@@ -264,4 +264,22 @@ public class SDKProgressPublisher {
             });
         }
     }
+
+    /**
+     * Can be used to shutdown the (legacy) executor.
+     * <p>
+     * However, the recommended best practice is to always make use of progress
+     * listeners that are short-lived (ie do not block) and are subclasses of
+     * either {@link SyncProgressListener} or
+     * <code>S3SyncProgressListener</code>. That way, the progress publisher
+     * (legacy) thread will never be activated in the first place.
+     * 
+     * @param now true if shutdown now; false otherwise.
+     */
+    public static void shutdown(boolean now) {
+        if (now)
+            LazyHolder.executor.shutdownNow();
+        else
+            LazyHolder.executor.shutdown();
+    }
 }

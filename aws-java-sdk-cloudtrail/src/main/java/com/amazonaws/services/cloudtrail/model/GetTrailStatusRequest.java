@@ -22,9 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cloudtrail.AWSCloudTrail#getTrailStatus(GetTrailStatusRequest) GetTrailStatus operation}.
  * <p>
  * Returns a JSON-formatted list of information about the specified
- * trail. Fields include information such as delivery errors, Amazon SNS
- * and Amazon S3 errors, and times that logging started and stopped for
- * each trail.
+ * trail. Fields include information on delivery errors, Amazon SNS and
+ * Amazon S3 errors, and start and stop logging times for each trail.
  * </p>
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#getTrailStatus(GetTrailStatusRequest)

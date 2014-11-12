@@ -13,18 +13,27 @@
  * limitations under the License.
  */
 package com.amazonaws.http.conn.ssl;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.conn.ssl.X509HostnameVerifier;
+import org.apache.http.params.HttpParams;
 
 /**
  * Used to enforce the preferred TLS protocol during SSL handshake.
@@ -91,5 +100,61 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
                 return true;
         }
         return false;
+    }
+
+    @Override
+    public Socket connectSocket(
+            final Socket socket,
+            final InetSocketAddress remoteAddress,
+            final InetSocketAddress localAddress,
+            final HttpParams params)
+            throws IOException, UnknownHostException, ConnectTimeoutException {
+        return verifyMasterSecret(
+            super.connectSocket(socket, remoteAddress, localAddress, params));
+    }
+
+    /**
+     * Double check the master secret of an SSL session must not be null, or
+     * else a {@link SecurityException} will be thrown.
+     * @param sock connected socket
+     */
+    private Socket verifyMasterSecret(final Socket sock) {
+        if (sock instanceof SSLSocket) {
+            SSLSocket ssl = (SSLSocket)sock;
+            SSLSession session = ssl.getSession();
+            if (session != null) {
+                String className = session.getClass().getName();
+                if ("sun.security.ssl.SSLSessionImpl".equals(className)) {
+                    try {
+                        Class<?> clazz = Class.forName(className);
+                        Method method = clazz.getDeclaredMethod("getMasterSecret");
+                        method.setAccessible(true);
+                        Object masterSecret = method.invoke(session);
+                        if (masterSecret == null)
+                            throw log(new SecurityException("Invalid SSL master secret"));
+                    } catch (ClassNotFoundException e) {
+                        failedToVerifyMasterSecret(e);
+                    } catch (NoSuchMethodException e) {
+                        failedToVerifyMasterSecret(e);
+                    } catch (IllegalAccessException e) {
+                        failedToVerifyMasterSecret(e);
+                    } catch (InvocationTargetException e) {
+                        failedToVerifyMasterSecret(e.getCause());
+                    }
+                }
+            }
+        }
+        return sock;
+    }
+    
+    private void failedToVerifyMasterSecret(Throwable t) {
+        if (log.isDebugEnabled())
+            log.debug("Failed to verify the SSL master secret", t);
+    }
+
+    private <T extends Throwable> T log(T t) {
+        if (log.isDebugEnabled())
+            log.debug("", t);
+        return t;
     }
 }

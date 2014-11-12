@@ -82,7 +82,7 @@ public class InstanceAttribute implements Serializable {
     private Boolean ebsOptimized;
 
     /**
-     * 
+     * The value to use for a resource attribute.
      */
     private String sriovNetSupport;
 
@@ -571,29 +571,29 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * 
+     * The value to use for a resource attribute.
      *
-     * @return 
+     * @return The value to use for a resource attribute.
      */
     public String getSriovNetSupport() {
         return sriovNetSupport;
     }
     
     /**
-     * 
+     * The value to use for a resource attribute.
      *
-     * @param sriovNetSupport 
+     * @param sriovNetSupport The value to use for a resource attribute.
      */
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
     
     /**
-     * 
+     * The value to use for a resource attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sriovNetSupport 
+     * @param sriovNetSupport The value to use for a resource attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

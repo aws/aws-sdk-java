@@ -73,41 +73,42 @@ public class BatchWriteItemImpl implements BatchWriteItemApi {
                 spec.getUnprocessedItems();
         if (requestItems == null || requestItems.size() == 0) {
             // handle new requests only if there is no unprocessed items
-            requestItems = new LinkedHashMap<String, List<WriteRequest>>
-                (tableWriteItemsCol.size());
+            requestItems = new LinkedHashMap<String, List<WriteRequest>>();
         }
-        for (TableWriteItems tableWriteItems: tableWriteItemsCol) {
-            // items to be put to a single table
-            Collection<Item> itemsToPut = tableWriteItems.getItemsToPut();
-            // primary keys to deleted in a single table
-            final List<PrimaryKey> pksToDelete =
-                    tableWriteItems.getPrimaryKeysToDelete();
-            // Merge them into a list of write requests to a single table
-            final int numPut = itemsToPut == null ? 0 : itemsToPut.size();
-            final int numDel = pksToDelete == null ? 0 : pksToDelete.size();
-            final List<WriteRequest> writeRequests =
-                new ArrayList<WriteRequest>(numPut + numDel);
-            // Put requests for a single table
-            if (itemsToPut != null) {
-                for (Item item: itemsToPut) {
-                    writeRequests.add(new WriteRequest()
-                        .withPutRequest(new PutRequest()
-                            .withItem(toAttributeValues(item))));
+        if (tableWriteItemsCol != null) {
+            for (TableWriteItems tableWriteItems: tableWriteItemsCol) {
+                // items to be put to a single table
+                Collection<Item> itemsToPut = tableWriteItems.getItemsToPut();
+                // primary keys to deleted in a single table
+                final List<PrimaryKey> pksToDelete =
+                        tableWriteItems.getPrimaryKeysToDelete();
+                // Merge them into a list of write requests to a single table
+                final int numPut = itemsToPut == null ? 0 : itemsToPut.size();
+                final int numDel = pksToDelete == null ? 0 : pksToDelete.size();
+                final List<WriteRequest> writeRequests =
+                    new ArrayList<WriteRequest>(numPut + numDel);
+                // Put requests for a single table
+                if (itemsToPut != null) {
+                    for (Item item: itemsToPut) {
+                        writeRequests.add(new WriteRequest()
+                            .withPutRequest(new PutRequest()
+                                .withItem(toAttributeValues(item))));
+                    }
                 }
-            }
-            // Delete requests for a single table
-            if (pksToDelete != null) {
-                for (PrimaryKey pkToDelete: pksToDelete) {
-                    writeRequests.add(new WriteRequest()
-                        .withDeleteRequest(new DeleteRequest()
-                            .withKey(toAttributeValueMap(pkToDelete))));
+                // Delete requests for a single table
+                if (pksToDelete != null) {
+                    for (PrimaryKey pkToDelete: pksToDelete) {
+                        writeRequests.add(new WriteRequest()
+                            .withDeleteRequest(new DeleteRequest()
+                                .withKey(toAttributeValueMap(pkToDelete))));
+                    }
                 }
+                requestItems.put(tableWriteItems.getTableName(), writeRequests);
             }
-            requestItems.put(tableWriteItems.getTableName(), writeRequests);
         }
         BatchWriteItemRequest req = spec.getRequest()
-                .withRequestItems(requestItems)
-                .withReturnConsumedCapacity(spec.getReturnConsumedCapacity());
+            .withRequestItems(requestItems)
+            .withReturnConsumedCapacity(spec.getReturnConsumedCapacity());
         BatchWriteItemResult result = client.batchWriteItem(req);
         return new BatchWriteItemOutcome(result);
     }

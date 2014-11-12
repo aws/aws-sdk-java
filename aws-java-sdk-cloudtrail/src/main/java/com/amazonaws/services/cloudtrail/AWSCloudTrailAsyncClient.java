@@ -34,7 +34,7 @@ import com.amazonaws.services.cloudtrail.model.*;
  * All asynchronous calls made using this client are non-blocking. Callers could either
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
- * AWS Cloud Trail <p>
+ * AWS CloudTrail <p>
  * This is the CloudTrail API Reference. It provides descriptions of
  * actions, data types, common parameters, and common errors for
  * CloudTrail.
@@ -296,9 +296,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     /**
      * <p>
      * Returns a JSON-formatted list of information about the specified
-     * trail. Fields include information such as delivery errors, Amazon SNS
-     * and Amazon S3 errors, and times that logging started and stopped for
-     * each trail.
+     * trail. Fields include information on delivery errors, Amazon SNS and
+     * Amazon S3 errors, and start and stop logging times for each trail.
      * </p>
      *
      * @param getTrailStatusRequest Container for the necessary parameters to
@@ -328,9 +327,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     /**
      * <p>
      * Returns a JSON-formatted list of information about the specified
-     * trail. Fields include information such as delivery errors, Amazon SNS
-     * and Amazon S3 errors, and times that logging started and stopped for
-     * each trail.
+     * trail. Fields include information on delivery errors, Amazon SNS and
+     * Amazon S3 errors, and start and stop logging times for each trail.
      * </p>
      *
      * @param getTrailStatusRequest Container for the necessary parameters to
@@ -445,27 +443,12 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     
     /**
      * <p>
-     * From the command line, use create-subscription.
+     * From the command line, use <code>create-subscription</code> .
      * </p>
      * <p>
      * Creates a trail that specifies the settings for delivery of log data
-     * to an Amazon S3 bucket. The request includes a Trail structure that
-     * specifies the following:
+     * to an Amazon S3 bucket.
      * </p>
-     * 
-     * <ul>
-     * <li>Trail name.</li>
-     * <li>The name of an existing Amazon S3 bucket to which CloudTrail
-     * delivers your log files.</li>
-     * <li>The name of the Amazon S3 key prefix that precedes each log
-     * file.</li>
-     * <li>The name of an existing Amazon SNS topic that notifies you that a
-     * new file is available in your bucket.</li>
-     * <li>Whether the log file should include AWS API calls from global
-     * services. Currently, the only global AWS API calls included in
-     * CloudTrail log files are from IAM and AWS STS.</li>
-     * 
-     * </ul>
      *
      * @param createTrailRequest Container for the necessary parameters to
      *           execute the CreateTrail operation on AWSCloudTrail.
@@ -493,27 +476,12 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
 
     /**
      * <p>
-     * From the command line, use create-subscription.
+     * From the command line, use <code>create-subscription</code> .
      * </p>
      * <p>
      * Creates a trail that specifies the settings for delivery of log data
-     * to an Amazon S3 bucket. The request includes a Trail structure that
-     * specifies the following:
+     * to an Amazon S3 bucket.
      * </p>
-     * 
-     * <ul>
-     * <li>Trail name.</li>
-     * <li>The name of an existing Amazon S3 bucket to which CloudTrail
-     * delivers your log files.</li>
-     * <li>The name of the Amazon S3 key prefix that precedes each log
-     * file.</li>
-     * <li>The name of an existing Amazon SNS topic that notifies you that a
-     * new file is available in your bucket.</li>
-     * <li>Whether the log file should include AWS API calls from global
-     * services. Currently, the only global AWS API calls included in
-     * CloudTrail log files are from IAM and AWS STS.</li>
-     * 
-     * </ul>
      *
      * @param createTrailRequest Container for the necessary parameters to
      *           execute the CreateTrail operation on AWSCloudTrail.
@@ -555,15 +523,14 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     
     /**
      * <p>
-     * From the command line, use update-subscription.
+     * From the command line, use <code>update-subscription</code> .
      * </p>
      * <p>
      * Updates the settings that specify delivery of log files. Changes to a
-     * trail do not require stopping the CloudTrail service. You use this
-     * action to designate an existing bucket for log delivery. If the
-     * existing bucket has previously been a target for CloudTrail log files,
-     * an IAM policy exists for the bucket. Use a Trail data type to pass
-     * updated bucket or topic names.
+     * trail do not require stopping the CloudTrail service. Use this action
+     * to designate an existing bucket for log delivery. If the existing
+     * bucket has previously been a target for CloudTrail log files, an IAM
+     * policy exists for the bucket.
      * </p>
      *
      * @param updateTrailRequest Container for the necessary parameters to
@@ -592,15 +559,14 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
 
     /**
      * <p>
-     * From the command line, use update-subscription.
+     * From the command line, use <code>update-subscription</code> .
      * </p>
      * <p>
      * Updates the settings that specify delivery of log files. Changes to a
-     * trail do not require stopping the CloudTrail service. You use this
-     * action to designate an existing bucket for log delivery. If the
-     * existing bucket has previously been a target for CloudTrail log files,
-     * an IAM policy exists for the bucket. Use a Trail data type to pass
-     * updated bucket or topic names.
+     * trail do not require stopping the CloudTrail service. Use this action
+     * to designate an existing bucket for log delivery. If the existing
+     * bucket has previously been a target for CloudTrail log files, an IAM
+     * policy exists for the bucket.
      * </p>
      *
      * @param updateTrailRequest Container for the necessary parameters to
@@ -643,8 +609,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     
     /**
      * <p>
-     * Retrieves the settings for some or all trails associated with an
-     * account. Returns a list of Trail structures in JSON format.
+     * Retrieves settings for the trail associated with the current region
+     * for your account.
      * </p>
      *
      * @param describeTrailsRequest Container for the necessary parameters to
@@ -673,8 +639,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
 
     /**
      * <p>
-     * Retrieves the settings for some or all trails associated with an
-     * account. Returns a list of Trail structures in JSON format.
+     * Retrieves settings for the trail associated with the current region
+     * for your account.
      * </p>
      *
      * @param describeTrailsRequest Container for the necessary parameters to

@@ -25,6 +25,7 @@ public enum ResourceStatus {
     DELETE_IN_PROGRESS("DELETE_IN_PROGRESS"),
     DELETE_FAILED("DELETE_FAILED"),
     DELETE_COMPLETE("DELETE_COMPLETE"),
+    DELETE_SKIPPED("DELETE_SKIPPED"),
     UPDATE_IN_PROGRESS("UPDATE_IN_PROGRESS"),
     UPDATE_FAILED("UPDATE_FAILED"),
     UPDATE_COMPLETE("UPDATE_COMPLETE");
@@ -63,6 +64,8 @@ public enum ResourceStatus {
             return ResourceStatus.DELETE_FAILED;
         } else if ("DELETE_COMPLETE".equals(value)) {
             return ResourceStatus.DELETE_COMPLETE;
+        } else if ("DELETE_SKIPPED".equals(value)) {
+            return ResourceStatus.DELETE_SKIPPED;
         } else if ("UPDATE_IN_PROGRESS".equals(value)) {
             return ResourceStatus.UPDATE_IN_PROGRESS;
         } else if ("UPDATE_FAILED".equals(value)) {

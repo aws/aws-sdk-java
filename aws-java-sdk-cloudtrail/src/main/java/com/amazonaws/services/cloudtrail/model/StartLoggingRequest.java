@@ -30,34 +30,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class StartLoggingRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the <a>Trail</a> for which CloudTrail logs AWS API calls.
+     * The name of the trail for which CloudTrail logs AWS API calls.
      */
     private String name;
 
     /**
-     * The name of the <a>Trail</a> for which CloudTrail logs AWS API calls.
+     * The name of the trail for which CloudTrail logs AWS API calls.
      *
-     * @return The name of the <a>Trail</a> for which CloudTrail logs AWS API calls.
+     * @return The name of the trail for which CloudTrail logs AWS API calls.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name of the <a>Trail</a> for which CloudTrail logs AWS API calls.
+     * The name of the trail for which CloudTrail logs AWS API calls.
      *
-     * @param name The name of the <a>Trail</a> for which CloudTrail logs AWS API calls.
+     * @param name The name of the trail for which CloudTrail logs AWS API calls.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name of the <a>Trail</a> for which CloudTrail logs AWS API calls.
+     * The name of the trail for which CloudTrail logs AWS API calls.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name of the <a>Trail</a> for which CloudTrail logs AWS API calls.
+     * @param name The name of the trail for which CloudTrail logs AWS API calls.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

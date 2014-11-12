@@ -39,7 +39,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
 
         Request<DescribeSnapshotsRequest> request = new DefaultRequest<DescribeSnapshotsRequest>(describeSnapshotsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSnapshots");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         java.util.List<String> snapshotIdsList = describeSnapshotsRequest.getSnapshotIds();
         int snapshotIdsListIndex = 1;

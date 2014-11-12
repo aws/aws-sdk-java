@@ -22,7 +22,7 @@ package com.amazonaws.services.s3.internal.crypto;
  * algorithm, if any. Byte array cloning is intentionally skipped for
  * performance reasons.
  */
-final class SecuredCEK {
+class SecuredCEK {
     /**
      * The encrypted CEK either via key wrapping or simple encryption.
      */

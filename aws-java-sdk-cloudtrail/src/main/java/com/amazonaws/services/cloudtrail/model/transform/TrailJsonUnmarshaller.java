@@ -65,6 +65,14 @@ public class TrailJsonUnmarshaller implements Unmarshaller<Trail, JsonUnmarshall
                     context.nextToken();
                     trail.setIncludeGlobalServiceEvents(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchLogsLogGroupArn", targetDepth)) {
+                    context.nextToken();
+                    trail.setCloudWatchLogsLogGroupArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchLogsRoleArn", targetDepth)) {
+                    context.nextToken();
+                    trail.setCloudWatchLogsRoleArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

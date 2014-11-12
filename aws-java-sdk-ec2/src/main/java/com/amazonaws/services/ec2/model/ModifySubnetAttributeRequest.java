@@ -34,7 +34,7 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     private String subnetId;
 
     /**
-     * 
+     * The value to use when a resource attribute accepts a Boolean value.
      */
     private Boolean mapPublicIpOnLaunch;
 
@@ -72,29 +72,29 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * 
+     * The value to use when a resource attribute accepts a Boolean value.
      *
-     * @return 
+     * @return The value to use when a resource attribute accepts a Boolean value.
      */
     public Boolean isMapPublicIpOnLaunch() {
         return mapPublicIpOnLaunch;
     }
     
     /**
-     * 
+     * The value to use when a resource attribute accepts a Boolean value.
      *
-     * @param mapPublicIpOnLaunch 
+     * @param mapPublicIpOnLaunch The value to use when a resource attribute accepts a Boolean value.
      */
     public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
         this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
     }
     
     /**
-     * 
+     * The value to use when a resource attribute accepts a Boolean value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mapPublicIpOnLaunch 
+     * @param mapPublicIpOnLaunch The value to use when a resource attribute accepts a Boolean value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -105,9 +105,9 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * 
+     * The value to use when a resource attribute accepts a Boolean value.
      *
-     * @return 
+     * @return The value to use when a resource attribute accepts a Boolean value.
      */
     public Boolean getMapPublicIpOnLaunch() {
         return mapPublicIpOnLaunch;

@@ -173,9 +173,9 @@ public class EncryptedGetObjectRequest extends GetObjectRequest {
     }
 
     /**
-     * Returns true if key wrapping is expected; false otherwse. Note, however,
-     * that if {@link CryptoMode#StrictAuthenticatedEncryption} is in use, key
-     * wrapping is always expected for the CEK regardless.
+     * Returns true if key wrapping is expected; false otherwise. Note, however,
+     * that if {@link CryptoMode#StrictAuthenticatedEncryption} or KMS is in
+     * use, key wrapping is always expected for the CEK regardless.
      */
     public boolean isKeyWrapExpected() {
         return keyWrapExpected;
@@ -185,8 +185,8 @@ public class EncryptedGetObjectRequest extends GetObjectRequest {
      * @param keyWrapExpected
      *            true if key wrapping is expected for the CEK; false otherwse.
      *            Note, however, that if
-     *            {@link CryptoMode#StrictAuthenticatedEncryption} is in use,
-     *            key wrapping is always expected for the CEK regardless.
+     *            {@link CryptoMode#StrictAuthenticatedEncryption} or KMS is in
+     *            use, key wrapping is always expected for the CEK regardless.
      *            <p>
      *            If keyWrapExpected is set to true but the CEK is found to be
      *            not key-wrapped, it would cause a {@link KeyWrapException} to

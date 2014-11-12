@@ -24,19 +24,18 @@ import java.io.Serializable;
 public class Trail implements Serializable {
 
     /**
-     * Name of the trail defined when you call when you call
-     * <a>CreateTrail</a>
+     * Name of the trail set by calling <a>CreateTrail</a>.
      */
     private String name;
 
     /**
      * Name of the Amazon S3 bucket into which CloudTrail delivers your trail
-     * files. Passed when you call <a>CreateTrail</a>.
+     * files.
      */
     private String s3BucketName;
 
     /**
-     * Value of the Amazon S3 prefix
+     * Value of the Amazon S3 prefix.
      */
     private String s3KeyPrefix;
 
@@ -52,36 +51,34 @@ public class Trail implements Serializable {
      */
     private Boolean includeGlobalServiceEvents;
 
+    private String cloudWatchLogsLogGroupArn;
+
+    private String cloudWatchLogsRoleArn;
+
     /**
-     * Name of the trail defined when you call when you call
-     * <a>CreateTrail</a>
+     * Name of the trail set by calling <a>CreateTrail</a>.
      *
-     * @return Name of the trail defined when you call when you call
-     *         <a>CreateTrail</a>
+     * @return Name of the trail set by calling <a>CreateTrail</a>.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Name of the trail defined when you call when you call
-     * <a>CreateTrail</a>
+     * Name of the trail set by calling <a>CreateTrail</a>.
      *
-     * @param name Name of the trail defined when you call when you call
-     *         <a>CreateTrail</a>
+     * @param name Name of the trail set by calling <a>CreateTrail</a>.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Name of the trail defined when you call when you call
-     * <a>CreateTrail</a>
+     * Name of the trail set by calling <a>CreateTrail</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Name of the trail defined when you call when you call
-     *         <a>CreateTrail</a>
+     * @param name Name of the trail set by calling <a>CreateTrail</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -93,10 +90,10 @@ public class Trail implements Serializable {
 
     /**
      * Name of the Amazon S3 bucket into which CloudTrail delivers your trail
-     * files. Passed when you call <a>CreateTrail</a>.
+     * files.
      *
      * @return Name of the Amazon S3 bucket into which CloudTrail delivers your trail
-     *         files. Passed when you call <a>CreateTrail</a>.
+     *         files.
      */
     public String getS3BucketName() {
         return s3BucketName;
@@ -104,10 +101,10 @@ public class Trail implements Serializable {
     
     /**
      * Name of the Amazon S3 bucket into which CloudTrail delivers your trail
-     * files. Passed when you call <a>CreateTrail</a>.
+     * files.
      *
      * @param s3BucketName Name of the Amazon S3 bucket into which CloudTrail delivers your trail
-     *         files. Passed when you call <a>CreateTrail</a>.
+     *         files.
      */
     public void setS3BucketName(String s3BucketName) {
         this.s3BucketName = s3BucketName;
@@ -115,12 +112,12 @@ public class Trail implements Serializable {
     
     /**
      * Name of the Amazon S3 bucket into which CloudTrail delivers your trail
-     * files. Passed when you call <a>CreateTrail</a>.
+     * files.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param s3BucketName Name of the Amazon S3 bucket into which CloudTrail delivers your trail
-     *         files. Passed when you call <a>CreateTrail</a>.
+     *         files.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -131,29 +128,29 @@ public class Trail implements Serializable {
     }
 
     /**
-     * Value of the Amazon S3 prefix
+     * Value of the Amazon S3 prefix.
      *
-     * @return Value of the Amazon S3 prefix
+     * @return Value of the Amazon S3 prefix.
      */
     public String getS3KeyPrefix() {
         return s3KeyPrefix;
     }
     
     /**
-     * Value of the Amazon S3 prefix
+     * Value of the Amazon S3 prefix.
      *
-     * @param s3KeyPrefix Value of the Amazon S3 prefix
+     * @param s3KeyPrefix Value of the Amazon S3 prefix.
      */
     public void setS3KeyPrefix(String s3KeyPrefix) {
         this.s3KeyPrefix = s3KeyPrefix;
     }
     
     /**
-     * Value of the Amazon S3 prefix
+     * Value of the Amazon S3 prefix.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3KeyPrefix Value of the Amazon S3 prefix
+     * @param s3KeyPrefix Value of the Amazon S3 prefix.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -253,6 +250,78 @@ public class Trail implements Serializable {
     }
 
     /**
+     * Returns the value of the CloudWatchLogsLogGroupArn property for this
+     * object.
+     *
+     * @return The value of the CloudWatchLogsLogGroupArn property for this object.
+     */
+    public String getCloudWatchLogsLogGroupArn() {
+        return cloudWatchLogsLogGroupArn;
+    }
+    
+    /**
+     * Sets the value of the CloudWatchLogsLogGroupArn property for this
+     * object.
+     *
+     * @param cloudWatchLogsLogGroupArn The new value for the CloudWatchLogsLogGroupArn property for this
+     *         object.
+     */
+    public void setCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
+        this.cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArn;
+    }
+    
+    /**
+     * Sets the value of the CloudWatchLogsLogGroupArn property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cloudWatchLogsLogGroupArn The new value for the CloudWatchLogsLogGroupArn property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Trail withCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
+        this.cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArn;
+        return this;
+    }
+
+    /**
+     * Returns the value of the CloudWatchLogsRoleArn property for this
+     * object.
+     *
+     * @return The value of the CloudWatchLogsRoleArn property for this object.
+     */
+    public String getCloudWatchLogsRoleArn() {
+        return cloudWatchLogsRoleArn;
+    }
+    
+    /**
+     * Sets the value of the CloudWatchLogsRoleArn property for this object.
+     *
+     * @param cloudWatchLogsRoleArn The new value for the CloudWatchLogsRoleArn property for this object.
+     */
+    public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
+        this.cloudWatchLogsRoleArn = cloudWatchLogsRoleArn;
+    }
+    
+    /**
+     * Sets the value of the CloudWatchLogsRoleArn property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cloudWatchLogsRoleArn The new value for the CloudWatchLogsRoleArn property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Trail withCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
+        this.cloudWatchLogsRoleArn = cloudWatchLogsRoleArn;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -268,7 +337,9 @@ public class Trail implements Serializable {
         if (getS3BucketName() != null) sb.append("S3BucketName: " + getS3BucketName() + ",");
         if (getS3KeyPrefix() != null) sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
         if (getSnsTopicName() != null) sb.append("SnsTopicName: " + getSnsTopicName() + ",");
-        if (isIncludeGlobalServiceEvents() != null) sb.append("IncludeGlobalServiceEvents: " + isIncludeGlobalServiceEvents() );
+        if (isIncludeGlobalServiceEvents() != null) sb.append("IncludeGlobalServiceEvents: " + isIncludeGlobalServiceEvents() + ",");
+        if (getCloudWatchLogsLogGroupArn() != null) sb.append("CloudWatchLogsLogGroupArn: " + getCloudWatchLogsLogGroupArn() + ",");
+        if (getCloudWatchLogsRoleArn() != null) sb.append("CloudWatchLogsRoleArn: " + getCloudWatchLogsRoleArn() );
         sb.append("}");
         return sb.toString();
     }
@@ -283,6 +354,8 @@ public class Trail implements Serializable {
         hashCode = prime * hashCode + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode()); 
         hashCode = prime * hashCode + ((getSnsTopicName() == null) ? 0 : getSnsTopicName().hashCode()); 
         hashCode = prime * hashCode + ((isIncludeGlobalServiceEvents() == null) ? 0 : isIncludeGlobalServiceEvents().hashCode()); 
+        hashCode = prime * hashCode + ((getCloudWatchLogsLogGroupArn() == null) ? 0 : getCloudWatchLogsLogGroupArn().hashCode()); 
+        hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode()); 
         return hashCode;
     }
     
@@ -304,6 +377,10 @@ public class Trail implements Serializable {
         if (other.getSnsTopicName() != null && other.getSnsTopicName().equals(this.getSnsTopicName()) == false) return false; 
         if (other.isIncludeGlobalServiceEvents() == null ^ this.isIncludeGlobalServiceEvents() == null) return false;
         if (other.isIncludeGlobalServiceEvents() != null && other.isIncludeGlobalServiceEvents().equals(this.isIncludeGlobalServiceEvents()) == false) return false; 
+        if (other.getCloudWatchLogsLogGroupArn() == null ^ this.getCloudWatchLogsLogGroupArn() == null) return false;
+        if (other.getCloudWatchLogsLogGroupArn() != null && other.getCloudWatchLogsLogGroupArn().equals(this.getCloudWatchLogsLogGroupArn()) == false) return false; 
+        if (other.getCloudWatchLogsRoleArn() == null ^ this.getCloudWatchLogsRoleArn() == null) return false;
+        if (other.getCloudWatchLogsRoleArn() != null && other.getCloudWatchLogsRoleArn().equals(this.getCloudWatchLogsRoleArn()) == false) return false; 
         return true;
     }
     

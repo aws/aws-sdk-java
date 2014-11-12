@@ -296,6 +296,110 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             
     /**
      * <p>
+     * Returns information about a new or existing template. The
+     * <code>GetTemplateSummary</code> action is useful for viewing parameter
+     * information, such as default parameter values and parameter types,
+     * before you create or update a stack.
+     * </p>
+     * <p>
+     * You can use the <code>GetTemplateSummary</code> action when you
+     * submit a template, or you can get template information for a running
+     * or deleted stack.
+     * </p>
+     * <p>
+     * For deleted stacks, <code>GetTemplateSummary</code> returns the
+     * template information for up to 90 days after the stack has been
+     * deleted. If the template does not exist, a
+     * <code>ValidationError</code> is returned.
+     * </p>
+     *
+     * @param getTemplateSummaryRequest Container for the necessary
+     *           parameters to execute the GetTemplateSummary operation on
+     *           AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTemplateSummary service method, as returned by
+     *         AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTemplateSummaryResult> getTemplateSummaryAsync(final GetTemplateSummaryRequest getTemplateSummaryRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetTemplateSummaryResult>() {
+            public GetTemplateSummaryResult call() throws Exception {
+                return getTemplateSummary(getTemplateSummaryRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns information about a new or existing template. The
+     * <code>GetTemplateSummary</code> action is useful for viewing parameter
+     * information, such as default parameter values and parameter types,
+     * before you create or update a stack.
+     * </p>
+     * <p>
+     * You can use the <code>GetTemplateSummary</code> action when you
+     * submit a template, or you can get template information for a running
+     * or deleted stack.
+     * </p>
+     * <p>
+     * For deleted stacks, <code>GetTemplateSummary</code> returns the
+     * template information for up to 90 days after the stack has been
+     * deleted. If the template does not exist, a
+     * <code>ValidationError</code> is returned.
+     * </p>
+     *
+     * @param getTemplateSummaryRequest Container for the necessary
+     *           parameters to execute the GetTemplateSummary operation on
+     *           AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTemplateSummary service method, as returned by
+     *         AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTemplateSummaryResult> getTemplateSummaryAsync(
+            final GetTemplateSummaryRequest getTemplateSummaryRequest,
+            final AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetTemplateSummaryResult>() {
+            public GetTemplateSummaryResult call() throws Exception {
+              GetTemplateSummaryResult result;
+                try {
+                result = getTemplateSummary(getTemplateSummaryRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getTemplateSummaryRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Validates a specified template.
      * </p>
      *
@@ -688,6 +792,78 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
+     * Sets a stack policy for a specified stack.
+     * </p>
+     *
+     * @param setStackPolicyRequest Container for the necessary parameters to
+     *           execute the SetStackPolicy operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetStackPolicy service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setStackPolicyAsync(final SetStackPolicyRequest setStackPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                setStackPolicy(setStackPolicyRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Sets a stack policy for a specified stack.
+     * </p>
+     *
+     * @param setStackPolicyRequest Container for the necessary parameters to
+     *           execute the SetStackPolicy operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetStackPolicy service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setStackPolicyAsync(
+            final SetStackPolicyRequest setStackPolicyRequest,
+            final AsyncHandler<SetStackPolicyRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                setStackPolicy(setStackPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setStackPolicyRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Creates a stack as specified in the template. After the call
      * completes successfully, the stack creation starts. You can check the
      * status of the stack via the DescribeStacks API.
@@ -758,78 +934,6 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
               }
               asyncHandler.onSuccess(createStackRequest, result);
                  return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Sets a stack policy for a specified stack.
-     * </p>
-     *
-     * @param setStackPolicyRequest Container for the necessary parameters to
-     *           execute the SetStackPolicy operation on AmazonCloudFormation.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetStackPolicy service method, as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setStackPolicyAsync(final SetStackPolicyRequest setStackPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                setStackPolicy(setStackPolicyRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Sets a stack policy for a specified stack.
-     * </p>
-     *
-     * @param setStackPolicyRequest Container for the necessary parameters to
-     *           execute the SetStackPolicy operation on AmazonCloudFormation.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetStackPolicy service method, as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setStackPolicyAsync(
-            final SetStackPolicyRequest setStackPolicyRequest,
-            final AsyncHandler<SetStackPolicyRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                setStackPolicy(setStackPolicyRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(setStackPolicyRequest, null);
-                 return null;
         }
     });
     }
@@ -1088,6 +1192,90 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
               }
               asyncHandler.onSuccess(describeStackResourceRequest, result);
                  return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Sends a signal to the specified resource with a success or failure
+     * status. You can use the SignalResource API in conjunction with a
+     * creation policy or update policy. AWS CloudFormation doesn't proceed
+     * with a stack creation or update until resources receive the required
+     * number of signals or the timeout period is exceeded. The
+     * SignalResource API is useful in cases where you want to send signals
+     * from anywhere other than an Amazon EC2 instance.
+     * </p>
+     *
+     * @param signalResourceRequest Container for the necessary parameters to
+     *           execute the SignalResource operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SignalResource service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> signalResourceAsync(final SignalResourceRequest signalResourceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                signalResource(signalResourceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Sends a signal to the specified resource with a success or failure
+     * status. You can use the SignalResource API in conjunction with a
+     * creation policy or update policy. AWS CloudFormation doesn't proceed
+     * with a stack creation or update until resources receive the required
+     * number of signals or the timeout period is exceeded. The
+     * SignalResource API is useful in cases where you want to send signals
+     * from anywhere other than an Amazon EC2 instance.
+     * </p>
+     *
+     * @param signalResourceRequest Container for the necessary parameters to
+     *           execute the SignalResource operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SignalResource service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> signalResourceAsync(
+            final SignalResourceRequest signalResourceRequest,
+            final AsyncHandler<SignalResourceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                signalResource(signalResourceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(signalResourceRequest, null);
+                 return null;
         }
     });
     }
@@ -1416,82 +1604,6 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
-     * Deletes a specified stack. Once the call completes successfully,
-     * stack deletion starts. Deleted stacks do not show up in the
-     * DescribeStacks API if the deletion has been completed successfully.
-     * </p>
-     *
-     * @param deleteStackRequest Container for the necessary parameters to
-     *           execute the DeleteStack operation on AmazonCloudFormation.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteStack service method, as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteStackAsync(final DeleteStackRequest deleteStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteStack(deleteStackRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a specified stack. Once the call completes successfully,
-     * stack deletion starts. Deleted stacks do not show up in the
-     * DescribeStacks API if the deletion has been completed successfully.
-     * </p>
-     *
-     * @param deleteStackRequest Container for the necessary parameters to
-     *           execute the DeleteStack operation on AmazonCloudFormation.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteStack service method, as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteStackAsync(
-            final DeleteStackRequest deleteStackRequest,
-            final AsyncHandler<DeleteStackRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteStack(deleteStackRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteStackRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Returns descriptions of all resources of the specified stack.
      * </p>
      * <p>
@@ -1570,6 +1682,82 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
               }
               asyncHandler.onSuccess(listStackResourcesRequest, result);
                  return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a specified stack. Once the call completes successfully,
+     * stack deletion starts. Deleted stacks do not show up in the
+     * DescribeStacks API if the deletion has been completed successfully.
+     * </p>
+     *
+     * @param deleteStackRequest Container for the necessary parameters to
+     *           execute the DeleteStack operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteStack service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteStackAsync(final DeleteStackRequest deleteStackRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteStack(deleteStackRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a specified stack. Once the call completes successfully,
+     * stack deletion starts. Deleted stacks do not show up in the
+     * DescribeStacks API if the deletion has been completed successfully.
+     * </p>
+     *
+     * @param deleteStackRequest Container for the necessary parameters to
+     *           execute the DeleteStack operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteStack service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteStackAsync(
+            final DeleteStackRequest deleteStackRequest,
+            final AsyncHandler<DeleteStackRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteStack(deleteStackRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteStackRequest, null);
+                 return null;
         }
     });
     }

@@ -100,6 +100,13 @@ public class Volume implements Serializable {
     private Boolean encrypted;
 
     /**
+     * The full ARN of the AWS Key Management Service (KMS) Customer Master
+     * Key (CMK) that was used to protect the volume encryption key for the
+     * volume.
+     */
+    private String kmsKeyId;
+
+    /**
      * The ID of the volume.
      *
      * @return The ID of the volume.
@@ -738,6 +745,51 @@ public class Volume implements Serializable {
     }
 
     /**
+     * The full ARN of the AWS Key Management Service (KMS) Customer Master
+     * Key (CMK) that was used to protect the volume encryption key for the
+     * volume.
+     *
+     * @return The full ARN of the AWS Key Management Service (KMS) Customer Master
+     *         Key (CMK) that was used to protect the volume encryption key for the
+     *         volume.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The full ARN of the AWS Key Management Service (KMS) Customer Master
+     * Key (CMK) that was used to protect the volume encryption key for the
+     * volume.
+     *
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) Customer Master
+     *         Key (CMK) that was used to protect the volume encryption key for the
+     *         volume.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The full ARN of the AWS Key Management Service (KMS) Customer Master
+     * Key (CMK) that was used to protect the volume encryption key for the
+     * volume.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) Customer Master
+     *         Key (CMK) that was used to protect the volume encryption key for the
+     *         volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Volume withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -759,7 +811,8 @@ public class Volume implements Serializable {
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
         if (getIops() != null) sb.append("Iops: " + getIops() + ",");
-        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -780,6 +833,7 @@ public class Volume implements Serializable {
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -813,6 +867,8 @@ public class Volume implements Serializable {
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
         if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

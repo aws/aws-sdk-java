@@ -25,14 +25,14 @@ import java.io.Serializable;
 public class DescribeTrailsResult implements Serializable {
 
     /**
-     * An array of <a>Trail</a> objects.
+     * The list of trails.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Trail> trailList;
 
     /**
-     * An array of <a>Trail</a> objects.
+     * The list of trails.
      *
-     * @return An array of <a>Trail</a> objects.
+     * @return The list of trails.
      */
     public java.util.List<Trail> getTrailList() {
         if (trailList == null) {
@@ -43,9 +43,9 @@ public class DescribeTrailsResult implements Serializable {
     }
     
     /**
-     * An array of <a>Trail</a> objects.
+     * The list of trails.
      *
-     * @param trailList An array of <a>Trail</a> objects.
+     * @param trailList The list of trails.
      */
     public void setTrailList(java.util.Collection<Trail> trailList) {
         if (trailList == null) {
@@ -58,11 +58,11 @@ public class DescribeTrailsResult implements Serializable {
     }
     
     /**
-     * An array of <a>Trail</a> objects.
+     * The list of trails.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trailList An array of <a>Trail</a> objects.
+     * @param trailList The list of trails.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -76,11 +76,11 @@ public class DescribeTrailsResult implements Serializable {
     }
     
     /**
-     * An array of <a>Trail</a> objects.
+     * The list of trails.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trailList An array of <a>Trail</a> objects.
+     * @param trailList The list of trails.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

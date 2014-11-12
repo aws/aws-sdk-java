@@ -34,6 +34,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.internal.SdkFilterInputStream;
+import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.CryptoMode;
@@ -60,11 +61,11 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     /**
      * @param cryptoConfig a read-only copy of the crypto configuration.
      */
-    S3CryptoModuleAE(S3Direct s3,
+    S3CryptoModuleAE(AWSKMSClient kms, S3Direct s3,
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
-        super(s3, credentialsProvider, encryptionMaterialsProvider,
+        super(kms, s3, credentialsProvider, encryptionMaterialsProvider,
                 cryptoConfig);
         CryptoMode mode = cryptoConfig.getCryptoMode();
         if (mode != StrictAuthenticatedEncryption
@@ -79,7 +80,16 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     S3CryptoModuleAE(S3Direct s3,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
-        this(s3, new DefaultAWSCredentialsProviderChain(),
+        this(null, s3, new DefaultAWSCredentialsProviderChain(),
+                encryptionMaterialsProvider, cryptoConfig);
+    }
+    /**
+     * Used for testing purposes only.
+     */
+    S3CryptoModuleAE(AWSKMSClient kms, S3Direct s3,
+            EncryptionMaterialsProvider encryptionMaterialsProvider,
+            CryptoConfiguration cryptoConfig) {
+        this(kms, s3, new DefaultAWSCredentialsProviderChain(),
                 encryptionMaterialsProvider, cryptoConfig);
     }
 
@@ -221,7 +231,8 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                     cryptoConfig.getCryptoProvider(), 
                     cryptoRange,   // range is sometimes necessary to compute the adjusted IV
                     extraMatDesc,
-                    keyWrapExpected
+                    keyWrapExpected,
+                    kms
             );
         securityCheck(cekMaterial, retrieved);
         S3ObjectWrapper decrypted = decrypt(retrieved, cekMaterial, cryptoRange);
@@ -249,7 +260,8 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                 // range is sometimes necessary to compute the adjusted IV
                 cryptoRange,
                 extraMatDesc,
-                keyWrapExpected
+                keyWrapExpected,
+                kms
             );
         securityCheck(cekMaterial, retrieved);
         S3ObjectWrapper decrypted = decrypt(retrieved, cekMaterial, cryptoRange);

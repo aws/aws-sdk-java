@@ -120,11 +120,12 @@ public class DeleteItemSpec extends AbstractSpecWithPrimaryKey<DeleteItemRequest
      * name, or a JSON path expression.
      */
     public DeleteItemSpec withNameMap(Map<String, String> nameMap) {
-        if (nameMap == null)
+        if (nameMap == null) {
             this.nameMap = null;
-        else
+        } else {
             this.nameMap = Collections.unmodifiableMap(
                 new LinkedHashMap<String, String>(nameMap));
+        }
         return this;
     }
     public Map<String, Object> getValueMap() {
@@ -136,11 +137,12 @@ public class DeleteItemSpec extends AbstractSpecWithPrimaryKey<DeleteItemRequest
      * specify the actual values for the attribute-value placeholders.
      */
     public DeleteItemSpec withValueMap(Map<String, Object> valueMap) {
-        if (valueMap == null)
+        if (valueMap == null) {
             this.valueMap = null;
-        else
+        } else {
             this.valueMap = Collections.unmodifiableMap(
                 new LinkedHashMap<String, Object>(valueMap));
+        }
         return this;
     }
 

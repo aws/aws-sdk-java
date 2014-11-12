@@ -26,7 +26,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
 public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
-        implements SSECustomerKeyProvider {
+        implements SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider {
     /**
      * The name of the bucket in which to create the new multipart upload, and
      * hence, the eventual object created from the multipart upload.
@@ -73,6 +73,12 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * encrypt the upload being started.
      */
     private SSECustomerKey sseCustomerKey;
+
+    /**
+     * The optional AWS Key Management system parameters to be used to encrypt
+     * the the object on the server side.
+     */
+    private SSEAwsKeyManagementParams sseAwsKeyManagementParams;
 
 
     /**
@@ -414,6 +420,9 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      *            use to encrypt the upload being started.
      */
     public void setSSECustomerKey(SSECustomerKey sseKey) {
+        if (this.sseAwsKeyManagementParams != null)
+            throw new IllegalArgumentException(
+                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
         this.sseCustomerKey = sseKey;
     }
 
@@ -432,6 +441,39 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      */
     public InitiateMultipartUploadRequest withSSECustomerKey(SSECustomerKey sseKey) {
         setSSECustomerKey(sseKey);
+        return this;
+    }
+
+    /**
+     * Returns the AWS Key Management System parameters used to encrypt the
+     * object on server side.
+     */
+    @Override
+    public SSEAwsKeyManagementParams getSSEAwsKeyManagementParams() {
+        return sseAwsKeyManagementParams;
+    }
+
+    /**
+     * Sets the AWS Key Management System parameters used to encrypt the object
+     * on server side.
+     */
+    public void setSSEAwsKeyManagementParams(
+            SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
+        if (this.sseCustomerKey != null)
+            throw new IllegalArgumentException(
+                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
+        this.sseAwsKeyManagementParams = sseAwsKeyManagementParams;
+    }
+
+    /**
+     * Sets the AWS Key Management System parameters used to encrypt the object
+     * on server side.
+     *
+     * @return returns the update InitiateMultipartUploadRequest
+     */
+    public InitiateMultipartUploadRequest withSSEAwsKeyManagementParams(
+            SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
+        setSSEAwsKeyManagementParams(sseAwsKeyManagementParams);
         return this;
     }
 }

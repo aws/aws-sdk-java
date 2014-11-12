@@ -32,41 +32,41 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class StopLoggingRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Communicates to CloudTrail the name of the <a>Trail</a> for which to
-     * stop logging AWS API calls.
+     * Communicates to CloudTrail the name of the trail for which to stop
+     * logging AWS API calls.
      */
     private String name;
 
     /**
-     * Communicates to CloudTrail the name of the <a>Trail</a> for which to
-     * stop logging AWS API calls.
+     * Communicates to CloudTrail the name of the trail for which to stop
+     * logging AWS API calls.
      *
-     * @return Communicates to CloudTrail the name of the <a>Trail</a> for which to
-     *         stop logging AWS API calls.
+     * @return Communicates to CloudTrail the name of the trail for which to stop
+     *         logging AWS API calls.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Communicates to CloudTrail the name of the <a>Trail</a> for which to
-     * stop logging AWS API calls.
+     * Communicates to CloudTrail the name of the trail for which to stop
+     * logging AWS API calls.
      *
-     * @param name Communicates to CloudTrail the name of the <a>Trail</a> for which to
-     *         stop logging AWS API calls.
+     * @param name Communicates to CloudTrail the name of the trail for which to stop
+     *         logging AWS API calls.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Communicates to CloudTrail the name of the <a>Trail</a> for which to
-     * stop logging AWS API calls.
+     * Communicates to CloudTrail the name of the trail for which to stop
+     * logging AWS API calls.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Communicates to CloudTrail the name of the <a>Trail</a> for which to
-     *         stop logging AWS API calls.
+     * @param name Communicates to CloudTrail the name of the trail for which to stop
+     *         logging AWS API calls.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

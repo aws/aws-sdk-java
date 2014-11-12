@@ -42,7 +42,8 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see AmazonS3Client#copyObject(com.amazonaws.services.s3.model.CopyObjectRequest)
  * @see CopyObjectResult
  */
-public class CopyObjectRequest extends AmazonWebServiceRequest {
+public class CopyObjectRequest extends AmazonWebServiceRequest implements
+    SSEAwsKeyManagementParamsProvider {
 
     /** The name of the bucket containing the object to be copied */
     private String sourceBucketName;
@@ -133,6 +134,12 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      * encrypt the destination object being copied.
      */
     private SSECustomerKey destinationSSECustomerKey;
+
+    /**
+     * The optional AWS Key Management system parameters to be used to encrypt
+     * the the object on the server side.
+     */
+    private SSEAwsKeyManagementParams sseAwsKeyManagementParams;
 
     /**
      * <p>
@@ -1039,6 +1046,9 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      *            use to encrypt the destination object being copied.
      */
     public void setDestinationSSECustomerKey(SSECustomerKey sseKey) {
+        if (this.sseAwsKeyManagementParams != null)
+            throw new IllegalArgumentException(
+                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
         this.destinationSSECustomerKey = sseKey;
     }
 
@@ -1056,6 +1066,39 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      */
     public CopyObjectRequest withDestinationSSECustomerKey(SSECustomerKey sseKey) {
         setDestinationSSECustomerKey(sseKey);
+        return this;
+    }
+
+    /**
+     * Returns the AWS Key Management System parameters used to encrypt the
+     * object on server side.
+     */
+    @Override
+    public SSEAwsKeyManagementParams getSSEAwsKeyManagementParams() {
+        return sseAwsKeyManagementParams;
+    }
+
+    /**
+     * Sets the AWS Key Management System parameters used to encrypt the object
+     * on server side.
+     */
+    public void setSSEAwsKeyManagementParams(
+            SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
+        if (this.destinationSSECustomerKey != null)
+            throw new IllegalArgumentException(
+                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
+        this.sseAwsKeyManagementParams = sseAwsKeyManagementParams;
+    }
+
+    /**
+     * Sets the AWS Key Management System parameters used to encrypt the object
+     * on server side.
+     *
+     * @return returns the update CopyObjectRequest
+     */
+    public CopyObjectRequest withSSEAwsKeyManagementParams(
+            SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
+        setSSEAwsKeyManagementParams(sseAwsKeyManagementParams);
         return this;
     }
 }

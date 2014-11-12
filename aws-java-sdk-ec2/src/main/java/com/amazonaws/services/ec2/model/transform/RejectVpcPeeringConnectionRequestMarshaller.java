@@ -39,7 +39,7 @@ public class RejectVpcPeeringConnectionRequestMarshaller implements Marshaller<R
 
         Request<RejectVpcPeeringConnectionRequest> request = new DefaultRequest<RejectVpcPeeringConnectionRequest>(rejectVpcPeeringConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "RejectVpcPeeringConnection");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         if (rejectVpcPeeringConnectionRequest.getVpcPeeringConnectionId() != null) {
             request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(rejectVpcPeeringConnectionRequest.getVpcPeeringConnectionId()));

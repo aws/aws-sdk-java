@@ -76,28 +76,11 @@ public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTr
             if (createTrailRequest.isIncludeGlobalServiceEvents() != null) {
                 jsonWriter.key("IncludeGlobalServiceEvents").value(createTrailRequest.isIncludeGlobalServiceEvents());
             }
-            Trail trail = createTrailRequest.getTrail();
-            if (trail != null) {
-
-                jsonWriter.key("trail");
-                jsonWriter.object();
-
-                if (trail.getName() != null) {
-                    jsonWriter.key("Name").value(trail.getName());
-                }
-                if (trail.getS3BucketName() != null) {
-                    jsonWriter.key("S3BucketName").value(trail.getS3BucketName());
-                }
-                if (trail.getS3KeyPrefix() != null) {
-                    jsonWriter.key("S3KeyPrefix").value(trail.getS3KeyPrefix());
-                }
-                if (trail.getSnsTopicName() != null) {
-                    jsonWriter.key("SnsTopicName").value(trail.getSnsTopicName());
-                }
-                if (trail.isIncludeGlobalServiceEvents() != null) {
-                    jsonWriter.key("IncludeGlobalServiceEvents").value(trail.isIncludeGlobalServiceEvents());
-                }
-                jsonWriter.endObject();
+            if (createTrailRequest.getCloudWatchLogsLogGroupArn() != null) {
+                jsonWriter.key("CloudWatchLogsLogGroupArn").value(createTrailRequest.getCloudWatchLogsLogGroupArn());
+            }
+            if (createTrailRequest.getCloudWatchLogsRoleArn() != null) {
+                jsonWriter.key("CloudWatchLogsRoleArn").value(createTrailRequest.getCloudWatchLogsRoleArn());
             }
 
           jsonWriter.endObject();

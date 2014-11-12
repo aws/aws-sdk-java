@@ -355,6 +355,12 @@ public class UploadCallable implements Callable<UploadResult> {
             initiateMultipartUploadRequest.setSSECustomerKey(putObjectRequest.getSSECustomerKey());
         }
 
+        if (putObjectRequest.getSSEAwsKeyManagementParams() != null) {
+            initiateMultipartUploadRequest
+                    .setSSEAwsKeyManagementParams(putObjectRequest
+                            .getSSEAwsKeyManagementParams());
+        }
+
         String uploadId = s3.initiateMultipartUpload(initiateMultipartUploadRequest).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);
 

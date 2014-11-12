@@ -189,4 +189,10 @@ public interface Headers {
      * the request.
      */
     public static final String REQUESTER_CHARGED_HEADER = "x-amz-request-charged";
+
+    /**
+     * Header in the request and response indicating the AWS Key Management
+     * System key id used for Server Side Encryption.
+     */
+    public static final String SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID = "x-amz-server-side-encryption-aws-kms-key-id";
 }

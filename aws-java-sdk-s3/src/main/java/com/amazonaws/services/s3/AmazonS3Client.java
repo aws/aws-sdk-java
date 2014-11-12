@@ -174,6 +174,8 @@ import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
+import com.amazonaws.services.s3.model.SSEAwsKeyManagementParams;
+import com.amazonaws.services.s3.model.SSEAwsKeyManagementParamsProvider;
 import com.amazonaws.services.s3.model.SSECustomerKey;
 import com.amazonaws.services.s3.model.SSECustomerKeyProvider;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
@@ -1158,7 +1160,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // we're downloading the whole object, by default we wrap the
             // stream in a validator that calculates an MD5 of the downloaded
             // bytes and complains if what we received doesn't match the Etag.
-            if ( !skipContentMd5IntegrityCheck(getObjectRequest) ) {
+            if (!skipContentMd5IntegrityCheck(getObjectRequest)
+                    && !ServiceUtils.skipContentMd5IntegrityCheck(s3Object
+                            .getObjectMetadata())) {
                 byte[] serverSideHash = null;
                 String etag = s3Object.getObjectMetadata().getETag();
                 if (etag != null && ServiceUtils.isMultipartUploadETag(etag) == false) {
@@ -1249,7 +1253,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 return true;
         } else if (request instanceof PutObjectRequest) {
             PutObjectRequest putObjectRequest = (PutObjectRequest)request;
-            return putObjectRequest.getSSECustomerKey() != null;
+            return putObjectRequest.getSSECustomerKey() != null
+                    || putObjectRequest.getSSEAwsKeyManagementParams() != null;
         } else if (request instanceof UploadPartRequest) {
             UploadPartRequest uploadPartRequest = (UploadPartRequest)request;
             return uploadPartRequest.getSSECustomerKey() != null;
@@ -1368,6 +1373,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             // Populate the SSE-CPK parameters to the request header
             populateSseCpkRequestParameters(request, putObjectRequest.getSSECustomerKey());
+
+            // Populate the SSE AWS KMS parameters to the request header
+            populateAWSKeyManagementParams(request,
+                    putObjectRequest.getSSEAwsKeyManagementParams());
 
             // Use internal interface to differentiate 0 from unset.
             final Long contentLength = (Long)metadata.getRawMetadataValue(Headers.CONTENT_LENGTH);
@@ -1525,6 +1534,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<CopyObjectRequest> request = createRequest(destinationBucketName, destinationKey, copyObjectRequest, HttpMethodName.PUT);
 
         populateRequestWithCopyObjectParameters(request, copyObjectRequest);
+
+        // Populate the SSE AWS KMS parameters to the request header
+        populateAWSKeyManagementParams(request,
+                copyObjectRequest.getSSEAwsKeyManagementParams());
         /*
          * We can't send a non-zero length Content-Length header if the user
          * specified it, otherwise it messes up the HTTP connection when the
@@ -2615,6 +2628,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // Populate the SSE-CPK parameters to the request header
         populateSseCpkRequestParameters(request, initiateMultipartUploadRequest.getSSECustomerKey());
 
+        // Populate the SSE AWS KMS parameters to the request header
+        populateAWSKeyManagementParams(request,
+                initiateMultipartUploadRequest.getSSEAwsKeyManagementParams());
+
         // Be careful that we don't send the object's total size as the content
         // length for the InitiateMultipartUpload request.
         setZeroContentLength(request);
@@ -2771,10 +2788,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
             final String etag = metadata.getETag();
 
-            if (md5DigestStream != null) {
+            if (md5DigestStream != null
+                    && !ServiceUtils.skipContentMd5IntegrityCheck(metadata)) {
                 byte[] clientSideHash = md5DigestStream.getMd5Digest();
                 byte[] serverSideHash = BinaryUtils.fromHex(etag);
-
 
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {
                     final String info = "bucketName: " + bucketName + ", key: "
@@ -2985,7 +3002,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Signer signer = getSigner();
 
-        if (upgradeToSigV4() && !(signer instanceof AWSS3V4Signer)){
+        final AmazonWebServiceRequest originalRequest = request
+                .getOriginalRequest();
+        final boolean isStandardEnpoint = getEndpoint().getHost().equals(
+                Constants.S3_HOSTNAME);
+        // For all GetObject requests, we default to SigV4 if the endpoint is a
+        // non-standard endpoint. This is because, we know the region name to be
+        // used fpr SigV4 signing.
+        final boolean sigv4ForGetRequests = ((originalRequest instanceof GetObjectRequest) && !isStandardEnpoint);
+
+        if ((upgradeToSigV4() && !(signer instanceof AWSS3V4Signer))
+                || (sigv4ForGetRequests)) {
 
             AWSS3V4Signer v4Signer = new AWSS3V4Signer();
 
@@ -3370,6 +3397,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             byte[] encryptionKey = Base64.decode(encryptionKey_b64);
             request.addHeader(Headers.COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5,
                     Md5Utils.md5AsBase64(encryptionKey));
+        }
+    }
+
+    private static void populateAWSKeyManagementParams(Request<?> request,
+            SSEAwsKeyManagementParams sseParams) {
+
+        if (sseParams != null) {
+            addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION,
+                    sseParams.getEncryption());
+            addHeaderIfNotNull(request,
+                    Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID,
+                    sseParams.getAwsKmsKeyId());
         }
     }
 
@@ -3787,6 +3826,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ||  cpr.getDestinationSSECustomerKey() != null) {
                 assertHttps();
             }
+        }
+
+        if (req instanceof SSEAwsKeyManagementParamsProvider) {
+            SSEAwsKeyManagementParamsProvider p = (SSEAwsKeyManagementParamsProvider) req;
+            if (p.getSSEAwsKeyManagementParams() != null)
+                assertHttps();
         }
     }
 

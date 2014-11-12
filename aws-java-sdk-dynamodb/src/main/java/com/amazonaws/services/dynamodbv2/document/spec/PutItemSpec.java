@@ -99,10 +99,12 @@ public class PutItemSpec extends AbstractSpec<PutItemRequest> {
      * name, or a JSON path expression.
      */
     public PutItemSpec withNameMap(Map<String, String> nameMap) {
-        if (nameMap == null)
+        if (nameMap == null) {
             this.nameMap = null;
-        else
-            this.nameMap = Collections.unmodifiableMap(new LinkedHashMap<String, String>(nameMap));
+        } else {
+            this.nameMap = Collections.unmodifiableMap(
+                new LinkedHashMap<String, String>(nameMap));
+        }
         return this;
     }
     public Map<String, Object> getValueMap() {
@@ -114,10 +116,12 @@ public class PutItemSpec extends AbstractSpec<PutItemRequest> {
      * specify the actual values for the attribute-value placeholders.
      */
     public PutItemSpec withValueMap(Map<String, Object> valueMap) {
-        if (valueMap == null)
+        if (valueMap == null) {
             this.valueMap = null;
-        else
-            this.valueMap = Collections.unmodifiableMap(new LinkedHashMap<String, Object>(valueMap));
+        } else {
+            this.valueMap = Collections.unmodifiableMap(
+                new LinkedHashMap<String, Object>(valueMap));
+        }
         return this;
     }
 

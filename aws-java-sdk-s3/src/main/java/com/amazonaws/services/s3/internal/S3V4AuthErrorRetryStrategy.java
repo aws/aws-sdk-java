@@ -16,6 +16,8 @@ package com.amazonaws.services.s3.internal;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -23,6 +25,7 @@ import org.apache.http.annotation.Immutable;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
@@ -44,12 +47,27 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
 
     private final String bucketName;
 
+    private static final List<String> ERROR_CODES_AUTH_ERROR;
+
+    private static final List<String> ERROR_MESSAGES_AUTH_ERROR;
+
+    static {
+        ERROR_CODES_AUTH_ERROR = new ArrayList<String>();
+        ERROR_CODES_AUTH_ERROR.add("InvalidRequest");
+        ERROR_CODES_AUTH_ERROR.add("InvalidArgument");
+
+        ERROR_MESSAGES_AUTH_ERROR = new ArrayList<String>();
+        ERROR_MESSAGES_AUTH_ERROR.add("Please use AWS4-HMAC-SHA256.");
+        ERROR_MESSAGES_AUTH_ERROR
+                .add("AWS KMS managed keys require AWS Signature Version 4.");
+    }
+
     public S3V4AuthErrorRetryStrategy(String bucketName) {
         this.bucketName = bucketName;
     }
 
     @Override
-    public AuthRetryParameters shouldRetryWithAuthParam(Request<?> originalRequest,
+    public AuthRetryParameters shouldRetryWithAuthParam(Request<?> request,
             AmazonServiceException ase) {
 
         /*
@@ -60,7 +78,7 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
          *  - "us-east-1" as the signer region
          * This will trigger a 307 which will then redirect us to the correct region.
          */
-        if ( isAwsV4SigningRequiredError(ase) ) {
+        if ( isAwsV4SigningRequiredError(request.getOriginalRequest(), ase) ) {
             if ( !BucketNameUtils.isDNSBucketName(bucketName) ) {
                 throw new AmazonClientException(V4_REGION_WARNING, ase);
             }
@@ -94,16 +112,24 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
      * Returns true if the given AWS service exception indicates an auth error
      * asking for V4 authentication.
      */
-    private static boolean isAwsV4SigningRequiredError(AmazonServiceException ase) {
-        if (ase == null) return false;
+    private static boolean isAwsV4SigningRequiredError(
+            AmazonWebServiceRequest originalRequest, AmazonServiceException ase) {
+        if (ase == null)
+            return false;
 
-        final String INVALID_REQUEST = "InvalidRequest";
-        final String PLEASE_USE_SIGV4 = "Please use AWS4-HMAC-SHA256.";
+        final String errorCode = ase.getErrorCode();
+        final String errorMsg = ase.getErrorMessage() != null ? ase
+                .getErrorMessage().trim() : null;
 
-        String errorCode = ase.getErrorCode();
-        String errorMsg  = ase.getErrorMessage();
+        if (errorMsg != null) {
+            if (ERROR_CODES_AUTH_ERROR.contains(errorCode)) {
+                for (String possibleErrorMessage : ERROR_MESSAGES_AUTH_ERROR) {
+                    if (errorMsg.contains(possibleErrorMessage))
+                        return true;
+                }
+            }
+        }
 
-        return INVALID_REQUEST.equalsIgnoreCase(errorCode) &&
-                errorMsg != null && errorMsg.contains(PLEASE_USE_SIGV4);
+        return false;
     }
 }

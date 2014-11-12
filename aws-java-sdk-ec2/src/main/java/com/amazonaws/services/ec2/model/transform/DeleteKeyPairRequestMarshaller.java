@@ -39,7 +39,7 @@ public class DeleteKeyPairRequestMarshaller implements Marshaller<Request<Delete
 
         Request<DeleteKeyPairRequest> request = new DefaultRequest<DeleteKeyPairRequest>(deleteKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteKeyPair");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         if (deleteKeyPairRequest.getKeyName() != null) {
             request.addParameter("KeyName", StringUtils.fromString(deleteKeyPairRequest.getKeyName()));

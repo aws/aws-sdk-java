@@ -39,7 +39,7 @@ public class DeleteNetworkAclEntryRequestMarshaller implements Marshaller<Reques
 
         Request<DeleteNetworkAclEntryRequest> request = new DefaultRequest<DeleteNetworkAclEntryRequest>(deleteNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteNetworkAclEntry");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         if (deleteNetworkAclEntryRequest.getNetworkAclId() != null) {
             request.addParameter("NetworkAclId", StringUtils.fromString(deleteNetworkAclEntryRequest.getNetworkAclId()));

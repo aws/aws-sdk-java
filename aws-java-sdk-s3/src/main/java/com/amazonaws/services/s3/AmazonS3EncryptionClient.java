@@ -23,6 +23,7 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.internal.crypto.CryptoModuleDispatcher;
 import com.amazonaws.services.s3.internal.crypto.S3CryptoModule;
@@ -67,6 +68,14 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     public static final String USER_AGENT = AmazonS3EncryptionClient.class.getName()
             + "/" + VersionInfoUtils.getVersion();
     private final S3CryptoModule<?> crypto;
+    private final AWSKMSClient kms;
+    /**
+     * True if the a default KMS client is constructed, which will be shut down
+     * when this instance of S3 encryption client is shutdown.  False otherwise,
+     * which means the users who provided the KMS client would be responsible
+     * to shut down the KMS client. 
+     */
+    private final boolean isKMSClientInternal;
 
     // ///////////////////// Constructors ////////////////
     /**
@@ -393,12 +402,27 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
             ClientConfiguration clientConfig,
             CryptoConfiguration cryptoConfig,
             RequestMetricCollector requestMetricCollector) {
+        this(null, // KMS client
+            credentialsProvider, kekMaterialsProvider, clientConfig,
+            cryptoConfig, requestMetricCollector);
+    }
+
+    public AmazonS3EncryptionClient(AWSKMSClient kms,
+            AWSCredentialsProvider credentialsProvider,
+            EncryptionMaterialsProvider kekMaterialsProvider,
+            ClientConfiguration clientConfig,
+            CryptoConfiguration cryptoConfig,
+            RequestMetricCollector requestMetricCollector) {
         super(credentialsProvider, clientConfig, requestMetricCollector);
         assertParameterNotNull(kekMaterialsProvider,
                 "EncryptionMaterialsProvider parameter must not be null.");
         assertParameterNotNull(cryptoConfig,
                 "CryptoConfiguration parameter must not be null.");
-        this.crypto = new CryptoModuleDispatcher(new S3DirectImpl(),
+        this.isKMSClientInternal = kms == null;
+        this.kms = isKMSClientInternal 
+            ? new AWSKMSClient(credentialsProvider, clientConfig, requestMetricCollector)
+            : kms;
+        this.crypto = new CryptoModuleDispatcher(this.kms, new S3DirectImpl(),
                 credentialsProvider, kekMaterialsProvider, cryptoConfig);
     }
 
@@ -506,6 +530,22 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     public PutObjectResult putInstructionFile(PutInstructionFileRequest req) {
         return crypto.putInstructionFileSecurely(req);
     }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * If the a default internal KMS client has been constructed, it will also be
+     * shut down by calling this method.
+     * Otherwise, users who provided the KMS client would be responsible to
+     * shut down the KMS client extrinsic to this method.
+     */
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (isKMSClientInternal)
+            kms.shutdown();
+    }
+
 
     // /////////////////// Access to the methods in the super class //////////
     /**

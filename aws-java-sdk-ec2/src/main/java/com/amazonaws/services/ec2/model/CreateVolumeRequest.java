@@ -52,9 +52,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10 GiB.
-     * <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.
+     * <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
+     * If you're creating the volume from a snapshot and don't specify a
+     * volume size, the default is the snapshot size.
      */
     private Integer size;
 
@@ -93,6 +93,18 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private Boolean encrypted;
 
     /**
+     * The full ARN of the AWS Key Management Service (KMS) Customer Master
+     * Key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter
+     * is not specified, the default CMK is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     */
+    private String kmsKeyId;
+
+    /**
      * Default constructor for a new CreateVolumeRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -104,7 +116,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param size The size of the volume, in GiBs. <p>Constraints: If the
-     * volume type is <code>io1</code>, the minimum size of the volume is 10
+     * volume type is <code>io1</code>, the minimum size of the volume is 4
      * GiB. <p>Default: If you're creating the volume from a snapshot and
      * don't specify a volume size, the default is the snapshot size.
      * @param availabilityZone The Availability Zone in which to create the
@@ -133,14 +145,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10 GiB.
-     * <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.
+     * <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
+     * If you're creating the volume from a snapshot and don't specify a
+     * volume size, the default is the snapshot size.
      *
      * @return The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10 GiB.
-     *         <p>Default: If you're creating the volume from a snapshot and don't
-     *         specify a volume size, the default is the snapshot size.
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
+     *         If you're creating the volume from a snapshot and don't specify a
+     *         volume size, the default is the snapshot size.
      */
     public Integer getSize() {
         return size;
@@ -148,14 +160,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10 GiB.
-     * <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.
+     * <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
+     * If you're creating the volume from a snapshot and don't specify a
+     * volume size, the default is the snapshot size.
      *
      * @param size The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10 GiB.
-     *         <p>Default: If you're creating the volume from a snapshot and don't
-     *         specify a volume size, the default is the snapshot size.
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
+     *         If you're creating the volume from a snapshot and don't specify a
+     *         volume size, the default is the snapshot size.
      */
     public void setSize(Integer size) {
         this.size = size;
@@ -163,16 +175,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10 GiB.
-     * <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.
+     * <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
+     * If you're creating the volume from a snapshot and don't specify a
+     * volume size, the default is the snapshot size.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10 GiB.
-     *         <p>Default: If you're creating the volume from a snapshot and don't
-     *         specify a volume size, the default is the snapshot size.
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
+     *         If you're creating the volume from a snapshot and don't specify a
+     *         volume size, the default is the snapshot size.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -454,6 +466,81 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * The full ARN of the AWS Key Management Service (KMS) Customer Master
+     * Key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter
+     * is not specified, the default CMK is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *
+     * @return The full ARN of the AWS Key Management Service (KMS) Customer Master
+     *         Key (CMK) to use when creating the encrypted volume. This parameter is
+     *         only required if you want to use a non-default CMK; if this parameter
+     *         is not specified, the default CMK is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     *         the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     *         and then the CMK ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The full ARN of the AWS Key Management Service (KMS) Customer Master
+     * Key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter
+     * is not specified, the default CMK is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) Customer Master
+     *         Key (CMK) to use when creating the encrypted volume. This parameter is
+     *         only required if you want to use a non-default CMK; if this parameter
+     *         is not specified, the default CMK is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     *         the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     *         and then the CMK ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The full ARN of the AWS Key Management Service (KMS) Customer Master
+     * Key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter
+     * is not specified, the default CMK is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) Customer Master
+     *         Key (CMK) to use when creating the encrypted volume. This parameter is
+     *         only required if you want to use a non-default CMK; if this parameter
+     *         is not specified, the default CMK is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     *         the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     *         and then the CMK ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateVolumeRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -482,7 +569,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
         if (getIops() != null) sb.append("Iops: " + getIops() + ",");
-        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -498,6 +586,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -521,6 +610,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
         if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

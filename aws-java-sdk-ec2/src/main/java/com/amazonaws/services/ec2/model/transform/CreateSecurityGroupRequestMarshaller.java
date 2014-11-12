@@ -39,7 +39,7 @@ public class CreateSecurityGroupRequestMarshaller implements Marshaller<Request<
 
         Request<CreateSecurityGroupRequest> request = new DefaultRequest<CreateSecurityGroupRequest>(createSecurityGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSecurityGroup");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         if (createSecurityGroupRequest.getGroupName() != null) {
             request.addParameter("GroupName", StringUtils.fromString(createSecurityGroupRequest.getGroupName()));
