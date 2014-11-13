@@ -31,6 +31,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -57,13 +58,13 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Transition;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
-import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
 import com.amazonaws.services.s3.model.CanonicalGrantee;
+import com.amazonaws.services.s3.model.CloudFunctionConfiguration;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.DeleteObjectsResult.DeletedObject;
@@ -74,17 +75,18 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.MultiObjectDeleteException.DeleteError;
 import com.amazonaws.services.s3.model.MultipartUpload;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
+import com.amazonaws.services.s3.model.NotificationConfiguration;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.PartSummary;
 import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.QueueConfiguration;
 import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
-import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.S3VersionSummary;
 import com.amazonaws.services.s3.model.StorageClass;
@@ -1782,45 +1784,100 @@ public class XmlResponsesSaxParser {
         }
     }
 
-    public static class BucketNotificationConfigurationHandler extends AbstractHandler {
+    public static class BucketNotificationConfigurationHandler extends
+            AbstractHandler {
 
-        private final BucketNotificationConfiguration configuration =
-                new BucketNotificationConfiguration();
+        private final BucketNotificationConfiguration bucketNotificationConfiguration = new BucketNotificationConfiguration();
 
-        private String topic;
-        private String event;
+        private String destinationArn;
+        private String configurationName;
+        private String invocationRole;
+        private List<String> events;
+        private List<String> prefixes;
 
         public BucketNotificationConfiguration getConfiguration() {
-            return configuration;
+            return bucketNotificationConfiguration;
         }
 
         @Override
-        protected void doStartElement(
-                String uri,
-                String name,
-                String qName,
+        protected void doStartElement(String uri, String name, String qName,
                 Attributes attrs) {
 
+            if (in("NotificationConfiguration")) {
+                if (name.equals("TopicConfiguration")
+                        || name.equals("QueueConfiguration")
+                        || name.equals("CloudFunctionConfiguration")) {
+                    destinationArn = null;
+                    configurationName = null;
+                    invocationRole = null;
+                    events = new ArrayList<String>();
+                    prefixes = new ArrayList<String>();
+                }
+            }
         }
 
         @Override
         protected void doEndElement(String uri, String name, String qName) {
             if (in("NotificationConfiguration", "TopicConfiguration")) {
                 if (name.equals("Topic")) {
-                    topic = getText();
-                } else if (name.equals("Event")) {
-                    event = getText();
+                    destinationArn = getText();
+                } else {
+                    parseConfig(name);
+                }
+            } else if (in("NotificationConfiguration", "QueueConfiguration")) {
+                if (name.equals("Queue")) {
+                    destinationArn = getText();
+                } else {
+                    parseConfig(name);
+                }
+            } else if (in("NotificationConfiguration", "CloudFunctionConfiguration")) {
+                if (name.equals("InvocationRole")) {
+                    invocationRole = getText();
+                } else if (name.equals("CloudFunction")) {
+                    destinationArn = getText();
+                } else {
+                    parseConfig(name);
                 }
             } else if (in("NotificationConfiguration")) {
+                NotificationConfiguration configuration = null;
                 if (name.equals("TopicConfiguration")) {
-                    if (topic != null && event != null) {
-                        configuration.getTopicConfigurations()
-                        .add(new TopicConfiguration(topic, event));
-                    }
+                    configuration = new com.amazonaws.services.s3.model.TopicConfiguration(
+                            destinationArn, events.toArray(new String[events
+                                    .size()]));
+                    configuration.withObjectPrefixes(prefixes
+                            .toArray(new String[prefixes.size()]));
+                } else if (name.equals("QueueConfiguration")) {
+                    configuration = new QueueConfiguration(destinationArn,
+                            events.toArray(new String[events.size()]));
+                    configuration.withObjectPrefixes(prefixes
+                            .toArray(new String[prefixes.size()]));
+				} else if (name.equals("CloudFunctionConfiguration")) {
+					configuration = new CloudFunctionConfiguration(
+							invocationRole, destinationArn,
+							events.toArray(new String[events.size()]));
+					configuration.withObjectPrefixes(prefixes
+							.toArray(new String[prefixes.size()]));
+				}
 
-                    topic = null;
-                    event = null;
+                if (configuration != null) {
+                    // TODO : The below condition needs to be removed when the
+                    // S3 supports name for each notification configuration.
+                    if (configurationName == null) {
+                        configurationName = UUID.randomUUID().toString();
+                    }
+                    bucketNotificationConfiguration.addConfiguration(
+                            configurationName, configuration);
                 }
+            }
+        }
+
+        private void parseConfig(String name) {
+            if (name.equals("Id")) {
+                configurationName = getText();
+            } else if (name.equals("Event")) {
+                events.add(getText());
+            } else if (name.equals("Prefix")) {
+                prefixes.add(getText());
             }
         }
     }

@@ -15,6 +15,8 @@
 package com.amazonaws.services.s3.model.transform;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
@@ -27,16 +29,19 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Transition;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
-import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CORSRule;
+import com.amazonaws.services.s3.model.CloudFunctionConfiguration;
+import com.amazonaws.services.s3.model.QueueConfiguration;
 import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
+import com.amazonaws.services.s3.model.NotificationConfiguration;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
 import com.amazonaws.services.s3.model.TagSet;
+import com.amazonaws.services.s3.model.TopicConfiguration;
 
 /**
  * Converts bucket configuration objects into XML byte arrays.
@@ -105,21 +110,62 @@ public class BucketConfigurationXmlFactory {
      *
      * @return The XML byte array representation.
      */
-    public byte[] convertToXmlByteArray(BucketNotificationConfiguration notificationConfiguration) {
+    public byte[] convertToXmlByteArray(
+            BucketNotificationConfiguration notificationConfiguration) {
         XmlWriter xml = new XmlWriter();
         xml.start("NotificationConfiguration", "xmlns", Constants.XML_NAMESPACE);
+        Map<String, NotificationConfiguration> configurations = notificationConfiguration
+                .getConfigurations();
 
-        List<TopicConfiguration> topicConfigurations = notificationConfiguration.getTopicConfigurations();
-        for ( TopicConfiguration topicConfiguration : topicConfigurations ) {
-            xml.start( "TopicConfiguration" );
-            xml.start( "Topic" ).value( topicConfiguration.getTopic() ).end();
-            xml.start( "Event" ).value( topicConfiguration.getEvent() ).end();
-            xml.end();
+        for (Map.Entry<String, NotificationConfiguration> entry : configurations
+                .entrySet()) {
+            String configName = entry.getKey();
+            NotificationConfiguration config = entry.getValue();
+            if (config instanceof TopicConfiguration) {
+                xml.start("TopicConfiguration");
+                xml.start("Id").value(configName).end();
+                xml.start("Topic")
+                        .value(((TopicConfiguration) config).getTopicARN())
+                        .end();
+                addPrefixesAndEvents(xml, config);
+                xml.end();
+            } else if (config instanceof QueueConfiguration) {
+                xml.start("QueueConfiguration");
+                xml.start("Id").value(configName).end();
+                xml.start("Queue")
+                        .value(((QueueConfiguration) config).getQueueARN())
+                        .end();
+                addPrefixesAndEvents(xml, config);
+                xml.end();
+            } else if (config instanceof CloudFunctionConfiguration) {
+                xml.start("CloudFunctionConfiguration");
+                xml.start("Id").value(configName).end();
+                xml.start("InvocationRole")
+                        .value(((CloudFunctionConfiguration) config)
+                                .getInvocationRoleARN()).end();
+                xml.start("CloudFunction")
+                        .value(((CloudFunctionConfiguration) config).getCloudFunctionARN())
+                        .end();
+                addPrefixesAndEvents(xml, config);
+                xml.end();
+            }
+        }
+        xml.end();
+        return xml.getBytes();
+    }
+
+    private void addPrefixesAndEvents(XmlWriter xml,
+            NotificationConfiguration config) {
+        Set<String> events = config.getEvents();
+
+        for (String event : events) {
+            xml.start("Event").value(event).end();
         }
 
-        xml.end();
-
-        return xml.getBytes();
+        List<String> objectPrefixes = config.getObjectPrefixes();
+        for (String prefix : objectPrefixes) {
+            xml.start("Prefix").value(prefix).end();
+        }
     }
 
     /**

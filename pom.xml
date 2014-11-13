@@ -5,7 +5,7 @@
   <artifactId>aws-java-sdk-pom</artifactId>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
-  <version>1.9.6-SNAPSHOT</version>
+  <version>1.9.6</version>
   <description>The Amazon Web Services SDK for Java provides Java APIs
     for building software on AWS' cost-effective, scalable, and reliable
     infrastructure products. The AWS Java SDK allows developers to code
@@ -61,6 +61,7 @@
     <module>aws-java-sdk-codedeploy</module>
     <module>aws-java-sdk-kms</module>
     <module>aws-java-sdk-config</module>
+    <module>aws-java-sdk-lambda</module>
     <module>aws-java-sdk</module>
     <module>aws-java-sdk-core</module>
 </modules>
