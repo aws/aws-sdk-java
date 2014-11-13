@@ -3,6 +3,12 @@
     <Region>
       <Name>us-east-1</Name>
       <Endpoint>
+        <ServiceName>lambda</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>lambda.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>codedeploy</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -401,6 +407,12 @@
     </Region>
     <Region>
       <Name>us-west-2</Name>
+      <Endpoint>
+        <ServiceName>lambda</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>lambda.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
       <Endpoint>
         <ServiceName>codedeploy</ServiceName>
         <Http>false</Http>
@@ -1302,6 +1314,12 @@
     <Region>
       <Name>eu-west-1</Name>
       <Endpoint>
+        <ServiceName>lambda</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>lambda.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>kms</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1872,6 +1890,13 @@
     </Region>
   </Regions>
   <Services>
+    <Service>
+      <Name>lambda</Name>
+      <FullName>AWS Lambda</FullName>
+      <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
+    </Service>
     <Service>
       <Name>codedeploy</Name>
       <FullName>AWS CodeDeploy</FullName>
