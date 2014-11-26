@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2;
 
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.w3c.dom.*;
 
 import java.net.*;
@@ -193,7 +194,37 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public AmazonEC2Client(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(clientConfiguration, requestMetricCollector);
+        this(awsCredentialsProvider, clientConfiguration,
+                requestMetricCollector, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AmazonEC2 using the
+     * specified AWS account credentials provider, client configuration options,
+     * request metric collector and SSL socket factory.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     * 
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials to
+     *            authenticate requests with AWS services.
+     * @param clientConfiguration
+     *            The client configuration options controlling how this client
+     *            connects to AmazonEC2 (ex: proxy settings, retry counts,
+     *            etc.).
+     * @param sslSocketFactory
+     *            client is configured to use this SSL socket factory. Pass
+     *            'null' to use the default factory.
+     * @param requestMetricCollector
+     *            optional request metric collector
+     */
+    public AmazonEC2Client(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector,
+            SSLSocketFactory sslSocketFactory) {
+        super(clientConfiguration, requestMetricCollector, sslSocketFactory);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }

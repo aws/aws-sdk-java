@@ -86,6 +86,23 @@ class HttpClientFactory {
      * @return The new, configured HttpClient.
      */
     public HttpClient createHttpClient(ClientConfiguration config) {
+    	return createHttpClient(config, null);
+    }
+
+    /**
+     * Creates a new HttpClient object using the specified AWS
+     * ClientConfiguration to configure the client. The client is configured to
+     * use the supplied SSL socket factory.
+     * 
+     * @param config
+     *            Client configuration options (ex: proxy settings, connection
+     *            limits, etc).
+     * @param sslSocketFactory
+     *            client is configured to use this SSL socket factory. If 'null'
+     *            it is ignored and the default socket factory is used instead.
+     * @return The new, configured HttpClient.
+     */
+    public HttpClient createHttpClient(ClientConfiguration config, SSLSocketFactory sslSocketFactory) {
         /* Set HTTP client parameters */
         HttpParams httpClientParams = new BasicHttpParams();
         HttpConnectionParams.setConnectionTimeout(httpClientParams, config.getConnectionTimeout());
@@ -113,10 +130,12 @@ class HttpClientFactory {
 
         try {
             Scheme http = new Scheme("http", 80, PlainSocketFactory.getSocketFactory());
-            SdkTLSSocketFactory sf = new SdkTLSSocketFactory(
-                    SSLContext.getDefault(),
-                    SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
-            Scheme https = new Scheme("https", 443, sf);
+            if (sslSocketFactory == null) {
+                sslSocketFactory = new SdkTLSSocketFactory(
+                        SSLContext.getDefault(),
+                        SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
+            }
+            Scheme https = new Scheme("https", 443, sslSocketFactory);
             SchemeRegistry sr = connectionManager.getSchemeRegistry();
             sr.register(http);
             sr.register(https);

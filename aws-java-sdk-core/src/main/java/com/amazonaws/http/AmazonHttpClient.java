@@ -190,7 +190,30 @@ public class AmazonHttpClient {
      *            is none.
      */
     public AmazonHttpClient(ClientConfiguration config, RequestMetricCollector requestMetricCollector) {
-        this(config, httpClientFactory.createHttpClient(config), requestMetricCollector);
+        this(config, requestMetricCollector, null);
+    }
+
+    /**
+     * Constructs a new AWS client using the specified client configuration
+     * options (ex: max retry attempts, proxy settings, etc), request metric
+     * collector and SSL socket factory.
+     * 
+     * @param config
+     *            Configuration options specifying how this client will
+     *            communicate with AWS (ex: proxy settings, retry count, etc.).
+     * @param requestMetricCollector
+     *            client specific request metric collector, which takes
+     *            precedence over the one at the AWS SDK level; or null if there
+     *            is none.
+     * @param sslSocketFactory
+     *            client is configured to use this SSL socket factory. Pass
+     *            'null' to use the default factory.
+     */
+    public AmazonHttpClient(ClientConfiguration config,
+            RequestMetricCollector requestMetricCollector,
+            SSLSocketFactory sslSocketFactory) {
+        this(config, httpClientFactory.createHttpClient(config,
+                sslSocketFactory), requestMetricCollector);
     }
 
     /**

@@ -24,6 +24,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 
 import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
@@ -116,8 +117,28 @@ public abstract class AmazonWebServiceClient {
      */
     public AmazonWebServiceClient(ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
+        this(clientConfiguration, requestMetricCollector, null);
+    }
+
+    /**
+     * Constructs a new AmazonWebServiceClient object using the specified
+     * configuration and request metric collector.
+     * 
+     * @param clientConfiguration
+     *            The client configuration for this client.
+     * @param requestMetricCollector
+     *            optional request metric collector to be used at the http
+     *            client level; can be null.
+     * @param sslSocketFactory
+     *            client is configured to use this SSL socket factory. Pass
+     *            'null' to use the default factory.
+     */
+    public AmazonWebServiceClient(ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector,
+            SSLSocketFactory sslSocketFactory) {
         this.clientConfiguration = clientConfiguration;
-        client = new AmazonHttpClient(clientConfiguration, requestMetricCollector);
+        client = new AmazonHttpClient(clientConfiguration,
+                requestMetricCollector, sslSocketFactory);
         requestHandler2s = new CopyOnWriteArrayList<RequestHandler2>();
     }
 
