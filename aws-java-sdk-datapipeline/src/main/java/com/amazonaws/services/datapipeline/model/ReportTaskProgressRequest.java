@@ -53,6 +53,12 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest implement
     private String taskId;
 
     /**
+     * Key-value pairs that define the properties of the
+     * ReportTaskProgressInput object.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Field> fields;
+
+    /**
      * Identifier of the task assigned to the task runner. This value is
      * provided in the <a>TaskObject</a> that the service returns with the
      * response for the <a>PollForTask</a> action.
@@ -110,6 +116,82 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * Key-value pairs that define the properties of the
+     * ReportTaskProgressInput object.
+     *
+     * @return Key-value pairs that define the properties of the
+     *         ReportTaskProgressInput object.
+     */
+    public java.util.List<Field> getFields() {
+        if (fields == null) {
+              fields = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>();
+              fields.setAutoConstruct(true);
+        }
+        return fields;
+    }
+    
+    /**
+     * Key-value pairs that define the properties of the
+     * ReportTaskProgressInput object.
+     *
+     * @param fields Key-value pairs that define the properties of the
+     *         ReportTaskProgressInput object.
+     */
+    public void setFields(java.util.Collection<Field> fields) {
+        if (fields == null) {
+            this.fields = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>(fields.size());
+        fieldsCopy.addAll(fields);
+        this.fields = fieldsCopy;
+    }
+    
+    /**
+     * Key-value pairs that define the properties of the
+     * ReportTaskProgressInput object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param fields Key-value pairs that define the properties of the
+     *         ReportTaskProgressInput object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ReportTaskProgressRequest withFields(Field... fields) {
+        if (getFields() == null) setFields(new java.util.ArrayList<Field>(fields.length));
+        for (Field value : fields) {
+            getFields().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Key-value pairs that define the properties of the
+     * ReportTaskProgressInput object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param fields Key-value pairs that define the properties of the
+     *         ReportTaskProgressInput object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ReportTaskProgressRequest withFields(java.util.Collection<Field> fields) {
+        if (fields == null) {
+            this.fields = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>(fields.size());
+            fieldsCopy.addAll(fields);
+            this.fields = fieldsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -121,7 +203,8 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest implement
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTaskId() != null) sb.append("TaskId: " + getTaskId() );
+        if (getTaskId() != null) sb.append("TaskId: " + getTaskId() + ",");
+        if (getFields() != null) sb.append("Fields: " + getFields() );
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +215,7 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest implement
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getTaskId() == null) ? 0 : getTaskId().hashCode()); 
+        hashCode = prime * hashCode + ((getFields() == null) ? 0 : getFields().hashCode()); 
         return hashCode;
     }
     
@@ -145,6 +229,8 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest implement
         
         if (other.getTaskId() == null ^ this.getTaskId() == null) return false;
         if (other.getTaskId() != null && other.getTaskId().equals(this.getTaskId()) == false) return false; 
+        if (other.getFields() == null ^ this.getFields() == null) return false;
+        if (other.getFields() != null && other.getFields().equals(this.getFields()) == false) return false; 
         return true;
     }
     

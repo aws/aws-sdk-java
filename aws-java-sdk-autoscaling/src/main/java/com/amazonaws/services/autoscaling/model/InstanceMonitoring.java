@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>InstanceMonitoring</code> data type.
+ * Describes whether instance monitoring is enabled.
  * </p>
  */
 public class InstanceMonitoring implements Serializable {

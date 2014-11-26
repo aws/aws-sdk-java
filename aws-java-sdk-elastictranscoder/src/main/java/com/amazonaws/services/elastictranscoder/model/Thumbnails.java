@@ -34,7 +34,8 @@ public class Thumbnails implements Serializable {
     private String format;
 
     /**
-     * The number of seconds between thumbnails. Specify an integer value.
+     * The approximate number of seconds between thumbnails. Specify an
+     * integer value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,5}$<br/>
@@ -199,38 +200,44 @@ public class Thumbnails implements Serializable {
     }
 
     /**
-     * The number of seconds between thumbnails. Specify an integer value.
+     * The approximate number of seconds between thumbnails. Specify an
+     * integer value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,5}$<br/>
      *
-     * @return The number of seconds between thumbnails. Specify an integer value.
+     * @return The approximate number of seconds between thumbnails. Specify an
+     *         integer value.
      */
     public String getInterval() {
         return interval;
     }
     
     /**
-     * The number of seconds between thumbnails. Specify an integer value.
+     * The approximate number of seconds between thumbnails. Specify an
+     * integer value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,5}$<br/>
      *
-     * @param interval The number of seconds between thumbnails. Specify an integer value.
+     * @param interval The approximate number of seconds between thumbnails. Specify an
+     *         integer value.
      */
     public void setInterval(String interval) {
         this.interval = interval;
     }
     
     /**
-     * The number of seconds between thumbnails. Specify an integer value.
+     * The approximate number of seconds between thumbnails. Specify an
+     * integer value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,5}$<br/>
      *
-     * @param interval The number of seconds between thumbnails. Specify an integer value.
+     * @param interval The approximate number of seconds between thumbnails. Specify an
+     *         integer value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

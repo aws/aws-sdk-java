@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
@@ -48,6 +50,8 @@ public class InternalConfig {
     private final Map<String, SignerConfig> serviceSigners;
     private final Map<String, HttpClientConfig> httpClients;
 
+    private final List<HostRegexToRegionMapping> hostRegexToRegionMappings;
+
     private final String userAgentTemplate;
 
     /**
@@ -66,6 +70,10 @@ public class InternalConfig {
             override.getServiceRegionSigners(),
             "service" + SERVICE_REGION_DELIMITOR + "region");
         httpClients = merge(defaults.getHttpClients(), override.getHttpClients());
+
+        hostRegexToRegionMappings = append(
+                override.getHostRegexToRegionMappings(),
+                defaults.getHostRegexToRegionMappings());
 
         if (override.getUserAgentTemplate() != null) {
             userAgentTemplate = override.getUserAgentTemplate();
@@ -114,6 +122,22 @@ public class InternalConfig {
             }
         }
         return map;
+    }
+
+    private <C extends Builder<T>, T> List<T> append(
+            C[] defaults, C[] overrides) {
+        List<T> list = new LinkedList<T>();
+        if (defaults != null) {
+            for (C builder : defaults) {
+                list.add(builder.build());
+            }
+        }
+        if (overrides != null) {
+            for (C builder : overrides) {
+                list.add(builder.build());
+            }
+        }
+        return list;
     }
 
     /**
@@ -185,6 +209,14 @@ public class InternalConfig {
         // Fall back to the default
         return signerConfig == null ? defaultSignerConfig : signerConfig;
     }
+
+    /**
+     * @return all the host-name-regex to region-name mappings.
+     */
+    public List<HostRegexToRegionMapping> getHostRegexToRegionMappings() {
+        return Collections.unmodifiableList(hostRegexToRegionMappings);
+    }
+
 
     /**
      * @return the custom user agent template, if configured

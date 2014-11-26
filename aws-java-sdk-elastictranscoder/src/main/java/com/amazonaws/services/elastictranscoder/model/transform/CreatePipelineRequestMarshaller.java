@@ -112,6 +112,9 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
             if (createPipelineRequest.getRole() != null) {
                 jsonWriter.key("Role").value(createPipelineRequest.getRole());
             }
+            if (createPipelineRequest.getAwsKmsKeyArn() != null) {
+                jsonWriter.key("AwsKmsKeyArn").value(createPipelineRequest.getAwsKmsKeyArn());
+            }
             Notifications notifications = createPipelineRequest.getNotifications();
             if (notifications != null) {
 

@@ -65,6 +65,27 @@ public class ActivatePipelineRequestMarshaller implements Marshaller<Request<Act
                 jsonWriter.key("pipelineId").value(activatePipelineRequest.getPipelineId());
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValuesList = (com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue>)(activatePipelineRequest.getParameterValues());
+            if (parameterValuesList != null && !(parameterValuesList.isAutoConstruct() && parameterValuesList.isEmpty())) {
+
+                jsonWriter.key("parameterValues");
+                jsonWriter.array();
+
+                for (ParameterValue parameterValuesListValue : parameterValuesList) {
+                    if (parameterValuesListValue != null) {
+                        jsonWriter.object();
+                        if (parameterValuesListValue.getId() != null) {
+                            jsonWriter.key("id").value(parameterValuesListValue.getId());
+                        }
+                        if (parameterValuesListValue.getStringValue() != null) {
+                            jsonWriter.key("stringValue").value(parameterValuesListValue.getStringValue());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();

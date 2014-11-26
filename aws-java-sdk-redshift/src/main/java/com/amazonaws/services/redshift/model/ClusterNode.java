@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The identifier of a node in a cluster. -->
+ * The identifier of a node in a cluster.
  * </p>
  */
 public class ClusterNode implements Serializable {

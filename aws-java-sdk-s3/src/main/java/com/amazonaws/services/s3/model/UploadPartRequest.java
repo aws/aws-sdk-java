@@ -23,6 +23,15 @@ import com.amazonaws.event.ProgressListener;
 /**
  * Contains the parameters used for the UploadPart operation on Amazon S3.
  * <p>
+ * If you are uploading parts for <a
+ * href="http://aws.amazon.com/kms/">KMS</a>-encrypted objects, you need to
+ * specify the correct region of the bucket on your client and configure AWS
+ * Signature Version 4 for added security. For more information on how to do
+ * this, see
+ * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify
+ * -signature-version
+ * </p>
+ * <p>
  * Required Parameters: BucketName, Key, UploadId, PartNumber
  */
 public class UploadPartRequest extends AmazonWebServiceRequest implements

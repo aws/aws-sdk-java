@@ -17,24 +17,22 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the DetachInstances action.
- * </p>
+ * 
  */
 public class DetachInstancesResult implements Serializable {
 
     /**
-     * A list describing the activities related to detaching the instances
-     * from the Auto Scaling group.
+     * The activities related to detaching the instances from the Auto
+     * Scaling group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Activity> activities;
 
     /**
-     * A list describing the activities related to detaching the instances
-     * from the Auto Scaling group.
+     * The activities related to detaching the instances from the Auto
+     * Scaling group.
      *
-     * @return A list describing the activities related to detaching the instances
-     *         from the Auto Scaling group.
+     * @return The activities related to detaching the instances from the Auto
+     *         Scaling group.
      */
     public java.util.List<Activity> getActivities() {
         if (activities == null) {
@@ -45,11 +43,11 @@ public class DetachInstancesResult implements Serializable {
     }
     
     /**
-     * A list describing the activities related to detaching the instances
-     * from the Auto Scaling group.
+     * The activities related to detaching the instances from the Auto
+     * Scaling group.
      *
-     * @param activities A list describing the activities related to detaching the instances
-     *         from the Auto Scaling group.
+     * @param activities The activities related to detaching the instances from the Auto
+     *         Scaling group.
      */
     public void setActivities(java.util.Collection<Activity> activities) {
         if (activities == null) {
@@ -62,13 +60,13 @@ public class DetachInstancesResult implements Serializable {
     }
     
     /**
-     * A list describing the activities related to detaching the instances
-     * from the Auto Scaling group.
+     * The activities related to detaching the instances from the Auto
+     * Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activities A list describing the activities related to detaching the instances
-     *         from the Auto Scaling group.
+     * @param activities The activities related to detaching the instances from the Auto
+     *         Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -82,13 +80,13 @@ public class DetachInstancesResult implements Serializable {
     }
     
     /**
-     * A list describing the activities related to detaching the instances
-     * from the Auto Scaling group.
+     * The activities related to detaching the instances from the Auto
+     * Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activities A list describing the activities related to detaching the instances
-     *         from the Auto Scaling group.
+     * @param activities The activities related to detaching the instances from the Auto
+     *         Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

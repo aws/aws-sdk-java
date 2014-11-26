@@ -111,6 +111,13 @@ public class Snapshot implements Serializable {
     private Boolean encrypted;
 
     /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * was used to encrypt data in the cluster from which the snapshot was
+     * taken.
+     */
+    private String kmsKeyId;
+
+    /**
      * A boolean that indicates whether the snapshot data is encrypted using
      * the HSM keys of the source cluster. <code>true</code> indicates that
      * the data is encrypted using HSM keys.
@@ -171,6 +178,11 @@ public class Snapshot implements Serializable {
      * The source region from which the snapshot was copied.
      */
     private String sourceRegion;
+
+    /**
+     * The list of tags for the cluster snapshot.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * The snapshot identifier that is provided in the request.
@@ -749,6 +761,51 @@ public class Snapshot implements Serializable {
     }
 
     /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * was used to encrypt data in the cluster from which the snapshot was
+     * taken.
+     *
+     * @return The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         was used to encrypt data in the cluster from which the snapshot was
+     *         taken.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * was used to encrypt data in the cluster from which the snapshot was
+     * taken.
+     *
+     * @param kmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         was used to encrypt data in the cluster from which the snapshot was
+     *         taken.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * was used to encrypt data in the cluster from which the snapshot was
+     * taken.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         was used to encrypt data in the cluster from which the snapshot was
+     *         taken.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Snapshot withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * A boolean that indicates whether the snapshot data is encrypted using
      * the HSM keys of the source cluster. <code>true</code> indicates that
      * the data is encrypted using HSM keys.
@@ -1203,6 +1260,74 @@ public class Snapshot implements Serializable {
     }
 
     /**
+     * The list of tags for the cluster snapshot.
+     *
+     * @return The list of tags for the cluster snapshot.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * The list of tags for the cluster snapshot.
+     *
+     * @param tags The list of tags for the cluster snapshot.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * The list of tags for the cluster snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the cluster snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Snapshot withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of tags for the cluster snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the cluster snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Snapshot withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1229,6 +1354,7 @@ public class Snapshot implements Serializable {
         if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
         if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (isEncryptedWithHSM() != null) sb.append("EncryptedWithHSM: " + isEncryptedWithHSM() + ",");
         if (getAccountsWithRestoreAccess() != null) sb.append("AccountsWithRestoreAccess: " + getAccountsWithRestoreAccess() + ",");
         if (getOwnerAccount() != null) sb.append("OwnerAccount: " + getOwnerAccount() + ",");
@@ -1238,7 +1364,8 @@ public class Snapshot implements Serializable {
         if (getCurrentBackupRateInMegaBytesPerSecond() != null) sb.append("CurrentBackupRateInMegaBytesPerSecond: " + getCurrentBackupRateInMegaBytesPerSecond() + ",");
         if (getEstimatedSecondsToCompletion() != null) sb.append("EstimatedSecondsToCompletion: " + getEstimatedSecondsToCompletion() + ",");
         if (getElapsedTimeInSeconds() != null) sb.append("ElapsedTimeInSeconds: " + getElapsedTimeInSeconds() + ",");
-        if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() );
+        if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -1263,6 +1390,7 @@ public class Snapshot implements Serializable {
         hashCode = prime * hashCode + ((getDBName() == null) ? 0 : getDBName().hashCode()); 
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
         hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         hashCode = prime * hashCode + ((isEncryptedWithHSM() == null) ? 0 : isEncryptedWithHSM().hashCode()); 
         hashCode = prime * hashCode + ((getAccountsWithRestoreAccess() == null) ? 0 : getAccountsWithRestoreAccess().hashCode()); 
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode()); 
@@ -1273,6 +1401,7 @@ public class Snapshot implements Serializable {
         hashCode = prime * hashCode + ((getEstimatedSecondsToCompletion() == null) ? 0 : getEstimatedSecondsToCompletion().hashCode()); 
         hashCode = prime * hashCode + ((getElapsedTimeInSeconds() == null) ? 0 : getElapsedTimeInSeconds().hashCode()); 
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -1314,6 +1443,8 @@ public class Snapshot implements Serializable {
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
         if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
         if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         if (other.isEncryptedWithHSM() == null ^ this.isEncryptedWithHSM() == null) return false;
         if (other.isEncryptedWithHSM() != null && other.isEncryptedWithHSM().equals(this.isEncryptedWithHSM()) == false) return false; 
         if (other.getAccountsWithRestoreAccess() == null ^ this.getAccountsWithRestoreAccess() == null) return false;
@@ -1334,6 +1465,8 @@ public class Snapshot implements Serializable {
         if (other.getElapsedTimeInSeconds() != null && other.getElapsedTimeInSeconds().equals(this.getElapsedTimeInSeconds()) == false) return false; 
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null) return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

@@ -32,8 +32,8 @@
  * <p>
  * If you are a database developer, the
  * <a href="http://docs.aws.amazon.com/redshift/latest/dg/welcome.html"> Amazon Redshift Database Developer Guide </a>
- * explains how to design, build, query, and maintain the databases that
- * make up your data warehouse.
+ * explains how to design, build, query, and maintain the databases
+ * that make up your data warehouse.
  * </p>
  */
  package com.amazonaws.services.redshift;

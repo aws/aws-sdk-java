@@ -50,8 +50,8 @@ import com.amazonaws.services.redshift.model.*;
  * <p>
  * If you are a database developer, the
  * <a href="http://docs.aws.amazon.com/redshift/latest/dg/welcome.html"> Amazon Redshift Database Developer Guide </a>
- * explains how to design, build, query, and maintain the databases that
- * make up your data warehouse.
+ * explains how to design, build, query, and maintain the databases
+ * that make up your data warehouse.
  * </p>
  */
 public interface AmazonRedshift {
@@ -122,7 +122,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param revokeSnapshotAccessRequest Container for the necessary
@@ -209,30 +209,6 @@ public interface AmazonRedshift {
 
     /**
      * <p>
-     * Deletes the specified Amazon Redshift HSM configuration.
-     * </p>
-     *
-     * @param deleteHsmConfigurationRequest Container for the necessary
-     *           parameters to execute the DeleteHsmConfiguration service method on
-     *           AmazonRedshift.
-     * 
-     * 
-     * @throws HsmConfigurationNotFoundException
-     * @throws InvalidHsmConfigurationStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteHsmConfiguration(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Allows you to purchase reserved nodes. Amazon Redshift offers a
      * predefined set of reserved node offerings. You can purchase one of the
      * offerings. You can call the DescribeReservedNodeOfferings API to
@@ -243,7 +219,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param purchaseReservedNodeOfferingRequest Container for the necessary
@@ -266,6 +242,30 @@ public interface AmazonRedshift {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ReservedNode purchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes the specified Amazon Redshift HSM configuration.
+     * </p>
+     *
+     * @param deleteHsmConfigurationRequest Container for the necessary
+     *           parameters to execute the DeleteHsmConfiguration service method on
+     *           AmazonRedshift.
+     * 
+     * 
+     * @throws HsmConfigurationNotFoundException
+     * @throws InvalidHsmConfigurationStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteHsmConfiguration(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -303,7 +303,7 @@ public interface AmazonRedshift {
      * parameters to take effect. For more information about managing
      * clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      * <p>
      * You can also change node type and the number of nodes to scale up or
@@ -344,6 +344,29 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Deletes a tag or tags from a resource. You must provide the ARN of
+     * the resource from which you want to delete the tag or tags.
+     * </p>
+     *
+     * @param deleteTagsRequest Container for the necessary parameters to
+     *           execute the DeleteTags service method on AmazonRedshift.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteTags(DeleteTagsRequest deleteTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Copies the specified automated cluster snapshot to a new manual
      * cluster snapshot. The source must be an automated snapshot and it must
      * be in the available state.
@@ -359,7 +382,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param copyClusterSnapshotRequest Container for the necessary
@@ -396,7 +419,7 @@ public interface AmazonRedshift {
      * the specific region and specify values when creating a cluster. For
      * more information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param describeOrderableClusterOptionsRequest Container for the
@@ -456,7 +479,7 @@ public interface AmazonRedshift {
      * <p>
      * For information about subnet groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html"> Amazon Redshift Cluster Subnet Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSubnetGroupRequest Container for the necessary
@@ -466,7 +489,9 @@ public interface AmazonRedshift {
      * @return The response from the CreateClusterSubnetGroup service method,
      *         as returned by AmazonRedshift.
      * 
+     * @throws TagLimitExceededException
      * @throws InvalidSubnetException
+     * @throws InvalidTagException
      * @throws UnauthorizedOperationException
      * @throws ClusterSubnetQuotaExceededException
      * @throws ClusterSubnetGroupAlreadyExistsException
@@ -516,7 +541,7 @@ public interface AmazonRedshift {
      * ModifyCluster) are applied at this reboot. For more information about
      * managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param rebootClusterRequest Container for the necessary parameters to
@@ -572,7 +597,7 @@ public interface AmazonRedshift {
      * operation cannot be canceled or reverted once submitted. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      * <p>
      * If you want to shut down the cluster and retain it for future use,
@@ -586,7 +611,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param deleteClusterRequest Container for the necessary parameters to
@@ -619,7 +644,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSnapshotRequest Container for the necessary
@@ -629,7 +654,9 @@ public interface AmazonRedshift {
      * @return The response from the CreateClusterSnapshot service method, as
      *         returned by AmazonRedshift.
      * 
+     * @throws TagLimitExceededException
      * @throws ClusterSnapshotAlreadyExistsException
+     * @throws InvalidTagException
      * @throws InvalidClusterStateException
      * @throws ClusterNotFoundException
      * @throws ClusterSnapshotQuotaExceededException
@@ -654,7 +681,7 @@ public interface AmazonRedshift {
      * the default cluster security group with the cluster. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterRequest Container for the necessary parameters to
@@ -666,11 +693,13 @@ public interface AmazonRedshift {
      * @throws InvalidElasticIpException
      * @throws InvalidSubnetException
      * @throws HsmConfigurationNotFoundException
+     * @throws InvalidTagException
      * @throws ClusterSubnetGroupNotFoundException
      * @throws InvalidClusterSubnetGroupStateException
      * @throws ClusterAlreadyExistsException
      * @throws InvalidVPCNetworkStateException
      * @throws ClusterParameterGroupNotFoundException
+     * @throws TagLimitExceededException
      * @throws InsufficientClusterCapacityException
      * @throws UnauthorizedOperationException
      * @throws NumberOfNodesQuotaExceededException
@@ -741,7 +770,7 @@ public interface AmazonRedshift {
      * authorized to connect to the cluster. For information about managing
      * security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Working with Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param authorizeClusterSecurityGroupIngressRequest Container for the
@@ -804,7 +833,7 @@ public interface AmazonRedshift {
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param deleteClusterSecurityGroupRequest Container for the necessary
@@ -859,7 +888,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param describeDefaultClusterParametersRequest Container for the
@@ -922,7 +951,7 @@ public interface AmazonRedshift {
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSecurityGroupRequest Container for the necessary
@@ -932,6 +961,8 @@ public interface AmazonRedshift {
      * @return The response from the CreateClusterSecurityGroup service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws TagLimitExceededException
+     * @throws InvalidTagException
      * @throws ClusterSecurityGroupQuotaExceededException
      * @throws ClusterSecurityGroupAlreadyExistsException
      *
@@ -986,7 +1017,7 @@ public interface AmazonRedshift {
      * clusters to learn more about the Amazon Redshift versions. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param describeClusterVersionsRequest Container for the necessary
@@ -1025,7 +1056,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param restoreFromClusterSnapshotRequest Container for the necessary
@@ -1068,12 +1099,97 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Adds one or more tags to a specified resource.
+     * </p>
+     * <p>
+     * A resource can have up to 10 tags. If you try to create more than 10
+     * tags for a resource, you will receive an error and the attempt will
+     * fail.
+     * </p>
+     * <p>
+     * If you specify a key that already exists for the resource, the value
+     * for that key will be updated with the new value.
+     * </p>
+     *
+     * @param createTagsRequest Container for the necessary parameters to
+     *           execute the CreateTags service method on AmazonRedshift.
+     * 
+     * 
+     * @throws TagLimitExceededException
+     * @throws ResourceNotFoundException
+     * @throws InvalidTagException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void createTags(CreateTagsRequest createTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of tags. You can return tags from a specific resource
+     * by specifying an ARN, or you can return all tags for a given type of
+     * resource, such as clusters, snapshots, and so on.
+     * </p>
+     * <p>
+     * The following are limitations for <code>DescribeTags</code> :
+     * <ul>
+     * <li>You cannot specify an ARN and a resource-type value together in
+     * the same request.</li>
+     * <li>You cannot use the <code>MaxRecords</code> and
+     * <code>Marker</code> parameters together with the ARN parameter.</li>
+     * <li>The <code>MaxRecords</code> parameter can be a range from 10 to
+     * 50 results to return in a request.</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all resources that match any combination of
+     * the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all resources
+     * that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, resources
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
+     * </p>
+     *
+     * @param describeTagsRequest Container for the necessary parameters to
+     *           execute the DescribeTags service method on AmazonRedshift.
+     * 
+     * @return The response from the DescribeTags service method, as returned
+     *         by AmazonRedshift.
+     * 
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Modifies the parameters of a parameter group.
      * </p>
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param modifyClusterParameterGroupRequest Container for the necessary
@@ -1134,7 +1250,20 @@ public interface AmazonRedshift {
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all security groups that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all security
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, security
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterSecurityGroupsRequest Container for the
@@ -1164,6 +1293,19 @@ public interface AmazonRedshift {
      * returns information about all cluster subnet groups that are defined
      * in you AWS account.
      * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all subnet groups that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all subnet
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, subnet
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
+     * </p>
      *
      * @param describeClusterSubnetGroupsRequest Container for the necessary
      *           parameters to execute the DescribeClusterSubnetGroups service method
@@ -1191,6 +1333,19 @@ public interface AmazonRedshift {
      * configuration. If no configuration ID is specified, returns
      * information about all the HSM configurations owned by your AWS
      * customer account.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all HSM connections that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all HSM
+     * connections that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, HSM
+     * connections are returned regardless of whether they have tag keys or
+     * values associated with them.
      * </p>
      *
      * @param describeHsmConfigurationsRequest Container for the necessary
@@ -1344,8 +1499,10 @@ public interface AmazonRedshift {
      * @return The response from the CreateEventSubscription service method,
      *         as returned by AmazonRedshift.
      * 
+     * @throws TagLimitExceededException
      * @throws SubscriptionCategoryNotFoundException
      * @throws SubscriptionAlreadyExistException
+     * @throws InvalidTagException
      * @throws EventSubscriptionQuotaExceededException
      * @throws SubscriptionEventIdNotFoundException
      * @throws SubscriptionSeverityNotFoundException
@@ -1403,7 +1560,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param authorizeSnapshotAccessRequest Container for the necessary
@@ -1473,7 +1630,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param describeReservedNodeOfferingsRequest Container for the
@@ -1586,7 +1743,7 @@ public interface AmazonRedshift {
      * needed to store and use encryption keys in the HSM. For more
      * information, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Management Guide.
+     * in the Amazon Redshift Cluster Management Guide.
      * </p>
      *
      * @param createHsmClientCertificateRequest Container for the necessary
@@ -1596,6 +1753,8 @@ public interface AmazonRedshift {
      * @return The response from the CreateHsmClientCertificate service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws TagLimitExceededException
+     * @throws InvalidTagException
      * @throws HsmClientCertificateQuotaExceededException
      * @throws HsmClientCertificateAlreadyExistsException
      *
@@ -1612,12 +1771,92 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Returns information about the specified HSM client certificate. If no
+     * certificate ID is specified, returns information about all the HSM
+     * certificates owned by your AWS customer account.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all HSM client certificates that match any
+     * combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all HSM
+     * client certificates that have any combination of those values are
+     * returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, HSM client
+     * certificates are returned regardless of whether they have tag keys or
+     * values associated with them.
+     * </p>
+     *
+     * @param describeHsmClientCertificatesRequest Container for the
+     *           necessary parameters to execute the DescribeHsmClientCertificates
+     *           service method on AmazonRedshift.
+     * 
+     * @return The response from the DescribeHsmClientCertificates service
+     *         method, as returned by AmazonRedshift.
+     * 
+     * @throws HsmClientCertificateNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeHsmClientCertificatesResult describeHsmClientCertificates(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a detailed list of parameters contained within the specified
+     * Amazon Redshift parameter group. For each parameter the response
+     * includes information such as parameter name, description, data type,
+     * value, whether the parameter value is modifiable, and so on.
+     * </p>
+     * <p>
+     * You can specify <i>source</i> filter to retrieve parameters of only
+     * specific type. For example, to retrieve parameters that were modified
+     * by a user action such as from ModifyClusterParameterGroup, you can
+     * specify <i>source</i> equal to <i>user</i> .
+     * </p>
+     * <p>
+     * For more information about managing parameter groups, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param describeClusterParametersRequest Container for the necessary
+     *           parameters to execute the DescribeClusterParameters service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the DescribeClusterParameters service
+     *         method, as returned by AmazonRedshift.
+     * 
+     * @throws ClusterParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeClusterParametersResult describeClusterParameters(DescribeClusterParametersRequest describeClusterParametersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Revokes an ingress rule in an Amazon Redshift security group for a
      * previously authorized IP range or Amazon EC2 security group. To add an
      * ingress rule, see AuthorizeClusterSecurityGroupIngress. For
      * information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param revokeClusterSecurityGroupIngressRequest Container for the
@@ -1644,72 +1883,6 @@ public interface AmazonRedshift {
 
     /**
      * <p>
-     * Returns a detailed list of parameters contained within the specified
-     * Amazon Redshift parameter group. For each parameter the response
-     * includes information such as parameter name, description, data type,
-     * value, whether the parameter value is modifiable, and so on.
-     * </p>
-     * <p>
-     * You can specify <i>source</i> filter to retrieve parameters of only
-     * specific type. For example, to retrieve parameters that were modified
-     * by a user action such as from ModifyClusterParameterGroup, you can
-     * specify <i>source</i> equal to <i>user</i> .
-     * </p>
-     * <p>
-     * For more information about managing parameter groups, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
-     * </p>
-     *
-     * @param describeClusterParametersRequest Container for the necessary
-     *           parameters to execute the DescribeClusterParameters service method on
-     *           AmazonRedshift.
-     * 
-     * @return The response from the DescribeClusterParameters service
-     *         method, as returned by AmazonRedshift.
-     * 
-     * @throws ClusterParameterGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeClusterParametersResult describeClusterParameters(DescribeClusterParametersRequest describeClusterParametersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns information about the specified HSM client certificate. If no
-     * certificate ID is specified, returns information about all the HSM
-     * certificates owned by your AWS customer account.
-     * </p>
-     *
-     * @param describeHsmClientCertificatesRequest Container for the
-     *           necessary parameters to execute the DescribeHsmClientCertificates
-     *           service method on AmazonRedshift.
-     * 
-     * @return The response from the DescribeHsmClientCertificates service
-     *         method, as returned by AmazonRedshift.
-     * 
-     * @throws HsmClientCertificateNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeHsmClientCertificatesResult describeHsmClientCertificates(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Creates an HSM configuration that contains the information required
      * by an Amazon Redshift cluster to store and use database encryption
      * keys in a Hardware Security Module (HSM). After creating the HSM
@@ -1720,7 +1893,7 @@ public interface AmazonRedshift {
      * In addition to creating an HSM configuration, you must also create an
      * HSM client certificate. For more information, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Management Guide.
+     * in the Amazon Redshift Cluster Management Guide.
      * </p>
      *
      * @param createHsmConfigurationRequest Container for the necessary
@@ -1730,7 +1903,9 @@ public interface AmazonRedshift {
      * @return The response from the CreateHsmConfiguration service method,
      *         as returned by AmazonRedshift.
      * 
+     * @throws TagLimitExceededException
      * @throws HsmConfigurationQuotaExceededException
+     * @throws InvalidTagException
      * @throws HsmConfigurationAlreadyExistsException
      *
      * @throws AmazonClientException
@@ -1752,7 +1927,20 @@ public interface AmazonRedshift {
      * supports pagination. For more information about managing clusters, go
      * to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all clusters that match any combination of the
+     * specified keys and values. For example, if you have <code>owner</code>
+     * and <code>environment</code> for tag keys, and <code>admin</code> and
+     * <code>test</code> for tag values, all clusters that have any
+     * combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, clusters
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClustersRequest Container for the necessary parameters
@@ -1781,6 +1969,21 @@ public interface AmazonRedshift {
      * about all snapshots of all clusters that are owned by you AWS customer
      * account. No information is returned for snapshots owned by inactive
      * AWS customer accounts.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all snapshots that match any combination of
+     * the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all snapshots
+     * that have any combination of those values are returned. Only snapshots
+     * that you own are returned in the response; shared snapshots are not
+     * returned with the tag key and tag value request parameters.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, snapshots
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterSnapshotsRequest Container for the necessary
@@ -1818,7 +2021,7 @@ public interface AmazonRedshift {
      * applies to the databases you create on the cluster. For more
      * information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterParameterGroupRequest Container for the necessary
@@ -1828,7 +2031,9 @@ public interface AmazonRedshift {
      * @return The response from the CreateClusterParameterGroup service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws TagLimitExceededException
      * @throws ClusterParameterGroupQuotaExceededException
+     * @throws InvalidTagException
      * @throws ClusterParameterGroupAlreadyExistsException
      *
      * @throws AmazonClientException
@@ -1854,7 +2059,20 @@ public interface AmazonRedshift {
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all parameter groups that match any
+     * combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all parameter
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, parameter
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterParameterGroupsRequest Container for the
@@ -1888,7 +2106,7 @@ public interface AmazonRedshift {
      * the specific region and specify values when creating a cluster. For
      * more information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      * 
      * @return The response from the DescribeOrderableClusterOptions service
@@ -1955,7 +2173,7 @@ public interface AmazonRedshift {
      * clusters to learn more about the Amazon Redshift versions. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      * 
      * @return The response from the DescribeClusterVersions service method,
@@ -1971,6 +2189,54 @@ public interface AmazonRedshift {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeClusterVersionsResult describeClusterVersions() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a list of tags. You can return tags from a specific resource
+     * by specifying an ARN, or you can return all tags for a given type of
+     * resource, such as clusters, snapshots, and so on.
+     * </p>
+     * <p>
+     * The following are limitations for <code>DescribeTags</code> :
+     * <ul>
+     * <li>You cannot specify an ARN and a resource-type value together in
+     * the same request.</li>
+     * <li>You cannot use the <code>MaxRecords</code> and
+     * <code>Marker</code> parameters together with the ARN parameter.</li>
+     * <li>The <code>MaxRecords</code> parameter can be a range from 10 to
+     * 50 results to return in a request.</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all resources that match any combination of
+     * the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all resources
+     * that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, resources
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
+     * </p>
+     * 
+     * @return The response from the DescribeTags service method, as returned
+     *         by AmazonRedshift.
+     * 
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTagsResult describeTags() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -2004,7 +2270,20 @@ public interface AmazonRedshift {
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all security groups that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all security
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, security
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      * 
      * @return The response from the DescribeClusterSecurityGroups service
@@ -2029,6 +2308,19 @@ public interface AmazonRedshift {
      * returns information about all cluster subnet groups that are defined
      * in you AWS account.
      * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all subnet groups that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all subnet
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, subnet
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
+     * </p>
      * 
      * @return The response from the DescribeClusterSubnetGroups service
      *         method, as returned by AmazonRedshift.
@@ -2051,6 +2343,19 @@ public interface AmazonRedshift {
      * configuration. If no configuration ID is specified, returns
      * information about all the HSM configurations owned by your AWS
      * customer account.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all HSM connections that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all HSM
+     * connections that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, HSM
+     * connections are returned regardless of whether they have tag keys or
+     * values associated with them.
      * </p>
      * 
      * @return The response from the DescribeHsmConfigurations service
@@ -2081,7 +2386,7 @@ public interface AmazonRedshift {
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      * 
      * @return The response from the DescribeReservedNodeOfferings service
@@ -2127,6 +2432,20 @@ public interface AmazonRedshift {
      * certificate ID is specified, returns information about all the HSM
      * certificates owned by your AWS customer account.
      * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all HSM client certificates that match any
+     * combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all HSM
+     * client certificates that have any combination of those values are
+     * returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, HSM client
+     * certificates are returned regardless of whether they have tag keys or
+     * values associated with them.
+     * </p>
      * 
      * @return The response from the DescribeHsmClientCertificates service
      *         method, as returned by AmazonRedshift.
@@ -2151,7 +2470,20 @@ public interface AmazonRedshift {
      * supports pagination. For more information about managing clusters, go
      * to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all clusters that match any combination of the
+     * specified keys and values. For example, if you have <code>owner</code>
+     * and <code>environment</code> for tag keys, and <code>admin</code> and
+     * <code>test</code> for tag values, all clusters that have any
+     * combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, clusters
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      * 
      * @return The response from the DescribeClusters service method, as
@@ -2176,6 +2508,21 @@ public interface AmazonRedshift {
      * about all snapshots of all clusters that are owned by you AWS customer
      * account. No information is returned for snapshots owned by inactive
      * AWS customer accounts.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all snapshots that match any combination of
+     * the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all snapshots
+     * that have any combination of those values are returned. Only snapshots
+     * that you own are returned in the response; shared snapshots are not
+     * returned with the tag key and tag value request parameters.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, snapshots
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      * 
      * @return The response from the DescribeClusterSnapshots service method,
@@ -2205,7 +2552,20 @@ public interface AmazonRedshift {
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all parameter groups that match any
+     * combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all parameter
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, parameter
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      * 
      * @return The response from the DescribeClusterParameterGroups service

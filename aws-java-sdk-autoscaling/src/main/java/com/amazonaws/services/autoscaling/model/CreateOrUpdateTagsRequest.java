@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest) CreateOrUpdateTags operation}.
  * <p>
- * Creates new tags or updates existing tags for an Auto Scaling group.
+ * Creates or updates tags for the specified Auto Scaling group.
  * </p>
  * <p>
  * <b>NOTE:</b> A tag's definition is composed of a resource ID, resource
@@ -30,9 +30,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * information.
  * </p>
  * <p>
- * For information on creating tags for your Auto Scaling group, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Tag Your Auto Scaling Groups and Amazon EC2 Instances </a>
- * .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Add, Modify, or Remove Auto Scaling Group Tags </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest)
@@ -47,15 +47,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      * <code>auto-scaling-group</code> is the only supported resource type.
      * The valid value for the resource ID is <i>groupname</i>. <p>The
      * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the Auto Scaling group. Valid
-     * values are <code>true</code> or <code>false</code>. However, instances
-     * that are already running will not get the new or updated tag.
-     * Likewise, when you modify a tag, the updated version will be applied
-     * only to new instances launched by the Auto Scaling group after the
-     * change. Running instances that had the previous version of the tag
-     * will continue to have the older tag. <p>When you create a tag and a
-     * tag of the same name already exists, the operation overwrites the
-     * previous tag definition, but you will not get an error message.
+     * be applied to instances launched by the group. Valid values are
+     * <code>true</code> or <code>false</code>. However, instances that are
+     * already running will not get the new or updated tag. Likewise, when
+     * you modify a tag, the updated version will be applied only to new
+     * instances launched by the group after the change. Running instances
+     * that had the previous version of the tag will continue to have the
+     * older tag. <p>When you create a tag and a tag of the same name already
+     * exists, the operation overwrites the previous tag definition, but you
+     * will not get an error message.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
@@ -67,15 +67,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      * <code>auto-scaling-group</code> is the only supported resource type.
      * The valid value for the resource ID is <i>groupname</i>. <p>The
      * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the Auto Scaling group. Valid
-     * values are <code>true</code> or <code>false</code>. However, instances
-     * that are already running will not get the new or updated tag.
-     * Likewise, when you modify a tag, the updated version will be applied
-     * only to new instances launched by the Auto Scaling group after the
-     * change. Running instances that had the previous version of the tag
-     * will continue to have the older tag. <p>When you create a tag and a
-     * tag of the same name already exists, the operation overwrites the
-     * previous tag definition, but you will not get an error message.
+     * be applied to instances launched by the group. Valid values are
+     * <code>true</code> or <code>false</code>. However, instances that are
+     * already running will not get the new or updated tag. Likewise, when
+     * you modify a tag, the updated version will be applied only to new
+     * instances launched by the group after the change. Running instances
+     * that had the previous version of the tag will continue to have the
+     * older tag. <p>When you create a tag and a tag of the same name already
+     * exists, the operation overwrites the previous tag definition, but you
+     * will not get an error message.
      *
      * @return The tag to be created or updated. Each tag should be defined by its
      *         resource type, resource ID, key, value, and a propagate flag. The
@@ -84,15 +84,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      *         <code>auto-scaling-group</code> is the only supported resource type.
      *         The valid value for the resource ID is <i>groupname</i>. <p>The
      *         <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     *         be applied to instances launched by the Auto Scaling group. Valid
-     *         values are <code>true</code> or <code>false</code>. However, instances
-     *         that are already running will not get the new or updated tag.
-     *         Likewise, when you modify a tag, the updated version will be applied
-     *         only to new instances launched by the Auto Scaling group after the
-     *         change. Running instances that had the previous version of the tag
-     *         will continue to have the older tag. <p>When you create a tag and a
-     *         tag of the same name already exists, the operation overwrites the
-     *         previous tag definition, but you will not get an error message.
+     *         be applied to instances launched by the group. Valid values are
+     *         <code>true</code> or <code>false</code>. However, instances that are
+     *         already running will not get the new or updated tag. Likewise, when
+     *         you modify a tag, the updated version will be applied only to new
+     *         instances launched by the group after the change. Running instances
+     *         that had the previous version of the tag will continue to have the
+     *         older tag. <p>When you create a tag and a tag of the same name already
+     *         exists, the operation overwrites the previous tag definition, but you
+     *         will not get an error message.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -110,15 +110,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      * <code>auto-scaling-group</code> is the only supported resource type.
      * The valid value for the resource ID is <i>groupname</i>. <p>The
      * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the Auto Scaling group. Valid
-     * values are <code>true</code> or <code>false</code>. However, instances
-     * that are already running will not get the new or updated tag.
-     * Likewise, when you modify a tag, the updated version will be applied
-     * only to new instances launched by the Auto Scaling group after the
-     * change. Running instances that had the previous version of the tag
-     * will continue to have the older tag. <p>When you create a tag and a
-     * tag of the same name already exists, the operation overwrites the
-     * previous tag definition, but you will not get an error message.
+     * be applied to instances launched by the group. Valid values are
+     * <code>true</code> or <code>false</code>. However, instances that are
+     * already running will not get the new or updated tag. Likewise, when
+     * you modify a tag, the updated version will be applied only to new
+     * instances launched by the group after the change. Running instances
+     * that had the previous version of the tag will continue to have the
+     * older tag. <p>When you create a tag and a tag of the same name already
+     * exists, the operation overwrites the previous tag definition, but you
+     * will not get an error message.
      *
      * @param tags The tag to be created or updated. Each tag should be defined by its
      *         resource type, resource ID, key, value, and a propagate flag. The
@@ -127,15 +127,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      *         <code>auto-scaling-group</code> is the only supported resource type.
      *         The valid value for the resource ID is <i>groupname</i>. <p>The
      *         <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     *         be applied to instances launched by the Auto Scaling group. Valid
-     *         values are <code>true</code> or <code>false</code>. However, instances
-     *         that are already running will not get the new or updated tag.
-     *         Likewise, when you modify a tag, the updated version will be applied
-     *         only to new instances launched by the Auto Scaling group after the
-     *         change. Running instances that had the previous version of the tag
-     *         will continue to have the older tag. <p>When you create a tag and a
-     *         tag of the same name already exists, the operation overwrites the
-     *         previous tag definition, but you will not get an error message.
+     *         be applied to instances launched by the group. Valid values are
+     *         <code>true</code> or <code>false</code>. However, instances that are
+     *         already running will not get the new or updated tag. Likewise, when
+     *         you modify a tag, the updated version will be applied only to new
+     *         instances launched by the group after the change. Running instances
+     *         that had the previous version of the tag will continue to have the
+     *         older tag. <p>When you create a tag and a tag of the same name already
+     *         exists, the operation overwrites the previous tag definition, but you
+     *         will not get an error message.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -155,15 +155,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      * <code>auto-scaling-group</code> is the only supported resource type.
      * The valid value for the resource ID is <i>groupname</i>. <p>The
      * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the Auto Scaling group. Valid
-     * values are <code>true</code> or <code>false</code>. However, instances
-     * that are already running will not get the new or updated tag.
-     * Likewise, when you modify a tag, the updated version will be applied
-     * only to new instances launched by the Auto Scaling group after the
-     * change. Running instances that had the previous version of the tag
-     * will continue to have the older tag. <p>When you create a tag and a
-     * tag of the same name already exists, the operation overwrites the
-     * previous tag definition, but you will not get an error message.
+     * be applied to instances launched by the group. Valid values are
+     * <code>true</code> or <code>false</code>. However, instances that are
+     * already running will not get the new or updated tag. Likewise, when
+     * you modify a tag, the updated version will be applied only to new
+     * instances launched by the group after the change. Running instances
+     * that had the previous version of the tag will continue to have the
+     * older tag. <p>When you create a tag and a tag of the same name already
+     * exists, the operation overwrites the previous tag definition, but you
+     * will not get an error message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -174,15 +174,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      *         <code>auto-scaling-group</code> is the only supported resource type.
      *         The valid value for the resource ID is <i>groupname</i>. <p>The
      *         <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     *         be applied to instances launched by the Auto Scaling group. Valid
-     *         values are <code>true</code> or <code>false</code>. However, instances
-     *         that are already running will not get the new or updated tag.
-     *         Likewise, when you modify a tag, the updated version will be applied
-     *         only to new instances launched by the Auto Scaling group after the
-     *         change. Running instances that had the previous version of the tag
-     *         will continue to have the older tag. <p>When you create a tag and a
-     *         tag of the same name already exists, the operation overwrites the
-     *         previous tag definition, but you will not get an error message.
+     *         be applied to instances launched by the group. Valid values are
+     *         <code>true</code> or <code>false</code>. However, instances that are
+     *         already running will not get the new or updated tag. Likewise, when
+     *         you modify a tag, the updated version will be applied only to new
+     *         instances launched by the group after the change. Running instances
+     *         that had the previous version of the tag will continue to have the
+     *         older tag. <p>When you create a tag and a tag of the same name already
+     *         exists, the operation overwrites the previous tag definition, but you
+     *         will not get an error message.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -203,15 +203,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      * <code>auto-scaling-group</code> is the only supported resource type.
      * The valid value for the resource ID is <i>groupname</i>. <p>The
      * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the Auto Scaling group. Valid
-     * values are <code>true</code> or <code>false</code>. However, instances
-     * that are already running will not get the new or updated tag.
-     * Likewise, when you modify a tag, the updated version will be applied
-     * only to new instances launched by the Auto Scaling group after the
-     * change. Running instances that had the previous version of the tag
-     * will continue to have the older tag. <p>When you create a tag and a
-     * tag of the same name already exists, the operation overwrites the
-     * previous tag definition, but you will not get an error message.
+     * be applied to instances launched by the group. Valid values are
+     * <code>true</code> or <code>false</code>. However, instances that are
+     * already running will not get the new or updated tag. Likewise, when
+     * you modify a tag, the updated version will be applied only to new
+     * instances launched by the group after the change. Running instances
+     * that had the previous version of the tag will continue to have the
+     * older tag. <p>When you create a tag and a tag of the same name already
+     * exists, the operation overwrites the previous tag definition, but you
+     * will not get an error message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -222,15 +222,15 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      *         <code>auto-scaling-group</code> is the only supported resource type.
      *         The valid value for the resource ID is <i>groupname</i>. <p>The
      *         <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     *         be applied to instances launched by the Auto Scaling group. Valid
-     *         values are <code>true</code> or <code>false</code>. However, instances
-     *         that are already running will not get the new or updated tag.
-     *         Likewise, when you modify a tag, the updated version will be applied
-     *         only to new instances launched by the Auto Scaling group after the
-     *         change. Running instances that had the previous version of the tag
-     *         will continue to have the older tag. <p>When you create a tag and a
-     *         tag of the same name already exists, the operation overwrites the
-     *         previous tag definition, but you will not get an error message.
+     *         be applied to instances launched by the group. Valid values are
+     *         <code>true</code> or <code>false</code>. However, instances that are
+     *         already running will not get the new or updated tag. Likewise, when
+     *         you modify a tag, the updated version will be applied only to new
+     *         instances launched by the group after the change. Running instances
+     *         that had the previous version of the tag will continue to have the
+     *         older tag. <p>When you create a tag and a tag of the same name already
+     *         exists, the operation overwrites the previous tag definition, but you
+     *         will not get an error message.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

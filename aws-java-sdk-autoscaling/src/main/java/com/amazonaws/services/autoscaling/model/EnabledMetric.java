@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>EnabledMetric</code> data type.
+ * Describes an enabled metric.
  * </p>
  */
 public class EnabledMetric implements Serializable {
 
     /**
-     * The name of the enabled metric.
+     * The name of the metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -33,7 +33,7 @@ public class EnabledMetric implements Serializable {
     private String metric;
 
     /**
-     * The granularity of the enabled metric.
+     * The granularity of the metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -42,33 +42,33 @@ public class EnabledMetric implements Serializable {
     private String granularity;
 
     /**
-     * The name of the enabled metric.
+     * The name of the metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the enabled metric.
+     * @return The name of the metric.
      */
     public String getMetric() {
         return metric;
     }
     
     /**
-     * The name of the enabled metric.
+     * The name of the metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param metric The name of the enabled metric.
+     * @param metric The name of the metric.
      */
     public void setMetric(String metric) {
         this.metric = metric;
     }
     
     /**
-     * The name of the enabled metric.
+     * The name of the metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -76,7 +76,7 @@ public class EnabledMetric implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param metric The name of the enabled metric.
+     * @param metric The name of the metric.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,33 +87,33 @@ public class EnabledMetric implements Serializable {
     }
 
     /**
-     * The granularity of the enabled metric.
+     * The granularity of the metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The granularity of the enabled metric.
+     * @return The granularity of the metric.
      */
     public String getGranularity() {
         return granularity;
     }
     
     /**
-     * The granularity of the enabled metric.
+     * The granularity of the metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param granularity The granularity of the enabled metric.
+     * @param granularity The granularity of the metric.
      */
     public void setGranularity(String granularity) {
         this.granularity = granularity;
     }
     
     /**
-     * The granularity of the enabled metric.
+     * The granularity of the metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -121,7 +121,7 @@ public class EnabledMetric implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param granularity The granularity of the enabled metric.
+     * @param granularity The granularity of the metric.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

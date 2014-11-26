@@ -108,6 +108,9 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
         if (restoreFromClusterSnapshotRequest.getAutomatedSnapshotRetentionPeriod() != null) {
             request.addParameter("AutomatedSnapshotRetentionPeriod", StringUtils.fromInteger(restoreFromClusterSnapshotRequest.getAutomatedSnapshotRetentionPeriod()));
         }
+        if (restoreFromClusterSnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(restoreFromClusterSnapshotRequest.getKmsKeyId()));
+        }
 
         return request;
     }

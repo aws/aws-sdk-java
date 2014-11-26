@@ -15,7 +15,7 @@
   <parent>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
-        <version>1.9.6</version>
+        <version>1.9.8</version>
   </parent>
 
   <properties>
@@ -34,7 +34,7 @@
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-simpleworkflow</artifactId>
-        <version>1.9.6</version>
+        <version>1.9.8</version>
       </dependency>
       <dependency>
         <groupId>org.freemarker</groupId>
@@ -110,6 +110,15 @@
             <minmemory>128m</minmemory>
             <maxmemory>1024m</maxmemory>
           </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
         </plugin>
       </plugins>
   </build>

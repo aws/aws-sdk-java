@@ -602,21 +602,8 @@ public class DynamoDBMapper {
      * appropriate annotation, then looking for matching attribute names in the
      * item attribute map.
      * <p>
-     * This method has been marked deprecated because it does not allow
-     * load/query/scan to pass through their DynamoDBMapperConfig parameter,
-     * which is needed by some implementations of {@code AttributeTransformer}.
-     * In a future version of the SDK, load/query/scan will be changed to
-     * directly call privateMarshalIntoObject, and will no longer call this
-     * method.
-     * <p>
-     * If you are extending DynamoDBMapper and overriding this method to
-     * customize how the mapper unmarshals POJOs from a raw DynamoDB item,
-     * please switch to using an AttributeTransformer (or open a GitHub
-     * issue if you need to fully control the unmarshalling process, and we'll
-     * figure out a better way to expose such a hook).
-     * <p>
-     * If you're simply calling this method, it will continue to be available
-     * for the forseeable future - feel free to ignore the @Deprecated tag.
+     * This method is no longer called by load/scan/query methods. If you are
+     * overriding this method, please switch to using an AttributeTransformer
      *
      * @param clazz
      *            The class to instantiate and hydrate
@@ -650,20 +637,8 @@ public class DynamoDBMapper {
     /**
      * Unmarshalls the list of item attributes into objects of type clazz.
      * <p>
-     * This method has been marked deprecated because it does not allow
-     * query/scan to pass through their DynamoDBMapperConfig parameter,
-     * which is needed by some implementations of {@code AttributeTransformer}.
-     * In a future version of the SDK, query/scan will be changed to directly
-     * call privateMarshalIntoObjects, and will no longer call this method.
-     * <p>
-     * If you are extending DynamoDBMapper and overriding this method to
-     * customize how the mapper unmarshals POJOs from raw DynamoDB items,
-     * please switch to using an AttributeTransformer (or open a GitHub
-     * issue if you need to fully control the unmarshalling process, and we'll
-     * figure out a better way to expose such a hook).
-     * <p>
-     * If you're simply calling this method, it will continue to be available
-     * for the forseeable future - feel free to ignore the @Deprecated tag.
+     * This method is no longer called by load/scan/query methods. If you are
+     * overriding this method, please switch to using an AttributeTransformer
      *
      * @see DynamoDBMapper#marshallIntoObject(Class, Map)
      */
@@ -682,10 +657,6 @@ public class DynamoDBMapper {
      * overridden). It's package-private because some of the Paginated*List
      * classes call back into it, but final because no one, even in this
      * package, should ever override it.
-     * <p>
-     * In the future, when the deprecated {@code marshallIntoObjects} is
-     * removed, this method will be changed to directly call
-     * {@code privateMarshalIntoObject}.
      */
     final <T> List<T> marshallIntoObjects(
             final List<AttributeTransformer.Parameters<T>> parameters

@@ -120,6 +120,9 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
             if (updatePipelineRequest.getRole() != null) {
                 jsonWriter.key("Role").value(updatePipelineRequest.getRole());
             }
+            if (updatePipelineRequest.getAwsKmsKeyArn() != null) {
+                jsonWriter.key("AwsKmsKeyArn").value(updatePipelineRequest.getAwsKmsKeyArn());
+            }
             Notifications notifications = updatePipelineRequest.getNotifications();
             if (notifications != null) {
 

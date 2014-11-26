@@ -27,10 +27,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the affected Auto Scaling group.
  * </p>
  * <p>
- * For information on creating or updating a scheduled action for your
- * Auto Scaling group, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scale Based on a Schedule </a>
- * .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scheduled Scaling </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  * <p>
  * <b>NOTE:</b> Auto Scaling supports the date and time expressed in
@@ -42,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name or ARN of the Auto Scaling group.
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -116,33 +115,33 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     private Integer desiredCapacity;
 
     /**
-     * The name or ARN of the Auto Scaling group.
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name or ARN of the Auto Scaling group.
+     * @return The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name or ARN of the Auto Scaling group.
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
+     * @param autoScalingGroupName The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name or ARN of the Auto Scaling group.
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -150,7 +149,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
+     * @param autoScalingGroupName The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

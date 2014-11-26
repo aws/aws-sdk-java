@@ -21,13 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#setInstanceHealth(SetInstanceHealthRequest) SetInstanceHealth operation}.
  * <p>
- * Sets the health status of a specified instance that belongs to any of
- * your Auto Scaling groups.
+ * Sets the health status of the specified instance.
  * </p>
  * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html"> Configure Health Checks for Your Auto Scaling group </a>
- * .
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"> Health Checks </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#setInstanceHealth(SetInstanceHealthRequest)
@@ -35,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The identifier of the Amazon EC2 instance.
+     * The ID of the EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
@@ -61,39 +60,39 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      * default, this call will respect the grace period. Set this to
      * <code>False</code>, if you do not want the call to respect the grace
      * period associated with the group. <p>For more information, see the
-     * <code>HealthCheckGracePeriod</code> parameter description in the
-     * <a>CreateAutoScalingGroup</a> action.
+     * <code>HealthCheckGracePeriod</code> parameter description for
+     * <a>CreateAutoScalingGroup</a>.
      */
     private Boolean shouldRespectGracePeriod;
 
     /**
-     * The identifier of the Amazon EC2 instance.
+     * The ID of the EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier of the Amazon EC2 instance.
+     * @return The ID of the EC2 instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The identifier of the Amazon EC2 instance.
+     * The ID of the EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The identifier of the Amazon EC2 instance.
+     * @param instanceId The ID of the EC2 instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The identifier of the Amazon EC2 instance.
+     * The ID of the EC2 instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -101,7 +100,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The identifier of the Amazon EC2 instance.
+     * @param instanceId The ID of the EC2 instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -180,16 +179,16 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      * default, this call will respect the grace period. Set this to
      * <code>False</code>, if you do not want the call to respect the grace
      * period associated with the group. <p>For more information, see the
-     * <code>HealthCheckGracePeriod</code> parameter description in the
-     * <a>CreateAutoScalingGroup</a> action.
+     * <code>HealthCheckGracePeriod</code> parameter description for
+     * <a>CreateAutoScalingGroup</a>.
      *
      * @return If the Auto Scaling group of the specified instance has a
      *         <code>HealthCheckGracePeriod</code> specified for the group, by
      *         default, this call will respect the grace period. Set this to
      *         <code>False</code>, if you do not want the call to respect the grace
      *         period associated with the group. <p>For more information, see the
-     *         <code>HealthCheckGracePeriod</code> parameter description in the
-     *         <a>CreateAutoScalingGroup</a> action.
+     *         <code>HealthCheckGracePeriod</code> parameter description for
+     *         <a>CreateAutoScalingGroup</a>.
      */
     public Boolean isShouldRespectGracePeriod() {
         return shouldRespectGracePeriod;
@@ -201,16 +200,16 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      * default, this call will respect the grace period. Set this to
      * <code>False</code>, if you do not want the call to respect the grace
      * period associated with the group. <p>For more information, see the
-     * <code>HealthCheckGracePeriod</code> parameter description in the
-     * <a>CreateAutoScalingGroup</a> action.
+     * <code>HealthCheckGracePeriod</code> parameter description for
+     * <a>CreateAutoScalingGroup</a>.
      *
      * @param shouldRespectGracePeriod If the Auto Scaling group of the specified instance has a
      *         <code>HealthCheckGracePeriod</code> specified for the group, by
      *         default, this call will respect the grace period. Set this to
      *         <code>False</code>, if you do not want the call to respect the grace
      *         period associated with the group. <p>For more information, see the
-     *         <code>HealthCheckGracePeriod</code> parameter description in the
-     *         <a>CreateAutoScalingGroup</a> action.
+     *         <code>HealthCheckGracePeriod</code> parameter description for
+     *         <a>CreateAutoScalingGroup</a>.
      */
     public void setShouldRespectGracePeriod(Boolean shouldRespectGracePeriod) {
         this.shouldRespectGracePeriod = shouldRespectGracePeriod;
@@ -222,8 +221,8 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      * default, this call will respect the grace period. Set this to
      * <code>False</code>, if you do not want the call to respect the grace
      * period associated with the group. <p>For more information, see the
-     * <code>HealthCheckGracePeriod</code> parameter description in the
-     * <a>CreateAutoScalingGroup</a> action.
+     * <code>HealthCheckGracePeriod</code> parameter description for
+     * <a>CreateAutoScalingGroup</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -232,8 +231,8 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      *         default, this call will respect the grace period. Set this to
      *         <code>False</code>, if you do not want the call to respect the grace
      *         period associated with the group. <p>For more information, see the
-     *         <code>HealthCheckGracePeriod</code> parameter description in the
-     *         <a>CreateAutoScalingGroup</a> action.
+     *         <code>HealthCheckGracePeriod</code> parameter description for
+     *         <a>CreateAutoScalingGroup</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -249,16 +248,16 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      * default, this call will respect the grace period. Set this to
      * <code>False</code>, if you do not want the call to respect the grace
      * period associated with the group. <p>For more information, see the
-     * <code>HealthCheckGracePeriod</code> parameter description in the
-     * <a>CreateAutoScalingGroup</a> action.
+     * <code>HealthCheckGracePeriod</code> parameter description for
+     * <a>CreateAutoScalingGroup</a>.
      *
      * @return If the Auto Scaling group of the specified instance has a
      *         <code>HealthCheckGracePeriod</code> specified for the group, by
      *         default, this call will respect the grace period. Set this to
      *         <code>False</code>, if you do not want the call to respect the grace
      *         period associated with the group. <p>For more information, see the
-     *         <code>HealthCheckGracePeriod</code> parameter description in the
-     *         <a>CreateAutoScalingGroup</a> action.
+     *         <code>HealthCheckGracePeriod</code> parameter description for
+     *         <a>CreateAutoScalingGroup</a>.
      */
     public Boolean getShouldRespectGracePeriod() {
         return shouldRespectGracePeriod;

@@ -20,6 +20,7 @@ package com.amazonaws.util;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.http.annotation.ThreadSafe;
 import org.joda.time.DateTimeZone;
@@ -274,5 +275,13 @@ public class DateUtils {
 
     public static Date cloneDate(Date date) {
         return date == null ? null : new Date(date.getTime());
+    }
+
+    /**
+     * Returns the number of days since epoch with respect to the given number
+     * of milliseconds since epoch.
+     */
+    public static long numberOfDaysSinceEpoch(long milliSinceEpoch) {
+        return TimeUnit.MILLISECONDS.toDays(milliSinceEpoch);
     }
 }

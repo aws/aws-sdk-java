@@ -175,5 +175,15 @@
       "serviceName": "cloudsearch"
     }
   } ],
+  "hostRegexToRegionMappings" : [ {
+    "hostNameRegex" : "(.+\\.)?s3\\.amazonaws\\.com",
+    "regionName"    : "us-east-1"
+  }, {
+    "hostNameRegex" : "(.+\\.)?s3-external-1\\.amazonaws\\.com",
+    "regionName"    : "us-east-1"
+  }, {
+    "hostNameRegex" : "(.+\\.)?s3-fips-us-gov-west-1\\.amazonaws\\.com",
+    "regionName"    : "us-gov-west-1"
+  } ],
   "userAgentTemplate": "aws-sdk-{platform}/{version} {os.name}/{os.version} {java.vm.name}/{java.vm.version}/{java.version}{language.and.region}"
 }

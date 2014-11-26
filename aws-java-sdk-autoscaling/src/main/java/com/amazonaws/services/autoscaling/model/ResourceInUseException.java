@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This is returned when you cannot delete a launch configuration or
- * Auto Scaling group because it is being used.
+ * The Auto Scaling group or launch configuration can't be deleted
+ * because it is in use.
  * </p>
  */        
 public class ResourceInUseException extends AmazonServiceException {

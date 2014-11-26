@@ -23,6 +23,8 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.internal.crypto.CryptoModuleDispatcher;
@@ -420,10 +422,29 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
                 "CryptoConfiguration parameter must not be null.");
         this.isKMSClientInternal = kms == null;
         this.kms = isKMSClientInternal 
-            ? new AWSKMSClient(credentialsProvider, clientConfig, requestMetricCollector)
+            ? newAWSKMSClient(credentialsProvider, clientConfig, cryptoConfig, 
+                    requestMetricCollector)
             : kms;
         this.crypto = new CryptoModuleDispatcher(this.kms, new S3DirectImpl(),
                 credentialsProvider, kekMaterialsProvider, cryptoConfig);
+    }
+
+    /**
+     * Creates and returns a new instance of AWS KMS client in the case when
+     * an explicit AWS KMS client is not specified.
+     */
+    private AWSKMSClient newAWSKMSClient(
+            AWSCredentialsProvider credentialsProvider,
+            ClientConfiguration clientConfig,
+            CryptoConfiguration cryptoConfig,
+            RequestMetricCollector requestMetricCollector
+    ) {
+        final AWSKMSClient kmsClient = new AWSKMSClient(
+            credentialsProvider, clientConfig, requestMetricCollector);
+        final Regions kmsRegion = cryptoConfig.getKmsRegion();
+        if (kmsRegion != null)
+            kmsClient.setRegion(Region.getRegion(kmsRegion));
+        return kmsClient;
     }
 
     private void assertParameterNotNull(Object parameterValue,

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The Alarm data type.
+ * Describes an alarm.
  * </p>
  */
 public class Alarm implements Serializable {

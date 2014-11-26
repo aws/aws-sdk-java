@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * ingress rule, see AuthorizeClusterSecurityGroupIngress. For
  * information about managing security groups, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
- * in the <i>Amazon Redshift Management Guide</i> .
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * 
  * </p>
  *

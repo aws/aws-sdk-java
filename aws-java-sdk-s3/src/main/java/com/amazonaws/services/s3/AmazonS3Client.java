@@ -3008,11 +3008,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 Constants.S3_HOSTNAME);
         // For all GetObject requests, we default to SigV4 if the endpoint is a
         // non-standard endpoint. This is because, we know the region name to be
-        // used fpr SigV4 signing.
+        // used for SigV4 signing.
         final boolean sigv4ForGetRequests = ((originalRequest instanceof GetObjectRequest) && !isStandardEnpoint);
 
-        if ((upgradeToSigV4() && !(signer instanceof AWSS3V4Signer))
-                || (sigv4ForGetRequests)) {
+        if (
+                !(signer instanceof AWSS3V4Signer) &&
+                (upgradeToSigV4() || sigv4ForGetRequests)
+           ) {
 
             AWSS3V4Signer v4Signer = new AWSS3V4Signer();
 

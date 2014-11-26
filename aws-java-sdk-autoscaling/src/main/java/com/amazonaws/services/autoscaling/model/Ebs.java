@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The Ebs data type.
+ * Describes an Amazon EBS volume.
  * </p>
  */
 public class Ebs implements Serializable {
 
     /**
-     * The snapshot ID.
+     * The ID of the snapshot.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -34,10 +34,13 @@ public class Ebs implements Serializable {
 
     /**
      * The volume size, in gigabytes. <p>Valid values: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10. <p>Default: If
-     * you're creating the volume from a snapshot, and you don't specify a
-     * volume size, the default is the snapshot size. <p>Required: Required
-     * when the volume type is <code>io1</code>.
+     * <code>io1</code>, the minimum size of the volume is 10 GiB. If you
+     * specify <code>SnapshotId</code> and <code>VolumeSize</code>,
+     * <code>VolumeSize</code> must be equal to or larger than the size of
+     * the snapshot. <p>Default: If you create a volume from a snapshot and
+     * you don't specify a volume size, the default is the size of the
+     * snapshot. <p>Required: Required when the volume type is
+     * <code>io1</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
@@ -45,7 +48,7 @@ public class Ebs implements Serializable {
     private Integer volumeSize;
 
     /**
-     * The volume type. <p>Valid values: <code>standard | io1</code>
+     * The volume type. <p>Valid values: <code>standard | io1 | gp2</code>
      * <p>Default: <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
@@ -60,9 +63,9 @@ public class Ebs implements Serializable {
     private Boolean deleteOnTermination;
 
     /**
-     * The number of I/O operations per second (IOPS) that the volume
-     * supports. <p>The maximum ratio of IOPS to volume size is 30.0 <p>Valid
-     * Values: Range is 100 to 4000. <p>Default: None.
+     * For Provisioned IOPS (SSD) volumes only. The number of I/O operations
+     * per second (IOPS) to provision for the volume. <p>Valid values: Range
+     * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>100 - 4000<br/>
@@ -70,33 +73,33 @@ public class Ebs implements Serializable {
     private Integer iops;
 
     /**
-     * The snapshot ID.
+     * The ID of the snapshot.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The snapshot ID.
+     * @return The ID of the snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The snapshot ID.
+     * The ID of the snapshot.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param snapshotId The snapshot ID.
+     * @param snapshotId The ID of the snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The snapshot ID.
+     * The ID of the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -104,7 +107,7 @@ public class Ebs implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param snapshotId The snapshot ID.
+     * @param snapshotId The ID of the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -116,19 +119,25 @@ public class Ebs implements Serializable {
 
     /**
      * The volume size, in gigabytes. <p>Valid values: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10. <p>Default: If
-     * you're creating the volume from a snapshot, and you don't specify a
-     * volume size, the default is the snapshot size. <p>Required: Required
-     * when the volume type is <code>io1</code>.
+     * <code>io1</code>, the minimum size of the volume is 10 GiB. If you
+     * specify <code>SnapshotId</code> and <code>VolumeSize</code>,
+     * <code>VolumeSize</code> must be equal to or larger than the size of
+     * the snapshot. <p>Default: If you create a volume from a snapshot and
+     * you don't specify a volume size, the default is the size of the
+     * snapshot. <p>Required: Required when the volume type is
+     * <code>io1</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
      *
      * @return The volume size, in gigabytes. <p>Valid values: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10. <p>Default: If
-     *         you're creating the volume from a snapshot, and you don't specify a
-     *         volume size, the default is the snapshot size. <p>Required: Required
-     *         when the volume type is <code>io1</code>.
+     *         <code>io1</code>, the minimum size of the volume is 10 GiB. If you
+     *         specify <code>SnapshotId</code> and <code>VolumeSize</code>,
+     *         <code>VolumeSize</code> must be equal to or larger than the size of
+     *         the snapshot. <p>Default: If you create a volume from a snapshot and
+     *         you don't specify a volume size, the default is the size of the
+     *         snapshot. <p>Required: Required when the volume type is
+     *         <code>io1</code>.
      */
     public Integer getVolumeSize() {
         return volumeSize;
@@ -136,19 +145,25 @@ public class Ebs implements Serializable {
     
     /**
      * The volume size, in gigabytes. <p>Valid values: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10. <p>Default: If
-     * you're creating the volume from a snapshot, and you don't specify a
-     * volume size, the default is the snapshot size. <p>Required: Required
-     * when the volume type is <code>io1</code>.
+     * <code>io1</code>, the minimum size of the volume is 10 GiB. If you
+     * specify <code>SnapshotId</code> and <code>VolumeSize</code>,
+     * <code>VolumeSize</code> must be equal to or larger than the size of
+     * the snapshot. <p>Default: If you create a volume from a snapshot and
+     * you don't specify a volume size, the default is the size of the
+     * snapshot. <p>Required: Required when the volume type is
+     * <code>io1</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
      *
      * @param volumeSize The volume size, in gigabytes. <p>Valid values: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10. <p>Default: If
-     *         you're creating the volume from a snapshot, and you don't specify a
-     *         volume size, the default is the snapshot size. <p>Required: Required
-     *         when the volume type is <code>io1</code>.
+     *         <code>io1</code>, the minimum size of the volume is 10 GiB. If you
+     *         specify <code>SnapshotId</code> and <code>VolumeSize</code>,
+     *         <code>VolumeSize</code> must be equal to or larger than the size of
+     *         the snapshot. <p>Default: If you create a volume from a snapshot and
+     *         you don't specify a volume size, the default is the size of the
+     *         snapshot. <p>Required: Required when the volume type is
+     *         <code>io1</code>.
      */
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
@@ -156,10 +171,13 @@ public class Ebs implements Serializable {
     
     /**
      * The volume size, in gigabytes. <p>Valid values: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10. <p>Default: If
-     * you're creating the volume from a snapshot, and you don't specify a
-     * volume size, the default is the snapshot size. <p>Required: Required
-     * when the volume type is <code>io1</code>.
+     * <code>io1</code>, the minimum size of the volume is 10 GiB. If you
+     * specify <code>SnapshotId</code> and <code>VolumeSize</code>,
+     * <code>VolumeSize</code> must be equal to or larger than the size of
+     * the snapshot. <p>Default: If you create a volume from a snapshot and
+     * you don't specify a volume size, the default is the size of the
+     * snapshot. <p>Required: Required when the volume type is
+     * <code>io1</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -167,10 +185,13 @@ public class Ebs implements Serializable {
      * <b>Range: </b>1 - 1024<br/>
      *
      * @param volumeSize The volume size, in gigabytes. <p>Valid values: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10. <p>Default: If
-     *         you're creating the volume from a snapshot, and you don't specify a
-     *         volume size, the default is the snapshot size. <p>Required: Required
-     *         when the volume type is <code>io1</code>.
+     *         <code>io1</code>, the minimum size of the volume is 10 GiB. If you
+     *         specify <code>SnapshotId</code> and <code>VolumeSize</code>,
+     *         <code>VolumeSize</code> must be equal to or larger than the size of
+     *         the snapshot. <p>Default: If you create a volume from a snapshot and
+     *         you don't specify a volume size, the default is the size of the
+     *         snapshot. <p>Required: Required when the volume type is
+     *         <code>io1</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -181,13 +202,13 @@ public class Ebs implements Serializable {
     }
 
     /**
-     * The volume type. <p>Valid values: <code>standard | io1</code>
+     * The volume type. <p>Valid values: <code>standard | io1 | gp2</code>
      * <p>Default: <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @return The volume type. <p>Valid values: <code>standard | io1</code>
+     * @return The volume type. <p>Valid values: <code>standard | io1 | gp2</code>
      *         <p>Default: <code>standard</code>
      */
     public String getVolumeType() {
@@ -195,13 +216,13 @@ public class Ebs implements Serializable {
     }
     
     /**
-     * The volume type. <p>Valid values: <code>standard | io1</code>
+     * The volume type. <p>Valid values: <code>standard | io1 | gp2</code>
      * <p>Default: <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param volumeType The volume type. <p>Valid values: <code>standard | io1</code>
+     * @param volumeType The volume type. <p>Valid values: <code>standard | io1 | gp2</code>
      *         <p>Default: <code>standard</code>
      */
     public void setVolumeType(String volumeType) {
@@ -209,7 +230,7 @@ public class Ebs implements Serializable {
     }
     
     /**
-     * The volume type. <p>Valid values: <code>standard | io1</code>
+     * The volume type. <p>Valid values: <code>standard | io1 | gp2</code>
      * <p>Default: <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -217,7 +238,7 @@ public class Ebs implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param volumeType The volume type. <p>Valid values: <code>standard | io1</code>
+     * @param volumeType The volume type. <p>Valid values: <code>standard | io1 | gp2</code>
      *         <p>Default: <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -279,50 +300,50 @@ public class Ebs implements Serializable {
     }
 
     /**
-     * The number of I/O operations per second (IOPS) that the volume
-     * supports. <p>The maximum ratio of IOPS to volume size is 30.0 <p>Valid
-     * Values: Range is 100 to 4000. <p>Default: None.
+     * For Provisioned IOPS (SSD) volumes only. The number of I/O operations
+     * per second (IOPS) to provision for the volume. <p>Valid values: Range
+     * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>100 - 4000<br/>
      *
-     * @return The number of I/O operations per second (IOPS) that the volume
-     *         supports. <p>The maximum ratio of IOPS to volume size is 30.0 <p>Valid
-     *         Values: Range is 100 to 4000. <p>Default: None.
+     * @return For Provisioned IOPS (SSD) volumes only. The number of I/O operations
+     *         per second (IOPS) to provision for the volume. <p>Valid values: Range
+     *         is 100 to 4000. <p>Default: None
      */
     public Integer getIops() {
         return iops;
     }
     
     /**
-     * The number of I/O operations per second (IOPS) that the volume
-     * supports. <p>The maximum ratio of IOPS to volume size is 30.0 <p>Valid
-     * Values: Range is 100 to 4000. <p>Default: None.
+     * For Provisioned IOPS (SSD) volumes only. The number of I/O operations
+     * per second (IOPS) to provision for the volume. <p>Valid values: Range
+     * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>100 - 4000<br/>
      *
-     * @param iops The number of I/O operations per second (IOPS) that the volume
-     *         supports. <p>The maximum ratio of IOPS to volume size is 30.0 <p>Valid
-     *         Values: Range is 100 to 4000. <p>Default: None.
+     * @param iops For Provisioned IOPS (SSD) volumes only. The number of I/O operations
+     *         per second (IOPS) to provision for the volume. <p>Valid values: Range
+     *         is 100 to 4000. <p>Default: None
      */
     public void setIops(Integer iops) {
         this.iops = iops;
     }
     
     /**
-     * The number of I/O operations per second (IOPS) that the volume
-     * supports. <p>The maximum ratio of IOPS to volume size is 30.0 <p>Valid
-     * Values: Range is 100 to 4000. <p>Default: None.
+     * For Provisioned IOPS (SSD) volumes only. The number of I/O operations
+     * per second (IOPS) to provision for the volume. <p>Valid values: Range
+     * is 100 to 4000. <p>Default: None
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>100 - 4000<br/>
      *
-     * @param iops The number of I/O operations per second (IOPS) that the volume
-     *         supports. <p>The maximum ratio of IOPS to volume size is 30.0 <p>Valid
-     *         Values: Range is 100 to 4000. <p>Default: None.
+     * @param iops For Provisioned IOPS (SSD) volumes only. The number of I/O operations
+     *         per second (IOPS) to provision for the volume. <p>Valid values: Range
+     *         is 100 to 4000. <p>Default: None
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

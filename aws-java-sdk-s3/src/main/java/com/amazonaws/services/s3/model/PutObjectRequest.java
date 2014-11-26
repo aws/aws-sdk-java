@@ -22,63 +22,67 @@ import com.amazonaws.event.ProgressListener;
 
 /**
  * <p>
- * Uploads a new object to the specified Amazon S3 bucket.
- * The PutObjectRequest optionally uploads object metadata
- * and applies a canned access
- * control policy to the new object.
+ * Uploads a new object to the specified Amazon S3 bucket. The PutObjectRequest
+ * optionally uploads object metadata and applies a canned access control policy
+ * to the new object.
  * </p>
  * <p>
- * Amazon S3 never stores partial objects;
- * if during this call an exception wasn't thrown,
- * the entire object was stored.
+ * Amazon S3 never stores partial objects; if during this call an exception
+ * wasn't thrown, the entire object was stored.
  * </p>
  * <p>
- * Depending on whether a file or input stream is being uploaded, this
- * request has slightly different behavior.
+ * Depending on whether a file or input stream is being uploaded, this request
+ * has slightly different behavior.
  * </p>
  * <p>
  * When uploading a file:
  * </p>
  * <ul>
- *  <li>
- *  The client automatically computes a checksum of the file.
- *  Amazon S3 uses checksums to validate the data in each file.
- *  </li>
- *  <li>
- *  Using the file extension, Amazon S3 attempts to determine
- *  the correct content type and content disposition to use
- *  for the object.
- *  </li>
+ * <li>
+ * The client automatically computes a checksum of the file. Amazon S3 uses
+ * checksums to validate the data in each file.</li>
+ * <li>
+ * Using the file extension, Amazon S3 attempts to determine the correct content
+ * type and content disposition to use for the object.</li>
  * </ul>
  * <p>
- * When uploading directly from an input stream, content length <b>must</b> be specified before data can be uploaded
- *  to Amazon S3. If not provided, the library will <b>have
- *  to</b> buffer the contents of the input stream in order to calculate it.
- *  Amazon S3 explicitly requires that the content length be sent in
- *  the request headers before any of the data is sent.</li>
+ * When uploading directly from an input stream, content length <b>must</b> be
+ * specified before data can be uploaded to Amazon S3. If not provided, the
+ * library will <b>have to</b> buffer the contents of the input stream in order
+ * to calculate it. Amazon S3 explicitly requires that the content length be
+ * sent in the request headers before any of the data is sent.</li>
  * <p>
- * Amazon S3 is a distributed system. If
- * Amazon S3 receives multiple write requests for the same object nearly
- * simultaneously, all of the objects might be stored. However, only one object
- * will obtain the key.
+ * Amazon S3 is a distributed system. If Amazon S3 receives multiple write
+ * requests for the same object nearly simultaneously, all of the objects might
+ * be stored. However, only one object will obtain the key.
  * </p>
  * <p>
- * Note: Amazon S3 does not provide object locking; if this is needed, make
- * sure to build it into the application layer.
+ * Note: Amazon S3 does not provide object locking; if this is needed, make sure
+ * to build it into the application layer.
  * </p>
  * <p>
- * If the caller specifies a location constraint when creating a bucket,
- * all objects added to the bucket are stored in the same region as the bucket.
- * For example, if specifying a Europe (EU) region constraint for a bucket,
- * all of that bucket's objects are stored in the EU region.
+ * If the caller specifies a location constraint when creating a bucket, all
+ * objects added to the bucket are stored in the same region as the bucket. For
+ * example, if specifying a Europe (EU) region constraint for a bucket, all of
+ * that bucket's objects are stored in the EU region.
  * </p>
  * <p>
  * The specified bucket must already exist and the caller must have
  * {@link Permission#Write} permission to the bucket to upload an object.
  * </p>
+ * <p>
+ * If you are uploading or accessing <a
+ * href="http://aws.amazon.com/kms/">KMS</a>-encrypted objects, you need to
+ * specify the correct region of the bucket on your client and configure AWS
+ * Signature Version 4 for added security. For more information on how to do
+ * this, see
+ * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify
+ * -signature-version
+ * </p>
  *
  * @see PutObjectRequest#PutObjectRequest(String, String, File)
- * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
+ * @see PutObjectRequest#PutObjectRequest(String, String, InputStream,
+ *      ObjectMetadata)
  */
 public class PutObjectRequest extends AmazonWebServiceRequest implements
         Cloneable, SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider, S3DataSource {

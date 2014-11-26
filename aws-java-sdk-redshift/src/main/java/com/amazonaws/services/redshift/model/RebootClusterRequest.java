@@ -23,12 +23,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Reboots a cluster. This action is taken as soon as possible. It
  * results in a momentary outage to the cluster, during which the cluster
- * status is set to <code>rebooting</code> . A cluster event is created
- * when the reboot is completed. Any pending cluster modifications (see
- * ModifyCluster) are applied at this reboot. For more information about
- * managing clusters, go to
+ * status is set to <code>rebooting</code> .
+ * A cluster event is created when the reboot is completed.
+ * Any pending cluster modifications (see ModifyCluster) are applied at
+ * this reboot. For more information about managing clusters, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
- * in the <i>Amazon Redshift Management Guide</i>
+ * in the <i>Amazon Redshift Cluster Management Guide</i>
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#rebootCluster(RebootClusterRequest)

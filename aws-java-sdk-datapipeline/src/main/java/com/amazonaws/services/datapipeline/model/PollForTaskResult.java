@@ -24,76 +24,69 @@ import java.io.Serializable;
 public class PollForTaskResult implements Serializable {
 
     /**
-     * An instance of <a>PollForTaskResult</a>, which contains an instance of
-     * <a>TaskObject</a>. The returned object contains all the information
-     * needed to complete the task that is being assigned to the task runner.
-     * One of the fields returned in this object is taskId, which contains an
-     * identifier for the task being assigned. The calling task runner uses
-     * taskId in subsequent calls to <a>ReportTaskProgress</a> and
-     * <a>SetTaskStatus</a>.
+     * An instance of <a>TaskObject</a>. The returned object contains all the
+     * information needed to complete the task that is being assigned to the
+     * task runner. One of the fields returned in this object is taskId,
+     * which contains an identifier for the task being assigned. The calling
+     * task runner uses taskId in subsequent calls to
+     * <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      */
     private TaskObject taskObject;
 
     /**
-     * An instance of <a>PollForTaskResult</a>, which contains an instance of
-     * <a>TaskObject</a>. The returned object contains all the information
-     * needed to complete the task that is being assigned to the task runner.
-     * One of the fields returned in this object is taskId, which contains an
-     * identifier for the task being assigned. The calling task runner uses
-     * taskId in subsequent calls to <a>ReportTaskProgress</a> and
-     * <a>SetTaskStatus</a>.
+     * An instance of <a>TaskObject</a>. The returned object contains all the
+     * information needed to complete the task that is being assigned to the
+     * task runner. One of the fields returned in this object is taskId,
+     * which contains an identifier for the task being assigned. The calling
+     * task runner uses taskId in subsequent calls to
+     * <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      *
-     * @return An instance of <a>PollForTaskResult</a>, which contains an instance of
-     *         <a>TaskObject</a>. The returned object contains all the information
-     *         needed to complete the task that is being assigned to the task runner.
-     *         One of the fields returned in this object is taskId, which contains an
-     *         identifier for the task being assigned. The calling task runner uses
-     *         taskId in subsequent calls to <a>ReportTaskProgress</a> and
-     *         <a>SetTaskStatus</a>.
+     * @return An instance of <a>TaskObject</a>. The returned object contains all the
+     *         information needed to complete the task that is being assigned to the
+     *         task runner. One of the fields returned in this object is taskId,
+     *         which contains an identifier for the task being assigned. The calling
+     *         task runner uses taskId in subsequent calls to
+     *         <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      */
     public TaskObject getTaskObject() {
         return taskObject;
     }
     
     /**
-     * An instance of <a>PollForTaskResult</a>, which contains an instance of
-     * <a>TaskObject</a>. The returned object contains all the information
-     * needed to complete the task that is being assigned to the task runner.
-     * One of the fields returned in this object is taskId, which contains an
-     * identifier for the task being assigned. The calling task runner uses
-     * taskId in subsequent calls to <a>ReportTaskProgress</a> and
-     * <a>SetTaskStatus</a>.
+     * An instance of <a>TaskObject</a>. The returned object contains all the
+     * information needed to complete the task that is being assigned to the
+     * task runner. One of the fields returned in this object is taskId,
+     * which contains an identifier for the task being assigned. The calling
+     * task runner uses taskId in subsequent calls to
+     * <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      *
-     * @param taskObject An instance of <a>PollForTaskResult</a>, which contains an instance of
-     *         <a>TaskObject</a>. The returned object contains all the information
-     *         needed to complete the task that is being assigned to the task runner.
-     *         One of the fields returned in this object is taskId, which contains an
-     *         identifier for the task being assigned. The calling task runner uses
-     *         taskId in subsequent calls to <a>ReportTaskProgress</a> and
-     *         <a>SetTaskStatus</a>.
+     * @param taskObject An instance of <a>TaskObject</a>. The returned object contains all the
+     *         information needed to complete the task that is being assigned to the
+     *         task runner. One of the fields returned in this object is taskId,
+     *         which contains an identifier for the task being assigned. The calling
+     *         task runner uses taskId in subsequent calls to
+     *         <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      */
     public void setTaskObject(TaskObject taskObject) {
         this.taskObject = taskObject;
     }
     
     /**
-     * An instance of <a>PollForTaskResult</a>, which contains an instance of
-     * <a>TaskObject</a>. The returned object contains all the information
-     * needed to complete the task that is being assigned to the task runner.
-     * One of the fields returned in this object is taskId, which contains an
-     * identifier for the task being assigned. The calling task runner uses
-     * taskId in subsequent calls to <a>ReportTaskProgress</a> and
-     * <a>SetTaskStatus</a>.
+     * An instance of <a>TaskObject</a>. The returned object contains all the
+     * information needed to complete the task that is being assigned to the
+     * task runner. One of the fields returned in this object is taskId,
+     * which contains an identifier for the task being assigned. The calling
+     * task runner uses taskId in subsequent calls to
+     * <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param taskObject An instance of <a>PollForTaskResult</a>, which contains an instance of
-     *         <a>TaskObject</a>. The returned object contains all the information
-     *         needed to complete the task that is being assigned to the task runner.
-     *         One of the fields returned in this object is taskId, which contains an
-     *         identifier for the task being assigned. The calling task runner uses
-     *         taskId in subsequent calls to <a>ReportTaskProgress</a> and
-     *         <a>SetTaskStatus</a>.
+     * @param taskObject An instance of <a>TaskObject</a>. The returned object contains all the
+     *         information needed to complete the task that is being assigned to the
+     *         task runner. One of the fields returned in this object is taskId,
+     *         which contains an identifier for the task being assigned. The calling
+     *         task runner uses taskId in subsequent calls to
+     *         <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

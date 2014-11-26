@@ -35,6 +35,8 @@ class InternalConfigJsonHelper {
     private JsonIndex<SignerConfigJsonHelper, SignerConfig>[] serviceRegionSigners;
     private JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig>[] httpClients;
 
+    private HostRegexToRegionMappingJsonHelper[] hostRegexToRegionMappings;
+
     private String userAgentTemplate;
 
     SignerConfigJsonHelper getDefaultSigner() {
@@ -75,6 +77,15 @@ class InternalConfigJsonHelper {
 
     public void setHttpClients(JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig> ... httpClients) {
         this.httpClients = httpClients;
+    }
+
+    public HostRegexToRegionMappingJsonHelper[] getHostRegexToRegionMappings() {
+        return hostRegexToRegionMappings;
+    }
+
+    public void setHostRegexToRegionMappings(
+            HostRegexToRegionMappingJsonHelper[] hostRegexToRegionMappings) {
+        this.hostRegexToRegionMappings = hostRegexToRegionMappings;
     }
 
     public String getUserAgentTemplate() {

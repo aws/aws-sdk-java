@@ -20,7 +20,6 @@ import com.amazonaws.AmazonServiceException;
  * <p>
  * The state of the cluster security group is not <code>available</code>
  * .
- * 
  * </p>
  */        
 public class InvalidClusterSecurityGroupStateException extends AmazonServiceException {

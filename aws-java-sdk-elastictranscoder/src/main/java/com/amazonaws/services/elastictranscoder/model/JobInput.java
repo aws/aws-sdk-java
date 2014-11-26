@@ -107,6 +107,13 @@ public class JobInput implements Serializable {
     private String container;
 
     /**
+     * The encryption settings, if any, that are used for decrypting your
+     * input files. If your input file is encrypted, you must specify the
+     * mode that Elastic Transcoder will use to decrypt your file.
+     */
+    private Encryption encryption;
+
+    /**
      * The name of the file to transcode. Elsewhere in the body of the JSON
      * block is the the ID of the pipeline to use for processing the job. The
      * <code>InputBucket</code> object in that pipeline tells Elastic
@@ -569,6 +576,51 @@ public class JobInput implements Serializable {
     }
 
     /**
+     * The encryption settings, if any, that are used for decrypting your
+     * input files. If your input file is encrypted, you must specify the
+     * mode that Elastic Transcoder will use to decrypt your file.
+     *
+     * @return The encryption settings, if any, that are used for decrypting your
+     *         input files. If your input file is encrypted, you must specify the
+     *         mode that Elastic Transcoder will use to decrypt your file.
+     */
+    public Encryption getEncryption() {
+        return encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that are used for decrypting your
+     * input files. If your input file is encrypted, you must specify the
+     * mode that Elastic Transcoder will use to decrypt your file.
+     *
+     * @param encryption The encryption settings, if any, that are used for decrypting your
+     *         input files. If your input file is encrypted, you must specify the
+     *         mode that Elastic Transcoder will use to decrypt your file.
+     */
+    public void setEncryption(Encryption encryption) {
+        this.encryption = encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that are used for decrypting your
+     * input files. If your input file is encrypted, you must specify the
+     * mode that Elastic Transcoder will use to decrypt your file.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encryption The encryption settings, if any, that are used for decrypting your
+     *         input files. If your input file is encrypted, you must specify the
+     *         mode that Elastic Transcoder will use to decrypt your file.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobInput withEncryption(Encryption encryption) {
+        this.encryption = encryption;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -585,7 +637,8 @@ public class JobInput implements Serializable {
         if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");
         if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");
         if (getInterlaced() != null) sb.append("Interlaced: " + getInterlaced() + ",");
-        if (getContainer() != null) sb.append("Container: " + getContainer() );
+        if (getContainer() != null) sb.append("Container: " + getContainer() + ",");
+        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
         sb.append("}");
         return sb.toString();
     }
@@ -601,6 +654,7 @@ public class JobInput implements Serializable {
         hashCode = prime * hashCode + ((getAspectRatio() == null) ? 0 : getAspectRatio().hashCode()); 
         hashCode = prime * hashCode + ((getInterlaced() == null) ? 0 : getInterlaced().hashCode()); 
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode()); 
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
         return hashCode;
     }
     
@@ -624,6 +678,8 @@ public class JobInput implements Serializable {
         if (other.getInterlaced() != null && other.getInterlaced().equals(this.getInterlaced()) == false) return false; 
         if (other.getContainer() == null ^ this.getContainer() == null) return false;
         if (other.getContainer() != null && other.getContainer().equals(this.getContainer()) == false) return false; 
+        if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
         return true;
     }
     

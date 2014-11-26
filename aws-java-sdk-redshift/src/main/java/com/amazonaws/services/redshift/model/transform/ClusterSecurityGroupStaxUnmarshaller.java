@@ -61,6 +61,10 @@ public class ClusterSecurityGroupStaxUnmarshaller implements Unmarshaller<Cluste
                     clusterSecurityGroup.getIPRanges().add(IPRangeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Tags/Tag", targetDepth)) {
+                    clusterSecurityGroup.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clusterSecurityGroup;

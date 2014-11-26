@@ -45,6 +45,23 @@ public class CreateHsmClientCertificateRequestMarshaller implements Marshaller<R
             request.addParameter("HsmClientCertificateIdentifier", StringUtils.fromString(createHsmClientCertificateRequest.getHsmClientCertificateIdentifier()));
         }
 
+        java.util.List<Tag> tagsList = createHsmClientCertificateRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+            }
+
+            tagsListIndex++;
+        }
+
         return request;
     }
 }

@@ -34,12 +34,11 @@ public class Captions implements Serializable {
      * and sidecar captions into outputs. If captions for a language are
      * embedded in the input file and also appear in a sidecar file, Elastic
      * Transcoder uses the embedded captions and ignores the sidecar captions
-     * for that language. If <guilabel>CaptionSources</guilabel> is empty,
-     * Elastic Transcoder omits all sidecar captions from the output
-     * files.</li> <li><p><b>Override:</b> Elastic Transcoder transcodes only
-     * the sidecar captions that you specify in
-     * <code>CaptionSources</code>.</li> </ul> <p><code>MergePolicy</code>
-     * cannot be null.
+     * for that language. If <code>CaptionSources</code> is empty, Elastic
+     * Transcoder omits all sidecar captions from the output files.</li>
+     * <li><p><b>Override:</b> Elastic Transcoder transcodes only the sidecar
+     * captions that you specify in <code>CaptionSources</code>.</li> </ul>
+     * <p><code>MergePolicy</code> cannot be null.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^MergeOverride$)|(^MergeRetain$)|(^Override$)<br/>
@@ -76,12 +75,11 @@ public class Captions implements Serializable {
      * and sidecar captions into outputs. If captions for a language are
      * embedded in the input file and also appear in a sidecar file, Elastic
      * Transcoder uses the embedded captions and ignores the sidecar captions
-     * for that language. If <guilabel>CaptionSources</guilabel> is empty,
-     * Elastic Transcoder omits all sidecar captions from the output
-     * files.</li> <li><p><b>Override:</b> Elastic Transcoder transcodes only
-     * the sidecar captions that you specify in
-     * <code>CaptionSources</code>.</li> </ul> <p><code>MergePolicy</code>
-     * cannot be null.
+     * for that language. If <code>CaptionSources</code> is empty, Elastic
+     * Transcoder omits all sidecar captions from the output files.</li>
+     * <li><p><b>Override:</b> Elastic Transcoder transcodes only the sidecar
+     * captions that you specify in <code>CaptionSources</code>.</li> </ul>
+     * <p><code>MergePolicy</code> cannot be null.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^MergeOverride$)|(^MergeRetain$)|(^Override$)<br/>
@@ -96,12 +94,11 @@ public class Captions implements Serializable {
      *         and sidecar captions into outputs. If captions for a language are
      *         embedded in the input file and also appear in a sidecar file, Elastic
      *         Transcoder uses the embedded captions and ignores the sidecar captions
-     *         for that language. If <guilabel>CaptionSources</guilabel> is empty,
-     *         Elastic Transcoder omits all sidecar captions from the output
-     *         files.</li> <li><p><b>Override:</b> Elastic Transcoder transcodes only
-     *         the sidecar captions that you specify in
-     *         <code>CaptionSources</code>.</li> </ul> <p><code>MergePolicy</code>
-     *         cannot be null.
+     *         for that language. If <code>CaptionSources</code> is empty, Elastic
+     *         Transcoder omits all sidecar captions from the output files.</li>
+     *         <li><p><b>Override:</b> Elastic Transcoder transcodes only the sidecar
+     *         captions that you specify in <code>CaptionSources</code>.</li> </ul>
+     *         <p><code>MergePolicy</code> cannot be null.
      */
     public String getMergePolicy() {
         return mergePolicy;
@@ -118,12 +115,11 @@ public class Captions implements Serializable {
      * and sidecar captions into outputs. If captions for a language are
      * embedded in the input file and also appear in a sidecar file, Elastic
      * Transcoder uses the embedded captions and ignores the sidecar captions
-     * for that language. If <guilabel>CaptionSources</guilabel> is empty,
-     * Elastic Transcoder omits all sidecar captions from the output
-     * files.</li> <li><p><b>Override:</b> Elastic Transcoder transcodes only
-     * the sidecar captions that you specify in
-     * <code>CaptionSources</code>.</li> </ul> <p><code>MergePolicy</code>
-     * cannot be null.
+     * for that language. If <code>CaptionSources</code> is empty, Elastic
+     * Transcoder omits all sidecar captions from the output files.</li>
+     * <li><p><b>Override:</b> Elastic Transcoder transcodes only the sidecar
+     * captions that you specify in <code>CaptionSources</code>.</li> </ul>
+     * <p><code>MergePolicy</code> cannot be null.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^MergeOverride$)|(^MergeRetain$)|(^Override$)<br/>
@@ -138,12 +134,11 @@ public class Captions implements Serializable {
      *         and sidecar captions into outputs. If captions for a language are
      *         embedded in the input file and also appear in a sidecar file, Elastic
      *         Transcoder uses the embedded captions and ignores the sidecar captions
-     *         for that language. If <guilabel>CaptionSources</guilabel> is empty,
-     *         Elastic Transcoder omits all sidecar captions from the output
-     *         files.</li> <li><p><b>Override:</b> Elastic Transcoder transcodes only
-     *         the sidecar captions that you specify in
-     *         <code>CaptionSources</code>.</li> </ul> <p><code>MergePolicy</code>
-     *         cannot be null.
+     *         for that language. If <code>CaptionSources</code> is empty, Elastic
+     *         Transcoder omits all sidecar captions from the output files.</li>
+     *         <li><p><b>Override:</b> Elastic Transcoder transcodes only the sidecar
+     *         captions that you specify in <code>CaptionSources</code>.</li> </ul>
+     *         <p><code>MergePolicy</code> cannot be null.
      */
     public void setMergePolicy(String mergePolicy) {
         this.mergePolicy = mergePolicy;
@@ -160,12 +155,11 @@ public class Captions implements Serializable {
      * and sidecar captions into outputs. If captions for a language are
      * embedded in the input file and also appear in a sidecar file, Elastic
      * Transcoder uses the embedded captions and ignores the sidecar captions
-     * for that language. If <guilabel>CaptionSources</guilabel> is empty,
-     * Elastic Transcoder omits all sidecar captions from the output
-     * files.</li> <li><p><b>Override:</b> Elastic Transcoder transcodes only
-     * the sidecar captions that you specify in
-     * <code>CaptionSources</code>.</li> </ul> <p><code>MergePolicy</code>
-     * cannot be null.
+     * for that language. If <code>CaptionSources</code> is empty, Elastic
+     * Transcoder omits all sidecar captions from the output files.</li>
+     * <li><p><b>Override:</b> Elastic Transcoder transcodes only the sidecar
+     * captions that you specify in <code>CaptionSources</code>.</li> </ul>
+     * <p><code>MergePolicy</code> cannot be null.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -182,12 +176,11 @@ public class Captions implements Serializable {
      *         and sidecar captions into outputs. If captions for a language are
      *         embedded in the input file and also appear in a sidecar file, Elastic
      *         Transcoder uses the embedded captions and ignores the sidecar captions
-     *         for that language. If <guilabel>CaptionSources</guilabel> is empty,
-     *         Elastic Transcoder omits all sidecar captions from the output
-     *         files.</li> <li><p><b>Override:</b> Elastic Transcoder transcodes only
-     *         the sidecar captions that you specify in
-     *         <code>CaptionSources</code>.</li> </ul> <p><code>MergePolicy</code>
-     *         cannot be null.
+     *         for that language. If <code>CaptionSources</code> is empty, Elastic
+     *         Transcoder omits all sidecar captions from the output files.</li>
+     *         <li><p><b>Override:</b> Elastic Transcoder transcodes only the sidecar
+     *         captions that you specify in <code>CaptionSources</code>.</li> </ul>
+     *         <p><code>MergePolicy</code> cannot be null.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

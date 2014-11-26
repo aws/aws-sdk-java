@@ -21,14 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#detachInstances(DetachInstancesRequest) DetachInstances operation}.
  * <p>
- * Using <code>DetachInstances</code> , you can remove an instance from
- * an Auto Scaling group. After the instances are detached, you can
- * manage them independently from the rest of the Auto Scaling group.
+ * Removes one or more instances from the specified Auto Scaling group.
+ * After the instances are detached, you can manage them independently
+ * from the rest of the Auto Scaling group.
  * </p>
  * <p>
- * To learn more about detaching instances, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html"> Detach Amazon EC2 Instances From Your Auto Scaling Group </a>
- * .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html"> Detach EC2 Instances from Your Auto Scaling Group </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#detachInstances(DetachInstancesRequest)
@@ -36,13 +36,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DetachInstancesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * A list of instances to detach from the Auto Scaling group. You must
-     * specify at least one instance ID.
+     * One or more instance IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
-     * The name of the Auto Scaling group from which to detach instances.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -51,19 +50,15 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     private String autoScalingGroupName;
 
     /**
-     * Specifies if the detached instance should decrement the desired
-     * capacity value for the Auto Scaling group. If set to
-     * <code>True</code>, the Auto Scaling group decrements the desired
+     * If <code>True</code>, the Auto Scaling group decrements the desired
      * capacity value by the number of instances detached.
      */
     private Boolean shouldDecrementDesiredCapacity;
 
     /**
-     * A list of instances to detach from the Auto Scaling group. You must
-     * specify at least one instance ID.
+     * One or more instance IDs.
      *
-     * @return A list of instances to detach from the Auto Scaling group. You must
-     *         specify at least one instance ID.
+     * @return One or more instance IDs.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -74,11 +69,9 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of instances to detach from the Auto Scaling group. You must
-     * specify at least one instance ID.
+     * One or more instance IDs.
      *
-     * @param instanceIds A list of instances to detach from the Auto Scaling group. You must
-     *         specify at least one instance ID.
+     * @param instanceIds One or more instance IDs.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -91,13 +84,11 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of instances to detach from the Auto Scaling group. You must
-     * specify at least one instance ID.
+     * One or more instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds A list of instances to detach from the Auto Scaling group. You must
-     *         specify at least one instance ID.
+     * @param instanceIds One or more instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -111,13 +102,11 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of instances to detach from the Auto Scaling group. You must
-     * specify at least one instance ID.
+     * One or more instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds A list of instances to detach from the Auto Scaling group. You must
-     *         specify at least one instance ID.
+     * @param instanceIds One or more instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -135,33 +124,33 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The name of the Auto Scaling group from which to detach instances.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group from which to detach instances.
+     * @return The name of the group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group from which to detach instances.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group from which to detach instances.
+     * @param autoScalingGroupName The name of the group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group from which to detach instances.
+     * The name of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -169,7 +158,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group from which to detach instances.
+     * @param autoScalingGroupName The name of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -180,14 +169,10 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Specifies if the detached instance should decrement the desired
-     * capacity value for the Auto Scaling group. If set to
-     * <code>True</code>, the Auto Scaling group decrements the desired
+     * If <code>True</code>, the Auto Scaling group decrements the desired
      * capacity value by the number of instances detached.
      *
-     * @return Specifies if the detached instance should decrement the desired
-     *         capacity value for the Auto Scaling group. If set to
-     *         <code>True</code>, the Auto Scaling group decrements the desired
+     * @return If <code>True</code>, the Auto Scaling group decrements the desired
      *         capacity value by the number of instances detached.
      */
     public Boolean isShouldDecrementDesiredCapacity() {
@@ -195,14 +180,10 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * Specifies if the detached instance should decrement the desired
-     * capacity value for the Auto Scaling group. If set to
-     * <code>True</code>, the Auto Scaling group decrements the desired
+     * If <code>True</code>, the Auto Scaling group decrements the desired
      * capacity value by the number of instances detached.
      *
-     * @param shouldDecrementDesiredCapacity Specifies if the detached instance should decrement the desired
-     *         capacity value for the Auto Scaling group. If set to
-     *         <code>True</code>, the Auto Scaling group decrements the desired
+     * @param shouldDecrementDesiredCapacity If <code>True</code>, the Auto Scaling group decrements the desired
      *         capacity value by the number of instances detached.
      */
     public void setShouldDecrementDesiredCapacity(Boolean shouldDecrementDesiredCapacity) {
@@ -210,16 +191,12 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * Specifies if the detached instance should decrement the desired
-     * capacity value for the Auto Scaling group. If set to
-     * <code>True</code>, the Auto Scaling group decrements the desired
+     * If <code>True</code>, the Auto Scaling group decrements the desired
      * capacity value by the number of instances detached.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param shouldDecrementDesiredCapacity Specifies if the detached instance should decrement the desired
-     *         capacity value for the Auto Scaling group. If set to
-     *         <code>True</code>, the Auto Scaling group decrements the desired
+     * @param shouldDecrementDesiredCapacity If <code>True</code>, the Auto Scaling group decrements the desired
      *         capacity value by the number of instances detached.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -231,14 +208,10 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Specifies if the detached instance should decrement the desired
-     * capacity value for the Auto Scaling group. If set to
-     * <code>True</code>, the Auto Scaling group decrements the desired
+     * If <code>True</code>, the Auto Scaling group decrements the desired
      * capacity value by the number of instances detached.
      *
-     * @return Specifies if the detached instance should decrement the desired
-     *         capacity value for the Auto Scaling group. If set to
-     *         <code>True</code>, the Auto Scaling group decrements the desired
+     * @return If <code>True</code>, the Auto Scaling group decrements the desired
      *         capacity value by the number of instances detached.
      */
     public Boolean getShouldDecrementDesiredCapacity() {

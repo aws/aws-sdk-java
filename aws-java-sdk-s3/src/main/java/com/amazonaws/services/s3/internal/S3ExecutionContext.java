@@ -27,6 +27,7 @@ import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.AmazonS3URI;
+import com.amazonaws.util.AwsHostNameUtils;
 
 public class S3ExecutionContext extends ExecutionContext {
 
@@ -44,6 +45,14 @@ public class S3ExecutionContext extends ExecutionContext {
         this.signer = signer;
     }
 
+    /**
+     * Returns the signer instance that should be used to sign the request sent
+     * to the given URL. This method will be called before either the first
+     * attempt of an S3 request, or a retry attempt for 307 redirect. In the
+     * second case, the URL passed here will be the full redirect location which
+     * includes not only the host component, but also the path, query
+     * parameters, etc.
+     */
     @Override
     public Signer getSignerByURI(URI uri) {
         // Don't modify the signer region, if the client is configured with region override
@@ -53,16 +62,19 @@ public class S3ExecutionContext extends ExecutionContext {
             return signer;
         }
 
-        // Otherwise, re-adjust the signer region in order to
-        // account for endpoint change after a 307 redirect
-        try {
-            if (signer instanceof RegionAwareSigner) {
-                ((RegionAwareSigner) signer).setRegionName(
-                        new AmazonS3URI(uri).getRegion());
+        // Otherwise, parse region name from the host component of the URL and
+        // assign it to the signer
+        if (signer instanceof RegionAwareSigner) {
+            RegionAwareSigner regionSigner = (RegionAwareSigner)signer;
+
+            try {
+                regionSigner.setRegionName(AwsHostNameUtils.parseRegionName(
+                        uri.getHost(), "s3"));
+
+            } catch (RuntimeException e) {
+                log.warn("Failed to parse the endpoint " + uri +
+                        ", and skip re-assigning the signer region", e);
             }
-        } catch (RuntimeException e) {
-            log.warn("Failed to parse the endpoint " + uri +
-                    ", and skip re-signing the signer region", e);
         }
 
         return signer;

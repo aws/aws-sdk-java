@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * In addition to creating an HSM configuration, you must also create an
  * HSM client certificate. For more information, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
- * in the Amazon Redshift Management Guide.
+ * in the Amazon Redshift Cluster Management Guide.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createHsmConfiguration(CreateHsmConfigurationRequest)
@@ -71,6 +71,11 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
      * is server.pem.
      */
     private String hsmServerPublicCertificate;
+
+    /**
+     * A list of tag instances.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * The identifier to be assigned to the new Amazon Redshift HSM
@@ -295,6 +300,74 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * A list of tag instances.
+     *
+     * @return A list of tag instances.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tag instances.
+     *
+     * @param tags A list of tag instances.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tag instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tag instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateHsmConfigurationRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tag instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tag instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateHsmConfigurationRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -311,7 +384,8 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
         if (getHsmIpAddress() != null) sb.append("HsmIpAddress: " + getHsmIpAddress() + ",");
         if (getHsmPartitionName() != null) sb.append("HsmPartitionName: " + getHsmPartitionName() + ",");
         if (getHsmPartitionPassword() != null) sb.append("HsmPartitionPassword: " + getHsmPartitionPassword() + ",");
-        if (getHsmServerPublicCertificate() != null) sb.append("HsmServerPublicCertificate: " + getHsmServerPublicCertificate() );
+        if (getHsmServerPublicCertificate() != null) sb.append("HsmServerPublicCertificate: " + getHsmServerPublicCertificate() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -327,6 +401,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getHsmPartitionName() == null) ? 0 : getHsmPartitionName().hashCode()); 
         hashCode = prime * hashCode + ((getHsmPartitionPassword() == null) ? 0 : getHsmPartitionPassword().hashCode()); 
         hashCode = prime * hashCode + ((getHsmServerPublicCertificate() == null) ? 0 : getHsmServerPublicCertificate().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -350,6 +425,8 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
         if (other.getHsmPartitionPassword() != null && other.getHsmPartitionPassword().equals(this.getHsmPartitionPassword()) == false) return false; 
         if (other.getHsmServerPublicCertificate() == null ^ this.getHsmServerPublicCertificate() == null) return false;
         if (other.getHsmServerPublicCertificate() != null && other.getHsmServerPublicCertificate().equals(this.getHsmServerPublicCertificate()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

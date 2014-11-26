@@ -29,8 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * parameters to take effect. For more information about managing
  * clusters, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
- * in the <i>Amazon Redshift Management Guide</i> .
- * 
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * </p>
  * <p>
  * You can also change node type and the number of nodes to scale up or
@@ -170,8 +169,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * parameter group family. For more information about managing parameter
      * groups, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
-     * Guide</i>. <p>Example: <code>1.0</code>
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>. <p>Example: <code>1.0</code>
      */
     private String clusterVersion;
 
@@ -1036,8 +1035,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * parameter group family. For more information about managing parameter
      * groups, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
-     * Guide</i>. <p>Example: <code>1.0</code>
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>. <p>Example: <code>1.0</code>
      *
      * @return The new version number of the Amazon Redshift engine to upgrade to.
      *         <p> For major version upgrades, if a non-default cluster parameter
@@ -1047,8 +1046,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         parameter group family. For more information about managing parameter
      *         groups, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
-     *         Guide</i>. <p>Example: <code>1.0</code>
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>. <p>Example: <code>1.0</code>
      */
     public String getClusterVersion() {
         return clusterVersion;
@@ -1063,8 +1062,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * parameter group family. For more information about managing parameter
      * groups, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
-     * Guide</i>. <p>Example: <code>1.0</code>
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>. <p>Example: <code>1.0</code>
      *
      * @param clusterVersion The new version number of the Amazon Redshift engine to upgrade to.
      *         <p> For major version upgrades, if a non-default cluster parameter
@@ -1074,8 +1073,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         parameter group family. For more information about managing parameter
      *         groups, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
-     *         Guide</i>. <p>Example: <code>1.0</code>
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>. <p>Example: <code>1.0</code>
      */
     public void setClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
@@ -1090,8 +1089,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * parameter group family. For more information about managing parameter
      * groups, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
-     * Guide</i>. <p>Example: <code>1.0</code>
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>. <p>Example: <code>1.0</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1103,8 +1102,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         parameter group family. For more information about managing parameter
      *         groups, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
-     *         Guide</i>. <p>Example: <code>1.0</code>
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>. <p>Example: <code>1.0</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

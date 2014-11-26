@@ -17,24 +17,22 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the ExitStandby action.
- * </p>
+ * 
  */
 public class ExitStandbyResult implements Serializable {
 
     /**
-     * A list describing the activities related to moving instances out of
-     * Standby mode.
+     * The activities related to moving instances out of <code>Standby</code>
+     * mode.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Activity> activities;
 
     /**
-     * A list describing the activities related to moving instances out of
-     * Standby mode.
+     * The activities related to moving instances out of <code>Standby</code>
+     * mode.
      *
-     * @return A list describing the activities related to moving instances out of
-     *         Standby mode.
+     * @return The activities related to moving instances out of <code>Standby</code>
+     *         mode.
      */
     public java.util.List<Activity> getActivities() {
         if (activities == null) {
@@ -45,11 +43,11 @@ public class ExitStandbyResult implements Serializable {
     }
     
     /**
-     * A list describing the activities related to moving instances out of
-     * Standby mode.
+     * The activities related to moving instances out of <code>Standby</code>
+     * mode.
      *
-     * @param activities A list describing the activities related to moving instances out of
-     *         Standby mode.
+     * @param activities The activities related to moving instances out of <code>Standby</code>
+     *         mode.
      */
     public void setActivities(java.util.Collection<Activity> activities) {
         if (activities == null) {
@@ -62,13 +60,13 @@ public class ExitStandbyResult implements Serializable {
     }
     
     /**
-     * A list describing the activities related to moving instances out of
-     * Standby mode.
+     * The activities related to moving instances out of <code>Standby</code>
+     * mode.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activities A list describing the activities related to moving instances out of
-     *         Standby mode.
+     * @param activities The activities related to moving instances out of <code>Standby</code>
+     *         mode.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -82,13 +80,13 @@ public class ExitStandbyResult implements Serializable {
     }
     
     /**
-     * A list describing the activities related to moving instances out of
-     * Standby mode.
+     * The activities related to moving instances out of <code>Standby</code>
+     * mode.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activities A list describing the activities related to moving instances out of
-     *         Standby mode.
+     * @param activities The activities related to moving instances out of <code>Standby</code>
+     *         mode.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

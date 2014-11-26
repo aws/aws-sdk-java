@@ -21,59 +21,10 @@ import com.amazonaws.services.autoscaling.model.*;
 /**
  * Interface for accessing AmazonAutoScaling.
  * Auto Scaling <p>
- * Auto Scaling is a web service designed to automatically launch or
- * terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on
- * user-defined policies, schedules, and health checks. This service is
- * used in conjunction with Amazon CloudWatch and Elastic Load Balancing
- * services.
- * </p>
- * <p>
- * Auto Scaling provides APIs that you can call by submitting a Query
- * Request. Query requests are HTTP or HTTPS requests that use the HTTP
- * verbs GET or POST and a Query parameter named <i>Action</i> or
- * <i>Operation</i> that specifies the API you are calling. Action is
- * used throughout this documentation, although Operation is also
- * supported for backward compatibility with other Amazon Web Services
- * (AWS) Query APIs.
- * </p>
- * <p>
- * Calling the API using a Query request is the most direct way to access
- * the web service, but requires that your application handle low-level
- * details such as generating the hash to sign the request and error
- * handling. The benefit of calling the service using a Query request is
- * that you are assured of having access to the complete functionality of
- * the API. For information about signing a a query request, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/api_requests.html"> Use Query Requests to Call Auto Scaling APIs </a>
- * 
- * </p>
- * <p>
- * This guide provides detailed information about Auto Scaling actions,
- * data types, parameters, and errors. For detailed information about
- * Auto Scaling features and their associated API actions, go to the
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/"> Auto Scaling Developer Guide </a>
- * .
- * </p>
- * <p>
- * This reference is based on the current WSDL, which is available at:
- * </p>
- * <p>
- * 
- * <a href="http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl"> http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl </a>
- * 
- * </p>
- * <p>
- * <b>Endpoints</b>
- * </p>
- * <p>
- * The examples in this guide assume that your instances are launched in
- * the US East (Northern Virginia) region and use us-east-1 as the
- * endpoint.
- * </p>
- * <p>
- * You can set up your Auto Scaling infrastructure in other AWS regions.
- * For information about this product's regions and endpoints, see
- * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a>
- * in the Amazon Web Services General Reference.
+ * Auto Scaling is designed to automatically launch or terminate EC2
+ * instances based on user-defined policies, schedules, and health
+ * checks. Use this service in conjunction with the Amazon CloudWatch and
+ * Elastic Load Balancing services.
  * </p>
  */
 public interface AmazonAutoScaling {
@@ -137,19 +88,13 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns the limits for the Auto Scaling resources currently allowed
-     * for your AWS account.
+     * Describes the current Auto Scaling resource limits for your AWS
+     * account.
      * </p>
      * <p>
-     * Your AWS account comes with default limits on resources for Auto
-     * Scaling. There is a default limit of <code>20</code> Auto Scaling
-     * groups and <code>100</code> launch configurations per region.
-     * </p>
-     * <p>
-     * If you reach the limits for the number of Auto Scaling groups or the
-     * launch configurations, you can go to the
-     * <a href="https://aws.amazon.com/support/"> Support Center </a>
-     * and place a request to raise the limits.
+     * For information about requesting an increase in these limits, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
+     * .
      * </p>
      *
      * @param describeAccountLimitsRequest Container for the necessary
@@ -173,15 +118,14 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns a full description of each Auto Scaling group in the given
-     * list. This includes all Amazon EC2 instances that are members of the
-     * group. If a list of names is not provided, the service returns the
-     * full details of all Auto Scaling groups.
+     * Describes one or more Auto Scaling groups. If a list of names is not
+     * provided, the call describes all Auto Scaling groups.
      * </p>
      * <p>
-     * This action supports pagination by returning a token if there are
-     * more pages to retrieve. To get the next page, call this action again
-     * with the returned token as the <code>NextToken</code> parameter.
+     * You can specify a maximum number of items to be returned with a
+     * single call. If there are more items to return, the call returns a
+     * token. To get the next set of items, repeat the call with the returned
+     * token in the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeAutoScalingGroupsRequest Container for the necessary
@@ -206,14 +150,13 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Enables monitoring of group metrics for the Auto Scaling group
-     * specified in <code>AutoScalingGroupName</code> . You can specify the
-     * list of enabled metrics with the <code>Metrics</code> parameter.
+     * Enables monitoring of the specified metrics for the specified Auto
+     * Scaling group.
      * </p>
      * <p>
-     * Auto Scaling metrics collection can be turned on only if the
-     * <code>InstanceMonitoring</code> flag, in the Auto Scaling group's
-     * launch configuration, is set to <code>True</code> .
+     * You can only enable metrics collection if
+     * <code>InstanceMonitoring</code> in the launch configuration for the
+     * group is set to <code>True</code> .
      * </p>
      *
      * @param enableMetricsCollectionRequest Container for the necessary
@@ -235,11 +178,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Resumes all suspended Auto Scaling processes for an Auto Scaling
-     * group. For information on suspending and resuming Auto Scaling
-     * process, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Process </a>
-     * .
+     * Resumes the specified suspended Auto Scaling processes for the
+     * specified Auto Scaling group. To resume specific processes, use the
+     * <code>ScalingProcesses</code> parameter. To resume all processes, omit
+     * the <code>ScalingProcesses</code> parameter. For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Processes </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param resumeProcessesRequest Container for the necessary parameters
@@ -260,8 +204,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Describes the lifecycle hooks that currently belong to the specified
-     * Auto Scaling group.
+     * Describes the lifecycle hooks for the specified Auto Scaling group.
      * </p>
      *
      * @param describeLifecycleHooksRequest Container for the necessary
@@ -285,10 +228,13 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns descriptions of what each policy does. This action supports
-     * pagination. If the response includes a token, there are more records
-     * available. To get the additional records, repeat the request with the
-     * response token as the <code>NextToken</code> parameter.
+     * Describes the policies for the specified Auto Scaling group.
+     * </p>
+     * <p>
+     * You can specify a maximum number of items to be returned with a
+     * single call. If there are more items to return, the call returns a
+     * token. To get the next set of items, repeat the call with the returned
+     * token in the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describePoliciesRequest Container for the necessary parameters
@@ -337,12 +283,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Deletes the specified LaunchConfiguration.
+     * Deletes the specified launch configuration.
      * </p>
      * <p>
-     * The specified launch configuration must not be attached to an Auto
-     * Scaling group. When this call completes, the launch configuration is
-     * no longer available for use.
+     * The launch configuration must not be attached to an Auto Scaling
+     * group. When this call completes, the launch configuration is no longer
+     * available for use.
      * </p>
      *
      * @param deleteLaunchConfigurationRequest Container for the necessary
@@ -365,13 +311,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates a new Auto Scaling group with the specified name and other
-     * attributes. When the creation request is completed, the Auto Scaling
-     * group is ready to be used in other calls.
+     * Creates an Auto Scaling group with the specified name and attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> The Auto Scaling group name must be unique within the
-     * scope of your AWS account.
+     * If you exceed your maximum limit of Auto Scaling groups, which by
+     * default is 20 per region, the call fails. For information about
+     * viewing and updating these limits, see DescribeAccountLimits.
      * </p>
      *
      * @param createAutoScalingGroupRequest Container for the necessary
@@ -395,9 +340,8 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Attaches one or more Amazon EC2 instances to an existing Auto Scaling
-     * group. After the instance(s) is attached, it becomes a part of the
-     * Auto Scaling group.
+     * Attaches one or more EC2 instances to the specified Auto Scaling
+     * group.
      * </p>
      * <p>
      * For more information, see
@@ -423,19 +367,17 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns the scaling activities for the specified Auto Scaling group.
-     * </p>
-     * <p>
-     * If the specified <code>ActivityIds</code> list is empty, all the
-     * activities from the past six weeks are returned. Activities are sorted
+     * Describes one or more scaling activities for the specified Auto
+     * Scaling group. If you omit the <code>ActivityIds</code> , the call
+     * returns all activities from the past six weeks. Activities are sorted
      * by the start time. Activities still in progress appear first on the
      * list.
      * </p>
      * <p>
-     * This action supports pagination. If the response includes a token,
-     * there are more records available. To get the additional records,
-     * repeat the request with the response token as the
-     * <code>NextToken</code> parameter.
+     * You can specify a maximum number of items to be returned with a
+     * single call. If there are more items to return, the call returns a
+     * token. To get the next set of items, repeat the call with the returned
+     * token in the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeScalingActivitiesRequest Container for the necessary
@@ -460,8 +402,8 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns a list of notification actions associated with Auto Scaling
-     * groups for specified events.
+     * Describes the notification actions associated with the specified Auto
+     * Scaling group.
      * </p>
      *
      * @param describeNotificationConfigurationsRequest Container for the
@@ -486,9 +428,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Deletes the specified lifecycle hook. If there are any outstanding
-     * lifecycle actions, they are completed first (ABANDON for launching
-     * instances, CONTINUE for terminating instances).
+     * Deletes the specified lifecycle hook.
+     * </p>
+     * <p>
+     * If there are any outstanding lifecycle actions, they are completed
+     * first ( <code>ABANDON</code> for launching instances,
+     * <code>CONTINUE</code> for terminating instances).
      * </p>
      *
      * @param deleteLifecycleHookRequest Container for the necessary
@@ -512,7 +457,8 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates or updates a lifecycle hook for an Auto Scaling Group.
+     * Creates or updates a lifecycle hook for the specified Auto Scaling
+     * Group.
      * </p>
      * <p>
      * A lifecycle hook tells Auto Scaling that you want to perform an
@@ -523,20 +469,19 @@ public interface AmazonAutoScaling {
      * This operation is a part of the basic sequence for adding a lifecycle
      * hook to an Auto Scaling group:
      * </p>
-     * <ol> <li> Create a notification target. A target can be either an
-     * Amazon SQS queue or an Amazon SNS topic. </li>
-     * <li> Create an IAM role. This role allows Auto Scaling to publish
-     * lifecycle notifications to the designated SQS queue or SNS topic.
-     * </li>
+     * <ol> <li>Create a notification target. A target can be either an
+     * Amazon SQS queue or an Amazon SNS topic.</li>
+     * <li>Create an IAM role. This role allows Auto Scaling to publish
+     * lifecycle notifications to the designated SQS queue or SNS topic.</li>
      * <li> <b>Create the lifecycle hook. You can create a hook that acts
      * when instances launch or when instances terminate.</b> </li>
-     * <li> If necessary, record the lifecycle action heartbeat to keep the
-     * instance in a pending state. </li>
-     * <li> Complete the lifecycle action. </li>
+     * <li>If necessary, record the lifecycle action heartbeat to keep the
+     * instance in a pending state.</li>
+     * <li>Complete the lifecycle action.</li>
      * </ol> <p>
-     * To learn more, see
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
-     * .
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param putLifecycleHookRequest Container for the necessary parameters
@@ -560,7 +505,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns a list of all termination policies supported by Auto Scaling.
+     * Lists the termination policies supported by Auto Scaling.
      * </p>
      *
      * @param describeTerminationPolicyTypesRequest Container for the
@@ -584,18 +529,17 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Lists the Auto Scaling group tags.
+     * Describes the specified tags.
      * </p>
      * <p>
-     * You can use filters to limit results when describing tags. For
-     * example, you can query for tags of a particular Auto Scaling group.
-     * You can specify multiple values for a filter. A tag must match at
-     * least one of the specified values for it to be included in the
-     * results.
+     * You can use filters to limit the results. For example, you can query
+     * for the tags for a specific Auto Scaling group. You can specify
+     * multiple values for a filter. A tag must match at least one of the
+     * specified values for it to be included in the results.
      * </p>
      * <p>
      * You can also specify multiple filters. The result includes
-     * information for a particular tag only if it matches all your filters.
+     * information for a particular tag only if it matches all the filters.
      * If there's no match, no special message is returned.
      * </p>
      *
@@ -620,7 +564,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Removes the specified tags or a set of tags from a set of resources.
+     * Deletes the specified tags.
      * </p>
      *
      * @param deleteTagsRequest Container for the necessary parameters to
@@ -664,7 +608,7 @@ public interface AmazonAutoScaling {
     /**
      * <p>
      * Creates or updates a policy for an Auto Scaling group. To update an
-     * existing policy, use the existing policy name and set the parameter(s)
+     * existing policy, use the existing policy name and set the parameters
      * you want to change. Any existing parameter not changed in an update to
      * an existing policy is not changed in this update request.
      * </p>
@@ -696,12 +640,11 @@ public interface AmazonAutoScaling {
      * </p>
      * <p>
      * For more information see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html"> Get Email Notifications When Your Auto Scaling Group Changes </a>
-     * 
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html"> Getting Notifications When Your Auto Scaling Group Changes </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      * <p>
-     * A new <code>PutNotificationConfiguration</code> overwrites an
-     * existing configuration.
+     * This configuration overwrites an existing configuration.
      * </p>
      *
      * @param putNotificationConfigurationRequest Container for the necessary
@@ -724,13 +667,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Move an instance out of Standby mode.
+     * Moves the specified instances out of <code>Standby</code> mode.
      * </p>
      * <p>
-     * To learn more about how to put instances that are in a Standby mode
-     * back into service, see
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html"> Auto Scaling InService State </a>
-     * .
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param exitStandbyRequest Container for the necessary parameters to
@@ -753,7 +695,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Deletes a policy created by PutScalingPolicy.
+     * Deletes the specified Auto Scaling policy.
      * </p>
      *
      * @param deletePolicyRequest Container for the necessary parameters to
@@ -781,20 +723,19 @@ public interface AmazonAutoScaling {
      * This operation is a part of the basic sequence for adding a lifecycle
      * hook to an Auto Scaling group:
      * </p>
-     * <ol> <li> Create a notification target. A target can be either an
-     * Amazon SQS queue or an Amazon SNS topic. </li>
-     * <li> Create an IAM role. This role allows Auto Scaling to publish
-     * lifecycle notifications to the designated SQS queue or SNS topic.
-     * </li>
-     * <li> Create the lifecycle hook. You can create a hook that acts when
-     * instances launch or when instances terminate. </li>
-     * <li> If necessary, record the lifecycle action heartbeat to keep the
-     * instance in a pending state. </li>
-     * <li> <b>Complete the lifecycle action.</b> </li>
+     * <ol> <li>Create a notification target. A target can be either an
+     * Amazon SQS queue or an Amazon SNS topic.</li>
+     * <li>Create an IAM role. This role allows Auto Scaling to publish
+     * lifecycle notifications to the designated SQS queue or SNS topic.</li>
+     * <li>Create the lifecycle hook. You can create a hook that acts when
+     * instances launch or when instances terminate.</li>
+     * <li>If necessary, record the lifecycle action heartbeat to keep the
+     * instance in a pending state.</li>
+     * <li> <b>Complete the lifecycle action</b> .</li>
      * </ol> <p>
-     * To learn more, see
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
-     * .
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param completeLifecycleActionRequest Container for the necessary
@@ -818,7 +759,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Deletes notifications created by PutNotificationConfiguration.
+     * Deletes the specified notification.
      * </p>
      *
      * @param deleteNotificationConfigurationRequest Container for the
@@ -840,8 +781,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Deletes a scheduled action previously created using the
-     * PutScheduledUpdateGroupAction.
+     * Deletes the specified scheduled action.
      * </p>
      *
      * @param deleteScheduledActionRequest Container for the necessary
@@ -863,13 +803,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Sets the health status of a specified instance that belongs to any of
-     * your Auto Scaling groups.
+     * Sets the health status of the specified instance.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html"> Configure Health Checks for Your Auto Scaling group </a>
-     * .
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"> Health Checks </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param setInstanceHealthRequest Container for the necessary parameters
@@ -890,8 +829,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns a list of all notification types that are supported by Auto
-     * Scaling.
+     * Lists the notification types that are supported by Auto Scaling.
      * </p>
      *
      * @param describeAutoScalingNotificationTypesRequest Container for the
@@ -916,22 +854,23 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Suspends Auto Scaling processes for an Auto Scaling group. To suspend
-     * specific process types, specify them by name with the
-     * <code>ScalingProcesses.member.N</code> parameter. To suspend all
-     * process types, omit the <code>ScalingProcesses.member.N</code>
-     * parameter.
+     * Suspends the specified Auto Scaling processes for the specified Auto
+     * Scaling group. To suspend specific processes, use the
+     * <code>ScalingProcesses</code> parameter. To suspend all processes,
+     * omit the <code>ScalingProcesses</code> parameter.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Suspending either of the two primary process types,
-     * Launch or Terminate, can prevent other process types from functioning
-     * properly.
+     * Note that if you suspend either the <code>Launch</code> or
+     * <code>Terminate</code> process types, it can prevent other process
+     * types from functioning properly.
      * </p>
      * <p>
-     * To resume processes that have been suspended, use ResumeProcesses For
-     * more information on suspending and resuming Auto Scaling process, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Process </a>
-     * .
+     * To resume processes that have been suspended, use ResumeProcesses.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Processes </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param suspendProcessesRequest Container for the necessary parameters
@@ -952,7 +891,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates new tags or updates existing tags for an Auto Scaling group.
+     * Creates or updates tags for the specified Auto Scaling group.
      * </p>
      * <p>
      * <b>NOTE:</b> A tag's definition is composed of a resource ID,
@@ -961,9 +900,9 @@ public interface AmazonAutoScaling {
      * more information.
      * </p>
      * <p>
-     * For information on creating tags for your Auto Scaling group, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Tag Your Auto Scaling Groups and Amazon EC2 Instances </a>
-     * .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Add, Modify, or Remove Auto Scaling Group Tags </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param createOrUpdateTagsRequest Container for the necessary
@@ -987,14 +926,14 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Using <code>DetachInstances</code> , you can remove an instance from
-     * an Auto Scaling group. After the instances are detached, you can
-     * manage them independently from the rest of the Auto Scaling group.
+     * Removes one or more instances from the specified Auto Scaling group.
+     * After the instances are detached, you can manage them independently
+     * from the rest of the Auto Scaling group.
      * </p>
      * <p>
-     * To learn more about detaching instances, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html"> Detach Amazon EC2 Instances From Your Auto Scaling Group </a>
-     * .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html"> Detach EC2 Instances from Your Auto Scaling Group </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param detachInstancesRequest Container for the necessary parameters
@@ -1017,15 +956,15 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns a description of each Auto Scaling instance in the
-     * <code>InstanceIds</code> list. If a list is not provided, the service
-     * returns the full details of all instances up to a maximum of 50. By
-     * default, the service returns a list of 20 items.
+     * Describes one or more Auto Scaling instances. If a list is not
+     * provided, the call describes all instances.
      * </p>
      * <p>
-     * This action supports pagination by returning a token if there are
-     * more pages to retrieve. To get the next page, call this action again
-     * with the returned token as the <code>NextToken</code> parameter.
+     * You can describe up to a maximum of 50 instances with a single call.
+     * By default, a call returns up to 20 instances. If there are more items
+     * to return, the call returns a token. To get the next set of items,
+     * repeat the call with the returned token in the <code>NextToken</code>
+     * parameter.
      * </p>
      *
      * @param describeAutoScalingInstancesRequest Container for the necessary
@@ -1050,11 +989,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates a new launch configuration. The launch configuration name
-     * must be unique within the scope of the client's AWS account. The
-     * maximum limit of launch configurations, which by default is 100, must
-     * not yet have been met; otherwise, the call will fail. When created,
-     * the new launch configuration is available for immediate use.
+     * Creates a launch configuration.
+     * </p>
+     * <p>
+     * If you exceed your maximum limit of launch configurations, which by
+     * default is 100 per region, the call fails. For information about
+     * viewing and updating these limits, see DescribeAccountLimits.
      * </p>
      *
      * @param createLaunchConfigurationRequest Container for the necessary
@@ -1078,12 +1018,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Move instances in an Auto Scaling group into a Standby mode.
+     * Moves the specified instances into <code>Standby</code> mode.
      * </p>
      * <p>
-     * To learn more about how to put instances into a Standby mode, see
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html"> Auto Scaling InService State </a>
-     * .
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param enterStandbyRequest Container for the necessary parameters to
@@ -1130,13 +1070,16 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Deletes the specified Auto Scaling group if the group has no
-     * instances and no scaling activities in progress.
+     * Deletes the specified Auto Scaling group.
      * </p>
      * <p>
-     * <b>NOTE:</b> To remove all instances before calling
-     * DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the
-     * minimum and maximum size of the AutoScalingGroup to zero.
+     * The group must have no instances and no scaling activities in
+     * progress.
+     * </p>
+     * <p>
+     * To remove all instances before calling DeleteAutoScalingGroup, you
+     * can call UpdateAutoScalingGroup to set the minimum and maximum size of
+     * the AutoScalingGroup to zero.
      * </p>
      *
      * @param deleteAutoScalingGroupRequest Container for the necessary
@@ -1160,9 +1103,8 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Disables monitoring of group metrics for the Auto Scaling group
-     * specified in <code>AutoScalingGroupName</code> . You can specify the
-     * list of affected metrics with the <code>Metrics</code> parameter.
+     * Disables monitoring of the specified metrics for the specified Auto
+     * Scaling group.
      * </p>
      *
      * @param disableMetricsCollectionRequest Container for the necessary
@@ -1203,11 +1145,11 @@ public interface AmazonAutoScaling {
      * <p>
      * <b>NOTE:</b> If a new value is specified for MinSize without
      * specifying the value for DesiredCapacity, and if the new MinSize is
-     * larger than the current size of the Auto Scaling Group, there will be
+     * larger than the current size of the Auto Scaling group, there will be
      * an implicit call to SetDesiredCapacity to set the group to the new
      * MinSize. If a new value is specified for MaxSize without specifying
      * the value for DesiredCapacity, and the new MaxSize is smaller than the
-     * current size of the Auto Scaling Group, there will be an implicit call
+     * current size of the Auto Scaling group, there will be an implicit call
      * to SetDesiredCapacity to set the group to the new MaxSize. All other
      * optional parameters are left unchanged if not passed in the request.
      * </p>
@@ -1232,12 +1174,14 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns a full description of the launch configurations, or the
-     * specified launch configurations, if they exist.
+     * Describes one or more launch configurations. If you omit the list of
+     * names, then the call describes all launch configurations.
      * </p>
      * <p>
-     * If no name is specified, then the full details of all launch
-     * configurations are returned.
+     * You can specify a maximum number of items to be returned with a
+     * single call. If there are more items to return, the call returns a
+     * token. To get the next set of items, repeat the call with the returned
+     * token in the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeLaunchConfigurationsRequest Container for the necessary
@@ -1262,8 +1206,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns policy adjustment types for use in the PutScalingPolicy
-     * action.
+     * Lists the policy adjustment types for use with PutScalingPolicy.
      * </p>
      *
      * @param describeAdjustmentTypesRequest Container for the necessary
@@ -1287,9 +1230,9 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Lists all the actions scheduled for your Auto Scaling group that
-     * haven't been executed. To see a list of actions already executed, see
-     * the activity record returned in DescribeScalingActivities.
+     * Lists the actions scheduled for your Auto Scaling group that haven't
+     * been executed. To list the actions that were already executed, use
+     * DescribeScalingActivities.
      * </p>
      *
      * @param describeScheduledActionsRequest Container for the necessary
@@ -1316,27 +1259,25 @@ public interface AmazonAutoScaling {
      * <p>
      * Records a heartbeat for the lifecycle action associated with a
      * specific token. This extends the timeout by the length of time defined
-     * by the <code>HeartbeatTimeout</code> parameter of the PutLifecycleHook
-     * operation.
+     * by the <code>HeartbeatTimeout</code> parameter of PutLifecycleHook.
      * </p>
      * <p>
      * This operation is a part of the basic sequence for adding a lifecycle
      * hook to an Auto Scaling group:
      * </p>
-     * <ol> <li> Create a notification target. A target can be either an
-     * Amazon SQS queue or an Amazon SNS topic. </li>
-     * <li> Create an IAM role. This role allows Auto Scaling to publish
-     * lifecycle notifications to the designated SQS queue or SNS topic.
-     * </li>
-     * <li> Create the lifecycle hook. You can create a hook that acts when
-     * instances launch or when instances terminate. </li>
+     * <ol> <li>Create a notification target. A target can be either an
+     * Amazon SQS queue or an Amazon SNS topic.</li>
+     * <li>Create an IAM role. This role allows Auto Scaling to publish
+     * lifecycle notifications to the designated SQS queue or SNS topic.</li>
+     * <li>Create the lifecycle hook. You can create a hook that acts when
+     * instances launch or when instances terminate.</li>
      * <li> <b>If necessary, record the lifecycle action heartbeat to keep
      * the instance in a pending state.</b> </li>
-     * <li> Complete the lifecycle action. </li>
+     * <li>Complete the lifecycle action.</li>
      * </ol> <p>
-     * To learn more, see
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
-     * .
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
      * @param recordLifecycleActionHeartbeatRequest Container for the
@@ -1366,10 +1307,9 @@ public interface AmazonAutoScaling {
      * the affected Auto Scaling group.
      * </p>
      * <p>
-     * For information on creating or updating a scheduled action for your
-     * Auto Scaling group, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scale Based on a Schedule </a>
-     * .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scheduled Scaling </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> Auto Scaling supports the date and time expressed in
@@ -1427,7 +1367,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Sets the desired size of the specified AutoScalingGroup.
+     * Sets the size of the specified AutoScalingGroup.
      * </p>
      *
      * @param setDesiredCapacityRequest Container for the necessary
@@ -1450,12 +1390,12 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Terminates the specified instance. Optionally, the desired group size
-     * can be adjusted.
+     * Terminates the specified instance and optionally adjusts the desired
+     * group size.
      * </p>
      * <p>
-     * <b>NOTE:</b> This call simply registers a termination request. The
-     * termination of the instance cannot happen immediately.
+     * <b>NOTE:</b>This call simply makes a termination request. The
+     * instances is not terminated immediately.
      * </p>
      *
      * @param terminateInstanceInAutoScalingGroupRequest Container for the
@@ -1481,19 +1421,13 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Returns the limits for the Auto Scaling resources currently allowed
-     * for your AWS account.
+     * Describes the current Auto Scaling resource limits for your AWS
+     * account.
      * </p>
      * <p>
-     * Your AWS account comes with default limits on resources for Auto
-     * Scaling. There is a default limit of <code>20</code> Auto Scaling
-     * groups and <code>100</code> launch configurations per region.
-     * </p>
-     * <p>
-     * If you reach the limits for the number of Auto Scaling groups or the
-     * launch configurations, you can go to the
-     * <a href="https://aws.amazon.com/support/"> Support Center </a>
-     * and place a request to raise the limits.
+     * For information about requesting an increase in these limits, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
+     * .
      * </p>
      * 
      * @return The response from the DescribeAccountLimits service method, as
@@ -1512,15 +1446,14 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns a full description of each Auto Scaling group in the given
-     * list. This includes all Amazon EC2 instances that are members of the
-     * group. If a list of names is not provided, the service returns the
-     * full details of all Auto Scaling groups.
+     * Describes one or more Auto Scaling groups. If a list of names is not
+     * provided, the call describes all Auto Scaling groups.
      * </p>
      * <p>
-     * This action supports pagination by returning a token if there are
-     * more pages to retrieve. To get the next page, call this action again
-     * with the returned token as the <code>NextToken</code> parameter.
+     * You can specify a maximum number of items to be returned with a
+     * single call. If there are more items to return, the call returns a
+     * token. To get the next set of items, repeat the call with the returned
+     * token in the <code>NextToken</code> parameter.
      * </p>
      * 
      * @return The response from the DescribeAutoScalingGroups service
@@ -1540,10 +1473,13 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns descriptions of what each policy does. This action supports
-     * pagination. If the response includes a token, there are more records
-     * available. To get the additional records, repeat the request with the
-     * response token as the <code>NextToken</code> parameter.
+     * Describes the policies for the specified Auto Scaling group.
+     * </p>
+     * <p>
+     * You can specify a maximum number of items to be returned with a
+     * single call. If there are more items to return, the call returns a
+     * token. To get the next set of items, repeat the call with the returned
+     * token in the <code>NextToken</code> parameter.
      * </p>
      * 
      * @return The response from the DescribePolicies service method, as
@@ -1583,19 +1519,17 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns the scaling activities for the specified Auto Scaling group.
-     * </p>
-     * <p>
-     * If the specified <code>ActivityIds</code> list is empty, all the
-     * activities from the past six weeks are returned. Activities are sorted
+     * Describes one or more scaling activities for the specified Auto
+     * Scaling group. If you omit the <code>ActivityIds</code> , the call
+     * returns all activities from the past six weeks. Activities are sorted
      * by the start time. Activities still in progress appear first on the
      * list.
      * </p>
      * <p>
-     * This action supports pagination. If the response includes a token,
-     * there are more records available. To get the additional records,
-     * repeat the request with the response token as the
-     * <code>NextToken</code> parameter.
+     * You can specify a maximum number of items to be returned with a
+     * single call. If there are more items to return, the call returns a
+     * token. To get the next set of items, repeat the call with the returned
+     * token in the <code>NextToken</code> parameter.
      * </p>
      * 
      * @return The response from the DescribeScalingActivities service
@@ -1615,8 +1549,8 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns a list of notification actions associated with Auto Scaling
-     * groups for specified events.
+     * Describes the notification actions associated with the specified Auto
+     * Scaling group.
      * </p>
      * 
      * @return The response from the DescribeNotificationConfigurations
@@ -1636,7 +1570,7 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns a list of all termination policies supported by Auto Scaling.
+     * Lists the termination policies supported by Auto Scaling.
      * </p>
      * 
      * @return The response from the DescribeTerminationPolicyTypes service
@@ -1655,18 +1589,17 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Lists the Auto Scaling group tags.
+     * Describes the specified tags.
      * </p>
      * <p>
-     * You can use filters to limit results when describing tags. For
-     * example, you can query for tags of a particular Auto Scaling group.
-     * You can specify multiple values for a filter. A tag must match at
-     * least one of the specified values for it to be included in the
-     * results.
+     * You can use filters to limit the results. For example, you can query
+     * for the tags for a specific Auto Scaling group. You can specify
+     * multiple values for a filter. A tag must match at least one of the
+     * specified values for it to be included in the results.
      * </p>
      * <p>
      * You can also specify multiple filters. The result includes
-     * information for a particular tag only if it matches all your filters.
+     * information for a particular tag only if it matches all the filters.
      * If there's no match, no special message is returned.
      * </p>
      * 
@@ -1687,8 +1620,7 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns a list of all notification types that are supported by Auto
-     * Scaling.
+     * Lists the notification types that are supported by Auto Scaling.
      * </p>
      * 
      * @return The response from the DescribeAutoScalingNotificationTypes
@@ -1707,15 +1639,15 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns a description of each Auto Scaling instance in the
-     * <code>InstanceIds</code> list. If a list is not provided, the service
-     * returns the full details of all instances up to a maximum of 50. By
-     * default, the service returns a list of 20 items.
+     * Describes one or more Auto Scaling instances. If a list is not
+     * provided, the call describes all instances.
      * </p>
      * <p>
-     * This action supports pagination by returning a token if there are
-     * more pages to retrieve. To get the next page, call this action again
-     * with the returned token as the <code>NextToken</code> parameter.
+     * You can describe up to a maximum of 50 instances with a single call.
+     * By default, a call returns up to 20 instances. If there are more items
+     * to return, the call returns a token. To get the next set of items,
+     * repeat the call with the returned token in the <code>NextToken</code>
+     * parameter.
      * </p>
      * 
      * @return The response from the DescribeAutoScalingInstances service
@@ -1754,12 +1686,14 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns a full description of the launch configurations, or the
-     * specified launch configurations, if they exist.
+     * Describes one or more launch configurations. If you omit the list of
+     * names, then the call describes all launch configurations.
      * </p>
      * <p>
-     * If no name is specified, then the full details of all launch
-     * configurations are returned.
+     * You can specify a maximum number of items to be returned with a
+     * single call. If there are more items to return, the call returns a
+     * token. To get the next set of items, repeat the call with the returned
+     * token in the <code>NextToken</code> parameter.
      * </p>
      * 
      * @return The response from the DescribeLaunchConfigurations service
@@ -1779,8 +1713,7 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Returns policy adjustment types for use in the PutScalingPolicy
-     * action.
+     * Lists the policy adjustment types for use with PutScalingPolicy.
      * </p>
      * 
      * @return The response from the DescribeAdjustmentTypes service method,
@@ -1799,9 +1732,9 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
-     * Lists all the actions scheduled for your Auto Scaling group that
-     * haven't been executed. To see a list of actions already executed, see
-     * the activity record returned in DescribeScalingActivities.
+     * Lists the actions scheduled for your Auto Scaling group that haven't
+     * been executed. To list the actions that were already executed, use
+     * DescribeScalingActivities.
      * </p>
      * 
      * @return The response from the DescribeScheduledActions service method,

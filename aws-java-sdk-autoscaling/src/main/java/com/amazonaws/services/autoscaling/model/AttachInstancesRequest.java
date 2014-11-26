@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#attachInstances(AttachInstancesRequest) AttachInstances operation}.
  * <p>
- * Attaches one or more Amazon EC2 instances to an existing Auto Scaling
- * group. After the instance(s) is attached, it becomes a part of the
- * Auto Scaling group.
+ * Attaches one or more EC2 instances to the specified Auto Scaling
+ * group.
  * </p>
  * <p>
  * For more information, see
@@ -36,14 +35,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AttachInstancesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * One or more IDs of the Amazon EC2 instances to attach to the specified
-     * Auto Scaling group. You must specify at least one instance ID.
+     * One or more EC2 instance IDs. You must specify at least one ID.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
-     * The name of the Auto Scaling group to which to attach the specified
-     * instance(s).
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -52,11 +49,9 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     private String autoScalingGroupName;
 
     /**
-     * One or more IDs of the Amazon EC2 instances to attach to the specified
-     * Auto Scaling group. You must specify at least one instance ID.
+     * One or more EC2 instance IDs. You must specify at least one ID.
      *
-     * @return One or more IDs of the Amazon EC2 instances to attach to the specified
-     *         Auto Scaling group. You must specify at least one instance ID.
+     * @return One or more EC2 instance IDs. You must specify at least one ID.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -67,11 +62,9 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more IDs of the Amazon EC2 instances to attach to the specified
-     * Auto Scaling group. You must specify at least one instance ID.
+     * One or more EC2 instance IDs. You must specify at least one ID.
      *
-     * @param instanceIds One or more IDs of the Amazon EC2 instances to attach to the specified
-     *         Auto Scaling group. You must specify at least one instance ID.
+     * @param instanceIds One or more EC2 instance IDs. You must specify at least one ID.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -84,13 +77,11 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more IDs of the Amazon EC2 instances to attach to the specified
-     * Auto Scaling group. You must specify at least one instance ID.
+     * One or more EC2 instance IDs. You must specify at least one ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds One or more IDs of the Amazon EC2 instances to attach to the specified
-     *         Auto Scaling group. You must specify at least one instance ID.
+     * @param instanceIds One or more EC2 instance IDs. You must specify at least one ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -104,13 +95,11 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more IDs of the Amazon EC2 instances to attach to the specified
-     * Auto Scaling group. You must specify at least one instance ID.
+     * One or more EC2 instance IDs. You must specify at least one ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds One or more IDs of the Amazon EC2 instances to attach to the specified
-     *         Auto Scaling group. You must specify at least one instance ID.
+     * @param instanceIds One or more EC2 instance IDs. You must specify at least one ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -128,38 +117,33 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The name of the Auto Scaling group to which to attach the specified
-     * instance(s).
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group to which to attach the specified
-     *         instance(s).
+     * @return The name of the group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which to attach the specified
-     * instance(s).
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which to attach the specified
-     *         instance(s).
+     * @param autoScalingGroupName The name of the group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which to attach the specified
-     * instance(s).
+     * The name of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -167,8 +151,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which to attach the specified
-     *         instance(s).
+     * @param autoScalingGroupName The name of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

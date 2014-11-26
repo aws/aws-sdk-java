@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * applies to the databases you create on the cluster. For more
  * information about managing parameter groups, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
- * in the <i>Amazon Redshift Management Guide</i> .
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * 
  * </p>
  *
@@ -69,6 +69,11 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * A description of the parameter group.
      */
     private String description;
+
+    /**
+     * A list of tag instances.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * The name of the cluster parameter group. <p> Constraints: <ul>
@@ -248,6 +253,74 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * A list of tag instances.
+     *
+     * @return A list of tag instances.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tag instances.
+     *
+     * @param tags A list of tag instances.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tag instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tag instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateClusterParameterGroupRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tag instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tag instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateClusterParameterGroupRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -261,7 +334,8 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
         sb.append("{");
         if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
         if (getParameterGroupFamily() != null) sb.append("ParameterGroupFamily: " + getParameterGroupFamily() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() );
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +348,7 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getParameterGroupName() == null) ? 0 : getParameterGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getParameterGroupFamily() == null) ? 0 : getParameterGroupFamily().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -291,6 +366,8 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
         if (other.getParameterGroupFamily() != null && other.getParameterGroupFamily().equals(this.getParameterGroupFamily()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

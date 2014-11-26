@@ -53,6 +53,12 @@ public class JobWatermark implements Serializable {
     private String inputKey;
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your watermarks.
+     */
+    private Encryption encryption;
+
+    /**
      * The ID of the watermark settings that Elastic Transcoder uses to add
      * watermarks to the video during transcoding. The settings are in the
      * preset specified by Preset for the current output. In that preset, the
@@ -200,6 +206,45 @@ public class JobWatermark implements Serializable {
     }
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your watermarks.
+     *
+     * @return The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your watermarks.
+     */
+    public Encryption getEncryption() {
+        return encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your watermarks.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your watermarks.
+     */
+    public void setEncryption(Encryption encryption) {
+        this.encryption = encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your watermarks.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your watermarks.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobWatermark withEncryption(Encryption encryption) {
+        this.encryption = encryption;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -212,7 +257,8 @@ public class JobWatermark implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPresetWatermarkId() != null) sb.append("PresetWatermarkId: " + getPresetWatermarkId() + ",");
-        if (getInputKey() != null) sb.append("InputKey: " + getInputKey() );
+        if (getInputKey() != null) sb.append("InputKey: " + getInputKey() + ",");
+        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
         sb.append("}");
         return sb.toString();
     }
@@ -224,6 +270,7 @@ public class JobWatermark implements Serializable {
         
         hashCode = prime * hashCode + ((getPresetWatermarkId() == null) ? 0 : getPresetWatermarkId().hashCode()); 
         hashCode = prime * hashCode + ((getInputKey() == null) ? 0 : getInputKey().hashCode()); 
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
         return hashCode;
     }
     
@@ -239,6 +286,8 @@ public class JobWatermark implements Serializable {
         if (other.getPresetWatermarkId() != null && other.getPresetWatermarkId().equals(this.getPresetWatermarkId()) == false) return false; 
         if (other.getInputKey() == null ^ this.getInputKey() == null) return false;
         if (other.getInputKey() != null && other.getInputKey().equals(this.getInputKey()) == false) return false; 
+        if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
         return true;
     }
     

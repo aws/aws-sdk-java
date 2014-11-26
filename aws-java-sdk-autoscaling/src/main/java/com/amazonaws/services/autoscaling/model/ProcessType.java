@@ -18,15 +18,17 @@ import java.io.Serializable;
 
 /**
  * <p>
- * There are two primary Auto Scaling process types--
- * <code>Launch</code> and <code>Terminate</code> . The
- * <code>Launch</code> process creates a new Amazon EC2 instance for an
- * Auto Scaling group, and the <code>Terminate</code> process removes an
- * existing Amazon EC2 instance.
+ * Describes a process type.
  * </p>
  * <p>
- * The remaining Auto Scaling process types relate to specific Auto
- * Scaling features:
+ * There are two primary Auto Scaling process types-- <code>Launch</code>
+ * and <code>Terminate</code> .
+ * The <code>Launch</code> process creates a new EC2 instance
+ * for an Auto Scaling group, and the <code>Terminate</code> process
+ * removes an existing EC2 instance. The remaining Auto Scaling process
+ * types relate to specific Auto Scaling features:
+ * </p>
+ * 
  * <ul>
  * <li>AddToLoadBalancer</li>
  * <li>AlarmNotification</li>
@@ -36,8 +38,6 @@ import java.io.Serializable;
  * <li>ScheduledActions</li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * <b>IMPORTANT:</b> If you suspend Launch or Terminate, all other
  * process types are affected to varying degrees. The following
@@ -52,10 +52,9 @@ import java.io.Serializable;
  * process, Auto Scaling will also resume adding new instances to the
  * load balancer when they are launched. However, Auto Scaling will not
  * add running instances that were launched while the process was
- * suspended; those instances must be added manually using the the
+ * suspended; those instances must be added manually using the
  * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_RegisterInstancesWithLoadBalancer.html"> RegisterInstancesWithLoadBalancer </a>
- * call in the <i>Elastic Load Balancing API Reference</i> .
- * 
+ * call.
  * </p>
  * <p>
  * The <code>AlarmNotification</code> process type accepts notifications
@@ -74,15 +73,15 @@ import java.io.Serializable;
  * be able to implement the alarm's associated policy.
  * </p>
  * <p>
- * The <code>AZRebalance</code> process type seeks to maintain a
- * balanced number of instances across Availability Zones within a
- * Region. If you remove an Availability Zone from your Auto Scaling
- * group or an Availability Zone otherwise becomes unhealthy or
- * unavailable, Auto Scaling launches new instances in an unaffected
- * Availability Zone before terminating the unhealthy or unavailable
- * instances. When the unhealthy Availability Zone returns to a healthy
- * state, Auto Scaling automatically redistributes the application
- * instances evenly across all of the designated Availability Zones.
+ * The <code>AZRebalance</code> process type seeks to maintain a balanced
+ * number of instances across Availability Zones within a Region. If you
+ * remove an Availability Zone from your Auto Scaling group or an
+ * Availability Zone otherwise becomes unhealthy or unavailable, Auto
+ * Scaling launches new instances in an unaffected Availability Zone
+ * before terminating the unhealthy or unavailable instances. When the
+ * unhealthy Availability Zone returns to a healthy state, Auto Scaling
+ * automatically redistributes the application instances evenly across
+ * all of the designated Availability Zones.
  * </p>
  * <p>
  * <b>IMPORTANT:</b> If you call SuspendProcesses on the launch process
@@ -110,7 +109,6 @@ import java.io.Serializable;
  * that are marked as unhealthy and subsequently creates new instances to
  * replace them. This process calls both of the primary process
  * types--first <code>Terminate</code> and then <code>Launch</code> .
- * 
  * </p>
  * <p>
  * <b>IMPORTANT:</b> The HealthCheck process type works in conjunction
@@ -130,7 +128,7 @@ import java.io.Serializable;
 public class ProcessType implements Serializable {
 
     /**
-     * The name of a process.
+     * The name of the process.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -139,33 +137,33 @@ public class ProcessType implements Serializable {
     private String processName;
 
     /**
-     * The name of a process.
+     * The name of the process.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of a process.
+     * @return The name of the process.
      */
     public String getProcessName() {
         return processName;
     }
     
     /**
-     * The name of a process.
+     * The name of the process.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param processName The name of a process.
+     * @param processName The name of the process.
      */
     public void setProcessName(String processName) {
         this.processName = processName;
     }
     
     /**
-     * The name of a process.
+     * The name of the process.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -173,7 +171,7 @@ public class ProcessType implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param processName The name of a process.
+     * @param processName The name of the process.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

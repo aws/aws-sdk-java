@@ -57,6 +57,10 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                     context.nextToken();
                     jobOutput.setThumbnailPattern(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ThumbnailEncryption", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setThumbnailEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Rotate", targetDepth)) {
                     context.nextToken();
                     jobOutput.setRotate(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -104,6 +108,10 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                 if (context.testExpression("Captions", targetDepth)) {
                     context.nextToken();
                     jobOutput.setCaptions(CaptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Encryption", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

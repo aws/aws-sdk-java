@@ -17,14 +17,12 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The <code>PolicyARNType</code> data type.
- * </p>
+ * 
  */
 public class PutScalingPolicyResult implements Serializable {
 
     /**
-     * A policy's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -33,33 +31,33 @@ public class PutScalingPolicyResult implements Serializable {
     private String policyARN;
 
     /**
-     * A policy's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A policy's Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the policy.
      */
     public String getPolicyARN() {
         return policyARN;
     }
     
     /**
-     * A policy's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param policyARN A policy's Amazon Resource Name (ARN).
+     * @param policyARN The Amazon Resource Name (ARN) of the policy.
      */
     public void setPolicyARN(String policyARN) {
         this.policyARN = policyARN;
     }
     
     /**
-     * A policy's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -67,7 +65,7 @@ public class PutScalingPolicyResult implements Serializable {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param policyARN A policy's Amazon Resource Name (ARN).
+     * @param policyARN The Amazon Resource Name (ARN) of the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

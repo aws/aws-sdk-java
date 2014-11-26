@@ -37,6 +37,7 @@ import com.amazonaws.http.HttpRequest;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AwsHostNameUtils;
@@ -391,6 +392,19 @@ public abstract class AmazonWebServiceClient {
             this.endpoint = uri;
             this.signer = signer;
         }
+    }
+
+    /**
+     * Convenient method for setting region.
+     * 
+     * @param region region to set to; must not be null.
+     * 
+     * @see #setRegion(Region)
+     */
+    public final void setRegion(Regions region) {
+        if (region == null)
+            throw new IllegalArgumentException("No region provided");
+        this.setRegion(Region.getRegion(region));
     }
 
     /**
@@ -775,6 +789,18 @@ public abstract class AmazonWebServiceClient {
         return t;
     }
 
+    /**
+     * Convenient fluent method for setting region.
+     * 
+     * @param region region to set to; must not be null.
+     * 
+     * @see #withRegion(Region)
+     */
+    public <T extends AmazonWebServiceClient> T withRegion(Regions region) {
+        setRegion(region);
+        @SuppressWarnings("unchecked") T t= (T)this;
+        return t;
+    }
     /**
      * Fluent method for {@link #setEndpoint(String)}.
      *<pre>

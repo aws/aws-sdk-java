@@ -70,7 +70,7 @@ public class ReservedNode implements Serializable {
     private Integer nodeCount;
 
     /**
-     * The state of the reserved Compute Node. <p>Possible Values: <ul>
+     * The state of the reserved compute node. <p>Possible Values: <ul>
      * <li>pending-payment-This reserved node has recently been purchased,
      * and the sale has been approved, but payment has not yet been
      * confirmed.</li> <li>active-This reserved node is owned by the caller
@@ -394,14 +394,14 @@ public class ReservedNode implements Serializable {
     }
 
     /**
-     * The state of the reserved Compute Node. <p>Possible Values: <ul>
+     * The state of the reserved compute node. <p>Possible Values: <ul>
      * <li>pending-payment-This reserved node has recently been purchased,
      * and the sale has been approved, but payment has not yet been
      * confirmed.</li> <li>active-This reserved node is owned by the caller
      * and is available for use.</li> <li>payment-failed-Payment failed for
      * the purchase attempt.</li> </ul>
      *
-     * @return The state of the reserved Compute Node. <p>Possible Values: <ul>
+     * @return The state of the reserved compute node. <p>Possible Values: <ul>
      *         <li>pending-payment-This reserved node has recently been purchased,
      *         and the sale has been approved, but payment has not yet been
      *         confirmed.</li> <li>active-This reserved node is owned by the caller
@@ -413,14 +413,14 @@ public class ReservedNode implements Serializable {
     }
     
     /**
-     * The state of the reserved Compute Node. <p>Possible Values: <ul>
+     * The state of the reserved compute node. <p>Possible Values: <ul>
      * <li>pending-payment-This reserved node has recently been purchased,
      * and the sale has been approved, but payment has not yet been
      * confirmed.</li> <li>active-This reserved node is owned by the caller
      * and is available for use.</li> <li>payment-failed-Payment failed for
      * the purchase attempt.</li> </ul>
      *
-     * @param state The state of the reserved Compute Node. <p>Possible Values: <ul>
+     * @param state The state of the reserved compute node. <p>Possible Values: <ul>
      *         <li>pending-payment-This reserved node has recently been purchased,
      *         and the sale has been approved, but payment has not yet been
      *         confirmed.</li> <li>active-This reserved node is owned by the caller
@@ -432,7 +432,7 @@ public class ReservedNode implements Serializable {
     }
     
     /**
-     * The state of the reserved Compute Node. <p>Possible Values: <ul>
+     * The state of the reserved compute node. <p>Possible Values: <ul>
      * <li>pending-payment-This reserved node has recently been purchased,
      * and the sale has been approved, but payment has not yet been
      * confirmed.</li> <li>active-This reserved node is owned by the caller
@@ -441,7 +441,7 @@ public class ReservedNode implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The state of the reserved Compute Node. <p>Possible Values: <ul>
+     * @param state The state of the reserved compute node. <p>Possible Values: <ul>
      *         <li>pending-payment-This reserved node has recently been purchased,
      *         and the sale has been approved, but payment has not yet been
      *         confirmed.</li> <li>active-This reserved node is owned by the caller

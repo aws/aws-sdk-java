@@ -17,9 +17,7 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the PutLifecycleHook action.
- * </p>
+ * 
  */
 public class PutLifecycleHookResult implements Serializable {
 

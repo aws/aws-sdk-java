@@ -17,54 +17,52 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the DescribeAccountLimitsResult action.
- * </p>
+ * 
  */
 public class DescribeAccountLimitsResult implements Serializable {
 
     /**
-     * The maximum number of Auto Scaling groups allowed for your AWS
-     * account.
+     * The maximum number of groups allowed for your AWS account. The default
+     * limit is 20 per region.
      */
     private Integer maxNumberOfAutoScalingGroups;
 
     /**
      * The maximum number of launch configurations allowed for your AWS
-     * account.
+     * account. The default limit is 100 per region.
      */
     private Integer maxNumberOfLaunchConfigurations;
 
     /**
-     * The maximum number of Auto Scaling groups allowed for your AWS
-     * account.
+     * The maximum number of groups allowed for your AWS account. The default
+     * limit is 20 per region.
      *
-     * @return The maximum number of Auto Scaling groups allowed for your AWS
-     *         account.
+     * @return The maximum number of groups allowed for your AWS account. The default
+     *         limit is 20 per region.
      */
     public Integer getMaxNumberOfAutoScalingGroups() {
         return maxNumberOfAutoScalingGroups;
     }
     
     /**
-     * The maximum number of Auto Scaling groups allowed for your AWS
-     * account.
+     * The maximum number of groups allowed for your AWS account. The default
+     * limit is 20 per region.
      *
-     * @param maxNumberOfAutoScalingGroups The maximum number of Auto Scaling groups allowed for your AWS
-     *         account.
+     * @param maxNumberOfAutoScalingGroups The maximum number of groups allowed for your AWS account. The default
+     *         limit is 20 per region.
      */
     public void setMaxNumberOfAutoScalingGroups(Integer maxNumberOfAutoScalingGroups) {
         this.maxNumberOfAutoScalingGroups = maxNumberOfAutoScalingGroups;
     }
     
     /**
-     * The maximum number of Auto Scaling groups allowed for your AWS
-     * account.
+     * The maximum number of groups allowed for your AWS account. The default
+     * limit is 20 per region.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxNumberOfAutoScalingGroups The maximum number of Auto Scaling groups allowed for your AWS
-     *         account.
+     * @param maxNumberOfAutoScalingGroups The maximum number of groups allowed for your AWS account. The default
+     *         limit is 20 per region.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -76,10 +74,10 @@ public class DescribeAccountLimitsResult implements Serializable {
 
     /**
      * The maximum number of launch configurations allowed for your AWS
-     * account.
+     * account. The default limit is 100 per region.
      *
      * @return The maximum number of launch configurations allowed for your AWS
-     *         account.
+     *         account. The default limit is 100 per region.
      */
     public Integer getMaxNumberOfLaunchConfigurations() {
         return maxNumberOfLaunchConfigurations;
@@ -87,10 +85,10 @@ public class DescribeAccountLimitsResult implements Serializable {
     
     /**
      * The maximum number of launch configurations allowed for your AWS
-     * account.
+     * account. The default limit is 100 per region.
      *
      * @param maxNumberOfLaunchConfigurations The maximum number of launch configurations allowed for your AWS
-     *         account.
+     *         account. The default limit is 100 per region.
      */
     public void setMaxNumberOfLaunchConfigurations(Integer maxNumberOfLaunchConfigurations) {
         this.maxNumberOfLaunchConfigurations = maxNumberOfLaunchConfigurations;
@@ -98,12 +96,12 @@ public class DescribeAccountLimitsResult implements Serializable {
     
     /**
      * The maximum number of launch configurations allowed for your AWS
-     * account.
+     * account. The default limit is 100 per region.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxNumberOfLaunchConfigurations The maximum number of launch configurations allowed for your AWS
-     *         account.
+     *         account. The default limit is 100 per region.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

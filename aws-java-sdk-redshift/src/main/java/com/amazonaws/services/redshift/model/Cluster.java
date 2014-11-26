@@ -196,6 +196,17 @@ public class Cluster implements Serializable {
     private String clusterRevisionNumber;
 
     /**
+     * The list of tags for the cluster.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key used
+     * to encrypt data in the cluster.
+     */
+    private String kmsKeyId;
+
+    /**
      * The unique identifier of the cluster.
      *
      * @return The unique identifier of the cluster.
@@ -1504,6 +1515,113 @@ public class Cluster implements Serializable {
     }
 
     /**
+     * The list of tags for the cluster.
+     *
+     * @return The list of tags for the cluster.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * The list of tags for the cluster.
+     *
+     * @param tags The list of tags for the cluster.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * The list of tags for the cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of tags for the cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key used
+     * to encrypt data in the cluster.
+     *
+     * @return The AWS Key Management Service (KMS) key ID of the encryption key used
+     *         to encrypt data in the cluster.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key used
+     * to encrypt data in the cluster.
+     *
+     * @param kmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key used
+     *         to encrypt data in the cluster.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key used
+     * to encrypt data in the cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key used
+     *         to encrypt data in the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1543,7 +1661,9 @@ public class Cluster implements Serializable {
         if (getClusterPublicKey() != null) sb.append("ClusterPublicKey: " + getClusterPublicKey() + ",");
         if (getClusterNodes() != null) sb.append("ClusterNodes: " + getClusterNodes() + ",");
         if (getElasticIpStatus() != null) sb.append("ElasticIpStatus: " + getElasticIpStatus() + ",");
-        if (getClusterRevisionNumber() != null) sb.append("ClusterRevisionNumber: " + getClusterRevisionNumber() );
+        if (getClusterRevisionNumber() != null) sb.append("ClusterRevisionNumber: " + getClusterRevisionNumber() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -1582,6 +1702,8 @@ public class Cluster implements Serializable {
         hashCode = prime * hashCode + ((getClusterNodes() == null) ? 0 : getClusterNodes().hashCode()); 
         hashCode = prime * hashCode + ((getElasticIpStatus() == null) ? 0 : getElasticIpStatus().hashCode()); 
         hashCode = prime * hashCode + ((getClusterRevisionNumber() == null) ? 0 : getClusterRevisionNumber().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -1651,6 +1773,10 @@ public class Cluster implements Serializable {
         if (other.getElasticIpStatus() != null && other.getElasticIpStatus().equals(this.getElasticIpStatus()) == false) return false; 
         if (other.getClusterRevisionNumber() == null ^ this.getClusterRevisionNumber() == null) return false;
         if (other.getClusterRevisionNumber() != null && other.getClusterRevisionNumber().equals(this.getClusterRevisionNumber()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

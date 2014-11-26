@@ -24,6 +24,15 @@ import com.amazonaws.services.s3.AmazonS3;
 /**
  * Container for the parameters of the CompleteMultipartUpload operation.
  * <p>
+ * If you are performing a complete multipart upload for <a
+ * href="http://aws.amazon.com/kms/">KMS</a>-encrypted objects, you need to
+ * specify the correct region of the bucket on your client and configure AWS
+ * Signature Version 4 for added security. For more information on how to do
+ * this, see
+ * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify
+ * -signature-version
+ * </p>
+ * <p>
  * Required Parameters: BucketName, Key, UploadId, PartETags
  *
  * @see AmazonS3#completeMultipartUpload(CompleteMultipartUploadRequest)

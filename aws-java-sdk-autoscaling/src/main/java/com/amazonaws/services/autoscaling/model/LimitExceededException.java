@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The quota for capacity groups or launch configurations for this
- * customer has already been reached.
+ * The limit for the number of Auto Scaling groups or launch
+ * configurations has already been reached.
  * </p>
  */        
 public class LimitExceededException extends AmazonServiceException {

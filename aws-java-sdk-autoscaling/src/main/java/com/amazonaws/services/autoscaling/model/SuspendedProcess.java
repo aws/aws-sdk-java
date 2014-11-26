@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An Auto Scaling process that has been suspended. For more
+ * Describes an Auto Scaling process that has been suspended. For more
  * information, see ProcessType.
  * </p>
  */

@@ -21,13 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#exitStandby(ExitStandbyRequest) ExitStandby operation}.
  * <p>
- * Move an instance out of Standby mode.
+ * Moves the specified instances out of <code>Standby</code> mode.
  * </p>
  * <p>
- * To learn more about how to put instances that are in a Standby mode
- * back into service, see
+ * For more information, see
  * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html"> Auto Scaling InService State </a>
- * .
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#exitStandby(ExitStandbyRequest)
@@ -35,14 +34,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ExitStandbyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * A list of instances to move out of Standby mode. You must specify at
-     * least one instance ID.
+     * One or more instance IDs. You must specify at least one instance ID.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
-     * The name of the Auto Scaling group from which to move instances out of
-     * Standby mode.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -51,11 +48,9 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements Seria
     private String autoScalingGroupName;
 
     /**
-     * A list of instances to move out of Standby mode. You must specify at
-     * least one instance ID.
+     * One or more instance IDs. You must specify at least one instance ID.
      *
-     * @return A list of instances to move out of Standby mode. You must specify at
-     *         least one instance ID.
+     * @return One or more instance IDs. You must specify at least one instance ID.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -66,11 +61,9 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * A list of instances to move out of Standby mode. You must specify at
-     * least one instance ID.
+     * One or more instance IDs. You must specify at least one instance ID.
      *
-     * @param instanceIds A list of instances to move out of Standby mode. You must specify at
-     *         least one instance ID.
+     * @param instanceIds One or more instance IDs. You must specify at least one instance ID.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -83,13 +76,11 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * A list of instances to move out of Standby mode. You must specify at
-     * least one instance ID.
+     * One or more instance IDs. You must specify at least one instance ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds A list of instances to move out of Standby mode. You must specify at
-     *         least one instance ID.
+     * @param instanceIds One or more instance IDs. You must specify at least one instance ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -103,13 +94,11 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * A list of instances to move out of Standby mode. You must specify at
-     * least one instance ID.
+     * One or more instance IDs. You must specify at least one instance ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds A list of instances to move out of Standby mode. You must specify at
-     *         least one instance ID.
+     * @param instanceIds One or more instance IDs. You must specify at least one instance ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -127,38 +116,33 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The name of the Auto Scaling group from which to move instances out of
-     * Standby mode.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group from which to move instances out of
-     *         Standby mode.
+     * @return The name of the Auto Scaling group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group from which to move instances out of
-     * Standby mode.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group from which to move instances out of
-     *         Standby mode.
+     * @param autoScalingGroupName The name of the Auto Scaling group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group from which to move instances out of
-     * Standby mode.
+     * The name of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -166,8 +150,7 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group from which to move instances out of
-     *         Standby mode.
+     * @param autoScalingGroupName The name of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -66,6 +66,12 @@ public class CaptionSource implements Serializable {
     private String label;
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption sources.
+     */
+    private Encryption encryption;
+
+    /**
      * The name of the sidecar caption file that you want Elastic Transcoder
      * to include in the output file.
      * <p>
@@ -288,6 +294,45 @@ public class CaptionSource implements Serializable {
     }
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption sources.
+     *
+     * @return The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your caption sources.
+     */
+    public Encryption getEncryption() {
+        return encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption sources.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your caption sources.
+     */
+    public void setEncryption(Encryption encryption) {
+        this.encryption = encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption sources.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your caption sources.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CaptionSource withEncryption(Encryption encryption) {
+        this.encryption = encryption;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -302,7 +347,8 @@ public class CaptionSource implements Serializable {
         if (getKey() != null) sb.append("Key: " + getKey() + ",");
         if (getLanguage() != null) sb.append("Language: " + getLanguage() + ",");
         if (getTimeOffset() != null) sb.append("TimeOffset: " + getTimeOffset() + ",");
-        if (getLabel() != null) sb.append("Label: " + getLabel() );
+        if (getLabel() != null) sb.append("Label: " + getLabel() + ",");
+        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +362,7 @@ public class CaptionSource implements Serializable {
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode()); 
         hashCode = prime * hashCode + ((getTimeOffset() == null) ? 0 : getTimeOffset().hashCode()); 
         hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode()); 
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
         return hashCode;
     }
     
@@ -335,6 +382,8 @@ public class CaptionSource implements Serializable {
         if (other.getTimeOffset() != null && other.getTimeOffset().equals(this.getTimeOffset()) == false) return false; 
         if (other.getLabel() == null ^ this.getLabel() == null) return false;
         if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false) return false; 
+        if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
         return true;
     }
     

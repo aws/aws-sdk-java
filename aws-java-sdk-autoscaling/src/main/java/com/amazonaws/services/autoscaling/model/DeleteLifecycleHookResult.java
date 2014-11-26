@@ -17,9 +17,7 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the DeleteLifecycleHook action.
- * </p>
+ * 
  */
 public class DeleteLifecycleHookResult implements Serializable {
 

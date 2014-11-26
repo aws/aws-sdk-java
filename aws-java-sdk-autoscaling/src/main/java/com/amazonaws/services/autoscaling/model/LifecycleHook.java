@@ -18,28 +18,28 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A lifecycle hook tells Auto Scaling that you want to perform an
- * action when an instance launches or terminates. When you have a
- * lifecycle hook in place, the Auto Scaling group will either:
+ * Describes a lifecycle hook, which tells Auto Scaling that you want to
+ * perform an action when an instance launches or terminates. When you
+ * have a lifecycle hook in place, the Auto Scaling group will either:
  * </p>
  * 
  * <ul>
- * <li> Pause the instance after it launches, but before it is put into
- * service </li>
- * <li> Pause the instance as it terminates, but before it is fully
- * terminated </li>
+ * <li>Pause the instance after it launches, but before it is put into
+ * service</li>
+ * <li>Pause the instance as it terminates, but before it is fully
+ * terminated</li>
  * 
  * </ul>
  * <p>
- * To learn more, see
+ * For more information, see
  * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
- * .
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  */
 public class LifecycleHook implements Serializable {
 
     /**
-     * The name of the lifecycle action hook.
+     * The name of the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -48,8 +48,7 @@ public class LifecycleHook implements Serializable {
     private String lifecycleHookName;
 
     /**
-     * The name of the Auto Scaling group to which the lifecycle action
-     * belongs.
+     * The name of the Auto Scaling group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -58,17 +57,17 @@ public class LifecycleHook implements Serializable {
     private String autoScalingGroupName;
 
     /**
-     * The Amazon EC2 instance state to which you want to attach the
-     * lifecycle hook. See <a>DescribeLifecycleHooks</a> for a list of
-     * available lifecycle hook types.
+     * The state of the EC2 instance to which you want to attach the
+     * lifecycle hook. For a list of lifecycle hook types, see
+     * <a>DescribeLifecycleHooks</a>.
      */
     private String lifecycleTransition;
 
     /**
-     * The ARN of the notification target that Auto Scaling will use to
-     * notify you when an instance is in the transition state for the
-     * lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     * topic. The notification message sent to the target will include: <ul>
+     * The ARN of the notification target that Auto Scaling uses to notify
+     * you when an instance is in the transition state for the lifecycle
+     * hook. This ARN target can be either an SQS queue or an SNS topic. The
+     * notification message sent to the target includes the following: <ul>
      * <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of
      * the Auto Scaling group</li> <li>Lifecycle hook name</li> <li>EC2
      * instance ID</li> <li>Lifecycle transition</li> <li>Notification
@@ -81,8 +80,8 @@ public class LifecycleHook implements Serializable {
     private String notificationTargetARN;
 
     /**
-     * The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     * publish to the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish
+     * to the specified notification target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -91,8 +90,8 @@ public class LifecycleHook implements Serializable {
     private String roleARN;
 
     /**
-     * Contains additional information that you want to include any time Auto
-     * Scaling sends a message to the notification target.
+     * Additional information that you want to include any time Auto Scaling
+     * sends a message to the notification target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1023<br/>
@@ -101,10 +100,10 @@ public class LifecycleHook implements Serializable {
     private String notificationMetadata;
 
     /**
-     * Defines the amount of time that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs
-     * the action defined in the <code>DefaultResult</code> parameter. You
-     * can prevent the lifecycle hook from timing out by calling
+     * The amount of time that can elapse before the lifecycle hook times
+     * out. When the lifecycle hook times out, Auto Scaling performs the
+     * action defined in the <code>DefaultResult</code> parameter. You can
+     * prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.
      */
     private Integer heartbeatTimeout;
@@ -119,40 +118,39 @@ public class LifecycleHook implements Serializable {
     /**
      * Defines the action the Auto Scaling group should take when the
      * lifecycle hook timeout elapses or if an unexpected failure occurs. The
-     * value for this parameter can be either <code>CONTINUE</code> or
-     * <code>ABANDON</code>. The default value for this parameter is
-     * <code>CONTINUE</code>.
+     * valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     * default value is <code>CONTINUE</code>.
      */
     private String defaultResult;
 
     /**
-     * The name of the lifecycle action hook.
+     * The name of the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[A-Za-z0-9\-_\/]+<br/>
      *
-     * @return The name of the lifecycle action hook.
+     * @return The name of the lifecycle hook.
      */
     public String getLifecycleHookName() {
         return lifecycleHookName;
     }
     
     /**
-     * The name of the lifecycle action hook.
+     * The name of the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[A-Za-z0-9\-_\/]+<br/>
      *
-     * @param lifecycleHookName The name of the lifecycle action hook.
+     * @param lifecycleHookName The name of the lifecycle hook.
      */
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
     
     /**
-     * The name of the lifecycle action hook.
+     * The name of the lifecycle hook.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -160,7 +158,7 @@ public class LifecycleHook implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[A-Za-z0-9\-_\/]+<br/>
      *
-     * @param lifecycleHookName The name of the lifecycle action hook.
+     * @param lifecycleHookName The name of the lifecycle hook.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -171,38 +169,33 @@ public class LifecycleHook implements Serializable {
     }
 
     /**
-     * The name of the Auto Scaling group to which the lifecycle action
-     * belongs.
+     * The name of the Auto Scaling group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group to which the lifecycle action
-     *         belongs.
+     * @return The name of the Auto Scaling group for the lifecycle hook.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which the lifecycle action
-     * belongs.
+     * The name of the Auto Scaling group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which the lifecycle action
-     *         belongs.
+     * @param autoScalingGroupName The name of the Auto Scaling group for the lifecycle hook.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which the lifecycle action
-     * belongs.
+     * The name of the Auto Scaling group for the lifecycle hook.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -210,8 +203,7 @@ public class LifecycleHook implements Serializable {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which the lifecycle action
-     *         belongs.
+     * @param autoScalingGroupName The name of the Auto Scaling group for the lifecycle hook.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -222,41 +214,41 @@ public class LifecycleHook implements Serializable {
     }
 
     /**
-     * The Amazon EC2 instance state to which you want to attach the
-     * lifecycle hook. See <a>DescribeLifecycleHooks</a> for a list of
-     * available lifecycle hook types.
+     * The state of the EC2 instance to which you want to attach the
+     * lifecycle hook. For a list of lifecycle hook types, see
+     * <a>DescribeLifecycleHooks</a>.
      *
-     * @return The Amazon EC2 instance state to which you want to attach the
-     *         lifecycle hook. See <a>DescribeLifecycleHooks</a> for a list of
-     *         available lifecycle hook types.
+     * @return The state of the EC2 instance to which you want to attach the
+     *         lifecycle hook. For a list of lifecycle hook types, see
+     *         <a>DescribeLifecycleHooks</a>.
      */
     public String getLifecycleTransition() {
         return lifecycleTransition;
     }
     
     /**
-     * The Amazon EC2 instance state to which you want to attach the
-     * lifecycle hook. See <a>DescribeLifecycleHooks</a> for a list of
-     * available lifecycle hook types.
+     * The state of the EC2 instance to which you want to attach the
+     * lifecycle hook. For a list of lifecycle hook types, see
+     * <a>DescribeLifecycleHooks</a>.
      *
-     * @param lifecycleTransition The Amazon EC2 instance state to which you want to attach the
-     *         lifecycle hook. See <a>DescribeLifecycleHooks</a> for a list of
-     *         available lifecycle hook types.
+     * @param lifecycleTransition The state of the EC2 instance to which you want to attach the
+     *         lifecycle hook. For a list of lifecycle hook types, see
+     *         <a>DescribeLifecycleHooks</a>.
      */
     public void setLifecycleTransition(String lifecycleTransition) {
         this.lifecycleTransition = lifecycleTransition;
     }
     
     /**
-     * The Amazon EC2 instance state to which you want to attach the
-     * lifecycle hook. See <a>DescribeLifecycleHooks</a> for a list of
-     * available lifecycle hook types.
+     * The state of the EC2 instance to which you want to attach the
+     * lifecycle hook. For a list of lifecycle hook types, see
+     * <a>DescribeLifecycleHooks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleTransition The Amazon EC2 instance state to which you want to attach the
-     *         lifecycle hook. See <a>DescribeLifecycleHooks</a> for a list of
-     *         available lifecycle hook types.
+     * @param lifecycleTransition The state of the EC2 instance to which you want to attach the
+     *         lifecycle hook. For a list of lifecycle hook types, see
+     *         <a>DescribeLifecycleHooks</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -267,10 +259,10 @@ public class LifecycleHook implements Serializable {
     }
 
     /**
-     * The ARN of the notification target that Auto Scaling will use to
-     * notify you when an instance is in the transition state for the
-     * lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     * topic. The notification message sent to the target will include: <ul>
+     * The ARN of the notification target that Auto Scaling uses to notify
+     * you when an instance is in the transition state for the lifecycle
+     * hook. This ARN target can be either an SQS queue or an SNS topic. The
+     * notification message sent to the target includes the following: <ul>
      * <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of
      * the Auto Scaling group</li> <li>Lifecycle hook name</li> <li>EC2
      * instance ID</li> <li>Lifecycle transition</li> <li>Notification
@@ -280,10 +272,10 @@ public class LifecycleHook implements Serializable {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The ARN of the notification target that Auto Scaling will use to
-     *         notify you when an instance is in the transition state for the
-     *         lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     *         topic. The notification message sent to the target will include: <ul>
+     * @return The ARN of the notification target that Auto Scaling uses to notify
+     *         you when an instance is in the transition state for the lifecycle
+     *         hook. This ARN target can be either an SQS queue or an SNS topic. The
+     *         notification message sent to the target includes the following: <ul>
      *         <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of
      *         the Auto Scaling group</li> <li>Lifecycle hook name</li> <li>EC2
      *         instance ID</li> <li>Lifecycle transition</li> <li>Notification
@@ -294,10 +286,10 @@ public class LifecycleHook implements Serializable {
     }
     
     /**
-     * The ARN of the notification target that Auto Scaling will use to
-     * notify you when an instance is in the transition state for the
-     * lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     * topic. The notification message sent to the target will include: <ul>
+     * The ARN of the notification target that Auto Scaling uses to notify
+     * you when an instance is in the transition state for the lifecycle
+     * hook. This ARN target can be either an SQS queue or an SNS topic. The
+     * notification message sent to the target includes the following: <ul>
      * <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of
      * the Auto Scaling group</li> <li>Lifecycle hook name</li> <li>EC2
      * instance ID</li> <li>Lifecycle transition</li> <li>Notification
@@ -307,10 +299,10 @@ public class LifecycleHook implements Serializable {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param notificationTargetARN The ARN of the notification target that Auto Scaling will use to
-     *         notify you when an instance is in the transition state for the
-     *         lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     *         topic. The notification message sent to the target will include: <ul>
+     * @param notificationTargetARN The ARN of the notification target that Auto Scaling uses to notify
+     *         you when an instance is in the transition state for the lifecycle
+     *         hook. This ARN target can be either an SQS queue or an SNS topic. The
+     *         notification message sent to the target includes the following: <ul>
      *         <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of
      *         the Auto Scaling group</li> <li>Lifecycle hook name</li> <li>EC2
      *         instance ID</li> <li>Lifecycle transition</li> <li>Notification
@@ -321,10 +313,10 @@ public class LifecycleHook implements Serializable {
     }
     
     /**
-     * The ARN of the notification target that Auto Scaling will use to
-     * notify you when an instance is in the transition state for the
-     * lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     * topic. The notification message sent to the target will include: <ul>
+     * The ARN of the notification target that Auto Scaling uses to notify
+     * you when an instance is in the transition state for the lifecycle
+     * hook. This ARN target can be either an SQS queue or an SNS topic. The
+     * notification message sent to the target includes the following: <ul>
      * <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of
      * the Auto Scaling group</li> <li>Lifecycle hook name</li> <li>EC2
      * instance ID</li> <li>Lifecycle transition</li> <li>Notification
@@ -336,10 +328,10 @@ public class LifecycleHook implements Serializable {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param notificationTargetARN The ARN of the notification target that Auto Scaling will use to
-     *         notify you when an instance is in the transition state for the
-     *         lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     *         topic. The notification message sent to the target will include: <ul>
+     * @param notificationTargetARN The ARN of the notification target that Auto Scaling uses to notify
+     *         you when an instance is in the transition state for the lifecycle
+     *         hook. This ARN target can be either an SQS queue or an SNS topic. The
+     *         notification message sent to the target includes the following: <ul>
      *         <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of
      *         the Auto Scaling group</li> <li>Lifecycle hook name</li> <li>EC2
      *         instance ID</li> <li>Lifecycle transition</li> <li>Notification
@@ -354,38 +346,38 @@ public class LifecycleHook implements Serializable {
     }
 
     /**
-     * The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     * publish to the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish
+     * to the specified notification target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     *         publish to the specified notification target.
+     * @return The ARN of the IAM role that allows the Auto Scaling group to publish
+     *         to the specified notification target.
      */
     public String getRoleARN() {
         return roleARN;
     }
     
     /**
-     * The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     * publish to the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish
+     * to the specified notification target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param roleARN The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     *         publish to the specified notification target.
+     * @param roleARN The ARN of the IAM role that allows the Auto Scaling group to publish
+     *         to the specified notification target.
      */
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
     
     /**
-     * The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     * publish to the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish
+     * to the specified notification target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -393,8 +385,8 @@ public class LifecycleHook implements Serializable {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param roleARN The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     *         publish to the specified notification target.
+     * @param roleARN The ARN of the IAM role that allows the Auto Scaling group to publish
+     *         to the specified notification target.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -405,38 +397,38 @@ public class LifecycleHook implements Serializable {
     }
 
     /**
-     * Contains additional information that you want to include any time Auto
-     * Scaling sends a message to the notification target.
+     * Additional information that you want to include any time Auto Scaling
+     * sends a message to the notification target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Contains additional information that you want to include any time Auto
-     *         Scaling sends a message to the notification target.
+     * @return Additional information that you want to include any time Auto Scaling
+     *         sends a message to the notification target.
      */
     public String getNotificationMetadata() {
         return notificationMetadata;
     }
     
     /**
-     * Contains additional information that you want to include any time Auto
-     * Scaling sends a message to the notification target.
+     * Additional information that you want to include any time Auto Scaling
+     * sends a message to the notification target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param notificationMetadata Contains additional information that you want to include any time Auto
-     *         Scaling sends a message to the notification target.
+     * @param notificationMetadata Additional information that you want to include any time Auto Scaling
+     *         sends a message to the notification target.
      */
     public void setNotificationMetadata(String notificationMetadata) {
         this.notificationMetadata = notificationMetadata;
     }
     
     /**
-     * Contains additional information that you want to include any time Auto
-     * Scaling sends a message to the notification target.
+     * Additional information that you want to include any time Auto Scaling
+     * sends a message to the notification target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -444,8 +436,8 @@ public class LifecycleHook implements Serializable {
      * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param notificationMetadata Contains additional information that you want to include any time Auto
-     *         Scaling sends a message to the notification target.
+     * @param notificationMetadata Additional information that you want to include any time Auto Scaling
+     *         sends a message to the notification target.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -456,16 +448,16 @@ public class LifecycleHook implements Serializable {
     }
 
     /**
-     * Defines the amount of time that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs
-     * the action defined in the <code>DefaultResult</code> parameter. You
-     * can prevent the lifecycle hook from timing out by calling
+     * The amount of time that can elapse before the lifecycle hook times
+     * out. When the lifecycle hook times out, Auto Scaling performs the
+     * action defined in the <code>DefaultResult</code> parameter. You can
+     * prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.
      *
-     * @return Defines the amount of time that can elapse before the lifecycle hook
-     *         times out. When the lifecycle hook times out, Auto Scaling performs
-     *         the action defined in the <code>DefaultResult</code> parameter. You
-     *         can prevent the lifecycle hook from timing out by calling
+     * @return The amount of time that can elapse before the lifecycle hook times
+     *         out. When the lifecycle hook times out, Auto Scaling performs the
+     *         action defined in the <code>DefaultResult</code> parameter. You can
+     *         prevent the lifecycle hook from timing out by calling
      *         <a>RecordLifecycleActionHeartbeat</a>.
      */
     public Integer getHeartbeatTimeout() {
@@ -473,16 +465,16 @@ public class LifecycleHook implements Serializable {
     }
     
     /**
-     * Defines the amount of time that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs
-     * the action defined in the <code>DefaultResult</code> parameter. You
-     * can prevent the lifecycle hook from timing out by calling
+     * The amount of time that can elapse before the lifecycle hook times
+     * out. When the lifecycle hook times out, Auto Scaling performs the
+     * action defined in the <code>DefaultResult</code> parameter. You can
+     * prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.
      *
-     * @param heartbeatTimeout Defines the amount of time that can elapse before the lifecycle hook
-     *         times out. When the lifecycle hook times out, Auto Scaling performs
-     *         the action defined in the <code>DefaultResult</code> parameter. You
-     *         can prevent the lifecycle hook from timing out by calling
+     * @param heartbeatTimeout The amount of time that can elapse before the lifecycle hook times
+     *         out. When the lifecycle hook times out, Auto Scaling performs the
+     *         action defined in the <code>DefaultResult</code> parameter. You can
+     *         prevent the lifecycle hook from timing out by calling
      *         <a>RecordLifecycleActionHeartbeat</a>.
      */
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -490,18 +482,18 @@ public class LifecycleHook implements Serializable {
     }
     
     /**
-     * Defines the amount of time that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs
-     * the action defined in the <code>DefaultResult</code> parameter. You
-     * can prevent the lifecycle hook from timing out by calling
+     * The amount of time that can elapse before the lifecycle hook times
+     * out. When the lifecycle hook times out, Auto Scaling performs the
+     * action defined in the <code>DefaultResult</code> parameter. You can
+     * prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param heartbeatTimeout Defines the amount of time that can elapse before the lifecycle hook
-     *         times out. When the lifecycle hook times out, Auto Scaling performs
-     *         the action defined in the <code>DefaultResult</code> parameter. You
-     *         can prevent the lifecycle hook from timing out by calling
+     * @param heartbeatTimeout The amount of time that can elapse before the lifecycle hook times
+     *         out. When the lifecycle hook times out, Auto Scaling performs the
+     *         action defined in the <code>DefaultResult</code> parameter. You can
+     *         prevent the lifecycle hook from timing out by calling
      *         <a>RecordLifecycleActionHeartbeat</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -560,15 +552,13 @@ public class LifecycleHook implements Serializable {
     /**
      * Defines the action the Auto Scaling group should take when the
      * lifecycle hook timeout elapses or if an unexpected failure occurs. The
-     * value for this parameter can be either <code>CONTINUE</code> or
-     * <code>ABANDON</code>. The default value for this parameter is
-     * <code>CONTINUE</code>.
+     * valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     * default value is <code>CONTINUE</code>.
      *
      * @return Defines the action the Auto Scaling group should take when the
      *         lifecycle hook timeout elapses or if an unexpected failure occurs. The
-     *         value for this parameter can be either <code>CONTINUE</code> or
-     *         <code>ABANDON</code>. The default value for this parameter is
-     *         <code>CONTINUE</code>.
+     *         valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     *         default value is <code>CONTINUE</code>.
      */
     public String getDefaultResult() {
         return defaultResult;
@@ -577,15 +567,13 @@ public class LifecycleHook implements Serializable {
     /**
      * Defines the action the Auto Scaling group should take when the
      * lifecycle hook timeout elapses or if an unexpected failure occurs. The
-     * value for this parameter can be either <code>CONTINUE</code> or
-     * <code>ABANDON</code>. The default value for this parameter is
-     * <code>CONTINUE</code>.
+     * valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     * default value is <code>CONTINUE</code>.
      *
      * @param defaultResult Defines the action the Auto Scaling group should take when the
      *         lifecycle hook timeout elapses or if an unexpected failure occurs. The
-     *         value for this parameter can be either <code>CONTINUE</code> or
-     *         <code>ABANDON</code>. The default value for this parameter is
-     *         <code>CONTINUE</code>.
+     *         valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     *         default value is <code>CONTINUE</code>.
      */
     public void setDefaultResult(String defaultResult) {
         this.defaultResult = defaultResult;
@@ -594,17 +582,15 @@ public class LifecycleHook implements Serializable {
     /**
      * Defines the action the Auto Scaling group should take when the
      * lifecycle hook timeout elapses or if an unexpected failure occurs. The
-     * value for this parameter can be either <code>CONTINUE</code> or
-     * <code>ABANDON</code>. The default value for this parameter is
-     * <code>CONTINUE</code>.
+     * valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     * default value is <code>CONTINUE</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultResult Defines the action the Auto Scaling group should take when the
      *         lifecycle hook timeout elapses or if an unexpected failure occurs. The
-     *         value for this parameter can be either <code>CONTINUE</code> or
-     *         <code>ABANDON</code>. The default value for this parameter is
-     *         <code>CONTINUE</code>.
+     *         valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     *         default value is <code>CONTINUE</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The MetricGranularityType data type.
+ * Describes a granularity of a metric.
  * </p>
  */
 public class MetricGranularityType implements Serializable {
 
     /**
-     * The granularity of a Metric.
+     * The granularity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -33,33 +33,33 @@ public class MetricGranularityType implements Serializable {
     private String granularity;
 
     /**
-     * The granularity of a Metric.
+     * The granularity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The granularity of a Metric.
+     * @return The granularity.
      */
     public String getGranularity() {
         return granularity;
     }
     
     /**
-     * The granularity of a Metric.
+     * The granularity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param granularity The granularity of a Metric.
+     * @param granularity The granularity.
      */
     public void setGranularity(String granularity) {
         this.granularity = granularity;
     }
     
     /**
-     * The granularity of a Metric.
+     * The granularity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -67,7 +67,7 @@ public class MetricGranularityType implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param granularity The granularity of a Metric.
+     * @param granularity The granularity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -27,12 +27,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html"> Get Email Notifications When Your Auto Scaling Group Changes </a>
- * 
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html"> Getting Notifications When Your Auto Scaling Group Changes </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  * <p>
- * A new <code>PutNotificationConfiguration</code> overwrites an existing
- * configuration.
+ * This configuration overwrites an existing configuration.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putNotificationConfiguration(PutNotificationConfigurationRequest)

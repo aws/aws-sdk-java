@@ -28,8 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the default cluster security group with the cluster. For more
  * information about managing clusters, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
- * in the <i>Amazon Redshift Management Guide</i> .
- * 
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createCluster(CreateClusterRequest)
@@ -79,7 +78,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * The node type to be provisioned for the cluster. For information about
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     * Working with Clusters</a> in the <i>Amazon Redshift Management
+     * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
      * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      * <code>dw2.8xlarge</code>.
@@ -143,13 +142,14 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The weekly time range (in UTC) during which automated cluster
      * maintenance can occur. <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
-     * for the cluster from which the snapshot was taken. For more
-     * information about the time blocks for each region, see <a
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     * selected at random from an 8-hour block of time per region, occurring
+     * on a random day of the week. For more information about the time
+     * blocks for each region, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     * Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     * Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     * window.
+     * Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     * Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     * 30-minute window.
      */
     private String preferredMaintenanceWindow;
 
@@ -207,7 +207,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * <code>multi-node</code>. <p>For information about determining how many
      * nodes you need, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     * Working with Clusters</a> in the <i>Amazon Redshift Management
+     * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. <p>If you don't specify this parameter, you get a
      * single-node cluster. When requesting a multi-node cluster, you must
      * specify the number of nodes that you want in the cluster. <p>Default:
@@ -247,10 +247,21 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * an Internet gateway. For more information about provisioning clusters
      * in EC2-VPC, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
-     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
-     * Guide.
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     * Management Guide.
      */
     private String elasticIp;
+
+    /**
+     * A list of tag instances.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * you want to use to encrypt data in the cluster.
+     */
+    private String kmsKeyId;
 
     /**
      * The name of the first database to be created when the cluster is
@@ -499,7 +510,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * The node type to be provisioned for the cluster. For information about
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     * Working with Clusters</a> in the <i>Amazon Redshift Management
+     * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
      * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      * <code>dw2.8xlarge</code>.
@@ -507,7 +518,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * @return The node type to be provisioned for the cluster. For information about
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     *         Working with Clusters</a> in the <i>Amazon Redshift Management
+     *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
      *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      *         <code>dw2.8xlarge</code>.
@@ -520,7 +531,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * The node type to be provisioned for the cluster. For information about
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     * Working with Clusters</a> in the <i>Amazon Redshift Management
+     * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
      * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      * <code>dw2.8xlarge</code>.
@@ -528,7 +539,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * @param nodeType The node type to be provisioned for the cluster. For information about
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     *         Working with Clusters</a> in the <i>Amazon Redshift Management
+     *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
      *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      *         <code>dw2.8xlarge</code>.
@@ -541,7 +552,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * The node type to be provisioned for the cluster. For information about
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     * Working with Clusters</a> in the <i>Amazon Redshift Management
+     * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
      * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      * <code>dw2.8xlarge</code>.
@@ -551,7 +562,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * @param nodeType The node type to be provisioned for the cluster. For information about
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     *         Working with Clusters</a> in the <i>Amazon Redshift Management
+     *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
      *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      *         <code>dw2.8xlarge</code>.
@@ -985,23 +996,25 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The weekly time range (in UTC) during which automated cluster
      * maintenance can occur. <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
-     * for the cluster from which the snapshot was taken. For more
-     * information about the time blocks for each region, see <a
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     * selected at random from an 8-hour block of time per region, occurring
+     * on a random day of the week. For more information about the time
+     * blocks for each region, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     * Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     * Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     * window.
+     * Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     * Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     * 30-minute window.
      *
      * @return The weekly time range (in UTC) during which automated cluster
      *         maintenance can occur. <p> Format:
-     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
-     *         for the cluster from which the snapshot was taken. For more
-     *         information about the time blocks for each region, see <a
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     *         selected at random from an 8-hour block of time per region, occurring
+     *         on a random day of the week. For more information about the time
+     *         blocks for each region, see <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     *         Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     *         Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     *         window.
+     *         Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     *         Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     *         30-minute window.
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -1010,23 +1023,25 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The weekly time range (in UTC) during which automated cluster
      * maintenance can occur. <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
-     * for the cluster from which the snapshot was taken. For more
-     * information about the time blocks for each region, see <a
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     * selected at random from an 8-hour block of time per region, occurring
+     * on a random day of the week. For more information about the time
+     * blocks for each region, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     * Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     * Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     * window.
+     * Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     * Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     * 30-minute window.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
      *         maintenance can occur. <p> Format:
-     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
-     *         for the cluster from which the snapshot was taken. For more
-     *         information about the time blocks for each region, see <a
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     *         selected at random from an 8-hour block of time per region, occurring
+     *         on a random day of the week. For more information about the time
+     *         blocks for each region, see <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     *         Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     *         Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     *         window.
+     *         Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     *         Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     *         30-minute window.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -1035,25 +1050,27 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The weekly time range (in UTC) during which automated cluster
      * maintenance can occur. <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
-     * for the cluster from which the snapshot was taken. For more
-     * information about the time blocks for each region, see <a
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     * selected at random from an 8-hour block of time per region, occurring
+     * on a random day of the week. For more information about the time
+     * blocks for each region, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     * Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     * Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     * window.
+     * Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     * Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     * 30-minute window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
      *         maintenance can occur. <p> Format:
-     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
-     *         for the cluster from which the snapshot was taken. For more
-     *         information about the time blocks for each region, see <a
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     *         selected at random from an 8-hour block of time per region, occurring
+     *         on a random day of the week. For more information about the time
+     *         blocks for each region, see <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     *         Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     *         Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     *         window.
+     *         Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     *         Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     *         30-minute window.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1391,7 +1408,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * <code>multi-node</code>. <p>For information about determining how many
      * nodes you need, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     * Working with Clusters</a> in the <i>Amazon Redshift Management
+     * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. <p>If you don't specify this parameter, you get a
      * single-node cluster. When requesting a multi-node cluster, you must
      * specify the number of nodes that you want in the cluster. <p>Default:
@@ -1403,7 +1420,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         <code>multi-node</code>. <p>For information about determining how many
      *         nodes you need, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     *         Working with Clusters</a> in the <i>Amazon Redshift Management
+     *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      *         Guide</i>. <p>If you don't specify this parameter, you get a
      *         single-node cluster. When requesting a multi-node cluster, you must
      *         specify the number of nodes that you want in the cluster. <p>Default:
@@ -1420,7 +1437,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * <code>multi-node</code>. <p>For information about determining how many
      * nodes you need, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     * Working with Clusters</a> in the <i>Amazon Redshift Management
+     * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. <p>If you don't specify this parameter, you get a
      * single-node cluster. When requesting a multi-node cluster, you must
      * specify the number of nodes that you want in the cluster. <p>Default:
@@ -1432,7 +1449,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         <code>multi-node</code>. <p>For information about determining how many
      *         nodes you need, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     *         Working with Clusters</a> in the <i>Amazon Redshift Management
+     *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      *         Guide</i>. <p>If you don't specify this parameter, you get a
      *         single-node cluster. When requesting a multi-node cluster, you must
      *         specify the number of nodes that you want in the cluster. <p>Default:
@@ -1449,7 +1466,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * <code>multi-node</code>. <p>For information about determining how many
      * nodes you need, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     * Working with Clusters</a> in the <i>Amazon Redshift Management
+     * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. <p>If you don't specify this parameter, you get a
      * single-node cluster. When requesting a multi-node cluster, you must
      * specify the number of nodes that you want in the cluster. <p>Default:
@@ -1463,7 +1480,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         <code>multi-node</code>. <p>For information about determining how many
      *         nodes you need, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-     *         Working with Clusters</a> in the <i>Amazon Redshift Management
+     *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      *         Guide</i>. <p>If you don't specify this parameter, you get a
      *         single-node cluster. When requesting a multi-node cluster, you must
      *         specify the number of nodes that you want in the cluster. <p>Default:
@@ -1668,16 +1685,16 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * an Internet gateway. For more information about provisioning clusters
      * in EC2-VPC, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
-     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
-     * Guide.
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     * Management Guide.
      *
      * @return The Elastic IP (EIP) address for the cluster. <p>Constraints: The
      *         cluster must be provisioned in EC2-VPC and publicly-accessible through
      *         an Internet gateway. For more information about provisioning clusters
      *         in EC2-VPC, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
-     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
-     *         Guide.
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     *         Management Guide.
      */
     public String getElasticIp() {
         return elasticIp;
@@ -1689,16 +1706,16 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * an Internet gateway. For more information about provisioning clusters
      * in EC2-VPC, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
-     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
-     * Guide.
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     * Management Guide.
      *
      * @param elasticIp The Elastic IP (EIP) address for the cluster. <p>Constraints: The
      *         cluster must be provisioned in EC2-VPC and publicly-accessible through
      *         an Internet gateway. For more information about provisioning clusters
      *         in EC2-VPC, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
-     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
-     *         Guide.
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     *         Management Guide.
      */
     public void setElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
@@ -1710,8 +1727,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * an Internet gateway. For more information about provisioning clusters
      * in EC2-VPC, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
-     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
-     * Guide.
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     * Management Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1720,14 +1737,121 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         an Internet gateway. For more information about provisioning clusters
      *         in EC2-VPC, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
-     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
-     *         Guide.
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     *         Management Guide.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterRequest withElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
+        return this;
+    }
+
+    /**
+     * A list of tag instances.
+     *
+     * @return A list of tag instances.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tag instances.
+     *
+     * @param tags A list of tag instances.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tag instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tag instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateClusterRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tag instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tag instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateClusterRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * you want to use to encrypt data in the cluster.
+     *
+     * @return The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         you want to use to encrypt data in the cluster.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * you want to use to encrypt data in the cluster.
+     *
+     * @param kmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         you want to use to encrypt data in the cluster.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * you want to use to encrypt data in the cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         you want to use to encrypt data in the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateClusterRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
         return this;
     }
 
@@ -1764,7 +1888,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
         if (getHsmClientCertificateIdentifier() != null) sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
         if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
-        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() );
+        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -1796,6 +1922,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getHsmClientCertificateIdentifier() == null) ? 0 : getHsmClientCertificateIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -1851,6 +1979,10 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false) return false; 
         if (other.getElasticIp() == null ^ this.getElasticIp() == null) return false;
         if (other.getElasticIp() != null && other.getElasticIp().equals(this.getElasticIp()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

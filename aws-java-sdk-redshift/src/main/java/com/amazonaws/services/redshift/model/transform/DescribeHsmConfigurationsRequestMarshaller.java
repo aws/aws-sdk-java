@@ -51,6 +51,28 @@ public class DescribeHsmConfigurationsRequestMarshaller implements Marshaller<Re
             request.addParameter("Marker", StringUtils.fromString(describeHsmConfigurationsRequest.getMarker()));
         }
 
+        java.util.List<String> tagKeysList = describeHsmConfigurationsRequest.getTagKeys();
+        int tagKeysListIndex = 1;
+
+        for (String tagKeysListValue : tagKeysList) {
+            if (tagKeysListValue != null) {
+                request.addParameter("TagKeys.TagKey." + tagKeysListIndex, StringUtils.fromString(tagKeysListValue));
+            }
+
+            tagKeysListIndex++;
+        }
+
+        java.util.List<String> tagValuesList = describeHsmConfigurationsRequest.getTagValues();
+        int tagValuesListIndex = 1;
+
+        for (String tagValuesListValue : tagValuesList) {
+            if (tagValuesListValue != null) {
+                request.addParameter("TagValues.TagValue." + tagValuesListIndex, StringUtils.fromString(tagValuesListValue));
+            }
+
+            tagValuesListIndex++;
+        }
+
         return request;
     }
 }

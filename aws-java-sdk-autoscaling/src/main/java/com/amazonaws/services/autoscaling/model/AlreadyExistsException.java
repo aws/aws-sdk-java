@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The named Auto Scaling group or launch configuration already exists.
+ * You already have an Auto Scaling group or launch configuration with
+ * this name.
  * </p>
  */        
 public class AlreadyExistsException extends AmazonServiceException {

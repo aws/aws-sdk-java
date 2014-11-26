@@ -65,6 +65,30 @@ public class ReportTaskProgressRequestMarshaller implements Marshaller<Request<R
                 jsonWriter.key("taskId").value(reportTaskProgressRequest.getTaskId());
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Field>)(reportTaskProgressRequest.getFields());
+            if (fieldsList != null && !(fieldsList.isAutoConstruct() && fieldsList.isEmpty())) {
+
+                jsonWriter.key("fields");
+                jsonWriter.array();
+
+                for (Field fieldsListValue : fieldsList) {
+                    if (fieldsListValue != null) {
+                        jsonWriter.object();
+                        if (fieldsListValue.getKey() != null) {
+                            jsonWriter.key("key").value(fieldsListValue.getKey());
+                        }
+                        if (fieldsListValue.getStringValue() != null) {
+                            jsonWriter.key("stringValue").value(fieldsListValue.getStringValue());
+                        }
+                        if (fieldsListValue.getRefValue() != null) {
+                            jsonWriter.key("refValue").value(fieldsListValue.getRefValue());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();

@@ -53,6 +53,10 @@ public class CaptionFormatJsonUnmarshaller implements Unmarshaller<CaptionFormat
                     context.nextToken();
                     captionFormat.setPattern(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Encryption", targetDepth)) {
+                    context.nextToken();
+                    captionFormat.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

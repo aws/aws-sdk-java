@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#putScalingPolicy(PutScalingPolicyRequest) PutScalingPolicy operation}.
  * <p>
  * Creates or updates a policy for an Auto Scaling group. To update an
- * existing policy, use the existing policy name and set the parameter(s)
+ * existing policy, use the existing policy name and set the parameters
  * you want to change. Any existing parameter not changed in an update to
  * an existing policy is not changed in this update request.
  * </p>
@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name or ARN of the Auto Scaling group.
+     * The name or ARN of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -41,7 +41,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     private String autoScalingGroupName;
 
     /**
-     * The name of the policy you want to create or update.
+     * The name of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -62,10 +62,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information about
-     * the adjustment types supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
-     * Based on Demand</a>.
+     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -77,8 +76,8 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * The amount of time, in seconds, after a scaling activity completes and
      * before the next scaling activity can start. <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     private Integer cooldown;
 
@@ -86,7 +85,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     * number of instances specified in the value. <p> You will get a
+     * number of instances specified in the value. <p>You will get a
      * <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
      * on a policy with an <code>AdjustmentType</code> other than
      * <code>PercentChangeInCapacity</code>.
@@ -94,33 +93,33 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     private Integer minAdjustmentStep;
 
     /**
-     * The name or ARN of the Auto Scaling group.
+     * The name or ARN of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name or ARN of the Auto Scaling group.
+     * @return The name or ARN of the group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name or ARN of the Auto Scaling group.
+     * The name or ARN of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
+     * @param autoScalingGroupName The name or ARN of the group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name or ARN of the Auto Scaling group.
+     * The name or ARN of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -128,7 +127,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
+     * @param autoScalingGroupName The name or ARN of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -139,33 +138,33 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The name of the policy you want to create or update.
+     * The name of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the policy you want to create or update.
+     * @return The name of the policy.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * The name of the policy you want to create or update.
+     * The name of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param policyName The name of the policy you want to create or update.
+     * @param policyName The name of the policy.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * The name of the policy you want to create or update.
+     * The name of the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -173,7 +172,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param policyName The name of the policy you want to create or update.
+     * @param policyName The name of the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -244,10 +243,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information about
-     * the adjustment types supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
-     * Based on Demand</a>.
+     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -256,10 +254,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * @return Specifies whether the <code>ScalingAdjustment</code> is an absolute
      *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information about
-     *         the adjustment types supported by Auto Scaling, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
-     *         Based on Demand</a>.
+     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public String getAdjustmentType() {
         return adjustmentType;
@@ -269,10 +266,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information about
-     * the adjustment types supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
-     * Based on Demand</a>.
+     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -281,10 +277,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * @param adjustmentType Specifies whether the <code>ScalingAdjustment</code> is an absolute
      *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information about
-     *         the adjustment types supported by Auto Scaling, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
-     *         Based on Demand</a>.
+     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public void setAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
@@ -294,10 +289,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information about
-     * the adjustment types supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
-     * Based on Demand</a>.
+     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -308,10 +302,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * @param adjustmentType Specifies whether the <code>ScalingAdjustment</code> is an absolute
      *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information about
-     *         the adjustment types supported by Auto Scaling, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
-     *         Based on Demand</a>.
+     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -325,14 +318,14 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * The amount of time, in seconds, after a scaling activity completes and
      * before the next scaling activity can start. <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @return The amount of time, in seconds, after a scaling activity completes and
      *         before the next scaling activity can start. <p>For more information,
      *         see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     *         Period</a>
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public Integer getCooldown() {
         return cooldown;
@@ -342,14 +335,14 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * The amount of time, in seconds, after a scaling activity completes and
      * before the next scaling activity can start. <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @param cooldown The amount of time, in seconds, after a scaling activity completes and
      *         before the next scaling activity can start. <p>For more information,
      *         see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     *         Period</a>
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public void setCooldown(Integer cooldown) {
         this.cooldown = cooldown;
@@ -359,16 +352,16 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * The amount of time, in seconds, after a scaling activity completes and
      * before the next scaling activity can start. <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cooldown The amount of time, in seconds, after a scaling activity completes and
      *         before the next scaling activity can start. <p>For more information,
      *         see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     *         Period</a>
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -382,7 +375,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     * number of instances specified in the value. <p> You will get a
+     * number of instances specified in the value. <p>You will get a
      * <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
      * on a policy with an <code>AdjustmentType</code> other than
      * <code>PercentChangeInCapacity</code>.
@@ -390,7 +383,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * @return Used with <code>AdjustmentType</code> with the value
      *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
      *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     *         number of instances specified in the value. <p> You will get a
+     *         number of instances specified in the value. <p>You will get a
      *         <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
      *         on a policy with an <code>AdjustmentType</code> other than
      *         <code>PercentChangeInCapacity</code>.
@@ -403,7 +396,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     * number of instances specified in the value. <p> You will get a
+     * number of instances specified in the value. <p>You will get a
      * <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
      * on a policy with an <code>AdjustmentType</code> other than
      * <code>PercentChangeInCapacity</code>.
@@ -411,7 +404,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * @param minAdjustmentStep Used with <code>AdjustmentType</code> with the value
      *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
      *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     *         number of instances specified in the value. <p> You will get a
+     *         number of instances specified in the value. <p>You will get a
      *         <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
      *         on a policy with an <code>AdjustmentType</code> other than
      *         <code>PercentChangeInCapacity</code>.
@@ -424,7 +417,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     * number of instances specified in the value. <p> You will get a
+     * number of instances specified in the value. <p>You will get a
      * <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
      * on a policy with an <code>AdjustmentType</code> other than
      * <code>PercentChangeInCapacity</code>.
@@ -434,7 +427,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * @param minAdjustmentStep Used with <code>AdjustmentType</code> with the value
      *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
      *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     *         number of instances specified in the value. <p> You will get a
+     *         number of instances specified in the value. <p>You will get a
      *         <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
      *         on a policy with an <code>AdjustmentType</code> other than
      *         <code>PercentChangeInCapacity</code>.

@@ -134,7 +134,7 @@ public class BucketNotificationConfiguration {
      * Sets the given notification configurations in this
      * {@link BucketNotificationConfiguration} object.
      *
-     * @param notificationConfiguration
+     * @param configurations
      *            the notification configurations to set
      */
     public void setConfigurations(
@@ -183,7 +183,7 @@ public class BucketNotificationConfiguration {
      * will set the bucket's notification configuration and overwrite any existing configuration.
      * </p>
      * @deprecated
-     * @see BucketNotificationConfiguration#BucketNotificationConfiguration(String, NotificationConfiguration))
+     * @see BucketNotificationConfiguration#BucketNotificationConfiguration(String, NotificationConfiguration)
      */
     public BucketNotificationConfiguration( Collection<TopicConfiguration> topicConfigurations ) {
         this.configurations = new HashMap<String, NotificationConfiguration>();

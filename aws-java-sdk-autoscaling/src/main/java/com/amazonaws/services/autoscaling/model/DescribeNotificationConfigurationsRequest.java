@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeNotificationConfigurations(DescribeNotificationConfigurationsRequest) DescribeNotificationConfigurations operation}.
  * <p>
- * Returns a list of notification actions associated with Auto Scaling
- * groups for specified events.
+ * Describes the notification actions associated with the specified Auto
+ * Scaling group.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeNotificationConfigurations(DescribeNotificationConfigurationsRequest)
@@ -30,13 +30,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the Auto Scaling group.
+     * The name of the group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupNames;
 
     /**
-     * A string that is used to mark the start of the next batch of returned
-     * results for pagination.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -44,14 +44,14 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     private String nextToken;
 
     /**
-     * Maximum number of records to be returned.
+     * The maximum number of items to return with this call.
      */
     private Integer maxRecords;
 
     /**
-     * The name of the Auto Scaling group.
+     * The name of the group.
      *
-     * @return The name of the Auto Scaling group.
+     * @return The name of the group.
      */
     public java.util.List<String> getAutoScalingGroupNames() {
         if (autoScalingGroupNames == null) {
@@ -62,9 +62,9 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The name of the Auto Scaling group.
+     * The name of the group.
      *
-     * @param autoScalingGroupNames The name of the Auto Scaling group.
+     * @param autoScalingGroupNames The name of the group.
      */
     public void setAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
         if (autoScalingGroupNames == null) {
@@ -77,11 +77,11 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The name of the Auto Scaling group.
+     * The name of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoScalingGroupNames The name of the Auto Scaling group.
+     * @param autoScalingGroupNames The name of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,11 +95,11 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The name of the Auto Scaling group.
+     * The name of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoScalingGroupNames The name of the Auto Scaling group.
+     * @param autoScalingGroupNames The name of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -117,44 +117,44 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     }
 
     /**
-     * A string that is used to mark the start of the next batch of returned
-     * results for pagination.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A string that is used to mark the start of the next batch of returned
-     *         results for pagination.
+     * @return The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string that is used to mark the start of the next batch of returned
-     * results for pagination.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that is used to mark the start of the next batch of returned
-     *         results for pagination.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string that is used to mark the start of the next batch of returned
-     * results for pagination.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that is used to mark the start of the next batch of returned
-     *         results for pagination.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -165,29 +165,29 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     }
 
     /**
-     * Maximum number of records to be returned.
+     * The maximum number of items to return with this call.
      *
-     * @return Maximum number of records to be returned.
+     * @return The maximum number of items to return with this call.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * Maximum number of records to be returned.
+     * The maximum number of items to return with this call.
      *
-     * @param maxRecords Maximum number of records to be returned.
+     * @param maxRecords The maximum number of items to return with this call.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * Maximum number of records to be returned.
+     * The maximum number of items to return with this call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords Maximum number of records to be returned.
+     * @param maxRecords The maximum number of items to return with this call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

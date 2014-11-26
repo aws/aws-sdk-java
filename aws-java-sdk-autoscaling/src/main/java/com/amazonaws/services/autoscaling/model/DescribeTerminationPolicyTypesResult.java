@@ -17,30 +17,28 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The <code>TerminationPolicyTypes</code> data type.
- * </p>
+ * 
  */
 public class DescribeTerminationPolicyTypesResult implements Serializable {
 
     /**
-     * Termination policies supported by Auto Scaling. They are:
+     * The Termination policies supported by Auto Scaling. They are:
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     * <code>Default</code>
+     * and <code>Default</code>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> terminationPolicyTypes;
 
     /**
-     * Termination policies supported by Auto Scaling. They are:
+     * The Termination policies supported by Auto Scaling. They are:
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     * <code>Default</code>
+     * and <code>Default</code>.
      *
-     * @return Termination policies supported by Auto Scaling. They are:
+     * @return The Termination policies supported by Auto Scaling. They are:
      *         <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      *         <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     *         <code>Default</code>
+     *         and <code>Default</code>.
      */
     public java.util.List<String> getTerminationPolicyTypes() {
         if (terminationPolicyTypes == null) {
@@ -51,15 +49,15 @@ public class DescribeTerminationPolicyTypesResult implements Serializable {
     }
     
     /**
-     * Termination policies supported by Auto Scaling. They are:
+     * The Termination policies supported by Auto Scaling. They are:
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     * <code>Default</code>
+     * and <code>Default</code>.
      *
-     * @param terminationPolicyTypes Termination policies supported by Auto Scaling. They are:
+     * @param terminationPolicyTypes The Termination policies supported by Auto Scaling. They are:
      *         <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      *         <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     *         <code>Default</code>
+     *         and <code>Default</code>.
      */
     public void setTerminationPolicyTypes(java.util.Collection<String> terminationPolicyTypes) {
         if (terminationPolicyTypes == null) {
@@ -72,17 +70,17 @@ public class DescribeTerminationPolicyTypesResult implements Serializable {
     }
     
     /**
-     * Termination policies supported by Auto Scaling. They are:
+     * The Termination policies supported by Auto Scaling. They are:
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     * <code>Default</code>
+     * and <code>Default</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param terminationPolicyTypes Termination policies supported by Auto Scaling. They are:
+     * @param terminationPolicyTypes The Termination policies supported by Auto Scaling. They are:
      *         <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      *         <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     *         <code>Default</code>
+     *         and <code>Default</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -96,17 +94,17 @@ public class DescribeTerminationPolicyTypesResult implements Serializable {
     }
     
     /**
-     * Termination policies supported by Auto Scaling. They are:
+     * The Termination policies supported by Auto Scaling. They are:
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     * <code>Default</code>
+     * and <code>Default</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param terminationPolicyTypes Termination policies supported by Auto Scaling. They are:
+     * @param terminationPolicyTypes The Termination policies supported by Auto Scaling. They are:
      *         <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      *         <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-     *         <code>Default</code>
+     *         and <code>Default</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

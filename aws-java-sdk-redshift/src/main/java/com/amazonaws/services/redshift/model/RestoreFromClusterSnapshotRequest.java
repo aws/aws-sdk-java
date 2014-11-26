@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For more information about working with snapshots, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
- * in the <i>Amazon Redshift Management Guide</i> .
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest)
@@ -161,9 +161,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      * for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     * Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     * Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     * window.
+     * Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     * Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     * 30-minute window.
      */
     private String preferredMaintenanceWindow;
 
@@ -176,6 +176,13 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      * value from 0 to 35.
      */
     private Integer automatedSnapshotRetentionPeriod;
+
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * you want to use to encrypt data in the cluster that you restore from a
+     * shared snapshot.
+     */
+    private String kmsKeyId;
 
     /**
      * The identifier of the cluster that will be created from restoring the
@@ -999,9 +1006,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      * for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     * Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     * Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     * window.
+     * Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     * Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     * 30-minute window.
      *
      * @return The weekly time range (in UTC) during which automated cluster
      *         maintenance can occur. <p> Format:
@@ -1009,9 +1016,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         for the cluster from which the snapshot was taken. For more
      *         information about the time blocks for each region, see <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     *         Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     *         Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     *         window.
+     *         Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     *         Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     *         30-minute window.
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -1024,9 +1031,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      * for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     * Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     * Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     * window.
+     * Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     * Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     * 30-minute window.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
      *         maintenance can occur. <p> Format:
@@ -1034,9 +1041,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         for the cluster from which the snapshot was taken. For more
      *         information about the time blocks for each region, see <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     *         Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     *         Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     *         window.
+     *         Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     *         Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     *         30-minute window.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -1049,9 +1056,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      * for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     * Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     * Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     * window.
+     * Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     * Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     * 30-minute window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1061,9 +1068,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         for the cluster from which the snapshot was taken. For more
      *         information about the time blocks for each region, see <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-     *         Windows</a> in Amazon Redshift Management Guide. <p>Valid Days: Mon |
-     *         Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum 30-minute
-     *         window.
+     *         Windows</a> in Amazon Redshift Cluster Management Guide. <p>Valid
+     *         Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Minimum
+     *         30-minute window.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1137,6 +1144,51 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * you want to use to encrypt data in the cluster that you restore from a
+     * shared snapshot.
+     *
+     * @return The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         you want to use to encrypt data in the cluster that you restore from a
+     *         shared snapshot.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * you want to use to encrypt data in the cluster that you restore from a
+     * shared snapshot.
+     *
+     * @param kmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         you want to use to encrypt data in the cluster that you restore from a
+     *         shared snapshot.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (KMS) key ID of the encryption key that
+     * you want to use to encrypt data in the cluster that you restore from a
+     * shared snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key that
+     *         you want to use to encrypt data in the cluster that you restore from a
+     *         shared snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1164,7 +1216,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");
         if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
-        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() );
+        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -1191,6 +1244,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -1236,6 +1290,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
         if (other.getAutomatedSnapshotRetentionPeriod() == null ^ this.getAutomatedSnapshotRetentionPeriod() == null) return false;
         if (other.getAutomatedSnapshotRetentionPeriod() != null && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     
