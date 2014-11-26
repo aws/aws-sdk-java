@@ -44,6 +44,7 @@ import java.util.regex.Matcher;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -410,7 +411,33 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public AmazonS3Client(AWSCredentialsProvider credentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(clientConfiguration, requestMetricCollector);
+        this(credentialsProvider, clientConfiguration, requestMetricCollector,
+                null);
+    }
+
+    /**
+     * Constructs a new Amazon S3 client using the specified AWS credentials,
+     * client configuration, request metric collector and SSL socket factory to
+     * access Amazon S3.
+     * 
+     * @param credentialsProvider
+     *            The AWS credentials provider which will provide credentials to
+     *            authenticate requests with AWS services.
+     * @param clientConfiguration
+     *            The client configuration options controlling how this client
+     *            connects to Amazon S3 (e.g. proxy settings, retry counts,
+     *            etc).
+     * @param requestMetricCollector
+     *            request metric collector
+     * @param sslSocketFactory
+     *            client is configured to use this SSL socket factory. Pass
+     *            'null' to use the default factory.
+     */
+    public AmazonS3Client(AWSCredentialsProvider credentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector,
+            SSLSocketFactory sslSocketFactory) {
+        super(clientConfiguration, requestMetricCollector, sslSocketFactory);
         this.awsCredentialsProvider = credentialsProvider;
         init();
     }
