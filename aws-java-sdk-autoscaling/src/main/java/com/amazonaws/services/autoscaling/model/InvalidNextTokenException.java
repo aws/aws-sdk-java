@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The <code>NextToken</code> value is invalid.
+ * The <code>NextToken</code> value is not valid.
  * </p>
  */        
 public class InvalidNextTokenException extends AmazonServiceException {

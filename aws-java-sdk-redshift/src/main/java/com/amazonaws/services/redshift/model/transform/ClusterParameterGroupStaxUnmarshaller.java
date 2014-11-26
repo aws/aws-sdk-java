@@ -57,6 +57,10 @@ public class ClusterParameterGroupStaxUnmarshaller implements Unmarshaller<Clust
                     clusterParameterGroup.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Tags/Tag", targetDepth)) {
+                    clusterParameterGroup.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clusterParameterGroup;

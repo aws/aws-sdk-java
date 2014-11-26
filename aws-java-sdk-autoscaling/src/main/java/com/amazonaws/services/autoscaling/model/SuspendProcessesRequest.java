@@ -21,22 +21,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#suspendProcesses(SuspendProcessesRequest) SuspendProcesses operation}.
  * <p>
- * Suspends Auto Scaling processes for an Auto Scaling group. To suspend
- * specific process types, specify them by name with the
- * <code>ScalingProcesses.member.N</code> parameter. To suspend all
- * process types, omit the <code>ScalingProcesses.member.N</code>
- * parameter.
+ * Suspends the specified Auto Scaling processes for the specified Auto
+ * Scaling group. To suspend specific processes, use the
+ * <code>ScalingProcesses</code> parameter. To suspend all processes,
+ * omit the <code>ScalingProcesses</code> parameter.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Suspending either of the two primary process types,
- * Launch or Terminate, can prevent other process types from functioning
- * properly.
+ * Note that if you suspend either the <code>Launch</code> or
+ * <code>Terminate</code> process types, it can prevent other process
+ * types from functioning properly.
  * </p>
  * <p>
- * To resume processes that have been suspended, use ResumeProcesses For
- * more information on suspending and resuming Auto Scaling process, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Process </a>
- * .
+ * To resume processes that have been suspended, use ResumeProcesses.
+ * </p>
+ * <p>
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Processes </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#suspendProcesses(SuspendProcessesRequest)
@@ -53,12 +54,10 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
     private String autoScalingGroupName;
 
     /**
-     * The processes that you want to suspend or resume, which can include
-     * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotification</li> <li>ScheduledActions</li>
-     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     * omit this parameter.
+     * One or more of the following processes: <ul> <li>Launch</li>
+     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     * <li>AZRebalance</li> <li>AlarmNotification</li>
+     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> scalingProcesses;
 
@@ -108,19 +107,15 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The processes that you want to suspend or resume, which can include
-     * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotification</li> <li>ScheduledActions</li>
-     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     * omit this parameter.
+     * One or more of the following processes: <ul> <li>Launch</li>
+     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     * <li>AZRebalance</li> <li>AlarmNotification</li>
+     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      *
-     * @return The processes that you want to suspend or resume, which can include
-     *         one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     *         <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     *         <li>AlarmNotification</li> <li>ScheduledActions</li>
-     *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     *         omit this parameter.
+     * @return One or more of the following processes: <ul> <li>Launch</li>
+     *         <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     *         <li>AZRebalance</li> <li>AlarmNotification</li>
+     *         <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      */
     public java.util.List<String> getScalingProcesses() {
         if (scalingProcesses == null) {
@@ -131,19 +126,15 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The processes that you want to suspend or resume, which can include
-     * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotification</li> <li>ScheduledActions</li>
-     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     * omit this parameter.
+     * One or more of the following processes: <ul> <li>Launch</li>
+     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     * <li>AZRebalance</li> <li>AlarmNotification</li>
+     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      *
-     * @param scalingProcesses The processes that you want to suspend or resume, which can include
-     *         one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     *         <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     *         <li>AlarmNotification</li> <li>ScheduledActions</li>
-     *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     *         omit this parameter.
+     * @param scalingProcesses One or more of the following processes: <ul> <li>Launch</li>
+     *         <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     *         <li>AZRebalance</li> <li>AlarmNotification</li>
+     *         <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      */
     public void setScalingProcesses(java.util.Collection<String> scalingProcesses) {
         if (scalingProcesses == null) {
@@ -156,21 +147,17 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The processes that you want to suspend or resume, which can include
-     * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotification</li> <li>ScheduledActions</li>
-     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     * omit this parameter.
+     * One or more of the following processes: <ul> <li>Launch</li>
+     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     * <li>AZRebalance</li> <li>AlarmNotification</li>
+     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scalingProcesses The processes that you want to suspend or resume, which can include
-     *         one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     *         <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     *         <li>AlarmNotification</li> <li>ScheduledActions</li>
-     *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     *         omit this parameter.
+     * @param scalingProcesses One or more of the following processes: <ul> <li>Launch</li>
+     *         <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     *         <li>AZRebalance</li> <li>AlarmNotification</li>
+     *         <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -184,21 +171,17 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The processes that you want to suspend or resume, which can include
-     * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotification</li> <li>ScheduledActions</li>
-     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     * omit this parameter.
+     * One or more of the following processes: <ul> <li>Launch</li>
+     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     * <li>AZRebalance</li> <li>AlarmNotification</li>
+     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scalingProcesses The processes that you want to suspend or resume, which can include
-     *         one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-     *         <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     *         <li>AlarmNotification</li> <li>ScheduledActions</li>
-     *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
-     *         omit this parameter.
+     * @param scalingProcesses One or more of the following processes: <ul> <li>Launch</li>
+     *         <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
+     *         <li>AZRebalance</li> <li>AlarmNotification</li>
+     *         <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

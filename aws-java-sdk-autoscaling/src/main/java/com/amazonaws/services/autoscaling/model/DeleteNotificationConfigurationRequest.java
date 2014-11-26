@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteNotificationConfiguration(DeleteNotificationConfigurationRequest) DeleteNotificationConfiguration operation}.
  * <p>
- * Deletes notifications created by PutNotificationConfiguration.
+ * Deletes the specified notification.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteNotificationConfiguration(DeleteNotificationConfigurationRequest)

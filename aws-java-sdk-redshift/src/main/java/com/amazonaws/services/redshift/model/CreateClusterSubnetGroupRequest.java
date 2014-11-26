@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For information about subnet groups, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html"> Amazon Redshift Cluster Subnet Groups </a>
- * in the <i>Amazon Redshift Management Guide</i> .
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * 
  * </p>
  *
@@ -56,6 +56,11 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      * a single request.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIds;
+
+    /**
+     * A list of tag instances.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * The name for the subnet group. Amazon Redshift stores the value as a
@@ -230,6 +235,74 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * A list of tag instances.
+     *
+     * @return A list of tag instances.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tag instances.
+     *
+     * @param tags A list of tag instances.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tag instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tag instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateClusterSubnetGroupRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tag instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tag instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateClusterSubnetGroupRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -243,7 +316,8 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         sb.append("{");
         if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getSubnetIds() != null) sb.append("SubnetIds: " + getSubnetIds() );
+        if (getSubnetIds() != null) sb.append("SubnetIds: " + getSubnetIds() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -256,6 +330,7 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getClusterSubnetGroupName() == null) ? 0 : getClusterSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -273,6 +348,8 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null) return false;
         if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

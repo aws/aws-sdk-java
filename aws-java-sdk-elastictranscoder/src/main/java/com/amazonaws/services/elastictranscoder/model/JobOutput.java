@@ -84,6 +84,12 @@ public class JobOutput implements Serializable {
     private String thumbnailPattern;
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your thumbnail.
+     */
+    private Encryption thumbnailEncryption;
+
+    /**
      * The number of degrees clockwise by which you want Elastic Transcoder
      * to rotate the output relative to the input. Enter one of the following
      * values: <p><code>auto</code>, <code>0</code>, <code>90</code>,
@@ -254,6 +260,14 @@ public class JobOutput implements Serializable {
      * Wikipedia pages.
      */
     private Captions captions;
+
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your output files. If you choose to use encryption, you must
+     * specify a mode to use. If you choose not to use encryption, Elastic
+     * Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     */
+    private Encryption encryption;
 
     /**
      * A sequential counter, starting with 1, that identifies an output among
@@ -561,6 +575,45 @@ public class JobOutput implements Serializable {
      */
     public JobOutput withThumbnailPattern(String thumbnailPattern) {
         this.thumbnailPattern = thumbnailPattern;
+        return this;
+    }
+
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your thumbnail.
+     *
+     * @return The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your thumbnail.
+     */
+    public Encryption getThumbnailEncryption() {
+        return thumbnailEncryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your thumbnail.
+     *
+     * @param thumbnailEncryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your thumbnail.
+     */
+    public void setThumbnailEncryption(Encryption thumbnailEncryption) {
+        this.thumbnailEncryption = thumbnailEncryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your thumbnail.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param thumbnailEncryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your thumbnail.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobOutput withThumbnailEncryption(Encryption thumbnailEncryption) {
+        this.thumbnailEncryption = thumbnailEncryption;
         return this;
     }
 
@@ -1690,6 +1743,57 @@ public class JobOutput implements Serializable {
     }
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your output files. If you choose to use encryption, you must
+     * specify a mode to use. If you choose not to use encryption, Elastic
+     * Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     *
+     * @return The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your output files. If you choose to use encryption, you must
+     *         specify a mode to use. If you choose not to use encryption, Elastic
+     *         Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     */
+    public Encryption getEncryption() {
+        return encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your output files. If you choose to use encryption, you must
+     * specify a mode to use. If you choose not to use encryption, Elastic
+     * Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your output files. If you choose to use encryption, you must
+     *         specify a mode to use. If you choose not to use encryption, Elastic
+     *         Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     */
+    public void setEncryption(Encryption encryption) {
+        this.encryption = encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your output files. If you choose to use encryption, you must
+     * specify a mode to use. If you choose not to use encryption, Elastic
+     * Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your output files. If you choose to use encryption, you must
+     *         specify a mode to use. If you choose not to use encryption, Elastic
+     *         Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobOutput withEncryption(Encryption encryption) {
+        this.encryption = encryption;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1704,6 +1808,7 @@ public class JobOutput implements Serializable {
         if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getKey() != null) sb.append("Key: " + getKey() + ",");
         if (getThumbnailPattern() != null) sb.append("ThumbnailPattern: " + getThumbnailPattern() + ",");
+        if (getThumbnailEncryption() != null) sb.append("ThumbnailEncryption: " + getThumbnailEncryption() + ",");
         if (getRotate() != null) sb.append("Rotate: " + getRotate() + ",");
         if (getPresetId() != null) sb.append("PresetId: " + getPresetId() + ",");
         if (getSegmentDuration() != null) sb.append("SegmentDuration: " + getSegmentDuration() + ",");
@@ -1715,7 +1820,8 @@ public class JobOutput implements Serializable {
         if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() + ",");
         if (getAlbumArt() != null) sb.append("AlbumArt: " + getAlbumArt() + ",");
         if (getComposition() != null) sb.append("Composition: " + getComposition() + ",");
-        if (getCaptions() != null) sb.append("Captions: " + getCaptions() );
+        if (getCaptions() != null) sb.append("Captions: " + getCaptions() + ",");
+        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
         sb.append("}");
         return sb.toString();
     }
@@ -1728,6 +1834,7 @@ public class JobOutput implements Serializable {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode()); 
         hashCode = prime * hashCode + ((getThumbnailPattern() == null) ? 0 : getThumbnailPattern().hashCode()); 
+        hashCode = prime * hashCode + ((getThumbnailEncryption() == null) ? 0 : getThumbnailEncryption().hashCode()); 
         hashCode = prime * hashCode + ((getRotate() == null) ? 0 : getRotate().hashCode()); 
         hashCode = prime * hashCode + ((getPresetId() == null) ? 0 : getPresetId().hashCode()); 
         hashCode = prime * hashCode + ((getSegmentDuration() == null) ? 0 : getSegmentDuration().hashCode()); 
@@ -1740,6 +1847,7 @@ public class JobOutput implements Serializable {
         hashCode = prime * hashCode + ((getAlbumArt() == null) ? 0 : getAlbumArt().hashCode()); 
         hashCode = prime * hashCode + ((getComposition() == null) ? 0 : getComposition().hashCode()); 
         hashCode = prime * hashCode + ((getCaptions() == null) ? 0 : getCaptions().hashCode()); 
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
         return hashCode;
     }
     
@@ -1757,6 +1865,8 @@ public class JobOutput implements Serializable {
         if (other.getKey() != null && other.getKey().equals(this.getKey()) == false) return false; 
         if (other.getThumbnailPattern() == null ^ this.getThumbnailPattern() == null) return false;
         if (other.getThumbnailPattern() != null && other.getThumbnailPattern().equals(this.getThumbnailPattern()) == false) return false; 
+        if (other.getThumbnailEncryption() == null ^ this.getThumbnailEncryption() == null) return false;
+        if (other.getThumbnailEncryption() != null && other.getThumbnailEncryption().equals(this.getThumbnailEncryption()) == false) return false; 
         if (other.getRotate() == null ^ this.getRotate() == null) return false;
         if (other.getRotate() != null && other.getRotate().equals(this.getRotate()) == false) return false; 
         if (other.getPresetId() == null ^ this.getPresetId() == null) return false;
@@ -1781,6 +1891,8 @@ public class JobOutput implements Serializable {
         if (other.getComposition() != null && other.getComposition().equals(this.getComposition()) == false) return false; 
         if (other.getCaptions() == null ^ this.getCaptions() == null) return false;
         if (other.getCaptions() != null && other.getCaptions().equals(this.getCaptions()) == false) return false; 
+        if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
         return true;
     }
     

@@ -105,6 +105,10 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     snapshot.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    snapshot.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("EncryptedWithHSM", targetDepth)) {
                     snapshot.setEncryptedWithHSM(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -143,6 +147,10 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
                 if (context.testExpression("SourceRegion", targetDepth)) {
                     snapshot.setSourceRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Tags/Tag", targetDepth)) {
+                    snapshot.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

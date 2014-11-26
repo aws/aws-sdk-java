@@ -1723,35 +1723,41 @@ public interface AmazonS3 {
 
     /**
      * <p>
-     * Gets the object stored in Amazon S3 under the specified bucket and
-     * key.
+     * Gets the object stored in Amazon S3 under the specified bucket and key.
      * </p>
      * <p>
-     * Be extremely careful when using this method; the returned
-     * Amazon S3 object contains a direct stream of data from the HTTP connection.
-     * The underlying HTTP connection cannot be closed until the user
-     * finishes reading the data and closes the stream.
-     * Therefore:
+     * Be extremely careful when using this method; the returned Amazon S3
+     * object contains a direct stream of data from the HTTP connection. The
+     * underlying HTTP connection cannot be closed until the user finishes
+     * reading the data and closes the stream. Therefore:
      * </p>
      * <ul>
-     *  <li>Use the data from the input stream in Amazon S3 object as soon as possible</li>
-     *  <li>Close the input stream in Amazon S3 object as soon as possible</li>
+     * <li>Use the data from the input stream in Amazon S3 object as soon as
+     * possible</li>
+     * <li>Close the input stream in Amazon S3 object as soon as possible</li>
      * </ul>
-     * If these rules are not followed, the client can run out of
-     * resources by allocating too many open, but unused, HTTP connections.
+     * If these rules are not followed, the client can run out of resources by
+     * allocating too many open, but unused, HTTP connections. </p>
+     * <p>
+     * To get an object from Amazon S3, the caller must have
+     * {@link Permission#Read} access to the object.
      * </p>
      * <p>
-     * To get an object from Amazon S3, the caller must have {@link Permission#Read}
-     * access to the object.
-     * </p>
-     * <p>
-     * If the object fetched is publicly readable, it can also read it
-     * by pasting its URL into a browser.
+     * If the object fetched is publicly readable, it can also read it by
+     * pasting its URL into a browser.
      * </p>
      * <p>
      * For more advanced options (such as downloading only a range of an
-     * object's content, or placing constraints on when the object should be downloaded)
-     * callers can use {@link #getObject(GetObjectRequest)}.
+     * object's content, or placing constraints on when the object should be
+     * downloaded) callers can use {@link #getObject(GetObjectRequest)}.
+     * </p>
+     * <p>
+     * If you are accessing <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
      * </p>
      *
      * @param bucketName
@@ -1812,6 +1818,14 @@ public interface AmazonS3 {
      * If the advanced options provided in {@link GetObjectRequest} aren't needed,
      * use the simpler {@link AmazonS3#getObject(String bucketName, String key)} method.
      * </p>
+     * <p>
+     * If you are accessing <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      *
      * @param getObjectRequest
      *            The request object containing all the options on how to
@@ -1862,7 +1876,14 @@ public interface AmazonS3 {
      * prepared to handle this method returning <code>null</code>
      * if the provided constraints aren't met when Amazon S3 receives the request.
      * </p>
-     *
+     * <p>
+     * If you are accessing <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      * @param getObjectRequest
      *            The request object containing all the options on how to
      *            download the Amazon S3 object content.
@@ -1942,15 +1963,23 @@ public interface AmazonS3 {
 
     /**
      * <p>
-     * Uploads a new object to the specified Amazon S3 bucket.
-     * The <code>PutObjectRequest</code> contains all the
-     * details of the request, including the bucket to upload to, the key the
-     * object will be uploaded under, and the file or input stream containing the data
-     * to upload.
+     * Uploads a new object to the specified Amazon S3 bucket. The
+     * <code>PutObjectRequest</code> contains all the details of the request,
+     * including the bucket to upload to, the key the object will be uploaded
+     * under, and the file or input stream containing the data to upload.
      * </p>
      * <p>
-     * Amazon S3 never stores partial objects; if during this call
-     * an exception wasn't thrown, the entire object was stored.
+     * Amazon S3 never stores partial objects; if during this call an exception
+     * wasn't thrown, the entire object was stored.
+     * </p>
+     * <p>
+     * If you are uploading or accessing <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
      * </p>
      * <p>
      * Depending on whether a file or input stream is being uploaded, this
@@ -1960,53 +1989,43 @@ public interface AmazonS3 {
      * When uploading a file:
      * </p>
      * <ul>
-     *  <li>
-     *  The client automatically computes
-     *  a checksum of the file.
-     *  Amazon S3 uses checksums to validate the data in each file.
-     *  </li>
-     *  <li>
-     *  Using the file extension, Amazon S3 attempts to determine
-     *  the correct content type and content disposition to use
-     *  for the object.
-     *  </li>
+     * <li>
+     * The client automatically computes a checksum of the file. Amazon S3 uses
+     * checksums to validate the data in each file.</li>
+     * <li>
+     * Using the file extension, Amazon S3 attempts to determine the correct
+     * content type and content disposition to use for the object.</li>
      * </ul>
      * <p>
      * When uploading directly from an input stream:
      * </p>
      * <ul>
-     *  <li>Be careful to set the
-     *  correct content type in the metadata object before directly sending a
-     *  stream. Unlike file uploads, content types from input streams
-     *  cannot be automatically determined.  If the caller doesn't explicitly set
-     *  the content type, it will not be set in Amazon S3.
-     *  </li>
-     *  <li>Content length <b>must</b> be specified before data can be uploaded
-     *  to Amazon S3. Amazon S3 explicitly requires that the
-     *  content length be sent in the request headers before it
-     *  will accept any of the data. If the caller doesn't provide
-     *  the length, the library must buffer the contents of the
-     *  input stream in order to calculate it.
+     * <li>Be careful to set the correct content type in the metadata object
+     * before directly sending a stream. Unlike file uploads, content types from
+     * input streams cannot be automatically determined. If the caller doesn't
+     * explicitly set the content type, it will not be set in Amazon S3.</li>
+     * <li>Content length <b>must</b> be specified before data can be uploaded
+     * to Amazon S3. Amazon S3 explicitly requires that the content length be
+     * sent in the request headers before it will accept any of the data. If the
+     * caller doesn't provide the length, the library must buffer the contents
+     * of the input stream in order to calculate it.
      * </ul>
      * <p>
-     * If versioning is enabled for the specified bucket,
-     * this operation will never overwrite an existing object
-     * with the same key, but will keep the existing object as
-     * an older version
-     * until that version is
-     * explicitly deleted (see
-     * {@link AmazonS3#deleteVersion(String, String, String)}.
+     * If versioning is enabled for the specified bucket, this operation will
+     * never overwrite an existing object with the same key, but will keep the
+     * existing object as an older version until that version is explicitly
+     * deleted (see {@link AmazonS3#deleteVersion(String, String, String)}.
      * </p>
-
+     *
      * <p>
-     * If versioning is not enabled, this operation will overwrite an existing object
-     * with the same key; Amazon S3 will store the last write request.
-     * Amazon S3 does not provide object locking.
-     * If Amazon S3 receives multiple write requests for the same object nearly
-     * simultaneously, all of the objects might be stored.  However, a single
-     * object will be stored with the final write request.
+     * If versioning is not enabled, this operation will overwrite an existing
+     * object with the same key; Amazon S3 will store the last write request.
+     * Amazon S3 does not provide object locking. If Amazon S3 receives multiple
+     * write requests for the same object nearly simultaneously, all of the
+     * objects might be stored. However, a single object will be stored with the
+     * final write request.
      * </p>
-
+     *
      * <p>
      * When specifying a location constraint when creating a bucket, all objects
      * added to the bucket are stored in the bucket's region. For example, if
@@ -2047,6 +2066,15 @@ public interface AmazonS3 {
      * Amazon S3 never stores partial objects;
      * if during this call an exception wasn't thrown,
      * the entire object was stored.
+     * </p>
+     * <p>
+     * If you are uploading or accessing <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
      * </p>
      * <p>
      * The client automatically computes
@@ -2121,6 +2149,15 @@ public interface AmazonS3 {
      * Amazon S3 never stores partial objects;
      * if during this call an exception wasn't thrown,
      * the entire object was stored.
+     * </p>
+     * <p>
+     * If you are uploading or accessing <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
      * </p>
      * <p>
      * The client automatically computes
@@ -2227,6 +2264,15 @@ public interface AmazonS3 {
      * conditional constraints for copying objects, setting ACLs, overwriting
      * object metadata, etc.
      * </p>
+     * <p>
+     * If you are copying <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      *
      * @param sourceBucketName
      *            The name of the bucket containing the source object to copy.
@@ -2288,6 +2334,15 @@ public interface AmazonS3 {
      * object. For simple needs, use the
      * {@link AmazonS3Client#copyObject(String, String, String, String)} method.
      * </p>
+     * <p>
+     * If you are copying <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      *
      * @param copyObjectRequest
      *            The request object containing all the options for copying an
@@ -2324,6 +2379,15 @@ public interface AmazonS3 {
      * request, this method returns <code>null</code>.
      * This method returns a non-null result under all other
      * circumstances.
+     * </p>
+     * <p>
+     * If you are copying <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
      * </p>
      *
      * @param copyPartRequest
@@ -3383,6 +3447,15 @@ public interface AmazonS3 {
      * location with the owner's AWS security credentials, then the pre-signed
      * URL can be passed to the end user's application to use.
      * </p>
+     * <p>
+     * If you are generating presigned url for <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      *
      * @param bucketName
      *            The name of the bucket containing the desired object.
@@ -3429,6 +3502,15 @@ public interface AmazonS3 {
      * to PUT an object into the owner's bucket can be generated from a remote
      * location with the owner's AWS security credentials, then the pre-signed
      * URL can be passed to the end user's application to use.
+     * </p>
+     * <p>
+     * If you are generating presigned url for <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
      * </p>
      *
      * @param bucketName
@@ -3486,6 +3568,15 @@ public interface AmazonS3 {
      * >this blog post</a>. That method is only suitable for POSTs from HTML
      * forms by browsers.
      * </p>
+     * <p>
+     * If you are generating presigned url for <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need to
+     * specify the correct region of the bucket on your client and configure AWS
+     * Signature Version 4 for added security. For more information on how to do
+     * this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      *
      * @param generatePresignedUrlRequest
      *            The request object containing all the options for generating a
@@ -3510,12 +3601,21 @@ public interface AmazonS3 {
      * upload ID in the final request to either complete, or abort the multipart
      * upload request.
      * <p>
-     * <b>Note:</b>
-     * After you initiate a multipart upload and upload one or more parts,
-     * you must either complete or abort the multipart upload in order to stop
-     * getting charged for storage of the uploaded parts.
-     * Once you complete or abort the multipart upload Amazon S3 will release the
-     * stored parts and stop charging you for their storage.
+     * <b>Note:</b> After you initiate a multipart upload and upload one or more
+     * parts, you must either complete or abort the multipart upload in order to
+     * stop getting charged for storage of the uploaded parts. Once you complete
+     * or abort the multipart upload Amazon S3 will release the stored parts and
+     * stop charging you for their storage.
+     * </p>
+     * <p>
+     * If you are initiating a multipart upload for <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need
+     * to specify the correct region of the bucket on your client and configure
+     * AWS Signature Version 4 for added security. For more information on how
+     * to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      *
      * @param request
      *            The InitiateMultipartUploadRequest object that specifies all
@@ -3564,7 +3664,16 @@ public interface AmazonS3 {
      * getting charged for storage of the uploaded parts.
      * Once you complete or abort the multipart upload Amazon S3 will release the
      * stored parts and stop charging you for their storage.
-     *
+     * </p>
+     * <p>
+     * If you are performing upload part for <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need
+     * to specify the correct region of the bucket on your client and configure
+     * AWS Signature Version 4 for added security. For more information on how
+     * to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      * @param request
      *            The UploadPartRequest object that specifies all the parameters
      *            of this operation.
@@ -3649,6 +3758,16 @@ public interface AmazonS3 {
      * <p>
      * Processing of a CompleteMultipartUpload request may take several minutes
      * to complete.
+     * </p>
+     * <p>
+     * If you are perfoming a complete multipart upload for <a
+     * href="http://aws.amazon.com/kms/">AWS KMS</a>-encrypted objects, you need
+     * to specify the correct region of the bucket on your client and configure
+     * AWS Signature Version 4 for added security. For more information on how
+     * to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      *
      * @param request
      *            The CompleteMultipartUploadRequest object that specifies all

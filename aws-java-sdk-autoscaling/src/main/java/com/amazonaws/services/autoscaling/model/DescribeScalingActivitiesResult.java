@@ -17,21 +17,18 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for the DescribeScalingActivities action.
- * </p>
+ * 
  */
 public class DescribeScalingActivitiesResult implements Serializable {
 
     /**
-     * A list of the requested scaling activities.
+     * The scaling activities.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Activity> activities;
 
     /**
-     * Acts as a paging mechanism for large result sets. Set to a non-empty
-     * string if there are additional results waiting to be returned. Pass
-     * this in to subsequent calls to return additional results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -39,9 +36,9 @@ public class DescribeScalingActivitiesResult implements Serializable {
     private String nextToken;
 
     /**
-     * A list of the requested scaling activities.
+     * The scaling activities.
      *
-     * @return A list of the requested scaling activities.
+     * @return The scaling activities.
      */
     public java.util.List<Activity> getActivities() {
         if (activities == null) {
@@ -52,9 +49,9 @@ public class DescribeScalingActivitiesResult implements Serializable {
     }
     
     /**
-     * A list of the requested scaling activities.
+     * The scaling activities.
      *
-     * @param activities A list of the requested scaling activities.
+     * @param activities The scaling activities.
      */
     public void setActivities(java.util.Collection<Activity> activities) {
         if (activities == null) {
@@ -67,11 +64,11 @@ public class DescribeScalingActivitiesResult implements Serializable {
     }
     
     /**
-     * A list of the requested scaling activities.
+     * The scaling activities.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activities A list of the requested scaling activities.
+     * @param activities The scaling activities.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -85,11 +82,11 @@ public class DescribeScalingActivitiesResult implements Serializable {
     }
     
     /**
-     * A list of the requested scaling activities.
+     * The scaling activities.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activities A list of the requested scaling activities.
+     * @param activities The scaling activities.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -107,50 +104,44 @@ public class DescribeScalingActivitiesResult implements Serializable {
     }
 
     /**
-     * Acts as a paging mechanism for large result sets. Set to a non-empty
-     * string if there are additional results waiting to be returned. Pass
-     * this in to subsequent calls to return additional results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Acts as a paging mechanism for large result sets. Set to a non-empty
-     *         string if there are additional results waiting to be returned. Pass
-     *         this in to subsequent calls to return additional results.
+     * @return The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Acts as a paging mechanism for large result sets. Set to a non-empty
-     * string if there are additional results waiting to be returned. Pass
-     * this in to subsequent calls to return additional results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken Acts as a paging mechanism for large result sets. Set to a non-empty
-     *         string if there are additional results waiting to be returned. Pass
-     *         this in to subsequent calls to return additional results.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Acts as a paging mechanism for large result sets. Set to a non-empty
-     * string if there are additional results waiting to be returned. Pass
-     * this in to subsequent calls to return additional results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken Acts as a paging mechanism for large result sets. Set to a non-empty
-     *         string if there are additional results waiting to be returned. Pass
-     *         this in to subsequent calls to return additional results.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

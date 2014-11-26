@@ -64,8 +64,8 @@ import com.amazonaws.services.redshift.model.*;
  * <p>
  * If you are a database developer, the
  * <a href="http://docs.aws.amazon.com/redshift/latest/dg/welcome.html"> Amazon Redshift Database Developer Guide </a>
- * explains how to design, build, query, and maintain the databases that
- * make up your data warehouse.
+ * explains how to design, build, query, and maintain the databases
+ * that make up your data warehouse.
  * </p>
  */
 public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
@@ -309,7 +309,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param revokeSnapshotAccessRequest Container for the necessary
@@ -346,7 +346,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param revokeSnapshotAccessRequest Container for the necessary
@@ -548,6 +548,102 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
+     * Allows you to purchase reserved nodes. Amazon Redshift offers a
+     * predefined set of reserved node offerings. You can purchase one of the
+     * offerings. You can call the DescribeReservedNodeOfferings API to
+     * obtain the available reserved node offerings. You can call this API by
+     * providing a specific reserved node offering and the number of nodes
+     * you want to reserve.
+     * </p>
+     * <p>
+     * For more information about managing parameter groups, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param purchaseReservedNodeOfferingRequest Container for the necessary
+     *           parameters to execute the PurchaseReservedNodeOffering operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PurchaseReservedNodeOffering service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ReservedNode> purchaseReservedNodeOfferingAsync(final PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ReservedNode>() {
+            public ReservedNode call() throws Exception {
+                return purchaseReservedNodeOffering(purchaseReservedNodeOfferingRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Allows you to purchase reserved nodes. Amazon Redshift offers a
+     * predefined set of reserved node offerings. You can purchase one of the
+     * offerings. You can call the DescribeReservedNodeOfferings API to
+     * obtain the available reserved node offerings. You can call this API by
+     * providing a specific reserved node offering and the number of nodes
+     * you want to reserve.
+     * </p>
+     * <p>
+     * For more information about managing parameter groups, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param purchaseReservedNodeOfferingRequest Container for the necessary
+     *           parameters to execute the PurchaseReservedNodeOffering operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PurchaseReservedNodeOffering service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ReservedNode> purchaseReservedNodeOfferingAsync(
+            final PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest,
+            final AsyncHandler<PurchaseReservedNodeOfferingRequest, ReservedNode> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ReservedNode>() {
+            public ReservedNode call() throws Exception {
+              ReservedNode result;
+                try {
+                result = purchaseReservedNodeOffering(purchaseReservedNodeOfferingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(purchaseReservedNodeOfferingRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes the specified Amazon Redshift HSM configuration.
      * </p>
      *
@@ -616,102 +712,6 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
               }
               asyncHandler.onSuccess(deleteHsmConfigurationRequest, null);
                  return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Allows you to purchase reserved nodes. Amazon Redshift offers a
-     * predefined set of reserved node offerings. You can purchase one of the
-     * offerings. You can call the DescribeReservedNodeOfferings API to
-     * obtain the available reserved node offerings. You can call this API by
-     * providing a specific reserved node offering and the number of nodes
-     * you want to reserve.
-     * </p>
-     * <p>
-     * For more information about managing parameter groups, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
-     * </p>
-     *
-     * @param purchaseReservedNodeOfferingRequest Container for the necessary
-     *           parameters to execute the PurchaseReservedNodeOffering operation on
-     *           AmazonRedshift.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PurchaseReservedNodeOffering service method, as returned by
-     *         AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ReservedNode> purchaseReservedNodeOfferingAsync(final PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ReservedNode>() {
-            public ReservedNode call() throws Exception {
-                return purchaseReservedNodeOffering(purchaseReservedNodeOfferingRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Allows you to purchase reserved nodes. Amazon Redshift offers a
-     * predefined set of reserved node offerings. You can purchase one of the
-     * offerings. You can call the DescribeReservedNodeOfferings API to
-     * obtain the available reserved node offerings. You can call this API by
-     * providing a specific reserved node offering and the number of nodes
-     * you want to reserve.
-     * </p>
-     * <p>
-     * For more information about managing parameter groups, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
-     * </p>
-     *
-     * @param purchaseReservedNodeOfferingRequest Container for the necessary
-     *           parameters to execute the PurchaseReservedNodeOffering operation on
-     *           AmazonRedshift.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PurchaseReservedNodeOffering service method, as returned by
-     *         AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ReservedNode> purchaseReservedNodeOfferingAsync(
-            final PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest,
-            final AsyncHandler<PurchaseReservedNodeOfferingRequest, ReservedNode> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ReservedNode>() {
-            public ReservedNode call() throws Exception {
-              ReservedNode result;
-                try {
-                result = purchaseReservedNodeOffering(purchaseReservedNodeOfferingRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(purchaseReservedNodeOfferingRequest, result);
-                 return result;
         }
     });
     }
@@ -800,7 +800,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * parameters to take effect. For more information about managing
      * clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      * <p>
      * You can also change node type and the number of nodes to scale up or
@@ -843,7 +843,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * parameters to take effect. For more information about managing
      * clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      * <p>
      * You can also change node type and the number of nodes to scale up or
@@ -892,6 +892,80 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
+     * Deletes a tag or tags from a resource. You must provide the ARN of
+     * the resource from which you want to delete the tag or tags.
+     * </p>
+     *
+     * @param deleteTagsRequest Container for the necessary parameters to
+     *           execute the DeleteTags operation on AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteTags service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteTagsAsync(final DeleteTagsRequest deleteTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteTags(deleteTagsRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a tag or tags from a resource. You must provide the ARN of
+     * the resource from which you want to delete the tag or tags.
+     * </p>
+     *
+     * @param deleteTagsRequest Container for the necessary parameters to
+     *           execute the DeleteTags operation on AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteTags service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteTagsAsync(
+            final DeleteTagsRequest deleteTagsRequest,
+            final AsyncHandler<DeleteTagsRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteTags(deleteTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteTagsRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Copies the specified automated cluster snapshot to a new manual
      * cluster snapshot. The source must be an automated snapshot and it must
      * be in the available state.
@@ -907,7 +981,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param copyClusterSnapshotRequest Container for the necessary
@@ -952,7 +1026,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param copyClusterSnapshotRequest Container for the necessary
@@ -1005,7 +1079,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * the specific region and specify values when creating a cluster. For
      * more information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param describeOrderableClusterOptionsRequest Container for the
@@ -1045,7 +1119,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * the specific region and specify values when creating a cluster. For
      * more information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param describeOrderableClusterOptionsRequest Container for the
@@ -1171,7 +1245,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For information about subnet groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html"> Amazon Redshift Cluster Subnet Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSubnetGroupRequest Container for the necessary
@@ -1209,7 +1283,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For information about subnet groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html"> Amazon Redshift Cluster Subnet Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSubnetGroupRequest Container for the necessary
@@ -1337,7 +1411,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * ModifyCluster) are applied at this reboot. For more information about
      * managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param rebootClusterRequest Container for the necessary parameters to
@@ -1373,7 +1447,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * ModifyCluster) are applied at this reboot. For more information about
      * managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param rebootClusterRequest Container for the necessary parameters to
@@ -1498,7 +1572,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * operation cannot be canceled or reverted once submitted. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      * <p>
      * If you want to shut down the cluster and retain it for future use,
@@ -1512,7 +1586,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param deleteClusterRequest Container for the necessary parameters to
@@ -1547,7 +1621,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * operation cannot be canceled or reverted once submitted. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      * <p>
      * If you want to shut down the cluster and retain it for future use,
@@ -1561,7 +1635,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param deleteClusterRequest Container for the necessary parameters to
@@ -1610,7 +1684,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSnapshotRequest Container for the necessary
@@ -1646,7 +1720,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSnapshotRequest Container for the necessary
@@ -1697,7 +1771,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * the default cluster security group with the cluster. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterRequest Container for the necessary parameters to
@@ -1733,7 +1807,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * the default cluster security group with the cluster. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterRequest Container for the necessary parameters to
@@ -1878,7 +1952,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * authorized to connect to the cluster. For information about managing
      * security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Working with Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param authorizeClusterSecurityGroupIngressRequest Container for the
@@ -1931,7 +2005,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * authorized to connect to the cluster. For information about managing
      * security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Working with Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param authorizeClusterSecurityGroupIngressRequest Container for the
@@ -2059,7 +2133,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param deleteClusterSecurityGroupRequest Container for the necessary
@@ -2100,7 +2174,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param deleteClusterSecurityGroupRequest Container for the necessary
@@ -2224,7 +2298,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param describeDefaultClusterParametersRequest Container for the
@@ -2261,7 +2335,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param describeDefaultClusterParametersRequest Container for the
@@ -2386,7 +2460,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSecurityGroupRequest Container for the necessary
@@ -2423,7 +2497,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterSecurityGroupRequest Container for the necessary
@@ -2561,7 +2635,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * clusters to learn more about the Amazon Redshift versions. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param describeClusterVersionsRequest Container for the necessary
@@ -2596,7 +2670,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * clusters to learn more about the Amazon Redshift versions. For more
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>
      * </p>
      *
      * @param describeClusterVersionsRequest Container for the necessary
@@ -2655,7 +2729,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param restoreFromClusterSnapshotRequest Container for the necessary
@@ -2701,7 +2775,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param restoreFromClusterSnapshotRequest Container for the necessary
@@ -2746,12 +2820,230 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
+     * Adds one or more tags to a specified resource.
+     * </p>
+     * <p>
+     * A resource can have up to 10 tags. If you try to create more than 10
+     * tags for a resource, you will receive an error and the attempt will
+     * fail.
+     * </p>
+     * <p>
+     * If you specify a key that already exists for the resource, the value
+     * for that key will be updated with the new value.
+     * </p>
+     *
+     * @param createTagsRequest Container for the necessary parameters to
+     *           execute the CreateTags operation on AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTags service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createTagsAsync(final CreateTagsRequest createTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                createTags(createTagsRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to a specified resource.
+     * </p>
+     * <p>
+     * A resource can have up to 10 tags. If you try to create more than 10
+     * tags for a resource, you will receive an error and the attempt will
+     * fail.
+     * </p>
+     * <p>
+     * If you specify a key that already exists for the resource, the value
+     * for that key will be updated with the new value.
+     * </p>
+     *
+     * @param createTagsRequest Container for the necessary parameters to
+     *           execute the CreateTags operation on AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTags service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createTagsAsync(
+            final CreateTagsRequest createTagsRequest,
+            final AsyncHandler<CreateTagsRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                createTags(createTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createTagsRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns a list of tags. You can return tags from a specific resource
+     * by specifying an ARN, or you can return all tags for a given type of
+     * resource, such as clusters, snapshots, and so on.
+     * </p>
+     * <p>
+     * The following are limitations for <code>DescribeTags</code> :
+     * <ul>
+     * <li>You cannot specify an ARN and a resource-type value together in
+     * the same request.</li>
+     * <li>You cannot use the <code>MaxRecords</code> and
+     * <code>Marker</code> parameters together with the ARN parameter.</li>
+     * <li>The <code>MaxRecords</code> parameter can be a range from 10 to
+     * 50 results to return in a request.</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all resources that match any combination of
+     * the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all resources
+     * that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, resources
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
+     * </p>
+     *
+     * @param describeTagsRequest Container for the necessary parameters to
+     *           execute the DescribeTags operation on AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeTags service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeTagsResult> describeTagsAsync(final DescribeTagsRequest describeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeTagsResult>() {
+            public DescribeTagsResult call() throws Exception {
+                return describeTags(describeTagsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns a list of tags. You can return tags from a specific resource
+     * by specifying an ARN, or you can return all tags for a given type of
+     * resource, such as clusters, snapshots, and so on.
+     * </p>
+     * <p>
+     * The following are limitations for <code>DescribeTags</code> :
+     * <ul>
+     * <li>You cannot specify an ARN and a resource-type value together in
+     * the same request.</li>
+     * <li>You cannot use the <code>MaxRecords</code> and
+     * <code>Marker</code> parameters together with the ARN parameter.</li>
+     * <li>The <code>MaxRecords</code> parameter can be a range from 10 to
+     * 50 results to return in a request.</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all resources that match any combination of
+     * the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all resources
+     * that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, resources
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
+     * </p>
+     *
+     * @param describeTagsRequest Container for the necessary parameters to
+     *           execute the DescribeTags operation on AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeTags service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeTagsResult> describeTagsAsync(
+            final DescribeTagsRequest describeTagsRequest,
+            final AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeTagsResult>() {
+            public DescribeTagsResult call() throws Exception {
+              DescribeTagsResult result;
+                try {
+                result = describeTags(describeTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeTagsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Modifies the parameters of a parameter group.
      * </p>
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param modifyClusterParameterGroupRequest Container for the necessary
@@ -2787,7 +3079,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param modifyClusterParameterGroupRequest Container for the necessary
@@ -2921,7 +3213,20 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all security groups that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all security
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, security
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterSecurityGroupsRequest Container for the
@@ -2959,7 +3264,20 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all security groups that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all security
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, security
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterSecurityGroupsRequest Container for the
@@ -3009,6 +3327,19 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * returns information about all cluster subnet groups that are defined
      * in you AWS account.
      * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all subnet groups that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all subnet
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, subnet
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
+     * </p>
      *
      * @param describeClusterSubnetGroupsRequest Container for the necessary
      *           parameters to execute the DescribeClusterSubnetGroups operation on
@@ -3042,6 +3373,19 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * metadata about your cluster subnet groups. By default, this operation
      * returns information about all cluster subnet groups that are defined
      * in you AWS account.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all subnet groups that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all subnet
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, subnet
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterSubnetGroupsRequest Container for the necessary
@@ -3091,6 +3435,19 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * information about all the HSM configurations owned by your AWS
      * customer account.
      * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all HSM connections that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all HSM
+     * connections that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, HSM
+     * connections are returned regardless of whether they have tag keys or
+     * values associated with them.
+     * </p>
      *
      * @param describeHsmConfigurationsRequest Container for the necessary
      *           parameters to execute the DescribeHsmConfigurations operation on
@@ -3124,6 +3481,19 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * configuration. If no configuration ID is specified, returns
      * information about all the HSM configurations owned by your AWS
      * customer account.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all HSM connections that match any combination
+     * of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all HSM
+     * connections that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, HSM
+     * connections are returned regardless of whether they have tag keys or
+     * values associated with them.
      * </p>
      *
      * @param describeHsmConfigurationsRequest Container for the necessary
@@ -3638,7 +4008,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param authorizeSnapshotAccessRequest Container for the necessary
@@ -3674,7 +4044,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about working with snapshots, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param authorizeSnapshotAccessRequest Container for the necessary
@@ -3805,7 +4175,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param describeReservedNodeOfferingsRequest Container for the
@@ -3847,7 +4217,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param describeReservedNodeOfferingsRequest Container for the
@@ -4133,7 +4503,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * needed to store and use encryption keys in the HSM. For more
      * information, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Management Guide.
+     * in the Amazon Redshift Cluster Management Guide.
      * </p>
      *
      * @param createHsmClientCertificateRequest Container for the necessary
@@ -4175,7 +4545,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * needed to store and use encryption keys in the HSM. For more
      * information, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Management Guide.
+     * in the Amazon Redshift Cluster Management Guide.
      * </p>
      *
      * @param createHsmClientCertificateRequest Container for the necessary
@@ -4220,199 +4590,23 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
-     * Revokes an ingress rule in an Amazon Redshift security group for a
-     * previously authorized IP range or Amazon EC2 security group. To add an
-     * ingress rule, see AuthorizeClusterSecurityGroupIngress. For
-     * information about managing security groups, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
-     * </p>
-     *
-     * @param revokeClusterSecurityGroupIngressRequest Container for the
-     *           necessary parameters to execute the RevokeClusterSecurityGroupIngress
-     *           operation on AmazonRedshift.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RevokeClusterSecurityGroupIngress service method, as returned by
-     *         AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(final RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ClusterSecurityGroup>() {
-            public ClusterSecurityGroup call() throws Exception {
-                return revokeClusterSecurityGroupIngress(revokeClusterSecurityGroupIngressRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Revokes an ingress rule in an Amazon Redshift security group for a
-     * previously authorized IP range or Amazon EC2 security group. To add an
-     * ingress rule, see AuthorizeClusterSecurityGroupIngress. For
-     * information about managing security groups, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
-     * </p>
-     *
-     * @param revokeClusterSecurityGroupIngressRequest Container for the
-     *           necessary parameters to execute the RevokeClusterSecurityGroupIngress
-     *           operation on AmazonRedshift.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RevokeClusterSecurityGroupIngress service method, as returned by
-     *         AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(
-            final RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest,
-            final AsyncHandler<RevokeClusterSecurityGroupIngressRequest, ClusterSecurityGroup> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ClusterSecurityGroup>() {
-            public ClusterSecurityGroup call() throws Exception {
-              ClusterSecurityGroup result;
-                try {
-                result = revokeClusterSecurityGroupIngress(revokeClusterSecurityGroupIngressRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(revokeClusterSecurityGroupIngressRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns a detailed list of parameters contained within the specified
-     * Amazon Redshift parameter group. For each parameter the response
-     * includes information such as parameter name, description, data type,
-     * value, whether the parameter value is modifiable, and so on.
-     * </p>
-     * <p>
-     * You can specify <i>source</i> filter to retrieve parameters of only
-     * specific type. For example, to retrieve parameters that were modified
-     * by a user action such as from ModifyClusterParameterGroup, you can
-     * specify <i>source</i> equal to <i>user</i> .
-     * </p>
-     * <p>
-     * For more information about managing parameter groups, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
-     * </p>
-     *
-     * @param describeClusterParametersRequest Container for the necessary
-     *           parameters to execute the DescribeClusterParameters operation on
-     *           AmazonRedshift.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeClusterParameters service method, as returned by
-     *         AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeClusterParametersResult> describeClusterParametersAsync(final DescribeClusterParametersRequest describeClusterParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeClusterParametersResult>() {
-            public DescribeClusterParametersResult call() throws Exception {
-                return describeClusterParameters(describeClusterParametersRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns a detailed list of parameters contained within the specified
-     * Amazon Redshift parameter group. For each parameter the response
-     * includes information such as parameter name, description, data type,
-     * value, whether the parameter value is modifiable, and so on.
-     * </p>
-     * <p>
-     * You can specify <i>source</i> filter to retrieve parameters of only
-     * specific type. For example, to retrieve parameters that were modified
-     * by a user action such as from ModifyClusterParameterGroup, you can
-     * specify <i>source</i> equal to <i>user</i> .
-     * </p>
-     * <p>
-     * For more information about managing parameter groups, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
-     * </p>
-     *
-     * @param describeClusterParametersRequest Container for the necessary
-     *           parameters to execute the DescribeClusterParameters operation on
-     *           AmazonRedshift.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeClusterParameters service method, as returned by
-     *         AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeClusterParametersResult> describeClusterParametersAsync(
-            final DescribeClusterParametersRequest describeClusterParametersRequest,
-            final AsyncHandler<DescribeClusterParametersRequest, DescribeClusterParametersResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeClusterParametersResult>() {
-            public DescribeClusterParametersResult call() throws Exception {
-              DescribeClusterParametersResult result;
-                try {
-                result = describeClusterParameters(describeClusterParametersRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeClusterParametersRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Returns information about the specified HSM client certificate. If no
      * certificate ID is specified, returns information about all the HSM
      * certificates owned by your AWS customer account.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all HSM client certificates that match any
+     * combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all HSM
+     * client certificates that have any combination of those values are
+     * returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, HSM client
+     * certificates are returned regardless of whether they have tag keys or
+     * values associated with them.
      * </p>
      *
      * @param describeHsmClientCertificatesRequest Container for the
@@ -4446,6 +4640,20 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * Returns information about the specified HSM client certificate. If no
      * certificate ID is specified, returns information about all the HSM
      * certificates owned by your AWS customer account.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all HSM client certificates that match any
+     * combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all HSM
+     * client certificates that have any combination of those values are
+     * returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, HSM client
+     * certificates are returned regardless of whether they have tag keys or
+     * values associated with them.
      * </p>
      *
      * @param describeHsmClientCertificatesRequest Container for the
@@ -4490,6 +4698,196 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
+     * Returns a detailed list of parameters contained within the specified
+     * Amazon Redshift parameter group. For each parameter the response
+     * includes information such as parameter name, description, data type,
+     * value, whether the parameter value is modifiable, and so on.
+     * </p>
+     * <p>
+     * You can specify <i>source</i> filter to retrieve parameters of only
+     * specific type. For example, to retrieve parameters that were modified
+     * by a user action such as from ModifyClusterParameterGroup, you can
+     * specify <i>source</i> equal to <i>user</i> .
+     * </p>
+     * <p>
+     * For more information about managing parameter groups, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param describeClusterParametersRequest Container for the necessary
+     *           parameters to execute the DescribeClusterParameters operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeClusterParameters service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeClusterParametersResult> describeClusterParametersAsync(final DescribeClusterParametersRequest describeClusterParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeClusterParametersResult>() {
+            public DescribeClusterParametersResult call() throws Exception {
+                return describeClusterParameters(describeClusterParametersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns a detailed list of parameters contained within the specified
+     * Amazon Redshift parameter group. For each parameter the response
+     * includes information such as parameter name, description, data type,
+     * value, whether the parameter value is modifiable, and so on.
+     * </p>
+     * <p>
+     * You can specify <i>source</i> filter to retrieve parameters of only
+     * specific type. For example, to retrieve parameters that were modified
+     * by a user action such as from ModifyClusterParameterGroup, you can
+     * specify <i>source</i> equal to <i>user</i> .
+     * </p>
+     * <p>
+     * For more information about managing parameter groups, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param describeClusterParametersRequest Container for the necessary
+     *           parameters to execute the DescribeClusterParameters operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeClusterParameters service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeClusterParametersResult> describeClusterParametersAsync(
+            final DescribeClusterParametersRequest describeClusterParametersRequest,
+            final AsyncHandler<DescribeClusterParametersRequest, DescribeClusterParametersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeClusterParametersResult>() {
+            public DescribeClusterParametersResult call() throws Exception {
+              DescribeClusterParametersResult result;
+                try {
+                result = describeClusterParameters(describeClusterParametersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeClusterParametersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Revokes an ingress rule in an Amazon Redshift security group for a
+     * previously authorized IP range or Amazon EC2 security group. To add an
+     * ingress rule, see AuthorizeClusterSecurityGroupIngress. For
+     * information about managing security groups, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param revokeClusterSecurityGroupIngressRequest Container for the
+     *           necessary parameters to execute the RevokeClusterSecurityGroupIngress
+     *           operation on AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RevokeClusterSecurityGroupIngress service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(final RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ClusterSecurityGroup>() {
+            public ClusterSecurityGroup call() throws Exception {
+                return revokeClusterSecurityGroupIngress(revokeClusterSecurityGroupIngressRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Revokes an ingress rule in an Amazon Redshift security group for a
+     * previously authorized IP range or Amazon EC2 security group. To add an
+     * ingress rule, see AuthorizeClusterSecurityGroupIngress. For
+     * information about managing security groups, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param revokeClusterSecurityGroupIngressRequest Container for the
+     *           necessary parameters to execute the RevokeClusterSecurityGroupIngress
+     *           operation on AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RevokeClusterSecurityGroupIngress service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(
+            final RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest,
+            final AsyncHandler<RevokeClusterSecurityGroupIngressRequest, ClusterSecurityGroup> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ClusterSecurityGroup>() {
+            public ClusterSecurityGroup call() throws Exception {
+              ClusterSecurityGroup result;
+                try {
+                result = revokeClusterSecurityGroupIngress(revokeClusterSecurityGroupIngressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(revokeClusterSecurityGroupIngressRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Creates an HSM configuration that contains the information required
      * by an Amazon Redshift cluster to store and use database encryption
      * keys in a Hardware Security Module (HSM). After creating the HSM
@@ -4500,7 +4898,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * In addition to creating an HSM configuration, you must also create an
      * HSM client certificate. For more information, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Management Guide.
+     * in the Amazon Redshift Cluster Management Guide.
      * </p>
      *
      * @param createHsmConfigurationRequest Container for the necessary
@@ -4540,7 +4938,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * In addition to creating an HSM configuration, you must also create an
      * HSM client certificate. For more information, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Management Guide.
+     * in the Amazon Redshift Cluster Management Guide.
      * </p>
      *
      * @param createHsmConfigurationRequest Container for the necessary
@@ -4590,7 +4988,20 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * supports pagination. For more information about managing clusters, go
      * to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all clusters that match any combination of the
+     * specified keys and values. For example, if you have <code>owner</code>
+     * and <code>environment</code> for tag keys, and <code>admin</code> and
+     * <code>test</code> for tag values, all clusters that have any
+     * combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, clusters
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClustersRequest Container for the necessary parameters
@@ -4625,7 +5036,20 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * supports pagination. For more information about managing clusters, go
      * to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all clusters that match any combination of the
+     * specified keys and values. For example, if you have <code>owner</code>
+     * and <code>environment</code> for tag keys, and <code>admin</code> and
+     * <code>test</code> for tag values, all clusters that have any
+     * combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, clusters
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClustersRequest Container for the necessary parameters
@@ -4674,6 +5098,21 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * account. No information is returned for snapshots owned by inactive
      * AWS customer accounts.
      * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all snapshots that match any combination of
+     * the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all snapshots
+     * that have any combination of those values are returned. Only snapshots
+     * that you own are returned in the response; shared snapshots are not
+     * returned with the tag key and tag value request parameters.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, snapshots
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
+     * </p>
      *
      * @param describeClusterSnapshotsRequest Container for the necessary
      *           parameters to execute the DescribeClusterSnapshots operation on
@@ -4708,6 +5147,21 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * about all snapshots of all clusters that are owned by you AWS customer
      * account. No information is returned for snapshots owned by inactive
      * AWS customer accounts.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all snapshots that match any combination of
+     * the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all snapshots
+     * that have any combination of those values are returned. Only snapshots
+     * that you own are returned in the response; shared snapshots are not
+     * returned with the tag key and tag value request parameters.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, snapshots
+     * are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterSnapshotsRequest Container for the necessary
@@ -4765,7 +5219,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * applies to the databases you create on the cluster. For more
      * information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterParameterGroupRequest Container for the necessary
@@ -4809,7 +5263,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * applies to the databases you create on the cluster. For more
      * information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
      *
      * @param createClusterParameterGroupRequest Container for the necessary
@@ -4864,7 +5318,20 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all parameter groups that match any
+     * combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all parameter
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, parameter
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterParameterGroupsRequest Container for the
@@ -4905,7 +5372,20 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
-     * in the <i>Amazon Redshift Management Guide</i> .
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request,
+     * Amazon Redshift returns all parameter groups that match any
+     * combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and
+     * <code>admin</code> and <code>test</code> for tag values, all parameter
+     * groups that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, parameter
+     * groups are returned regardless of whether they have tag keys or values
+     * associated with them.
      * </p>
      *
      * @param describeClusterParameterGroupsRequest Container for the

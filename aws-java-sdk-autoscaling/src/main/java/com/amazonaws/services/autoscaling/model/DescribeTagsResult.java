@@ -17,19 +17,18 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class DescribeTagsResult implements Serializable {
 
     /**
-     * The list of tags.
+     * The tags.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription> tags;
 
     /**
-     * A string used to mark the start of the next batch of returned results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -37,9 +36,9 @@ public class DescribeTagsResult implements Serializable {
     private String nextToken;
 
     /**
-     * The list of tags.
+     * The tags.
      *
-     * @return The list of tags.
+     * @return The tags.
      */
     public java.util.List<TagDescription> getTags() {
         if (tags == null) {
@@ -50,9 +49,9 @@ public class DescribeTagsResult implements Serializable {
     }
     
     /**
-     * The list of tags.
+     * The tags.
      *
-     * @param tags The list of tags.
+     * @param tags The tags.
      */
     public void setTags(java.util.Collection<TagDescription> tags) {
         if (tags == null) {
@@ -65,11 +64,11 @@ public class DescribeTagsResult implements Serializable {
     }
     
     /**
-     * The list of tags.
+     * The tags.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The list of tags.
+     * @param tags The tags.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -83,11 +82,11 @@ public class DescribeTagsResult implements Serializable {
     }
     
     /**
-     * The list of tags.
+     * The tags.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The list of tags.
+     * @param tags The tags.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -105,38 +104,44 @@ public class DescribeTagsResult implements Serializable {
     }
 
     /**
-     * A string used to mark the start of the next batch of returned results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A string used to mark the start of the next batch of returned results.
+     * @return The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string used to mark the start of the next batch of returned results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string used to mark the start of the next batch of returned results.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string used to mark the start of the next batch of returned results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string used to mark the start of the next batch of returned results.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

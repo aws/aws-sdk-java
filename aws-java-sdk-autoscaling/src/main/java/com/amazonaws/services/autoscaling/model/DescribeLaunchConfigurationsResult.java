@@ -17,19 +17,18 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The <code>LaunchConfigurationsType</code> data type.
- * </p>
+ * 
  */
 public class DescribeLaunchConfigurationsResult implements Serializable {
 
     /**
-     * A list of launch configurations.
+     * The launch configurations.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchConfiguration> launchConfigurations;
 
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -37,9 +36,9 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
     private String nextToken;
 
     /**
-     * A list of launch configurations.
+     * The launch configurations.
      *
-     * @return A list of launch configurations.
+     * @return The launch configurations.
      */
     public java.util.List<LaunchConfiguration> getLaunchConfigurations() {
         if (launchConfigurations == null) {
@@ -50,9 +49,9 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
     }
     
     /**
-     * A list of launch configurations.
+     * The launch configurations.
      *
-     * @param launchConfigurations A list of launch configurations.
+     * @param launchConfigurations The launch configurations.
      */
     public void setLaunchConfigurations(java.util.Collection<LaunchConfiguration> launchConfigurations) {
         if (launchConfigurations == null) {
@@ -65,11 +64,11 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
     }
     
     /**
-     * A list of launch configurations.
+     * The launch configurations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchConfigurations A list of launch configurations.
+     * @param launchConfigurations The launch configurations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -83,11 +82,11 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
     }
     
     /**
-     * A list of launch configurations.
+     * The launch configurations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchConfigurations A list of launch configurations.
+     * @param launchConfigurations The launch configurations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -105,38 +104,44 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
     }
 
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A string that marks the start of the next batch of returned results.
+     * @return The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that marks the start of the next batch of returned results.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that marks the start of the next batch of returned results.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

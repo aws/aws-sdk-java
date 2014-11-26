@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>Filter</code> data type.
+ * Describes a filter.
  * </p>
  */
 public class Filter implements Serializable {
 
     /**
-     * The name of the filter. Valid Name values are:
+     * The name of the filter. The valid values are:
      * <code>"auto-scaling-group"</code>, <code>"key"</code>,
      * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
@@ -39,14 +39,14 @@ public class Filter implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> values;
 
     /**
-     * The name of the filter. Valid Name values are:
+     * The name of the filter. The valid values are:
      * <code>"auto-scaling-group"</code>, <code>"key"</code>,
      * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the filter. Valid Name values are:
+     * @return The name of the filter. The valid values are:
      *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
      *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      */
@@ -55,14 +55,14 @@ public class Filter implements Serializable {
     }
     
     /**
-     * The name of the filter. Valid Name values are:
+     * The name of the filter. The valid values are:
      * <code>"auto-scaling-group"</code>, <code>"key"</code>,
      * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param name The name of the filter. Valid Name values are:
+     * @param name The name of the filter. The valid values are:
      *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
      *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      */
@@ -71,7 +71,7 @@ public class Filter implements Serializable {
     }
     
     /**
-     * The name of the filter. Valid Name values are:
+     * The name of the filter. The valid values are:
      * <code>"auto-scaling-group"</code>, <code>"key"</code>,
      * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
@@ -80,7 +80,7 @@ public class Filter implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param name The name of the filter. Valid Name values are:
+     * @param name The name of the filter. The valid values are:
      *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
      *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      *

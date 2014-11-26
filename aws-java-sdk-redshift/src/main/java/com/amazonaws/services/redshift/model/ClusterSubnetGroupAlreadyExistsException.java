@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A
- * <i>ClusterSubnetGroupName</i> is already used by
- * an existing cluster subnet group.
+ * A <i>ClusterSubnetGroupName</i> is already used by an existing
+ * cluster subnet group.
  * </p>
  */        
 public class ClusterSubnetGroupAlreadyExistsException extends AmazonServiceException {

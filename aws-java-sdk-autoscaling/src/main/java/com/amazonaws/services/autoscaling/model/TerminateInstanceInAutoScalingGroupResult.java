@@ -17,41 +17,39 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for the TerminateInstanceInAutoScalingGroup action.
- * </p>
+ * 
  */
 public class TerminateInstanceInAutoScalingGroupResult implements Serializable {
 
     /**
-     * A scaling Activity.
+     * A scaling activity.
      */
     private Activity activity;
 
     /**
-     * A scaling Activity.
+     * A scaling activity.
      *
-     * @return A scaling Activity.
+     * @return A scaling activity.
      */
     public Activity getActivity() {
         return activity;
     }
     
     /**
-     * A scaling Activity.
+     * A scaling activity.
      *
-     * @param activity A scaling Activity.
+     * @param activity A scaling activity.
      */
     public void setActivity(Activity activity) {
         this.activity = activity;
     }
     
     /**
-     * A scaling Activity.
+     * A scaling activity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activity A scaling Activity.
+     * @param activity A scaling activity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

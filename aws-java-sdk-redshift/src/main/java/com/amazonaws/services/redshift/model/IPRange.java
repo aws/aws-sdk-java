@@ -34,6 +34,11 @@ public class IPRange implements Serializable {
     private String cIDRIP;
 
     /**
+     * The list of tags for the IP range.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * The status of the IP range, for example, "authorized".
      *
      * @return The status of the IP range, for example, "authorized".
@@ -100,6 +105,74 @@ public class IPRange implements Serializable {
     }
 
     /**
+     * The list of tags for the IP range.
+     *
+     * @return The list of tags for the IP range.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * The list of tags for the IP range.
+     *
+     * @param tags The list of tags for the IP range.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * The list of tags for the IP range.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the IP range.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public IPRange withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of tags for the IP range.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the IP range.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public IPRange withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -112,7 +185,8 @@ public class IPRange implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getCIDRIP() != null) sb.append("CIDRIP: " + getCIDRIP() );
+        if (getCIDRIP() != null) sb.append("CIDRIP: " + getCIDRIP() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -124,6 +198,7 @@ public class IPRange implements Serializable {
         
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getCIDRIP() == null) ? 0 : getCIDRIP().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -139,6 +214,8 @@ public class IPRange implements Serializable {
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getCIDRIP() == null ^ this.getCIDRIP() == null) return false;
         if (other.getCIDRIP() != null && other.getCIDRIP().equals(this.getCIDRIP()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

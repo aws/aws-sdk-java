@@ -65,6 +65,12 @@ public class CaptionFormat implements Serializable {
     private String pattern;
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption formats.
+     */
+    private Encryption encryption;
+
+    /**
      * The format you specify determines whether Elastic Transcoder generates
      * an embedded or sidecar caption for this output. <ul> <li><p><b>Valid
      * Embedded Caption Formats:</b> <ul> <li><p><b>For MP3</b>: None</li>
@@ -293,6 +299,45 @@ public class CaptionFormat implements Serializable {
     }
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption formats.
+     *
+     * @return The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your caption formats.
+     */
+    public Encryption getEncryption() {
+        return encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption formats.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your caption formats.
+     */
+    public void setEncryption(Encryption encryption) {
+        this.encryption = encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption formats.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your caption formats.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CaptionFormat withEncryption(Encryption encryption) {
+        this.encryption = encryption;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -305,7 +350,8 @@ public class CaptionFormat implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null) sb.append("Format: " + getFormat() + ",");
-        if (getPattern() != null) sb.append("Pattern: " + getPattern() );
+        if (getPattern() != null) sb.append("Pattern: " + getPattern() + ",");
+        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +363,7 @@ public class CaptionFormat implements Serializable {
         
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode()); 
         hashCode = prime * hashCode + ((getPattern() == null) ? 0 : getPattern().hashCode()); 
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
         return hashCode;
     }
     
@@ -332,6 +379,8 @@ public class CaptionFormat implements Serializable {
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false) return false; 
         if (other.getPattern() == null ^ this.getPattern() == null) return false;
         if (other.getPattern() != null && other.getPattern().equals(this.getPattern()) == false) return false; 
+        if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
         return true;
     }
     

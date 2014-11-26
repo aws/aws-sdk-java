@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteTags(DeleteTagsRequest) DeleteTags operation}.
  * <p>
- * Removes the specified tags or a set of tags from a set of resources.
+ * Deletes the specified tags.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteTags(DeleteTagsRequest)

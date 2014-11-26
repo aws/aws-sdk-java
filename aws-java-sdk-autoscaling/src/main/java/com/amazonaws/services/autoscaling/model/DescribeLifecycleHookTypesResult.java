@@ -22,21 +22,18 @@ import java.io.Serializable;
 public class DescribeLifecycleHookTypesResult implements Serializable {
 
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> lifecycleHookTypes;
 
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      *
-     * @return Returns a list of all notification types supported by Auto Scaling.
-     *         They are: <ul>
+     * @return One or more of the following notification types: <ul>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      */
@@ -49,13 +46,11 @@ public class DescribeLifecycleHookTypesResult implements Serializable {
     }
     
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      *
-     * @param lifecycleHookTypes Returns a list of all notification types supported by Auto Scaling.
-     *         They are: <ul>
+     * @param lifecycleHookTypes One or more of the following notification types: <ul>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      */
@@ -70,15 +65,13 @@ public class DescribeLifecycleHookTypesResult implements Serializable {
     }
     
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleHookTypes Returns a list of all notification types supported by Auto Scaling.
-     *         They are: <ul>
+     * @param lifecycleHookTypes One or more of the following notification types: <ul>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      *
@@ -94,15 +87,13 @@ public class DescribeLifecycleHookTypesResult implements Serializable {
     }
     
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleHookTypes Returns a list of all notification types supported by Auto Scaling.
-     *         They are: <ul>
+     * @param lifecycleHookTypes One or more of the following notification types: <ul>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCHING</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATING</code></li> </ul>
      *

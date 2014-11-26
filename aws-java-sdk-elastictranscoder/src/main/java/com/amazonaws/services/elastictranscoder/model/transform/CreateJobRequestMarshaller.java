@@ -127,6 +127,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 if (input.getContainer() != null) {
                     jsonWriter.key("Container").value(input.getContainer());
                 }
+                Encryption encryption = input.getEncryption();
+                if (encryption != null) {
+
+                    jsonWriter.key("Encryption");
+                    jsonWriter.object();
+
+                    if (encryption.getMode() != null) {
+                        jsonWriter.key("Mode").value(encryption.getMode());
+                    }
+                    if (encryption.getKey() != null) {
+                        jsonWriter.key("Key").value(encryption.getKey());
+                    }
+                    if (encryption.getKeyMd5() != null) {
+                        jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                    }
+                    if (encryption.getInitializationVector() != null) {
+                        jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                    }
+                    jsonWriter.endObject();
+                }
                 jsonWriter.endObject();
             }
             CreateJobOutput output = createJobRequest.getOutput();
@@ -140,6 +160,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 }
                 if (output.getThumbnailPattern() != null) {
                     jsonWriter.key("ThumbnailPattern").value(output.getThumbnailPattern());
+                }
+                Encryption thumbnailEncryption = output.getThumbnailEncryption();
+                if (thumbnailEncryption != null) {
+
+                    jsonWriter.key("ThumbnailEncryption");
+                    jsonWriter.object();
+
+                    if (thumbnailEncryption.getMode() != null) {
+                        jsonWriter.key("Mode").value(thumbnailEncryption.getMode());
+                    }
+                    if (thumbnailEncryption.getKey() != null) {
+                        jsonWriter.key("Key").value(thumbnailEncryption.getKey());
+                    }
+                    if (thumbnailEncryption.getKeyMd5() != null) {
+                        jsonWriter.key("KeyMd5").value(thumbnailEncryption.getKeyMd5());
+                    }
+                    if (thumbnailEncryption.getInitializationVector() != null) {
+                        jsonWriter.key("InitializationVector").value(thumbnailEncryption.getInitializationVector());
+                    }
+                    jsonWriter.endObject();
                 }
                 if (output.getRotate() != null) {
                     jsonWriter.key("Rotate").value(output.getRotate());
@@ -165,6 +205,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                             }
                             if (watermarksListValue.getInputKey() != null) {
                                 jsonWriter.key("InputKey").value(watermarksListValue.getInputKey());
+                            }
+                            Encryption encryption = watermarksListValue.getEncryption();
+                            if (encryption != null) {
+
+                                jsonWriter.key("Encryption");
+                                jsonWriter.object();
+
+                                if (encryption.getMode() != null) {
+                                    jsonWriter.key("Mode").value(encryption.getMode());
+                                }
+                                if (encryption.getKey() != null) {
+                                    jsonWriter.key("Key").value(encryption.getKey());
+                                }
+                                if (encryption.getKeyMd5() != null) {
+                                    jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                                }
+                                if (encryption.getInitializationVector() != null) {
+                                    jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                                }
+                                jsonWriter.endObject();
                             }
                             jsonWriter.endObject();
                         }
@@ -207,6 +267,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                 }
                                 if (artworkListValue.getAlbumArtFormat() != null) {
                                     jsonWriter.key("AlbumArtFormat").value(artworkListValue.getAlbumArtFormat());
+                                }
+                                Encryption encryption = artworkListValue.getEncryption();
+                                if (encryption != null) {
+
+                                    jsonWriter.key("Encryption");
+                                    jsonWriter.object();
+
+                                    if (encryption.getMode() != null) {
+                                        jsonWriter.key("Mode").value(encryption.getMode());
+                                    }
+                                    if (encryption.getKey() != null) {
+                                        jsonWriter.key("Key").value(encryption.getKey());
+                                    }
+                                    if (encryption.getKeyMd5() != null) {
+                                        jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                                    }
+                                    if (encryption.getInitializationVector() != null) {
+                                        jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                                    }
+                                    jsonWriter.endObject();
                                 }
                                 jsonWriter.endObject();
                             }
@@ -275,6 +355,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                 if (captionSourcesListValue.getLabel() != null) {
                                     jsonWriter.key("Label").value(captionSourcesListValue.getLabel());
                                 }
+                                Encryption encryption = captionSourcesListValue.getEncryption();
+                                if (encryption != null) {
+
+                                    jsonWriter.key("Encryption");
+                                    jsonWriter.object();
+
+                                    if (encryption.getMode() != null) {
+                                        jsonWriter.key("Mode").value(encryption.getMode());
+                                    }
+                                    if (encryption.getKey() != null) {
+                                        jsonWriter.key("Key").value(encryption.getKey());
+                                    }
+                                    if (encryption.getKeyMd5() != null) {
+                                        jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                                    }
+                                    if (encryption.getInitializationVector() != null) {
+                                        jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                                    }
+                                    jsonWriter.endObject();
+                                }
                                 jsonWriter.endObject();
                             }
                         }
@@ -296,10 +396,50 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                 if (captionFormatsListValue.getPattern() != null) {
                                     jsonWriter.key("Pattern").value(captionFormatsListValue.getPattern());
                                 }
+                                Encryption encryption = captionFormatsListValue.getEncryption();
+                                if (encryption != null) {
+
+                                    jsonWriter.key("Encryption");
+                                    jsonWriter.object();
+
+                                    if (encryption.getMode() != null) {
+                                        jsonWriter.key("Mode").value(encryption.getMode());
+                                    }
+                                    if (encryption.getKey() != null) {
+                                        jsonWriter.key("Key").value(encryption.getKey());
+                                    }
+                                    if (encryption.getKeyMd5() != null) {
+                                        jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                                    }
+                                    if (encryption.getInitializationVector() != null) {
+                                        jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                                    }
+                                    jsonWriter.endObject();
+                                }
                                 jsonWriter.endObject();
                             }
                         }
                         jsonWriter.endArray();
+                    }
+                    jsonWriter.endObject();
+                }
+                Encryption encryption = output.getEncryption();
+                if (encryption != null) {
+
+                    jsonWriter.key("Encryption");
+                    jsonWriter.object();
+
+                    if (encryption.getMode() != null) {
+                        jsonWriter.key("Mode").value(encryption.getMode());
+                    }
+                    if (encryption.getKey() != null) {
+                        jsonWriter.key("Key").value(encryption.getKey());
+                    }
+                    if (encryption.getKeyMd5() != null) {
+                        jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                    }
+                    if (encryption.getInitializationVector() != null) {
+                        jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
                     }
                     jsonWriter.endObject();
                 }
@@ -320,6 +460,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                         }
                         if (outputsListValue.getThumbnailPattern() != null) {
                             jsonWriter.key("ThumbnailPattern").value(outputsListValue.getThumbnailPattern());
+                        }
+                        Encryption thumbnailEncryption = outputsListValue.getThumbnailEncryption();
+                        if (thumbnailEncryption != null) {
+
+                            jsonWriter.key("ThumbnailEncryption");
+                            jsonWriter.object();
+
+                            if (thumbnailEncryption.getMode() != null) {
+                                jsonWriter.key("Mode").value(thumbnailEncryption.getMode());
+                            }
+                            if (thumbnailEncryption.getKey() != null) {
+                                jsonWriter.key("Key").value(thumbnailEncryption.getKey());
+                            }
+                            if (thumbnailEncryption.getKeyMd5() != null) {
+                                jsonWriter.key("KeyMd5").value(thumbnailEncryption.getKeyMd5());
+                            }
+                            if (thumbnailEncryption.getInitializationVector() != null) {
+                                jsonWriter.key("InitializationVector").value(thumbnailEncryption.getInitializationVector());
+                            }
+                            jsonWriter.endObject();
                         }
                         if (outputsListValue.getRotate() != null) {
                             jsonWriter.key("Rotate").value(outputsListValue.getRotate());
@@ -345,6 +505,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                     }
                                     if (watermarksListValue.getInputKey() != null) {
                                         jsonWriter.key("InputKey").value(watermarksListValue.getInputKey());
+                                    }
+                                    Encryption encryption = watermarksListValue.getEncryption();
+                                    if (encryption != null) {
+
+                                        jsonWriter.key("Encryption");
+                                        jsonWriter.object();
+
+                                        if (encryption.getMode() != null) {
+                                            jsonWriter.key("Mode").value(encryption.getMode());
+                                        }
+                                        if (encryption.getKey() != null) {
+                                            jsonWriter.key("Key").value(encryption.getKey());
+                                        }
+                                        if (encryption.getKeyMd5() != null) {
+                                            jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                                        }
+                                        if (encryption.getInitializationVector() != null) {
+                                            jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                                        }
+                                        jsonWriter.endObject();
                                     }
                                     jsonWriter.endObject();
                                 }
@@ -387,6 +567,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                         }
                                         if (artworkListValue.getAlbumArtFormat() != null) {
                                             jsonWriter.key("AlbumArtFormat").value(artworkListValue.getAlbumArtFormat());
+                                        }
+                                        Encryption encryption = artworkListValue.getEncryption();
+                                        if (encryption != null) {
+
+                                            jsonWriter.key("Encryption");
+                                            jsonWriter.object();
+
+                                            if (encryption.getMode() != null) {
+                                                jsonWriter.key("Mode").value(encryption.getMode());
+                                            }
+                                            if (encryption.getKey() != null) {
+                                                jsonWriter.key("Key").value(encryption.getKey());
+                                            }
+                                            if (encryption.getKeyMd5() != null) {
+                                                jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                                            }
+                                            if (encryption.getInitializationVector() != null) {
+                                                jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                                            }
+                                            jsonWriter.endObject();
                                         }
                                         jsonWriter.endObject();
                                     }
@@ -455,6 +655,26 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                         if (captionSourcesListValue.getLabel() != null) {
                                             jsonWriter.key("Label").value(captionSourcesListValue.getLabel());
                                         }
+                                        Encryption encryption = captionSourcesListValue.getEncryption();
+                                        if (encryption != null) {
+
+                                            jsonWriter.key("Encryption");
+                                            jsonWriter.object();
+
+                                            if (encryption.getMode() != null) {
+                                                jsonWriter.key("Mode").value(encryption.getMode());
+                                            }
+                                            if (encryption.getKey() != null) {
+                                                jsonWriter.key("Key").value(encryption.getKey());
+                                            }
+                                            if (encryption.getKeyMd5() != null) {
+                                                jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                                            }
+                                            if (encryption.getInitializationVector() != null) {
+                                                jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                                            }
+                                            jsonWriter.endObject();
+                                        }
                                         jsonWriter.endObject();
                                     }
                                 }
@@ -476,10 +696,50 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                         if (captionFormatsListValue.getPattern() != null) {
                                             jsonWriter.key("Pattern").value(captionFormatsListValue.getPattern());
                                         }
+                                        Encryption encryption = captionFormatsListValue.getEncryption();
+                                        if (encryption != null) {
+
+                                            jsonWriter.key("Encryption");
+                                            jsonWriter.object();
+
+                                            if (encryption.getMode() != null) {
+                                                jsonWriter.key("Mode").value(encryption.getMode());
+                                            }
+                                            if (encryption.getKey() != null) {
+                                                jsonWriter.key("Key").value(encryption.getKey());
+                                            }
+                                            if (encryption.getKeyMd5() != null) {
+                                                jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                                            }
+                                            if (encryption.getInitializationVector() != null) {
+                                                jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
+                                            }
+                                            jsonWriter.endObject();
+                                        }
                                         jsonWriter.endObject();
                                     }
                                 }
                                 jsonWriter.endArray();
+                            }
+                            jsonWriter.endObject();
+                        }
+                        Encryption encryption = outputsListValue.getEncryption();
+                        if (encryption != null) {
+
+                            jsonWriter.key("Encryption");
+                            jsonWriter.object();
+
+                            if (encryption.getMode() != null) {
+                                jsonWriter.key("Mode").value(encryption.getMode());
+                            }
+                            if (encryption.getKey() != null) {
+                                jsonWriter.key("Key").value(encryption.getKey());
+                            }
+                            if (encryption.getKeyMd5() != null) {
+                                jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                            }
+                            if (encryption.getInitializationVector() != null) {
+                                jsonWriter.key("InitializationVector").value(encryption.getInitializationVector());
                             }
                             jsonWriter.endObject();
                         }

@@ -17,9 +17,7 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the RecordLifecycleActionHeartbeat action.
- * </p>
+ * 
  */
 public class RecordLifecycleActionHeartbeatResult implements Serializable {
 

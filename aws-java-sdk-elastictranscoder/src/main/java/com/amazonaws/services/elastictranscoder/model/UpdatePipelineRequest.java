@@ -72,6 +72,21 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
     private String role;
 
     /**
+     * The AWS Key Management Service (AWS KMS) key that you want to use with
+     * this pipeline. <p>If you use either <code>S3</code> or
+     * <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     * don't need to provide a key with your job because a default key, known
+     * as an AWS-KMS key, is created for you automatically. You need to
+     * provide an AWS-KMS key only if you want to use a non-default AWS-KMS
+     * key, or if you are using an <code>Encryption:Mode</code> of
+     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 255<br/>
+     */
+    private String awsKmsKeyArn;
+
+    /**
      * The Amazon Simple Notification Service (Amazon SNS) topic or topics to
      * notify in order to report job status. <important>To receive
      * notifications, you must also subscribe to the new topic in the Amazon
@@ -377,6 +392,90 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
      */
     public UpdatePipelineRequest withRole(String role) {
         this.role = role;
+        return this;
+    }
+
+    /**
+     * The AWS Key Management Service (AWS KMS) key that you want to use with
+     * this pipeline. <p>If you use either <code>S3</code> or
+     * <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     * don't need to provide a key with your job because a default key, known
+     * as an AWS-KMS key, is created for you automatically. You need to
+     * provide an AWS-KMS key only if you want to use a non-default AWS-KMS
+     * key, or if you are using an <code>Encryption:Mode</code> of
+     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 255<br/>
+     *
+     * @return The AWS Key Management Service (AWS KMS) key that you want to use with
+     *         this pipeline. <p>If you use either <code>S3</code> or
+     *         <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *         don't need to provide a key with your job because a default key, known
+     *         as an AWS-KMS key, is created for you automatically. You need to
+     *         provide an AWS-KMS key only if you want to use a non-default AWS-KMS
+     *         key, or if you are using an <code>Encryption:Mode</code> of
+     *         <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     */
+    public String getAwsKmsKeyArn() {
+        return awsKmsKeyArn;
+    }
+    
+    /**
+     * The AWS Key Management Service (AWS KMS) key that you want to use with
+     * this pipeline. <p>If you use either <code>S3</code> or
+     * <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     * don't need to provide a key with your job because a default key, known
+     * as an AWS-KMS key, is created for you automatically. You need to
+     * provide an AWS-KMS key only if you want to use a non-default AWS-KMS
+     * key, or if you are using an <code>Encryption:Mode</code> of
+     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 255<br/>
+     *
+     * @param awsKmsKeyArn The AWS Key Management Service (AWS KMS) key that you want to use with
+     *         this pipeline. <p>If you use either <code>S3</code> or
+     *         <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *         don't need to provide a key with your job because a default key, known
+     *         as an AWS-KMS key, is created for you automatically. You need to
+     *         provide an AWS-KMS key only if you want to use a non-default AWS-KMS
+     *         key, or if you are using an <code>Encryption:Mode</code> of
+     *         <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     */
+    public void setAwsKmsKeyArn(String awsKmsKeyArn) {
+        this.awsKmsKeyArn = awsKmsKeyArn;
+    }
+    
+    /**
+     * The AWS Key Management Service (AWS KMS) key that you want to use with
+     * this pipeline. <p>If you use either <code>S3</code> or
+     * <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     * don't need to provide a key with your job because a default key, known
+     * as an AWS-KMS key, is created for you automatically. You need to
+     * provide an AWS-KMS key only if you want to use a non-default AWS-KMS
+     * key, or if you are using an <code>Encryption:Mode</code> of
+     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 255<br/>
+     *
+     * @param awsKmsKeyArn The AWS Key Management Service (AWS KMS) key that you want to use with
+     *         this pipeline. <p>If you use either <code>S3</code> or
+     *         <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *         don't need to provide a key with your job because a default key, known
+     *         as an AWS-KMS key, is created for you automatically. You need to
+     *         provide an AWS-KMS key only if you want to use a non-default AWS-KMS
+     *         key, or if you are using an <code>Encryption:Mode</code> of
+     *         <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdatePipelineRequest withAwsKmsKeyArn(String awsKmsKeyArn) {
+        this.awsKmsKeyArn = awsKmsKeyArn;
         return this;
     }
 
@@ -1107,6 +1206,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getInputBucket() != null) sb.append("InputBucket: " + getInputBucket() + ",");
         if (getRole() != null) sb.append("Role: " + getRole() + ",");
+        if (getAwsKmsKeyArn() != null) sb.append("AwsKmsKeyArn: " + getAwsKmsKeyArn() + ",");
         if (getNotifications() != null) sb.append("Notifications: " + getNotifications() + ",");
         if (getContentConfig() != null) sb.append("ContentConfig: " + getContentConfig() + ",");
         if (getThumbnailConfig() != null) sb.append("ThumbnailConfig: " + getThumbnailConfig() );
@@ -1123,6 +1223,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getInputBucket() == null) ? 0 : getInputBucket().hashCode()); 
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode()); 
+        hashCode = prime * hashCode + ((getAwsKmsKeyArn() == null) ? 0 : getAwsKmsKeyArn().hashCode()); 
         hashCode = prime * hashCode + ((getNotifications() == null) ? 0 : getNotifications().hashCode()); 
         hashCode = prime * hashCode + ((getContentConfig() == null) ? 0 : getContentConfig().hashCode()); 
         hashCode = prime * hashCode + ((getThumbnailConfig() == null) ? 0 : getThumbnailConfig().hashCode()); 
@@ -1145,6 +1246,8 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         if (other.getInputBucket() != null && other.getInputBucket().equals(this.getInputBucket()) == false) return false; 
         if (other.getRole() == null ^ this.getRole() == null) return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false) return false; 
+        if (other.getAwsKmsKeyArn() == null ^ this.getAwsKmsKeyArn() == null) return false;
+        if (other.getAwsKmsKeyArn() != null && other.getAwsKmsKeyArn().equals(this.getAwsKmsKeyArn()) == false) return false; 
         if (other.getNotifications() == null ^ this.getNotifications() == null) return false;
         if (other.getNotifications() != null && other.getNotifications().equals(this.getNotifications()) == false) return false; 
         if (other.getContentConfig() == null ^ this.getContentConfig() == null) return false;

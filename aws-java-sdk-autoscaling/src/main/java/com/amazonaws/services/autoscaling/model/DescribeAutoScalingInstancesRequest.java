@@ -21,15 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingInstances(DescribeAutoScalingInstancesRequest) DescribeAutoScalingInstances operation}.
  * <p>
- * Returns a description of each Auto Scaling instance in the
- * <code>InstanceIds</code> list. If a list is not provided, the service
- * returns the full details of all instances up to a maximum of 50. By
- * default, the service returns a list of 20 items.
+ * Describes one or more Auto Scaling instances. If a list is not
+ * provided, the call describes all instances.
  * </p>
  * <p>
- * This action supports pagination by returning a token if there are
- * more pages to retrieve. To get the next page, call this action again
- * with the returned token as the <code>NextToken</code> parameter.
+ * You can describe up to a maximum of 50 instances with a single call.
+ * By default, a call returns up to 20 instances. If there are more items
+ * to return, the call returns a token. To get the next set of items,
+ * repeat the call with the returned token in the <code>NextToken</code>
+ * parameter.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingInstances(DescribeAutoScalingInstancesRequest)
@@ -37,22 +37,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The list of Auto Scaling instances to describe. If this list is
-     * omitted, all auto scaling instances are described. The list of
-     * requested instances cannot contain more than 50 items. If unknown
-     * instances are requested, they are ignored with no error.
+     * One or more Auto Scaling instances to describe, up to 50 instances. If
+     * you omit this parameter, all Auto Scaling instances are described. If
+     * you specify an ID that does not exist, it is ignored with no error.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
-     * The maximum number of Auto Scaling instances to be described with each
-     * call.
+     * The maximum number of items to return with this call.
      */
     private Integer maxRecords;
 
     /**
-     * The token returned by a previous call to indicate that there is more
-     * data available.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -60,15 +58,13 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     private String nextToken;
 
     /**
-     * The list of Auto Scaling instances to describe. If this list is
-     * omitted, all auto scaling instances are described. The list of
-     * requested instances cannot contain more than 50 items. If unknown
-     * instances are requested, they are ignored with no error.
+     * One or more Auto Scaling instances to describe, up to 50 instances. If
+     * you omit this parameter, all Auto Scaling instances are described. If
+     * you specify an ID that does not exist, it is ignored with no error.
      *
-     * @return The list of Auto Scaling instances to describe. If this list is
-     *         omitted, all auto scaling instances are described. The list of
-     *         requested instances cannot contain more than 50 items. If unknown
-     *         instances are requested, they are ignored with no error.
+     * @return One or more Auto Scaling instances to describe, up to 50 instances. If
+     *         you omit this parameter, all Auto Scaling instances are described. If
+     *         you specify an ID that does not exist, it is ignored with no error.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -79,15 +75,13 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The list of Auto Scaling instances to describe. If this list is
-     * omitted, all auto scaling instances are described. The list of
-     * requested instances cannot contain more than 50 items. If unknown
-     * instances are requested, they are ignored with no error.
+     * One or more Auto Scaling instances to describe, up to 50 instances. If
+     * you omit this parameter, all Auto Scaling instances are described. If
+     * you specify an ID that does not exist, it is ignored with no error.
      *
-     * @param instanceIds The list of Auto Scaling instances to describe. If this list is
-     *         omitted, all auto scaling instances are described. The list of
-     *         requested instances cannot contain more than 50 items. If unknown
-     *         instances are requested, they are ignored with no error.
+     * @param instanceIds One or more Auto Scaling instances to describe, up to 50 instances. If
+     *         you omit this parameter, all Auto Scaling instances are described. If
+     *         you specify an ID that does not exist, it is ignored with no error.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -100,17 +94,15 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The list of Auto Scaling instances to describe. If this list is
-     * omitted, all auto scaling instances are described. The list of
-     * requested instances cannot contain more than 50 items. If unknown
-     * instances are requested, they are ignored with no error.
+     * One or more Auto Scaling instances to describe, up to 50 instances. If
+     * you omit this parameter, all Auto Scaling instances are described. If
+     * you specify an ID that does not exist, it is ignored with no error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The list of Auto Scaling instances to describe. If this list is
-     *         omitted, all auto scaling instances are described. The list of
-     *         requested instances cannot contain more than 50 items. If unknown
-     *         instances are requested, they are ignored with no error.
+     * @param instanceIds One or more Auto Scaling instances to describe, up to 50 instances. If
+     *         you omit this parameter, all Auto Scaling instances are described. If
+     *         you specify an ID that does not exist, it is ignored with no error.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -124,17 +116,15 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The list of Auto Scaling instances to describe. If this list is
-     * omitted, all auto scaling instances are described. The list of
-     * requested instances cannot contain more than 50 items. If unknown
-     * instances are requested, they are ignored with no error.
+     * One or more Auto Scaling instances to describe, up to 50 instances. If
+     * you omit this parameter, all Auto Scaling instances are described. If
+     * you specify an ID that does not exist, it is ignored with no error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The list of Auto Scaling instances to describe. If this list is
-     *         omitted, all auto scaling instances are described. The list of
-     *         requested instances cannot contain more than 50 items. If unknown
-     *         instances are requested, they are ignored with no error.
+     * @param instanceIds One or more Auto Scaling instances to describe, up to 50 instances. If
+     *         you omit this parameter, all Auto Scaling instances are described. If
+     *         you specify an ID that does not exist, it is ignored with no error.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -152,35 +142,29 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * The maximum number of Auto Scaling instances to be described with each
-     * call.
+     * The maximum number of items to return with this call.
      *
-     * @return The maximum number of Auto Scaling instances to be described with each
-     *         call.
+     * @return The maximum number of items to return with this call.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * The maximum number of Auto Scaling instances to be described with each
-     * call.
+     * The maximum number of items to return with this call.
      *
-     * @param maxRecords The maximum number of Auto Scaling instances to be described with each
-     *         call.
+     * @param maxRecords The maximum number of items to return with this call.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * The maximum number of Auto Scaling instances to be described with each
-     * call.
+     * The maximum number of items to return with this call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords The maximum number of Auto Scaling instances to be described with each
-     *         call.
+     * @param maxRecords The maximum number of items to return with this call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -191,44 +175,44 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * The token returned by a previous call to indicate that there is more
-     * data available.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The token returned by a previous call to indicate that there is more
-     *         data available.
+     * @return The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token returned by a previous call to indicate that there is more
-     * data available.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken The token returned by a previous call to indicate that there is more
-     *         data available.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token returned by a previous call to indicate that there is more
-     * data available.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken The token returned by a previous call to indicate that there is more
-     *         data available.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

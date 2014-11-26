@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>ScalingPolicy</code> data type.
+ * Describes a scaling policy.
  * </p>
  */
 public class ScalingPolicy implements Serializable {
@@ -77,7 +77,7 @@ public class ScalingPolicy implements Serializable {
     private String policyARN;
 
     /**
-     * A list of CloudWatch Alarms related to the policy.
+     * The CloudWatch Alarms related to the policy.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Alarm> alarms;
 
@@ -376,9 +376,9 @@ public class ScalingPolicy implements Serializable {
     }
 
     /**
-     * A list of CloudWatch Alarms related to the policy.
+     * The CloudWatch Alarms related to the policy.
      *
-     * @return A list of CloudWatch Alarms related to the policy.
+     * @return The CloudWatch Alarms related to the policy.
      */
     public java.util.List<Alarm> getAlarms() {
         if (alarms == null) {
@@ -389,9 +389,9 @@ public class ScalingPolicy implements Serializable {
     }
     
     /**
-     * A list of CloudWatch Alarms related to the policy.
+     * The CloudWatch Alarms related to the policy.
      *
-     * @param alarms A list of CloudWatch Alarms related to the policy.
+     * @param alarms The CloudWatch Alarms related to the policy.
      */
     public void setAlarms(java.util.Collection<Alarm> alarms) {
         if (alarms == null) {
@@ -404,11 +404,11 @@ public class ScalingPolicy implements Serializable {
     }
     
     /**
-     * A list of CloudWatch Alarms related to the policy.
+     * The CloudWatch Alarms related to the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alarms A list of CloudWatch Alarms related to the policy.
+     * @param alarms The CloudWatch Alarms related to the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -422,11 +422,11 @@ public class ScalingPolicy implements Serializable {
     }
     
     /**
-     * A list of CloudWatch Alarms related to the policy.
+     * The CloudWatch Alarms related to the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alarms A list of CloudWatch Alarms related to the policy.
+     * @param alarms The CloudWatch Alarms related to the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

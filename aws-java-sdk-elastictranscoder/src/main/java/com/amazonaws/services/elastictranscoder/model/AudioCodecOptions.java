@@ -30,11 +30,11 @@ public class AudioCodecOptions implements Serializable {
      * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      * Transcoder will select the profile based on the bit rate selected for
      * the output file.</li> <li><code>AAC-LC</code>: The most common AAC
-     * profile. Use for bitrates larger than 64 kbps.</li>
+     * profile. Use for bit rates larger than 64 kbps.</li>
      * <li><code>HE-AAC</code>: Not supported on some older players and
-     * devices. Use for bitrates between 40 and 80 kbps.</li>
+     * devices. Use for bit rates between 40 and 80 kbps.</li>
      * <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     * Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     * Use for bit rates less than 48 kbps.</li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
      * <code>Profile</code>. <note><p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your
@@ -52,11 +52,11 @@ public class AudioCodecOptions implements Serializable {
      * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      * Transcoder will select the profile based on the bit rate selected for
      * the output file.</li> <li><code>AAC-LC</code>: The most common AAC
-     * profile. Use for bitrates larger than 64 kbps.</li>
+     * profile. Use for bit rates larger than 64 kbps.</li>
      * <li><code>HE-AAC</code>: Not supported on some older players and
-     * devices. Use for bitrates between 40 and 80 kbps.</li>
+     * devices. Use for bit rates between 40 and 80 kbps.</li>
      * <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     * Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     * Use for bit rates less than 48 kbps.</li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
      * <code>Profile</code>. <note><p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your
@@ -71,11 +71,11 @@ public class AudioCodecOptions implements Serializable {
      *         <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      *         Transcoder will select the profile based on the bit rate selected for
      *         the output file.</li> <li><code>AAC-LC</code>: The most common AAC
-     *         profile. Use for bitrates larger than 64 kbps.</li>
+     *         profile. Use for bit rates larger than 64 kbps.</li>
      *         <li><code>HE-AAC</code>: Not supported on some older players and
-     *         devices. Use for bitrates between 40 and 80 kbps.</li>
+     *         devices. Use for bit rates between 40 and 80 kbps.</li>
      *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     *         Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     *         Use for bit rates less than 48 kbps.</li> </ul> <p>All outputs in a
      *         <code>Smooth</code> playlist must have the same value for
      *         <code>Profile</code>. <note><p>If you created any presets before AAC
      *         profiles were added, Elastic Transcoder automatically updated your
@@ -92,11 +92,11 @@ public class AudioCodecOptions implements Serializable {
      * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      * Transcoder will select the profile based on the bit rate selected for
      * the output file.</li> <li><code>AAC-LC</code>: The most common AAC
-     * profile. Use for bitrates larger than 64 kbps.</li>
+     * profile. Use for bit rates larger than 64 kbps.</li>
      * <li><code>HE-AAC</code>: Not supported on some older players and
-     * devices. Use for bitrates between 40 and 80 kbps.</li>
+     * devices. Use for bit rates between 40 and 80 kbps.</li>
      * <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     * Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     * Use for bit rates less than 48 kbps.</li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
      * <code>Profile</code>. <note><p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your
@@ -111,11 +111,11 @@ public class AudioCodecOptions implements Serializable {
      *         <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      *         Transcoder will select the profile based on the bit rate selected for
      *         the output file.</li> <li><code>AAC-LC</code>: The most common AAC
-     *         profile. Use for bitrates larger than 64 kbps.</li>
+     *         profile. Use for bit rates larger than 64 kbps.</li>
      *         <li><code>HE-AAC</code>: Not supported on some older players and
-     *         devices. Use for bitrates between 40 and 80 kbps.</li>
+     *         devices. Use for bit rates between 40 and 80 kbps.</li>
      *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     *         Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     *         Use for bit rates less than 48 kbps.</li> </ul> <p>All outputs in a
      *         <code>Smooth</code> playlist must have the same value for
      *         <code>Profile</code>. <note><p>If you created any presets before AAC
      *         profiles were added, Elastic Transcoder automatically updated your
@@ -132,11 +132,11 @@ public class AudioCodecOptions implements Serializable {
      * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      * Transcoder will select the profile based on the bit rate selected for
      * the output file.</li> <li><code>AAC-LC</code>: The most common AAC
-     * profile. Use for bitrates larger than 64 kbps.</li>
+     * profile. Use for bit rates larger than 64 kbps.</li>
      * <li><code>HE-AAC</code>: Not supported on some older players and
-     * devices. Use for bitrates between 40 and 80 kbps.</li>
+     * devices. Use for bit rates between 40 and 80 kbps.</li>
      * <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     * Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     * Use for bit rates less than 48 kbps.</li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
      * <code>Profile</code>. <note><p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your
@@ -153,11 +153,11 @@ public class AudioCodecOptions implements Serializable {
      *         <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      *         Transcoder will select the profile based on the bit rate selected for
      *         the output file.</li> <li><code>AAC-LC</code>: The most common AAC
-     *         profile. Use for bitrates larger than 64 kbps.</li>
+     *         profile. Use for bit rates larger than 64 kbps.</li>
      *         <li><code>HE-AAC</code>: Not supported on some older players and
-     *         devices. Use for bitrates between 40 and 80 kbps.</li>
+     *         devices. Use for bit rates between 40 and 80 kbps.</li>
      *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     *         Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     *         Use for bit rates less than 48 kbps.</li> </ul> <p>All outputs in a
      *         <code>Smooth</code> playlist must have the same value for
      *         <code>Profile</code>. <note><p>If you created any presets before AAC
      *         profiles were added, Elastic Transcoder automatically updated your

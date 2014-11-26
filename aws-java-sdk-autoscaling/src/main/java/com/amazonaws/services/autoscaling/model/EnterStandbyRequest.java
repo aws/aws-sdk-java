@@ -21,12 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#enterStandby(EnterStandbyRequest) EnterStandby operation}.
  * <p>
- * Move instances in an Auto Scaling group into a Standby mode.
+ * Moves the specified instances into <code>Standby</code> mode.
  * </p>
  * <p>
- * To learn more about how to put instances into a Standby mode, see
+ * For more information, see
  * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html"> Auto Scaling InService State </a>
- * .
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#enterStandby(EnterStandbyRequest)
@@ -34,14 +34,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class EnterStandbyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The instances to move into Standby mode. You must specify at least one
-     * instance ID.
+     * One or more instances to move into <code>Standby</code> mode. You must
+     * specify at least one instance ID.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
-     * The name of the Auto Scaling group from which to move instances into
-     * Standby mode.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -50,19 +49,19 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
     private String autoScalingGroupName;
 
     /**
-     * Specifies whether the instances moved to Standby mode count as part of
-     * the Auto Scaling group's desired capacity. If set, the desired
-     * capacity for the Auto Scaling group decrements by the number of
-     * instances moved to Standby mode.
+     * Specifies whether the instances moved to <code>Standby</code> mode
+     * count as part of the Auto Scaling group's desired capacity. If set,
+     * the desired capacity for the Auto Scaling group decrements by the
+     * number of instances moved to <code>Standby</code> mode.
      */
     private Boolean shouldDecrementDesiredCapacity;
 
     /**
-     * The instances to move into Standby mode. You must specify at least one
-     * instance ID.
+     * One or more instances to move into <code>Standby</code> mode. You must
+     * specify at least one instance ID.
      *
-     * @return The instances to move into Standby mode. You must specify at least one
-     *         instance ID.
+     * @return One or more instances to move into <code>Standby</code> mode. You must
+     *         specify at least one instance ID.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -73,11 +72,11 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The instances to move into Standby mode. You must specify at least one
-     * instance ID.
+     * One or more instances to move into <code>Standby</code> mode. You must
+     * specify at least one instance ID.
      *
-     * @param instanceIds The instances to move into Standby mode. You must specify at least one
-     *         instance ID.
+     * @param instanceIds One or more instances to move into <code>Standby</code> mode. You must
+     *         specify at least one instance ID.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -90,13 +89,13 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The instances to move into Standby mode. You must specify at least one
-     * instance ID.
+     * One or more instances to move into <code>Standby</code> mode. You must
+     * specify at least one instance ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The instances to move into Standby mode. You must specify at least one
-     *         instance ID.
+     * @param instanceIds One or more instances to move into <code>Standby</code> mode. You must
+     *         specify at least one instance ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -110,13 +109,13 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The instances to move into Standby mode. You must specify at least one
-     * instance ID.
+     * One or more instances to move into <code>Standby</code> mode. You must
+     * specify at least one instance ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The instances to move into Standby mode. You must specify at least one
-     *         instance ID.
+     * @param instanceIds One or more instances to move into <code>Standby</code> mode. You must
+     *         specify at least one instance ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -134,38 +133,33 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The name of the Auto Scaling group from which to move instances into
-     * Standby mode.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group from which to move instances into
-     *         Standby mode.
+     * @return The name of the Auto Scaling group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group from which to move instances into
-     * Standby mode.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group from which to move instances into
-     *         Standby mode.
+     * @param autoScalingGroupName The name of the Auto Scaling group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group from which to move instances into
-     * Standby mode.
+     * The name of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -173,8 +167,7 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group from which to move instances into
-     *         Standby mode.
+     * @param autoScalingGroupName The name of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -185,47 +178,47 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Specifies whether the instances moved to Standby mode count as part of
-     * the Auto Scaling group's desired capacity. If set, the desired
-     * capacity for the Auto Scaling group decrements by the number of
-     * instances moved to Standby mode.
+     * Specifies whether the instances moved to <code>Standby</code> mode
+     * count as part of the Auto Scaling group's desired capacity. If set,
+     * the desired capacity for the Auto Scaling group decrements by the
+     * number of instances moved to <code>Standby</code> mode.
      *
-     * @return Specifies whether the instances moved to Standby mode count as part of
-     *         the Auto Scaling group's desired capacity. If set, the desired
-     *         capacity for the Auto Scaling group decrements by the number of
-     *         instances moved to Standby mode.
+     * @return Specifies whether the instances moved to <code>Standby</code> mode
+     *         count as part of the Auto Scaling group's desired capacity. If set,
+     *         the desired capacity for the Auto Scaling group decrements by the
+     *         number of instances moved to <code>Standby</code> mode.
      */
     public Boolean isShouldDecrementDesiredCapacity() {
         return shouldDecrementDesiredCapacity;
     }
     
     /**
-     * Specifies whether the instances moved to Standby mode count as part of
-     * the Auto Scaling group's desired capacity. If set, the desired
-     * capacity for the Auto Scaling group decrements by the number of
-     * instances moved to Standby mode.
+     * Specifies whether the instances moved to <code>Standby</code> mode
+     * count as part of the Auto Scaling group's desired capacity. If set,
+     * the desired capacity for the Auto Scaling group decrements by the
+     * number of instances moved to <code>Standby</code> mode.
      *
-     * @param shouldDecrementDesiredCapacity Specifies whether the instances moved to Standby mode count as part of
-     *         the Auto Scaling group's desired capacity. If set, the desired
-     *         capacity for the Auto Scaling group decrements by the number of
-     *         instances moved to Standby mode.
+     * @param shouldDecrementDesiredCapacity Specifies whether the instances moved to <code>Standby</code> mode
+     *         count as part of the Auto Scaling group's desired capacity. If set,
+     *         the desired capacity for the Auto Scaling group decrements by the
+     *         number of instances moved to <code>Standby</code> mode.
      */
     public void setShouldDecrementDesiredCapacity(Boolean shouldDecrementDesiredCapacity) {
         this.shouldDecrementDesiredCapacity = shouldDecrementDesiredCapacity;
     }
     
     /**
-     * Specifies whether the instances moved to Standby mode count as part of
-     * the Auto Scaling group's desired capacity. If set, the desired
-     * capacity for the Auto Scaling group decrements by the number of
-     * instances moved to Standby mode.
+     * Specifies whether the instances moved to <code>Standby</code> mode
+     * count as part of the Auto Scaling group's desired capacity. If set,
+     * the desired capacity for the Auto Scaling group decrements by the
+     * number of instances moved to <code>Standby</code> mode.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param shouldDecrementDesiredCapacity Specifies whether the instances moved to Standby mode count as part of
-     *         the Auto Scaling group's desired capacity. If set, the desired
-     *         capacity for the Auto Scaling group decrements by the number of
-     *         instances moved to Standby mode.
+     * @param shouldDecrementDesiredCapacity Specifies whether the instances moved to <code>Standby</code> mode
+     *         count as part of the Auto Scaling group's desired capacity. If set,
+     *         the desired capacity for the Auto Scaling group decrements by the
+     *         number of instances moved to <code>Standby</code> mode.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -236,15 +229,15 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Specifies whether the instances moved to Standby mode count as part of
-     * the Auto Scaling group's desired capacity. If set, the desired
-     * capacity for the Auto Scaling group decrements by the number of
-     * instances moved to Standby mode.
+     * Specifies whether the instances moved to <code>Standby</code> mode
+     * count as part of the Auto Scaling group's desired capacity. If set,
+     * the desired capacity for the Auto Scaling group decrements by the
+     * number of instances moved to <code>Standby</code> mode.
      *
-     * @return Specifies whether the instances moved to Standby mode count as part of
-     *         the Auto Scaling group's desired capacity. If set, the desired
-     *         capacity for the Auto Scaling group decrements by the number of
-     *         instances moved to Standby mode.
+     * @return Specifies whether the instances moved to <code>Standby</code> mode
+     *         count as part of the Auto Scaling group's desired capacity. If set,
+     *         the desired capacity for the Auto Scaling group decrements by the
+     *         number of instances moved to <code>Standby</code> mode.
      */
     public Boolean getShouldDecrementDesiredCapacity() {
         return shouldDecrementDesiredCapacity;

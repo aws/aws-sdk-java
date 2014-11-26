@@ -51,6 +51,11 @@ public class ClusterSubnetGroup implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnets;
 
     /**
+     * The list of tags for the cluster subnet group.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * The name of the cluster subnet group.
      *
      * @return The name of the cluster subnet group.
@@ -263,6 +268,74 @@ public class ClusterSubnetGroup implements Serializable {
     }
 
     /**
+     * The list of tags for the cluster subnet group.
+     *
+     * @return The list of tags for the cluster subnet group.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * The list of tags for the cluster subnet group.
+     *
+     * @param tags The list of tags for the cluster subnet group.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * The list of tags for the cluster subnet group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the cluster subnet group.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ClusterSubnetGroup withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of tags for the cluster subnet group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the cluster subnet group.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ClusterSubnetGroup withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -278,7 +351,8 @@ public class ClusterSubnetGroup implements Serializable {
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
         if (getSubnetGroupStatus() != null) sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +367,7 @@ public class ClusterSubnetGroup implements Serializable {
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
         hashCode = prime * hashCode + ((getSubnetGroupStatus() == null) ? 0 : getSubnetGroupStatus().hashCode()); 
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -314,6 +389,8 @@ public class ClusterSubnetGroup implements Serializable {
         if (other.getSubnetGroupStatus() != null && other.getSubnetGroupStatus().equals(this.getSubnetGroupStatus()) == false) return false; 
         if (other.getSubnets() == null ^ this.getSubnets() == null) return false;
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

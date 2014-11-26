@@ -17,15 +17,12 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The <code>AutoScalingNotificationTypes</code> data type.
- * </p>
+ * 
  */
 public class DescribeAutoScalingNotificationTypesResult implements Serializable {
 
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
@@ -53,8 +50,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingNotificationTypes;
 
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
@@ -79,8 +75,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * </DescribeAutoScalingNotificationTypesResponse></queryresponse>
      * </examples>
      *
-     * @return Returns a list of all notification types supported by Auto Scaling.
-     *         They are: <ul>
+     * @return One or more of the following notification types: <ul>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
@@ -114,8 +109,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
     }
     
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
@@ -140,8 +134,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * </DescribeAutoScalingNotificationTypesResponse></queryresponse>
      * </examples>
      *
-     * @param autoScalingNotificationTypes Returns a list of all notification types supported by Auto Scaling.
-     *         They are: <ul>
+     * @param autoScalingNotificationTypes One or more of the following notification types: <ul>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
@@ -177,8 +170,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
     }
     
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
@@ -205,8 +197,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoScalingNotificationTypes Returns a list of all notification types supported by Auto Scaling.
-     *         They are: <ul>
+     * @param autoScalingNotificationTypes One or more of the following notification types: <ul>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
@@ -243,8 +234,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
     }
     
     /**
-     * Returns a list of all notification types supported by Auto Scaling.
-     * They are: <ul>
+     * One or more of the following notification types: <ul>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
@@ -271,8 +261,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoScalingNotificationTypes Returns a list of all notification types supported by Auto Scaling.
-     *         They are: <ul>
+     * @param autoScalingNotificationTypes One or more of the following notification types: <ul>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>

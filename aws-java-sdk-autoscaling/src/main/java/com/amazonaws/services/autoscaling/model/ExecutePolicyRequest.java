@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -38,7 +38,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
     private String autoScalingGroupName;
 
     /**
-     * The name or ARN of the policy you want to run.
+     * The name or ARN of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -52,40 +52,40 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      * before executing the policy. <p>Set to <code>False</code> if you want
      * Auto Scaling to circumvent the cooldown period associated with the
      * Auto Scaling group and execute the policy before the cooldown period
-     * ends. <p>For information about cooldown period, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     * ends. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     private Boolean honorCooldown;
 
     /**
-     * The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
+     * @return The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
+     * @param autoScalingGroupName The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
+     * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -93,7 +93,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
+     * @param autoScalingGroupName The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -104,33 +104,33 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * The name or ARN of the policy you want to run.
+     * The name or ARN of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name or ARN of the policy you want to run.
+     * @return The name or ARN of the policy.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * The name or ARN of the policy you want to run.
+     * The name or ARN of the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param policyName The name or ARN of the policy you want to run.
+     * @param policyName The name or ARN of the policy.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * The name or ARN of the policy you want to run.
+     * The name or ARN of the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -138,7 +138,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param policyName The name or ARN of the policy you want to run.
+     * @param policyName The name or ARN of the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -154,18 +154,18 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      * before executing the policy. <p>Set to <code>False</code> if you want
      * Auto Scaling to circumvent the cooldown period associated with the
      * Auto Scaling group and execute the policy before the cooldown period
-     * ends. <p>For information about cooldown period, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     * ends. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @return Set to <code>True</code> if you want Auto Scaling to wait for the
      *         cooldown period associated with the Auto Scaling group to complete
      *         before executing the policy. <p>Set to <code>False</code> if you want
      *         Auto Scaling to circumvent the cooldown period associated with the
      *         Auto Scaling group and execute the policy before the cooldown period
-     *         ends. <p>For information about cooldown period, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     *         Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         ends. <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public Boolean isHonorCooldown() {
         return honorCooldown;
@@ -177,18 +177,18 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      * before executing the policy. <p>Set to <code>False</code> if you want
      * Auto Scaling to circumvent the cooldown period associated with the
      * Auto Scaling group and execute the policy before the cooldown period
-     * ends. <p>For information about cooldown period, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     * ends. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @param honorCooldown Set to <code>True</code> if you want Auto Scaling to wait for the
      *         cooldown period associated with the Auto Scaling group to complete
      *         before executing the policy. <p>Set to <code>False</code> if you want
      *         Auto Scaling to circumvent the cooldown period associated with the
      *         Auto Scaling group and execute the policy before the cooldown period
-     *         ends. <p>For information about cooldown period, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     *         Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         ends. <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public void setHonorCooldown(Boolean honorCooldown) {
         this.honorCooldown = honorCooldown;
@@ -200,9 +200,9 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      * before executing the policy. <p>Set to <code>False</code> if you want
      * Auto Scaling to circumvent the cooldown period associated with the
      * Auto Scaling group and execute the policy before the cooldown period
-     * ends. <p>For information about cooldown period, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     * ends. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -211,9 +211,9 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      *         before executing the policy. <p>Set to <code>False</code> if you want
      *         Auto Scaling to circumvent the cooldown period associated with the
      *         Auto Scaling group and execute the policy before the cooldown period
-     *         ends. <p>For information about cooldown period, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     *         Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         ends. <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -229,18 +229,18 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      * before executing the policy. <p>Set to <code>False</code> if you want
      * Auto Scaling to circumvent the cooldown period associated with the
      * Auto Scaling group and execute the policy before the cooldown period
-     * ends. <p>For information about cooldown period, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     * Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     * ends. <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @return Set to <code>True</code> if you want Auto Scaling to wait for the
      *         cooldown period associated with the Auto Scaling group to complete
      *         before executing the policy. <p>Set to <code>False</code> if you want
      *         Auto Scaling to circumvent the cooldown period associated with the
      *         Auto Scaling group and execute the policy before the cooldown period
-     *         ends. <p>For information about cooldown period, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-     *         Period</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         ends. <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public Boolean getHonorCooldown() {
         return honorCooldown;

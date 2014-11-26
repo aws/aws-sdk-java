@@ -73,6 +73,10 @@ public class PipelineJsonUnmarshaller implements Unmarshaller<Pipeline, JsonUnma
                     context.nextToken();
                     pipeline.setRole(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsKmsKeyArn", targetDepth)) {
+                    context.nextToken();
+                    pipeline.setAwsKmsKeyArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Notifications", targetDepth)) {
                     context.nextToken();
                     pipeline.setNotifications(NotificationsJsonUnmarshaller.getInstance().unmarshall(context));

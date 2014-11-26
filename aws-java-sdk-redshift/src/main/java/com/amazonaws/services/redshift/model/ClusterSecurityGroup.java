@@ -47,6 +47,11 @@ public class ClusterSecurityGroup implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<IPRange> iPRanges;
 
     /**
+     * The list of tags for the cluster security group.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * The name of the cluster security group to which the operation was
      * applied.
      *
@@ -271,6 +276,74 @@ public class ClusterSecurityGroup implements Serializable {
     }
 
     /**
+     * The list of tags for the cluster security group.
+     *
+     * @return The list of tags for the cluster security group.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * The list of tags for the cluster security group.
+     *
+     * @param tags The list of tags for the cluster security group.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * The list of tags for the cluster security group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the cluster security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ClusterSecurityGroup withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of tags for the cluster security group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the cluster security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ClusterSecurityGroup withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -285,7 +358,8 @@ public class ClusterSecurityGroup implements Serializable {
         if (getClusterSecurityGroupName() != null) sb.append("ClusterSecurityGroupName: " + getClusterSecurityGroupName() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getEC2SecurityGroups() != null) sb.append("EC2SecurityGroups: " + getEC2SecurityGroups() + ",");
-        if (getIPRanges() != null) sb.append("IPRanges: " + getIPRanges() );
+        if (getIPRanges() != null) sb.append("IPRanges: " + getIPRanges() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -299,6 +373,7 @@ public class ClusterSecurityGroup implements Serializable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getEC2SecurityGroups() == null) ? 0 : getEC2SecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getIPRanges() == null) ? 0 : getIPRanges().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -318,6 +393,8 @@ public class ClusterSecurityGroup implements Serializable {
         if (other.getEC2SecurityGroups() != null && other.getEC2SecurityGroups().equals(this.getEC2SecurityGroups()) == false) return false; 
         if (other.getIPRanges() == null ^ this.getIPRanges() == null) return false;
         if (other.getIPRanges() != null && other.getIPRanges().equals(this.getIPRanges()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

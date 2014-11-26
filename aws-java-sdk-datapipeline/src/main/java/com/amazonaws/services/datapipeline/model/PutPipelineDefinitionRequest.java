@@ -23,8 +23,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Adds tasks, schedules, and preconditions that control the behavior of
  * the pipeline. You can use PutPipelineDefinition to populate a new
- * pipeline or to update an existing pipeline that has not yet been
- * activated.
+ * pipeline.
  * </p>
  * <p>
  * PutPipelineDefinition also validates the configuration as it adds it
@@ -34,6 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <li>A string or reference field is empty.</li>
  * <li>The number of objects in the pipeline exceeds the maximum allowed
  * objects.</li>
+ * <li>The pipeline is in a FINISHED state.</li>
  * </ol>
  * </p>
  * <p>
@@ -59,6 +59,16 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
      * existing pipeline definition.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject> pipelineObjects;
+
+    /**
+     * A list of parameter objects used with the pipeline.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject> parameterObjects;
+
+    /**
+     * A list of parameter values used with the pipeline.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValues;
 
     /**
      * The identifier of the pipeline to be configured.
@@ -182,6 +192,142 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * A list of parameter objects used with the pipeline.
+     *
+     * @return A list of parameter objects used with the pipeline.
+     */
+    public java.util.List<ParameterObject> getParameterObjects() {
+        if (parameterObjects == null) {
+              parameterObjects = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject>();
+              parameterObjects.setAutoConstruct(true);
+        }
+        return parameterObjects;
+    }
+    
+    /**
+     * A list of parameter objects used with the pipeline.
+     *
+     * @param parameterObjects A list of parameter objects used with the pipeline.
+     */
+    public void setParameterObjects(java.util.Collection<ParameterObject> parameterObjects) {
+        if (parameterObjects == null) {
+            this.parameterObjects = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject> parameterObjectsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject>(parameterObjects.size());
+        parameterObjectsCopy.addAll(parameterObjects);
+        this.parameterObjects = parameterObjectsCopy;
+    }
+    
+    /**
+     * A list of parameter objects used with the pipeline.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param parameterObjects A list of parameter objects used with the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PutPipelineDefinitionRequest withParameterObjects(ParameterObject... parameterObjects) {
+        if (getParameterObjects() == null) setParameterObjects(new java.util.ArrayList<ParameterObject>(parameterObjects.length));
+        for (ParameterObject value : parameterObjects) {
+            getParameterObjects().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of parameter objects used with the pipeline.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param parameterObjects A list of parameter objects used with the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PutPipelineDefinitionRequest withParameterObjects(java.util.Collection<ParameterObject> parameterObjects) {
+        if (parameterObjects == null) {
+            this.parameterObjects = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject> parameterObjectsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject>(parameterObjects.size());
+            parameterObjectsCopy.addAll(parameterObjects);
+            this.parameterObjects = parameterObjectsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * A list of parameter values used with the pipeline.
+     *
+     * @return A list of parameter values used with the pipeline.
+     */
+    public java.util.List<ParameterValue> getParameterValues() {
+        if (parameterValues == null) {
+              parameterValues = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue>();
+              parameterValues.setAutoConstruct(true);
+        }
+        return parameterValues;
+    }
+    
+    /**
+     * A list of parameter values used with the pipeline.
+     *
+     * @param parameterValues A list of parameter values used with the pipeline.
+     */
+    public void setParameterValues(java.util.Collection<ParameterValue> parameterValues) {
+        if (parameterValues == null) {
+            this.parameterValues = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue>(parameterValues.size());
+        parameterValuesCopy.addAll(parameterValues);
+        this.parameterValues = parameterValuesCopy;
+    }
+    
+    /**
+     * A list of parameter values used with the pipeline.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param parameterValues A list of parameter values used with the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PutPipelineDefinitionRequest withParameterValues(ParameterValue... parameterValues) {
+        if (getParameterValues() == null) setParameterValues(new java.util.ArrayList<ParameterValue>(parameterValues.length));
+        for (ParameterValue value : parameterValues) {
+            getParameterValues().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of parameter values used with the pipeline.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param parameterValues A list of parameter values used with the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PutPipelineDefinitionRequest withParameterValues(java.util.Collection<ParameterValue> parameterValues) {
+        if (parameterValues == null) {
+            this.parameterValues = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue>(parameterValues.size());
+            parameterValuesCopy.addAll(parameterValues);
+            this.parameterValues = parameterValuesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -194,7 +340,9 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
-        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() );
+        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() + ",");
+        if (getParameterObjects() != null) sb.append("ParameterObjects: " + getParameterObjects() + ",");
+        if (getParameterValues() != null) sb.append("ParameterValues: " + getParameterValues() );
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +354,8 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
         
         hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode()); 
         hashCode = prime * hashCode + ((getPipelineObjects() == null) ? 0 : getPipelineObjects().hashCode()); 
+        hashCode = prime * hashCode + ((getParameterObjects() == null) ? 0 : getParameterObjects().hashCode()); 
+        hashCode = prime * hashCode + ((getParameterValues() == null) ? 0 : getParameterValues().hashCode()); 
         return hashCode;
     }
     
@@ -221,6 +371,10 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
         if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false) return false; 
         if (other.getPipelineObjects() == null ^ this.getPipelineObjects() == null) return false;
         if (other.getPipelineObjects() != null && other.getPipelineObjects().equals(this.getPipelineObjects()) == false) return false; 
+        if (other.getParameterObjects() == null ^ this.getParameterObjects() == null) return false;
+        if (other.getParameterObjects() != null && other.getParameterObjects().equals(this.getParameterObjects()) == false) return false; 
+        if (other.getParameterValues() == null ^ this.getParameterValues() == null) return false;
+        if (other.getParameterValues() != null && other.getParameterValues().equals(this.getParameterValues()) == false) return false; 
         return true;
     }
     

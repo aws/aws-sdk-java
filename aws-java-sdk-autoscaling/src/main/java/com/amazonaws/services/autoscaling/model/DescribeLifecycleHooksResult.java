@@ -17,24 +17,19 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the DescribeLifecycleHooks action.
- * </p>
+ * 
  */
 public class DescribeLifecycleHooksResult implements Serializable {
 
     /**
-     * A list describing the lifecycle hooks that belong to the specified
-     * Auto Scaling group.
+     * The lifecycle hooks for the specified group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LifecycleHook> lifecycleHooks;
 
     /**
-     * A list describing the lifecycle hooks that belong to the specified
-     * Auto Scaling group.
+     * The lifecycle hooks for the specified group.
      *
-     * @return A list describing the lifecycle hooks that belong to the specified
-     *         Auto Scaling group.
+     * @return The lifecycle hooks for the specified group.
      */
     public java.util.List<LifecycleHook> getLifecycleHooks() {
         if (lifecycleHooks == null) {
@@ -45,11 +40,9 @@ public class DescribeLifecycleHooksResult implements Serializable {
     }
     
     /**
-     * A list describing the lifecycle hooks that belong to the specified
-     * Auto Scaling group.
+     * The lifecycle hooks for the specified group.
      *
-     * @param lifecycleHooks A list describing the lifecycle hooks that belong to the specified
-     *         Auto Scaling group.
+     * @param lifecycleHooks The lifecycle hooks for the specified group.
      */
     public void setLifecycleHooks(java.util.Collection<LifecycleHook> lifecycleHooks) {
         if (lifecycleHooks == null) {
@@ -62,13 +55,11 @@ public class DescribeLifecycleHooksResult implements Serializable {
     }
     
     /**
-     * A list describing the lifecycle hooks that belong to the specified
-     * Auto Scaling group.
+     * The lifecycle hooks for the specified group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleHooks A list describing the lifecycle hooks that belong to the specified
-     *         Auto Scaling group.
+     * @param lifecycleHooks The lifecycle hooks for the specified group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -82,13 +73,11 @@ public class DescribeLifecycleHooksResult implements Serializable {
     }
     
     /**
-     * A list describing the lifecycle hooks that belong to the specified
-     * Auto Scaling group.
+     * The lifecycle hooks for the specified group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleHooks A list describing the lifecycle hooks that belong to the specified
-     *         Auto Scaling group.
+     * @param lifecycleHooks The lifecycle hooks for the specified group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

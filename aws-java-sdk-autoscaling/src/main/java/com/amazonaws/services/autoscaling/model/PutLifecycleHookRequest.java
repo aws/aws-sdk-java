@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#putLifecycleHook(PutLifecycleHookRequest) PutLifecycleHook operation}.
  * <p>
- * Creates or updates a lifecycle hook for an Auto Scaling Group.
+ * Creates or updates a lifecycle hook for the specified Auto Scaling
+ * Group.
  * </p>
  * <p>
  * A lifecycle hook tells Auto Scaling that you want to perform an action
@@ -32,20 +33,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This operation is a part of the basic sequence for adding a lifecycle
  * hook to an Auto Scaling group:
  * </p>
- * <ol> <li> Create a notification target. A target can be either an
- * Amazon SQS queue or an Amazon SNS topic. </li>
- * <li> Create an IAM role. This role allows Auto Scaling to publish
- * lifecycle notifications to the designated SQS queue or SNS topic.
- * </li>
+ * <ol> <li>Create a notification target. A target can be either an
+ * Amazon SQS queue or an Amazon SNS topic.</li>
+ * <li>Create an IAM role. This role allows Auto Scaling to publish
+ * lifecycle notifications to the designated SQS queue or SNS topic.</li>
  * <li> <b>Create the lifecycle hook. You can create a hook that acts
  * when instances launch or when instances terminate.</b> </li>
- * <li> If necessary, record the lifecycle action heartbeat to keep the
- * instance in a pending state. </li>
- * <li> Complete the lifecycle action. </li>
+ * <li>If necessary, record the lifecycle action heartbeat to keep the
+ * instance in a pending state.</li>
+ * <li>Complete the lifecycle action.</li>
  * </ol> <p>
- * To learn more, see
+ * For more information, see
  * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
- * .
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putLifecycleHook(PutLifecycleHookRequest)
@@ -81,10 +81,10 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
     private String lifecycleTransition;
 
     /**
-     * The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     * publish to the specified notification target. <note> <p>This parameter
-     * is required for new lifecycle hooks, but optional when updating
-     * existing hooks. </note>
+     * The ARN of the IAM role that allows the Auto Scaling group to publish
+     * to the specified notification target. <note> <p>This parameter is
+     * required for new lifecycle hooks, but optional when updating existing
+     * hooks. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -302,48 +302,48 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     * publish to the specified notification target. <note> <p>This parameter
-     * is required for new lifecycle hooks, but optional when updating
-     * existing hooks. </note>
+     * The ARN of the IAM role that allows the Auto Scaling group to publish
+     * to the specified notification target. <note> <p>This parameter is
+     * required for new lifecycle hooks, but optional when updating existing
+     * hooks. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     *         publish to the specified notification target. <note> <p>This parameter
-     *         is required for new lifecycle hooks, but optional when updating
-     *         existing hooks. </note>
+     * @return The ARN of the IAM role that allows the Auto Scaling group to publish
+     *         to the specified notification target. <note> <p>This parameter is
+     *         required for new lifecycle hooks, but optional when updating existing
+     *         hooks. </note>
      */
     public String getRoleARN() {
         return roleARN;
     }
     
     /**
-     * The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     * publish to the specified notification target. <note> <p>This parameter
-     * is required for new lifecycle hooks, but optional when updating
-     * existing hooks. </note>
+     * The ARN of the IAM role that allows the Auto Scaling group to publish
+     * to the specified notification target. <note> <p>This parameter is
+     * required for new lifecycle hooks, but optional when updating existing
+     * hooks. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param roleARN The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     *         publish to the specified notification target. <note> <p>This parameter
-     *         is required for new lifecycle hooks, but optional when updating
-     *         existing hooks. </note>
+     * @param roleARN The ARN of the IAM role that allows the Auto Scaling group to publish
+     *         to the specified notification target. <note> <p>This parameter is
+     *         required for new lifecycle hooks, but optional when updating existing
+     *         hooks. </note>
      */
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
     
     /**
-     * The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     * publish to the specified notification target. <note> <p>This parameter
-     * is required for new lifecycle hooks, but optional when updating
-     * existing hooks. </note>
+     * The ARN of the IAM role that allows the Auto Scaling group to publish
+     * to the specified notification target. <note> <p>This parameter is
+     * required for new lifecycle hooks, but optional when updating existing
+     * hooks. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -351,10 +351,10 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param roleARN The ARN of the Amazon IAM role that allows the Auto Scaling group to
-     *         publish to the specified notification target. <note> <p>This parameter
-     *         is required for new lifecycle hooks, but optional when updating
-     *         existing hooks. </note>
+     * @param roleARN The ARN of the IAM role that allows the Auto Scaling group to publish
+     *         to the specified notification target. <note> <p>This parameter is
+     *         required for new lifecycle hooks, but optional when updating existing
+     *         hooks. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

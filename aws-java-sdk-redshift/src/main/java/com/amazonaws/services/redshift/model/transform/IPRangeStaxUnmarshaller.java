@@ -51,6 +51,10 @@ public class IPRangeStaxUnmarshaller implements Unmarshaller<IPRange, StaxUnmars
                     iPRange.setCIDRIP(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Tags/Tag", targetDepth)) {
+                    iPRange.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return iPRange;

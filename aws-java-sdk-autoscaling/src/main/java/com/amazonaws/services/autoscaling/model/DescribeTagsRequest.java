@@ -21,19 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeTags(DescribeTagsRequest) DescribeTags operation}.
  * <p>
- * Lists the Auto Scaling group tags.
+ * Describes the specified tags.
  * </p>
  * <p>
- * You can use filters to limit results when describing tags. For
- * example, you can query for tags of a particular Auto Scaling group.
- * You can specify multiple values for a filter. A tag must match at
- * least one of the specified values for it to be included in the
- * results.
+ * You can use filters to limit the results. For example, you can query
+ * for the tags for a specific Auto Scaling group. You can specify
+ * multiple values for a filter. A tag must match at least one of the
+ * specified values for it to be included in the results.
  * </p>
  * <p>
- * You can also specify multiple filters. The result includes
- * information for a particular tag only if it matches all your filters.
- * If there's no match, no special message is returned.
+ * You can also specify multiple filters. The result includes information
+ * for a particular tag only if it matches all the filters. If there's no
+ * match, no special message is returned.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeTags(DescribeTagsRequest)
@@ -50,7 +49,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -58,7 +58,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     private String nextToken;
 
     /**
-     * The maximum number of records to return.
+     * The maximum number of items to return with this call.
      */
     private Integer maxRecords;
 
@@ -163,38 +163,44 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A string that marks the start of the next batch of returned results.
+     * @return The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that marks the start of the next batch of returned results.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that marks the start of the next batch of returned results.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -205,29 +211,29 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The maximum number of records to return.
+     * The maximum number of items to return with this call.
      *
-     * @return The maximum number of records to return.
+     * @return The maximum number of items to return with this call.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * The maximum number of records to return.
+     * The maximum number of items to return with this call.
      *
-     * @param maxRecords The maximum number of records to return.
+     * @param maxRecords The maximum number of items to return with this call.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * The maximum number of records to return.
+     * The maximum number of items to return with this call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords The maximum number of records to return.
+     * @param maxRecords The maximum number of items to return with this call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

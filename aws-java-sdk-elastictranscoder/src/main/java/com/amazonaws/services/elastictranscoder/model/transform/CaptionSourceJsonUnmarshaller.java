@@ -61,6 +61,10 @@ public class CaptionSourceJsonUnmarshaller implements Unmarshaller<CaptionSource
                     context.nextToken();
                     captionSource.setLabel(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Encryption", targetDepth)) {
+                    context.nextToken();
+                    captionSource.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

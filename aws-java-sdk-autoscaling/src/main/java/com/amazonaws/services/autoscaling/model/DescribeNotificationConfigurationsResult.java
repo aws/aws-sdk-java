@@ -17,20 +17,18 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the DescribeNotificationConfigurations action.
- * </p>
+ * 
  */
 public class DescribeNotificationConfigurationsResult implements Serializable {
 
     /**
-     * The list of notification configurations.
+     * The notification configurations.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<NotificationConfiguration> notificationConfigurations;
 
     /**
-     * A string that is used to mark the start of the next batch of returned
-     * results for pagination.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -38,9 +36,9 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
     private String nextToken;
 
     /**
-     * The list of notification configurations.
+     * The notification configurations.
      *
-     * @return The list of notification configurations.
+     * @return The notification configurations.
      */
     public java.util.List<NotificationConfiguration> getNotificationConfigurations() {
         if (notificationConfigurations == null) {
@@ -51,9 +49,9 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
     }
     
     /**
-     * The list of notification configurations.
+     * The notification configurations.
      *
-     * @param notificationConfigurations The list of notification configurations.
+     * @param notificationConfigurations The notification configurations.
      */
     public void setNotificationConfigurations(java.util.Collection<NotificationConfiguration> notificationConfigurations) {
         if (notificationConfigurations == null) {
@@ -66,11 +64,11 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
     }
     
     /**
-     * The list of notification configurations.
+     * The notification configurations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param notificationConfigurations The list of notification configurations.
+     * @param notificationConfigurations The notification configurations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -84,11 +82,11 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
     }
     
     /**
-     * The list of notification configurations.
+     * The notification configurations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param notificationConfigurations The list of notification configurations.
+     * @param notificationConfigurations The notification configurations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -106,44 +104,44 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
     }
 
     /**
-     * A string that is used to mark the start of the next batch of returned
-     * results for pagination.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A string that is used to mark the start of the next batch of returned
-     *         results for pagination.
+     * @return The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string that is used to mark the start of the next batch of returned
-     * results for pagination.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that is used to mark the start of the next batch of returned
-     *         results for pagination.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string that is used to mark the start of the next batch of returned
-     * results for pagination.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that is used to mark the start of the next batch of returned
-     *         results for pagination.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

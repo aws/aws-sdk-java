@@ -21,21 +21,17 @@ import com.amazonaws.services.datapipeline.model.*;
 /**
  * Interface for accessing DataPipeline.
  * <p>
- * This is the <i>AWS Data Pipeline API Reference</i> . This guide
- * provides descriptions and samples of the AWS Data Pipeline API.
- * </p>
- * <p>
  * AWS Data Pipeline is a web service that configures and manages a
  * data-driven workflow called a pipeline. AWS Data Pipeline handles the
  * details of scheduling and ensuring that data dependencies are met so
  * your application can focus on processing the data.
  * </p>
  * <p>
- * The AWS Data Pipeline API implements two main sets of functionality.
- * The first set of actions configure the pipeline in the web service.
- * You call these actions to create a pipeline and define data sources,
- * schedules, dependencies, and the transforms to be performed on the
- * data.
+ * The AWS Data Pipeline SDKs and CLI implements two main sets of
+ * functionality. The first set of actions configure the pipeline in the
+ * web service. You perform these actions to create a pipeline and define
+ * data sources, schedules, dependencies, and the transforms to be
+ * performed on the data.
  * </p>
  * <p>
  * The second set of actions are used by a task runner application that
@@ -48,21 +44,13 @@ import com.amazonaws.services.datapipeline.model.*;
  * reports the final success or failure of the task to the web service.
  * </p>
  * <p>
- * AWS Data Pipeline provides an open-source implementation of a task
- * runner called AWS Data Pipeline Task Runner. AWS Data Pipeline Task
- * Runner provides logic for common data management scenarios, such as
+ * AWS Data Pipeline provides a JAR implementation of a task runner
+ * called AWS Data Pipeline Task Runner. AWS Data Pipeline Task Runner
+ * provides logic for common data management scenarios, such as
  * performing database queries and running data analysis using Amazon
  * Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task
  * Runner as your task runner, or you can write your own task runner to
  * provide custom data management.
- * </p>
- * <p>
- * The AWS Data Pipeline API uses the Signature Version 4 protocol for
- * signing requests. For more information about how to sign a request
- * with this protocol, see
- * <a href="http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process </a>
- * . In the code examples in this reference, the Signature Version 4
- * Request parameters are represented as AuthParams.
  * </p>
  */
 public interface DataPipeline {
@@ -127,7 +115,9 @@ public interface DataPipeline {
     /**
      * <p>
      * Validates a pipeline and initiates processing. If the pipeline does
-     * not pass validation, activation fails.
+     * not pass validation, activation fails. You cannot perform this
+     * operation on FINISHED pipelines and attempting to do so will return an
+     * InvalidRequestException.
      * </p>
      * <p>
      * Call this action to start processing pipeline tasks of a pipeline
@@ -339,7 +329,9 @@ public interface DataPipeline {
      * Requests that the status of an array of physical or logical pipeline
      * objects be updated in the pipeline. This update may not occur
      * immediately, but is eventually consistent. The status that can be set
-     * depends on the type of object.
+     * depends on the type of object, e.g. DataNode or Activity. You cannot
+     * perform this operation on FINISHED pipelines and attempting to do so
+     * will return an InvalidRequestException.
      * </p>
      *
      * @param setStatusRequest Container for the necessary parameters to
@@ -614,8 +606,7 @@ public interface DataPipeline {
      * <p>
      * Adds tasks, schedules, and preconditions that control the behavior of
      * the pipeline. You can use PutPipelineDefinition to populate a new
-     * pipeline or to update an existing pipeline that has not yet been
-     * activated.
+     * pipeline.
      * </p>
      * <p>
      * PutPipelineDefinition also validates the configuration as it adds it
@@ -625,6 +616,7 @@ public interface DataPipeline {
      * <li>A string or reference field is empty.</li>
      * <li>The number of objects in the pipeline exceeds the maximum allowed
      * objects.</li>
+     * <li>The pipeline is in a FINISHED state.</li>
      * </ol>
      * </p>
      * <p>

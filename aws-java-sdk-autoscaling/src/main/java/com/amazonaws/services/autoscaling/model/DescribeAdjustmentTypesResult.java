@@ -17,21 +17,19 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the DescribeAdjustmentTypes action.
- * </p>
+ * 
  */
 public class DescribeAdjustmentTypesResult implements Serializable {
 
     /**
-     * A list of specific policy adjustment types.
+     * The policy adjustment types.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AdjustmentType> adjustmentTypes;
 
     /**
-     * A list of specific policy adjustment types.
+     * The policy adjustment types.
      *
-     * @return A list of specific policy adjustment types.
+     * @return The policy adjustment types.
      */
     public java.util.List<AdjustmentType> getAdjustmentTypes() {
         if (adjustmentTypes == null) {
@@ -42,9 +40,9 @@ public class DescribeAdjustmentTypesResult implements Serializable {
     }
     
     /**
-     * A list of specific policy adjustment types.
+     * The policy adjustment types.
      *
-     * @param adjustmentTypes A list of specific policy adjustment types.
+     * @param adjustmentTypes The policy adjustment types.
      */
     public void setAdjustmentTypes(java.util.Collection<AdjustmentType> adjustmentTypes) {
         if (adjustmentTypes == null) {
@@ -57,11 +55,11 @@ public class DescribeAdjustmentTypesResult implements Serializable {
     }
     
     /**
-     * A list of specific policy adjustment types.
+     * The policy adjustment types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param adjustmentTypes A list of specific policy adjustment types.
+     * @param adjustmentTypes The policy adjustment types.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -75,11 +73,11 @@ public class DescribeAdjustmentTypesResult implements Serializable {
     }
     
     /**
-     * A list of specific policy adjustment types.
+     * The policy adjustment types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param adjustmentTypes A list of specific policy adjustment types.
+     * @param adjustmentTypes The policy adjustment types.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

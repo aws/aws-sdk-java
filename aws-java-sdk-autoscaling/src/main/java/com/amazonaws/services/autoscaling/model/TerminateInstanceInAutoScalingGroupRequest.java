@@ -21,12 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest) TerminateInstanceInAutoScalingGroup operation}.
  * <p>
- * Terminates the specified instance. Optionally, the desired group size
- * can be adjusted.
+ * Terminates the specified instance and optionally adjusts the desired
+ * group size.
  * </p>
  * <p>
- * <b>NOTE:</b> This call simply registers a termination request. The
- * termination of the instance cannot happen immediately.
+ * <b>NOTE:</b>This call simply makes a termination request. The
+ * instances is not terminated immediately.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest)
@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The ID of the Amazon EC2 instance to be terminated.
+     * The ID of the EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
@@ -43,40 +43,39 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
     private String instanceId;
 
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     * instance should also decrement the size of the
-     * <a>AutoScalingGroup</a>.
+     * If <code>true</code>, terminating this instance also decrements the
+     * size of the Auto Scaling group.
      */
     private Boolean shouldDecrementDesiredCapacity;
 
     /**
-     * The ID of the Amazon EC2 instance to be terminated.
+     * The ID of the EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The ID of the Amazon EC2 instance to be terminated.
+     * @return The ID of the EC2 instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the Amazon EC2 instance to be terminated.
+     * The ID of the EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The ID of the Amazon EC2 instance to be terminated.
+     * @param instanceId The ID of the EC2 instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the Amazon EC2 instance to be terminated.
+     * The ID of the EC2 instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -84,7 +83,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The ID of the Amazon EC2 instance to be terminated.
+     * @param instanceId The ID of the EC2 instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,41 +94,35 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
     }
 
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     * instance should also decrement the size of the
-     * <a>AutoScalingGroup</a>.
+     * If <code>true</code>, terminating this instance also decrements the
+     * size of the Auto Scaling group.
      *
-     * @return Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     *         instance should also decrement the size of the
-     *         <a>AutoScalingGroup</a>.
+     * @return If <code>true</code>, terminating this instance also decrements the
+     *         size of the Auto Scaling group.
      */
     public Boolean isShouldDecrementDesiredCapacity() {
         return shouldDecrementDesiredCapacity;
     }
     
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     * instance should also decrement the size of the
-     * <a>AutoScalingGroup</a>.
+     * If <code>true</code>, terminating this instance also decrements the
+     * size of the Auto Scaling group.
      *
-     * @param shouldDecrementDesiredCapacity Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     *         instance should also decrement the size of the
-     *         <a>AutoScalingGroup</a>.
+     * @param shouldDecrementDesiredCapacity If <code>true</code>, terminating this instance also decrements the
+     *         size of the Auto Scaling group.
      */
     public void setShouldDecrementDesiredCapacity(Boolean shouldDecrementDesiredCapacity) {
         this.shouldDecrementDesiredCapacity = shouldDecrementDesiredCapacity;
     }
     
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     * instance should also decrement the size of the
-     * <a>AutoScalingGroup</a>.
+     * If <code>true</code>, terminating this instance also decrements the
+     * size of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param shouldDecrementDesiredCapacity Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     *         instance should also decrement the size of the
-     *         <a>AutoScalingGroup</a>.
+     * @param shouldDecrementDesiredCapacity If <code>true</code>, terminating this instance also decrements the
+     *         size of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -140,13 +133,11 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
     }
 
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     * instance should also decrement the size of the
-     * <a>AutoScalingGroup</a>.
+     * If <code>true</code>, terminating this instance also decrements the
+     * size of the Auto Scaling group.
      *
-     * @return Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-     *         instance should also decrement the size of the
-     *         <a>AutoScalingGroup</a>.
+     * @return If <code>true</code>, terminating this instance also decrements the
+     *         size of the Auto Scaling group.
      */
     public Boolean getShouldDecrementDesiredCapacity() {
         return shouldDecrementDesiredCapacity;

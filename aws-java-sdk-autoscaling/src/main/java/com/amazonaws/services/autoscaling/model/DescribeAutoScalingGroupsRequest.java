@@ -21,15 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest) DescribeAutoScalingGroups operation}.
  * <p>
- * Returns a full description of each Auto Scaling group in the given
- * list. This includes all Amazon EC2 instances that are members of the
- * group. If a list of names is not provided, the service returns the
- * full details of all Auto Scaling groups.
+ * Describes one or more Auto Scaling groups. If a list of names is not
+ * provided, the call describes all Auto Scaling groups.
  * </p>
  * <p>
- * This action supports pagination by returning a token if there are
- * more pages to retrieve. To get the next page, call this action again
- * with the returned token as the <code>NextToken</code> parameter.
+ * You can specify a maximum number of items to be returned with a single
+ * call. If there are more items to return, the call returns a token. To
+ * get the next set of items, repeat the call with the returned token in
+ * the <code>NextToken</code> parameter.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest)
@@ -37,12 +36,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * A list of Auto Scaling group names.
+     * The group names.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupNames;
 
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -50,14 +50,14 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
     private String nextToken;
 
     /**
-     * The maximum number of records to return.
+     * The maximum number of items to return with this call.
      */
     private Integer maxRecords;
 
     /**
-     * A list of Auto Scaling group names.
+     * The group names.
      *
-     * @return A list of Auto Scaling group names.
+     * @return The group names.
      */
     public java.util.List<String> getAutoScalingGroupNames() {
         if (autoScalingGroupNames == null) {
@@ -68,9 +68,9 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * A list of Auto Scaling group names.
+     * The group names.
      *
-     * @param autoScalingGroupNames A list of Auto Scaling group names.
+     * @param autoScalingGroupNames The group names.
      */
     public void setAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
         if (autoScalingGroupNames == null) {
@@ -83,11 +83,11 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * A list of Auto Scaling group names.
+     * The group names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoScalingGroupNames A list of Auto Scaling group names.
+     * @param autoScalingGroupNames The group names.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -101,11 +101,11 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * A list of Auto Scaling group names.
+     * The group names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoScalingGroupNames A list of Auto Scaling group names.
+     * @param autoScalingGroupNames The group names.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -123,38 +123,44 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A string that marks the start of the next batch of returned results.
+     * @return The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that marks the start of the next batch of returned results.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * The token for the next set of items to return. (You received this
+     * token from a previous call.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that marks the start of the next batch of returned results.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a previous call.)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -165,29 +171,29 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The maximum number of records to return.
+     * The maximum number of items to return with this call.
      *
-     * @return The maximum number of records to return.
+     * @return The maximum number of items to return with this call.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * The maximum number of records to return.
+     * The maximum number of items to return with this call.
      *
-     * @param maxRecords The maximum number of records to return.
+     * @param maxRecords The maximum number of items to return with this call.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * The maximum number of records to return.
+     * The maximum number of items to return with this call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords The maximum number of records to return.
+     * @param maxRecords The maximum number of items to return with this call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

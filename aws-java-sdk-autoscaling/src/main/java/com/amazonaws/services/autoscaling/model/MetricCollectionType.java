@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The MetricCollectionType data type.
+ * Describes a metric.
  * </p>
  */
 public class MetricCollectionType implements Serializable {
 
     /**
-     * 
+     * The metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -33,33 +33,33 @@ public class MetricCollectionType implements Serializable {
     private String metric;
 
     /**
-     * 
+     * The metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return 
+     * @return The metric.
      */
     public String getMetric() {
         return metric;
     }
     
     /**
-     * 
+     * The metric.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param metric 
+     * @param metric The metric.
      */
     public void setMetric(String metric) {
         this.metric = metric;
     }
     
     /**
-     * 
+     * The metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -67,7 +67,7 @@ public class MetricCollectionType implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param metric 
+     * @param metric The metric.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

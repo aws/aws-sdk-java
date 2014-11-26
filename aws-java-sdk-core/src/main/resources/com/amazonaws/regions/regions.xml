@@ -1887,6 +1887,12 @@
         <Https>true</Https>
         <Hostname>swf.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>redshift</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>redshift.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
   </Regions>
   <Services>
@@ -2323,6 +2329,7 @@
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>kinesis</Name>

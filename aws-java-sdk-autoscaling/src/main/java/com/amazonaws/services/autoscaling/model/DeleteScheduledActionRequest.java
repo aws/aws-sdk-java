@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteScheduledAction(DeleteScheduledActionRequest) DeleteScheduledAction operation}.
  * <p>
- * Deletes a scheduled action previously created using the
- * PutScheduledUpdateGroupAction.
+ * Deletes the specified scheduled action.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteScheduledAction(DeleteScheduledActionRequest)
@@ -39,7 +38,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implem
     private String autoScalingGroupName;
 
     /**
-     * The name of the action you want to delete.
+     * The name of the action to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -93,33 +92,33 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The name of the action you want to delete.
+     * The name of the action to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the action you want to delete.
+     * @return The name of the action to delete.
      */
     public String getScheduledActionName() {
         return scheduledActionName;
     }
     
     /**
-     * The name of the action you want to delete.
+     * The name of the action to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param scheduledActionName The name of the action you want to delete.
+     * @param scheduledActionName The name of the action to delete.
      */
     public void setScheduledActionName(String scheduledActionName) {
         this.scheduledActionName = scheduledActionName;
     }
     
     /**
-     * The name of the action you want to delete.
+     * The name of the action to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -127,7 +126,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implem
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param scheduledActionName The name of the action you want to delete.
+     * @param scheduledActionName The name of the action to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

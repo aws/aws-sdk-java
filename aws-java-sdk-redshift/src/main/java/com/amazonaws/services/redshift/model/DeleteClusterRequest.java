@@ -27,8 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * operation cannot be canceled or reverted once submitted. For more
  * information about managing clusters, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
- * in the <i>Amazon Redshift Management Guide</i> .
- * 
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * </p>
  * <p>
  * If you want to shut down the cluster and retain it for future use,
@@ -42,8 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For more information about managing clusters, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
- * in the <i>Amazon Redshift Management Guide</i> .
- * 
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteCluster(DeleteClusterRequest)

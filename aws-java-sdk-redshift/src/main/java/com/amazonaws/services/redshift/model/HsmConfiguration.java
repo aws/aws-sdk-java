@@ -49,6 +49,11 @@ public class HsmConfiguration implements Serializable {
     private String hsmPartitionName;
 
     /**
+     * The list of tags for the HSM configuration.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * The name of the Amazon Redshift HSM configuration.
      *
      * @return The name of the Amazon Redshift HSM configuration.
@@ -193,6 +198,74 @@ public class HsmConfiguration implements Serializable {
     }
 
     /**
+     * The list of tags for the HSM configuration.
+     *
+     * @return The list of tags for the HSM configuration.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * The list of tags for the HSM configuration.
+     *
+     * @param tags The list of tags for the HSM configuration.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * The list of tags for the HSM configuration.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the HSM configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HsmConfiguration withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of tags for the HSM configuration.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the HSM configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HsmConfiguration withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -207,7 +280,8 @@ public class HsmConfiguration implements Serializable {
         if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getHsmIpAddress() != null) sb.append("HsmIpAddress: " + getHsmIpAddress() + ",");
-        if (getHsmPartitionName() != null) sb.append("HsmPartitionName: " + getHsmPartitionName() );
+        if (getHsmPartitionName() != null) sb.append("HsmPartitionName: " + getHsmPartitionName() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -221,6 +295,7 @@ public class HsmConfiguration implements Serializable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getHsmIpAddress() == null) ? 0 : getHsmIpAddress().hashCode()); 
         hashCode = prime * hashCode + ((getHsmPartitionName() == null) ? 0 : getHsmPartitionName().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -240,6 +315,8 @@ public class HsmConfiguration implements Serializable {
         if (other.getHsmIpAddress() != null && other.getHsmIpAddress().equals(this.getHsmIpAddress()) == false) return false; 
         if (other.getHsmPartitionName() == null ^ this.getHsmPartitionName() == null) return false;
         if (other.getHsmPartitionName() != null && other.getHsmPartitionName().equals(this.getHsmPartitionName()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

@@ -36,6 +36,15 @@ import com.amazonaws.services.s3.internal.Constants;
  *      <li>Constraints controlling if the object will be downloaded or not.
  *  </ul>
  * </p>
+ * <p>
+ * If you are uploading or accessing <a
+ * href="http://aws.amazon.com/kms/">KMS</a>-encrypted objects, you need to
+ * specify the correct region of the bucket on your client and configure AWS
+ * Signature Version 4 for added security. For more information on how to do
+ * this, see
+ * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify
+ * -signature-version
+ * </p>
  *
  * @see GetObjectRequest#GetObjectRequest(String, String)
  * @see GetObjectRequest#GetObjectRequest(String, String, String)
@@ -839,14 +848,14 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the S3 object id for this request. 
+     * Sets the S3 object id for this request.
      */
     public void setS3ObjectId(S3ObjectId s3ObjectId) {
         this.s3ObjectIdBuilder = new S3ObjectIdBuilder(s3ObjectId);
     }
 
     /**
-     * Fluent API to set the S3 object id for this request. 
+     * Fluent API to set the S3 object id for this request.
      */
     public GetObjectRequest withS3ObjectId(S3ObjectId s3ObjectId) {
         setS3ObjectId(s3ObjectId);

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest) DescribeTerminationPolicyTypes operation}.
  * <p>
- * Returns a list of all termination policies supported by Auto Scaling.
+ * Lists the termination policies supported by Auto Scaling.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest)

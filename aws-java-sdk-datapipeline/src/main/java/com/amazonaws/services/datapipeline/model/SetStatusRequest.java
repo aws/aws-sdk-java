@@ -24,7 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests that the status of an array of physical or logical pipeline
  * objects be updated in the pipeline. This update may not occur
  * immediately, but is eventually consistent. The status that can be set
- * depends on the type of object.
+ * depends on the type of object, e.g. DataNode or Activity. You cannot
+ * perform this operation on FINISHED pipelines and attempting to do so
+ * will return an InvalidRequestException.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest)

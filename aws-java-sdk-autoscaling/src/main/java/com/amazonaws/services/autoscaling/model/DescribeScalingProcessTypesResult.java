@@ -17,21 +17,19 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output of the DescribeScalingProcessTypes action.
- * </p>
+ * 
  */
 public class DescribeScalingProcessTypesResult implements Serializable {
 
     /**
-     * A list of <a>ProcessType</a> names.
+     * The names of the process types.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProcessType> processes;
 
     /**
-     * A list of <a>ProcessType</a> names.
+     * The names of the process types.
      *
-     * @return A list of <a>ProcessType</a> names.
+     * @return The names of the process types.
      */
     public java.util.List<ProcessType> getProcesses() {
         if (processes == null) {
@@ -42,9 +40,9 @@ public class DescribeScalingProcessTypesResult implements Serializable {
     }
     
     /**
-     * A list of <a>ProcessType</a> names.
+     * The names of the process types.
      *
-     * @param processes A list of <a>ProcessType</a> names.
+     * @param processes The names of the process types.
      */
     public void setProcesses(java.util.Collection<ProcessType> processes) {
         if (processes == null) {
@@ -57,11 +55,11 @@ public class DescribeScalingProcessTypesResult implements Serializable {
     }
     
     /**
-     * A list of <a>ProcessType</a> names.
+     * The names of the process types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param processes A list of <a>ProcessType</a> names.
+     * @param processes The names of the process types.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -75,11 +73,11 @@ public class DescribeScalingProcessTypesResult implements Serializable {
     }
     
     /**
-     * A list of <a>ProcessType</a> names.
+     * The names of the process types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param processes A list of <a>ProcessType</a> names.
+     * @param processes The names of the process types.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

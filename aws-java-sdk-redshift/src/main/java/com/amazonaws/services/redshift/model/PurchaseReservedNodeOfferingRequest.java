@@ -31,8 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For more information about managing parameter groups, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
- * in the <i>Amazon Redshift Management Guide</i> .
- * 
+ * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * 
  * </p>
  *

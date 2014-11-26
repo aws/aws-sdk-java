@@ -21,6 +21,9 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.internal.config.HostRegexToRegionMapping;
+import com.amazonaws.internal.config.InternalConfig;
+
 public class AwsHostNameUtils {
 
     private static final Pattern S3_ENDPOINT_PATTERN =
@@ -52,6 +55,11 @@ public class AwsHostNameUtils {
      */
     public static String parseRegionName(final String host,
                                          final String serviceHint) {
+
+        String regionNameInInternalConfig = parseRegionNameByInternalConfig(host);
+        if (regionNameInInternalConfig != null) {
+            return regionNameInInternalConfig;
+        }
 
         if (host.endsWith(".amazonaws.com")) {
             int index = host.length() - ".amazonaws.com".length();
@@ -103,16 +111,6 @@ public class AwsHostNameUtils {
      */
     private static String parseStandardRegionName(final String fragment) {
 
-        if (fragment.equals("s3") || fragment.equals("s3-external-1")
-                || fragment.endsWith(".s3")
-                || fragment.endsWith(".s3-external-1")) {
-            // host was 'bucket.s3.amazonaws.com' or
-            // 'bucket.s3-external-1.amazonaws.com' or s3.amazonaws.com or
-            // s3-external-1.amazonaws.com,
-            // which is us-east-1.
-            return "us-east-1";
-        }
-
         Matcher matcher = S3_ENDPOINT_PATTERN.matcher(fragment);
         if (matcher.matches()) {
             // host was 'bucket.s3-[region].amazonaws.com'.
@@ -142,6 +140,24 @@ public class AwsHostNameUtils {
         }
 
         return region;
+    }
+
+    /**
+     * @return the configured region name if the given host name matches any of
+     *         the host-to-region mappings in the internal config; otherwise
+     *         return null.
+     */
+    private static String parseRegionNameByInternalConfig(String host) {
+        InternalConfig internConfig = InternalConfig.Factory.getInternalConfig();
+
+        for (HostRegexToRegionMapping mapping : internConfig.getHostRegexToRegionMappings()) {
+            String hostNameRegex = mapping.getHostNameRegex();
+            if (host.matches(hostNameRegex)) {
+                return mapping.getRegionName();
+            }
+        }
+
+        return null;
     }
 
     /**

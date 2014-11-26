@@ -21,13 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest) DeleteAutoScalingGroup operation}.
  * <p>
- * Deletes the specified Auto Scaling group if the group has no
- * instances and no scaling activities in progress.
+ * Deletes the specified Auto Scaling group.
  * </p>
  * <p>
- * <b>NOTE:</b> To remove all instances before calling
- * DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the
- * minimum and maximum size of the AutoScalingGroup to zero.
+ * The group must have no instances and no scaling activities in
+ * progress.
+ * </p>
+ * <p>
+ * To remove all instances before calling DeleteAutoScalingGroup, you can
+ * call UpdateAutoScalingGroup to set the minimum and maximum size of the
+ * AutoScalingGroup to zero.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest)
@@ -35,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the Auto Scaling group to delete.
+     * The name of the group to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -44,42 +47,41 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     private String autoScalingGroupName;
 
     /**
-     * Starting with API version 2011-01-01, specifies that the Auto Scaling
-     * group will be deleted along with all instances associated with the
-     * group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the
-     * group.
+     * Specifies that the group will be deleted along with all instances
+     * associated with the group, without waiting for all instances to be
+     * terminated. This parameter also deletes any lifecycle actions
+     * associated with the group.
      */
     private Boolean forceDelete;
 
     /**
-     * The name of the Auto Scaling group to delete.
+     * The name of the group to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group to delete.
+     * @return The name of the group to delete.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to delete.
+     * The name of the group to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to delete.
+     * @param autoScalingGroupName The name of the group to delete.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to delete.
+     * The name of the group to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -87,7 +89,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to delete.
+     * @param autoScalingGroupName The name of the group to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -98,53 +100,47 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Starting with API version 2011-01-01, specifies that the Auto Scaling
-     * group will be deleted along with all instances associated with the
-     * group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the
-     * group.
+     * Specifies that the group will be deleted along with all instances
+     * associated with the group, without waiting for all instances to be
+     * terminated. This parameter also deletes any lifecycle actions
+     * associated with the group.
      *
-     * @return Starting with API version 2011-01-01, specifies that the Auto Scaling
-     *         group will be deleted along with all instances associated with the
-     *         group, without waiting for all instances to be terminated. This
-     *         parameter also deletes any lifecycle actions associated with the
-     *         group.
+     * @return Specifies that the group will be deleted along with all instances
+     *         associated with the group, without waiting for all instances to be
+     *         terminated. This parameter also deletes any lifecycle actions
+     *         associated with the group.
      */
     public Boolean isForceDelete() {
         return forceDelete;
     }
     
     /**
-     * Starting with API version 2011-01-01, specifies that the Auto Scaling
-     * group will be deleted along with all instances associated with the
-     * group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the
-     * group.
+     * Specifies that the group will be deleted along with all instances
+     * associated with the group, without waiting for all instances to be
+     * terminated. This parameter also deletes any lifecycle actions
+     * associated with the group.
      *
-     * @param forceDelete Starting with API version 2011-01-01, specifies that the Auto Scaling
-     *         group will be deleted along with all instances associated with the
-     *         group, without waiting for all instances to be terminated. This
-     *         parameter also deletes any lifecycle actions associated with the
-     *         group.
+     * @param forceDelete Specifies that the group will be deleted along with all instances
+     *         associated with the group, without waiting for all instances to be
+     *         terminated. This parameter also deletes any lifecycle actions
+     *         associated with the group.
      */
     public void setForceDelete(Boolean forceDelete) {
         this.forceDelete = forceDelete;
     }
     
     /**
-     * Starting with API version 2011-01-01, specifies that the Auto Scaling
-     * group will be deleted along with all instances associated with the
-     * group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the
-     * group.
+     * Specifies that the group will be deleted along with all instances
+     * associated with the group, without waiting for all instances to be
+     * terminated. This parameter also deletes any lifecycle actions
+     * associated with the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param forceDelete Starting with API version 2011-01-01, specifies that the Auto Scaling
-     *         group will be deleted along with all instances associated with the
-     *         group, without waiting for all instances to be terminated. This
-     *         parameter also deletes any lifecycle actions associated with the
-     *         group.
+     * @param forceDelete Specifies that the group will be deleted along with all instances
+     *         associated with the group, without waiting for all instances to be
+     *         terminated. This parameter also deletes any lifecycle actions
+     *         associated with the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -155,17 +151,15 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Starting with API version 2011-01-01, specifies that the Auto Scaling
-     * group will be deleted along with all instances associated with the
-     * group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the
-     * group.
+     * Specifies that the group will be deleted along with all instances
+     * associated with the group, without waiting for all instances to be
+     * terminated. This parameter also deletes any lifecycle actions
+     * associated with the group.
      *
-     * @return Starting with API version 2011-01-01, specifies that the Auto Scaling
-     *         group will be deleted along with all instances associated with the
-     *         group, without waiting for all instances to be terminated. This
-     *         parameter also deletes any lifecycle actions associated with the
-     *         group.
+     * @return Specifies that the group will be deleted along with all instances
+     *         associated with the group, without waiting for all instances to be
+     *         terminated. This parameter also deletes any lifecycle actions
+     *         associated with the group.
      */
     public Boolean getForceDelete() {
         return forceDelete;

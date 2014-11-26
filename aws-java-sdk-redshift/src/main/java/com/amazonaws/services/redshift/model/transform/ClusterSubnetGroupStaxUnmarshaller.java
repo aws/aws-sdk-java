@@ -65,6 +65,10 @@ public class ClusterSubnetGroupStaxUnmarshaller implements Unmarshaller<ClusterS
                     clusterSubnetGroup.getSubnets().add(SubnetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Tags/Tag", targetDepth)) {
+                    clusterSubnetGroup.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clusterSubnetGroup;

@@ -110,6 +110,66 @@ public class ValidatePipelineDefinitionRequestMarshaller implements Marshaller<R
                 jsonWriter.endArray();
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject> parameterObjectsList = (com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject>)(validatePipelineDefinitionRequest.getParameterObjects());
+            if (parameterObjectsList != null && !(parameterObjectsList.isAutoConstruct() && parameterObjectsList.isEmpty())) {
+
+                jsonWriter.key("parameterObjects");
+                jsonWriter.array();
+
+                for (ParameterObject parameterObjectsListValue : parameterObjectsList) {
+                    if (parameterObjectsListValue != null) {
+                        jsonWriter.object();
+                        if (parameterObjectsListValue.getId() != null) {
+                            jsonWriter.key("id").value(parameterObjectsListValue.getId());
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<ParameterAttribute> attributesList = (com.amazonaws.internal.ListWithAutoConstructFlag<ParameterAttribute>)(parameterObjectsListValue.getAttributes());
+                        if (attributesList != null && !(attributesList.isAutoConstruct() && attributesList.isEmpty())) {
+
+                            jsonWriter.key("attributes");
+                            jsonWriter.array();
+
+                            for (ParameterAttribute attributesListValue : attributesList) {
+                                if (attributesListValue != null) {
+                                    jsonWriter.object();
+                                    if (attributesListValue.getKey() != null) {
+                                        jsonWriter.key("key").value(attributesListValue.getKey());
+                                    }
+                                    if (attributesListValue.getStringValue() != null) {
+                                        jsonWriter.key("stringValue").value(attributesListValue.getStringValue());
+                                    }
+                                    jsonWriter.endObject();
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValuesList = (com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue>)(validatePipelineDefinitionRequest.getParameterValues());
+            if (parameterValuesList != null && !(parameterValuesList.isAutoConstruct() && parameterValuesList.isEmpty())) {
+
+                jsonWriter.key("parameterValues");
+                jsonWriter.array();
+
+                for (ParameterValue parameterValuesListValue : parameterValuesList) {
+                    if (parameterValuesListValue != null) {
+                        jsonWriter.object();
+                        if (parameterValuesListValue.getId() != null) {
+                            jsonWriter.key("id").value(parameterValuesListValue.getId());
+                        }
+                        if (parameterValuesListValue.getStringValue() != null) {
+                            jsonWriter.key("stringValue").value(parameterValuesListValue.getStringValue());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();

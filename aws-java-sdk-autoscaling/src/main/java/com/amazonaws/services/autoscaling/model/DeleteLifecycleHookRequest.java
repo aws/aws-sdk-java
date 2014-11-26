@@ -21,9 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLifecycleHook(DeleteLifecycleHookRequest) DeleteLifecycleHook operation}.
  * <p>
- * Deletes the specified lifecycle hook. If there are any outstanding
- * lifecycle actions, they are completed first (ABANDON for launching
- * instances, CONTINUE for terminating instances).
+ * Deletes the specified lifecycle hook.
+ * </p>
+ * <p>
+ * If there are any outstanding lifecycle actions, they are completed
+ * first (
+ * <code>ABANDON</code> for launching instances,
+ * <code>CONTINUE</code> for terminating instances).
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLifecycleHook(DeleteLifecycleHookRequest)
@@ -40,8 +44,7 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest implemen
     private String lifecycleHookName;
 
     /**
-     * The name of the Auto Scaling group to which the lifecycle hook
-     * belongs.
+     * The name of the Auto Scaling group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -95,38 +98,33 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The name of the Auto Scaling group to which the lifecycle hook
-     * belongs.
+     * The name of the Auto Scaling group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group to which the lifecycle hook
-     *         belongs.
+     * @return The name of the Auto Scaling group for the lifecycle hook.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which the lifecycle hook
-     * belongs.
+     * The name of the Auto Scaling group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which the lifecycle hook
-     *         belongs.
+     * @param autoScalingGroupName The name of the Auto Scaling group for the lifecycle hook.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which the lifecycle hook
-     * belongs.
+     * The name of the Auto Scaling group for the lifecycle hook.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -134,8 +132,7 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest implemen
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which the lifecycle hook
-     *         belongs.
+     * @param autoScalingGroupName The name of the Auto Scaling group for the lifecycle hook.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -61,6 +61,10 @@ public class HsmConfigurationStaxUnmarshaller implements Unmarshaller<HsmConfigu
                     hsmConfiguration.setHsmPartitionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Tags/Tag", targetDepth)) {
+                    hsmConfiguration.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return hsmConfiguration;

@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLifecycleHooks(DescribeLifecycleHooksRequest) DescribeLifecycleHooks operation}.
  * <p>
- * Describes the lifecycle hooks that currently belong to the specified
- * Auto Scaling group.
+ * Describes the lifecycle hooks for the specified Auto Scaling group.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLifecycleHooks(DescribeLifecycleHooksRequest)
@@ -30,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of one or more Auto Scaling groups.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -39,38 +38,38 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest imple
     private String autoScalingGroupName;
 
     /**
-     * The name of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> lifecycleHookNames;
 
     /**
-     * The name of one or more Auto Scaling groups.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of one or more Auto Scaling groups.
+     * @return The name of the group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of one or more Auto Scaling groups.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of one or more Auto Scaling groups.
+     * @param autoScalingGroupName The name of the group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of one or more Auto Scaling groups.
+     * The name of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -78,7 +77,7 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest imple
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of one or more Auto Scaling groups.
+     * @param autoScalingGroupName The name of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -89,9 +88,9 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The name of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks.
      *
-     * @return The name of one or more lifecycle hooks.
+     * @return The names of one or more lifecycle hooks.
      */
     public java.util.List<String> getLifecycleHookNames() {
         if (lifecycleHookNames == null) {
@@ -102,9 +101,9 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks.
      *
-     * @param lifecycleHookNames The name of one or more lifecycle hooks.
+     * @param lifecycleHookNames The names of one or more lifecycle hooks.
      */
     public void setLifecycleHookNames(java.util.Collection<String> lifecycleHookNames) {
         if (lifecycleHookNames == null) {
@@ -117,11 +116,11 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleHookNames The name of one or more lifecycle hooks.
+     * @param lifecycleHookNames The names of one or more lifecycle hooks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -135,11 +134,11 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleHookNames The name of one or more lifecycle hooks.
+     * @param lifecycleHookNames The names of one or more lifecycle hooks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -86,6 +86,11 @@ public class EventSubscription implements Serializable {
     private Boolean enabled;
 
     /**
+     * The list of tags for the event subscription.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * The AWS customer account associated with the Amazon Redshift event
      * notification subscription.
      *
@@ -587,6 +592,74 @@ public class EventSubscription implements Serializable {
     }
 
     /**
+     * The list of tags for the event subscription.
+     *
+     * @return The list of tags for the event subscription.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * The list of tags for the event subscription.
+     *
+     * @param tags The list of tags for the event subscription.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * The list of tags for the event subscription.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the event subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public EventSubscription withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of tags for the event subscription.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags The list of tags for the event subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public EventSubscription withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -607,7 +680,8 @@ public class EventSubscription implements Serializable {
         if (getSourceIdsList() != null) sb.append("SourceIdsList: " + getSourceIdsList() + ",");
         if (getEventCategoriesList() != null) sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");
         if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ",");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -627,6 +701,7 @@ public class EventSubscription implements Serializable {
         hashCode = prime * hashCode + ((getEventCategoriesList() == null) ? 0 : getEventCategoriesList().hashCode()); 
         hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -658,6 +733,8 @@ public class EventSubscription implements Serializable {
         if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false) return false; 
         if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

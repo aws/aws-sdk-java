@@ -28,20 +28,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This operation is a part of the basic sequence for adding a lifecycle
  * hook to an Auto Scaling group:
  * </p>
- * <ol> <li> Create a notification target. A target can be either an
- * Amazon SQS queue or an Amazon SNS topic. </li>
- * <li> Create an IAM role. This role allows Auto Scaling to publish
- * lifecycle notifications to the designated SQS queue or SNS topic.
- * </li>
- * <li> Create the lifecycle hook. You can create a hook that acts when
- * instances launch or when instances terminate. </li>
- * <li> If necessary, record the lifecycle action heartbeat to keep the
- * instance in a pending state. </li>
- * <li> <b>Complete the lifecycle action.</b> </li>
+ * <ol> <li>Create a notification target. A target can be either an
+ * Amazon SQS queue or an Amazon SNS topic.</li>
+ * <li>Create an IAM role. This role allows Auto Scaling to publish
+ * lifecycle notifications to the designated SQS queue or SNS topic.</li>
+ * <li>Create the lifecycle hook. You can create a hook that acts when
+ * instances launch or when instances terminate.</li>
+ * <li>If necessary, record the lifecycle action heartbeat to keep the
+ * instance in a pending state.</li>
+ * <li> <b>Complete the lifecycle action</b> .</li>
  * </ol> <p>
- * To learn more, see
+ * For more information, see
  * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
- * .
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#completeLifecycleAction(CompleteLifecycleActionRequest)
@@ -58,8 +57,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest impl
     private String lifecycleHookName;
 
     /**
-     * The name of the Auto Scaling group to which the lifecycle hook
-     * belongs.
+     * The name of the group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -79,8 +77,8 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest impl
     private String lifecycleActionToken;
 
     /**
-     * The action the Auto Scaling group should take. The value for this
-     * parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
+     * The action for the group to take. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>.
      */
     private String lifecycleActionResult;
 
@@ -130,38 +128,33 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The name of the Auto Scaling group to which the lifecycle hook
-     * belongs.
+     * The name of the group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group to which the lifecycle hook
-     *         belongs.
+     * @return The name of the group for the lifecycle hook.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which the lifecycle hook
-     * belongs.
+     * The name of the group for the lifecycle hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which the lifecycle hook
-     *         belongs.
+     * @param autoScalingGroupName The name of the group for the lifecycle hook.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which the lifecycle hook
-     * belongs.
+     * The name of the group for the lifecycle hook.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -169,8 +162,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest impl
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which the lifecycle hook
-     *         belongs.
+     * @param autoScalingGroupName The name of the group for the lifecycle hook.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -241,35 +233,35 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The action the Auto Scaling group should take. The value for this
-     * parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
+     * The action for the group to take. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>.
      *
-     * @return The action the Auto Scaling group should take. The value for this
-     *         parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
+     * @return The action for the group to take. This parameter can be either
+     *         <code>CONTINUE</code> or <code>ABANDON</code>.
      */
     public String getLifecycleActionResult() {
         return lifecycleActionResult;
     }
     
     /**
-     * The action the Auto Scaling group should take. The value for this
-     * parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
+     * The action for the group to take. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>.
      *
-     * @param lifecycleActionResult The action the Auto Scaling group should take. The value for this
-     *         parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
+     * @param lifecycleActionResult The action for the group to take. This parameter can be either
+     *         <code>CONTINUE</code> or <code>ABANDON</code>.
      */
     public void setLifecycleActionResult(String lifecycleActionResult) {
         this.lifecycleActionResult = lifecycleActionResult;
     }
     
     /**
-     * The action the Auto Scaling group should take. The value for this
-     * parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
+     * The action for the group to take. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleActionResult The action the Auto Scaling group should take. The value for this
-     *         parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
+     * @param lifecycleActionResult The action for the group to take. This parameter can be either
+     *         <code>CONTINUE</code> or <code>ABANDON</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

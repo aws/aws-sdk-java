@@ -23,27 +23,25 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Records a heartbeat for the lifecycle action associated with a
  * specific token. This extends the timeout by the length of time defined
- * by the <code>HeartbeatTimeout</code> parameter of the PutLifecycleHook
- * operation.
+ * by the <code>HeartbeatTimeout</code> parameter of PutLifecycleHook.
  * </p>
  * <p>
  * This operation is a part of the basic sequence for adding a lifecycle
  * hook to an Auto Scaling group:
  * </p>
- * <ol> <li> Create a notification target. A target can be either an
- * Amazon SQS queue or an Amazon SNS topic. </li>
- * <li> Create an IAM role. This role allows Auto Scaling to publish
- * lifecycle notifications to the designated SQS queue or SNS topic.
- * </li>
- * <li> Create the lifecycle hook. You can create a hook that acts when
- * instances launch or when instances terminate. </li>
+ * <ol> <li>Create a notification target. A target can be either an
+ * Amazon SQS queue or an Amazon SNS topic.</li>
+ * <li>Create an IAM role. This role allows Auto Scaling to publish
+ * lifecycle notifications to the designated SQS queue or SNS topic.</li>
+ * <li>Create the lifecycle hook. You can create a hook that acts when
+ * instances launch or when instances terminate.</li>
  * <li> <b>If necessary, record the lifecycle action heartbeat to keep
  * the instance in a pending state.</b> </li>
- * <li> Complete the lifecycle action. </li>
+ * <li>Complete the lifecycle action.</li>
  * </ol> <p>
- * To learn more, see
+ * For more information, see
  * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
- * .
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#recordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest)
@@ -60,7 +58,7 @@ public class RecordLifecycleActionHeartbeatRequest extends AmazonWebServiceReque
     private String lifecycleHookName;
 
     /**
-     * The name of the Auto Scaling group to which the hook belongs.
+     * The name of the Auto Scaling group for the hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -124,33 +122,33 @@ public class RecordLifecycleActionHeartbeatRequest extends AmazonWebServiceReque
     }
 
     /**
-     * The name of the Auto Scaling group to which the hook belongs.
+     * The name of the Auto Scaling group for the hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group to which the hook belongs.
+     * @return The name of the Auto Scaling group for the hook.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which the hook belongs.
+     * The name of the Auto Scaling group for the hook.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which the hook belongs.
+     * @param autoScalingGroupName The name of the Auto Scaling group for the hook.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to which the hook belongs.
+     * The name of the Auto Scaling group for the hook.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -158,7 +156,7 @@ public class RecordLifecycleActionHeartbeatRequest extends AmazonWebServiceReque
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to which the hook belongs.
+     * @param autoScalingGroupName The name of the Auto Scaling group for the hook.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

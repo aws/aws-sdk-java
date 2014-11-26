@@ -18,14 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type stores information about a scheduled update to an Auto
- * Scaling group.
+ * Describes a scheduled update to an Auto Scaling group.
  * </p>
  */
 public class ScheduledUpdateGroupAction implements Serializable {
 
     /**
-     * The name of the Auto Scaling group to be updated.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -34,7 +33,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
     private String autoScalingGroupName;
 
     /**
-     * The name of this scheduled action.
+     * The name of the scheduled action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -43,7 +42,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
     private String scheduledActionName;
 
     /**
-     * The Amazon Resource Name (ARN) of this scheduled action.
+     * The Amazon Resource Name (ARN) of the scheduled action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -82,49 +81,48 @@ public class ScheduledUpdateGroupAction implements Serializable {
     private String recurrence;
 
     /**
-     * The minimum size of the Auto Scaling group.
+     * The minimum size of the group.
      */
     private Integer minSize;
 
     /**
-     * The maximum size of the Auto Scaling group.
+     * The maximum size of the group.
      */
     private Integer maxSize;
 
     /**
-     * The number of instances you prefer to maintain in your Auto Scaling
-     * group.
+     * The number of instances you prefer to maintain in the group.
      */
     private Integer desiredCapacity;
 
     /**
-     * The name of the Auto Scaling group to be updated.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling group to be updated.
+     * @return The name of the group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to be updated.
+     * The name of the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to be updated.
+     * @param autoScalingGroupName The name of the group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling group to be updated.
+     * The name of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -132,7 +130,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling group to be updated.
+     * @param autoScalingGroupName The name of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -143,33 +141,33 @@ public class ScheduledUpdateGroupAction implements Serializable {
     }
 
     /**
-     * The name of this scheduled action.
+     * The name of the scheduled action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of this scheduled action.
+     * @return The name of the scheduled action.
      */
     public String getScheduledActionName() {
         return scheduledActionName;
     }
     
     /**
-     * The name of this scheduled action.
+     * The name of the scheduled action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param scheduledActionName The name of this scheduled action.
+     * @param scheduledActionName The name of the scheduled action.
      */
     public void setScheduledActionName(String scheduledActionName) {
         this.scheduledActionName = scheduledActionName;
     }
     
     /**
-     * The name of this scheduled action.
+     * The name of the scheduled action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -177,7 +175,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param scheduledActionName The name of this scheduled action.
+     * @param scheduledActionName The name of the scheduled action.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -188,33 +186,33 @@ public class ScheduledUpdateGroupAction implements Serializable {
     }
 
     /**
-     * The Amazon Resource Name (ARN) of this scheduled action.
+     * The Amazon Resource Name (ARN) of the scheduled action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The Amazon Resource Name (ARN) of this scheduled action.
+     * @return The Amazon Resource Name (ARN) of the scheduled action.
      */
     public String getScheduledActionARN() {
         return scheduledActionARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of this scheduled action.
+     * The Amazon Resource Name (ARN) of the scheduled action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param scheduledActionARN The Amazon Resource Name (ARN) of this scheduled action.
+     * @param scheduledActionARN The Amazon Resource Name (ARN) of the scheduled action.
      */
     public void setScheduledActionARN(String scheduledActionARN) {
         this.scheduledActionARN = scheduledActionARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of this scheduled action.
+     * The Amazon Resource Name (ARN) of the scheduled action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -222,7 +220,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param scheduledActionARN The Amazon Resource Name (ARN) of this scheduled action.
+     * @param scheduledActionARN The Amazon Resource Name (ARN) of the scheduled action.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -413,29 +411,29 @@ public class ScheduledUpdateGroupAction implements Serializable {
     }
 
     /**
-     * The minimum size of the Auto Scaling group.
+     * The minimum size of the group.
      *
-     * @return The minimum size of the Auto Scaling group.
+     * @return The minimum size of the group.
      */
     public Integer getMinSize() {
         return minSize;
     }
     
     /**
-     * The minimum size of the Auto Scaling group.
+     * The minimum size of the group.
      *
-     * @param minSize The minimum size of the Auto Scaling group.
+     * @param minSize The minimum size of the group.
      */
     public void setMinSize(Integer minSize) {
         this.minSize = minSize;
     }
     
     /**
-     * The minimum size of the Auto Scaling group.
+     * The minimum size of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param minSize The minimum size of the Auto Scaling group.
+     * @param minSize The minimum size of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -446,29 +444,29 @@ public class ScheduledUpdateGroupAction implements Serializable {
     }
 
     /**
-     * The maximum size of the Auto Scaling group.
+     * The maximum size of the group.
      *
-     * @return The maximum size of the Auto Scaling group.
+     * @return The maximum size of the group.
      */
     public Integer getMaxSize() {
         return maxSize;
     }
     
     /**
-     * The maximum size of the Auto Scaling group.
+     * The maximum size of the group.
      *
-     * @param maxSize The maximum size of the Auto Scaling group.
+     * @param maxSize The maximum size of the group.
      */
     public void setMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
     }
     
     /**
-     * The maximum size of the Auto Scaling group.
+     * The maximum size of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxSize The maximum size of the Auto Scaling group.
+     * @param maxSize The maximum size of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -479,35 +477,29 @@ public class ScheduledUpdateGroupAction implements Serializable {
     }
 
     /**
-     * The number of instances you prefer to maintain in your Auto Scaling
-     * group.
+     * The number of instances you prefer to maintain in the group.
      *
-     * @return The number of instances you prefer to maintain in your Auto Scaling
-     *         group.
+     * @return The number of instances you prefer to maintain in the group.
      */
     public Integer getDesiredCapacity() {
         return desiredCapacity;
     }
     
     /**
-     * The number of instances you prefer to maintain in your Auto Scaling
-     * group.
+     * The number of instances you prefer to maintain in the group.
      *
-     * @param desiredCapacity The number of instances you prefer to maintain in your Auto Scaling
-     *         group.
+     * @param desiredCapacity The number of instances you prefer to maintain in the group.
      */
     public void setDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
     }
     
     /**
-     * The number of instances you prefer to maintain in your Auto Scaling
-     * group.
+     * The number of instances you prefer to maintain in the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param desiredCapacity The number of instances you prefer to maintain in your Auto Scaling
-     *         group.
+     * @param desiredCapacity The number of instances you prefer to maintain in the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

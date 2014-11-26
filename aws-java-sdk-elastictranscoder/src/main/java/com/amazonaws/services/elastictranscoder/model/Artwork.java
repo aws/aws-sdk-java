@@ -129,6 +129,12 @@ public class Artwork implements Serializable {
     private String albumArtFormat;
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your artwork.
+     */
+    private Encryption encryption;
+
+    /**
      * The name of the file to be used as album art. To determine which
      * Amazon S3 bucket contains the specified file, Elastic Transcoder
      * checks the pipeline specified by <code>PipelineId</code>; the
@@ -654,6 +660,45 @@ public class Artwork implements Serializable {
     }
 
     /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your artwork.
+     *
+     * @return The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your artwork.
+     */
+    public Encryption getEncryption() {
+        return encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your artwork.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your artwork.
+     */
+    public void setEncryption(Encryption encryption) {
+        this.encryption = encryption;
+    }
+    
+    /**
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your artwork.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
+     *         apply to your artwork.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Artwork withEncryption(Encryption encryption) {
+        this.encryption = encryption;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -670,7 +715,8 @@ public class Artwork implements Serializable {
         if (getMaxHeight() != null) sb.append("MaxHeight: " + getMaxHeight() + ",");
         if (getSizingPolicy() != null) sb.append("SizingPolicy: " + getSizingPolicy() + ",");
         if (getPaddingPolicy() != null) sb.append("PaddingPolicy: " + getPaddingPolicy() + ",");
-        if (getAlbumArtFormat() != null) sb.append("AlbumArtFormat: " + getAlbumArtFormat() );
+        if (getAlbumArtFormat() != null) sb.append("AlbumArtFormat: " + getAlbumArtFormat() + ",");
+        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
         sb.append("}");
         return sb.toString();
     }
@@ -686,6 +732,7 @@ public class Artwork implements Serializable {
         hashCode = prime * hashCode + ((getSizingPolicy() == null) ? 0 : getSizingPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getPaddingPolicy() == null) ? 0 : getPaddingPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getAlbumArtFormat() == null) ? 0 : getAlbumArtFormat().hashCode()); 
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
         return hashCode;
     }
     
@@ -709,6 +756,8 @@ public class Artwork implements Serializable {
         if (other.getPaddingPolicy() != null && other.getPaddingPolicy().equals(this.getPaddingPolicy()) == false) return false; 
         if (other.getAlbumArtFormat() == null ^ this.getAlbumArtFormat() == null) return false;
         if (other.getAlbumArtFormat() != null && other.getAlbumArtFormat().equals(this.getAlbumArtFormat()) == false) return false; 
+        if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
         return true;
     }
     
