@@ -4,45 +4,47 @@
  *
  * AWS Support <p>
  * The AWS Support API reference is intended for programmers who need
- * detailed information about the AWS Support actions and data types.
+ * detailed information about the AWS Support operations and data types.
  * This service enables you to manage your AWS Support cases
  * programmatically. It uses HTTP methods that return results in JSON
  * format.
  * </p>
  * <p>
  * The AWS Support service also exposes a set of
- * <a href="https://aws.amazon.com/support/trustedadvisor"> Trusted Advisor </a>
+ * <a href="https://aws.amazon.com/premiumsupport/trustedadvisor/"> Trusted Advisor </a>
  * features. You can retrieve a list of checks and their descriptions,
  * get check results, specify checks to refresh, and get the refresh
  * status of checks.
  * </p>
  * <p>
- * The following list describes the AWS Support case management actions:
+ * The following list describes the AWS Support case management
+ * operations:
  * </p>
  * 
  * <ul>
  * <li> <b>Service names, issue categories, and available severity
- * levels. </b> The actions DescribeServices and DescribeSeverityLevels
- * enable you to obtain AWS service names, service codes, service
+ * levels. </b> The DescribeServices and DescribeSeverityLevels
+ * operations return AWS service names, service codes, service
  * categories, and problem severity levels. You use these values when you
- * call the CreateCase action. </li>
+ * call the CreateCase operation. </li>
  * <li> <b>Case creation, case details, and case resolution.</b> The
- * actions CreateCase, DescribeCases, and ResolveCase enable you to
- * create AWS Support cases, retrieve them, and resolve them.</li>
- * <li> <b>Case communication.</b> The actions DescribeCommunications
- * and AddCommunicationToCase enable you to retrieve and add
- * communication to AWS Support cases. </li>
+ * CreateCase, DescribeCases, DescribeAttachment, and ResolveCase
+ * operations create AWS Support cases, retrieve information about cases,
+ * and resolve cases.</li>
+ * <li> <b>Case communication.</b> The DescribeCommunications,
+ * AddCommunicationToCase, and AddAttachmentsToSet operations retrieve
+ * and add communications and attachments to AWS Support cases. </li>
  * 
  * </ul>
  * <p>
- * The following list describes the actions available from the AWS
+ * The following list describes the operations available from the AWS
  * Support service for Trusted Advisor:
  * </p>
  * 
  * <ul>
  * <li> DescribeTrustedAdvisorChecks returns the list of checks that run
  * against your AWS resources.</li>
- * <li>Using the CheckId for a specific check returned by
+ * <li>Using the <code>CheckId</code> for a specific check returned by
  * DescribeTrustedAdvisorChecks, you can call
  * DescribeTrustedAdvisorCheckResult to obtain the results for the check
  * you specified.</li>
@@ -60,11 +62,11 @@
  * .
  * </p>
  * <p>
- * See the AWS Support
- * <a href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html"> User Guide </a>
- * for information about how to use this service to create and manage
- * your support cases, and how to call Trusted Advisor for results of
- * checks on your resources.
+ * See
+ * <a href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html"> About the AWS Support API </a>
+ * in the <i>AWS Support User Guide</i> for information about how to
+ * use this service to create and manage your support cases, and how to
+ * call Trusted Advisor for results of checks on your resources.
  * </p>
  */
  package com.amazonaws.services.support;

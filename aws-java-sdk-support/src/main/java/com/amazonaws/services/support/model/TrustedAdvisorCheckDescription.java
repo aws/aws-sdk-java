@@ -48,7 +48,9 @@ public class TrustedAdvisorCheckDescription implements Serializable {
      * The column headings for the data returned by the Trusted Advisor
      * check. The order of the headings corresponds to the order of the data
      * in the <b>Metadata</b> element of the
-     * <a>TrustedAdvisorResourceDetail</a> for the check.
+     * <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     * contains all the data that is shown in the Excel download, even in
+     * those cases where the UI shows just summary data.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> metadata;
 
@@ -194,12 +196,16 @@ public class TrustedAdvisorCheckDescription implements Serializable {
      * The column headings for the data returned by the Trusted Advisor
      * check. The order of the headings corresponds to the order of the data
      * in the <b>Metadata</b> element of the
-     * <a>TrustedAdvisorResourceDetail</a> for the check.
+     * <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     * contains all the data that is shown in the Excel download, even in
+     * those cases where the UI shows just summary data.
      *
      * @return The column headings for the data returned by the Trusted Advisor
      *         check. The order of the headings corresponds to the order of the data
      *         in the <b>Metadata</b> element of the
-     *         <a>TrustedAdvisorResourceDetail</a> for the check.
+     *         <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     *         contains all the data that is shown in the Excel download, even in
+     *         those cases where the UI shows just summary data.
      */
     public java.util.List<String> getMetadata() {
         if (metadata == null) {
@@ -213,12 +219,16 @@ public class TrustedAdvisorCheckDescription implements Serializable {
      * The column headings for the data returned by the Trusted Advisor
      * check. The order of the headings corresponds to the order of the data
      * in the <b>Metadata</b> element of the
-     * <a>TrustedAdvisorResourceDetail</a> for the check.
+     * <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     * contains all the data that is shown in the Excel download, even in
+     * those cases where the UI shows just summary data.
      *
      * @param metadata The column headings for the data returned by the Trusted Advisor
      *         check. The order of the headings corresponds to the order of the data
      *         in the <b>Metadata</b> element of the
-     *         <a>TrustedAdvisorResourceDetail</a> for the check.
+     *         <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     *         contains all the data that is shown in the Excel download, even in
+     *         those cases where the UI shows just summary data.
      */
     public void setMetadata(java.util.Collection<String> metadata) {
         if (metadata == null) {
@@ -234,14 +244,18 @@ public class TrustedAdvisorCheckDescription implements Serializable {
      * The column headings for the data returned by the Trusted Advisor
      * check. The order of the headings corresponds to the order of the data
      * in the <b>Metadata</b> element of the
-     * <a>TrustedAdvisorResourceDetail</a> for the check.
+     * <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     * contains all the data that is shown in the Excel download, even in
+     * those cases where the UI shows just summary data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata The column headings for the data returned by the Trusted Advisor
      *         check. The order of the headings corresponds to the order of the data
      *         in the <b>Metadata</b> element of the
-     *         <a>TrustedAdvisorResourceDetail</a> for the check.
+     *         <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     *         contains all the data that is shown in the Excel download, even in
+     *         those cases where the UI shows just summary data.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -258,14 +272,18 @@ public class TrustedAdvisorCheckDescription implements Serializable {
      * The column headings for the data returned by the Trusted Advisor
      * check. The order of the headings corresponds to the order of the data
      * in the <b>Metadata</b> element of the
-     * <a>TrustedAdvisorResourceDetail</a> for the check.
+     * <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     * contains all the data that is shown in the Excel download, even in
+     * those cases where the UI shows just summary data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata The column headings for the data returned by the Trusted Advisor
      *         check. The order of the headings corresponds to the order of the data
      *         in the <b>Metadata</b> element of the
-     *         <a>TrustedAdvisorResourceDetail</a> for the check.
+     *         <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b>
+     *         contains all the data that is shown in the Excel download, even in
+     *         those cases where the UI shows just summary data.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

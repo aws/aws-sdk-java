@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the following objects or data if successful. Otherwise,
- * returns an error.
+ * The list of AWS services returned by the DescribeServices operation.
  * </p>
  */
 public class DescribeServicesResult implements Serializable {

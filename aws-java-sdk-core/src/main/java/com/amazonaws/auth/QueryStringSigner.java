@@ -89,7 +89,8 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
             throw new AmazonClientException("Invalid Signature Version specified");
         }
 
-        String signatureValue = signAndBase64Encode(stringToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
+        String signatureValue = signAndBase64Encode(stringToSign,
+                sanitizedCredentials.getAWSSecretKey(), algorithm);
         request.addParameter("Signature", signatureValue);
     }
 

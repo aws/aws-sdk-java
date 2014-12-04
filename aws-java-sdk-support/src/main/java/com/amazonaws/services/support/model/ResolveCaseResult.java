@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the following objects or data if successful. Otherwise,
- * returns an error.
+ * The status of the case returned by the ResolveCase operation.
  * </p>
  */
 public class ResolveCaseResult implements Serializable {

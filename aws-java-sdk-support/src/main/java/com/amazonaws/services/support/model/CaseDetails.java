@@ -36,7 +36,8 @@ import java.io.Serializable;
  * and Japanese ("ja"). Language parameters must be passed explicitly for
  * operations that take them.</li>
  * <li> <b>RecentCommunications.</b> One or more Communication objects.
- * Fields of these objects are <code>Body</code> ,
+ * Fields of these objects are <code>Attachments</code> ,
+ * <code>Body</code> ,
  * <code>CaseId</code> ,
  * <code>SubmittedBy</code> , and
  * <code>TimeCreated</code> .</li>
@@ -110,8 +111,9 @@ public class CaseDetails implements Serializable {
 
     /**
      * The five most recent communications between you and AWS Support
-     * Center. Includes a <code>nextToken</code> to retrieve the next set of
-     * communications.
+     * Center, including the IDs of any attachments to the communications.
+     * Also includes a <code>nextToken</code> that you can use to retrieve
+     * earlier communications.
      */
     private RecentCaseCommunications recentCommunications;
 
@@ -458,12 +460,14 @@ public class CaseDetails implements Serializable {
 
     /**
      * The five most recent communications between you and AWS Support
-     * Center. Includes a <code>nextToken</code> to retrieve the next set of
-     * communications.
+     * Center, including the IDs of any attachments to the communications.
+     * Also includes a <code>nextToken</code> that you can use to retrieve
+     * earlier communications.
      *
      * @return The five most recent communications between you and AWS Support
-     *         Center. Includes a <code>nextToken</code> to retrieve the next set of
-     *         communications.
+     *         Center, including the IDs of any attachments to the communications.
+     *         Also includes a <code>nextToken</code> that you can use to retrieve
+     *         earlier communications.
      */
     public RecentCaseCommunications getRecentCommunications() {
         return recentCommunications;
@@ -471,12 +475,14 @@ public class CaseDetails implements Serializable {
     
     /**
      * The five most recent communications between you and AWS Support
-     * Center. Includes a <code>nextToken</code> to retrieve the next set of
-     * communications.
+     * Center, including the IDs of any attachments to the communications.
+     * Also includes a <code>nextToken</code> that you can use to retrieve
+     * earlier communications.
      *
      * @param recentCommunications The five most recent communications between you and AWS Support
-     *         Center. Includes a <code>nextToken</code> to retrieve the next set of
-     *         communications.
+     *         Center, including the IDs of any attachments to the communications.
+     *         Also includes a <code>nextToken</code> that you can use to retrieve
+     *         earlier communications.
      */
     public void setRecentCommunications(RecentCaseCommunications recentCommunications) {
         this.recentCommunications = recentCommunications;
@@ -484,14 +490,16 @@ public class CaseDetails implements Serializable {
     
     /**
      * The five most recent communications between you and AWS Support
-     * Center. Includes a <code>nextToken</code> to retrieve the next set of
-     * communications.
+     * Center, including the IDs of any attachments to the communications.
+     * Also includes a <code>nextToken</code> that you can use to retrieve
+     * earlier communications.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param recentCommunications The five most recent communications between you and AWS Support
-     *         Center. Includes a <code>nextToken</code> to retrieve the next set of
-     *         communications.
+     *         Center, including the IDs of any attachments to the communications.
+     *         Also includes a <code>nextToken</code> that you can use to retrieve
+     *         earlier communications.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

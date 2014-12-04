@@ -32,9 +32,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The response indicates the success or failure of the request.
  * </p>
  * <p>
- * This operation implements a subset of the behavior on the AWS Support
- * <a href="https://aws.amazon.com/support"> Your Support Cases </a>
- * web form.
+ * This operation implements a subset of the features of the AWS Support
+ * Center.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#addCommunicationToCase(AddCommunicationToCaseRequest)
@@ -65,6 +64,10 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddresses;
 
+    /**
+     * The ID of a set of one or more attachments for the communication to
+     * add to the case. Create the set by calling <a>AddAttachmentsToSet</a>
+     */
     private String attachmentSetId;
 
     /**
@@ -243,29 +246,35 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns the value of the AttachmentSetId property for this object.
+     * The ID of a set of one or more attachments for the communication to
+     * add to the case. Create the set by calling <a>AddAttachmentsToSet</a>
      *
-     * @return The value of the AttachmentSetId property for this object.
+     * @return The ID of a set of one or more attachments for the communication to
+     *         add to the case. Create the set by calling <a>AddAttachmentsToSet</a>
      */
     public String getAttachmentSetId() {
         return attachmentSetId;
     }
     
     /**
-     * Sets the value of the AttachmentSetId property for this object.
+     * The ID of a set of one or more attachments for the communication to
+     * add to the case. Create the set by calling <a>AddAttachmentsToSet</a>
      *
-     * @param attachmentSetId The new value for the AttachmentSetId property for this object.
+     * @param attachmentSetId The ID of a set of one or more attachments for the communication to
+     *         add to the case. Create the set by calling <a>AddAttachmentsToSet</a>
      */
     public void setAttachmentSetId(String attachmentSetId) {
         this.attachmentSetId = attachmentSetId;
     }
     
     /**
-     * Sets the value of the AttachmentSetId property for this object.
+     * The ID of a set of one or more attachments for the communication to
+     * add to the case. Create the set by calling <a>AddAttachmentsToSet</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachmentSetId The new value for the AttachmentSetId property for this object.
+     * @param attachmentSetId The ID of a set of one or more attachments for the communication to
+     *         add to the case. Create the set by calling <a>AddAttachmentsToSet</a>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

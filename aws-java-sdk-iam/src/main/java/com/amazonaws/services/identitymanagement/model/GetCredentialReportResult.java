@@ -38,7 +38,7 @@ public class GetCredentialReportResult implements Serializable {
     private String reportFormat;
 
     /**
-     * The time and date when the credential report was created, in <a
+     * The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.
      */
     private java.util.Date generatedTime;
@@ -159,10 +159,10 @@ public class GetCredentialReportResult implements Serializable {
     }
 
     /**
-     * The time and date when the credential report was created, in <a
+     * The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.
      *
-     * @return The time and date when the credential report was created, in <a
+     * @return The date and time when the credential report was created, in <a
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.
      */
     public java.util.Date getGeneratedTime() {
@@ -170,10 +170,10 @@ public class GetCredentialReportResult implements Serializable {
     }
     
     /**
-     * The time and date when the credential report was created, in <a
+     * The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.
      *
-     * @param generatedTime The time and date when the credential report was created, in <a
+     * @param generatedTime The date and time when the credential report was created, in <a
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.
      */
     public void setGeneratedTime(java.util.Date generatedTime) {
@@ -181,12 +181,12 @@ public class GetCredentialReportResult implements Serializable {
     }
     
     /**
-     * The time and date when the credential report was created, in <a
+     * The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param generatedTime The time and date when the credential report was created, in <a
+     * @param generatedTime The date and time when the credential report was created, in <a
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.
      *
      * @return A reference to this updated object so that method calls can be chained

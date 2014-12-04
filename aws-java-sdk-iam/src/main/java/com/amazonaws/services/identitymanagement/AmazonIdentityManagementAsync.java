@@ -3754,6 +3754,79 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Retrieves information about all IAM users, groups, and roles in your
+     * account, including their relationships to one another and their
+     * policies. Use this API to obtain a snapshot of the configuration of
+     * IAM permissions (users, groups, roles, and their policies) in your
+     * account.
+     * </p>
+     * <p>
+     * You can optionally filter the results using the <code>Filter</code>
+     * parameter. You can paginate the results using the
+     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param getAccountAuthorizationDetailsRequest Container for the
+     *           necessary parameters to execute the GetAccountAuthorizationDetails
+     *           operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetAccountAuthorizationDetails service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetAccountAuthorizationDetailsResult> getAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest getAccountAuthorizationDetailsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Retrieves information about all IAM users, groups, and roles in your
+     * account, including their relationships to one another and their
+     * policies. Use this API to obtain a snapshot of the configuration of
+     * IAM permissions (users, groups, roles, and their policies) in your
+     * account.
+     * </p>
+     * <p>
+     * You can optionally filter the results using the <code>Filter</code>
+     * parameter. You can paginate the results using the
+     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param getAccountAuthorizationDetailsRequest Container for the
+     *           necessary parameters to execute the GetAccountAuthorizationDetails
+     *           operation on AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetAccountAuthorizationDetails service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetAccountAuthorizationDetailsResult> getAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest getAccountAuthorizationDetailsRequest,
+            AsyncHandler<GetAccountAuthorizationDetailsRequest, GetAccountAuthorizationDetailsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Creates a new role for your AWS account. For more information about
      * roles, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>

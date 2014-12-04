@@ -46,7 +46,7 @@ public class Group implements Serializable {
     private String path;
 
     /**
-     * The name that identifies the group.
+     * The friendly name that identifies the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -78,7 +78,8 @@ public class Group implements Serializable {
     private String arn;
 
     /**
-     * The date when the group was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the group was created.
      */
     private java.util.Date createDate;
 
@@ -97,7 +98,7 @@ public class Group implements Serializable {
      * see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.
-     * @param groupName The name that identifies the group.
+     * @param groupName The friendly name that identifies the group.
      * @param groupId The stable and unique string identifying the group. For
      * more information about IDs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -106,7 +107,9 @@ public class Group implements Serializable {
      * more information about ARNs and how to use them in policies, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.
-     * @param createDate The date when the group was created.
+     * @param createDate The date and time, in <a
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>,
+     * when the group was created.
      */
     public Group(String path, String groupName, String groupId, String arn, java.util.Date createDate) {
         setPath(path);
@@ -174,33 +177,33 @@ public class Group implements Serializable {
     }
 
     /**
-     * The name that identifies the group.
+     * The friendly name that identifies the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name that identifies the group.
+     * @return The friendly name that identifies the group.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The name that identifies the group.
+     * The friendly name that identifies the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName The name that identifies the group.
+     * @param groupName The friendly name that identifies the group.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The name that identifies the group.
+     * The friendly name that identifies the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -208,7 +211,7 @@ public class Group implements Serializable {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName The name that identifies the group.
+     * @param groupName The friendly name that identifies the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -342,29 +345,35 @@ public class Group implements Serializable {
     }
 
     /**
-     * The date when the group was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the group was created.
      *
-     * @return The date when the group was created.
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the group was created.
      */
     public java.util.Date getCreateDate() {
         return createDate;
     }
     
     /**
-     * The date when the group was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the group was created.
      *
-     * @param createDate The date when the group was created.
+     * @param createDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the group was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
     
     /**
-     * The date when the group was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the group was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createDate The date when the group was created.
+     * @param createDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the group was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

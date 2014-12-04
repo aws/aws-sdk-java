@@ -46,10 +46,6 @@ public class WorkflowTypeInfos implements Serializable {
      * @return The list of workflow type information.
      */
     public java.util.List<WorkflowTypeInfo> getTypeInfos() {
-        if (typeInfos == null) {
-              typeInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowTypeInfo>();
-              typeInfos.setAutoConstruct(true);
-        }
         return typeInfos;
     }
     

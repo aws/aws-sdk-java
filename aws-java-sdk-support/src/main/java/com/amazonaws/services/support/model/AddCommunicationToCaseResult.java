@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the following objects or data if successful. Otherwise,
- * returns an error.
+ * The result of the AddCommunicationToCase operation.
  * </p>
  */
 public class AddCommunicationToCaseResult implements Serializable {

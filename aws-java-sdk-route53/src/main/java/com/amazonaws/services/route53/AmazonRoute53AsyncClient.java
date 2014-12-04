@@ -517,6 +517,94 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     }
     
     /**
+     * <p>
+     * To update the hosted zone comment, send a <code>POST</code> request
+     * to the <code>2013-04-01/hostedzone/hosted zone ID </code> resource.
+     * The request body must include an XML document with a
+     * <code>UpdateHostedZoneCommentRequest</code> element. The response to
+     * this request includes the modified <code>HostedZone</code> element.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The comment can have a maximum length of 256 characters.
+     * </p>
+     *
+     * @param updateHostedZoneCommentRequest Container for the necessary
+     *           parameters to execute the UpdateHostedZoneComment operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateHostedZoneComment service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateHostedZoneCommentResult> updateHostedZoneCommentAsync(final UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateHostedZoneCommentResult>() {
+            public UpdateHostedZoneCommentResult call() throws Exception {
+                return updateHostedZoneComment(updateHostedZoneCommentRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * To update the hosted zone comment, send a <code>POST</code> request
+     * to the <code>2013-04-01/hostedzone/hosted zone ID </code> resource.
+     * The request body must include an XML document with a
+     * <code>UpdateHostedZoneCommentRequest</code> element. The response to
+     * this request includes the modified <code>HostedZone</code> element.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The comment can have a maximum length of 256 characters.
+     * </p>
+     *
+     * @param updateHostedZoneCommentRequest Container for the necessary
+     *           parameters to execute the UpdateHostedZoneComment operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateHostedZoneComment service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateHostedZoneCommentResult> updateHostedZoneCommentAsync(
+            final UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest,
+            final AsyncHandler<UpdateHostedZoneCommentRequest, UpdateHostedZoneCommentResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateHostedZoneCommentResult>() {
+            public UpdateHostedZoneCommentResult call() throws Exception {
+              UpdateHostedZoneCommentResult result;
+                try {
+                result = updateHostedZoneComment(updateHostedZoneCommentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateHostedZoneCommentRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
      *
      * @param listTagsForResourcesRequest Container for the necessary
      *           parameters to execute the ListTagsForResources operation on
@@ -2503,6 +2591,74 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     }
     
     /**
+     *
+     * @param listTagsForResourceRequest Container for the necessary
+     *           parameters to execute the ListTagsForResource operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTagsForResource service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest listTagsForResourceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTagsForResourceResult>() {
+            public ListTagsForResourceResult call() throws Exception {
+                return listTagsForResource(listTagsForResourceRequest);
+        }
+    });
+    }
+
+    /**
+     *
+     * @param listTagsForResourceRequest Container for the necessary
+     *           parameters to execute the ListTagsForResource operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTagsForResource service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            final ListTagsForResourceRequest listTagsForResourceRequest,
+            final AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTagsForResourceResult>() {
+            public ListTagsForResourceResult call() throws Exception {
+              ListTagsForResourceResult result;
+                try {
+                result = listTagsForResource(listTagsForResourceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTagsForResourceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
      * <p>
      * To retrieve a list of your reusable delegation sets, send a
      * <code>GET</code> request to the <code>2013-04-01/delegationset</code>
@@ -2599,74 +2755,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(listReusableDelegationSetsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     *
-     * @param listTagsForResourceRequest Container for the necessary
-     *           parameters to execute the ListTagsForResource operation on
-     *           AmazonRoute53.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTagsForResource service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest listTagsForResourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListTagsForResourceResult>() {
-            public ListTagsForResourceResult call() throws Exception {
-                return listTagsForResource(listTagsForResourceRequest);
-        }
-    });
-    }
-
-    /**
-     *
-     * @param listTagsForResourceRequest Container for the necessary
-     *           parameters to execute the ListTagsForResource operation on
-     *           AmazonRoute53.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTagsForResource service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTagsForResourceResult> listTagsForResourceAsync(
-            final ListTagsForResourceRequest listTagsForResourceRequest,
-            final AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListTagsForResourceResult>() {
-            public ListTagsForResourceResult call() throws Exception {
-              ListTagsForResourceResult result;
-                try {
-                result = listTagsForResource(listTagsForResourceRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listTagsForResourceRequest, result);
                  return result;
         }
     });

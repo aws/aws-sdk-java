@@ -23,6 +23,7 @@ import com.amazonaws.Request;
 import com.amazonaws.ResetException;
 import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.AwsChunkedEncodingInputStream;
+import com.amazonaws.auth.internal.AWS4SignerRequestParams;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
@@ -46,17 +47,14 @@ public class AWSS3V4Signer extends AWS4Signer {
      * If necessary, creates a chunk-encoding wrapper on the request payload.
      */
     @Override
-    protected void processRequestPayload(Request<?> request,
-            HeaderSigningResult headerSigningResult) {
+    protected void processRequestPayload(Request<?> request, byte[] signature,
+            byte[] signingKey, AWS4SignerRequestParams signerRequestParams) {
         if (useChunkEncoding(request)) {
-            InputStream payloadStream = request.getContent();
-            String dateTime = headerSigningResult.getDateTime();
-            String keyPath = headerSigningResult.getScope();
-            byte[] kSigning = headerSigningResult.getKSigning();
-            String signature = BinaryUtils.toHex(headerSigningResult
-                    .getSignature());
             AwsChunkedEncodingInputStream chunkEncodededStream = new AwsChunkedEncodingInputStream(
-                    payloadStream, kSigning, dateTime, keyPath, signature, this);
+                    request.getContent(), signingKey,
+                    signerRequestParams.getFormattedSigningDateTime(),
+                    signerRequestParams.getScope(),
+                    BinaryUtils.toHex(signature), this);
             request.setContent(chunkEncodededStream);
         }
     }

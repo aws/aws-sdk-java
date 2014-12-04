@@ -52,11 +52,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Each data record can be up to 50 KB in size, and each shard can read
  * up to 2 MB per second. You can ensure that your calls don't exceed the
- * maximum supported size or throughput by specifying the maximum number
- * of records that <code>GetRecords</code> can return in the
- * <code>Limit</code> parameter. Consider your average record size when
- * determining this limit. For example, if your average record size is 40
- * KB, you can limit the data returned to about 1 MB per call by
+ * maximum supported size or throughput by using the <code>Limit</code>
+ * parameter to specify the maximum number of records that
+ * <code>GetRecords</code> can return. Consider your average record size
+ * when determining this limit. For example, if your average record size
+ * is 40 KB, you can limit the data returned to about 1 MB per call by
  * specifying 25 as the limit.
  * </p>
  * <p>
@@ -78,8 +78,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * To detect whether the application is falling behind in processing, add
  * a timestamp to your records and note how long it takes to process
  * them. You can also monitor how much data is in a stream using the
- * CloudWatch metrics for <code>PutRecord</code> . For more information,
- * see
+ * CloudWatch metrics for write operations ( <code>PutRecord</code> and
+ * <code>PutRecords</code> ). For more information, see
  * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html"> Monitoring Amazon Kinesis with Amazon CloudWatch </a>
  * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>

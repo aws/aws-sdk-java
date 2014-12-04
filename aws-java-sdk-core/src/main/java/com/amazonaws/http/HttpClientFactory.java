@@ -113,9 +113,12 @@ class HttpClientFactory {
 
         try {
             Scheme http = new Scheme("http", 80, PlainSocketFactory.getSocketFactory());
-            SdkTLSSocketFactory sf = new SdkTLSSocketFactory(
-                    SSLContext.getDefault(),
-                    SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
+            SSLSocketFactory sf = config.getApacheHttpClientConfig().getSslSocketFactory();
+            if (sf == null) {
+                sf = new SdkTLSSocketFactory(
+                        SSLContext.getDefault(),
+                        SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
+            }
             Scheme https = new Scheme("https", 443, sf);
             SchemeRegistry sr = connectionManager.getSchemeRegistry();
             sr.register(http);

@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the following objects or data if successful. Otherwise,
- * returns an error.
+ * The statuses of the Trusted Advisor checks returned by the
+ * DescribeTrustedAdvisorCheckRefreshStatuses operation.
  * </p>
  */
 public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Serializable {

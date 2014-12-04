@@ -114,7 +114,8 @@ public class AWS3Signer extends AbstractAWSSigner {
         }
         log.debug("Calculated StringToSign: " + stringToSign);
 
-        String signature = signAndBase64Encode(bytesToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
+        String signature = signAndBase64Encode(bytesToSign,
+                sanitizedCredentials.getAWSSecretKey(), algorithm);
 
         StringBuilder builder = new StringBuilder();
         builder.append(isHttps ? HTTPS_SCHEME : HTTP_SCHEME).append(" ");

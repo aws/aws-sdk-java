@@ -55,7 +55,7 @@ public class Role implements Serializable {
     private String path;
 
     /**
-     * The name that identifies the role.
+     * The friendly name that identifies the role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -87,15 +87,15 @@ public class Role implements Serializable {
     private String arn;
 
     /**
-     * The date when the role was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the role was created.
      */
     private java.util.Date createDate;
 
     /**
      * The policy that grants an entity permission to assume the role. <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to <a
-     * href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+     * The returned policy is URL-encoded according to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -161,33 +161,33 @@ public class Role implements Serializable {
     }
 
     /**
-     * The name that identifies the role.
+     * The friendly name that identifies the role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name that identifies the role.
+     * @return The friendly name that identifies the role.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * The name that identifies the role.
+     * The friendly name that identifies the role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName The name that identifies the role.
+     * @param roleName The friendly name that identifies the role.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * The name that identifies the role.
+     * The friendly name that identifies the role.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -195,7 +195,7 @@ public class Role implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName The name that identifies the role.
+     * @param roleName The friendly name that identifies the role.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -329,29 +329,35 @@ public class Role implements Serializable {
     }
 
     /**
-     * The date when the role was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the role was created.
      *
-     * @return The date when the role was created.
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the role was created.
      */
     public java.util.Date getCreateDate() {
         return createDate;
     }
     
     /**
-     * The date when the role was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the role was created.
      *
-     * @param createDate The date when the role was created.
+     * @param createDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the role was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
     
     /**
-     * The date when the role was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the role was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createDate The date when the role was created.
+     * @param createDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the role was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -363,18 +369,16 @@ public class Role implements Serializable {
 
     /**
      * The policy that grants an entity permission to assume the role. <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to <a
-     * href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+     * The returned policy is URL-encoded according to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @return The policy that grants an entity permission to assume the role. <p>
-     *         The returned policy is URL-encoded according to RFC 3986. For more
-     *         information about RFC 3986, go to <a
-     *         href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+     *         The returned policy is URL-encoded according to <a
+     *         href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
      */
     public String getAssumeRolePolicyDocument() {
         return assumeRolePolicyDocument;
@@ -382,18 +386,16 @@ public class Role implements Serializable {
     
     /**
      * The policy that grants an entity permission to assume the role. <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to <a
-     * href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+     * The returned policy is URL-encoded according to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role. <p>
-     *         The returned policy is URL-encoded according to RFC 3986. For more
-     *         information about RFC 3986, go to <a
-     *         href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+     *         The returned policy is URL-encoded according to <a
+     *         href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
      */
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
@@ -401,9 +403,8 @@ public class Role implements Serializable {
     
     /**
      * The policy that grants an entity permission to assume the role. <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to <a
-     * href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+     * The returned policy is URL-encoded according to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -412,9 +413,8 @@ public class Role implements Serializable {
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role. <p>
-     *         The returned policy is URL-encoded according to RFC 3986. For more
-     *         information about RFC 3986, go to <a
-     *         href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+     *         The returned policy is URL-encoded according to <a
+     *         href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

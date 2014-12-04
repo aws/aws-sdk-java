@@ -654,10 +654,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
      */
     public java.util.List<String> getTagList() {
-        if (tagList == null) {
-              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              tagList.setAutoConstruct(true);
-        }
         return tagList;
     }
     

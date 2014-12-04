@@ -22,45 +22,47 @@ import com.amazonaws.services.support.model.*;
  * Interface for accessing AWSSupport.
  * AWS Support <p>
  * The AWS Support API reference is intended for programmers who need
- * detailed information about the AWS Support actions and data types.
+ * detailed information about the AWS Support operations and data types.
  * This service enables you to manage your AWS Support cases
  * programmatically. It uses HTTP methods that return results in JSON
  * format.
  * </p>
  * <p>
  * The AWS Support service also exposes a set of
- * <a href="https://aws.amazon.com/support/trustedadvisor"> Trusted Advisor </a>
+ * <a href="https://aws.amazon.com/premiumsupport/trustedadvisor/"> Trusted Advisor </a>
  * features. You can retrieve a list of checks and their descriptions,
  * get check results, specify checks to refresh, and get the refresh
  * status of checks.
  * </p>
  * <p>
- * The following list describes the AWS Support case management actions:
+ * The following list describes the AWS Support case management
+ * operations:
  * </p>
  * 
  * <ul>
  * <li> <b>Service names, issue categories, and available severity
- * levels. </b> The actions DescribeServices and DescribeSeverityLevels
- * enable you to obtain AWS service names, service codes, service
+ * levels. </b> The DescribeServices and DescribeSeverityLevels
+ * operations return AWS service names, service codes, service
  * categories, and problem severity levels. You use these values when you
- * call the CreateCase action. </li>
+ * call the CreateCase operation. </li>
  * <li> <b>Case creation, case details, and case resolution.</b> The
- * actions CreateCase, DescribeCases, and ResolveCase enable you to
- * create AWS Support cases, retrieve them, and resolve them.</li>
- * <li> <b>Case communication.</b> The actions DescribeCommunications
- * and AddCommunicationToCase enable you to retrieve and add
- * communication to AWS Support cases. </li>
+ * CreateCase, DescribeCases, DescribeAttachment, and ResolveCase
+ * operations create AWS Support cases, retrieve information about cases,
+ * and resolve cases.</li>
+ * <li> <b>Case communication.</b> The DescribeCommunications,
+ * AddCommunicationToCase, and AddAttachmentsToSet operations retrieve
+ * and add communications and attachments to AWS Support cases. </li>
  * 
  * </ul>
  * <p>
- * The following list describes the actions available from the AWS
+ * The following list describes the operations available from the AWS
  * Support service for Trusted Advisor:
  * </p>
  * 
  * <ul>
  * <li> DescribeTrustedAdvisorChecks returns the list of checks that run
  * against your AWS resources.</li>
- * <li>Using the CheckId for a specific check returned by
+ * <li>Using the <code>CheckId</code> for a specific check returned by
  * DescribeTrustedAdvisorChecks, you can call
  * DescribeTrustedAdvisorCheckResult to obtain the results for the check
  * you specified.</li>
@@ -78,11 +80,11 @@ import com.amazonaws.services.support.model.*;
  * .
  * </p>
  * <p>
- * See the AWS Support
- * <a href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html"> User Guide </a>
- * for information about how to use this service to create and manage
- * your support cases, and how to call Trusted Advisor for results of
- * checks on your resources.
+ * See
+ * <a href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html"> About the AWS Support API </a>
+ * in the <i>AWS Support User Guide</i> for information about how to
+ * use this service to create and manage your support cases, and how to
+ * call Trusted Advisor for results of checks on your resources.
  * </p>
  */
 public interface AWSSupport {
@@ -178,7 +180,15 @@ public interface AWSSupport {
      * Returns a list of cases that you specify by passing one or more case
      * IDs. In addition, you can filter the cases by date by setting values
      * for the <code>AfterTime</code> and <code>BeforeTime</code> request
-     * parameters.
+     * parameters. You can set values for the
+     * <code>IncludeResolvedCases</code> and
+     * <code>IncludeCommunications</code> request parameters to control how
+     * much information is returned.
+     * </p>
+     * <p>
+     * Case data is available for 12 months after creation. If a case was
+     * created more than 12 months ago, a request for data might cause an
+     * error.
      * </p>
      * <p>
      * The response returns the following in JSON format:
@@ -210,6 +220,21 @@ public interface AWSSupport {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     * <p>
+     * Adds one or more attachments to an attachment set. If an
+     * <code>AttachmentSetId</code> is not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an
+     * <code>AttachmentSetId</code> is specified, the attachments are added
+     * to the specified set, if it exists.
+     * </p>
+     * <p>
+     * An attachment set is a temporary container for attachments that are
+     * to be added to a case or case communication. The set is available for
+     * one hour after it is created; the <code>ExpiryTime</code> returned in
+     * the response indicates when the set expires. The maximum number of
+     * attachments in a set is 3, and the maximum size of any attachment in
+     * the set is 5 MB.
+     * </p>
      *
      * @param addAttachmentsToSetRequest Container for the necessary
      *           parameters to execute the AddAttachmentsToSet service method on
@@ -264,14 +289,20 @@ public interface AWSSupport {
 
     /**
      * <p>
-     * Returns communications regarding the support case. You can use the
-     * <code>AfterTime</code> and <code>BeforeTime</code> parameters to
-     * filter by date. The <code>CaseId</code> parameter enables you to
-     * identify a specific case by its <code>CaseId</code> value.
+     * Returns communications (and attachments) for one or more support
+     * cases. You can use the <code>AfterTime</code> and
+     * <code>BeforeTime</code> parameters to filter by date. You can use the
+     * <code>CaseId</code> parameter to restrict the results to a particular
+     * case.
      * </p>
      * <p>
-     * The <code>MaxResults</code> and <code>NextToken</code> parameters
-     * enable you to control the pagination of the result set. Set
+     * Case data is available for 12 months after creation. If a case was
+     * created more than 12 months ago, a request for data might cause an
+     * error.
+     * </p>
+     * <p>
+     * You can use the <code>MaxResults</code> and <code>NextToken</code>
+     * parameters to control the pagination of the result set. Set
      * <code>MaxResults</code> to the number of cases you want displayed on
      * each page, and use <code>NextToken</code> to specify the resumption of
      * pagination.
@@ -299,6 +330,13 @@ public interface AWSSupport {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     * <p>
+     * Returns the attachment that has the specified ID. Attachment IDs are
+     * generated by the case management system when you add an attachment to
+     * a case or case communication. Attachment IDs are returned in the
+     * AttachmentDetails objects that are returned by the
+     * DescribeCommunications operation.
+     * </p>
      *
      * @param describeAttachmentRequest Container for the necessary
      *           parameters to execute the DescribeAttachment service method on
@@ -360,7 +398,7 @@ public interface AWSSupport {
      * The service codes and category codes correspond to the values that
      * are displayed in the <b>Service</b> and <b>Category</b> drop-down
      * lists on the AWS Support Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * <a href="https://console.aws.amazon.com/support/home#/case/create"> Create Case </a>
      * page. The values in those fields, however, do not necessarily match
      * the service codes and categories returned by the
      * <code>DescribeServices</code> request. Always use the service codes
@@ -400,9 +438,8 @@ public interface AWSSupport {
      * The response indicates the success or failure of the request.
      * </p>
      * <p>
-     * This operation implements a subset of the behavior on the AWS Support
-     * <a href="https://aws.amazon.com/support"> Your Support Cases </a>
-     * web form.
+     * This operation implements a subset of the features of the AWS Support
+     * Center.
      * </p>
      *
      * @param addCommunicationToCaseRequest Container for the necessary
@@ -432,12 +469,15 @@ public interface AWSSupport {
      * <p>
      * Creates a new case in the AWS Support Center. This operation is
      * modeled on the behavior of the AWS Support Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * <a href="https://console.aws.amazon.com/support/home#/case/create"> Create Case </a>
      * page. Its parameters require you to specify the following
      * information:
      * </p>
-     * <ol> <li> <b>ServiceCode.</b> The code for an AWS service. You obtain
-     * the <code>ServiceCode</code> by calling DescribeServices. </li>
+     * <ol> <li> <b>IssueType.</b> The type of issue for the case. You can
+     * specify either "customer-service" or "technical." If you do not
+     * indicate a value, the default is "technical." </li>
+     * <li> <b>ServiceCode.</b> The code for an AWS service. You obtain the
+     * <code>ServiceCode</code> by calling DescribeServices. </li>
      * <li> <b>CategoryCode.</b> The category for the service defined for
      * the <code>ServiceCode</code> value. You also obtain the category code
      * for a service by calling DescribeServices. Each AWS service defines
@@ -448,30 +488,28 @@ public interface AWSSupport {
      * by calling DescribeSeverityLevels.</li>
      * <li> <b>Subject.</b> The <b>Subject</b> field on the AWS Support
      * Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * <a href="https://console.aws.amazon.com/support/home#/case/create"> Create Case </a>
      * page.</li>
      * <li> <b>CommunicationBody.</b> The <b>Description</b> field on the
      * AWS Support Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * <a href="https://console.aws.amazon.com/support/home#/case/create"> Create Case </a>
      * page.</li>
+     * <li> <b>AttachmentSetId.</b> The ID of a set of attachments that has
+     * been created by using AddAttachmentsToSet.</li>
      * <li> <b>Language.</b> The human language in which AWS Support handles
      * the case. English and Japanese are currently supported.</li>
      * <li> <b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field
      * on the
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is already identified by passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an <a href="http://aws.amazon.com/tools/"> AWS SDK </a>
+     * <a href="https://console.aws.amazon.com/support/home#/case/create"> Create Case </a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is already identified by passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an <a href="http://aws.amazon.com/tools/"> AWS SDK </a>
      * . </li>
-     * <li> <b>IssueType.</b> The type of issue for the case. You can
-     * specify either "customer-service" or "technical." If you do not
-     * indicate a value, the default is "technical." </li>
      * </ol> <p>
-     * <b>NOTE:</b> The AWS Support API does not currently support the
-     * ability to add attachments to cases. You can, however, call
-     * AddCommunicationToCase to add information to an open case.
+     * <b>NOTE:</b> To add additional communication or attachments to an
+     * existing case, use AddCommunicationToCase.
      * </p>
      * <p>
      * A successful CreateCase request returns an AWS Support case number.
-     * Case numbers are used by the DescribeCases action to retrieve existing
-     * AWS Support cases.
+     * Case numbers are used by the DescribeCases operation to retrieve
+     * existing AWS Support cases.
      * </p>
      *
      * @param createCaseRequest Container for the necessary parameters to
@@ -582,7 +620,7 @@ public interface AWSSupport {
      * DescribeTrustedAdvisorChecks.
      * </p>
      * <p>
-     * The response contains a RefreshTrustedAdvisorCheckResult object,
+     * The response contains a TrustedAdvisorCheckRefreshStatus object,
      * which contains these fields:
      * </p>
      * 
@@ -650,7 +688,15 @@ public interface AWSSupport {
      * Returns a list of cases that you specify by passing one or more case
      * IDs. In addition, you can filter the cases by date by setting values
      * for the <code>AfterTime</code> and <code>BeforeTime</code> request
-     * parameters.
+     * parameters. You can set values for the
+     * <code>IncludeResolvedCases</code> and
+     * <code>IncludeCommunications</code> request parameters to control how
+     * much information is returned.
+     * </p>
+     * <p>
+     * Case data is available for 12 months after creation. If a case was
+     * created more than 12 months ago, a request for data might cause an
+     * error.
      * </p>
      * <p>
      * The response returns the following in JSON format:
@@ -733,7 +779,7 @@ public interface AWSSupport {
      * The service codes and category codes correspond to the values that
      * are displayed in the <b>Service</b> and <b>Category</b> drop-down
      * lists on the AWS Support Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * <a href="https://console.aws.amazon.com/support/home#/case/create"> Create Case </a>
      * page. The values in those fields, however, do not necessarily match
      * the service codes and categories returned by the
      * <code>DescribeServices</code> request. Always use the service codes

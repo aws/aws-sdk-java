@@ -21,14 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeCommunications(DescribeCommunicationsRequest) DescribeCommunications operation}.
  * <p>
- * Returns communications regarding the support case. You can use the
- * <code>AfterTime</code> and <code>BeforeTime</code> parameters to
- * filter by date. The <code>CaseId</code> parameter enables you to
- * identify a specific case by its <code>CaseId</code> value.
+ * Returns communications (and attachments) for one or more support
+ * cases. You can use the <code>AfterTime</code> and
+ * <code>BeforeTime</code> parameters to filter by date. You can use the
+ * <code>CaseId</code> parameter to restrict the results to a particular
+ * case.
  * </p>
  * <p>
- * The <code>MaxResults</code> and <code>NextToken</code> parameters
- * enable you to control the pagination of the result set. Set
+ * Case data is available for 12 months after creation. If a case was
+ * created more than 12 months ago, a request for data might cause an
+ * error.
+ * </p>
+ * <p>
+ * You can use the <code>MaxResults</code> and <code>NextToken</code>
+ * parameters to control the pagination of the result set. Set
  * <code>MaxResults</code> to the number of cases you want displayed on
  * each page, and use <code>NextToken</code> to specify the resumption of
  * pagination.
@@ -47,13 +53,15 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
 
     /**
      * The end date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      */
     private String beforeTime;
 
     /**
      * The start date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      */
     private String afterTime;
 
@@ -117,10 +125,12 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
 
     /**
      * The end date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      *
      * @return The end date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      */
     public String getBeforeTime() {
         return beforeTime;
@@ -128,10 +138,12 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     
     /**
      * The end date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      *
      * @param beforeTime The end date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      */
     public void setBeforeTime(String beforeTime) {
         this.beforeTime = beforeTime;
@@ -139,12 +151,14 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     
     /**
      * The end date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param beforeTime The end date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -156,10 +170,12 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
 
     /**
      * The start date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      *
      * @return The start date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      */
     public String getAfterTime() {
         return afterTime;
@@ -167,10 +183,12 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     
     /**
      * The start date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      *
      * @param afterTime The start date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      */
     public void setAfterTime(String afterTime) {
         this.afterTime = afterTime;
@@ -178,12 +196,14 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     
     /**
      * The start date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param afterTime The start date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

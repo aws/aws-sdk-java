@@ -17,36 +17,42 @@ package com.amazonaws.services.support.model;
 import java.io.Serializable;
 
 /**
- * Describe Attachment Result
+ * <p>
+ * The content and file name of the attachment returned by the
+ * DescribeAttachment operation.
+ * </p>
  */
 public class DescribeAttachmentResult implements Serializable {
 
+    /**
+     * The attachment content and file name.
+     */
     private Attachment attachment;
 
     /**
-     * Returns the value of the Attachment property for this object.
+     * The attachment content and file name.
      *
-     * @return The value of the Attachment property for this object.
+     * @return The attachment content and file name.
      */
     public Attachment getAttachment() {
         return attachment;
     }
     
     /**
-     * Sets the value of the Attachment property for this object.
+     * The attachment content and file name.
      *
-     * @param attachment The new value for the Attachment property for this object.
+     * @param attachment The attachment content and file name.
      */
     public void setAttachment(Attachment attachment) {
         this.attachment = attachment;
     }
     
     /**
-     * Sets the value of the Attachment property for this object.
+     * The attachment content and file name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachment The new value for the Attachment property for this object.
+     * @param attachment The attachment content and file name.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -1,0 +1,174 @@
+/*
+ * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.auth.internal;
+
+import java.util.Date;
+
+import com.amazonaws.Request;
+import com.amazonaws.util.AwsHostNameUtils;
+import com.amazonaws.auth.internal.SignerConstants;
+
+/**
+ * Parameters that are used for computing a AWS 4 signature for a request.
+ */
+public final class AWS4SignerRequestParams {
+
+    /**
+     * The request for which the signature needs to be computed.
+     */
+    private final Request<?> request;
+
+    /**
+     * The datetime in milliseconds for which the signature needs to be
+     * computed.
+     */
+    private final long signingDateTimeMilli;
+
+    /**
+     * The scope of the signature.
+     */
+    private final String scope;
+
+    /**
+     * The AWS region to be used for computing the signature.
+     */
+    private final String regionName;
+
+    /**
+     * The name of the AWS service.
+     */
+    private final String serviceName;
+
+    /**
+     * UTC formatted version of the signing time stamp.
+     */
+    private final String formattedSigningDateTime;
+
+    /**
+     * UTC Formatted Signing date with time stamp stripped
+     */
+    private final String formattedSigningDate;
+
+    /**
+     * The signing algorithm to be used for computing the signature.
+     */
+    private final String signingAlgorithm;
+
+    /**
+     * Generates an instance of AWS4signerRequestParams that holds the
+     * parameters used for computing a AWS 4 signature for a request
+     */
+    public AWS4SignerRequestParams(Request<?> request,
+            Date signingDateOverride, String regionNameOverride,
+            String serviceNameOverride, String signingAlgorithm) {
+        if (request == null) {
+            throw new IllegalArgumentException("Request cannot be null");
+        }
+        if (signingAlgorithm == null) {
+            throw new IllegalArgumentException(
+                    "Signing Algorithm cannot be null");
+        }
+        this.request = request;
+        this.signingDateTimeMilli = signingDateOverride != null ? signingDateOverride
+                .getTime() : getSigningDate(request);
+        this.formattedSigningDate = AWS4SignerUtils
+                .formatDateStamp(signingDateTimeMilli);
+        this.serviceName = serviceNameOverride != null ? serviceNameOverride
+                : AwsHostNameUtils.parseServiceName(request.getEndpoint());
+        this.regionName = regionNameOverride != null ? regionNameOverride
+                : AwsHostNameUtils.parseRegionName(request.getEndpoint()
+                        .getHost(), serviceName);
+        this.scope = generateScope(request, formattedSigningDate, serviceName,
+                regionName);
+        this.formattedSigningDateTime = AWS4SignerUtils
+                .formatTimestamp(signingDateTimeMilli);
+        this.signingAlgorithm = signingAlgorithm;
+    }
+
+    /**
+     * Returns the signing date from the request.
+     */
+    private final long getSigningDate(Request<?> request) {
+        return System.currentTimeMillis() - request.getTimeOffset() * 1000;
+    }
+
+    /**
+     * Returns the scope to be used for the signing.
+     */
+    private String generateScope(Request<?> request, String dateStamp,
+            String serviceName, String regionName) {
+        final StringBuilder scopeBuilder = new StringBuilder();
+        return scopeBuilder.append(dateStamp).append("/").append(regionName)
+                .append("/").append(serviceName).append("/")
+                .append(SignerConstants.AWS4_TERMINATOR).toString();
+    }
+
+    /**
+     * Returns the request for which the signing needs to be done.
+     */
+    public Request<?> getRequest() {
+        return request;
+    }
+
+    /**
+     * Returns the scope of the signing.
+     */
+    public String getScope() {
+        return scope;
+    }
+
+    /**
+     * Returns the formatted date and time of the signing date in UTC zone.
+     */
+    public String getFormattedSigningDateTime() {
+        return formattedSigningDateTime;
+    }
+
+    /**
+     * Returns the signing date time in millis for which the signature needs to
+     * be computed.
+     */
+    public long getSigningDateTimeMilli() {
+        return signingDateTimeMilli;
+    }
+
+    /**
+     * Returns the AWS region name to be used while computing the signature.
+     */
+    public String getRegionName() {
+        return regionName;
+    }
+
+    /**
+     * Returns the AWS Service name to be used while computing the signature.
+     */
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    /**
+     * Returns the formatted date in UTC zone of the signing date.
+     */
+    public String getFormattedSigningDate() {
+        return formattedSigningDate;
+    }
+
+    /**
+     * Returns the signing algorithm used for computing the signature.
+     */
+    public String getSigningAlgorithm() {
+        return signingAlgorithm;
+    }
+}

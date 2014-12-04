@@ -248,10 +248,6 @@ public class DecisionTask implements Serializable {
      *         decider uses this during the processing of the decision task.
      */
     public java.util.List<HistoryEvent> getEvents() {
-        if (events == null) {
-              events = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>();
-              events.setAutoConstruct(true);
-        }
         return events;
     }
     

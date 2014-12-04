@@ -393,6 +393,60 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     }
     
     /**
+     * <p>
+     * To update the hosted zone comment, send a <code>POST</code> request
+     * to the <code>2013-04-01/hostedzone/hosted zone ID </code> resource.
+     * The request body must include an XML document with a
+     * <code>UpdateHostedZoneCommentRequest</code> element. The response to
+     * this request includes the modified <code>HostedZone</code> element.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The comment can have a maximum length of 256 characters.
+     * </p>
+     *
+     * @param updateHostedZoneCommentRequest Container for the necessary
+     *           parameters to execute the UpdateHostedZoneComment service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the UpdateHostedZoneComment service method,
+     *         as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchHostedZoneException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateHostedZoneCommentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateHostedZoneCommentRequest> request = null;
+        Response<UpdateHostedZoneCommentResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateHostedZoneCommentRequestMarshaller().marshall(updateHostedZoneCommentRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new UpdateHostedZoneCommentResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
      *
      * @param listTagsForResourcesRequest Container for the necessary
      *           parameters to execute the ListTagsForResources service method on
@@ -1616,6 +1670,52 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     }
     
     /**
+     *
+     * @param listTagsForResourceRequest Container for the necessary
+     *           parameters to execute the ListTagsForResource service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListTagsForResource service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws PriorRequestNotCompleteException
+     * @throws NoSuchHealthCheckException
+     * @throws ThrottlingException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller().marshall(listTagsForResourceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListTagsForResourceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
      * <p>
      * To retrieve a list of your reusable delegation sets, send a
      * <code>GET</code> request to the <code>2013-04-01/delegationset</code>
@@ -1667,52 +1767,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
             response = invoke(request, new ListReusableDelegationSetsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     *
-     * @param listTagsForResourceRequest Container for the necessary
-     *           parameters to execute the ListTagsForResource service method on
-     *           AmazonRoute53.
-     * 
-     * @return The response from the ListTagsForResource service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws PriorRequestNotCompleteException
-     * @throws NoSuchHealthCheckException
-     * @throws ThrottlingException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
-        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListTagsForResourceRequest> request = null;
-        Response<ListTagsForResourceResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListTagsForResourceRequestMarshaller().marshall(listTagsForResourceRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListTagsForResourceResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             

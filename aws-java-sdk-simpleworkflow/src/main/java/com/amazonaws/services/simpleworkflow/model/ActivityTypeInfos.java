@@ -44,10 +44,6 @@ public class ActivityTypeInfos implements Serializable {
      * @return List of activity type information.
      */
     public java.util.List<ActivityTypeInfo> getTypeInfos() {
-        if (typeInfos == null) {
-              typeInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo>();
-              typeInfos.setAutoConstruct(true);
-        }
         return typeInfos;
     }
     

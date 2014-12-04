@@ -34,8 +34,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <b>Note:</b> Amazon Kinesis might continue to accept data read and
- * write operations, such as PutRecord and GetRecords, on a stream in the
- * <code>DELETING</code> state until the stream deletion is complete.
+ * write operations, such as PutRecord, PutRecords, and GetRecords, on a
+ * stream in the <code>DELETING</code> state until the stream deletion is
+ * complete.
  * </p>
  * <p>
  * When you delete a stream, any shards in that stream are also deleted,
