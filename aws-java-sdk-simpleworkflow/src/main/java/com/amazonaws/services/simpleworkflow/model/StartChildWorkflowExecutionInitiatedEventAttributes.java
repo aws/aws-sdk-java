@@ -710,10 +710,6 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
      * @return The list of tags to associated with the child workflow execution.
      */
     public java.util.List<String> getTagList() {
-        if (tagList == null) {
-              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              tagList.setAutoConstruct(true);
-        }
         return tagList;
     }
     

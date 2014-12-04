@@ -23,6 +23,7 @@ import static com.amazonaws.util.BinaryUtils.copyAllBytesFrom;
 import static com.amazonaws.util.BinaryUtils.copyBytesFrom;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -138,6 +139,45 @@ public class Item {
 
     /**
      * Returns the value of the specified attribute in the current item as an
+     * <code>BigInteger</code>; or null if the attribute doesn't exist.
+     * 
+     * @see #isNull(String) #isNull(String) to check if the attribute value is
+     *      null.
+     * @see #isPresent(String) #isPresent(String) to check if the attribute
+     *      value is present.
+     *
+     * @throws NumberFormatException
+     *             if the attribute value is null or not a valid representation
+     *             of a {@code BigDecimal}.
+     */
+    public BigInteger getBigInteger(String attrName) {
+        BigDecimal bd = getNumber(attrName);
+        return bd == null ? null : bd.toBigInteger();
+    }
+
+    /**
+     * Returns the value of the specified attribute in the current item as a
+     * <code>short</code>.
+     * 
+     * @see #isNull(String) #isNull(String) to check if the attribute value is
+     *      null.
+     * @see #isPresent(String) #isPresent(String) to check if the attribute
+     *      value is present.
+     *
+     * @throws NumberFormatException
+     *             if the attribute value is null or not a valid representation
+     *             of a {@code BigDecimal}.
+     */
+    public short getShort(String attrName) {
+        BigDecimal bd = getNumber(attrName);
+        if (bd == null)
+            throw new NumberFormatException
+                ("value of " + attrName + " is null");
+        return bd.shortValue();
+    }
+
+    /**
+     * Returns the value of the specified attribute in the current item as an
      * <code>int</code>.
      * 
      * @see #isNull(String) #isNull(String) to check if the attribute value is
@@ -179,6 +219,48 @@ public class Item {
     }
 
     /**
+     * Returns the value of the specified attribute in the current item as a
+     * <code>float</code>.
+     * 
+     * @see #isNull(String) #isNull(String) to check if the attribute value is
+     *      null.
+     * @see #isPresent(String) #isPresent(String) to check if the attribute
+     *      value is present.
+     *
+     * @throws NumberFormatException
+     *             if the attribute value is null or not a valid representation
+     *             of a {@code BigDecimal}.
+     */
+    public float getFloat(String attrName) {
+        BigDecimal bd = getNumber(attrName);
+        if (bd == null)
+            throw new NumberFormatException
+                ("value of " + attrName + " is null");
+        return bd.floatValue();
+    }
+
+    /**
+     * Returns the value of the specified attribute in the current item as a
+     * <code>double</code>.
+     * 
+     * @see #isNull(String) #isNull(String) to check if the attribute value is
+     *      null.
+     * @see #isPresent(String) #isPresent(String) to check if the attribute
+     *      value is present.
+     *
+     * @throws NumberFormatException
+     *             if the attribute value is null or not a valid representation
+     *             of a {@code BigDecimal}.
+     */
+    public double getDouble(String attrName) {
+        BigDecimal bd = getNumber(attrName);
+        if (bd == null)
+            throw new NumberFormatException
+                ("value of " + attrName + " is null");
+        return bd.doubleValue();
+    }
+
+    /**
      * Sets the value of the specified attribute in the current item to the
      * given value.
      */
@@ -205,6 +287,15 @@ public class Item {
     public Item withInt(String attrName, int val) {
         checkInvalidAttrName(attrName);
         return withNumber(attrName, Integer.valueOf(val));
+    }
+
+    /**
+     * Sets the value of the specified attribute in the current item to the
+     * given value.
+     */
+    public Item withBigInteger(String attrName, BigInteger val) {
+        checkInvalidAttrName(attrName);
+        return withNumber(attrName, val);
     }
 
     /**
@@ -694,16 +785,110 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as a map
      * of string-to-<code>T</code>'s; or null if the attribute either doesn't
-     * exist or the attribute value is null.
+     * exist or the attribute value is null. Note that any numeric type of a
+     * map is always canonicalized into <code>BigDecimal</code>, and therefore
+     * if <code>T</code> referred to a <code>Number</code> type, it would need
+     * to be <code>BigDecimal</code> to avoid a class cast exception.
      * 
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
      *      value is present.
+     *
+     * @throws ClassCastException
+     *             if the attribute is not a map of string to <code>T</code>
      */
     @SuppressWarnings("unchecked")
     public <T> Map<String, T> getMap(String attrName) {
         return (Map<String, T>)attributes.get(attrName);
+    }
+
+    /**
+     * Convenient method to return the specified attribute in the current item
+     * as a (copy of) map of string-to-<code>T</code>'s where T must be a
+     * subclass of <code>Number</code>; or null if the attribute doesn't
+     * exist.
+     * 
+     * @param attrName
+     *            the attribute name
+     * @param valueType
+     *            the specific number type of the value to be returned.
+     *            Currently, only<ul>
+     *            <li><code>Short</code></li>
+     *            <li><code>Integer</code></li>
+     *            <li><code>Long</code></li>
+     *            <li><code>Float</code></li>
+     *            <li><code>Double</code></li>
+     *            <li><code>Number</code></li>
+     *            <li><code>BigDecimal</code></li>
+     *            <li><code>BigInteger</code></li>
+     *            </ul>are supported.
+     * 
+     * @throws UnsupportedOperationException
+     *             if the value type is not supported
+     * @throws ClassCastException
+     *             if the attribute is not a map of string to numbers
+     */
+    @SuppressWarnings("unchecked")
+    public <T extends Number> Map<String, T> getMapOfNumbers(String attrName,
+            Class<T> valueType) {
+        if (valueType == Short.class
+        ||  valueType == Integer.class
+        ||  valueType == Long.class
+        ||  valueType == Float.class
+        ||  valueType == Double.class
+        ||  valueType == Number.class
+        ||  valueType == BigDecimal.class
+        ||  valueType == BigInteger.class) {
+            final Map<String, BigDecimal> src =
+                (Map<String, BigDecimal>)attributes.get(attrName);
+            if (src == null)
+                return null;
+            final Map<String, T> dst = new LinkedHashMap<String, T>(src.size()); 
+            for (Map.Entry<String,BigDecimal> e: src.entrySet()) {
+                final String key = e.getKey();
+                final BigDecimal val = e.getValue();
+                if (val == null) {
+                    dst.put(key, null);
+                } else if (valueType == Short.class) {
+                    dst.put(key, (T)Short.valueOf(val.shortValue()));
+                } else if (valueType == Integer.class) {
+                    dst.put(key, (T)Integer.valueOf(val.intValue()));
+                } else if (valueType == Long.class) {
+                    dst.put(key, (T)Long.valueOf(val.longValue()));
+                } else if (valueType == Float.class) {
+                    dst.put(key, (T)Float.valueOf(val.floatValue()));
+                } else if (valueType == Double.class) {
+                    dst.put(key, (T)Double.valueOf(val.doubleValue()));
+                } else if (valueType == BigDecimal.class || valueType == Number.class) {
+                    dst.put(key, (T)val);
+                } else if (valueType == BigInteger.class) {
+                    dst.put(key, (T)val.toBigInteger());
+                }
+            }
+            return dst;
+        } else {
+            throw new UnsupportedOperationException("Value type " + valueType
+                    + " is not currently supported");
+        }
+    }
+
+    /**
+     * Convenient method to return the value of the specified attribute in the
+     * current item as a map of string-to-<code>Object</code>'s; or null if the
+     * attribute either doesn't exist or the attribute value is null. Note that
+     * any numeric type of the map will be returned as <code>BigDecimal</code>.
+     * 
+     * @see #isNull(String) #isNull(String) to check if the attribute value is
+     *      null.
+     * @see #isPresent(String) #isPresent(String) to check if the attribute
+     *      value is present.
+     *
+     * @throws ClassCastException if the attribute is not a map
+     */
+    @SuppressWarnings("unchecked")
+    public Map<String, Object> getRawMap(String attrName) {
+        return (Map<String, Object>)attributes.get(attrName);
     }
 
     /**

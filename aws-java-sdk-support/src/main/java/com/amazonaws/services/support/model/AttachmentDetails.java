@@ -17,38 +17,48 @@ package com.amazonaws.services.support.model;
 import java.io.Serializable;
 
 /**
- * Attachment Details
+ * <p>
+ * The file name and ID of an attachment to a case communication. You can
+ * use the ID to retrieve the attachment with the DescribeAttachment
+ * operation.
+ * </p>
  */
 public class AttachmentDetails implements Serializable {
 
+    /**
+     * The ID of the attachment.
+     */
     private String attachmentId;
 
+    /**
+     * The file name of the attachment.
+     */
     private String fileName;
 
     /**
-     * Returns the value of the AttachmentId property for this object.
+     * The ID of the attachment.
      *
-     * @return The value of the AttachmentId property for this object.
+     * @return The ID of the attachment.
      */
     public String getAttachmentId() {
         return attachmentId;
     }
     
     /**
-     * Sets the value of the AttachmentId property for this object.
+     * The ID of the attachment.
      *
-     * @param attachmentId The new value for the AttachmentId property for this object.
+     * @param attachmentId The ID of the attachment.
      */
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
     
     /**
-     * Sets the value of the AttachmentId property for this object.
+     * The ID of the attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachmentId The new value for the AttachmentId property for this object.
+     * @param attachmentId The ID of the attachment.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -59,29 +69,29 @@ public class AttachmentDetails implements Serializable {
     }
 
     /**
-     * Returns the value of the FileName property for this object.
+     * The file name of the attachment.
      *
-     * @return The value of the FileName property for this object.
+     * @return The file name of the attachment.
      */
     public String getFileName() {
         return fileName;
     }
     
     /**
-     * Sets the value of the FileName property for this object.
+     * The file name of the attachment.
      *
-     * @param fileName The new value for the FileName property for this object.
+     * @param fileName The file name of the attachment.
      */
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
     
     /**
-     * Sets the value of the FileName property for this object.
+     * The file name of the attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fileName The new value for the FileName property for this object.
+     * @param fileName The file name of the attachment.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

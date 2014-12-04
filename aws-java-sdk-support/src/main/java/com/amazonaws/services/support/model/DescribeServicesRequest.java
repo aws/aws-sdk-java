@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The service codes and category codes correspond to the values that are
  * displayed in the <b>Service</b> and <b>Category</b> drop-down lists on
  * the AWS Support Center
- * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+ * <a href="https://console.aws.amazon.com/support/home#/case/create"> Create Case </a>
  * page. The values in those fields, however, do not necessarily match
  * the service codes and categories returned by the
  * <code>DescribeServices</code> request. Always use the service codes

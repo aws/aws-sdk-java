@@ -24,7 +24,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Returns a list of cases that you specify by passing one or more case
  * IDs. In addition, you can filter the cases by date by setting values
  * for the <code>AfterTime</code> and <code>BeforeTime</code> request
- * parameters.
+ * parameters. You can set values for the
+ * <code>IncludeResolvedCases</code> and
+ * <code>IncludeCommunications</code> request parameters to control how
+ * much information is returned.
+ * </p>
+ * <p>
+ * Case data is available for 12 months after creation. If a case was
+ * created more than 12 months ago, a request for data might cause an
+ * error.
  * </p>
  * <p>
  * The response returns the following in JSON format:
@@ -55,19 +63,21 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The start date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      */
     private String afterTime;
 
     /**
      * The end date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      */
     private String beforeTime;
 
     /**
      * Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results.
+     * <a>DescribeCases</a> results. The default is <i>false</i>.
      */
     private Boolean includeResolvedCases;
 
@@ -92,6 +102,10 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      */
     private String language;
 
+    /**
+     * Specifies whether communications should be included in the
+     * <a>DescribeCases</a> results. The default is <i>true</i>.
+     */
     private Boolean includeCommunications;
 
     /**
@@ -217,10 +231,12 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The start date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      *
      * @return The start date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      */
     public String getAfterTime() {
         return afterTime;
@@ -228,10 +244,12 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The start date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      *
      * @param afterTime The start date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      */
     public void setAfterTime(String afterTime) {
         this.afterTime = afterTime;
@@ -239,12 +257,14 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The start date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param afterTime The start date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -256,10 +276,12 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The end date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      *
      * @return The end date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      */
     public String getBeforeTime() {
         return beforeTime;
@@ -267,10 +289,12 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The end date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      *
      * @param beforeTime The end date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      */
     public void setBeforeTime(String beforeTime) {
         this.beforeTime = beforeTime;
@@ -278,12 +302,14 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The end date for a filtered date search on support case
-     * communications.
+     * communications. Case communications are available for 12 months after
+     * creation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param beforeTime The end date for a filtered date search on support case
-     *         communications.
+     *         communications. Case communications are available for 12 months after
+     *         creation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -295,10 +321,10 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results.
+     * <a>DescribeCases</a> results. The default is <i>false</i>.
      *
      * @return Specifies whether resolved support cases should be included in the
-     *         <a>DescribeCases</a> results.
+     *         <a>DescribeCases</a> results. The default is <i>false</i>.
      */
     public Boolean isIncludeResolvedCases() {
         return includeResolvedCases;
@@ -306,10 +332,10 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results.
+     * <a>DescribeCases</a> results. The default is <i>false</i>.
      *
      * @param includeResolvedCases Specifies whether resolved support cases should be included in the
-     *         <a>DescribeCases</a> results.
+     *         <a>DescribeCases</a> results. The default is <i>false</i>.
      */
     public void setIncludeResolvedCases(Boolean includeResolvedCases) {
         this.includeResolvedCases = includeResolvedCases;
@@ -317,12 +343,12 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results.
+     * <a>DescribeCases</a> results. The default is <i>false</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param includeResolvedCases Specifies whether resolved support cases should be included in the
-     *         <a>DescribeCases</a> results.
+     *         <a>DescribeCases</a> results. The default is <i>false</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -334,10 +360,10 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results.
+     * <a>DescribeCases</a> results. The default is <i>false</i>.
      *
      * @return Specifies whether resolved support cases should be included in the
-     *         <a>DescribeCases</a> results.
+     *         <a>DescribeCases</a> results. The default is <i>false</i>.
      */
     public Boolean getIncludeResolvedCases() {
         return includeResolvedCases;
@@ -470,30 +496,35 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Returns the value of the IncludeCommunications property for this
-     * object.
+     * Specifies whether communications should be included in the
+     * <a>DescribeCases</a> results. The default is <i>true</i>.
      *
-     * @return The value of the IncludeCommunications property for this object.
+     * @return Specifies whether communications should be included in the
+     *         <a>DescribeCases</a> results. The default is <i>true</i>.
      */
     public Boolean isIncludeCommunications() {
         return includeCommunications;
     }
     
     /**
-     * Sets the value of the IncludeCommunications property for this object.
+     * Specifies whether communications should be included in the
+     * <a>DescribeCases</a> results. The default is <i>true</i>.
      *
-     * @param includeCommunications The new value for the IncludeCommunications property for this object.
+     * @param includeCommunications Specifies whether communications should be included in the
+     *         <a>DescribeCases</a> results. The default is <i>true</i>.
      */
     public void setIncludeCommunications(Boolean includeCommunications) {
         this.includeCommunications = includeCommunications;
     }
     
     /**
-     * Sets the value of the IncludeCommunications property for this object.
+     * Specifies whether communications should be included in the
+     * <a>DescribeCases</a> results. The default is <i>true</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param includeCommunications The new value for the IncludeCommunications property for this object.
+     * @param includeCommunications Specifies whether communications should be included in the
+     *         <a>DescribeCases</a> results. The default is <i>true</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -504,10 +535,11 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Returns the value of the IncludeCommunications property for this
-     * object.
+     * Specifies whether communications should be included in the
+     * <a>DescribeCases</a> results. The default is <i>true</i>.
      *
-     * @return The value of the IncludeCommunications property for this object.
+     * @return Specifies whether communications should be included in the
+     *         <a>DescribeCases</a> results. The default is <i>true</i>.
      */
     public Boolean getIncludeCommunications() {
         return includeCommunications;

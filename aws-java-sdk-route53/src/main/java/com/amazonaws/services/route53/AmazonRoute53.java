@@ -173,6 +173,39 @@ public interface AmazonRoute53 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     * <p>
+     * To update the hosted zone comment, send a <code>POST</code> request
+     * to the <code>2013-04-01/hostedzone/hosted zone ID </code> resource.
+     * The request body must include an XML document with a
+     * <code>UpdateHostedZoneCommentRequest</code> element. The response to
+     * this request includes the modified <code>HostedZone</code> element.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The comment can have a maximum length of 256 characters.
+     * </p>
+     *
+     * @param updateHostedZoneCommentRequest Container for the necessary
+     *           parameters to execute the UpdateHostedZoneComment service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the UpdateHostedZoneComment service method,
+     *         as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchHostedZoneException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      *
      * @param listTagsForResourcesRequest Container for the necessary
      *           parameters to execute the ListTagsForResources service method on
@@ -955,6 +988,31 @@ public interface AmazonRoute53 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param listTagsForResourceRequest Container for the necessary
+     *           parameters to execute the ListTagsForResource service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListTagsForResource service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws PriorRequestNotCompleteException
+     * @throws NoSuchHealthCheckException
+     * @throws ThrottlingException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * To retrieve a list of your reusable delegation sets, send a
      * <code>GET</code> request to the <code>2013-04-01/delegationset</code>
@@ -990,31 +1048,6 @@ public interface AmazonRoute53 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     *
-     * @param listTagsForResourceRequest Container for the necessary
-     *           parameters to execute the ListTagsForResource service method on
-     *           AmazonRoute53.
-     * 
-     * @return The response from the ListTagsForResource service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws PriorRequestNotCompleteException
-     * @throws NoSuchHealthCheckException
-     * @throws ThrottlingException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the five most recent communications associated with the case.
+ * The five most recent communications associated with the case.
  * </p>
  */
 public class RecentCaseCommunications implements Serializable {

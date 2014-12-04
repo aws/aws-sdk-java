@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * DescribeTrustedAdvisorChecks.
  * </p>
  * <p>
- * The response contains a RefreshTrustedAdvisorCheckResult object, which
+ * The response contains a TrustedAdvisorCheckRefreshStatus object, which
  * contains these fields:
  * </p>
  * 

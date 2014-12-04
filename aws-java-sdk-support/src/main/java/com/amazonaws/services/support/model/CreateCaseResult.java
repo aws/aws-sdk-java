@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * <p>
  * The AWS Support case ID returned by a successful completion of the
- * CreateCase action.
+ * CreateCase operation.
  * </p>
  */
 public class CreateCaseResult implements Serializable {

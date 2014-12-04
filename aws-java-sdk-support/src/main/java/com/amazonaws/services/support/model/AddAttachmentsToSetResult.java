@@ -17,38 +17,75 @@ package com.amazonaws.services.support.model;
 import java.io.Serializable;
 
 /**
- * Add Attachments To Set Result
+ * <p>
+ * The ID and expiry time of the attachment set returned by the
+ * AddAttachmentsToSet operation.
+ * </p>
  */
 public class AddAttachmentsToSetResult implements Serializable {
 
+    /**
+     * The ID of the attachment set. If an <code>AttachmentSetId</code> was
+     * not specified, a new attachment set is created, and the ID of the set
+     * is returned in the response. If an <code>AttachmentSetId</code> was
+     * specified, the attachments are added to the specified set, if it
+     * exists.
+     */
     private String attachmentSetId;
 
+    /**
+     * The time and date when the attachment set expires.
+     */
     private String expiryTime;
 
     /**
-     * Returns the value of the AttachmentSetId property for this object.
+     * The ID of the attachment set. If an <code>AttachmentSetId</code> was
+     * not specified, a new attachment set is created, and the ID of the set
+     * is returned in the response. If an <code>AttachmentSetId</code> was
+     * specified, the attachments are added to the specified set, if it
+     * exists.
      *
-     * @return The value of the AttachmentSetId property for this object.
+     * @return The ID of the attachment set. If an <code>AttachmentSetId</code> was
+     *         not specified, a new attachment set is created, and the ID of the set
+     *         is returned in the response. If an <code>AttachmentSetId</code> was
+     *         specified, the attachments are added to the specified set, if it
+     *         exists.
      */
     public String getAttachmentSetId() {
         return attachmentSetId;
     }
     
     /**
-     * Sets the value of the AttachmentSetId property for this object.
+     * The ID of the attachment set. If an <code>AttachmentSetId</code> was
+     * not specified, a new attachment set is created, and the ID of the set
+     * is returned in the response. If an <code>AttachmentSetId</code> was
+     * specified, the attachments are added to the specified set, if it
+     * exists.
      *
-     * @param attachmentSetId The new value for the AttachmentSetId property for this object.
+     * @param attachmentSetId The ID of the attachment set. If an <code>AttachmentSetId</code> was
+     *         not specified, a new attachment set is created, and the ID of the set
+     *         is returned in the response. If an <code>AttachmentSetId</code> was
+     *         specified, the attachments are added to the specified set, if it
+     *         exists.
      */
     public void setAttachmentSetId(String attachmentSetId) {
         this.attachmentSetId = attachmentSetId;
     }
     
     /**
-     * Sets the value of the AttachmentSetId property for this object.
+     * The ID of the attachment set. If an <code>AttachmentSetId</code> was
+     * not specified, a new attachment set is created, and the ID of the set
+     * is returned in the response. If an <code>AttachmentSetId</code> was
+     * specified, the attachments are added to the specified set, if it
+     * exists.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachmentSetId The new value for the AttachmentSetId property for this object.
+     * @param attachmentSetId The ID of the attachment set. If an <code>AttachmentSetId</code> was
+     *         not specified, a new attachment set is created, and the ID of the set
+     *         is returned in the response. If an <code>AttachmentSetId</code> was
+     *         specified, the attachments are added to the specified set, if it
+     *         exists.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -59,29 +96,29 @@ public class AddAttachmentsToSetResult implements Serializable {
     }
 
     /**
-     * Returns the value of the ExpiryTime property for this object.
+     * The time and date when the attachment set expires.
      *
-     * @return The value of the ExpiryTime property for this object.
+     * @return The time and date when the attachment set expires.
      */
     public String getExpiryTime() {
         return expiryTime;
     }
     
     /**
-     * Sets the value of the ExpiryTime property for this object.
+     * The time and date when the attachment set expires.
      *
-     * @param expiryTime The new value for the ExpiryTime property for this object.
+     * @param expiryTime The time and date when the attachment set expires.
      */
     public void setExpiryTime(String expiryTime) {
         this.expiryTime = expiryTime;
     }
     
     /**
-     * Sets the value of the ExpiryTime property for this object.
+     * The time and date when the attachment set expires.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expiryTime The new value for the ExpiryTime property for this object.
+     * @param expiryTime The time and date when the attachment set expires.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -17,7 +17,10 @@ package com.amazonaws.services.support.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSSupport exception
+ * <p>
+ * The expiration time of the attachment set has passed. The set expires
+ * 1 hour after it is created.
+ * </p>
  */        
 public class AttachmentSetExpiredException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

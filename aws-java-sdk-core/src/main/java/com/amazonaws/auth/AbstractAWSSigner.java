@@ -55,40 +55,47 @@ public abstract class AbstractAWSSigner implements Signer {
      */
     protected String signAndBase64Encode(String data, String key,
             SigningAlgorithm algorithm) throws AmazonClientException {
-        return signAndBase64Encode(data.getBytes(UTF8),
-                key, algorithm);
+        return signAndBase64Encode(data.getBytes(UTF8), key, algorithm);
     }
 
     /**
      * Computes an RFC 2104-compliant HMAC signature for an array of bytes and
      * returns the result as a Base64 encoded string.
      */
-    protected String signAndBase64Encode(byte[] data, String key, SigningAlgorithm algorithm)
-            throws AmazonClientException {
+    protected String signAndBase64Encode(byte[] data, String key,
+            SigningAlgorithm algorithm) throws AmazonClientException {
         try {
             byte[] signature = sign(data, key.getBytes(UTF8), algorithm);
             return Base64.encodeAsString(signature);
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
+            throw new AmazonClientException(
+                    "Unable to calculate a request signature: "
+                            + e.getMessage(), e);
         }
     }
 
-    public byte[] sign(String stringData, byte[] key, SigningAlgorithm algorithm) throws AmazonClientException {
+    public byte[] sign(String stringData, byte[] key,
+            SigningAlgorithm algorithm) throws AmazonClientException {
         try {
             byte[] data = stringData.getBytes(UTF8);
             return sign(data, key, algorithm);
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
+            throw new AmazonClientException(
+                    "Unable to calculate a request signature: "
+                            + e.getMessage(), e);
         }
     }
 
-    protected byte[] sign(byte[] data, byte[] key, SigningAlgorithm algorithm) throws AmazonClientException {
+    protected byte[] sign(byte[] data, byte[] key,
+            SigningAlgorithm algorithm) throws AmazonClientException {
         try {
             Mac mac = Mac.getInstance(algorithm.toString());
             mac.init(new SecretKeySpec(key, algorithm.toString()));
             return mac.doFinal(data);
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
+            throw new AmazonClientException(
+                    "Unable to calculate a request signature: "
+                            + e.getMessage(), e);
         }
     }
 
@@ -110,7 +117,9 @@ public abstract class AbstractAWSSigner implements Signer {
             md.update(text.getBytes(UTF8));
             return md.digest();
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
+            throw new AmazonClientException(
+                    "Unable to compute hash while signing request: "
+                            + e.getMessage(), e);
         }
     }
 
@@ -118,15 +127,18 @@ public abstract class AbstractAWSSigner implements Signer {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             @SuppressWarnings("resource")
-            DigestInputStream digestInputStream = new SdkDigestInputStream(input, md);
+            DigestInputStream digestInputStream = new SdkDigestInputStream(
+                    input, md);
             byte[] buffer = new byte[1024];
-            while (digestInputStream.read(buffer) > -1);
+            while (digestInputStream.read(buffer) > -1)
+                ;
             return digestInputStream.getMessageDigest().digest();
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
+            throw new AmazonClientException(
+                    "Unable to compute hash while signing request: "
+                            + e.getMessage(), e);
         }
     }
-
 
     /**
      * Hashes the binary data using the SHA-256 algorithm.
@@ -145,10 +157,11 @@ public abstract class AbstractAWSSigner implements Signer {
             md.update(data);
             return md.digest();
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
+            throw new AmazonClientException(
+                    "Unable to compute hash while signing request: "
+                            + e.getMessage(), e);
         }
     }
-
     /**
      * Examines the specified query string parameters and returns a
      * canonicalized form.
@@ -195,8 +208,9 @@ public abstract class AbstractAWSSigner implements Signer {
          * then any request query parameters will be sent as the payload, and
          * not in the actual query string.
          */
-        if (HttpUtils.usePayloadForQueryParameters(request)) return "";
-        else return this.getCanonicalizedQueryString(request.getParameters());
+        if (HttpUtils.usePayloadForQueryParameters(request))
+            return "";
+        return this.getCanonicalizedQueryString(request.getParameters());
     }
 
     /**
@@ -319,7 +333,7 @@ public abstract class AbstractAWSSigner implements Signer {
     }
 
     protected String getCanonicalizedResourcePath(String resourcePath, boolean urlEncode) {
-        if (resourcePath == null || resourcePath.length() == 0) {
+        if (resourcePath == null || resourcePath.isEmpty()) {
             return "/";
         } else {
             String value = urlEncode ? HttpUtils.urlEncode(resourcePath, true) : resourcePath;
@@ -396,7 +410,7 @@ public abstract class AbstractAWSSigner implements Signer {
      * Returns the current time minus the given offset in seconds.
      * The intent is to adjust the current time in the running JVM to the
      * corresponding wall clock time at AWS for request signing purposes.
-     * 
+     *
      * @param offsetInSeconds
      *            offset in seconds
      */

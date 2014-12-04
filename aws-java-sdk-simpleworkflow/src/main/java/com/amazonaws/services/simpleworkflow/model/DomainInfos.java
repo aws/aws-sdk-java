@@ -44,10 +44,6 @@ public class DomainInfos implements Serializable {
      * @return A list of DomainInfo structures.
      */
     public java.util.List<DomainInfo> getDomainInfos() {
-        if (domainInfos == null) {
-              domainInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<DomainInfo>();
-              domainInfos.setAutoConstruct(true);
-        }
         return domainInfos;
     }
     

@@ -17,7 +17,9 @@ package com.amazonaws.services.support.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSSupport exception
+ * <p>
+ * An attachment set with the specified ID could not be found.
+ * </p>
  */        
 public class AttachmentSetIdNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

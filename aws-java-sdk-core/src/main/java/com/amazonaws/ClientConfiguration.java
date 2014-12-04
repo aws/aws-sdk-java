@@ -18,9 +18,9 @@ import java.net.InetAddress;
 
 import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
-import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.util.VersionInfoUtils;
 /**
  * Client configuration options such as proxy settings, user agent string, max
@@ -195,8 +195,15 @@ public class ClientConfiguration {
      * the operating system (sysctl on Linux, and Registry values on Windows).
      */
     private boolean tcpKeepAlive = DEFAULT_TCP_KEEP_ALIVE;
+    
+    /**
+     * Can be used to specify custom specific Apache HTTP client configurations.
+     */
+    private final ApacheHttpClientConfig apacheHttpClientConfig;
 
-    public ClientConfiguration() {}
+    public ClientConfiguration() {
+        apacheHttpClientConfig = new ApacheHttpClientConfig();
+    }
 
     public ClientConfiguration(ClientConfiguration other) {
         this.connectionTimeout           = other.connectionTimeout;
@@ -219,6 +226,8 @@ public class ClientConfiguration {
         this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
         this.socketSendBufferSizeHint    = other.socketSendBufferSizeHint;
         this.signerOverride              = other.signerOverride;
+        this.apacheHttpClientConfig =
+            new ApacheHttpClientConfig(other.apacheHttpClientConfig);
     }
 
     /**
@@ -1129,5 +1138,13 @@ public class ClientConfiguration {
     public ClientConfiguration withTcpKeepAlive(final boolean use) {
         setUseTcpKeepAlive(use);
         return this;
+    }
+
+    /**
+     * Returns a non-null object that can be used to specify Apache HTTP client
+     * specific custom configurations.
+     */
+    public ApacheHttpClientConfig getApacheHttpClientConfig() {
+        return apacheHttpClientConfig;
     }
 }

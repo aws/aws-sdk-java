@@ -546,10 +546,6 @@ public class WorkflowExecutionInfo implements Serializable {
      *         visibility APIs. A workflow execution can have a maximum of 5 tags.
      */
     public java.util.List<String> getTagList() {
-        if (tagList == null) {
-              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              tagList.setAutoConstruct(true);
-        }
         return tagList;
     }
     

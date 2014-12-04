@@ -17,7 +17,10 @@ package com.amazonaws.services.support.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSSupport exception
+ * <p>
+ * The limit for the number of attachment sets created in a short period
+ * of time has been exceeded.
+ * </p>
  */        
 public class AttachmentLimitExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

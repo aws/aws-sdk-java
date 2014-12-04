@@ -13,8 +13,8 @@ The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web
 * Provides easy-to-use HTTP clients for all supported AWS services, regions, and authentication protocols.
 * Client-Side Data Encryption for Amazon S3 - Helps improve the security of storing application data in Amazon S3.
 * Amazon DynamoDB Object Mapper - Uses Plain Old Java Object (POJOs) to store and retrieve Amazon DynamoDB data.
-* Amazon S3 Transfer Manager - With a simple API, achieve enhanced the throughput, performance, and reliability by using multi-threaded Amazon S3 multipart calls.
-* Amazon SQS Client-Side Buffering - Collect and send SQS requests in asynchronous batches, improving application and network performance.
+* Amazon S3 Transfer Manager - With a simple API, acheive enhanced the throughput, performance, and reliability by using multi-threaded Amazon S3 multipart calls.
+* Amazon SQS Client-Side Buffering - Collect and send SQS requests in ansynchronous batches, improving application and network performance.
 * Automatically uses [IAM Instance Profile Credentials][aws-iam-credentials] on configured Amazon EC2 instances.
 * And more!
 

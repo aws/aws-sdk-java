@@ -47,10 +47,6 @@ public class History implements Serializable {
      * @return The list of history events.
      */
     public java.util.List<HistoryEvent> getEvents() {
-        if (events == null) {
-              events = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>();
-              events.setAutoConstruct(true);
-        }
         return events;
     }
     

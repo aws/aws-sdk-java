@@ -40,6 +40,23 @@ public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest i
     private String queueUrl;
 
     /**
+     * Default constructor for a new ListDeadLetterSourceQueuesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListDeadLetterSourceQueuesRequest() {}
+    
+    /**
+     * Constructs a new ListDeadLetterSourceQueuesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl The queue URL of a dead letter queue.
+     */
+    public ListDeadLetterSourceQueuesRequest(String queueUrl) {
+        setQueueUrl(queueUrl);
+    }
+
+    /**
      * The queue URL of a dead letter queue.
      *
      * @return The queue URL of a dead letter queue.

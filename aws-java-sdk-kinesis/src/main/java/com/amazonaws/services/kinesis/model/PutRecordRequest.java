@@ -21,20 +21,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#putRecord(PutRecordRequest) PutRecord operation}.
  * <p>
- * Puts a data record from a producer into an Amazon Kinesis stream. You
- * must call <code>PutRecord</code> to send data from the producer into
- * the Amazon Kinesis stream for real-time ingestion and subsequent
- * processing. You must specify the name of the stream that captures,
- * stores, and transports the data; a partition key; and the data blob
- * itself. The data blob could be a segment from a log file,
- * geographic/location data, website clickstream data, or any other data
- * type.
+ * Puts (writes) a single data record from a producer into an Amazon
+ * Kinesis stream. Call <code>PutRecord</code> to send data from the
+ * producer into the Amazon Kinesis stream for real-time ingestion and
+ * subsequent processing, one record at a time. Each shard can support up
+ * to 1000 records written per second, up to a maximum total of 1 MB data
+ * written per second.
  * </p>
  * <p>
- * The partition key is used to distribute data across shards. Amazon
- * Kinesis segregates the data records that belong to a data stream into
- * multiple shards, using the partition key associated with each data
- * record to determine which shard a given data record belongs to.
+ * You must specify the name of the stream that captures, stores, and
+ * transports the data; a partition key; and the data blob itself.
+ * </p>
+ * <p>
+ * The data blob can be any type of data; for example, a segment from a
+ * log file, geographic/location data, website clickstream data, and so
+ * on.
+ * </p>
+ * <p>
+ * The partition key is used by Amazon Kinesis to distribute data across
+ * shards. Amazon Kinesis segregates the data records that belong to a
+ * data stream into multiple shards, using the partition key associated
+ * with each data record to determine which shard a given data record
+ * belongs to.
  * </p>
  * <p>
  * Partition keys are Unicode strings, with a maximum length limit of 256
@@ -83,9 +91,9 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     private String streamName;
 
     /**
-     * The data blob to put into the record, which is Base64-encoded when the
+     * The data blob to put into the record, which is base64-encoded when the
      * blob is serialized. The maximum size of the data blob (the payload
-     * before Base64-encoding) is 50 kilobytes (KB)
+     * before base64-encoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
@@ -176,50 +184,50 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The data blob to put into the record, which is Base64-encoded when the
+     * The data blob to put into the record, which is base64-encoded when the
      * blob is serialized. The maximum size of the data blob (the payload
-     * before Base64-encoding) is 50 kilobytes (KB)
+     * before base64-encoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
      *
-     * @return The data blob to put into the record, which is Base64-encoded when the
+     * @return The data blob to put into the record, which is base64-encoded when the
      *         blob is serialized. The maximum size of the data blob (the payload
-     *         before Base64-encoding) is 50 kilobytes (KB)
+     *         before base64-encoding) is 50 kilobytes (KB)
      */
     public java.nio.ByteBuffer getData() {
         return data;
     }
     
     /**
-     * The data blob to put into the record, which is Base64-encoded when the
+     * The data blob to put into the record, which is base64-encoded when the
      * blob is serialized. The maximum size of the data blob (the payload
-     * before Base64-encoding) is 50 kilobytes (KB)
+     * before base64-encoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
      *
-     * @param data The data blob to put into the record, which is Base64-encoded when the
+     * @param data The data blob to put into the record, which is base64-encoded when the
      *         blob is serialized. The maximum size of the data blob (the payload
-     *         before Base64-encoding) is 50 kilobytes (KB)
+     *         before base64-encoding) is 50 kilobytes (KB)
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
     
     /**
-     * The data blob to put into the record, which is Base64-encoded when the
+     * The data blob to put into the record, which is base64-encoded when the
      * blob is serialized. The maximum size of the data blob (the payload
-     * before Base64-encoding) is 50 kilobytes (KB)
+     * before base64-encoding) is 50 kilobytes (KB)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
      *
-     * @param data The data blob to put into the record, which is Base64-encoded when the
+     * @param data The data blob to put into the record, which is base64-encoded when the
      *         blob is serialized. The maximum size of the data blob (the payload
-     *         before Base64-encoding) is 50 kilobytes (KB)
+     *         before base64-encoding) is 50 kilobytes (KB)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

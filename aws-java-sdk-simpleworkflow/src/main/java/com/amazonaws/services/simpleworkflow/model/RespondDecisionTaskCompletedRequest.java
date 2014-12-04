@@ -153,10 +153,6 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      *         structure for details.
      */
     public java.util.List<Decision> getDecisions() {
-        if (decisions == null) {
-              decisions = new com.amazonaws.internal.ListWithAutoConstructFlag<Decision>();
-              decisions.setAutoConstruct(true);
-        }
         return decisions;
     }
     

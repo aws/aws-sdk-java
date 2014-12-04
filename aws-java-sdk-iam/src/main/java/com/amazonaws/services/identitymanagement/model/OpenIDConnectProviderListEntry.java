@@ -25,13 +25,11 @@ import java.io.Serializable;
 public class OpenIDConnectProviderListEntry implements Serializable {
 
     /**
-     * An Amazon Resource Name (ARN) for an IAM OpenID Connect provider. The
-     * ARNs are in the following format (strings in ALL-CAPS are
-     * replaceable):
-     * <p><code>arn:aws:iam::ACCOUNT-ID:oidc/PROVIDER-URL-WITHOUT-HTTPS://</code>
-     * <p>The following example shows an ARN that might be returned by
-     * <a>CreateOpenIDConnectProvider</a>:
-     * <p><code>arn:aws:iam::123456789012:oidc/server.example.com</code>
+     * The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
+     * resources. <p>For more information about ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+     * General Reference</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -39,74 +37,62 @@ public class OpenIDConnectProviderListEntry implements Serializable {
     private String arn;
 
     /**
-     * An Amazon Resource Name (ARN) for an IAM OpenID Connect provider. The
-     * ARNs are in the following format (strings in ALL-CAPS are
-     * replaceable):
-     * <p><code>arn:aws:iam::ACCOUNT-ID:oidc/PROVIDER-URL-WITHOUT-HTTPS://</code>
-     * <p>The following example shows an ARN that might be returned by
-     * <a>CreateOpenIDConnectProvider</a>:
-     * <p><code>arn:aws:iam::123456789012:oidc/server.example.com</code>
+     * The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
+     * resources. <p>For more information about ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+     * General Reference</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @return An Amazon Resource Name (ARN) for an IAM OpenID Connect provider. The
-     *         ARNs are in the following format (strings in ALL-CAPS are
-     *         replaceable):
-     *         <p><code>arn:aws:iam::ACCOUNT-ID:oidc/PROVIDER-URL-WITHOUT-HTTPS://</code>
-     *         <p>The following example shows an ARN that might be returned by
-     *         <a>CreateOpenIDConnectProvider</a>:
-     *         <p><code>arn:aws:iam::123456789012:oidc/server.example.com</code>
+     * @return The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
+     *         resources. <p>For more information about ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+     *         General Reference</i>.
      */
     public String getArn() {
         return arn;
     }
     
     /**
-     * An Amazon Resource Name (ARN) for an IAM OpenID Connect provider. The
-     * ARNs are in the following format (strings in ALL-CAPS are
-     * replaceable):
-     * <p><code>arn:aws:iam::ACCOUNT-ID:oidc/PROVIDER-URL-WITHOUT-HTTPS://</code>
-     * <p>The following example shows an ARN that might be returned by
-     * <a>CreateOpenIDConnectProvider</a>:
-     * <p><code>arn:aws:iam::123456789012:oidc/server.example.com</code>
+     * The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
+     * resources. <p>For more information about ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+     * General Reference</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @param arn An Amazon Resource Name (ARN) for an IAM OpenID Connect provider. The
-     *         ARNs are in the following format (strings in ALL-CAPS are
-     *         replaceable):
-     *         <p><code>arn:aws:iam::ACCOUNT-ID:oidc/PROVIDER-URL-WITHOUT-HTTPS://</code>
-     *         <p>The following example shows an ARN that might be returned by
-     *         <a>CreateOpenIDConnectProvider</a>:
-     *         <p><code>arn:aws:iam::123456789012:oidc/server.example.com</code>
+     * @param arn The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
+     *         resources. <p>For more information about ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+     *         General Reference</i>.
      */
     public void setArn(String arn) {
         this.arn = arn;
     }
     
     /**
-     * An Amazon Resource Name (ARN) for an IAM OpenID Connect provider. The
-     * ARNs are in the following format (strings in ALL-CAPS are
-     * replaceable):
-     * <p><code>arn:aws:iam::ACCOUNT-ID:oidc/PROVIDER-URL-WITHOUT-HTTPS://</code>
-     * <p>The following example shows an ARN that might be returned by
-     * <a>CreateOpenIDConnectProvider</a>:
-     * <p><code>arn:aws:iam::123456789012:oidc/server.example.com</code>
+     * The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
+     * resources. <p>For more information about ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+     * General Reference</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @param arn An Amazon Resource Name (ARN) for an IAM OpenID Connect provider. The
-     *         ARNs are in the following format (strings in ALL-CAPS are
-     *         replaceable):
-     *         <p><code>arn:aws:iam::ACCOUNT-ID:oidc/PROVIDER-URL-WITHOUT-HTTPS://</code>
-     *         <p>The following example shows an ARN that might be returned by
-     *         <a>CreateOpenIDConnectProvider</a>:
-     *         <p><code>arn:aws:iam::123456789012:oidc/server.example.com</code>
+     * @param arn The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
+     *         resources. <p>For more information about ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+     *         General Reference</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,20 +18,22 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an AWS Service returned by the DescribeServices action.
+ * Information about an AWS service returned by the DescribeServices
+ * operation.
  * </p>
  */
 public class Service implements Serializable {
 
     /**
-     * The code for an AWS service returned by <a>DescribeServices</a>
-     * response. Has a corresponding name represented by Service.name.
+     * The code for an AWS service returned by the <a>DescribeServices</a>
+     * response. The <code>Name</code> element contains the corresponding
+     * friendly name.
      */
     private String code;
 
     /**
-     * The friendly name for an AWS service. Has a corresponding code
-     * represented by Service.code.
+     * The friendly name for an AWS service. The <code>Code</code> element
+     * contains the corresponding code.
      */
     private String name;
 
@@ -44,35 +46,41 @@ public class Service implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Category> categories;
 
     /**
-     * The code for an AWS service returned by <a>DescribeServices</a>
-     * response. Has a corresponding name represented by Service.name.
+     * The code for an AWS service returned by the <a>DescribeServices</a>
+     * response. The <code>Name</code> element contains the corresponding
+     * friendly name.
      *
-     * @return The code for an AWS service returned by <a>DescribeServices</a>
-     *         response. Has a corresponding name represented by Service.name.
+     * @return The code for an AWS service returned by the <a>DescribeServices</a>
+     *         response. The <code>Name</code> element contains the corresponding
+     *         friendly name.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * The code for an AWS service returned by <a>DescribeServices</a>
-     * response. Has a corresponding name represented by Service.name.
+     * The code for an AWS service returned by the <a>DescribeServices</a>
+     * response. The <code>Name</code> element contains the corresponding
+     * friendly name.
      *
-     * @param code The code for an AWS service returned by <a>DescribeServices</a>
-     *         response. Has a corresponding name represented by Service.name.
+     * @param code The code for an AWS service returned by the <a>DescribeServices</a>
+     *         response. The <code>Name</code> element contains the corresponding
+     *         friendly name.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * The code for an AWS service returned by <a>DescribeServices</a>
-     * response. Has a corresponding name represented by Service.name.
+     * The code for an AWS service returned by the <a>DescribeServices</a>
+     * response. The <code>Name</code> element contains the corresponding
+     * friendly name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code The code for an AWS service returned by <a>DescribeServices</a>
-     *         response. Has a corresponding name represented by Service.name.
+     * @param code The code for an AWS service returned by the <a>DescribeServices</a>
+     *         response. The <code>Name</code> element contains the corresponding
+     *         friendly name.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -83,35 +91,35 @@ public class Service implements Serializable {
     }
 
     /**
-     * The friendly name for an AWS service. Has a corresponding code
-     * represented by Service.code.
+     * The friendly name for an AWS service. The <code>Code</code> element
+     * contains the corresponding code.
      *
-     * @return The friendly name for an AWS service. Has a corresponding code
-     *         represented by Service.code.
+     * @return The friendly name for an AWS service. The <code>Code</code> element
+     *         contains the corresponding code.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The friendly name for an AWS service. Has a corresponding code
-     * represented by Service.code.
+     * The friendly name for an AWS service. The <code>Code</code> element
+     * contains the corresponding code.
      *
-     * @param name The friendly name for an AWS service. Has a corresponding code
-     *         represented by Service.code.
+     * @param name The friendly name for an AWS service. The <code>Code</code> element
+     *         contains the corresponding code.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The friendly name for an AWS service. Has a corresponding code
-     * represented by Service.code.
+     * The friendly name for an AWS service. The <code>Code</code> element
+     * contains the corresponding code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The friendly name for an AWS service. Has a corresponding code
-     *         represented by Service.code.
+     * @param name The friendly name for an AWS service. The <code>Code</code> element
+     *         contains the corresponding code.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

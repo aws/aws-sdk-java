@@ -599,10 +599,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * @return The list of tags associated with the new workflow execution.
      */
     public java.util.List<String> getTagList() {
-        if (tagList == null) {
-              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              tagList.setAutoConstruct(true);
-        }
         return tagList;
     }
     

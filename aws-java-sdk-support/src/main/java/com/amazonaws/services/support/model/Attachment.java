@@ -17,38 +17,47 @@ package com.amazonaws.services.support.model;
 import java.io.Serializable;
 
 /**
- * Attachment
+ * <p>
+ * An attachment to a case communication. The attachment consists of the
+ * file name and the content of the file.
+ * </p>
  */
 public class Attachment implements Serializable {
 
+    /**
+     * The name of the attachment file.
+     */
     private String fileName;
 
+    /**
+     * The content of the attachment file.
+     */
     private java.nio.ByteBuffer data;
 
     /**
-     * Returns the value of the FileName property for this object.
+     * The name of the attachment file.
      *
-     * @return The value of the FileName property for this object.
+     * @return The name of the attachment file.
      */
     public String getFileName() {
         return fileName;
     }
     
     /**
-     * Sets the value of the FileName property for this object.
+     * The name of the attachment file.
      *
-     * @param fileName The new value for the FileName property for this object.
+     * @param fileName The name of the attachment file.
      */
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
     
     /**
-     * Sets the value of the FileName property for this object.
+     * The name of the attachment file.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fileName The new value for the FileName property for this object.
+     * @param fileName The name of the attachment file.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -59,29 +68,29 @@ public class Attachment implements Serializable {
     }
 
     /**
-     * Returns the value of the Data property for this object.
+     * The content of the attachment file.
      *
-     * @return The value of the Data property for this object.
+     * @return The content of the attachment file.
      */
     public java.nio.ByteBuffer getData() {
         return data;
     }
     
     /**
-     * Sets the value of the Data property for this object.
+     * The content of the attachment file.
      *
-     * @param data The new value for the Data property for this object.
+     * @param data The content of the attachment file.
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
     
     /**
-     * Sets the value of the Data property for this object.
+     * The content of the attachment file.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param data The new value for the Data property for this object.
+     * @param data The content of the attachment file.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Exposes the fields used by a communication for an AWS Support case.
+ * A communication associated with an AWS Support case. The communication
+ * consists of the case ID, the message body, attachment information, the
+ * account email address, and the date and time of the communication.
  * </p>
  */
 public class Communication implements Serializable {
@@ -41,10 +43,13 @@ public class Communication implements Serializable {
     private String submittedBy;
 
     /**
-     * The time the support case was created.
+     * The time the communication was created.
      */
     private String timeCreated;
 
+    /**
+     * Information about the attachments to the case communication.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails> attachmentSet;
 
     /**
@@ -159,29 +164,29 @@ public class Communication implements Serializable {
     }
 
     /**
-     * The time the support case was created.
+     * The time the communication was created.
      *
-     * @return The time the support case was created.
+     * @return The time the communication was created.
      */
     public String getTimeCreated() {
         return timeCreated;
     }
     
     /**
-     * The time the support case was created.
+     * The time the communication was created.
      *
-     * @param timeCreated The time the support case was created.
+     * @param timeCreated The time the communication was created.
      */
     public void setTimeCreated(String timeCreated) {
         this.timeCreated = timeCreated;
     }
     
     /**
-     * The time the support case was created.
+     * The time the communication was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timeCreated The time the support case was created.
+     * @param timeCreated The time the communication was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -192,9 +197,9 @@ public class Communication implements Serializable {
     }
 
     /**
-     * Returns the value of the AttachmentSet property for this object.
+     * Information about the attachments to the case communication.
      *
-     * @return The value of the AttachmentSet property for this object.
+     * @return Information about the attachments to the case communication.
      */
     public java.util.List<AttachmentDetails> getAttachmentSet() {
         if (attachmentSet == null) {
@@ -205,9 +210,9 @@ public class Communication implements Serializable {
     }
     
     /**
-     * Sets the value of the AttachmentSet property for this object.
+     * Information about the attachments to the case communication.
      *
-     * @param attachmentSet The new value for the AttachmentSet property for this object.
+     * @param attachmentSet Information about the attachments to the case communication.
      */
     public void setAttachmentSet(java.util.Collection<AttachmentDetails> attachmentSet) {
         if (attachmentSet == null) {
@@ -220,11 +225,11 @@ public class Communication implements Serializable {
     }
     
     /**
-     * Sets the value of the AttachmentSet property for this object.
+     * Information about the attachments to the case communication.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachmentSet The new value for the AttachmentSet property for this object.
+     * @param attachmentSet Information about the attachments to the case communication.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -238,11 +243,11 @@ public class Communication implements Serializable {
     }
     
     /**
-     * Sets the value of the AttachmentSet property for this object.
+     * Information about the attachments to the case communication.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachmentSet The new value for the AttachmentSet property for this object.
+     * @param attachmentSet Information about the attachments to the case communication.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

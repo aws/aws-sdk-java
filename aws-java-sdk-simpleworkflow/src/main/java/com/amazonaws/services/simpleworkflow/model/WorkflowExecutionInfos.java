@@ -44,10 +44,6 @@ public class WorkflowExecutionInfos implements Serializable {
      * @return The list of workflow information structures.
      */
     public java.util.List<WorkflowExecutionInfo> getExecutionInfos() {
-        if (executionInfos == null) {
-              executionInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowExecutionInfo>();
-              executionInfos.setAutoConstruct(true);
-        }
         return executionInfos;
     }
     

@@ -50,7 +50,9 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     * <a>DescribeTrustedAdvisorChecks</a>.
+     * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     * data that is shown in the Excel download, even in those cases where
+     * the UI shows just summary data.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> metadata;
 
@@ -213,12 +215,16 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     * <a>DescribeTrustedAdvisorChecks</a>.
+     * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     * data that is shown in the Excel download, even in those cases where
+     * the UI shows just summary data.
      *
      * @return Additional information about the identified resource. The exact
      *         metadata and its order can be obtained by inspecting the
      *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     *         <a>DescribeTrustedAdvisorChecks</a>.
+     *         <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     *         data that is shown in the Excel download, even in those cases where
+     *         the UI shows just summary data.
      */
     public java.util.List<String> getMetadata() {
         if (metadata == null) {
@@ -232,12 +238,16 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     * <a>DescribeTrustedAdvisorChecks</a>.
+     * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     * data that is shown in the Excel download, even in those cases where
+     * the UI shows just summary data.
      *
      * @param metadata Additional information about the identified resource. The exact
      *         metadata and its order can be obtained by inspecting the
      *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     *         <a>DescribeTrustedAdvisorChecks</a>.
+     *         <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     *         data that is shown in the Excel download, even in those cases where
+     *         the UI shows just summary data.
      */
     public void setMetadata(java.util.Collection<String> metadata) {
         if (metadata == null) {
@@ -253,14 +263,18 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     * <a>DescribeTrustedAdvisorChecks</a>.
+     * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     * data that is shown in the Excel download, even in those cases where
+     * the UI shows just summary data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata Additional information about the identified resource. The exact
      *         metadata and its order can be obtained by inspecting the
      *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     *         <a>DescribeTrustedAdvisorChecks</a>.
+     *         <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     *         data that is shown in the Excel download, even in those cases where
+     *         the UI shows just summary data.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -277,14 +291,18 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     * <a>DescribeTrustedAdvisorChecks</a>.
+     * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     * data that is shown in the Excel download, even in those cases where
+     * the UI shows just summary data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata Additional information about the identified resource. The exact
      *         metadata and its order can be obtained by inspecting the
      *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
-     *         <a>DescribeTrustedAdvisorChecks</a>.
+     *         <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
+     *         data that is shown in the Excel download, even in those cases where
+     *         the UI shows just summary data.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

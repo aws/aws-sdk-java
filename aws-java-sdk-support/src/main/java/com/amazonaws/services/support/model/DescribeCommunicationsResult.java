@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the following objects or data if successful. Otherwise,
- * returns an error.
+ * The communications returned by the DescribeCommunications operation.
  * </p>
  */
 public class DescribeCommunicationsResult implements Serializable {

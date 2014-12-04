@@ -66,12 +66,12 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
-        
+
         String expirationInSeconds = Long.toString(expiration.getTime() / 1000L);
 
         String canonicalString = RestUtils.makeS3CanonicalString(
                 httpVerb, resourcePath, request, expirationInSeconds);
-        
+
         String signature = super.signAndBase64Encode(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);
 
         request.addParameter("AWSAccessKeyId", sanitizedCredentials.getAWSAccessKeyId());
