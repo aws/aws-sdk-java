@@ -45,6 +45,10 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
             if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Assigning", targetDepth)) {
+                    context.nextToken();
+                    instancesCount.setAssigning(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Booting", targetDepth)) {
                     context.nextToken();
                     instancesCount.setBooting(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
@@ -52,6 +56,10 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
                 if (context.testExpression("ConnectionLost", targetDepth)) {
                     context.nextToken();
                     instancesCount.setConnectionLost(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Deregistering", targetDepth)) {
+                    context.nextToken();
+                    instancesCount.setDeregistering(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Online", targetDepth)) {
                     context.nextToken();
@@ -64,6 +72,14 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
                 if (context.testExpression("Rebooting", targetDepth)) {
                     context.nextToken();
                     instancesCount.setRebooting(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Registered", targetDepth)) {
+                    context.nextToken();
+                    instancesCount.setRegistered(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Registering", targetDepth)) {
+                    context.nextToken();
+                    instancesCount.setRegistering(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Requested", targetDepth)) {
                     context.nextToken();
@@ -100,6 +116,10 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
                 if (context.testExpression("Terminating", targetDepth)) {
                     context.nextToken();
                     instancesCount.setTerminating(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Unassigning", targetDepth)) {
+                    context.nextToken();
+                    instancesCount.setUnassigning(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

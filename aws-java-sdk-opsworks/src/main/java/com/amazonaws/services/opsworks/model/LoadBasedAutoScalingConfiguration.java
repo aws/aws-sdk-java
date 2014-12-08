@@ -34,15 +34,15 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
     private Boolean enable;
 
     /**
-     * A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     * the upscaling configuration, which defines how and when AWS OpsWorks
+     * An <code>AutoScalingThresholds</code> object that describes the
+     * upscaling configuration, which defines how and when AWS OpsWorks
      * increases the number of instances.
      */
     private AutoScalingThresholds upScaling;
 
     /**
-     * A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     * the downscaling configuration, which defines how and when AWS OpsWorks
+     * An <code>AutoScalingThresholds</code> object that describes the
+     * downscaling configuration, which defines how and when AWS OpsWorks
      * reduces the number of instances.
      */
     private AutoScalingThresholds downScaling;
@@ -123,12 +123,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
     }
 
     /**
-     * A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     * the upscaling configuration, which defines how and when AWS OpsWorks
+     * An <code>AutoScalingThresholds</code> object that describes the
+     * upscaling configuration, which defines how and when AWS OpsWorks
      * increases the number of instances.
      *
-     * @return A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     *         the upscaling configuration, which defines how and when AWS OpsWorks
+     * @return An <code>AutoScalingThresholds</code> object that describes the
+     *         upscaling configuration, which defines how and when AWS OpsWorks
      *         increases the number of instances.
      */
     public AutoScalingThresholds getUpScaling() {
@@ -136,12 +136,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
     }
     
     /**
-     * A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     * the upscaling configuration, which defines how and when AWS OpsWorks
+     * An <code>AutoScalingThresholds</code> object that describes the
+     * upscaling configuration, which defines how and when AWS OpsWorks
      * increases the number of instances.
      *
-     * @param upScaling A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     *         the upscaling configuration, which defines how and when AWS OpsWorks
+     * @param upScaling An <code>AutoScalingThresholds</code> object that describes the
+     *         upscaling configuration, which defines how and when AWS OpsWorks
      *         increases the number of instances.
      */
     public void setUpScaling(AutoScalingThresholds upScaling) {
@@ -149,14 +149,14 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
     }
     
     /**
-     * A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     * the upscaling configuration, which defines how and when AWS OpsWorks
+     * An <code>AutoScalingThresholds</code> object that describes the
+     * upscaling configuration, which defines how and when AWS OpsWorks
      * increases the number of instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param upScaling A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     *         the upscaling configuration, which defines how and when AWS OpsWorks
+     * @param upScaling An <code>AutoScalingThresholds</code> object that describes the
+     *         upscaling configuration, which defines how and when AWS OpsWorks
      *         increases the number of instances.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -168,12 +168,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
     }
 
     /**
-     * A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     * the downscaling configuration, which defines how and when AWS OpsWorks
+     * An <code>AutoScalingThresholds</code> object that describes the
+     * downscaling configuration, which defines how and when AWS OpsWorks
      * reduces the number of instances.
      *
-     * @return A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     *         the downscaling configuration, which defines how and when AWS OpsWorks
+     * @return An <code>AutoScalingThresholds</code> object that describes the
+     *         downscaling configuration, which defines how and when AWS OpsWorks
      *         reduces the number of instances.
      */
     public AutoScalingThresholds getDownScaling() {
@@ -181,12 +181,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
     }
     
     /**
-     * A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     * the downscaling configuration, which defines how and when AWS OpsWorks
+     * An <code>AutoScalingThresholds</code> object that describes the
+     * downscaling configuration, which defines how and when AWS OpsWorks
      * reduces the number of instances.
      *
-     * @param downScaling A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     *         the downscaling configuration, which defines how and when AWS OpsWorks
+     * @param downScaling An <code>AutoScalingThresholds</code> object that describes the
+     *         downscaling configuration, which defines how and when AWS OpsWorks
      *         reduces the number of instances.
      */
     public void setDownScaling(AutoScalingThresholds downScaling) {
@@ -194,14 +194,14 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
     }
     
     /**
-     * A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     * the downscaling configuration, which defines how and when AWS OpsWorks
+     * An <code>AutoScalingThresholds</code> object that describes the
+     * downscaling configuration, which defines how and when AWS OpsWorks
      * reduces the number of instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param downScaling A <code>LoadBasedAutoscalingInstruction</code> object that describes
-     *         the downscaling configuration, which defines how and when AWS OpsWorks
+     * @param downScaling An <code>AutoScalingThresholds</code> object that describes the
+     *         downscaling configuration, which defines how and when AWS OpsWorks
      *         reduces the number of instances.
      *
      * @return A reference to this updated object so that method calls can be chained

@@ -70,10 +70,7 @@ public class Stack implements Serializable {
     private String defaultInstanceProfileArn;
 
     /**
-     * The stack's default operating system, which must be set to
-     * <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     * Linux</code>.
+     * The stack's default operating system.
      */
     private String defaultOs;
 
@@ -498,47 +495,29 @@ public class Stack implements Serializable {
     }
 
     /**
-     * The stack's default operating system, which must be set to
-     * <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     * Linux</code>.
+     * The stack's default operating system.
      *
-     * @return The stack's default operating system, which must be set to
-     *         <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     *         Linux</code>.
+     * @return The stack's default operating system.
      */
     public String getDefaultOs() {
         return defaultOs;
     }
     
     /**
-     * The stack's default operating system, which must be set to
-     * <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     * Linux</code>.
+     * The stack's default operating system.
      *
-     * @param defaultOs The stack's default operating system, which must be set to
-     *         <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     *         Linux</code>.
+     * @param defaultOs The stack's default operating system.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
     
     /**
-     * The stack's default operating system, which must be set to
-     * <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     * Linux</code>.
+     * The stack's default operating system.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultOs The stack's default operating system, which must be set to
-     *         <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     *         Linux</code>.
+     * @param defaultOs The stack's default operating system.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

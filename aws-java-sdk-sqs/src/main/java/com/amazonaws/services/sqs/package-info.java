@@ -28,6 +28,9 @@
  * <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a>
  * </li>
  * <li>
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html"> Using Amazon SQS Message Attributes </a>
+ * </li>
+ * <li>
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
  * </li>
  * <li>

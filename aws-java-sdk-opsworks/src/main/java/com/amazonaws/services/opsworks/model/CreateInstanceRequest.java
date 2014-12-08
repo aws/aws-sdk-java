@@ -60,16 +60,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     private String instanceType;
 
     /**
-     * The instance auto scaling type, which has three possible values: <ul>
-     * <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     * auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     * scaling instance, which is started and stopped based on a specified
-     * schedule. To specify the schedule, call
-     * <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     * A load-based auto scaling instance, which is started and stopped based
-     * on load metrics. To use load-based auto scaling, you must enable it
-     * for the instance layer and configure the thresholds by calling
-     * <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
@@ -82,15 +73,15 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     private String hostname;
 
     /**
-     * The instance operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
-     * LTS</code>.</li> <li>Custom AMIs: <code>Custom</code></li> </ul>
-     * <p>The default option is <code>Amazon Linux</code>. If you set this
-     * parameter to <code>Custom</code>, you must use the
-     * <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     * AMI that you want to use. For more information on the standard
-     * operating systems, see <a
+     * The instance's operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to
+     * <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     * AmiId parameter to specify the custom AMI that you want to use. For
+     * more information on the standard operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>For more information on how to use custom AMIs with
      * OpsWorks, see <a
@@ -103,7 +94,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * A custom AMI ID to be used to create the instance. The AMI should be
      * based on one of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu
      * 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>.
+     * <note>If you specify a custom AMI, you must set <code>Os</code> to
+     * <code>Custom</code>.</note>
      */
     private String amiId;
 
@@ -344,30 +337,12 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The instance auto scaling type, which has three possible values: <ul>
-     * <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     * auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     * scaling instance, which is started and stopped based on a specified
-     * schedule. To specify the schedule, call
-     * <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     * A load-based auto scaling instance, which is started and stopped based
-     * on load metrics. To use load-based auto scaling, you must enable it
-     * for the instance layer and configure the thresholds by calling
-     * <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @return The instance auto scaling type, which has three possible values: <ul>
-     *         <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     *         auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     *         scaling instance, which is started and stopped based on a specified
-     *         schedule. To specify the schedule, call
-     *         <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     *         A load-based auto scaling instance, which is started and stopped based
-     *         on load metrics. To use load-based auto scaling, you must enable it
-     *         for the instance layer and configure the thresholds by calling
-     *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * @return For load-based or time-based instances, the type.
      *
      * @see AutoScalingType
      */
@@ -376,30 +351,12 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The instance auto scaling type, which has three possible values: <ul>
-     * <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     * auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     * scaling instance, which is started and stopped based on a specified
-     * schedule. To specify the schedule, call
-     * <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     * A load-based auto scaling instance, which is started and stopped based
-     * on load metrics. To use load-based auto scaling, you must enable it
-     * for the instance layer and configure the thresholds by calling
-     * <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType The instance auto scaling type, which has three possible values: <ul>
-     *         <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     *         auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     *         scaling instance, which is started and stopped based on a specified
-     *         schedule. To specify the schedule, call
-     *         <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     *         A load-based auto scaling instance, which is started and stopped based
-     *         on load metrics. To use load-based auto scaling, you must enable it
-     *         for the instance layer and configure the thresholds by calling
-     *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * @param autoScalingType For load-based or time-based instances, the type.
      *
      * @see AutoScalingType
      */
@@ -408,32 +365,14 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The instance auto scaling type, which has three possible values: <ul>
-     * <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     * auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     * scaling instance, which is started and stopped based on a specified
-     * schedule. To specify the schedule, call
-     * <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     * A load-based auto scaling instance, which is started and stopped based
-     * on load metrics. To use load-based auto scaling, you must enable it
-     * for the instance layer and configure the thresholds by calling
-     * <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType The instance auto scaling type, which has three possible values: <ul>
-     *         <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     *         auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     *         scaling instance, which is started and stopped based on a specified
-     *         schedule. To specify the schedule, call
-     *         <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     *         A load-based auto scaling instance, which is started and stopped based
-     *         on load metrics. To use load-based auto scaling, you must enable it
-     *         for the instance layer and configure the thresholds by calling
-     *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * @param autoScalingType For load-based or time-based instances, the type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -446,30 +385,12 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The instance auto scaling type, which has three possible values: <ul>
-     * <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     * auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     * scaling instance, which is started and stopped based on a specified
-     * schedule. To specify the schedule, call
-     * <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     * A load-based auto scaling instance, which is started and stopped based
-     * on load metrics. To use load-based auto scaling, you must enable it
-     * for the instance layer and configure the thresholds by calling
-     * <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType The instance auto scaling type, which has three possible values: <ul>
-     *         <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     *         auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     *         scaling instance, which is started and stopped based on a specified
-     *         schedule. To specify the schedule, call
-     *         <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     *         A load-based auto scaling instance, which is started and stopped based
-     *         on load metrics. To use load-based auto scaling, you must enable it
-     *         for the instance layer and configure the thresholds by calling
-     *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * @param autoScalingType For load-based or time-based instances, the type.
      *
      * @see AutoScalingType
      */
@@ -478,32 +399,14 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The instance auto scaling type, which has three possible values: <ul>
-     * <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     * auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     * scaling instance, which is started and stopped based on a specified
-     * schedule. To specify the schedule, call
-     * <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     * A load-based auto scaling instance, which is started and stopped based
-     * on load metrics. To use load-based auto scaling, you must enable it
-     * for the instance layer and configure the thresholds by calling
-     * <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType The instance auto scaling type, which has three possible values: <ul>
-     *         <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
-     *         auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based auto
-     *         scaling instance, which is started and stopped based on a specified
-     *         schedule. To specify the schedule, call
-     *         <a>SetTimeBasedAutoScaling</a>.</li> <li><b>LoadBasedAutoScaling</b>:
-     *         A load-based auto scaling instance, which is started and stopped based
-     *         on load metrics. To use load-based auto scaling, you must enable it
-     *         for the instance layer and configure the thresholds by calling
-     *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
+     * @param autoScalingType For load-based or time-based instances, the type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -549,30 +452,30 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The instance operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
-     * LTS</code>.</li> <li>Custom AMIs: <code>Custom</code></li> </ul>
-     * <p>The default option is <code>Amazon Linux</code>. If you set this
-     * parameter to <code>Custom</code>, you must use the
-     * <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     * AMI that you want to use. For more information on the standard
-     * operating systems, see <a
+     * The instance's operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to
+     * <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     * AmiId parameter to specify the custom AMI that you want to use. For
+     * more information on the standard operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>For more information on how to use custom AMIs with
      * OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.
      *
-     * @return The instance operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
-     *         LTS</code>.</li> <li>Custom AMIs: <code>Custom</code></li> </ul>
-     *         <p>The default option is <code>Amazon Linux</code>. If you set this
-     *         parameter to <code>Custom</code>, you must use the
-     *         <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     *         AMI that you want to use. For more information on the standard
-     *         operating systems, see <a
+     * @return The instance's operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is the current
+     *         Amazon Linux version. If you set this parameter to
+     *         <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     *         AmiId parameter to specify the custom AMI that you want to use. For
+     *         more information on the standard operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      *         Systems</a>For more information on how to use custom AMIs with
      *         OpsWorks, see <a
@@ -584,30 +487,30 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The instance operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
-     * LTS</code>.</li> <li>Custom AMIs: <code>Custom</code></li> </ul>
-     * <p>The default option is <code>Amazon Linux</code>. If you set this
-     * parameter to <code>Custom</code>, you must use the
-     * <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     * AMI that you want to use. For more information on the standard
-     * operating systems, see <a
+     * The instance's operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to
+     * <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     * AmiId parameter to specify the custom AMI that you want to use. For
+     * more information on the standard operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>For more information on how to use custom AMIs with
      * OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.
      *
-     * @param os The instance operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
-     *         LTS</code>.</li> <li>Custom AMIs: <code>Custom</code></li> </ul>
-     *         <p>The default option is <code>Amazon Linux</code>. If you set this
-     *         parameter to <code>Custom</code>, you must use the
-     *         <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     *         AMI that you want to use. For more information on the standard
-     *         operating systems, see <a
+     * @param os The instance's operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is the current
+     *         Amazon Linux version. If you set this parameter to
+     *         <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     *         AmiId parameter to specify the custom AMI that you want to use. For
+     *         more information on the standard operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      *         Systems</a>For more information on how to use custom AMIs with
      *         OpsWorks, see <a
@@ -619,15 +522,15 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The instance operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
-     * LTS</code>.</li> <li>Custom AMIs: <code>Custom</code></li> </ul>
-     * <p>The default option is <code>Amazon Linux</code>. If you set this
-     * parameter to <code>Custom</code>, you must use the
-     * <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     * AMI that you want to use. For more information on the standard
-     * operating systems, see <a
+     * The instance's operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to
+     * <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     * AmiId parameter to specify the custom AMI that you want to use. For
+     * more information on the standard operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>For more information on how to use custom AMIs with
      * OpsWorks, see <a
@@ -636,15 +539,15 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param os The instance operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
-     *         LTS</code>.</li> <li>Custom AMIs: <code>Custom</code></li> </ul>
-     *         <p>The default option is <code>Amazon Linux</code>. If you set this
-     *         parameter to <code>Custom</code>, you must use the
-     *         <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     *         AMI that you want to use. For more information on the standard
-     *         operating systems, see <a
+     * @param os The instance's operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is the current
+     *         Amazon Linux version. If you set this parameter to
+     *         <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     *         AmiId parameter to specify the custom AMI that you want to use. For
+     *         more information on the standard operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      *         Systems</a>For more information on how to use custom AMIs with
      *         OpsWorks, see <a
@@ -663,12 +566,16 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * A custom AMI ID to be used to create the instance. The AMI should be
      * based on one of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu
      * 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>.
+     * <note>If you specify a custom AMI, you must set <code>Os</code> to
+     * <code>Custom</code>.</note>
      *
      * @return A custom AMI ID to be used to create the instance. The AMI should be
      *         based on one of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu
      *         12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>.
+     *         <note>If you specify a custom AMI, you must set <code>Os</code> to
+     *         <code>Custom</code>.</note>
      */
     public String getAmiId() {
         return amiId;
@@ -678,12 +585,16 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * A custom AMI ID to be used to create the instance. The AMI should be
      * based on one of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu
      * 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>.
+     * <note>If you specify a custom AMI, you must set <code>Os</code> to
+     * <code>Custom</code>.</note>
      *
      * @param amiId A custom AMI ID to be used to create the instance. The AMI should be
      *         based on one of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu
      *         12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>.
+     *         <note>If you specify a custom AMI, you must set <code>Os</code> to
+     *         <code>Custom</code>.</note>
      */
     public void setAmiId(String amiId) {
         this.amiId = amiId;
@@ -693,14 +604,18 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * A custom AMI ID to be used to create the instance. The AMI should be
      * based on one of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu
      * 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>.
+     * <note>If you specify a custom AMI, you must set <code>Os</code> to
+     * <code>Custom</code>.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param amiId A custom AMI ID to be used to create the instance. The AMI should be
      *         based on one of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu
      *         12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>.
+     *         <note>If you specify a custom AMI, you must set <code>Os</code> to
+     *         <code>Custom</code>.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

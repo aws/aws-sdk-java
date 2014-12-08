@@ -46,6 +46,9 @@ import com.amazonaws.services.sqs.model.*;
  * <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a>
  * </li>
  * <li>
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html"> Using Amazon SQS Message Attributes </a>
+ * </li>
+ * <li>
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
  * </li>
  * <li>
@@ -491,6 +494,41 @@ public interface AmazonSQS {
 
     /**
      * <p>
+     * Deletes the messages in a queue specified by the <b>queue URL</b> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>When you use the PurgeQueue API, the deleted
+     * messages in the queue cannot be retrieved.
+     * </p>
+     * <p>
+     * When you purge a queue, the message deletion process takes up to 60
+     * seconds. All messages sent to the queue before calling
+     * <code>PurgeQueue</code> will be deleted; messages sent to the queue
+     * while it is being purged may be deleted. While the queue is being
+     * purged, messages sent to the queue before <code>PurgeQueue</code> was
+     * called may be received, but will be deleted within the next minute.
+     * </p>
+     *
+     * @param purgeQueueRequest Container for the necessary parameters to
+     *           execute the PurgeQueue service method on AmazonSQS.
+     * 
+     * 
+     * @throws PurgeQueueInProgressException
+     * @throws QueueDoesNotExistException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void purgeQueue(PurgeQueueRequest purgeQueueRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a list of your queues that have the RedrivePolicy queue
      * attribute configured with a dead letter queue.
      * </p>
@@ -718,9 +756,9 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * Deletes multiple messages. This is a batch version of DeleteMessage.
-     * The result of the delete action on each message is reported
-     * individually in the response.
+     * Deletes up to ten messages from the specified queue. This is a batch
+     * version of DeleteMessage. The result of the delete action on each
+     * message is reported individually in the response.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Because the batch request can result in a
@@ -971,12 +1009,9 @@ public interface AmazonSQS {
      * SQS retains a message. Integer representing seconds, from 60 (1
      * minute) to 1209600 (14 days). The default for this attribute is 345600
      * (4 days).</li> <li><code>Policy</code> - The queue's policy. A valid
-     * form-url-encoded policy. For more information about policy structure,
-     * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/BasicStructure.html">Basic
-     * Policy Structure</a> in the <i>Amazon SQS Developer Guide</i>. For
-     * more information about form-url-encoding, see <a
-     * href="http://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2.1">http://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2.1</a>.</li>
+     * AWS policy. For more information about policy structure, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>.</li>
      * <li><code>ReceiveMessageWaitTimeSeconds</code> - The time for which a
      * ReceiveMessage call will wait for a message to arrive. An integer from
      * 0 to 20 (seconds). The default for this attribute is 0. </li>
@@ -1536,9 +1571,9 @@ public interface AmazonSQS {
     
     /**
      * <p>
-     * Deletes multiple messages. This is a batch version of DeleteMessage.
-     * The result of the delete action on each message is reported
-     * individually in the response.
+     * Deletes up to ten messages from the specified queue. This is a batch
+     * version of DeleteMessage. The result of the delete action on each
+     * message is reported individually in the response.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Because the batch request can result in a

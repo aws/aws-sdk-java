@@ -64,7 +64,7 @@ public class Deployment implements Serializable {
     private String comment;
 
     /**
-     * Used to specify a deployment operation.
+     * Used to specify a stack or deployment command.
      */
     private DeploymentCommand command;
 
@@ -355,29 +355,29 @@ public class Deployment implements Serializable {
     }
 
     /**
-     * Used to specify a deployment operation.
+     * Used to specify a stack or deployment command.
      *
-     * @return Used to specify a deployment operation.
+     * @return Used to specify a stack or deployment command.
      */
     public DeploymentCommand getCommand() {
         return command;
     }
     
     /**
-     * Used to specify a deployment operation.
+     * Used to specify a stack or deployment command.
      *
-     * @param command Used to specify a deployment operation.
+     * @param command Used to specify a stack or deployment command.
      */
     public void setCommand(DeploymentCommand command) {
         this.command = command;
     }
     
     /**
-     * Used to specify a deployment operation.
+     * Used to specify a stack or deployment command.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param command Used to specify a deployment operation.
+     * @param command Used to specify a stack or deployment command.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

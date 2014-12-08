@@ -51,6 +51,9 @@ import com.amazonaws.services.sqs.model.*;
  * <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a>
  * </li>
  * <li>
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html"> Using Amazon SQS Message Attributes </a>
+ * </li>
+ * <li>
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
  * </li>
  * <li>
@@ -805,6 +808,81 @@ public interface AmazonSQSAsync extends AmazonSQS {
 
     /**
      * <p>
+     * Deletes the messages in a queue specified by the <b>queue URL</b> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>When you use the PurgeQueue API, the deleted
+     * messages in the queue cannot be retrieved.
+     * </p>
+     * <p>
+     * When you purge a queue, the message deletion process takes up to 60
+     * seconds. All messages sent to the queue before calling
+     * <code>PurgeQueue</code> will be deleted; messages sent to the queue
+     * while it is being purged may be deleted. While the queue is being
+     * purged, messages sent to the queue before <code>PurgeQueue</code> was
+     * called may be received, but will be deleted within the next minute.
+     * </p>
+     *
+     * @param purgeQueueRequest Container for the necessary parameters to
+     *           execute the PurgeQueue operation on AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PurgeQueue service method, as returned by AmazonSQS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> purgeQueueAsync(PurgeQueueRequest purgeQueueRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes the messages in a queue specified by the <b>queue URL</b> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>When you use the PurgeQueue API, the deleted
+     * messages in the queue cannot be retrieved.
+     * </p>
+     * <p>
+     * When you purge a queue, the message deletion process takes up to 60
+     * seconds. All messages sent to the queue before calling
+     * <code>PurgeQueue</code> will be deleted; messages sent to the queue
+     * while it is being purged may be deleted. While the queue is being
+     * purged, messages sent to the queue before <code>PurgeQueue</code> was
+     * called may be received, but will be deleted within the next minute.
+     * </p>
+     *
+     * @param purgeQueueRequest Container for the necessary parameters to
+     *           execute the PurgeQueue operation on AmazonSQS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PurgeQueue service method, as returned by AmazonSQS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> purgeQueueAsync(PurgeQueueRequest purgeQueueRequest,
+            AsyncHandler<PurgeQueueRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a list of your queues that have the RedrivePolicy queue
      * attribute configured with a dead letter queue.
      * </p>
@@ -1280,9 +1358,9 @@ public interface AmazonSQSAsync extends AmazonSQS {
 
     /**
      * <p>
-     * Deletes multiple messages. This is a batch version of DeleteMessage.
-     * The result of the delete action on each message is reported
-     * individually in the response.
+     * Deletes up to ten messages from the specified queue. This is a batch
+     * version of DeleteMessage. The result of the delete action on each
+     * message is reported individually in the response.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Because the batch request can result in a
@@ -1323,9 +1401,9 @@ public interface AmazonSQSAsync extends AmazonSQS {
 
     /**
      * <p>
-     * Deletes multiple messages. This is a batch version of DeleteMessage.
-     * The result of the delete action on each message is reported
-     * individually in the response.
+     * Deletes up to ten messages from the specified queue. This is a batch
+     * version of DeleteMessage. The result of the delete action on each
+     * message is reported individually in the response.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Because the batch request can result in a
