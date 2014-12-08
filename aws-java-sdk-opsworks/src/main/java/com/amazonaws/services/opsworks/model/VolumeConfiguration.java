@@ -46,7 +46,9 @@ public class VolumeConfiguration implements Serializable {
     private Integer size;
 
     /**
-     * The volume type, standard or PIOPS.
+     * The volume type: <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     * <li><code>gp2</code> - General Purpose (SSD)</li> </ul>
      */
     private String volumeType;
 
@@ -200,29 +202,41 @@ public class VolumeConfiguration implements Serializable {
     }
 
     /**
-     * The volume type, standard or PIOPS.
+     * The volume type: <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     * <li><code>gp2</code> - General Purpose (SSD)</li> </ul>
      *
-     * @return The volume type, standard or PIOPS.
+     * @return The volume type: <ul> <li><code>standard</code> - Magnetic</li>
+     *         <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     *         <li><code>gp2</code> - General Purpose (SSD)</li> </ul>
      */
     public String getVolumeType() {
         return volumeType;
     }
     
     /**
-     * The volume type, standard or PIOPS.
+     * The volume type: <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     * <li><code>gp2</code> - General Purpose (SSD)</li> </ul>
      *
-     * @param volumeType The volume type, standard or PIOPS.
+     * @param volumeType The volume type: <ul> <li><code>standard</code> - Magnetic</li>
+     *         <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     *         <li><code>gp2</code> - General Purpose (SSD)</li> </ul>
      */
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
     
     /**
-     * The volume type, standard or PIOPS.
+     * The volume type: <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     * <li><code>gp2</code> - General Purpose (SSD)</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeType The volume type, standard or PIOPS.
+     * @param volumeType The volume type: <ul> <li><code>standard</code> - Magnetic</li>
+     *         <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     *         <li><code>gp2</code> - General Purpose (SSD)</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

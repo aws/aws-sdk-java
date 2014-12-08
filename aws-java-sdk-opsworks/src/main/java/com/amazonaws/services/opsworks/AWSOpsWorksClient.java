@@ -681,8 +681,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
-     * Deletes a specified instance. You must stop an instance before you
-     * can delete it. For more information, see
+     * Deletes a specified instance, which terminates the associated Amazon
+     * EC2 instance. You must stop an instance before you can delete it.
+     * </p>
+     * <p>
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"> Deleting Instances </a>
      * .
      * </p>
@@ -1493,6 +1496,60 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
+     * Unassigns a registered instance from all of it's layers. The instance
+     * remains in the stack as an unassigned instance and can be assigned to
+     * another layer, as needed. You cannot use this action with instances
+     * that were created with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param unassignInstanceRequest Container for the necessary parameters
+     *           to execute the UnassignInstance service method on AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void unassignInstance(UnassignInstanceRequest unassignInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(unassignInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnassignInstanceRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnassignInstanceRequestMarshaller().marshall(unassignInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * Describes AWS OpsWorks service errors.
      * </p>
      * <p>
@@ -1839,7 +1896,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     /**
      * <p>
      * Deletes a specified stack. You must first delete all instances,
-     * layers, and apps. For more information, see
+     * layers, and apps or deregister registered instances. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html"> Shut Down a Stack </a>
      * .
      * </p>
@@ -2058,6 +2116,75 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
     
+    /**
+     * <p>
+     * Registers instances with a specified stack that were created outside
+     * of AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>We do not recommend using this action to register
+     * instances. The complete registration operation has two primary steps,
+     * installing the AWS OpsWorks agent on the instance and registering the
+     * instance with the stack. RegisterInstance handles only the second
+     * step. You should instead use the AWS CLI register command, which
+     * performs the entire registration operation.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param registerInstanceRequest Container for the necessary parameters
+     *           to execute the RegisterInstance service method on AWSOpsWorks.
+     * 
+     * @return The response from the RegisterInstance service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RegisterInstanceResult registerInstance(RegisterInstanceRequest registerInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterInstanceRequest> request = null;
+        Response<RegisterInstanceResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterInstanceRequestMarshaller().marshall(registerInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<RegisterInstanceResult, JsonUnmarshallerContext> unmarshaller =
+                new RegisterInstanceResultJsonUnmarshaller();
+            JsonResponseHandler<RegisterInstanceResult> responseHandler =
+                new JsonResponseHandler<RegisterInstanceResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
     /**
      * <p>
      * Updates a specified user profile.
@@ -2334,6 +2461,67 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
     
+    /**
+     * <p>
+     * Requests a description of a stack's provisioning parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param describeStackProvisioningParametersRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeStackProvisioningParameters service method on AWSOpsWorks.
+     * 
+     * @return The response from the DescribeStackProvisioningParameters
+     *         service method, as returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStackProvisioningParametersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStackProvisioningParametersRequest> request = null;
+        Response<DescribeStackProvisioningParametersResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStackProvisioningParametersRequestMarshaller().marshall(describeStackProvisioningParametersRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeStackProvisioningParametersResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeStackProvisioningParametersResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeStackProvisioningParametersResult> responseHandler =
+                new JsonResponseHandler<DescribeStackProvisioningParametersResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
     /**
      * <p>
      * Deregisters a specified Elastic IP address. The address can then be
@@ -2752,8 +2940,116 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
+     * Assign a registered instance to a custom layer. You cannot use this
+     * action with instances that were created with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param assignInstanceRequest Container for the necessary parameters to
+     *           execute the AssignInstance service method on AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void assignInstance(AssignInstanceRequest assignInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(assignInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssignInstanceRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssignInstanceRequestMarshaller().marshall(assignInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deregister a registered Amazon EC2 or on-premises instance. This
+     * action removes the instance from the stack and returns it to your
+     * control. This action can not be used with instances that were created
+     * with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param deregisterInstanceRequest Container for the necessary
+     *           parameters to execute the DeregisterInstance service method on
+     *           AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deregisterInstance(DeregisterInstanceRequest deregisterInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterInstanceRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterInstanceRequestMarshaller().marshall(deregisterInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * Deletes a specified layer. You must first stop and then delete all
-     * associated instances. For more information, see
+     * associated instances or unassign registered instances. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html"> How to Delete a Layer </a>
      * .
      * </p>
@@ -2791,6 +3087,61 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteLayerRequestMarshaller().marshall(deleteLayerRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
+     * Specify the time-based auto scaling configuration for a specified
+     * instance. For more information, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"> Managing Load with Time-based and Load-based Instances </a>
+     * .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param setTimeBasedAutoScalingRequest Container for the necessary
+     *           parameters to execute the SetTimeBasedAutoScaling service method on
+     *           AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) {
+        ExecutionContext executionContext = createExecutionContext(setTimeBasedAutoScalingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetTimeBasedAutoScalingRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetTimeBasedAutoScalingRequestMarshaller().marshall(setTimeBasedAutoScalingRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2862,61 +3213,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-    /**
-     * <p>
-     * Specify the time-based auto scaling configuration for a specified
-     * instance. For more information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"> Managing Load with Time-based and Load-based Instances </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param setTimeBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetTimeBasedAutoScaling service method on
-     *           AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) {
-        ExecutionContext executionContext = createExecutionContext(setTimeBasedAutoScalingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<SetTimeBasedAutoScalingRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new SetTimeBasedAutoScalingRequestMarshaller().marshall(setTimeBasedAutoScalingRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
     /**
      * <p>
      * Creates an app for a specified stack. For more information, see
@@ -3035,56 +3331,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Deletes a user profile.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deleteUserProfileRequest Container for the necessary parameters
-     *           to execute the DeleteUserProfile service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteUserProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteUserProfileRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteUserProfileRequestMarshaller().marshall(deleteUserProfileRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
      * Describes time-based auto scaling configurations for specified
      * instances.
      * </p>
@@ -3148,6 +3394,56 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
+    /**
+     * <p>
+     * Deletes a user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param deleteUserProfileRequest Container for the necessary parameters
+     *           to execute the DeleteUserProfile service method on AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteUserProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserProfileRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserProfileRequestMarshaller().marshall(deleteUserProfileRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
     /**
      * <p>
      * Describe specified users.
@@ -3693,19 +3989,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Deploys a stack or app.
-     * </p>
-     * 
-     * <ul>
-     * <li>App deployment generates a <code>deploy</code> event, which runs
-     * the associated recipes and passes them a JSON stack configuration
-     * object that includes information about the app. </li>
-     * <li>Stack deployment runs the <code>deploy</code> recipes but does
-     * not raise an event.</li>
-     * 
-     * </ul>
-     * <p>
-     * For more information, see
+     * Runs deployment or stack commands. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"> Deploying Apps </a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"> Run Stack Commands </a>
      * .
      * </p>

@@ -133,6 +133,11 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     private Boolean useEbsOptimizedInstances;
 
     /**
+     * <p/>
+     */
+    private LifecycleEventConfiguration lifecycleEventConfiguration;
+
+    /**
      * The layer ID.
      *
      * @return The layer ID.
@@ -972,6 +977,39 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * <p/>
+     *
+     * @return <p/>
+     */
+    public LifecycleEventConfiguration getLifecycleEventConfiguration() {
+        return lifecycleEventConfiguration;
+    }
+    
+    /**
+     * <p/>
+     *
+     * @param lifecycleEventConfiguration <p/>
+     */
+    public void setLifecycleEventConfiguration(LifecycleEventConfiguration lifecycleEventConfiguration) {
+        this.lifecycleEventConfiguration = lifecycleEventConfiguration;
+    }
+    
+    /**
+     * <p/>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param lifecycleEventConfiguration <p/>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateLayerRequest withLifecycleEventConfiguration(LifecycleEventConfiguration lifecycleEventConfiguration) {
+        this.lifecycleEventConfiguration = lifecycleEventConfiguration;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -996,7 +1034,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (isAutoAssignPublicIps() != null) sb.append("AutoAssignPublicIps: " + isAutoAssignPublicIps() + ",");
         if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ",");
         if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
-        if (isUseEbsOptimizedInstances() != null) sb.append("UseEbsOptimizedInstances: " + isUseEbsOptimizedInstances() );
+        if (isUseEbsOptimizedInstances() != null) sb.append("UseEbsOptimizedInstances: " + isUseEbsOptimizedInstances() + ",");
+        if (getLifecycleEventConfiguration() != null) sb.append("LifecycleEventConfiguration: " + getLifecycleEventConfiguration() );
         sb.append("}");
         return sb.toString();
     }
@@ -1020,6 +1059,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getCustomRecipes() == null) ? 0 : getCustomRecipes().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         hashCode = prime * hashCode + ((isUseEbsOptimizedInstances() == null) ? 0 : isUseEbsOptimizedInstances().hashCode()); 
+        hashCode = prime * hashCode + ((getLifecycleEventConfiguration() == null) ? 0 : getLifecycleEventConfiguration().hashCode()); 
         return hashCode;
     }
     
@@ -1059,6 +1099,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         if (other.isUseEbsOptimizedInstances() == null ^ this.isUseEbsOptimizedInstances() == null) return false;
         if (other.isUseEbsOptimizedInstances() != null && other.isUseEbsOptimizedInstances().equals(this.isUseEbsOptimizedInstances()) == false) return false; 
+        if (other.getLifecycleEventConfiguration() == null ^ this.getLifecycleEventConfiguration() == null) return false;
+        if (other.getLifecycleEventConfiguration() != null && other.getLifecycleEventConfiguration().equals(this.getLifecycleEventConfiguration()) == false) return false; 
         return true;
     }
     

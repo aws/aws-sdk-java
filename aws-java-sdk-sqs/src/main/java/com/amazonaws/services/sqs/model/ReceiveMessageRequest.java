@@ -109,25 +109,31 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      * <p> The following lists the names and descriptions of the attributes
      * that can be returned: <ul> <li><code>All</code> - returns all
      * values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     * returns the time when the message was first received (epoch time in
-     * milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     * the number of times a message has been received but not deleted.</li>
+     * returns the time when the message was first received from the queue
+     * (epoch time in milliseconds).</li>
+     * <li><code>ApproximateReceiveCount</code> - returns the number of times
+     * a message has been received from the queue but not deleted.</li>
      * <li><code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
      * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent (epoch time in milliseconds).</li> </ul>
+     * sent to the queue (epoch time in milliseconds).</li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNames;
 
     /**
-     * The message attribute Name can contain the following characters: A-Z,
-     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     * attribute name must not start or end with a period, and it should not
-     * have successive periods. The message attribute name is case sensitive
-     * and must be unique among all attribute names for the message. The
-     * message attribute name can be up to 256 characters long. Attribute
-     * names cannot start with "AWS." or "Amazon." because these prefixes are
-     * reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index. The
+     * message attribute name can contain the following characters: A-Z, a-z,
+     * 0-9, underscore (_), hyphen (-), and period (.). The name must not
+     * start or end with a period, and it should not have successive periods.
+     * The name is case sensitive and must be unique among all attribute
+     * names for the message. The name can be up to 256 characters long. The
+     * name cannot start with "AWS." or "Amazon." (or any variations in
+     * casing), because these prefixes are reserved for use by Amazon Web
+     * Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the
+     * attributes by specifying "All" or ".*" in your request. You can also
+     * use "foo.*" to return all message attributes starting with the "foo"
+     * prefix.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> messageAttributeNames;
 
@@ -208,25 +214,27 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      * <p> The following lists the names and descriptions of the attributes
      * that can be returned: <ul> <li><code>All</code> - returns all
      * values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     * returns the time when the message was first received (epoch time in
-     * milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     * the number of times a message has been received but not deleted.</li>
+     * returns the time when the message was first received from the queue
+     * (epoch time in milliseconds).</li>
+     * <li><code>ApproximateReceiveCount</code> - returns the number of times
+     * a message has been received from the queue but not deleted.</li>
      * <li><code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
      * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent (epoch time in milliseconds).</li> </ul>
+     * sent to the queue (epoch time in milliseconds).</li> </ul>
      *
      * @return A list of attributes that need to be returned along with each message.
      *         <p> The following lists the names and descriptions of the attributes
      *         that can be returned: <ul> <li><code>All</code> - returns all
      *         values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     *         returns the time when the message was first received (epoch time in
-     *         milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     *         the number of times a message has been received but not deleted.</li>
+     *         returns the time when the message was first received from the queue
+     *         (epoch time in milliseconds).</li>
+     *         <li><code>ApproximateReceiveCount</code> - returns the number of times
+     *         a message has been received from the queue but not deleted.</li>
      *         <li><code>SenderId</code> - returns the AWS account number (or the IP
      *         address, if anonymous access is allowed) of the sender.</li>
      *         <li><code>SentTimestamp</code> - returns the time when the message was
-     *         sent (epoch time in milliseconds).</li> </ul>
+     *         sent to the queue (epoch time in milliseconds).</li> </ul>
      */
     public java.util.List<String> getAttributeNames() {
         if (attributeNames == null) {
@@ -241,25 +249,27 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      * <p> The following lists the names and descriptions of the attributes
      * that can be returned: <ul> <li><code>All</code> - returns all
      * values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     * returns the time when the message was first received (epoch time in
-     * milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     * the number of times a message has been received but not deleted.</li>
+     * returns the time when the message was first received from the queue
+     * (epoch time in milliseconds).</li>
+     * <li><code>ApproximateReceiveCount</code> - returns the number of times
+     * a message has been received from the queue but not deleted.</li>
      * <li><code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
      * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent (epoch time in milliseconds).</li> </ul>
+     * sent to the queue (epoch time in milliseconds).</li> </ul>
      *
      * @param attributeNames A list of attributes that need to be returned along with each message.
      *         <p> The following lists the names and descriptions of the attributes
      *         that can be returned: <ul> <li><code>All</code> - returns all
      *         values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     *         returns the time when the message was first received (epoch time in
-     *         milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     *         the number of times a message has been received but not deleted.</li>
+     *         returns the time when the message was first received from the queue
+     *         (epoch time in milliseconds).</li>
+     *         <li><code>ApproximateReceiveCount</code> - returns the number of times
+     *         a message has been received from the queue but not deleted.</li>
      *         <li><code>SenderId</code> - returns the AWS account number (or the IP
      *         address, if anonymous access is allowed) of the sender.</li>
      *         <li><code>SentTimestamp</code> - returns the time when the message was
-     *         sent (epoch time in milliseconds).</li> </ul>
+     *         sent to the queue (epoch time in milliseconds).</li> </ul>
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
@@ -276,13 +286,14 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      * <p> The following lists the names and descriptions of the attributes
      * that can be returned: <ul> <li><code>All</code> - returns all
      * values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     * returns the time when the message was first received (epoch time in
-     * milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     * the number of times a message has been received but not deleted.</li>
+     * returns the time when the message was first received from the queue
+     * (epoch time in milliseconds).</li>
+     * <li><code>ApproximateReceiveCount</code> - returns the number of times
+     * a message has been received from the queue but not deleted.</li>
      * <li><code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
      * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent (epoch time in milliseconds).</li> </ul>
+     * sent to the queue (epoch time in milliseconds).</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -290,13 +301,14 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         <p> The following lists the names and descriptions of the attributes
      *         that can be returned: <ul> <li><code>All</code> - returns all
      *         values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     *         returns the time when the message was first received (epoch time in
-     *         milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     *         the number of times a message has been received but not deleted.</li>
+     *         returns the time when the message was first received from the queue
+     *         (epoch time in milliseconds).</li>
+     *         <li><code>ApproximateReceiveCount</code> - returns the number of times
+     *         a message has been received from the queue but not deleted.</li>
      *         <li><code>SenderId</code> - returns the AWS account number (or the IP
      *         address, if anonymous access is allowed) of the sender.</li>
      *         <li><code>SentTimestamp</code> - returns the time when the message was
-     *         sent (epoch time in milliseconds).</li> </ul>
+     *         sent to the queue (epoch time in milliseconds).</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -314,13 +326,14 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      * <p> The following lists the names and descriptions of the attributes
      * that can be returned: <ul> <li><code>All</code> - returns all
      * values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     * returns the time when the message was first received (epoch time in
-     * milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     * the number of times a message has been received but not deleted.</li>
+     * returns the time when the message was first received from the queue
+     * (epoch time in milliseconds).</li>
+     * <li><code>ApproximateReceiveCount</code> - returns the number of times
+     * a message has been received from the queue but not deleted.</li>
      * <li><code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
      * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent (epoch time in milliseconds).</li> </ul>
+     * sent to the queue (epoch time in milliseconds).</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -328,13 +341,14 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         <p> The following lists the names and descriptions of the attributes
      *         that can be returned: <ul> <li><code>All</code> - returns all
      *         values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     *         returns the time when the message was first received (epoch time in
-     *         milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     *         the number of times a message has been received but not deleted.</li>
+     *         returns the time when the message was first received from the queue
+     *         (epoch time in milliseconds).</li>
+     *         <li><code>ApproximateReceiveCount</code> - returns the number of times
+     *         a message has been received from the queue but not deleted.</li>
      *         <li><code>SenderId</code> - returns the AWS account number (or the IP
      *         address, if anonymous access is allowed) of the sender.</li>
      *         <li><code>SentTimestamp</code> - returns the time when the message was
-     *         sent (epoch time in milliseconds).</li> </ul>
+     *         sent to the queue (epoch time in milliseconds).</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -356,13 +370,14 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      * <p> The following lists the names and descriptions of the attributes
      * that can be returned: <ul> <li><code>All</code> - returns all
      * values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     * returns the time when the message was first received (epoch time in
-     * milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     * the number of times a message has been received but not deleted.</li>
+     * returns the time when the message was first received from the queue
+     * (epoch time in milliseconds).</li>
+     * <li><code>ApproximateReceiveCount</code> - returns the number of times
+     * a message has been received from the queue but not deleted.</li>
      * <li><code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
      * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent (epoch time in milliseconds).</li> </ul>
+     * sent to the queue (epoch time in milliseconds).</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -370,13 +385,14 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         <p> The following lists the names and descriptions of the attributes
      *         that can be returned: <ul> <li><code>All</code> - returns all
      *         values.</li> <li><code>ApproximateFirstReceiveTimestamp</code> -
-     *         returns the time when the message was first received (epoch time in
-     *         milliseconds).</li> <li><code>ApproximateReceiveCount</code> - returns
-     *         the number of times a message has been received but not deleted.</li>
+     *         returns the time when the message was first received from the queue
+     *         (epoch time in milliseconds).</li>
+     *         <li><code>ApproximateReceiveCount</code> - returns the number of times
+     *         a message has been received from the queue but not deleted.</li>
      *         <li><code>SenderId</code> - returns the AWS account number (or the IP
      *         address, if anonymous access is allowed) of the sender.</li>
      *         <li><code>SentTimestamp</code> - returns the time when the message was
-     *         sent (epoch time in milliseconds).</li> </ul>
+     *         sent to the queue (epoch time in milliseconds).</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -395,23 +411,33 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The message attribute Name can contain the following characters: A-Z,
-     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     * attribute name must not start or end with a period, and it should not
-     * have successive periods. The message attribute name is case sensitive
-     * and must be unique among all attribute names for the message. The
-     * message attribute name can be up to 256 characters long. Attribute
-     * names cannot start with "AWS." or "Amazon." because these prefixes are
-     * reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index. The
+     * message attribute name can contain the following characters: A-Z, a-z,
+     * 0-9, underscore (_), hyphen (-), and period (.). The name must not
+     * start or end with a period, and it should not have successive periods.
+     * The name is case sensitive and must be unique among all attribute
+     * names for the message. The name can be up to 256 characters long. The
+     * name cannot start with "AWS." or "Amazon." (or any variations in
+     * casing), because these prefixes are reserved for use by Amazon Web
+     * Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the
+     * attributes by specifying "All" or ".*" in your request. You can also
+     * use "foo.*" to return all message attributes starting with the "foo"
+     * prefix.
      *
-     * @return The message attribute Name can contain the following characters: A-Z,
-     *         a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     *         attribute name must not start or end with a period, and it should not
-     *         have successive periods. The message attribute name is case sensitive
-     *         and must be unique among all attribute names for the message. The
-     *         message attribute name can be up to 256 characters long. Attribute
-     *         names cannot start with "AWS." or "Amazon." because these prefixes are
-     *         reserved for use by Amazon Web Services.
+     * @return The name of the message attribute, where <i>N</i> is the index. The
+     *         message attribute name can contain the following characters: A-Z, a-z,
+     *         0-9, underscore (_), hyphen (-), and period (.). The name must not
+     *         start or end with a period, and it should not have successive periods.
+     *         The name is case sensitive and must be unique among all attribute
+     *         names for the message. The name can be up to 256 characters long. The
+     *         name cannot start with "AWS." or "Amazon." (or any variations in
+     *         casing), because these prefixes are reserved for use by Amazon Web
+     *         Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     *         list of attribute names to receive, or you can return all of the
+     *         attributes by specifying "All" or ".*" in your request. You can also
+     *         use "foo.*" to return all message attributes starting with the "foo"
+     *         prefix.
      */
     public java.util.List<String> getMessageAttributeNames() {
         if (messageAttributeNames == null) {
@@ -422,23 +448,33 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The message attribute Name can contain the following characters: A-Z,
-     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     * attribute name must not start or end with a period, and it should not
-     * have successive periods. The message attribute name is case sensitive
-     * and must be unique among all attribute names for the message. The
-     * message attribute name can be up to 256 characters long. Attribute
-     * names cannot start with "AWS." or "Amazon." because these prefixes are
-     * reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index. The
+     * message attribute name can contain the following characters: A-Z, a-z,
+     * 0-9, underscore (_), hyphen (-), and period (.). The name must not
+     * start or end with a period, and it should not have successive periods.
+     * The name is case sensitive and must be unique among all attribute
+     * names for the message. The name can be up to 256 characters long. The
+     * name cannot start with "AWS." or "Amazon." (or any variations in
+     * casing), because these prefixes are reserved for use by Amazon Web
+     * Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the
+     * attributes by specifying "All" or ".*" in your request. You can also
+     * use "foo.*" to return all message attributes starting with the "foo"
+     * prefix.
      *
-     * @param messageAttributeNames The message attribute Name can contain the following characters: A-Z,
-     *         a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     *         attribute name must not start or end with a period, and it should not
-     *         have successive periods. The message attribute name is case sensitive
-     *         and must be unique among all attribute names for the message. The
-     *         message attribute name can be up to 256 characters long. Attribute
-     *         names cannot start with "AWS." or "Amazon." because these prefixes are
-     *         reserved for use by Amazon Web Services.
+     * @param messageAttributeNames The name of the message attribute, where <i>N</i> is the index. The
+     *         message attribute name can contain the following characters: A-Z, a-z,
+     *         0-9, underscore (_), hyphen (-), and period (.). The name must not
+     *         start or end with a period, and it should not have successive periods.
+     *         The name is case sensitive and must be unique among all attribute
+     *         names for the message. The name can be up to 256 characters long. The
+     *         name cannot start with "AWS." or "Amazon." (or any variations in
+     *         casing), because these prefixes are reserved for use by Amazon Web
+     *         Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     *         list of attribute names to receive, or you can return all of the
+     *         attributes by specifying "All" or ".*" in your request. You can also
+     *         use "foo.*" to return all message attributes starting with the "foo"
+     *         prefix.
      */
     public void setMessageAttributeNames(java.util.Collection<String> messageAttributeNames) {
         if (messageAttributeNames == null) {
@@ -451,25 +487,35 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The message attribute Name can contain the following characters: A-Z,
-     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     * attribute name must not start or end with a period, and it should not
-     * have successive periods. The message attribute name is case sensitive
-     * and must be unique among all attribute names for the message. The
-     * message attribute name can be up to 256 characters long. Attribute
-     * names cannot start with "AWS." or "Amazon." because these prefixes are
-     * reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index. The
+     * message attribute name can contain the following characters: A-Z, a-z,
+     * 0-9, underscore (_), hyphen (-), and period (.). The name must not
+     * start or end with a period, and it should not have successive periods.
+     * The name is case sensitive and must be unique among all attribute
+     * names for the message. The name can be up to 256 characters long. The
+     * name cannot start with "AWS." or "Amazon." (or any variations in
+     * casing), because these prefixes are reserved for use by Amazon Web
+     * Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the
+     * attributes by specifying "All" or ".*" in your request. You can also
+     * use "foo.*" to return all message attributes starting with the "foo"
+     * prefix.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageAttributeNames The message attribute Name can contain the following characters: A-Z,
-     *         a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     *         attribute name must not start or end with a period, and it should not
-     *         have successive periods. The message attribute name is case sensitive
-     *         and must be unique among all attribute names for the message. The
-     *         message attribute name can be up to 256 characters long. Attribute
-     *         names cannot start with "AWS." or "Amazon." because these prefixes are
-     *         reserved for use by Amazon Web Services.
+     * @param messageAttributeNames The name of the message attribute, where <i>N</i> is the index. The
+     *         message attribute name can contain the following characters: A-Z, a-z,
+     *         0-9, underscore (_), hyphen (-), and period (.). The name must not
+     *         start or end with a period, and it should not have successive periods.
+     *         The name is case sensitive and must be unique among all attribute
+     *         names for the message. The name can be up to 256 characters long. The
+     *         name cannot start with "AWS." or "Amazon." (or any variations in
+     *         casing), because these prefixes are reserved for use by Amazon Web
+     *         Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     *         list of attribute names to receive, or you can return all of the
+     *         attributes by specifying "All" or ".*" in your request. You can also
+     *         use "foo.*" to return all message attributes starting with the "foo"
+     *         prefix.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -483,25 +529,35 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The message attribute Name can contain the following characters: A-Z,
-     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     * attribute name must not start or end with a period, and it should not
-     * have successive periods. The message attribute name is case sensitive
-     * and must be unique among all attribute names for the message. The
-     * message attribute name can be up to 256 characters long. Attribute
-     * names cannot start with "AWS." or "Amazon." because these prefixes are
-     * reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index. The
+     * message attribute name can contain the following characters: A-Z, a-z,
+     * 0-9, underscore (_), hyphen (-), and period (.). The name must not
+     * start or end with a period, and it should not have successive periods.
+     * The name is case sensitive and must be unique among all attribute
+     * names for the message. The name can be up to 256 characters long. The
+     * name cannot start with "AWS." or "Amazon." (or any variations in
+     * casing), because these prefixes are reserved for use by Amazon Web
+     * Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the
+     * attributes by specifying "All" or ".*" in your request. You can also
+     * use "foo.*" to return all message attributes starting with the "foo"
+     * prefix.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageAttributeNames The message attribute Name can contain the following characters: A-Z,
-     *         a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
-     *         attribute name must not start or end with a period, and it should not
-     *         have successive periods. The message attribute name is case sensitive
-     *         and must be unique among all attribute names for the message. The
-     *         message attribute name can be up to 256 characters long. Attribute
-     *         names cannot start with "AWS." or "Amazon." because these prefixes are
-     *         reserved for use by Amazon Web Services.
+     * @param messageAttributeNames The name of the message attribute, where <i>N</i> is the index. The
+     *         message attribute name can contain the following characters: A-Z, a-z,
+     *         0-9, underscore (_), hyphen (-), and period (.). The name must not
+     *         start or end with a period, and it should not have successive periods.
+     *         The name is case sensitive and must be unique among all attribute
+     *         names for the message. The name can be up to 256 characters long. The
+     *         name cannot start with "AWS." or "Amazon." (or any variations in
+     *         casing), because these prefixes are reserved for use by Amazon Web
+     *         Services. <p>When using <code>ReceiveMessage</code>, you can send a
+     *         list of attribute names to receive, or you can return all of the
+     *         attributes by specifying "All" or ".*" in your request. You can also
+     *         use "foo.*" to return all message attributes starting with the "foo"
+     *         prefix.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

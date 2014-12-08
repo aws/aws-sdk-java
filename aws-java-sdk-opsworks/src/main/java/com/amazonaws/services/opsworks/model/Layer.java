@@ -34,10 +34,7 @@ public class Layer implements Serializable {
     private String layerId;
 
     /**
-     * The layer type, which must be one of the following: <ul>
-     * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * The layer type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
@@ -158,6 +155,12 @@ public class Layer implements Serializable {
     private Boolean useEbsOptimizedInstances;
 
     /**
+     * A <code>LifeCycleEventConfiguration</code> object that specifies the
+     * Shutdown event configuration.
+     */
+    private LifecycleEventConfiguration lifecycleEventConfiguration;
+
+    /**
      * The layer stack ID.
      *
      * @return The layer stack ID.
@@ -224,18 +227,12 @@ public class Layer implements Serializable {
     }
 
     /**
-     * The layer type, which must be one of the following: <ul>
-     * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * The layer type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @return The layer type, which must be one of the following: <ul>
-     *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * @return The layer type.
      *
      * @see LayerType
      */
@@ -244,18 +241,12 @@ public class Layer implements Serializable {
     }
     
     /**
-     * The layer type, which must be one of the following: <ul>
-     * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * The layer type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @param type The layer type, which must be one of the following: <ul>
-     *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * @param type The layer type.
      *
      * @see LayerType
      */
@@ -264,20 +255,14 @@ public class Layer implements Serializable {
     }
     
     /**
-     * The layer type, which must be one of the following: <ul>
-     * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * The layer type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @param type The layer type, which must be one of the following: <ul>
-     *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * @param type The layer type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -290,18 +275,12 @@ public class Layer implements Serializable {
     }
 
     /**
-     * The layer type, which must be one of the following: <ul>
-     * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * The layer type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @param type The layer type, which must be one of the following: <ul>
-     *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * @param type The layer type.
      *
      * @see LayerType
      */
@@ -310,20 +289,14 @@ public class Layer implements Serializable {
     }
     
     /**
-     * The layer type, which must be one of the following: <ul>
-     * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * The layer type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @param type The layer type, which must be one of the following: <ul>
-     *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
-     *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
-     *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * @param type The layer type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1317,6 +1290,45 @@ public class Layer implements Serializable {
     }
 
     /**
+     * A <code>LifeCycleEventConfiguration</code> object that specifies the
+     * Shutdown event configuration.
+     *
+     * @return A <code>LifeCycleEventConfiguration</code> object that specifies the
+     *         Shutdown event configuration.
+     */
+    public LifecycleEventConfiguration getLifecycleEventConfiguration() {
+        return lifecycleEventConfiguration;
+    }
+    
+    /**
+     * A <code>LifeCycleEventConfiguration</code> object that specifies the
+     * Shutdown event configuration.
+     *
+     * @param lifecycleEventConfiguration A <code>LifeCycleEventConfiguration</code> object that specifies the
+     *         Shutdown event configuration.
+     */
+    public void setLifecycleEventConfiguration(LifecycleEventConfiguration lifecycleEventConfiguration) {
+        this.lifecycleEventConfiguration = lifecycleEventConfiguration;
+    }
+    
+    /**
+     * A <code>LifeCycleEventConfiguration</code> object that specifies the
+     * Shutdown event configuration.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param lifecycleEventConfiguration A <code>LifeCycleEventConfiguration</code> object that specifies the
+     *         Shutdown event configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Layer withLifecycleEventConfiguration(LifecycleEventConfiguration lifecycleEventConfiguration) {
+        this.lifecycleEventConfiguration = lifecycleEventConfiguration;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1346,7 +1358,8 @@ public class Layer implements Serializable {
         if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ",");
         if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");
         if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
-        if (isUseEbsOptimizedInstances() != null) sb.append("UseEbsOptimizedInstances: " + isUseEbsOptimizedInstances() );
+        if (isUseEbsOptimizedInstances() != null) sb.append("UseEbsOptimizedInstances: " + isUseEbsOptimizedInstances() + ",");
+        if (getLifecycleEventConfiguration() != null) sb.append("LifecycleEventConfiguration: " + getLifecycleEventConfiguration() );
         sb.append("}");
         return sb.toString();
     }
@@ -1375,6 +1388,7 @@ public class Layer implements Serializable {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         hashCode = prime * hashCode + ((isUseEbsOptimizedInstances() == null) ? 0 : isUseEbsOptimizedInstances().hashCode()); 
+        hashCode = prime * hashCode + ((getLifecycleEventConfiguration() == null) ? 0 : getLifecycleEventConfiguration().hashCode()); 
         return hashCode;
     }
     
@@ -1424,6 +1438,8 @@ public class Layer implements Serializable {
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         if (other.isUseEbsOptimizedInstances() == null ^ this.isUseEbsOptimizedInstances() == null) return false;
         if (other.isUseEbsOptimizedInstances() != null && other.isUseEbsOptimizedInstances().equals(this.isUseEbsOptimizedInstances()) == false) return false; 
+        if (other.getLifecycleEventConfiguration() == null ^ this.getLifecycleEventConfiguration() == null) return false;
+        if (other.getLifecycleEventConfiguration() != null && other.getLifecycleEventConfiguration().equals(this.getLifecycleEventConfiguration()) == false) return false; 
         return true;
     }
     

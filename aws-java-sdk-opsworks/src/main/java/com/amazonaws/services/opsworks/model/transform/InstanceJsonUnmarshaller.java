@@ -165,6 +165,18 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setEbsOptimized(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ReportedOs", targetDepth)) {
+                    context.nextToken();
+                    instance.setReportedOs(ReportedOsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("InfrastructureClass", targetDepth)) {
+                    context.nextToken();
+                    instance.setInfrastructureClass(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RegisteredBy", targetDepth)) {
+                    context.nextToken();
+                    instance.setRegisteredBy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -238,6 +238,28 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
             if (updateLayerRequest.isUseEbsOptimizedInstances() != null) {
                 jsonWriter.key("UseEbsOptimizedInstances").value(updateLayerRequest.isUseEbsOptimizedInstances());
             }
+            LifecycleEventConfiguration lifecycleEventConfiguration = updateLayerRequest.getLifecycleEventConfiguration();
+            if (lifecycleEventConfiguration != null) {
+
+                jsonWriter.key("LifecycleEventConfiguration");
+                jsonWriter.object();
+
+                ShutdownEventConfiguration shutdown = lifecycleEventConfiguration.getShutdown();
+                if (shutdown != null) {
+
+                    jsonWriter.key("Shutdown");
+                    jsonWriter.object();
+
+                    if (shutdown.getExecutionTimeout() != null) {
+                        jsonWriter.key("ExecutionTimeout").value(shutdown.getExecutionTimeout());
+                    }
+                    if (shutdown.isDelayUntilElbConnectionsDrained() != null) {
+                        jsonWriter.key("DelayUntilElbConnectionsDrained").value(shutdown.isDelayUntilElbConnectionsDrained());
+                    }
+                    jsonWriter.endObject();
+                }
+                jsonWriter.endObject();
+            }
 
           jsonWriter.endObject();
 

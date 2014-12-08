@@ -84,16 +84,17 @@ public class Instance implements Serializable {
     /**
      * The instance status: <ul> <li><code>booting</code></li>
      * <li><code>connection_lost</code></li> <li><code>online</code></li>
-     * <li><code>rebooting</code></li> <li><code>requested</code></li>
-     * <li><code>running_setup</code></li> <li><code>setup_failed</code></li>
+     * <li><code>pending</code></li> <li><code>rebooting</code></li>
+     * <li><code>requested</code></li> <li><code>running_setup</code></li>
+     * <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
      * <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     * <li><code>terminated</code></li> <li><code>terminating</code></li>
-     * </ul>
+     * <li><code>stopping</code></li> <li><code>terminated</code></li>
+     * <li><code>terminating</code></li> </ul>
      */
     private String status;
 
     /**
-     * The instance operating system.
+     * The instance's operating system.
      */
     private String os;
 
@@ -145,13 +146,7 @@ public class Instance implements Serializable {
     private String elasticIp;
 
     /**
-     * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     * auto scaling instance, which is started and stopped based on a
-     * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     * auto scaling instance, which is started and stopped based on load
-     * metrics.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
@@ -224,6 +219,22 @@ public class Instance implements Serializable {
      * Whether this is an Amazon EBS-optimized instance.
      */
     private Boolean ebsOptimized;
+
+    /**
+     * For registered instances, the reported operating system.
+     */
+    private ReportedOs reportedOs;
+
+    /**
+     * For registered instances, the infrastructure class: <code>ec2</code>
+     * or <code>on-premises</code>
+     */
+    private String infrastructureClass;
+
+    /**
+     * For registered instances, who performed the registration.
+     */
+    private String registeredBy;
 
     /**
      * The instance ID.
@@ -708,19 +719,21 @@ public class Instance implements Serializable {
     /**
      * The instance status: <ul> <li><code>booting</code></li>
      * <li><code>connection_lost</code></li> <li><code>online</code></li>
-     * <li><code>rebooting</code></li> <li><code>requested</code></li>
-     * <li><code>running_setup</code></li> <li><code>setup_failed</code></li>
+     * <li><code>pending</code></li> <li><code>rebooting</code></li>
+     * <li><code>requested</code></li> <li><code>running_setup</code></li>
+     * <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
      * <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     * <li><code>terminated</code></li> <li><code>terminating</code></li>
-     * </ul>
+     * <li><code>stopping</code></li> <li><code>terminated</code></li>
+     * <li><code>terminating</code></li> </ul>
      *
      * @return The instance status: <ul> <li><code>booting</code></li>
      *         <li><code>connection_lost</code></li> <li><code>online</code></li>
-     *         <li><code>rebooting</code></li> <li><code>requested</code></li>
-     *         <li><code>running_setup</code></li> <li><code>setup_failed</code></li>
+     *         <li><code>pending</code></li> <li><code>rebooting</code></li>
+     *         <li><code>requested</code></li> <li><code>running_setup</code></li>
+     *         <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
      *         <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     *         <li><code>terminated</code></li> <li><code>terminating</code></li>
-     *         </ul>
+     *         <li><code>stopping</code></li> <li><code>terminated</code></li>
+     *         <li><code>terminating</code></li> </ul>
      */
     public String getStatus() {
         return status;
@@ -729,19 +742,21 @@ public class Instance implements Serializable {
     /**
      * The instance status: <ul> <li><code>booting</code></li>
      * <li><code>connection_lost</code></li> <li><code>online</code></li>
-     * <li><code>rebooting</code></li> <li><code>requested</code></li>
-     * <li><code>running_setup</code></li> <li><code>setup_failed</code></li>
+     * <li><code>pending</code></li> <li><code>rebooting</code></li>
+     * <li><code>requested</code></li> <li><code>running_setup</code></li>
+     * <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
      * <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     * <li><code>terminated</code></li> <li><code>terminating</code></li>
-     * </ul>
+     * <li><code>stopping</code></li> <li><code>terminated</code></li>
+     * <li><code>terminating</code></li> </ul>
      *
      * @param status The instance status: <ul> <li><code>booting</code></li>
      *         <li><code>connection_lost</code></li> <li><code>online</code></li>
-     *         <li><code>rebooting</code></li> <li><code>requested</code></li>
-     *         <li><code>running_setup</code></li> <li><code>setup_failed</code></li>
+     *         <li><code>pending</code></li> <li><code>rebooting</code></li>
+     *         <li><code>requested</code></li> <li><code>running_setup</code></li>
+     *         <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
      *         <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     *         <li><code>terminated</code></li> <li><code>terminating</code></li>
-     *         </ul>
+     *         <li><code>stopping</code></li> <li><code>terminated</code></li>
+     *         <li><code>terminating</code></li> </ul>
      */
     public void setStatus(String status) {
         this.status = status;
@@ -750,21 +765,23 @@ public class Instance implements Serializable {
     /**
      * The instance status: <ul> <li><code>booting</code></li>
      * <li><code>connection_lost</code></li> <li><code>online</code></li>
-     * <li><code>rebooting</code></li> <li><code>requested</code></li>
-     * <li><code>running_setup</code></li> <li><code>setup_failed</code></li>
+     * <li><code>pending</code></li> <li><code>rebooting</code></li>
+     * <li><code>requested</code></li> <li><code>running_setup</code></li>
+     * <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
      * <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     * <li><code>terminated</code></li> <li><code>terminating</code></li>
-     * </ul>
+     * <li><code>stopping</code></li> <li><code>terminated</code></li>
+     * <li><code>terminating</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The instance status: <ul> <li><code>booting</code></li>
      *         <li><code>connection_lost</code></li> <li><code>online</code></li>
-     *         <li><code>rebooting</code></li> <li><code>requested</code></li>
-     *         <li><code>running_setup</code></li> <li><code>setup_failed</code></li>
+     *         <li><code>pending</code></li> <li><code>rebooting</code></li>
+     *         <li><code>requested</code></li> <li><code>running_setup</code></li>
+     *         <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
      *         <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     *         <li><code>terminated</code></li> <li><code>terminating</code></li>
-     *         </ul>
+     *         <li><code>stopping</code></li> <li><code>terminated</code></li>
+     *         <li><code>terminating</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -775,29 +792,29 @@ public class Instance implements Serializable {
     }
 
     /**
-     * The instance operating system.
+     * The instance's operating system.
      *
-     * @return The instance operating system.
+     * @return The instance's operating system.
      */
     public String getOs() {
         return os;
     }
     
     /**
-     * The instance operating system.
+     * The instance's operating system.
      *
-     * @param os The instance operating system.
+     * @param os The instance's operating system.
      */
     public void setOs(String os) {
         this.os = os;
     }
     
     /**
-     * The instance operating system.
+     * The instance's operating system.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param os The instance operating system.
+     * @param os The instance's operating system.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1114,24 +1131,12 @@ public class Instance implements Serializable {
     }
 
     /**
-     * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     * auto scaling instance, which is started and stopped based on a
-     * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     * auto scaling instance, which is started and stopped based on load
-     * metrics.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @return The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     *         auto scaling instance, which is started and stopped based on a
-     *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     *         auto scaling instance, which is started and stopped based on load
-     *         metrics.</li> </ul>
+     * @return For load-based or time-based instances, the type.
      *
      * @see AutoScalingType
      */
@@ -1140,24 +1145,12 @@ public class Instance implements Serializable {
     }
     
     /**
-     * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     * auto scaling instance, which is started and stopped based on a
-     * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     * auto scaling instance, which is started and stopped based on load
-     * metrics.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     *         auto scaling instance, which is started and stopped based on a
-     *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     *         auto scaling instance, which is started and stopped based on load
-     *         metrics.</li> </ul>
+     * @param autoScalingType For load-based or time-based instances, the type.
      *
      * @see AutoScalingType
      */
@@ -1166,26 +1159,14 @@ public class Instance implements Serializable {
     }
     
     /**
-     * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     * auto scaling instance, which is started and stopped based on a
-     * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     * auto scaling instance, which is started and stopped based on load
-     * metrics.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     *         auto scaling instance, which is started and stopped based on a
-     *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     *         auto scaling instance, which is started and stopped based on load
-     *         metrics.</li> </ul>
+     * @param autoScalingType For load-based or time-based instances, the type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1198,24 +1179,12 @@ public class Instance implements Serializable {
     }
 
     /**
-     * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     * auto scaling instance, which is started and stopped based on a
-     * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     * auto scaling instance, which is started and stopped based on load
-     * metrics.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     *         auto scaling instance, which is started and stopped based on a
-     *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     *         auto scaling instance, which is started and stopped based on load
-     *         metrics.</li> </ul>
+     * @param autoScalingType For load-based or time-based instances, the type.
      *
      * @see AutoScalingType
      */
@@ -1224,26 +1193,14 @@ public class Instance implements Serializable {
     }
     
     /**
-     * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     * auto scaling instance, which is started and stopped based on a
-     * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     * auto scaling instance, which is started and stopped based on load
-     * metrics.</li> </ul>
+     * For load-based or time-based instances, the type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
-     *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
-     *         auto scaling instance, which is started and stopped based on a
-     *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
-     *         auto scaling instance, which is started and stopped based on load
-     *         metrics.</li> </ul>
+     * @param autoScalingType For load-based or time-based instances, the type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1792,6 +1749,111 @@ public class Instance implements Serializable {
     }
 
     /**
+     * For registered instances, the reported operating system.
+     *
+     * @return For registered instances, the reported operating system.
+     */
+    public ReportedOs getReportedOs() {
+        return reportedOs;
+    }
+    
+    /**
+     * For registered instances, the reported operating system.
+     *
+     * @param reportedOs For registered instances, the reported operating system.
+     */
+    public void setReportedOs(ReportedOs reportedOs) {
+        this.reportedOs = reportedOs;
+    }
+    
+    /**
+     * For registered instances, the reported operating system.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param reportedOs For registered instances, the reported operating system.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Instance withReportedOs(ReportedOs reportedOs) {
+        this.reportedOs = reportedOs;
+        return this;
+    }
+
+    /**
+     * For registered instances, the infrastructure class: <code>ec2</code>
+     * or <code>on-premises</code>
+     *
+     * @return For registered instances, the infrastructure class: <code>ec2</code>
+     *         or <code>on-premises</code>
+     */
+    public String getInfrastructureClass() {
+        return infrastructureClass;
+    }
+    
+    /**
+     * For registered instances, the infrastructure class: <code>ec2</code>
+     * or <code>on-premises</code>
+     *
+     * @param infrastructureClass For registered instances, the infrastructure class: <code>ec2</code>
+     *         or <code>on-premises</code>
+     */
+    public void setInfrastructureClass(String infrastructureClass) {
+        this.infrastructureClass = infrastructureClass;
+    }
+    
+    /**
+     * For registered instances, the infrastructure class: <code>ec2</code>
+     * or <code>on-premises</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param infrastructureClass For registered instances, the infrastructure class: <code>ec2</code>
+     *         or <code>on-premises</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Instance withInfrastructureClass(String infrastructureClass) {
+        this.infrastructureClass = infrastructureClass;
+        return this;
+    }
+
+    /**
+     * For registered instances, who performed the registration.
+     *
+     * @return For registered instances, who performed the registration.
+     */
+    public String getRegisteredBy() {
+        return registeredBy;
+    }
+    
+    /**
+     * For registered instances, who performed the registration.
+     *
+     * @param registeredBy For registered instances, who performed the registration.
+     */
+    public void setRegisteredBy(String registeredBy) {
+        this.registeredBy = registeredBy;
+    }
+    
+    /**
+     * For registered instances, who performed the registration.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param registeredBy For registered instances, who performed the registration.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Instance withRegisteredBy(String registeredBy) {
+        this.registeredBy = registeredBy;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1832,7 +1894,10 @@ public class Instance implements Serializable {
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
         if (getRootDeviceVolumeId() != null) sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() + ",");
         if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
-        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ",");
+        if (getReportedOs() != null) sb.append("ReportedOs: " + getReportedOs() + ",");
+        if (getInfrastructureClass() != null) sb.append("InfrastructureClass: " + getInfrastructureClass() + ",");
+        if (getRegisteredBy() != null) sb.append("RegisteredBy: " + getRegisteredBy() );
         sb.append("}");
         return sb.toString();
     }
@@ -1872,6 +1937,9 @@ public class Instance implements Serializable {
         hashCode = prime * hashCode + ((getRootDeviceVolumeId() == null) ? 0 : getRootDeviceVolumeId().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
+        hashCode = prime * hashCode + ((getReportedOs() == null) ? 0 : getReportedOs().hashCode()); 
+        hashCode = prime * hashCode + ((getInfrastructureClass() == null) ? 0 : getInfrastructureClass().hashCode()); 
+        hashCode = prime * hashCode + ((getRegisteredBy() == null) ? 0 : getRegisteredBy().hashCode()); 
         return hashCode;
     }
     
@@ -1943,6 +2011,12 @@ public class Instance implements Serializable {
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
         if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
+        if (other.getReportedOs() == null ^ this.getReportedOs() == null) return false;
+        if (other.getReportedOs() != null && other.getReportedOs().equals(this.getReportedOs()) == false) return false; 
+        if (other.getInfrastructureClass() == null ^ this.getInfrastructureClass() == null) return false;
+        if (other.getInfrastructureClass() != null && other.getInfrastructureClass().equals(this.getInfrastructureClass()) == false) return false; 
+        if (other.getRegisteredBy() == null ^ this.getRegisteredBy() == null) return false;
+        if (other.getRegisteredBy() != null && other.getRegisteredBy().equals(this.getRegisteredBy()) == false) return false; 
         return true;
     }
     

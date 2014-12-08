@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Used to specify a deployment operation.
+ * Used to specify a stack or deployment command.
  * </p>
  */
 public class DeploymentCommand implements Serializable {
@@ -58,8 +58,21 @@ public class DeploymentCommand implements Serializable {
 
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format:
-     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
+     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+     * ...}</code> <p>The <code>update_dependencies</code> command takes two
+     * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
+     * Amazon Linux version for instances whose OS you want to upgrade, such
+     * as <code>Amazon Linux 2014.09</code>. You must also set the
+     * <code>allow_reboot</code> argument to true.</li>
+     * <li><code>allow_reboot</code> - Specifies whether to allow AWS
+     * OpsWorks to reboot the instances if necessary, after installing the
+     * updates. This argument can be set to either <code>true</code> or
+     * <code>false</code>. The default value is <code>false</code>.</li>
+     * </ul> <p>For example, to upgrade an instance to Amazon Linux 2014.09,
+     * set <code>Args</code> to the following. <code> {
+     * "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
+     * </code>
      */
     private java.util.Map<String,java.util.List<String>> args;
 
@@ -397,12 +410,38 @@ public class DeploymentCommand implements Serializable {
 
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format:
-     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
+     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+     * ...}</code> <p>The <code>update_dependencies</code> command takes two
+     * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
+     * Amazon Linux version for instances whose OS you want to upgrade, such
+     * as <code>Amazon Linux 2014.09</code>. You must also set the
+     * <code>allow_reboot</code> argument to true.</li>
+     * <li><code>allow_reboot</code> - Specifies whether to allow AWS
+     * OpsWorks to reboot the instances if necessary, after installing the
+     * updates. This argument can be set to either <code>true</code> or
+     * <code>false</code>. The default value is <code>false</code>.</li>
+     * </ul> <p>For example, to upgrade an instance to Amazon Linux 2014.09,
+     * set <code>Args</code> to the following. <code> {
+     * "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
+     * </code>
      *
      * @return The arguments of those commands that take arguments. It should be set
-     *         to a JSON object with the following format:
-     *         <p><code>{"arg_name":["value1", "value2", ...]}</code>
+     *         to a JSON object with the following format: <p><code>{"arg_name1" :
+     *         ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+     *         ...}</code> <p>The <code>update_dependencies</code> command takes two
+     *         arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
+     *         Amazon Linux version for instances whose OS you want to upgrade, such
+     *         as <code>Amazon Linux 2014.09</code>. You must also set the
+     *         <code>allow_reboot</code> argument to true.</li>
+     *         <li><code>allow_reboot</code> - Specifies whether to allow AWS
+     *         OpsWorks to reboot the instances if necessary, after installing the
+     *         updates. This argument can be set to either <code>true</code> or
+     *         <code>false</code>. The default value is <code>false</code>.</li>
+     *         </ul> <p>For example, to upgrade an instance to Amazon Linux 2014.09,
+     *         set <code>Args</code> to the following. <code> {
+     *         "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
+     *         </code>
      */
     public java.util.Map<String,java.util.List<String>> getArgs() {
         
@@ -414,12 +453,38 @@ public class DeploymentCommand implements Serializable {
     
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format:
-     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
+     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+     * ...}</code> <p>The <code>update_dependencies</code> command takes two
+     * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
+     * Amazon Linux version for instances whose OS you want to upgrade, such
+     * as <code>Amazon Linux 2014.09</code>. You must also set the
+     * <code>allow_reboot</code> argument to true.</li>
+     * <li><code>allow_reboot</code> - Specifies whether to allow AWS
+     * OpsWorks to reboot the instances if necessary, after installing the
+     * updates. This argument can be set to either <code>true</code> or
+     * <code>false</code>. The default value is <code>false</code>.</li>
+     * </ul> <p>For example, to upgrade an instance to Amazon Linux 2014.09,
+     * set <code>Args</code> to the following. <code> {
+     * "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
+     * </code>
      *
      * @param args The arguments of those commands that take arguments. It should be set
-     *         to a JSON object with the following format:
-     *         <p><code>{"arg_name":["value1", "value2", ...]}</code>
+     *         to a JSON object with the following format: <p><code>{"arg_name1" :
+     *         ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+     *         ...}</code> <p>The <code>update_dependencies</code> command takes two
+     *         arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
+     *         Amazon Linux version for instances whose OS you want to upgrade, such
+     *         as <code>Amazon Linux 2014.09</code>. You must also set the
+     *         <code>allow_reboot</code> argument to true.</li>
+     *         <li><code>allow_reboot</code> - Specifies whether to allow AWS
+     *         OpsWorks to reboot the instances if necessary, after installing the
+     *         updates. This argument can be set to either <code>true</code> or
+     *         <code>false</code>. The default value is <code>false</code>.</li>
+     *         </ul> <p>For example, to upgrade an instance to Amazon Linux 2014.09,
+     *         set <code>Args</code> to the following. <code> {
+     *         "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
+     *         </code>
      */
     public void setArgs(java.util.Map<String,java.util.List<String>> args) {
         this.args = args;
@@ -427,14 +492,40 @@ public class DeploymentCommand implements Serializable {
     
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format:
-     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
+     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+     * ...}</code> <p>The <code>update_dependencies</code> command takes two
+     * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
+     * Amazon Linux version for instances whose OS you want to upgrade, such
+     * as <code>Amazon Linux 2014.09</code>. You must also set the
+     * <code>allow_reboot</code> argument to true.</li>
+     * <li><code>allow_reboot</code> - Specifies whether to allow AWS
+     * OpsWorks to reboot the instances if necessary, after installing the
+     * updates. This argument can be set to either <code>true</code> or
+     * <code>false</code>. The default value is <code>false</code>.</li>
+     * </ul> <p>For example, to upgrade an instance to Amazon Linux 2014.09,
+     * set <code>Args</code> to the following. <code> {
+     * "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
+     * </code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param args The arguments of those commands that take arguments. It should be set
-     *         to a JSON object with the following format:
-     *         <p><code>{"arg_name":["value1", "value2", ...]}</code>
+     *         to a JSON object with the following format: <p><code>{"arg_name1" :
+     *         ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+     *         ...}</code> <p>The <code>update_dependencies</code> command takes two
+     *         arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
+     *         Amazon Linux version for instances whose OS you want to upgrade, such
+     *         as <code>Amazon Linux 2014.09</code>. You must also set the
+     *         <code>allow_reboot</code> argument to true.</li>
+     *         <li><code>allow_reboot</code> - Specifies whether to allow AWS
+     *         OpsWorks to reboot the instances if necessary, after installing the
+     *         updates. This argument can be set to either <code>true</code> or
+     *         <code>false</code>. The default value is <code>false</code>.</li>
+     *         </ul> <p>For example, to upgrade an instance to Amazon Linux 2014.09,
+     *         set <code>Args</code> to the following. <code> {
+     *         "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
+     *         </code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -446,8 +537,21 @@ public class DeploymentCommand implements Serializable {
 
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format:
-     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
+     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+     * ...}</code> <p>The <code>update_dependencies</code> command takes two
+     * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
+     * Amazon Linux version for instances whose OS you want to upgrade, such
+     * as <code>Amazon Linux 2014.09</code>. You must also set the
+     * <code>allow_reboot</code> argument to true.</li>
+     * <li><code>allow_reboot</code> - Specifies whether to allow AWS
+     * OpsWorks to reboot the instances if necessary, after installing the
+     * updates. This argument can be set to either <code>true</code> or
+     * <code>false</code>. The default value is <code>false</code>.</li>
+     * </ul> <p>For example, to upgrade an instance to Amazon Linux 2014.09,
+     * set <code>Args</code> to the following. <code> {
+     * "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
+     * </code>
      * <p>
      * The method adds a new key-value pair into Args parameter, and returns
      * a reference to this object so that method calls can be chained

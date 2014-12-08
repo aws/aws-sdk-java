@@ -101,10 +101,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     private String defaultInstanceProfileArn;
 
     /**
-     * The stack's default operating system, which must be set to
-     * <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     * Linux</code>.
+     * The stack's operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     * <code>Custom</code>. You specify the custom AMI you want to use when
+     * you create instances.</li> </ul> <p> The default option is the current
+     * Amazon Linux version.
      */
     private String defaultOs;
 
@@ -663,47 +666,65 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The stack's default operating system, which must be set to
-     * <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     * Linux</code>.
+     * The stack's operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     * <code>Custom</code>. You specify the custom AMI you want to use when
+     * you create instances.</li> </ul> <p> The default option is the current
+     * Amazon Linux version.
      *
-     * @return The stack's default operating system, which must be set to
-     *         <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     *         Linux</code>.
+     * @return The stack's operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     *         <code>Custom</code>. You specify the custom AMI you want to use when
+     *         you create instances.</li> </ul> <p> The default option is the current
+     *         Amazon Linux version.
      */
     public String getDefaultOs() {
         return defaultOs;
     }
     
     /**
-     * The stack's default operating system, which must be set to
-     * <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     * Linux</code>.
+     * The stack's operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     * <code>Custom</code>. You specify the custom AMI you want to use when
+     * you create instances.</li> </ul> <p> The default option is the current
+     * Amazon Linux version.
      *
-     * @param defaultOs The stack's default operating system, which must be set to
-     *         <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     *         Linux</code>.
+     * @param defaultOs The stack's operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     *         <code>Custom</code>. You specify the custom AMI you want to use when
+     *         you create instances.</li> </ul> <p> The default option is the current
+     *         Amazon Linux version.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
     
     /**
-     * The stack's default operating system, which must be set to
-     * <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     * Linux</code>.
+     * The stack's operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     * <code>Custom</code>. You specify the custom AMI you want to use when
+     * you create instances.</li> </ul> <p> The default option is the current
+     * Amazon Linux version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultOs The stack's default operating system, which must be set to
-     *         <code>Amazon Linux</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>. The default option is <code>Amazon
-     *         Linux</code>.
+     * @param defaultOs The stack's operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
+     *         <code>Custom</code>. You specify the custom AMI you want to use when
+     *         you create instances.</li> </ul> <p> The default option is the current
+     *         Amazon Linux version.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

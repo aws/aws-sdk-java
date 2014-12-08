@@ -980,8 +980,11 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
-     * Deletes a specified instance. You must stop an instance before you
-     * can delete it. For more information, see
+     * Deletes a specified instance, which terminates the associated Amazon
+     * EC2 instance. You must stop an instance before you can delete it.
+     * </p>
+     * <p>
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"> Deleting Instances </a>
      * .
      * </p>
@@ -1021,8 +1024,11 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
 
     /**
      * <p>
-     * Deletes a specified instance. You must stop an instance before you
-     * can delete it. For more information, see
+     * Deletes a specified instance, which terminates the associated Amazon
+     * EC2 instance. You must stop an instance before you can delete it.
+     * </p>
+     * <p>
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"> Deleting Instances </a>
      * .
      * </p>
@@ -2298,6 +2304,100 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
+     * Unassigns a registered instance from all of it's layers. The instance
+     * remains in the stack as an unassigned instance and can be assigned to
+     * another layer, as needed. You cannot use this action with instances
+     * that were created with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param unassignInstanceRequest Container for the necessary parameters
+     *           to execute the UnassignInstance operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnassignInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> unassignInstanceAsync(final UnassignInstanceRequest unassignInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                unassignInstance(unassignInstanceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Unassigns a registered instance from all of it's layers. The instance
+     * remains in the stack as an unassigned instance and can be assigned to
+     * another layer, as needed. You cannot use this action with instances
+     * that were created with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param unassignInstanceRequest Container for the necessary parameters
+     *           to execute the UnassignInstance operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnassignInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> unassignInstanceAsync(
+            final UnassignInstanceRequest unassignInstanceRequest,
+            final AsyncHandler<UnassignInstanceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                unassignInstance(unassignInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(unassignInstanceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Describes AWS OpsWorks service errors.
      * </p>
      * <p>
@@ -2869,7 +2969,8 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     /**
      * <p>
      * Deletes a specified stack. You must first delete all instances,
-     * layers, and apps. For more information, see
+     * layers, and apps or deregister registered instances. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html"> Shut Down a Stack </a>
      * .
      * </p>
@@ -2910,7 +3011,8 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     /**
      * <p>
      * Deletes a specified stack. You must first delete all instances,
-     * layers, and apps. For more information, see
+     * layers, and apps or deregister registered instances. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html"> Shut Down a Stack </a>
      * .
      * </p>
@@ -3232,6 +3334,112 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
               }
               asyncHandler.onSuccess(updateRdsDbInstanceRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Registers instances with a specified stack that were created outside
+     * of AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>We do not recommend using this action to register
+     * instances. The complete registration operation has two primary steps,
+     * installing the AWS OpsWorks agent on the instance and registering the
+     * instance with the stack. RegisterInstance handles only the second
+     * step. You should instead use the AWS CLI register command, which
+     * performs the entire registration operation.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param registerInstanceRequest Container for the necessary parameters
+     *           to execute the RegisterInstance operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RegisterInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RegisterInstanceResult> registerInstanceAsync(final RegisterInstanceRequest registerInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RegisterInstanceResult>() {
+            public RegisterInstanceResult call() throws Exception {
+                return registerInstance(registerInstanceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Registers instances with a specified stack that were created outside
+     * of AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>We do not recommend using this action to register
+     * instances. The complete registration operation has two primary steps,
+     * installing the AWS OpsWorks agent on the instance and registering the
+     * instance with the stack. RegisterInstance handles only the second
+     * step. You should instead use the AWS CLI register command, which
+     * performs the entire registration operation.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param registerInstanceRequest Container for the necessary parameters
+     *           to execute the RegisterInstance operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RegisterInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RegisterInstanceResult> registerInstanceAsync(
+            final RegisterInstanceRequest registerInstanceRequest,
+            final AsyncHandler<RegisterInstanceRequest, RegisterInstanceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RegisterInstanceResult>() {
+            public RegisterInstanceResult call() throws Exception {
+              RegisterInstanceResult result;
+                try {
+                result = registerInstance(registerInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(registerInstanceRequest, result);
+                 return result;
         }
     });
     }
@@ -3680,6 +3888,98 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
               }
               asyncHandler.onSuccess(deleteAppRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Requests a description of a stack's provisioning parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param describeStackProvisioningParametersRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeStackProvisioningParameters operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStackProvisioningParameters service method, as returned by
+     *         AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStackProvisioningParametersResult> describeStackProvisioningParametersAsync(final DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeStackProvisioningParametersResult>() {
+            public DescribeStackProvisioningParametersResult call() throws Exception {
+                return describeStackProvisioningParameters(describeStackProvisioningParametersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Requests a description of a stack's provisioning parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param describeStackProvisioningParametersRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeStackProvisioningParameters operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStackProvisioningParameters service method, as returned by
+     *         AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStackProvisioningParametersResult> describeStackProvisioningParametersAsync(
+            final DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest,
+            final AsyncHandler<DescribeStackProvisioningParametersRequest, DescribeStackProvisioningParametersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeStackProvisioningParametersResult>() {
+            public DescribeStackProvisioningParametersResult call() throws Exception {
+              DescribeStackProvisioningParametersResult result;
+                try {
+                result = describeStackProvisioningParameters(describeStackProvisioningParametersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeStackProvisioningParametersRequest, result);
+                 return result;
         }
     });
     }
@@ -4354,8 +4654,193 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
+     * Assign a registered instance to a custom layer. You cannot use this
+     * action with instances that were created with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param assignInstanceRequest Container for the necessary parameters to
+     *           execute the AssignInstance operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AssignInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> assignInstanceAsync(final AssignInstanceRequest assignInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                assignInstance(assignInstanceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Assign a registered instance to a custom layer. You cannot use this
+     * action with instances that were created with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param assignInstanceRequest Container for the necessary parameters to
+     *           execute the AssignInstance operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AssignInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> assignInstanceAsync(
+            final AssignInstanceRequest assignInstanceRequest,
+            final AsyncHandler<AssignInstanceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                assignInstance(assignInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(assignInstanceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deregister a registered Amazon EC2 or on-premises instance. This
+     * action removes the instance from the stack and returns it to your
+     * control. This action can not be used with instances that were created
+     * with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param deregisterInstanceRequest Container for the necessary
+     *           parameters to execute the DeregisterInstance operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeregisterInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deregisterInstanceAsync(final DeregisterInstanceRequest deregisterInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deregisterInstance(deregisterInstanceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deregister a registered Amazon EC2 or on-premises instance. This
+     * action removes the instance from the stack and returns it to your
+     * control. This action can not be used with instances that were created
+     * with AWS OpsWorks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param deregisterInstanceRequest Container for the necessary
+     *           parameters to execute the DeregisterInstance operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeregisterInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deregisterInstanceAsync(
+            final DeregisterInstanceRequest deregisterInstanceRequest,
+            final AsyncHandler<DeregisterInstanceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deregisterInstance(deregisterInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deregisterInstanceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes a specified layer. You must first stop and then delete all
-     * associated instances. For more information, see
+     * associated instances or unassign registered instances. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html"> How to Delete a Layer </a>
      * .
      * </p>
@@ -4396,7 +4881,8 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     /**
      * <p>
      * Deletes a specified layer. You must first stop and then delete all
-     * associated instances. For more information, see
+     * associated instances or unassign registered instances. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html"> How to Delete a Layer </a>
      * .
      * </p>
@@ -4442,94 +4928,6 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
               }
               asyncHandler.onSuccess(deleteLayerRequest, null);
                  return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Describes a user's SSH information.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have self-management enabled or an attached policy that explicitly
-     * grants permissions. For more information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeMyUserProfileRequest Container for the necessary
-     *           parameters to execute the DescribeMyUserProfile operation on
-     *           AWSOpsWorks.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeMyUserProfile service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(final DescribeMyUserProfileRequest describeMyUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeMyUserProfileResult>() {
-            public DescribeMyUserProfileResult call() throws Exception {
-                return describeMyUserProfile(describeMyUserProfileRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Describes a user's SSH information.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have self-management enabled or an attached policy that explicitly
-     * grants permissions. For more information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeMyUserProfileRequest Container for the necessary
-     *           parameters to execute the DescribeMyUserProfile operation on
-     *           AWSOpsWorks.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeMyUserProfile service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(
-            final DescribeMyUserProfileRequest describeMyUserProfileRequest,
-            final AsyncHandler<DescribeMyUserProfileRequest, DescribeMyUserProfileResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeMyUserProfileResult>() {
-            public DescribeMyUserProfileResult call() throws Exception {
-              DescribeMyUserProfileResult result;
-                try {
-                result = describeMyUserProfile(describeMyUserProfileRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeMyUserProfileRequest, result);
-                 return result;
         }
     });
     }
@@ -4626,6 +5024,94 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
               }
               asyncHandler.onSuccess(setTimeBasedAutoScalingRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Describes a user's SSH information.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have self-management enabled or an attached policy that explicitly
+     * grants permissions. For more information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param describeMyUserProfileRequest Container for the necessary
+     *           parameters to execute the DescribeMyUserProfile operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeMyUserProfile service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(final DescribeMyUserProfileRequest describeMyUserProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeMyUserProfileResult>() {
+            public DescribeMyUserProfileResult call() throws Exception {
+                return describeMyUserProfile(describeMyUserProfileRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes a user's SSH information.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have self-management enabled or an attached policy that explicitly
+     * grants permissions. For more information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param describeMyUserProfileRequest Container for the necessary
+     *           parameters to execute the DescribeMyUserProfile operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeMyUserProfile service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(
+            final DescribeMyUserProfileRequest describeMyUserProfileRequest,
+            final AsyncHandler<DescribeMyUserProfileRequest, DescribeMyUserProfileResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeMyUserProfileResult>() {
+            public DescribeMyUserProfileResult call() throws Exception {
+              DescribeMyUserProfileResult result;
+                try {
+                result = describeMyUserProfile(describeMyUserProfileRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeMyUserProfileRequest, result);
+                 return result;
         }
     });
     }
@@ -4818,92 +5304,6 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
-     * Deletes a user profile.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deleteUserProfileRequest Container for the necessary parameters
-     *           to execute the DeleteUserProfile operation on AWSOpsWorks.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteUserProfile service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteUserProfileAsync(final DeleteUserProfileRequest deleteUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteUserProfile(deleteUserProfileRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a user profile.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have an attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param deleteUserProfileRequest Container for the necessary parameters
-     *           to execute the DeleteUserProfile operation on AWSOpsWorks.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteUserProfile service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteUserProfileAsync(
-            final DeleteUserProfileRequest deleteUserProfileRequest,
-            final AsyncHandler<DeleteUserProfileRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteUserProfile(deleteUserProfileRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteUserProfileRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Describes time-based auto scaling configurations for specified
      * instances.
      * </p>
@@ -4998,6 +5398,92 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
               }
               asyncHandler.onSuccess(describeTimeBasedAutoScalingRequest, result);
                  return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param deleteUserProfileRequest Container for the necessary parameters
+     *           to execute the DeleteUserProfile operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteUserProfile service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteUserProfileAsync(final DeleteUserProfileRequest deleteUserProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteUserProfile(deleteUserProfileRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param deleteUserProfileRequest Container for the necessary parameters
+     *           to execute the DeleteUserProfile operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteUserProfile service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteUserProfileAsync(
+            final DeleteUserProfileRequest deleteUserProfileRequest,
+            final AsyncHandler<DeleteUserProfileRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteUserProfile(deleteUserProfileRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteUserProfileRequest, null);
+                 return null;
         }
     });
     }
@@ -5836,19 +6322,7 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
-     * Deploys a stack or app.
-     * </p>
-     * 
-     * <ul>
-     * <li>App deployment generates a <code>deploy</code> event, which runs
-     * the associated recipes and passes them a JSON stack configuration
-     * object that includes information about the app. </li>
-     * <li>Stack deployment runs the <code>deploy</code> recipes but does
-     * not raise an event.</li>
-     * 
-     * </ul>
-     * <p>
-     * For more information, see
+     * Runs deployment or stack commands. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"> Deploying Apps </a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"> Run Stack Commands </a>
      * .
      * </p>
@@ -5887,19 +6361,7 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
 
     /**
      * <p>
-     * Deploys a stack or app.
-     * </p>
-     * 
-     * <ul>
-     * <li>App deployment generates a <code>deploy</code> event, which runs
-     * the associated recipes and passes them a JSON stack configuration
-     * object that includes information about the app. </li>
-     * <li>Stack deployment runs the <code>deploy</code> recipes but does
-     * not raise an event.</li>
-     * 
-     * </ul>
-     * <p>
-     * For more information, see
+     * Runs deployment or stack commands. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"> Deploying Apps </a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"> Run Stack Commands </a>
      * .
      * </p>

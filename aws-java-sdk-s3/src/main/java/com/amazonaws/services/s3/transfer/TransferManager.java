@@ -787,7 +787,7 @@ public class TransferManager {
                 getObjectRequest, file);
 
         long startingByte = 0;
-        long lastByte = objectMetadata.getContentLength();
+        long lastByte = objectMetadata.getContentLength() - 1;
 
         if (getObjectRequest.getRange() != null
                 && getObjectRequest.getRange().length == 2) {
@@ -795,7 +795,7 @@ public class TransferManager {
             lastByte = getObjectRequest.getRange()[1];
         }
 
-        long totalBytesToDownload = lastByte - startingByte;
+        long totalBytesToDownload = lastByte - startingByte + 1;
         transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
 
         if (resumeExistingDownload) {
@@ -805,7 +805,7 @@ public class TransferManager {
                 getObjectRequest.setRange(startingByte, lastByte);
                 transferProgress.updateProgress(Math.min(numberOfBytesRead,
                         totalBytesToDownload));
-                totalBytesToDownload = lastByte - startingByte;
+                totalBytesToDownload = lastByte - startingByte + 1;
             }
         }
 

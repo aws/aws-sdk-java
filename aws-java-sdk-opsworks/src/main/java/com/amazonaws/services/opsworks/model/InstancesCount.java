@@ -24,6 +24,11 @@ import java.io.Serializable;
 public class InstancesCount implements Serializable {
 
     /**
+     * The number of instances in the Assigning state.
+     */
+    private Integer assigning;
+
+    /**
      * The number of instances with <code>booting</code> status.
      */
     private Integer booting;
@@ -32,6 +37,11 @@ public class InstancesCount implements Serializable {
      * The number of instances with <code>connection_lost</code> status.
      */
     private Integer connectionLost;
+
+    /**
+     * The number of instances in the Deregistering state.
+     */
+    private Integer deregistering;
 
     /**
      * The number of instances with <code>online</code> status.
@@ -47,6 +57,16 @@ public class InstancesCount implements Serializable {
      * The number of instances with <code>rebooting</code> status.
      */
     private Integer rebooting;
+
+    /**
+     * The number of instances in the Registered state.
+     */
+    private Integer registered;
+
+    /**
+     * The number of instances in the Registering state.
+     */
+    private Integer registering;
 
     /**
      * The number of instances with <code>requested</code> status.
@@ -92,6 +112,44 @@ public class InstancesCount implements Serializable {
      * The number of instances with <code>terminating</code> status.
      */
     private Integer terminating;
+
+    /**
+     * The number of instances in the Unassigning state.
+     */
+    private Integer unassigning;
+
+    /**
+     * The number of instances in the Assigning state.
+     *
+     * @return The number of instances in the Assigning state.
+     */
+    public Integer getAssigning() {
+        return assigning;
+    }
+    
+    /**
+     * The number of instances in the Assigning state.
+     *
+     * @param assigning The number of instances in the Assigning state.
+     */
+    public void setAssigning(Integer assigning) {
+        this.assigning = assigning;
+    }
+    
+    /**
+     * The number of instances in the Assigning state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param assigning The number of instances in the Assigning state.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstancesCount withAssigning(Integer assigning) {
+        this.assigning = assigning;
+        return this;
+    }
 
     /**
      * The number of instances with <code>booting</code> status.
@@ -156,6 +214,39 @@ public class InstancesCount implements Serializable {
      */
     public InstancesCount withConnectionLost(Integer connectionLost) {
         this.connectionLost = connectionLost;
+        return this;
+    }
+
+    /**
+     * The number of instances in the Deregistering state.
+     *
+     * @return The number of instances in the Deregistering state.
+     */
+    public Integer getDeregistering() {
+        return deregistering;
+    }
+    
+    /**
+     * The number of instances in the Deregistering state.
+     *
+     * @param deregistering The number of instances in the Deregistering state.
+     */
+    public void setDeregistering(Integer deregistering) {
+        this.deregistering = deregistering;
+    }
+    
+    /**
+     * The number of instances in the Deregistering state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param deregistering The number of instances in the Deregistering state.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstancesCount withDeregistering(Integer deregistering) {
+        this.deregistering = deregistering;
         return this;
     }
 
@@ -255,6 +346,72 @@ public class InstancesCount implements Serializable {
      */
     public InstancesCount withRebooting(Integer rebooting) {
         this.rebooting = rebooting;
+        return this;
+    }
+
+    /**
+     * The number of instances in the Registered state.
+     *
+     * @return The number of instances in the Registered state.
+     */
+    public Integer getRegistered() {
+        return registered;
+    }
+    
+    /**
+     * The number of instances in the Registered state.
+     *
+     * @param registered The number of instances in the Registered state.
+     */
+    public void setRegistered(Integer registered) {
+        this.registered = registered;
+    }
+    
+    /**
+     * The number of instances in the Registered state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param registered The number of instances in the Registered state.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstancesCount withRegistered(Integer registered) {
+        this.registered = registered;
+        return this;
+    }
+
+    /**
+     * The number of instances in the Registering state.
+     *
+     * @return The number of instances in the Registering state.
+     */
+    public Integer getRegistering() {
+        return registering;
+    }
+    
+    /**
+     * The number of instances in the Registering state.
+     *
+     * @param registering The number of instances in the Registering state.
+     */
+    public void setRegistering(Integer registering) {
+        this.registering = registering;
+    }
+    
+    /**
+     * The number of instances in the Registering state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param registering The number of instances in the Registering state.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstancesCount withRegistering(Integer registering) {
+        this.registering = registering;
         return this;
     }
 
@@ -556,6 +713,39 @@ public class InstancesCount implements Serializable {
     }
 
     /**
+     * The number of instances in the Unassigning state.
+     *
+     * @return The number of instances in the Unassigning state.
+     */
+    public Integer getUnassigning() {
+        return unassigning;
+    }
+    
+    /**
+     * The number of instances in the Unassigning state.
+     *
+     * @param unassigning The number of instances in the Unassigning state.
+     */
+    public void setUnassigning(Integer unassigning) {
+        this.unassigning = unassigning;
+    }
+    
+    /**
+     * The number of instances in the Unassigning state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param unassigning The number of instances in the Unassigning state.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstancesCount withUnassigning(Integer unassigning) {
+        this.unassigning = unassigning;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -567,11 +757,15 @@ public class InstancesCount implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssigning() != null) sb.append("Assigning: " + getAssigning() + ",");
         if (getBooting() != null) sb.append("Booting: " + getBooting() + ",");
         if (getConnectionLost() != null) sb.append("ConnectionLost: " + getConnectionLost() + ",");
+        if (getDeregistering() != null) sb.append("Deregistering: " + getDeregistering() + ",");
         if (getOnline() != null) sb.append("Online: " + getOnline() + ",");
         if (getPending() != null) sb.append("Pending: " + getPending() + ",");
         if (getRebooting() != null) sb.append("Rebooting: " + getRebooting() + ",");
+        if (getRegistered() != null) sb.append("Registered: " + getRegistered() + ",");
+        if (getRegistering() != null) sb.append("Registering: " + getRegistering() + ",");
         if (getRequested() != null) sb.append("Requested: " + getRequested() + ",");
         if (getRunningSetup() != null) sb.append("RunningSetup: " + getRunningSetup() + ",");
         if (getSetupFailed() != null) sb.append("SetupFailed: " + getSetupFailed() + ",");
@@ -580,7 +774,8 @@ public class InstancesCount implements Serializable {
         if (getStopped() != null) sb.append("Stopped: " + getStopped() + ",");
         if (getStopping() != null) sb.append("Stopping: " + getStopping() + ",");
         if (getTerminated() != null) sb.append("Terminated: " + getTerminated() + ",");
-        if (getTerminating() != null) sb.append("Terminating: " + getTerminating() );
+        if (getTerminating() != null) sb.append("Terminating: " + getTerminating() + ",");
+        if (getUnassigning() != null) sb.append("Unassigning: " + getUnassigning() );
         sb.append("}");
         return sb.toString();
     }
@@ -590,11 +785,15 @@ public class InstancesCount implements Serializable {
         final int prime = 31;
         int hashCode = 1;
         
+        hashCode = prime * hashCode + ((getAssigning() == null) ? 0 : getAssigning().hashCode()); 
         hashCode = prime * hashCode + ((getBooting() == null) ? 0 : getBooting().hashCode()); 
         hashCode = prime * hashCode + ((getConnectionLost() == null) ? 0 : getConnectionLost().hashCode()); 
+        hashCode = prime * hashCode + ((getDeregistering() == null) ? 0 : getDeregistering().hashCode()); 
         hashCode = prime * hashCode + ((getOnline() == null) ? 0 : getOnline().hashCode()); 
         hashCode = prime * hashCode + ((getPending() == null) ? 0 : getPending().hashCode()); 
         hashCode = prime * hashCode + ((getRebooting() == null) ? 0 : getRebooting().hashCode()); 
+        hashCode = prime * hashCode + ((getRegistered() == null) ? 0 : getRegistered().hashCode()); 
+        hashCode = prime * hashCode + ((getRegistering() == null) ? 0 : getRegistering().hashCode()); 
         hashCode = prime * hashCode + ((getRequested() == null) ? 0 : getRequested().hashCode()); 
         hashCode = prime * hashCode + ((getRunningSetup() == null) ? 0 : getRunningSetup().hashCode()); 
         hashCode = prime * hashCode + ((getSetupFailed() == null) ? 0 : getSetupFailed().hashCode()); 
@@ -604,6 +803,7 @@ public class InstancesCount implements Serializable {
         hashCode = prime * hashCode + ((getStopping() == null) ? 0 : getStopping().hashCode()); 
         hashCode = prime * hashCode + ((getTerminated() == null) ? 0 : getTerminated().hashCode()); 
         hashCode = prime * hashCode + ((getTerminating() == null) ? 0 : getTerminating().hashCode()); 
+        hashCode = prime * hashCode + ((getUnassigning() == null) ? 0 : getUnassigning().hashCode()); 
         return hashCode;
     }
     
@@ -615,16 +815,24 @@ public class InstancesCount implements Serializable {
         if (obj instanceof InstancesCount == false) return false;
         InstancesCount other = (InstancesCount)obj;
         
+        if (other.getAssigning() == null ^ this.getAssigning() == null) return false;
+        if (other.getAssigning() != null && other.getAssigning().equals(this.getAssigning()) == false) return false; 
         if (other.getBooting() == null ^ this.getBooting() == null) return false;
         if (other.getBooting() != null && other.getBooting().equals(this.getBooting()) == false) return false; 
         if (other.getConnectionLost() == null ^ this.getConnectionLost() == null) return false;
         if (other.getConnectionLost() != null && other.getConnectionLost().equals(this.getConnectionLost()) == false) return false; 
+        if (other.getDeregistering() == null ^ this.getDeregistering() == null) return false;
+        if (other.getDeregistering() != null && other.getDeregistering().equals(this.getDeregistering()) == false) return false; 
         if (other.getOnline() == null ^ this.getOnline() == null) return false;
         if (other.getOnline() != null && other.getOnline().equals(this.getOnline()) == false) return false; 
         if (other.getPending() == null ^ this.getPending() == null) return false;
         if (other.getPending() != null && other.getPending().equals(this.getPending()) == false) return false; 
         if (other.getRebooting() == null ^ this.getRebooting() == null) return false;
         if (other.getRebooting() != null && other.getRebooting().equals(this.getRebooting()) == false) return false; 
+        if (other.getRegistered() == null ^ this.getRegistered() == null) return false;
+        if (other.getRegistered() != null && other.getRegistered().equals(this.getRegistered()) == false) return false; 
+        if (other.getRegistering() == null ^ this.getRegistering() == null) return false;
+        if (other.getRegistering() != null && other.getRegistering().equals(this.getRegistering()) == false) return false; 
         if (other.getRequested() == null ^ this.getRequested() == null) return false;
         if (other.getRequested() != null && other.getRequested().equals(this.getRequested()) == false) return false; 
         if (other.getRunningSetup() == null ^ this.getRunningSetup() == null) return false;
@@ -643,6 +851,8 @@ public class InstancesCount implements Serializable {
         if (other.getTerminated() != null && other.getTerminated().equals(this.getTerminated()) == false) return false; 
         if (other.getTerminating() == null ^ this.getTerminating() == null) return false;
         if (other.getTerminating() != null && other.getTerminating().equals(this.getTerminating()) == false) return false; 
+        if (other.getUnassigning() == null ^ this.getUnassigning() == null) return false;
+        if (other.getUnassigning() != null && other.getUnassigning().equals(this.getUnassigning()) == false) return false; 
         return true;
     }
     

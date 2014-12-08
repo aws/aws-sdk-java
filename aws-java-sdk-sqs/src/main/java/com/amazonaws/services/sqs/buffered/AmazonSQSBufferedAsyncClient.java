@@ -49,6 +49,7 @@ import com.amazonaws.services.sqs.model.ListDeadLetterSourceQueuesRequest;
 import com.amazonaws.services.sqs.model.ListDeadLetterSourceQueuesResult;
 import com.amazonaws.services.sqs.model.ListQueuesRequest;
 import com.amazonaws.services.sqs.model.ListQueuesResult;
+import com.amazonaws.services.sqs.model.PurgeQueueRequest;
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.amazonaws.services.sqs.model.ReceiveMessageResult;
 import com.amazonaws.services.sqs.model.RemovePermissionRequest;
@@ -298,6 +299,18 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return realSQS.getQueueAttributes(getQueueAttributesRequest);
     }
 
+    public Future<Void> purgeQueueAsync(PurgeQueueRequest purgeQueueRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ResultConverter.appendUserAgent(purgeQueueRequest, USER_AGENT);
+        return realSQS.purgeQueueAsync(purgeQueueRequest);
+    }
+
+    public void purgeQueue(PurgeQueueRequest purgeQueueRequest)
+            throws AmazonServiceException, AmazonClientException {
+        ResultConverter.appendUserAgent(purgeQueueRequest, USER_AGENT);
+        realSQS.purgeQueue(purgeQueueRequest);
+    }
+
     public Future<Void> deleteQueueAsync(DeleteQueueRequest deleteQueueRequest)
             throws AmazonServiceException, AmazonClientException {
         ResultConverter.appendUserAgent(deleteQueueRequest, USER_AGENT);
@@ -487,6 +500,12 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
             throws AmazonServiceException, AmazonClientException {
         return realSQS.sendMessageBatchAsync(sendMessageBatchRequest,
                 asyncHandler);
+    }
+
+    public Future<Void> purgeQueueAsync(PurgeQueueRequest purgeQueueRequest,
+            AsyncHandler<PurgeQueueRequest, Void> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return realSQS.purgeQueueAsync(purgeQueueRequest, asyncHandler);
     }
 
     public Future<Void> deleteQueueAsync(DeleteQueueRequest deleteQueueRequest,

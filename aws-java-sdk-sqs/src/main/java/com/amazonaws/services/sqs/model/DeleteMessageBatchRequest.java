@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteMessageBatch(DeleteMessageBatchRequest) DeleteMessageBatch operation}.
  * <p>
- * Deletes multiple messages. This is a batch version of DeleteMessage.
- * The result of the delete action on each message is reported
- * individually in the response.
+ * Deletes up to ten messages from the specified queue. This is a batch
+ * version of DeleteMessage. The result of the delete action on each
+ * message is reported individually in the response.
  * </p>
  * <p>
  * <b>IMPORTANT:</b> Because the batch request can result in a
