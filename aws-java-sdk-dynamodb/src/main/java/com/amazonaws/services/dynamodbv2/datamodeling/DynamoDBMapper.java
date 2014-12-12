@@ -1362,10 +1362,16 @@ public class DynamoDBMapper {
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No
      * version checks are performed</b>, as required by the API.
      * <p/>
-     * <b>This method ignores any SaveBehavior set on the mapper</b>, and
-     * always behaves as if SaveBehavior.CLOBBER was specified, as
-     * the AmazonDynamoDB.batchWriteItem() request does not support updating
+     * <b>This method ignores any SaveBehavior set on the mapper</b>, and always
+     * behaves as if SaveBehavior.CLOBBER was specified, as the
+     * AmazonDynamoDB.batchWriteItem() request does not support updating
      * existing items.
+     * <p>
+     * This method fails to save the batch if the size of an individual object
+     * in the batch exceeds 400 KB. For more information on batch restrictions
+     * see, http://docs.aws.amazon
+     * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
+     * </p>
      *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
@@ -1378,10 +1384,16 @@ public class DynamoDBMapper {
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No
      * version checks are performed</b>, as required by the API.
      * <p/>
-     * <b>This method ignores any SaveBehavior set on the mapper</b>, and
-     * always behaves as if SaveBehavior.CLOBBER was specified, as
-     * the AmazonDynamoDB.batchWriteItem() request does not support updating
-     * existing items.
+     * <b>This method ignores any SaveBehavior set on the mapper</b>, and always
+     * behaves as if SaveBehavior.CLOBBER was specified, as the
+     * AmazonDynamoDB.batchWriteItem() request does not support updating
+     * existing items. *
+     * <p>
+     * This method fails to save the batch if the size of an individual object
+     * in the batch exceeds 400 KB. For more information on batch restrictions
+     * see, http://docs.aws.amazon
+     * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
+     * </p>
      *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
@@ -1394,10 +1406,16 @@ public class DynamoDBMapper {
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No
      * version checks are performed</b>, as required by the API.
      * <p/>
-     * <b>This method ignores any SaveBehavior set on the mapper</b>, and
-     * always behaves as if SaveBehavior.CLOBBER was specified, as
-     * the AmazonDynamoDB.batchWriteItem() request does not support updating
+     * <b>This method ignores any SaveBehavior set on the mapper</b>, and always
+     * behaves as if SaveBehavior.CLOBBER was specified, as the
+     * AmazonDynamoDB.batchWriteItem() request does not support updating
      * existing items.
+     * <p>
+     * This method fails to save the batch if the size of an individual object
+     * in the batch exceeds 400 KB. For more information on batch restrictions
+     * see, http://docs.aws.amazon
+     * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
+     * </p>
      *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
@@ -1408,6 +1426,12 @@ public class DynamoDBMapper {
     /**
      * Saves and deletes the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
+     * <p>
+     * This method fails to save the batch if the size of an individual object
+     * in the batch exceeds 400 KB. For more information on batch restrictions
+     * see, http://docs.aws.amazon
+     * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
+     * </p>
      *
      * @param objectsToWrite
      *            A list of objects to save to DynamoDB. <b>No version checks
@@ -1423,9 +1447,9 @@ public class DynamoDBMapper {
      *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} is
      *            considered; if specified, all objects in the two parameter
      *            lists will be considered to belong to the given table
-     *            override. In particular, this method <b>always acts as
-     *            if SaveBehavior.CLOBBER was specified</b> regardless of the
-     *            value of the config parameter.
+     *            override. In particular, this method <b>always acts as if
+     *            SaveBehavior.CLOBBER was specified</b> regardless of the value
+     *            of the config parameter.
      * @return A list of failed batches which includes the unprocessed items and
      *         the exceptions causing the failure.
      */

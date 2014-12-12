@@ -5,7 +5,7 @@
   <artifactId>aws-java-sdk-pom</artifactId>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
-  <version>1.9.11-SNAPSHOT</version>
+  <version>1.9.11</version>
   <description>The Amazon Web Services SDK for Java provides Java APIs
     for building software on AWS' cost-effective, scalable, and reliable
     infrastructure products. The AWS Java SDK allows developers to code
@@ -63,6 +63,7 @@
     <module>aws-java-sdk-config</module>
     <module>aws-java-sdk-lambda</module>
     <module>aws-java-sdk</module>
+    <module>aws-java-sdk-osgi</module>
     <module>aws-java-sdk-core</module>
 </modules>
 
@@ -114,28 +115,6 @@
           <minmemory>128m</minmemory>
           <maxmemory>1024m</maxmemory>
         </configuration>
-      </plugin>
-      <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-             <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-           </archive>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <executions>
-          <execution>
-             <id>bundle-manifest</id>
-               <phase>process-classes</phase>
-               <goals>
-                  <goal>manifest</goal>
-                </goals>
-           </execution>
-        </executions>
       </plugin>
     </plugins>
   </pluginManagement>

@@ -1752,6 +1752,13 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * <ol> <li> <p>
      * Initiate a retrieval job.
      * </p>
+     * <p>
+     * <b>NOTE:</b> A data retrieval policy can cause your initiate
+     * retrieval job request to fail with a PolicyEnforcedException
+     * exception. For more information about data retrieval policies, see
+     * Amazon Glacier Data Retrieval Policies. For more information about the
+     * PolicyEnforcedException exception, see Error Responses.
+     * </p>
      * </li>
      * <li> <p>
      * After the job completes, download the bytes.
@@ -1935,6 +1942,13 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * </p>
      * <ol> <li> <p>
      * Initiate a retrieval job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> A data retrieval policy can cause your initiate
+     * retrieval job request to fail with a PolicyEnforcedException
+     * exception. For more information about data retrieval policies, see
+     * Amazon Glacier Data Retrieval Policies. For more information about the
+     * PolicyEnforcedException exception, see Error Responses.
      * </p>
      * </li>
      * <li> <p>
@@ -3188,6 +3202,100 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
     
     /**
      * <p>
+     * This operation sets and then enacts a data retrieval policy in the
+     * region specified in the PUT request. You can set one policy per region
+     * for an AWS account. The policy is enacted within a few minutes of a
+     * successful PUT operation.
+     * </p>
+     * <p>
+     * The set policy operation does not affect retrieval jobs that were in
+     * progress before the policy was enacted. For more information about
+     * data retrieval policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html"> Amazon Glacier Data Retrieval Policies </a>
+     * .
+     * </p>
+     *
+     * @param setDataRetrievalPolicyRequest Container for the necessary
+     *           parameters to execute the SetDataRetrievalPolicy operation on
+     *           AmazonGlacier.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetDataRetrievalPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setDataRetrievalPolicyAsync(final SetDataRetrievalPolicyRequest setDataRetrievalPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                setDataRetrievalPolicy(setDataRetrievalPolicyRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * This operation sets and then enacts a data retrieval policy in the
+     * region specified in the PUT request. You can set one policy per region
+     * for an AWS account. The policy is enacted within a few minutes of a
+     * successful PUT operation.
+     * </p>
+     * <p>
+     * The set policy operation does not affect retrieval jobs that were in
+     * progress before the policy was enacted. For more information about
+     * data retrieval policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html"> Amazon Glacier Data Retrieval Policies </a>
+     * .
+     * </p>
+     *
+     * @param setDataRetrievalPolicyRequest Container for the necessary
+     *           parameters to execute the SetDataRetrievalPolicy operation on
+     *           AmazonGlacier.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetDataRetrievalPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setDataRetrievalPolicyAsync(
+            final SetDataRetrievalPolicyRequest setDataRetrievalPolicyRequest,
+            final AsyncHandler<SetDataRetrievalPolicyRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                setDataRetrievalPolicy(setDataRetrievalPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setDataRetrievalPolicyRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * This operation deletes a vault. Amazon Glacier will delete a vault
      * only if there are no archives in the vault as of the last inventory
      * and there have been no writes to the vault since the last inventory.
@@ -3302,6 +3410,88 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
               }
               asyncHandler.onSuccess(deleteVaultRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * This operation returns the current data retrieval policy for the
+     * account and region specified in the GET request. For more information
+     * about data retrieval policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html"> Amazon Glacier Data Retrieval Policies </a>
+     * .
+     * </p>
+     *
+     * @param getDataRetrievalPolicyRequest Container for the necessary
+     *           parameters to execute the GetDataRetrievalPolicy operation on
+     *           AmazonGlacier.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetDataRetrievalPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetDataRetrievalPolicyResult> getDataRetrievalPolicyAsync(final GetDataRetrievalPolicyRequest getDataRetrievalPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetDataRetrievalPolicyResult>() {
+            public GetDataRetrievalPolicyResult call() throws Exception {
+                return getDataRetrievalPolicy(getDataRetrievalPolicyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * This operation returns the current data retrieval policy for the
+     * account and region specified in the GET request. For more information
+     * about data retrieval policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html"> Amazon Glacier Data Retrieval Policies </a>
+     * .
+     * </p>
+     *
+     * @param getDataRetrievalPolicyRequest Container for the necessary
+     *           parameters to execute the GetDataRetrievalPolicy operation on
+     *           AmazonGlacier.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetDataRetrievalPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetDataRetrievalPolicyResult> getDataRetrievalPolicyAsync(
+            final GetDataRetrievalPolicyRequest getDataRetrievalPolicyRequest,
+            final AsyncHandler<GetDataRetrievalPolicyRequest, GetDataRetrievalPolicyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetDataRetrievalPolicyResult>() {
+            public GetDataRetrievalPolicyResult call() throws Exception {
+              GetDataRetrievalPolicyResult result;
+                try {
+                result = getDataRetrievalPolicy(getDataRetrievalPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getDataRetrievalPolicyRequest, result);
+                 return result;
         }
     });
     }

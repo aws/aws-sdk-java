@@ -9,32 +9,21 @@
   <description>This artifact contains the higher level libraries that can be used in Amazon Simple WorkFlow Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
 
-  <scm>
-    <url>https://github.com/aws/aws-sdk-java.git</url>
-  </scm>
   <parent>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
-        <version>1.9.10</version>
+        <version>1.9.11</version>
   </parent>
 
   <properties>
     <spring.version>3.0.7.RELEASE</spring.version>
   </properties>
 
-  <licenses>
-    <license>
-      <name>Apache License, Version 2.0</name>
-      <url>https://aws.amazon.com/apache2.0</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
   <dependencies>
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-simpleworkflow</artifactId>
-        <version>1.9.10</version>
+        <version>1.9.11</version>
       </dependency>
       <dependency>
         <groupId>org.freemarker</groupId>
@@ -110,15 +99,6 @@
             <minmemory>128m</minmemory>
             <maxmemory>1024m</maxmemory>
           </configuration>
-        </plugin>
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-bundle-plugin</artifactId>
         </plugin>
       </plugins>
   </build>

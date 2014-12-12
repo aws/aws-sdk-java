@@ -17,7 +17,6 @@ package com.amazonaws.services.s3.model;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.conn.EofSensorInputStream;
@@ -27,6 +26,7 @@ import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.MetricFilterInputStream;
 import com.amazonaws.services.s3.metrics.S3ServiceMetric;
+import com.amazonaws.util.IOUtils;
 
 /**
  * Input stream representing the content of an {@link S3Object}. In addition to
@@ -89,12 +89,7 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     @Override
     public void abort() {
         getHttpRequest().abort();
-        try {
-            close();
-        } catch (IOException e) {
-            // expected from some implementations because the stream is closed
-            LogFactory.getLog(getClass()).debug("FYI", e);
-        }
+        IOUtils.closeQuietly(in, null);
     }
 
     /**

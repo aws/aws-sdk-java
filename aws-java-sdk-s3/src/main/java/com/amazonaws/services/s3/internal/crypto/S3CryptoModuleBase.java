@@ -222,9 +222,8 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         T uploadContext = multipartUploadContexts.get(uploadId);
         CopyPartResult result = s3.copyPart(copyPartRequest);
 
-        if (!uploadContext.hasFinalPartBeenSeen()) {
+        if (uploadContext != null && !uploadContext.hasFinalPartBeenSeen())
             uploadContext.setHasFinalPartBeenSeen(true);
-        }
         return result;
     }
 
@@ -371,22 +370,22 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             CompleteMultipartUploadRequest req) {
         appendUserAgent(req, USER_AGENT);
         String uploadId = req.getUploadId();
-        T uploadContext = multipartUploadContexts.get(uploadId);
+        final T uploadContext = multipartUploadContexts.get(uploadId);
 
-        if (uploadContext.hasFinalPartBeenSeen() == false) {
-            throw new AmazonClientException("Unable to complete an encrypted multipart upload without being told which part was the last.  " +
-                    "Without knowing which part was the last, the encrypted data in Amazon S3 is incomplete and corrupt.");
+        if (uploadContext != null && !uploadContext.hasFinalPartBeenSeen()) {
+            throw new AmazonClientException(
+                "Unable to complete an encrypted multipart upload without being told which part was the last.  "
+                + "Without knowing which part was the last, the encrypted data in Amazon S3 is incomplete and corrupt.");
         }
-
         CompleteMultipartUploadResult result = s3.completeMultipartUpload(req);
 
         // In InstructionFile mode, we want to write the instruction file only
         // after the whole upload has completed correctly.
-        if (cryptoConfig.getStorageMode() == InstructionFile) {
+        if (uploadContext != null
+        &&  cryptoConfig.getStorageMode() == InstructionFile) {
             // Put the instruction file into S3
             s3.putObject(createInstructionPutRequest(
-                    uploadContext.getBucketName(),
-                    uploadContext.getKey(),
+                    uploadContext.getBucketName(), uploadContext.getKey(),
                     uploadContext.getContentCryptoMaterial()));
         }
         multipartUploadContexts.remove(uploadId);

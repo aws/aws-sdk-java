@@ -256,6 +256,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         jsonErrorUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new MissingParameterValueExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new PolicyEnforcedExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new RequestTimeoutExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ServiceUnavailableExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
@@ -1168,6 +1169,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * <ol> <li> <p>
      * Initiate a retrieval job.
      * </p>
+     * <p>
+     * <b>NOTE:</b> A data retrieval policy can cause your initiate
+     * retrieval job request to fail with a PolicyEnforcedException
+     * exception. For more information about data retrieval policies, see
+     * Amazon Glacier Data Retrieval Policies. For more information about the
+     * PolicyEnforcedException exception, see Error Responses.
+     * </p>
      * </li>
      * <li> <p>
      * After the job completes, download the bytes.
@@ -1325,6 +1333,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @throws ResourceNotFoundException
      * @throws MissingParameterValueException
      * @throws ServiceUnavailableException
+     * @throws PolicyEnforcedException
      * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
@@ -2021,6 +2030,61 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This operation sets and then enacts a data retrieval policy in the
+     * region specified in the PUT request. You can set one policy per region
+     * for an AWS account. The policy is enacted within a few minutes of a
+     * successful PUT operation.
+     * </p>
+     * <p>
+     * The set policy operation does not affect retrieval jobs that were in
+     * progress before the policy was enacted. For more information about
+     * data retrieval policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html"> Amazon Glacier Data Retrieval Policies </a>
+     * .
+     * </p>
+     *
+     * @param setDataRetrievalPolicyRequest Container for the necessary
+     *           parameters to execute the SetDataRetrievalPolicy service method on
+     *           AmazonGlacier.
+     * 
+     * 
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setDataRetrievalPolicy(SetDataRetrievalPolicyRequest setDataRetrievalPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(setDataRetrievalPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetDataRetrievalPolicyRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetDataRetrievalPolicyRequestMarshaller().marshall(setDataRetrievalPolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * This operation deletes a vault. Amazon Glacier will delete a vault
      * only if there are no archives in the vault as of the last inventory
      * and there have been no writes to the vault since the last inventory.
@@ -2085,6 +2149,64 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
+     * This operation returns the current data retrieval policy for the
+     * account and region specified in the GET request. For more information
+     * about data retrieval policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html"> Amazon Glacier Data Retrieval Policies </a>
+     * .
+     * </p>
+     *
+     * @param getDataRetrievalPolicyRequest Container for the necessary
+     *           parameters to execute the GetDataRetrievalPolicy service method on
+     *           AmazonGlacier.
+     * 
+     * @return The response from the GetDataRetrievalPolicy service method,
+     *         as returned by AmazonGlacier.
+     * 
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetDataRetrievalPolicyResult getDataRetrievalPolicy(GetDataRetrievalPolicyRequest getDataRetrievalPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDataRetrievalPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataRetrievalPolicyRequest> request = null;
+        Response<GetDataRetrievalPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataRetrievalPolicyRequestMarshaller().marshall(getDataRetrievalPolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<GetDataRetrievalPolicyResult, JsonUnmarshallerContext> unmarshaller =
+                new GetDataRetrievalPolicyResultJsonUnmarshaller();
+            JsonResponseHandler<GetDataRetrievalPolicyResult> responseHandler =
+                new JsonResponseHandler<GetDataRetrievalPolicyResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
