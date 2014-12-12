@@ -92,6 +92,15 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
     private com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist> playlists;
 
     /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them.
+     */
+    private java.util.Map<String,String> userMetadata;
+
+    /**
      * The <code>Id</code> of the pipeline that you want Elastic Transcoder
      * to use for transcoding. The pipeline determines several settings,
      * including the Amazon S3 bucket from which Elastic Transcoder gets the
@@ -492,6 +501,101 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them.
+     *
+     * @return User-defined metadata that you want to associate with an Elastic
+     *         Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     *         and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *         Transcoder does not guarantee that <code>key/value</code> pairs will
+     *         be returned in the same order in which you specify them.
+     */
+    public java.util.Map<String,String> getUserMetadata() {
+        
+        if (userMetadata == null) {
+            userMetadata = new java.util.HashMap<String,String>();
+        }
+        return userMetadata;
+    }
+    
+    /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them.
+     *
+     * @param userMetadata User-defined metadata that you want to associate with an Elastic
+     *         Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     *         and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *         Transcoder does not guarantee that <code>key/value</code> pairs will
+     *         be returned in the same order in which you specify them.
+     */
+    public void setUserMetadata(java.util.Map<String,String> userMetadata) {
+        this.userMetadata = userMetadata;
+    }
+    
+    /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param userMetadata User-defined metadata that you want to associate with an Elastic
+     *         Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     *         and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *         Transcoder does not guarantee that <code>key/value</code> pairs will
+     *         be returned in the same order in which you specify them.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateJobRequest withUserMetadata(java.util.Map<String,String> userMetadata) {
+        setUserMetadata(userMetadata);
+        return this;
+    }
+
+    /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them.
+     * <p>
+     * The method adds a new key-value pair into UserMetadata parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into UserMetadata.
+     * @param value The corresponding value of the entry to be added into UserMetadata.
+     */
+    public CreateJobRequest addUserMetadataEntry(String key, String value) {
+        if (null == this.userMetadata) {
+            this.userMetadata = new java.util.HashMap<String,String>();
+        }
+        if (this.userMetadata.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.userMetadata.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into UserMetadata.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public CreateJobRequest clearUserMetadataEntries() {
+        this.userMetadata = null;
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -508,7 +612,8 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         if (getOutput() != null) sb.append("Output: " + getOutput() + ",");
         if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");
         if (getOutputKeyPrefix() != null) sb.append("OutputKeyPrefix: " + getOutputKeyPrefix() + ",");
-        if (getPlaylists() != null) sb.append("Playlists: " + getPlaylists() );
+        if (getPlaylists() != null) sb.append("Playlists: " + getPlaylists() + ",");
+        if (getUserMetadata() != null) sb.append("UserMetadata: " + getUserMetadata() );
         sb.append("}");
         return sb.toString();
     }
@@ -524,6 +629,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode()); 
         hashCode = prime * hashCode + ((getOutputKeyPrefix() == null) ? 0 : getOutputKeyPrefix().hashCode()); 
         hashCode = prime * hashCode + ((getPlaylists() == null) ? 0 : getPlaylists().hashCode()); 
+        hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode()); 
         return hashCode;
     }
     
@@ -547,6 +653,8 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         if (other.getOutputKeyPrefix() != null && other.getOutputKeyPrefix().equals(this.getOutputKeyPrefix()) == false) return false; 
         if (other.getPlaylists() == null ^ this.getPlaylists() == null) return false;
         if (other.getPlaylists() != null && other.getPlaylists().equals(this.getPlaylists()) == false) return false; 
+        if (other.getUserMetadata() == null ^ this.getUserMetadata() == null) return false;
+        if (other.getUserMetadata() != null && other.getUserMetadata().equals(this.getUserMetadata()) == false) return false; 
         return true;
     }
     

@@ -31,6 +31,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <ol> <li> <p>
  * Initiate a retrieval job.
  * </p>
+ * <p>
+ * <b>NOTE:</b> A data retrieval policy can cause your initiate retrieval
+ * job request to fail with a PolicyEnforcedException exception. For more
+ * information about data retrieval policies, see Amazon Glacier Data
+ * Retrieval Policies. For more information about the
+ * PolicyEnforcedException exception, see Error Responses.
+ * </p>
  * </li>
  * <li> <p>
  * After the job completes, download the bytes.

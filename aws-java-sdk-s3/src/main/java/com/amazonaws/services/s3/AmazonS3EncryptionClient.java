@@ -508,7 +508,16 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     @Override
     public InitiateMultipartUploadResult initiateMultipartUpload(
             InitiateMultipartUploadRequest req) {
-        return crypto.initiateMultipartUploadSecurely(req);
+        boolean isCreateEncryptionMaterial = true;
+        if (req instanceof EncryptedInitiateMultipartUploadRequest) {
+            EncryptedInitiateMultipartUploadRequest cryptoReq = 
+                    (EncryptedInitiateMultipartUploadRequest) req;
+            isCreateEncryptionMaterial = cryptoReq.isCreateEncryptionMaterial();
+        }
+        return isCreateEncryptionMaterial
+             ? crypto.initiateMultipartUploadSecurely(req)
+             : super.initiateMultipartUpload(req)
+             ;
     }
 
     /**

@@ -111,6 +111,20 @@ public class Job implements Serializable {
     private String status;
 
     /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them. <p>Metadata
+     * <code>keys</code> and <code>values</code> must use characters from the
+     * following list: <ul> <li><p><code>0-9</code></li>
+     * <li><p><code>A-Z</code> and <code>a-z</code></li>
+     * <li><p><code>Space</code></li> <li><p>The following symbols:
+     * <code>_.:/=+-%@</code></li> </ul>
+     */
+    private java.util.Map<String,String> userMetadata;
+
+    /**
      * The identifier that Elastic Transcoder assigned to the job. You use
      * this value to get settings for the job or to delete the job.
      * <p>
@@ -712,6 +726,136 @@ public class Job implements Serializable {
     }
 
     /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them. <p>Metadata
+     * <code>keys</code> and <code>values</code> must use characters from the
+     * following list: <ul> <li><p><code>0-9</code></li>
+     * <li><p><code>A-Z</code> and <code>a-z</code></li>
+     * <li><p><code>Space</code></li> <li><p>The following symbols:
+     * <code>_.:/=+-%@</code></li> </ul>
+     *
+     * @return User-defined metadata that you want to associate with an Elastic
+     *         Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     *         and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *         Transcoder does not guarantee that <code>key/value</code> pairs will
+     *         be returned in the same order in which you specify them. <p>Metadata
+     *         <code>keys</code> and <code>values</code> must use characters from the
+     *         following list: <ul> <li><p><code>0-9</code></li>
+     *         <li><p><code>A-Z</code> and <code>a-z</code></li>
+     *         <li><p><code>Space</code></li> <li><p>The following symbols:
+     *         <code>_.:/=+-%@</code></li> </ul>
+     */
+    public java.util.Map<String,String> getUserMetadata() {
+        
+        if (userMetadata == null) {
+            userMetadata = new java.util.HashMap<String,String>();
+        }
+        return userMetadata;
+    }
+    
+    /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them. <p>Metadata
+     * <code>keys</code> and <code>values</code> must use characters from the
+     * following list: <ul> <li><p><code>0-9</code></li>
+     * <li><p><code>A-Z</code> and <code>a-z</code></li>
+     * <li><p><code>Space</code></li> <li><p>The following symbols:
+     * <code>_.:/=+-%@</code></li> </ul>
+     *
+     * @param userMetadata User-defined metadata that you want to associate with an Elastic
+     *         Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     *         and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *         Transcoder does not guarantee that <code>key/value</code> pairs will
+     *         be returned in the same order in which you specify them. <p>Metadata
+     *         <code>keys</code> and <code>values</code> must use characters from the
+     *         following list: <ul> <li><p><code>0-9</code></li>
+     *         <li><p><code>A-Z</code> and <code>a-z</code></li>
+     *         <li><p><code>Space</code></li> <li><p>The following symbols:
+     *         <code>_.:/=+-%@</code></li> </ul>
+     */
+    public void setUserMetadata(java.util.Map<String,String> userMetadata) {
+        this.userMetadata = userMetadata;
+    }
+    
+    /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them. <p>Metadata
+     * <code>keys</code> and <code>values</code> must use characters from the
+     * following list: <ul> <li><p><code>0-9</code></li>
+     * <li><p><code>A-Z</code> and <code>a-z</code></li>
+     * <li><p><code>Space</code></li> <li><p>The following symbols:
+     * <code>_.:/=+-%@</code></li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param userMetadata User-defined metadata that you want to associate with an Elastic
+     *         Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     *         and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *         Transcoder does not guarantee that <code>key/value</code> pairs will
+     *         be returned in the same order in which you specify them. <p>Metadata
+     *         <code>keys</code> and <code>values</code> must use characters from the
+     *         following list: <ul> <li><p><code>0-9</code></li>
+     *         <li><p><code>A-Z</code> and <code>a-z</code></li>
+     *         <li><p><code>Space</code></li> <li><p>The following symbols:
+     *         <code>_.:/=+-%@</code></li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Job withUserMetadata(java.util.Map<String,String> userMetadata) {
+        setUserMetadata(userMetadata);
+        return this;
+    }
+
+    /**
+     * User-defined metadata that you want to associate with an Elastic
+     * Transcoder job. You specify metadata in <code>key/value</code> pairs,
+     * and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     * Transcoder does not guarantee that <code>key/value</code> pairs will
+     * be returned in the same order in which you specify them. <p>Metadata
+     * <code>keys</code> and <code>values</code> must use characters from the
+     * following list: <ul> <li><p><code>0-9</code></li>
+     * <li><p><code>A-Z</code> and <code>a-z</code></li>
+     * <li><p><code>Space</code></li> <li><p>The following symbols:
+     * <code>_.:/=+-%@</code></li> </ul>
+     * <p>
+     * The method adds a new key-value pair into UserMetadata parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into UserMetadata.
+     * @param value The corresponding value of the entry to be added into UserMetadata.
+     */
+    public Job addUserMetadataEntry(String key, String value) {
+        if (null == this.userMetadata) {
+            this.userMetadata = new java.util.HashMap<String,String>();
+        }
+        if (this.userMetadata.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.userMetadata.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into UserMetadata.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public Job clearUserMetadataEntries() {
+        this.userMetadata = null;
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -731,7 +875,8 @@ public class Job implements Serializable {
         if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");
         if (getOutputKeyPrefix() != null) sb.append("OutputKeyPrefix: " + getOutputKeyPrefix() + ",");
         if (getPlaylists() != null) sb.append("Playlists: " + getPlaylists() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() );
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getUserMetadata() != null) sb.append("UserMetadata: " + getUserMetadata() );
         sb.append("}");
         return sb.toString();
     }
@@ -750,6 +895,7 @@ public class Job implements Serializable {
         hashCode = prime * hashCode + ((getOutputKeyPrefix() == null) ? 0 : getOutputKeyPrefix().hashCode()); 
         hashCode = prime * hashCode + ((getPlaylists() == null) ? 0 : getPlaylists().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode()); 
         return hashCode;
     }
     
@@ -779,6 +925,8 @@ public class Job implements Serializable {
         if (other.getPlaylists() != null && other.getPlaylists().equals(this.getPlaylists()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getUserMetadata() == null ^ this.getUserMetadata() == null) return false;
+        if (other.getUserMetadata() != null && other.getUserMetadata().equals(this.getUserMetadata()) == false) return false; 
         return true;
     }
     

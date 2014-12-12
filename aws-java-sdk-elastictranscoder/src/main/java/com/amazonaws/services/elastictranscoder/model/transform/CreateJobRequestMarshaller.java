@@ -786,6 +786,18 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 }
                 jsonWriter.endArray();
             }
+            if (createJobRequest.getUserMetadata() != null) {
+                jsonWriter.key("UserMetadata");
+                jsonWriter.object();
+                for (Map.Entry<String, String> userMetadataListValue : createJobRequest.getUserMetadata().entrySet()) {
+                    if (userMetadataListValue.getValue() != null) {
+                        jsonWriter.key(userMetadataListValue.getKey());
+
+                        jsonWriter.value(userMetadataListValue.getValue());
+                    }
+                }
+                jsonWriter.endObject();
+            }
 
           jsonWriter.endObject();
 

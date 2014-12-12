@@ -19,7 +19,9 @@ import java.util.Map;
 
 import org.apache.http.annotation.ThreadSafe;
 
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.document.api.BatchGetItemApi;
 import com.amazonaws.services.dynamodbv2.document.api.BatchWriteItemApi;
 import com.amazonaws.services.dynamodbv2.document.api.ListTablesApi;
@@ -47,7 +49,7 @@ import com.amazonaws.services.dynamodbv2.model.WriteRequest;
 public class DynamoDB implements ListTablesApi, BatchGetItemApi,
         BatchWriteItemApi {
     private final AmazonDynamoDB client;
-    
+
     private final ListTablesImpl listTablesDelegate;
     private final BatchGetItemImpl batchGetItemDelegate;
     private final BatchWriteItemImpl batchWriteItemDelegate;
@@ -63,6 +65,24 @@ public class DynamoDB implements ListTablesApi, BatchGetItemApi,
     }
 
     /**
+     * Create a DynamoDB object that talks to the specified AWS region. The
+     * underlying service client will use all the default client configurations,
+     * including the default credentials provider chain. See
+     * {@link AmazonDynamoDBClient#AmazonDynamoDBClient()} for more information.
+     * <p>
+     * If you need more control over the client configuration, use
+     * {@link DynamoDB#DynamoDB(AmazonDynamoDB)} instead.
+     *
+     * @param regionEnum
+     *            the AWS region enum
+     * @see AmazonDynamoDBClient#AmazonDynamoDBClient()
+     */
+    public DynamoDB(Regions regionEnum) {
+        this(new AmazonDynamoDBClient()
+                .<AmazonDynamoDBClient>withRegion(regionEnum));
+    }
+
+    /**
      * Returns the specified DynamoDB table.  No network call is involved.
      */
     public Table getTable(String tableName) {
@@ -74,7 +94,7 @@ public class DynamoDB implements ListTablesApi, BatchGetItemApi,
      */
     public Table createTable(CreateTableRequest req) {
         CreateTableResult result = client.createTable(req);
-        return new Table(client, req.getTableName(), 
+        return new Table(client, req.getTableName(),
             result.getTableDescription());
     }
 
@@ -82,7 +102,7 @@ public class DynamoDB implements ListTablesApi, BatchGetItemApi,
     /**
      * Creates the specified table in DynamoDB.
      */
-    public Table createTable(String tableName, 
+    public Table createTable(String tableName,
             List<KeySchemaElement> keySchema,
             List<AttributeDefinition> attributeDefinitions,
             ProvisionedThroughput provisionedThroughput) {

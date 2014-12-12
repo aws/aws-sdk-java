@@ -22,17 +22,22 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.AmazonS3EncryptionClient;
 
 /**
- * <p>
  * This class is an extension of {@link InitiateMultipartUploadRequest} to allow
- * additional encryption material description to be specified on a per-request
- * basis. In particular, {@link EncryptedInitiateMultipartUploadRequest} is only
+ * additional crypto related attributes to be specified.
+ * <p>
+ * In particular, this includes the options to
+ * <ul>
+ * <li>specify encryption material description on a per-request basis;</li>
+ * <li>specify whether a new set of encryption material is to be created for the
+ * upload or not;</li>
+ * </ul>
+ * In particular, {@link EncryptedInitiateMultipartUploadRequest} is only
  * recognized by {@link AmazonS3EncryptionClient}.
  * </p>
  * <p>
  * If {@link EncryptedInitiateMultipartUploadRequest} is used against the
  * non-encrypting {@link AmazonS3Client}, these additional attributes will be
  * ignored.
- * </p>
  */
 public class EncryptedInitiateMultipartUploadRequest extends
         InitiateMultipartUploadRequest implements MaterialsDescriptionProvider {
@@ -40,6 +45,11 @@ public class EncryptedInitiateMultipartUploadRequest extends
      * description of encryption materials to be used with this request.
      */
     private Map<String, String> materialsDescription;
+    /**
+     * True if a new set of encryption material is to be created; false
+     * otherwise. Default is true.
+     */
+    private boolean createEncryptionMaterial = true;
     
     public EncryptedInitiateMultipartUploadRequest(String bucketName, String key) {
         super(bucketName, key);
@@ -71,6 +81,34 @@ public class EncryptedInitiateMultipartUploadRequest extends
      */
     public EncryptedInitiateMultipartUploadRequest withMaterialsDescription(Map<String, String> materialsDescription) {
         setMaterialsDescription(materialsDescription);
+        return this;
+    }
+
+    /**
+     * Returns true if a new set of encryption material is to be created; false
+     * otherwise.  Default is true.
+     */
+    public boolean isCreateEncryptionMaterial() {
+        return createEncryptionMaterial;
+    }
+
+    /**
+     * @param createEncryptionMaterial
+     *            true if a new set of encryption material is to be created;
+     *            false otherwise.
+     */
+    public void setCreateEncryptionMaterial(boolean createEncryptionMaterial) {
+        this.createEncryptionMaterial = createEncryptionMaterial;
+    }
+
+    /**
+     * @param createEncryptionMaterial
+     *            true if a new set of encryption material is to be created;
+     *            false otherwise.
+     */
+    public EncryptedInitiateMultipartUploadRequest withCreateEncryptionMaterial(
+            boolean createEncryptionMaterial) {
+        this.createEncryptionMaterial = createEncryptionMaterial;
         return this;
     }
 }
