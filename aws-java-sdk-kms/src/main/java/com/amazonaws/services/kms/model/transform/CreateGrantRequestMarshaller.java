@@ -90,7 +90,7 @@ public class CreateGrantRequestMarshaller implements Marshaller<Request<CreateGr
                 jsonWriter.key("Constraints");
                 jsonWriter.object();
 
-                if (constraints.getEncryptionContextSubset() != null) {
+                if (constraints.getEncryptionContextSubset() != null && constraints.getEncryptionContextSubset().size() > 0) {
                     jsonWriter.key("EncryptionContextSubset");
                     jsonWriter.object();
                     for (Map.Entry<String, String> encryptionContextSubsetListValue : constraints.getEncryptionContextSubset().entrySet()) {
@@ -102,7 +102,7 @@ public class CreateGrantRequestMarshaller implements Marshaller<Request<CreateGr
                     }
                     jsonWriter.endObject();
                 }
-                if (constraints.getEncryptionContextEquals() != null) {
+                if (constraints.getEncryptionContextEquals() != null && constraints.getEncryptionContextEquals().size() > 0) {
                     jsonWriter.key("EncryptionContextEquals");
                     jsonWriter.object();
                     for (Map.Entry<String, String> encryptionContextEqualsListValue : constraints.getEncryptionContextEquals().entrySet()) {
