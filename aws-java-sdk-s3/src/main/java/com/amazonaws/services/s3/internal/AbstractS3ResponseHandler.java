@@ -105,8 +105,8 @@ public abstract class AbstractS3ResponseHandler<T>
     protected void populateObjectMetadata(HttpResponse response, ObjectMetadata metadata) {
         for (Entry<String, String> header : response.getHeaders().entrySet()) {
             String key = header.getKey();
-            if (key.startsWith(Headers.S3_USER_METADATA_PREFIX)) {
-                key = key.substring(Headers.S3_USER_METADATA_PREFIX.length());
+            if (key.toLowerCase().startsWith(Headers.S3_USER_METADATA_PREFIX)) {
+                key = key.substring(Headers.S3_USER_METADATA_PREFIX.length()).toLowerCase();
                 metadata.addUserMetadata(key, header.getValue());
             } else if (ignoredHeaders.contains(key)) {
                 // ignore...
