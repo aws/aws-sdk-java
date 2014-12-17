@@ -85,10 +85,10 @@ public class JobFlowInstancesConfig implements Serializable {
 
     /**
      * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     * or "0.20.205". If you do not set this value, the default of 0.18 is
-     * used, unless the AmiVersion parameter is set in the RunJobFlow call,
-     * in which case the default version of Hadoop for that AMI version is
-     * used.
+     * "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
+     * value, the default of 0.18 is used, unless the AmiVersion parameter is
+     * set in the RunJobFlow call, in which case the default version of
+     * Hadoop for that AMI version is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -503,20 +503,20 @@ public class JobFlowInstancesConfig implements Serializable {
 
     /**
      * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     * or "0.20.205". If you do not set this value, the default of 0.18 is
-     * used, unless the AmiVersion parameter is set in the RunJobFlow call,
-     * in which case the default version of Hadoop for that AMI version is
-     * used.
+     * "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
+     * value, the default of 0.18 is used, unless the AmiVersion parameter is
+     * set in the RunJobFlow call, in which case the default version of
+     * Hadoop for that AMI version is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     *         or "0.20.205". If you do not set this value, the default of 0.18 is
-     *         used, unless the AmiVersion parameter is set in the RunJobFlow call,
-     *         in which case the default version of Hadoop for that AMI version is
-     *         used.
+     *         "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
+     *         value, the default of 0.18 is used, unless the AmiVersion parameter is
+     *         set in the RunJobFlow call, in which case the default version of
+     *         Hadoop for that AMI version is used.
      */
     public String getHadoopVersion() {
         return hadoopVersion;
@@ -524,20 +524,20 @@ public class JobFlowInstancesConfig implements Serializable {
     
     /**
      * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     * or "0.20.205". If you do not set this value, the default of 0.18 is
-     * used, unless the AmiVersion parameter is set in the RunJobFlow call,
-     * in which case the default version of Hadoop for that AMI version is
-     * used.
+     * "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
+     * value, the default of 0.18 is used, unless the AmiVersion parameter is
+     * set in the RunJobFlow call, in which case the default version of
+     * Hadoop for that AMI version is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param hadoopVersion The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     *         or "0.20.205". If you do not set this value, the default of 0.18 is
-     *         used, unless the AmiVersion parameter is set in the RunJobFlow call,
-     *         in which case the default version of Hadoop for that AMI version is
-     *         used.
+     *         "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
+     *         value, the default of 0.18 is used, unless the AmiVersion parameter is
+     *         set in the RunJobFlow call, in which case the default version of
+     *         Hadoop for that AMI version is used.
      */
     public void setHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
@@ -545,10 +545,10 @@ public class JobFlowInstancesConfig implements Serializable {
     
     /**
      * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     * or "0.20.205". If you do not set this value, the default of 0.18 is
-     * used, unless the AmiVersion parameter is set in the RunJobFlow call,
-     * in which case the default version of Hadoop for that AMI version is
-     * used.
+     * "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
+     * value, the default of 0.18 is used, unless the AmiVersion parameter is
+     * set in the RunJobFlow call, in which case the default version of
+     * Hadoop for that AMI version is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -557,10 +557,10 @@ public class JobFlowInstancesConfig implements Serializable {
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param hadoopVersion The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     *         or "0.20.205". If you do not set this value, the default of 0.18 is
-     *         used, unless the AmiVersion parameter is set in the RunJobFlow call,
-     *         in which case the default version of Hadoop for that AMI version is
-     *         used.
+     *         "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
+     *         value, the default of 0.18 is used, unless the AmiVersion parameter is
+     *         set in the RunJobFlow call, in which case the default version of
+     *         Hadoop for that AMI version is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

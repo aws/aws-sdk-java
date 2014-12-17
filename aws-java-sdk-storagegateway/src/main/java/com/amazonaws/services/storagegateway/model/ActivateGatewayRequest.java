@@ -117,7 +117,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
     /**
      * The value that indicates the type of medium changer to use for
      * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
-     * "STK-L700"
+     * "STK-L700", "AWS-Gateway-VTL"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
@@ -532,14 +532,14 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
     /**
      * The value that indicates the type of medium changer to use for
      * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
-     * "STK-L700"
+     * "STK-L700", "AWS-Gateway-VTL"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
      *
      * @return The value that indicates the type of medium changer to use for
      *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
-     *         "STK-L700"
+     *         "STK-L700", "AWS-Gateway-VTL"
      */
     public String getMediumChangerType() {
         return mediumChangerType;
@@ -548,14 +548,14 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
     /**
      * The value that indicates the type of medium changer to use for
      * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
-     * "STK-L700"
+     * "STK-L700", "AWS-Gateway-VTL"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
      *
      * @param mediumChangerType The value that indicates the type of medium changer to use for
      *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
-     *         "STK-L700"
+     *         "STK-L700", "AWS-Gateway-VTL"
      */
     public void setMediumChangerType(String mediumChangerType) {
         this.mediumChangerType = mediumChangerType;
@@ -564,7 +564,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
     /**
      * The value that indicates the type of medium changer to use for
      * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
-     * "STK-L700"
+     * "STK-L700", "AWS-Gateway-VTL"
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -573,7 +573,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      *
      * @param mediumChangerType The value that indicates the type of medium changer to use for
      *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
-     *         "STK-L700"
+     *         "STK-L700", "AWS-Gateway-VTL"
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

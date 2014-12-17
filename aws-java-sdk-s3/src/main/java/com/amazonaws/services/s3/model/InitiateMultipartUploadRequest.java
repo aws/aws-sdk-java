@@ -345,6 +345,14 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
         return this;
     }
 
+    public InitiateMultipartUploadRequest withStorageClass(String storageClass) {
+        if (storageClass != null)
+            this.storageClass = StorageClass.fromValue(storageClass);
+        else
+            this.storageClass = null;
+        return this;
+    }
+
     /**
      * Returns the additional information about the new object being created,
      * such as content type, content encoding, user metadata, etc.

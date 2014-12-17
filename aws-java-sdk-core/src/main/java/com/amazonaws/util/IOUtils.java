@@ -18,6 +18,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -99,5 +100,24 @@ public enum IOUtils {
             Releasable r = (Releasable) is;
             r.release();
         }
+    }
+
+    /**
+     * Copies all bytes from the given input stream to the given output stream.
+     * Caller is responsible for closing the streams.
+     * 
+     * @throws IOException
+     *             if there is any IO exception during read or write.
+     */
+    public static long copy(InputStream in, OutputStream out)
+            throws IOException {
+        byte[] buf = new byte[BUFFER_SIZE];
+        long count = 0;
+        int n = 0;
+        while ((n = in.read(buf)) > -1) {
+            out.write(buf, 0, n);
+            count += n;
+        }
+        return count;
     }
 }

@@ -28,7 +28,9 @@ import static com.amazonaws.util.Throwables.failure;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
 import java.security.Provider;
@@ -57,6 +59,7 @@ import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
+import com.amazonaws.services.s3.model.AbstractPutObjectRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
@@ -77,8 +80,10 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectId;
+import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
+import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.json.Jackson;
 
@@ -147,6 +152,8 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     //////////////////////// Common Implementation ////////////////////////
     @Override
     public PutObjectResult putObjectSecurely(PutObjectRequest req) {
+        // TODO: consider cloning req before proceeding further to reduce side
+        // effects
         appendUserAgent(req, USER_AGENT);
         return cryptoConfig.getStorageMode() == InstructionFile
              ? putObjectUsingInstructionFile(req)
@@ -451,7 +458,32 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             throw new AmazonClientException("No material available from the encryption material provider");
         return buildContentCryptoMaterial(kekMaterials, provider, req);
     }
-    
+
+    @Override
+    public final void putLocalObjectSecurely(final UploadObjectRequest reqIn,
+            String uploadId, OutputStream os) throws IOException {
+        UploadObjectRequest req = reqIn.clone();
+
+        final File fileOrig = req.getFile();
+        final InputStream isOrig = req.getInputStream();
+
+        final T uploadContext = multipartUploadContexts.get(uploadId);
+        ContentCryptoMaterial cekMaterial = uploadContext.getContentCryptoMaterial();
+        req = wrapWithCipher(req, cekMaterial);
+
+        try {
+            IOUtils.copy(req.getInputStream(), os);
+            // so it won't crap out with a false negative at the end; (Not
+            // really relevant here)
+            uploadContext.setHasFinalPartBeenSeen(true);
+        } finally {
+            cleanupDataSource(req, fileOrig, isOrig,
+                    req.getInputStream(), log);
+            IOUtils.closeQuietly(os, log);
+        }
+        return;
+    }
+
     private ContentCryptoMaterial buildContentCryptoMaterial(
             EncryptionMaterials kekMaterials, Provider provider,
             AmazonWebServiceRequest req) {
@@ -526,11 +558,12 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     }
 
     /**
-     * Returns a request that has the content as input stream wrapped with a
-     * cipher, and configured with some meta data and user metadata.
+     * Returns the given <code>PutObjectRequest</code> but has the content as
+     * input stream wrapped with a cipher, and configured with some meta data
+     * and user metadata.
      */
-    protected final PutObjectRequest wrapWithCipher(
-            PutObjectRequest request, ContentCryptoMaterial cekMaterial) {
+    protected final <R extends AbstractPutObjectRequest> R wrapWithCipher(
+            final R request, ContentCryptoMaterial cekMaterial) {
         // Create a new metadata object if there is no metadata already.
         ObjectMetadata metadata = request.getMetadata();
         if (metadata == null) {
@@ -565,7 +598,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     }
 
     private CipherLiteInputStream newS3CipherLiteInputStream(
-            PutObjectRequest req, ContentCryptoMaterial cekMaterial,
+            AbstractPutObjectRequest req, ContentCryptoMaterial cekMaterial,
             long plaintextLength) {
         final File fileOrig = req.getFile();
         final InputStream isOrig = req.getInputStream();
@@ -605,7 +638,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
      * Returns the plaintext length from the request and metadata; or -1 if
      * unknown.
      */
-    protected final long plaintextLength(PutObjectRequest request,
+    protected final long plaintextLength(AbstractPutObjectRequest request,
             ObjectMetadata metadata) {
         if (request.getFile() != null) {
             return request.getFile().length();
@@ -800,6 +833,10 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 "Invalid instruction file for S3 object: " + s3w);
         }
         String json = orig_ifile.toJsonString();
+        return ccmFromJson(json);
+    }
+
+    private ContentCryptoMaterial ccmFromJson(String json) {
         @SuppressWarnings("unchecked")
         Map<String, String> instruction = Collections.unmodifiableMap(
                 Jackson.fromJsonString(json, Map.class));

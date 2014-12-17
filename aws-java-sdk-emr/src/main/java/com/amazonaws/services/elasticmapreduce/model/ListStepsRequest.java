@@ -39,6 +39,12 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> stepStates;
 
     /**
+     * The filter to limit the step list based on the identifier of the
+     * steps.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> stepIds;
+
+    /**
      * The pagination token that indicates the next set of results to
      * retrieve.
      */
@@ -169,6 +175,82 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * The filter to limit the step list based on the identifier of the
+     * steps.
+     *
+     * @return The filter to limit the step list based on the identifier of the
+     *         steps.
+     */
+    public java.util.List<String> getStepIds() {
+        if (stepIds == null) {
+              stepIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              stepIds.setAutoConstruct(true);
+        }
+        return stepIds;
+    }
+    
+    /**
+     * The filter to limit the step list based on the identifier of the
+     * steps.
+     *
+     * @param stepIds The filter to limit the step list based on the identifier of the
+     *         steps.
+     */
+    public void setStepIds(java.util.Collection<String> stepIds) {
+        if (stepIds == null) {
+            this.stepIds = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> stepIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(stepIds.size());
+        stepIdsCopy.addAll(stepIds);
+        this.stepIds = stepIdsCopy;
+    }
+    
+    /**
+     * The filter to limit the step list based on the identifier of the
+     * steps.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param stepIds The filter to limit the step list based on the identifier of the
+     *         steps.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ListStepsRequest withStepIds(String... stepIds) {
+        if (getStepIds() == null) setStepIds(new java.util.ArrayList<String>(stepIds.length));
+        for (String value : stepIds) {
+            getStepIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The filter to limit the step list based on the identifier of the
+     * steps.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param stepIds The filter to limit the step list based on the identifier of the
+     *         steps.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ListStepsRequest withStepIds(java.util.Collection<String> stepIds) {
+        if (stepIds == null) {
+            this.stepIds = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> stepIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(stepIds.size());
+            stepIdsCopy.addAll(stepIds);
+            this.stepIds = stepIdsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * The pagination token that indicates the next set of results to
      * retrieve.
      *
@@ -221,6 +303,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
         sb.append("{");
         if (getClusterId() != null) sb.append("ClusterId: " + getClusterId() + ",");
         if (getStepStates() != null) sb.append("StepStates: " + getStepStates() + ",");
+        if (getStepIds() != null) sb.append("StepIds: " + getStepIds() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
@@ -233,6 +316,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
         
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode()); 
         hashCode = prime * hashCode + ((getStepStates() == null) ? 0 : getStepStates().hashCode()); 
+        hashCode = prime * hashCode + ((getStepIds() == null) ? 0 : getStepIds().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
         return hashCode;
     }
@@ -249,6 +333,8 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
         if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false) return false; 
         if (other.getStepStates() == null ^ this.getStepStates() == null) return false;
         if (other.getStepStates() != null && other.getStepStates().equals(this.getStepStates()) == false) return false; 
+        if (other.getStepIds() == null ^ this.getStepIds() == null) return false;
+        if (other.getStepIds() != null && other.getStepIds().equals(this.getStepIds()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
         return true;

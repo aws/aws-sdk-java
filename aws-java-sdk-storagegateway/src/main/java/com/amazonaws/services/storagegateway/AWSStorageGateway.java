@@ -227,47 +227,6 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * This operation updates the gateway virtual machine (VM) software. The
-     * request immediately triggers the software update.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>When you make this request, you get a 200 OK success
-     * response immediately. However, it might take some time for the update
-     * to complete. You can call DescribeGatewayInformation to verify the
-     * gateway is in the STATE_RUNNING state.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>A software update forces a system restart of your
-     * gateway. You can minimize the chance of any disruption to your
-     * applications by increasing your iSCSI Initiators' timeouts. For more
-     * information about increasing iSCSI Initiator timeouts for Windows and
-     * Linux, see Customizing Your Windows iSCSI Settings and Customizing
-     * Your Linux iSCSI Settings, respectively.
-     * </p>
-     *
-     * @param updateGatewaySoftwareNowRequest Container for the necessary
-     *           parameters to execute the UpdateGatewaySoftwareNow service method on
-     *           AWSStorageGateway.
-     * 
-     * @return The response from the UpdateGatewaySoftwareNow service method,
-     *         as returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * This operation initiates a snapshot of a volume.
      * </p>
      * <p>
@@ -484,40 +443,6 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * This operation updates the Challenge-Handshake Authentication
-     * Protocol (CHAP) credentials for a specified iSCSI target. By default,
-     * a gateway does not have CHAP enabled; however, for added security, you
-     * might use it.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> When you update CHAP credentials, all existing
-     * connections on the target are closed and initiators must reconnect
-     * with the new credentials.
-     * </p>
-     *
-     * @param updateChapCredentialsRequest Container for the necessary
-     *           parameters to execute the UpdateChapCredentials service method on
-     *           AWSStorageGateway.
-     * 
-     * @return The response from the UpdateChapCredentials service method, as
-     *         returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest updateChapCredentialsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Creates one or more virtual tapes. You write data to the virtual
      * tapes and then archive the tapes.
      * </p>
@@ -672,6 +597,611 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
+     * This operation returns a list of the gateway's local disks. To
+     * specify which gateway to describe, you use the Amazon Resource Name
+     * (ARN) of the gateway in the body of the request.
+     * </p>
+     * <p>
+     * The request returns a list of all disks, specifying which are
+     * configured as working storage, cache storage, or stored volume or not
+     * configured at all. The response includes a <code>DiskStatus</code>
+     * field. This field can have a value of present (the disk is availble to
+     * use), missing (the disk is no longer connected to the gateway), or
+     * mismatch (the disk node is occupied by a disk that has incorrect
+     * metadata or the disk content is corrupted).
+     * </p>
+     *
+     * @param listLocalDisksRequest Container for the necessary parameters to
+     *           execute the ListLocalDisks service method on AWSStorageGateway.
+     * 
+     * @return The response from the ListLocalDisks service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListLocalDisksResult listLocalDisks(ListLocalDisksRequest listLocalDisksRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation returns information about the cache of a gateway. This
+     * operation is supported only for the gateway-cached volume
+     * architecture.
+     * </p>
+     * <p>
+     * The response includes disk IDs that are configured as cache, and it
+     * includes the amount of cache allocated and used.
+     * </p>
+     *
+     * @param describeCacheRequest Container for the necessary parameters to
+     *           execute the DescribeCache service method on AWSStorageGateway.
+     * 
+     * @return The response from the DescribeCache service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCacheResult describeCache(DescribeCacheRequest describeCacheRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Disables a gateway when the gateway is no longer functioning. For
+     * example, if your gateway VM is damaged, you can disable the gateway so
+     * you can recover virtual tapes.
+     * </p>
+     * <p>
+     * Use this operation for a gateway-VTL that is not reachable or not
+     * functioning.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Once a gateway is disabled it cannot be enabled.
+     * </p>
+     *
+     * @param disableGatewayRequest Container for the necessary parameters to
+     *           execute the DisableGateway service method on AWSStorageGateway.
+     * 
+     * @return The response from the DisableGateway service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DisableGatewayResult disableGateway(DisableGatewayRequest disableGatewayRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes the specified virtual tape.
+     * </p>
+     *
+     * @param deleteTapeRequest Container for the necessary parameters to
+     *           execute the DeleteTape service method on AWSStorageGateway.
+     * 
+     * @return The response from the DeleteTape service method, as returned
+     *         by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteTapeResult deleteTape(DeleteTapeRequest deleteTapeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation starts a gateway that you previously shut down (see
+     * ShutdownGateway). After the gateway starts, you can then make other
+     * API calls, your applications can read from or write to the gateway's
+     * storage volumes and you will be able to take snapshot backups.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>When you make a request, you will get a 200 OK success
+     * response immediately. However, it might take some time for the gateway
+     * to be ready. You should call DescribeGatewayInformation and check the
+     * status before making any additional API calls. For more information,
+     * see ActivateGateway.
+     * </p>
+     * <p>
+     * To specify which gateway to start, use the Amazon Resource Name (ARN)
+     * of the gateway in your request.
+     * </p>
+     *
+     * @param startGatewayRequest Container for the necessary parameters to
+     *           execute the StartGateway service method on AWSStorageGateway.
+     * 
+     * @return The response from the StartGateway service method, as returned
+     *         by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public StartGatewayResult startGateway(StartGatewayRequest startGatewayRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation initiates a snapshot of a gateway from a volume
+     * recovery point. This operation is supported only for the
+     * gateway-cached volume architecture (see ).
+     * </p>
+     * <p>
+     * A volume recovery point is a point in time at which all data of the
+     * volume is consistent and from which you can create a snapshot. To get
+     * a list of volume recovery point for gateway-cached volumes, use
+     * ListVolumeRecoveryPoints.
+     * </p>
+     * <p>
+     * In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request,
+     * you identify the volume by providing its Amazon Resource Name (ARN).
+     * You must also provide a description for the snapshot. When AWS Storage
+     * Gateway takes a snapshot of the specified volume, the snapshot and its
+     * description appear in the AWS Storage Gateway console. In response,
+     * AWS Storage Gateway returns you a snapshot ID. You can use this
+     * snapshot ID to check the snapshot progress or later use it when you
+     * want to create a volume from a snapshot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon
+     * EC2 API. For more information, in Amazon Elastic Compute Cloud API
+     * Reference.
+     * </p>
+     *
+     * @param createSnapshotFromVolumeRecoveryPointRequest Container for the
+     *           necessary parameters to execute the
+     *           CreateSnapshotFromVolumeRecoveryPoint service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the CreateSnapshotFromVolumeRecoveryPoint
+     *         service method, as returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation creates a cached volume on a specified cached gateway.
+     * This operation is supported only for the gateway-cached volume
+     * architecture.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Cache storage must be allocated to the gateway before you
+     * can create a cached volume. Use the AddCache operation to add cache
+     * storage to a gateway.
+     * </p>
+     * <p>
+     * In the request, you must specify the gateway, size of the volume in
+     * bytes, the iSCSI target name, an IP address on which to expose the
+     * target, and a unique client token. In response, AWS Storage Gateway
+     * creates the volume and returns information about it such as the volume
+     * Amazon Resource Name (ARN), its size, and the iSCSI target ARN that
+     * initiators can use to connect to the volume target.
+     * </p>
+     *
+     * @param createCachediSCSIVolumeRequest Container for the necessary
+     *           parameters to execute the CreateCachediSCSIVolume service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the CreateCachediSCSIVolume service method,
+     *         as returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation shuts down a gateway. To specify which gateway to shut
+     * down, use the Amazon Resource Name (ARN) of the gateway in the body of
+     * your request.
+     * </p>
+     * <p>
+     * The operation shuts down the gateway service component running in the
+     * storage gateway's virtual machine (VM) and not the VM.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>If you want to shut down the VM, it is recommended that
+     * you first shut down the gateway component in the VM to avoid
+     * unpredictable conditions.
+     * </p>
+     * <p>
+     * After the gateway is shutdown, you cannot call any other API except
+     * StartGateway, DescribeGatewayInformation, and ListGateways. For more
+     * information, see ActivateGateway. Your applications cannot read from
+     * or write to the gateway's storage volumes, and there are no snapshots
+     * taken.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>When you make a shutdown request, you will get a 200 OK
+     * success response immediately. However, it might take some time for the
+     * gateway to shut down. You can call the DescribeGatewayInformation API
+     * to check the status. For more information, see ActivateGateway.
+     * </p>
+     * <p>
+     * If do not intend to use the gateway again, you must delete the
+     * gateway (using DeleteGateway) to no longer pay software charges
+     * associated with the gateway.
+     * </p>
+     *
+     * @param shutdownGatewayRequest Container for the necessary parameters
+     *           to execute the ShutdownGateway service method on AWSStorageGateway.
+     * 
+     * @return The response from the ShutdownGateway service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest shutdownGatewayRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of virtual tape recovery points that are available for
+     * the specified gateway-VTL.
+     * </p>
+     * <p>
+     * A recovery point is a point in time view of a virtual tape at which
+     * all the data on the virtual tape is consistent. If your gateway
+     * crashes, virtual tapes that have recovery points can be recovered to a
+     * new gateway.
+     * </p>
+     *
+     * @param describeTapeRecoveryPointsRequest Container for the necessary
+     *           parameters to execute the DescribeTapeRecoveryPoints service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the DescribeTapeRecoveryPoints service
+     *         method, as returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation lists gateways owned by an AWS account in a region
+     * specified in the request. The returned list is ordered by gateway
+     * Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * By default, the operation returns a maximum of 100 gateways. This
+     * operation supports pagination that allows you to optionally reduce the
+     * number of gateways returned in a response.
+     * </p>
+     * <p>
+     * If you have more gateways than are returned in a response-that is,
+     * the response returns only a truncated list of your gateways-the
+     * response contains a marker that you can specify in your next request
+     * to fetch the next page of gateways.
+     * </p>
+     *
+     * @param listGatewaysRequest Container for the necessary parameters to
+     *           execute the ListGateways service method on AWSStorageGateway.
+     * 
+     * @return The response from the ListGateways service method, as returned
+     *         by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation returns description of the gateway volumes specified
+     * in the request. The list of gateway volumes in the request must be
+     * from one gateway. In the response Amazon Storage Gateway returns
+     * volume information sorted by volume ARNs.
+     * </p>
+     *
+     * @param describeStorediSCSIVolumesRequest Container for the necessary
+     *           parameters to execute the DescribeStorediSCSIVolumes service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the DescribeStorediSCSIVolumes service
+     *         method, as returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation lists the recovery points for a specified gateway.
+     * This operation is supported only for the gateway-cached volume
+     * architecture.
+     * </p>
+     * <p>
+     * Each gateway-cached volume has one recovery point. A volume recovery
+     * point is a point in time at which all data of the volume is consistent
+     * and from which you can create a snapshot. To create a snapshot from a
+     * volume recovery point use the CreateSnapshotFromVolumeRecoveryPoint
+     * operation.
+     * </p>
+     *
+     * @param listVolumeRecoveryPointsRequest Container for the necessary
+     *           parameters to execute the ListVolumeRecoveryPoints service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the ListVolumeRecoveryPoints service method,
+     *         as returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a description of virtual tape library (VTL) devices for the
+     * specified gateway. In the response, AWS Storage Gateway returns VTL
+     * device information.
+     * </p>
+     * <p>
+     * The list of VTL devices must be from one gateway.
+     * </p>
+     *
+     * @param describeVTLDevicesRequest Container for the necessary
+     *           parameters to execute the DescribeVTLDevices service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the DescribeVTLDevices service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest describeVTLDevicesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Cancels archiving of a virtual tape to the virtual tape shelf (VTS)
+     * after the archiving process is initiated.
+     * </p>
+     *
+     * @param cancelArchivalRequest Container for the necessary parameters to
+     *           execute the CancelArchival service method on AWSStorageGateway.
+     * 
+     * @return The response from the CancelArchival service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CancelArchivalResult cancelArchival(CancelArchivalRequest cancelArchivalRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation updates the gateway virtual machine (VM) software. The
+     * request immediately triggers the software update.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>When you make this request, you get a 200 OK success
+     * response immediately. However, it might take some time for the update
+     * to complete. You can call DescribeGatewayInformation to verify the
+     * gateway is in the STATE_RUNNING state.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>A software update forces a system restart of your
+     * gateway. You can minimize the chance of any disruption to your
+     * applications by increasing your iSCSI Initiators' timeouts. For more
+     * information about increasing iSCSI Initiator timeouts for Windows and
+     * Linux, see Customizing Your Windows iSCSI Settings and Customizing
+     * Your Linux iSCSI Settings, respectively.
+     * </p>
+     *
+     * @param updateGatewaySoftwareNowRequest Container for the necessary
+     *           parameters to execute the UpdateGatewaySoftwareNow service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the UpdateGatewaySoftwareNow service method,
+     *         as returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation resets all cache disks and makes the disks available
+     * for reconfiguration as cache storage. When a cache is reset, the
+     * gateway loses its cache storage. At this point you can reconfigure the
+     * disks as cache disks.
+     * </p>
+     *
+     * @param resetCacheRequest Container for the necessary parameters to
+     *           execute the ResetCache service method on AWSStorageGateway.
+     * 
+     * @return The response from the ResetCache service method, as returned
+     *         by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ResetCacheResult resetCache(ResetCacheRequest resetCacheRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation updates the Challenge-Handshake Authentication
+     * Protocol (CHAP) credentials for a specified iSCSI target. By default,
+     * a gateway does not have CHAP enabled; however, for added security, you
+     * might use it.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> When you update CHAP credentials, all existing
+     * connections on the target are closed and initiators must reconnect
+     * with the new credentials.
+     * </p>
+     *
+     * @param updateChapCredentialsRequest Container for the necessary
+     *           parameters to execute the UpdateChapCredentials service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the UpdateChapCredentials service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest updateChapCredentialsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation activates the gateway you previously deployed on your
      * host. For more information, see
      * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html"> Activate the AWS Storage Gateway </a>
@@ -705,6 +1235,35 @@ public interface AWSStorageGateway {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ActivateGatewayResult activateGateway(ActivateGatewayRequest activateGatewayRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation updates the type of medium changer in a gateway-VTL.
+     * When you activate a gateway-VTL, you select a medium changer type for
+     * the gateway-VTL. This operation enables you to select a different type
+     * of medium changer after a gateway-VTL is activated.
+     * </p>
+     *
+     * @param updateVTLDeviceTypeRequest Container for the necessary
+     *           parameters to execute the UpdateVTLDeviceType service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the UpdateVTLDeviceType service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateVTLDeviceTypeResult updateVTLDeviceType(UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -769,37 +1328,6 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * This operation returns a list of the local disks of a gateway. To
-     * specify which gateway to describe you use the Amazon Resource Name
-     * (ARN) of the gateway in the body of the request.
-     * </p>
-     * <p>
-     * The request returns all disks, specifying which are configured as
-     * working storage, stored volume or not configured at all.
-     * </p>
-     *
-     * @param listLocalDisksRequest Container for the necessary parameters to
-     *           execute the ListLocalDisks service method on AWSStorageGateway.
-     * 
-     * @return The response from the ListLocalDisks service method, as
-     *         returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListLocalDisksResult listLocalDisks(ListLocalDisksRequest listLocalDisksRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Deletes the specified virtual tape from the virtual tape shelf (VTS).
      * </p>
      *
@@ -821,37 +1349,6 @@ public interface AWSStorageGateway {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest deleteTapeArchiveRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation returns information about the cache of a gateway. This
-     * operation is supported only for the gateway-cached volume
-     * architecture.
-     * </p>
-     * <p>
-     * The response includes disk IDs that are configured as cache, and it
-     * includes the amount of cache allocated and used.
-     * </p>
-     *
-     * @param describeCacheRequest Container for the necessary parameters to
-     *           execute the DescribeCache service method on AWSStorageGateway.
-     * 
-     * @return The response from the DescribeCache service method, as
-     *         returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCacheResult describeCache(DescribeCacheRequest describeCacheRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -891,40 +1388,6 @@ public interface AWSStorageGateway {
      *             either a problem with the data in the request, or a server side issue.
      */
     public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Disables a gateway when the gateway is no longer functioning. For
-     * example, if your gateway VM is damaged, you can disable the gateway so
-     * you can recover virtual tapes.
-     * </p>
-     * <p>
-     * Use this operation for a gateway-VTL that is not reachable or not
-     * functioning.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>Once a gateway is disabled it cannot be enabled.
-     * </p>
-     *
-     * @param disableGatewayRequest Container for the necessary parameters to
-     *           execute the DisableGateway service method on AWSStorageGateway.
-     * 
-     * @return The response from the DisableGateway service method, as
-     *         returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DisableGatewayResult disableGateway(DisableGatewayRequest disableGatewayRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -992,70 +1455,6 @@ public interface AWSStorageGateway {
      *             either a problem with the data in the request, or a server side issue.
      */
     public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified virtual tape.
-     * </p>
-     *
-     * @param deleteTapeRequest Container for the necessary parameters to
-     *           execute the DeleteTape service method on AWSStorageGateway.
-     * 
-     * @return The response from the DeleteTape service method, as returned
-     *         by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteTapeResult deleteTape(DeleteTapeRequest deleteTapeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation starts a gateway that you previously shut down (see
-     * ShutdownGateway). After the gateway starts, you can then make other
-     * API calls, your applications can read from or write to the gateway's
-     * storage volumes and you will be able to take snapshot backups.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>When you make a request, you will get a 200 OK success
-     * response immediately. However, it might take some time for the gateway
-     * to be ready. You should call DescribeGatewayInformation and check the
-     * status before making any additional API calls. For more information,
-     * see ActivateGateway.
-     * </p>
-     * <p>
-     * To specify which gateway to start, use the Amazon Resource Name (ARN)
-     * of the gateway in your request.
-     * </p>
-     *
-     * @param startGatewayRequest Container for the necessary parameters to
-     *           execute the StartGateway service method on AWSStorageGateway.
-     * 
-     * @return The response from the StartGateway service method, as returned
-     *         by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public StartGatewayResult startGateway(StartGatewayRequest startGatewayRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1159,56 +1558,6 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * This operation initiates a snapshot of a gateway from a volume
-     * recovery point. This operation is supported only for the
-     * gateway-cached volume architecture (see ).
-     * </p>
-     * <p>
-     * A volume recovery point is a point in time at which all data of the
-     * volume is consistent and from which you can create a snapshot. To get
-     * a list of volume recovery point for gateway-cached volumes, use
-     * ListVolumeRecoveryPoints.
-     * </p>
-     * <p>
-     * In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request,
-     * you identify the volume by providing its Amazon Resource Name (ARN).
-     * You must also provide a description for the snapshot. When AWS Storage
-     * Gateway takes a snapshot of the specified volume, the snapshot and its
-     * description appear in the AWS Storage Gateway console. In response,
-     * AWS Storage Gateway returns you a snapshot ID. You can use this
-     * snapshot ID to check the snapshot progress or later use it when you
-     * want to create a volume from a snapshot.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon
-     * EC2 API. For more information, in Amazon Elastic Compute Cloud API
-     * Reference.
-     * </p>
-     *
-     * @param createSnapshotFromVolumeRecoveryPointRequest Container for the
-     *           necessary parameters to execute the
-     *           CreateSnapshotFromVolumeRecoveryPoint service method on
-     *           AWSStorageGateway.
-     * 
-     * @return The response from the CreateSnapshotFromVolumeRecoveryPoint
-     *         service method, as returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * This operation deletes a gateway. To specify which gateway to delete,
      * use the Amazon Resource Name (ARN) of the gateway in your request. The
      * operation deletes the gateway; however, it does not delete the gateway
@@ -1250,101 +1599,6 @@ public interface AWSStorageGateway {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DeleteGatewayResult deleteGateway(DeleteGatewayRequest deleteGatewayRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation creates a cached volume on a specified cached gateway.
-     * This operation is supported only for the gateway-cached volume
-     * architecture.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Cache storage must be allocated to the gateway before you
-     * can create a cached volume. Use the AddCache operation to add cache
-     * storage to a gateway.
-     * </p>
-     * <p>
-     * In the request, you must specify the gateway, size of the volume in
-     * bytes, the iSCSI target name, an IP address on which to expose the
-     * target, and a unique client token. In response, AWS Storage Gateway
-     * creates the volume and returns information about it such as the volume
-     * Amazon Resource Name (ARN), its size, and the iSCSI target ARN that
-     * initiators can use to connect to the volume target.
-     * </p>
-     *
-     * @param createCachediSCSIVolumeRequest Container for the necessary
-     *           parameters to execute the CreateCachediSCSIVolume service method on
-     *           AWSStorageGateway.
-     * 
-     * @return The response from the CreateCachediSCSIVolume service method,
-     *         as returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation shuts down a gateway. To specify which gateway to shut
-     * down, use the Amazon Resource Name (ARN) of the gateway in the body of
-     * your request.
-     * </p>
-     * <p>
-     * The operation shuts down the gateway service component running in the
-     * storage gateway's virtual machine (VM) and not the VM.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>If you want to shut down the VM, it is recommended that
-     * you first shut down the gateway component in the VM to avoid
-     * unpredictable conditions.
-     * </p>
-     * <p>
-     * After the gateway is shutdown, you cannot call any other API except
-     * StartGateway, DescribeGatewayInformation, and ListGateways. For more
-     * information, see ActivateGateway. Your applications cannot read from
-     * or write to the gateway's storage volumes, and there are no snapshots
-     * taken.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>When you make a shutdown request, you will get a 200 OK
-     * success response immediately. However, it might take some time for the
-     * gateway to shut down. You can call the DescribeGatewayInformation API
-     * to check the status. For more information, see ActivateGateway.
-     * </p>
-     * <p>
-     * If do not intend to use the gateway again, you must delete the
-     * gateway (using DeleteGateway) to no longer pay software charges
-     * associated with the gateway.
-     * </p>
-     *
-     * @param shutdownGatewayRequest Container for the necessary parameters
-     *           to execute the ShutdownGateway service method on AWSStorageGateway.
-     * 
-     * @return The response from the ShutdownGateway service method, as
-     *         returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest shutdownGatewayRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1416,39 +1670,6 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a list of virtual tape recovery points that are available for
-     * the specified gateway-VTL.
-     * </p>
-     * <p>
-     * A recovery point is a point in time view of a virtual tape at which
-     * all the data on the virtual tape is consistent. If your gateway
-     * crashes, virtual tapes that have recovery points can be recovered to a
-     * new gateway.
-     * </p>
-     *
-     * @param describeTapeRecoveryPointsRequest Container for the necessary
-     *           parameters to execute the DescribeTapeRecoveryPoints service method on
-     *           AWSStorageGateway.
-     * 
-     * @return The response from the DescribeTapeRecoveryPoints service
-     *         method, as returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * This operation updates a snapshot schedule configured for a gateway
      * volume.
      * </p>
@@ -1483,44 +1704,6 @@ public interface AWSStorageGateway {
      *             either a problem with the data in the request, or a server side issue.
      */
     public UpdateSnapshotScheduleResult updateSnapshotSchedule(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation lists gateways owned by an AWS account in a region
-     * specified in the request. The returned list is ordered by gateway
-     * Amazon Resource Name (ARN).
-     * </p>
-     * <p>
-     * By default, the operation returns a maximum of 100 gateways. This
-     * operation supports pagination that allows you to optionally reduce the
-     * number of gateways returned in a response.
-     * </p>
-     * <p>
-     * If you have more gateways than are returned in a response-that is,
-     * the response returns only a truncated list of your gateways-the
-     * response contains a marker that you can specify in your next request
-     * to fetch the next page of gateways.
-     * </p>
-     *
-     * @param listGatewaysRequest Container for the necessary parameters to
-     *           execute the ListGateways service method on AWSStorageGateway.
-     * 
-     * @return The response from the ListGateways service method, as returned
-     *         by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1590,101 +1773,6 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * This operation returns description of the gateway volumes specified
-     * in the request. The list of gateway volumes in the request must be
-     * from one gateway. In the response Amazon Storage Gateway returns
-     * volume information sorted by volume ARNs.
-     * </p>
-     *
-     * @param describeStorediSCSIVolumesRequest Container for the necessary
-     *           parameters to execute the DescribeStorediSCSIVolumes service method on
-     *           AWSStorageGateway.
-     * 
-     * @return The response from the DescribeStorediSCSIVolumes service
-     *         method, as returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation lists the recovery points for a specified gateway.
-     * This operation is supported only for the gateway-cached volume
-     * architecture.
-     * </p>
-     * <p>
-     * Each gateway-cached volume has one recovery point. A volume recovery
-     * point is a point in time at which all data of the volume is consistent
-     * and from which you can create a snapshot. To create a snapshot from a
-     * volume recovery point use the CreateSnapshotFromVolumeRecoveryPoint
-     * operation.
-     * </p>
-     *
-     * @param listVolumeRecoveryPointsRequest Container for the necessary
-     *           parameters to execute the ListVolumeRecoveryPoints service method on
-     *           AWSStorageGateway.
-     * 
-     * @return The response from the ListVolumeRecoveryPoints service method,
-     *         as returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a description of virtual tape library (VTL) devices for the
-     * specified gateway. In the response, AWS Storage Gateway returns VTL
-     * device information.
-     * </p>
-     * <p>
-     * The list of VTL devices must be from one gateway.
-     * </p>
-     *
-     * @param describeVTLDevicesRequest Container for the necessary
-     *           parameters to execute the DescribeVTLDevices service method on
-     *           AWSStorageGateway.
-     * 
-     * @return The response from the DescribeVTLDevices service method, as
-     *         returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest describeVTLDevicesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Retrieves an archived virtual tape from the virtual tape shelf (VTS)
      * to a gateway-VTL. Virtual tapes archived in the VTS are not associated
      * with any gateway. However after a tape is retrieved, it is associated
@@ -1719,59 +1807,6 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Cancels archiving of a virtual tape to the virtual tape shelf (VTS)
-     * after the archiving process is initiated.
-     * </p>
-     *
-     * @param cancelArchivalRequest Container for the necessary parameters to
-     *           execute the CancelArchival service method on AWSStorageGateway.
-     * 
-     * @return The response from the CancelArchival service method, as
-     *         returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CancelArchivalResult cancelArchival(CancelArchivalRequest cancelArchivalRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a description of specified virtual tapes in the virtual tape
-     * shelf (VTS).
-     * </p>
-     * <p>
-     * If a specific <code>TapeARN</code> is not specified, AWS Storage
-     * Gateway returns a description of all virtual tapes found in the VTS
-     * associated with your account.
-     * </p>
-     * 
-     * @return The response from the DescribeTapeArchives service method, as
-     *         returned by AWSStorageGateway.
-     * 
-     * @throws InternalServerErrorException
-     * @throws InvalidGatewayRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSStorageGateway indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeTapeArchivesResult describeTapeArchives() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
      * This operation lists gateways owned by an AWS account in a region
      * specified in the request. The returned list is ordered by gateway
      * Amazon Resource Name (ARN).
@@ -1803,6 +1838,33 @@ public interface AWSStorageGateway {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListGatewaysResult listGateways() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a description of specified virtual tapes in the virtual tape
+     * shelf (VTS).
+     * </p>
+     * <p>
+     * If a specific <code>TapeARN</code> is not specified, AWS Storage
+     * Gateway returns a description of all virtual tapes found in the VTS
+     * associated with your account.
+     * </p>
+     * 
+     * @return The response from the DescribeTapeArchives service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTapeArchivesResult describeTapeArchives() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Shuts down this client object, releasing any resources that might be held

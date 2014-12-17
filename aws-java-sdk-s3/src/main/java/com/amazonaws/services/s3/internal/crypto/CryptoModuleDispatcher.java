@@ -18,6 +18,8 @@ import static com.amazonaws.services.s3.model.CryptoMode.AuthenticatedEncryption
 import static com.amazonaws.services.s3.model.CryptoMode.EncryptionOnly;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -40,6 +42,7 @@ import com.amazonaws.services.s3.model.PutInstructionFileRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 
@@ -100,8 +103,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
     }
 
     @Override
-    public PutObjectResult putObjectSecurely(PutObjectRequest putObjectRequest)
-            throws AmazonClientException, AmazonServiceException {
+    public PutObjectResult putObjectSecurely(PutObjectRequest putObjectRequest) {
         return defaultCryptoMode == EncryptionOnly
              ? eo.putObjectSecurely(putObjectRequest)
              : ae.putObjectSecurely(putObjectRequest)
@@ -109,15 +111,14 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
     }
 
     @Override
-    public S3Object getObjectSecurely(GetObjectRequest req)
-            throws AmazonClientException, AmazonServiceException {
+    public S3Object getObjectSecurely(GetObjectRequest req) {
         // AE module can handle S3 objects encrypted in either AE or EO format
         return ae.getObjectSecurely(req);
     }
 
     @Override
-    public ObjectMetadata getObjectSecurely(GetObjectRequest req, File destinationFile)
-            throws AmazonClientException, AmazonServiceException {
+    public ObjectMetadata getObjectSecurely(GetObjectRequest req,
+            File destinationFile) {
         // AE module can handle S3 objects encrypted in either AE or EO format
         return ae.getObjectSecurely(req, destinationFile);
     }
@@ -184,5 +185,14 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
             ? eo.putInstructionFileSecurely(req)
             : ae.putInstructionFileSecurely(req)
             ;
+    }
+
+    @Override
+    public void putLocalObjectSecurely(UploadObjectRequest req,
+            String uploadId, OutputStream os) throws IOException {
+        if (defaultCryptoMode == EncryptionOnly)
+            eo.putLocalObjectSecurely(req, uploadId, os);
+        else
+            ae.putLocalObjectSecurely(req, uploadId, os);
     }
 }

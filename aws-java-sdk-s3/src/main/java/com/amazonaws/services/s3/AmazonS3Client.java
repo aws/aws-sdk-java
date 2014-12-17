@@ -23,13 +23,16 @@ import static com.amazonaws.util.Throwables.failure;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
@@ -39,6 +42,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.regex.Matcher;
 
 import org.apache.commons.logging.Log;
@@ -91,6 +98,7 @@ import com.amazonaws.services.s3.internal.DigestValidationInputStream;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream;
 import com.amazonaws.services.s3.internal.Mimetypes;
+import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.ObjectExpirationHeaderHandler;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
 import com.amazonaws.services.s3.internal.S3ErrorResponseHandler;
@@ -163,6 +171,7 @@ import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Owner;
+import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -189,6 +198,7 @@ import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.SetRequestPaymentConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
+import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
@@ -208,6 +218,7 @@ import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.Md5Utils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
@@ -3851,5 +3862,94 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     URI getEndpoint() {
         return endpoint;
+    }
+
+    /**
+     * Creates and returns a multi-part upload initiation request from the given
+     * upload-object request.
+     */
+    protected final InitiateMultipartUploadRequest newInitiateMultipartUploadRequest(
+            UploadObjectRequest req) {
+        return new InitiateMultipartUploadRequest(
+                req.getBucketName(), req.getKey(), req.getMetadata())
+            .withRedirectLocation(req.getRedirectLocation())
+            .withSSEAwsKeyManagementParams(req.getSSEAwsKeyManagementParams())
+            .withSSECustomerKey(req.getSSECustomerKey())
+            .withStorageClass(req.getStorageClass())
+            .withAccessControlList(req.getAccessControlList())
+            .withCannedACL(req.getCannedAcl())
+            .withGeneralProgressListener(req.getGeneralProgressListener())
+            .withRequestMetricCollector(req.getRequestMetricCollector())
+            ;
+    }
+
+    /**
+     * Used for performance testing purposes only.
+     */
+    private void putLocalObject(final UploadObjectRequest reqIn,
+            OutputStream os) throws IOException {
+        UploadObjectRequest req = reqIn.clone();
+
+        final File fileOrig = req.getFile();
+        final InputStream isOrig = req.getInputStream();
+
+        if (isOrig == null) {
+            if (fileOrig == null)
+                throw new IllegalArgumentException("Either a file lor input stream must be specified");
+            req.setInputStream(new FileInputStream(fileOrig));
+            req.setFile(null);
+        }
+
+        try {
+            IOUtils.copy(req.getInputStream(), os);
+        } finally {
+            cleanupDataSource(req, fileOrig, isOrig,
+                    req.getInputStream(), log);
+            IOUtils.closeQuietly(os, log);
+        }
+        return;
+    }
+
+    /**
+     * Used for performance testing purposes only.  Hence package private.
+     * This method is subject to removal anytime without notice.
+     */
+    CompleteMultipartUploadResult uploadObject(final UploadObjectRequest req)
+            throws IOException, InterruptedException, ExecutionException {
+        // Set up the pipeline for concurrent encrypt and upload
+        // Set up a thread pool for this pipeline
+        ExecutorService es = req.getExecutorService();
+        final boolean defaultExecutorService = es == null;
+        if (es == null)
+            es = Executors.newFixedThreadPool(clientConfiguration.getMaxConnections());
+        UploadObjectObserver observer = req.getUploadObjectObserver();
+        if (observer == null)
+            observer = new UploadObjectObserver();
+        // initialize the observer
+        observer.init(req, this, this, es);
+        // Initiate upload
+        observer.onUploadInitiation(req);
+        final List<PartETag> partETags = new ArrayList<PartETag>();
+        MultiFileOutputStream mfos = req.getMultiFileOutputStream();
+        if (mfos == null)
+            mfos = new MultiFileOutputStream();
+        try {
+            // initialize the multi-file output stream
+            mfos.init(observer, req.getPartSize(), req.getDiskLimit());
+            // Kicks off the encryption-upload pipeline;
+            // Note mfos is automatically closed upon method completion.
+            putLocalObject(req, mfos);
+            // block till all part have been uploaded
+            for (Future<UploadPartResult> future: observer.getFutures()) {
+                UploadPartResult partResult = future.get();
+                partETags.add(new PartETag(partResult.getPartNumber(), partResult.getETag()));
+            }
+        } finally {
+            if (defaultExecutorService)
+                es.shutdownNow();   // shut down the locally created thread pool
+            mfos.cleanup();       // delete left-over temp files
+        }
+        // Complete upload
+        return observer.onCompletion(partETags);
     }
 }

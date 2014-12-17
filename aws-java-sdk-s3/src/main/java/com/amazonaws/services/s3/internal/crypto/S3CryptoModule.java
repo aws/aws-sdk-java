@@ -15,6 +15,8 @@
 package com.amazonaws.services.s3.internal.crypto;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
 
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
@@ -31,6 +33,7 @@ import com.amazonaws.services.s3.model.PutInstructionFileRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 
@@ -80,4 +83,11 @@ public abstract class S3CryptoModule<T extends MultipartUploadContext> {
      */
     public abstract PutObjectResult putInstructionFileSecurely(
             PutInstructionFileRequest req);
+
+    /**
+     * @param uploadId multipart upload id
+     * @param os output stream which will be closed upon method completion.
+     */
+    public abstract void putLocalObjectSecurely(UploadObjectRequest req,
+            String uploadId, OutputStream os) throws IOException;
 }

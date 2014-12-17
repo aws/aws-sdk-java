@@ -57,6 +57,10 @@ public class ClusterSummaryJsonUnmarshaller implements Unmarshaller<ClusterSumma
                     context.nextToken();
                     clusterSummary.setStatus(ClusterStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NormalizedInstanceHours", targetDepth)) {
+                    context.nextToken();
+                    clusterSummary.setNormalizedInstanceHours(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

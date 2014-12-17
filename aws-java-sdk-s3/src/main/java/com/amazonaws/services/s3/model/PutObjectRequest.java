@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,9 +16,6 @@ package com.amazonaws.services.s3.model;
 
 import java.io.File;
 import java.io.InputStream;
-
-import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.event.ProgressListener;
 
 /**
  * <p>
@@ -84,79 +81,7 @@ import com.amazonaws.event.ProgressListener;
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream,
  *      ObjectMetadata)
  */
-public class PutObjectRequest extends AmazonWebServiceRequest implements
-        Cloneable, SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider, S3DataSource {
-    /**
-     * The name of an existing bucket, to which this request will upload a new
-     * object. You must have {@link Permission#Write} permission granted to you
-     * in order to upload new objects to a bucket.
-     */
-    private String bucketName;
-
-    /**
-     * The key under which to store the new object.
-     */
-    private String key;
-
-    /**
-     * The file containing the data to be uploaded to Amazon S3. You must either
-     * specify a file or an InputStream containing the data to be uploaded to
-     * Amazon S3.
-     */
-    private File file;
-
-    /**
-     * The InputStream containing the data to be uploaded to Amazon S3. You must
-     * either specify a file or an InputStream containing the data to be
-     * uploaded to Amazon S3.
-     */
-    private InputStream inputStream;
-
-    /**
-     * Optional metadata instructing Amazon S3 how to handle the uploaded data
-     * (e.g. custom user metadata, hooks for specifying content type, etc.). If
-     * you are uploading from an InputStream, you <bold>should always</bold>
-     * specify metadata with the content size set, otherwise the contents of the
-     * InputStream will have to be buffered in memory before they can be sent to
-     * Amazon S3, which can have very negative performance impacts.
-     */
-    private ObjectMetadata metadata;
-
-    /**
-     * An optional pre-configured access control policy to use for the new
-     * object.  Ignored in favor of accessControlList, if present.
-     */
-    private CannedAccessControlList cannedAcl;
-
-    /**
-     * An optional access control list to apply to the new object. If specified,
-     * cannedAcl will be ignored.
-     */
-    private AccessControlList accessControlList;
-
-    /**
-     * The optional Amazon S3 storage class to use when storing the new object.
-     * If not specified, the default, standard storage class will be used.
-     * <p>
-     * For more information on Amazon S3 storage classes and available values,
-     * see the {@link StorageClass} enumeration.
-     */
-    private String storageClass;
-
-    /** The optional redirect location about an object */
-    private String redirectLocation;
-
-    /**
-     * The optional customer-provided server-side encryption key to use to
-     * encrypt the uploaded object.
-     */
-    private SSECustomerKey sseCustomerKey;
-
-    /**
-     * The optional AWS Key Management system parameters to be used to encrypt
-     * the the object on the server side.
-     */
-    private SSEAwsKeyManagementParams sseAwsKeyManagementParams;
+public class PutObjectRequest extends AbstractPutObjectRequest {
 
     /**
      * Constructs a new
@@ -171,36 +96,25 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      *            The key under which to store the new object.
      * @param file
      *            The path of the file to upload to Amazon S3.
-     *
-     * @see #PutObjectRequest(String, String, InputStream, ObjectMetadata)
-     * @see #PutObjectRequest(String, String, String)
      */
     public PutObjectRequest(String bucketName, String key, File file) {
-        this.bucketName = bucketName;
-        this.key = key;
-        this.file = file;
+        super(bucketName, key, file);
     }
 
     /**
-     * Constructs a new {@link PutObjectRequest} object with redirect location.
-     * After constructing the request, users may optionally specify object
-     * metadata or a canned ACL as well.
+     * Constructs a new
+     * {@link PutObjectRequest} object to upload a file to the
+     * specified bucket and key. After constructing the request,
+     * users may optionally specify object metadata or a canned ACL as well.
      *
      * @param bucketName
      *            The name of an existing bucket to which the new object will be
      *            uploaded.
      * @param key
      *            The key under which to store the new object.
-     * @param redirectLocation
-     *            The redirect location of this new object.
-     *
-     * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
-     * @see PutObjectRequest#PutObjectRequest(String, String, File)
      */
     public PutObjectRequest(String bucketName, String key, String redirectLocation) {
-        this.bucketName = bucketName;
-        this.key = key;
-        this.redirectLocation = redirectLocation;
+        super(bucketName, key, redirectLocation);
     }
 
     /**
@@ -227,633 +141,10 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      * @param metadata
      *            The object metadata. At minimum this specifies the
      *            content length for the stream of data being uploaded.
-     *
-     * @see #PutObjectRequest(String, String, File)
-     * @see #PutObjectRequest(String, String, String)
      */
-    public PutObjectRequest(String bucketName, String key, InputStream input, ObjectMetadata metadata) {
-        this.bucketName = bucketName;
-        this.key = key;
-        this.inputStream = input;
-        this.metadata = metadata;
-    }
-
-    /**
-     * Gets the name of the existing bucket where this request will
-     * upload a new object to.
-     * In order to upload the object,
-     * users must have {@link Permission#Write} permission granted.
-     *
-     * @return The name of an existing bucket where this request will
-     * upload a new object to.
-     *
-     * @see PutObjectRequest#setBucketName(String)
-     * @see PutObjectRequest#withBucketName(String)
-     */
-    public String getBucketName() {
-        return bucketName;
-    }
-
-    /**
-     * Sets the name of an existing bucket where this request will
-     * upload a new object to. In order to upload the object,
-     * users must have {@link Permission#Write} permission granted.
-     *
-     * @param bucketName
-     *            The name of an existing bucket where this request will
-     *            upload a new object to.
-     *            In order to upload the object,
-     *            users must have {@link Permission#Write} permission granted.
-     *
-     * @see PutObjectRequest#getBucketName()
-     * @see PutObjectRequest#withBucketName(String)
-     */
-    public void setBucketName(String bucketName) {
-        this.bucketName = bucketName;
-    }
-
-    /**
-     * Sets the name of the bucket where this request will upload a new
-     * object to. Returns this object, enabling additional method calls to be
-     * chained together.
-     * <p>
-     * In order to upload the object,
-     * users must have {@link Permission#Write} permission granted.
-     *
-     * @param bucketName
-     *            The name of an existing bucket where this request will
-     *            upload a new object to.
-     *            In order to upload the object,
-     *            users must have {@link Permission#Write} permission granted.
-     *
-     * @return This {@link PutObjectRequest}, enabling additional method calls to be
-     *         chained together.
-     *
-     * @see PutObjectRequest#getBucketName()
-     * @see PutObjectRequest#setBucketName(String)
-     */
-    public PutObjectRequest withBucketName(String bucketName) {
-        setBucketName(bucketName);
-        return this;
-    }
-
-    /**
-     * Gets the key under which to store the new object.
-     *
-     * @return The key under which to store the new object.
-     *
-     * @see PutObjectRequest#setKey(String)
-     * @see PutObjectRequest#withKey(String)
-     */
-    public String getKey() {
-        return key;
-    }
-
-    /**
-     * Sets the key under which to store the new object.
-     *
-     * @param key
-     *            The key under which to store the new object.
-     *
-     * @see PutObjectRequest#getKey()
-     * @see PutObjectRequest#withKey(String)
-     */
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    /**
-     * Sets the key under which to store the new object. Returns this object,
-     * enabling additional method calls to be chained together.
-     *
-     * @param key
-     *            The key under which to store the new object.
-     *
-     * @return This {@link PutObjectRequest}, enabling additional method calls to be
-     *         chained together.
-     *
-     * @see PutObjectRequest#getKey()
-     * @see PutObjectRequest#setKey(String)
-     */
-    public PutObjectRequest withKey(String key) {
-        setKey(key);
-        return this;
-    }
-
-    /**
-     * Gets the optional Amazon S3 storage class to use when storing the new
-     * object. If not specified, the default standard storage class is
-     * used when storing the object.
-     * <p>
-     * For more information on available Amazon S3 storage classes, see the
-     * {@link StorageClass} enumeration.
-     * </p>
-     *
-     * @return The Amazon S3 storage class to use when storing the newly copied
-     *         object.
-     *
-     * @see PutObjectRequest#setStorageClass(String)
-     * @see PutObjectRequest#setStorageClass(StorageClass)
-     * @see PutObjectRequest#withStorageClass(StorageClass)
-     * @see PutObjectRequest#withStorageClass(String)
-     */
-    public String getStorageClass() {
-        return storageClass;
-    }
-
-    /**
-     * Sets the optional Amazon S3 storage class to use when storing the new
-     * object. If not specified, the default standard storage class will be
-     * used when storing the new object.
-     * <p>
-     * For more information on Amazon S3 storage classes and available values,
-     * see the {@link StorageClass} enumeration.
-     * </p>
-     *
-     * @param storageClass
-     *         The storage class to use when storing the new object.
-     *
-     * @see #getStorageClass()
-     * @see #setStorageClass(String)
-     * @see #withStorageClass(StorageClass)
-     * @see #withStorageClass(String)
-     */
-    public void setStorageClass(String storageClass) {
-        this.storageClass = storageClass;
-    }
-
-    /**
-     * Sets the optional Amazon S3 storage class to use when storing the new
-     * object. Returns this {@link PutObjectRequest}, enabling additional method
-     * calls to be chained together. If not specified, the default standard
-     * storage class will be used when storing the object.
-     * <p>
-     * For more information on Amazon S3 storage classes and available values,
-     * see the {@link StorageClass} enumeration.
-     * </p>
-     *
-     * @param storageClass
-     *         The storage class to use when storing the new object.
-     *
-     * @return This {@link PutObjectRequest}, enabling additional method calls to be
-     *         chained together.
-     *
-     * @see PutObjectRequest#getStorageClass()
-     * @see PutObjectRequest#setStorageClass(StorageClass)
-     * @see PutObjectRequest#setStorageClass(String)
-     * @see PutObjectRequest#withStorageClass(StorageClass)
-     */
-    public PutObjectRequest withStorageClass(String storageClass) {
-        setStorageClass(storageClass);
-        return this;
-    }
-
-    /**
-     * Sets the optional Amazon S3 storage class to use when storing the new
-     * object. If not specified, the default standard storage class will be
-     * used when storing the object.
-     * <p>
-     * For more information on Amazon S3 storage classes and available values,
-     * see the {@link StorageClass} enumeration.
-     * </p>
-     *
-     * @param storageClass
-     *         The storage class to use when storing the new object.
-     *
-     * @see #getStorageClass()
-     * @see #setStorageClass(String)
-     */
-    public void setStorageClass(StorageClass storageClass) {
-        this.storageClass = storageClass.toString();
-    }
-
-    /**
-     * Sets the optional Amazon S3 storage class to use when storing the new
-     * object. Returns this {@link PutObjectRequest}, enabling additional method
-     * calls to be chained together. If not specified, the default standard
-     * storage class will be used when storing the object.
-     * <p>
-     * For more information on Amazon S3 storage classes and available values,
-     * see the {@link StorageClass} enumeration.
-     * </p>
-     *
-     * @param storageClass
-     *         The storage class to use when storing the new object.
-     *
-     * @return This {@link PutObjectRequest}, enabling additional method calls to be
-     *         chained together.
-     *
-     * @see PutObjectRequest#getStorageClass()
-     * @see PutObjectRequest#setStorageClass(StorageClass)
-     * @see PutObjectRequest#setStorageClass(String)
-     * @see PutObjectRequest#withStorageClass(String)
-     */
-    public PutObjectRequest withStorageClass(StorageClass storageClass) {
-        setStorageClass(storageClass);
-        return this;
-    }
-
-    /**
-     * Gets the path and name of the file
-     * containing the data to be uploaded to Amazon S3.
-     * Either specify a file or an input stream containing the data to be
-     * uploaded to Amazon S3; both cannot be specified.
-     *
-     * @return The path and name of the file
-     *         containing the data to be uploaded to Amazon S3.
-     *
-     * @see PutObjectRequest#setFile(File)
-     * @see PutObjectRequest#withFile(File)
-     * @see PutObjectRequest#setInputStream(InputStream)
-     * @see PutObjectRequest#withInputStream(InputStream)
-     */
-    @Override
-    public File getFile() {
-        return file;
-    }
-
-    /**
-     * Sets the path and name of the file
-     * containing the data to be uploaded to Amazon S3.
-     * Either specify a file or an input stream containing the data to be
-     * uploaded to Amazon S3; both cannot be specified.
-     *
-     * @param file
-     *            The path and name of the
-     *            file containing the data to be uploaded to Amazon S3.
-     *
-     * @see PutObjectRequest#getFile()
-     * @see PutObjectRequest#withFile(File)
-     * @see PutObjectRequest#getInputStream()
-     * @see PutObjectRequest#withInputStream(InputStream)
-     */
-    @Override
-    public void setFile(File file) {
-        this.file = file;
-    }
-
-    /**
-     * Sets the file containing the data to be uploaded to Amazon S3.
-     * Returns this {@link PutObjectRequest}, enabling additional method
-     * calls to be chained together.
-     * <p>
-     * Either specify a file or an input stream containing the data to
-     * be uploaded to Amazon S3; both cannot be specified.
-     *
-     * @param file
-     *            The file containing the data to be uploaded to Amazon S3.
-     *
-     * @return This {@link PutObjectRequest}, enabling additional method
-     *         calls to be chained together.
-     *
-     * @see PutObjectRequest#getFile()
-     * @see PutObjectRequest#setFile(File)
-     * @see PutObjectRequest#getInputStream()
-     * @see PutObjectRequest#setInputStream(InputStream)
-     */
-    public PutObjectRequest withFile(File file) {
-        setFile(file);
-        return this;
-    }
-
-    /**
-     * Gets the optional metadata instructing Amazon S3 how to handle the
-     * uploaded data (e.g. custom user metadata, hooks for specifying content
-     * type, etc.).
-     * <p>
-     * If uploading from an input stream,
-     * <b>always</b> specify metadata with the content size set. Otherwise the
-     * contents of the input stream have to be buffered in memory before
-     * being sent to Amazon S3. This can cause very negative performance
-     * impacts.
-     * </p>
-     *
-     * @return The optional metadata instructing Amazon S3 how to handle the
-     *         uploaded data (e.g. custom user metadata, hooks for specifying
-     *         content type, etc.).
-     *
-     * @see PutObjectRequest#setMetadata(ObjectMetadata)
-     * @see PutObjectRequest#withMetadata(ObjectMetadata)
-     */
-    public ObjectMetadata getMetadata() {
-        return metadata;
-    }
-
-    /**
-     * Sets the optional metadata instructing Amazon S3 how to handle the
-     * uploaded data (e.g. custom user metadata, hooks for specifying content
-     * type, etc.).
-     * <p>
-     * If uploading from an input stream,
-     * <b>always</b> specify metadata with the content size set. Otherwise the
-     * contents of the input stream have to be buffered in memory before
-     * being sent to Amazon S3. This can cause very negative performance
-     * impacts.
-     * </p>
-     *
-     * @param metadata
-     *            The optional metadata instructing Amazon S3 how to handle the
-     *            uploaded data (e.g. custom user metadata, hooks for specifying
-     *            content type, etc.).
-     *
-     * @see PutObjectRequest#getMetadata()
-     * @see PutObjectRequest#withMetadata(ObjectMetadata)
-     */
-    public void setMetadata(ObjectMetadata metadata) {
-        this.metadata = metadata;
-    }
-
-    /**
-     * Sets the optional metadata instructing Amazon S3 how to handle the
-     * uploaded data (e.g. custom user metadata, hooks for specifying content
-     * type, etc.). Returns this {@link PutObjectRequest}, enabling additional method
-     * calls to be chained together.
-     * <p>
-     * If uploading from an input stream,
-     * <b>always</b> specify metadata with the content size set. Otherwise the
-     * contents of the input stream have to be buffered in memory before
-     * being sent to Amazon S3. This can cause very negative performance
-     * impacts.
-     * </p>
-     *
-     * @param metadata
-     *            The optional metadata instructing Amazon S3 how to handle the
-     *            uploaded data (e.g. custom user metadata, hooks for specifying
-     *            content type, etc.).
-     *
-     * @return This {@link PutObjectRequest}, enabling additional method
-     *         calls to be chained together.
-     *
-     * @see PutObjectRequest#getMetadata()
-     * @see PutObjectRequest#setMetadata(ObjectMetadata)
-     */
-    public PutObjectRequest withMetadata(ObjectMetadata metadata) {
-        setMetadata(metadata);
-        return this;
-    }
-
-    /**
-     * Gets the optional pre-configured access control policy to use for the
-     * new object.
-     *
-     * @return The optional pre-configured access control policy to use for the
-     *         new object.
-     *
-     * @see PutObjectRequest#setCannedAcl(CannedAccessControlList)
-     * @see PutObjectRequest#withCannedAcl(CannedAccessControlList)
-     */
-    public CannedAccessControlList getCannedAcl() {
-        return cannedAcl;
-    }
-
-    /**
-     * Sets the optional pre-configured access control policy to use for the new
-     * object.
-     *
-     * @param cannedAcl
-     *            The optional pre-configured access control policy to use for
-     *            the new object.
-     *
-     * @see PutObjectRequest#getCannedAcl()
-     * @see PutObjectRequest#withCannedAcl(CannedAccessControlList)
-     */
-    public void setCannedAcl(CannedAccessControlList cannedAcl) {
-        this.cannedAcl = cannedAcl;
-    }
-
-    /**
-     * Sets the optional pre-configured access control policy to use for the new
-     * object. Returns this {@link PutObjectRequest}, enabling additional method
-     * calls to be chained together.
-     *
-     * @param cannedAcl
-     *            The optional pre-configured access control policy to use for
-     *            the new object.
-     *
-     * @return This {@link PutObjectRequest}, enabling additional method
-     *         calls to be chained together.
-     *
-     * @see PutObjectRequest#getCannedAcl()
-     * @see PutObjectRequest#setCannedAcl(CannedAccessControlList)
-     */
-    public PutObjectRequest withCannedAcl(CannedAccessControlList cannedAcl) {
-        setCannedAcl(cannedAcl);
-        return this;
-    }
-
-    /**
-     * Returns the optional access control list for the new object. If
-     * specified, cannedAcl will be ignored.
-     */
-    public AccessControlList getAccessControlList() {
-        return accessControlList;
-    }
-
-    /**
-     * Sets the optional access control list for the new object. If specified,
-     * cannedAcl will be ignored.
-     *
-     * @param accessControlList
-     *            The access control list for the new object.
-     */
-    public void setAccessControlList(AccessControlList accessControlList) {
-        this.accessControlList = accessControlList;
-    }
-
-    /**
-     * Sets the optional access control list for the new object. If specified,
-     * cannedAcl will be ignored. Returns this {@link PutObjectRequest},
-     * enabling additional method calls to be chained together.
-     *
-     * @param accessControlList
-     *            The access control list for the new object.
-     */
-    public PutObjectRequest withAccessControlList(AccessControlList accessControlList) {
-        setAccessControlList(accessControlList);
-        return this;
-    }
-
-    /**
-     * Gets the input stream containing the data to be uploaded to Amazon S3.
-     * The user of this request
-     * must either specify a file or an input stream containing the data to be
-     * uploaded to Amazon S3; both cannot be specified.
-     *
-     * @return The input stream containing the data to be uploaded to Amazon S3.
-     *         Either specify a file or an input stream containing the
-     *         data to be uploaded to Amazon S3, not both.
-     *
-     * @see PutObjectRequest#setInputStream(InputStream)
-     * @see PutObjectRequest#withInputStream(InputStream)
-     * @see PutObjectRequest#setFile(File)
-     * @see PutObjectRequest#withFile(File)
-     */
-    @Override
-    public InputStream getInputStream() {
-        return inputStream;
-    }
-
-    /**
-     * Sets the input stream containing the data to be uploaded to Amazon S3.
-     * Either specify a file or an input stream containing the data to be
-     * uploaded to Amazon S3; both cannot be specified.
-     *
-     * @param inputStream
-     *            The input stream containing the data to be uploaded to Amazon
-     *            S3. Either specify a file or an input stream containing the
-     *            data to be uploaded to Amazon S3, not both.
-     *
-     * @see PutObjectRequest#getInputStream()
-     * @see PutObjectRequest#withInputStream(InputStream)
-     * @see PutObjectRequest#getFile()
-     * @see PutObjectRequest#withFile(File)
-     */
-    @Override
-    public void setInputStream(InputStream inputStream) {
-        this.inputStream = inputStream;
-    }
-
-    /**
-     * Sets the input stream containing the data to be uploaded to Amazon S3.
-     * Returns this {@link PutObjectRequest}, enabling additional method
-     * calls to be chained together.
-     * <p>
-     * Either specify a file or an input stream containing the data to be
-     * uploaded to Amazon S3; both cannot be specified.
-     * </p>
-     *
-     * @param inputStream
-     *            The InputStream containing the data to be uploaded to Amazon
-     *            S3.
-     *
-     * @return This PutObjectRequest, so that additional method calls can be
-     *         chained together.
-     *
-     * @see PutObjectRequest#getInputStream()
-     * @see PutObjectRequest#setInputStream(InputStream)
-     * @see PutObjectRequest#getFile()
-     * @see PutObjectRequest#setFile(File)
-     */
-    public PutObjectRequest withInputStream(InputStream inputStream) {
-        setInputStream(inputStream);
-        return this;
-    }
-
-    /**
-     * Sets the optional redirect location for the new object.
-     *
-     * @param redirectLocation
-     *            The redirect location for the new object.
-     */
-    public void setRedirectLocation(String redirectLocation) {
-        this.redirectLocation = redirectLocation;
-    }
-
-    /**
-     * Gets the optional redirect location for the new object.
-     */
-    public String getRedirectLocation() {
-        return this.redirectLocation;
-    }
-
-    /**
-     * Sets the optional redirect location for the new object.Returns this
-     * {@link PutObjectRequest}, enabling additional method calls to be chained
-     * together.
-     * @param redirectLocation
-     *            The redirect location for the new object.
-     */
-    public PutObjectRequest withRedirectLocation(String redirectLocation) {
-        this.redirectLocation = redirectLocation;
-        return this;
-    }
-
-    @Override
-    public SSECustomerKey getSSECustomerKey() {
-        return sseCustomerKey;
-    }
-
-    /**
-     * Sets the optional customer-provided server-side encryption key to use to
-     * encrypt the uploaded object.
-     *
-     * @param sseKey
-     *            The optional customer-provided server-side encryption key to
-     *            use to encrypt the uploaded object.
-     */
-    public void setSSECustomerKey(SSECustomerKey sseKey) {
-        if (this.sseAwsKeyManagementParams != null)
-            throw new IllegalArgumentException(
-                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
-        this.sseCustomerKey = sseKey;
-    }
-
-    /**
-     * Sets the optional customer-provided server-side encryption key to use to
-     * encrypt the uploaded object, and returns the updated request object so
-     * that additional method calls can be chained together.
-     *
-     * @param sseKey
-     *            The optional customer-provided server-side encryption key to
-     *            use to encrypt the uploaded object.
-     *
-     * @return This updated request object so that additional method calls can
-     *         be chained together.
-     */
-    public PutObjectRequest withSSECustomerKey(SSECustomerKey sseKey) {
-        setSSECustomerKey(sseKey);
-        return this;
-    }
-
-    /**
-     * Sets the optional progress listener for receiving updates for object
-     * upload status.
-     *
-     * @param progressListener
-     *            The legacy progress listener that is used exclusively for Amazon S3 client.
-     *
-     * @deprecated use {@link #setGeneralProgressListener(ProgressListener)} instead.
-     */
-    @Deprecated
-    public void setProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
-        setGeneralProgressListener(new LegacyS3ProgressListener(progressListener));
-    }
-
-    /**
-     * Returns the optional progress listener for receiving updates about object
-     * upload status.
-     *
-     * @return the optional progress listener for receiving updates about object
-     *         upload status.
-     *
-     * @deprecated use {@link #getGeneralProgressListener()} instead.
-     */
-    @Deprecated
-    public com.amazonaws.services.s3.model.ProgressListener getProgressListener() {
-        ProgressListener generalProgressListener = getGeneralProgressListener();
-        if (generalProgressListener instanceof LegacyS3ProgressListener) {
-            return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
-        } else {
-             return null;
-        }
-    }
-
-    /**
-     * Sets the optional progress listener for receiving updates about object
-     * upload status, and returns this updated object so that additional method
-     * calls can be chained together.
-     *
-     * @param progressListener
-     *            The legacy progress listener that is used exclusively for Amazon S3 client.
-     *
-     * @return This updated PutObjectRequest object.
-     *
-     * @deprecated use {@link #withGeneralProgressListener(ProgressListener)} instead.
-     */
-    @Deprecated
-    public PutObjectRequest withProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
-        setProgressListener(progressListener);
-        return this;
+    public PutObjectRequest(String bucketName, String key, InputStream input,
+            ObjectMetadata metadata) {
+        super(bucketName, key, input, metadata);
     }
 
     /**
@@ -861,49 +152,100 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      */
     @Override
     public PutObjectRequest clone() {
+        final ObjectMetadata metadata = getMetadata();
         PutObjectRequest cloned =
-            new PutObjectRequest(bucketName, key, redirectLocation)
-            .withAccessControlList(accessControlList)
-            .withCannedAcl(cannedAcl)
-            .withFile(file)
-            .withInputStream(inputStream)
+            new PutObjectRequest(getBucketName(), getKey(), getRedirectLocation())
+            .withAccessControlList(getAccessControlList())
+            .withCannedAcl(getCannedAcl())
+            .withFile(getFile())
+            .withInputStream(getInputStream())
             .withMetadata(metadata == null ? null : metadata.clone())
-            .withStorageClass(storageClass)
-            .withSSECustomerKey(sseCustomerKey)
+            .withStorageClass(getStorageClass())
+            .withSSECustomerKey(getSSECustomerKey())
             ;
         return copyBaseTo(cloned);
     }
 
-    /**
-     * Returns the AWS Key Management System parameters used to encrypt the
-     * object on server side.
-     */
     @Override
-    public SSEAwsKeyManagementParams getSSEAwsKeyManagementParams() {
-        return sseAwsKeyManagementParams;
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withBucketName(String bucketName) {
+        return super.withBucketName(bucketName);
     }
 
-    /**
-     * Sets the AWS Key Management System parameters used to encrypt the object
-     * on server side.
-     */
-    public void setSSEAwsKeyManagementParams(
-            SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
-        if (this.sseCustomerKey != null)
-            throw new IllegalArgumentException(
-                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
-        this.sseAwsKeyManagementParams = sseAwsKeyManagementParams;
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withKey(String key) {
+        return super.withKey(key);
     }
 
-    /**
-     * Sets the AWS Key Management System parameters used to encrypt the object
-     * on server side.
-     *
-     * @return returns the update PutObjectRequest
-     */
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withStorageClass(String storageClass) {
+        return super.withStorageClass(storageClass);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withStorageClass(StorageClass storageClass) {
+        return super.withStorageClass(storageClass);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest  withFile(File file) {
+        return super.withFile(file);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withMetadata(ObjectMetadata metadata) {
+        return super.withMetadata(metadata);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest  withCannedAcl(CannedAccessControlList cannedAcl) {
+        return super.withCannedAcl(cannedAcl);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withAccessControlList(
+            AccessControlList accessControlList) {
+        return super.withAccessControlList(accessControlList);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest  withInputStream(InputStream inputStream) {
+        return super.withInputStream(inputStream);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withRedirectLocation(String redirectLocation) {
+        return super.withRedirectLocation(redirectLocation);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withSSECustomerKey(SSECustomerKey sseKey) {
+        return super.withSSECustomerKey(sseKey);
+    }
+
+    @Deprecated
+    @Override
+    @SuppressWarnings("unchecked")
+    public PutObjectRequest withProgressListener(
+            com.amazonaws.services.s3.model.ProgressListener progressListener) {
+        return super.withProgressListener(progressListener);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
     public PutObjectRequest withSSEAwsKeyManagementParams(
             SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
-        setSSEAwsKeyManagementParams(sseAwsKeyManagementParams);
-        return this;
+        return super.withSSEAwsKeyManagementParams(sseAwsKeyManagementParams);
     }
 }

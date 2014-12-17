@@ -53,6 +53,14 @@ public class StepSummaryJsonUnmarshaller implements Unmarshaller<StepSummary, Js
                     context.nextToken();
                     stepSummary.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Config", targetDepth)) {
+                    context.nextToken();
+                    stepSummary.setConfig(HadoopStepConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ActionOnFailure", targetDepth)) {
+                    context.nextToken();
+                    stepSummary.setActionOnFailure(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     stepSummary.setStatus(StepStatusJsonUnmarshaller.getInstance().unmarshall(context));
