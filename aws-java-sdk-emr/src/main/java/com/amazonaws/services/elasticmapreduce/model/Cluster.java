@@ -104,6 +104,21 @@ public class Cluster implements Serializable {
     private String serviceRole;
 
     /**
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
+     */
+    private Integer normalizedInstanceHours;
+
+    /**
+     * The public DNS name of the master Ec2 instance.
+     */
+    private String masterPublicDnsName;
+
+    /**
      * The unique identifier for the cluster.
      *
      * @return The unique identifier for the cluster.
@@ -738,6 +753,102 @@ public class Cluster implements Serializable {
     }
 
     /**
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
+     *
+     * @return An approximation of the cost of the job flow, represented in
+     *         m1.small/hours. This value is incremented one time for every hour an
+     *         m1.small instance runs. Larger instances are weighted more, so an EC2
+     *         instance that is roughly four times more expensive would result in the
+     *         normalized instance hours being incremented by four. This result is
+     *         only an approximation and does not reflect the actual billing rate.
+     */
+    public Integer getNormalizedInstanceHours() {
+        return normalizedInstanceHours;
+    }
+    
+    /**
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
+     *
+     * @param normalizedInstanceHours An approximation of the cost of the job flow, represented in
+     *         m1.small/hours. This value is incremented one time for every hour an
+     *         m1.small instance runs. Larger instances are weighted more, so an EC2
+     *         instance that is roughly four times more expensive would result in the
+     *         normalized instance hours being incremented by four. This result is
+     *         only an approximation and does not reflect the actual billing rate.
+     */
+    public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
+        this.normalizedInstanceHours = normalizedInstanceHours;
+    }
+    
+    /**
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param normalizedInstanceHours An approximation of the cost of the job flow, represented in
+     *         m1.small/hours. This value is incremented one time for every hour an
+     *         m1.small instance runs. Larger instances are weighted more, so an EC2
+     *         instance that is roughly four times more expensive would result in the
+     *         normalized instance hours being incremented by four. This result is
+     *         only an approximation and does not reflect the actual billing rate.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withNormalizedInstanceHours(Integer normalizedInstanceHours) {
+        this.normalizedInstanceHours = normalizedInstanceHours;
+        return this;
+    }
+
+    /**
+     * The public DNS name of the master Ec2 instance.
+     *
+     * @return The public DNS name of the master Ec2 instance.
+     */
+    public String getMasterPublicDnsName() {
+        return masterPublicDnsName;
+    }
+    
+    /**
+     * The public DNS name of the master Ec2 instance.
+     *
+     * @param masterPublicDnsName The public DNS name of the master Ec2 instance.
+     */
+    public void setMasterPublicDnsName(String masterPublicDnsName) {
+        this.masterPublicDnsName = masterPublicDnsName;
+    }
+    
+    /**
+     * The public DNS name of the master Ec2 instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param masterPublicDnsName The public DNS name of the master Ec2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withMasterPublicDnsName(String masterPublicDnsName) {
+        this.masterPublicDnsName = masterPublicDnsName;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -761,7 +872,9 @@ public class Cluster implements Serializable {
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
         if (getApplications() != null) sb.append("Applications: " + getApplications() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
-        if (getServiceRole() != null) sb.append("ServiceRole: " + getServiceRole() );
+        if (getServiceRole() != null) sb.append("ServiceRole: " + getServiceRole() + ",");
+        if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");
+        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() );
         sb.append("}");
         return sb.toString();
     }
@@ -784,6 +897,8 @@ public class Cluster implements Serializable {
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode()); 
+        hashCode = prime * hashCode + ((getNormalizedInstanceHours() == null) ? 0 : getNormalizedInstanceHours().hashCode()); 
+        hashCode = prime * hashCode + ((getMasterPublicDnsName() == null) ? 0 : getMasterPublicDnsName().hashCode()); 
         return hashCode;
     }
     
@@ -821,6 +936,10 @@ public class Cluster implements Serializable {
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getServiceRole() == null ^ this.getServiceRole() == null) return false;
         if (other.getServiceRole() != null && other.getServiceRole().equals(this.getServiceRole()) == false) return false; 
+        if (other.getNormalizedInstanceHours() == null ^ this.getNormalizedInstanceHours() == null) return false;
+        if (other.getNormalizedInstanceHours() != null && other.getNormalizedInstanceHours().equals(this.getNormalizedInstanceHours()) == false) return false; 
+        if (other.getMasterPublicDnsName() == null ^ this.getMasterPublicDnsName() == null) return false;
+        if (other.getMasterPublicDnsName() != null && other.getMasterPublicDnsName().equals(this.getMasterPublicDnsName()) == false) return false; 
         return true;
     }
     

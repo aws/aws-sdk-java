@@ -94,7 +94,7 @@ public class Constants {
 
     /**
      * Returns the value of the system property
-     * {@value SDKGlobalConfiguration#DEFAULT_S3_STREAM_BUFFER_SIZE} as an
+     * {@link SDKGlobalConfiguration#DEFAULT_S3_STREAM_BUFFER_SIZE} as an
      * Integer; or null if not set. This method exists for backward
      * compatibility reasons.
      */

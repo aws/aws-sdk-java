@@ -57,6 +57,10 @@ public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshaller
                     context.nextToken();
                     disk.setDiskNode(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DiskStatus", targetDepth)) {
+                    context.nextToken();
+                    disk.setDiskStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DiskSizeInBytes", targetDepth)) {
                     context.nextToken();
                     disk.setDiskSizeInBytes(LongJsonUnmarshaller.getInstance().unmarshall(context));

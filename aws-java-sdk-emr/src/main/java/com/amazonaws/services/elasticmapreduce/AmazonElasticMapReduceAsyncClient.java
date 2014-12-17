@@ -35,11 +35,6 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * <p>
- * This is the <i>Amazon Elastic MapReduce API Reference</i> . This
- * guide provides descriptions and samples of the Amazon Elastic
- * MapReduce APIs.
- * </p>
- * <p>
  * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it
  * easy to process large amounts of data efficiently. Amazon EMR uses
  * Hadoop processing combined with several AWS products to do tasks such
@@ -1290,10 +1285,11 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * when the job flow was created.
      * </p>
      * <p>
-     * The call to TerminateJobFlows is asynchronous. Depending on the
-     * configuration of the job flow, it may take up to 5-20 minutes for the
-     * job flow to completely terminate and release allocated resources, such
-     * as Amazon EC2 instances.
+     * The maximum number of JobFlows allowed is 10. The call to
+     * TerminateJobFlows is asynchronous. Depending on the configuration of
+     * the job flow, it may take up to 5-20 minutes for the job flow to
+     * completely terminate and release allocated resources, such as Amazon
+     * EC2 instances.
      * </p>
      *
      * @param terminateJobFlowsRequest Container for the necessary parameters
@@ -1331,10 +1327,11 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * when the job flow was created.
      * </p>
      * <p>
-     * The call to TerminateJobFlows is asynchronous. Depending on the
-     * configuration of the job flow, it may take up to 5-20 minutes for the
-     * job flow to completely terminate and release allocated resources, such
-     * as Amazon EC2 instances.
+     * The maximum number of JobFlows allowed is 10. The call to
+     * TerminateJobFlows is asynchronous. Depending on the configuration of
+     * the job flow, it may take up to 5-20 minutes for the job flow to
+     * completely terminate and release allocated resources, such as Amazon
+     * EC2 instances.
      * </p>
      *
      * @param terminateJobFlowsRequest Container for the necessary parameters

@@ -35,6 +35,9 @@ import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.conn.ssl.X509HostnameVerifier;
 import org.apache.http.params.HttpParams;
 
+import com.amazonaws.internal.SdkSSLSocket;
+import com.amazonaws.internal.SdkSocket;
+
 /**
  * Used to enforce the preferred TLS protocol during SSL handshake.
  */
@@ -109,8 +112,14 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
             final InetSocketAddress localAddress,
             final HttpParams params)
             throws IOException, UnknownHostException, ConnectTimeoutException {
-        return verifyMasterSecret(
+        if (log.isDebugEnabled())
+            log.debug("connecting to " + remoteAddress.getAddress() + ":"
+                    + remoteAddress.getPort());
+        verifyMasterSecret(
             super.connectSocket(socket, remoteAddress, localAddress, params));
+        if (socket instanceof SSLSocket)
+            return new SdkSSLSocket((SSLSocket)socket);
+        return new SdkSocket(socket);
     }
 
     /**
@@ -118,7 +127,7 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
      * else a {@link SecurityException} will be thrown.
      * @param sock connected socket
      */
-    private Socket verifyMasterSecret(final Socket sock) {
+    private void verifyMasterSecret(final Socket sock) {
         if (sock instanceof SSLSocket) {
             SSLSocket ssl = (SSLSocket)sock;
             SSLSession session = ssl.getSession();
@@ -144,9 +153,9 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
                 }
             }
         }
-        return sock;
+        return;
     }
-    
+
     private void failedToVerifyMasterSecret(Throwable t) {
         if (log.isDebugEnabled())
             log.debug("Failed to verify the SSL master secret", t);

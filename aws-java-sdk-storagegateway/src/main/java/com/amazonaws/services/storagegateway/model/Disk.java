@@ -27,6 +27,8 @@ public class Disk implements Serializable {
 
     private String diskNode;
 
+    private String diskStatus;
+
     private Long diskSizeInBytes;
 
     private String diskAllocationType;
@@ -138,6 +140,39 @@ public class Disk implements Serializable {
      */
     public Disk withDiskNode(String diskNode) {
         this.diskNode = diskNode;
+        return this;
+    }
+
+    /**
+     * Returns the value of the DiskStatus property for this object.
+     *
+     * @return The value of the DiskStatus property for this object.
+     */
+    public String getDiskStatus() {
+        return diskStatus;
+    }
+    
+    /**
+     * Sets the value of the DiskStatus property for this object.
+     *
+     * @param diskStatus The new value for the DiskStatus property for this object.
+     */
+    public void setDiskStatus(String diskStatus) {
+        this.diskStatus = diskStatus;
+    }
+    
+    /**
+     * Sets the value of the DiskStatus property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param diskStatus The new value for the DiskStatus property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Disk withDiskStatus(String diskStatus) {
+        this.diskStatus = diskStatus;
         return this;
     }
 
@@ -265,6 +300,7 @@ public class Disk implements Serializable {
         if (getDiskId() != null) sb.append("DiskId: " + getDiskId() + ",");
         if (getDiskPath() != null) sb.append("DiskPath: " + getDiskPath() + ",");
         if (getDiskNode() != null) sb.append("DiskNode: " + getDiskNode() + ",");
+        if (getDiskStatus() != null) sb.append("DiskStatus: " + getDiskStatus() + ",");
         if (getDiskSizeInBytes() != null) sb.append("DiskSizeInBytes: " + getDiskSizeInBytes() + ",");
         if (getDiskAllocationType() != null) sb.append("DiskAllocationType: " + getDiskAllocationType() + ",");
         if (getDiskAllocationResource() != null) sb.append("DiskAllocationResource: " + getDiskAllocationResource() );
@@ -280,6 +316,7 @@ public class Disk implements Serializable {
         hashCode = prime * hashCode + ((getDiskId() == null) ? 0 : getDiskId().hashCode()); 
         hashCode = prime * hashCode + ((getDiskPath() == null) ? 0 : getDiskPath().hashCode()); 
         hashCode = prime * hashCode + ((getDiskNode() == null) ? 0 : getDiskNode().hashCode()); 
+        hashCode = prime * hashCode + ((getDiskStatus() == null) ? 0 : getDiskStatus().hashCode()); 
         hashCode = prime * hashCode + ((getDiskSizeInBytes() == null) ? 0 : getDiskSizeInBytes().hashCode()); 
         hashCode = prime * hashCode + ((getDiskAllocationType() == null) ? 0 : getDiskAllocationType().hashCode()); 
         hashCode = prime * hashCode + ((getDiskAllocationResource() == null) ? 0 : getDiskAllocationResource().hashCode()); 
@@ -300,6 +337,8 @@ public class Disk implements Serializable {
         if (other.getDiskPath() != null && other.getDiskPath().equals(this.getDiskPath()) == false) return false; 
         if (other.getDiskNode() == null ^ this.getDiskNode() == null) return false;
         if (other.getDiskNode() != null && other.getDiskNode().equals(this.getDiskNode()) == false) return false; 
+        if (other.getDiskStatus() == null ^ this.getDiskStatus() == null) return false;
+        if (other.getDiskStatus() != null && other.getDiskStatus().equals(this.getDiskStatus()) == false) return false; 
         if (other.getDiskSizeInBytes() == null ^ this.getDiskSizeInBytes() == null) return false;
         if (other.getDiskSizeInBytes() != null && other.getDiskSizeInBytes().equals(this.getDiskSizeInBytes()) == false) return false; 
         if (other.getDiskAllocationType() == null ^ this.getDiskAllocationType() == null) return false;

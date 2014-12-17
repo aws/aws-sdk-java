@@ -97,6 +97,14 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setServiceRole(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NormalizedInstanceHours", targetDepth)) {
+                    context.nextToken();
+                    cluster.setNormalizedInstanceHours(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MasterPublicDnsName", targetDepth)) {
+                    context.nextToken();
+                    cluster.setMasterPublicDnsName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

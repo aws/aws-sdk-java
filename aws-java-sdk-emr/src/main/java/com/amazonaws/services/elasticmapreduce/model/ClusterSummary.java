@@ -39,6 +39,16 @@ public class ClusterSummary implements Serializable {
     private ClusterStatus status;
 
     /**
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
+     */
+    private Integer normalizedInstanceHours;
+
+    /**
      * The unique identifier for the cluster.
      *
      * @return The unique identifier for the cluster.
@@ -138,6 +148,69 @@ public class ClusterSummary implements Serializable {
     }
 
     /**
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
+     *
+     * @return An approximation of the cost of the job flow, represented in
+     *         m1.small/hours. This value is incremented one time for every hour an
+     *         m1.small instance runs. Larger instances are weighted more, so an EC2
+     *         instance that is roughly four times more expensive would result in the
+     *         normalized instance hours being incremented by four. This result is
+     *         only an approximation and does not reflect the actual billing rate.
+     */
+    public Integer getNormalizedInstanceHours() {
+        return normalizedInstanceHours;
+    }
+    
+    /**
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
+     *
+     * @param normalizedInstanceHours An approximation of the cost of the job flow, represented in
+     *         m1.small/hours. This value is incremented one time for every hour an
+     *         m1.small instance runs. Larger instances are weighted more, so an EC2
+     *         instance that is roughly four times more expensive would result in the
+     *         normalized instance hours being incremented by four. This result is
+     *         only an approximation and does not reflect the actual billing rate.
+     */
+    public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
+        this.normalizedInstanceHours = normalizedInstanceHours;
+    }
+    
+    /**
+     * An approximation of the cost of the job flow, represented in
+     * m1.small/hours. This value is incremented one time for every hour an
+     * m1.small instance runs. Larger instances are weighted more, so an EC2
+     * instance that is roughly four times more expensive would result in the
+     * normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param normalizedInstanceHours An approximation of the cost of the job flow, represented in
+     *         m1.small/hours. This value is incremented one time for every hour an
+     *         m1.small instance runs. Larger instances are weighted more, so an EC2
+     *         instance that is roughly four times more expensive would result in the
+     *         normalized instance hours being incremented by four. This result is
+     *         only an approximation and does not reflect the actual billing rate.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ClusterSummary withNormalizedInstanceHours(Integer normalizedInstanceHours) {
+        this.normalizedInstanceHours = normalizedInstanceHours;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -151,7 +224,8 @@ public class ClusterSummary implements Serializable {
         sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() );
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() );
         sb.append("}");
         return sb.toString();
     }
@@ -164,6 +238,7 @@ public class ClusterSummary implements Serializable {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getNormalizedInstanceHours() == null) ? 0 : getNormalizedInstanceHours().hashCode()); 
         return hashCode;
     }
     
@@ -181,6 +256,8 @@ public class ClusterSummary implements Serializable {
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getNormalizedInstanceHours() == null ^ this.getNormalizedInstanceHours() == null) return false;
+        if (other.getNormalizedInstanceHours() != null && other.getNormalizedInstanceHours().equals(this.getNormalizedInstanceHours()) == false) return false; 
         return true;
     }
     

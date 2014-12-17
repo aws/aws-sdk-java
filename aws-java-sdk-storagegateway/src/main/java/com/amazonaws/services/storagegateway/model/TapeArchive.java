@@ -43,9 +43,6 @@ public class TapeArchive implements Serializable {
 
     /**
      * The size, in bytes, of the archived virtual tape.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>107374182400 - 2748779069440<br/>
      */
     private Long tapeSizeInBytes;
 
@@ -160,9 +157,6 @@ public class TapeArchive implements Serializable {
 
     /**
      * The size, in bytes, of the archived virtual tape.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>107374182400 - 2748779069440<br/>
      *
      * @return The size, in bytes, of the archived virtual tape.
      */
@@ -172,9 +166,6 @@ public class TapeArchive implements Serializable {
     
     /**
      * The size, in bytes, of the archived virtual tape.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>107374182400 - 2748779069440<br/>
      *
      * @param tapeSizeInBytes The size, in bytes, of the archived virtual tape.
      */
@@ -186,9 +177,6 @@ public class TapeArchive implements Serializable {
      * The size, in bytes, of the archived virtual tape.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>107374182400 - 2748779069440<br/>
      *
      * @param tapeSizeInBytes The size, in bytes, of the archived virtual tape.
      *

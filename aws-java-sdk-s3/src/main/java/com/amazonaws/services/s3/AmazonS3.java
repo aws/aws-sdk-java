@@ -26,6 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.internal.Constants;
+import com.amazonaws.services.s3.internal.S3DirectSpi;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
@@ -119,7 +120,7 @@ import com.amazonaws.services.s3.model.VersionListing;
  * http://aws.amazon.com/s3</a>
  * </p>
  */
-public interface AmazonS3 {
+public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>

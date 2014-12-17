@@ -47,6 +47,24 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements Serial
     private String queueUrl;
 
     /**
+     * Default constructor for a new PurgeQueueRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PurgeQueueRequest() {}
+    
+    /**
+     * Constructs a new PurgeQueueRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl The queue URL of the queue to delete the messages from
+     * when using the <code>PurgeQueue</code> API.
+     */
+    public PurgeQueueRequest(String queueUrl) {
+        setQueueUrl(queueUrl);
+    }
+
+    /**
      * The queue URL of the queue to delete the messages from when using the
      * <code>PurgeQueue</code> API.
      *

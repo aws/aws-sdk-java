@@ -78,6 +78,20 @@ public class ListStepsRequestMarshaller implements Marshaller<Request<ListStepsR
                 }
                 jsonWriter.endArray();
             }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> stepIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(listStepsRequest.getStepIds());
+            if (stepIdsList != null && !(stepIdsList.isAutoConstruct() && stepIdsList.isEmpty())) {
+
+                jsonWriter.key("StepIds");
+                jsonWriter.array();
+
+                for (String stepIdsListValue : stepIdsList) {
+                    if (stepIdsListValue != null) {
+                        jsonWriter.value(stepIdsListValue);
+                    }
+                }
+                jsonWriter.endArray();
+            }
             if (listStepsRequest.getMarker() != null) {
                 jsonWriter.key("Marker").value(listStepsRequest.getMarker());
             }
