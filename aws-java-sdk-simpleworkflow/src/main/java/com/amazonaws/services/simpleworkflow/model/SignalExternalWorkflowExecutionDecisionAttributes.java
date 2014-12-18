@@ -26,14 +26,14 @@ import java.io.Serializable;
  * </p>
  * <p>
  * You can use IAM policies to control this decision's access to Amazon
- * SWF in much the same way as for the regular API:
+ * SWF resources as follows:
  * </p>
  * 
  * <ul>
  * <li>Use a <code>Resource</code> element with the domain name to limit
- * the decision to only specified domains.</li>
+ * the action to only specified domains.</li>
  * <li>Use an <code>Action</code> element to allow or deny permission to
- * specify this decision.</li>
+ * call this action.</li>
  * <li>You cannot use an IAM policy to constrain this action's
  * parameters.</li>
  * 
@@ -51,8 +51,8 @@ import java.io.Serializable;
 public class SignalExternalWorkflowExecutionDecisionAttributes implements Serializable {
 
     /**
-     * The <code>workflowId</code> of the workflow execution to be signaled.
-     * This field is required.
+     * <b>Required.</b> The <code>workflowId</code> of the workflow execution
+     * to be signaled.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -68,8 +68,8 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
     private String runId;
 
     /**
-     * The name of the signal.The target workflow execution will use the
-     * signal name and input to process the signal. This field is required.
+     * <b>Required.</b> The name of the signal.The target workflow execution
+     * will use the signal name and input to process the signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -77,8 +77,9 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
     private String signalName;
 
     /**
-     * Optional input to be provided with the signal.The target workflow
-     * execution will use the signal name and input to process the signal.
+     * <i>Optional.</i> Input data to be provided with the signal. The target
+     * workflow execution will use the signal name and input data to process
+     * the signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -86,8 +87,8 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
     private String input;
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent decision tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent decision tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -95,44 +96,44 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
     private String control;
 
     /**
-     * The <code>workflowId</code> of the workflow execution to be signaled.
-     * This field is required.
+     * <b>Required.</b> The <code>workflowId</code> of the workflow execution
+     * to be signaled.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The <code>workflowId</code> of the workflow execution to be signaled.
-     *         This field is required.
+     * @return <b>Required.</b> The <code>workflowId</code> of the workflow execution
+     *         to be signaled.
      */
     public String getWorkflowId() {
         return workflowId;
     }
     
     /**
-     * The <code>workflowId</code> of the workflow execution to be signaled.
-     * This field is required.
+     * <b>Required.</b> The <code>workflowId</code> of the workflow execution
+     * to be signaled.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param workflowId The <code>workflowId</code> of the workflow execution to be signaled.
-     *         This field is required.
+     * @param workflowId <b>Required.</b> The <code>workflowId</code> of the workflow execution
+     *         to be signaled.
      */
     public void setWorkflowId(String workflowId) {
         this.workflowId = workflowId;
     }
     
     /**
-     * The <code>workflowId</code> of the workflow execution to be signaled.
-     * This field is required.
+     * <b>Required.</b> The <code>workflowId</code> of the workflow execution
+     * to be signaled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param workflowId The <code>workflowId</code> of the workflow execution to be signaled.
-     *         This field is required.
+     * @param workflowId <b>Required.</b> The <code>workflowId</code> of the workflow execution
+     *         to be signaled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -185,44 +186,44 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
     }
 
     /**
-     * The name of the signal.The target workflow execution will use the
-     * signal name and input to process the signal. This field is required.
+     * <b>Required.</b> The name of the signal.The target workflow execution
+     * will use the signal name and input to process the signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The name of the signal.The target workflow execution will use the
-     *         signal name and input to process the signal. This field is required.
+     * @return <b>Required.</b> The name of the signal.The target workflow execution
+     *         will use the signal name and input to process the signal.
      */
     public String getSignalName() {
         return signalName;
     }
     
     /**
-     * The name of the signal.The target workflow execution will use the
-     * signal name and input to process the signal. This field is required.
+     * <b>Required.</b> The name of the signal.The target workflow execution
+     * will use the signal name and input to process the signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param signalName The name of the signal.The target workflow execution will use the
-     *         signal name and input to process the signal. This field is required.
+     * @param signalName <b>Required.</b> The name of the signal.The target workflow execution
+     *         will use the signal name and input to process the signal.
      */
     public void setSignalName(String signalName) {
         this.signalName = signalName;
     }
     
     /**
-     * The name of the signal.The target workflow execution will use the
-     * signal name and input to process the signal. This field is required.
+     * <b>Required.</b> The name of the signal.The target workflow execution
+     * will use the signal name and input to process the signal.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param signalName The name of the signal.The target workflow execution will use the
-     *         signal name and input to process the signal. This field is required.
+     * @param signalName <b>Required.</b> The name of the signal.The target workflow execution
+     *         will use the signal name and input to process the signal.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -233,44 +234,50 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
     }
 
     /**
-     * Optional input to be provided with the signal.The target workflow
-     * execution will use the signal name and input to process the signal.
+     * <i>Optional.</i> Input data to be provided with the signal. The target
+     * workflow execution will use the signal name and input data to process
+     * the signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional input to be provided with the signal.The target workflow
-     *         execution will use the signal name and input to process the signal.
+     * @return <i>Optional.</i> Input data to be provided with the signal. The target
+     *         workflow execution will use the signal name and input data to process
+     *         the signal.
      */
     public String getInput() {
         return input;
     }
     
     /**
-     * Optional input to be provided with the signal.The target workflow
-     * execution will use the signal name and input to process the signal.
+     * <i>Optional.</i> Input data to be provided with the signal. The target
+     * workflow execution will use the signal name and input data to process
+     * the signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param input Optional input to be provided with the signal.The target workflow
-     *         execution will use the signal name and input to process the signal.
+     * @param input <i>Optional.</i> Input data to be provided with the signal. The target
+     *         workflow execution will use the signal name and input data to process
+     *         the signal.
      */
     public void setInput(String input) {
         this.input = input;
     }
     
     /**
-     * Optional input to be provided with the signal.The target workflow
-     * execution will use the signal name and input to process the signal.
+     * <i>Optional.</i> Input data to be provided with the signal. The target
+     * workflow execution will use the signal name and input data to process
+     * the signal.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param input Optional input to be provided with the signal.The target workflow
-     *         execution will use the signal name and input to process the signal.
+     * @param input <i>Optional.</i> Input data to be provided with the signal. The target
+     *         workflow execution will use the signal name and input data to process
+     *         the signal.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -281,44 +288,44 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
     }
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent decision tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent decision tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional data attached to the event that can be used by the decider in
-     *         subsequent decision tasks.
+     * @return <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent decision tasks.
      */
     public String getControl() {
         return control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent decision tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent decision tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent decision tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent decision tasks.
      */
     public void setControl(String control) {
         this.control = control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent decision tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent decision tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent decision tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent decision tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

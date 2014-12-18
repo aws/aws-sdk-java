@@ -141,6 +141,7 @@ class GenericWorkflowClientImpl implements GenericWorkflowClient {
         attributes.setInput(parameters.getInput());
         attributes.setExecutionStartToCloseTimeout(FlowHelpers.secondsToDuration(parameters.getExecutionStartToCloseTimeoutSeconds()));
         attributes.setTaskStartToCloseTimeout(FlowHelpers.secondsToDuration(parameters.getTaskStartToCloseTimeoutSeconds()));
+        attributes.setTaskPriority(FlowHelpers.taskPriorityToString(parameters.getTaskPriority()));
         List<String> tagList = parameters.getTagList();
         if (tagList != null) {
             attributes.setTagList(tagList);

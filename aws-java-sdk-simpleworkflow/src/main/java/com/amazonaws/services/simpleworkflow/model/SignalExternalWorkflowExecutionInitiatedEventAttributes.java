@@ -62,13 +62,13 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
-     * the cause of events leading up to this event.
+     * the chain of events leading up to this event.
      */
     private Long decisionTaskCompletedEventId;
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent decision tasks.
+     * <i>Optional.</i> data attached to the event that can be used by the
+     * decider in subsequent decision tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -254,13 +254,13 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
-     * the cause of events leading up to this event.
+     * the chain of events leading up to this event.
      *
      * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back
-     *         the cause of events leading up to this event.
+     *         the chain of events leading up to this event.
      */
     public Long getDecisionTaskCompletedEventId() {
         return decisionTaskCompletedEventId;
@@ -271,13 +271,13 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
-     * the cause of events leading up to this event.
+     * the chain of events leading up to this event.
      *
      * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back
-     *         the cause of events leading up to this event.
+     *         the chain of events leading up to this event.
      */
     public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -288,7 +288,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
-     * the cause of events leading up to this event.
+     * the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -296,7 +296,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back
-     *         the cause of events leading up to this event.
+     *         the chain of events leading up to this event.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -307,44 +307,44 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     }
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent decision tasks.
+     * <i>Optional.</i> data attached to the event that can be used by the
+     * decider in subsequent decision tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional data attached to the event that can be used by the decider in
-     *         subsequent decision tasks.
+     * @return <i>Optional.</i> data attached to the event that can be used by the
+     *         decider in subsequent decision tasks.
      */
     public String getControl() {
         return control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent decision tasks.
+     * <i>Optional.</i> data attached to the event that can be used by the
+     * decider in subsequent decision tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent decision tasks.
+     * @param control <i>Optional.</i> data attached to the event that can be used by the
+     *         decider in subsequent decision tasks.
      */
     public void setControl(String control) {
         this.control = control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent decision tasks.
+     * <i>Optional.</i> data attached to the event that can be used by the
+     * decider in subsequent decision tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent decision tasks.
+     * @param control <i>Optional.</i> data attached to the event that can be used by the
+     *         decider in subsequent decision tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

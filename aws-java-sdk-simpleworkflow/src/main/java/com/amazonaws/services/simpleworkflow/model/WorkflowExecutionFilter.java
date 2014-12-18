@@ -20,7 +20,6 @@ import java.io.Serializable;
  * <p>
  * Used to filter the workflow executions in visibility APIs by their
  * <code>workflowId</code> .
- * 
  * </p>
  */
 public class WorkflowExecutionFilter implements Serializable {

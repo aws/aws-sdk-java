@@ -65,6 +65,10 @@ public class WorkflowExecutionContinuedAsNewEventAttributesJsonUnmarshaller impl
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("taskPriority", targetDepth)) {
+                    context.nextToken();
+                    workflowExecutionContinuedAsNewEventAttributes.setTaskPriority(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("taskStartToCloseTimeout", targetDepth)) {
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setTaskStartToCloseTimeout(StringJsonUnmarshaller.getInstance().unmarshall(context));

@@ -133,7 +133,8 @@ public class GenericWorkflowWorker extends GenericWorker {
         registerWorkflow.setDefaultChildPolicy(registrationOptions.getDefaultChildPolicy().toString());
         registerWorkflow.setDefaultTaskStartToCloseTimeout(FlowHelpers.secondsToDuration(registrationOptions.getDefaultTaskStartToCloseTimeoutSeconds()));
         registerWorkflow.setDefaultExecutionStartToCloseTimeout(FlowHelpers.secondsToDuration(registrationOptions.getDefaultExecutionStartToCloseTimeoutSeconds()));
-
+        registerWorkflow.setDefaultTaskPriority(FlowHelpers.taskPriorityToString(registrationOptions.getDefaultTaskPriority()));
+        
         String description = registrationOptions.getDescription();
         if (description != null) {
             registerWorkflow.setDescription(description);

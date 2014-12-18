@@ -89,6 +89,7 @@ class GenericActivityClientImpl implements GenericActivityClient {
         attributes.setScheduleToCloseTimeout(FlowHelpers.secondsToDuration(parameters.getScheduleToCloseTimeoutSeconds()));
         attributes.setScheduleToStartTimeout(FlowHelpers.secondsToDuration(parameters.getScheduleToStartTimeoutSeconds()));
         attributes.setStartToCloseTimeout(FlowHelpers.secondsToDuration(parameters.getStartToCloseTimeoutSeconds()));
+        attributes.setTaskPriority(FlowHelpers.taskPriorityToString(parameters.getTaskPriority()));
         String activityId = parameters.getActivityId();
         if (activityId == null) {
             activityId = String.valueOf(decisions.getNextId());

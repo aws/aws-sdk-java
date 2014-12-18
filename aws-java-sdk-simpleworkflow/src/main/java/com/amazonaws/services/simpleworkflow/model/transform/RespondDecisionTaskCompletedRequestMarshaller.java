@@ -120,6 +120,9 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                                 }
                                 jsonWriter.endObject();
                             }
+                            if (scheduleActivityTaskDecisionAttributes.getTaskPriority() != null) {
+                                jsonWriter.key("taskPriority").value(scheduleActivityTaskDecisionAttributes.getTaskPriority());
+                            }
                             if (scheduleActivityTaskDecisionAttributes.getScheduleToStartTimeout() != null) {
                                 jsonWriter.key("scheduleToStartTimeout").value(scheduleActivityTaskDecisionAttributes.getScheduleToStartTimeout());
                             }
@@ -200,6 +203,9 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                                     jsonWriter.key("name").value(taskList.getName());
                                 }
                                 jsonWriter.endObject();
+                            }
+                            if (continueAsNewWorkflowExecutionDecisionAttributes.getTaskPriority() != null) {
+                                jsonWriter.key("taskPriority").value(continueAsNewWorkflowExecutionDecisionAttributes.getTaskPriority());
                             }
                             if (continueAsNewWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout() != null) {
                                 jsonWriter.key("taskStartToCloseTimeout").value(continueAsNewWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout());
@@ -350,6 +356,9 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                                     jsonWriter.key("name").value(taskList.getName());
                                 }
                                 jsonWriter.endObject();
+                            }
+                            if (startChildWorkflowExecutionDecisionAttributes.getTaskPriority() != null) {
+                                jsonWriter.key("taskPriority").value(startChildWorkflowExecutionDecisionAttributes.getTaskPriority());
                             }
                             if (startChildWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout() != null) {
                                 jsonWriter.key("taskStartToCloseTimeout").value(startChildWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout());

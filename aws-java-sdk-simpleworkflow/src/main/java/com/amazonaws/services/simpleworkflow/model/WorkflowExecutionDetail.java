@@ -50,8 +50,8 @@ public class WorkflowExecutionDetail implements Serializable {
 
     /**
      * The latest executionContext provided by the decider for this workflow
-     * execution. A decider can provide an executionContext, which is a free
-     * form string, when closing a decision task using
+     * execution. A decider can provide an executionContext (a free-form
+     * string) when closing a decision task using
      * <a>RespondDecisionTaskCompleted</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -223,16 +223,16 @@ public class WorkflowExecutionDetail implements Serializable {
 
     /**
      * The latest executionContext provided by the decider for this workflow
-     * execution. A decider can provide an executionContext, which is a free
-     * form string, when closing a decision task using
+     * execution. A decider can provide an executionContext (a free-form
+     * string) when closing a decision task using
      * <a>RespondDecisionTaskCompleted</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
      * @return The latest executionContext provided by the decider for this workflow
-     *         execution. A decider can provide an executionContext, which is a free
-     *         form string, when closing a decision task using
+     *         execution. A decider can provide an executionContext (a free-form
+     *         string) when closing a decision task using
      *         <a>RespondDecisionTaskCompleted</a>.
      */
     public String getLatestExecutionContext() {
@@ -241,16 +241,16 @@ public class WorkflowExecutionDetail implements Serializable {
     
     /**
      * The latest executionContext provided by the decider for this workflow
-     * execution. A decider can provide an executionContext, which is a free
-     * form string, when closing a decision task using
+     * execution. A decider can provide an executionContext (a free-form
+     * string) when closing a decision task using
      * <a>RespondDecisionTaskCompleted</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param latestExecutionContext The latest executionContext provided by the decider for this workflow
-     *         execution. A decider can provide an executionContext, which is a free
-     *         form string, when closing a decision task using
+     *         execution. A decider can provide an executionContext (a free-form
+     *         string) when closing a decision task using
      *         <a>RespondDecisionTaskCompleted</a>.
      */
     public void setLatestExecutionContext(String latestExecutionContext) {
@@ -259,8 +259,8 @@ public class WorkflowExecutionDetail implements Serializable {
     
     /**
      * The latest executionContext provided by the decider for this workflow
-     * execution. A decider can provide an executionContext, which is a free
-     * form string, when closing a decision task using
+     * execution. A decider can provide an executionContext (a free-form
+     * string) when closing a decision task using
      * <a>RespondDecisionTaskCompleted</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -269,8 +269,8 @@ public class WorkflowExecutionDetail implements Serializable {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param latestExecutionContext The latest executionContext provided by the decider for this workflow
-     *         execution. A decider can provide an executionContext, which is a free
-     *         form string, when closing a decision task using
+     *         execution. A decider can provide an executionContext (a free-form
+     *         string) when closing a decision task using
      *         <a>RespondDecisionTaskCompleted</a>.
      *
      * @return A reference to this updated object so that method calls can be chained

@@ -28,6 +28,7 @@ public class ExecuteActivityParameters implements Cloneable {
     private long scheduleToStartTimeoutSeconds = FlowConstants.USE_REGISTERED_DEFAULTS;
     private long startToCloseTimeoutSeconds = FlowConstants.USE_REGISTERED_DEFAULTS;
     private String taskList;
+    private int taskPriority;
     
     public ExecuteActivityParameters() {
     }
@@ -341,7 +342,20 @@ public class ExecuteActivityParameters implements Cloneable {
         this.taskList = taskList;
         return this;
     }
-    
+
+    public int getTaskPriority() {
+        return taskPriority;
+    }
+
+    public void setTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+
+    public ExecuteActivityParameters withTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+
     public ExecuteActivityParameters createExecuteActivityParametersFromOptions(ActivitySchedulingOptions options, 
     		ActivitySchedulingOptions optionsOverride) {
     	ExecuteActivityParameters scheduleActivityParameters = this.clone();
@@ -371,6 +385,11 @@ public class ExecuteActivityParameters implements Cloneable {
     		if (taskList != null && !taskList.isEmpty()) { 
     			scheduleActivityParameters.setTaskList(taskList);
     		}
+    		
+            Integer taskPriority = options.getTaskPriority();
+            if (taskPriority != null) {
+                scheduleActivityParameters.setTaskPriority(taskPriority);
+            }
     	}
     	
     	if (optionsOverride != null) {    
@@ -398,6 +417,11 @@ public class ExecuteActivityParameters implements Cloneable {
     		if (taskList != null && !taskList.isEmpty()) { 
     			scheduleActivityParameters.setTaskList(taskList);
     		}
+    		
+            Integer taskPriority = optionsOverride.getTaskPriority();
+            if (taskPriority != null) {
+                scheduleActivityParameters.setTaskPriority(taskPriority);
+            }
     	}
     	
     	return scheduleActivityParameters;
@@ -423,7 +447,8 @@ public class ExecuteActivityParameters implements Cloneable {
         sb.append("ScheduleToStartTimeout: " + scheduleToStartTimeoutSeconds + ", ");
         sb.append("ScheduleToCloseTimeout: " + scheduleToCloseTimeoutSeconds + ", ");
         sb.append("StartToCloseTimeout: " + startToCloseTimeoutSeconds + ", ");
-        sb.append("TaskList: " + taskList);
+        sb.append("TaskList: " + taskList + ", ");
+        sb.append("TaskPriority: " + taskPriority);
         sb.append("}");
         return sb.toString();
     }
@@ -439,6 +464,7 @@ public class ExecuteActivityParameters implements Cloneable {
         result.setScheduleToCloseTimeoutSeconds(scheduleToCloseTimeoutSeconds);
         result.setStartToCloseTimeoutSeconds(startToCloseTimeoutSeconds);
         result.setTaskList(taskList);
+        result.setTaskPriority(taskPriority);
         return result;
     }
 }

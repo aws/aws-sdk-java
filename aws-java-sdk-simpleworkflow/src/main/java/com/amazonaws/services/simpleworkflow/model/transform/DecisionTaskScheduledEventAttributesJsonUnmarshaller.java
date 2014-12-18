@@ -49,6 +49,10 @@ public class DecisionTaskScheduledEventAttributesJsonUnmarshaller implements Unm
                     context.nextToken();
                     decisionTaskScheduledEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("taskPriority", targetDepth)) {
+                    context.nextToken();
+                    decisionTaskScheduledEventAttributes.setTaskPriority(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("startToCloseTimeout", targetDepth)) {
                     context.nextToken();
                     decisionTaskScheduledEventAttributes.setStartToCloseTimeout(StringJsonUnmarshaller.getInstance().unmarshall(context));

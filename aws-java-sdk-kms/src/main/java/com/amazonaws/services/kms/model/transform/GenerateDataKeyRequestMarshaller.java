@@ -64,7 +64,7 @@ public class GenerateDataKeyRequestMarshaller implements Marshaller<Request<Gene
             if (generateDataKeyRequest.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(generateDataKeyRequest.getKeyId());
             }
-            if (generateDataKeyRequest.getEncryptionContext() != null) {
+            if (generateDataKeyRequest.getEncryptionContext() != null && !generateDataKeyRequest.getEncryptionContext().isEmpty()) {
                 jsonWriter.key("EncryptionContext");
                 jsonWriter.object();
                 for (Map.Entry<String, String> encryptionContextListValue : generateDataKeyRequest.getEncryptionContext().entrySet()) {

@@ -57,6 +57,10 @@ public class WorkflowTypeConfigurationJsonUnmarshaller implements Unmarshaller<W
                     context.nextToken();
                     workflowTypeConfiguration.setDefaultTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("defaultTaskPriority", targetDepth)) {
+                    context.nextToken();
+                    workflowTypeConfiguration.setDefaultTaskPriority(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("defaultChildPolicy", targetDepth)) {
                     context.nextToken();
                     workflowTypeConfiguration.setDefaultChildPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));

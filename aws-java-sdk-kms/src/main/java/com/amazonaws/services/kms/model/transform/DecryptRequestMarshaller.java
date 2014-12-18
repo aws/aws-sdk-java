@@ -64,7 +64,7 @@ public class DecryptRequestMarshaller implements Marshaller<Request<DecryptReque
             if (decryptRequest.getCiphertextBlob() != null) {
                 jsonWriter.key("CiphertextBlob").value(decryptRequest.getCiphertextBlob());
             }
-            if (decryptRequest.getEncryptionContext() != null) {
+            if (decryptRequest.getEncryptionContext() != null && !decryptRequest.getEncryptionContext().isEmpty()) {
                 jsonWriter.key("EncryptionContext");
                 jsonWriter.object();
                 for (Map.Entry<String, String> encryptionContextListValue : decryptRequest.getEncryptionContext().entrySet()) {

@@ -24,18 +24,17 @@ import java.io.Serializable;
 public class WorkflowTypeConfiguration implements Serializable {
 
     /**
-     * The optional default maximum duration, specified when registering the
-     * workflow type, that a decision task for executions of this workflow
-     * type might take before returning completion or failure. If the task
-     * does not close in the specified time then the task is automatically
-     * timed out and rescheduled. If the decider eventually reports a
-     * completion or failure, it is ignored. This default can be overridden
-     * when starting a workflow execution using the
+     * <i>Optional.</i> The default maximum duration, specified when
+     * registering the workflow type, that a decision task for executions of
+     * this workflow type might take before returning completion or failure.
+     * If the task does not close in the specified time then the task is
+     * automatically timed out and rescheduled. If the decider eventually
+     * reports a completion or failure, it is ignored. This default can be
+     * overridden when starting a workflow execution using the
      * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -43,14 +42,13 @@ public class WorkflowTypeConfiguration implements Serializable {
     private String defaultTaskStartToCloseTimeout;
 
     /**
-     * The optional default maximum duration, specified when registering the
-     * workflow type, for executions of this workflow type. This default can
-     * be overridden when starting a workflow execution using the
-     * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * <i>Optional.</i> The default maximum duration, specified when
+     * registering the workflow type, for executions of this workflow type.
+     * This default can be overridden when starting a workflow execution
+     * using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -58,7 +56,7 @@ public class WorkflowTypeConfiguration implements Serializable {
     private String defaultExecutionStartToCloseTimeout;
 
     /**
-     * The optional default task list, specified when registering the
+     * <i>Optional.</i> The default task list, specified when registering the
      * workflow type, for decisions tasks scheduled for workflow executions
      * of this type. This default can be overridden when starting a workflow
      * execution using the <a>StartWorkflowExecution</a> action or the
@@ -67,18 +65,37 @@ public class WorkflowTypeConfiguration implements Serializable {
     private TaskList defaultTaskList;
 
     /**
-     * The optional default policy to use for the child workflow executions
-     * when a workflow execution of this type is terminated, by calling the
-     * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. This default can be overridden when starting a
+     * <i>Optional.</i> The default task priority, specified when registering
+     * the workflow type, for all decision tasks of this workflow type. This
+     * default can be overridden when starting a workflow execution using the
+     * <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision. <p>Valid values are
+     * integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority. <p>For more information about
+     * setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     */
+    private String defaultTaskPriority;
+
+    /**
+     * <i>Optional.</i> The default policy to use for the child workflow
+     * executions when a workflow execution of this type is terminated, by
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
      * recording a <code>WorkflowExecutionCancelRequested</code> event in its
      * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event. </li>
+     * receives an execution history with this event.</li>
      * <li><b>ABANDON:</b> no action will be taken. The child executions will
      * continue to run.</li> </ul>
      * <p>
@@ -88,104 +105,98 @@ public class WorkflowTypeConfiguration implements Serializable {
     private String defaultChildPolicy;
 
     /**
-     * The optional default maximum duration, specified when registering the
-     * workflow type, that a decision task for executions of this workflow
-     * type might take before returning completion or failure. If the task
-     * does not close in the specified time then the task is automatically
-     * timed out and rescheduled. If the decider eventually reports a
-     * completion or failure, it is ignored. This default can be overridden
-     * when starting a workflow execution using the
+     * <i>Optional.</i> The default maximum duration, specified when
+     * registering the workflow type, that a decision task for executions of
+     * this workflow type might take before returning completion or failure.
+     * If the task does not close in the specified time then the task is
+     * automatically timed out and rescheduled. If the decider eventually
+     * reports a completion or failure, it is ignored. This default can be
+     * overridden when starting a workflow execution using the
      * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @return The optional default maximum duration, specified when registering the
-     *         workflow type, that a decision task for executions of this workflow
-     *         type might take before returning completion or failure. If the task
-     *         does not close in the specified time then the task is automatically
-     *         timed out and rescheduled. If the decider eventually reports a
-     *         completion or failure, it is ignored. This default can be overridden
-     *         when starting a workflow execution using the
+     * @return <i>Optional.</i> The default maximum duration, specified when
+     *         registering the workflow type, that a decision task for executions of
+     *         this workflow type might take before returning completion or failure.
+     *         If the task does not close in the specified time then the task is
+     *         automatically timed out and rescheduled. If the decider eventually
+     *         reports a completion or failure, it is ignored. This default can be
+     *         overridden when starting a workflow execution using the
      *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public String getDefaultTaskStartToCloseTimeout() {
         return defaultTaskStartToCloseTimeout;
     }
     
     /**
-     * The optional default maximum duration, specified when registering the
-     * workflow type, that a decision task for executions of this workflow
-     * type might take before returning completion or failure. If the task
-     * does not close in the specified time then the task is automatically
-     * timed out and rescheduled. If the decider eventually reports a
-     * completion or failure, it is ignored. This default can be overridden
-     * when starting a workflow execution using the
+     * <i>Optional.</i> The default maximum duration, specified when
+     * registering the workflow type, that a decision task for executions of
+     * this workflow type might take before returning completion or failure.
+     * If the task does not close in the specified time then the task is
+     * automatically timed out and rescheduled. If the decider eventually
+     * reports a completion or failure, it is ignored. This default can be
+     * overridden when starting a workflow execution using the
      * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param defaultTaskStartToCloseTimeout The optional default maximum duration, specified when registering the
-     *         workflow type, that a decision task for executions of this workflow
-     *         type might take before returning completion or failure. If the task
-     *         does not close in the specified time then the task is automatically
-     *         timed out and rescheduled. If the decider eventually reports a
-     *         completion or failure, it is ignored. This default can be overridden
-     *         when starting a workflow execution using the
+     * @param defaultTaskStartToCloseTimeout <i>Optional.</i> The default maximum duration, specified when
+     *         registering the workflow type, that a decision task for executions of
+     *         this workflow type might take before returning completion or failure.
+     *         If the task does not close in the specified time then the task is
+     *         automatically timed out and rescheduled. If the decider eventually
+     *         reports a completion or failure, it is ignored. This default can be
+     *         overridden when starting a workflow execution using the
      *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public void setDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
         this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
     }
     
     /**
-     * The optional default maximum duration, specified when registering the
-     * workflow type, that a decision task for executions of this workflow
-     * type might take before returning completion or failure. If the task
-     * does not close in the specified time then the task is automatically
-     * timed out and rescheduled. If the decider eventually reports a
-     * completion or failure, it is ignored. This default can be overridden
-     * when starting a workflow execution using the
+     * <i>Optional.</i> The default maximum duration, specified when
+     * registering the workflow type, that a decision task for executions of
+     * this workflow type might take before returning completion or failure.
+     * If the task does not close in the specified time then the task is
+     * automatically timed out and rescheduled. If the decider eventually
+     * reports a completion or failure, it is ignored. This default can be
+     * overridden when starting a workflow execution using the
      * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param defaultTaskStartToCloseTimeout The optional default maximum duration, specified when registering the
-     *         workflow type, that a decision task for executions of this workflow
-     *         type might take before returning completion or failure. If the task
-     *         does not close in the specified time then the task is automatically
-     *         timed out and rescheduled. If the decider eventually reports a
-     *         completion or failure, it is ignored. This default can be overridden
-     *         when starting a workflow execution using the
+     * @param defaultTaskStartToCloseTimeout <i>Optional.</i> The default maximum duration, specified when
+     *         registering the workflow type, that a decision task for executions of
+     *         this workflow type might take before returning completion or failure.
+     *         If the task does not close in the specified time then the task is
+     *         automatically timed out and rescheduled. If the decider eventually
+     *         reports a completion or failure, it is ignored. This default can be
+     *         overridden when starting a workflow execution using the
      *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -196,80 +207,74 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
 
     /**
-     * The optional default maximum duration, specified when registering the
-     * workflow type, for executions of this workflow type. This default can
-     * be overridden when starting a workflow execution using the
-     * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * <i>Optional.</i> The default maximum duration, specified when
+     * registering the workflow type, for executions of this workflow type.
+     * This default can be overridden when starting a workflow execution
+     * using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @return The optional default maximum duration, specified when registering the
-     *         workflow type, for executions of this workflow type. This default can
-     *         be overridden when starting a workflow execution using the
-     *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     * @return <i>Optional.</i> The default maximum duration, specified when
+     *         registering the workflow type, for executions of this workflow type.
+     *         This default can be overridden when starting a workflow execution
+     *         using the <a>StartWorkflowExecution</a> action or the
+     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public String getDefaultExecutionStartToCloseTimeout() {
         return defaultExecutionStartToCloseTimeout;
     }
     
     /**
-     * The optional default maximum duration, specified when registering the
-     * workflow type, for executions of this workflow type. This default can
-     * be overridden when starting a workflow execution using the
-     * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * <i>Optional.</i> The default maximum duration, specified when
+     * registering the workflow type, for executions of this workflow type.
+     * This default can be overridden when starting a workflow execution
+     * using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param defaultExecutionStartToCloseTimeout The optional default maximum duration, specified when registering the
-     *         workflow type, for executions of this workflow type. This default can
-     *         be overridden when starting a workflow execution using the
-     *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     * @param defaultExecutionStartToCloseTimeout <i>Optional.</i> The default maximum duration, specified when
+     *         registering the workflow type, for executions of this workflow type.
+     *         This default can be overridden when starting a workflow execution
+     *         using the <a>StartWorkflowExecution</a> action or the
+     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public void setDefaultExecutionStartToCloseTimeout(String defaultExecutionStartToCloseTimeout) {
         this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
     }
     
     /**
-     * The optional default maximum duration, specified when registering the
-     * workflow type, for executions of this workflow type. This default can
-     * be overridden when starting a workflow execution using the
-     * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * <i>Optional.</i> The default maximum duration, specified when
+     * registering the workflow type, for executions of this workflow type.
+     * This default can be overridden when starting a workflow execution
+     * using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param defaultExecutionStartToCloseTimeout The optional default maximum duration, specified when registering the
-     *         workflow type, for executions of this workflow type. This default can
-     *         be overridden when starting a workflow execution using the
-     *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     * @param defaultExecutionStartToCloseTimeout <i>Optional.</i> The default maximum duration, specified when
+     *         registering the workflow type, for executions of this workflow type.
+     *         This default can be overridden when starting a workflow execution
+     *         using the <a>StartWorkflowExecution</a> action or the
+     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -280,13 +285,13 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
 
     /**
-     * The optional default task list, specified when registering the
+     * <i>Optional.</i> The default task list, specified when registering the
      * workflow type, for decisions tasks scheduled for workflow executions
      * of this type. This default can be overridden when starting a workflow
      * execution using the <a>StartWorkflowExecution</a> action or the
      * <code>StartChildWorkflowExecution</code> <a>Decision</a>.
      *
-     * @return The optional default task list, specified when registering the
+     * @return <i>Optional.</i> The default task list, specified when registering the
      *         workflow type, for decisions tasks scheduled for workflow executions
      *         of this type. This default can be overridden when starting a workflow
      *         execution using the <a>StartWorkflowExecution</a> action or the
@@ -297,13 +302,13 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
     
     /**
-     * The optional default task list, specified when registering the
+     * <i>Optional.</i> The default task list, specified when registering the
      * workflow type, for decisions tasks scheduled for workflow executions
      * of this type. This default can be overridden when starting a workflow
      * execution using the <a>StartWorkflowExecution</a> action or the
      * <code>StartChildWorkflowExecution</code> <a>Decision</a>.
      *
-     * @param defaultTaskList The optional default task list, specified when registering the
+     * @param defaultTaskList <i>Optional.</i> The default task list, specified when registering the
      *         workflow type, for decisions tasks scheduled for workflow executions
      *         of this type. This default can be overridden when starting a workflow
      *         execution using the <a>StartWorkflowExecution</a> action or the
@@ -314,7 +319,7 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
     
     /**
-     * The optional default task list, specified when registering the
+     * <i>Optional.</i> The default task list, specified when registering the
      * workflow type, for decisions tasks scheduled for workflow executions
      * of this type. This default can be overridden when starting a workflow
      * execution using the <a>StartWorkflowExecution</a> action or the
@@ -322,7 +327,7 @@ public class WorkflowTypeConfiguration implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultTaskList The optional default task list, specified when registering the
+     * @param defaultTaskList <i>Optional.</i> The default task list, specified when registering the
      *         workflow type, for decisions tasks scheduled for workflow executions
      *         of this type. This default can be overridden when starting a workflow
      *         execution using the <a>StartWorkflowExecution</a> action or the
@@ -337,36 +342,144 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
 
     /**
-     * The optional default policy to use for the child workflow executions
-     * when a workflow execution of this type is terminated, by calling the
-     * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. This default can be overridden when starting a
+     * <i>Optional.</i> The default task priority, specified when registering
+     * the workflow type, for all decision tasks of this workflow type. This
+     * default can be overridden when starting a workflow execution using the
+     * <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision. <p>Valid values are
+     * integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority. <p>For more information about
+     * setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @return <i>Optional.</i> The default task priority, specified when registering
+     *         the workflow type, for all decision tasks of this workflow type. This
+     *         default can be overridden when starting a workflow execution using the
+     *         <a>StartWorkflowExecution</a> action or the
+     *         <code>StartChildWorkflowExecution</code> decision. <p>Valid values are
+     *         integers that range from Java's <code>Integer.MIN_VALUE</code>
+     *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     *         numbers indicate higher priority. <p>For more information about
+     *         setting task priority, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public String getDefaultTaskPriority() {
+        return defaultTaskPriority;
+    }
+    
+    /**
+     * <i>Optional.</i> The default task priority, specified when registering
+     * the workflow type, for all decision tasks of this workflow type. This
+     * default can be overridden when starting a workflow execution using the
+     * <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision. <p>Valid values are
+     * integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority. <p>For more information about
+     * setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param defaultTaskPriority <i>Optional.</i> The default task priority, specified when registering
+     *         the workflow type, for all decision tasks of this workflow type. This
+     *         default can be overridden when starting a workflow execution using the
+     *         <a>StartWorkflowExecution</a> action or the
+     *         <code>StartChildWorkflowExecution</code> decision. <p>Valid values are
+     *         integers that range from Java's <code>Integer.MIN_VALUE</code>
+     *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     *         numbers indicate higher priority. <p>For more information about
+     *         setting task priority, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public void setDefaultTaskPriority(String defaultTaskPriority) {
+        this.defaultTaskPriority = defaultTaskPriority;
+    }
+    
+    /**
+     * <i>Optional.</i> The default task priority, specified when registering
+     * the workflow type, for all decision tasks of this workflow type. This
+     * default can be overridden when starting a workflow execution using the
+     * <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision. <p>Valid values are
+     * integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority. <p>For more information about
+     * setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param defaultTaskPriority <i>Optional.</i> The default task priority, specified when registering
+     *         the workflow type, for all decision tasks of this workflow type. This
+     *         default can be overridden when starting a workflow execution using the
+     *         <a>StartWorkflowExecution</a> action or the
+     *         <code>StartChildWorkflowExecution</code> decision. <p>Valid values are
+     *         integers that range from Java's <code>Integer.MIN_VALUE</code>
+     *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     *         numbers indicate higher priority. <p>For more information about
+     *         setting task priority, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public WorkflowTypeConfiguration withDefaultTaskPriority(String defaultTaskPriority) {
+        this.defaultTaskPriority = defaultTaskPriority;
+        return this;
+    }
+
+    /**
+     * <i>Optional.</i> The default policy to use for the child workflow
+     * executions when a workflow execution of this type is terminated, by
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
      * recording a <code>WorkflowExecutionCancelRequested</code> event in its
      * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event. </li>
+     * receives an execution history with this event.</li>
      * <li><b>ABANDON:</b> no action will be taken. The child executions will
      * continue to run.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
      *
-     * @return The optional default policy to use for the child workflow executions
-     *         when a workflow execution of this type is terminated, by calling the
-     *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. This default can be overridden when starting a
+     * @return <i>Optional.</i> The default policy to use for the child workflow
+     *         executions when a workflow execution of this type is terminated, by
+     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
      *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
      *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event. </li>
+     *         receives an execution history with this event.</li>
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
@@ -377,36 +490,36 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
     
     /**
-     * The optional default policy to use for the child workflow executions
-     * when a workflow execution of this type is terminated, by calling the
-     * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. This default can be overridden when starting a
+     * <i>Optional.</i> The default policy to use for the child workflow
+     * executions when a workflow execution of this type is terminated, by
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
      * recording a <code>WorkflowExecutionCancelRequested</code> event in its
      * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event. </li>
+     * receives an execution history with this event.</li>
      * <li><b>ABANDON:</b> no action will be taken. The child executions will
      * continue to run.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
      *
-     * @param defaultChildPolicy The optional default policy to use for the child workflow executions
-     *         when a workflow execution of this type is terminated, by calling the
-     *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. This default can be overridden when starting a
+     * @param defaultChildPolicy <i>Optional.</i> The default policy to use for the child workflow
+     *         executions when a workflow execution of this type is terminated, by
+     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
      *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
      *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event. </li>
+     *         receives an execution history with this event.</li>
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
@@ -417,18 +530,18 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
     
     /**
-     * The optional default policy to use for the child workflow executions
-     * when a workflow execution of this type is terminated, by calling the
-     * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. This default can be overridden when starting a
+     * <i>Optional.</i> The default policy to use for the child workflow
+     * executions when a workflow execution of this type is terminated, by
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
      * recording a <code>WorkflowExecutionCancelRequested</code> event in its
      * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event. </li>
+     * receives an execution history with this event.</li>
      * <li><b>ABANDON:</b> no action will be taken. The child executions will
      * continue to run.</li> </ul>
      * <p>
@@ -437,18 +550,18 @@ public class WorkflowTypeConfiguration implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
      *
-     * @param defaultChildPolicy The optional default policy to use for the child workflow executions
-     *         when a workflow execution of this type is terminated, by calling the
-     *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. This default can be overridden when starting a
+     * @param defaultChildPolicy <i>Optional.</i> The default policy to use for the child workflow
+     *         executions when a workflow execution of this type is terminated, by
+     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
      *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
      *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event. </li>
+     *         receives an execution history with this event.</li>
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
@@ -463,36 +576,36 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
 
     /**
-     * The optional default policy to use for the child workflow executions
-     * when a workflow execution of this type is terminated, by calling the
-     * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. This default can be overridden when starting a
+     * <i>Optional.</i> The default policy to use for the child workflow
+     * executions when a workflow execution of this type is terminated, by
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
      * recording a <code>WorkflowExecutionCancelRequested</code> event in its
      * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event. </li>
+     * receives an execution history with this event.</li>
      * <li><b>ABANDON:</b> no action will be taken. The child executions will
      * continue to run.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
      *
-     * @param defaultChildPolicy The optional default policy to use for the child workflow executions
-     *         when a workflow execution of this type is terminated, by calling the
-     *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. This default can be overridden when starting a
+     * @param defaultChildPolicy <i>Optional.</i> The default policy to use for the child workflow
+     *         executions when a workflow execution of this type is terminated, by
+     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
      *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
      *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event. </li>
+     *         receives an execution history with this event.</li>
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
@@ -503,18 +616,18 @@ public class WorkflowTypeConfiguration implements Serializable {
     }
     
     /**
-     * The optional default policy to use for the child workflow executions
-     * when a workflow execution of this type is terminated, by calling the
-     * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. This default can be overridden when starting a
+     * <i>Optional.</i> The default policy to use for the child workflow
+     * executions when a workflow execution of this type is terminated, by
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
      * recording a <code>WorkflowExecutionCancelRequested</code> event in its
      * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event. </li>
+     * receives an execution history with this event.</li>
      * <li><b>ABANDON:</b> no action will be taken. The child executions will
      * continue to run.</li> </ul>
      * <p>
@@ -523,18 +636,18 @@ public class WorkflowTypeConfiguration implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
      *
-     * @param defaultChildPolicy The optional default policy to use for the child workflow executions
-     *         when a workflow execution of this type is terminated, by calling the
-     *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. This default can be overridden when starting a
+     * @param defaultChildPolicy <i>Optional.</i> The default policy to use for the child workflow
+     *         executions when a workflow execution of this type is terminated, by
+     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
+     *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. The
+     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
      *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
      *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event. </li>
+     *         receives an execution history with this event.</li>
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
@@ -563,6 +676,7 @@ public class WorkflowTypeConfiguration implements Serializable {
         if (getDefaultTaskStartToCloseTimeout() != null) sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ",");
         if (getDefaultExecutionStartToCloseTimeout() != null) sb.append("DefaultExecutionStartToCloseTimeout: " + getDefaultExecutionStartToCloseTimeout() + ",");
         if (getDefaultTaskList() != null) sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");
+        if (getDefaultTaskPriority() != null) sb.append("DefaultTaskPriority: " + getDefaultTaskPriority() + ",");
         if (getDefaultChildPolicy() != null) sb.append("DefaultChildPolicy: " + getDefaultChildPolicy() );
         sb.append("}");
         return sb.toString();
@@ -576,6 +690,7 @@ public class WorkflowTypeConfiguration implements Serializable {
         hashCode = prime * hashCode + ((getDefaultTaskStartToCloseTimeout() == null) ? 0 : getDefaultTaskStartToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultExecutionStartToCloseTimeout() == null) ? 0 : getDefaultExecutionStartToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultTaskList() == null) ? 0 : getDefaultTaskList().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultTaskPriority() == null) ? 0 : getDefaultTaskPriority().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultChildPolicy() == null) ? 0 : getDefaultChildPolicy().hashCode()); 
         return hashCode;
     }
@@ -594,6 +709,8 @@ public class WorkflowTypeConfiguration implements Serializable {
         if (other.getDefaultExecutionStartToCloseTimeout() != null && other.getDefaultExecutionStartToCloseTimeout().equals(this.getDefaultExecutionStartToCloseTimeout()) == false) return false; 
         if (other.getDefaultTaskList() == null ^ this.getDefaultTaskList() == null) return false;
         if (other.getDefaultTaskList() != null && other.getDefaultTaskList().equals(this.getDefaultTaskList()) == false) return false; 
+        if (other.getDefaultTaskPriority() == null ^ this.getDefaultTaskPriority() == null) return false;
+        if (other.getDefaultTaskPriority() != null && other.getDefaultTaskPriority().equals(this.getDefaultTaskPriority()) == false) return false; 
         if (other.getDefaultChildPolicy() == null ^ this.getDefaultChildPolicy() == null) return false;
         if (other.getDefaultChildPolicy() != null && other.getDefaultChildPolicy().equals(this.getDefaultChildPolicy()) == false) return false; 
         return true;

@@ -25,23 +25,23 @@ import java.io.Serializable;
  * </p>
  * <p>
  * You can use IAM policies to control this decision's access to Amazon
- * SWF in much the same way as for the regular API:
+ * SWF resources as follows:
  * </p>
  * 
  * <ul>
  * <li>Use a <code>Resource</code> element with the domain name to limit
- * the decision to only specified domains.</li>
+ * the action to only specified domains.</li>
  * <li>Use an <code>Action</code> element to allow or deny permission to
- * specify this decision.</li>
+ * call this action.</li>
  * <li>Constrain the following parameters by using a
  * <code>Condition</code> element with the appropriate keys.
  * <ul>
  * <li> <code>activityType.name</code> : String constraint. The key is
- * ???swf:activityType.name???.</li>
+ * <code>swf:activityType.name</code> .</li>
  * <li> <code>activityType.version</code> : String constraint. The key
- * is ???swf:activityType.version???.</li>
+ * is <code>swf:activityType.version</code> .</li>
  * <li> <code>taskList</code> : String constraint. The key is
- * ???swf:taskList.name???.</li>
+ * <code>swf:taskList.name</code> .</li>
  * 
  * </ul>
  * </li>
@@ -60,17 +60,17 @@ import java.io.Serializable;
 public class ScheduleActivityTaskDecisionAttributes implements Serializable {
 
     /**
-     * The type of the activity task to schedule. This field is required.
+     * <b>Required.</b> The type of the activity task to schedule.
      */
     private ActivityType activityType;
 
     /**
-     * The <code>activityId</code> of the activity task. This field is
-     * required. <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string "arn".
+     * <b>Required.</b> The <code>activityId</code> of the activity task.
+     * <p>The specified string must not start or end with whitespace. It must
+     * not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     * literal string "arn".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -78,8 +78,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
     private String activityId;
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks. This data is not sent to the activity.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks. This data is not sent to the
+     * activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -95,14 +96,13 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
     private String input;
 
     /**
-     * The maximum duration for this activity task. <p>The valid values are
-     * integers greater than or equal to <code>0</code>. An integer value can
-     * be used to specify the duration in seconds while <code>NONE</code> can
-     * be used to specify unlimited duration. <note>A schedule-to-close
-     * timeout for this activity task must be specified either as a default
-     * for the activity type or through this field. If neither this field is
-     * set nor a default schedule-to-close timeout was specified at
-     * registration time then a fault will be returned.</note>
+     * The maximum duration for this activity task. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration. <note>A
+     * schedule-to-close timeout for this activity task must be specified
+     * either as a default for the activity type or through this field. If
+     * neither this field is set nor a default schedule-to-close timeout was
+     * specified at registration time then a fault will be returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -125,17 +125,34 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
     private TaskList taskList;
 
     /**
-     * If set, specifies the maximum duration the activity task can wait to
-     * be assigned to a worker. This overrides the default schedule-to-start
-     * timeout specified when registering the activity type using
-     * <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     * than or equal to <code>0</code>. An integer value can be used to
-     * specify the duration in seconds while <code>NONE</code> can be used to
-     * specify unlimited duration. <note>A schedule-to-start timeout for this
-     * activity task must be specified either as a default for the activity
-     * type or through this field. If neither this field is set nor a default
-     * schedule-to-start timeout was specified at registration time then a
-     * fault will be returned.</note>
+     * <i>Optional.</i> If set, specifies the priority with which the
+     * activity task is to be assigned to a worker. This overrides the
+     * defaultTaskPriority specified when registering the activity type using
+     * <a>RegisterActivityType</a>. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     */
+    private String taskPriority;
+
+    /**
+     * <i>Optional.</i> If set, specifies the maximum duration the activity
+     * task can wait to be assigned to a worker. This overrides the default
+     * schedule-to-start timeout specified when registering the activity type
+     * using <a>RegisterActivityType</a>. <p>The duration is specified in
+     * seconds; an integer greater than or equal to 0. The value "NONE" can
+     * be used to specify unlimited duration. <note>A schedule-to-start
+     * timeout for this activity task must be specified either as a default
+     * for the activity type or through this field. If neither this field is
+     * set nor a default schedule-to-start timeout was specified at
+     * registration time then a fault will be returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -146,9 +163,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * If set, specifies the maximum duration a worker may take to process
      * this activity task. This overrides the default start-to-close timeout
      * specified when registering the activity type using
-     * <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     * than or equal to <code>0</code>. An integer value can be used to
-     * specify the duration in seconds while <code>NONE</code> can be used to
+     * <a>RegisterActivityType</a>. <p>The duration is specified in seconds;
+     * an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration. <note>A start-to-close timeout for this
      * activity task must be specified either as a default for the activity
      * type or through this field. If neither this field is set nor a default
@@ -168,9 +184,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * attempts to record a heartbeat or returns a result, it will be
      * ignored. This overrides the default heartbeat timeout specified when
      * registering the activity type using <a>RegisterActivityType</a>.
-     * <p>The valid values are integers greater than or equal to
-     * <code>0</code>. An integer value can be used to specify the duration
-     * in seconds while <code>NONE</code> can be used to specify unlimited
+     * <p>The duration is specified in seconds; an integer greater than or
+     * equal to 0. The value "NONE" can be used to specify unlimited
      * duration.
      * <p>
      * <b>Constraints:</b><br/>
@@ -179,29 +194,29 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
     private String heartbeatTimeout;
 
     /**
-     * The type of the activity task to schedule. This field is required.
+     * <b>Required.</b> The type of the activity task to schedule.
      *
-     * @return The type of the activity task to schedule. This field is required.
+     * @return <b>Required.</b> The type of the activity task to schedule.
      */
     public ActivityType getActivityType() {
         return activityType;
     }
     
     /**
-     * The type of the activity task to schedule. This field is required.
+     * <b>Required.</b> The type of the activity task to schedule.
      *
-     * @param activityType The type of the activity task to schedule. This field is required.
+     * @param activityType <b>Required.</b> The type of the activity task to schedule.
      */
     public void setActivityType(ActivityType activityType) {
         this.activityType = activityType;
     }
     
     /**
-     * The type of the activity task to schedule. This field is required.
+     * <b>Required.</b> The type of the activity task to schedule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activityType The type of the activity task to schedule. This field is required.
+     * @param activityType <b>Required.</b> The type of the activity task to schedule.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -212,68 +227,68 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
     }
 
     /**
-     * The <code>activityId</code> of the activity task. This field is
-     * required. <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string "arn".
+     * <b>Required.</b> The <code>activityId</code> of the activity task.
+     * <p>The specified string must not start or end with whitespace. It must
+     * not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     * literal string "arn".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The <code>activityId</code> of the activity task. This field is
-     *         required. <p>The specified string must not start or end with
-     *         whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     *         contain the literal string "arn".
+     * @return <b>Required.</b> The <code>activityId</code> of the activity task.
+     *         <p>The specified string must not start or end with whitespace. It must
+     *         not contain a <code>:</code> (colon), <code>/</code> (slash),
+     *         <code>|</code> (vertical bar), or any control characters
+     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *         literal string "arn".
      */
     public String getActivityId() {
         return activityId;
     }
     
     /**
-     * The <code>activityId</code> of the activity task. This field is
-     * required. <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string "arn".
+     * <b>Required.</b> The <code>activityId</code> of the activity task.
+     * <p>The specified string must not start or end with whitespace. It must
+     * not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     * literal string "arn".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param activityId The <code>activityId</code> of the activity task. This field is
-     *         required. <p>The specified string must not start or end with
-     *         whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     *         contain the literal string "arn".
+     * @param activityId <b>Required.</b> The <code>activityId</code> of the activity task.
+     *         <p>The specified string must not start or end with whitespace. It must
+     *         not contain a <code>:</code> (colon), <code>/</code> (slash),
+     *         <code>|</code> (vertical bar), or any control characters
+     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *         literal string "arn".
      */
     public void setActivityId(String activityId) {
         this.activityId = activityId;
     }
     
     /**
-     * The <code>activityId</code> of the activity task. This field is
-     * required. <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string "arn".
+     * <b>Required.</b> The <code>activityId</code> of the activity task.
+     * <p>The specified string must not start or end with whitespace. It must
+     * not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     * literal string "arn".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param activityId The <code>activityId</code> of the activity task. This field is
-     *         required. <p>The specified string must not start or end with
-     *         whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     *         contain the literal string "arn".
+     * @param activityId <b>Required.</b> The <code>activityId</code> of the activity task.
+     *         <p>The specified string must not start or end with whitespace. It must
+     *         not contain a <code>:</code> (colon), <code>/</code> (slash),
+     *         <code>|</code> (vertical bar), or any control characters
+     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *         literal string "arn".
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -284,44 +299,50 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
     }
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks. This data is not sent to the activity.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks. This data is not sent to the
+     * activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks. This data is not sent to the activity.
+     * @return <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks. This data is not sent to the
+     *         activity.
      */
     public String getControl() {
         return control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks. This data is not sent to the activity.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks. This data is not sent to the
+     * activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks. This data is not sent to the activity.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks. This data is not sent to the
+     *         activity.
      */
     public void setControl(String control) {
         this.control = control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks. This data is not sent to the activity.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks. This data is not sent to the
+     * activity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks. This data is not sent to the activity.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks. This data is not sent to the
+     *         activity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -374,80 +395,74 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
     }
 
     /**
-     * The maximum duration for this activity task. <p>The valid values are
-     * integers greater than or equal to <code>0</code>. An integer value can
-     * be used to specify the duration in seconds while <code>NONE</code> can
-     * be used to specify unlimited duration. <note>A schedule-to-close
-     * timeout for this activity task must be specified either as a default
-     * for the activity type or through this field. If neither this field is
-     * set nor a default schedule-to-close timeout was specified at
-     * registration time then a fault will be returned.</note>
+     * The maximum duration for this activity task. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration. <note>A
+     * schedule-to-close timeout for this activity task must be specified
+     * either as a default for the activity type or through this field. If
+     * neither this field is set nor a default schedule-to-close timeout was
+     * specified at registration time then a fault will be returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @return The maximum duration for this activity task. <p>The valid values are
-     *         integers greater than or equal to <code>0</code>. An integer value can
-     *         be used to specify the duration in seconds while <code>NONE</code> can
-     *         be used to specify unlimited duration. <note>A schedule-to-close
-     *         timeout for this activity task must be specified either as a default
-     *         for the activity type or through this field. If neither this field is
-     *         set nor a default schedule-to-close timeout was specified at
-     *         registration time then a fault will be returned.</note>
+     * @return The maximum duration for this activity task. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration. <note>A
+     *         schedule-to-close timeout for this activity task must be specified
+     *         either as a default for the activity type or through this field. If
+     *         neither this field is set nor a default schedule-to-close timeout was
+     *         specified at registration time then a fault will be returned.</note>
      */
     public String getScheduleToCloseTimeout() {
         return scheduleToCloseTimeout;
     }
     
     /**
-     * The maximum duration for this activity task. <p>The valid values are
-     * integers greater than or equal to <code>0</code>. An integer value can
-     * be used to specify the duration in seconds while <code>NONE</code> can
-     * be used to specify unlimited duration. <note>A schedule-to-close
-     * timeout for this activity task must be specified either as a default
-     * for the activity type or through this field. If neither this field is
-     * set nor a default schedule-to-close timeout was specified at
-     * registration time then a fault will be returned.</note>
+     * The maximum duration for this activity task. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration. <note>A
+     * schedule-to-close timeout for this activity task must be specified
+     * either as a default for the activity type or through this field. If
+     * neither this field is set nor a default schedule-to-close timeout was
+     * specified at registration time then a fault will be returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param scheduleToCloseTimeout The maximum duration for this activity task. <p>The valid values are
-     *         integers greater than or equal to <code>0</code>. An integer value can
-     *         be used to specify the duration in seconds while <code>NONE</code> can
-     *         be used to specify unlimited duration. <note>A schedule-to-close
-     *         timeout for this activity task must be specified either as a default
-     *         for the activity type or through this field. If neither this field is
-     *         set nor a default schedule-to-close timeout was specified at
-     *         registration time then a fault will be returned.</note>
+     * @param scheduleToCloseTimeout The maximum duration for this activity task. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration. <note>A
+     *         schedule-to-close timeout for this activity task must be specified
+     *         either as a default for the activity type or through this field. If
+     *         neither this field is set nor a default schedule-to-close timeout was
+     *         specified at registration time then a fault will be returned.</note>
      */
     public void setScheduleToCloseTimeout(String scheduleToCloseTimeout) {
         this.scheduleToCloseTimeout = scheduleToCloseTimeout;
     }
     
     /**
-     * The maximum duration for this activity task. <p>The valid values are
-     * integers greater than or equal to <code>0</code>. An integer value can
-     * be used to specify the duration in seconds while <code>NONE</code> can
-     * be used to specify unlimited duration. <note>A schedule-to-close
-     * timeout for this activity task must be specified either as a default
-     * for the activity type or through this field. If neither this field is
-     * set nor a default schedule-to-close timeout was specified at
-     * registration time then a fault will be returned.</note>
+     * The maximum duration for this activity task. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration. <note>A
+     * schedule-to-close timeout for this activity task must be specified
+     * either as a default for the activity type or through this field. If
+     * neither this field is set nor a default schedule-to-close timeout was
+     * specified at registration time then a fault will be returned.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param scheduleToCloseTimeout The maximum duration for this activity task. <p>The valid values are
-     *         integers greater than or equal to <code>0</code>. An integer value can
-     *         be used to specify the duration in seconds while <code>NONE</code> can
-     *         be used to specify unlimited duration. <note>A schedule-to-close
-     *         timeout for this activity task must be specified either as a default
-     *         for the activity type or through this field. If neither this field is
-     *         set nor a default schedule-to-close timeout was specified at
-     *         registration time then a fault will be returned.</note>
+     * @param scheduleToCloseTimeout The maximum duration for this activity task. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration. <note>A
+     *         schedule-to-close timeout for this activity task must be specified
+     *         either as a default for the activity type or through this field. If
+     *         neither this field is set nor a default schedule-to-close timeout was
+     *         specified at registration time then a fault will be returned.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -551,98 +566,194 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
     }
 
     /**
-     * If set, specifies the maximum duration the activity task can wait to
-     * be assigned to a worker. This overrides the default schedule-to-start
-     * timeout specified when registering the activity type using
-     * <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     * than or equal to <code>0</code>. An integer value can be used to
-     * specify the duration in seconds while <code>NONE</code> can be used to
-     * specify unlimited duration. <note>A schedule-to-start timeout for this
-     * activity task must be specified either as a default for the activity
-     * type or through this field. If neither this field is set nor a default
-     * schedule-to-start timeout was specified at registration time then a
-     * fault will be returned.</note>
+     * <i>Optional.</i> If set, specifies the priority with which the
+     * activity task is to be assigned to a worker. This overrides the
+     * defaultTaskPriority specified when registering the activity type using
+     * <a>RegisterActivityType</a>. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @return <i>Optional.</i> If set, specifies the priority with which the
+     *         activity task is to be assigned to a worker. This overrides the
+     *         defaultTaskPriority specified when registering the activity type using
+     *         <a>RegisterActivityType</a>. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public String getTaskPriority() {
+        return taskPriority;
+    }
+    
+    /**
+     * <i>Optional.</i> If set, specifies the priority with which the
+     * activity task is to be assigned to a worker. This overrides the
+     * defaultTaskPriority specified when registering the activity type using
+     * <a>RegisterActivityType</a>. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority <i>Optional.</i> If set, specifies the priority with which the
+     *         activity task is to be assigned to a worker. This overrides the
+     *         defaultTaskPriority specified when registering the activity type using
+     *         <a>RegisterActivityType</a>. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public void setTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+    
+    /**
+     * <i>Optional.</i> If set, specifies the priority with which the
+     * activity task is to be assigned to a worker. This overrides the
+     * defaultTaskPriority specified when registering the activity type using
+     * <a>RegisterActivityType</a>. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority <i>Optional.</i> If set, specifies the priority with which the
+     *         activity task is to be assigned to a worker. This overrides the
+     *         defaultTaskPriority specified when registering the activity type using
+     *         <a>RegisterActivityType</a>. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ScheduleActivityTaskDecisionAttributes withTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+
+    /**
+     * <i>Optional.</i> If set, specifies the maximum duration the activity
+     * task can wait to be assigned to a worker. This overrides the default
+     * schedule-to-start timeout specified when registering the activity type
+     * using <a>RegisterActivityType</a>. <p>The duration is specified in
+     * seconds; an integer greater than or equal to 0. The value "NONE" can
+     * be used to specify unlimited duration. <note>A schedule-to-start
+     * timeout for this activity task must be specified either as a default
+     * for the activity type or through this field. If neither this field is
+     * set nor a default schedule-to-start timeout was specified at
+     * registration time then a fault will be returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @return If set, specifies the maximum duration the activity task can wait to
-     *         be assigned to a worker. This overrides the default schedule-to-start
-     *         timeout specified when registering the activity type using
-     *         <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     *         than or equal to <code>0</code>. An integer value can be used to
-     *         specify the duration in seconds while <code>NONE</code> can be used to
-     *         specify unlimited duration. <note>A schedule-to-start timeout for this
-     *         activity task must be specified either as a default for the activity
-     *         type or through this field. If neither this field is set nor a default
-     *         schedule-to-start timeout was specified at registration time then a
-     *         fault will be returned.</note>
+     * @return <i>Optional.</i> If set, specifies the maximum duration the activity
+     *         task can wait to be assigned to a worker. This overrides the default
+     *         schedule-to-start timeout specified when registering the activity type
+     *         using <a>RegisterActivityType</a>. <p>The duration is specified in
+     *         seconds; an integer greater than or equal to 0. The value "NONE" can
+     *         be used to specify unlimited duration. <note>A schedule-to-start
+     *         timeout for this activity task must be specified either as a default
+     *         for the activity type or through this field. If neither this field is
+     *         set nor a default schedule-to-start timeout was specified at
+     *         registration time then a fault will be returned.</note>
      */
     public String getScheduleToStartTimeout() {
         return scheduleToStartTimeout;
     }
     
     /**
-     * If set, specifies the maximum duration the activity task can wait to
-     * be assigned to a worker. This overrides the default schedule-to-start
-     * timeout specified when registering the activity type using
-     * <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     * than or equal to <code>0</code>. An integer value can be used to
-     * specify the duration in seconds while <code>NONE</code> can be used to
-     * specify unlimited duration. <note>A schedule-to-start timeout for this
-     * activity task must be specified either as a default for the activity
-     * type or through this field. If neither this field is set nor a default
-     * schedule-to-start timeout was specified at registration time then a
-     * fault will be returned.</note>
+     * <i>Optional.</i> If set, specifies the maximum duration the activity
+     * task can wait to be assigned to a worker. This overrides the default
+     * schedule-to-start timeout specified when registering the activity type
+     * using <a>RegisterActivityType</a>. <p>The duration is specified in
+     * seconds; an integer greater than or equal to 0. The value "NONE" can
+     * be used to specify unlimited duration. <note>A schedule-to-start
+     * timeout for this activity task must be specified either as a default
+     * for the activity type or through this field. If neither this field is
+     * set nor a default schedule-to-start timeout was specified at
+     * registration time then a fault will be returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param scheduleToStartTimeout If set, specifies the maximum duration the activity task can wait to
-     *         be assigned to a worker. This overrides the default schedule-to-start
-     *         timeout specified when registering the activity type using
-     *         <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     *         than or equal to <code>0</code>. An integer value can be used to
-     *         specify the duration in seconds while <code>NONE</code> can be used to
-     *         specify unlimited duration. <note>A schedule-to-start timeout for this
-     *         activity task must be specified either as a default for the activity
-     *         type or through this field. If neither this field is set nor a default
-     *         schedule-to-start timeout was specified at registration time then a
-     *         fault will be returned.</note>
+     * @param scheduleToStartTimeout <i>Optional.</i> If set, specifies the maximum duration the activity
+     *         task can wait to be assigned to a worker. This overrides the default
+     *         schedule-to-start timeout specified when registering the activity type
+     *         using <a>RegisterActivityType</a>. <p>The duration is specified in
+     *         seconds; an integer greater than or equal to 0. The value "NONE" can
+     *         be used to specify unlimited duration. <note>A schedule-to-start
+     *         timeout for this activity task must be specified either as a default
+     *         for the activity type or through this field. If neither this field is
+     *         set nor a default schedule-to-start timeout was specified at
+     *         registration time then a fault will be returned.</note>
      */
     public void setScheduleToStartTimeout(String scheduleToStartTimeout) {
         this.scheduleToStartTimeout = scheduleToStartTimeout;
     }
     
     /**
-     * If set, specifies the maximum duration the activity task can wait to
-     * be assigned to a worker. This overrides the default schedule-to-start
-     * timeout specified when registering the activity type using
-     * <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     * than or equal to <code>0</code>. An integer value can be used to
-     * specify the duration in seconds while <code>NONE</code> can be used to
-     * specify unlimited duration. <note>A schedule-to-start timeout for this
-     * activity task must be specified either as a default for the activity
-     * type or through this field. If neither this field is set nor a default
-     * schedule-to-start timeout was specified at registration time then a
-     * fault will be returned.</note>
+     * <i>Optional.</i> If set, specifies the maximum duration the activity
+     * task can wait to be assigned to a worker. This overrides the default
+     * schedule-to-start timeout specified when registering the activity type
+     * using <a>RegisterActivityType</a>. <p>The duration is specified in
+     * seconds; an integer greater than or equal to 0. The value "NONE" can
+     * be used to specify unlimited duration. <note>A schedule-to-start
+     * timeout for this activity task must be specified either as a default
+     * for the activity type or through this field. If neither this field is
+     * set nor a default schedule-to-start timeout was specified at
+     * registration time then a fault will be returned.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param scheduleToStartTimeout If set, specifies the maximum duration the activity task can wait to
-     *         be assigned to a worker. This overrides the default schedule-to-start
-     *         timeout specified when registering the activity type using
-     *         <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     *         than or equal to <code>0</code>. An integer value can be used to
-     *         specify the duration in seconds while <code>NONE</code> can be used to
-     *         specify unlimited duration. <note>A schedule-to-start timeout for this
-     *         activity task must be specified either as a default for the activity
-     *         type or through this field. If neither this field is set nor a default
-     *         schedule-to-start timeout was specified at registration time then a
-     *         fault will be returned.</note>
+     * @param scheduleToStartTimeout <i>Optional.</i> If set, specifies the maximum duration the activity
+     *         task can wait to be assigned to a worker. This overrides the default
+     *         schedule-to-start timeout specified when registering the activity type
+     *         using <a>RegisterActivityType</a>. <p>The duration is specified in
+     *         seconds; an integer greater than or equal to 0. The value "NONE" can
+     *         be used to specify unlimited duration. <note>A schedule-to-start
+     *         timeout for this activity task must be specified either as a default
+     *         for the activity type or through this field. If neither this field is
+     *         set nor a default schedule-to-start timeout was specified at
+     *         registration time then a fault will be returned.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -656,9 +767,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * If set, specifies the maximum duration a worker may take to process
      * this activity task. This overrides the default start-to-close timeout
      * specified when registering the activity type using
-     * <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     * than or equal to <code>0</code>. An integer value can be used to
-     * specify the duration in seconds while <code>NONE</code> can be used to
+     * <a>RegisterActivityType</a>. <p>The duration is specified in seconds;
+     * an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration. <note>A start-to-close timeout for this
      * activity task must be specified either as a default for the activity
      * type or through this field. If neither this field is set nor a default
@@ -671,9 +781,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * @return If set, specifies the maximum duration a worker may take to process
      *         this activity task. This overrides the default start-to-close timeout
      *         specified when registering the activity type using
-     *         <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     *         than or equal to <code>0</code>. An integer value can be used to
-     *         specify the duration in seconds while <code>NONE</code> can be used to
+     *         <a>RegisterActivityType</a>. <p>The duration is specified in seconds;
+     *         an integer greater than or equal to 0. The value "NONE" can be used to
      *         specify unlimited duration. <note>A start-to-close timeout for this
      *         activity task must be specified either as a default for the activity
      *         type or through this field. If neither this field is set nor a default
@@ -688,9 +797,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * If set, specifies the maximum duration a worker may take to process
      * this activity task. This overrides the default start-to-close timeout
      * specified when registering the activity type using
-     * <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     * than or equal to <code>0</code>. An integer value can be used to
-     * specify the duration in seconds while <code>NONE</code> can be used to
+     * <a>RegisterActivityType</a>. <p>The duration is specified in seconds;
+     * an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration. <note>A start-to-close timeout for this
      * activity task must be specified either as a default for the activity
      * type or through this field. If neither this field is set nor a default
@@ -703,9 +811,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * @param startToCloseTimeout If set, specifies the maximum duration a worker may take to process
      *         this activity task. This overrides the default start-to-close timeout
      *         specified when registering the activity type using
-     *         <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     *         than or equal to <code>0</code>. An integer value can be used to
-     *         specify the duration in seconds while <code>NONE</code> can be used to
+     *         <a>RegisterActivityType</a>. <p>The duration is specified in seconds;
+     *         an integer greater than or equal to 0. The value "NONE" can be used to
      *         specify unlimited duration. <note>A start-to-close timeout for this
      *         activity task must be specified either as a default for the activity
      *         type or through this field. If neither this field is set nor a default
@@ -720,9 +827,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * If set, specifies the maximum duration a worker may take to process
      * this activity task. This overrides the default start-to-close timeout
      * specified when registering the activity type using
-     * <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     * than or equal to <code>0</code>. An integer value can be used to
-     * specify the duration in seconds while <code>NONE</code> can be used to
+     * <a>RegisterActivityType</a>. <p>The duration is specified in seconds;
+     * an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration. <note>A start-to-close timeout for this
      * activity task must be specified either as a default for the activity
      * type or through this field. If neither this field is set nor a default
@@ -737,9 +843,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * @param startToCloseTimeout If set, specifies the maximum duration a worker may take to process
      *         this activity task. This overrides the default start-to-close timeout
      *         specified when registering the activity type using
-     *         <a>RegisterActivityType</a>. <p>The valid values are integers greater
-     *         than or equal to <code>0</code>. An integer value can be used to
-     *         specify the duration in seconds while <code>NONE</code> can be used to
+     *         <a>RegisterActivityType</a>. <p>The duration is specified in seconds;
+     *         an integer greater than or equal to 0. The value "NONE" can be used to
      *         specify unlimited duration. <note>A start-to-close timeout for this
      *         activity task must be specified either as a default for the activity
      *         type or through this field. If neither this field is set nor a default
@@ -762,9 +867,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * attempts to record a heartbeat or returns a result, it will be
      * ignored. This overrides the default heartbeat timeout specified when
      * registering the activity type using <a>RegisterActivityType</a>.
-     * <p>The valid values are integers greater than or equal to
-     * <code>0</code>. An integer value can be used to specify the duration
-     * in seconds while <code>NONE</code> can be used to specify unlimited
+     * <p>The duration is specified in seconds; an integer greater than or
+     * equal to 0. The value "NONE" can be used to specify unlimited
      * duration.
      * <p>
      * <b>Constraints:</b><br/>
@@ -777,9 +881,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         attempts to record a heartbeat or returns a result, it will be
      *         ignored. This overrides the default heartbeat timeout specified when
      *         registering the activity type using <a>RegisterActivityType</a>.
-     *         <p>The valid values are integers greater than or equal to
-     *         <code>0</code>. An integer value can be used to specify the duration
-     *         in seconds while <code>NONE</code> can be used to specify unlimited
+     *         <p>The duration is specified in seconds; an integer greater than or
+     *         equal to 0. The value "NONE" can be used to specify unlimited
      *         duration.
      */
     public String getHeartbeatTimeout() {
@@ -794,9 +897,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * attempts to record a heartbeat or returns a result, it will be
      * ignored. This overrides the default heartbeat timeout specified when
      * registering the activity type using <a>RegisterActivityType</a>.
-     * <p>The valid values are integers greater than or equal to
-     * <code>0</code>. An integer value can be used to specify the duration
-     * in seconds while <code>NONE</code> can be used to specify unlimited
+     * <p>The duration is specified in seconds; an integer greater than or
+     * equal to 0. The value "NONE" can be used to specify unlimited
      * duration.
      * <p>
      * <b>Constraints:</b><br/>
@@ -809,9 +911,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         attempts to record a heartbeat or returns a result, it will be
      *         ignored. This overrides the default heartbeat timeout specified when
      *         registering the activity type using <a>RegisterActivityType</a>.
-     *         <p>The valid values are integers greater than or equal to
-     *         <code>0</code>. An integer value can be used to specify the duration
-     *         in seconds while <code>NONE</code> can be used to specify unlimited
+     *         <p>The duration is specified in seconds; an integer greater than or
+     *         equal to 0. The value "NONE" can be used to specify unlimited
      *         duration.
      */
     public void setHeartbeatTimeout(String heartbeatTimeout) {
@@ -826,9 +927,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * attempts to record a heartbeat or returns a result, it will be
      * ignored. This overrides the default heartbeat timeout specified when
      * registering the activity type using <a>RegisterActivityType</a>.
-     * <p>The valid values are integers greater than or equal to
-     * <code>0</code>. An integer value can be used to specify the duration
-     * in seconds while <code>NONE</code> can be used to specify unlimited
+     * <p>The duration is specified in seconds; an integer greater than or
+     * equal to 0. The value "NONE" can be used to specify unlimited
      * duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -843,9 +943,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         attempts to record a heartbeat or returns a result, it will be
      *         ignored. This overrides the default heartbeat timeout specified when
      *         registering the activity type using <a>RegisterActivityType</a>.
-     *         <p>The valid values are integers greater than or equal to
-     *         <code>0</code>. An integer value can be used to specify the duration
-     *         in seconds while <code>NONE</code> can be used to specify unlimited
+     *         <p>The duration is specified in seconds; an integer greater than or
+     *         equal to 0. The value "NONE" can be used to specify unlimited
      *         duration.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -874,6 +973,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         if (getInput() != null) sb.append("Input: " + getInput() + ",");
         if (getScheduleToCloseTimeout() != null) sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ",");
         if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
+        if (getTaskPriority() != null) sb.append("TaskPriority: " + getTaskPriority() + ",");
         if (getScheduleToStartTimeout() != null) sb.append("ScheduleToStartTimeout: " + getScheduleToStartTimeout() + ",");
         if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ",");
         if (getHeartbeatTimeout() != null) sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() );
@@ -892,6 +992,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode()); 
         hashCode = prime * hashCode + ((getScheduleToCloseTimeout() == null) ? 0 : getScheduleToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode()); 
+        hashCode = prime * hashCode + ((getTaskPriority() == null) ? 0 : getTaskPriority().hashCode()); 
         hashCode = prime * hashCode + ((getScheduleToStartTimeout() == null) ? 0 : getScheduleToStartTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getStartToCloseTimeout() == null) ? 0 : getStartToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getHeartbeatTimeout() == null) ? 0 : getHeartbeatTimeout().hashCode()); 
@@ -918,6 +1019,8 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         if (other.getScheduleToCloseTimeout() != null && other.getScheduleToCloseTimeout().equals(this.getScheduleToCloseTimeout()) == false) return false; 
         if (other.getTaskList() == null ^ this.getTaskList() == null) return false;
         if (other.getTaskList() != null && other.getTaskList().equals(this.getTaskList()) == false) return false; 
+        if (other.getTaskPriority() == null ^ this.getTaskPriority() == null) return false;
+        if (other.getTaskPriority() != null && other.getTaskPriority().equals(this.getTaskPriority()) == false) return false; 
         if (other.getScheduleToStartTimeout() == null ^ this.getScheduleToStartTimeout() == null) return false;
         if (other.getScheduleToStartTimeout() != null && other.getScheduleToStartTimeout().equals(this.getScheduleToStartTimeout()) == false) return false; 
         if (other.getStartToCloseTimeout() == null ^ this.getStartToCloseTimeout() == null) return false;

@@ -44,13 +44,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the caller does not have sufficient permissions to invoke the
  * action, or the parameter values fall outside the specified
- * constraints, the action fails by throwing
- * <code>OperationNotPermitted</code> . For details and example IAM
- * policies, see
+ * constraints, the action fails. The associated event attribute's
+ * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+ * details and example IAM policies, see
  * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
  * .
- * </p>
- * <p>
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerDomain(RegisterDomainRequest)
@@ -58,12 +56,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RegisterDomainRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the domain to register. The name must be unique. <p>The
-     * specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string "arn".
+     * Name of the domain to register. The name must be unique in the region
+     * that the domain is registered in. <p>The specified string must not
+     * start or end with whitespace. It must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+     * control characters (\u0000-\u001f | \u007f - \u009f). Also, it must
+     * not contain the literal string "arn".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -71,7 +69,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
     private String name;
 
     /**
-     * Textual description of the domain.
+     * A text description of the domain.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -79,12 +77,17 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
     private String description;
 
     /**
-     * Specifies the duration--<b><i>in days</i></b>--for which the record
-     * (including the history) of workflow executions in this domain should
-     * be kept by the service. After the retention period, the workflow
-     * execution will not be available in the results of visibility calls. If
-     * a duration of <code>NONE</code> is specified, the records for workflow
-     * executions in this domain are not retained at all.
+     * The duration (in days) that records and histories of workflow
+     * executions on the domain should be kept by the service. After the
+     * retention period, the workflow execution is not available in the
+     * results of visibility calls. <p>If you pass the value
+     * <code>NONE</code> or <code>0</code> (zero), then the workflow
+     * execution history will not be retained. As soon as the workflow
+     * execution completes, the execution record and its history are deleted.
+     * <p>The maximum workflow execution retention period is 90 days. For
+     * more information about Amazon SWF service limits, see: <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
@@ -92,68 +95,68 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
     private String workflowExecutionRetentionPeriodInDays;
 
     /**
-     * Name of the domain to register. The name must be unique. <p>The
-     * specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string "arn".
+     * Name of the domain to register. The name must be unique in the region
+     * that the domain is registered in. <p>The specified string must not
+     * start or end with whitespace. It must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+     * control characters (\u0000-\u001f | \u007f - \u009f). Also, it must
+     * not contain the literal string "arn".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Name of the domain to register. The name must be unique. <p>The
-     *         specified string must not start or end with whitespace. It must not
-     *         contain a <code>:</code> (colon), <code>/</code> (slash),
-     *         <code>|</code> (vertical bar), or any control characters
-     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *         literal string "arn".
+     * @return Name of the domain to register. The name must be unique in the region
+     *         that the domain is registered in. <p>The specified string must not
+     *         start or end with whitespace. It must not contain a <code>:</code>
+     *         (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+     *         control characters (\u0000-\u001f | \u007f - \u009f). Also, it must
+     *         not contain the literal string "arn".
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Name of the domain to register. The name must be unique. <p>The
-     * specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string "arn".
+     * Name of the domain to register. The name must be unique in the region
+     * that the domain is registered in. <p>The specified string must not
+     * start or end with whitespace. It must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+     * control characters (\u0000-\u001f | \u007f - \u009f). Also, it must
+     * not contain the literal string "arn".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name Name of the domain to register. The name must be unique. <p>The
-     *         specified string must not start or end with whitespace. It must not
-     *         contain a <code>:</code> (colon), <code>/</code> (slash),
-     *         <code>|</code> (vertical bar), or any control characters
-     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *         literal string "arn".
+     * @param name Name of the domain to register. The name must be unique in the region
+     *         that the domain is registered in. <p>The specified string must not
+     *         start or end with whitespace. It must not contain a <code>:</code>
+     *         (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+     *         control characters (\u0000-\u001f | \u007f - \u009f). Also, it must
+     *         not contain the literal string "arn".
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Name of the domain to register. The name must be unique. <p>The
-     * specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string "arn".
+     * Name of the domain to register. The name must be unique in the region
+     * that the domain is registered in. <p>The specified string must not
+     * start or end with whitespace. It must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+     * control characters (\u0000-\u001f | \u007f - \u009f). Also, it must
+     * not contain the literal string "arn".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name Name of the domain to register. The name must be unique. <p>The
-     *         specified string must not start or end with whitespace. It must not
-     *         contain a <code>:</code> (colon), <code>/</code> (slash),
-     *         <code>|</code> (vertical bar), or any control characters
-     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *         literal string "arn".
+     * @param name Name of the domain to register. The name must be unique in the region
+     *         that the domain is registered in. <p>The specified string must not
+     *         start or end with whitespace. It must not contain a <code>:</code>
+     *         (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+     *         control characters (\u0000-\u001f | \u007f - \u009f). Also, it must
+     *         not contain the literal string "arn".
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -164,38 +167,38 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Textual description of the domain.
+     * A text description of the domain.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      *
-     * @return Textual description of the domain.
+     * @return A text description of the domain.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Textual description of the domain.
+     * A text description of the domain.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      *
-     * @param description Textual description of the domain.
+     * @param description A text description of the domain.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Textual description of the domain.
+     * A text description of the domain.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      *
-     * @param description Textual description of the domain.
+     * @param description A text description of the domain.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -206,68 +209,98 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Specifies the duration--<b><i>in days</i></b>--for which the record
-     * (including the history) of workflow executions in this domain should
-     * be kept by the service. After the retention period, the workflow
-     * execution will not be available in the results of visibility calls. If
-     * a duration of <code>NONE</code> is specified, the records for workflow
-     * executions in this domain are not retained at all.
+     * The duration (in days) that records and histories of workflow
+     * executions on the domain should be kept by the service. After the
+     * retention period, the workflow execution is not available in the
+     * results of visibility calls. <p>If you pass the value
+     * <code>NONE</code> or <code>0</code> (zero), then the workflow
+     * execution history will not be retained. As soon as the workflow
+     * execution completes, the execution record and its history are deleted.
+     * <p>The maximum workflow execution retention period is 90 days. For
+     * more information about Amazon SWF service limits, see: <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
      *
-     * @return Specifies the duration--<b><i>in days</i></b>--for which the record
-     *         (including the history) of workflow executions in this domain should
-     *         be kept by the service. After the retention period, the workflow
-     *         execution will not be available in the results of visibility calls. If
-     *         a duration of <code>NONE</code> is specified, the records for workflow
-     *         executions in this domain are not retained at all.
+     * @return The duration (in days) that records and histories of workflow
+     *         executions on the domain should be kept by the service. After the
+     *         retention period, the workflow execution is not available in the
+     *         results of visibility calls. <p>If you pass the value
+     *         <code>NONE</code> or <code>0</code> (zero), then the workflow
+     *         execution history will not be retained. As soon as the workflow
+     *         execution completes, the execution record and its history are deleted.
+     *         <p>The maximum workflow execution retention period is 90 days. For
+     *         more information about Amazon SWF service limits, see: <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     *         SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      */
     public String getWorkflowExecutionRetentionPeriodInDays() {
         return workflowExecutionRetentionPeriodInDays;
     }
     
     /**
-     * Specifies the duration--<b><i>in days</i></b>--for which the record
-     * (including the history) of workflow executions in this domain should
-     * be kept by the service. After the retention period, the workflow
-     * execution will not be available in the results of visibility calls. If
-     * a duration of <code>NONE</code> is specified, the records for workflow
-     * executions in this domain are not retained at all.
+     * The duration (in days) that records and histories of workflow
+     * executions on the domain should be kept by the service. After the
+     * retention period, the workflow execution is not available in the
+     * results of visibility calls. <p>If you pass the value
+     * <code>NONE</code> or <code>0</code> (zero), then the workflow
+     * execution history will not be retained. As soon as the workflow
+     * execution completes, the execution record and its history are deleted.
+     * <p>The maximum workflow execution retention period is 90 days. For
+     * more information about Amazon SWF service limits, see: <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
      *
-     * @param workflowExecutionRetentionPeriodInDays Specifies the duration--<b><i>in days</i></b>--for which the record
-     *         (including the history) of workflow executions in this domain should
-     *         be kept by the service. After the retention period, the workflow
-     *         execution will not be available in the results of visibility calls. If
-     *         a duration of <code>NONE</code> is specified, the records for workflow
-     *         executions in this domain are not retained at all.
+     * @param workflowExecutionRetentionPeriodInDays The duration (in days) that records and histories of workflow
+     *         executions on the domain should be kept by the service. After the
+     *         retention period, the workflow execution is not available in the
+     *         results of visibility calls. <p>If you pass the value
+     *         <code>NONE</code> or <code>0</code> (zero), then the workflow
+     *         execution history will not be retained. As soon as the workflow
+     *         execution completes, the execution record and its history are deleted.
+     *         <p>The maximum workflow execution retention period is 90 days. For
+     *         more information about Amazon SWF service limits, see: <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     *         SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      */
     public void setWorkflowExecutionRetentionPeriodInDays(String workflowExecutionRetentionPeriodInDays) {
         this.workflowExecutionRetentionPeriodInDays = workflowExecutionRetentionPeriodInDays;
     }
     
     /**
-     * Specifies the duration--<b><i>in days</i></b>--for which the record
-     * (including the history) of workflow executions in this domain should
-     * be kept by the service. After the retention period, the workflow
-     * execution will not be available in the results of visibility calls. If
-     * a duration of <code>NONE</code> is specified, the records for workflow
-     * executions in this domain are not retained at all.
+     * The duration (in days) that records and histories of workflow
+     * executions on the domain should be kept by the service. After the
+     * retention period, the workflow execution is not available in the
+     * results of visibility calls. <p>If you pass the value
+     * <code>NONE</code> or <code>0</code> (zero), then the workflow
+     * execution history will not be retained. As soon as the workflow
+     * execution completes, the execution record and its history are deleted.
+     * <p>The maximum workflow execution retention period is 90 days. For
+     * more information about Amazon SWF service limits, see: <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
      *
-     * @param workflowExecutionRetentionPeriodInDays Specifies the duration--<b><i>in days</i></b>--for which the record
-     *         (including the history) of workflow executions in this domain should
-     *         be kept by the service. After the retention period, the workflow
-     *         execution will not be available in the results of visibility calls. If
-     *         a duration of <code>NONE</code> is specified, the records for workflow
-     *         executions in this domain are not retained at all.
+     * @param workflowExecutionRetentionPeriodInDays The duration (in days) that records and histories of workflow
+     *         executions on the domain should be kept by the service. After the
+     *         retention period, the workflow execution is not available in the
+     *         results of visibility calls. <p>If you pass the value
+     *         <code>NONE</code> or <code>0</code> (zero), then the workflow
+     *         execution history will not be retained. As soon as the workflow
+     *         execution completes, the execution record and its history are deleted.
+     *         <p>The maximum workflow execution retention period is 90 days. For
+     *         more information about Amazon SWF service limits, see: <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     *         SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -25,8 +25,8 @@ import java.io.Serializable;
 public class TagFilter implements Serializable {
 
     /**
-     * Specifies the tag that must be associated with the execution for it to
-     * meet the filter criteria. This field is required.
+     * <b>Required.</b> Specifies the tag that must be associated with the
+     * execution for it to meet the filter criteria.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -34,44 +34,44 @@ public class TagFilter implements Serializable {
     private String tag;
 
     /**
-     * Specifies the tag that must be associated with the execution for it to
-     * meet the filter criteria. This field is required.
+     * <b>Required.</b> Specifies the tag that must be associated with the
+     * execution for it to meet the filter criteria.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Specifies the tag that must be associated with the execution for it to
-     *         meet the filter criteria. This field is required.
+     * @return <b>Required.</b> Specifies the tag that must be associated with the
+     *         execution for it to meet the filter criteria.
      */
     public String getTag() {
         return tag;
     }
     
     /**
-     * Specifies the tag that must be associated with the execution for it to
-     * meet the filter criteria. This field is required.
+     * <b>Required.</b> Specifies the tag that must be associated with the
+     * execution for it to meet the filter criteria.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param tag Specifies the tag that must be associated with the execution for it to
-     *         meet the filter criteria. This field is required.
+     * @param tag <b>Required.</b> Specifies the tag that must be associated with the
+     *         execution for it to meet the filter criteria.
      */
     public void setTag(String tag) {
         this.tag = tag;
     }
     
     /**
-     * Specifies the tag that must be associated with the execution for it to
-     * meet the filter criteria. This field is required.
+     * <b>Required.</b> Specifies the tag that must be associated with the
+     * execution for it to meet the filter criteria.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param tag Specifies the tag that must be associated with the execution for it to
-     *         meet the filter criteria. This field is required.
+     * @param tag <b>Required.</b> Specifies the tag that must be associated with the
+     *         execution for it to meet the filter criteria.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

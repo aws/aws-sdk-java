@@ -28,6 +28,8 @@ public class StartWorkflowOptions {
 	
     private String taskList;
 	
+    private Integer taskPriority;
+    
     private ChildPolicy childPolicy;
     
     public ChildPolicy getChildPolicy() {
@@ -89,4 +91,17 @@ public class StartWorkflowOptions {
 		this.taskList = taskList;
 		return this;
 	}
+	
+    public Integer getTaskPriority() {
+        return taskPriority;
+    }
+	
+    public void setTaskPriority(Integer taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+    
+    public StartWorkflowOptions withTaskPriority(Integer taskPriority) {
+    	this.taskPriority = taskPriority;
+    	return this;
+    }
 }

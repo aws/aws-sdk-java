@@ -25,14 +25,14 @@ import java.io.Serializable;
  * </p>
  * <p>
  * You can use IAM policies to control this decision's access to Amazon
- * SWF in much the same way as for the regular API:
+ * SWF resources as follows:
  * </p>
  * 
  * <ul>
  * <li>Use a <code>Resource</code> element with the domain name to limit
- * the decision to only specified domains.</li>
+ * the action to only specified domains.</li>
  * <li>Use an <code>Action</code> element to allow or deny permission to
- * specify this decision.</li>
+ * call this action.</li>
  * <li>You cannot use an IAM policy to constrain this action's
  * parameters.</li>
  * 
@@ -50,7 +50,7 @@ import java.io.Serializable;
 public class RecordMarkerDecisionAttributes implements Serializable {
 
     /**
-     * The name of the marker. This file is required.
+     * <b>Required.</b> The name of the marker.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -58,7 +58,7 @@ public class RecordMarkerDecisionAttributes implements Serializable {
     private String markerName;
 
     /**
-     * Optional details of the marker.
+     * <i>Optional.</i> details of the marker.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -66,38 +66,38 @@ public class RecordMarkerDecisionAttributes implements Serializable {
     private String details;
 
     /**
-     * The name of the marker. This file is required.
+     * <b>Required.</b> The name of the marker.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The name of the marker. This file is required.
+     * @return <b>Required.</b> The name of the marker.
      */
     public String getMarkerName() {
         return markerName;
     }
     
     /**
-     * The name of the marker. This file is required.
+     * <b>Required.</b> The name of the marker.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param markerName The name of the marker. This file is required.
+     * @param markerName <b>Required.</b> The name of the marker.
      */
     public void setMarkerName(String markerName) {
         this.markerName = markerName;
     }
     
     /**
-     * The name of the marker. This file is required.
+     * <b>Required.</b> The name of the marker.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param markerName The name of the marker. This file is required.
+     * @param markerName <b>Required.</b> The name of the marker.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -108,38 +108,38 @@ public class RecordMarkerDecisionAttributes implements Serializable {
     }
 
     /**
-     * Optional details of the marker.
+     * <i>Optional.</i> details of the marker.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional details of the marker.
+     * @return <i>Optional.</i> details of the marker.
      */
     public String getDetails() {
         return details;
     }
     
     /**
-     * Optional details of the marker.
+     * <i>Optional.</i> details of the marker.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param details Optional details of the marker.
+     * @param details <i>Optional.</i> details of the marker.
      */
     public void setDetails(String details) {
         this.details = details;
     }
     
     /**
-     * Optional details of the marker.
+     * <i>Optional.</i> details of the marker.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param details Optional details of the marker.
+     * @param details <i>Optional.</i> details of the marker.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

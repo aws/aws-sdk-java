@@ -146,7 +146,8 @@ public class GenericActivityWorker extends GenericWorker {
         registerActivity.setDefaultTaskScheduleToCloseTimeout(FlowHelpers.secondsToDuration(registrationOptions.getDefaultTaskScheduleToCloseTimeoutSeconds()));
         registerActivity.setDefaultTaskHeartbeatTimeout(FlowHelpers.secondsToDuration(registrationOptions.getDefaultTaskHeartbeatTimeoutSeconds()));
         registerActivity.setDefaultTaskScheduleToStartTimeout(FlowHelpers.secondsToDuration(registrationOptions.getDefaultTaskScheduleToStartTimeoutSeconds()));
-
+        registerActivity.setDefaultTaskPriority(FlowHelpers.taskPriorityToString(registrationOptions.getDefaultTaskPriority()));
+        
         if (registrationOptions.getDescription() != null) {
             registerActivity.setDescription(registrationOptions.getDescription());
         }

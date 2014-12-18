@@ -67,7 +67,7 @@ public class EncryptRequestMarshaller implements Marshaller<Request<EncryptReque
             if (encryptRequest.getPlaintext() != null) {
                 jsonWriter.key("Plaintext").value(encryptRequest.getPlaintext());
             }
-            if (encryptRequest.getEncryptionContext() != null) {
+            if (encryptRequest.getEncryptionContext() != null && !encryptRequest.getEncryptionContext().isEmpty()) {
                 jsonWriter.key("EncryptionContext");
                 jsonWriter.object();
                 for (Map.Entry<String, String> encryptionContextListValue : encryptRequest.getEncryptionContext().entrySet()) {

@@ -24,11 +24,11 @@ import java.io.Serializable;
 public class ActivityTypeDetail implements Serializable {
 
     /**
-     * General information about the activity type. <p> The status of
-     * activity type (returned in the ActivityTypeInfo structure) can be one
-     * of the following. <ul> <li> <b>REGISTERED</b>: The type is registered
-     * and available. Workers supporting this type should be running. </li>
-     * <li> <b>DEPRECATED</b>: The type was deprecated using
+     * General information about the activity type. <p>The status of activity
+     * type (returned in the ActivityTypeInfo structure) can be one of the
+     * following. <ul> <li><b>REGISTERED</b>: The type is registered and
+     * available. Workers supporting this type should be running. </li>
+     * <li><b>DEPRECATED</b>: The type was deprecated using
      * <a>DeprecateActivityType</a>, but is still in use. You should keep
      * workers supporting this type running. You cannot create new tasks of
      * this type. </li> </ul>
@@ -41,20 +41,20 @@ public class ActivityTypeDetail implements Serializable {
     private ActivityTypeConfiguration configuration;
 
     /**
-     * General information about the activity type. <p> The status of
-     * activity type (returned in the ActivityTypeInfo structure) can be one
-     * of the following. <ul> <li> <b>REGISTERED</b>: The type is registered
-     * and available. Workers supporting this type should be running. </li>
-     * <li> <b>DEPRECATED</b>: The type was deprecated using
+     * General information about the activity type. <p>The status of activity
+     * type (returned in the ActivityTypeInfo structure) can be one of the
+     * following. <ul> <li><b>REGISTERED</b>: The type is registered and
+     * available. Workers supporting this type should be running. </li>
+     * <li><b>DEPRECATED</b>: The type was deprecated using
      * <a>DeprecateActivityType</a>, but is still in use. You should keep
      * workers supporting this type running. You cannot create new tasks of
      * this type. </li> </ul>
      *
-     * @return General information about the activity type. <p> The status of
-     *         activity type (returned in the ActivityTypeInfo structure) can be one
-     *         of the following. <ul> <li> <b>REGISTERED</b>: The type is registered
-     *         and available. Workers supporting this type should be running. </li>
-     *         <li> <b>DEPRECATED</b>: The type was deprecated using
+     * @return General information about the activity type. <p>The status of activity
+     *         type (returned in the ActivityTypeInfo structure) can be one of the
+     *         following. <ul> <li><b>REGISTERED</b>: The type is registered and
+     *         available. Workers supporting this type should be running. </li>
+     *         <li><b>DEPRECATED</b>: The type was deprecated using
      *         <a>DeprecateActivityType</a>, but is still in use. You should keep
      *         workers supporting this type running. You cannot create new tasks of
      *         this type. </li> </ul>
@@ -64,20 +64,20 @@ public class ActivityTypeDetail implements Serializable {
     }
     
     /**
-     * General information about the activity type. <p> The status of
-     * activity type (returned in the ActivityTypeInfo structure) can be one
-     * of the following. <ul> <li> <b>REGISTERED</b>: The type is registered
-     * and available. Workers supporting this type should be running. </li>
-     * <li> <b>DEPRECATED</b>: The type was deprecated using
+     * General information about the activity type. <p>The status of activity
+     * type (returned in the ActivityTypeInfo structure) can be one of the
+     * following. <ul> <li><b>REGISTERED</b>: The type is registered and
+     * available. Workers supporting this type should be running. </li>
+     * <li><b>DEPRECATED</b>: The type was deprecated using
      * <a>DeprecateActivityType</a>, but is still in use. You should keep
      * workers supporting this type running. You cannot create new tasks of
      * this type. </li> </ul>
      *
-     * @param typeInfo General information about the activity type. <p> The status of
-     *         activity type (returned in the ActivityTypeInfo structure) can be one
-     *         of the following. <ul> <li> <b>REGISTERED</b>: The type is registered
-     *         and available. Workers supporting this type should be running. </li>
-     *         <li> <b>DEPRECATED</b>: The type was deprecated using
+     * @param typeInfo General information about the activity type. <p>The status of activity
+     *         type (returned in the ActivityTypeInfo structure) can be one of the
+     *         following. <ul> <li><b>REGISTERED</b>: The type is registered and
+     *         available. Workers supporting this type should be running. </li>
+     *         <li><b>DEPRECATED</b>: The type was deprecated using
      *         <a>DeprecateActivityType</a>, but is still in use. You should keep
      *         workers supporting this type running. You cannot create new tasks of
      *         this type. </li> </ul>
@@ -87,22 +87,22 @@ public class ActivityTypeDetail implements Serializable {
     }
     
     /**
-     * General information about the activity type. <p> The status of
-     * activity type (returned in the ActivityTypeInfo structure) can be one
-     * of the following. <ul> <li> <b>REGISTERED</b>: The type is registered
-     * and available. Workers supporting this type should be running. </li>
-     * <li> <b>DEPRECATED</b>: The type was deprecated using
+     * General information about the activity type. <p>The status of activity
+     * type (returned in the ActivityTypeInfo structure) can be one of the
+     * following. <ul> <li><b>REGISTERED</b>: The type is registered and
+     * available. Workers supporting this type should be running. </li>
+     * <li><b>DEPRECATED</b>: The type was deprecated using
      * <a>DeprecateActivityType</a>, but is still in use. You should keep
      * workers supporting this type running. You cannot create new tasks of
      * this type. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param typeInfo General information about the activity type. <p> The status of
-     *         activity type (returned in the ActivityTypeInfo structure) can be one
-     *         of the following. <ul> <li> <b>REGISTERED</b>: The type is registered
-     *         and available. Workers supporting this type should be running. </li>
-     *         <li> <b>DEPRECATED</b>: The type was deprecated using
+     * @param typeInfo General information about the activity type. <p>The status of activity
+     *         type (returned in the ActivityTypeInfo structure) can be one of the
+     *         following. <ul> <li><b>REGISTERED</b>: The type is registered and
+     *         available. Workers supporting this type should be running. </li>
+     *         <li><b>DEPRECATED</b>: The type was deprecated using
      *         <a>DeprecateActivityType</a>, but is still in use. You should keep
      *         workers supporting this type running. You cannot create new tasks of
      *         this type. </li> </ul>

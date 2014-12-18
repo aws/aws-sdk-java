@@ -25,14 +25,14 @@ import java.io.Serializable;
  * </p>
  * <p>
  * You can use IAM policies to control this decision's access to Amazon
- * SWF in much the same way as for the regular API:
+ * SWF resources as follows:
  * </p>
  * 
  * <ul>
  * <li>Use a <code>Resource</code> element with the domain name to limit
- * the decision to only specified domains.</li>
+ * the action to only specified domains.</li>
  * <li>Use an <code>Action</code> element to allow or deny permission to
- * specify this decision.</li>
+ * call this action.</li>
  * <li>You cannot use an IAM policy to constrain this action's
  * parameters.</li>
  * 
@@ -50,7 +50,7 @@ import java.io.Serializable;
 public class CancelTimerDecisionAttributes implements Serializable {
 
     /**
-     * The unique Id of the timer to cancel. This field is required.
+     * <b>Required.</b> The unique Id of the timer to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -58,38 +58,38 @@ public class CancelTimerDecisionAttributes implements Serializable {
     private String timerId;
 
     /**
-     * The unique Id of the timer to cancel. This field is required.
+     * <b>Required.</b> The unique Id of the timer to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The unique Id of the timer to cancel. This field is required.
+     * @return <b>Required.</b> The unique Id of the timer to cancel.
      */
     public String getTimerId() {
         return timerId;
     }
     
     /**
-     * The unique Id of the timer to cancel. This field is required.
+     * <b>Required.</b> The unique Id of the timer to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer to cancel. This field is required.
+     * @param timerId <b>Required.</b> The unique Id of the timer to cancel.
      */
     public void setTimerId(String timerId) {
         this.timerId = timerId;
     }
     
     /**
-     * The unique Id of the timer to cancel. This field is required.
+     * <b>Required.</b> The unique Id of the timer to cancel.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer to cancel. This field is required.
+     * @param timerId <b>Required.</b> The unique Id of the timer to cancel.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

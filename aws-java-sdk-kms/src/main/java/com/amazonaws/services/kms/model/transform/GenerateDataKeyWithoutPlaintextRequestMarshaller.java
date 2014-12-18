@@ -64,7 +64,7 @@ public class GenerateDataKeyWithoutPlaintextRequestMarshaller implements Marshal
             if (generateDataKeyWithoutPlaintextRequest.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(generateDataKeyWithoutPlaintextRequest.getKeyId());
             }
-            if (generateDataKeyWithoutPlaintextRequest.getEncryptionContext() != null) {
+            if (generateDataKeyWithoutPlaintextRequest.getEncryptionContext() != null && !generateDataKeyWithoutPlaintextRequest.getEncryptionContext().isEmpty()) {
                 jsonWriter.key("EncryptionContext");
                 jsonWriter.object();
                 for (Map.Entry<String, String> encryptionContextListValue : generateDataKeyWithoutPlaintextRequest.getEncryptionContext().entrySet()) {

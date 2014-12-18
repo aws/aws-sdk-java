@@ -43,7 +43,8 @@ public class MarkerRecordedEventAttributes implements Serializable {
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>RecordMarker</code>
      * decision that requested this marker. This information can be useful
-     * for diagnosing problems by tracing back the cause of events.
+     * for diagnosing problems by tracing back the chain of events leading up
+     * to this event.
      */
     private Long decisionTaskCompletedEventId;
 
@@ -135,12 +136,14 @@ public class MarkerRecordedEventAttributes implements Serializable {
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>RecordMarker</code>
      * decision that requested this marker. This information can be useful
-     * for diagnosing problems by tracing back the cause of events.
+     * for diagnosing problems by tracing back the chain of events leading up
+     * to this event.
      *
      * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>RecordMarker</code>
      *         decision that requested this marker. This information can be useful
-     *         for diagnosing problems by tracing back the cause of events.
+     *         for diagnosing problems by tracing back the chain of events leading up
+     *         to this event.
      */
     public Long getDecisionTaskCompletedEventId() {
         return decisionTaskCompletedEventId;
@@ -150,12 +153,14 @@ public class MarkerRecordedEventAttributes implements Serializable {
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>RecordMarker</code>
      * decision that requested this marker. This information can be useful
-     * for diagnosing problems by tracing back the cause of events.
+     * for diagnosing problems by tracing back the chain of events leading up
+     * to this event.
      *
      * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>RecordMarker</code>
      *         decision that requested this marker. This information can be useful
-     *         for diagnosing problems by tracing back the cause of events.
+     *         for diagnosing problems by tracing back the chain of events leading up
+     *         to this event.
      */
     public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -165,14 +170,16 @@ public class MarkerRecordedEventAttributes implements Serializable {
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>RecordMarker</code>
      * decision that requested this marker. This information can be useful
-     * for diagnosing problems by tracing back the cause of events.
+     * for diagnosing problems by tracing back the chain of events leading up
+     * to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>RecordMarker</code>
      *         decision that requested this marker. This information can be useful
-     *         for diagnosing problems by tracing back the cause of events.
+     *         for diagnosing problems by tracing back the chain of events leading up
+     *         to this event.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

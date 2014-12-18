@@ -29,6 +29,7 @@ public class ContinueAsNewWorkflowExecutionParameters {
     private String taskList;
     private long taskStartToCloseTimeoutSeconds = FlowConstants.USE_REGISTERED_DEFAULTS;
     private ChildPolicy childPolicy;
+    private int taskPriority;
     
     public ContinueAsNewWorkflowExecutionParameters() {
     }
@@ -101,6 +102,19 @@ public class ContinueAsNewWorkflowExecutionParameters {
         return this;
     }
     
+    public int getTaskPriority() {
+        return taskPriority;
+    }
+
+    public void setTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+
+    public ContinueAsNewWorkflowExecutionParameters withTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+
     public long getTaskStartToCloseTimeoutSeconds() {
         return taskStartToCloseTimeoutSeconds;
     }
@@ -143,6 +157,11 @@ public class ContinueAsNewWorkflowExecutionParameters {
             if (childPolicy != null) {
                 continueAsNewWorkflowExecutionParameters.setChildPolicy(childPolicy);
             }
+            
+            Integer taskPriority = options.getTaskPriority();
+            if (taskPriority != null) {
+                continueAsNewWorkflowExecutionParameters.setTaskPriority(taskPriority);
+            }
         }
         
         if (optionsOverride != null) {    
@@ -170,6 +189,11 @@ public class ContinueAsNewWorkflowExecutionParameters {
             if (childPolicy != null) {
                 continueAsNewWorkflowExecutionParameters.setChildPolicy(childPolicy);
             }
+            
+            Integer taskPriority = optionsOverride.getTaskPriority();
+            if (taskPriority != null) {
+                continueAsNewWorkflowExecutionParameters.setTaskPriority(taskPriority);
+            }
         }
         
         return continueAsNewWorkflowExecutionParameters;
@@ -183,7 +207,8 @@ public class ContinueAsNewWorkflowExecutionParameters {
         sb.append("ExecutionStartToCloseTimeout: " + executionStartToCloseTimeoutSeconds + ", ");
         sb.append("TaskStartToCloseTimeout: " + taskStartToCloseTimeoutSeconds + ", ");
         sb.append("TagList: " + tagList + ", ");
-        sb.append("TaskList: " + taskList);
+        sb.append("TaskList: " + taskList + ", ");
+        sb.append("TaskPriority: " + taskPriority);
         sb.append("}");
         return sb.toString();
     }
@@ -197,6 +222,7 @@ public class ContinueAsNewWorkflowExecutionParameters {
         result.setTaskList(taskList);
         result.setTaskStartToCloseTimeoutSeconds(taskStartToCloseTimeoutSeconds);
         result.setChildPolicy(childPolicy);
+        result.setTaskPriority(taskPriority);
         return result;
     }
 

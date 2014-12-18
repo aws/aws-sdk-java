@@ -41,6 +41,8 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
 
     private ChildPolicy childPolicy;
 
+    private int taskPriority;
+    
     public StartChildWorkflowExecutionParameters() {
     }
 
@@ -156,6 +158,24 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
         this.childPolicy = childPolicy;
     }
 
+    public StartChildWorkflowExecutionParameters withChildPolicy(ChildPolicy childPolicy) {
+        this.childPolicy = childPolicy;
+        return this;
+    }
+    
+    public int getTaskPriority() {
+        return taskPriority;
+    }
+
+    public void setTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+
+    public StartChildWorkflowExecutionParameters withTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+	
     public StartChildWorkflowExecutionParameters createStartChildWorkflowExecutionParametersFromOptions(
             StartWorkflowOptions options, StartWorkflowOptions optionsOverride) {
         StartChildWorkflowExecutionParameters startChildWorkflowExecutionParameters = this.clone();
@@ -186,6 +206,11 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
             if (childPolicy != null) {
                 startChildWorkflowExecutionParameters.setChildPolicy(childPolicy);
             }
+            
+            Integer taskPriority = options.getTaskPriority();
+            if (taskPriority != null) {
+                startChildWorkflowExecutionParameters.setTaskPriority(taskPriority);
+            }
         }
 
         if (optionsOverride != null) {
@@ -213,6 +238,11 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
             if (childPolicy != null) {
                 startChildWorkflowExecutionParameters.setChildPolicy(childPolicy);
             }
+
+            Integer taskPriority = optionsOverride.getTaskPriority();
+            if (taskPriority != null) {
+                startChildWorkflowExecutionParameters.setTaskPriority(taskPriority);
+            }
         }
 
         return startChildWorkflowExecutionParameters;
@@ -229,7 +259,8 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
         sb.append("ExecutionStartToCloseTimeout: " + executionStartToCloseTimeoutSeconds + ", ");
         sb.append("TaskStartToCloseTimeout: " + taskStartToCloseTimeoutSeconds + ", ");
         sb.append("TagList: " + tagList + ", ");
-        sb.append("TaskList: " + taskList);
+        sb.append("TaskList: " + taskList + ", ");
+        sb.append("TaskPriority: " + taskPriority);
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +275,7 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
         result.setTaskStartToCloseTimeoutSeconds(taskStartToCloseTimeoutSeconds);
         result.setWorkflowId(workflowId);
         result.setWorkflowType(workflowType);
+        result.setTaskPriority(taskPriority);
         return result;
     }
 

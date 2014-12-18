@@ -77,6 +77,10 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unm
                     context.nextToken();
                     activityTaskScheduledEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("taskPriority", targetDepth)) {
+                    context.nextToken();
+                    activityTaskScheduledEventAttributes.setTaskPriority(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("decisionTaskCompletedEventId", targetDepth)) {
                     context.nextToken();
                     activityTaskScheduledEventAttributes.setDecisionTaskCompletedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));

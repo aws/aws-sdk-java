@@ -45,8 +45,9 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
     private String input;
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks. This data is not sent to the activity.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks. This data is not sent to the
+     * activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -83,6 +84,24 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      * The task list in which the activity task has been scheduled.
      */
     private TaskList taskList;
+
+    /**
+     * <i>Optional.</i> The priority to assign to the scheduled activity
+     * task. This will override any default priority that was assigned when
+     * the activity type was registered. If not set, then the priority set on
+     * the activity type is used as the task priority. <p>Valid values are
+     * integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority. <p>For more information about
+     * setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     */
+    private String taskPriority;
 
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
@@ -222,44 +241,50 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
     }
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks. This data is not sent to the activity.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks. This data is not sent to the
+     * activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks. This data is not sent to the activity.
+     * @return <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks. This data is not sent to the
+     *         activity.
      */
     public String getControl() {
         return control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks. This data is not sent to the activity.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks. This data is not sent to the
+     * activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks. This data is not sent to the activity.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks. This data is not sent to the
+     *         activity.
      */
     public void setControl(String control) {
         this.control = control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks. This data is not sent to the activity.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks. This data is not sent to the
+     * activity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks. This data is not sent to the activity.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks. This data is not sent to the
+     *         activity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -441,6 +466,108 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
     }
 
     /**
+     * <i>Optional.</i> The priority to assign to the scheduled activity
+     * task. This will override any default priority that was assigned when
+     * the activity type was registered. If not set, then the priority set on
+     * the activity type is used as the task priority. <p>Valid values are
+     * integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority. <p>For more information about
+     * setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @return <i>Optional.</i> The priority to assign to the scheduled activity
+     *         task. This will override any default priority that was assigned when
+     *         the activity type was registered. If not set, then the priority set on
+     *         the activity type is used as the task priority. <p>Valid values are
+     *         integers that range from Java's <code>Integer.MIN_VALUE</code>
+     *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     *         numbers indicate higher priority. <p>For more information about
+     *         setting task priority, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public String getTaskPriority() {
+        return taskPriority;
+    }
+    
+    /**
+     * <i>Optional.</i> The priority to assign to the scheduled activity
+     * task. This will override any default priority that was assigned when
+     * the activity type was registered. If not set, then the priority set on
+     * the activity type is used as the task priority. <p>Valid values are
+     * integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority. <p>For more information about
+     * setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority <i>Optional.</i> The priority to assign to the scheduled activity
+     *         task. This will override any default priority that was assigned when
+     *         the activity type was registered. If not set, then the priority set on
+     *         the activity type is used as the task priority. <p>Valid values are
+     *         integers that range from Java's <code>Integer.MIN_VALUE</code>
+     *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     *         numbers indicate higher priority. <p>For more information about
+     *         setting task priority, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public void setTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+    
+    /**
+     * <i>Optional.</i> The priority to assign to the scheduled activity
+     * task. This will override any default priority that was assigned when
+     * the activity type was registered. If not set, then the priority set on
+     * the activity type is used as the task priority. <p>Valid values are
+     * integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority. <p>For more information about
+     * setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority <i>Optional.</i> The priority to assign to the scheduled activity
+     *         task. This will override any default priority that was assigned when
+     *         the activity type was registered. If not set, then the priority set on
+     *         the activity type is used as the task priority. <p>Valid values are
+     *         integers that range from Java's <code>Integer.MIN_VALUE</code>
+     *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     *         numbers indicate higher priority. <p>For more information about
+     *         setting task priority, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ActivityTaskScheduledEventAttributes withTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+
+    /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
@@ -577,6 +704,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
         if (getScheduleToCloseTimeout() != null) sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ",");
         if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ",");
         if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
+        if (getTaskPriority() != null) sb.append("TaskPriority: " + getTaskPriority() + ",");
         if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
         if (getHeartbeatTimeout() != null) sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() );
         sb.append("}");
@@ -596,6 +724,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
         hashCode = prime * hashCode + ((getScheduleToCloseTimeout() == null) ? 0 : getScheduleToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getStartToCloseTimeout() == null) ? 0 : getStartToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode()); 
+        hashCode = prime * hashCode + ((getTaskPriority() == null) ? 0 : getTaskPriority().hashCode()); 
         hashCode = prime * hashCode + ((getDecisionTaskCompletedEventId() == null) ? 0 : getDecisionTaskCompletedEventId().hashCode()); 
         hashCode = prime * hashCode + ((getHeartbeatTimeout() == null) ? 0 : getHeartbeatTimeout().hashCode()); 
         return hashCode;
@@ -625,6 +754,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
         if (other.getStartToCloseTimeout() != null && other.getStartToCloseTimeout().equals(this.getStartToCloseTimeout()) == false) return false; 
         if (other.getTaskList() == null ^ this.getTaskList() == null) return false;
         if (other.getTaskList() != null && other.getTaskList().equals(this.getTaskList()) == false) return false; 
+        if (other.getTaskPriority() == null ^ this.getTaskPriority() == null) return false;
+        if (other.getTaskPriority() != null && other.getTaskPriority().equals(this.getTaskPriority()) == false) return false; 
         if (other.getDecisionTaskCompletedEventId() == null ^ this.getDecisionTaskCompletedEventId() == null) return false;
         if (other.getDecisionTaskCompletedEventId() != null && other.getDecisionTaskCompletedEventId().equals(this.getDecisionTaskCompletedEventId()) == false) return false; 
         if (other.getHeartbeatTimeout() == null ^ this.getHeartbeatTimeout() == null) return false;

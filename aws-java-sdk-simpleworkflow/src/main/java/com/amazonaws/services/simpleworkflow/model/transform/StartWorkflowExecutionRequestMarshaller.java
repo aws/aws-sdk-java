@@ -92,6 +92,9 @@ public class StartWorkflowExecutionRequestMarshaller implements Marshaller<Reque
                 }
                 jsonWriter.endObject();
             }
+            if (startWorkflowExecutionRequest.getTaskPriority() != null) {
+                jsonWriter.key("taskPriority").value(startWorkflowExecutionRequest.getTaskPriority());
+            }
             if (startWorkflowExecutionRequest.getInput() != null) {
                 jsonWriter.key("input").value(startWorkflowExecutionRequest.getInput());
             }

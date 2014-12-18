@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class WorkflowType implements Serializable {
 
     /**
-     * The name of the workflow type. This field is required. <note>The
-     * combination of workflow type name and version must be unique with in a
+     * <b>Required.</b> The name of the workflow type. <note>The combination
+     * of workflow type name and version must be unique with in a
      * domain.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -34,7 +34,7 @@ public class WorkflowType implements Serializable {
     private String name;
 
     /**
-     * The version of the workflow type. This field is required. <note>The
+     * <b>Required.</b> The version of the workflow type. <note>The
      * combination of workflow type name and version must be unique with in a
      * domain.</note>
      * <p>
@@ -44,15 +44,15 @@ public class WorkflowType implements Serializable {
     private String version;
 
     /**
-     * The name of the workflow type. This field is required. <note>The
-     * combination of workflow type name and version must be unique with in a
+     * <b>Required.</b> The name of the workflow type. <note>The combination
+     * of workflow type name and version must be unique with in a
      * domain.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The name of the workflow type. This field is required. <note>The
-     *         combination of workflow type name and version must be unique with in a
+     * @return <b>Required.</b> The name of the workflow type. <note>The combination
+     *         of workflow type name and version must be unique with in a
      *         domain.</note>
      */
     public String getName() {
@@ -60,15 +60,15 @@ public class WorkflowType implements Serializable {
     }
     
     /**
-     * The name of the workflow type. This field is required. <note>The
-     * combination of workflow type name and version must be unique with in a
+     * <b>Required.</b> The name of the workflow type. <note>The combination
+     * of workflow type name and version must be unique with in a
      * domain.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name The name of the workflow type. This field is required. <note>The
-     *         combination of workflow type name and version must be unique with in a
+     * @param name <b>Required.</b> The name of the workflow type. <note>The combination
+     *         of workflow type name and version must be unique with in a
      *         domain.</note>
      */
     public void setName(String name) {
@@ -76,8 +76,8 @@ public class WorkflowType implements Serializable {
     }
     
     /**
-     * The name of the workflow type. This field is required. <note>The
-     * combination of workflow type name and version must be unique with in a
+     * <b>Required.</b> The name of the workflow type. <note>The combination
+     * of workflow type name and version must be unique with in a
      * domain.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -85,8 +85,8 @@ public class WorkflowType implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name The name of the workflow type. This field is required. <note>The
-     *         combination of workflow type name and version must be unique with in a
+     * @param name <b>Required.</b> The name of the workflow type. <note>The combination
+     *         of workflow type name and version must be unique with in a
      *         domain.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -98,14 +98,14 @@ public class WorkflowType implements Serializable {
     }
 
     /**
-     * The version of the workflow type. This field is required. <note>The
+     * <b>Required.</b> The version of the workflow type. <note>The
      * combination of workflow type name and version must be unique with in a
      * domain.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @return The version of the workflow type. This field is required. <note>The
+     * @return <b>Required.</b> The version of the workflow type. <note>The
      *         combination of workflow type name and version must be unique with in a
      *         domain.</note>
      */
@@ -114,14 +114,14 @@ public class WorkflowType implements Serializable {
     }
     
     /**
-     * The version of the workflow type. This field is required. <note>The
+     * <b>Required.</b> The version of the workflow type. <note>The
      * combination of workflow type name and version must be unique with in a
      * domain.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @param version The version of the workflow type. This field is required. <note>The
+     * @param version <b>Required.</b> The version of the workflow type. <note>The
      *         combination of workflow type name and version must be unique with in a
      *         domain.</note>
      */
@@ -130,7 +130,7 @@ public class WorkflowType implements Serializable {
     }
     
     /**
-     * The version of the workflow type. This field is required. <note>The
+     * <b>Required.</b> The version of the workflow type. <note>The
      * combination of workflow type name and version must be unique with in a
      * domain.</note>
      * <p>
@@ -139,7 +139,7 @@ public class WorkflowType implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @param version The version of the workflow type. This field is required. <note>The
+     * @param version <b>Required.</b> The version of the workflow type. <note>The
      *         combination of workflow type name and version must be unique with in a
      *         domain.</note>
      *

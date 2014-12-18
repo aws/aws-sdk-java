@@ -25,8 +25,8 @@ import java.io.Serializable;
 public class CloseStatusFilter implements Serializable {
 
     /**
-     * The close status that must match the close status of an execution for
-     * it to meet the criteria of this filter. This field is required.
+     * <b>Required.</b> The close status that must match the close status of
+     * an execution for it to meet the criteria of this filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
@@ -34,14 +34,14 @@ public class CloseStatusFilter implements Serializable {
     private String status;
 
     /**
-     * The close status that must match the close status of an execution for
-     * it to meet the criteria of this filter. This field is required.
+     * <b>Required.</b> The close status that must match the close status of
+     * an execution for it to meet the criteria of this filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
-     * @return The close status that must match the close status of an execution for
-     *         it to meet the criteria of this filter. This field is required.
+     * @return <b>Required.</b> The close status that must match the close status of
+     *         an execution for it to meet the criteria of this filter.
      *
      * @see CloseStatus
      */
@@ -50,14 +50,14 @@ public class CloseStatusFilter implements Serializable {
     }
     
     /**
-     * The close status that must match the close status of an execution for
-     * it to meet the criteria of this filter. This field is required.
+     * <b>Required.</b> The close status that must match the close status of
+     * an execution for it to meet the criteria of this filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
-     * @param status The close status that must match the close status of an execution for
-     *         it to meet the criteria of this filter. This field is required.
+     * @param status <b>Required.</b> The close status that must match the close status of
+     *         an execution for it to meet the criteria of this filter.
      *
      * @see CloseStatus
      */
@@ -66,16 +66,16 @@ public class CloseStatusFilter implements Serializable {
     }
     
     /**
-     * The close status that must match the close status of an execution for
-     * it to meet the criteria of this filter. This field is required.
+     * <b>Required.</b> The close status that must match the close status of
+     * an execution for it to meet the criteria of this filter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
-     * @param status The close status that must match the close status of an execution for
-     *         it to meet the criteria of this filter. This field is required.
+     * @param status <b>Required.</b> The close status that must match the close status of
+     *         an execution for it to meet the criteria of this filter.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -88,14 +88,14 @@ public class CloseStatusFilter implements Serializable {
     }
 
     /**
-     * The close status that must match the close status of an execution for
-     * it to meet the criteria of this filter. This field is required.
+     * <b>Required.</b> The close status that must match the close status of
+     * an execution for it to meet the criteria of this filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
-     * @param status The close status that must match the close status of an execution for
-     *         it to meet the criteria of this filter. This field is required.
+     * @param status <b>Required.</b> The close status that must match the close status of
+     *         an execution for it to meet the criteria of this filter.
      *
      * @see CloseStatus
      */
@@ -104,16 +104,16 @@ public class CloseStatusFilter implements Serializable {
     }
     
     /**
-     * The close status that must match the close status of an execution for
-     * it to meet the criteria of this filter. This field is required.
+     * <b>Required.</b> The close status that must match the close status of
+     * an execution for it to meet the criteria of this filter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
-     * @param status The close status that must match the close status of an execution for
-     *         it to meet the criteria of this filter. This field is required.
+     * @param status <b>Required.</b> The close status that must match the close status of
+     *         an execution for it to meet the criteria of this filter.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

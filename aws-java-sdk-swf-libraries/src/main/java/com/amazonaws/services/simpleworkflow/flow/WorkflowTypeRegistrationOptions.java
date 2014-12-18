@@ -28,6 +28,8 @@ public class WorkflowTypeRegistrationOptions {
     
     private String description;
     
+    private int defaultTaskPriority;
+    
     public ChildPolicy getDefaultChildPolicy() {
         return defaultChildPolicy;
     }
@@ -73,6 +75,14 @@ public class WorkflowTypeRegistrationOptions {
         this.defaultTaskStartToCloseTimeoutSeconds = defaultTaskStartToCloseTimeoutSeconds;
     }
 
+    public int getDefaultTaskPriority() {
+        return defaultTaskPriority;
+    }
+
+    public void setDefaultTaskPriority(int defaultTaskPriority) {
+        this.defaultTaskPriority = defaultTaskPriority;
+    }
+
     @Override
     public String toString() {
         return "WorkflowVersionRegistrationOptions [defaultTaskList=" + defaultTaskList
@@ -80,6 +90,7 @@ public class WorkflowTypeRegistrationOptions {
                 + ", defaultTaskList=" + defaultTaskList
                 + ", description=" + description 
                 + ", defaultTaskStartToCloseTimeoutSeconds=" + defaultTaskStartToCloseTimeoutSeconds
+                + ", defaultTaskPriority=" + defaultTaskPriority
                 + "]";
     }
 

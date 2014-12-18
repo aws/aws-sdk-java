@@ -33,4 +33,8 @@ public final class FlowConstants {
      */
     public static final String USE_WORKER_TASK_LIST = "USE_WORKER_TASK_LIST";
 
+    /**
+     * Use task priority 0
+     */
+    public static final int DEFAULT_TASK_PRIORITY = 0;
 }

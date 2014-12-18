@@ -23,7 +23,7 @@ import java.io.Serializable;
  * must be satisfied by each returned query result. The parameter values
  * are in the
  * <a href="https://en.wikipedia.org/wiki/Unix_time"> Unix Time format </a>
- * . For example: "oldestDate": 1325376070.
+ * . For example: <code>"oldestDate": 1325376070.</code>
  * </p>
  */
 public class ExecutionTimeFilter implements Serializable {

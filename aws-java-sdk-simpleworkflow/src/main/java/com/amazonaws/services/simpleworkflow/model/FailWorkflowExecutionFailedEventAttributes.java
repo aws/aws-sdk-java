@@ -42,7 +42,7 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable 
      * to the decision task that resulted in the
      * <code>FailWorkflowExecution</code> decision to fail this execution.
      * This information can be useful for diagnosing problems by tracing back
-     * the cause of events.
+     * the chain of events leading up to this event.
      */
     private Long decisionTaskCompletedEventId;
 
@@ -183,13 +183,13 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable 
      * to the decision task that resulted in the
      * <code>FailWorkflowExecution</code> decision to fail this execution.
      * This information can be useful for diagnosing problems by tracing back
-     * the cause of events.
+     * the chain of events leading up to this event.
      *
      * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>FailWorkflowExecution</code> decision to fail this execution.
      *         This information can be useful for diagnosing problems by tracing back
-     *         the cause of events.
+     *         the chain of events leading up to this event.
      */
     public Long getDecisionTaskCompletedEventId() {
         return decisionTaskCompletedEventId;
@@ -200,13 +200,13 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable 
      * to the decision task that resulted in the
      * <code>FailWorkflowExecution</code> decision to fail this execution.
      * This information can be useful for diagnosing problems by tracing back
-     * the cause of events.
+     * the chain of events leading up to this event.
      *
      * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>FailWorkflowExecution</code> decision to fail this execution.
      *         This information can be useful for diagnosing problems by tracing back
-     *         the cause of events.
+     *         the chain of events leading up to this event.
      */
     public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -217,7 +217,7 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable 
      * to the decision task that resulted in the
      * <code>FailWorkflowExecution</code> decision to fail this execution.
      * This information can be useful for diagnosing problems by tracing back
-     * the cause of events.
+     * the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -225,7 +225,7 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable 
      *         to the decision task that resulted in the
      *         <code>FailWorkflowExecution</code> decision to fail this execution.
      *         This information can be useful for diagnosing problems by tracing back
-     *         the cause of events.
+     *         the chain of events leading up to this event.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

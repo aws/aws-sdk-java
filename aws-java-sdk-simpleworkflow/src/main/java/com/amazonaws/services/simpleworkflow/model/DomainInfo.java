@@ -32,10 +32,10 @@ public class DomainInfo implements Serializable {
     private String name;
 
     /**
-     * The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      * properly registered and available. You can use this domain for
-     * registering types and creating new workflow executions. </li> <li>
-     * <b>DEPRECATED</b>: The domain was deprecated using
+     * registering types and creating new workflow executions. </li>
+     * <li><b>DEPRECATED</b>: The domain was deprecated using
      * <a>DeprecateDomain</a>, but is still in use. You should not create new
      * workflow executions in this domain. </li> </ul>
      * <p>
@@ -95,20 +95,20 @@ public class DomainInfo implements Serializable {
     }
 
     /**
-     * The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      * properly registered and available. You can use this domain for
-     * registering types and creating new workflow executions. </li> <li>
-     * <b>DEPRECATED</b>: The domain was deprecated using
+     * registering types and creating new workflow executions. </li>
+     * <li><b>DEPRECATED</b>: The domain was deprecated using
      * <a>DeprecateDomain</a>, but is still in use. You should not create new
      * workflow executions in this domain. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
-     * @return The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * @return The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      *         properly registered and available. You can use this domain for
-     *         registering types and creating new workflow executions. </li> <li>
-     *         <b>DEPRECATED</b>: The domain was deprecated using
+     *         registering types and creating new workflow executions. </li>
+     *         <li><b>DEPRECATED</b>: The domain was deprecated using
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *
@@ -119,20 +119,20 @@ public class DomainInfo implements Serializable {
     }
     
     /**
-     * The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      * properly registered and available. You can use this domain for
-     * registering types and creating new workflow executions. </li> <li>
-     * <b>DEPRECATED</b>: The domain was deprecated using
+     * registering types and creating new workflow executions. </li>
+     * <li><b>DEPRECATED</b>: The domain was deprecated using
      * <a>DeprecateDomain</a>, but is still in use. You should not create new
      * workflow executions in this domain. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
-     * @param status The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * @param status The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      *         properly registered and available. You can use this domain for
-     *         registering types and creating new workflow executions. </li> <li>
-     *         <b>DEPRECATED</b>: The domain was deprecated using
+     *         registering types and creating new workflow executions. </li>
+     *         <li><b>DEPRECATED</b>: The domain was deprecated using
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *
@@ -143,10 +143,10 @@ public class DomainInfo implements Serializable {
     }
     
     /**
-     * The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      * properly registered and available. You can use this domain for
-     * registering types and creating new workflow executions. </li> <li>
-     * <b>DEPRECATED</b>: The domain was deprecated using
+     * registering types and creating new workflow executions. </li>
+     * <li><b>DEPRECATED</b>: The domain was deprecated using
      * <a>DeprecateDomain</a>, but is still in use. You should not create new
      * workflow executions in this domain. </li> </ul>
      * <p>
@@ -155,10 +155,10 @@ public class DomainInfo implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
-     * @param status The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * @param status The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      *         properly registered and available. You can use this domain for
-     *         registering types and creating new workflow executions. </li> <li>
-     *         <b>DEPRECATED</b>: The domain was deprecated using
+     *         registering types and creating new workflow executions. </li>
+     *         <li><b>DEPRECATED</b>: The domain was deprecated using
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *
@@ -173,20 +173,20 @@ public class DomainInfo implements Serializable {
     }
 
     /**
-     * The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      * properly registered and available. You can use this domain for
-     * registering types and creating new workflow executions. </li> <li>
-     * <b>DEPRECATED</b>: The domain was deprecated using
+     * registering types and creating new workflow executions. </li>
+     * <li><b>DEPRECATED</b>: The domain was deprecated using
      * <a>DeprecateDomain</a>, but is still in use. You should not create new
      * workflow executions in this domain. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
-     * @param status The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * @param status The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      *         properly registered and available. You can use this domain for
-     *         registering types and creating new workflow executions. </li> <li>
-     *         <b>DEPRECATED</b>: The domain was deprecated using
+     *         registering types and creating new workflow executions. </li>
+     *         <li><b>DEPRECATED</b>: The domain was deprecated using
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *
@@ -197,10 +197,10 @@ public class DomainInfo implements Serializable {
     }
     
     /**
-     * The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      * properly registered and available. You can use this domain for
-     * registering types and creating new workflow executions. </li> <li>
-     * <b>DEPRECATED</b>: The domain was deprecated using
+     * registering types and creating new workflow executions. </li>
+     * <li><b>DEPRECATED</b>: The domain was deprecated using
      * <a>DeprecateDomain</a>, but is still in use. You should not create new
      * workflow executions in this domain. </li> </ul>
      * <p>
@@ -209,10 +209,10 @@ public class DomainInfo implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
-     * @param status The status of the domain: <ul> <li> <b>REGISTERED</b>: The domain is
+     * @param status The status of the domain: <ul> <li><b>REGISTERED</b>: The domain is
      *         properly registered and available. You can use this domain for
-     *         registering types and creating new workflow executions. </li> <li>
-     *         <b>DEPRECATED</b>: The domain was deprecated using
+     *         registering types and creating new workflow executions. </li>
+     *         <li><b>DEPRECATED</b>: The domain was deprecated using
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *

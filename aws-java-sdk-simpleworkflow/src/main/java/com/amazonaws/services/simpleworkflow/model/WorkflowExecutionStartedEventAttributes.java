@@ -32,10 +32,9 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
     private String input;
 
     /**
-     * The maximum duration for this workflow execution. <p>The valid values
-     * are integers greater than or equal to <code>0</code>. An integer value
-     * can be used to specify the duration in seconds while <code>NONE</code>
-     * can be used to specify unlimited duration.
+     * The maximum duration for this workflow execution. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -44,9 +43,8 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
 
     /**
      * The maximum duration of decision tasks for this workflow type. <p>The
-     * valid values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -57,13 +55,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. The supported child policies are: <ul>
+     * expired timeout. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
@@ -90,6 +88,8 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * <b>Length: </b>0 - 5<br/>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagList;
+
+    private String taskPriority;
 
     /**
      * If this workflow execution was started due to a
@@ -162,56 +162,50 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
     }
 
     /**
-     * The maximum duration for this workflow execution. <p>The valid values
-     * are integers greater than or equal to <code>0</code>. An integer value
-     * can be used to specify the duration in seconds while <code>NONE</code>
-     * can be used to specify unlimited duration.
+     * The maximum duration for this workflow execution. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @return The maximum duration for this workflow execution. <p>The valid values
-     *         are integers greater than or equal to <code>0</code>. An integer value
-     *         can be used to specify the duration in seconds while <code>NONE</code>
-     *         can be used to specify unlimited duration.
+     * @return The maximum duration for this workflow execution. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      */
     public String getExecutionStartToCloseTimeout() {
         return executionStartToCloseTimeout;
     }
     
     /**
-     * The maximum duration for this workflow execution. <p>The valid values
-     * are integers greater than or equal to <code>0</code>. An integer value
-     * can be used to specify the duration in seconds while <code>NONE</code>
-     * can be used to specify unlimited duration.
+     * The maximum duration for this workflow execution. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param executionStartToCloseTimeout The maximum duration for this workflow execution. <p>The valid values
-     *         are integers greater than or equal to <code>0</code>. An integer value
-     *         can be used to specify the duration in seconds while <code>NONE</code>
-     *         can be used to specify unlimited duration.
+     * @param executionStartToCloseTimeout The maximum duration for this workflow execution. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      */
     public void setExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
     }
     
     /**
-     * The maximum duration for this workflow execution. <p>The valid values
-     * are integers greater than or equal to <code>0</code>. An integer value
-     * can be used to specify the duration in seconds while <code>NONE</code>
-     * can be used to specify unlimited duration.
+     * The maximum duration for this workflow execution. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
-     * @param executionStartToCloseTimeout The maximum duration for this workflow execution. <p>The valid values
-     *         are integers greater than or equal to <code>0</code>. An integer value
-     *         can be used to specify the duration in seconds while <code>NONE</code>
-     *         can be used to specify unlimited duration.
+     * @param executionStartToCloseTimeout The maximum duration for this workflow execution. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -223,17 +217,15 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
 
     /**
      * The maximum duration of decision tasks for this workflow type. <p>The
-     * valid values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
      * @return The maximum duration of decision tasks for this workflow type. <p>The
-     *         valid values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public String getTaskStartToCloseTimeout() {
         return taskStartToCloseTimeout;
@@ -241,17 +233,15 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
     
     /**
      * The maximum duration of decision tasks for this workflow type. <p>The
-     * valid values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
      * @param taskStartToCloseTimeout The maximum duration of decision tasks for this workflow type. <p>The
-     *         valid values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public void setTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -259,9 +249,8 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
     
     /**
      * The maximum duration of decision tasks for this workflow type. <p>The
-     * valid values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -269,9 +258,8 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * <b>Length: </b>0 - 8<br/>
      *
      * @param taskStartToCloseTimeout The maximum duration of decision tasks for this workflow type. <p>The
-     *         valid values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -285,13 +273,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. The supported child policies are: <ul>
+     * expired timeout. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
@@ -300,13 +288,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * @return The policy to use for the child workflow executions if this workflow
      *         execution is terminated, by calling the
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. The supported child policies are: <ul>
+     *         expired timeout. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
      * @see ChildPolicy
@@ -319,13 +307,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. The supported child policies are: <ul>
+     * expired timeout. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
@@ -334,13 +322,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * @param childPolicy The policy to use for the child workflow executions if this workflow
      *         execution is terminated, by calling the
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. The supported child policies are: <ul>
+     *         expired timeout. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
      * @see ChildPolicy
@@ -353,13 +341,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. The supported child policies are: <ul>
+     * expired timeout. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -370,13 +358,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * @param childPolicy The policy to use for the child workflow executions if this workflow
      *         execution is terminated, by calling the
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. The supported child policies are: <ul>
+     *         expired timeout. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -393,13 +381,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. The supported child policies are: <ul>
+     * expired timeout. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
@@ -408,13 +396,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * @param childPolicy The policy to use for the child workflow executions if this workflow
      *         execution is terminated, by calling the
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. The supported child policies are: <ul>
+     *         expired timeout. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
      * @see ChildPolicy
@@ -427,13 +415,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     * expired timeout. The supported child policies are: <ul>
+     * expired timeout. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -444,13 +432,13 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * @param childPolicy The policy to use for the child workflow executions if this workflow
      *         execution is terminated, by calling the
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
-     *         expired timeout. The supported child policies are: <ul>
+     *         expired timeout. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -616,6 +604,48 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
             this.tagList = tagListCopy;
         }
 
+        return this;
+    }
+
+    /**
+     * Returns the value of the TaskPriority property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @return The value of the TaskPriority property for this object.
+     */
+    public String getTaskPriority() {
+        return taskPriority;
+    }
+    
+    /**
+     * Sets the value of the TaskPriority property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority The new value for the TaskPriority property for this object.
+     */
+    public void setTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+    
+    /**
+     * Sets the value of the TaskPriority property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority The new value for the TaskPriority property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public WorkflowExecutionStartedEventAttributes withTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
         return this;
     }
 
@@ -806,6 +836,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
         if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
         if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
+        if (getTaskPriority() != null) sb.append("TaskPriority: " + getTaskPriority() + ",");
         if (getContinuedExecutionRunId() != null) sb.append("ContinuedExecutionRunId: " + getContinuedExecutionRunId() + ",");
         if (getParentWorkflowExecution() != null) sb.append("ParentWorkflowExecution: " + getParentWorkflowExecution() + ",");
         if (getParentInitiatedEventId() != null) sb.append("ParentInitiatedEventId: " + getParentInitiatedEventId() );
@@ -825,6 +856,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode()); 
         hashCode = prime * hashCode + ((getWorkflowType() == null) ? 0 : getWorkflowType().hashCode()); 
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode()); 
+        hashCode = prime * hashCode + ((getTaskPriority() == null) ? 0 : getTaskPriority().hashCode()); 
         hashCode = prime * hashCode + ((getContinuedExecutionRunId() == null) ? 0 : getContinuedExecutionRunId().hashCode()); 
         hashCode = prime * hashCode + ((getParentWorkflowExecution() == null) ? 0 : getParentWorkflowExecution().hashCode()); 
         hashCode = prime * hashCode + ((getParentInitiatedEventId() == null) ? 0 : getParentInitiatedEventId().hashCode()); 
@@ -853,6 +885,8 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         if (other.getWorkflowType() != null && other.getWorkflowType().equals(this.getWorkflowType()) == false) return false; 
         if (other.getTagList() == null ^ this.getTagList() == null) return false;
         if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false) return false; 
+        if (other.getTaskPriority() == null ^ this.getTaskPriority() == null) return false;
+        if (other.getTaskPriority() != null && other.getTaskPriority().equals(this.getTaskPriority()) == false) return false; 
         if (other.getContinuedExecutionRunId() == null ^ this.getContinuedExecutionRunId() == null) return false;
         if (other.getContinuedExecutionRunId() != null && other.getContinuedExecutionRunId().equals(this.getContinuedExecutionRunId()) == false) return false; 
         if (other.getParentWorkflowExecution() == null ^ this.getParentWorkflowExecution() == null) return false;

@@ -47,13 +47,13 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      * to the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
-     * problems by tracing back the cause of events.
+     * problems by tracing back the chain of events leading up to this event.
      */
     private Long decisionTaskCompletedEventId;
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -161,13 +161,13 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      * to the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
-     * problems by tracing back the cause of events.
+     * problems by tracing back the chain of events leading up to this event.
      *
      * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
      *         cancellation request. This information can be useful for diagnosing
-     *         problems by tracing back the cause of events.
+     *         problems by tracing back the chain of events leading up to this event.
      */
     public Long getDecisionTaskCompletedEventId() {
         return decisionTaskCompletedEventId;
@@ -178,13 +178,13 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      * to the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
-     * problems by tracing back the cause of events.
+     * problems by tracing back the chain of events leading up to this event.
      *
      * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
      *         cancellation request. This information can be useful for diagnosing
-     *         problems by tracing back the cause of events.
+     *         problems by tracing back the chain of events leading up to this event.
      */
     public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -195,7 +195,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      * to the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
-     * problems by tracing back the cause of events.
+     * problems by tracing back the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -203,7 +203,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      *         to the decision task that resulted in the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
      *         cancellation request. This information can be useful for diagnosing
-     *         problems by tracing back the cause of events.
+     *         problems by tracing back the chain of events leading up to this event.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -214,44 +214,44 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
     }
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @return <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      */
     public String getControl() {
         return control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      */
     public void setControl(String control) {
         this.control = control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

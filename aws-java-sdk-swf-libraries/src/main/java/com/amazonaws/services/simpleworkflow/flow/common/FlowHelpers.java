@@ -61,4 +61,20 @@ public final class FlowHelpers {
         return args;
     }
 
+    public static String taskPriorityToString(Integer taskPriority) {
+        if (taskPriority == null) {
+            return null;
+        }
+        return String.valueOf(taskPriority);
+    }
+
+    public static int taskPriorityToInt(String taskPriority) {
+        if (taskPriority == null) {
+            return FlowConstants.DEFAULT_TASK_PRIORITY;
+        }
+        else {
+            return Integer.parseInt(taskPriority);
+        }
+    }
+    
 }

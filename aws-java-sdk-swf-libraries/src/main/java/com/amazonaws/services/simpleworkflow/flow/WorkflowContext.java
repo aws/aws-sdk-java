@@ -46,4 +46,6 @@ public interface WorkflowContext {
 
     String getTaskList();
     
+    int getTaskPriority();
+    
 }

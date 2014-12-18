@@ -34,6 +34,8 @@ public class StartWorkflowExecutionParameters {
     
     private java.util.List<String> tagList;
     
+    private int taskPriority;
+    
     /**
      * Returns the value of the WorkflowId property for this object.
      * <p>
@@ -317,6 +319,19 @@ public class StartWorkflowExecutionParameters {
         return this;
     }
     
+    public int getTaskPriority() {
+        return taskPriority;
+    }
+
+    public void setTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+
+    public StartWorkflowExecutionParameters withTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+    
     public StartWorkflowExecutionParameters createStartWorkflowExecutionParametersFromOptions(StartWorkflowOptions options, 
     		StartWorkflowOptions optionsOverride) {
     	StartWorkflowExecutionParameters parameters = this.clone();
@@ -341,6 +356,11 @@ public class StartWorkflowExecutionParameters {
     		if (taskList != null && !taskList.isEmpty()) { 
     			parameters.setTaskList(taskList);
     		}
+    		
+            Integer taskPriority = options.getTaskPriority();
+            if (taskPriority != null) {
+                parameters.setTaskPriority(taskPriority);
+            }
     	}
     	
     	if (optionsOverride != null) {
@@ -363,6 +383,11 @@ public class StartWorkflowExecutionParameters {
     		if (taskList != null && !taskList.isEmpty()) { 
     			parameters.setTaskList(taskList);
     		}
+    		
+            Integer taskPriority = optionsOverride.getTaskPriority();
+            if (taskPriority != null) {
+                parameters.setTaskPriority(taskPriority);
+            }
     	}
     	
     	return parameters;
@@ -386,6 +411,7 @@ public class StartWorkflowExecutionParameters {
         sb.append("Input: " + input + ", ");
         sb.append("StartToCloseTimeout: " + executionStartToCloseTimeoutSeconds + ", ");
         sb.append("TagList: " + tagList + ", ");
+        sb.append("TaskPriority: " + taskPriority);
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +425,7 @@ public class StartWorkflowExecutionParameters {
         result.setTaskList(taskList);
         result.setWorkflowId(workflowId);
         result.setWorkflowType(workflowType);
+        result.setTaskPriority(taskPriority);
         return result;
     }
 
