@@ -90,6 +90,9 @@ public class RegisterWorkflowTypeRequestMarshaller implements Marshaller<Request
                 }
                 jsonWriter.endObject();
             }
+            if (registerWorkflowTypeRequest.getDefaultTaskPriority() != null) {
+                jsonWriter.key("defaultTaskPriority").value(registerWorkflowTypeRequest.getDefaultTaskPriority());
+            }
             if (registerWorkflowTypeRequest.getDefaultChildPolicy() != null) {
                 jsonWriter.key("defaultChildPolicy").value(registerWorkflowTypeRequest.getDefaultChildPolicy());
             }

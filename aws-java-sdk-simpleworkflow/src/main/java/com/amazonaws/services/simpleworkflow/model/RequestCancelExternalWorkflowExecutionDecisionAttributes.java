@@ -26,14 +26,14 @@ import java.io.Serializable;
  * </p>
  * <p>
  * You can use IAM policies to control this decision's access to Amazon
- * SWF in much the same way as for the regular API:
+ * SWF resources as follows:
  * </p>
  * 
  * <ul>
  * <li>Use a <code>Resource</code> element with the domain name to limit
- * the decision to only specified domains.</li>
+ * the action to only specified domains.</li>
  * <li>Use an <code>Action</code> element to allow or deny permission to
- * specify this decision.</li>
+ * call this action.</li>
  * <li>You cannot use an IAM policy to constrain this action's
  * parameters.</li>
  * 
@@ -51,8 +51,8 @@ import java.io.Serializable;
 public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements Serializable {
 
     /**
-     * The <code>workflowId</code> of the external workflow execution to
-     * cancel. This field is required.
+     * <b>Required.</b> The <code>workflowId</code> of the external workflow
+     * execution to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -68,8 +68,8 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
     private String runId;
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -77,44 +77,44 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
     private String control;
 
     /**
-     * The <code>workflowId</code> of the external workflow execution to
-     * cancel. This field is required.
+     * <b>Required.</b> The <code>workflowId</code> of the external workflow
+     * execution to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The <code>workflowId</code> of the external workflow execution to
-     *         cancel. This field is required.
+     * @return <b>Required.</b> The <code>workflowId</code> of the external workflow
+     *         execution to cancel.
      */
     public String getWorkflowId() {
         return workflowId;
     }
     
     /**
-     * The <code>workflowId</code> of the external workflow execution to
-     * cancel. This field is required.
+     * <b>Required.</b> The <code>workflowId</code> of the external workflow
+     * execution to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param workflowId The <code>workflowId</code> of the external workflow execution to
-     *         cancel. This field is required.
+     * @param workflowId <b>Required.</b> The <code>workflowId</code> of the external workflow
+     *         execution to cancel.
      */
     public void setWorkflowId(String workflowId) {
         this.workflowId = workflowId;
     }
     
     /**
-     * The <code>workflowId</code> of the external workflow execution to
-     * cancel. This field is required.
+     * <b>Required.</b> The <code>workflowId</code> of the external workflow
+     * execution to cancel.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param workflowId The <code>workflowId</code> of the external workflow execution to
-     *         cancel. This field is required.
+     * @param workflowId <b>Required.</b> The <code>workflowId</code> of the external workflow
+     *         execution to cancel.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -167,44 +167,44 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
     }
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @return <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      */
     public String getControl() {
         return control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      */
     public void setControl(String control) {
         this.control = control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

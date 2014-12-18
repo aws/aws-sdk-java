@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * domain that meet the specified filtering criteria.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
+ * <b>NOTE:</b>This operation is eventually consistent. The results are
  * best effort and may not exactly reflect recent updates and changes.
  * </p>
  * <p>
@@ -44,12 +44,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <li>Constrain the following parameters by using a
  * <code>Condition</code> element with the appropriate keys.
  * <ul>
- * <li> <code>tag</code> : String constraint. The key is
+ * <li> <code>tagFilter.tag</code> : String constraint. The key is
  * <code>swf:tagFilter.tag</code> .</li>
- * <li> <code>typeFilter.name</code> : String constraint. String
- * constraint. The key is <code>swf:typeFilter.name</code> .</li>
- * <li> <code>typeFilter.version</code> : String constraint. String
- * constraint. The key is <code>swf:typeFilter.version</code> .</li>
+ * <li> <code>typeFilter.name</code> : String constraint. The key is
+ * <code>swf:typeFilter.name</code> .</li>
+ * <li> <code>typeFilter.version</code> : String constraint. The key is
+ * <code>swf:typeFilter.version</code> .</li>
  * 
  * </ul>
  * </li>
@@ -58,9 +58,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the caller does not have sufficient permissions to invoke the
  * action, or the parameter values fall outside the specified
- * constraints, the action fails by throwing
- * <code>OperationNotPermitted</code> . For details and example IAM
- * policies, see
+ * constraints, the action fails. The associated event attribute's
+ * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+ * details and example IAM policies, see
  * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
  * .
  * </p>

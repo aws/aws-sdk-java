@@ -28,6 +28,8 @@ public class ActivityTypeRegistrationOptions {
     
 	private Long defaultTaskStartToCloseTimeoutSeconds;
 	
+	private Integer defaultTaskPriority;
+	
 	public String getDefaultTaskList() {
         return defaultTaskList;
     }
@@ -76,6 +78,14 @@ public class ActivityTypeRegistrationOptions {
         this.defaultTaskStartToCloseTimeoutSeconds = defaultTaskStartToCloseTimeoutSeconds;
     }
     
+    public Integer getDefaultTaskPriority() {
+        return defaultTaskPriority;
+    }
+
+    public void setDefaultTaskPriority(Integer defaultTaskPriority) {
+        this.defaultTaskPriority = defaultTaskPriority;
+    }
+
     @Override
     public String toString() {
         return "ActivityTypeRegistrationOptions [defaultTaskList=" + ((defaultTaskList != null) ? defaultTaskList.toString() : "null") 
@@ -84,6 +94,7 @@ public class ActivityTypeRegistrationOptions {
         + ", defaultTaskScheduleToCloseTimeoutSeconds=" + defaultTaskScheduleToCloseTimeoutSeconds
         + ", defaultTaskScheduleToStartTimeoutSeconds=" + defaultTaskScheduleToStartTimeoutSeconds
         + ", defaultTaskStartToCloseTimeoutSeconds=" + defaultTaskStartToCloseTimeoutSeconds
+        + ", defaultTaskPriority=" + defaultTaskPriority
         + "]";
     }
 

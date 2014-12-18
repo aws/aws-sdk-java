@@ -22,18 +22,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest) PollForActivityTask operation}.
  * <p>
  * Used by workers to get an ActivityTask from the specified activity
- * <code>taskList</code> .
- * This initiates a long poll, where the service holds the HTTP
- * connection open and responds as soon as a task becomes available. The
- * maximum time the service holds on to the request before responding is
- * 60 seconds. If no task is available within 60 seconds, the poll will
- * return an empty result. An empty result, in this context, means that
- * an ActivityTask is returned, but that the value of taskToken is an
- * empty string. If a task is returned, the worker should use its type to
- * identify and process it correctly.
+ * <code>taskList</code> . This initiates a long poll, where the service
+ * holds the HTTP connection open and responds as soon as a task becomes
+ * available. The maximum time the service holds on to the request before
+ * responding is 60 seconds. If no task is available within 60 seconds,
+ * the poll will return an empty result. An empty result, in this
+ * context, means that an ActivityTask is returned, but that the value of
+ * taskToken is an empty string. If a task is returned, the worker should
+ * use its type to identify and process it correctly.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Workers should set their client side socket timeout
+ * <b>IMPORTANT:</b>Workers should set their client side socket timeout
  * to at least 70 seconds (10 seconds higher than the maximum time
  * service may hold the poll request).
  * </p>
@@ -50,17 +49,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the action to only specified domains.</li>
  * <li>Use an <code>Action</code> element to allow or deny permission to
  * call this action.</li>
- * <li>Use a <b>Condition</b> element with the
- * <code>swf:taskList.name</code> key to allow the action to access only
- * certain task lists.</li>
+ * <li>Constrain the <code>taskList.name</code> parameter by using a
+ * <b>Condition</b> element with the <code>swf:taskList.name</code> key
+ * to allow the action to access only certain task lists.</li>
  * 
  * </ul>
  * <p>
  * If the caller does not have sufficient permissions to invoke the
  * action, or the parameter values fall outside the specified
- * constraints, the action fails by throwing
- * <code>OperationNotPermitted</code> . For details and example IAM
- * policies, see
+ * constraints, the action fails. The associated event attribute's
+ * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+ * details and example IAM policies, see
  * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
  * .
  * </p>
@@ -87,7 +86,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
     private TaskList taskList;
 
     /**
-     * Identity of the worker making the request, which is recorded in the
+     * Identity of the worker making the request, recorded in the
      * <code>ActivityTaskStarted</code> event in the workflow history. This
      * enables diagnostic tracing when problems arise. The form of this
      * identity is user defined.
@@ -197,7 +196,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Identity of the worker making the request, which is recorded in the
+     * Identity of the worker making the request, recorded in the
      * <code>ActivityTaskStarted</code> event in the workflow history. This
      * enables diagnostic tracing when problems arise. The form of this
      * identity is user defined.
@@ -205,7 +204,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @return Identity of the worker making the request, which is recorded in the
+     * @return Identity of the worker making the request, recorded in the
      *         <code>ActivityTaskStarted</code> event in the workflow history. This
      *         enables diagnostic tracing when problems arise. The form of this
      *         identity is user defined.
@@ -215,7 +214,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * Identity of the worker making the request, which is recorded in the
+     * Identity of the worker making the request, recorded in the
      * <code>ActivityTaskStarted</code> event in the workflow history. This
      * enables diagnostic tracing when problems arise. The form of this
      * identity is user defined.
@@ -223,7 +222,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @param identity Identity of the worker making the request, which is recorded in the
+     * @param identity Identity of the worker making the request, recorded in the
      *         <code>ActivityTaskStarted</code> event in the workflow history. This
      *         enables diagnostic tracing when problems arise. The form of this
      *         identity is user defined.
@@ -233,7 +232,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * Identity of the worker making the request, which is recorded in the
+     * Identity of the worker making the request, recorded in the
      * <code>ActivityTaskStarted</code> event in the workflow history. This
      * enables diagnostic tracing when problems arise. The form of this
      * identity is user defined.
@@ -243,7 +242,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @param identity Identity of the worker making the request, which is recorded in the
+     * @param identity Identity of the worker making the request, recorded in the
      *         <code>ActivityTaskStarted</code> event in the workflow history. This
      *         enables diagnostic tracing when problems arise. The form of this
      *         identity is user defined.

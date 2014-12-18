@@ -32,8 +32,8 @@ public class TimerStartedEventAttributes implements Serializable {
     private String timerId;
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -42,8 +42,7 @@ public class TimerStartedEventAttributes implements Serializable {
 
     /**
      * The duration of time after which the timer will fire. <p>The duration
-     * is specified in seconds. The valid values are integers greater than or
-     * equal to 0.
+     * is specified in seconds; an integer greater than or equal to 0.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
@@ -54,7 +53,8 @@ public class TimerStartedEventAttributes implements Serializable {
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
-     * diagnosing problems by tracing back the cause of events.
+     * diagnosing problems by tracing back the chain of events leading up to
+     * this event.
      */
     private Long decisionTaskCompletedEventId;
 
@@ -101,44 +101,44 @@ public class TimerStartedEventAttributes implements Serializable {
     }
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @return <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      */
     public String getControl() {
         return control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      */
     public void setControl(String control) {
         this.control = control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -150,15 +150,13 @@ public class TimerStartedEventAttributes implements Serializable {
 
     /**
      * The duration of time after which the timer will fire. <p>The duration
-     * is specified in seconds. The valid values are integers greater than or
-     * equal to 0.
+     * is specified in seconds; an integer greater than or equal to 0.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
      *
      * @return The duration of time after which the timer will fire. <p>The duration
-     *         is specified in seconds. The valid values are integers greater than or
-     *         equal to 0.
+     *         is specified in seconds; an integer greater than or equal to 0.
      */
     public String getStartToFireTimeout() {
         return startToFireTimeout;
@@ -166,15 +164,13 @@ public class TimerStartedEventAttributes implements Serializable {
     
     /**
      * The duration of time after which the timer will fire. <p>The duration
-     * is specified in seconds. The valid values are integers greater than or
-     * equal to 0.
+     * is specified in seconds; an integer greater than or equal to 0.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
      *
      * @param startToFireTimeout The duration of time after which the timer will fire. <p>The duration
-     *         is specified in seconds. The valid values are integers greater than or
-     *         equal to 0.
+     *         is specified in seconds; an integer greater than or equal to 0.
      */
     public void setStartToFireTimeout(String startToFireTimeout) {
         this.startToFireTimeout = startToFireTimeout;
@@ -182,8 +178,7 @@ public class TimerStartedEventAttributes implements Serializable {
     
     /**
      * The duration of time after which the timer will fire. <p>The duration
-     * is specified in seconds. The valid values are integers greater than or
-     * equal to 0.
+     * is specified in seconds; an integer greater than or equal to 0.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -191,8 +186,7 @@ public class TimerStartedEventAttributes implements Serializable {
      * <b>Length: </b>1 - 8<br/>
      *
      * @param startToFireTimeout The duration of time after which the timer will fire. <p>The duration
-     *         is specified in seconds. The valid values are integers greater than or
-     *         equal to 0.
+     *         is specified in seconds; an integer greater than or equal to 0.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -206,12 +200,14 @@ public class TimerStartedEventAttributes implements Serializable {
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
-     * diagnosing problems by tracing back the cause of events.
+     * diagnosing problems by tracing back the chain of events leading up to
+     * this event.
      *
      * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
-     *         diagnosing problems by tracing back the cause of events.
+     *         diagnosing problems by tracing back the chain of events leading up to
+     *         this event.
      */
     public Long getDecisionTaskCompletedEventId() {
         return decisionTaskCompletedEventId;
@@ -221,12 +217,14 @@ public class TimerStartedEventAttributes implements Serializable {
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
-     * diagnosing problems by tracing back the cause of events.
+     * diagnosing problems by tracing back the chain of events leading up to
+     * this event.
      *
      * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
-     *         diagnosing problems by tracing back the cause of events.
+     *         diagnosing problems by tracing back the chain of events leading up to
+     *         this event.
      */
     public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -236,14 +234,16 @@ public class TimerStartedEventAttributes implements Serializable {
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
-     * diagnosing problems by tracing back the cause of events.
+     * diagnosing problems by tracing back the chain of events leading up to
+     * this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
-     *         diagnosing problems by tracing back the cause of events.
+     *         diagnosing problems by tracing back the chain of events leading up to
+     *         this event.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

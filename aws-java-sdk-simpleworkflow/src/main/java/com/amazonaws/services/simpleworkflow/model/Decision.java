@@ -23,50 +23,50 @@ import java.io.Serializable;
  * </p>
  * 
  * <ul>
- * <li> <b>CancelTimer</b> cancels a previously started timer and
+ * <li> <b>CancelTimer</b> : cancels a previously started timer and
  * records a <code>TimerCanceled</code> event in the history.</li>
- * <li> <b>CancelWorkflowExecution</b> closes the workflow execution and
- * records a <code>WorkflowExecutionCanceled</code> event in the
+ * <li> <b>CancelWorkflowExecution</b> : closes the workflow execution
+ * and records a <code>WorkflowExecutionCanceled</code> event in the
  * history.</li>
- * <li> <b>CompleteWorkflowExecution</b> closes the workflow execution
+ * <li> <b>CompleteWorkflowExecution</b> : closes the workflow execution
  * and records a <code>WorkflowExecutionCompleted</code> event in the
  * history .</li>
- * <li> <b>ContinueAsNewWorkflowExecution</b> closes the workflow
+ * <li> <b>ContinueAsNewWorkflowExecution</b> : closes the workflow
  * execution and starts a new workflow execution of the same type using
  * the same workflow id and a unique run Id. A
  * <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the
  * history.</li>
- * <li> <b>FailWorkflowExecution</b> closes the workflow execution and
+ * <li> <b>FailWorkflowExecution</b> : closes the workflow execution and
  * records a <code>WorkflowExecutionFailed</code> event in the
  * history.</li>
- * <li> <b>RecordMarker</b> records a <code>MarkerRecorded</code> event
- * in the history. Markers can be used for adding custom information in
- * the history for instance to let deciders know that they do not need to
- * look at the history beyond the marker event.</li>
- * <li> <b>RequestCancelActivityTask</b> attempts to cancel a previously
- * scheduled activity task. If the activity task was scheduled but has
- * not been assigned to a worker, then it will be canceled. If the
- * activity task was already assigned to a worker, then the worker will
- * be informed that cancellation has been requested in the response to
- * RecordActivityTaskHeartbeat.</li>
- * <li> <b>RequestCancelExternalWorkflowExecution</b> requests that a
+ * <li> <b>RecordMarker</b> : records a <code>MarkerRecorded</code>
+ * event in the history. Markers can be used for adding custom
+ * information in the history for instance to let deciders know that they
+ * do not need to look at the history beyond the marker event.</li>
+ * <li> <b>RequestCancelActivityTask</b> : attempts to cancel a
+ * previously scheduled activity task. If the activity task was scheduled
+ * but has not been assigned to a worker, then it will be canceled. If
+ * the activity task was already assigned to a worker, then the worker
+ * will be informed that cancellation has been requested in the response
+ * to RecordActivityTaskHeartbeat.</li>
+ * <li> <b>RequestCancelExternalWorkflowExecution</b> : requests that a
  * request be made to cancel the specified external workflow execution
  * and records a
  * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in
  * the history.</li>
- * <li> <b>ScheduleActivityTask</b> schedules an activity task.</li>
- * <li> <b>SignalExternalWorkflowExecution</b> requests a signal to be
+ * <li> <b>ScheduleActivityTask</b> : schedules an activity task.</li>
+ * <li> <b>SignalExternalWorkflowExecution</b> : requests a signal to be
  * delivered to the specified external workflow execution and records a
  * <code>SignalExternalWorkflowExecutionInitiated</code> event in the
  * history.</li>
- * <li> <b>StartChildWorkflowExecution</b> requests that a child
+ * <li> <b>StartChildWorkflowExecution</b> : requests that a child
  * workflow execution be started and records a
  * <code>StartChildWorkflowExecutionInitiated</code> event in the
  * history. The child workflow execution is a separate workflow execution
  * with its own history.</li>
- * <li> <b>StartTimer</b> starts a timer for this workflow execution and
- * records a <code>TimerStarted</code> event in the history. This timer
- * will fire after the specified delay and record a
+ * <li> <b>StartTimer</b> : starts a timer for this workflow execution
+ * and records a <code>TimerStarted</code> event in the history. This
+ * timer will fire after the specified delay and record a
  * <code>TimerFired</code> event.</li>
  * 
  * </ul>
@@ -102,48 +102,52 @@ import java.io.Serializable;
  * One of the following events might be added to the history to indicate
  * an error. The event attribute's <b>cause</b> parameter indicates the
  * cause. If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
- * failed because it lacked sufficient permissions.
+ * failed because it lacked sufficient permissions. For details and
+ * example IAM policies, see
+ * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
+ * .
  * </p>
  * 
  * <ul>
- * <li> <b>ScheduleActivityTaskFailed</b> a ScheduleActivityTask
+ * <li> <b>ScheduleActivityTaskFailed</b> : a ScheduleActivityTask
  * decision failed. This could happen if the activity type specified in
  * the decision is not registered, is in a deprecated state, or the
  * decision is not properly configured.</li>
- * <li> <b>RequestCancelActivityTaskFailed</b> a
+ * <li> <b>RequestCancelActivityTaskFailed</b> : a
  * RequestCancelActivityTask decision failed. This could happen if there
  * is no open activity task with the specified activityId.</li>
- * <li> <b>StartTimerFailed</b> a StartTimer decision failed. This could
- * happen if there is another open timer with the same timerId.</li>
- * <li> <b>CancelTimerFailed</b> a CancelTimer decision failed. This
+ * <li> <b>StartTimerFailed</b> : a StartTimer decision failed. This
+ * could happen if there is another open timer with the same
+ * timerId.</li>
+ * <li> <b>CancelTimerFailed</b> : a CancelTimer decision failed. This
  * could happen if there is no open timer with the specified
  * timerId.</li>
- * <li> <b>StartChildWorkflowExecutionFailed</b> a
+ * <li> <b>StartChildWorkflowExecutionFailed</b> : a
  * StartChildWorkflowExecution decision failed. This could happen if the
  * workflow type specified is not registered, is deprecated, or the
  * decision is not properly configured.</li>
- * <li> <b>SignalExternalWorkflowExecutionFailed</b> a
+ * <li> <b>SignalExternalWorkflowExecutionFailed</b> : a
  * SignalExternalWorkflowExecution decision failed. This could happen if
- * the <code>workflowID</code> specified in the decision was incorrect.
- * </li>
- * <li> <b>RequestCancelExternalWorkflowExecutionFailed</b> a
+ * the <code>workflowID</code> specified in the decision was
+ * incorrect.</li>
+ * <li> <b>RequestCancelExternalWorkflowExecutionFailed</b> : a
  * RequestCancelExternalWorkflowExecution decision failed. This could
  * happen if the <code>workflowID</code> specified in the decision was
- * incorrect. </li>
- * <li> <b>CancelWorkflowExecutionFailed</b> a CancelWorkflowExecution
+ * incorrect.</li>
+ * <li> <b>CancelWorkflowExecutionFailed</b> : a CancelWorkflowExecution
  * decision failed. This could happen if there is an unhandled decision
- * task pending in the workflow execution. </li>
- * <li> <b>CompleteWorkflowExecutionFailed</b> a
+ * task pending in the workflow execution.</li>
+ * <li> <b>CompleteWorkflowExecutionFailed</b> : a
  * CompleteWorkflowExecution decision failed. This could happen if there
- * is an unhandled decision task pending in the workflow execution. </li>
- * <li> <b>ContinueAsNewWorkflowExecutionFailed</b> a
+ * is an unhandled decision task pending in the workflow execution.</li>
+ * <li> <b>ContinueAsNewWorkflowExecutionFailed</b> : a
  * ContinueAsNewWorkflowExecution decision failed. This could happen if
  * there is an unhandled decision task pending in the workflow execution
  * or the ContinueAsNewWorkflowExecution decision was not configured
- * correctly. </li>
- * <li> <b>FailWorkflowExecutionFailed</b> a FailWorkflowExecution
+ * correctly.</li>
+ * <li> <b>FailWorkflowExecutionFailed</b> : a FailWorkflowExecution
  * decision failed. This could happen if there is an unhandled decision
- * task pending in the workflow execution. </li>
+ * task pending in the workflow execution.</li>
  * 
  * </ul>
  * <p>
@@ -153,7 +157,7 @@ import java.io.Serializable;
  * cause of the error.
  * </p>
  * <p>
- * <b>NOTE:</b> A workflow execution may be closed by the decider by
+ * <b>NOTE:</b>A workflow execution may be closed by the decider by
  * returning one of the following decisions when completing a decision
  * task: CompleteWorkflowExecution, FailWorkflowExecution,
  * CancelWorkflowExecution and ContinueAsNewWorkflowExecution. An
@@ -171,9 +175,9 @@ import java.io.Serializable;
  * <b>How to Code a Decision</b>
  * </p>
  * <p>
- * You code a decision by first setting the decision type field to one
- * of the above decision values, and then set the corresponding
- * attributes field shown below:
+ * You code a decision by first setting the decision type field to one of
+ * the above decision values, and then set the corresponding attributes
+ * field shown below:
  * </p>
  * 
  * <ul>

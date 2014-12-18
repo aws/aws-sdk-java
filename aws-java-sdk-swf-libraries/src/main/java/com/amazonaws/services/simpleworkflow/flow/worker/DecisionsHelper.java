@@ -321,6 +321,7 @@ class DecisionsHelper {
         attributes.setInput(continueParameters.getInput());
         attributes.setExecutionStartToCloseTimeout(FlowHelpers.secondsToDuration(continueParameters.getExecutionStartToCloseTimeoutSeconds()));
         attributes.setTaskStartToCloseTimeout(FlowHelpers.secondsToDuration(continueParameters.getTaskStartToCloseTimeoutSeconds()));
+        attributes.setTaskPriority(FlowHelpers.taskPriorityToString(continueParameters.getTaskPriority()));
         List<String> tagList = continueParameters.getTagList();
         if (tagList != null) {
             attributes.setTagList(tagList);

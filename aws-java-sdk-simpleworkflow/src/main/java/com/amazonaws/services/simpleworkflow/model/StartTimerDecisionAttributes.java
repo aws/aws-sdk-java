@@ -25,14 +25,14 @@ import java.io.Serializable;
  * </p>
  * <p>
  * You can use IAM policies to control this decision's access to Amazon
- * SWF in much the same way as for the regular API:
+ * SWF resources as follows:
  * </p>
  * 
  * <ul>
  * <li>Use a <code>Resource</code> element with the domain name to limit
- * the decision to only specified domains.</li>
+ * the action to only specified domains.</li>
  * <li>Use an <code>Action</code> element to allow or deny permission to
- * specify this decision.</li>
+ * call this action.</li>
  * <li>You cannot use an IAM policy to constrain this action's
  * parameters.</li>
  * 
@@ -50,8 +50,8 @@ import java.io.Serializable;
 public class StartTimerDecisionAttributes implements Serializable {
 
     /**
-     * The unique Id of the timer. This field is required. <p>The specified
-     * string must not start or end with whitespace. It must not contain a
+     * <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      * \u009f). Also, it must not contain the literal string "arn".
@@ -62,8 +62,8 @@ public class StartTimerDecisionAttributes implements Serializable {
     private String timerId;
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
@@ -71,9 +71,9 @@ public class StartTimerDecisionAttributes implements Serializable {
     private String control;
 
     /**
-     * The duration to wait before firing the timer. This field is required.
-     * <p>The duration is specified in seconds. The valid values are integers
-     * greater than or equal to 0.
+     * <b>Required.</b> The duration to wait before firing the timer. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
@@ -81,8 +81,8 @@ public class StartTimerDecisionAttributes implements Serializable {
     private String startToFireTimeout;
 
     /**
-     * The unique Id of the timer. This field is required. <p>The specified
-     * string must not start or end with whitespace. It must not contain a
+     * <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      * \u009f). Also, it must not contain the literal string "arn".
@@ -90,8 +90,8 @@ public class StartTimerDecisionAttributes implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The unique Id of the timer. This field is required. <p>The specified
-     *         string must not start or end with whitespace. It must not contain a
+     * @return <b>Required.</b> The unique Id of the timer. <p>The specified string
+     *         must not start or end with whitespace. It must not contain a
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
@@ -101,8 +101,8 @@ public class StartTimerDecisionAttributes implements Serializable {
     }
     
     /**
-     * The unique Id of the timer. This field is required. <p>The specified
-     * string must not start or end with whitespace. It must not contain a
+     * <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      * \u009f). Also, it must not contain the literal string "arn".
@@ -110,8 +110,8 @@ public class StartTimerDecisionAttributes implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer. This field is required. <p>The specified
-     *         string must not start or end with whitespace. It must not contain a
+     * @param timerId <b>Required.</b> The unique Id of the timer. <p>The specified string
+     *         must not start or end with whitespace. It must not contain a
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
@@ -121,8 +121,8 @@ public class StartTimerDecisionAttributes implements Serializable {
     }
     
     /**
-     * The unique Id of the timer. This field is required. <p>The specified
-     * string must not start or end with whitespace. It must not contain a
+     * <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      * \u009f). Also, it must not contain the literal string "arn".
@@ -132,8 +132,8 @@ public class StartTimerDecisionAttributes implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer. This field is required. <p>The specified
-     *         string must not start or end with whitespace. It must not contain a
+     * @param timerId <b>Required.</b> The unique Id of the timer. <p>The specified string
+     *         must not start or end with whitespace. It must not contain a
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
@@ -147,44 +147,44 @@ public class StartTimerDecisionAttributes implements Serializable {
     }
 
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @return Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @return <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      */
     public String getControl() {
         return control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      */
     public void setControl(String control) {
         this.control = control;
     }
     
     /**
-     * Optional data attached to the event that can be used by the decider in
-     * subsequent workflow tasks.
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32768<br/>
      *
-     * @param control Optional data attached to the event that can be used by the decider in
-     *         subsequent workflow tasks.
+     * @param control <i>Optional.</i> Data attached to the event that can be used by the
+     *         decider in subsequent workflow tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -195,50 +195,50 @@ public class StartTimerDecisionAttributes implements Serializable {
     }
 
     /**
-     * The duration to wait before firing the timer. This field is required.
-     * <p>The duration is specified in seconds. The valid values are integers
-     * greater than or equal to 0.
+     * <b>Required.</b> The duration to wait before firing the timer. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
      *
-     * @return The duration to wait before firing the timer. This field is required.
-     *         <p>The duration is specified in seconds. The valid values are integers
-     *         greater than or equal to 0.
+     * @return <b>Required.</b> The duration to wait before firing the timer. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0.
      */
     public String getStartToFireTimeout() {
         return startToFireTimeout;
     }
     
     /**
-     * The duration to wait before firing the timer. This field is required.
-     * <p>The duration is specified in seconds. The valid values are integers
-     * greater than or equal to 0.
+     * <b>Required.</b> The duration to wait before firing the timer. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
      *
-     * @param startToFireTimeout The duration to wait before firing the timer. This field is required.
-     *         <p>The duration is specified in seconds. The valid values are integers
-     *         greater than or equal to 0.
+     * @param startToFireTimeout <b>Required.</b> The duration to wait before firing the timer. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0.
      */
     public void setStartToFireTimeout(String startToFireTimeout) {
         this.startToFireTimeout = startToFireTimeout;
     }
     
     /**
-     * The duration to wait before firing the timer. This field is required.
-     * <p>The duration is specified in seconds. The valid values are integers
-     * greater than or equal to 0.
+     * <b>Required.</b> The duration to wait before firing the timer. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
      *
-     * @param startToFireTimeout The duration to wait before firing the timer. This field is required.
-     *         <p>The duration is specified in seconds. The valid values are integers
-     *         greater than or equal to 0.
+     * @param startToFireTimeout <b>Required.</b> The duration to wait before firing the timer. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

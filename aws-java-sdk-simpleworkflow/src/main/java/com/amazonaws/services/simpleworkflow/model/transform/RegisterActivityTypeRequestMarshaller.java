@@ -90,6 +90,9 @@ public class RegisterActivityTypeRequestMarshaller implements Marshaller<Request
                 }
                 jsonWriter.endObject();
             }
+            if (registerActivityTypeRequest.getDefaultTaskPriority() != null) {
+                jsonWriter.key("defaultTaskPriority").value(registerActivityTypeRequest.getDefaultTaskPriority());
+            }
             if (registerActivityTypeRequest.getDefaultTaskScheduleToStartTimeout() != null) {
                 jsonWriter.key("defaultTaskScheduleToStartTimeout").value(registerActivityTypeRequest.getDefaultTaskScheduleToStartTimeout());
             }

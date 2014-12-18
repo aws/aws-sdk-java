@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionCompleted</code>
- * event.
+ * Provides details of the <code>WorkflowExecutionCompleted</code> event.
  * </p>
  */
 public class WorkflowExecutionCompletedEventAttributes implements Serializable {
@@ -38,7 +37,7 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable {
      * to the decision task that resulted in the
      * <code>CompleteWorkflowExecution</code> decision to complete this
      * execution. This information can be useful for diagnosing problems by
-     * tracing back the cause of events.
+     * tracing back the chain of events leading up to this event.
      */
     private Long decisionTaskCompletedEventId;
 
@@ -95,13 +94,13 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable {
      * to the decision task that resulted in the
      * <code>CompleteWorkflowExecution</code> decision to complete this
      * execution. This information can be useful for diagnosing problems by
-     * tracing back the cause of events.
+     * tracing back the chain of events leading up to this event.
      *
      * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>CompleteWorkflowExecution</code> decision to complete this
      *         execution. This information can be useful for diagnosing problems by
-     *         tracing back the cause of events.
+     *         tracing back the chain of events leading up to this event.
      */
     public Long getDecisionTaskCompletedEventId() {
         return decisionTaskCompletedEventId;
@@ -112,13 +111,13 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable {
      * to the decision task that resulted in the
      * <code>CompleteWorkflowExecution</code> decision to complete this
      * execution. This information can be useful for diagnosing problems by
-     * tracing back the cause of events.
+     * tracing back the chain of events leading up to this event.
      *
      * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>CompleteWorkflowExecution</code> decision to complete this
      *         execution. This information can be useful for diagnosing problems by
-     *         tracing back the cause of events.
+     *         tracing back the chain of events leading up to this event.
      */
     public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -129,7 +128,7 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable {
      * to the decision task that resulted in the
      * <code>CompleteWorkflowExecution</code> decision to complete this
      * execution. This information can be useful for diagnosing problems by
-     * tracing back the cause of events.
+     * tracing back the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -137,7 +136,7 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable {
      *         to the decision task that resulted in the
      *         <code>CompleteWorkflowExecution</code> decision to complete this
      *         execution. This information can be useful for diagnosing problems by
-     *         tracing back the cause of events.
+     *         tracing back the chain of events leading up to this event.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

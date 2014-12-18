@@ -21,15 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateDomain(DeprecateDomainRequest) DeprecateDomain operation}.
  * <p>
- * Deprecates the specified domain. After a domain has been deprecated
- * it cannot be used to create new workflow executions or register new
+ * Deprecates the specified domain. After a domain has been deprecated it
+ * cannot be used to create new workflow executions or register new
  * types. However, you can still use visibility actions on this domain.
  * Deprecating a domain also deprecates all activity and workflow types
  * registered in the domain. Executions that were started before the
  * domain was deprecated will continue to run.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
+ * <b>NOTE:</b>This operation is eventually consistent. The results are
  * best effort and may not exactly reflect recent updates and changes.
  * </p>
  * <p>
@@ -52,9 +52,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the caller does not have sufficient permissions to invoke the
  * action, or the parameter values fall outside the specified
- * constraints, the action fails by throwing
- * <code>OperationNotPermitted</code> . For details and example IAM
- * policies, see
+ * constraints, the action fails. The associated event attribute's
+ * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+ * details and example IAM policies, see
  * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
  * .
  * </p>

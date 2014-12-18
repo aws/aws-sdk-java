@@ -305,6 +305,8 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
                     taskStartToClose = previousParameters.getTaskStartToCloseTimeoutSeconds();
                 }
                 nextParameters.setTaskStartToCloseTimeoutSeconds(taskStartToClose);
+                int taskPriority = cp.getTaskPriority();
+                nextParameters.setTaskPriority(taskPriority);
                 Settable<StartChildWorkflowReply> reply = new Settable<StartChildWorkflowReply>();
                 startChildWorkflow(nextParameters, reply, result);
             }

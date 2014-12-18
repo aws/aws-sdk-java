@@ -35,6 +35,7 @@ public class TestWorkflowContext implements WorkflowContext {
     private String continuedExecutionRunId;
     private long executionStartToCloseTimeout;
     private String taskList;
+    private int taskPriority;
     private TryCatchFinally rootTryCatch;
     
     public WorkflowExecution getWorkflowExecution() {
@@ -117,4 +118,11 @@ public class TestWorkflowContext implements WorkflowContext {
         this.rootTryCatch = rootTryCatch;
     }
 
+    public int getTaskPriority() {
+        return taskPriority;
+    }
+
+    public void setTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+    }
 }

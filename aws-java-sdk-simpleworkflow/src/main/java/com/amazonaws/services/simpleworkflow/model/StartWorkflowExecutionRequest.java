@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#startWorkflowExecution(StartWorkflowExecutionRequest) StartWorkflowExecution operation}.
  * <p>
- * Starts an execution of the workflow type in the specified domain
- * using the provided <code>workflowId</code> and input data.
+ * Starts an execution of the workflow type in the specified domain using
+ * the provided <code>workflowId</code> and input data.
  * </p>
  * <p>
  * This action returns the newly started workflow execution.
@@ -55,10 +55,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>swf:tagList.member.4</code> .</li>
  * <li> <code>taskList</code> : String constraint. The key is
  * <code>swf:taskList.name</code> .</li>
- * <li> <code>name</code> : String constraint. The key is
+ * <li> <code>workflowType.name</code> : String constraint. The key is
  * <code>swf:workflowType.name</code> .</li>
- * <li> <code>version</code> : String constraint. The key is
- * <code>swf:workflowType.version</code> .</li>
+ * <li> <code>workflowType.version</code> : String constraint. The key
+ * is <code>swf:workflowType.version</code> .</li>
  * 
  * </ul>
  * </li>
@@ -67,9 +67,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the caller does not have sufficient permissions to invoke the
  * action, or the parameter values fall outside the specified
- * constraints, the action fails by throwing
- * <code>OperationNotPermitted</code> . For details and example IAM
- * policies, see
+ * constraints, the action fails. The associated event attribute's
+ * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+ * details and example IAM policies, see
  * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
  * .
  * </p>
@@ -124,6 +124,24 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
     private TaskList taskList;
 
     /**
+     * The task priority to use for this workflow execution. This will
+     * override any default priority that was assigned when the workflow type
+     * was registered. If not set, then the default task priority for the
+     * workflow type will be used. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     */
+    private String taskPriority;
+
+    /**
      * The input for the workflow execution. This is a free form string which
      * should be meaningful to the workflow you are starting. This
      * <code>input</code> is made available to the new workflow execution in
@@ -137,16 +155,16 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
     /**
      * The total duration for this workflow execution. This overrides the
      * defaultExecutionStartToCloseTimeout specified when registering the
-     * workflow type. <p> The duration is specified in seconds. The valid
-     * values are integers greater than or equal to 0. Exceeding this limit
-     * will cause the workflow execution to time out. Unlike some of the
-     * other timeout parameters in Amazon SWF, you cannot specify a value of
-     * "NONE" for this timeout; there is a one-year max limit on the time
-     * that a workflow execution can run. <note> An execution start-to-close
-     * timeout must be specified either through this parameter or as a
-     * default when the workflow type is registered. If neither this
-     * parameter nor a default execution start-to-close timeout is specified,
-     * a fault is returned. </note>
+     * workflow type. <p>The duration is specified in seconds; an integer
+     * greater than or equal to 0. Exceeding this limit will cause the
+     * workflow execution to time out. Unlike some of the other timeout
+     * parameters in Amazon SWF, you cannot specify a value of "NONE" for
+     * this timeout; there is a one-year max limit on the time that a
+     * workflow execution can run. <note> An execution start-to-close timeout
+     * must be specified either through this parameter or as a default when
+     * the workflow type is registered. If neither this parameter nor a
+     * default execution start-to-close timeout is specified, a fault is
+     * returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -168,15 +186,14 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * Specifies the maximum duration of decision tasks for this workflow
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering
-     * the workflow type using <a>RegisterWorkflowType</a>. <p> The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration. <note>A
-     * task start-to-close timeout for this workflow execution must be
-     * specified either as a default for the workflow type or through this
-     * parameter. If neither this parameter is set nor a default task
-     * start-to-close timeout was specified at registration time then a fault
-     * will be returned.</note>
+     * the workflow type using <a>RegisterWorkflowType</a>. <p>The duration
+     * is specified in seconds; an integer greater than or equal to 0. The
+     * value "NONE" can be used to specify unlimited duration. <note>A task
+     * start-to-close timeout for this workflow execution must be specified
+     * either as a default for the workflow type or through this parameter.
+     * If neither this parameter is set nor a default task start-to-close
+     * timeout was specified at registration time then a fault will be
+     * returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -189,13 +206,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
      * expired timeout. This policy overrides the default child policy
      * specified when registering the workflow type using
-     * <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     * <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <note>A child policy for this workflow execution must be specified
      * either as a default for the workflow type or through this parameter.
@@ -472,6 +489,108 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * The task priority to use for this workflow execution. This will
+     * override any default priority that was assigned when the workflow type
+     * was registered. If not set, then the default task priority for the
+     * workflow type will be used. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @return The task priority to use for this workflow execution. This will
+     *         override any default priority that was assigned when the workflow type
+     *         was registered. If not set, then the default task priority for the
+     *         workflow type will be used. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public String getTaskPriority() {
+        return taskPriority;
+    }
+    
+    /**
+     * The task priority to use for this workflow execution. This will
+     * override any default priority that was assigned when the workflow type
+     * was registered. If not set, then the default task priority for the
+     * workflow type will be used. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority The task priority to use for this workflow execution. This will
+     *         override any default priority that was assigned when the workflow type
+     *         was registered. If not set, then the default task priority for the
+     *         workflow type will be used. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public void setTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+    
+    /**
+     * The task priority to use for this workflow execution. This will
+     * override any default priority that was assigned when the workflow type
+     * was registered. If not set, then the default task priority for the
+     * workflow type will be used. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority The task priority to use for this workflow execution. This will
+     *         override any default priority that was assigned when the workflow type
+     *         was registered. If not set, then the default task priority for the
+     *         workflow type will be used. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public StartWorkflowExecutionRequest withTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+
+    /**
      * The input for the workflow execution. This is a free form string which
      * should be meaningful to the workflow you are starting. This
      * <code>input</code> is made available to the new workflow execution in
@@ -534,32 +653,32 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
     /**
      * The total duration for this workflow execution. This overrides the
      * defaultExecutionStartToCloseTimeout specified when registering the
-     * workflow type. <p> The duration is specified in seconds. The valid
-     * values are integers greater than or equal to 0. Exceeding this limit
-     * will cause the workflow execution to time out. Unlike some of the
-     * other timeout parameters in Amazon SWF, you cannot specify a value of
-     * "NONE" for this timeout; there is a one-year max limit on the time
-     * that a workflow execution can run. <note> An execution start-to-close
-     * timeout must be specified either through this parameter or as a
-     * default when the workflow type is registered. If neither this
-     * parameter nor a default execution start-to-close timeout is specified,
-     * a fault is returned. </note>
+     * workflow type. <p>The duration is specified in seconds; an integer
+     * greater than or equal to 0. Exceeding this limit will cause the
+     * workflow execution to time out. Unlike some of the other timeout
+     * parameters in Amazon SWF, you cannot specify a value of "NONE" for
+     * this timeout; there is a one-year max limit on the time that a
+     * workflow execution can run. <note> An execution start-to-close timeout
+     * must be specified either through this parameter or as a default when
+     * the workflow type is registered. If neither this parameter nor a
+     * default execution start-to-close timeout is specified, a fault is
+     * returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
      * @return The total duration for this workflow execution. This overrides the
      *         defaultExecutionStartToCloseTimeout specified when registering the
-     *         workflow type. <p> The duration is specified in seconds. The valid
-     *         values are integers greater than or equal to 0. Exceeding this limit
-     *         will cause the workflow execution to time out. Unlike some of the
-     *         other timeout parameters in Amazon SWF, you cannot specify a value of
-     *         "NONE" for this timeout; there is a one-year max limit on the time
-     *         that a workflow execution can run. <note> An execution start-to-close
-     *         timeout must be specified either through this parameter or as a
-     *         default when the workflow type is registered. If neither this
-     *         parameter nor a default execution start-to-close timeout is specified,
-     *         a fault is returned. </note>
+     *         workflow type. <p>The duration is specified in seconds; an integer
+     *         greater than or equal to 0. Exceeding this limit will cause the
+     *         workflow execution to time out. Unlike some of the other timeout
+     *         parameters in Amazon SWF, you cannot specify a value of "NONE" for
+     *         this timeout; there is a one-year max limit on the time that a
+     *         workflow execution can run. <note> An execution start-to-close timeout
+     *         must be specified either through this parameter or as a default when
+     *         the workflow type is registered. If neither this parameter nor a
+     *         default execution start-to-close timeout is specified, a fault is
+     *         returned.</note>
      */
     public String getExecutionStartToCloseTimeout() {
         return executionStartToCloseTimeout;
@@ -568,32 +687,32 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
     /**
      * The total duration for this workflow execution. This overrides the
      * defaultExecutionStartToCloseTimeout specified when registering the
-     * workflow type. <p> The duration is specified in seconds. The valid
-     * values are integers greater than or equal to 0. Exceeding this limit
-     * will cause the workflow execution to time out. Unlike some of the
-     * other timeout parameters in Amazon SWF, you cannot specify a value of
-     * "NONE" for this timeout; there is a one-year max limit on the time
-     * that a workflow execution can run. <note> An execution start-to-close
-     * timeout must be specified either through this parameter or as a
-     * default when the workflow type is registered. If neither this
-     * parameter nor a default execution start-to-close timeout is specified,
-     * a fault is returned. </note>
+     * workflow type. <p>The duration is specified in seconds; an integer
+     * greater than or equal to 0. Exceeding this limit will cause the
+     * workflow execution to time out. Unlike some of the other timeout
+     * parameters in Amazon SWF, you cannot specify a value of "NONE" for
+     * this timeout; there is a one-year max limit on the time that a
+     * workflow execution can run. <note> An execution start-to-close timeout
+     * must be specified either through this parameter or as a default when
+     * the workflow type is registered. If neither this parameter nor a
+     * default execution start-to-close timeout is specified, a fault is
+     * returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
      * @param executionStartToCloseTimeout The total duration for this workflow execution. This overrides the
      *         defaultExecutionStartToCloseTimeout specified when registering the
-     *         workflow type. <p> The duration is specified in seconds. The valid
-     *         values are integers greater than or equal to 0. Exceeding this limit
-     *         will cause the workflow execution to time out. Unlike some of the
-     *         other timeout parameters in Amazon SWF, you cannot specify a value of
-     *         "NONE" for this timeout; there is a one-year max limit on the time
-     *         that a workflow execution can run. <note> An execution start-to-close
-     *         timeout must be specified either through this parameter or as a
-     *         default when the workflow type is registered. If neither this
-     *         parameter nor a default execution start-to-close timeout is specified,
-     *         a fault is returned. </note>
+     *         workflow type. <p>The duration is specified in seconds; an integer
+     *         greater than or equal to 0. Exceeding this limit will cause the
+     *         workflow execution to time out. Unlike some of the other timeout
+     *         parameters in Amazon SWF, you cannot specify a value of "NONE" for
+     *         this timeout; there is a one-year max limit on the time that a
+     *         workflow execution can run. <note> An execution start-to-close timeout
+     *         must be specified either through this parameter or as a default when
+     *         the workflow type is registered. If neither this parameter nor a
+     *         default execution start-to-close timeout is specified, a fault is
+     *         returned.</note>
      */
     public void setExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -602,16 +721,16 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
     /**
      * The total duration for this workflow execution. This overrides the
      * defaultExecutionStartToCloseTimeout specified when registering the
-     * workflow type. <p> The duration is specified in seconds. The valid
-     * values are integers greater than or equal to 0. Exceeding this limit
-     * will cause the workflow execution to time out. Unlike some of the
-     * other timeout parameters in Amazon SWF, you cannot specify a value of
-     * "NONE" for this timeout; there is a one-year max limit on the time
-     * that a workflow execution can run. <note> An execution start-to-close
-     * timeout must be specified either through this parameter or as a
-     * default when the workflow type is registered. If neither this
-     * parameter nor a default execution start-to-close timeout is specified,
-     * a fault is returned. </note>
+     * workflow type. <p>The duration is specified in seconds; an integer
+     * greater than or equal to 0. Exceeding this limit will cause the
+     * workflow execution to time out. Unlike some of the other timeout
+     * parameters in Amazon SWF, you cannot specify a value of "NONE" for
+     * this timeout; there is a one-year max limit on the time that a
+     * workflow execution can run. <note> An execution start-to-close timeout
+     * must be specified either through this parameter or as a default when
+     * the workflow type is registered. If neither this parameter nor a
+     * default execution start-to-close timeout is specified, a fault is
+     * returned.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -620,16 +739,16 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *
      * @param executionStartToCloseTimeout The total duration for this workflow execution. This overrides the
      *         defaultExecutionStartToCloseTimeout specified when registering the
-     *         workflow type. <p> The duration is specified in seconds. The valid
-     *         values are integers greater than or equal to 0. Exceeding this limit
-     *         will cause the workflow execution to time out. Unlike some of the
-     *         other timeout parameters in Amazon SWF, you cannot specify a value of
-     *         "NONE" for this timeout; there is a one-year max limit on the time
-     *         that a workflow execution can run. <note> An execution start-to-close
-     *         timeout must be specified either through this parameter or as a
-     *         default when the workflow type is registered. If neither this
-     *         parameter nor a default execution start-to-close timeout is specified,
-     *         a fault is returned. </note>
+     *         workflow type. <p>The duration is specified in seconds; an integer
+     *         greater than or equal to 0. Exceeding this limit will cause the
+     *         workflow execution to time out. Unlike some of the other timeout
+     *         parameters in Amazon SWF, you cannot specify a value of "NONE" for
+     *         this timeout; there is a one-year max limit on the time that a
+     *         workflow execution can run. <note> An execution start-to-close timeout
+     *         must be specified either through this parameter or as a default when
+     *         the workflow type is registered. If neither this parameter nor a
+     *         default execution start-to-close timeout is specified, a fault is
+     *         returned.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -743,15 +862,14 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * Specifies the maximum duration of decision tasks for this workflow
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering
-     * the workflow type using <a>RegisterWorkflowType</a>. <p> The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration. <note>A
-     * task start-to-close timeout for this workflow execution must be
-     * specified either as a default for the workflow type or through this
-     * parameter. If neither this parameter is set nor a default task
-     * start-to-close timeout was specified at registration time then a fault
-     * will be returned.</note>
+     * the workflow type using <a>RegisterWorkflowType</a>. <p>The duration
+     * is specified in seconds; an integer greater than or equal to 0. The
+     * value "NONE" can be used to specify unlimited duration. <note>A task
+     * start-to-close timeout for this workflow execution must be specified
+     * either as a default for the workflow type or through this parameter.
+     * If neither this parameter is set nor a default task start-to-close
+     * timeout was specified at registration time then a fault will be
+     * returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -759,15 +877,14 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * @return Specifies the maximum duration of decision tasks for this workflow
      *         execution. This parameter overrides the
      *         <code>defaultTaskStartToCloseTimout</code> specified when registering
-     *         the workflow type using <a>RegisterWorkflowType</a>. <p> The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration. <note>A
-     *         task start-to-close timeout for this workflow execution must be
-     *         specified either as a default for the workflow type or through this
-     *         parameter. If neither this parameter is set nor a default task
-     *         start-to-close timeout was specified at registration time then a fault
-     *         will be returned.</note>
+     *         the workflow type using <a>RegisterWorkflowType</a>. <p>The duration
+     *         is specified in seconds; an integer greater than or equal to 0. The
+     *         value "NONE" can be used to specify unlimited duration. <note>A task
+     *         start-to-close timeout for this workflow execution must be specified
+     *         either as a default for the workflow type or through this parameter.
+     *         If neither this parameter is set nor a default task start-to-close
+     *         timeout was specified at registration time then a fault will be
+     *         returned.</note>
      */
     public String getTaskStartToCloseTimeout() {
         return taskStartToCloseTimeout;
@@ -777,15 +894,14 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * Specifies the maximum duration of decision tasks for this workflow
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering
-     * the workflow type using <a>RegisterWorkflowType</a>. <p> The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration. <note>A
-     * task start-to-close timeout for this workflow execution must be
-     * specified either as a default for the workflow type or through this
-     * parameter. If neither this parameter is set nor a default task
-     * start-to-close timeout was specified at registration time then a fault
-     * will be returned.</note>
+     * the workflow type using <a>RegisterWorkflowType</a>. <p>The duration
+     * is specified in seconds; an integer greater than or equal to 0. The
+     * value "NONE" can be used to specify unlimited duration. <note>A task
+     * start-to-close timeout for this workflow execution must be specified
+     * either as a default for the workflow type or through this parameter.
+     * If neither this parameter is set nor a default task start-to-close
+     * timeout was specified at registration time then a fault will be
+     * returned.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -793,15 +909,14 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * @param taskStartToCloseTimeout Specifies the maximum duration of decision tasks for this workflow
      *         execution. This parameter overrides the
      *         <code>defaultTaskStartToCloseTimout</code> specified when registering
-     *         the workflow type using <a>RegisterWorkflowType</a>. <p> The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration. <note>A
-     *         task start-to-close timeout for this workflow execution must be
-     *         specified either as a default for the workflow type or through this
-     *         parameter. If neither this parameter is set nor a default task
-     *         start-to-close timeout was specified at registration time then a fault
-     *         will be returned.</note>
+     *         the workflow type using <a>RegisterWorkflowType</a>. <p>The duration
+     *         is specified in seconds; an integer greater than or equal to 0. The
+     *         value "NONE" can be used to specify unlimited duration. <note>A task
+     *         start-to-close timeout for this workflow execution must be specified
+     *         either as a default for the workflow type or through this parameter.
+     *         If neither this parameter is set nor a default task start-to-close
+     *         timeout was specified at registration time then a fault will be
+     *         returned.</note>
      */
     public void setTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -811,15 +926,14 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * Specifies the maximum duration of decision tasks for this workflow
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering
-     * the workflow type using <a>RegisterWorkflowType</a>. <p> The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration. <note>A
-     * task start-to-close timeout for this workflow execution must be
-     * specified either as a default for the workflow type or through this
-     * parameter. If neither this parameter is set nor a default task
-     * start-to-close timeout was specified at registration time then a fault
-     * will be returned.</note>
+     * the workflow type using <a>RegisterWorkflowType</a>. <p>The duration
+     * is specified in seconds; an integer greater than or equal to 0. The
+     * value "NONE" can be used to specify unlimited duration. <note>A task
+     * start-to-close timeout for this workflow execution must be specified
+     * either as a default for the workflow type or through this parameter.
+     * If neither this parameter is set nor a default task start-to-close
+     * timeout was specified at registration time then a fault will be
+     * returned.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -829,15 +943,14 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * @param taskStartToCloseTimeout Specifies the maximum duration of decision tasks for this workflow
      *         execution. This parameter overrides the
      *         <code>defaultTaskStartToCloseTimout</code> specified when registering
-     *         the workflow type using <a>RegisterWorkflowType</a>. <p> The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration. <note>A
-     *         task start-to-close timeout for this workflow execution must be
-     *         specified either as a default for the workflow type or through this
-     *         parameter. If neither this parameter is set nor a default task
-     *         start-to-close timeout was specified at registration time then a fault
-     *         will be returned.</note>
+     *         the workflow type using <a>RegisterWorkflowType</a>. <p>The duration
+     *         is specified in seconds; an integer greater than or equal to 0. The
+     *         value "NONE" can be used to specify unlimited duration. <note>A task
+     *         start-to-close timeout for this workflow execution must be specified
+     *         either as a default for the workflow type or through this parameter.
+     *         If neither this parameter is set nor a default task start-to-close
+     *         timeout was specified at registration time then a fault will be
+     *         returned.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -853,13 +966,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
      * expired timeout. This policy overrides the default child policy
      * specified when registering the workflow type using
-     * <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     * <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <note>A child policy for this workflow execution must be specified
      * either as a default for the workflow type or through this parameter.
@@ -874,13 +987,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
      *         expired timeout. This policy overrides the default child policy
      *         specified when registering the workflow type using
-     *         <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     *         <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *         <note>A child policy for this workflow execution must be specified
      *         either as a default for the workflow type or through this parameter.
@@ -899,13 +1012,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
      * expired timeout. This policy overrides the default child policy
      * specified when registering the workflow type using
-     * <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     * <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <note>A child policy for this workflow execution must be specified
      * either as a default for the workflow type or through this parameter.
@@ -920,13 +1033,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
      *         expired timeout. This policy overrides the default child policy
      *         specified when registering the workflow type using
-     *         <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     *         <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *         <note>A child policy for this workflow execution must be specified
      *         either as a default for the workflow type or through this parameter.
@@ -945,13 +1058,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
      * expired timeout. This policy overrides the default child policy
      * specified when registering the workflow type using
-     * <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     * <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <note>A child policy for this workflow execution must be specified
      * either as a default for the workflow type or through this parameter.
@@ -968,13 +1081,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
      *         expired timeout. This policy overrides the default child policy
      *         specified when registering the workflow type using
-     *         <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     *         <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *         <note>A child policy for this workflow execution must be specified
      *         either as a default for the workflow type or through this parameter.
@@ -997,13 +1110,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
      * expired timeout. This policy overrides the default child policy
      * specified when registering the workflow type using
-     * <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     * <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <note>A child policy for this workflow execution must be specified
      * either as a default for the workflow type or through this parameter.
@@ -1018,13 +1131,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
      *         expired timeout. This policy overrides the default child policy
      *         specified when registering the workflow type using
-     *         <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     *         <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *         <note>A child policy for this workflow execution must be specified
      *         either as a default for the workflow type or through this parameter.
@@ -1043,13 +1156,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an
      * expired timeout. This policy overrides the default child policy
      * specified when registering the workflow type using
-     * <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     * <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      * each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It
      * is up to the decider to take appropriate actions when it receives an
-     * execution history with this event. </li> <li><b>ABANDON:</b> no action
+     * execution history with this event.</li> <li><b>ABANDON:</b> no action
      * will be taken. The child executions will continue to run.</li> </ul>
      * <note>A child policy for this workflow execution must be specified
      * either as a default for the workflow type or through this parameter.
@@ -1066,13 +1179,13 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         <a>TerminateWorkflowExecution</a> action explicitly or due to an
      *         expired timeout. This policy overrides the default child policy
      *         specified when registering the workflow type using
-     *         <a>RegisterWorkflowType</a>. The supported child policies are: <ul>
+     *         <a>RegisterWorkflowType</a>. <p>The supported child policies are: <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
      *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for
      *         each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It
      *         is up to the decider to take appropriate actions when it receives an
-     *         execution history with this event. </li> <li><b>ABANDON:</b> no action
+     *         execution history with this event.</li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *         <note>A child policy for this workflow execution must be specified
      *         either as a default for the workflow type or through this parameter.
@@ -1105,6 +1218,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");
         if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
         if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
+        if (getTaskPriority() != null) sb.append("TaskPriority: " + getTaskPriority() + ",");
         if (getInput() != null) sb.append("Input: " + getInput() + ",");
         if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
         if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
@@ -1123,6 +1237,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode()); 
         hashCode = prime * hashCode + ((getWorkflowType() == null) ? 0 : getWorkflowType().hashCode()); 
         hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode()); 
+        hashCode = prime * hashCode + ((getTaskPriority() == null) ? 0 : getTaskPriority().hashCode()); 
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode()); 
         hashCode = prime * hashCode + ((getExecutionStartToCloseTimeout() == null) ? 0 : getExecutionStartToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode()); 
@@ -1147,6 +1262,8 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         if (other.getWorkflowType() != null && other.getWorkflowType().equals(this.getWorkflowType()) == false) return false; 
         if (other.getTaskList() == null ^ this.getTaskList() == null) return false;
         if (other.getTaskList() != null && other.getTaskList().equals(this.getTaskList()) == false) return false; 
+        if (other.getTaskPriority() == null ^ this.getTaskPriority() == null) return false;
+        if (other.getTaskPriority() != null && other.getTaskPriority().equals(this.getTaskPriority()) == false) return false; 
         if (other.getInput() == null ^ this.getInput() == null) return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false) return false; 
         if (other.getExecutionStartToCloseTimeout() == null ^ this.getExecutionStartToCloseTimeout() == null) return false;

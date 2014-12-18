@@ -109,4 +109,10 @@ class WorkfowContextImpl implements WorkflowContext {
         return attributes;
     }
 
+    @Override
+    public int getTaskPriority() {
+        WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
+        String result = attributes.getTaskPriority();
+        return FlowHelpers.taskPriorityToInt(result);
+    }
 }

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * initial call.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
+ * <b>NOTE:</b>This operation is eventually consistent. The results are
  * best effort and may not exactly reflect recent updates and changes.
  * </p>
  * <p>
@@ -50,9 +50,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the caller does not have sufficient permissions to invoke the
  * action, or the parameter values fall outside the specified
- * constraints, the action fails by throwing
- * <code>OperationNotPermitted</code> . For details and example IAM
- * policies, see
+ * constraints, the action fails. The associated event attribute's
+ * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+ * details and example IAM policies, see
  * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
  * .
  * </p>
@@ -75,9 +75,12 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     private WorkflowExecution execution;
 
     /**
-     * If a <code>NextPageToken</code> is returned, the result has more than
-     * one pages. To get the next page, repeat the call and specify the
-     * nextPageToken with all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there
+     * are more results available. To retrieve the next page of results, make
+     * the call again using the returned token in <code>nextPageToken</code>.
+     * Keep all other arguments unchanged. <p>The configured
+     * <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2048<br/>
@@ -85,14 +88,12 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     private String nextPageToken;
 
     /**
-     * Specifies the maximum number of history events returned in one page.
-     * The next page in the result is identified by the
-     * <code>NextPageToken</code> returned. By default 100 history events are
-     * returned in a page but the caller can override this value to a page
-     * size <i>smaller</i> than the default. You cannot specify a page size
-     * larger than 100. Note that the number of events may be less than the
-     * maxiumum page size, in which case, the returned page will have fewer
-     * results than the maximumPageSize specified.
+     * The maximum number of results that will be returned per call.
+     * <code>nextPageToken</code> can be used to obtain futher pages of
+     * results. The default is 100, which is the maximum allowed page size.
+     * You can, however, specify a page size <i>smaller</i> than 100. <p>This
+     * is an upper limit only; the actual number of results returned per call
+     * may be fewer than the specified maximum.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
@@ -182,50 +183,68 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * If a <code>NextPageToken</code> is returned, the result has more than
-     * one pages. To get the next page, repeat the call and specify the
-     * nextPageToken with all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there
+     * are more results available. To retrieve the next page of results, make
+     * the call again using the returned token in <code>nextPageToken</code>.
+     * Keep all other arguments unchanged. <p>The configured
+     * <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2048<br/>
      *
-     * @return If a <code>NextPageToken</code> is returned, the result has more than
-     *         one pages. To get the next page, repeat the call and specify the
-     *         nextPageToken with all other arguments unchanged.
+     * @return If a <code>NextPageToken</code> was returned by a previous call, there
+     *         are more results available. To retrieve the next page of results, make
+     *         the call again using the returned token in <code>nextPageToken</code>.
+     *         Keep all other arguments unchanged. <p>The configured
+     *         <code>maximumPageSize</code> determines how many results can be
+     *         returned in a single call.
      */
     public String getNextPageToken() {
         return nextPageToken;
     }
     
     /**
-     * If a <code>NextPageToken</code> is returned, the result has more than
-     * one pages. To get the next page, repeat the call and specify the
-     * nextPageToken with all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there
+     * are more results available. To retrieve the next page of results, make
+     * the call again using the returned token in <code>nextPageToken</code>.
+     * Keep all other arguments unchanged. <p>The configured
+     * <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2048<br/>
      *
-     * @param nextPageToken If a <code>NextPageToken</code> is returned, the result has more than
-     *         one pages. To get the next page, repeat the call and specify the
-     *         nextPageToken with all other arguments unchanged.
+     * @param nextPageToken If a <code>NextPageToken</code> was returned by a previous call, there
+     *         are more results available. To retrieve the next page of results, make
+     *         the call again using the returned token in <code>nextPageToken</code>.
+     *         Keep all other arguments unchanged. <p>The configured
+     *         <code>maximumPageSize</code> determines how many results can be
+     *         returned in a single call.
      */
     public void setNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
     }
     
     /**
-     * If a <code>NextPageToken</code> is returned, the result has more than
-     * one pages. To get the next page, repeat the call and specify the
-     * nextPageToken with all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there
+     * are more results available. To retrieve the next page of results, make
+     * the call again using the returned token in <code>nextPageToken</code>.
+     * Keep all other arguments unchanged. <p>The configured
+     * <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2048<br/>
      *
-     * @param nextPageToken If a <code>NextPageToken</code> is returned, the result has more than
-     *         one pages. To get the next page, repeat the call and specify the
-     *         nextPageToken with all other arguments unchanged.
+     * @param nextPageToken If a <code>NextPageToken</code> was returned by a previous call, there
+     *         are more results available. To retrieve the next page of results, make
+     *         the call again using the returned token in <code>nextPageToken</code>.
+     *         Keep all other arguments unchanged. <p>The configured
+     *         <code>maximumPageSize</code> determines how many results can be
+     *         returned in a single call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -236,80 +255,68 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Specifies the maximum number of history events returned in one page.
-     * The next page in the result is identified by the
-     * <code>NextPageToken</code> returned. By default 100 history events are
-     * returned in a page but the caller can override this value to a page
-     * size <i>smaller</i> than the default. You cannot specify a page size
-     * larger than 100. Note that the number of events may be less than the
-     * maxiumum page size, in which case, the returned page will have fewer
-     * results than the maximumPageSize specified.
+     * The maximum number of results that will be returned per call.
+     * <code>nextPageToken</code> can be used to obtain futher pages of
+     * results. The default is 100, which is the maximum allowed page size.
+     * You can, however, specify a page size <i>smaller</i> than 100. <p>This
+     * is an upper limit only; the actual number of results returned per call
+     * may be fewer than the specified maximum.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
      *
-     * @return Specifies the maximum number of history events returned in one page.
-     *         The next page in the result is identified by the
-     *         <code>NextPageToken</code> returned. By default 100 history events are
-     *         returned in a page but the caller can override this value to a page
-     *         size <i>smaller</i> than the default. You cannot specify a page size
-     *         larger than 100. Note that the number of events may be less than the
-     *         maxiumum page size, in which case, the returned page will have fewer
-     *         results than the maximumPageSize specified.
+     * @return The maximum number of results that will be returned per call.
+     *         <code>nextPageToken</code> can be used to obtain futher pages of
+     *         results. The default is 100, which is the maximum allowed page size.
+     *         You can, however, specify a page size <i>smaller</i> than 100. <p>This
+     *         is an upper limit only; the actual number of results returned per call
+     *         may be fewer than the specified maximum.
      */
     public Integer getMaximumPageSize() {
         return maximumPageSize;
     }
     
     /**
-     * Specifies the maximum number of history events returned in one page.
-     * The next page in the result is identified by the
-     * <code>NextPageToken</code> returned. By default 100 history events are
-     * returned in a page but the caller can override this value to a page
-     * size <i>smaller</i> than the default. You cannot specify a page size
-     * larger than 100. Note that the number of events may be less than the
-     * maxiumum page size, in which case, the returned page will have fewer
-     * results than the maximumPageSize specified.
+     * The maximum number of results that will be returned per call.
+     * <code>nextPageToken</code> can be used to obtain futher pages of
+     * results. The default is 100, which is the maximum allowed page size.
+     * You can, however, specify a page size <i>smaller</i> than 100. <p>This
+     * is an upper limit only; the actual number of results returned per call
+     * may be fewer than the specified maximum.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
      *
-     * @param maximumPageSize Specifies the maximum number of history events returned in one page.
-     *         The next page in the result is identified by the
-     *         <code>NextPageToken</code> returned. By default 100 history events are
-     *         returned in a page but the caller can override this value to a page
-     *         size <i>smaller</i> than the default. You cannot specify a page size
-     *         larger than 100. Note that the number of events may be less than the
-     *         maxiumum page size, in which case, the returned page will have fewer
-     *         results than the maximumPageSize specified.
+     * @param maximumPageSize The maximum number of results that will be returned per call.
+     *         <code>nextPageToken</code> can be used to obtain futher pages of
+     *         results. The default is 100, which is the maximum allowed page size.
+     *         You can, however, specify a page size <i>smaller</i> than 100. <p>This
+     *         is an upper limit only; the actual number of results returned per call
+     *         may be fewer than the specified maximum.
      */
     public void setMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
     }
     
     /**
-     * Specifies the maximum number of history events returned in one page.
-     * The next page in the result is identified by the
-     * <code>NextPageToken</code> returned. By default 100 history events are
-     * returned in a page but the caller can override this value to a page
-     * size <i>smaller</i> than the default. You cannot specify a page size
-     * larger than 100. Note that the number of events may be less than the
-     * maxiumum page size, in which case, the returned page will have fewer
-     * results than the maximumPageSize specified.
+     * The maximum number of results that will be returned per call.
+     * <code>nextPageToken</code> can be used to obtain futher pages of
+     * results. The default is 100, which is the maximum allowed page size.
+     * You can, however, specify a page size <i>smaller</i> than 100. <p>This
+     * is an upper limit only; the actual number of results returned per call
+     * may be fewer than the specified maximum.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
      *
-     * @param maximumPageSize Specifies the maximum number of history events returned in one page.
-     *         The next page in the result is identified by the
-     *         <code>NextPageToken</code> returned. By default 100 history events are
-     *         returned in a page but the caller can override this value to a page
-     *         size <i>smaller</i> than the default. You cannot specify a page size
-     *         larger than 100. Note that the number of events may be less than the
-     *         maxiumum page size, in which case, the returned page will have fewer
-     *         results than the maximumPageSize specified.
+     * @param maximumPageSize The maximum number of results that will be returned per call.
+     *         <code>nextPageToken</code> can be used to obtain futher pages of
+     *         results. The default is 100, which is the maximum allowed page size.
+     *         You can, however, specify a page size <i>smaller</i> than 100. <p>This
+     *         is an upper limit only; the actual number of results returned per call
+     *         may be fewer than the specified maximum.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

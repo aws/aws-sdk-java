@@ -29,13 +29,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * event.
  * </p>
  * <p>
- * <b>NOTE:</b> If the runId is not specified, the
+ * <b>NOTE:</b>If the runId is not specified, the
  * WorkflowExecutionCancelRequested event is recorded in the history of
  * the current open workflow execution with the specified workflowId in
  * the domain.
  * </p>
  * <p>
- * <b>NOTE:</b> Because this action allows the workflow to properly clean
+ * <b>NOTE:</b>Because this action allows the workflow to properly clean
  * up and gracefully close, it should be used instead of
  * TerminateWorkflowExecution when possible.
  * </p>
@@ -59,9 +59,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the caller does not have sufficient permissions to invoke the
  * action, or the parameter values fall outside the specified
- * constraints, the action fails by throwing
- * <code>OperationNotPermitted</code> . For details and example IAM
- * policies, see
+ * constraints, the action fails. The associated event attribute's
+ * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+ * details and example IAM policies, see
  * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
  * .
  * </p>

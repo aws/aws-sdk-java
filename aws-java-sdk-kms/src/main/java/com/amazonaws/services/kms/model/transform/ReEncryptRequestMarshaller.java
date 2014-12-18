@@ -64,7 +64,7 @@ public class ReEncryptRequestMarshaller implements Marshaller<Request<ReEncryptR
             if (reEncryptRequest.getCiphertextBlob() != null) {
                 jsonWriter.key("CiphertextBlob").value(reEncryptRequest.getCiphertextBlob());
             }
-            if (reEncryptRequest.getSourceEncryptionContext() != null) {
+            if (reEncryptRequest.getSourceEncryptionContext() != null && !reEncryptRequest.getSourceEncryptionContext().isEmpty()) {
                 jsonWriter.key("SourceEncryptionContext");
                 jsonWriter.object();
                 for (Map.Entry<String, String> sourceEncryptionContextListValue : reEncryptRequest.getSourceEncryptionContext().entrySet()) {
@@ -79,7 +79,7 @@ public class ReEncryptRequestMarshaller implements Marshaller<Request<ReEncryptR
             if (reEncryptRequest.getDestinationKeyId() != null) {
                 jsonWriter.key("DestinationKeyId").value(reEncryptRequest.getDestinationKeyId());
             }
-            if (reEncryptRequest.getDestinationEncryptionContext() != null) {
+            if (reEncryptRequest.getDestinationEncryptionContext() != null && !reEncryptRequest.getDestinationEncryptionContext().isEmpty()) {
                 jsonWriter.key("DestinationEncryptionContext");
                 jsonWriter.object();
                 for (Map.Entry<String, String> destinationEncryptionContextListValue : reEncryptRequest.getDestinationEncryptionContext().entrySet()) {

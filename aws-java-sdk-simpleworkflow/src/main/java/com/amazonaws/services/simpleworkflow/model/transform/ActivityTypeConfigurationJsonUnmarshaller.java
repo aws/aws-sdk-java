@@ -57,6 +57,10 @@ public class ActivityTypeConfigurationJsonUnmarshaller implements Unmarshaller<A
                     context.nextToken();
                     activityTypeConfiguration.setDefaultTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("defaultTaskPriority", targetDepth)) {
+                    context.nextToken();
+                    activityTypeConfiguration.setDefaultTaskPriority(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("defaultTaskScheduleToStartTimeout", targetDepth)) {
                     context.nextToken();
                     activityTypeConfiguration.setDefaultTaskScheduleToStartTimeout(StringJsonUnmarshaller.getInstance().unmarshall(context));

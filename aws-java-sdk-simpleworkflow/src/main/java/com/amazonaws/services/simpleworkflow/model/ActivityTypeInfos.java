@@ -29,9 +29,12 @@ public class ActivityTypeInfos implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo> typeInfos;
 
     /**
-     * Returns a value if the results are paginated. To get the next page of
-     * results, repeat the request specifying this token and all other
-     * arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there
+     * are more results available. To retrieve the next page of results, make
+     * the call again using the returned token in <code>nextPageToken</code>.
+     * Keep all other arguments unchanged. <p>The configured
+     * <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2048<br/>
@@ -103,50 +106,68 @@ public class ActivityTypeInfos implements Serializable {
     }
 
     /**
-     * Returns a value if the results are paginated. To get the next page of
-     * results, repeat the request specifying this token and all other
-     * arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there
+     * are more results available. To retrieve the next page of results, make
+     * the call again using the returned token in <code>nextPageToken</code>.
+     * Keep all other arguments unchanged. <p>The configured
+     * <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2048<br/>
      *
-     * @return Returns a value if the results are paginated. To get the next page of
-     *         results, repeat the request specifying this token and all other
-     *         arguments unchanged.
+     * @return If a <code>NextPageToken</code> was returned by a previous call, there
+     *         are more results available. To retrieve the next page of results, make
+     *         the call again using the returned token in <code>nextPageToken</code>.
+     *         Keep all other arguments unchanged. <p>The configured
+     *         <code>maximumPageSize</code> determines how many results can be
+     *         returned in a single call.
      */
     public String getNextPageToken() {
         return nextPageToken;
     }
     
     /**
-     * Returns a value if the results are paginated. To get the next page of
-     * results, repeat the request specifying this token and all other
-     * arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there
+     * are more results available. To retrieve the next page of results, make
+     * the call again using the returned token in <code>nextPageToken</code>.
+     * Keep all other arguments unchanged. <p>The configured
+     * <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2048<br/>
      *
-     * @param nextPageToken Returns a value if the results are paginated. To get the next page of
-     *         results, repeat the request specifying this token and all other
-     *         arguments unchanged.
+     * @param nextPageToken If a <code>NextPageToken</code> was returned by a previous call, there
+     *         are more results available. To retrieve the next page of results, make
+     *         the call again using the returned token in <code>nextPageToken</code>.
+     *         Keep all other arguments unchanged. <p>The configured
+     *         <code>maximumPageSize</code> determines how many results can be
+     *         returned in a single call.
      */
     public void setNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
     }
     
     /**
-     * Returns a value if the results are paginated. To get the next page of
-     * results, repeat the request specifying this token and all other
-     * arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there
+     * are more results available. To retrieve the next page of results, make
+     * the call again using the returned token in <code>nextPageToken</code>.
+     * Keep all other arguments unchanged. <p>The configured
+     * <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2048<br/>
      *
-     * @param nextPageToken Returns a value if the results are paginated. To get the next page of
-     *         results, repeat the request specifying this token and all other
-     *         arguments unchanged.
+     * @param nextPageToken If a <code>NextPageToken</code> was returned by a previous call, there
+     *         are more results available. To retrieve the next page of results, make
+     *         the call again using the returned token in <code>nextPageToken</code>.
+     *         Keep all other arguments unchanged. <p>The configured
+     *         <code>maximumPageSize</code> determines how many results can be
+     *         returned in a single call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

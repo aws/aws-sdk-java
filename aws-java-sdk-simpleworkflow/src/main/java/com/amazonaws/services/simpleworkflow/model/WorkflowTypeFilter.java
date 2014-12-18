@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class WorkflowTypeFilter implements Serializable {
 
     /**
-     * Name of the workflow type. This field is required.
+     * <b>Required.</b> Name of the workflow type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -42,38 +42,38 @@ public class WorkflowTypeFilter implements Serializable {
     private String version;
 
     /**
-     * Name of the workflow type. This field is required.
+     * <b>Required.</b> Name of the workflow type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Name of the workflow type. This field is required.
+     * @return <b>Required.</b> Name of the workflow type.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Name of the workflow type. This field is required.
+     * <b>Required.</b> Name of the workflow type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name Name of the workflow type. This field is required.
+     * @param name <b>Required.</b> Name of the workflow type.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Name of the workflow type. This field is required.
+     * <b>Required.</b> Name of the workflow type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name Name of the workflow type. This field is required.
+     * @param name <b>Required.</b> Name of the workflow type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>DecisionTaskScheduled</code> event.
+ * Provides details about the <code>DecisionTaskScheduled</code> event.
  * </p>
  */
 public class DecisionTaskScheduledEventAttributes implements Serializable {
@@ -29,11 +29,26 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
     private TaskList taskList;
 
     /**
+     * <i>Optional.</i> A task priority that, if set, specifies the priority
+     * for this decision task. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     */
+    private String taskPriority;
+
+    /**
      * The maximum duration for this decision task. The task is considered
-     * timed out if it does not completed within this duration. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * timed out if it does not completed within this duration. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -74,20 +89,108 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
     }
 
     /**
+     * <i>Optional.</i> A task priority that, if set, specifies the priority
+     * for this decision task. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @return <i>Optional.</i> A task priority that, if set, specifies the priority
+     *         for this decision task. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public String getTaskPriority() {
+        return taskPriority;
+    }
+    
+    /**
+     * <i>Optional.</i> A task priority that, if set, specifies the priority
+     * for this decision task. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority <i>Optional.</i> A task priority that, if set, specifies the priority
+     *         for this decision task. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     */
+    public void setTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+    
+    /**
+     * <i>Optional.</i> A task priority that, if set, specifies the priority
+     * for this decision task. Valid values are integers that range from
+     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority. <p>For more information about setting task priority,
+     * see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 11<br/>
+     *
+     * @param taskPriority <i>Optional.</i> A task priority that, if set, specifies the priority
+     *         for this decision task. Valid values are integers that range from
+     *         Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     *         higher priority. <p>For more information about setting task priority,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DecisionTaskScheduledEventAttributes withTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+
+    /**
      * The maximum duration for this decision task. The task is considered
-     * timed out if it does not completed within this duration. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * timed out if it does not completed within this duration. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
      * @return The maximum duration for this decision task. The task is considered
-     *         timed out if it does not completed within this duration. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         timed out if it does not completed within this duration. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public String getStartToCloseTimeout() {
         return startToCloseTimeout;
@@ -95,19 +198,17 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
     
     /**
      * The maximum duration for this decision task. The task is considered
-     * timed out if it does not completed within this duration. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * timed out if it does not completed within this duration. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
      * @param startToCloseTimeout The maximum duration for this decision task. The task is considered
-     *         timed out if it does not completed within this duration. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         timed out if it does not completed within this duration. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public void setStartToCloseTimeout(String startToCloseTimeout) {
         this.startToCloseTimeout = startToCloseTimeout;
@@ -115,10 +216,9 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
     
     /**
      * The maximum duration for this decision task. The task is considered
-     * timed out if it does not completed within this duration. <p>The valid
-     * values are integers greater than or equal to <code>0</code>. An
-     * integer value can be used to specify the duration in seconds while
-     * <code>NONE</code> can be used to specify unlimited duration.
+     * timed out if it does not completed within this duration. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -126,10 +226,9 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
      * <b>Length: </b>0 - 8<br/>
      *
      * @param startToCloseTimeout The maximum duration for this decision task. The task is considered
-     *         timed out if it does not completed within this duration. <p>The valid
-     *         values are integers greater than or equal to <code>0</code>. An
-     *         integer value can be used to specify the duration in seconds while
-     *         <code>NONE</code> can be used to specify unlimited duration.
+     *         timed out if it does not completed within this duration. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -152,6 +251,7 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
+        if (getTaskPriority() != null) sb.append("TaskPriority: " + getTaskPriority() + ",");
         if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() );
         sb.append("}");
         return sb.toString();
@@ -163,6 +263,7 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode()); 
+        hashCode = prime * hashCode + ((getTaskPriority() == null) ? 0 : getTaskPriority().hashCode()); 
         hashCode = prime * hashCode + ((getStartToCloseTimeout() == null) ? 0 : getStartToCloseTimeout().hashCode()); 
         return hashCode;
     }
@@ -177,6 +278,8 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
         
         if (other.getTaskList() == null ^ this.getTaskList() == null) return false;
         if (other.getTaskList() != null && other.getTaskList().equals(this.getTaskList()) == false) return false; 
+        if (other.getTaskPriority() == null ^ this.getTaskPriority() == null) return false;
+        if (other.getTaskPriority() != null && other.getTaskPriority().equals(this.getTaskPriority()) == false) return false; 
         if (other.getStartToCloseTimeout() == null ^ this.getStartToCloseTimeout() == null) return false;
         if (other.getStartToCloseTimeout() != null && other.getStartToCloseTimeout().equals(this.getStartToCloseTimeout()) == false) return false; 
         return true;

@@ -73,4 +73,11 @@ public @interface WorkflowRegistrationOptions {
     String defaultTaskList() default FlowConstants.USE_WORKER_TASK_LIST;
 
     ChildPolicy defaultChildPolicy() default ChildPolicy.TERMINATE;
+    
+    /**
+     * Default is {@link FlowConstants#DEFAULT_TASK_PRIORITY} if it
+     * is not specified on activity invocation
+     */
+    int defaultTaskPriority() default FlowConstants.DEFAULT_TASK_PRIORITY;
+    
 }

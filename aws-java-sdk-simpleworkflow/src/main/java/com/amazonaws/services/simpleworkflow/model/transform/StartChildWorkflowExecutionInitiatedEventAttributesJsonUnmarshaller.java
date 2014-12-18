@@ -69,6 +69,10 @@ public class StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller
                     context.nextToken();
                     startChildWorkflowExecutionInitiatedEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("taskPriority", targetDepth)) {
+                    context.nextToken();
+                    startChildWorkflowExecutionInitiatedEventAttributes.setTaskPriority(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("decisionTaskCompletedEventId", targetDepth)) {
                     context.nextToken();
                     startChildWorkflowExecutionInitiatedEventAttributes.setDecisionTaskCompletedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));

@@ -54,16 +54,17 @@ public class WorkflowExecutionInfo implements Serializable {
 
     /**
      * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li>COMPLETED: the execution was
-     * successfully completed.</li> <li>CANCELED: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up
-     * before the execution is closed.</li> <li>TERMINATED: the execution was
-     * force terminated.</li> <li>FAILED: the execution failed to
-     * complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     * was successfully completed.</li> <li><code>CANCELED</code>: the
+     * execution was canceled.Cancellation allows the implementation to
+     * gracefully clean up before the execution is closed.</li>
+     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li><code>FAILED</code>: the execution failed to complete.</li>
+     * <li><code>TIMED_OUT</code>: the execution did not complete in the
      * alloted time and was automatically timed out.</li>
-     * <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to
-     * carry on the workflow.</li> </ul>
+     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     * continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
@@ -314,31 +315,33 @@ public class WorkflowExecutionInfo implements Serializable {
 
     /**
      * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li>COMPLETED: the execution was
-     * successfully completed.</li> <li>CANCELED: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up
-     * before the execution is closed.</li> <li>TERMINATED: the execution was
-     * force terminated.</li> <li>FAILED: the execution failed to
-     * complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     * was successfully completed.</li> <li><code>CANCELED</code>: the
+     * execution was canceled.Cancellation allows the implementation to
+     * gracefully clean up before the execution is closed.</li>
+     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li><code>FAILED</code>: the execution failed to complete.</li>
+     * <li><code>TIMED_OUT</code>: the execution did not complete in the
      * alloted time and was automatically timed out.</li>
-     * <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to
-     * carry on the workflow.</li> </ul>
+     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     * continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
      * @return If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li>COMPLETED: the execution was
-     *         successfully completed.</li> <li>CANCELED: the execution was
-     *         canceled.Cancellation allows the implementation to gracefully clean up
-     *         before the execution is closed.</li> <li>TERMINATED: the execution was
-     *         force terminated.</li> <li>FAILED: the execution failed to
-     *         complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     *         was successfully completed.</li> <li><code>CANCELED</code>: the
+     *         execution was canceled.Cancellation allows the implementation to
+     *         gracefully clean up before the execution is closed.</li>
+     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     *         <li><code>FAILED</code>: the execution failed to complete.</li>
+     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
      *         alloted time and was automatically timed out.</li>
-     *         <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     *         the current execution was completed and a new execution was started to
-     *         carry on the workflow.</li> </ul>
+     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     *         continued. This means the current execution was completed and a new
+     *         execution was started to carry on the workflow.</li> </ul>
      *
      * @see CloseStatus
      */
@@ -348,31 +351,33 @@ public class WorkflowExecutionInfo implements Serializable {
     
     /**
      * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li>COMPLETED: the execution was
-     * successfully completed.</li> <li>CANCELED: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up
-     * before the execution is closed.</li> <li>TERMINATED: the execution was
-     * force terminated.</li> <li>FAILED: the execution failed to
-     * complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     * was successfully completed.</li> <li><code>CANCELED</code>: the
+     * execution was canceled.Cancellation allows the implementation to
+     * gracefully clean up before the execution is closed.</li>
+     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li><code>FAILED</code>: the execution failed to complete.</li>
+     * <li><code>TIMED_OUT</code>: the execution did not complete in the
      * alloted time and was automatically timed out.</li>
-     * <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to
-     * carry on the workflow.</li> </ul>
+     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     * continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
      * @param closeStatus If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li>COMPLETED: the execution was
-     *         successfully completed.</li> <li>CANCELED: the execution was
-     *         canceled.Cancellation allows the implementation to gracefully clean up
-     *         before the execution is closed.</li> <li>TERMINATED: the execution was
-     *         force terminated.</li> <li>FAILED: the execution failed to
-     *         complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     *         was successfully completed.</li> <li><code>CANCELED</code>: the
+     *         execution was canceled.Cancellation allows the implementation to
+     *         gracefully clean up before the execution is closed.</li>
+     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     *         <li><code>FAILED</code>: the execution failed to complete.</li>
+     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
      *         alloted time and was automatically timed out.</li>
-     *         <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     *         the current execution was completed and a new execution was started to
-     *         carry on the workflow.</li> </ul>
+     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     *         continued. This means the current execution was completed and a new
+     *         execution was started to carry on the workflow.</li> </ul>
      *
      * @see CloseStatus
      */
@@ -382,16 +387,17 @@ public class WorkflowExecutionInfo implements Serializable {
     
     /**
      * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li>COMPLETED: the execution was
-     * successfully completed.</li> <li>CANCELED: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up
-     * before the execution is closed.</li> <li>TERMINATED: the execution was
-     * force terminated.</li> <li>FAILED: the execution failed to
-     * complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     * was successfully completed.</li> <li><code>CANCELED</code>: the
+     * execution was canceled.Cancellation allows the implementation to
+     * gracefully clean up before the execution is closed.</li>
+     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li><code>FAILED</code>: the execution failed to complete.</li>
+     * <li><code>TIMED_OUT</code>: the execution did not complete in the
      * alloted time and was automatically timed out.</li>
-     * <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to
-     * carry on the workflow.</li> </ul>
+     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     * continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -399,16 +405,17 @@ public class WorkflowExecutionInfo implements Serializable {
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
      * @param closeStatus If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li>COMPLETED: the execution was
-     *         successfully completed.</li> <li>CANCELED: the execution was
-     *         canceled.Cancellation allows the implementation to gracefully clean up
-     *         before the execution is closed.</li> <li>TERMINATED: the execution was
-     *         force terminated.</li> <li>FAILED: the execution failed to
-     *         complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     *         was successfully completed.</li> <li><code>CANCELED</code>: the
+     *         execution was canceled.Cancellation allows the implementation to
+     *         gracefully clean up before the execution is closed.</li>
+     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     *         <li><code>FAILED</code>: the execution failed to complete.</li>
+     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
      *         alloted time and was automatically timed out.</li>
-     *         <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     *         the current execution was completed and a new execution was started to
-     *         carry on the workflow.</li> </ul>
+     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     *         continued. This means the current execution was completed and a new
+     *         execution was started to carry on the workflow.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -422,31 +429,33 @@ public class WorkflowExecutionInfo implements Serializable {
 
     /**
      * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li>COMPLETED: the execution was
-     * successfully completed.</li> <li>CANCELED: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up
-     * before the execution is closed.</li> <li>TERMINATED: the execution was
-     * force terminated.</li> <li>FAILED: the execution failed to
-     * complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     * was successfully completed.</li> <li><code>CANCELED</code>: the
+     * execution was canceled.Cancellation allows the implementation to
+     * gracefully clean up before the execution is closed.</li>
+     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li><code>FAILED</code>: the execution failed to complete.</li>
+     * <li><code>TIMED_OUT</code>: the execution did not complete in the
      * alloted time and was automatically timed out.</li>
-     * <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to
-     * carry on the workflow.</li> </ul>
+     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     * continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
      * @param closeStatus If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li>COMPLETED: the execution was
-     *         successfully completed.</li> <li>CANCELED: the execution was
-     *         canceled.Cancellation allows the implementation to gracefully clean up
-     *         before the execution is closed.</li> <li>TERMINATED: the execution was
-     *         force terminated.</li> <li>FAILED: the execution failed to
-     *         complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     *         was successfully completed.</li> <li><code>CANCELED</code>: the
+     *         execution was canceled.Cancellation allows the implementation to
+     *         gracefully clean up before the execution is closed.</li>
+     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     *         <li><code>FAILED</code>: the execution failed to complete.</li>
+     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
      *         alloted time and was automatically timed out.</li>
-     *         <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     *         the current execution was completed and a new execution was started to
-     *         carry on the workflow.</li> </ul>
+     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     *         continued. This means the current execution was completed and a new
+     *         execution was started to carry on the workflow.</li> </ul>
      *
      * @see CloseStatus
      */
@@ -456,16 +465,17 @@ public class WorkflowExecutionInfo implements Serializable {
     
     /**
      * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li>COMPLETED: the execution was
-     * successfully completed.</li> <li>CANCELED: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up
-     * before the execution is closed.</li> <li>TERMINATED: the execution was
-     * force terminated.</li> <li>FAILED: the execution failed to
-     * complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     * was successfully completed.</li> <li><code>CANCELED</code>: the
+     * execution was canceled.Cancellation allows the implementation to
+     * gracefully clean up before the execution is closed.</li>
+     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li><code>FAILED</code>: the execution failed to complete.</li>
+     * <li><code>TIMED_OUT</code>: the execution did not complete in the
      * alloted time and was automatically timed out.</li>
-     * <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to
-     * carry on the workflow.</li> </ul>
+     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     * continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -473,16 +483,17 @@ public class WorkflowExecutionInfo implements Serializable {
      * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
      *
      * @param closeStatus If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li>COMPLETED: the execution was
-     *         successfully completed.</li> <li>CANCELED: the execution was
-     *         canceled.Cancellation allows the implementation to gracefully clean up
-     *         before the execution is closed.</li> <li>TERMINATED: the execution was
-     *         force terminated.</li> <li>FAILED: the execution failed to
-     *         complete.</li> <li>TIMED_OUT: the execution did not complete in the
+     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
+     *         was successfully completed.</li> <li><code>CANCELED</code>: the
+     *         execution was canceled.Cancellation allows the implementation to
+     *         gracefully clean up before the execution is closed.</li>
+     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
+     *         <li><code>FAILED</code>: the execution failed to complete.</li>
+     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
      *         alloted time and was automatically timed out.</li>
-     *         <li>CONTINUED_AS_NEW: the execution is logically continued. This means
-     *         the current execution was completed and a new execution was started to
-     *         carry on the workflow.</li> </ul>
+     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
+     *         continued. This means the current execution was completed and a new
+     *         execution was started to carry on the workflow.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

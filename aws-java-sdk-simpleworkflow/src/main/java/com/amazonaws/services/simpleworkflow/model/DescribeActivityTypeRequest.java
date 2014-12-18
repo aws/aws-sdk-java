@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeActivityType(DescribeActivityTypeRequest) DescribeActivityType operation}.
  * <p>
  * Returns information about the specified activity type. This includes
- * configuration settings provided at registration time as well as other
+ * configuration settings provided when the type was registered and other
  * general information about the type.
  * </p>
  * <p>
@@ -53,9 +53,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the caller does not have sufficient permissions to invoke the
  * action, or the parameter values fall outside the specified
- * constraints, the action fails by throwing
- * <code>OperationNotPermitted</code> . For details and example IAM
- * policies, see
+ * constraints, the action fails. The associated event attribute's
+ * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+ * details and example IAM policies, see
  * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
  * .
  * </p>
@@ -73,7 +73,9 @@ public class DescribeActivityTypeRequest extends AmazonWebServiceRequest impleme
     private String domain;
 
     /**
-     * The activity type to describe.
+     * The activity type to get information about. Activity types are
+     * identified by the <code>name</code> and <code>version</code> that were
+     * supplied when the activity was registered.
      */
     private ActivityType activityType;
 
@@ -120,29 +122,41 @@ public class DescribeActivityTypeRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The activity type to describe.
+     * The activity type to get information about. Activity types are
+     * identified by the <code>name</code> and <code>version</code> that were
+     * supplied when the activity was registered.
      *
-     * @return The activity type to describe.
+     * @return The activity type to get information about. Activity types are
+     *         identified by the <code>name</code> and <code>version</code> that were
+     *         supplied when the activity was registered.
      */
     public ActivityType getActivityType() {
         return activityType;
     }
     
     /**
-     * The activity type to describe.
+     * The activity type to get information about. Activity types are
+     * identified by the <code>name</code> and <code>version</code> that were
+     * supplied when the activity was registered.
      *
-     * @param activityType The activity type to describe.
+     * @param activityType The activity type to get information about. Activity types are
+     *         identified by the <code>name</code> and <code>version</code> that were
+     *         supplied when the activity was registered.
      */
     public void setActivityType(ActivityType activityType) {
         this.activityType = activityType;
     }
     
     /**
-     * The activity type to describe.
+     * The activity type to get information about. Activity types are
+     * identified by the <code>name</code> and <code>version</code> that were
+     * supplied when the activity was registered.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activityType The activity type to describe.
+     * @param activityType The activity type to get information about. Activity types are
+     *         identified by the <code>name</code> and <code>version</code> that were
+     *         supplied when the activity was registered.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -32,7 +32,7 @@ public class WorkflowExecution implements Serializable {
     private String workflowId;
 
     /**
-     * A system generated unique identifier for the workflow execution.
+     * A system-generated unique identifier for the workflow execution.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -82,38 +82,38 @@ public class WorkflowExecution implements Serializable {
     }
 
     /**
-     * A system generated unique identifier for the workflow execution.
+     * A system-generated unique identifier for the workflow execution.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @return A system generated unique identifier for the workflow execution.
+     * @return A system-generated unique identifier for the workflow execution.
      */
     public String getRunId() {
         return runId;
     }
     
     /**
-     * A system generated unique identifier for the workflow execution.
+     * A system-generated unique identifier for the workflow execution.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @param runId A system generated unique identifier for the workflow execution.
+     * @param runId A system-generated unique identifier for the workflow execution.
      */
     public void setRunId(String runId) {
         this.runId = runId;
     }
     
     /**
-     * A system generated unique identifier for the workflow execution.
+     * A system-generated unique identifier for the workflow execution.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @param runId A system generated unique identifier for the workflow execution.
+     * @param runId A system-generated unique identifier for the workflow execution.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
