@@ -83,10 +83,16 @@ public class S3Object implements Closeable {
     }
 
     /**
-     * Gets an input stream containing the contents of this object. Callers
+     * Gets the input stream containing the contents of this object.
+     *
+     * <p>
+     * <b>Note</b>: The method is a simple getter and does not
+     * actually create a stream. If you retrieve an S3Object, you
      * should close this input stream as soon as possible, because the
-     * object contents aren't buffered in memory and stream directly from Amazon
-     * S3.
+     * object contents aren't buffered in memory and stream directly
+     * from Amazon S3. Further, failure to close this stream can cause the
+     * request pool to become blocked.
+     * </p>
      *
      * @return An input stream containing the contents of this object.
      *
