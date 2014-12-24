@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.SetUnmarshaller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -480,6 +481,10 @@ public final class ConversionSchemas {
                 return getMapUnmarshaller(type);
             }
 
+            if (unmarshaller instanceof SetUnmarshaller) {
+                return getSetUnmarshaller(type);
+            }
+
             // Inject ourselves to recursively unmarshall things if it's an
             // ObjectUnmarshaller.
             if (unmarshaller instanceof ObjectUnmarshaller) {
@@ -538,6 +543,29 @@ public final class ConversionSchemas {
                     getMemberUnmarshaller(args[1]);
 
             return new MapUnmarshaller(memberUnmarshaller);
+        }
+
+        private ArgumentUnmarshaller getSetUnmarshaller(Type type) {
+            if (!(type instanceof ParameterizedType)) {
+                throw new DynamoDBMappingException(
+                        "Cannot tell what type of objects belong in the Set "
+                                + "type " + type + ", which is not parameterized.");
+            }
+
+            ParameterizedType ptype = (ParameterizedType) type;
+            Type[] args = ptype.getActualTypeArguments();
+
+            if (args == null || args.length != 1) {
+                throw new DynamoDBMappingException(
+                        "Cannot tell what type of objects belong in the Set "
+                                + "type " + type + "; unexpected number of type "
+                                + "arguments.");
+            }
+
+            ArgumentUnmarshaller memberUnmarshaller =
+                    getMemberUnmarshaller(args[0]);
+
+            return new SetUnmarshaller(memberUnmarshaller);
         }
 
         private ArgumentUnmarshaller getObjectUnmarshaller(Type type) {
@@ -1003,6 +1031,7 @@ public final class ConversionSchemas {
 
             list.add(Pair.of(List.class, ListUnmarshaller.instance()));
             list.add(Pair.of(Map.class, MapUnmarshaller.instance()));
+            list.add(Pair.of(Set.class, SetUnmarshaller.instance()));
 
             // Make sure I'm last since I'll catch all other types.
             list.add(Pair.of(Object.class, ObjectUnmarshaller.instance()));
@@ -1067,14 +1096,18 @@ public final class ConversionSchemas {
 
             if (Set.class.isAssignableFrom(paramType)) {
 
-                paramType = unwrapGenericSetParam(
+                Class<?> paramType2 = unwrapGenericSetParam(
                         setter.getGenericParameterTypes()[0]);
 
-                return getSet(setter, paramType);
+                try {
+                    return getSet(setter, paramType2);
+                } catch(DynamoDBMappingException e){
 
-            } else {
-                return getScalar(setter, paramType);
+                }
+
             }
+
+            return getScalar(setter, paramType);
         }
 
         @Override
