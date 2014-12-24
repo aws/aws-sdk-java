@@ -1096,13 +1096,14 @@ public final class ConversionSchemas {
 
             if (Set.class.isAssignableFrom(paramType)) {
 
-                Class<?> paramType2 = unwrapGenericSetParam(
+                Class<?> setElementParamType = unwrapGenericSetParam(
                         setter.getGenericParameterTypes()[0]);
 
-                try {
-                    return getSet(setter, paramType2);
-                } catch(DynamoDBMappingException e){
+                ArgumentUnmarshaller unmarshaller =
+                        find(setElementParamType, setUnmarshallers);
 
+                if(unmarshaller != null) {
+                    return getSet(setter, setElementParamType);
                 }
 
             }
