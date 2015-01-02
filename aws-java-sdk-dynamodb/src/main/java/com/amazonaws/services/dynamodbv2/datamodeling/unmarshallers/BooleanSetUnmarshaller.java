@@ -14,19 +14,21 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers;
 
+import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentUnmarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMappingException;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 /**
- * A legacy unmarshaller that unmarshals DynamoDB NumberSets containing only
- * "0" and "1" into a set of Java Booleans (with "0" == false and "1" == true).
- * Retained only for backwards compatibility - DynamoDB does not have a
- * BooleanSet type, and sets of booleans aren't particularly useful anyways.
+ * A special unmarshaller for Set&lt;Boolean>, which the V1 schema stores as
+ * an NS using 0/1 for true/false. In the V2 schema these fall through to
+ * the {@code ObjectSetToListMarshaller} which stores them as an L or BOOLs.
  */
-public class BooleanSetUnmarshaller extends NSUnmarshaller {
+public class BooleanSetUnmarshaller implements ArgumentUnmarshaller {
 
     private static final BooleanSetUnmarshaller INSTANCE =
             new BooleanSetUnmarshaller();
@@ -39,21 +41,44 @@ public class BooleanSetUnmarshaller extends NSUnmarshaller {
     }
 
     @Override
-    public Object unmarshall(AttributeValue value) {
-        List<String> values = value.getNS();
-        Set<Boolean> result = new HashSet<Boolean>();
-
-        for (String s : values) {
-            if ("1".equals(s)) {
-                 result.add(Boolean.TRUE);
-            } else if ("0".equals(s)) {
-                result.add(Boolean.FALSE);
-            } else {
-                throw new IllegalArgumentException(
-                        "Expected '1' or '0' for boolean value, was " + s);
-            }
+    public void typeCheck(AttributeValue value, Method setter) {
+        if (value.getNS() == null && value.getL() == null) {
+            throw new DynamoDBMappingException(
+                    "Expected either L or NS in value " + value
+                    + " when invoking " + setter);
         }
+    }
 
-        return result;
+    @Override
+    public Object unmarshall(AttributeValue value) {
+        if (value.getL() != null) {
+
+            List<AttributeValue> values = value.getL();
+            Set<Boolean> result = new HashSet<Boolean>();
+
+            for (AttributeValue v : values) {
+                result.add(v.getBOOL());
+            }
+
+            return result;
+
+        } else {
+
+            List<String> values = value.getNS();
+            Set<Boolean> result = new HashSet<Boolean>();
+
+            for (String s : values) {
+                if ("1".equals(s)) {
+                    result.add(Boolean.TRUE);
+                } else if ("0".equals(s)) {
+                    result.add(Boolean.FALSE);
+                } else {
+                    throw new IllegalArgumentException(
+                            "Expected '1' or '0' for boolean value, was " + s);
+                }
+            }
+
+            return result;
+        }
     }
 }
