@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,10 +35,10 @@ public class DiskImageDetail implements Serializable {
     private Long bytes;
 
     /**
-     * A presigned URL for the import manifest stored in Amazon S3. For
-     * information about creating a presigned URL for an Amazon S3 object,
-     * read the "Query String Request Authentication Alternative" section of
-     * the <a
+     * A presigned URL for the import manifest stored in Amazon S3 and
+     * presented here as an Amazon S3 presigned URL. For information about
+     * creating a presigned URL for an Amazon S3 object, read the "Query
+     * String Request Authentication Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.
@@ -161,18 +161,18 @@ public class DiskImageDetail implements Serializable {
     }
 
     /**
-     * A presigned URL for the import manifest stored in Amazon S3. For
-     * information about creating a presigned URL for an Amazon S3 object,
-     * read the "Query String Request Authentication Alternative" section of
-     * the <a
+     * A presigned URL for the import manifest stored in Amazon S3 and
+     * presented here as an Amazon S3 presigned URL. For information about
+     * creating a presigned URL for an Amazon S3 object, read the "Query
+     * String Request Authentication Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.
      *
-     * @return A presigned URL for the import manifest stored in Amazon S3. For
-     *         information about creating a presigned URL for an Amazon S3 object,
-     *         read the "Query String Request Authentication Alternative" section of
-     *         the <a
+     * @return A presigned URL for the import manifest stored in Amazon S3 and
+     *         presented here as an Amazon S3 presigned URL. For information about
+     *         creating a presigned URL for an Amazon S3 object, read the "Query
+     *         String Request Authentication Alternative" section of the <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      *         REST Requests</a> topic in the <i>Amazon Simple Storage Service
      *         Developer Guide</i>.
@@ -182,18 +182,18 @@ public class DiskImageDetail implements Serializable {
     }
     
     /**
-     * A presigned URL for the import manifest stored in Amazon S3. For
-     * information about creating a presigned URL for an Amazon S3 object,
-     * read the "Query String Request Authentication Alternative" section of
-     * the <a
+     * A presigned URL for the import manifest stored in Amazon S3 and
+     * presented here as an Amazon S3 presigned URL. For information about
+     * creating a presigned URL for an Amazon S3 object, read the "Query
+     * String Request Authentication Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.
      *
-     * @param importManifestUrl A presigned URL for the import manifest stored in Amazon S3. For
-     *         information about creating a presigned URL for an Amazon S3 object,
-     *         read the "Query String Request Authentication Alternative" section of
-     *         the <a
+     * @param importManifestUrl A presigned URL for the import manifest stored in Amazon S3 and
+     *         presented here as an Amazon S3 presigned URL. For information about
+     *         creating a presigned URL for an Amazon S3 object, read the "Query
+     *         String Request Authentication Alternative" section of the <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      *         REST Requests</a> topic in the <i>Amazon Simple Storage Service
      *         Developer Guide</i>.
@@ -203,20 +203,20 @@ public class DiskImageDetail implements Serializable {
     }
     
     /**
-     * A presigned URL for the import manifest stored in Amazon S3. For
-     * information about creating a presigned URL for an Amazon S3 object,
-     * read the "Query String Request Authentication Alternative" section of
-     * the <a
+     * A presigned URL for the import manifest stored in Amazon S3 and
+     * presented here as an Amazon S3 presigned URL. For information about
+     * creating a presigned URL for an Amazon S3 object, read the "Query
+     * String Request Authentication Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importManifestUrl A presigned URL for the import manifest stored in Amazon S3. For
-     *         information about creating a presigned URL for an Amazon S3 object,
-     *         read the "Query String Request Authentication Alternative" section of
-     *         the <a
+     * @param importManifestUrl A presigned URL for the import manifest stored in Amazon S3 and
+     *         presented here as an Amazon S3 presigned URL. For information about
+     *         creating a presigned URL for an Amazon S3 object, read the "Query
+     *         String Request Authentication Alternative" section of the <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      *         REST Requests</a> topic in the <i>Amazon Simple Storage Service
      *         Developer Guide</i>.

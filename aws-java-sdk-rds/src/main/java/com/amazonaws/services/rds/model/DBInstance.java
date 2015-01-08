@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,12 +65,13 @@ public class DBInstance implements Serializable {
 
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. For example, this value returns only MySQL information when
-     * returning values from CreateDBInstanceReadReplica since read replicas
-     * are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
-     * the initial database of this instance that was provided at create
-     * time, if one was specified when the DB instance was created. This same
-     * name is returned for the life of the DB instance. <p>Type: String
+     * you use. For example, this value returns either MySQL or PostgreSQL
+     * information when returning values from CreateDBInstanceReadReplica
+     * since Read Replicas are only supported for MySQL and PostgreSQL.
+     * <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     * initial database of this instance that was provided at create time, if
+     * one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance. <p>Type: String
      * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
      * created DB instance. Not shown when the returned parameters do not
      * apply to an Oracle DB instance.
@@ -172,12 +173,12 @@ public class DBInstance implements Serializable {
 
     /**
      * Contains the identifier of the source DB instance if this DB instance
-     * is a read replica.
+     * is a Read Replica.
      */
     private String readReplicaSourceDBInstanceIdentifier;
 
     /**
-     * Contains one or more identifiers of the read replicas associated with
+     * Contains one or more identifiers of the Read Replicas associated with
      * this DB instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> readReplicaDBInstanceIdentifiers;
@@ -227,13 +228,13 @@ public class DBInstance implements Serializable {
     private Boolean publiclyAccessible;
 
     /**
-     * The status of a read replica. If the instance is not a read replica,
+     * The status of a Read Replica. If the instance is not a Read Replica,
      * this will be blank.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo> statusInfos;
 
     /**
-     * Specifies storage type associated with DB Instance.
+     * Specifies the storage type associated with DB instance.
      */
     private String storageType;
 
@@ -242,6 +243,25 @@ public class DBInstance implements Serializable {
      * TDE encryption.
      */
     private String tdeCredentialArn;
+
+    /**
+     * Specifies whether the DB instance is encrypted.
+     */
+    private Boolean storageEncrypted;
+
+    /**
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     * the encrypted DB instance.
+     */
+    private String kmsKeyId;
+
+    /**
+     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
+     * identifier for the encrypted DB instance. This identifier is found in
+     * AWS CloudTrail log entries whenever the KMS key for the DB instance is
+     * accessed.
+     */
+    private String dbiResourceId;
 
     /**
      * Contains a user-supplied database identifier. This is the unique key
@@ -428,23 +448,25 @@ public class DBInstance implements Serializable {
 
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. For example, this value returns only MySQL information when
-     * returning values from CreateDBInstanceReadReplica since read replicas
-     * are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
-     * the initial database of this instance that was provided at create
-     * time, if one was specified when the DB instance was created. This same
-     * name is returned for the life of the DB instance. <p>Type: String
+     * you use. For example, this value returns either MySQL or PostgreSQL
+     * information when returning values from CreateDBInstanceReadReplica
+     * since Read Replicas are only supported for MySQL and PostgreSQL.
+     * <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     * initial database of this instance that was provided at create time, if
+     * one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance. <p>Type: String
      * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
      * created DB instance. Not shown when the returned parameters do not
      * apply to an Oracle DB instance.
      *
      * @return The meaning of this parameter differs according to the database engine
-     *         you use. For example, this value returns only MySQL information when
-     *         returning values from CreateDBInstanceReadReplica since read replicas
-     *         are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
-     *         the initial database of this instance that was provided at create
-     *         time, if one was specified when the DB instance was created. This same
-     *         name is returned for the life of the DB instance. <p>Type: String
+     *         you use. For example, this value returns either MySQL or PostgreSQL
+     *         information when returning values from CreateDBInstanceReadReplica
+     *         since Read Replicas are only supported for MySQL and PostgreSQL.
+     *         <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     *         initial database of this instance that was provided at create time, if
+     *         one was specified when the DB instance was created. This same name is
+     *         returned for the life of the DB instance. <p>Type: String
      *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
      *         created DB instance. Not shown when the returned parameters do not
      *         apply to an Oracle DB instance.
@@ -455,23 +477,25 @@ public class DBInstance implements Serializable {
     
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. For example, this value returns only MySQL information when
-     * returning values from CreateDBInstanceReadReplica since read replicas
-     * are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
-     * the initial database of this instance that was provided at create
-     * time, if one was specified when the DB instance was created. This same
-     * name is returned for the life of the DB instance. <p>Type: String
+     * you use. For example, this value returns either MySQL or PostgreSQL
+     * information when returning values from CreateDBInstanceReadReplica
+     * since Read Replicas are only supported for MySQL and PostgreSQL.
+     * <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     * initial database of this instance that was provided at create time, if
+     * one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance. <p>Type: String
      * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
      * created DB instance. Not shown when the returned parameters do not
      * apply to an Oracle DB instance.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
-     *         you use. For example, this value returns only MySQL information when
-     *         returning values from CreateDBInstanceReadReplica since read replicas
-     *         are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
-     *         the initial database of this instance that was provided at create
-     *         time, if one was specified when the DB instance was created. This same
-     *         name is returned for the life of the DB instance. <p>Type: String
+     *         you use. For example, this value returns either MySQL or PostgreSQL
+     *         information when returning values from CreateDBInstanceReadReplica
+     *         since Read Replicas are only supported for MySQL and PostgreSQL.
+     *         <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     *         initial database of this instance that was provided at create time, if
+     *         one was specified when the DB instance was created. This same name is
+     *         returned for the life of the DB instance. <p>Type: String
      *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
      *         created DB instance. Not shown when the returned parameters do not
      *         apply to an Oracle DB instance.
@@ -482,12 +506,13 @@ public class DBInstance implements Serializable {
     
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. For example, this value returns only MySQL information when
-     * returning values from CreateDBInstanceReadReplica since read replicas
-     * are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
-     * the initial database of this instance that was provided at create
-     * time, if one was specified when the DB instance was created. This same
-     * name is returned for the life of the DB instance. <p>Type: String
+     * you use. For example, this value returns either MySQL or PostgreSQL
+     * information when returning values from CreateDBInstanceReadReplica
+     * since Read Replicas are only supported for MySQL and PostgreSQL.
+     * <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     * initial database of this instance that was provided at create time, if
+     * one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance. <p>Type: String
      * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
      * created DB instance. Not shown when the returned parameters do not
      * apply to an Oracle DB instance.
@@ -495,12 +520,13 @@ public class DBInstance implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
-     *         you use. For example, this value returns only MySQL information when
-     *         returning values from CreateDBInstanceReadReplica since read replicas
-     *         are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
-     *         the initial database of this instance that was provided at create
-     *         time, if one was specified when the DB instance was created. This same
-     *         name is returned for the life of the DB instance. <p>Type: String
+     *         you use. For example, this value returns either MySQL or PostgreSQL
+     *         information when returning values from CreateDBInstanceReadReplica
+     *         since Read Replicas are only supported for MySQL and PostgreSQL.
+     *         <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     *         initial database of this instance that was provided at create time, if
+     *         one was specified when the DB instance was created. This same name is
+     *         returned for the life of the DB instance. <p>Type: String
      *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
      *         created DB instance. Not shown when the returned parameters do not
      *         apply to an Oracle DB instance.
@@ -1250,10 +1276,10 @@ public class DBInstance implements Serializable {
 
     /**
      * Contains the identifier of the source DB instance if this DB instance
-     * is a read replica.
+     * is a Read Replica.
      *
      * @return Contains the identifier of the source DB instance if this DB instance
-     *         is a read replica.
+     *         is a Read Replica.
      */
     public String getReadReplicaSourceDBInstanceIdentifier() {
         return readReplicaSourceDBInstanceIdentifier;
@@ -1261,10 +1287,10 @@ public class DBInstance implements Serializable {
     
     /**
      * Contains the identifier of the source DB instance if this DB instance
-     * is a read replica.
+     * is a Read Replica.
      *
      * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB instance if this DB instance
-     *         is a read replica.
+     *         is a Read Replica.
      */
     public void setReadReplicaSourceDBInstanceIdentifier(String readReplicaSourceDBInstanceIdentifier) {
         this.readReplicaSourceDBInstanceIdentifier = readReplicaSourceDBInstanceIdentifier;
@@ -1272,12 +1298,12 @@ public class DBInstance implements Serializable {
     
     /**
      * Contains the identifier of the source DB instance if this DB instance
-     * is a read replica.
+     * is a Read Replica.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB instance if this DB instance
-     *         is a read replica.
+     *         is a Read Replica.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1288,10 +1314,10 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Contains one or more identifiers of the read replicas associated with
+     * Contains one or more identifiers of the Read Replicas associated with
      * this DB instance.
      *
-     * @return Contains one or more identifiers of the read replicas associated with
+     * @return Contains one or more identifiers of the Read Replicas associated with
      *         this DB instance.
      */
     public java.util.List<String> getReadReplicaDBInstanceIdentifiers() {
@@ -1303,10 +1329,10 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Contains one or more identifiers of the read replicas associated with
+     * Contains one or more identifiers of the Read Replicas associated with
      * this DB instance.
      *
-     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the read replicas associated with
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
      *         this DB instance.
      */
     public void setReadReplicaDBInstanceIdentifiers(java.util.Collection<String> readReplicaDBInstanceIdentifiers) {
@@ -1320,12 +1346,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Contains one or more identifiers of the read replicas associated with
+     * Contains one or more identifiers of the Read Replicas associated with
      * this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the read replicas associated with
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
      *         this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -1340,12 +1366,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Contains one or more identifiers of the read replicas associated with
+     * Contains one or more identifiers of the Read Replicas associated with
      * this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the read replicas associated with
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
      *         this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -1714,10 +1740,10 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * The status of a read replica. If the instance is not a read replica,
+     * The status of a Read Replica. If the instance is not a Read Replica,
      * this will be blank.
      *
-     * @return The status of a read replica. If the instance is not a read replica,
+     * @return The status of a Read Replica. If the instance is not a Read Replica,
      *         this will be blank.
      */
     public java.util.List<DBInstanceStatusInfo> getStatusInfos() {
@@ -1729,10 +1755,10 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * The status of a read replica. If the instance is not a read replica,
+     * The status of a Read Replica. If the instance is not a Read Replica,
      * this will be blank.
      *
-     * @param statusInfos The status of a read replica. If the instance is not a read replica,
+     * @param statusInfos The status of a Read Replica. If the instance is not a Read Replica,
      *         this will be blank.
      */
     public void setStatusInfos(java.util.Collection<DBInstanceStatusInfo> statusInfos) {
@@ -1746,12 +1772,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * The status of a read replica. If the instance is not a read replica,
+     * The status of a Read Replica. If the instance is not a Read Replica,
      * this will be blank.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusInfos The status of a read replica. If the instance is not a read replica,
+     * @param statusInfos The status of a Read Replica. If the instance is not a Read Replica,
      *         this will be blank.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -1766,12 +1792,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * The status of a read replica. If the instance is not a read replica,
+     * The status of a Read Replica. If the instance is not a Read Replica,
      * this will be blank.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusInfos The status of a read replica. If the instance is not a read replica,
+     * @param statusInfos The status of a Read Replica. If the instance is not a Read Replica,
      *         this will be blank.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -1790,29 +1816,29 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Specifies storage type associated with DB Instance.
+     * Specifies the storage type associated with DB instance.
      *
-     * @return Specifies storage type associated with DB Instance.
+     * @return Specifies the storage type associated with DB instance.
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * Specifies storage type associated with DB Instance.
+     * Specifies the storage type associated with DB instance.
      *
-     * @param storageType Specifies storage type associated with DB Instance.
+     * @param storageType Specifies the storage type associated with DB instance.
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * Specifies storage type associated with DB Instance.
+     * Specifies the storage type associated with DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType Specifies storage type associated with DB Instance.
+     * @param storageType Specifies the storage type associated with DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1862,6 +1888,138 @@ public class DBInstance implements Serializable {
     }
 
     /**
+     * Specifies whether the DB instance is encrypted.
+     *
+     * @return Specifies whether the DB instance is encrypted.
+     */
+    public Boolean isStorageEncrypted() {
+        return storageEncrypted;
+    }
+    
+    /**
+     * Specifies whether the DB instance is encrypted.
+     *
+     * @param storageEncrypted Specifies whether the DB instance is encrypted.
+     */
+    public void setStorageEncrypted(Boolean storageEncrypted) {
+        this.storageEncrypted = storageEncrypted;
+    }
+    
+    /**
+     * Specifies whether the DB instance is encrypted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageEncrypted Specifies whether the DB instance is encrypted.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withStorageEncrypted(Boolean storageEncrypted) {
+        this.storageEncrypted = storageEncrypted;
+        return this;
+    }
+
+    /**
+     * Specifies whether the DB instance is encrypted.
+     *
+     * @return Specifies whether the DB instance is encrypted.
+     */
+    public Boolean getStorageEncrypted() {
+        return storageEncrypted;
+    }
+
+    /**
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     * the encrypted DB instance.
+     *
+     * @return If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     *         the encrypted DB instance.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     * the encrypted DB instance.
+     *
+     * @param kmsKeyId If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     *         the encrypted DB instance.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     * the encrypted DB instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId If <code>StorageEncrypted</code> is true, the KMS key identifier for
+     *         the encrypted DB instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
+     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
+     * identifier for the encrypted DB instance. This identifier is found in
+     * AWS CloudTrail log entries whenever the KMS key for the DB instance is
+     * accessed.
+     *
+     * @return If <code>StorageEncrypted</code> is true, the region-unique, immutable
+     *         identifier for the encrypted DB instance. This identifier is found in
+     *         AWS CloudTrail log entries whenever the KMS key for the DB instance is
+     *         accessed.
+     */
+    public String getDbiResourceId() {
+        return dbiResourceId;
+    }
+    
+    /**
+     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
+     * identifier for the encrypted DB instance. This identifier is found in
+     * AWS CloudTrail log entries whenever the KMS key for the DB instance is
+     * accessed.
+     *
+     * @param dbiResourceId If <code>StorageEncrypted</code> is true, the region-unique, immutable
+     *         identifier for the encrypted DB instance. This identifier is found in
+     *         AWS CloudTrail log entries whenever the KMS key for the DB instance is
+     *         accessed.
+     */
+    public void setDbiResourceId(String dbiResourceId) {
+        this.dbiResourceId = dbiResourceId;
+    }
+    
+    /**
+     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
+     * identifier for the encrypted DB instance. This identifier is found in
+     * AWS CloudTrail log entries whenever the KMS key for the DB instance is
+     * accessed.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dbiResourceId If <code>StorageEncrypted</code> is true, the region-unique, immutable
+     *         identifier for the encrypted DB instance. This identifier is found in
+     *         AWS CloudTrail log entries whenever the KMS key for the DB instance is
+     *         accessed.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withDbiResourceId(String dbiResourceId) {
+        this.dbiResourceId = dbiResourceId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1905,7 +2063,10 @@ public class DBInstance implements Serializable {
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
         if (getStatusInfos() != null) sb.append("StatusInfos: " + getStatusInfos() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
-        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() );
+        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
+        if (isStorageEncrypted() != null) sb.append("StorageEncrypted: " + isStorageEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getDbiResourceId() != null) sb.append("DbiResourceId: " + getDbiResourceId() );
         sb.append("}");
         return sb.toString();
     }
@@ -1948,6 +2109,9 @@ public class DBInstance implements Serializable {
         hashCode = prime * hashCode + ((getStatusInfos() == null) ? 0 : getStatusInfos().hashCode()); 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
+        hashCode = prime * hashCode + ((isStorageEncrypted() == null) ? 0 : isStorageEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode()); 
         return hashCode;
     }
     
@@ -2025,6 +2189,12 @@ public class DBInstance implements Serializable {
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
         if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;
         if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
+        if (other.isStorageEncrypted() == null ^ this.isStorageEncrypted() == null) return false;
+        if (other.isStorageEncrypted() != null && other.isStorageEncrypted().equals(this.isStorageEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
+        if (other.getDbiResourceId() == null ^ this.getDbiResourceId() == null) return false;
+        if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false) return false; 
         return true;
     }
     

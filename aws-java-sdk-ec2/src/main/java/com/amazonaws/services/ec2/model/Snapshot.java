@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -83,9 +83,8 @@ public class Snapshot implements Serializable {
     private Boolean encrypted;
 
     /**
-     * The full ARN of the AWS Key Management Service (KMS) Customer Master
-     * Key (CMK) that was used to protect the volume encryption key for the
-     * parent volume.
+     * The full ARN of the AWS Key Management Service (KMS) master key that
+     * was used to protect the volume encryption key for the parent volume.
      */
     private String kmsKeyId;
 
@@ -552,41 +551,35 @@ public class Snapshot implements Serializable {
     }
 
     /**
-     * The full ARN of the AWS Key Management Service (KMS) Customer Master
-     * Key (CMK) that was used to protect the volume encryption key for the
-     * parent volume.
+     * The full ARN of the AWS Key Management Service (KMS) master key that
+     * was used to protect the volume encryption key for the parent volume.
      *
-     * @return The full ARN of the AWS Key Management Service (KMS) Customer Master
-     *         Key (CMK) that was used to protect the volume encryption key for the
-     *         parent volume.
+     * @return The full ARN of the AWS Key Management Service (KMS) master key that
+     *         was used to protect the volume encryption key for the parent volume.
      */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
     
     /**
-     * The full ARN of the AWS Key Management Service (KMS) Customer Master
-     * Key (CMK) that was used to protect the volume encryption key for the
-     * parent volume.
+     * The full ARN of the AWS Key Management Service (KMS) master key that
+     * was used to protect the volume encryption key for the parent volume.
      *
-     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) Customer Master
-     *         Key (CMK) that was used to protect the volume encryption key for the
-     *         parent volume.
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key that
+     *         was used to protect the volume encryption key for the parent volume.
      */
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
     
     /**
-     * The full ARN of the AWS Key Management Service (KMS) Customer Master
-     * Key (CMK) that was used to protect the volume encryption key for the
-     * parent volume.
+     * The full ARN of the AWS Key Management Service (KMS) master key that
+     * was used to protect the volume encryption key for the parent volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) Customer Master
-     *         Key (CMK) that was used to protect the volume encryption key for the
-     *         parent volume.
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key that
+     *         was used to protect the volume encryption key for the parent volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

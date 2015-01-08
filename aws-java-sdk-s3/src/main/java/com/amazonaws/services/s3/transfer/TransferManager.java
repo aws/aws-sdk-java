@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -603,7 +603,13 @@ public class TransferManager {
 
         UploadImpl upload = new UploadImpl(description, transferProgress,
                 listenerChain, stateListener);
-
+        /**
+         * Since we use the same thread pool for uploading individual parts and
+         * complete multi part upload, there is a possibility that the tasks for
+         * complete multi-part upload will be added to end of queue in case of
+         * multiple parallel uploads submitted. This may result in a delay for
+         * processing the complete multi part upload request.
+         */
         UploadCallable uploadCallable = new UploadCallable(this, threadPool,
                 upload, putObjectRequest, listenerChain, multipartUploadId,
                 transferProgress);

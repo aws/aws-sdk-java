@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,11 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#promoteReadReplica(PromoteReadReplicaRequest) PromoteReadReplica operation}.
  * <p>
- * Promotes a read replica DB instance to a standalone DB instance.
+ * Promotes a Read Replica DB instance to a standalone DB instance.
  * </p>
  * <p>
  * <b>NOTE:</b> We recommend that you enable automated backups on your
- * read replica before promoting the read replica. This ensures that no
+ * Read Replica before promoting the Read Replica. This ensures that no
  * backup is taken during the promotion process. Once the instance is
  * promoted to a primary instance, backups are taken based on your backup
  * settings.
@@ -38,7 +38,7 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
     /**
      * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing read replica DB instance</li> <li>Must contain from 1 to 63
+     * existing Read Replica DB instance</li> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
@@ -69,14 +69,14 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
     /**
      * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing read replica DB instance</li> <li>Must contain from 1 to 63
+     * existing Read Replica DB instance</li> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
      *
      * @return The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing read replica DB instance</li> <li>Must contain from 1 to 63
+     *         existing Read Replica DB instance</li> <li>Must contain from 1 to 63
      *         alphanumeric characters or hyphens</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
@@ -88,14 +88,14 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
     /**
      * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing read replica DB instance</li> <li>Must contain from 1 to 63
+     * existing Read Replica DB instance</li> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
      *
      * @param dBInstanceIdentifier The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing read replica DB instance</li> <li>Must contain from 1 to 63
+     *         existing Read Replica DB instance</li> <li>Must contain from 1 to 63
      *         alphanumeric characters or hyphens</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
@@ -107,7 +107,7 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
     /**
      * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing read replica DB instance</li> <li>Must contain from 1 to 63
+     * existing Read Replica DB instance</li> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
@@ -116,7 +116,7 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
      *
      * @param dBInstanceIdentifier The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing read replica DB instance</li> <li>Must contain from 1 to 63
+     *         existing Read Replica DB instance</li> <li>Must contain from 1 to 63
      *         alphanumeric characters or hyphens</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>

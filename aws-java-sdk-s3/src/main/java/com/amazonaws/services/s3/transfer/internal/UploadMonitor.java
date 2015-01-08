@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Amazon Technologies, Inc.
+ * Copyright 2011-2015 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,20 +17,17 @@ package com.amazonaws.services.s3.transfer.internal;
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
-import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.PauseResult;
@@ -55,29 +52,29 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
     private final ProgressListenerChain listener;
     private final UploadCallable multipartUploadCallable;
     private final UploadImpl transfer;
+    private final ExecutorService threadPool;
 
     /*
-     * State for tracking the upload's progress
+     * Futures of threads that upload the parts.
      */
-    private String uploadId;
-    private final List<Future<PartETag>> futures = new ArrayList<Future<PartETag>>();
+    private final List<Future<PartETag>> futures = Collections
+            .synchronizedList(new ArrayList<Future<PartETag>>());
 
     /*
      * State for clients wishing to poll for completion
      */
     private boolean isUploadDone = false;
     private Future<UploadResult> future;
-    private CountDownLatch latch;
 
-    public Future<UploadResult> getFuture() {
+    public synchronized Future<UploadResult> getFuture() {
         return future;
     }
 
-    private void setFuture(Future<UploadResult> future) {
+    private synchronized void setFuture(Future<UploadResult> future) {
         this.future = future;
     }
 
-    private void cancelFuture() {
+    private synchronized void cancelFuture() {
         future.cancel(true);
     }
 
@@ -88,8 +85,6 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
     private synchronized void markAllDone() {
         isUploadDone = true;
     }
-
-    private int latchWaitTime = 5000;
 
     /**
      * Constructs a new upload watcher, which immediately submits itself to the
@@ -119,6 +114,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         this.putObjectRequest = putObjectRequest;
         this.listener = progressListenerChain;
         this.transfer = transfer;
+        this.threadPool = threadPool;
 
         setFuture(threadPool.submit(this));
     }
@@ -128,13 +124,20 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         try {
             UploadResult result = multipartUploadCallable.call();
 
+            /**
+             * If the result is null, it is a mutli part parellel upload. So, an
+             * new task is submitted for initiating a complete multi part upload
+             * request.
+             */
             if (result == null) {
-                uploadId = multipartUploadCallable.getMultipartUploadId();
                 futures.addAll(multipartUploadCallable.getFutures());
-                latch = multipartUploadCallable.getLatch();
-                result = waitForUploadResult();
+                setFuture(threadPool.submit(new CompleteMultipartUpload(
+                        multipartUploadCallable.getMultipartUploadId(), s3,
+                        putObjectRequest, futures, multipartUploadCallable
+                                .getETags(), this)));
+            } else {
+                uploadComplete();
             }
-            uploadComplete();
             return result;
         } catch (CancellationException e) {
             transfer.setState(TransferState.Canceled);
@@ -147,7 +150,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         }
     }
 
-    private void uploadComplete() {
+    void uploadComplete() {
         markAllDone();
         transfer.setState(TransferState.Completed);
 
@@ -156,63 +159,6 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         if (multipartUploadCallable.isMultipartUpload()) {
             publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         }
-    }
-
-    private UploadResult waitForUploadResult() throws InterruptedException {
-
-        while (!(latch.await(latchWaitTime, TimeUnit.MILLISECONDS))) {
-
-            for ( Future<PartETag> f : futures ) {
-                if ( !f.isDone() ) {
-                    continue;
-                }
-            }
-
-            for ( Future<PartETag> f : futures ) {
-                if ( f.isCancelled() ) {
-                    throw new CancellationException();
-                }
-            }
-            break;
-        }
-
-        // Ideally we would want to move this complete multipart along with last
-        // part upload.
-        // This way the monitor need not run in a thread.
-        return completeMultipartUpload();
-    }
-
-    /**
-     * Completes the multipart upload and returns the result.
-     */
-    private UploadResult completeMultipartUpload() {
-        CompleteMultipartUploadResult completeMultipartUploadResult = 
-            s3.completeMultipartUpload(
-                new CompleteMultipartUploadRequest(
-                    putObjectRequest.getBucketName(),
-                    putObjectRequest.getKey(),
-                    uploadId,
-                    collectPartETags()));
-        UploadResult uploadResult = new UploadResult();
-        uploadResult.setBucketName(completeMultipartUploadResult.getBucketName());
-        uploadResult.setKey(completeMultipartUploadResult.getKey());
-        uploadResult.setETag(completeMultipartUploadResult.getETag());
-        uploadResult.setVersionId(completeMultipartUploadResult.getVersionId());
-        return uploadResult;
-    }
-
-    private List<PartETag> collectPartETags() {
-
-        final List<PartETag> partETags = new ArrayList<PartETag>();
-        partETags.addAll(multipartUploadCallable.getETags());
-        for (Future<PartETag> future : futures) {
-            try {
-                partETags.add(future.get());
-            } catch (Exception e) {
-                throw new AmazonClientException("Unable to upload part: " + e.getCause().getMessage(), e.getCause());
-            }
-        }
-        return partETags;
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,6 +25,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * created from the source database restore point with the same
  * configuration as the original source database, except that the new RDS
  * instance is created with the default security group.
+ * </p>
+ * <p>
+ * If your intent is to replace your original DB instance with the new,
+ * restored DB instance, then rename your original DB instance before you
+ * call the RestoreDBInstanceFromDBSnapshot action. RDS does not allow
+ * two DB instances with the same name. Once you have renamed your
+ * original DB instance with a different identifier, then you can pass
+ * the original name of the DB instance as the DBInstanceIdentifier in
+ * the call to the RestoreDBInstanceFromDBSnapshot action. The result is
+ * that you will replace the original DB instance with the DB instance
+ * created from the snapshot.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest)
@@ -93,13 +104,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      */
     private Boolean publiclyAccessible;
 
@@ -126,7 +137,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p>Example: <code>oracle-ee</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     * | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      */
     private String engine;
 
@@ -145,7 +160,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * <p>Permanent options, such as the TDE option for Oracle Advanced
      * Security TDE, cannot be removed from an option group, and that option
      * group cannot be removed from a DB instance once it is associated with
      * a DB instance
@@ -158,10 +173,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      */
     private String storageType;
 
@@ -576,13 +593,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      *
      * @return Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
@@ -590,13 +607,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will be
-     *         publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been
-     *         set, the DB instance will be private.
+     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         has been specified as part of the request and the PubliclyAccessible
+     *         value has not been set, the DB instance will be publicly accessible.
+     *         If a specific DB subnet group has been specified as part of the
+     *         request and the PubliclyAccessible value has not been set, the DB
+     *         instance will be private.
      */
     public Boolean isPubliclyAccessible() {
         return publiclyAccessible;
@@ -609,13 +626,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      *
      * @param publiclyAccessible Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
@@ -623,13 +640,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will be
-     *         publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been
-     *         set, the DB instance will be private.
+     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         has been specified as part of the request and the PubliclyAccessible
+     *         value has not been set, the DB instance will be publicly accessible.
+     *         If a specific DB subnet group has been specified as part of the
+     *         request and the PubliclyAccessible value has not been set, the DB
+     *         instance will be private.
      */
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
@@ -642,13 +659,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -658,13 +675,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will be
-     *         publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been
-     *         set, the DB instance will be private.
+     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         has been specified as part of the request and the PubliclyAccessible
+     *         value has not been set, the DB instance will be publicly accessible.
+     *         If a specific DB subnet group has been specified as part of the
+     *         request and the PubliclyAccessible value has not been set, the DB
+     *         instance will be private.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -681,13 +698,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      *
      * @return Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
@@ -695,13 +712,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will be
-     *         publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been
-     *         set, the DB instance will be private.
+     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         has been specified as part of the request and the PubliclyAccessible
+     *         value has not been set, the DB instance will be publicly accessible.
+     *         If a specific DB subnet group has been specified as part of the
+     *         request and the PubliclyAccessible value has not been set, the DB
+     *         instance will be private.
      */
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
@@ -850,11 +867,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p>Example: <code>oracle-ee</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     * | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      *
      * @return The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p>Example: <code>oracle-ee</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      */
     public String getEngine() {
         return engine;
@@ -863,11 +888,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p>Example: <code>oracle-ee</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     * | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      *
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p>Example: <code>oracle-ee</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -876,13 +909,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p>Example: <code>oracle-ee</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     * | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p>Example: <code>oracle-ee</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -975,13 +1016,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * <p>Permanent options, such as the TDE option for Oracle Advanced
      * Security TDE, cannot be removed from an option group, and that option
      * group cannot be removed from a DB instance once it is associated with
      * a DB instance
      *
      * @return The name of the option group to be used for the restored DB instance.
-     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         <p>Permanent options, such as the TDE option for Oracle Advanced
      *         Security TDE, cannot be removed from an option group, and that option
      *         group cannot be removed from a DB instance once it is associated with
      *         a DB instance
@@ -992,13 +1033,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * <p>Permanent options, such as the TDE option for Oracle Advanced
      * Security TDE, cannot be removed from an option group, and that option
      * group cannot be removed from a DB instance once it is associated with
      * a DB instance
      *
      * @param optionGroupName The name of the option group to be used for the restored DB instance.
-     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         <p>Permanent options, such as the TDE option for Oracle Advanced
      *         Security TDE, cannot be removed from an option group, and that option
      *         group cannot be removed from a DB instance once it is associated with
      *         a DB instance
@@ -1009,7 +1050,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * <p>Permanent options, such as the TDE option for Oracle Advanced
      * Security TDE, cannot be removed from an option group, and that option
      * group cannot be removed from a DB instance once it is associated with
      * a DB instance
@@ -1017,7 +1058,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupName The name of the option group to be used for the restored DB instance.
-     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         <p>Permanent options, such as the TDE option for Oracle Advanced
      *         Security TDE, cannot be removed from an option group, and that option
      *         group cannot be removed from a DB instance once it is associated with
      *         a DB instance
@@ -1099,47 +1140,59 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @return Specifies storage type to be associated with the DB Instance. <p>
+     * @return Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     * @param storageType Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     * @param storageType Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

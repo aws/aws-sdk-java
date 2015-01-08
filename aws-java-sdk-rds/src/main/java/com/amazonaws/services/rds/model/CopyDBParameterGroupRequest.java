@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#copyDBParameterGroup(CopyDBParameterGroupRequest) CopyDBParameterGroup operation}.
  * <p>
- * Copies the specified DBParameterGroup.
+ * Copies the specified DB parameter group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#copyDBParameterGroup(CopyDBParameterGroupRequest)
@@ -29,19 +29,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The identifier or ARN for the source DB Parameter Group.
-     * <p>Constraints: <ul> <li>Must specify a valid DB Parameter Group.</li>
-     * <li>If the source DB Parameter Group is in the same region as the
-     * copy, specify a valid DB Parameter Group identifier, or a valid
-     * ARN.</li> <li>If the source DB Parameter Group is in a different
-     * region than the copy, specify a valid DB parameter group ARN.</li>
-     * </ul> <p>Example: <code>my-db-param-group</code> <p>Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
+     * The identifier or ARN for the source DB parameter group.
+     * <p>Constraints: <ul> <li>Must specify a valid DB parameter group.</li>
+     * <li>If the source DB parameter group is in the same region as the
+     * copy, specify a valid DB parameter group identifier, for example
+     * <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
+     * DB parameter group is in a different region than the copy, specify a
+     * valid DB parameter group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
+     * </ul>
      */
     private String sourceDBParameterGroupIdentifier;
 
     /**
-     * The identifier for the copied DB Parameter Group. <p>Constraints: <ul>
+     * The identifier for the copied DB parameter group. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -51,7 +52,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest impleme
     private String targetDBParameterGroupIdentifier;
 
     /**
-     * The description for the copied DB Parameter Group.
+     * A description for the copied DB parameter group.
      */
     private String targetDBParameterGroupDescription;
 
@@ -61,71 +62,77 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest impleme
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The identifier or ARN for the source DB Parameter Group.
-     * <p>Constraints: <ul> <li>Must specify a valid DB Parameter Group.</li>
-     * <li>If the source DB Parameter Group is in the same region as the
-     * copy, specify a valid DB Parameter Group identifier, or a valid
-     * ARN.</li> <li>If the source DB Parameter Group is in a different
-     * region than the copy, specify a valid DB parameter group ARN.</li>
-     * </ul> <p>Example: <code>my-db-param-group</code> <p>Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
+     * The identifier or ARN for the source DB parameter group.
+     * <p>Constraints: <ul> <li>Must specify a valid DB parameter group.</li>
+     * <li>If the source DB parameter group is in the same region as the
+     * copy, specify a valid DB parameter group identifier, for example
+     * <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
+     * DB parameter group is in a different region than the copy, specify a
+     * valid DB parameter group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
+     * </ul>
      *
-     * @return The identifier or ARN for the source DB Parameter Group.
-     *         <p>Constraints: <ul> <li>Must specify a valid DB Parameter Group.</li>
-     *         <li>If the source DB Parameter Group is in the same region as the
-     *         copy, specify a valid DB Parameter Group identifier, or a valid
-     *         ARN.</li> <li>If the source DB Parameter Group is in a different
-     *         region than the copy, specify a valid DB parameter group ARN.</li>
-     *         </ul> <p>Example: <code>my-db-param-group</code> <p>Example:
-     *         <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
+     * @return The identifier or ARN for the source DB parameter group.
+     *         <p>Constraints: <ul> <li>Must specify a valid DB parameter group.</li>
+     *         <li>If the source DB parameter group is in the same region as the
+     *         copy, specify a valid DB parameter group identifier, for example
+     *         <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
+     *         DB parameter group is in a different region than the copy, specify a
+     *         valid DB parameter group ARN, for example
+     *         <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
+     *         </ul>
      */
     public String getSourceDBParameterGroupIdentifier() {
         return sourceDBParameterGroupIdentifier;
     }
     
     /**
-     * The identifier or ARN for the source DB Parameter Group.
-     * <p>Constraints: <ul> <li>Must specify a valid DB Parameter Group.</li>
-     * <li>If the source DB Parameter Group is in the same region as the
-     * copy, specify a valid DB Parameter Group identifier, or a valid
-     * ARN.</li> <li>If the source DB Parameter Group is in a different
-     * region than the copy, specify a valid DB parameter group ARN.</li>
-     * </ul> <p>Example: <code>my-db-param-group</code> <p>Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
+     * The identifier or ARN for the source DB parameter group.
+     * <p>Constraints: <ul> <li>Must specify a valid DB parameter group.</li>
+     * <li>If the source DB parameter group is in the same region as the
+     * copy, specify a valid DB parameter group identifier, for example
+     * <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
+     * DB parameter group is in a different region than the copy, specify a
+     * valid DB parameter group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
+     * </ul>
      *
-     * @param sourceDBParameterGroupIdentifier The identifier or ARN for the source DB Parameter Group.
-     *         <p>Constraints: <ul> <li>Must specify a valid DB Parameter Group.</li>
-     *         <li>If the source DB Parameter Group is in the same region as the
-     *         copy, specify a valid DB Parameter Group identifier, or a valid
-     *         ARN.</li> <li>If the source DB Parameter Group is in a different
-     *         region than the copy, specify a valid DB parameter group ARN.</li>
-     *         </ul> <p>Example: <code>my-db-param-group</code> <p>Example:
-     *         <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
+     * @param sourceDBParameterGroupIdentifier The identifier or ARN for the source DB parameter group.
+     *         <p>Constraints: <ul> <li>Must specify a valid DB parameter group.</li>
+     *         <li>If the source DB parameter group is in the same region as the
+     *         copy, specify a valid DB parameter group identifier, for example
+     *         <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
+     *         DB parameter group is in a different region than the copy, specify a
+     *         valid DB parameter group ARN, for example
+     *         <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
+     *         </ul>
      */
     public void setSourceDBParameterGroupIdentifier(String sourceDBParameterGroupIdentifier) {
         this.sourceDBParameterGroupIdentifier = sourceDBParameterGroupIdentifier;
     }
     
     /**
-     * The identifier or ARN for the source DB Parameter Group.
-     * <p>Constraints: <ul> <li>Must specify a valid DB Parameter Group.</li>
-     * <li>If the source DB Parameter Group is in the same region as the
-     * copy, specify a valid DB Parameter Group identifier, or a valid
-     * ARN.</li> <li>If the source DB Parameter Group is in a different
-     * region than the copy, specify a valid DB parameter group ARN.</li>
-     * </ul> <p>Example: <code>my-db-param-group</code> <p>Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
+     * The identifier or ARN for the source DB parameter group.
+     * <p>Constraints: <ul> <li>Must specify a valid DB parameter group.</li>
+     * <li>If the source DB parameter group is in the same region as the
+     * copy, specify a valid DB parameter group identifier, for example
+     * <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
+     * DB parameter group is in a different region than the copy, specify a
+     * valid DB parameter group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceDBParameterGroupIdentifier The identifier or ARN for the source DB Parameter Group.
-     *         <p>Constraints: <ul> <li>Must specify a valid DB Parameter Group.</li>
-     *         <li>If the source DB Parameter Group is in the same region as the
-     *         copy, specify a valid DB Parameter Group identifier, or a valid
-     *         ARN.</li> <li>If the source DB Parameter Group is in a different
-     *         region than the copy, specify a valid DB parameter group ARN.</li>
-     *         </ul> <p>Example: <code>my-db-param-group</code> <p>Example:
-     *         <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
+     * @param sourceDBParameterGroupIdentifier The identifier or ARN for the source DB parameter group.
+     *         <p>Constraints: <ul> <li>Must specify a valid DB parameter group.</li>
+     *         <li>If the source DB parameter group is in the same region as the
+     *         copy, specify a valid DB parameter group identifier, for example
+     *         <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
+     *         DB parameter group is in a different region than the copy, specify a
+     *         valid DB parameter group ARN, for example
+     *         <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -136,14 +143,14 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The identifier for the copied DB Parameter Group. <p>Constraints: <ul>
+     * The identifier for the copied DB parameter group. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example:
      * <code>my-db-parameter-group</code>
      *
-     * @return The identifier for the copied DB Parameter Group. <p>Constraints: <ul>
+     * @return The identifier for the copied DB parameter group. <p>Constraints: <ul>
      *         <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -155,14 +162,14 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The identifier for the copied DB Parameter Group. <p>Constraints: <ul>
+     * The identifier for the copied DB parameter group. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example:
      * <code>my-db-parameter-group</code>
      *
-     * @param targetDBParameterGroupIdentifier The identifier for the copied DB Parameter Group. <p>Constraints: <ul>
+     * @param targetDBParameterGroupIdentifier The identifier for the copied DB parameter group. <p>Constraints: <ul>
      *         <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -174,7 +181,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The identifier for the copied DB Parameter Group. <p>Constraints: <ul>
+     * The identifier for the copied DB parameter group. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -183,7 +190,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest impleme
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetDBParameterGroupIdentifier The identifier for the copied DB Parameter Group. <p>Constraints: <ul>
+     * @param targetDBParameterGroupIdentifier The identifier for the copied DB parameter group. <p>Constraints: <ul>
      *         <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -199,29 +206,29 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The description for the copied DB Parameter Group.
+     * A description for the copied DB parameter group.
      *
-     * @return The description for the copied DB Parameter Group.
+     * @return A description for the copied DB parameter group.
      */
     public String getTargetDBParameterGroupDescription() {
         return targetDBParameterGroupDescription;
     }
     
     /**
-     * The description for the copied DB Parameter Group.
+     * A description for the copied DB parameter group.
      *
-     * @param targetDBParameterGroupDescription The description for the copied DB Parameter Group.
+     * @param targetDBParameterGroupDescription A description for the copied DB parameter group.
      */
     public void setTargetDBParameterGroupDescription(String targetDBParameterGroupDescription) {
         this.targetDBParameterGroupDescription = targetDBParameterGroupDescription;
     }
     
     /**
-     * The description for the copied DB Parameter Group.
+     * A description for the copied DB parameter group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetDBParameterGroupDescription The description for the copied DB Parameter Group.
+     * @param targetDBParameterGroupDescription A description for the copied DB parameter group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,9 +85,9 @@ public class Volume implements Serializable {
      * bursting. For more information on General Purpose (SSD) baseline
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     * (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
+     * for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
+     * IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -95,14 +95,13 @@ public class Volume implements Serializable {
     private Integer iops;
 
     /**
-     * Indicates whether the volume is encrypted.
+     * Indicates whether the volume will be encrypted.
      */
     private Boolean encrypted;
 
     /**
-     * The full ARN of the AWS Key Management Service (KMS) Customer Master
-     * Key (CMK) that was used to protect the volume encryption key for the
-     * volume.
+     * The full ARN of the AWS Key Management Service (KMS) master key that
+     * was used to protect the volume encryption key for the volume.
      */
     private String kmsKeyId;
 
@@ -600,9 +599,9 @@ public class Volume implements Serializable {
      * bursting. For more information on General Purpose (SSD) baseline
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     * (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
+     * for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
+     * IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -615,9 +614,9 @@ public class Volume implements Serializable {
      *         bursting. For more information on General Purpose (SSD) baseline
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     *         (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
+     *         for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
+     *         IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
@@ -635,9 +634,9 @@ public class Volume implements Serializable {
      * bursting. For more information on General Purpose (SSD) baseline
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     * (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
+     * for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
+     * IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -650,9 +649,9 @@ public class Volume implements Serializable {
      *         bursting. For more information on General Purpose (SSD) baseline
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     *         (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
+     *         for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
+     *         IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
@@ -670,9 +669,9 @@ public class Volume implements Serializable {
      * bursting. For more information on General Purpose (SSD) baseline
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     * (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
+     * for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
+     * IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -687,9 +686,9 @@ public class Volume implements Serializable {
      *         bursting. For more information on General Purpose (SSD) baseline
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     *         (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
+     *         for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
+     *         IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
@@ -703,29 +702,29 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Indicates whether the volume is encrypted.
+     * Indicates whether the volume will be encrypted.
      *
-     * @return Indicates whether the volume is encrypted.
+     * @return Indicates whether the volume will be encrypted.
      */
     public Boolean isEncrypted() {
         return encrypted;
     }
     
     /**
-     * Indicates whether the volume is encrypted.
+     * Indicates whether the volume will be encrypted.
      *
-     * @param encrypted Indicates whether the volume is encrypted.
+     * @param encrypted Indicates whether the volume will be encrypted.
      */
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
     
     /**
-     * Indicates whether the volume is encrypted.
+     * Indicates whether the volume will be encrypted.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param encrypted Indicates whether the volume is encrypted.
+     * @param encrypted Indicates whether the volume will be encrypted.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -736,50 +735,44 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Indicates whether the volume is encrypted.
+     * Indicates whether the volume will be encrypted.
      *
-     * @return Indicates whether the volume is encrypted.
+     * @return Indicates whether the volume will be encrypted.
      */
     public Boolean getEncrypted() {
         return encrypted;
     }
 
     /**
-     * The full ARN of the AWS Key Management Service (KMS) Customer Master
-     * Key (CMK) that was used to protect the volume encryption key for the
-     * volume.
+     * The full ARN of the AWS Key Management Service (KMS) master key that
+     * was used to protect the volume encryption key for the volume.
      *
-     * @return The full ARN of the AWS Key Management Service (KMS) Customer Master
-     *         Key (CMK) that was used to protect the volume encryption key for the
-     *         volume.
+     * @return The full ARN of the AWS Key Management Service (KMS) master key that
+     *         was used to protect the volume encryption key for the volume.
      */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
     
     /**
-     * The full ARN of the AWS Key Management Service (KMS) Customer Master
-     * Key (CMK) that was used to protect the volume encryption key for the
-     * volume.
+     * The full ARN of the AWS Key Management Service (KMS) master key that
+     * was used to protect the volume encryption key for the volume.
      *
-     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) Customer Master
-     *         Key (CMK) that was used to protect the volume encryption key for the
-     *         volume.
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key that
+     *         was used to protect the volume encryption key for the volume.
      */
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
     
     /**
-     * The full ARN of the AWS Key Management Service (KMS) Customer Master
-     * Key (CMK) that was used to protect the volume encryption key for the
-     * volume.
+     * The full ARN of the AWS Key Management Service (KMS) master key that
+     * was used to protect the volume encryption key for the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) Customer Master
-     *         Key (CMK) that was used to protect the volume encryption key for the
-     *         volume.
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key that
+     *         was used to protect the volume encryption key for the volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

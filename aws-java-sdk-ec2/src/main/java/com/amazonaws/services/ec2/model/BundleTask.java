@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public class BundleTask implements Serializable {
     private String instanceId;
 
     /**
-     * The ID for this bundle task.
+     * The ID of the bundle task.
      */
     private String bundleId;
 
@@ -100,29 +100,29 @@ public class BundleTask implements Serializable {
     }
 
     /**
-     * The ID for this bundle task.
+     * The ID of the bundle task.
      *
-     * @return The ID for this bundle task.
+     * @return The ID of the bundle task.
      */
     public String getBundleId() {
         return bundleId;
     }
     
     /**
-     * The ID for this bundle task.
+     * The ID of the bundle task.
      *
-     * @param bundleId The ID for this bundle task.
+     * @param bundleId The ID of the bundle task.
      */
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
     
     /**
-     * The ID for this bundle task.
+     * The ID of the bundle task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bundleId The ID for this bundle task.
+     * @param bundleId The ID of the bundle task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

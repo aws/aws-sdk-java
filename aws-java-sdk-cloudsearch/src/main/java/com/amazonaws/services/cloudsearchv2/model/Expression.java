@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,11 +26,8 @@ import java.io.Serializable;
 public class Expression implements Serializable {
 
     /**
-     * A string that represents the name of an index field. Field names begin
-     * with a letter and can contain the following characters: a-z
-     * (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     * cannot be used as a field name. To reference a document's ID, you can
-     * use the name <code>_id</code>.
+     * Names must begin with a letter and can contain the following
+     * characters: a-z (lowercase), 0-9, and _ (underscore).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -52,53 +49,38 @@ public class Expression implements Serializable {
     private String expressionValue;
 
     /**
-     * A string that represents the name of an index field. Field names begin
-     * with a letter and can contain the following characters: a-z
-     * (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     * cannot be used as a field name. To reference a document's ID, you can
-     * use the name <code>_id</code>.
+     * Names must begin with a letter and can contain the following
+     * characters: a-z (lowercase), 0-9, and _ (underscore).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
      *
-     * @return A string that represents the name of an index field. Field names begin
-     *         with a letter and can contain the following characters: a-z
-     *         (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     *         cannot be used as a field name. To reference a document's ID, you can
-     *         use the name <code>_id</code>.
+     * @return Names must begin with a letter and can contain the following
+     *         characters: a-z (lowercase), 0-9, and _ (underscore).
      */
     public String getExpressionName() {
         return expressionName;
     }
     
     /**
-     * A string that represents the name of an index field. Field names begin
-     * with a letter and can contain the following characters: a-z
-     * (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     * cannot be used as a field name. To reference a document's ID, you can
-     * use the name <code>_id</code>.
+     * Names must begin with a letter and can contain the following
+     * characters: a-z (lowercase), 0-9, and _ (underscore).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
      *
-     * @param expressionName A string that represents the name of an index field. Field names begin
-     *         with a letter and can contain the following characters: a-z
-     *         (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     *         cannot be used as a field name. To reference a document's ID, you can
-     *         use the name <code>_id</code>.
+     * @param expressionName Names must begin with a letter and can contain the following
+     *         characters: a-z (lowercase), 0-9, and _ (underscore).
      */
     public void setExpressionName(String expressionName) {
         this.expressionName = expressionName;
     }
     
     /**
-     * A string that represents the name of an index field. Field names begin
-     * with a letter and can contain the following characters: a-z
-     * (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     * cannot be used as a field name. To reference a document's ID, you can
-     * use the name <code>_id</code>.
+     * Names must begin with a letter and can contain the following
+     * characters: a-z (lowercase), 0-9, and _ (underscore).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -106,11 +88,8 @@ public class Expression implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
      *
-     * @param expressionName A string that represents the name of an index field. Field names begin
-     *         with a letter and can contain the following characters: a-z
-     *         (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     *         cannot be used as a field name. To reference a document's ID, you can
-     *         use the name <code>_id</code>.
+     * @param expressionName Names must begin with a letter and can contain the following
+     *         characters: a-z (lowercase), 0-9, and _ (underscore).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

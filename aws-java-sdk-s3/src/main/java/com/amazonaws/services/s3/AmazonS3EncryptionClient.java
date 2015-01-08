@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
+import com.amazonaws.services.s3.internal.PartCreationEvent;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.internal.crypto.CryptoModuleDispatcher;
 import com.amazonaws.services.s3.internal.crypto.S3CryptoModule;
@@ -661,22 +662,27 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      * multi-part upload behavior</li>
      * </ul>
      * <p>
-     * A request is handled with the following life cycle:
+     * A request is handled with the following life cycle, calling the necessary
+     * Service Provider Interface:
      * <ol>
-     * <li>Initiate a multi-part upload request to S3</li>
+     * <li>A thread pool is constructed (or retrieved from the request) for the
+     * execution of concurrent upload tasks to be submitted by the
+     * <code>UploadObjectObserver</code></li>
+     * <li>An {@link UploadObjectObserver} is constructed (or retrieved from the
+     * request) for execution of concurrent uploads to S3</li>
+     * <li>Initialize the <code>UploadObjectObserver</code></li>
+     * <li>Initialize a multi-part upload request to S3 by calling
+     * {@link UploadObjectObserver#onUploadInitiation(UploadObjectRequest)}</li>
      * <li>A {@link MultiFileOutputStream} is constructed (or retrieved from the
      * request) which serves as the pipeline for incremental (but serial)
      * encryption to disk with concurrent multipart uploads to S3 whenever the
      * parts on the disk are ready</li>
-     * <li>A {@link UploadObjectObserver} is constructed (or retrieved from the
-     * request) for execution of concurrent uploads to S3</li>
-     * <li>A thread pool is constructed (or retrieved from the request) for the
-     * execution of concurrent uploads tasks submitted by the
-     * <code>UploadObjectObserver</code></li>
-     * <li>Initialize the <code>UploadObjectObserver</code></li>
      * <li>Initialize the <code>MultiFileOutputStream</code></li>
      * <li>Kicks off the pipeline for incremental encryption to disk with
      * pipelined concurrent multi-part uploads to S3</li>
+     * <li>For every part encrypted into a temporary file on disk, it is
+     * uploaded by calling
+     * {@link UploadObjectObserver#onPartCreate(PartCreationEvent)}</li>
      * <li>Finally, clean up and complete the multi-part upload by calling
      * {@link UploadObjectObserver#onCompletion(List)}.</li>
      * </ol>
@@ -720,6 +726,16 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
                 UploadPartResult partResult = future.get();
                 partETags.add(new PartETag(partResult.getPartNumber(), partResult.getETag()));
             }
+        } catch(IOException ex) {
+            throw onAbort(observer, ex);
+        } catch(InterruptedException ex) {
+            throw onAbort(observer, ex);
+        } catch(ExecutionException ex) {
+            throw onAbort(observer, ex);
+        } catch(RuntimeException ex) {
+            throw onAbort(observer, ex);
+        } catch(Error ex) {
+            throw onAbort(observer, ex);
         } finally {
             if (defaultExecutorService)
                 es.shutdownNow();   // shut down the locally created thread pool
@@ -727,5 +743,14 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
         }
         // Complete upload
         return observer.onCompletion(partETags);
+    }
+
+    /**
+     * Convenient method to notifies the observer to abort the multi-part
+     * upload, and returns the original exception.
+     */
+    private <T extends Throwable> T onAbort(UploadObjectObserver observer, T t) {
+        observer.onAbort();
+        return t;
     }
 }

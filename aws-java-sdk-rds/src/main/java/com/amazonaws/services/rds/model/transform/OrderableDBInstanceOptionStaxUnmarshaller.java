@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,6 +75,10 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                 }
                 if (context.testExpression("Vpc", targetDepth)) {
                     orderableDBInstanceOption.setVpc(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("SupportsStorageEncryption", targetDepth)) {
+                    orderableDBInstanceOption.setSupportsStorageEncryption(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("StorageType", targetDepth)) {

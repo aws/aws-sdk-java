@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public class OptionGroupOption implements Serializable {
     private String description;
 
     /**
-     * Engine name that this option can be applied to.
+     * The name of the engine that this option can be applied to.
      */
     private String engineName;
 
@@ -152,29 +152,29 @@ public class OptionGroupOption implements Serializable {
     }
 
     /**
-     * Engine name that this option can be applied to.
+     * The name of the engine that this option can be applied to.
      *
-     * @return Engine name that this option can be applied to.
+     * @return The name of the engine that this option can be applied to.
      */
     public String getEngineName() {
         return engineName;
     }
     
     /**
-     * Engine name that this option can be applied to.
+     * The name of the engine that this option can be applied to.
      *
-     * @param engineName Engine name that this option can be applied to.
+     * @param engineName The name of the engine that this option can be applied to.
      */
     public void setEngineName(String engineName) {
         this.engineName = engineName;
     }
     
     /**
-     * Engine name that this option can be applied to.
+     * The name of the engine that this option can be applied to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineName Engine name that this option can be applied to.
+     * @param engineName The name of the engine that this option can be applied to.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

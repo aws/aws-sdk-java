@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@ package com.amazonaws.services.s3.model;
 
 import java.io.File;
 import java.io.InputStream;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
 import com.amazonaws.services.s3.AmazonS3EncryptionClient;
@@ -28,9 +31,13 @@ import com.amazonaws.services.s3.internal.MultiFileOutputStream;
  * 
  * @see AmazonS3EncryptionClient#uploadObject(UploadObjectRequest)
  */
-public class UploadObjectRequest extends AbstractPutObjectRequest {
+public class UploadObjectRequest extends AbstractPutObjectRequest implements
+        MaterialsDescriptionProvider {
     static final int MIN_PART_SIZE = 5 << 20; // 5 MB
-    
+    /**
+     * description of encryption materials to be used with this request.
+     */
+    private Map<String, String> materialsDescription;
     /**
      * Part size (in bytes). Default is {@value #MIN_PART_SIZE}. This part size
      * will be used as a reference for the multi-part uploads but the physical
@@ -65,29 +72,6 @@ public class UploadObjectRequest extends AbstractPutObjectRequest {
     public UploadObjectRequest(String bucketName, String key,
             InputStream input, ObjectMetadata metadata) {
         super(bucketName, key, input, metadata);
-    }
-
-    /**
-     * Returns a clone (as deep as possible) of this request object.
-     */
-    @Override
-    public UploadObjectRequest clone() {
-        ObjectMetadata metadata = getMetadata();
-        UploadObjectRequest cloned =
-            new UploadObjectRequest(
-                    getBucketName(), 
-                    getKey(),
-                    getFile())
-                .withPartSize(getPartSize())
-                .withExecutorService(getExecutorService())
-                .withAccessControlList(getAccessControlList())
-                .withCannedAcl(getCannedAcl())
-                .withInputStream(getInputStream())
-                .withMetadata(metadata == null ? null : metadata.clone())
-                .withStorageClass(getStorageClass())
-                .withSSECustomerKey(getSSECustomerKey())
-                ;
-        return copyBaseTo(cloned);
     }
 
     /**
@@ -191,5 +175,54 @@ public class UploadObjectRequest extends AbstractPutObjectRequest {
             UploadObjectObserver uploadObjectObserver) {
         this.uploadObjectObserver = uploadObjectObserver;
         return this;
+    }
+
+    @Override
+    public Map<String, String> getMaterialsDescription() {
+        return materialsDescription;
+    }
+
+    /**
+     * Sets the materials description for the encryption materials to be used
+     * with the current request.
+     * 
+     * @param materialsDescription
+     *            the materialsDescription to set
+     */
+    public void setMaterialsDescription(Map<String, String> materialsDescription) {
+        this.materialsDescription = materialsDescription == null
+            ? null
+            : Collections.unmodifiableMap(
+                new HashMap<String, String>(materialsDescription));
+    }
+
+    /**
+     * Fluent API for {@link #setMaterialsDescription(Map)}.
+     */
+    public UploadObjectRequest withMaterialsDescription(
+            Map<String, String> materialsDescription) {
+        setMaterialsDescription(materialsDescription);
+        return this;
+    }
+
+    /**
+     * Returns a clone (as deep as possible) of this request object.
+     */
+    @Override
+    public UploadObjectRequest clone() {
+        final UploadObjectRequest cloned = new UploadObjectRequest(
+                getBucketName(), getKey(), getFile());
+        super.copyPutObjectBaseTo(cloned);
+        final Map<String, String> materialsDescription = getMaterialsDescription();
+        return cloned
+                .withMaterialsDescription(materialsDescription == null
+                    ? null
+                    : new HashMap<String, String>(materialsDescription))
+                .withDiskLimit(getDiskLimit())
+                .withExecutorService(getExecutorService())
+                .withMultiFileOutputStream(getMultiFileOutputStream())
+                .withPartSize(getPartSize())
+                .withUploadObjectObserver(getUploadObjectObserver())
+                ;
     }
 }

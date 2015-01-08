@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ public class OrderableDBInstanceOption implements Serializable {
     private Boolean multiAZCapable;
 
     /**
-     * Indicates whether this orderable DB instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a Read Replica.
      */
     private Boolean readReplicaCapable;
 
@@ -66,6 +66,12 @@ public class OrderableDBInstanceOption implements Serializable {
      * Indicates whether this is a VPC orderable DB instance.
      */
     private Boolean vpc;
+
+    /**
+     * Indicates whether this orderable DB instance supports encrypted
+     * storage.
+     */
+    private Boolean supportsStorageEncryption;
 
     /**
      * The storage type for this orderable DB instance.
@@ -321,29 +327,29 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * Indicates whether this orderable DB instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a Read Replica.
      *
-     * @return Indicates whether this orderable DB instance can have a read replica.
+     * @return Indicates whether this orderable DB instance can have a Read Replica.
      */
     public Boolean isReadReplicaCapable() {
         return readReplicaCapable;
     }
     
     /**
-     * Indicates whether this orderable DB instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a Read Replica.
      *
-     * @param readReplicaCapable Indicates whether this orderable DB instance can have a read replica.
+     * @param readReplicaCapable Indicates whether this orderable DB instance can have a Read Replica.
      */
     public void setReadReplicaCapable(Boolean readReplicaCapable) {
         this.readReplicaCapable = readReplicaCapable;
     }
     
     /**
-     * Indicates whether this orderable DB instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a Read Replica.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param readReplicaCapable Indicates whether this orderable DB instance can have a read replica.
+     * @param readReplicaCapable Indicates whether this orderable DB instance can have a Read Replica.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -354,9 +360,9 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * Indicates whether this orderable DB instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a Read Replica.
      *
-     * @return Indicates whether this orderable DB instance can have a read replica.
+     * @return Indicates whether this orderable DB instance can have a Read Replica.
      */
     public Boolean getReadReplicaCapable() {
         return readReplicaCapable;
@@ -402,6 +408,56 @@ public class OrderableDBInstanceOption implements Serializable {
      */
     public Boolean getVpc() {
         return vpc;
+    }
+
+    /**
+     * Indicates whether this orderable DB instance supports encrypted
+     * storage.
+     *
+     * @return Indicates whether this orderable DB instance supports encrypted
+     *         storage.
+     */
+    public Boolean isSupportsStorageEncryption() {
+        return supportsStorageEncryption;
+    }
+    
+    /**
+     * Indicates whether this orderable DB instance supports encrypted
+     * storage.
+     *
+     * @param supportsStorageEncryption Indicates whether this orderable DB instance supports encrypted
+     *         storage.
+     */
+    public void setSupportsStorageEncryption(Boolean supportsStorageEncryption) {
+        this.supportsStorageEncryption = supportsStorageEncryption;
+    }
+    
+    /**
+     * Indicates whether this orderable DB instance supports encrypted
+     * storage.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param supportsStorageEncryption Indicates whether this orderable DB instance supports encrypted
+     *         storage.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public OrderableDBInstanceOption withSupportsStorageEncryption(Boolean supportsStorageEncryption) {
+        this.supportsStorageEncryption = supportsStorageEncryption;
+        return this;
+    }
+
+    /**
+     * Indicates whether this orderable DB instance supports encrypted
+     * storage.
+     *
+     * @return Indicates whether this orderable DB instance supports encrypted
+     *         storage.
+     */
+    public Boolean getSupportsStorageEncryption() {
+        return supportsStorageEncryption;
     }
 
     /**
@@ -507,6 +563,7 @@ public class OrderableDBInstanceOption implements Serializable {
         if (isMultiAZCapable() != null) sb.append("MultiAZCapable: " + isMultiAZCapable() + ",");
         if (isReadReplicaCapable() != null) sb.append("ReadReplicaCapable: " + isReadReplicaCapable() + ",");
         if (isVpc() != null) sb.append("Vpc: " + isVpc() + ",");
+        if (isSupportsStorageEncryption() != null) sb.append("SupportsStorageEncryption: " + isSupportsStorageEncryption() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
         if (isSupportsIops() != null) sb.append("SupportsIops: " + isSupportsIops() );
         sb.append("}");
@@ -526,6 +583,7 @@ public class OrderableDBInstanceOption implements Serializable {
         hashCode = prime * hashCode + ((isMultiAZCapable() == null) ? 0 : isMultiAZCapable().hashCode()); 
         hashCode = prime * hashCode + ((isReadReplicaCapable() == null) ? 0 : isReadReplicaCapable().hashCode()); 
         hashCode = prime * hashCode + ((isVpc() == null) ? 0 : isVpc().hashCode()); 
+        hashCode = prime * hashCode + ((isSupportsStorageEncryption() == null) ? 0 : isSupportsStorageEncryption().hashCode()); 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((isSupportsIops() == null) ? 0 : isSupportsIops().hashCode()); 
         return hashCode;
@@ -555,6 +613,8 @@ public class OrderableDBInstanceOption implements Serializable {
         if (other.isReadReplicaCapable() != null && other.isReadReplicaCapable().equals(this.isReadReplicaCapable()) == false) return false; 
         if (other.isVpc() == null ^ this.isVpc() == null) return false;
         if (other.isVpc() != null && other.isVpc().equals(this.isVpc()) == false) return false; 
+        if (other.isSupportsStorageEncryption() == null ^ this.isSupportsStorageEncryption() == null) return false;
+        if (other.isSupportsStorageEncryption() != null && other.isSupportsStorageEncryption().equals(this.isSupportsStorageEncryption()) == false) return false; 
         if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
         if (other.isSupportsIops() == null ^ this.isSupportsIops() == null) return false;

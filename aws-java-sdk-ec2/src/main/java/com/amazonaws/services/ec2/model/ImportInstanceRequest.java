@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshalle
  * image. After importing the image, you then upload it using the
  * ec2-import-volume command in the EC2 command line tools. For more
  * information, see Using the Command Line Tools to Import Your Virtual
- * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+ * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide
+ * for Linux.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importInstance(ImportInstanceRequest)

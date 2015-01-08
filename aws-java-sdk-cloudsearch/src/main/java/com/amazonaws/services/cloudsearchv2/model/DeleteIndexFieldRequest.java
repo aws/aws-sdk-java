@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
+     * <b>Pattern: </b>([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)<br/>
      */
     private String indexFieldName;
 
@@ -122,7 +122,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
+     * <b>Pattern: </b>([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)<br/>
      *
      * @return The name of the index field your want to remove from the domain's
      *         indexing options.
@@ -137,7 +137,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
+     * <b>Pattern: </b>([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)<br/>
      *
      * @param indexFieldName The name of the index field your want to remove from the domain's
      *         indexing options.
@@ -154,7 +154,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
+     * <b>Pattern: </b>([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)<br/>
      *
      * @param indexFieldName The name of the index field your want to remove from the domain's
      *         indexing options.

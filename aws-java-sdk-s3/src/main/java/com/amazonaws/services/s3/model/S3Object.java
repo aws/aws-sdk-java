@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,9 +11,9 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- * 
- * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt 
- * for applicable license terms and NOTICE.txt for applicable notices. 
+ *
+ * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
+ * for applicable license terms and NOTICE.txt for applicable notices.
  */
 package com.amazonaws.services.s3.model;
 
@@ -43,7 +43,7 @@ public class S3Object implements Closeable {
 
     /** The stream containing the contents of this object from S3 */
     private S3ObjectInputStream objectContent;
-    
+
     /** The redirect location for this object */
     private String redirectLocation;
 
@@ -86,12 +86,11 @@ public class S3Object implements Closeable {
      * Gets the input stream containing the contents of this object.
      *
      * <p>
-     * <b>Note</b>: The method is a simple getter and does not
-     * actually create a stream. If you retrieve an S3Object, you
-     * should close this input stream as soon as possible, because the
-     * object contents aren't buffered in memory and stream directly
-     * from Amazon S3. Further, failure to close this stream can cause the
-     * request pool to become blocked.
+     * <b>Note</b>: The method is a simple getter and does not actually create a
+     * stream. If you retrieve an S3Object, you should close this input stream
+     * as soon as possible, because the object contents aren't buffered in
+     * memory and stream directly from Amazon S3. Further, failure to close this
+     * stream can cause the request pool to become blocked.
      * </p>
      *
      * @return An input stream containing the contents of this object.
@@ -114,10 +113,10 @@ public class S3Object implements Closeable {
     public void setObjectContent(S3ObjectInputStream objectContent) {
         this.objectContent = objectContent;
     }
-    
+
     /**
      * Sets the input stream containing this object's contents.
-     * 
+     *
      * @param objectContent
      *            The input stream containing this object's contents. Will get
      *            wrapped in an S3ObjectInputStream.
@@ -173,15 +172,15 @@ public class S3Object implements Closeable {
     public void setKey(String key) {
         this.key = key;
     }
-    
+
     /**
      * Gets the redirect location for this object.
      *
      */
     public String getRedirectLocation() {
-    	return this.redirectLocation;
+        return this.redirectLocation;
     }
-    
+
     /**
      * Sets the redirect location for this object.
      *
@@ -189,7 +188,7 @@ public class S3Object implements Closeable {
      *            the redirect location for that object.
      */
     public void setRedirectLocation(String redirectLocation) {
-    	this.redirectLocation = redirectLocation;
+        this.redirectLocation = redirectLocation;
     }
 
     /**

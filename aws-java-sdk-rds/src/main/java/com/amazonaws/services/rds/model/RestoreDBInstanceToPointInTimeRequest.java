@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest) RestoreDBInstanceToPointInTime operation}.
  * <p>
  * Restores a DB instance to an arbitrary point-in-time. Users can
- * restore to any point in time before the latestRestorableTime for up to
- * backupRetentionPeriod days. The target database is created from the
+ * restore to any point in time before the LatestRestorableTime for up to
+ * BackupRetentionPeriod days. The target database is created from the
  * source database with the same configuration as the original database
  * except that the DB instance is created with the default DB security
  * group.
@@ -147,7 +147,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p>Example: <code>oracle-ee</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     * | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      */
     private String engine;
 
@@ -161,7 +165,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * <p>Permanent options, such as the TDE option for Oracle Advanced
      * Security TDE, cannot be removed from an option group, and that option
      * group cannot be removed from a DB instance once it is associated with
      * a DB instance
@@ -174,10 +178,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      */
     private String storageType;
 
@@ -1001,11 +1007,19 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p>Example: <code>oracle-ee</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     * | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      *
      * @return The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p>Example: <code>oracle-ee</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      */
     public String getEngine() {
         return engine;
@@ -1014,11 +1028,19 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p>Example: <code>oracle-ee</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     * | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      *
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p>Example: <code>oracle-ee</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -1027,13 +1049,21 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
-     * source <p>Example: <code>oracle-ee</code>
+     * source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     * | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
-     *         source <p>Example: <code>oracle-ee</code>
+     *         source <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code>
+     *         | <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1096,13 +1126,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * <p>Permanent options, such as the TDE option for Oracle Advanced
      * Security TDE, cannot be removed from an option group, and that option
      * group cannot be removed from a DB instance once it is associated with
      * a DB instance
      *
      * @return The name of the option group to be used for the restored DB instance.
-     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         <p>Permanent options, such as the TDE option for Oracle Advanced
      *         Security TDE, cannot be removed from an option group, and that option
      *         group cannot be removed from a DB instance once it is associated with
      *         a DB instance
@@ -1113,13 +1143,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * <p>Permanent options, such as the TDE option for Oracle Advanced
      * Security TDE, cannot be removed from an option group, and that option
      * group cannot be removed from a DB instance once it is associated with
      * a DB instance
      *
      * @param optionGroupName The name of the option group to be used for the restored DB instance.
-     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         <p>Permanent options, such as the TDE option for Oracle Advanced
      *         Security TDE, cannot be removed from an option group, and that option
      *         group cannot be removed from a DB instance once it is associated with
      *         a DB instance
@@ -1130,7 +1160,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * <p>Permanent options, such as the TDE option for Oracle Advanced
      * Security TDE, cannot be removed from an option group, and that option
      * group cannot be removed from a DB instance once it is associated with
      * a DB instance
@@ -1138,7 +1168,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupName The name of the option group to be used for the restored DB instance.
-     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         <p>Permanent options, such as the TDE option for Oracle Advanced
      *         Security TDE, cannot be removed from an option group, and that option
      *         group cannot be removed from a DB instance once it is associated with
      *         a DB instance
@@ -1220,47 +1250,59 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
 
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @return Specifies storage type to be associated with the DB Instance. <p>
+     * @return Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     * @param storageType Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     * @param storageType Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

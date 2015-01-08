@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,8 +27,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.PartCreationEvent;
 import com.amazonaws.services.s3.internal.S3DirectSpi;
+import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.EncryptedInitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.PartETag;
@@ -86,8 +88,9 @@ public class UploadObjectObserver {
 
     protected InitiateMultipartUploadRequest newInitiateMultipartUploadRequest(
             UploadObjectRequest req) {
-        return new InitiateMultipartUploadRequest(
+        return new EncryptedInitiateMultipartUploadRequest(
                 req.getBucketName(), req.getKey(), req.getMetadata())
+            .withMaterialsDescription(req.getMaterialsDescription())
             .withRedirectLocation(req.getRedirectLocation())
             .withSSEAwsKeyManagementParams(req.getSSEAwsKeyManagementParams())
             .withSSECustomerKey(req.getSSECustomerKey())
@@ -180,6 +183,26 @@ public class UploadObjectObserver {
     }
 
     /**
+     * Notified from
+     * {@link AmazonS3EncryptionClient#uploadObject(UploadObjectRequest)} when
+     * failed to upload any part. This method is responsible for cancelling
+     * ongoing uploads and aborting the multi-part upload request.
+     */
+    public void onAbort() {
+        for (Future<?> future : getFutures()) {
+            future.cancel(true);
+        }
+        if (uploadId != null) {
+            try {
+                s3.abortMultipartUpload(new AbortMultipartUploadRequest(
+                    req.getBucketName(), req.getKey(), uploadId));
+            } catch (Exception e) {
+                LogFactory.getLog(getClass())
+                    .debug("Failed to abort multi-part upload: " + uploadId, e);
+            }
+        }
+    }
+    /**
      * Creates and returns an upload-part request corresponding to a ciphertext
      * file upon a part-creation event.
      * 
@@ -226,5 +249,45 @@ public class UploadObjectObserver {
 
     public List<Future<UploadPartResult>> getFutures() {
         return futures;
+    }
+
+    /**
+     * Returns the request initialized via
+     * {@link #init(UploadObjectRequest, S3DirectSpi, AmazonS3, ExecutorService)}
+     */
+    protected UploadObjectRequest getRequest() {
+        return req;
+    }
+
+    /**
+     * Returns the upload id after the multi-part upload has been initiated via
+     * {@link #onUploadInitiation(UploadObjectRequest)}
+     */
+    protected String getUploadId() {
+        return uploadId;
+    }
+
+    /**
+     * Returns the <code>S3DirectSpi</code> instance initialized via
+     * {@link #init(UploadObjectRequest, S3DirectSpi, AmazonS3, ExecutorService)}
+     */
+    protected S3DirectSpi getS3DirectSpi() {
+        return s3direct;
+    }
+
+    /**
+     * Returns the <code>AmazonS3</code> instance initialized via
+     * {@link #init(UploadObjectRequest, S3DirectSpi, AmazonS3, ExecutorService)}
+     */
+    protected AmazonS3 getAmazonS3() {
+        return s3;
+    }
+
+    /**
+     * Returns the <code>ExecutorService</code> instance initialized via
+     * {@link #init(UploadObjectRequest, S3DirectSpi, AmazonS3, ExecutorService)}
+     */
+    protected ExecutorService getExecutorService() {
+        return es;
     }
 }

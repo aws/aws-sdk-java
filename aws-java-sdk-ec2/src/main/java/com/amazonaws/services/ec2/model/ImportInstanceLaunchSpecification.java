@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,12 +44,20 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     /**
      * User data to be made available to the instance.
      */
-    private String userData;
+    private UserData userData;
 
     /**
-     * The instance type. For more information, see <a
+     * The instance type. This is not supported for VMs imported into a VPC,
+     * which are assigned the default security group. After a VM is imported
+     * into a VPC, you can specify another security group using the AWS
+     * Management Console. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>. For more information about the Linux instance types you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     * Linux.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
@@ -344,7 +352,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @return User data to be made available to the instance.
      */
-    public String getUserData() {
+    public UserData getUserData() {
         return userData;
     }
     
@@ -353,7 +361,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param userData User data to be made available to the instance.
      */
-    public void setUserData(String userData) {
+    public void setUserData(UserData userData) {
         this.userData = userData;
     }
     
@@ -367,22 +375,38 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public ImportInstanceLaunchSpecification withUserData(String userData) {
+    public ImportInstanceLaunchSpecification withUserData(UserData userData) {
         this.userData = userData;
         return this;
     }
 
     /**
-     * The instance type. For more information, see <a
+     * The instance type. This is not supported for VMs imported into a VPC,
+     * which are assigned the default security group. After a VM is imported
+     * into a VPC, you can specify another security group using the AWS
+     * Management Console. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>. For more information about the Linux instance types you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     * Linux.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @return The instance type. For more information, see <a
+     * @return The instance type. This is not supported for VMs imported into a VPC,
+     *         which are assigned the default security group. After a VM is imported
+     *         into a VPC, you can specify another security group using the AWS
+     *         Management Console. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>. For more information about the Linux instance types you can
+     *         import, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     *         You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     *         Linux.
      *
      * @see InstanceType
      */
@@ -391,16 +415,32 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * The instance type. For more information, see <a
+     * The instance type. This is not supported for VMs imported into a VPC,
+     * which are assigned the default security group. After a VM is imported
+     * into a VPC, you can specify another security group using the AWS
+     * Management Console. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>. For more information about the Linux instance types you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     * Linux.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @param instanceType The instance type. For more information, see <a
+     * @param instanceType The instance type. This is not supported for VMs imported into a VPC,
+     *         which are assigned the default security group. After a VM is imported
+     *         into a VPC, you can specify another security group using the AWS
+     *         Management Console. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>. For more information about the Linux instance types you can
+     *         import, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     *         You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     *         Linux.
      *
      * @see InstanceType
      */
@@ -409,18 +449,34 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * The instance type. For more information, see <a
+     * The instance type. This is not supported for VMs imported into a VPC,
+     * which are assigned the default security group. After a VM is imported
+     * into a VPC, you can specify another security group using the AWS
+     * Management Console. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>. For more information about the Linux instance types you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     * Linux.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @param instanceType The instance type. For more information, see <a
+     * @param instanceType The instance type. This is not supported for VMs imported into a VPC,
+     *         which are assigned the default security group. After a VM is imported
+     *         into a VPC, you can specify another security group using the AWS
+     *         Management Console. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>. For more information about the Linux instance types you can
+     *         import, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     *         You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     *         Linux.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -433,16 +489,32 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * The instance type. For more information, see <a
+     * The instance type. This is not supported for VMs imported into a VPC,
+     * which are assigned the default security group. After a VM is imported
+     * into a VPC, you can specify another security group using the AWS
+     * Management Console. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>. For more information about the Linux instance types you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     * Linux.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @param instanceType The instance type. For more information, see <a
+     * @param instanceType The instance type. This is not supported for VMs imported into a VPC,
+     *         which are assigned the default security group. After a VM is imported
+     *         into a VPC, you can specify another security group using the AWS
+     *         Management Console. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>. For more information about the Linux instance types you can
+     *         import, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     *         You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     *         Linux.
      *
      * @see InstanceType
      */
@@ -451,18 +523,34 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * The instance type. For more information, see <a
+     * The instance type. This is not supported for VMs imported into a VPC,
+     * which are assigned the default security group. After a VM is imported
+     * into a VPC, you can specify another security group using the AWS
+     * Management Console. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>. For more information about the Linux instance types you can
+     * import, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     * Linux.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @param instanceType The instance type. For more information, see <a
+     * @param instanceType The instance type. This is not supported for VMs imported into a VPC,
+     *         which are assigned the default security group. After a VM is imported
+     *         into a VPC, you can specify another security group using the AWS
+     *         Management Console. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>. For more information about the Linux instance types you can
+     *         import, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+     *         You Get Started</a> in the Amazon Elastic Compute Cloud User Guide for
+     *         Linux.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

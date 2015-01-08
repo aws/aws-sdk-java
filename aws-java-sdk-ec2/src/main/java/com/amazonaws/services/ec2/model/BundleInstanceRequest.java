@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ import com.amazonaws.services.ec2.model.transform.BundleInstanceRequestMarshalle
  * other instance store volumes is not preserved.
  * </p>
  * <p>
- * <b>NOTE:</b> This procedure is not applicable for Linux/Unix instances
- * or Windows instances that are backed by Amazon EBS.
+ * <b>NOTE:</b> This action is not applicable for Linux/Unix instances or
+ * Windows instances that are backed by Amazon EBS.
  * </p>
  * <p>
  * For more information, see
@@ -44,7 +44,8 @@ import com.amazonaws.services.ec2.model.transform.BundleInstanceRequestMarshalle
 public class BundleInstanceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<BundleInstanceRequest> {
 
     /**
-     * The ID of the instance to bundle.
+     * The ID of the instance to bundle. <p>Type: String <p>Default: None
+     * <p>Required: Yes
      */
     private String instanceId;
 
@@ -67,7 +68,8 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param instanceId The ID of the instance to bundle.
+     * @param instanceId The ID of the instance to bundle. <p>Type: String
+     * <p>Default: None <p>Required: Yes
      * @param storage The bucket in which to store the AMI. You can specify a
      * bucket that you already own or a new bucket that Amazon EC2 creates on
      * your behalf. If you specify a bucket that belongs to someone else,
@@ -79,29 +81,35 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The ID of the instance to bundle.
+     * The ID of the instance to bundle. <p>Type: String <p>Default: None
+     * <p>Required: Yes
      *
-     * @return The ID of the instance to bundle.
+     * @return The ID of the instance to bundle. <p>Type: String <p>Default: None
+     *         <p>Required: Yes
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the instance to bundle.
+     * The ID of the instance to bundle. <p>Type: String <p>Default: None
+     * <p>Required: Yes
      *
-     * @param instanceId The ID of the instance to bundle.
+     * @param instanceId The ID of the instance to bundle. <p>Type: String <p>Default: None
+     *         <p>Required: Yes
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the instance to bundle.
+     * The ID of the instance to bundle. <p>Type: String <p>Default: None
+     * <p>Required: Yes
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the instance to bundle.
+     * @param instanceId The ID of the instance to bundle. <p>Type: String <p>Default: None
+     *         <p>Required: Yes
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

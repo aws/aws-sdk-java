@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the S3 bucket for an instance store-backed AMI.
+ * Describes the storage parameters for S3 and S3 buckets for an instance
+ * store-backed AMI.
  * </p>
  */
 public class S3Storage implements Serializable {

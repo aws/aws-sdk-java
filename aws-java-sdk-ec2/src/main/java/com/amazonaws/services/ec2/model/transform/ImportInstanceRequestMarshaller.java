@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -74,8 +74,11 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
             if (importInstanceLaunchSpecificationLaunchSpecification.getAdditionalInfo() != null) {
                 request.addParameter("LaunchSpecification.AdditionalInfo", StringUtils.fromString(importInstanceLaunchSpecificationLaunchSpecification.getAdditionalInfo()));
             }
-            if (importInstanceLaunchSpecificationLaunchSpecification.getUserData() != null) {
-                request.addParameter("LaunchSpecification.UserData", StringUtils.fromString(importInstanceLaunchSpecificationLaunchSpecification.getUserData()));
+            UserData userDataUserData = importInstanceLaunchSpecificationLaunchSpecification.getUserData();
+            if (userDataUserData != null) {
+                if (userDataUserData.getData() != null) {
+                    request.addParameter("LaunchSpecification.UserData.Data", StringUtils.fromString(userDataUserData.getData()));
+                }
             }
             if (importInstanceLaunchSpecificationLaunchSpecification.getInstanceType() != null) {
                 request.addParameter("LaunchSpecification.InstanceType", StringUtils.fromString(importInstanceLaunchSpecificationLaunchSpecification.getInstanceType()));

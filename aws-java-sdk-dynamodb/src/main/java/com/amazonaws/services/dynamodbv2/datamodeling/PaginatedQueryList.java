@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Amazon Technologies, Inc.
+ * Copyright 2011-2015 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import com.amazonaws.services.dynamodbv2.model.QueryResult;
  * This is an unmodifiable list, so callers should not invoke any operations
  * that modify this list, otherwise they will throw an
  * UnsupportedOperationException.
- * 
+ *
  * @param <T>
  *            The type of objects held in this list.
  * @see PaginatedList
@@ -42,7 +42,7 @@ public class PaginatedQueryList<T> extends PaginatedList<T> {
     private final QueryRequest queryRequest;
 
     private final DynamoDBMapperConfig config;
-    
+
     /** The current results for the last executed query operation */
     private QueryResult queryResult;
 
@@ -63,24 +63,31 @@ public class PaginatedQueryList<T> extends PaginatedList<T> {
 
 
         allResults.addAll(mapper.marshallIntoObjects(
-            mapper.toParameters(queryResult.getItems(), clazz, config)));
-        
+            mapper.toParameters(
+                    queryResult.getItems(),
+                    clazz,
+                    queryRequest.getTableName(),
+                    config)));
+
         // If the results should be eagerly loaded at once
         if (paginationLoadingStrategy == PaginationLoadingStrategy.EAGER_LOADING) {
             loadAllResults();
         }
     }
 
-    @Override    
+    @Override
     protected boolean atEndOfResults() {
         return queryResult.getLastEvaluatedKey() == null;
     }
 
-    @Override    
+    @Override
     protected synchronized List<T> fetchNextPage() {
         queryRequest.setExclusiveStartKey(queryResult.getLastEvaluatedKey());
         queryResult = dynamo.query(DynamoDBMapper.applyUserAgent(queryRequest));
-        return mapper.marshallIntoObjects(
-            mapper.toParameters(queryResult.getItems(), clazz, config));
+        return mapper.marshallIntoObjects(mapper.toParameters(
+                queryResult.getItems(),
+                clazz,
+                queryRequest.getTableName(),
+                config));
     }
 }

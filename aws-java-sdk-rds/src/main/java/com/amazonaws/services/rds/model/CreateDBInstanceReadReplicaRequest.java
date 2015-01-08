@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,11 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest) CreateDBInstanceReadReplica operation}.
  * <p>
- * Creates a DB instance that acts as a read replica of a source DB
+ * Creates a DB instance that acts as a Read Replica of a source DB
  * instance.
  * </p>
  * <p>
- * All read replica DB instances are created as Single-AZ deployments
+ * All Read Replica DB instances are created as Single-AZ deployments
  * with backups disabled. All other DB instance attributes (including DB
  * security groups and DB parameter groups) are inherited from the source
  * DB instance, except as specified below.
@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The DB instance identifier of the read replica. This is the unique key
+     * The DB instance identifier of the Read Replica. This is the unique key
      * that identifies a DB instance. This parameter is stored as a lowercase
      * string.
      */
@@ -48,23 +48,24 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
 
     /**
      * The identifier of the DB instance that will act as the source for the
-     * read replica. Each DB instance can have up to five read replicas.
+     * Read Replica. Each DB instance can have up to five Read Replicas.
      * <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     * instance.</li> <li>Can specify a DB instance that is a read replica
-     * only if the source is running MySQL 5.6.</li> <li>The specified DB
-     * instance must have automatic backups enabled, its backup retention
-     * period must be greater than 0.</li> <li>If the source DB instance is
-     * in the same region as the read replica, specify a valid DB instance
-     * identifier.</li> <li>If the source DB instance is in a different
-     * region than the read replica, specify a valid DB instance ARN. For
-     * more information, go to <a
+     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
+     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
+     * a DB instance that is a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater
+     * than 0.</li> <li>If the source DB instance is in the same region as
+     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
+     * the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
     private String sourceDBInstanceIdentifier;
 
     /**
-     * The compute and memory capacity of the read replica. <p> Valid Values:
+     * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
@@ -75,7 +76,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     private String dBInstanceClass;
 
     /**
-     * The Amazon EC2 Availability Zone that the read replica will be created
+     * The Amazon EC2 Availability Zone that the Read Replica will be created
      * in. <p> Default: A random, system-chosen Availability Zone in the
      * endpoint's region. <p> Example: <code>us-east-1d</code>
      */
@@ -90,7 +91,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
 
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the read replica during the maintenance window. <p>Default: Inherits
+     * the Read Replica during the maintenance window. <p>Default: Inherits
      * from the source DB instance
      */
     private Boolean autoMinorVersionUpgrade;
@@ -136,20 +137,22 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
      * DB instance identifier specifies a DB instance in another region.</li>
      * <li>The specified DB subnet group must be in the same region in which
-     * the operation is running.</li> <li> All read replicas in one region
+     * the operation is running.</li> <li> All Read Replicas in one region
      * that are created from the same source DB instance must either: <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these read
-     * replicas will be created in the same VPC.</li> <li>Not specify a DB
-     * subnet group. All these read replicas will be created outside of any
+     * <li>Specify DB subnet groups from the same VPC. All these Read
+     * Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * subnet group. All these Read Replicas will be created outside of any
      * VPC.</li> </ul> </li> </ul>
      */
     private String dBSubnetGroupName;
 
     /**
-     * Specifies storage type to be associated with the DB Instance read
-     * replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
-     * you specify <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * Specifies the storage type to be associated with the Read Replica. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      */
     private String storageType;
 
@@ -164,20 +167,22 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBInstanceIdentifier The DB instance identifier of the read
-     * replica. This is the unique key that identifies a DB instance. This
+     * @param dBInstanceIdentifier The DB instance identifier of the Read
+     * Replica. This is the unique key that identifies a DB instance. This
      * parameter is stored as a lowercase string.
      * @param sourceDBInstanceIdentifier The identifier of the DB instance
-     * that will act as the source for the read replica. Each DB instance can
-     * have up to five read replicas. <p>Constraints: <ul> <li>Must be the
+     * that will act as the source for the Read Replica. Each DB instance can
+     * have up to five Read Replicas. <p>Constraints: <ul> <li>Must be the
      * identifier of an existing DB instance.</li> <li>Can specify a DB
-     * instance that is a read replica only if the source is running MySQL
-     * 5.6.</li> <li>The specified DB instance must have automatic backups
-     * enabled, its backup retention period must be greater than 0.</li>
-     * <li>If the source DB instance is in the same region as the read
-     * replica, specify a valid DB instance identifier.</li> <li>If the
-     * source DB instance is in a different region than the read replica,
-     * specify a valid DB instance ARN. For more information, go to <a
+     * instance that is a MySQL Read Replica only if the source is running
+     * MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL
+     * Read Replica only if the source is running PostgreSQL 9.3.5.</li>
+     * <li>The specified DB instance must have automatic backups enabled, its
+     * backup retention period must be greater than 0.</li> <li>If the source
+     * DB instance is in the same region as the Read Replica, specify a valid
+     * DB instance identifier.</li> <li>If the source DB instance is in a
+     * different region than the Read Replica, specify a valid DB instance
+     * ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
@@ -187,11 +192,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * The DB instance identifier of the read replica. This is the unique key
+     * The DB instance identifier of the Read Replica. This is the unique key
      * that identifies a DB instance. This parameter is stored as a lowercase
      * string.
      *
-     * @return The DB instance identifier of the read replica. This is the unique key
+     * @return The DB instance identifier of the Read Replica. This is the unique key
      *         that identifies a DB instance. This parameter is stored as a lowercase
      *         string.
      */
@@ -200,11 +205,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The DB instance identifier of the read replica. This is the unique key
+     * The DB instance identifier of the Read Replica. This is the unique key
      * that identifies a DB instance. This parameter is stored as a lowercase
      * string.
      *
-     * @param dBInstanceIdentifier The DB instance identifier of the read replica. This is the unique key
+     * @param dBInstanceIdentifier The DB instance identifier of the Read Replica. This is the unique key
      *         that identifies a DB instance. This parameter is stored as a lowercase
      *         string.
      */
@@ -213,13 +218,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The DB instance identifier of the read replica. This is the unique key
+     * The DB instance identifier of the Read Replica. This is the unique key
      * that identifies a DB instance. This parameter is stored as a lowercase
      * string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier The DB instance identifier of the read replica. This is the unique key
+     * @param dBInstanceIdentifier The DB instance identifier of the Read Replica. This is the unique key
      *         that identifies a DB instance. This parameter is stored as a lowercase
      *         string.
      *
@@ -233,30 +238,32 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
 
     /**
      * The identifier of the DB instance that will act as the source for the
-     * read replica. Each DB instance can have up to five read replicas.
+     * Read Replica. Each DB instance can have up to five Read Replicas.
      * <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     * instance.</li> <li>Can specify a DB instance that is a read replica
-     * only if the source is running MySQL 5.6.</li> <li>The specified DB
-     * instance must have automatic backups enabled, its backup retention
-     * period must be greater than 0.</li> <li>If the source DB instance is
-     * in the same region as the read replica, specify a valid DB instance
-     * identifier.</li> <li>If the source DB instance is in a different
-     * region than the read replica, specify a valid DB instance ARN. For
-     * more information, go to <a
+     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
+     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
+     * a DB instance that is a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater
+     * than 0.</li> <li>If the source DB instance is in the same region as
+     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
+     * the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
      * @return The identifier of the DB instance that will act as the source for the
-     *         read replica. Each DB instance can have up to five read replicas.
+     *         Read Replica. Each DB instance can have up to five Read Replicas.
      *         <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     *         instance.</li> <li>Can specify a DB instance that is a read replica
-     *         only if the source is running MySQL 5.6.</li> <li>The specified DB
-     *         instance must have automatic backups enabled, its backup retention
-     *         period must be greater than 0.</li> <li>If the source DB instance is
-     *         in the same region as the read replica, specify a valid DB instance
-     *         identifier.</li> <li>If the source DB instance is in a different
-     *         region than the read replica, specify a valid DB instance ARN. For
-     *         more information, go to <a
+     *         instance.</li> <li>Can specify a DB instance that is a MySQL Read
+     *         Replica only if the source is running MySQL 5.6.</li> <li>Can specify
+     *         a DB instance that is a PostgreSQL Read Replica only if the source is
+     *         running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
+     *         automatic backups enabled, its backup retention period must be greater
+     *         than 0.</li> <li>If the source DB instance is in the same region as
+     *         the Read Replica, specify a valid DB instance identifier.</li> <li>If
+     *         the source DB instance is in a different region than the Read Replica,
+     *         specify a valid DB instance ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
@@ -266,30 +273,32 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * The identifier of the DB instance that will act as the source for the
-     * read replica. Each DB instance can have up to five read replicas.
+     * Read Replica. Each DB instance can have up to five Read Replicas.
      * <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     * instance.</li> <li>Can specify a DB instance that is a read replica
-     * only if the source is running MySQL 5.6.</li> <li>The specified DB
-     * instance must have automatic backups enabled, its backup retention
-     * period must be greater than 0.</li> <li>If the source DB instance is
-     * in the same region as the read replica, specify a valid DB instance
-     * identifier.</li> <li>If the source DB instance is in a different
-     * region than the read replica, specify a valid DB instance ARN. For
-     * more information, go to <a
+     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
+     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
+     * a DB instance that is a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater
+     * than 0.</li> <li>If the source DB instance is in the same region as
+     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
+     * the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
      * @param sourceDBInstanceIdentifier The identifier of the DB instance that will act as the source for the
-     *         read replica. Each DB instance can have up to five read replicas.
+     *         Read Replica. Each DB instance can have up to five Read Replicas.
      *         <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     *         instance.</li> <li>Can specify a DB instance that is a read replica
-     *         only if the source is running MySQL 5.6.</li> <li>The specified DB
-     *         instance must have automatic backups enabled, its backup retention
-     *         period must be greater than 0.</li> <li>If the source DB instance is
-     *         in the same region as the read replica, specify a valid DB instance
-     *         identifier.</li> <li>If the source DB instance is in a different
-     *         region than the read replica, specify a valid DB instance ARN. For
-     *         more information, go to <a
+     *         instance.</li> <li>Can specify a DB instance that is a MySQL Read
+     *         Replica only if the source is running MySQL 5.6.</li> <li>Can specify
+     *         a DB instance that is a PostgreSQL Read Replica only if the source is
+     *         running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
+     *         automatic backups enabled, its backup retention period must be greater
+     *         than 0.</li> <li>If the source DB instance is in the same region as
+     *         the Read Replica, specify a valid DB instance identifier.</li> <li>If
+     *         the source DB instance is in a different region than the Read Replica,
+     *         specify a valid DB instance ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
@@ -299,32 +308,34 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * The identifier of the DB instance that will act as the source for the
-     * read replica. Each DB instance can have up to five read replicas.
+     * Read Replica. Each DB instance can have up to five Read Replicas.
      * <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     * instance.</li> <li>Can specify a DB instance that is a read replica
-     * only if the source is running MySQL 5.6.</li> <li>The specified DB
-     * instance must have automatic backups enabled, its backup retention
-     * period must be greater than 0.</li> <li>If the source DB instance is
-     * in the same region as the read replica, specify a valid DB instance
-     * identifier.</li> <li>If the source DB instance is in a different
-     * region than the read replica, specify a valid DB instance ARN. For
-     * more information, go to <a
+     * instance.</li> <li>Can specify a DB instance that is a MySQL Read
+     * Replica only if the source is running MySQL 5.6.</li> <li>Can specify
+     * a DB instance that is a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater
+     * than 0.</li> <li>If the source DB instance is in the same region as
+     * the Read Replica, specify a valid DB instance identifier.</li> <li>If
+     * the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDBInstanceIdentifier The identifier of the DB instance that will act as the source for the
-     *         read replica. Each DB instance can have up to five read replicas.
+     *         Read Replica. Each DB instance can have up to five Read Replicas.
      *         <p>Constraints: <ul> <li>Must be the identifier of an existing DB
-     *         instance.</li> <li>Can specify a DB instance that is a read replica
-     *         only if the source is running MySQL 5.6.</li> <li>The specified DB
-     *         instance must have automatic backups enabled, its backup retention
-     *         period must be greater than 0.</li> <li>If the source DB instance is
-     *         in the same region as the read replica, specify a valid DB instance
-     *         identifier.</li> <li>If the source DB instance is in a different
-     *         region than the read replica, specify a valid DB instance ARN. For
-     *         more information, go to <a
+     *         instance.</li> <li>Can specify a DB instance that is a MySQL Read
+     *         Replica only if the source is running MySQL 5.6.</li> <li>Can specify
+     *         a DB instance that is a PostgreSQL Read Replica only if the source is
+     *         running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have
+     *         automatic backups enabled, its backup retention period must be greater
+     *         than 0.</li> <li>If the source DB instance is in the same region as
+     *         the Read Replica, specify a valid DB instance identifier.</li> <li>If
+     *         the source DB instance is in a different region than the Read Replica,
+     *         specify a valid DB instance ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
@@ -337,7 +348,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * The compute and memory capacity of the read replica. <p> Valid Values:
+     * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
@@ -345,7 +356,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
      * from the source DB instance.
      *
-     * @return The compute and memory capacity of the read replica. <p> Valid Values:
+     * @return The compute and memory capacity of the Read Replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
@@ -358,7 +369,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The compute and memory capacity of the read replica. <p> Valid Values:
+     * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
@@ -366,7 +377,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
      * from the source DB instance.
      *
-     * @param dBInstanceClass The compute and memory capacity of the read replica. <p> Valid Values:
+     * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
@@ -379,7 +390,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The compute and memory capacity of the read replica. <p> Valid Values:
+     * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
@@ -389,7 +400,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The compute and memory capacity of the read replica. <p> Valid Values:
+     * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
@@ -406,11 +417,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * The Amazon EC2 Availability Zone that the read replica will be created
+     * The Amazon EC2 Availability Zone that the Read Replica will be created
      * in. <p> Default: A random, system-chosen Availability Zone in the
      * endpoint's region. <p> Example: <code>us-east-1d</code>
      *
-     * @return The Amazon EC2 Availability Zone that the read replica will be created
+     * @return The Amazon EC2 Availability Zone that the Read Replica will be created
      *         in. <p> Default: A random, system-chosen Availability Zone in the
      *         endpoint's region. <p> Example: <code>us-east-1d</code>
      */
@@ -419,11 +430,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The Amazon EC2 Availability Zone that the read replica will be created
+     * The Amazon EC2 Availability Zone that the Read Replica will be created
      * in. <p> Default: A random, system-chosen Availability Zone in the
      * endpoint's region. <p> Example: <code>us-east-1d</code>
      *
-     * @param availabilityZone The Amazon EC2 Availability Zone that the read replica will be created
+     * @param availabilityZone The Amazon EC2 Availability Zone that the Read Replica will be created
      *         in. <p> Default: A random, system-chosen Availability Zone in the
      *         endpoint's region. <p> Example: <code>us-east-1d</code>
      */
@@ -432,13 +443,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The Amazon EC2 Availability Zone that the read replica will be created
+     * The Amazon EC2 Availability Zone that the Read Replica will be created
      * in. <p> Default: A random, system-chosen Availability Zone in the
      * endpoint's region. <p> Example: <code>us-east-1d</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Amazon EC2 Availability Zone that the read replica will be created
+     * @param availabilityZone The Amazon EC2 Availability Zone that the Read Replica will be created
      *         in. <p> Default: A random, system-chosen Availability Zone in the
      *         endpoint's region. <p> Example: <code>us-east-1d</code>
      *
@@ -497,11 +508,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
 
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the read replica during the maintenance window. <p>Default: Inherits
+     * the Read Replica during the maintenance window. <p>Default: Inherits
      * from the source DB instance
      *
      * @return Indicates that minor engine upgrades will be applied automatically to
-     *         the read replica during the maintenance window. <p>Default: Inherits
+     *         the Read Replica during the maintenance window. <p>Default: Inherits
      *         from the source DB instance
      */
     public Boolean isAutoMinorVersionUpgrade() {
@@ -510,11 +521,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the read replica during the maintenance window. <p>Default: Inherits
+     * the Read Replica during the maintenance window. <p>Default: Inherits
      * from the source DB instance
      *
      * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
-     *         the read replica during the maintenance window. <p>Default: Inherits
+     *         the Read Replica during the maintenance window. <p>Default: Inherits
      *         from the source DB instance
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -523,13 +534,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the read replica during the maintenance window. <p>Default: Inherits
+     * the Read Replica during the maintenance window. <p>Default: Inherits
      * from the source DB instance
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
-     *         the read replica during the maintenance window. <p>Default: Inherits
+     *         the Read Replica during the maintenance window. <p>Default: Inherits
      *         from the source DB instance
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -542,11 +553,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
 
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the read replica during the maintenance window. <p>Default: Inherits
+     * the Read Replica during the maintenance window. <p>Default: Inherits
      * from the source DB instance
      *
      * @return Indicates that minor engine upgrades will be applied automatically to
-     *         the read replica during the maintenance window. <p>Default: Inherits
+     *         the Read Replica during the maintenance window. <p>Default: Inherits
      *         from the source DB instance
      */
     public Boolean getAutoMinorVersionUpgrade() {
@@ -844,11 +855,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
      * DB instance identifier specifies a DB instance in another region.</li>
      * <li>The specified DB subnet group must be in the same region in which
-     * the operation is running.</li> <li> All read replicas in one region
+     * the operation is running.</li> <li> All Read Replicas in one region
      * that are created from the same source DB instance must either: <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these read
-     * replicas will be created in the same VPC.</li> <li>Not specify a DB
-     * subnet group. All these read replicas will be created outside of any
+     * <li>Specify DB subnet groups from the same VPC. All these Read
+     * Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * subnet group. All these Read Replicas will be created outside of any
      * VPC.</li> </ul> </li> </ul>
      *
      * @return Specifies a DB subnet group for the DB instance. The new DB instance
@@ -857,11 +868,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
      *         DB instance identifier specifies a DB instance in another region.</li>
      *         <li>The specified DB subnet group must be in the same region in which
-     *         the operation is running.</li> <li> All read replicas in one region
+     *         the operation is running.</li> <li> All Read Replicas in one region
      *         that are created from the same source DB instance must either: <ul>
-     *         <li>Specify DB subnet groups from the same VPC. All these read
-     *         replicas will be created in the same VPC.</li> <li>Not specify a DB
-     *         subnet group. All these read replicas will be created outside of any
+     *         <li>Specify DB subnet groups from the same VPC. All these Read
+     *         Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         subnet group. All these Read Replicas will be created outside of any
      *         VPC.</li> </ul> </li> </ul>
      */
     public String getDBSubnetGroupName() {
@@ -875,11 +886,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
      * DB instance identifier specifies a DB instance in another region.</li>
      * <li>The specified DB subnet group must be in the same region in which
-     * the operation is running.</li> <li> All read replicas in one region
+     * the operation is running.</li> <li> All Read Replicas in one region
      * that are created from the same source DB instance must either: <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these read
-     * replicas will be created in the same VPC.</li> <li>Not specify a DB
-     * subnet group. All these read replicas will be created outside of any
+     * <li>Specify DB subnet groups from the same VPC. All these Read
+     * Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * subnet group. All these Read Replicas will be created outside of any
      * VPC.</li> </ul> </li> </ul>
      *
      * @param dBSubnetGroupName Specifies a DB subnet group for the DB instance. The new DB instance
@@ -888,11 +899,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
      *         DB instance identifier specifies a DB instance in another region.</li>
      *         <li>The specified DB subnet group must be in the same region in which
-     *         the operation is running.</li> <li> All read replicas in one region
+     *         the operation is running.</li> <li> All Read Replicas in one region
      *         that are created from the same source DB instance must either: <ul>
-     *         <li>Specify DB subnet groups from the same VPC. All these read
-     *         replicas will be created in the same VPC.</li> <li>Not specify a DB
-     *         subnet group. All these read replicas will be created outside of any
+     *         <li>Specify DB subnet groups from the same VPC. All these Read
+     *         Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         subnet group. All these Read Replicas will be created outside of any
      *         VPC.</li> </ul> </li> </ul>
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
@@ -906,11 +917,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
      * DB instance identifier specifies a DB instance in another region.</li>
      * <li>The specified DB subnet group must be in the same region in which
-     * the operation is running.</li> <li> All read replicas in one region
+     * the operation is running.</li> <li> All Read Replicas in one region
      * that are created from the same source DB instance must either: <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these read
-     * replicas will be created in the same VPC.</li> <li>Not specify a DB
-     * subnet group. All these read replicas will be created outside of any
+     * <li>Specify DB subnet groups from the same VPC. All these Read
+     * Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * subnet group. All these Read Replicas will be created outside of any
      * VPC.</li> </ul> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -921,11 +932,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
      *         DB instance identifier specifies a DB instance in another region.</li>
      *         <li>The specified DB subnet group must be in the same region in which
-     *         the operation is running.</li> <li> All read replicas in one region
+     *         the operation is running.</li> <li> All Read Replicas in one region
      *         that are created from the same source DB instance must either: <ul>
-     *         <li>Specify DB subnet groups from the same VPC. All these read
-     *         replicas will be created in the same VPC.</li> <li>Not specify a DB
-     *         subnet group. All these read replicas will be created outside of any
+     *         <li>Specify DB subnet groups from the same VPC. All these Read
+     *         Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         subnet group. All these Read Replicas will be created outside of any
      *         VPC.</li> </ul> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -937,47 +948,59 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Specifies storage type to be associated with the DB Instance read
-     * replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
-     * you specify <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * Specifies the storage type to be associated with the Read Replica. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @return Specifies storage type to be associated with the DB Instance read
-     *         replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
-     *         you specify <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     * @return Specifies the storage type to be associated with the Read Replica. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance read
-     * replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
-     * you specify <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * Specifies the storage type to be associated with the Read Replica. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance read
-     *         replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
-     *         you specify <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     * @param storageType Specifies the storage type to be associated with the Read Replica. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance read
-     * replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
-     * you specify <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * Specifies the storage type to be associated with the Read Replica. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance read
-     *         replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
-     *         you specify <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     * @param storageType Specifies the storage type to be associated with the Read Replica. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

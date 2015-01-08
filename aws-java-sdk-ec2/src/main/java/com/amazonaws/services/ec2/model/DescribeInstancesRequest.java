@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,56 +67,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * idempotency token you provided when you launched the instance. </li>
      * <li> <p><code>dns-name</code> - The public DNS name of the instance.
      * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. If the instance is in EC2-Classic or a default VPC, you
-     * can use <code>group-name</code> instead. </li> <li>
-     * <p><code>group-name</code> - The name of the security group for the
-     * instance. If the instance is in a nondefault VPC, you must use
-     * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     * - The instance profile associated with the instance. Specified as an
-     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     * <li> <p><code>instance-state-code</code> - The state of the instance,
-     * as a 16-bit unsigned integer. The high byte is an opaque internal
-     * value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     * </li> <li> <p><code>instance-state-name</code> - The state of the
-     * instance (<code>pending</code> | <code>running</code> |
+     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     * - The name of the security group for the instance. EC2-Classic only.
+     * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     * <p><code>iam-instance-profile.arn</code> - The instance profile
+     * associated with the instance. Specified as an ARN. </li> <li>
+     * <p><code>image-id</code> - The ID of the image used to launch the
+     * instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     * instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     * whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     * <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and
+     * should be ignored. The low byte is set based on the state represented.
+     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     * <p><code>instance-state-name</code> - The state of the instance
+     * (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
      * <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     * The ID of the security group for the instance. If the instance is in
-     * EC2-Classic or a default VPC, you can use
-     * <code>instance.group-name</code> instead. </li> <li>
+     * The ID of the security group for the instance. </li> <li>
      * <p><code>instance.group-name</code> - The name of the security group
-     * for the instance. If the instance is in a nondefault VPC, you must use
-     * <code>instance.group-id</code> instead. </li> <li>
-     * <p><code>ip-address</code> - The public IP address of the instance.
-     * </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     * <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched. </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in
-     * the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.
-     * </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     * monitoring is enabled for the instance (<code>disabled</code> |
-     * <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     * account ID of the instance owner. </li> <li>
-     * <p><code>placement-group-name</code> - The name of the placement group
-     * for the instance. </li> <li> <p><code>platform</code> - The platform.
-     * Use <code>windows</code> if you have Windows instances; otherwise,
-     * leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     * DNS name of the instance. </li> <li>
-     * <p><code>private-ip-address</code> - The private IP address of the
-     * instance. </li> <li> <p><code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance. </li> <li>
-     * <p><code>product-code.type</code> - The type of product code
-     * (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     * for the instance. </li> <li> <p><code>ip-address</code> - The public
+     * IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     * kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched. </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this
+     * is the index for the instance in the launch group (for example, 0, 1,
+     * 2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     * the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     * - Indicates whether monitoring is enabled for the instance
+     * (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     * <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     * </li> <li> <p><code>placement-group-name</code> - The name of the
+     * placement group for the instance. </li> <li> <p><code>platform</code>
+     * - The platform. Use <code>windows</code> if you have Windows
+     * instances; otherwise, leave blank. </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the
+     * instance. </li> <li> <p><code>private-ip-address</code> - The private
+     * IP address of the instance. </li> <li> <p><code>product-code</code> -
+     * The product code associated with the AMI used to launch the instance.
+     * </li> <li> <p><code>product-code.type</code> - The type of product
+     * code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>reason</code> - The reason for the current state of the
      * instance (for example, shows "User Initiated [date]" when you stop or
@@ -337,56 +331,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * idempotency token you provided when you launched the instance. </li>
      * <li> <p><code>dns-name</code> - The public DNS name of the instance.
      * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. If the instance is in EC2-Classic or a default VPC, you
-     * can use <code>group-name</code> instead. </li> <li>
-     * <p><code>group-name</code> - The name of the security group for the
-     * instance. If the instance is in a nondefault VPC, you must use
-     * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     * - The instance profile associated with the instance. Specified as an
-     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     * <li> <p><code>instance-state-code</code> - The state of the instance,
-     * as a 16-bit unsigned integer. The high byte is an opaque internal
-     * value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     * </li> <li> <p><code>instance-state-name</code> - The state of the
-     * instance (<code>pending</code> | <code>running</code> |
+     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     * - The name of the security group for the instance. EC2-Classic only.
+     * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     * <p><code>iam-instance-profile.arn</code> - The instance profile
+     * associated with the instance. Specified as an ARN. </li> <li>
+     * <p><code>image-id</code> - The ID of the image used to launch the
+     * instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     * instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     * whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     * <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and
+     * should be ignored. The low byte is set based on the state represented.
+     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     * <p><code>instance-state-name</code> - The state of the instance
+     * (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
      * <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     * The ID of the security group for the instance. If the instance is in
-     * EC2-Classic or a default VPC, you can use
-     * <code>instance.group-name</code> instead. </li> <li>
+     * The ID of the security group for the instance. </li> <li>
      * <p><code>instance.group-name</code> - The name of the security group
-     * for the instance. If the instance is in a nondefault VPC, you must use
-     * <code>instance.group-id</code> instead. </li> <li>
-     * <p><code>ip-address</code> - The public IP address of the instance.
-     * </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     * <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched. </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in
-     * the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.
-     * </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     * monitoring is enabled for the instance (<code>disabled</code> |
-     * <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     * account ID of the instance owner. </li> <li>
-     * <p><code>placement-group-name</code> - The name of the placement group
-     * for the instance. </li> <li> <p><code>platform</code> - The platform.
-     * Use <code>windows</code> if you have Windows instances; otherwise,
-     * leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     * DNS name of the instance. </li> <li>
-     * <p><code>private-ip-address</code> - The private IP address of the
-     * instance. </li> <li> <p><code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance. </li> <li>
-     * <p><code>product-code.type</code> - The type of product code
-     * (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     * for the instance. </li> <li> <p><code>ip-address</code> - The public
+     * IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     * kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched. </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this
+     * is the index for the instance in the launch group (for example, 0, 1,
+     * 2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     * the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     * - Indicates whether monitoring is enabled for the instance
+     * (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     * <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     * </li> <li> <p><code>placement-group-name</code> - The name of the
+     * placement group for the instance. </li> <li> <p><code>platform</code>
+     * - The platform. Use <code>windows</code> if you have Windows
+     * instances; otherwise, leave blank. </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the
+     * instance. </li> <li> <p><code>private-ip-address</code> - The private
+     * IP address of the instance. </li> <li> <p><code>product-code</code> -
+     * The product code associated with the AMI used to launch the instance.
+     * </li> <li> <p><code>product-code.type</code> - The type of product
+     * code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>reason</code> - The reason for the current state of the
      * instance (for example, shows "User Initiated [date]" when you stop or
@@ -522,56 +510,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         idempotency token you provided when you launched the instance. </li>
      *         <li> <p><code>dns-name</code> - The public DNS name of the instance.
      *         </li> <li> <p><code>group-id</code> - The ID of the security group for
-     *         the instance. If the instance is in EC2-Classic or a default VPC, you
-     *         can use <code>group-name</code> instead. </li> <li>
-     *         <p><code>group-name</code> - The name of the security group for the
-     *         instance. If the instance is in a nondefault VPC, you must use
-     *         <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     *         The hypervisor type of the instance (<code>ovm</code> |
-     *         <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     *         - The instance profile associated with the instance. Specified as an
-     *         ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     *         launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     *         of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     *         Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     *         <li> <p><code>instance-state-code</code> - The state of the instance,
-     *         as a 16-bit unsigned integer. The high byte is an opaque internal
-     *         value and should be ignored. The low byte is set based on the state
-     *         represented. The valid values are: 0 (pending), 16 (running), 32
-     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     *         </li> <li> <p><code>instance-state-name</code> - The state of the
-     *         instance (<code>pending</code> | <code>running</code> |
+     *         the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     *         - The name of the security group for the instance. EC2-Classic only.
+     *         </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     *         instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     *         <p><code>iam-instance-profile.arn</code> - The instance profile
+     *         associated with the instance. Specified as an ARN. </li> <li>
+     *         <p><code>image-id</code> - The ID of the image used to launch the
+     *         instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     *         instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     *         whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     *         <p><code>instance-state-code</code> - The state of the instance, as a
+     *         16-bit unsigned integer. The high byte is an opaque internal value and
+     *         should be ignored. The low byte is set based on the state represented.
+     *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     *         48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     *         <p><code>instance-state-name</code> - The state of the instance
+     *         (<code>pending</code> | <code>running</code> |
      *         <code>shutting-down</code> | <code>terminated</code> |
      *         <code>stopping</code> | <code>stopped</code>). </li> <li>
      *         <p><code>instance-type</code> - The type of instance (for example,
      *         <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     *         The ID of the security group for the instance. If the instance is in
-     *         EC2-Classic or a default VPC, you can use
-     *         <code>instance.group-name</code> instead. </li> <li>
+     *         The ID of the security group for the instance. </li> <li>
      *         <p><code>instance.group-name</code> - The name of the security group
-     *         for the instance. If the instance is in a nondefault VPC, you must use
-     *         <code>instance.group-id</code> instead. </li> <li>
-     *         <p><code>ip-address</code> - The public IP address of the instance.
-     *         </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     *         <p><code>key-name</code> - The name of the key pair used when the
-     *         instance was launched. </li> <li> <p><code>launch-index</code> - When
-     *         launching multiple instances, this is the index for the instance in
-     *         the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     *         <p><code>launch-time</code> - The time when the instance was launched.
-     *         </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     *         monitoring is enabled for the instance (<code>disabled</code> |
-     *         <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     *         account ID of the instance owner. </li> <li>
-     *         <p><code>placement-group-name</code> - The name of the placement group
-     *         for the instance. </li> <li> <p><code>platform</code> - The platform.
-     *         Use <code>windows</code> if you have Windows instances; otherwise,
-     *         leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     *         DNS name of the instance. </li> <li>
-     *         <p><code>private-ip-address</code> - The private IP address of the
-     *         instance. </li> <li> <p><code>product-code</code> - The product code
-     *         associated with the AMI used to launch the instance. </li> <li>
-     *         <p><code>product-code.type</code> - The type of product code
-     *         (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     *         for the instance. </li> <li> <p><code>ip-address</code> - The public
+     *         IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     *         kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     *         pair used when the instance was launched. </li> <li>
+     *         <p><code>launch-index</code> - When launching multiple instances, this
+     *         is the index for the instance in the launch group (for example, 0, 1,
+     *         2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     *         the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     *         - Indicates whether monitoring is enabled for the instance
+     *         (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     *         <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     *         </li> <li> <p><code>placement-group-name</code> - The name of the
+     *         placement group for the instance. </li> <li> <p><code>platform</code>
+     *         - The platform. Use <code>windows</code> if you have Windows
+     *         instances; otherwise, leave blank. </li> <li>
+     *         <p><code>private-dns-name</code> - The private DNS name of the
+     *         instance. </li> <li> <p><code>private-ip-address</code> - The private
+     *         IP address of the instance. </li> <li> <p><code>product-code</code> -
+     *         The product code associated with the AMI used to launch the instance.
+     *         </li> <li> <p><code>product-code.type</code> - The type of product
+     *         code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      *         <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      *         <p><code>reason</code> - The reason for the current state of the
      *         instance (for example, shows "User Initiated [date]" when you stop or
@@ -716,56 +698,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * idempotency token you provided when you launched the instance. </li>
      * <li> <p><code>dns-name</code> - The public DNS name of the instance.
      * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. If the instance is in EC2-Classic or a default VPC, you
-     * can use <code>group-name</code> instead. </li> <li>
-     * <p><code>group-name</code> - The name of the security group for the
-     * instance. If the instance is in a nondefault VPC, you must use
-     * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     * - The instance profile associated with the instance. Specified as an
-     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     * <li> <p><code>instance-state-code</code> - The state of the instance,
-     * as a 16-bit unsigned integer. The high byte is an opaque internal
-     * value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     * </li> <li> <p><code>instance-state-name</code> - The state of the
-     * instance (<code>pending</code> | <code>running</code> |
+     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     * - The name of the security group for the instance. EC2-Classic only.
+     * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     * <p><code>iam-instance-profile.arn</code> - The instance profile
+     * associated with the instance. Specified as an ARN. </li> <li>
+     * <p><code>image-id</code> - The ID of the image used to launch the
+     * instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     * instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     * whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     * <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and
+     * should be ignored. The low byte is set based on the state represented.
+     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     * <p><code>instance-state-name</code> - The state of the instance
+     * (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
      * <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     * The ID of the security group for the instance. If the instance is in
-     * EC2-Classic or a default VPC, you can use
-     * <code>instance.group-name</code> instead. </li> <li>
+     * The ID of the security group for the instance. </li> <li>
      * <p><code>instance.group-name</code> - The name of the security group
-     * for the instance. If the instance is in a nondefault VPC, you must use
-     * <code>instance.group-id</code> instead. </li> <li>
-     * <p><code>ip-address</code> - The public IP address of the instance.
-     * </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     * <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched. </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in
-     * the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.
-     * </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     * monitoring is enabled for the instance (<code>disabled</code> |
-     * <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     * account ID of the instance owner. </li> <li>
-     * <p><code>placement-group-name</code> - The name of the placement group
-     * for the instance. </li> <li> <p><code>platform</code> - The platform.
-     * Use <code>windows</code> if you have Windows instances; otherwise,
-     * leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     * DNS name of the instance. </li> <li>
-     * <p><code>private-ip-address</code> - The private IP address of the
-     * instance. </li> <li> <p><code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance. </li> <li>
-     * <p><code>product-code.type</code> - The type of product code
-     * (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     * for the instance. </li> <li> <p><code>ip-address</code> - The public
+     * IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     * kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched. </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this
+     * is the index for the instance in the launch group (for example, 0, 1,
+     * 2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     * the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     * - Indicates whether monitoring is enabled for the instance
+     * (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     * <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     * </li> <li> <p><code>placement-group-name</code> - The name of the
+     * placement group for the instance. </li> <li> <p><code>platform</code>
+     * - The platform. Use <code>windows</code> if you have Windows
+     * instances; otherwise, leave blank. </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the
+     * instance. </li> <li> <p><code>private-ip-address</code> - The private
+     * IP address of the instance. </li> <li> <p><code>product-code</code> -
+     * The product code associated with the AMI used to launch the instance.
+     * </li> <li> <p><code>product-code.type</code> - The type of product
+     * code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>reason</code> - The reason for the current state of the
      * instance (for example, shows "User Initiated [date]" when you stop or
@@ -901,56 +877,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         idempotency token you provided when you launched the instance. </li>
      *         <li> <p><code>dns-name</code> - The public DNS name of the instance.
      *         </li> <li> <p><code>group-id</code> - The ID of the security group for
-     *         the instance. If the instance is in EC2-Classic or a default VPC, you
-     *         can use <code>group-name</code> instead. </li> <li>
-     *         <p><code>group-name</code> - The name of the security group for the
-     *         instance. If the instance is in a nondefault VPC, you must use
-     *         <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     *         The hypervisor type of the instance (<code>ovm</code> |
-     *         <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     *         - The instance profile associated with the instance. Specified as an
-     *         ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     *         launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     *         of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     *         Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     *         <li> <p><code>instance-state-code</code> - The state of the instance,
-     *         as a 16-bit unsigned integer. The high byte is an opaque internal
-     *         value and should be ignored. The low byte is set based on the state
-     *         represented. The valid values are: 0 (pending), 16 (running), 32
-     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     *         </li> <li> <p><code>instance-state-name</code> - The state of the
-     *         instance (<code>pending</code> | <code>running</code> |
+     *         the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     *         - The name of the security group for the instance. EC2-Classic only.
+     *         </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     *         instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     *         <p><code>iam-instance-profile.arn</code> - The instance profile
+     *         associated with the instance. Specified as an ARN. </li> <li>
+     *         <p><code>image-id</code> - The ID of the image used to launch the
+     *         instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     *         instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     *         whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     *         <p><code>instance-state-code</code> - The state of the instance, as a
+     *         16-bit unsigned integer. The high byte is an opaque internal value and
+     *         should be ignored. The low byte is set based on the state represented.
+     *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     *         48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     *         <p><code>instance-state-name</code> - The state of the instance
+     *         (<code>pending</code> | <code>running</code> |
      *         <code>shutting-down</code> | <code>terminated</code> |
      *         <code>stopping</code> | <code>stopped</code>). </li> <li>
      *         <p><code>instance-type</code> - The type of instance (for example,
      *         <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     *         The ID of the security group for the instance. If the instance is in
-     *         EC2-Classic or a default VPC, you can use
-     *         <code>instance.group-name</code> instead. </li> <li>
+     *         The ID of the security group for the instance. </li> <li>
      *         <p><code>instance.group-name</code> - The name of the security group
-     *         for the instance. If the instance is in a nondefault VPC, you must use
-     *         <code>instance.group-id</code> instead. </li> <li>
-     *         <p><code>ip-address</code> - The public IP address of the instance.
-     *         </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     *         <p><code>key-name</code> - The name of the key pair used when the
-     *         instance was launched. </li> <li> <p><code>launch-index</code> - When
-     *         launching multiple instances, this is the index for the instance in
-     *         the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     *         <p><code>launch-time</code> - The time when the instance was launched.
-     *         </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     *         monitoring is enabled for the instance (<code>disabled</code> |
-     *         <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     *         account ID of the instance owner. </li> <li>
-     *         <p><code>placement-group-name</code> - The name of the placement group
-     *         for the instance. </li> <li> <p><code>platform</code> - The platform.
-     *         Use <code>windows</code> if you have Windows instances; otherwise,
-     *         leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     *         DNS name of the instance. </li> <li>
-     *         <p><code>private-ip-address</code> - The private IP address of the
-     *         instance. </li> <li> <p><code>product-code</code> - The product code
-     *         associated with the AMI used to launch the instance. </li> <li>
-     *         <p><code>product-code.type</code> - The type of product code
-     *         (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     *         for the instance. </li> <li> <p><code>ip-address</code> - The public
+     *         IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     *         kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     *         pair used when the instance was launched. </li> <li>
+     *         <p><code>launch-index</code> - When launching multiple instances, this
+     *         is the index for the instance in the launch group (for example, 0, 1,
+     *         2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     *         the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     *         - Indicates whether monitoring is enabled for the instance
+     *         (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     *         <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     *         </li> <li> <p><code>placement-group-name</code> - The name of the
+     *         placement group for the instance. </li> <li> <p><code>platform</code>
+     *         - The platform. Use <code>windows</code> if you have Windows
+     *         instances; otherwise, leave blank. </li> <li>
+     *         <p><code>private-dns-name</code> - The private DNS name of the
+     *         instance. </li> <li> <p><code>private-ip-address</code> - The private
+     *         IP address of the instance. </li> <li> <p><code>product-code</code> -
+     *         The product code associated with the AMI used to launch the instance.
+     *         </li> <li> <p><code>product-code.type</code> - The type of product
+     *         code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      *         <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      *         <p><code>reason</code> - The reason for the current state of the
      *         instance (for example, shows "User Initiated [date]" when you stop or
@@ -1097,56 +1067,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * idempotency token you provided when you launched the instance. </li>
      * <li> <p><code>dns-name</code> - The public DNS name of the instance.
      * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. If the instance is in EC2-Classic or a default VPC, you
-     * can use <code>group-name</code> instead. </li> <li>
-     * <p><code>group-name</code> - The name of the security group for the
-     * instance. If the instance is in a nondefault VPC, you must use
-     * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     * - The instance profile associated with the instance. Specified as an
-     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     * <li> <p><code>instance-state-code</code> - The state of the instance,
-     * as a 16-bit unsigned integer. The high byte is an opaque internal
-     * value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     * </li> <li> <p><code>instance-state-name</code> - The state of the
-     * instance (<code>pending</code> | <code>running</code> |
+     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     * - The name of the security group for the instance. EC2-Classic only.
+     * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     * <p><code>iam-instance-profile.arn</code> - The instance profile
+     * associated with the instance. Specified as an ARN. </li> <li>
+     * <p><code>image-id</code> - The ID of the image used to launch the
+     * instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     * instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     * whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     * <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and
+     * should be ignored. The low byte is set based on the state represented.
+     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     * <p><code>instance-state-name</code> - The state of the instance
+     * (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
      * <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     * The ID of the security group for the instance. If the instance is in
-     * EC2-Classic or a default VPC, you can use
-     * <code>instance.group-name</code> instead. </li> <li>
+     * The ID of the security group for the instance. </li> <li>
      * <p><code>instance.group-name</code> - The name of the security group
-     * for the instance. If the instance is in a nondefault VPC, you must use
-     * <code>instance.group-id</code> instead. </li> <li>
-     * <p><code>ip-address</code> - The public IP address of the instance.
-     * </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     * <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched. </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in
-     * the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.
-     * </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     * monitoring is enabled for the instance (<code>disabled</code> |
-     * <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     * account ID of the instance owner. </li> <li>
-     * <p><code>placement-group-name</code> - The name of the placement group
-     * for the instance. </li> <li> <p><code>platform</code> - The platform.
-     * Use <code>windows</code> if you have Windows instances; otherwise,
-     * leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     * DNS name of the instance. </li> <li>
-     * <p><code>private-ip-address</code> - The private IP address of the
-     * instance. </li> <li> <p><code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance. </li> <li>
-     * <p><code>product-code.type</code> - The type of product code
-     * (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     * for the instance. </li> <li> <p><code>ip-address</code> - The public
+     * IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     * kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched. </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this
+     * is the index for the instance in the launch group (for example, 0, 1,
+     * 2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     * the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     * - Indicates whether monitoring is enabled for the instance
+     * (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     * <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     * </li> <li> <p><code>placement-group-name</code> - The name of the
+     * placement group for the instance. </li> <li> <p><code>platform</code>
+     * - The platform. Use <code>windows</code> if you have Windows
+     * instances; otherwise, leave blank. </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the
+     * instance. </li> <li> <p><code>private-ip-address</code> - The private
+     * IP address of the instance. </li> <li> <p><code>product-code</code> -
+     * The product code associated with the AMI used to launch the instance.
+     * </li> <li> <p><code>product-code.type</code> - The type of product
+     * code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>reason</code> - The reason for the current state of the
      * instance (for example, shows "User Initiated [date]" when you stop or
@@ -1284,56 +1248,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         idempotency token you provided when you launched the instance. </li>
      *         <li> <p><code>dns-name</code> - The public DNS name of the instance.
      *         </li> <li> <p><code>group-id</code> - The ID of the security group for
-     *         the instance. If the instance is in EC2-Classic or a default VPC, you
-     *         can use <code>group-name</code> instead. </li> <li>
-     *         <p><code>group-name</code> - The name of the security group for the
-     *         instance. If the instance is in a nondefault VPC, you must use
-     *         <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     *         The hypervisor type of the instance (<code>ovm</code> |
-     *         <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     *         - The instance profile associated with the instance. Specified as an
-     *         ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     *         launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     *         of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     *         Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     *         <li> <p><code>instance-state-code</code> - The state of the instance,
-     *         as a 16-bit unsigned integer. The high byte is an opaque internal
-     *         value and should be ignored. The low byte is set based on the state
-     *         represented. The valid values are: 0 (pending), 16 (running), 32
-     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     *         </li> <li> <p><code>instance-state-name</code> - The state of the
-     *         instance (<code>pending</code> | <code>running</code> |
+     *         the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     *         - The name of the security group for the instance. EC2-Classic only.
+     *         </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     *         instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     *         <p><code>iam-instance-profile.arn</code> - The instance profile
+     *         associated with the instance. Specified as an ARN. </li> <li>
+     *         <p><code>image-id</code> - The ID of the image used to launch the
+     *         instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     *         instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     *         whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     *         <p><code>instance-state-code</code> - The state of the instance, as a
+     *         16-bit unsigned integer. The high byte is an opaque internal value and
+     *         should be ignored. The low byte is set based on the state represented.
+     *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     *         48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     *         <p><code>instance-state-name</code> - The state of the instance
+     *         (<code>pending</code> | <code>running</code> |
      *         <code>shutting-down</code> | <code>terminated</code> |
      *         <code>stopping</code> | <code>stopped</code>). </li> <li>
      *         <p><code>instance-type</code> - The type of instance (for example,
      *         <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     *         The ID of the security group for the instance. If the instance is in
-     *         EC2-Classic or a default VPC, you can use
-     *         <code>instance.group-name</code> instead. </li> <li>
+     *         The ID of the security group for the instance. </li> <li>
      *         <p><code>instance.group-name</code> - The name of the security group
-     *         for the instance. If the instance is in a nondefault VPC, you must use
-     *         <code>instance.group-id</code> instead. </li> <li>
-     *         <p><code>ip-address</code> - The public IP address of the instance.
-     *         </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     *         <p><code>key-name</code> - The name of the key pair used when the
-     *         instance was launched. </li> <li> <p><code>launch-index</code> - When
-     *         launching multiple instances, this is the index for the instance in
-     *         the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     *         <p><code>launch-time</code> - The time when the instance was launched.
-     *         </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     *         monitoring is enabled for the instance (<code>disabled</code> |
-     *         <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     *         account ID of the instance owner. </li> <li>
-     *         <p><code>placement-group-name</code> - The name of the placement group
-     *         for the instance. </li> <li> <p><code>platform</code> - The platform.
-     *         Use <code>windows</code> if you have Windows instances; otherwise,
-     *         leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     *         DNS name of the instance. </li> <li>
-     *         <p><code>private-ip-address</code> - The private IP address of the
-     *         instance. </li> <li> <p><code>product-code</code> - The product code
-     *         associated with the AMI used to launch the instance. </li> <li>
-     *         <p><code>product-code.type</code> - The type of product code
-     *         (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     *         for the instance. </li> <li> <p><code>ip-address</code> - The public
+     *         IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     *         kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     *         pair used when the instance was launched. </li> <li>
+     *         <p><code>launch-index</code> - When launching multiple instances, this
+     *         is the index for the instance in the launch group (for example, 0, 1,
+     *         2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     *         the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     *         - Indicates whether monitoring is enabled for the instance
+     *         (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     *         <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     *         </li> <li> <p><code>placement-group-name</code> - The name of the
+     *         placement group for the instance. </li> <li> <p><code>platform</code>
+     *         - The platform. Use <code>windows</code> if you have Windows
+     *         instances; otherwise, leave blank. </li> <li>
+     *         <p><code>private-dns-name</code> - The private DNS name of the
+     *         instance. </li> <li> <p><code>private-ip-address</code> - The private
+     *         IP address of the instance. </li> <li> <p><code>product-code</code> -
+     *         The product code associated with the AMI used to launch the instance.
+     *         </li> <li> <p><code>product-code.type</code> - The type of product
+     *         code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      *         <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      *         <p><code>reason</code> - The reason for the current state of the
      *         instance (for example, shows "User Initiated [date]" when you stop or
@@ -1481,56 +1439,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * idempotency token you provided when you launched the instance. </li>
      * <li> <p><code>dns-name</code> - The public DNS name of the instance.
      * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. If the instance is in EC2-Classic or a default VPC, you
-     * can use <code>group-name</code> instead. </li> <li>
-     * <p><code>group-name</code> - The name of the security group for the
-     * instance. If the instance is in a nondefault VPC, you must use
-     * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     * - The instance profile associated with the instance. Specified as an
-     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     * <li> <p><code>instance-state-code</code> - The state of the instance,
-     * as a 16-bit unsigned integer. The high byte is an opaque internal
-     * value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     * </li> <li> <p><code>instance-state-name</code> - The state of the
-     * instance (<code>pending</code> | <code>running</code> |
+     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     * - The name of the security group for the instance. EC2-Classic only.
+     * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     * <p><code>iam-instance-profile.arn</code> - The instance profile
+     * associated with the instance. Specified as an ARN. </li> <li>
+     * <p><code>image-id</code> - The ID of the image used to launch the
+     * instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     * instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     * whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     * <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and
+     * should be ignored. The low byte is set based on the state represented.
+     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     * <p><code>instance-state-name</code> - The state of the instance
+     * (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
      * <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     * The ID of the security group for the instance. If the instance is in
-     * EC2-Classic or a default VPC, you can use
-     * <code>instance.group-name</code> instead. </li> <li>
+     * The ID of the security group for the instance. </li> <li>
      * <p><code>instance.group-name</code> - The name of the security group
-     * for the instance. If the instance is in a nondefault VPC, you must use
-     * <code>instance.group-id</code> instead. </li> <li>
-     * <p><code>ip-address</code> - The public IP address of the instance.
-     * </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     * <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched. </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in
-     * the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.
-     * </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     * monitoring is enabled for the instance (<code>disabled</code> |
-     * <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     * account ID of the instance owner. </li> <li>
-     * <p><code>placement-group-name</code> - The name of the placement group
-     * for the instance. </li> <li> <p><code>platform</code> - The platform.
-     * Use <code>windows</code> if you have Windows instances; otherwise,
-     * leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     * DNS name of the instance. </li> <li>
-     * <p><code>private-ip-address</code> - The private IP address of the
-     * instance. </li> <li> <p><code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance. </li> <li>
-     * <p><code>product-code.type</code> - The type of product code
-     * (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     * for the instance. </li> <li> <p><code>ip-address</code> - The public
+     * IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     * kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched. </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this
+     * is the index for the instance in the launch group (for example, 0, 1,
+     * 2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     * the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     * - Indicates whether monitoring is enabled for the instance
+     * (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     * <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     * </li> <li> <p><code>placement-group-name</code> - The name of the
+     * placement group for the instance. </li> <li> <p><code>platform</code>
+     * - The platform. Use <code>windows</code> if you have Windows
+     * instances; otherwise, leave blank. </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the
+     * instance. </li> <li> <p><code>private-ip-address</code> - The private
+     * IP address of the instance. </li> <li> <p><code>product-code</code> -
+     * The product code associated with the AMI used to launch the instance.
+     * </li> <li> <p><code>product-code.type</code> - The type of product
+     * code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>reason</code> - The reason for the current state of the
      * instance (for example, shows "User Initiated [date]" when you stop or
@@ -1668,56 +1620,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         idempotency token you provided when you launched the instance. </li>
      *         <li> <p><code>dns-name</code> - The public DNS name of the instance.
      *         </li> <li> <p><code>group-id</code> - The ID of the security group for
-     *         the instance. If the instance is in EC2-Classic or a default VPC, you
-     *         can use <code>group-name</code> instead. </li> <li>
-     *         <p><code>group-name</code> - The name of the security group for the
-     *         instance. If the instance is in a nondefault VPC, you must use
-     *         <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
-     *         The hypervisor type of the instance (<code>ovm</code> |
-     *         <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
-     *         - The instance profile associated with the instance. Specified as an
-     *         ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
-     *         launch the instance. </li> <li> <p><code>instance-id</code> - The ID
-     *         of the instance. </li> <li> <p><code>instance-lifecycle</code> -
-     *         Indicates whether this is a Spot Instance (<code>spot</code>). </li>
-     *         <li> <p><code>instance-state-code</code> - The state of the instance,
-     *         as a 16-bit unsigned integer. The high byte is an opaque internal
-     *         value and should be ignored. The low byte is set based on the state
-     *         represented. The valid values are: 0 (pending), 16 (running), 32
-     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
-     *         </li> <li> <p><code>instance-state-name</code> - The state of the
-     *         instance (<code>pending</code> | <code>running</code> |
+     *         the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
+     *         - The name of the security group for the instance. EC2-Classic only.
+     *         </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
+     *         instance (<code>ovm</code> | <code>xen</code>). </li> <li>
+     *         <p><code>iam-instance-profile.arn</code> - The instance profile
+     *         associated with the instance. Specified as an ARN. </li> <li>
+     *         <p><code>image-id</code> - The ID of the image used to launch the
+     *         instance. </li> <li> <p><code>instance-id</code> - The ID of the
+     *         instance. </li> <li> <p><code>instance-lifecycle</code> - Indicates
+     *         whether this is a Spot Instance (<code>spot</code>). </li> <li>
+     *         <p><code>instance-state-code</code> - The state of the instance, as a
+     *         16-bit unsigned integer. The high byte is an opaque internal value and
+     *         should be ignored. The low byte is set based on the state represented.
+     *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
+     *         48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
+     *         <p><code>instance-state-name</code> - The state of the instance
+     *         (<code>pending</code> | <code>running</code> |
      *         <code>shutting-down</code> | <code>terminated</code> |
      *         <code>stopping</code> | <code>stopped</code>). </li> <li>
      *         <p><code>instance-type</code> - The type of instance (for example,
      *         <code>m1.small</code>). </li> <li> <p><code>instance.group-id</code> -
-     *         The ID of the security group for the instance. If the instance is in
-     *         EC2-Classic or a default VPC, you can use
-     *         <code>instance.group-name</code> instead. </li> <li>
+     *         The ID of the security group for the instance. </li> <li>
      *         <p><code>instance.group-name</code> - The name of the security group
-     *         for the instance. If the instance is in a nondefault VPC, you must use
-     *         <code>instance.group-id</code> instead. </li> <li>
-     *         <p><code>ip-address</code> - The public IP address of the instance.
-     *         </li> <li> <p><code>kernel-id</code> - The kernel ID. </li> <li>
-     *         <p><code>key-name</code> - The name of the key pair used when the
-     *         instance was launched. </li> <li> <p><code>launch-index</code> - When
-     *         launching multiple instances, this is the index for the instance in
-     *         the launch group (for example, 0, 1, 2, and so on). </li> <li>
-     *         <p><code>launch-time</code> - The time when the instance was launched.
-     *         </li> <li> <p><code>monitoring-state</code> - Indicates whether
-     *         monitoring is enabled for the instance (<code>disabled</code> |
-     *         <code>enabled</code>). </li> <li> <p><code>owner-id</code> - The AWS
-     *         account ID of the instance owner. </li> <li>
-     *         <p><code>placement-group-name</code> - The name of the placement group
-     *         for the instance. </li> <li> <p><code>platform</code> - The platform.
-     *         Use <code>windows</code> if you have Windows instances; otherwise,
-     *         leave blank. </li> <li> <p><code>private-dns-name</code> - The private
-     *         DNS name of the instance. </li> <li>
-     *         <p><code>private-ip-address</code> - The private IP address of the
-     *         instance. </li> <li> <p><code>product-code</code> - The product code
-     *         associated with the AMI used to launch the instance. </li> <li>
-     *         <p><code>product-code.type</code> - The type of product code
-     *         (<code>devpay</code> | <code>marketplace</code>). </li> <li>
+     *         for the instance. </li> <li> <p><code>ip-address</code> - The public
+     *         IP address of the instance. </li> <li> <p><code>kernel-id</code> - The
+     *         kernel ID. </li> <li> <p><code>key-name</code> - The name of the key
+     *         pair used when the instance was launched. </li> <li>
+     *         <p><code>launch-index</code> - When launching multiple instances, this
+     *         is the index for the instance in the launch group (for example, 0, 1,
+     *         2, and so on). </li> <li> <p><code>launch-time</code> - The time when
+     *         the instance was launched. </li> <li> <p><code>monitoring-state</code>
+     *         - Indicates whether monitoring is enabled for the instance
+     *         (<code>disabled</code> | <code>enabled</code>). </li> <li>
+     *         <p><code>owner-id</code> - The AWS account ID of the instance owner.
+     *         </li> <li> <p><code>placement-group-name</code> - The name of the
+     *         placement group for the instance. </li> <li> <p><code>platform</code>
+     *         - The platform. Use <code>windows</code> if you have Windows
+     *         instances; otherwise, leave blank. </li> <li>
+     *         <p><code>private-dns-name</code> - The private DNS name of the
+     *         instance. </li> <li> <p><code>private-ip-address</code> - The private
+     *         IP address of the instance. </li> <li> <p><code>product-code</code> -
+     *         The product code associated with the AMI used to launch the instance.
+     *         </li> <li> <p><code>product-code.type</code> - The type of product
+     *         code (<code>devpay</code> | <code>marketplace</code>). </li> <li>
      *         <p><code>ramdisk-id</code> - The RAM disk ID. </li> <li>
      *         <p><code>reason</code> - The reason for the current state of the
      *         instance (for example, shows "User Initiated [date]" when you stop or

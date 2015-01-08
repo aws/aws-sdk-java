@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class CopyDBParameterGroupRequestMarshaller implements Marshaller<Request
 
         Request<CopyDBParameterGroupRequest> request = new DefaultRequest<CopyDBParameterGroupRequest>(copyDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CopyDBParameterGroup");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-31");
 
         if (copyDBParameterGroupRequest.getSourceDBParameterGroupIdentifier() != null) {
             request.addParameter("SourceDBParameterGroupIdentifier", StringUtils.fromString(copyDBParameterGroupRequest.getSourceDBParameterGroupIdentifier()));
