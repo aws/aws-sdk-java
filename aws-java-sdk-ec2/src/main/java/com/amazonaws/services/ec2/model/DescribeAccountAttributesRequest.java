@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,8 +23,43 @@ import com.amazonaws.services.ec2.model.transform.DescribeAccountAttributesReque
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeAccountAttributes(DescribeAccountAttributesRequest) DescribeAccountAttributes operation}.
  * <p>
- * Describes the specified attribute of your AWS account.
+ * Describes attributes of your AWS account. The following are the
+ * supported account attributes:
  * </p>
+ * 
+ * <ul>
+ * <li> <p>
+ * <code>supported-platforms</code> : Indicates whether your account can
+ * launch instances into EC2-Classic and EC2-VPC, or only into EC2-VPC.
+ * </p>
+ * </li>
+ * <li> <p>
+ * <code>default-vpc</code> : The ID of the default VPC for your
+ * account, or <code>none</code> .
+ * </p>
+ * </li>
+ * <li> <p>
+ * <code>max-instances</code> : The maximum number of On-Demand
+ * instances that you can run.
+ * </p>
+ * </li>
+ * <li> <p>
+ * <code>vpc-max-security-groups-per-interface</code> : The maximum
+ * number of security groups that you can assign to a network interface.
+ * </p>
+ * </li>
+ * <li> <p>
+ * <code>max-elastic-ips</code> : The maximum number of Elastic IP
+ * addresses that you can allocate for use with EC2-Classic.
+ * </p>
+ * </li>
+ * <li> <p>
+ * <code>vpc-max-elastic-ips</code> : The maximum number of Elastic IP
+ * addresses that you can allocate for use with EC2-VPC.
+ * </p>
+ * </li>
+ * 
+ * </ul>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAccountAttributes(DescribeAccountAttributesRequest)
  */

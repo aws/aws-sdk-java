@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * option group option settings are used to display settings available
+ * Option group option settings are used to display settings available
  * for each option with their default values and other information. These
  * values are used with the DescribeOptionGroupOptions action.
  * </p>

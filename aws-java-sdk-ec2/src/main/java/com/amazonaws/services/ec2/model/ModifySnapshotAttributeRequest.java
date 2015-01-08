@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.ModifySnapshotAttributeRequest
  * <p>
  * For more information on modifying snapshot permissions, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  * <p>
  * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be

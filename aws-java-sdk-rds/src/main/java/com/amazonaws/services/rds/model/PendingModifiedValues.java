@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ public class PendingModifiedValues implements Serializable {
     private String dBInstanceIdentifier;
 
     /**
-     * Specifies storage type to be associated with the DB instance.
+     * Specifies the storage type to be associated with the DB instance.
      */
     private String storageType;
 
@@ -438,29 +438,29 @@ public class PendingModifiedValues implements Serializable {
     }
 
     /**
-     * Specifies storage type to be associated with the DB instance.
+     * Specifies the storage type to be associated with the DB instance.
      *
-     * @return Specifies storage type to be associated with the DB instance.
+     * @return Specifies the storage type to be associated with the DB instance.
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB instance.
+     * Specifies the storage type to be associated with the DB instance.
      *
-     * @param storageType Specifies storage type to be associated with the DB instance.
+     * @param storageType Specifies the storage type to be associated with the DB instance.
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB instance.
+     * Specifies the storage type to be associated with the DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType Specifies storage type to be associated with the DB instance.
+     * @param storageType Specifies the storage type to be associated with the DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Amazon Technologies, Inc.
+ * Copyright 2011-2015 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ class DynamoDBTableSchemaParser {
             ItemConverter converter) {
 
         CreateTableRequest createTableRequest = new CreateTableRequest();
-        createTableRequest.setTableName(DynamoDBMapper.getTableName(clazz, config, reflector));
+        createTableRequest.setTableName(DynamoDBMapper.internalGetTableName(clazz, null, config));
 
         // Primary keys
         Method pHashKeyGetter = reflector.getPrimaryHashKeyGetter(clazz);

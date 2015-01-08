@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
@@ -75,8 +74,6 @@ public class UploadCallable implements Callable<UploadResult> {
     private final List<PartETag> eTagsToSkip = new ArrayList<PartETag>();
 
     private PersistableUpload persistableUpload;
-
-    private CountDownLatch latch;
 
     public UploadCallable(TransferManager transferManager,
             ExecutorService threadPool, UploadImpl upload,
@@ -279,8 +276,6 @@ public class UploadCallable implements Callable<UploadResult> {
 
         Map<Integer,PartSummary> partNumbers = identifyExistingPartsForResume(uploadId);
 
-        latch = new CountDownLatch(requestFactory.getTotalNumberOfParts());
-
         while (requestFactory.hasMoreRequests()) {
             if (threadPool.isShutdown()) throw new CancellationException("TransferManager has been shutdown");
             UploadPartRequest request = requestFactory.getNextUploadPartRequest();
@@ -289,11 +284,9 @@ public class UploadCallable implements Callable<UploadResult> {
                 eTagsToSkip.add(new PartETag(request.getPartNumber(), summary
                         .getETag()));
                 transferProgress.updateProgress(summary.getSize());
-                latch.countDown();
                 continue;
             }
-            futures.add(threadPool.submit(new UploadPartCallable(s3, request,
-                    latch)));
+            futures.add(threadPool.submit(new UploadPartCallable(s3, request)));
         }
     }
 
@@ -365,9 +358,5 @@ public class UploadCallable implements Callable<UploadResult> {
         log.debug("Initiated new multipart upload: " + uploadId);
 
         return uploadId;
-    }
-
-    CountDownLatch getLatch() {
-        return latch;
     }
 }

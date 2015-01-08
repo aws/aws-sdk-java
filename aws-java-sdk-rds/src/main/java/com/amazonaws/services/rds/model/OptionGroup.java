@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public class OptionGroup implements Serializable {
     private String optionGroupName;
 
     /**
-     * Provides the description of the option group.
+     * Provides a description of the option group.
      */
     private String optionGroupDescription;
 
@@ -50,18 +50,18 @@ public class OptionGroup implements Serializable {
 
     /**
      * Indicates whether this option group can be applied to both VPC and
-     * non-VPC instances. The value 'true' indicates the option group can be
-     * applied to both VPC and non-VPC instances.
+     * non-VPC instances. The value <code>true</code> indicates the option
+     * group can be applied to both VPC and non-VPC instances.
      */
     private Boolean allowsVpcAndNonVpcInstanceMemberships;
 
     /**
-     * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
-     * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
-     * field is blank, then this option group can be applied to both VPC and
-     * non-VPC instances. If this field contains a value, then this option
-     * group can only be applied to instances that are in the VPC indicated
-     * by this field.
+     * If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>,
+     * this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b>
+     * is <code>true</code> and this field is blank, then this option group
+     * can be applied to both VPC and non-VPC instances. If this field
+     * contains a value, then this option group can only be applied to
+     * instances that are in the VPC indicated by this field.
      */
     private String vpcId;
 
@@ -99,29 +99,29 @@ public class OptionGroup implements Serializable {
     }
 
     /**
-     * Provides the description of the option group.
+     * Provides a description of the option group.
      *
-     * @return Provides the description of the option group.
+     * @return Provides a description of the option group.
      */
     public String getOptionGroupDescription() {
         return optionGroupDescription;
     }
     
     /**
-     * Provides the description of the option group.
+     * Provides a description of the option group.
      *
-     * @param optionGroupDescription Provides the description of the option group.
+     * @param optionGroupDescription Provides a description of the option group.
      */
     public void setOptionGroupDescription(String optionGroupDescription) {
         this.optionGroupDescription = optionGroupDescription;
     }
     
     /**
-     * Provides the description of the option group.
+     * Provides a description of the option group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupDescription Provides the description of the option group.
+     * @param optionGroupDescription Provides a description of the option group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -267,12 +267,12 @@ public class OptionGroup implements Serializable {
 
     /**
      * Indicates whether this option group can be applied to both VPC and
-     * non-VPC instances. The value 'true' indicates the option group can be
-     * applied to both VPC and non-VPC instances.
+     * non-VPC instances. The value <code>true</code> indicates the option
+     * group can be applied to both VPC and non-VPC instances.
      *
      * @return Indicates whether this option group can be applied to both VPC and
-     *         non-VPC instances. The value 'true' indicates the option group can be
-     *         applied to both VPC and non-VPC instances.
+     *         non-VPC instances. The value <code>true</code> indicates the option
+     *         group can be applied to both VPC and non-VPC instances.
      */
     public Boolean isAllowsVpcAndNonVpcInstanceMemberships() {
         return allowsVpcAndNonVpcInstanceMemberships;
@@ -280,12 +280,12 @@ public class OptionGroup implements Serializable {
     
     /**
      * Indicates whether this option group can be applied to both VPC and
-     * non-VPC instances. The value 'true' indicates the option group can be
-     * applied to both VPC and non-VPC instances.
+     * non-VPC instances. The value <code>true</code> indicates the option
+     * group can be applied to both VPC and non-VPC instances.
      *
      * @param allowsVpcAndNonVpcInstanceMemberships Indicates whether this option group can be applied to both VPC and
-     *         non-VPC instances. The value 'true' indicates the option group can be
-     *         applied to both VPC and non-VPC instances.
+     *         non-VPC instances. The value <code>true</code> indicates the option
+     *         group can be applied to both VPC and non-VPC instances.
      */
     public void setAllowsVpcAndNonVpcInstanceMemberships(Boolean allowsVpcAndNonVpcInstanceMemberships) {
         this.allowsVpcAndNonVpcInstanceMemberships = allowsVpcAndNonVpcInstanceMemberships;
@@ -293,14 +293,14 @@ public class OptionGroup implements Serializable {
     
     /**
      * Indicates whether this option group can be applied to both VPC and
-     * non-VPC instances. The value 'true' indicates the option group can be
-     * applied to both VPC and non-VPC instances.
+     * non-VPC instances. The value <code>true</code> indicates the option
+     * group can be applied to both VPC and non-VPC instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowsVpcAndNonVpcInstanceMemberships Indicates whether this option group can be applied to both VPC and
-     *         non-VPC instances. The value 'true' indicates the option group can be
-     *         applied to both VPC and non-VPC instances.
+     *         non-VPC instances. The value <code>true</code> indicates the option
+     *         group can be applied to both VPC and non-VPC instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -312,71 +312,71 @@ public class OptionGroup implements Serializable {
 
     /**
      * Indicates whether this option group can be applied to both VPC and
-     * non-VPC instances. The value 'true' indicates the option group can be
-     * applied to both VPC and non-VPC instances.
+     * non-VPC instances. The value <code>true</code> indicates the option
+     * group can be applied to both VPC and non-VPC instances.
      *
      * @return Indicates whether this option group can be applied to both VPC and
-     *         non-VPC instances. The value 'true' indicates the option group can be
-     *         applied to both VPC and non-VPC instances.
+     *         non-VPC instances. The value <code>true</code> indicates the option
+     *         group can be applied to both VPC and non-VPC instances.
      */
     public Boolean getAllowsVpcAndNonVpcInstanceMemberships() {
         return allowsVpcAndNonVpcInstanceMemberships;
     }
 
     /**
-     * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
-     * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
-     * field is blank, then this option group can be applied to both VPC and
-     * non-VPC instances. If this field contains a value, then this option
-     * group can only be applied to instances that are in the VPC indicated
-     * by this field.
+     * If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>,
+     * this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b>
+     * is <code>true</code> and this field is blank, then this option group
+     * can be applied to both VPC and non-VPC instances. If this field
+     * contains a value, then this option group can only be applied to
+     * instances that are in the VPC indicated by this field.
      *
-     * @return If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
-     *         blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
-     *         field is blank, then this option group can be applied to both VPC and
-     *         non-VPC instances. If this field contains a value, then this option
-     *         group can only be applied to instances that are in the VPC indicated
-     *         by this field.
+     * @return If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>,
+     *         this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b>
+     *         is <code>true</code> and this field is blank, then this option group
+     *         can be applied to both VPC and non-VPC instances. If this field
+     *         contains a value, then this option group can only be applied to
+     *         instances that are in the VPC indicated by this field.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
-     * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
-     * field is blank, then this option group can be applied to both VPC and
-     * non-VPC instances. If this field contains a value, then this option
-     * group can only be applied to instances that are in the VPC indicated
-     * by this field.
+     * If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>,
+     * this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b>
+     * is <code>true</code> and this field is blank, then this option group
+     * can be applied to both VPC and non-VPC instances. If this field
+     * contains a value, then this option group can only be applied to
+     * instances that are in the VPC indicated by this field.
      *
-     * @param vpcId If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
-     *         blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
-     *         field is blank, then this option group can be applied to both VPC and
-     *         non-VPC instances. If this field contains a value, then this option
-     *         group can only be applied to instances that are in the VPC indicated
-     *         by this field.
+     * @param vpcId If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>,
+     *         this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b>
+     *         is <code>true</code> and this field is blank, then this option group
+     *         can be applied to both VPC and non-VPC instances. If this field
+     *         contains a value, then this option group can only be applied to
+     *         instances that are in the VPC indicated by this field.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
-     * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
-     * field is blank, then this option group can be applied to both VPC and
-     * non-VPC instances. If this field contains a value, then this option
-     * group can only be applied to instances that are in the VPC indicated
-     * by this field.
+     * If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>,
+     * this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b>
+     * is <code>true</code> and this field is blank, then this option group
+     * can be applied to both VPC and non-VPC instances. If this field
+     * contains a value, then this option group can only be applied to
+     * instances that are in the VPC indicated by this field.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
-     *         blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
-     *         field is blank, then this option group can be applied to both VPC and
-     *         non-VPC instances. If this field contains a value, then this option
-     *         group can only be applied to instances that are in the VPC indicated
-     *         by this field.
+     * @param vpcId If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>,
+     *         this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b>
+     *         is <code>true</code> and this field is blank, then this option group
+     *         can be applied to both VPC and non-VPC instances. If this field
+     *         contains a value, then this option group can only be applied to
+     *         instances that are in the VPC indicated by this field.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -846,4 +846,19 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
 
     @Override
     public abstract AbstractPutObjectRequest clone();
+
+    protected final <T extends AbstractPutObjectRequest> T copyPutObjectBaseTo(
+            T target) {
+        copyBaseTo(target);
+        final ObjectMetadata metadata = getMetadata();
+        return target.withAccessControlList(getAccessControlList())
+            .withCannedAcl(getCannedAcl())
+            .withInputStream(getInputStream())
+            .withMetadata(metadata == null ? null : metadata.clone())
+            .withRedirectLocation(getRedirectLocation())
+            .withStorageClass(getStorageClass())
+            .withSSEAwsKeyManagementParams(getSSEAwsKeyManagementParams())
+            .withSSECustomerKey(getSSECustomerKey())
+            ;
+    }
 }

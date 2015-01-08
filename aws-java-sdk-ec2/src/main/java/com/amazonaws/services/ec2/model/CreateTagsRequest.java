@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,10 +23,10 @@ import com.amazonaws.services.ec2.model.transform.CreateTagsRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest) CreateTags operation}.
  * <p>
- * Adds or overwrites one or more tags for the specified EC2 resource or
- * resources. Each resource can have a maximum of 10 tags. Each tag
- * consists of a key and optional value. Tag keys must be unique per
- * resource.
+ * Adds or overwrites one or more tags for the specified Amazon EC2
+ * resource or resources. Each resource can have a maximum of 10 tags.
+ * Each tag consists of a key and optional value. Tag keys must be unique
+ * per resource.
  * </p>
  * <p>
  * For more information about tags, see

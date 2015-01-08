@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -565,7 +565,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param detachVolumeRequest Container for the necessary parameters to
@@ -612,7 +612,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param detachVolumeRequest Container for the necessary parameters to
@@ -1073,7 +1073,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * For information about the supported operating systems, image formats,
      * and known limitations for the types of instances you can export, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createInstanceExportTaskRequest Container for the necessary
@@ -1109,7 +1109,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * For information about the supported operating systems, image formats,
      * and known limitations for the types of instances you can export, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createInstanceExportTaskRequest Container for the necessary
@@ -2431,8 +2431,13 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * using AmazonProvidedDNS in another region, specify
      * <code>region.compute.internal</code> (for example,
      * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code> ). If specifying
-     * more than one domain name, separate them with spaces.</li>
+     * domain name (for example, <code>MyCompany.com</code> ).
+     * <b>Important</b> : Some Linux operating systems accept multiple domain
+     * names separated by spaces. However, Windows and other Linux operating
+     * systems treat the value as a single domain, which results in
+     * unexpected behavior. If your DHCP options set is associated with a VPC
+     * that has instances with multiple operating systems, specify only one
+     * domain name.</li>
      * <li> <code>ntp-servers</code> - The IP addresses of up to four
      * Network Time Protocol (NTP) servers.</li>
      * <li> <code>netbios-name-servers</code> - The IP addresses of up to
@@ -2502,8 +2507,13 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * using AmazonProvidedDNS in another region, specify
      * <code>region.compute.internal</code> (for example,
      * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code> ). If specifying
-     * more than one domain name, separate them with spaces.</li>
+     * domain name (for example, <code>MyCompany.com</code> ).
+     * <b>Important</b> : Some Linux operating systems accept multiple domain
+     * names separated by spaces. However, Windows and other Linux operating
+     * systems treat the value as a single domain, which results in
+     * unexpected behavior. If your DHCP options set is associated with a VPC
+     * that has instances with multiple operating systems, specify only one
+     * domain name.</li>
      * <li> <code>ntp-servers</code> - The IP addresses of up to four
      * Network Time Protocol (NTP) servers.</li>
      * <li> <code>netbios-name-servers</code> - The IP addresses of up to
@@ -2572,7 +2582,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information on modifying snapshot permissions, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param resetSnapshotAttributeRequest Container for the necessary
@@ -2608,7 +2618,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information on modifying snapshot permissions, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param resetSnapshotAttributeRequest Container for the necessary
@@ -2802,7 +2812,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * ec2-import-volume command in the Amazon EC2 command-line interface
      * (CLI) tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param importVolumeRequest Container for the necessary parameters to
@@ -2836,7 +2846,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * ec2-import-volume command in the Amazon EC2 command-line interface
      * (CLI) tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param importVolumeRequest Container for the necessary parameters to
@@ -3459,8 +3469,43 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes the specified attribute of your AWS account.
+     * Describes attributes of your AWS account. The following are the
+     * supported account attributes:
      * </p>
+     * 
+     * <ul>
+     * <li> <p>
+     * <code>supported-platforms</code> : Indicates whether your account can
+     * launch instances into EC2-Classic and EC2-VPC, or only into EC2-VPC.
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>default-vpc</code> : The ID of the default VPC for your
+     * account, or <code>none</code> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>max-instances</code> : The maximum number of On-Demand
+     * instances that you can run.
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>vpc-max-security-groups-per-interface</code> : The maximum
+     * number of security groups that you can assign to a network interface.
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>max-elastic-ips</code> : The maximum number of Elastic IP
+     * addresses that you can allocate for use with EC2-Classic.
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>vpc-max-elastic-ips</code> : The maximum number of Elastic IP
+     * addresses that you can allocate for use with EC2-VPC.
+     * </p>
+     * </li>
+     * 
+     * </ul>
      *
      * @param describeAccountAttributesRequest Container for the necessary
      *           parameters to execute the DescribeAccountAttributes operation on
@@ -3489,8 +3534,43 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Describes the specified attribute of your AWS account.
+     * Describes attributes of your AWS account. The following are the
+     * supported account attributes:
      * </p>
+     * 
+     * <ul>
+     * <li> <p>
+     * <code>supported-platforms</code> : Indicates whether your account can
+     * launch instances into EC2-Classic and EC2-VPC, or only into EC2-VPC.
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>default-vpc</code> : The ID of the default VPC for your
+     * account, or <code>none</code> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>max-instances</code> : The maximum number of On-Demand
+     * instances that you can run.
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>vpc-max-security-groups-per-interface</code> : The maximum
+     * number of security groups that you can assign to a network interface.
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>max-elastic-ips</code> : The maximum number of Elastic IP
+     * addresses that you can allocate for use with EC2-Classic.
+     * </p>
+     * </li>
+     * <li> <p>
+     * <code>vpc-max-elastic-ips</code> : The maximum number of Elastic IP
+     * addresses that you can allocate for use with EC2-VPC.
+     * </p>
+     * </li>
+     * 
+     * </ul>
      *
      * @param describeAccountAttributesRequest Container for the necessary
      *           parameters to execute the DescribeAccountAttributes operation on
@@ -3526,6 +3606,106 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             throw ex;
               }
               asyncHandler.onSuccess(describeAccountAttributesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Links an EC2-Classic instance to a ClassicLink-enabled VPC through
+     * one or more of the VPC's security groups. You cannot link an
+     * EC2-Classic instance to more than one VPC at a time. You can only link
+     * an instance that's in the <code>running</code> state. An instance is
+     * automatically unlinked from a VPC when it's stopped - you can link it
+     * to the VPC again when you restart it.
+     * </p>
+     * <p>
+     * After you've linked an instance, you cannot change the VPC security
+     * groups that are associated with it. To change the security groups, you
+     * must first unlink the instance, and then link it again.
+     * </p>
+     * <p>
+     * Linking your instance to a VPC is sometimes referred to as
+     * <i>attaching</i> your instance.
+     * </p>
+     *
+     * @param attachClassicLinkVpcRequest Container for the necessary
+     *           parameters to execute the AttachClassicLinkVpc operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AttachClassicLinkVpc service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AttachClassicLinkVpcResult> attachClassicLinkVpcAsync(final AttachClassicLinkVpcRequest attachClassicLinkVpcRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AttachClassicLinkVpcResult>() {
+            public AttachClassicLinkVpcResult call() throws Exception {
+                return attachClassicLinkVpc(attachClassicLinkVpcRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Links an EC2-Classic instance to a ClassicLink-enabled VPC through
+     * one or more of the VPC's security groups. You cannot link an
+     * EC2-Classic instance to more than one VPC at a time. You can only link
+     * an instance that's in the <code>running</code> state. An instance is
+     * automatically unlinked from a VPC when it's stopped - you can link it
+     * to the VPC again when you restart it.
+     * </p>
+     * <p>
+     * After you've linked an instance, you cannot change the VPC security
+     * groups that are associated with it. To change the security groups, you
+     * must first unlink the instance, and then link it again.
+     * </p>
+     * <p>
+     * Linking your instance to a VPC is sometimes referred to as
+     * <i>attaching</i> your instance.
+     * </p>
+     *
+     * @param attachClassicLinkVpcRequest Container for the necessary
+     *           parameters to execute the AttachClassicLinkVpc operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AttachClassicLinkVpc service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AttachClassicLinkVpcResult> attachClassicLinkVpcAsync(
+            final AttachClassicLinkVpcRequest attachClassicLinkVpcRequest,
+            final AsyncHandler<AttachClassicLinkVpcRequest, AttachClassicLinkVpcResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AttachClassicLinkVpcResult>() {
+            public AttachClassicLinkVpcResult call() throws Exception {
+              AttachClassicLinkVpcResult result;
+                try {
+                result = attachClassicLinkVpc(attachClassicLinkVpcRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(attachClassicLinkVpcRequest, result);
                  return result;
         }
     });
@@ -3780,12 +3960,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Encrypted Amazon EBS volumes may only be attached to instances that
      * support Amazon EBS encryption. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * For a list of supported device names, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * If a volume has an AWS Marketplace product code:
@@ -3812,7 +3992,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching Amazon EBS Volumes </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param attachVolumeRequest Container for the necessary parameters to
@@ -3848,12 +4028,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Encrypted Amazon EBS volumes may only be attached to instances that
      * support Amazon EBS encryption. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * For a list of supported device names, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * If a volume has an AWS Marketplace product code:
@@ -3880,7 +4060,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching Amazon EBS Volumes </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param attachVolumeRequest Container for the necessary parameters to
@@ -4091,6 +4271,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Resets an attribute of an AMI to its default value.
      * </p>
+     * <p>
+     * <b>NOTE:</b> The productCodes attribute can't be reset.
+     * </p>
      *
      * @param resetImageAttributeRequest Container for the necessary
      *           parameters to execute the ResetImageAttribute operation on AmazonEC2.
@@ -4120,6 +4303,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Resets an attribute of an AMI to its default value.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The productCodes attribute can't be reset.
      * </p>
      *
      * @param resetImageAttributeRequest Container for the necessary
@@ -4355,7 +4541,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html"> Amazon Elastic Block Store </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createSnapshotRequest Container for the necessary parameters to
@@ -4418,7 +4604,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html"> Amazon Elastic Block Store </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createSnapshotRequest Container for the necessary parameters to
@@ -4471,7 +4657,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html"> Deleting an Amazon EBS Volume </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
@@ -4511,7 +4697,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html"> Deleting an Amazon EBS Volume </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
@@ -4727,78 +4913,6 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes one or more of your VPCs.
-     * </p>
-     *
-     * @param describeVpcsRequest Container for the necessary parameters to
-     *           execute the DescribeVpcs operation on AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeVpcs service method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeVpcsResult> describeVpcsAsync(final DescribeVpcsRequest describeVpcsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeVpcsResult>() {
-            public DescribeVpcsResult call() throws Exception {
-                return describeVpcs(describeVpcsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Describes one or more of your VPCs.
-     * </p>
-     *
-     * @param describeVpcsRequest Container for the necessary parameters to
-     *           execute the DescribeVpcs operation on AmazonEC2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeVpcs service method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeVpcsResult> describeVpcsAsync(
-            final DescribeVpcsRequest describeVpcsRequest,
-            final AsyncHandler<DescribeVpcsRequest, DescribeVpcsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeVpcsResult>() {
-            public DescribeVpcsResult call() throws Exception {
-              DescribeVpcsResult result;
-                try {
-                result = describeVpcs(describeVpcsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeVpcsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Unassigns one or more secondary private IP addresses from a network
      * interface.
      * </p>
@@ -4875,6 +4989,78 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Describes one or more of your VPCs.
+     * </p>
+     *
+     * @param describeVpcsRequest Container for the necessary parameters to
+     *           execute the DescribeVpcs operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeVpcs service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeVpcsResult> describeVpcsAsync(final DescribeVpcsRequest describeVpcsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeVpcsResult>() {
+            public DescribeVpcsResult call() throws Exception {
+                return describeVpcs(describeVpcsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your VPCs.
+     * </p>
+     *
+     * @param describeVpcsRequest Container for the necessary parameters to
+     *           execute the DescribeVpcs operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeVpcs service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeVpcsResult> describeVpcsAsync(
+            final DescribeVpcsRequest describeVpcsRequest,
+            final AsyncHandler<DescribeVpcsRequest, DescribeVpcsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeVpcsResult>() {
+            public DescribeVpcsResult call() throws Exception {
+              DescribeVpcsResult result;
+                try {
+                result = describeVpcs(describeVpcsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVpcsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Cancels an active conversion task. The task can be the import of an
      * instance or volume. The action removes all artifacts of the
      * conversion, including a partially uploaded volume or instance. If the
@@ -4884,7 +5070,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param cancelConversionTaskRequest Container for the necessary
@@ -4923,7 +5109,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param cancelConversionTaskRequest Container for the necessary
@@ -5708,7 +5894,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -5752,7 +5938,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -6427,7 +6613,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * disk image. After importing the image, you then upload it using the
      * ec2-import-volume command in the EC2 command line tools. For more
      * information, see Using the Command Line Tools to Import Your Virtual
-     * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+     * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide
+     * for Linux.
      * </p>
      *
      * @param importInstanceRequest Container for the necessary parameters to
@@ -6460,7 +6647,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * disk image. After importing the image, you then upload it using the
      * ec2-import-volume command in the EC2 command line tools. For more
      * information, see Using the Command Line Tools to Import Your Virtual
-     * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+     * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide
+     * for Linux.
      * </p>
      *
      * @param importInstanceRequest Container for the necessary parameters to
@@ -7504,7 +7692,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your conversion tasks. For more information,
      * see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeConversionTasksRequest Container for the necessary
@@ -7537,7 +7725,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your conversion tasks. For more information,
      * see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeConversionTasksRequest Container for the necessary
@@ -7688,6 +7876,82 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             throw ex;
               }
               asyncHandler.onSuccess(createVpnConnectionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Disables ClassicLink for a VPC. You cannot disable ClassicLink for a
+     * VPC that has EC2-Classic instances linked to it.
+     * </p>
+     *
+     * @param disableVpcClassicLinkRequest Container for the necessary
+     *           parameters to execute the DisableVpcClassicLink operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DisableVpcClassicLink service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DisableVpcClassicLinkResult> disableVpcClassicLinkAsync(final DisableVpcClassicLinkRequest disableVpcClassicLinkRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DisableVpcClassicLinkResult>() {
+            public DisableVpcClassicLinkResult call() throws Exception {
+                return disableVpcClassicLink(disableVpcClassicLinkRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Disables ClassicLink for a VPC. You cannot disable ClassicLink for a
+     * VPC that has EC2-Classic instances linked to it.
+     * </p>
+     *
+     * @param disableVpcClassicLinkRequest Container for the necessary
+     *           parameters to execute the DisableVpcClassicLink operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DisableVpcClassicLink service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DisableVpcClassicLinkResult> disableVpcClassicLinkAsync(
+            final DisableVpcClassicLinkRequest disableVpcClassicLinkRequest,
+            final AsyncHandler<DisableVpcClassicLinkRequest, DisableVpcClassicLinkResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DisableVpcClassicLinkResult>() {
+            public DisableVpcClassicLinkResult call() throws Exception {
+              DisableVpcClassicLinkResult result;
+                try {
+                result = disableVpcClassicLink(disableVpcClassicLinkRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(disableVpcClassicLinkRequest, result);
                  return result;
         }
     });
@@ -9628,9 +9892,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Initiates the copy of an AMI from the specified source region to the
-     * region in which the request was made. You specify the destination
-     * region by using its endpoint when making the request. AMIs that use
-     * encrypted Amazon EBS snapshots cannot be copied with this method.
+     * current region. You specify the destination region by using its
+     * endpoint when making the request. AMIs that use encrypted Amazon EBS
+     * snapshots cannot be copied with this method.
      * </p>
      * <p>
      * For more information, see
@@ -9665,9 +9929,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Initiates the copy of an AMI from the specified source region to the
-     * region in which the request was made. You specify the destination
-     * region by using its endpoint when making the request. AMIs that use
-     * encrypted Amazon EBS snapshots cannot be copied with this method.
+     * current region. You specify the destination region by using its
+     * endpoint when making the request. AMIs that use encrypted Amazon EBS
+     * snapshots cannot be copied with this method.
      * </p>
      * <p>
      * For more information, see
@@ -9708,6 +9972,80 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             throw ex;
               }
               asyncHandler.onSuccess(copyImageRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Describes the ClassicLink status of one or more VPCs.
+     * </p>
+     *
+     * @param describeVpcClassicLinkRequest Container for the necessary
+     *           parameters to execute the DescribeVpcClassicLink operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeVpcClassicLink service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeVpcClassicLinkResult> describeVpcClassicLinkAsync(final DescribeVpcClassicLinkRequest describeVpcClassicLinkRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeVpcClassicLinkResult>() {
+            public DescribeVpcClassicLinkResult call() throws Exception {
+                return describeVpcClassicLink(describeVpcClassicLinkRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes the ClassicLink status of one or more VPCs.
+     * </p>
+     *
+     * @param describeVpcClassicLinkRequest Container for the necessary
+     *           parameters to execute the DescribeVpcClassicLink operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeVpcClassicLink service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeVpcClassicLinkResult> describeVpcClassicLinkAsync(
+            final DescribeVpcClassicLinkRequest describeVpcClassicLinkRequest,
+            final AsyncHandler<DescribeVpcClassicLinkRequest, DescribeVpcClassicLinkResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeVpcClassicLinkResult>() {
+            public DescribeVpcClassicLinkResult call() throws Exception {
+              DescribeVpcClassicLinkResult result;
+                try {
+                result = describeVpcClassicLink(describeVpcClassicLinkRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVpcClassicLinkRequest, result);
                  return result;
         }
     });
@@ -9947,6 +10285,86 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Describes one or more of your linked EC2-Classic instances. This
+     * request only returns information about EC2-Classic instances linked to
+     * a VPC through ClassicLink; you cannot use this request to return
+     * information about other instances.
+     * </p>
+     *
+     * @param describeClassicLinkInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeClassicLinkInstances operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeClassicLinkInstances service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeClassicLinkInstancesResult> describeClassicLinkInstancesAsync(final DescribeClassicLinkInstancesRequest describeClassicLinkInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeClassicLinkInstancesResult>() {
+            public DescribeClassicLinkInstancesResult call() throws Exception {
+                return describeClassicLinkInstances(describeClassicLinkInstancesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your linked EC2-Classic instances. This
+     * request only returns information about EC2-Classic instances linked to
+     * a VPC through ClassicLink; you cannot use this request to return
+     * information about other instances.
+     * </p>
+     *
+     * @param describeClassicLinkInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeClassicLinkInstances operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeClassicLinkInstances service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeClassicLinkInstancesResult> describeClassicLinkInstancesAsync(
+            final DescribeClassicLinkInstancesRequest describeClassicLinkInstancesRequest,
+            final AsyncHandler<DescribeClassicLinkInstancesRequest, DescribeClassicLinkInstancesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeClassicLinkInstancesResult>() {
+            public DescribeClassicLinkInstancesResult call() throws Exception {
+              DescribeClassicLinkInstancesResult result;
+                try {
+                result = describeClassicLinkInstances(describeClassicLinkInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeClassicLinkInstancesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Creates a Spot Instance request. Spot Instances are instances that
      * Amazon EC2 starts on your behalf when the maximum price that you
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
@@ -10039,10 +10457,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified EC2 resource or
-     * resources. Each resource can have a maximum of 10 tags. Each tag
-     * consists of a key and optional value. Tag keys must be unique per
-     * resource.
+     * Adds or overwrites one or more tags for the specified Amazon EC2
+     * resource or resources. Each resource can have a maximum of 10 tags.
+     * Each tag consists of a key and optional value. Tag keys must be unique
+     * per resource.
      * </p>
      * <p>
      * For more information about tags, see
@@ -10077,10 +10495,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified EC2 resource or
-     * resources. Each resource can have a maximum of 10 tags. Each tag
-     * consists of a key and optional value. Tag keys must be unique per
-     * resource.
+     * Adds or overwrites one or more tags for the specified Amazon EC2
+     * resource or resources. Each resource can have a maximum of 10 tags.
+     * Each tag consists of a key and optional value. Tag keys must be unique
+     * per resource.
      * </p>
      * <p>
      * For more information about tags, see
@@ -10133,7 +10551,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeVolumeAttributeRequest Container for the necessary
@@ -10169,7 +10587,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeVolumeAttributeRequest Container for the necessary
@@ -10816,7 +11234,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information on modifying snapshot permissions, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be
@@ -10860,7 +11278,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information on modifying snapshot permissions, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be
@@ -11287,7 +11705,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS snapshots, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeSnapshotAttributeRequest Container for the necessary
@@ -11323,7 +11741,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS snapshots, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeSnapshotAttributeRequest Container for the necessary
@@ -12122,8 +12540,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Creates an Amazon EBS volume that can be attached to an instance in
-     * the same Availability Zone. The volume is created in the specified
-     * region.
+     * the same Availability Zone. The volume is created in the regional
+     * endpoint that you send the HTTP request to. For more information see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html"> Regions and Endpoints </a>
+     * .
      * </p>
      * <p>
      * You can create a new empty volume or restore a volume from an Amazon
@@ -12136,12 +12556,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * support Amazon EBS encryption. Volumes that are created from encrypted
      * snapshots are also automatically encrypted. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html"> Creating or Restoring an Amazon EBS Volume </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createVolumeRequest Container for the necessary parameters to
@@ -12171,8 +12591,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Creates an Amazon EBS volume that can be attached to an instance in
-     * the same Availability Zone. The volume is created in the specified
-     * region.
+     * the same Availability Zone. The volume is created in the regional
+     * endpoint that you send the HTTP request to. For more information see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html"> Regions and Endpoints </a>
+     * .
      * </p>
      * <p>
      * You can create a new empty volume or restore a volume from an Amazon
@@ -12185,12 +12607,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * support Amazon EBS encryption. Volumes that are created from encrypted
      * snapshots are also automatically encrypted. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html"> Creating or Restoring an Amazon EBS Volume </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createVolumeRequest Container for the necessary parameters to
@@ -12908,7 +13330,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html"> Deleting an Amazon EBS Snapshot </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -12957,7 +13379,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html"> Deleting an Amazon EBS Snapshot </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -13270,8 +13692,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * on other instance store volumes is not preserved.
      * </p>
      * <p>
-     * <b>NOTE:</b> This procedure is not applicable for Linux/Unix
-     * instances or Windows instances that are backed by Amazon EBS.
+     * <b>NOTE:</b> This action is not applicable for Linux/Unix instances
+     * or Windows instances that are backed by Amazon EBS.
      * </p>
      * <p>
      * For more information, see
@@ -13312,8 +13734,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * on other instance store volumes is not preserved.
      * </p>
      * <p>
-     * <b>NOTE:</b> This procedure is not applicable for Linux/Unix
-     * instances or Windows instances that are backed by Amazon EBS.
+     * <b>NOTE:</b> This action is not applicable for Linux/Unix instances
+     * or Windows instances that are backed by Amazon EBS.
      * </p>
      * <p>
      * For more information, see
@@ -13610,9 +14032,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * unencrypted snapshots remain unencrypted.
      * </p>
      * <p>
+     * <b>NOTE:</b> Copying snapshots that were encrypted with non-default
+     * AWS Key Management Service (KMS) master keys is not supported at this
+     * time.
+     * </p>
+     * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param copySnapshotRequest Container for the necessary parameters to
@@ -13652,9 +14079,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * unencrypted snapshots remain unencrypted.
      * </p>
      * <p>
+     * <b>NOTE:</b> Copying snapshots that were encrypted with non-default
+     * AWS Key Management Service (KMS) master keys is not supported at this
+     * time.
+     * </p>
+     * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param copySnapshotRequest Container for the necessary parameters to
@@ -14224,7 +14656,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS snapshots, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -14302,7 +14734,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For more information about Amazon EBS snapshots, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -14633,6 +15065,94 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Enables a VPC for ClassicLink. You can then link EC2-Classic
+     * instances to your ClassicLink-enabled VPC to allow communication over
+     * private IP addresses. You cannot enable your VPC for ClassicLink if
+     * any of your VPC's route tables have existing routes for address ranges
+     * within the <code>10.0.0.0/8</code> IP address range, excluding local
+     * routes for VPCs in the <code>10.0.0.0/16</code> and
+     * <code>10.1.0.0/16</code> IP address ranges. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"> ClassicLink </a>
+     * in the Amazon Elastic Compute Cloud User Guide.
+     * </p>
+     *
+     * @param enableVpcClassicLinkRequest Container for the necessary
+     *           parameters to execute the EnableVpcClassicLink operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EnableVpcClassicLink service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EnableVpcClassicLinkResult> enableVpcClassicLinkAsync(final EnableVpcClassicLinkRequest enableVpcClassicLinkRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EnableVpcClassicLinkResult>() {
+            public EnableVpcClassicLinkResult call() throws Exception {
+                return enableVpcClassicLink(enableVpcClassicLinkRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Enables a VPC for ClassicLink. You can then link EC2-Classic
+     * instances to your ClassicLink-enabled VPC to allow communication over
+     * private IP addresses. You cannot enable your VPC for ClassicLink if
+     * any of your VPC's route tables have existing routes for address ranges
+     * within the <code>10.0.0.0/8</code> IP address range, excluding local
+     * routes for VPCs in the <code>10.0.0.0/16</code> and
+     * <code>10.1.0.0/16</code> IP address ranges. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"> ClassicLink </a>
+     * in the Amazon Elastic Compute Cloud User Guide.
+     * </p>
+     *
+     * @param enableVpcClassicLinkRequest Container for the necessary
+     *           parameters to execute the EnableVpcClassicLink operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EnableVpcClassicLink service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EnableVpcClassicLinkResult> enableVpcClassicLinkAsync(
+            final EnableVpcClassicLinkRequest enableVpcClassicLinkRequest,
+            final AsyncHandler<EnableVpcClassicLinkRequest, EnableVpcClassicLinkResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EnableVpcClassicLinkResult>() {
+            public EnableVpcClassicLinkResult call() throws Exception {
+              EnableVpcClassicLinkResult result;
+                try {
+                result = enableVpcClassicLink(enableVpcClassicLinkRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(enableVpcClassicLinkRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Creates a static route associated with a VPN connection between an
      * existing virtual private gateway and a VPN customer gateway. The
      * static route allows traffic to be routed from the virtual private
@@ -14717,6 +15237,84 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
               }
               asyncHandler.onSuccess(createVpnConnectionRouteRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Unlinks (detaches) a linked EC2-Classic instance from a VPC. After
+     * the instance has been unlinked, the VPC security groups are no longer
+     * associated with it. An instance is automatically unlinked from a VPC
+     * when it's stopped.
+     * </p>
+     *
+     * @param detachClassicLinkVpcRequest Container for the necessary
+     *           parameters to execute the DetachClassicLinkVpc operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DetachClassicLinkVpc service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DetachClassicLinkVpcResult> detachClassicLinkVpcAsync(final DetachClassicLinkVpcRequest detachClassicLinkVpcRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DetachClassicLinkVpcResult>() {
+            public DetachClassicLinkVpcResult call() throws Exception {
+                return detachClassicLinkVpc(detachClassicLinkVpcRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Unlinks (detaches) a linked EC2-Classic instance from a VPC. After
+     * the instance has been unlinked, the VPC security groups are no longer
+     * associated with it. An instance is automatically unlinked from a VPC
+     * when it's stopped.
+     * </p>
+     *
+     * @param detachClassicLinkVpcRequest Container for the necessary
+     *           parameters to execute the DetachClassicLinkVpc operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DetachClassicLinkVpc service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DetachClassicLinkVpcResult> detachClassicLinkVpcAsync(
+            final DetachClassicLinkVpcRequest detachClassicLinkVpcRequest,
+            final AsyncHandler<DetachClassicLinkVpcRequest, DetachClassicLinkVpcResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DetachClassicLinkVpcResult>() {
+            public DetachClassicLinkVpcResult call() throws Exception {
+              DetachClassicLinkVpcResult result;
+                try {
+                result = detachClassicLinkVpc(detachClassicLinkVpcRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(detachClassicLinkVpcRequest, result);
+                 return result;
         }
     });
     }

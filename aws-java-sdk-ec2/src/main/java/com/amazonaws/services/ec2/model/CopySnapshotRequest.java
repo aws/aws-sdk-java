@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,9 +34,14 @@ import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
  * unencrypted snapshots remain unencrypted.
  * </p>
  * <p>
+ * <b>NOTE:</b> Copying snapshots that were encrypted with non-default
+ * AWS Key Management Service (KMS) master keys is not supported at this
+ * time.
+ * </p>
+ * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#copySnapshot(CopySnapshotRequest)

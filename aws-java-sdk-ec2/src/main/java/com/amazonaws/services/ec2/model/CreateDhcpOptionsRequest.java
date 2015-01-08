@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,8 +44,13 @@ import com.amazonaws.services.ec2.model.transform.CreateDhcpOptionsRequestMarsha
  * AmazonProvidedDNS in another region, specify
  * <code>region.compute.internal</code> (for example,
  * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
- * domain name (for example, <code>MyCompany.com</code> ). If specifying
- * more than one domain name, separate them with spaces.</li>
+ * domain name (for example, <code>MyCompany.com</code> ).
+ * <b>Important</b> : Some Linux operating systems accept multiple domain
+ * names separated by spaces. However, Windows and other Linux operating
+ * systems treat the value as a single domain, which results in
+ * unexpected behavior. If your DHCP options set is associated with a VPC
+ * that has instances with multiple operating systems, specify only one
+ * domain name.</li>
  * <li> <code>ntp-servers</code> - The IP addresses of up to four
  * Network Time Protocol (NTP) servers.</li>
  * <li> <code>netbios-name-servers</code> - The IP addresses of up to

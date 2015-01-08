@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ import com.amazonaws.services.ec2.model.transform.CopyImageRequestMarshaller;
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#copyImage(CopyImageRequest) CopyImage operation}.
  * <p>
  * Initiates the copy of an AMI from the specified source region to the
- * region in which the request was made. You specify the destination
- * region by using its endpoint when making the request. AMIs that use
- * encrypted Amazon EBS snapshots cannot be copied with this method.
+ * current region. You specify the destination region by using its
+ * endpoint when making the request. AMIs that use encrypted Amazon EBS
+ * snapshots cannot be copied with this method.
  * </p>
  * <p>
  * For more information, see

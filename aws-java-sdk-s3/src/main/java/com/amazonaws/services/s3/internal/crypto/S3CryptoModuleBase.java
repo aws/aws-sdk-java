@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -410,6 +410,12 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         return instruction.toObjectMetadata(metadata, cryptoConfig.getCryptoMode());
     }
     
+    /**
+     * Creates and returns a non-null content crypto material for the given
+     * request.
+     * 
+     * @throws AmazonClientException if no encryption material can be found.
+     */
     protected final ContentCryptoMaterial createContentCryptoMaterial(
             AmazonWebServiceRequest req) {
         if (req instanceof EncryptionMaterialsFactory) {
@@ -424,18 +430,29 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         if (req instanceof MaterialsDescriptionProvider) {
             // per request level material description
             MaterialsDescriptionProvider mdp = (MaterialsDescriptionProvider) req;
-            return newContentCryptoMaterial(this.kekMaterialsProvider,
-                    mdp.getMaterialsDescription(),
+            Map<String,String> matdesc = mdp.getMaterialsDescription();
+            ContentCryptoMaterial ccm = newContentCryptoMaterial(this.kekMaterialsProvider,
+                    matdesc,
                     cryptoConfig.getCryptoProvider(), req);
+            if (ccm != null)
+                return ccm;
+            if (matdesc != null) {
+                throw new AmazonClientException(
+                    "No material available from the encryption material provider for description "
+                        + matdesc);
+            }
+            // if there is no material description, fall thru to use
+            // the per s3 client level encryption  materials
         }
-        // per s3 client level encryption materails 
+        // per s3 client level encryption materials 
         return newContentCryptoMaterial(this.kekMaterialsProvider,
                 cryptoConfig.getCryptoProvider(), req);
     }
 
     /**
-     * Generates and returns the content encryption material with the given kek
-     * material, material description and security providers.
+     * Returns the content encryption material generated with the given kek
+     * material, material description and security providers; or null if
+     * the encryption material cannot be found for the specified description.
      */
     private ContentCryptoMaterial newContentCryptoMaterial(
             EncryptionMaterialsProvider kekMaterialProvider,
@@ -443,12 +460,18 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             AmazonWebServiceRequest req) {
         EncryptionMaterials kekMaterials = 
             kekMaterialProvider.getEncryptionMaterials(materialsDescription);
+        if (kekMaterials == null) {
+            return null; 
+        }
         return buildContentCryptoMaterial(kekMaterials, provider, req);
     }
 
     /**
-     * Generates and returns the content encryption material with the given kek
+     * Returns a non-null content encryption material generated with the given kek
      * material and security providers.
+     * 
+     * @throws AmazonClientException if no encryption material can be found from
+     * the given encryption material provider. 
      */
     private ContentCryptoMaterial newContentCryptoMaterial(
             EncryptionMaterialsProvider kekMaterialProvider,
@@ -484,6 +507,9 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         return;
     }
 
+    /**
+     * @param kekMaterials a non-null encryption material
+     */
     private ContentCryptoMaterial buildContentCryptoMaterial(
             EncryptionMaterials kekMaterials, Provider provider,
             AmazonWebServiceRequest req) {
@@ -516,6 +542,9 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         }
     }
 
+    /**
+     * @param kekMaterials non-null encryption materials
+     */
     protected final SecretKey generateCEK(
             final EncryptionMaterials kekMaterials,
             final Provider providerIn) {

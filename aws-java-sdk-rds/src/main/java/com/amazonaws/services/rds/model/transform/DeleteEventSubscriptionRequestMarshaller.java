@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class DeleteEventSubscriptionRequestMarshaller implements Marshaller<Requ
 
         Request<DeleteEventSubscriptionRequest> request = new DefaultRequest<DeleteEventSubscriptionRequest>(deleteEventSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteEventSubscription");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-31");
 
         if (deleteEventSubscriptionRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(deleteEventSubscriptionRequest.getSubscriptionName()));

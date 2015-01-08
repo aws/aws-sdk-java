@@ -3,6 +3,18 @@
     <Region>
       <Name>us-east-1</Name>
       <Endpoint>
+        <ServiceName>cloudhsm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudhsm.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ecs</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ecs.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>lambda</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -407,6 +419,12 @@
     </Region>
     <Region>
       <Name>us-west-2</Name>
+      <Endpoint>
+        <ServiceName>cloudhsm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudhsm.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
       <Endpoint>
         <ServiceName>lambda</ServiceName>
         <Http>false</Http>
@@ -978,6 +996,12 @@
     <Region>
       <Name>ap-southeast-2</Name>
       <Endpoint>
+        <ServiceName>cloudhsm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudhsm.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>kms</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1314,6 +1338,12 @@
     <Region>
       <Name>eu-west-1</Name>
       <Endpoint>
+        <ServiceName>cloudhsm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudhsm.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>lambda</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1529,6 +1559,12 @@
     </Region>
     <Region>
       <Name>eu-central-1</Name>
+      <Endpoint>
+        <ServiceName>cloudhsm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudhsm.eu-central-1.amazonaws.com</Hostname>
+      </Endpoint>
       <Endpoint>
         <ServiceName>kms</ServiceName>
         <Http>false</Http>
@@ -1902,6 +1938,20 @@
     </Region>
   </Regions>
   <Services>
+    <Service>
+      <Name>cloudhsm</Name>
+      <FullName>AWS CloudHSM</FullName>
+      <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
+      <RegionName>eu-central-1</RegionName>
+    </Service>
+    <Service>
+      <Name>ecs</Name>
+      <FullName>Amazon EC2 Container Service</FullName>
+      <RegionName>us-east-1</RegionName>
+    </Service>
     <Service>
       <Name>lambda</Name>
       <FullName>AWS Lambda</FullName>

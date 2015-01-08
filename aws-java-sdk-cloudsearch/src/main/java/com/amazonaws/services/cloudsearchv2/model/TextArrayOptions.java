@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class TextArrayOptions implements Serializable {
      * A list of source fields to map to the field.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\s*[a-z][a-z0-9_]*\s*(,\s*[a-z][a-z0-9_]*\s*)*<br/>
+     * <b>Pattern: </b>\s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)*<br/>
      */
     private String sourceFields;
 
@@ -114,7 +114,7 @@ public class TextArrayOptions implements Serializable {
      * A list of source fields to map to the field.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\s*[a-z][a-z0-9_]*\s*(,\s*[a-z][a-z0-9_]*\s*)*<br/>
+     * <b>Pattern: </b>\s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)*<br/>
      *
      * @return A list of source fields to map to the field.
      */
@@ -126,7 +126,7 @@ public class TextArrayOptions implements Serializable {
      * A list of source fields to map to the field.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\s*[a-z][a-z0-9_]*\s*(,\s*[a-z][a-z0-9_]*\s*)*<br/>
+     * <b>Pattern: </b>\s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)*<br/>
      *
      * @param sourceFields A list of source fields to map to the field.
      */
@@ -140,7 +140,7 @@ public class TextArrayOptions implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\s*[a-z][a-z0-9_]*\s*(,\s*[a-z][a-z0-9_]*\s*)*<br/>
+     * <b>Pattern: </b>\s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)*<br/>
      *
      * @param sourceFields A list of source fields to map to the field.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,15 +75,14 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
     /**
      * Defines one or more numeric expressions that can be used to sort
      * results or specify search or filter criteria. You can also specify
-     * expressions as return fields. <p>For more information about defining
-     * and using expressions, see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring
+     * expressions as return fields. <p>You specify the expressions in JSON
+     * using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can
+     * define and use multiple expressions in a search request. For example:
+     * <p><code> {"expression1":"_score*rating",
+     * "expression2":"(1/rank)*year"} </code> <p>For information about the
+     * variables, operators, and functions you can use in expressions, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
      * Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
-     * <examples> <example> <name>Defining Multiple Expressions</name>
-     * <description>You can define and use multiple expressions in a search
-     * request.</description> <request> {"expression1":"_score*rating",
-     * "expression2":"(1/rank)*year"} </request> <response/> </example>
-     * </examples>
      */
     private String expr;
 
@@ -116,26 +115,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * instead of <code>sort</code>. </li> </ul> <p>If no facet options are
      * specified, facet counts are computed for all field values, the facets
      * are sorted by facet count, and the top 10 facets are returned in the
-     * results. <p>For more information, see <a
+     * results. <p>To count particular buckets of values, use the
+     * <code>buckets</code> option. For example, the following request uses
+     * the <code>buckets</code> option to calculate and return facet counts
+     * by decade. <p><code>
+     * {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
+     * </code> <p>To sort facets by facet count, use the <code>count</code>
+     * option. For example, the following request sets the <code>sort</code>
+     * option to <code>count</code> to sort the facet values by facet count,
+     * with the facet values that have the most matching documents listed
+     * first. Setting the <code>size</code> option to 3 returns only the top
+     * three facet values. <p><code> {"year":{"sort":"count","size":3}}
+     * </code> <p>To sort the facets by value, use the <code>bucket</code>
+     * option. For example, the following request sets the <code>sort</code>
+     * option to <code>bucket</code> to sort the facet values numerically by
+     * year, with earliest year listed first. <p><code>
+     * {"year":{"sort":"bucket"}} </code> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting
      * and Using Facet Information</a> in the <i>Amazon CloudSearch Developer
-     * Guide</i>. <examples> <example> <name>Counting Particular Buckets of
-     * Values</name> <description>This request uses the <code>buckets</code>
-     * option to calculate and return facet counts by decade.</description>
-     * <request>
-     * {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
-     * </request> <response/> </example> <example> <name>Sorting Facets By
-     * Facet Count</name> <description>This request sets the
-     * <code>sort</code> option to <code>count</code> to sort the facet
-     * values by facet count, with the facet values that have the most
-     * matching documents listed first. Setting the <code>size</code> option
-     * to 3 returns only the top three facet values.</description> <request>
-     * {"year":{"sort":"count","size":3}} </request> <response/> </example>
-     * <example> <name>Sorting Facets By Value</name> <description>This
-     * request sets the <code>sort</code> option to <code>bucket</code> to
-     * sort the facet values numerically by year, with earliest year listed
-     * first. </description> <request> {"year":{"sort":"bucket"}} </request>
-     * <response/> </example> </examples>
+     * Guide</i>.
      */
     private String facet;
 
@@ -177,12 +175,10 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * </li> </ul> <p>If no highlight options are specified for a field, the
      * returned field text is treated as HTML and the first match is
      * highlighted with emphasis tags: <code><em>search-term</em></code>.
-     * <examples> <example> <name>Setting Highlight Options</name>
-     * <description>This example retrieves highlights for the
-     * <code>actors</code> and <code>title</code> fields.</description>
-     * <request>{ "actors": {}, "title": {"format": "text","max_phrases":
-     * 2,"pre_tag": "<b>","post_tag": "</b>"} }</request> </example>
-     * </examples>
+     * <p>For example, the following request retrieves highlights for the
+     * <code>actors</code> and <code>title</code> fields. <p> <code>{
+     * "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag":
+     * "<b>","post_tag": "</b>"} }</code>
      */
     private String highlight;
 
@@ -218,10 +214,12 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
 
     /**
      * Configures options for the query parser specified in the
-     * <code>queryParser</code> parameter. <p>The options you can configure
-     * vary according to which parser you use: <ul>
-     * <li><code>defaultOperator</code>: The default operator used to combine
-     * individual terms in the search string. For example:
+     * <code>queryParser</code> parameter. You specify the options in JSON
+     * using the following form
+     * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code>
+     * <p>The options you can configure vary according to which parser you
+     * use: <ul> <li><code>defaultOperator</code>: The default operator used
+     * to combine individual terms in the search string. For example:
      * <code>defaultOperator: 'or'</code>. For the <code>dismax</code>
      * parser, you specify a percentage that represents the percentage of
      * terms in the search string (rounded down) that must match, rather than
@@ -320,11 +318,6 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all
      * fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to
      * 1.0. Default: 0.0. Valid for: <code>dismax</code>. </li> </ul>
-     * <examples> <example> <name>Setting Default Search Fields</name>
-     * <description>This example searches the <code>title</code> and
-     * <code>plot</code> fields if no fields are specified in the search
-     * criteria.</description> <request>{"fields":["title","plot"]}</request>
-     * <response> </response> </example> </examples>
      */
     private String queryOptions;
 
@@ -504,27 +497,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
     /**
      * Defines one or more numeric expressions that can be used to sort
      * results or specify search or filter criteria. You can also specify
-     * expressions as return fields. <p>For more information about defining
-     * and using expressions, see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring
+     * expressions as return fields. <p>You specify the expressions in JSON
+     * using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can
+     * define and use multiple expressions in a search request. For example:
+     * <p><code> {"expression1":"_score*rating",
+     * "expression2":"(1/rank)*year"} </code> <p>For information about the
+     * variables, operators, and functions you can use in expressions, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
      * Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
-     * <examples> <example> <name>Defining Multiple Expressions</name>
-     * <description>You can define and use multiple expressions in a search
-     * request.</description> <request> {"expression1":"_score*rating",
-     * "expression2":"(1/rank)*year"} </request> <response/> </example>
-     * </examples>
      *
      * @return Defines one or more numeric expressions that can be used to sort
      *         results or specify search or filter criteria. You can also specify
-     *         expressions as return fields. <p>For more information about defining
-     *         and using expressions, see <a
-     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring
+     *         expressions as return fields. <p>You specify the expressions in JSON
+     *         using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can
+     *         define and use multiple expressions in a search request. For example:
+     *         <p><code> {"expression1":"_score*rating",
+     *         "expression2":"(1/rank)*year"} </code> <p>For information about the
+     *         variables, operators, and functions you can use in expressions, see <a
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
      *         Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
-     *         <examples> <example> <name>Defining Multiple Expressions</name>
-     *         <description>You can define and use multiple expressions in a search
-     *         request.</description> <request> {"expression1":"_score*rating",
-     *         "expression2":"(1/rank)*year"} </request> <response/> </example>
-     *         </examples>
      */
     public String getExpr() {
         return expr;
@@ -533,27 +524,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
     /**
      * Defines one or more numeric expressions that can be used to sort
      * results or specify search or filter criteria. You can also specify
-     * expressions as return fields. <p>For more information about defining
-     * and using expressions, see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring
+     * expressions as return fields. <p>You specify the expressions in JSON
+     * using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can
+     * define and use multiple expressions in a search request. For example:
+     * <p><code> {"expression1":"_score*rating",
+     * "expression2":"(1/rank)*year"} </code> <p>For information about the
+     * variables, operators, and functions you can use in expressions, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
      * Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
-     * <examples> <example> <name>Defining Multiple Expressions</name>
-     * <description>You can define and use multiple expressions in a search
-     * request.</description> <request> {"expression1":"_score*rating",
-     * "expression2":"(1/rank)*year"} </request> <response/> </example>
-     * </examples>
      *
      * @param expr Defines one or more numeric expressions that can be used to sort
      *         results or specify search or filter criteria. You can also specify
-     *         expressions as return fields. <p>For more information about defining
-     *         and using expressions, see <a
-     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring
+     *         expressions as return fields. <p>You specify the expressions in JSON
+     *         using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can
+     *         define and use multiple expressions in a search request. For example:
+     *         <p><code> {"expression1":"_score*rating",
+     *         "expression2":"(1/rank)*year"} </code> <p>For information about the
+     *         variables, operators, and functions you can use in expressions, see <a
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
      *         Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
-     *         <examples> <example> <name>Defining Multiple Expressions</name>
-     *         <description>You can define and use multiple expressions in a search
-     *         request.</description> <request> {"expression1":"_score*rating",
-     *         "expression2":"(1/rank)*year"} </request> <response/> </example>
-     *         </examples>
      */
     public void setExpr(String expr) {
         this.expr = expr;
@@ -562,29 +551,27 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
     /**
      * Defines one or more numeric expressions that can be used to sort
      * results or specify search or filter criteria. You can also specify
-     * expressions as return fields. <p>For more information about defining
-     * and using expressions, see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring
+     * expressions as return fields. <p>You specify the expressions in JSON
+     * using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can
+     * define and use multiple expressions in a search request. For example:
+     * <p><code> {"expression1":"_score*rating",
+     * "expression2":"(1/rank)*year"} </code> <p>For information about the
+     * variables, operators, and functions you can use in expressions, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
      * Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
-     * <examples> <example> <name>Defining Multiple Expressions</name>
-     * <description>You can define and use multiple expressions in a search
-     * request.</description> <request> {"expression1":"_score*rating",
-     * "expression2":"(1/rank)*year"} </request> <response/> </example>
-     * </examples>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param expr Defines one or more numeric expressions that can be used to sort
      *         results or specify search or filter criteria. You can also specify
-     *         expressions as return fields. <p>For more information about defining
-     *         and using expressions, see <a
-     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring
+     *         expressions as return fields. <p>You specify the expressions in JSON
+     *         using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can
+     *         define and use multiple expressions in a search request. For example:
+     *         <p><code> {"expression1":"_score*rating",
+     *         "expression2":"(1/rank)*year"} </code> <p>For information about the
+     *         variables, operators, and functions you can use in expressions, see <a
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
      *         Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
-     *         <examples> <example> <name>Defining Multiple Expressions</name>
-     *         <description>You can define and use multiple expressions in a search
-     *         request.</description> <request> {"expression1":"_score*rating",
-     *         "expression2":"(1/rank)*year"} </request> <response/> </example>
-     *         </examples>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -623,26 +610,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * instead of <code>sort</code>. </li> </ul> <p>If no facet options are
      * specified, facet counts are computed for all field values, the facets
      * are sorted by facet count, and the top 10 facets are returned in the
-     * results. <p>For more information, see <a
+     * results. <p>To count particular buckets of values, use the
+     * <code>buckets</code> option. For example, the following request uses
+     * the <code>buckets</code> option to calculate and return facet counts
+     * by decade. <p><code>
+     * {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
+     * </code> <p>To sort facets by facet count, use the <code>count</code>
+     * option. For example, the following request sets the <code>sort</code>
+     * option to <code>count</code> to sort the facet values by facet count,
+     * with the facet values that have the most matching documents listed
+     * first. Setting the <code>size</code> option to 3 returns only the top
+     * three facet values. <p><code> {"year":{"sort":"count","size":3}}
+     * </code> <p>To sort the facets by value, use the <code>bucket</code>
+     * option. For example, the following request sets the <code>sort</code>
+     * option to <code>bucket</code> to sort the facet values numerically by
+     * year, with earliest year listed first. <p><code>
+     * {"year":{"sort":"bucket"}} </code> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting
      * and Using Facet Information</a> in the <i>Amazon CloudSearch Developer
-     * Guide</i>. <examples> <example> <name>Counting Particular Buckets of
-     * Values</name> <description>This request uses the <code>buckets</code>
-     * option to calculate and return facet counts by decade.</description>
-     * <request>
-     * {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
-     * </request> <response/> </example> <example> <name>Sorting Facets By
-     * Facet Count</name> <description>This request sets the
-     * <code>sort</code> option to <code>count</code> to sort the facet
-     * values by facet count, with the facet values that have the most
-     * matching documents listed first. Setting the <code>size</code> option
-     * to 3 returns only the top three facet values.</description> <request>
-     * {"year":{"sort":"count","size":3}} </request> <response/> </example>
-     * <example> <name>Sorting Facets By Value</name> <description>This
-     * request sets the <code>sort</code> option to <code>bucket</code> to
-     * sort the facet values numerically by year, with earliest year listed
-     * first. </description> <request> {"year":{"sort":"bucket"}} </request>
-     * <response/> </example> </examples>
+     * Guide</i>.
      *
      * @return Specifies one or more fields for which to get facet information, and
      *         options that control how the facet information is returned. Each
@@ -672,26 +658,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         instead of <code>sort</code>. </li> </ul> <p>If no facet options are
      *         specified, facet counts are computed for all field values, the facets
      *         are sorted by facet count, and the top 10 facets are returned in the
-     *         results. <p>For more information, see <a
+     *         results. <p>To count particular buckets of values, use the
+     *         <code>buckets</code> option. For example, the following request uses
+     *         the <code>buckets</code> option to calculate and return facet counts
+     *         by decade. <p><code>
+     *         {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
+     *         </code> <p>To sort facets by facet count, use the <code>count</code>
+     *         option. For example, the following request sets the <code>sort</code>
+     *         option to <code>count</code> to sort the facet values by facet count,
+     *         with the facet values that have the most matching documents listed
+     *         first. Setting the <code>size</code> option to 3 returns only the top
+     *         three facet values. <p><code> {"year":{"sort":"count","size":3}}
+     *         </code> <p>To sort the facets by value, use the <code>bucket</code>
+     *         option. For example, the following request sets the <code>sort</code>
+     *         option to <code>bucket</code> to sort the facet values numerically by
+     *         year, with earliest year listed first. <p><code>
+     *         {"year":{"sort":"bucket"}} </code> <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting
      *         and Using Facet Information</a> in the <i>Amazon CloudSearch Developer
-     *         Guide</i>. <examples> <example> <name>Counting Particular Buckets of
-     *         Values</name> <description>This request uses the <code>buckets</code>
-     *         option to calculate and return facet counts by decade.</description>
-     *         <request>
-     *         {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
-     *         </request> <response/> </example> <example> <name>Sorting Facets By
-     *         Facet Count</name> <description>This request sets the
-     *         <code>sort</code> option to <code>count</code> to sort the facet
-     *         values by facet count, with the facet values that have the most
-     *         matching documents listed first. Setting the <code>size</code> option
-     *         to 3 returns only the top three facet values.</description> <request>
-     *         {"year":{"sort":"count","size":3}} </request> <response/> </example>
-     *         <example> <name>Sorting Facets By Value</name> <description>This
-     *         request sets the <code>sort</code> option to <code>bucket</code> to
-     *         sort the facet values numerically by year, with earliest year listed
-     *         first. </description> <request> {"year":{"sort":"bucket"}} </request>
-     *         <response/> </example> </examples>
+     *         Guide</i>.
      */
     public String getFacet() {
         return facet;
@@ -726,26 +711,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * instead of <code>sort</code>. </li> </ul> <p>If no facet options are
      * specified, facet counts are computed for all field values, the facets
      * are sorted by facet count, and the top 10 facets are returned in the
-     * results. <p>For more information, see <a
+     * results. <p>To count particular buckets of values, use the
+     * <code>buckets</code> option. For example, the following request uses
+     * the <code>buckets</code> option to calculate and return facet counts
+     * by decade. <p><code>
+     * {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
+     * </code> <p>To sort facets by facet count, use the <code>count</code>
+     * option. For example, the following request sets the <code>sort</code>
+     * option to <code>count</code> to sort the facet values by facet count,
+     * with the facet values that have the most matching documents listed
+     * first. Setting the <code>size</code> option to 3 returns only the top
+     * three facet values. <p><code> {"year":{"sort":"count","size":3}}
+     * </code> <p>To sort the facets by value, use the <code>bucket</code>
+     * option. For example, the following request sets the <code>sort</code>
+     * option to <code>bucket</code> to sort the facet values numerically by
+     * year, with earliest year listed first. <p><code>
+     * {"year":{"sort":"bucket"}} </code> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting
      * and Using Facet Information</a> in the <i>Amazon CloudSearch Developer
-     * Guide</i>. <examples> <example> <name>Counting Particular Buckets of
-     * Values</name> <description>This request uses the <code>buckets</code>
-     * option to calculate and return facet counts by decade.</description>
-     * <request>
-     * {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
-     * </request> <response/> </example> <example> <name>Sorting Facets By
-     * Facet Count</name> <description>This request sets the
-     * <code>sort</code> option to <code>count</code> to sort the facet
-     * values by facet count, with the facet values that have the most
-     * matching documents listed first. Setting the <code>size</code> option
-     * to 3 returns only the top three facet values.</description> <request>
-     * {"year":{"sort":"count","size":3}} </request> <response/> </example>
-     * <example> <name>Sorting Facets By Value</name> <description>This
-     * request sets the <code>sort</code> option to <code>bucket</code> to
-     * sort the facet values numerically by year, with earliest year listed
-     * first. </description> <request> {"year":{"sort":"bucket"}} </request>
-     * <response/> </example> </examples>
+     * Guide</i>.
      *
      * @param facet Specifies one or more fields for which to get facet information, and
      *         options that control how the facet information is returned. Each
@@ -775,26 +759,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         instead of <code>sort</code>. </li> </ul> <p>If no facet options are
      *         specified, facet counts are computed for all field values, the facets
      *         are sorted by facet count, and the top 10 facets are returned in the
-     *         results. <p>For more information, see <a
+     *         results. <p>To count particular buckets of values, use the
+     *         <code>buckets</code> option. For example, the following request uses
+     *         the <code>buckets</code> option to calculate and return facet counts
+     *         by decade. <p><code>
+     *         {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
+     *         </code> <p>To sort facets by facet count, use the <code>count</code>
+     *         option. For example, the following request sets the <code>sort</code>
+     *         option to <code>count</code> to sort the facet values by facet count,
+     *         with the facet values that have the most matching documents listed
+     *         first. Setting the <code>size</code> option to 3 returns only the top
+     *         three facet values. <p><code> {"year":{"sort":"count","size":3}}
+     *         </code> <p>To sort the facets by value, use the <code>bucket</code>
+     *         option. For example, the following request sets the <code>sort</code>
+     *         option to <code>bucket</code> to sort the facet values numerically by
+     *         year, with earliest year listed first. <p><code>
+     *         {"year":{"sort":"bucket"}} </code> <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting
      *         and Using Facet Information</a> in the <i>Amazon CloudSearch Developer
-     *         Guide</i>. <examples> <example> <name>Counting Particular Buckets of
-     *         Values</name> <description>This request uses the <code>buckets</code>
-     *         option to calculate and return facet counts by decade.</description>
-     *         <request>
-     *         {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
-     *         </request> <response/> </example> <example> <name>Sorting Facets By
-     *         Facet Count</name> <description>This request sets the
-     *         <code>sort</code> option to <code>count</code> to sort the facet
-     *         values by facet count, with the facet values that have the most
-     *         matching documents listed first. Setting the <code>size</code> option
-     *         to 3 returns only the top three facet values.</description> <request>
-     *         {"year":{"sort":"count","size":3}} </request> <response/> </example>
-     *         <example> <name>Sorting Facets By Value</name> <description>This
-     *         request sets the <code>sort</code> option to <code>bucket</code> to
-     *         sort the facet values numerically by year, with earliest year listed
-     *         first. </description> <request> {"year":{"sort":"bucket"}} </request>
-     *         <response/> </example> </examples>
+     *         Guide</i>.
      */
     public void setFacet(String facet) {
         this.facet = facet;
@@ -829,26 +812,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * instead of <code>sort</code>. </li> </ul> <p>If no facet options are
      * specified, facet counts are computed for all field values, the facets
      * are sorted by facet count, and the top 10 facets are returned in the
-     * results. <p>For more information, see <a
+     * results. <p>To count particular buckets of values, use the
+     * <code>buckets</code> option. For example, the following request uses
+     * the <code>buckets</code> option to calculate and return facet counts
+     * by decade. <p><code>
+     * {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
+     * </code> <p>To sort facets by facet count, use the <code>count</code>
+     * option. For example, the following request sets the <code>sort</code>
+     * option to <code>count</code> to sort the facet values by facet count,
+     * with the facet values that have the most matching documents listed
+     * first. Setting the <code>size</code> option to 3 returns only the top
+     * three facet values. <p><code> {"year":{"sort":"count","size":3}}
+     * </code> <p>To sort the facets by value, use the <code>bucket</code>
+     * option. For example, the following request sets the <code>sort</code>
+     * option to <code>bucket</code> to sort the facet values numerically by
+     * year, with earliest year listed first. <p><code>
+     * {"year":{"sort":"bucket"}} </code> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting
      * and Using Facet Information</a> in the <i>Amazon CloudSearch Developer
-     * Guide</i>. <examples> <example> <name>Counting Particular Buckets of
-     * Values</name> <description>This request uses the <code>buckets</code>
-     * option to calculate and return facet counts by decade.</description>
-     * <request>
-     * {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
-     * </request> <response/> </example> <example> <name>Sorting Facets By
-     * Facet Count</name> <description>This request sets the
-     * <code>sort</code> option to <code>count</code> to sort the facet
-     * values by facet count, with the facet values that have the most
-     * matching documents listed first. Setting the <code>size</code> option
-     * to 3 returns only the top three facet values.</description> <request>
-     * {"year":{"sort":"count","size":3}} </request> <response/> </example>
-     * <example> <name>Sorting Facets By Value</name> <description>This
-     * request sets the <code>sort</code> option to <code>bucket</code> to
-     * sort the facet values numerically by year, with earliest year listed
-     * first. </description> <request> {"year":{"sort":"bucket"}} </request>
-     * <response/> </example> </examples>
+     * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -880,26 +862,25 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         instead of <code>sort</code>. </li> </ul> <p>If no facet options are
      *         specified, facet counts are computed for all field values, the facets
      *         are sorted by facet count, and the top 10 facets are returned in the
-     *         results. <p>For more information, see <a
+     *         results. <p>To count particular buckets of values, use the
+     *         <code>buckets</code> option. For example, the following request uses
+     *         the <code>buckets</code> option to calculate and return facet counts
+     *         by decade. <p><code>
+     *         {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
+     *         </code> <p>To sort facets by facet count, use the <code>count</code>
+     *         option. For example, the following request sets the <code>sort</code>
+     *         option to <code>count</code> to sort the facet values by facet count,
+     *         with the facet values that have the most matching documents listed
+     *         first. Setting the <code>size</code> option to 3 returns only the top
+     *         three facet values. <p><code> {"year":{"sort":"count","size":3}}
+     *         </code> <p>To sort the facets by value, use the <code>bucket</code>
+     *         option. For example, the following request sets the <code>sort</code>
+     *         option to <code>bucket</code> to sort the facet values numerically by
+     *         year, with earliest year listed first. <p><code>
+     *         {"year":{"sort":"bucket"}} </code> <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting
      *         and Using Facet Information</a> in the <i>Amazon CloudSearch Developer
-     *         Guide</i>. <examples> <example> <name>Counting Particular Buckets of
-     *         Values</name> <description>This request uses the <code>buckets</code>
-     *         option to calculate and return facet counts by decade.</description>
-     *         <request>
-     *         {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
-     *         </request> <response/> </example> <example> <name>Sorting Facets By
-     *         Facet Count</name> <description>This request sets the
-     *         <code>sort</code> option to <code>count</code> to sort the facet
-     *         values by facet count, with the facet values that have the most
-     *         matching documents listed first. Setting the <code>size</code> option
-     *         to 3 returns only the top three facet values.</description> <request>
-     *         {"year":{"sort":"count","size":3}} </request> <response/> </example>
-     *         <example> <name>Sorting Facets By Value</name> <description>This
-     *         request sets the <code>sort</code> option to <code>bucket</code> to
-     *         sort the facet values numerically by year, with earliest year listed
-     *         first. </description> <request> {"year":{"sort":"bucket"}} </request>
-     *         <response/> </example> </examples>
+     *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1030,12 +1011,10 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * </li> </ul> <p>If no highlight options are specified for a field, the
      * returned field text is treated as HTML and the first match is
      * highlighted with emphasis tags: <code><em>search-term</em></code>.
-     * <examples> <example> <name>Setting Highlight Options</name>
-     * <description>This example retrieves highlights for the
-     * <code>actors</code> and <code>title</code> fields.</description>
-     * <request>{ "actors": {}, "title": {"format": "text","max_phrases":
-     * 2,"pre_tag": "<b>","post_tag": "</b>"} }</request> </example>
-     * </examples>
+     * <p>For example, the following request retrieves highlights for the
+     * <code>actors</code> and <code>title</code> fields. <p> <code>{
+     * "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag":
+     * "<b>","post_tag": "</b>"} }</code>
      *
      * @return Retrieves highlights for matches in the specified <code>text</code> or
      *         <code>text-array</code> fields. Each specified field must be highlight
@@ -1058,12 +1037,10 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         </li> </ul> <p>If no highlight options are specified for a field, the
      *         returned field text is treated as HTML and the first match is
      *         highlighted with emphasis tags: <code><em>search-term</em></code>.
-     *         <examples> <example> <name>Setting Highlight Options</name>
-     *         <description>This example retrieves highlights for the
-     *         <code>actors</code> and <code>title</code> fields.</description>
-     *         <request>{ "actors": {}, "title": {"format": "text","max_phrases":
-     *         2,"pre_tag": "<b>","post_tag": "</b>"} }</request> </example>
-     *         </examples>
+     *         <p>For example, the following request retrieves highlights for the
+     *         <code>actors</code> and <code>title</code> fields. <p> <code>{
+     *         "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag":
+     *         "<b>","post_tag": "</b>"} }</code>
      */
     public String getHighlight() {
         return highlight;
@@ -1091,12 +1068,10 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * </li> </ul> <p>If no highlight options are specified for a field, the
      * returned field text is treated as HTML and the first match is
      * highlighted with emphasis tags: <code><em>search-term</em></code>.
-     * <examples> <example> <name>Setting Highlight Options</name>
-     * <description>This example retrieves highlights for the
-     * <code>actors</code> and <code>title</code> fields.</description>
-     * <request>{ "actors": {}, "title": {"format": "text","max_phrases":
-     * 2,"pre_tag": "<b>","post_tag": "</b>"} }</request> </example>
-     * </examples>
+     * <p>For example, the following request retrieves highlights for the
+     * <code>actors</code> and <code>title</code> fields. <p> <code>{
+     * "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag":
+     * "<b>","post_tag": "</b>"} }</code>
      *
      * @param highlight Retrieves highlights for matches in the specified <code>text</code> or
      *         <code>text-array</code> fields. Each specified field must be highlight
@@ -1119,12 +1094,10 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         </li> </ul> <p>If no highlight options are specified for a field, the
      *         returned field text is treated as HTML and the first match is
      *         highlighted with emphasis tags: <code><em>search-term</em></code>.
-     *         <examples> <example> <name>Setting Highlight Options</name>
-     *         <description>This example retrieves highlights for the
-     *         <code>actors</code> and <code>title</code> fields.</description>
-     *         <request>{ "actors": {}, "title": {"format": "text","max_phrases":
-     *         2,"pre_tag": "<b>","post_tag": "</b>"} }</request> </example>
-     *         </examples>
+     *         <p>For example, the following request retrieves highlights for the
+     *         <code>actors</code> and <code>title</code> fields. <p> <code>{
+     *         "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag":
+     *         "<b>","post_tag": "</b>"} }</code>
      */
     public void setHighlight(String highlight) {
         this.highlight = highlight;
@@ -1152,12 +1125,10 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * </li> </ul> <p>If no highlight options are specified for a field, the
      * returned field text is treated as HTML and the first match is
      * highlighted with emphasis tags: <code><em>search-term</em></code>.
-     * <examples> <example> <name>Setting Highlight Options</name>
-     * <description>This example retrieves highlights for the
-     * <code>actors</code> and <code>title</code> fields.</description>
-     * <request>{ "actors": {}, "title": {"format": "text","max_phrases":
-     * 2,"pre_tag": "<b>","post_tag": "</b>"} }</request> </example>
-     * </examples>
+     * <p>For example, the following request retrieves highlights for the
+     * <code>actors</code> and <code>title</code> fields. <p> <code>{
+     * "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag":
+     * "<b>","post_tag": "</b>"} }</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1182,12 +1153,10 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         </li> </ul> <p>If no highlight options are specified for a field, the
      *         returned field text is treated as HTML and the first match is
      *         highlighted with emphasis tags: <code><em>search-term</em></code>.
-     *         <examples> <example> <name>Setting Highlight Options</name>
-     *         <description>This example retrieves highlights for the
-     *         <code>actors</code> and <code>title</code> fields.</description>
-     *         <request>{ "actors": {}, "title": {"format": "text","max_phrases":
-     *         2,"pre_tag": "<b>","post_tag": "</b>"} }</request> </example>
-     *         </examples>
+     *         <p>For example, the following request retrieves highlights for the
+     *         <code>actors</code> and <code>title</code> fields. <p> <code>{
+     *         "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag":
+     *         "<b>","post_tag": "</b>"} }</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1416,10 +1385,12 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
 
     /**
      * Configures options for the query parser specified in the
-     * <code>queryParser</code> parameter. <p>The options you can configure
-     * vary according to which parser you use: <ul>
-     * <li><code>defaultOperator</code>: The default operator used to combine
-     * individual terms in the search string. For example:
+     * <code>queryParser</code> parameter. You specify the options in JSON
+     * using the following form
+     * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code>
+     * <p>The options you can configure vary according to which parser you
+     * use: <ul> <li><code>defaultOperator</code>: The default operator used
+     * to combine individual terms in the search string. For example:
      * <code>defaultOperator: 'or'</code>. For the <code>dismax</code>
      * parser, you specify a percentage that represents the percentage of
      * terms in the search string (rounded down) that must match, rather than
@@ -1518,17 +1489,14 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all
      * fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to
      * 1.0. Default: 0.0. Valid for: <code>dismax</code>. </li> </ul>
-     * <examples> <example> <name>Setting Default Search Fields</name>
-     * <description>This example searches the <code>title</code> and
-     * <code>plot</code> fields if no fields are specified in the search
-     * criteria.</description> <request>{"fields":["title","plot"]}</request>
-     * <response> </response> </example> </examples>
      *
      * @return Configures options for the query parser specified in the
-     *         <code>queryParser</code> parameter. <p>The options you can configure
-     *         vary according to which parser you use: <ul>
-     *         <li><code>defaultOperator</code>: The default operator used to combine
-     *         individual terms in the search string. For example:
+     *         <code>queryParser</code> parameter. You specify the options in JSON
+     *         using the following form
+     *         <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code>
+     *         <p>The options you can configure vary according to which parser you
+     *         use: <ul> <li><code>defaultOperator</code>: The default operator used
+     *         to combine individual terms in the search string. For example:
      *         <code>defaultOperator: 'or'</code>. For the <code>dismax</code>
      *         parser, you specify a percentage that represents the percentage of
      *         terms in the search string (rounded down) that must match, rather than
@@ -1627,11 +1595,6 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all
      *         fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to
      *         1.0. Default: 0.0. Valid for: <code>dismax</code>. </li> </ul>
-     *         <examples> <example> <name>Setting Default Search Fields</name>
-     *         <description>This example searches the <code>title</code> and
-     *         <code>plot</code> fields if no fields are specified in the search
-     *         criteria.</description> <request>{"fields":["title","plot"]}</request>
-     *         <response> </response> </example> </examples>
      */
     public String getQueryOptions() {
         return queryOptions;
@@ -1639,10 +1602,12 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
     
     /**
      * Configures options for the query parser specified in the
-     * <code>queryParser</code> parameter. <p>The options you can configure
-     * vary according to which parser you use: <ul>
-     * <li><code>defaultOperator</code>: The default operator used to combine
-     * individual terms in the search string. For example:
+     * <code>queryParser</code> parameter. You specify the options in JSON
+     * using the following form
+     * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code>
+     * <p>The options you can configure vary according to which parser you
+     * use: <ul> <li><code>defaultOperator</code>: The default operator used
+     * to combine individual terms in the search string. For example:
      * <code>defaultOperator: 'or'</code>. For the <code>dismax</code>
      * parser, you specify a percentage that represents the percentage of
      * terms in the search string (rounded down) that must match, rather than
@@ -1741,17 +1706,14 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all
      * fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to
      * 1.0. Default: 0.0. Valid for: <code>dismax</code>. </li> </ul>
-     * <examples> <example> <name>Setting Default Search Fields</name>
-     * <description>This example searches the <code>title</code> and
-     * <code>plot</code> fields if no fields are specified in the search
-     * criteria.</description> <request>{"fields":["title","plot"]}</request>
-     * <response> </response> </example> </examples>
      *
      * @param queryOptions Configures options for the query parser specified in the
-     *         <code>queryParser</code> parameter. <p>The options you can configure
-     *         vary according to which parser you use: <ul>
-     *         <li><code>defaultOperator</code>: The default operator used to combine
-     *         individual terms in the search string. For example:
+     *         <code>queryParser</code> parameter. You specify the options in JSON
+     *         using the following form
+     *         <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code>
+     *         <p>The options you can configure vary according to which parser you
+     *         use: <ul> <li><code>defaultOperator</code>: The default operator used
+     *         to combine individual terms in the search string. For example:
      *         <code>defaultOperator: 'or'</code>. For the <code>dismax</code>
      *         parser, you specify a percentage that represents the percentage of
      *         terms in the search string (rounded down) that must match, rather than
@@ -1850,11 +1812,6 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all
      *         fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to
      *         1.0. Default: 0.0. Valid for: <code>dismax</code>. </li> </ul>
-     *         <examples> <example> <name>Setting Default Search Fields</name>
-     *         <description>This example searches the <code>title</code> and
-     *         <code>plot</code> fields if no fields are specified in the search
-     *         criteria.</description> <request>{"fields":["title","plot"]}</request>
-     *         <response> </response> </example> </examples>
      */
     public void setQueryOptions(String queryOptions) {
         this.queryOptions = queryOptions;
@@ -1862,10 +1819,12 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
     
     /**
      * Configures options for the query parser specified in the
-     * <code>queryParser</code> parameter. <p>The options you can configure
-     * vary according to which parser you use: <ul>
-     * <li><code>defaultOperator</code>: The default operator used to combine
-     * individual terms in the search string. For example:
+     * <code>queryParser</code> parameter. You specify the options in JSON
+     * using the following form
+     * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code>
+     * <p>The options you can configure vary according to which parser you
+     * use: <ul> <li><code>defaultOperator</code>: The default operator used
+     * to combine individual terms in the search string. For example:
      * <code>defaultOperator: 'or'</code>. For the <code>dismax</code>
      * parser, you specify a percentage that represents the percentage of
      * terms in the search string (rounded down) that must match, rather than
@@ -1964,19 +1923,16 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      * <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all
      * fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to
      * 1.0. Default: 0.0. Valid for: <code>dismax</code>. </li> </ul>
-     * <examples> <example> <name>Setting Default Search Fields</name>
-     * <description>This example searches the <code>title</code> and
-     * <code>plot</code> fields if no fields are specified in the search
-     * criteria.</description> <request>{"fields":["title","plot"]}</request>
-     * <response> </response> </example> </examples>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queryOptions Configures options for the query parser specified in the
-     *         <code>queryParser</code> parameter. <p>The options you can configure
-     *         vary according to which parser you use: <ul>
-     *         <li><code>defaultOperator</code>: The default operator used to combine
-     *         individual terms in the search string. For example:
+     *         <code>queryParser</code> parameter. You specify the options in JSON
+     *         using the following form
+     *         <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code>
+     *         <p>The options you can configure vary according to which parser you
+     *         use: <ul> <li><code>defaultOperator</code>: The default operator used
+     *         to combine individual terms in the search string. For example:
      *         <code>defaultOperator: 'or'</code>. For the <code>dismax</code>
      *         parser, you specify a percentage that represents the percentage of
      *         terms in the search string (rounded down) that must match, rather than
@@ -2075,11 +2031,6 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
      *         <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all
      *         fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to
      *         1.0. Default: 0.0. Valid for: <code>dismax</code>. </li> </ul>
-     *         <examples> <example> <name>Setting Default Search Fields</name>
-     *         <description>This example searches the <code>title</code> and
-     *         <code>plot</code> fields if no fields are specified in the search
-     *         criteria.</description> <request>{"fields":["title","plot"]}</request>
-     *         <response> </response> </example> </examples>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

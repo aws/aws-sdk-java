@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Amazon Technologies, Inc.
+ * Copyright 2011-2015 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -55,6 +58,8 @@ import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
 import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteRequest;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
@@ -182,6 +187,8 @@ public class DynamoDBMapper {
     /** The max back off time for batch write */
     static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
 
+    /** The max number of items allowed in a BatchWrite request */
+    static final int MAX_ITEMS_PER_BATCH = 25;
     /**
      * This retry count is applicable only when every batch get item request
      * results in no data retrieved from server and the un processed keys is
@@ -192,7 +199,10 @@ public class DynamoDBMapper {
     /**
      * User agent for requests made using the {@link DynamoDBMapper}.
      */
-    private static final String USER_AGENT = DynamoDBMapper.class.getName() + "/" + VersionInfoUtils.getVersion();
+    private static final String USER_AGENT =
+            DynamoDBMapper.class.getName() + "/" + VersionInfoUtils.getVersion();
+    private static final String USER_AGENT_BATCH_OPERATION  =
+            DynamoDBMapper.class.getName() + "_batch_operation/" + VersionInfoUtils.getVersion();
 
     private static final String NO_RANGE_KEY = new String();
 
@@ -391,7 +401,7 @@ public class DynamoDBMapper {
         config = mergeConfig(config);
         ItemConverter converter = getConverter(config);
 
-        String tableName = getTableName(clazz, config);
+        String tableName = getTableName(clazz, keyObject, config);
 
         GetItemRequest rq = new GetItemRequest()
             .withRequestMetricCollector(config.getRequestMetricCollector());
@@ -411,7 +421,7 @@ public class DynamoDBMapper {
 
         T object = privateMarshallIntoObject(
                 converter,
-                toParameters(itemAttributes, clazz, config));
+                toParameters(itemAttributes, clazz, tableName, config));
 
         return object;
     }
@@ -573,25 +583,35 @@ public class DynamoDBMapper {
     protected final String getTableName(final Class<?> clazz,
                                         final DynamoDBMapperConfig config) {
 
-        return getTableName(clazz, config, reflector);
+        return internalGetTableName(clazz, null, config);
     }
 
-    static String getTableName(final Class<?> clazz,
-                               final DynamoDBMapperConfig config,
-                               final DynamoDBReflector reflector) {
+    /**
+     * Returns the table name for the class or object given.
+     */
+    protected final String getTableName(final Class<?> clazz,
+                                        final Object object,
+                                        final DynamoDBMapperConfig config) {
 
-        DynamoDBTable table = reflector.getTable(clazz);
-        String tableName = table.tableName();
-        if ( config.getTableNameOverride() != null ) {
-            if ( config.getTableNameOverride().getTableName() != null ) {
-                tableName = config.getTableNameOverride().getTableName();
-            } else {
-                tableName = config.getTableNameOverride().getTableNamePrefix()
-                            + tableName;
-            }
+        return internalGetTableName(clazz, object, config);
+    }
+
+    static String internalGetTableName(final Class<?> clazz,
+                                       final Object object,
+                                       final DynamoDBMapperConfig config) {
+
+        // Resolve by object, if possible and desired
+        DynamoDBMapperConfig.ObjectTableNameResolver objectResolver = config.getObjectTableNameResolver();
+        if (object != null && objectResolver != null) {
+            return objectResolver.getTableName(object, config);
         }
 
-        return tableName;
+        // Resolve by class
+        DynamoDBMapperConfig.TableNameResolver classResolver = config.getTableNameResolver();
+        if (classResolver == null) {
+            classResolver = DynamoDBMapperConfig.DefaultTableNameResolver.INSTANCE;
+        }
+        return classResolver.getTableName(clazz, config);
     }
 
     /**
@@ -616,9 +636,11 @@ public class DynamoDBMapper {
 
         ItemConverter converter = getConverter(config);
 
+        String tableName = getTableName(clazz, config);
+
         return privateMarshallIntoObject(
                 converter,
-                toParameters(itemAttributes, clazz, config));
+                toParameters(itemAttributes, clazz, tableName, config));
     }
 
     /**
@@ -766,7 +788,7 @@ public class DynamoDBMapper {
 
         @SuppressWarnings("unchecked")
         Class<? extends T> clazz = (Class<? extends T>) object.getClass();
-        String tableName = getTableName(clazz, finalConfig);
+        String tableName = getTableName(clazz, object, finalConfig);
 
         /*
          * We force a putItem request instead of updateItem request either when
@@ -1152,6 +1174,7 @@ public class DynamoDBMapper {
                     .withAttributeUpdates(
                             transformAttributeUpdates(
                                     this.clazz,
+                                    getTableName(),
                                     getKeyAttributeValues(),
                                     getAttributeValueUpdates(),
                                     saveConfig))
@@ -1180,6 +1203,7 @@ public class DynamoDBMapper {
             attributeValues = transformAttributes(
                     toParameters(attributeValues,
                                  this.clazz,
+                                 getTableName(),
                                  saveConfig));
             PutItemRequest req = new PutItemRequest()
                     .withTableName(getTableName())
@@ -1275,7 +1299,7 @@ public class DynamoDBMapper {
         @SuppressWarnings("unchecked")
         Class<T> clazz = (Class<T>) object.getClass();
 
-        String tableName = getTableName(clazz, config);
+        String tableName = getTableName(clazz, object, config);
 
         Map<String, AttributeValue> key = getKey(converter, object, clazz);
 
@@ -1465,7 +1489,7 @@ public class DynamoDBMapper {
         List<ValueUpdate> inMemoryUpdates = new LinkedList<ValueUpdate>();
         for ( Object toWrite : objectsToWrite ) {
             Class<?> clazz = toWrite.getClass();
-            String tableName = getTableName(clazz, config);
+            String tableName = getTableName(clazz, toWrite, config);
 
             Map<String, AttributeValue> attributeValues = new HashMap<String, AttributeValue>();
 
@@ -1494,7 +1518,7 @@ public class DynamoDBMapper {
             }
 
             AttributeTransformer.Parameters<?> parameters =
-                toParameters(attributeValues, clazz, config);
+                toParameters(attributeValues, clazz, tableName, config);
 
             requestItems.get(tableName).add(
                 new WriteRequest().withPutRequest(
@@ -1505,7 +1529,7 @@ public class DynamoDBMapper {
         for ( Object toDelete : objectsToDelete ) {
             Class<?> clazz = toDelete.getClass();
 
-            String tableName = getTableName(clazz, config);
+            String tableName = getTableName(clazz, toDelete, config);
 
             Map<String, AttributeValue> key = getKey(converter, toDelete);
 
@@ -1519,14 +1543,21 @@ public class DynamoDBMapper {
 
         // Break into chunks of 25 items and make service requests to DynamoDB
         while ( !requestItems.isEmpty() ) {
-            HashMap<String, List<WriteRequest>> batch = new HashMap<String, List<WriteRequest>>();
+
+            HashMap<String, List<WriteRequest>> batch =
+                    new HashMap<String, List<WriteRequest>>();
+
             int i = 0;
+
             Iterator<Entry<String, List<WriteRequest>>> tableIter = requestItems.entrySet().iterator();
-            while ( tableIter.hasNext() && i < 25 ) {
+            while ( tableIter.hasNext() && i < MAX_ITEMS_PER_BATCH ) {
+
                 Entry<String, List<WriteRequest>> tableRequest = tableIter.next();
+
                 batch.put(tableRequest.getKey(), new LinkedList<WriteRequest>());
                 Iterator<WriteRequest> writeRequestIter = tableRequest.getValue().iterator();
-                while ( writeRequestIter.hasNext() && i++ < 25 ) {
+
+                while ( writeRequestIter.hasNext() && i++ < MAX_ITEMS_PER_BATCH ) {
                     WriteRequest writeRequest = writeRequestIter.next();
                     batch.get(tableRequest.getKey()).add(writeRequest);
                     writeRequestIter.remove();
@@ -1661,7 +1692,8 @@ public class DynamoDBMapper {
         FailedBatch failedBatch = null;
         while (true) {
             try {
-                result = db.batchWriteItem(new BatchWriteItemRequest().withRequestItems(batch));
+                result = db.batchWriteItem(applyBatchOperationUserAgent(
+                        new BatchWriteItemRequest().withRequestItems(batch)));
             } catch (Exception e) {
                 failedBatch = new FailedBatch();
                 failedBatch.setUnprocessedItems(batch);
@@ -1729,7 +1761,7 @@ public class DynamoDBMapper {
         for ( Object keyObject : itemsToGet ) {
             Class<?> clazz = keyObject.getClass();
 
-            String tableName = getTableName(clazz, config);
+            String tableName = getTableName(clazz, keyObject, config);
             classesByTableName.put(tableName, clazz);
 
             if ( !requestItems.containsKey(tableName) ) {
@@ -1824,8 +1856,10 @@ public class DynamoDBMapper {
         BatchGetItemRequest batchGetItemRequest = new BatchGetItemRequest()
             .withRequestMetricCollector(config.getRequestMetricCollector());
         batchGetItemRequest.setRequestItems(requestItems);
+
         int retries = 0;
         int noOfItemsInOriginalRequest = requestItems.size();
+
         do {
             if ( batchGetItemResult != null ) {
                 retries++;
@@ -1835,14 +1869,18 @@ public class DynamoDBMapper {
                     pauseExponentially(retries);
                     if (retries > BATCH_GET_MAX_RETRY_COUNT_ALL_KEYS) {
                         throw new AmazonClientException(
-                                "Batch Get Item request to server hasn't received any data. Please try again later.");
+                                "Batch Get Item request to server hasn't received any data. "
+                                + "Please try again later.");
                     }
                 }
 
-                batchGetItemRequest.setRequestItems(batchGetItemResult.getUnprocessedKeys());
+                batchGetItemRequest.setRequestItems(
+                        batchGetItemResult.getUnprocessedKeys());
             }
 
-            batchGetItemResult = db.batchGetItem(batchGetItemRequest);
+            batchGetItemResult = db.batchGetItem(
+                    applyBatchOperationUserAgent(batchGetItemRequest));
+
             Map<String, List<Map<String, AttributeValue>>> responses = batchGetItemResult.getResponses();
             for ( String tableName : responses.keySet() ) {
                 List<Object> objects = null;
@@ -1856,7 +1894,7 @@ public class DynamoDBMapper {
 
                 for ( Map<String, AttributeValue> item : responses.get(tableName) ) {
                     AttributeTransformer.Parameters<?> parameters =
-                        toParameters(item, clazz, config);
+                        toParameters(item, clazz, tableName, config);
                     objects.add(privateMarshallIntoObject(converter, parameters));
                 }
 
@@ -2069,7 +2107,7 @@ public class DynamoDBMapper {
         ScanResult scanResult = db.scan(applyUserAgent(scanRequest));
         ScanResultPage<T> result = new ScanResultPage<T>();
         List<AttributeTransformer.Parameters<T>> parameters =
-            toParameters(scanResult.getItems(), clazz, config);
+            toParameters(scanResult.getItems(), clazz, scanRequest.getTableName(), config);
 
         result.setResults(marshallIntoObjects(parameters));
         result.setLastEvaluatedKey(scanResult.getLastEvaluatedKey());
@@ -2184,7 +2222,7 @@ public class DynamoDBMapper {
         QueryResult scanResult = db.query(applyUserAgent(queryRequest));
         QueryResultPage<T> result = new QueryResultPage<T>();
         List<AttributeTransformer.Parameters<T>> parameters =
-            toParameters(scanResult.getItems(), clazz, config);
+            toParameters(scanResult.getItems(), clazz, queryRequest.getTableName(), config);
 
         result.setResults(marshallIntoObjects(parameters));
         result.setLastEvaluatedKey(scanResult.getLastEvaluatedKey());
@@ -2340,7 +2378,7 @@ public class DynamoDBMapper {
     private <T> QueryRequest createQueryRequestFromExpression(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression, DynamoDBMapperConfig config) {
         QueryRequest queryRequest = new QueryRequest();
         queryRequest.setConsistentRead(queryExpression.isConsistentRead());
-        queryRequest.setTableName(getTableName(clazz, config));
+        queryRequest.setTableName(getTableName(clazz, queryExpression.getHashKeyValues(), config));
         queryRequest.setIndexName(queryExpression.getIndexName());
 
         ItemConverter converter = getConverter(config);
@@ -2635,15 +2673,17 @@ public class DynamoDBMapper {
     private <T> AttributeTransformer.Parameters<T> toParameters(
             final Map<String, AttributeValue> attributeValues,
             final Class<T> modelClass,
+            final String tableName,
             final DynamoDBMapperConfig mapperConfig) {
 
-        return toParameters(attributeValues, false, modelClass, mapperConfig);
+        return toParameters(attributeValues, false, modelClass, tableName, mapperConfig);
     }
 
     private <T> AttributeTransformer.Parameters<T> toParameters(
             final Map<String, AttributeValue> attributeValues,
             final boolean partialUpdate,
             final Class<T> modelClass,
+            final String tableName,
             final DynamoDBMapperConfig mapperConfig) {
 
         return new TransformerParameters<T>(
@@ -2651,12 +2691,14 @@ public class DynamoDBMapper {
                 attributeValues,
                 partialUpdate,
                 modelClass,
-                mapperConfig);
+                mapperConfig,
+                tableName);
     }
 
     final <T> List<AttributeTransformer.Parameters<T>> toParameters(
             final List<Map<String, AttributeValue>> attributeValues,
             final Class<T> modelClass,
+            final String tableName,
             final DynamoDBMapperConfig mapperConfig
     ) {
         List<AttributeTransformer.Parameters<T>> rval =
@@ -2664,7 +2706,7 @@ public class DynamoDBMapper {
                 attributeValues.size());
 
         for (Map<String, AttributeValue> item : attributeValues) {
-            rval.add(toParameters(item, modelClass, mapperConfig));
+            rval.add(toParameters(item, modelClass, tableName, mapperConfig));
         }
 
         return rval;
@@ -2681,8 +2723,8 @@ public class DynamoDBMapper {
         private final boolean partialUpdate;
         private final Class<T> modelClass;
         private final DynamoDBMapperConfig mapperConfig;
+        private final String tableName;
 
-        private String tableName;
         private String hashKeyName;
         private String rangeKeyName;
 
@@ -2691,7 +2733,8 @@ public class DynamoDBMapper {
                 final Map<String, AttributeValue> attributeValues,
                 final boolean partialUpdate,
                 final Class<T> modelClass,
-                final DynamoDBMapperConfig mapperConfig) {
+                final DynamoDBMapperConfig mapperConfig,
+                final String tableName) {
 
             this.reflector = reflector;
             this.attributeValues =
@@ -2699,6 +2742,7 @@ public class DynamoDBMapper {
             this.partialUpdate = partialUpdate;
             this.modelClass = modelClass;
             this.mapperConfig = mapperConfig;
+            this.tableName = tableName;
         }
 
         @Override
@@ -2723,10 +2767,6 @@ public class DynamoDBMapper {
 
         @Override
         public String getTableName() {
-            if (tableName == null) {
-                tableName = DynamoDBMapper
-                        .getTableName(modelClass, mapperConfig, reflector);
-            }
             return tableName;
         }
 
@@ -2779,6 +2819,7 @@ public class DynamoDBMapper {
 
     private Map<String, AttributeValueUpdate> transformAttributeUpdates(
             final Class<?> clazz,
+            final String tableName,
             final Map<String, AttributeValue> keys,
             final Map<String, AttributeValueUpdate> updateValues,
             final DynamoDBMapperConfig config
@@ -2794,7 +2835,7 @@ public class DynamoDBMapper {
         }
 
         AttributeTransformer.Parameters<?> parameters =
-            toParameters(item, true, clazz, config);
+            toParameters(item, true, clazz, tableName, config);
 
         String hashKey = parameters.getHashKeyName();
 
@@ -2910,6 +2951,11 @@ public class DynamoDBMapper {
 
     static <X extends AmazonWebServiceRequest> X applyUserAgent(X request) {
         request.getRequestClientOptions().appendUserAgent(USER_AGENT);
+        return request;
+    }
+
+    static <X extends AmazonWebServiceRequest> X applyBatchOperationUserAgent(X request) {
+        request.getRequestClientOptions().appendUserAgent(USER_AGENT_BATCH_OPERATION);
         return request;
     }
 

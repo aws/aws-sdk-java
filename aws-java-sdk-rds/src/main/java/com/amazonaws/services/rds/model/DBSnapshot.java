@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -129,7 +129,7 @@ public class DBSnapshot implements Serializable {
     private String sourceRegion;
 
     /**
-     * Specifies storage type associated with DB Snapshot.
+     * Specifies the storage type associated with DB Snapshot.
      */
     private String storageType;
 
@@ -138,6 +138,17 @@ public class DBSnapshot implements Serializable {
      * TDE encryption.
      */
     private String tdeCredentialArn;
+
+    /**
+     * Specifies whether the DB snapshot is encrypted.
+     */
+    private Boolean encrypted;
+
+    /**
+     * If <code>Encrypted</code> is true, the KMS key identifier for the
+     * encrypted DB snapshot.
+     */
+    private String kmsKeyId;
 
     /**
      * Specifies the identifier for the DB snapshot.
@@ -758,29 +769,29 @@ public class DBSnapshot implements Serializable {
     }
 
     /**
-     * Specifies storage type associated with DB Snapshot.
+     * Specifies the storage type associated with DB Snapshot.
      *
-     * @return Specifies storage type associated with DB Snapshot.
+     * @return Specifies the storage type associated with DB Snapshot.
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * Specifies storage type associated with DB Snapshot.
+     * Specifies the storage type associated with DB Snapshot.
      *
-     * @param storageType Specifies storage type associated with DB Snapshot.
+     * @param storageType Specifies the storage type associated with DB Snapshot.
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * Specifies storage type associated with DB Snapshot.
+     * Specifies the storage type associated with DB Snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType Specifies storage type associated with DB Snapshot.
+     * @param storageType Specifies the storage type associated with DB Snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -830,6 +841,87 @@ public class DBSnapshot implements Serializable {
     }
 
     /**
+     * Specifies whether the DB snapshot is encrypted.
+     *
+     * @return Specifies whether the DB snapshot is encrypted.
+     */
+    public Boolean isEncrypted() {
+        return encrypted;
+    }
+    
+    /**
+     * Specifies whether the DB snapshot is encrypted.
+     *
+     * @param encrypted Specifies whether the DB snapshot is encrypted.
+     */
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+    
+    /**
+     * Specifies whether the DB snapshot is encrypted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encrypted Specifies whether the DB snapshot is encrypted.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBSnapshot withEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+        return this;
+    }
+
+    /**
+     * Specifies whether the DB snapshot is encrypted.
+     *
+     * @return Specifies whether the DB snapshot is encrypted.
+     */
+    public Boolean getEncrypted() {
+        return encrypted;
+    }
+
+    /**
+     * If <code>Encrypted</code> is true, the KMS key identifier for the
+     * encrypted DB snapshot.
+     *
+     * @return If <code>Encrypted</code> is true, the KMS key identifier for the
+     *         encrypted DB snapshot.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * If <code>Encrypted</code> is true, the KMS key identifier for the
+     * encrypted DB snapshot.
+     *
+     * @param kmsKeyId If <code>Encrypted</code> is true, the KMS key identifier for the
+     *         encrypted DB snapshot.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * If <code>Encrypted</code> is true, the KMS key identifier for the
+     * encrypted DB snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId If <code>Encrypted</code> is true, the KMS key identifier for the
+     *         encrypted DB snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBSnapshot withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -860,7 +952,9 @@ public class DBSnapshot implements Serializable {
         if (getPercentProgress() != null) sb.append("PercentProgress: " + getPercentProgress() + ",");
         if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
-        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() );
+        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -890,6 +984,8 @@ public class DBSnapshot implements Serializable {
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode()); 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
+        hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -941,6 +1037,10 @@ public class DBSnapshot implements Serializable {
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
         if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;
         if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
+        if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
+        if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

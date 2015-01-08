@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
      * the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the
+     * a Read Replica for the instance, and creating a DB snapshot of the
      * instance.
      */
     private Integer allocatedStorage;
@@ -141,7 +141,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
      * action provides a way to regain access to a master instance user if
-     * the password is lost. </note>
+     * the password is lost. This includes restoring privileges that may have
+     * been accidentally revoked. </note>
      */
     private String masterUserPassword;
 
@@ -169,9 +170,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * one non-zero value to another non-zero value, the change is
      * asynchronously applied as soon as possible. <p>Default: Uses existing
      * setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
-     * <li>Can be specified for a read replica only if the source is running
-     * MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
-     * to read replicas</li> </ul>
+     * <li>Can be specified for a MySQL Read Replica only if the source is
+     * running MySQL 5.6</li> <li>Can be specified for a PostgreSQL Read
+     * Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot
+     * be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      */
     private Integer backupRetentionPeriod;
 
@@ -209,7 +211,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a read replica.
+     * instance is a Read Replica.
      */
     private Boolean multiAZ;
 
@@ -221,8 +223,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * version upgrades, if a non-default DB parameter group is currently in
      * use, a new DB parameter group in the DB parameter group family for the
      * new engine version must be specified. The new DB parameter group can
-     * be the default for that DB parameter group family. <p>Example:
-     * <code>5.1.42</code>
+     * be the default for that DB parameter group family. <p>For a list of
+     * valid engine versions, see <a>CreateDBInstance</a>.
      */
     private String engineVersion;
 
@@ -273,7 +275,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
      * the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the
+     * a Read Replica for the instance, and creating a DB snapshot of the
      * instance.
      */
     private Integer iops;
@@ -307,10 +309,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String newDBInstanceIdentifier;
 
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      */
     private String storageType;
 
@@ -443,7 +447,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
      * the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the
+     * a Read Replica for the instance, and creating a DB snapshot of the
      * instance.
      *
      * @return The new storage capacity of the RDS instance. Changing this setting
@@ -477,7 +481,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
      *         the instance, rebooting the instance, deleting the instance, creating
-     *         a read replica for the instance, and creating a DB snapshot of the
+     *         a Read Replica for the instance, and creating a DB snapshot of the
      *         instance.
      */
     public Integer getAllocatedStorage() {
@@ -516,7 +520,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
      * the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the
+     * a Read Replica for the instance, and creating a DB snapshot of the
      * instance.
      *
      * @param allocatedStorage The new storage capacity of the RDS instance. Changing this setting
@@ -550,7 +554,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
      *         the instance, rebooting the instance, deleting the instance, creating
-     *         a read replica for the instance, and creating a DB snapshot of the
+     *         a Read Replica for the instance, and creating a DB snapshot of the
      *         instance.
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -589,7 +593,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
      * the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the
+     * a Read Replica for the instance, and creating a DB snapshot of the
      * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -625,7 +629,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
      *         the instance, rebooting the instance, deleting the instance, creating
-     *         a read replica for the instance, and creating a DB snapshot of the
+     *         a Read Replica for the instance, and creating a DB snapshot of the
      *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -1093,7 +1097,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
      * action provides a way to regain access to a master instance user if
-     * the password is lost. </note>
+     * the password is lost. This includes restoring privileges that may have
+     * been accidentally revoked. </note>
      *
      * @return The new password for the DB instance master user. Can be any printable
      *         ASCII character except "/", """, or "@". <p> Changing this parameter
@@ -1106,7 +1111,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
      *         action provides a way to regain access to a master instance user if
-     *         the password is lost. </note>
+     *         the password is lost. This includes restoring privileges that may have
+     *         been accidentally revoked. </note>
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
@@ -1124,7 +1130,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
      * action provides a way to regain access to a master instance user if
-     * the password is lost. </note>
+     * the password is lost. This includes restoring privileges that may have
+     * been accidentally revoked. </note>
      *
      * @param masterUserPassword The new password for the DB instance master user. Can be any printable
      *         ASCII character except "/", """, or "@". <p> Changing this parameter
@@ -1137,7 +1144,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
      *         action provides a way to regain access to a master instance user if
-     *         the password is lost. </note>
+     *         the password is lost. This includes restoring privileges that may have
+     *         been accidentally revoked. </note>
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -1155,7 +1163,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
      * action provides a way to regain access to a master instance user if
-     * the password is lost. </note>
+     * the password is lost. This includes restoring privileges that may have
+     * been accidentally revoked. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1170,7 +1179,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
      *         action provides a way to regain access to a master instance user if
-     *         the password is lost. </note>
+     *         the password is lost. This includes restoring privileges that may have
+     *         been accidentally revoked. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1272,9 +1282,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * one non-zero value to another non-zero value, the change is
      * asynchronously applied as soon as possible. <p>Default: Uses existing
      * setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
-     * <li>Can be specified for a read replica only if the source is running
-     * MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
-     * to read replicas</li> </ul>
+     * <li>Can be specified for a MySQL Read Replica only if the source is
+     * running MySQL 5.6</li> <li>Can be specified for a PostgreSQL Read
+     * Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot
+     * be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      *
      * @return The number of days to retain automated backups. Setting this parameter
      *         to a positive number enables backups. Setting this parameter to 0
@@ -1286,9 +1297,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         one non-zero value to another non-zero value, the change is
      *         asynchronously applied as soon as possible. <p>Default: Uses existing
      *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
-     *         <li>Can be specified for a read replica only if the source is running
-     *         MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
-     *         to read replicas</li> </ul>
+     *         <li>Can be specified for a MySQL Read Replica only if the source is
+     *         running MySQL 5.6</li> <li>Can be specified for a PostgreSQL Read
+     *         Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot
+     *         be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      */
     public Integer getBackupRetentionPeriod() {
         return backupRetentionPeriod;
@@ -1305,9 +1317,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * one non-zero value to another non-zero value, the change is
      * asynchronously applied as soon as possible. <p>Default: Uses existing
      * setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
-     * <li>Can be specified for a read replica only if the source is running
-     * MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
-     * to read replicas</li> </ul>
+     * <li>Can be specified for a MySQL Read Replica only if the source is
+     * running MySQL 5.6</li> <li>Can be specified for a PostgreSQL Read
+     * Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot
+     * be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      *
      * @param backupRetentionPeriod The number of days to retain automated backups. Setting this parameter
      *         to a positive number enables backups. Setting this parameter to 0
@@ -1319,9 +1332,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         one non-zero value to another non-zero value, the change is
      *         asynchronously applied as soon as possible. <p>Default: Uses existing
      *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
-     *         <li>Can be specified for a read replica only if the source is running
-     *         MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
-     *         to read replicas</li> </ul>
+     *         <li>Can be specified for a MySQL Read Replica only if the source is
+     *         running MySQL 5.6</li> <li>Can be specified for a PostgreSQL Read
+     *         Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot
+     *         be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      */
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
         this.backupRetentionPeriod = backupRetentionPeriod;
@@ -1338,9 +1352,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * one non-zero value to another non-zero value, the change is
      * asynchronously applied as soon as possible. <p>Default: Uses existing
      * setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
-     * <li>Can be specified for a read replica only if the source is running
-     * MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
-     * to read replicas</li> </ul>
+     * <li>Can be specified for a MySQL Read Replica only if the source is
+     * running MySQL 5.6</li> <li>Can be specified for a PostgreSQL Read
+     * Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot
+     * be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1354,9 +1369,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         one non-zero value to another non-zero value, the change is
      *         asynchronously applied as soon as possible. <p>Default: Uses existing
      *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
-     *         <li>Can be specified for a read replica only if the source is running
-     *         MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
-     *         to read replicas</li> </ul>
+     *         <li>Can be specified for a MySQL Read Replica only if the source is
+     *         running MySQL 5.6</li> <li>Can be specified for a PostgreSQL Read
+     *         Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot
+     *         be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1546,14 +1562,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a read replica.
+     * instance is a Read Replica.
      *
      * @return Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         instance is a read replica.
+     *         instance is a Read Replica.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
@@ -1565,14 +1581,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a read replica.
+     * instance is a Read Replica.
      *
      * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         instance is a read replica.
+     *         instance is a Read Replica.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -1584,7 +1600,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a read replica.
+     * instance is a Read Replica.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1593,7 +1609,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         instance is a read replica.
+     *         instance is a Read Replica.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1609,14 +1625,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a read replica.
+     * instance is a Read Replica.
      *
      * @return Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         instance is a read replica.
+     *         instance is a Read Replica.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
@@ -1630,8 +1646,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * version upgrades, if a non-default DB parameter group is currently in
      * use, a new DB parameter group in the DB parameter group family for the
      * new engine version must be specified. The new DB parameter group can
-     * be the default for that DB parameter group family. <p>Example:
-     * <code>5.1.42</code>
+     * be the default for that DB parameter group family. <p>For a list of
+     * valid engine versions, see <a>CreateDBInstance</a>.
      *
      * @return The version number of the database engine to upgrade to. Changing this
      *         parameter results in an outage and the change is applied during the
@@ -1640,8 +1656,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         version upgrades, if a non-default DB parameter group is currently in
      *         use, a new DB parameter group in the DB parameter group family for the
      *         new engine version must be specified. The new DB parameter group can
-     *         be the default for that DB parameter group family. <p>Example:
-     *         <code>5.1.42</code>
+     *         be the default for that DB parameter group family. <p>For a list of
+     *         valid engine versions, see <a>CreateDBInstance</a>.
      */
     public String getEngineVersion() {
         return engineVersion;
@@ -1655,8 +1671,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * version upgrades, if a non-default DB parameter group is currently in
      * use, a new DB parameter group in the DB parameter group family for the
      * new engine version must be specified. The new DB parameter group can
-     * be the default for that DB parameter group family. <p>Example:
-     * <code>5.1.42</code>
+     * be the default for that DB parameter group family. <p>For a list of
+     * valid engine versions, see <a>CreateDBInstance</a>.
      *
      * @param engineVersion The version number of the database engine to upgrade to. Changing this
      *         parameter results in an outage and the change is applied during the
@@ -1665,8 +1681,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         version upgrades, if a non-default DB parameter group is currently in
      *         use, a new DB parameter group in the DB parameter group family for the
      *         new engine version must be specified. The new DB parameter group can
-     *         be the default for that DB parameter group family. <p>Example:
-     *         <code>5.1.42</code>
+     *         be the default for that DB parameter group family. <p>For a list of
+     *         valid engine versions, see <a>CreateDBInstance</a>.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -1680,8 +1696,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * version upgrades, if a non-default DB parameter group is currently in
      * use, a new DB parameter group in the DB parameter group family for the
      * new engine version must be specified. The new DB parameter group can
-     * be the default for that DB parameter group family. <p>Example:
-     * <code>5.1.42</code>
+     * be the default for that DB parameter group family. <p>For a list of
+     * valid engine versions, see <a>CreateDBInstance</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1692,8 +1708,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         version upgrades, if a non-default DB parameter group is currently in
      *         use, a new DB parameter group in the DB parameter group family for the
      *         new engine version must be specified. The new DB parameter group can
-     *         be the default for that DB parameter group family. <p>Example:
-     *         <code>5.1.42</code>
+     *         be the default for that DB parameter group family. <p>For a list of
+     *         valid engine versions, see <a>CreateDBInstance</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1901,7 +1917,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
      * the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the
+     * a Read Replica for the instance, and creating a DB snapshot of the
      * instance.
      *
      * @return The new Provisioned IOPS (I/O operations per second) value for the RDS
@@ -1929,7 +1945,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
      *         the instance, rebooting the instance, deleting the instance, creating
-     *         a read replica for the instance, and creating a DB snapshot of the
+     *         a Read Replica for the instance, and creating a DB snapshot of the
      *         instance.
      */
     public Integer getIops() {
@@ -1962,7 +1978,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
      * the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the
+     * a Read Replica for the instance, and creating a DB snapshot of the
      * instance.
      *
      * @param iops The new Provisioned IOPS (I/O operations per second) value for the RDS
@@ -1990,7 +2006,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
      *         the instance, rebooting the instance, deleting the instance, creating
-     *         a read replica for the instance, and creating a DB snapshot of the
+     *         a Read Replica for the instance, and creating a DB snapshot of the
      *         instance.
      */
     public void setIops(Integer iops) {
@@ -2023,7 +2039,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
      * the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the
+     * a Read Replica for the instance, and creating a DB snapshot of the
      * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -2053,7 +2069,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
      *         the instance, rebooting the instance, deleting the instance, creating
-     *         a read replica for the instance, and creating a DB snapshot of the
+     *         a Read Replica for the instance, and creating a DB snapshot of the
      *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -2239,47 +2255,59 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @return Specifies storage type to be associated with the DB Instance. <p>
+     * @return Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     * @param storageType Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     * @param storageType Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Amazon Technologies, Inc.
+ * Copyright 2011-2015 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import com.amazonaws.services.dynamodbv2.model.ScanResult;
  * This is an unmodifiable list, so callers should not invoke any operations
  * that modify this list, otherwise they will throw an
  * UnsupportedOperationException.
- * 
+ *
  * @param <T>
  *            The type of objects held in this list.
  * @see PaginatedList
@@ -42,7 +42,7 @@ public class PaginatedScanList<T> extends PaginatedList<T> {
     private final ScanRequest scanRequest;
 
     private final DynamoDBMapperConfig config;
-    
+
     /** The current results for the last executed scan operation */
     private ScanResult scanResult;
 
@@ -62,8 +62,12 @@ public class PaginatedScanList<T> extends PaginatedList<T> {
         this.config = config;
 
         allResults.addAll(mapper.marshallIntoObjects(
-            mapper.toParameters(scanResult.getItems(), clazz, config)));
-        
+            mapper.toParameters(
+                    scanResult.getItems(),
+                    clazz,
+                    scanRequest.getTableName(),
+                    config)));
+
         // If the results should be eagerly loaded at once
         if (paginationLoadingStrategy == PaginationLoadingStrategy.EAGER_LOADING) {
             loadAllResults();
@@ -74,13 +78,16 @@ public class PaginatedScanList<T> extends PaginatedList<T> {
     protected boolean atEndOfResults() {
         return scanResult.getLastEvaluatedKey() == null;
     }
-    
+
     @Override
     protected synchronized List<T> fetchNextPage() {
         scanRequest.setExclusiveStartKey(scanResult.getLastEvaluatedKey());
         scanResult = dynamo.scan(DynamoDBMapper.applyUserAgent(scanRequest));
-        return mapper.marshallIntoObjects(
-            mapper.toParameters(scanResult.getItems(), clazz, config));
+        return mapper.marshallIntoObjects(mapper.toParameters(
+            scanResult.getItems(),
+            clazz,
+            scanRequest.getTableName(),
+            config));
     }
 
 }

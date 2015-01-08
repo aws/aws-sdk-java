@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -78,25 +78,21 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements
         setMaterialsDescription(materialsDescription);
         return this;
     }
-    
+
     /**
      * Returns a clone (as deep as possible) of this request object.
      */
     @Override
     public EncryptedPutObjectRequest clone() {
-        EncryptedPutObjectRequest cloned = 
+        final EncryptedPutObjectRequest cloned = 
             new EncryptedPutObjectRequest(
-                getBucketName(), getKey(), getRedirectLocation());
-        cloned.setAccessControlList(getAccessControlList());
-        cloned.setCannedAcl(getCannedAcl());
-        cloned.setFile(getFile());
-        cloned.setInputStream(getInputStream());
-        final ObjectMetadata metadata = getMetadata();
-        cloned.setMetadata(metadata == null ? null : metadata.clone());
-        cloned.setStorageClass(getStorageClass());
-        cloned.setSSECustomerKey(getSSECustomerKey());
-        cloned.materialsDescription = materialsDescription == null
-            ? null : new HashMap<String, String>(materialsDescription);
-        return copyBaseTo(cloned);
+                getBucketName(), getKey(), getFile());
+        super.copyPutObjectBaseTo(cloned);
+        final Map<String, String> materialsDescription = getMaterialsDescription();
+        cloned.withMaterialsDescription(materialsDescription == null
+            ? null
+            : new HashMap<String, String>(materialsDescription))
+            ;
+        return cloned;
     }
 }

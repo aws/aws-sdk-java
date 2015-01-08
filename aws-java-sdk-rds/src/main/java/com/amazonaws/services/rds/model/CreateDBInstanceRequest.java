@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
      * Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
      * <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
-     * and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * and Enterprise Edition) or from 20 to 1024 (Express Edition and Web
      * Edition)
      */
     private Integer allocatedStorage;
@@ -86,7 +86,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code>
+     * <code>postgres</code> <p> Not every database engine is available for
+     * every AWS region.
      */
     private String engine;
 
@@ -129,11 +130,14 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The EC2 Availability Zone that the database instance will be created
-     * in. <p> Default: A random, system-chosen Availability Zone in the
-     * endpoint's region. <p> Example: <code>us-east-1d</code> <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the
-     * MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same region as the current endpoint.
+     * in. For information on regions and Availability Zones, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>. <p> Default: A random, system-chosen
+     * Availability Zone in the endpoint's region. <p> Example:
+     * <code>us-east-1d</code> <p> Constraint: The AvailabilityZone parameter
+     * cannot be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same
+     * region as the current endpoint.
      */
     private String availabilityZone;
 
@@ -145,10 +149,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
-     * 30-minute window selected at random from an 8-hour block of time per
-     * region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * occur. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     * Instance Maintenance</a>. <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     * selected at random from an 8-hour block of time per region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
      * Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -171,20 +177,23 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * this parameter to a positive number enables backups. Setting this
      * parameter to 0 disables automated backups. <p> Default: 1
      * <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot
-     * be set to 0 if the DB instance is a source to read replicas</li> </ul>
+     * be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      */
     private Integer backupRetentionPeriod;
 
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per region. See
-     * the Amazon RDS User Guide for the time blocks for each region from
-     * which the default backup windows are assigned. <p> Constraints: Must
-     * be in the format <code>hh24:mi-hh24:mi</code>. Times should be
-     * Universal Time Coordinated (UTC). Must not conflict with the preferred
-     * maintenance window. Must be at least 30 minutes.
+     * <code>BackupRetentionPeriod</code> parameter. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     * Instance Backups</a>. <p> Default: A 30-minute window selected at
+     * random from an 8-hour block of time per region. See the Amazon RDS
+     * User Guide for the time blocks for each region from which the default
+     * backup windows are assigned. <p> Constraints: Must be in the format
+     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Coordinated (UTC). Must not conflict with the preferred maintenance
+     * window. Must be at least 30 minutes.
      */
     private String preferredBackupWindow;
 
@@ -209,11 +218,38 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     private Boolean multiAZ;
 
     /**
-     * The version number of the database engine to use. <p><b>MySQL</b>
-     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
-     * <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
-     * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
-     * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
+     * The version number of the database engine to use. <p> The following
+     * are the database engines and major and minor versions that are
+     * available with Amazon RDS. Not every database engine is available for
+     * every AWS region. <p><b>MySQL</b> <ul> <li><b>Version 5.1:</b> <code>
+     * 5.1.45 | 5.1.49 | 5.1.50 | 5.1.57 | 5.1.61 | 5.1.62 | 5.1.63 | 5.1.69
+     * | 5.1.71 | 5.1.73</code></li> <li><b>Version 5.5:</b> <code> 5.5.12 |
+     * 5.5.20 | 5.5.23 | 5.5.25a | 5.5.27 | 5.5.31 | 5.5.33 | 5.5.37 | 5.5.38
+     * | 5.5.8</code></li> <li><b>Version 5.6:</b> <code> 5.6.12 | 5.6.13 |
+     * 5.6.17 | 5.6.19 | 5.6.21</code></li> </ul> <p><b>Oracle Database
+     * Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2:</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
+     * 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul> <p><b>Oracle
+     * Database Standard Edition (oracle-se)</b> <ul> <li><b>Version
+     * 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6
+     * | 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul>
+     * <p><b>Oracle Database Standard Edition One (oracle-se1)</b> <ul>
+     * <li><b>Version 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
+     * 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7 | 11.2.0.3.v1 |
+     * 11.2.0.4.v1</code></li> </ul> <p><b>PostgreSQL</b> <ul> <li><b>Version
+     * 9.3:</b> <code> 9.3.1 | 9.3.2 | 9.3.3</code></li> </ul>
+     * <p><b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Express Edition (sqlserver-ex)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Web Edition (sqlserver-web)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
      */
     private String engineVersion;
 
@@ -260,13 +296,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      */
     private Boolean publiclyAccessible;
 
@@ -276,10 +312,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      */
     private String storageType;
 
@@ -294,6 +332,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * the device.
      */
     private String tdeCredentialPassword;
+
+    /**
+     * Specifies whether the DB instance is encrypted. <p> Default: false
+     */
+    private Boolean storageEncrypted;
+
+    /**
+     * The KMS key identifier for an encrypted DB instance. <p>The KMS key
+     * identifier is the Amazon Resoure Name (ARN) for the KMS encryption
+     * key. If you are creating a DB instance with the same AWS account that
+     * owns the KMS encryption key used to encrypt the new DB instance, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption
+     * key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has
+     * a different default encryption key for each AWS region.
+     */
+    private String kmsKeyId;
 
     /**
      * Default constructor for a new CreateDBInstanceRequest object.  Callers should use the
@@ -318,7 +375,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p><b>PostgreSQL</b> <p> Constraints: Must be an integer from 5 to
      * 3072. <p><b>Oracle</b> <p> Constraints: Must be an integer from 10 to
      * 3072. <p><b>SQL Server</b> <p> Constraints: Must be an integer from
-     * 200 to 1024 (Standard Edition and Enterprise Edition) or from 30 to
+     * 200 to 1024 (Standard Edition and Enterprise Edition) or from 20 to
      * 1024 (Express Edition and Web Edition)
      * @param dBInstanceClass The compute and memory capacity of the DB
      * instance. <p> Valid Values: <code>db.t1.micro | db.m1.small |
@@ -332,7 +389,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>
+     * <code>sqlserver-web</code> | <code>postgres</code> <p> Not every
+     * database engine is available for every AWS region.
      * @param masterUsername The name of master user for the client DB
      * instance. <p><b>MySQL</b> <p>Constraints: <ul> <li>Must be 1 to 16
      * alphanumeric characters.</li> <li>First character must be a
@@ -553,7 +611,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
      * Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
      * <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
-     * and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * and Enterprise Edition) or from 20 to 1024 (Express Edition and Web
      * Edition)
      *
      * @return The amount of storage (in gigabytes) to be initially allocated for the
@@ -562,7 +620,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
      *         Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
      *         <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
-     *         and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         and Enterprise Edition) or from 20 to 1024 (Express Edition and Web
      *         Edition)
      */
     public Integer getAllocatedStorage() {
@@ -576,7 +634,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
      * Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
      * <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
-     * and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * and Enterprise Edition) or from 20 to 1024 (Express Edition and Web
      * Edition)
      *
      * @param allocatedStorage The amount of storage (in gigabytes) to be initially allocated for the
@@ -585,7 +643,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
      *         Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
      *         <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
-     *         and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         and Enterprise Edition) or from 20 to 1024 (Express Edition and Web
      *         Edition)
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -599,7 +657,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
      * Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
      * <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
-     * and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * and Enterprise Edition) or from 20 to 1024 (Express Edition and Web
      * Edition)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -610,7 +668,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
      *         Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
      *         <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
-     *         and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         and Enterprise Edition) or from 20 to 1024 (Express Edition and Web
      *         Edition)
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -690,14 +748,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code>
+     * <code>postgres</code> <p> Not every database engine is available for
+     * every AWS region.
      *
      * @return The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      *         <code>oracle-se</code> | <code>oracle-ee</code> |
      *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *         <code>postgres</code>
+     *         <code>postgres</code> <p> Not every database engine is available for
+     *         every AWS region.
      */
     public String getEngine() {
         return engine;
@@ -709,14 +769,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code>
+     * <code>postgres</code> <p> Not every database engine is available for
+     * every AWS region.
      *
      * @param engine The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      *         <code>oracle-se</code> | <code>oracle-ee</code> |
      *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *         <code>postgres</code>
+     *         <code>postgres</code> <p> Not every database engine is available for
+     *         every AWS region.
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -728,7 +790,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code>
+     * <code>postgres</code> <p> Not every database engine is available for
+     * every AWS region.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -737,7 +800,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>oracle-se</code> | <code>oracle-ee</code> |
      *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *         <code>postgres</code>
+     *         <code>postgres</code> <p> Not every database engine is available for
+     *         every AWS region.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1059,18 +1123,24 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The EC2 Availability Zone that the database instance will be created
-     * in. <p> Default: A random, system-chosen Availability Zone in the
-     * endpoint's region. <p> Example: <code>us-east-1d</code> <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the
-     * MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same region as the current endpoint.
+     * in. For information on regions and Availability Zones, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>. <p> Default: A random, system-chosen
+     * Availability Zone in the endpoint's region. <p> Example:
+     * <code>us-east-1d</code> <p> Constraint: The AvailabilityZone parameter
+     * cannot be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same
+     * region as the current endpoint.
      *
      * @return The EC2 Availability Zone that the database instance will be created
-     *         in. <p> Default: A random, system-chosen Availability Zone in the
-     *         endpoint's region. <p> Example: <code>us-east-1d</code> <p>
-     *         Constraint: The AvailabilityZone parameter cannot be specified if the
-     *         MultiAZ parameter is set to <code>true</code>. The specified
-     *         Availability Zone must be in the same region as the current endpoint.
+     *         in. For information on regions and Availability Zones, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     *         and Availability Zones</a>. <p> Default: A random, system-chosen
+     *         Availability Zone in the endpoint's region. <p> Example:
+     *         <code>us-east-1d</code> <p> Constraint: The AvailabilityZone parameter
+     *         cannot be specified if the MultiAZ parameter is set to
+     *         <code>true</code>. The specified Availability Zone must be in the same
+     *         region as the current endpoint.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
@@ -1078,18 +1148,24 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The EC2 Availability Zone that the database instance will be created
-     * in. <p> Default: A random, system-chosen Availability Zone in the
-     * endpoint's region. <p> Example: <code>us-east-1d</code> <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the
-     * MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same region as the current endpoint.
+     * in. For information on regions and Availability Zones, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>. <p> Default: A random, system-chosen
+     * Availability Zone in the endpoint's region. <p> Example:
+     * <code>us-east-1d</code> <p> Constraint: The AvailabilityZone parameter
+     * cannot be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same
+     * region as the current endpoint.
      *
      * @param availabilityZone The EC2 Availability Zone that the database instance will be created
-     *         in. <p> Default: A random, system-chosen Availability Zone in the
-     *         endpoint's region. <p> Example: <code>us-east-1d</code> <p>
-     *         Constraint: The AvailabilityZone parameter cannot be specified if the
-     *         MultiAZ parameter is set to <code>true</code>. The specified
-     *         Availability Zone must be in the same region as the current endpoint.
+     *         in. For information on regions and Availability Zones, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     *         and Availability Zones</a>. <p> Default: A random, system-chosen
+     *         Availability Zone in the endpoint's region. <p> Example:
+     *         <code>us-east-1d</code> <p> Constraint: The AvailabilityZone parameter
+     *         cannot be specified if the MultiAZ parameter is set to
+     *         <code>true</code>. The specified Availability Zone must be in the same
+     *         region as the current endpoint.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -1097,20 +1173,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The EC2 Availability Zone that the database instance will be created
-     * in. <p> Default: A random, system-chosen Availability Zone in the
-     * endpoint's region. <p> Example: <code>us-east-1d</code> <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the
-     * MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same region as the current endpoint.
+     * in. For information on regions and Availability Zones, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>. <p> Default: A random, system-chosen
+     * Availability Zone in the endpoint's region. <p> Example:
+     * <code>us-east-1d</code> <p> Constraint: The AvailabilityZone parameter
+     * cannot be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same
+     * region as the current endpoint.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The EC2 Availability Zone that the database instance will be created
-     *         in. <p> Default: A random, system-chosen Availability Zone in the
-     *         endpoint's region. <p> Example: <code>us-east-1d</code> <p>
-     *         Constraint: The AvailabilityZone parameter cannot be specified if the
-     *         MultiAZ parameter is set to <code>true</code>. The specified
-     *         Availability Zone must be in the same region as the current endpoint.
+     *         in. For information on regions and Availability Zones, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     *         and Availability Zones</a>. <p> Default: A random, system-chosen
+     *         Availability Zone in the endpoint's region. <p> Example:
+     *         <code>us-east-1d</code> <p> Constraint: The AvailabilityZone parameter
+     *         cannot be specified if the MultiAZ parameter is set to
+     *         <code>true</code>. The specified Availability Zone must be in the same
+     *         region as the current endpoint.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1161,20 +1243,24 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
-     * 30-minute window selected at random from an 8-hour block of time per
-     * region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * occur. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     * Instance Maintenance</a>. <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     * selected at random from an 8-hour block of time per region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
      * Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
      * <p>Constraints: Minimum 30-minute window.
      *
      * @return The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
-     *         30-minute window selected at random from an 8-hour block of time per
-     *         region, occurring on a random day of the week. To see the time blocks
-     *         available, see <a
+     *         occur. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     *         Instance Maintenance</a>. <p> Format:
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     *         selected at random from an 8-hour block of time per region, occurring
+     *         on a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
      *         Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -1186,20 +1272,24 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
-     * 30-minute window selected at random from an 8-hour block of time per
-     * region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * occur. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     * Instance Maintenance</a>. <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     * selected at random from an 8-hour block of time per region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
      * Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
      * <p>Constraints: Minimum 30-minute window.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
-     *         30-minute window selected at random from an 8-hour block of time per
-     *         region, occurring on a random day of the week. To see the time blocks
-     *         available, see <a
+     *         occur. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     *         Instance Maintenance</a>. <p> Format:
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     *         selected at random from an 8-hour block of time per region, occurring
+     *         on a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
      *         Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -1211,10 +1301,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
-     * 30-minute window selected at random from an 8-hour block of time per
-     * region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * occur. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     * Instance Maintenance</a>. <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     * selected at random from an 8-hour block of time per region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
      * Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -1223,10 +1315,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
-     *         30-minute window selected at random from an 8-hour block of time per
-     *         region, occurring on a random day of the week. To see the time blocks
-     *         available, see <a
+     *         occur. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     *         Instance Maintenance</a>. <p> Format:
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A 30-minute window
+     *         selected at random from an 8-hour block of time per region, occurring
+     *         on a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
      *         Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -1308,13 +1402,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * this parameter to a positive number enables backups. Setting this
      * parameter to 0 disables automated backups. <p> Default: 1
      * <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot
-     * be set to 0 if the DB instance is a source to read replicas</li> </ul>
+     * be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      *
      * @return The number of days for which automated backups are retained. Setting
      *         this parameter to a positive number enables backups. Setting this
      *         parameter to 0 disables automated backups. <p> Default: 1
      *         <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot
-     *         be set to 0 if the DB instance is a source to read replicas</li> </ul>
+     *         be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      */
     public Integer getBackupRetentionPeriod() {
         return backupRetentionPeriod;
@@ -1325,13 +1419,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * this parameter to a positive number enables backups. Setting this
      * parameter to 0 disables automated backups. <p> Default: 1
      * <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot
-     * be set to 0 if the DB instance is a source to read replicas</li> </ul>
+     * be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      *
      * @param backupRetentionPeriod The number of days for which automated backups are retained. Setting
      *         this parameter to a positive number enables backups. Setting this
      *         parameter to 0 disables automated backups. <p> Default: 1
      *         <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot
-     *         be set to 0 if the DB instance is a source to read replicas</li> </ul>
+     *         be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      */
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
         this.backupRetentionPeriod = backupRetentionPeriod;
@@ -1342,7 +1436,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * this parameter to a positive number enables backups. Setting this
      * parameter to 0 disables automated backups. <p> Default: 1
      * <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot
-     * be set to 0 if the DB instance is a source to read replicas</li> </ul>
+     * be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1350,7 +1444,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         this parameter to a positive number enables backups. Setting this
      *         parameter to 0 disables automated backups. <p> Default: 1
      *         <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot
-     *         be set to 0 if the DB instance is a source to read replicas</li> </ul>
+     *         be set to 0 if the DB instance is a source to Read Replicas</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1363,23 +1457,29 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per region. See
-     * the Amazon RDS User Guide for the time blocks for each region from
-     * which the default backup windows are assigned. <p> Constraints: Must
-     * be in the format <code>hh24:mi-hh24:mi</code>. Times should be
-     * Universal Time Coordinated (UTC). Must not conflict with the preferred
-     * maintenance window. Must be at least 30 minutes.
+     * <code>BackupRetentionPeriod</code> parameter. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     * Instance Backups</a>. <p> Default: A 30-minute window selected at
+     * random from an 8-hour block of time per region. See the Amazon RDS
+     * User Guide for the time blocks for each region from which the default
+     * backup windows are assigned. <p> Constraints: Must be in the format
+     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Coordinated (UTC). Must not conflict with the preferred maintenance
+     * window. Must be at least 30 minutes.
      *
      * @return The daily time range during which automated backups are created if
      *         automated backups are enabled, using the
-     *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     *         window selected at random from an 8-hour block of time per region. See
-     *         the Amazon RDS User Guide for the time blocks for each region from
-     *         which the default backup windows are assigned. <p> Constraints: Must
-     *         be in the format <code>hh24:mi-hh24:mi</code>. Times should be
-     *         Universal Time Coordinated (UTC). Must not conflict with the preferred
-     *         maintenance window. Must be at least 30 minutes.
+     *         <code>BackupRetentionPeriod</code> parameter. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     *         Instance Backups</a>. <p> Default: A 30-minute window selected at
+     *         random from an 8-hour block of time per region. See the Amazon RDS
+     *         User Guide for the time blocks for each region from which the default
+     *         backup windows are assigned. <p> Constraints: Must be in the format
+     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Coordinated (UTC). Must not conflict with the preferred maintenance
+     *         window. Must be at least 30 minutes.
      */
     public String getPreferredBackupWindow() {
         return preferredBackupWindow;
@@ -1388,23 +1488,29 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per region. See
-     * the Amazon RDS User Guide for the time blocks for each region from
-     * which the default backup windows are assigned. <p> Constraints: Must
-     * be in the format <code>hh24:mi-hh24:mi</code>. Times should be
-     * Universal Time Coordinated (UTC). Must not conflict with the preferred
-     * maintenance window. Must be at least 30 minutes.
+     * <code>BackupRetentionPeriod</code> parameter. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     * Instance Backups</a>. <p> Default: A 30-minute window selected at
+     * random from an 8-hour block of time per region. See the Amazon RDS
+     * User Guide for the time blocks for each region from which the default
+     * backup windows are assigned. <p> Constraints: Must be in the format
+     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Coordinated (UTC). Must not conflict with the preferred maintenance
+     * window. Must be at least 30 minutes.
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
      *         automated backups are enabled, using the
-     *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     *         window selected at random from an 8-hour block of time per region. See
-     *         the Amazon RDS User Guide for the time blocks for each region from
-     *         which the default backup windows are assigned. <p> Constraints: Must
-     *         be in the format <code>hh24:mi-hh24:mi</code>. Times should be
-     *         Universal Time Coordinated (UTC). Must not conflict with the preferred
-     *         maintenance window. Must be at least 30 minutes.
+     *         <code>BackupRetentionPeriod</code> parameter. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     *         Instance Backups</a>. <p> Default: A 30-minute window selected at
+     *         random from an 8-hour block of time per region. See the Amazon RDS
+     *         User Guide for the time blocks for each region from which the default
+     *         backup windows are assigned. <p> Constraints: Must be in the format
+     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Coordinated (UTC). Must not conflict with the preferred maintenance
+     *         window. Must be at least 30 minutes.
      */
     public void setPreferredBackupWindow(String preferredBackupWindow) {
         this.preferredBackupWindow = preferredBackupWindow;
@@ -1413,25 +1519,31 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per region. See
-     * the Amazon RDS User Guide for the time blocks for each region from
-     * which the default backup windows are assigned. <p> Constraints: Must
-     * be in the format <code>hh24:mi-hh24:mi</code>. Times should be
-     * Universal Time Coordinated (UTC). Must not conflict with the preferred
-     * maintenance window. Must be at least 30 minutes.
+     * <code>BackupRetentionPeriod</code> parameter. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     * Instance Backups</a>. <p> Default: A 30-minute window selected at
+     * random from an 8-hour block of time per region. See the Amazon RDS
+     * User Guide for the time blocks for each region from which the default
+     * backup windows are assigned. <p> Constraints: Must be in the format
+     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Coordinated (UTC). Must not conflict with the preferred maintenance
+     * window. Must be at least 30 minutes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
      *         automated backups are enabled, using the
-     *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     *         window selected at random from an 8-hour block of time per region. See
-     *         the Amazon RDS User Guide for the time blocks for each region from
-     *         which the default backup windows are assigned. <p> Constraints: Must
-     *         be in the format <code>hh24:mi-hh24:mi</code>. Times should be
-     *         Universal Time Coordinated (UTC). Must not conflict with the preferred
-     *         maintenance window. Must be at least 30 minutes.
+     *         <code>BackupRetentionPeriod</code> parameter. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     *         Instance Backups</a>. <p> Default: A 30-minute window selected at
+     *         random from an 8-hour block of time per region. See the Amazon RDS
+     *         User Guide for the time blocks for each region from which the default
+     *         backup windows are assigned. <p> Constraints: Must be in the format
+     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Coordinated (UTC). Must not conflict with the preferred maintenance
+     *         window. Must be at least 30 minutes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1581,53 +1693,215 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The version number of the database engine to use. <p><b>MySQL</b>
-     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
-     * <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
-     * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
-     * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
+     * The version number of the database engine to use. <p> The following
+     * are the database engines and major and minor versions that are
+     * available with Amazon RDS. Not every database engine is available for
+     * every AWS region. <p><b>MySQL</b> <ul> <li><b>Version 5.1:</b> <code>
+     * 5.1.45 | 5.1.49 | 5.1.50 | 5.1.57 | 5.1.61 | 5.1.62 | 5.1.63 | 5.1.69
+     * | 5.1.71 | 5.1.73</code></li> <li><b>Version 5.5:</b> <code> 5.5.12 |
+     * 5.5.20 | 5.5.23 | 5.5.25a | 5.5.27 | 5.5.31 | 5.5.33 | 5.5.37 | 5.5.38
+     * | 5.5.8</code></li> <li><b>Version 5.6:</b> <code> 5.6.12 | 5.6.13 |
+     * 5.6.17 | 5.6.19 | 5.6.21</code></li> </ul> <p><b>Oracle Database
+     * Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2:</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
+     * 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul> <p><b>Oracle
+     * Database Standard Edition (oracle-se)</b> <ul> <li><b>Version
+     * 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6
+     * | 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul>
+     * <p><b>Oracle Database Standard Edition One (oracle-se1)</b> <ul>
+     * <li><b>Version 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
+     * 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7 | 11.2.0.3.v1 |
+     * 11.2.0.4.v1</code></li> </ul> <p><b>PostgreSQL</b> <ul> <li><b>Version
+     * 9.3:</b> <code> 9.3.1 | 9.3.2 | 9.3.3</code></li> </ul>
+     * <p><b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Express Edition (sqlserver-ex)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Web Edition (sqlserver-web)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
      *
-     * @return The version number of the database engine to use. <p><b>MySQL</b>
-     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
-     *         <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
-     *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
-     *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
+     * @return The version number of the database engine to use. <p> The following
+     *         are the database engines and major and minor versions that are
+     *         available with Amazon RDS. Not every database engine is available for
+     *         every AWS region. <p><b>MySQL</b> <ul> <li><b>Version 5.1:</b> <code>
+     *         5.1.45 | 5.1.49 | 5.1.50 | 5.1.57 | 5.1.61 | 5.1.62 | 5.1.63 | 5.1.69
+     *         | 5.1.71 | 5.1.73</code></li> <li><b>Version 5.5:</b> <code> 5.5.12 |
+     *         5.5.20 | 5.5.23 | 5.5.25a | 5.5.27 | 5.5.31 | 5.5.33 | 5.5.37 | 5.5.38
+     *         | 5.5.8</code></li> <li><b>Version 5.6:</b> <code> 5.6.12 | 5.6.13 |
+     *         5.6.17 | 5.6.19 | 5.6.21</code></li> </ul> <p><b>Oracle Database
+     *         Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2:</b>
+     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
+     *         11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul> <p><b>Oracle
+     *         Database Standard Edition (oracle-se)</b> <ul> <li><b>Version
+     *         11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6
+     *         | 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul>
+     *         <p><b>Oracle Database Standard Edition One (oracle-se1)</b> <ul>
+     *         <li><b>Version 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
+     *         11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7 | 11.2.0.3.v1 |
+     *         11.2.0.4.v1</code></li> </ul> <p><b>PostgreSQL</b> <ul> <li><b>Version
+     *         9.3:</b> <code> 9.3.1 | 9.3.2 | 9.3.3</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Express Edition (sqlserver-ex)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Web Edition (sqlserver-web)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * The version number of the database engine to use. <p><b>MySQL</b>
-     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
-     * <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
-     * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
-     * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
+     * The version number of the database engine to use. <p> The following
+     * are the database engines and major and minor versions that are
+     * available with Amazon RDS. Not every database engine is available for
+     * every AWS region. <p><b>MySQL</b> <ul> <li><b>Version 5.1:</b> <code>
+     * 5.1.45 | 5.1.49 | 5.1.50 | 5.1.57 | 5.1.61 | 5.1.62 | 5.1.63 | 5.1.69
+     * | 5.1.71 | 5.1.73</code></li> <li><b>Version 5.5:</b> <code> 5.5.12 |
+     * 5.5.20 | 5.5.23 | 5.5.25a | 5.5.27 | 5.5.31 | 5.5.33 | 5.5.37 | 5.5.38
+     * | 5.5.8</code></li> <li><b>Version 5.6:</b> <code> 5.6.12 | 5.6.13 |
+     * 5.6.17 | 5.6.19 | 5.6.21</code></li> </ul> <p><b>Oracle Database
+     * Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2:</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
+     * 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul> <p><b>Oracle
+     * Database Standard Edition (oracle-se)</b> <ul> <li><b>Version
+     * 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6
+     * | 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul>
+     * <p><b>Oracle Database Standard Edition One (oracle-se1)</b> <ul>
+     * <li><b>Version 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
+     * 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7 | 11.2.0.3.v1 |
+     * 11.2.0.4.v1</code></li> </ul> <p><b>PostgreSQL</b> <ul> <li><b>Version
+     * 9.3:</b> <code> 9.3.1 | 9.3.2 | 9.3.3</code></li> </ul>
+     * <p><b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Express Edition (sqlserver-ex)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Web Edition (sqlserver-web)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
      *
-     * @param engineVersion The version number of the database engine to use. <p><b>MySQL</b>
-     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
-     *         <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
-     *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
-     *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
+     * @param engineVersion The version number of the database engine to use. <p> The following
+     *         are the database engines and major and minor versions that are
+     *         available with Amazon RDS. Not every database engine is available for
+     *         every AWS region. <p><b>MySQL</b> <ul> <li><b>Version 5.1:</b> <code>
+     *         5.1.45 | 5.1.49 | 5.1.50 | 5.1.57 | 5.1.61 | 5.1.62 | 5.1.63 | 5.1.69
+     *         | 5.1.71 | 5.1.73</code></li> <li><b>Version 5.5:</b> <code> 5.5.12 |
+     *         5.5.20 | 5.5.23 | 5.5.25a | 5.5.27 | 5.5.31 | 5.5.33 | 5.5.37 | 5.5.38
+     *         | 5.5.8</code></li> <li><b>Version 5.6:</b> <code> 5.6.12 | 5.6.13 |
+     *         5.6.17 | 5.6.19 | 5.6.21</code></li> </ul> <p><b>Oracle Database
+     *         Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2:</b>
+     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
+     *         11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul> <p><b>Oracle
+     *         Database Standard Edition (oracle-se)</b> <ul> <li><b>Version
+     *         11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6
+     *         | 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul>
+     *         <p><b>Oracle Database Standard Edition One (oracle-se1)</b> <ul>
+     *         <li><b>Version 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
+     *         11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7 | 11.2.0.3.v1 |
+     *         11.2.0.4.v1</code></li> </ul> <p><b>PostgreSQL</b> <ul> <li><b>Version
+     *         9.3:</b> <code> 9.3.1 | 9.3.2 | 9.3.3</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Express Edition (sqlserver-ex)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Web Edition (sqlserver-web)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * The version number of the database engine to use. <p><b>MySQL</b>
-     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
-     * <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
-     * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
-     * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
+     * The version number of the database engine to use. <p> The following
+     * are the database engines and major and minor versions that are
+     * available with Amazon RDS. Not every database engine is available for
+     * every AWS region. <p><b>MySQL</b> <ul> <li><b>Version 5.1:</b> <code>
+     * 5.1.45 | 5.1.49 | 5.1.50 | 5.1.57 | 5.1.61 | 5.1.62 | 5.1.63 | 5.1.69
+     * | 5.1.71 | 5.1.73</code></li> <li><b>Version 5.5:</b> <code> 5.5.12 |
+     * 5.5.20 | 5.5.23 | 5.5.25a | 5.5.27 | 5.5.31 | 5.5.33 | 5.5.37 | 5.5.38
+     * | 5.5.8</code></li> <li><b>Version 5.6:</b> <code> 5.6.12 | 5.6.13 |
+     * 5.6.17 | 5.6.19 | 5.6.21</code></li> </ul> <p><b>Oracle Database
+     * Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2:</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
+     * 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul> <p><b>Oracle
+     * Database Standard Edition (oracle-se)</b> <ul> <li><b>Version
+     * 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6
+     * | 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul>
+     * <p><b>Oracle Database Standard Edition One (oracle-se1)</b> <ul>
+     * <li><b>Version 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
+     * 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7 | 11.2.0.3.v1 |
+     * 11.2.0.4.v1</code></li> </ul> <p><b>PostgreSQL</b> <ul> <li><b>Version
+     * 9.3:</b> <code> 9.3.1 | 9.3.2 | 9.3.3</code></li> </ul>
+     * <p><b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Express Edition (sqlserver-ex)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     * <p><b>Microsoft SQL Server Web Edition (sqlserver-web)</b> <ul>
+     * <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     * <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The version number of the database engine to use. <p><b>MySQL</b>
-     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
-     *         <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
-     *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
-     *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
+     * @param engineVersion The version number of the database engine to use. <p> The following
+     *         are the database engines and major and minor versions that are
+     *         available with Amazon RDS. Not every database engine is available for
+     *         every AWS region. <p><b>MySQL</b> <ul> <li><b>Version 5.1:</b> <code>
+     *         5.1.45 | 5.1.49 | 5.1.50 | 5.1.57 | 5.1.61 | 5.1.62 | 5.1.63 | 5.1.69
+     *         | 5.1.71 | 5.1.73</code></li> <li><b>Version 5.5:</b> <code> 5.5.12 |
+     *         5.5.20 | 5.5.23 | 5.5.25a | 5.5.27 | 5.5.31 | 5.5.33 | 5.5.37 | 5.5.38
+     *         | 5.5.8</code></li> <li><b>Version 5.6:</b> <code> 5.6.12 | 5.6.13 |
+     *         5.6.17 | 5.6.19 | 5.6.21</code></li> </ul> <p><b>Oracle Database
+     *         Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2:</b>
+     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
+     *         11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul> <p><b>Oracle
+     *         Database Standard Edition (oracle-se)</b> <ul> <li><b>Version
+     *         11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6
+     *         | 11.2.0.2.v7 | 11.2.0.3.v1 | 11.2.0.4.v1</code></li> </ul>
+     *         <p><b>Oracle Database Standard Edition One (oracle-se1)</b> <ul>
+     *         <li><b>Version 11.2:</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
+     *         11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7 | 11.2.0.3.v1 |
+     *         11.2.0.4.v1</code></li> </ul> <p><b>PostgreSQL</b> <ul> <li><b>Version
+     *         9.3:</b> <code> 9.3.1 | 9.3.2 | 9.3.3</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Express Edition (sqlserver-ex)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Standard Edition (sqlserver-se)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
+     *         <p><b>Microsoft SQL Server Web Edition (sqlserver-web)</b> <ul>
+     *         <li><b>Version 10.5:</b> <code> 10.50.2789.0.v1</code></li>
+     *         <li><b>Version 11.0:</b> <code> 11.00.2100.60.v1</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1888,13 +2162,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      *
      * @return Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
@@ -1902,13 +2176,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will be
-     *         publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been
-     *         set, the DB instance will be private.
+     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         has been specified as part of the request and the PubliclyAccessible
+     *         value has not been set, the DB instance will be publicly accessible.
+     *         If a specific DB subnet group has been specified as part of the
+     *         request and the PubliclyAccessible value has not been set, the DB
+     *         instance will be private.
      */
     public Boolean isPubliclyAccessible() {
         return publiclyAccessible;
@@ -1921,13 +2195,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      *
      * @param publiclyAccessible Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
@@ -1935,13 +2209,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will be
-     *         publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been
-     *         set, the DB instance will be private.
+     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         has been specified as part of the request and the PubliclyAccessible
+     *         value has not been set, the DB instance will be publicly accessible.
+     *         If a specific DB subnet group has been specified as part of the
+     *         request and the PubliclyAccessible value has not been set, the DB
+     *         instance will be private.
      */
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
@@ -1954,13 +2228,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1970,13 +2244,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will be
-     *         publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been
-     *         set, the DB instance will be private.
+     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         has been specified as part of the request and the PubliclyAccessible
+     *         value has not been set, the DB instance will be publicly accessible.
+     *         If a specific DB subnet group has been specified as part of the
+     *         request and the PubliclyAccessible value has not been set, the DB
+     *         instance will be private.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1993,13 +2267,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     * group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified
-     * as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be private.
+     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * has been specified as part of the request and the PubliclyAccessible
+     * value has not been set, the DB instance will be publicly accessible.
+     * If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB
+     * instance will be private.
      *
      * @return Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
@@ -2007,13 +2281,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will be
-     *         publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been
-     *         set, the DB instance will be private.
+     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
+     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         has been specified as part of the request and the PubliclyAccessible
+     *         value has not been set, the DB instance will be publicly accessible.
+     *         If a specific DB subnet group has been specified as part of the
+     *         request and the PubliclyAccessible value has not been set, the DB
+     *         instance will be private.
      */
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
@@ -2088,47 +2362,59 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @return Specifies storage type to be associated with the DB Instance. <p>
+     * @return Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     * @param storageType Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * Specifies storage type to be associated with the DB Instance. <p>
+     * Specifies the storage type to be associated with the DB instance. <p>
      * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      * <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     * @param storageType Specifies the storage type to be associated with the DB instance. <p>
      *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
      *         <code>io1</code>, you must also include a value for the
-     *         <code>Iops</code> parameter.
+     *         <code>Iops</code> parameter. <p> Default: <code>io1</code> if the
+     *         <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2217,6 +2503,135 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * Specifies whether the DB instance is encrypted. <p> Default: false
+     *
+     * @return Specifies whether the DB instance is encrypted. <p> Default: false
+     */
+    public Boolean isStorageEncrypted() {
+        return storageEncrypted;
+    }
+    
+    /**
+     * Specifies whether the DB instance is encrypted. <p> Default: false
+     *
+     * @param storageEncrypted Specifies whether the DB instance is encrypted. <p> Default: false
+     */
+    public void setStorageEncrypted(Boolean storageEncrypted) {
+        this.storageEncrypted = storageEncrypted;
+    }
+    
+    /**
+     * Specifies whether the DB instance is encrypted. <p> Default: false
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageEncrypted Specifies whether the DB instance is encrypted. <p> Default: false
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withStorageEncrypted(Boolean storageEncrypted) {
+        this.storageEncrypted = storageEncrypted;
+        return this;
+    }
+
+    /**
+     * Specifies whether the DB instance is encrypted. <p> Default: false
+     *
+     * @return Specifies whether the DB instance is encrypted. <p> Default: false
+     */
+    public Boolean getStorageEncrypted() {
+        return storageEncrypted;
+    }
+
+    /**
+     * The KMS key identifier for an encrypted DB instance. <p>The KMS key
+     * identifier is the Amazon Resoure Name (ARN) for the KMS encryption
+     * key. If you are creating a DB instance with the same AWS account that
+     * owns the KMS encryption key used to encrypt the new DB instance, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption
+     * key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has
+     * a different default encryption key for each AWS region.
+     *
+     * @return The KMS key identifier for an encrypted DB instance. <p>The KMS key
+     *         identifier is the Amazon Resoure Name (ARN) for the KMS encryption
+     *         key. If you are creating a DB instance with the same AWS account that
+     *         owns the KMS encryption key used to encrypt the new DB instance, then
+     *         you can use the KMS key alias instead of the ARN for the KM encryption
+     *         key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     *         you do not specify a value for the <code>KmsKeyId</code> parameter,
+     *         then Amazon RDS will use your default encryption key. AWS KMS creates
+     *         the default encryption key for your AWS account. Your AWS account has
+     *         a different default encryption key for each AWS region.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The KMS key identifier for an encrypted DB instance. <p>The KMS key
+     * identifier is the Amazon Resoure Name (ARN) for the KMS encryption
+     * key. If you are creating a DB instance with the same AWS account that
+     * owns the KMS encryption key used to encrypt the new DB instance, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption
+     * key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has
+     * a different default encryption key for each AWS region.
+     *
+     * @param kmsKeyId The KMS key identifier for an encrypted DB instance. <p>The KMS key
+     *         identifier is the Amazon Resoure Name (ARN) for the KMS encryption
+     *         key. If you are creating a DB instance with the same AWS account that
+     *         owns the KMS encryption key used to encrypt the new DB instance, then
+     *         you can use the KMS key alias instead of the ARN for the KM encryption
+     *         key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     *         you do not specify a value for the <code>KmsKeyId</code> parameter,
+     *         then Amazon RDS will use your default encryption key. AWS KMS creates
+     *         the default encryption key for your AWS account. Your AWS account has
+     *         a different default encryption key for each AWS region.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The KMS key identifier for an encrypted DB instance. <p>The KMS key
+     * identifier is the Amazon Resoure Name (ARN) for the KMS encryption
+     * key. If you are creating a DB instance with the same AWS account that
+     * owns the KMS encryption key used to encrypt the new DB instance, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption
+     * key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has
+     * a different default encryption key for each AWS region.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The KMS key identifier for an encrypted DB instance. <p>The KMS key
+     *         identifier is the Amazon Resoure Name (ARN) for the KMS encryption
+     *         key. If you are creating a DB instance with the same AWS account that
+     *         owns the KMS encryption key used to encrypt the new DB instance, then
+     *         you can use the KMS key alias instead of the ARN for the KM encryption
+     *         key. <p>If the <code>StorageEncrypted</code> parameter is true, and
+     *         you do not specify a value for the <code>KmsKeyId</code> parameter,
+     *         then Amazon RDS will use your default encryption key. AWS KMS creates
+     *         the default encryption key for your AWS account. Your AWS account has
+     *         a different default encryption key for each AWS region.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2255,7 +2670,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
-        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() );
+        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
+        if (isStorageEncrypted() != null) sb.append("StorageEncrypted: " + isStorageEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -2293,6 +2710,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
+        hashCode = prime * hashCode + ((isStorageEncrypted() == null) ? 0 : isStorageEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -2360,6 +2779,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
         if (other.getTdeCredentialPassword() == null ^ this.getTdeCredentialPassword() == null) return false;
         if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false) return false; 
+        if (other.isStorageEncrypted() == null ^ this.isStorageEncrypted() == null) return false;
+        if (other.isStorageEncrypted() != null && other.isStorageEncrypted().equals(this.isStorageEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     

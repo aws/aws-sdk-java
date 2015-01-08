@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public class TagDescription implements Serializable {
     private String resourceId;
 
     /**
-     * The type of resource.
+     * The resource type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, internet-gateway, network-acl, network-interface, reserved-instances, route-table, snapshot, spot-instances-request, subnet, security-group, volume, vpc, vpn-connection, vpn-gateway
@@ -37,12 +37,12 @@ public class TagDescription implements Serializable {
     private String resourceType;
 
     /**
-     * The key of the tag.
+     * The tag key.
      */
     private String key;
 
     /**
-     * The value of the tag.
+     * The tag value.
      */
     private String value;
 
@@ -80,12 +80,12 @@ public class TagDescription implements Serializable {
     }
 
     /**
-     * The type of resource.
+     * The resource type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, internet-gateway, network-acl, network-interface, reserved-instances, route-table, snapshot, spot-instances-request, subnet, security-group, volume, vpc, vpn-connection, vpn-gateway
      *
-     * @return The type of resource.
+     * @return The resource type.
      *
      * @see ResourceType
      */
@@ -94,12 +94,12 @@ public class TagDescription implements Serializable {
     }
     
     /**
-     * The type of resource.
+     * The resource type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, internet-gateway, network-acl, network-interface, reserved-instances, route-table, snapshot, spot-instances-request, subnet, security-group, volume, vpc, vpn-connection, vpn-gateway
      *
-     * @param resourceType The type of resource.
+     * @param resourceType The resource type.
      *
      * @see ResourceType
      */
@@ -108,14 +108,14 @@ public class TagDescription implements Serializable {
     }
     
     /**
-     * The type of resource.
+     * The resource type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, internet-gateway, network-acl, network-interface, reserved-instances, route-table, snapshot, spot-instances-request, subnet, security-group, volume, vpc, vpn-connection, vpn-gateway
      *
-     * @param resourceType The type of resource.
+     * @param resourceType The resource type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -128,12 +128,12 @@ public class TagDescription implements Serializable {
     }
 
     /**
-     * The type of resource.
+     * The resource type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, internet-gateway, network-acl, network-interface, reserved-instances, route-table, snapshot, spot-instances-request, subnet, security-group, volume, vpc, vpn-connection, vpn-gateway
      *
-     * @param resourceType The type of resource.
+     * @param resourceType The resource type.
      *
      * @see ResourceType
      */
@@ -142,14 +142,14 @@ public class TagDescription implements Serializable {
     }
     
     /**
-     * The type of resource.
+     * The resource type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, internet-gateway, network-acl, network-interface, reserved-instances, route-table, snapshot, spot-instances-request, subnet, security-group, volume, vpc, vpn-connection, vpn-gateway
      *
-     * @param resourceType The type of resource.
+     * @param resourceType The resource type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -162,29 +162,29 @@ public class TagDescription implements Serializable {
     }
 
     /**
-     * The key of the tag.
+     * The tag key.
      *
-     * @return The key of the tag.
+     * @return The tag key.
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * The key of the tag.
+     * The tag key.
      *
-     * @param key The key of the tag.
+     * @param key The tag key.
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * The key of the tag.
+     * The tag key.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param key The key of the tag.
+     * @param key The tag key.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -195,29 +195,29 @@ public class TagDescription implements Serializable {
     }
 
     /**
-     * The value of the tag.
+     * The tag value.
      *
-     * @return The value of the tag.
+     * @return The tag value.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * The value of the tag.
+     * The tag value.
      *
-     * @param value The value of the tag.
+     * @param value The tag value.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * The value of the tag.
+     * The tag value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value The value of the tag.
+     * @param value The tag value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

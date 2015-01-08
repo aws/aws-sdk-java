@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -152,18 +152,8 @@ public class PutObjectRequest extends AbstractPutObjectRequest {
      */
     @Override
     public PutObjectRequest clone() {
-        final ObjectMetadata metadata = getMetadata();
-        PutObjectRequest cloned =
-            new PutObjectRequest(getBucketName(), getKey(), getRedirectLocation())
-            .withAccessControlList(getAccessControlList())
-            .withCannedAcl(getCannedAcl())
-            .withFile(getFile())
-            .withInputStream(getInputStream())
-            .withMetadata(metadata == null ? null : metadata.clone())
-            .withStorageClass(getStorageClass())
-            .withSSECustomerKey(getSSECustomerKey())
-            ;
-        return copyBaseTo(cloned);
+        return this.copyPutObjectBaseTo(new PutObjectRequest(
+            getBucketName(), getKey(), getFile()));
     }
 
     @Override

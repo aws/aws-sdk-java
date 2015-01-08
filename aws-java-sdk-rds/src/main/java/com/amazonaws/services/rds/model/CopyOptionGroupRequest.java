@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#copyOptionGroup(CopyOptionGroupRequest) CopyOptionGroup operation}.
  * <p>
- * Copies the specified Option Group.
+ * Copies the specified option group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#copyOptionGroup(CopyOptionGroupRequest)
@@ -29,18 +29,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The identifier or ARN for the source Option Group. <p>Constraints:
-     * <ul> <li>Must specify a valid Option Group.</li> <li>If the source
-     * Option Group is in the same region as the copy, specify a valid Option
-     * Group identifier, or a valid ARN.</li> <li>If the source Option Group
-     * is in a different region than the copy, specify a valid Option group
-     * ARN.</li> </ul> <p>Example: <code>my-option-group</code> <p>Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
+     * The identifier or ARN for the source option group. <p>Constraints:
+     * <ul> <li>Must specify a valid option group.</li> <li>If the source
+     * option group is in the same region as the copy, specify a valid option
+     * group identifier, for example <code>my-option-group</code>, or a valid
+     * ARN.</li> <li>If the source option group is in a different region than
+     * the copy, specify a valid option group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     * </ul>
      */
     private String sourceOptionGroupIdentifier;
 
     /**
-     * The identifier for the copied Option Group. <p>Constraints: <ul>
+     * The identifier for the copied option group. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -50,7 +51,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     private String targetOptionGroupIdentifier;
 
     /**
-     * The description for the copied Option Group.
+     * The description for the copied option group.
      */
     private String targetOptionGroupDescription;
 
@@ -60,65 +61,71 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The identifier or ARN for the source Option Group. <p>Constraints:
-     * <ul> <li>Must specify a valid Option Group.</li> <li>If the source
-     * Option Group is in the same region as the copy, specify a valid Option
-     * Group identifier, or a valid ARN.</li> <li>If the source Option Group
-     * is in a different region than the copy, specify a valid Option group
-     * ARN.</li> </ul> <p>Example: <code>my-option-group</code> <p>Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
+     * The identifier or ARN for the source option group. <p>Constraints:
+     * <ul> <li>Must specify a valid option group.</li> <li>If the source
+     * option group is in the same region as the copy, specify a valid option
+     * group identifier, for example <code>my-option-group</code>, or a valid
+     * ARN.</li> <li>If the source option group is in a different region than
+     * the copy, specify a valid option group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     * </ul>
      *
-     * @return The identifier or ARN for the source Option Group. <p>Constraints:
-     *         <ul> <li>Must specify a valid Option Group.</li> <li>If the source
-     *         Option Group is in the same region as the copy, specify a valid Option
-     *         Group identifier, or a valid ARN.</li> <li>If the source Option Group
-     *         is in a different region than the copy, specify a valid Option group
-     *         ARN.</li> </ul> <p>Example: <code>my-option-group</code> <p>Example:
-     *         <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
+     * @return The identifier or ARN for the source option group. <p>Constraints:
+     *         <ul> <li>Must specify a valid option group.</li> <li>If the source
+     *         option group is in the same region as the copy, specify a valid option
+     *         group identifier, for example <code>my-option-group</code>, or a valid
+     *         ARN.</li> <li>If the source option group is in a different region than
+     *         the copy, specify a valid option group ARN, for example
+     *         <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     *         </ul>
      */
     public String getSourceOptionGroupIdentifier() {
         return sourceOptionGroupIdentifier;
     }
     
     /**
-     * The identifier or ARN for the source Option Group. <p>Constraints:
-     * <ul> <li>Must specify a valid Option Group.</li> <li>If the source
-     * Option Group is in the same region as the copy, specify a valid Option
-     * Group identifier, or a valid ARN.</li> <li>If the source Option Group
-     * is in a different region than the copy, specify a valid Option group
-     * ARN.</li> </ul> <p>Example: <code>my-option-group</code> <p>Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
+     * The identifier or ARN for the source option group. <p>Constraints:
+     * <ul> <li>Must specify a valid option group.</li> <li>If the source
+     * option group is in the same region as the copy, specify a valid option
+     * group identifier, for example <code>my-option-group</code>, or a valid
+     * ARN.</li> <li>If the source option group is in a different region than
+     * the copy, specify a valid option group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     * </ul>
      *
-     * @param sourceOptionGroupIdentifier The identifier or ARN for the source Option Group. <p>Constraints:
-     *         <ul> <li>Must specify a valid Option Group.</li> <li>If the source
-     *         Option Group is in the same region as the copy, specify a valid Option
-     *         Group identifier, or a valid ARN.</li> <li>If the source Option Group
-     *         is in a different region than the copy, specify a valid Option group
-     *         ARN.</li> </ul> <p>Example: <code>my-option-group</code> <p>Example:
-     *         <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
+     * @param sourceOptionGroupIdentifier The identifier or ARN for the source option group. <p>Constraints:
+     *         <ul> <li>Must specify a valid option group.</li> <li>If the source
+     *         option group is in the same region as the copy, specify a valid option
+     *         group identifier, for example <code>my-option-group</code>, or a valid
+     *         ARN.</li> <li>If the source option group is in a different region than
+     *         the copy, specify a valid option group ARN, for example
+     *         <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     *         </ul>
      */
     public void setSourceOptionGroupIdentifier(String sourceOptionGroupIdentifier) {
         this.sourceOptionGroupIdentifier = sourceOptionGroupIdentifier;
     }
     
     /**
-     * The identifier or ARN for the source Option Group. <p>Constraints:
-     * <ul> <li>Must specify a valid Option Group.</li> <li>If the source
-     * Option Group is in the same region as the copy, specify a valid Option
-     * Group identifier, or a valid ARN.</li> <li>If the source Option Group
-     * is in a different region than the copy, specify a valid Option group
-     * ARN.</li> </ul> <p>Example: <code>my-option-group</code> <p>Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
+     * The identifier or ARN for the source option group. <p>Constraints:
+     * <ul> <li>Must specify a valid option group.</li> <li>If the source
+     * option group is in the same region as the copy, specify a valid option
+     * group identifier, for example <code>my-option-group</code>, or a valid
+     * ARN.</li> <li>If the source option group is in a different region than
+     * the copy, specify a valid option group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceOptionGroupIdentifier The identifier or ARN for the source Option Group. <p>Constraints:
-     *         <ul> <li>Must specify a valid Option Group.</li> <li>If the source
-     *         Option Group is in the same region as the copy, specify a valid Option
-     *         Group identifier, or a valid ARN.</li> <li>If the source Option Group
-     *         is in a different region than the copy, specify a valid Option group
-     *         ARN.</li> </ul> <p>Example: <code>my-option-group</code> <p>Example:
-     *         <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
+     * @param sourceOptionGroupIdentifier The identifier or ARN for the source option group. <p>Constraints:
+     *         <ul> <li>Must specify a valid option group.</li> <li>If the source
+     *         option group is in the same region as the copy, specify a valid option
+     *         group identifier, for example <code>my-option-group</code>, or a valid
+     *         ARN.</li> <li>If the source option group is in a different region than
+     *         the copy, specify a valid option group ARN, for example
+     *         <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -129,14 +136,14 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The identifier for the copied Option Group. <p>Constraints: <ul>
+     * The identifier for the copied option group. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example:
      * <code>my-option-group</code>
      *
-     * @return The identifier for the copied Option Group. <p>Constraints: <ul>
+     * @return The identifier for the copied option group. <p>Constraints: <ul>
      *         <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -148,14 +155,14 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The identifier for the copied Option Group. <p>Constraints: <ul>
+     * The identifier for the copied option group. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example:
      * <code>my-option-group</code>
      *
-     * @param targetOptionGroupIdentifier The identifier for the copied Option Group. <p>Constraints: <ul>
+     * @param targetOptionGroupIdentifier The identifier for the copied option group. <p>Constraints: <ul>
      *         <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -167,7 +174,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The identifier for the copied Option Group. <p>Constraints: <ul>
+     * The identifier for the copied option group. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -176,7 +183,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetOptionGroupIdentifier The identifier for the copied Option Group. <p>Constraints: <ul>
+     * @param targetOptionGroupIdentifier The identifier for the copied option group. <p>Constraints: <ul>
      *         <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -192,29 +199,29 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The description for the copied Option Group.
+     * The description for the copied option group.
      *
-     * @return The description for the copied Option Group.
+     * @return The description for the copied option group.
      */
     public String getTargetOptionGroupDescription() {
         return targetOptionGroupDescription;
     }
     
     /**
-     * The description for the copied Option Group.
+     * The description for the copied option group.
      *
-     * @param targetOptionGroupDescription The description for the copied Option Group.
+     * @param targetOptionGroupDescription The description for the copied option group.
      */
     public void setTargetOptionGroupDescription(String targetOptionGroupDescription) {
         this.targetOptionGroupDescription = targetOptionGroupDescription;
     }
     
     /**
-     * The description for the copied Option Group.
+     * The description for the copied option group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetOptionGroupDescription The description for the copied Option Group.
+     * @param targetOptionGroupDescription The description for the copied option group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
