@@ -25,6 +25,11 @@ public class UpdateTableSpec extends AbstractSpec<UpdateTableRequest> {
         super(new UpdateTableRequest());
     }
 
+    public UpdateTableSpec withTableName(String tableName) {
+        getRequest().setTableName(tableName);
+        return this;
+    }
+
     public ProvisionedThroughput getProvisionedThroughput() {
         return getRequest().getProvisionedThroughput();
     }
