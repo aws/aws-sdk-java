@@ -2735,6 +2735,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addParameter("uploadId", uploadId);
         request.addParameter("partNumber", Integer.toString(partNumber));
 
+        final ObjectMetadata objectMetadata = uploadPartRequest.getObjectMetadata();
+        if (objectMetadata != null)
+            populateRequestMetadata(request, objectMetadata);
+
         addHeaderIfNotNull(request, Headers.CONTENT_MD5, uploadPartRequest.getMd5Digest());
         request.addHeader(Headers.CONTENT_LENGTH, Long.toString(partSize));
 

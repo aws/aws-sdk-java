@@ -94,6 +94,12 @@ public class Playlist implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> outputKeys;
 
     /**
+     * The HLS content protection settings, if any, that you want Elastic
+     * Transcoder to apply to the output files associated with this playlist.
+     */
+    private HlsContentProtection hlsContentProtection;
+
+    /**
      * The status of the job with which the playlist is associated.
      * <p>
      * <b>Constraints:</b><br/>
@@ -570,6 +576,45 @@ public class Playlist implements Serializable {
     }
 
     /**
+     * The HLS content protection settings, if any, that you want Elastic
+     * Transcoder to apply to the output files associated with this playlist.
+     *
+     * @return The HLS content protection settings, if any, that you want Elastic
+     *         Transcoder to apply to the output files associated with this playlist.
+     */
+    public HlsContentProtection getHlsContentProtection() {
+        return hlsContentProtection;
+    }
+    
+    /**
+     * The HLS content protection settings, if any, that you want Elastic
+     * Transcoder to apply to the output files associated with this playlist.
+     *
+     * @param hlsContentProtection The HLS content protection settings, if any, that you want Elastic
+     *         Transcoder to apply to the output files associated with this playlist.
+     */
+    public void setHlsContentProtection(HlsContentProtection hlsContentProtection) {
+        this.hlsContentProtection = hlsContentProtection;
+    }
+    
+    /**
+     * The HLS content protection settings, if any, that you want Elastic
+     * Transcoder to apply to the output files associated with this playlist.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hlsContentProtection The HLS content protection settings, if any, that you want Elastic
+     *         Transcoder to apply to the output files associated with this playlist.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Playlist withHlsContentProtection(HlsContentProtection hlsContentProtection) {
+        this.hlsContentProtection = hlsContentProtection;
+        return this;
+    }
+
+    /**
      * The status of the job with which the playlist is associated.
      * <p>
      * <b>Constraints:</b><br/>
@@ -668,6 +713,7 @@ public class Playlist implements Serializable {
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getFormat() != null) sb.append("Format: " + getFormat() + ",");
         if (getOutputKeys() != null) sb.append("OutputKeys: " + getOutputKeys() + ",");
+        if (getHlsContentProtection() != null) sb.append("HlsContentProtection: " + getHlsContentProtection() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getStatusDetail() != null) sb.append("StatusDetail: " + getStatusDetail() );
         sb.append("}");
@@ -682,6 +728,7 @@ public class Playlist implements Serializable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode()); 
         hashCode = prime * hashCode + ((getOutputKeys() == null) ? 0 : getOutputKeys().hashCode()); 
+        hashCode = prime * hashCode + ((getHlsContentProtection() == null) ? 0 : getHlsContentProtection().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getStatusDetail() == null) ? 0 : getStatusDetail().hashCode()); 
         return hashCode;
@@ -701,6 +748,8 @@ public class Playlist implements Serializable {
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false) return false; 
         if (other.getOutputKeys() == null ^ this.getOutputKeys() == null) return false;
         if (other.getOutputKeys() != null && other.getOutputKeys().equals(this.getOutputKeys()) == false) return false; 
+        if (other.getHlsContentProtection() == null ^ this.getHlsContentProtection() == null) return false;
+        if (other.getHlsContentProtection() != null && other.getHlsContentProtection().equals(this.getHlsContentProtection()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getStatusDetail() == null ^ this.getStatusDetail() == null) return false;

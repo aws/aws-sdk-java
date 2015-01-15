@@ -46,6 +46,7 @@ import com.amazonaws.services.dynamodbv2.model.DescribeTableResult;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
+import com.amazonaws.services.dynamodbv2.model.UpdateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.UpdateTableResult;
 
 /**
@@ -324,7 +325,9 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      * @return the updated table description returned from DynamoDB.
      */
     public TableDescription updateTable(UpdateTableSpec spec) {
-        UpdateTableResult result = client.updateTable(spec.getRequest());
+        UpdateTableRequest req = spec.getRequest();
+        req.setTableName(getTableName());
+        UpdateTableResult result = client.updateTable(req);
         return this.tableDescription = result.getTableDescription();
     }
 

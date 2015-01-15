@@ -15,29 +15,30 @@
 package com.amazonaws.services.dynamodbv2.datamodeling.marshallers;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.ListAttributeMarshaller;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
-public class ListToListMarshaller implements ListAttributeMarshaller {
+public class CollectionToListMarshaller implements ListAttributeMarshaller {
 
-    private static final ListToListMarshaller INSTANCE =
-            new ListToListMarshaller();
+    private static final CollectionToListMarshaller INSTANCE =
+            new CollectionToListMarshaller();
 
-    public static ListToListMarshaller instance() {
+    public static CollectionToListMarshaller instance() {
         return INSTANCE;
     }
 
 
     private final ArgumentMarshaller memberMarshaller;
 
-    private ListToListMarshaller() {
+    private CollectionToListMarshaller() {
         this(null);
     }
 
-    public ListToListMarshaller(ArgumentMarshaller memberMarshaller) {
+    public CollectionToListMarshaller(ArgumentMarshaller memberMarshaller) {
         this.memberMarshaller = memberMarshaller;
     }
 
@@ -48,7 +49,7 @@ public class ListToListMarshaller implements ListAttributeMarshaller {
                     "No member marshaller configured!");
         }
 
-        List<?> objects = (List<?>) obj;
+        Collection<?> objects = (Collection<?>) obj;
         List<AttributeValue> values =
                 new ArrayList<AttributeValue>(objects.size());
 

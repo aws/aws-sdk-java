@@ -48,6 +48,11 @@ public enum InstanceType {
     C32xlarge("c3.2xlarge"),
     C34xlarge("c3.4xlarge"),
     C38xlarge("c3.8xlarge"),
+    C4Large("c4.large"),
+    C4Xlarge("c4.xlarge"),
+    C42xlarge("c4.2xlarge"),
+    C44xlarge("c4.4xlarge"),
+    C48xlarge("c4.8xlarge"),
     Cc14xlarge("cc1.4xlarge"),
     Cc28xlarge("cc2.8xlarge"),
     G22xlarge("g2.2xlarge"),
@@ -138,6 +143,16 @@ public enum InstanceType {
             return InstanceType.C34xlarge;
         } else if ("c3.8xlarge".equals(value)) {
             return InstanceType.C38xlarge;
+        } else if ("c4.large".equals(value)) {
+            return InstanceType.C4Large;
+        } else if ("c4.xlarge".equals(value)) {
+            return InstanceType.C4Xlarge;
+        } else if ("c4.2xlarge".equals(value)) {
+            return InstanceType.C42xlarge;
+        } else if ("c4.4xlarge".equals(value)) {
+            return InstanceType.C44xlarge;
+        } else if ("c4.8xlarge".equals(value)) {
+            return InstanceType.C48xlarge;
         } else if ("cc1.4xlarge".equals(value)) {
             return InstanceType.Cc14xlarge;
         } else if ("cc2.8xlarge".equals(value)) {

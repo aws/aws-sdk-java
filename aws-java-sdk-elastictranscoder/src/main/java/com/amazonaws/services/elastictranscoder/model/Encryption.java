@@ -65,7 +65,7 @@ public class Encryption implements Serializable {
      * encrypted by using the Amazon Key Management Service.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$<br/>
+     * <b>Pattern: </b>^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)<br/>
      */
     private String key;
 
@@ -77,7 +77,7 @@ public class Encryption implements Serializable {
      * and it must be exactly 16 bytes long before being base64-encoded.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$<br/>
+     * <b>Pattern: </b>^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)<br/>
      */
     private String keyMd5;
 
@@ -89,7 +89,7 @@ public class Encryption implements Serializable {
      * must be exactly 16 bytes long before being base64-encoded.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>0 - 255<br/>
      */
     private String initializationVector;
 
@@ -270,7 +270,7 @@ public class Encryption implements Serializable {
      * encrypted by using the Amazon Key Management Service.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$<br/>
+     * <b>Pattern: </b>^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)<br/>
      *
      * @return The data encryption key that you want Elastic Transcoder to use to
      *         encrypt your output file, or that was used to encrypt your input file.
@@ -292,7 +292,7 @@ public class Encryption implements Serializable {
      * encrypted by using the Amazon Key Management Service.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$<br/>
+     * <b>Pattern: </b>^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)<br/>
      *
      * @param key The data encryption key that you want Elastic Transcoder to use to
      *         encrypt your output file, or that was used to encrypt your input file.
@@ -316,7 +316,7 @@ public class Encryption implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$<br/>
+     * <b>Pattern: </b>^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)<br/>
      *
      * @param key The data encryption key that you want Elastic Transcoder to use to
      *         encrypt your output file, or that was used to encrypt your input file.
@@ -341,7 +341,7 @@ public class Encryption implements Serializable {
      * and it must be exactly 16 bytes long before being base64-encoded.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$<br/>
+     * <b>Pattern: </b>^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)<br/>
      *
      * @return The MD5 digest of the key that you used to encrypt your input file, or
      *         that you want Elastic Transcoder to use to encrypt your output file.
@@ -361,7 +361,7 @@ public class Encryption implements Serializable {
      * and it must be exactly 16 bytes long before being base64-encoded.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$<br/>
+     * <b>Pattern: </b>^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)<br/>
      *
      * @param keyMd5 The MD5 digest of the key that you used to encrypt your input file, or
      *         that you want Elastic Transcoder to use to encrypt your output file.
@@ -383,7 +383,7 @@ public class Encryption implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$<br/>
+     * <b>Pattern: </b>^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)<br/>
      *
      * @param keyMd5 The MD5 digest of the key that you used to encrypt your input file, or
      *         that you want Elastic Transcoder to use to encrypt your output file.
@@ -407,7 +407,7 @@ public class Encryption implements Serializable {
      * must be exactly 16 bytes long before being base64-encoded.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>0 - 255<br/>
      *
      * @return The series of random bits created by a random bit generator, unique
      *         for every encryption operation, that you used to encrypt your input
@@ -427,7 +427,7 @@ public class Encryption implements Serializable {
      * must be exactly 16 bytes long before being base64-encoded.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>0 - 255<br/>
      *
      * @param initializationVector The series of random bits created by a random bit generator, unique
      *         for every encryption operation, that you used to encrypt your input
@@ -449,7 +449,7 @@ public class Encryption implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>0 - 255<br/>
      *
      * @param initializationVector The series of random bits created by a random bit generator, unique
      *         for every encryption operation, that you used to encrypt your input
