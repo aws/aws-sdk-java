@@ -781,6 +781,32 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                             }
                             jsonWriter.endArray();
                         }
+                        HlsContentProtection hlsContentProtection = playlistsListValue.getHlsContentProtection();
+                        if (hlsContentProtection != null) {
+
+                            jsonWriter.key("HlsContentProtection");
+                            jsonWriter.object();
+
+                            if (hlsContentProtection.getMethod() != null) {
+                                jsonWriter.key("Method").value(hlsContentProtection.getMethod());
+                            }
+                            if (hlsContentProtection.getKey() != null) {
+                                jsonWriter.key("Key").value(hlsContentProtection.getKey());
+                            }
+                            if (hlsContentProtection.getKeyMd5() != null) {
+                                jsonWriter.key("KeyMd5").value(hlsContentProtection.getKeyMd5());
+                            }
+                            if (hlsContentProtection.getInitializationVector() != null) {
+                                jsonWriter.key("InitializationVector").value(hlsContentProtection.getInitializationVector());
+                            }
+                            if (hlsContentProtection.getLicenseAcquisitionUrl() != null) {
+                                jsonWriter.key("LicenseAcquisitionUrl").value(hlsContentProtection.getLicenseAcquisitionUrl());
+                            }
+                            if (hlsContentProtection.getKeyStoragePolicy() != null) {
+                                jsonWriter.key("KeyStoragePolicy").value(hlsContentProtection.getKeyStoragePolicy());
+                            }
+                            jsonWriter.endObject();
+                        }
                         jsonWriter.endObject();
                     }
                 }

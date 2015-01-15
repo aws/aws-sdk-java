@@ -37,6 +37,11 @@ import com.amazonaws.event.ProgressListener;
 public class UploadPartRequest extends AmazonWebServiceRequest implements
         SSECustomerKeyProvider, S3DataSource {
     /**
+     * Additional information about the part being uploaded, such as
+     * referrer.
+     */
+    private ObjectMetadata objectMetadata;
+    /**
      * The name of the bucket containing the initiated multipart upload with
      * which this new part will be associated.
      */
@@ -586,6 +591,27 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      */
     public UploadPartRequest withSSECustomerKey(SSECustomerKey sseKey) {
         setSSECustomerKey(sseKey);
+        return this;
+    }
+    /**
+     * Returns the additional information about the part being uploaded.
+     */
+    public ObjectMetadata getObjectMetadata() {
+        return objectMetadata;
+    }
+
+    /**
+     * Sets the additional information about the part being uploaded.
+     */
+    public void setObjectMetadata(ObjectMetadata objectMetadata) {
+        this.objectMetadata = objectMetadata;
+    }
+
+    /**
+     * Fluent API for {@link #setObjectMetadata(ObjectMetadata)}.
+     */
+    public UploadPartRequest withObjectMetadata(ObjectMetadata objectMetadata) {
+        setObjectMetadata(objectMetadata);
         return this;
     }
 }

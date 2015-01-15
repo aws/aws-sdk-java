@@ -26,12 +26,12 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Playlist JSON Unmarshaller
+ * Hls Content Protection JSON Unmarshaller
  */
-public class PlaylistJsonUnmarshaller implements Unmarshaller<Playlist, JsonUnmarshallerContext> {
+public class HlsContentProtectionJsonUnmarshaller implements Unmarshaller<HlsContentProtection, JsonUnmarshallerContext> {
 
-    public Playlist unmarshall(JsonUnmarshallerContext context) throws Exception {
-        Playlist playlist = new Playlist();
+    public HlsContentProtection unmarshall(JsonUnmarshallerContext context) throws Exception {
+        HlsContentProtection hlsContentProtection = new HlsContentProtection();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -45,29 +45,29 @@ public class PlaylistJsonUnmarshaller implements Unmarshaller<Playlist, JsonUnma
             if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Name", targetDepth)) {
+                if (context.testExpression("Method", targetDepth)) {
                     context.nextToken();
-                    playlist.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    hlsContentProtection.setMethod(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Format", targetDepth)) {
+                if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    playlist.setFormat(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    hlsContentProtection.setKey(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("OutputKeys", targetDepth)) {
+                if (context.testExpression("KeyMd5", targetDepth)) {
                     context.nextToken();
-                    playlist.setOutputKeys(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    hlsContentProtection.setKeyMd5(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("HlsContentProtection", targetDepth)) {
+                if (context.testExpression("InitializationVector", targetDepth)) {
                     context.nextToken();
-                    playlist.setHlsContentProtection(HlsContentProtectionJsonUnmarshaller.getInstance().unmarshall(context));
+                    hlsContentProtection.setInitializationVector(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Status", targetDepth)) {
+                if (context.testExpression("LicenseAcquisitionUrl", targetDepth)) {
                     context.nextToken();
-                    playlist.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    hlsContentProtection.setLicenseAcquisitionUrl(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("StatusDetail", targetDepth)) {
+                if (context.testExpression("KeyStoragePolicy", targetDepth)) {
                     context.nextToken();
-                    playlist.setStatusDetail(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    hlsContentProtection.setKeyStoragePolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -78,12 +78,12 @@ public class PlaylistJsonUnmarshaller implements Unmarshaller<Playlist, JsonUnma
             token = context.nextToken();
         }
         
-        return playlist;
+        return hlsContentProtection;
     }
 
-    private static PlaylistJsonUnmarshaller instance;
-    public static PlaylistJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new PlaylistJsonUnmarshaller();
+    private static HlsContentProtectionJsonUnmarshaller instance;
+    public static HlsContentProtectionJsonUnmarshaller getInstance() {
+        if (instance == null) instance = new HlsContentProtectionJsonUnmarshaller();
         return instance;
     }
 }

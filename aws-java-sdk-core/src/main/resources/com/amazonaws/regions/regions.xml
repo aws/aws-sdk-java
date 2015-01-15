@@ -1930,6 +1930,12 @@
         <Hostname>swf.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>glacier</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>glacier.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>redshift</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -2353,6 +2359,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>directconnect</Name>

@@ -51,10 +51,10 @@ import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.ByteBufferSetT
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.ByteBufferToBinaryMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CalendarSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CalendarToStringMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CollectionToListMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CustomMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.DateSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.DateToStringMarshaller;
-import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.ListToListMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.MapToMapMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.NumberSetToNumberSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.NumberToNumberMarshaller;
@@ -91,6 +91,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.LongSetUnmar
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.LongUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.MapUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.NullableUnmarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ObjectSetUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ObjectUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.S3LinkUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ShortSetUnmarshaller;
@@ -308,8 +309,8 @@ public final class ConversionSchemas {
                 Type type,
                 ArgumentMarshaller marshaller) {
 
-            if (marshaller instanceof ListToListMarshaller) {
-                return getListToListMarshaller(type);
+            if (marshaller instanceof CollectionToListMarshaller) {
+                return getCollectionToListMarshaller(type);
             }
 
             if (marshaller instanceof MapToMapMarshaller) {
@@ -322,11 +323,12 @@ public final class ConversionSchemas {
             return marshaller;
         }
 
-        private ArgumentMarshaller getListToListMarshaller(Type type) {
+        private ArgumentMarshaller getCollectionToListMarshaller(Type type) {
             if (!(type instanceof ParameterizedType)) {
                 throw new DynamoDBMappingException(
-                        "Cannot tell what type of objects belong in the List "
-                        + "type " + type + ", which is not parameterized.");
+                        "Cannot tell what type of objects belong in the "
+                        + "Collection type " + type + ", which is not "
+                        + "parameterized.");
             }
 
             ParameterizedType ptype = (ParameterizedType) type;
@@ -334,15 +336,15 @@ public final class ConversionSchemas {
 
             if (args == null || args.length != 1) {
                 throw new DynamoDBMappingException(
-                        "Cannot tell what type of objects belong in the List "
-                        + "type " + type + "; unexpected number of type "
-                        + "arguments.");
+                        "Cannot tell what type of objects belong in the "
+                        + "Collection type " + type + "; unexpected number of "
+                        + "type arguments.");
             }
 
             ArgumentMarshaller memberMarshaller =
                     getMemberMarshaller(args[0]);
 
-            return new ListToListMarshaller(memberMarshaller);
+            return new CollectionToListMarshaller(memberMarshaller);
         }
 
         private ArgumentMarshaller getMapToMapMarshaller(Type type) {
@@ -470,8 +472,12 @@ public final class ConversionSchemas {
                 return new S3LinkUnmarshaller(s3cc);
             }
 
-            // Inject an appropriate member-type unmarshaller if it's a list or
-            // map unmarshaller
+            // Inject an appropriate member-type unmarshaller if it's a list,
+            // object-set, or map unmarshaller.
+            if (unmarshaller instanceof ObjectSetUnmarshaller) {
+                return getObjectSetUnmarshaller(type);
+            }
+
             if (unmarshaller instanceof ListUnmarshaller) {
                 return getListUnmarshaller(type);
             }
@@ -487,6 +493,29 @@ public final class ConversionSchemas {
             }
 
             return unmarshaller;
+        }
+
+        private ArgumentUnmarshaller getObjectSetUnmarshaller(Type type) {
+            if (!(type instanceof ParameterizedType)) {
+                throw new DynamoDBMappingException(
+                        "Cannot tell what type of objects belong in the Set "
+                        + "type " + type + ", which is not parameterized.");
+            }
+
+            ParameterizedType ptype = (ParameterizedType) type;
+            Type[] args = ptype.getActualTypeArguments();
+
+            if (args == null || args.length != 1) {
+                throw new DynamoDBMappingException(
+                        "Cannot tell what type of objects belong in the Set "
+                        + "type " + type + "; unexpected number of type "
+                        + "arguments.");
+            }
+
+            ArgumentUnmarshaller memberUnmarshaller =
+                    getMemberUnmarshaller(args[0]);
+
+            return new ObjectSetUnmarshaller(memberUnmarshaller);
         }
 
         private ArgumentUnmarshaller getListUnmarshaller(Type type) {
@@ -632,7 +661,7 @@ public final class ConversionSchemas {
             addStandardS3LinkMarshallers(list);
 
             // Add marshallers for the new list and map types.
-            list.add(Pair.of(List.class, ListToListMarshaller.instance()));
+            list.add(Pair.of(List.class, CollectionToListMarshaller.instance()));
             list.add(Pair.of(Map.class, MapToMapMarshaller.instance()));
 
             // Make sure I'm last since I'll catch anything.
@@ -650,6 +679,11 @@ public final class ConversionSchemas {
             addStandardNumberSetMarshallers(list);
             addStandardStringSetMarshallers(list);
             addStandardBinarySetMarshallers(list);
+
+            // Make sure I'm last since I'll catch anything.
+            list.add(Pair.of(
+                    Object.class,
+                    CollectionToListMarshaller.instance()));
 
             return list;
         }
@@ -675,7 +709,7 @@ public final class ConversionSchemas {
             addStandardS3LinkMarshallers(list);
 
             // Add marshallers for the new list and map types.
-            list.add(Pair.of(List.class, ListToListMarshaller.instance()));
+            list.add(Pair.of(List.class, CollectionToListMarshaller.instance()));
             list.add(Pair.of(Map.class, MapToMapMarshaller.instance()));
 
             // Make sure I'm last since I'll catch anything.
@@ -1050,6 +1084,9 @@ public final class ConversionSchemas {
                     ByteArraySetUnmarshaller.instance()));
 
             list.add(Pair.of(String.class, StringSetUnmarshaller.instance()));
+
+            // Make sure I'm last since I'll catch all other types.
+            list.add(Pair.of(Object.class, ObjectSetUnmarshaller.instance()));
 
             return list;
         }

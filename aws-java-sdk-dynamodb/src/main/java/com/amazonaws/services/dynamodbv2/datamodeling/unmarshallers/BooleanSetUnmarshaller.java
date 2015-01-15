@@ -14,19 +14,21 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers;
 
+import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentUnmarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMappingException;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 /**
- * A legacy unmarshaller that unmarshals DynamoDB NumberSets containing only
- * "0" and "1" into a set of Java Booleans (with "0" == false and "1" == true).
- * Retained only for backwards compatibility - DynamoDB does not have a
- * BooleanSet type, and sets of booleans aren't particularly useful anyways.
+ * A special unmarshaller for Set&lt;Boolean>, which the V1 schema stores as
+ * an NS using 0/1 for true/false. In the V2 schema these fall through to
+ * the {@code ObjectSetToListMarshaller} which stores them as an L or BOOLs.
  */
-public class BooleanSetUnmarshaller extends NSUnmarshaller {
+public class BooleanSetUnmarshaller implements ArgumentUnmarshaller {
 
     private static final BooleanSetUnmarshaller INSTANCE =
             new BooleanSetUnmarshaller();
@@ -39,13 +41,54 @@ public class BooleanSetUnmarshaller extends NSUnmarshaller {
     }
 
     @Override
+    public void typeCheck(AttributeValue value, Method setter) {
+        if (value.getNS() == null && value.getL() == null) {
+            throw new DynamoDBMappingException(
+                    "Expected either L or NS in value " + value
+                    + " when invoking " + setter);
+        }
+    }
+
+    @Override
     public Object unmarshall(AttributeValue value) {
-        List<String> values = value.getNS();
+        if (value.getL() != null) {
+            return unmarshallList(value.getL());
+        } else {
+            return unmarshallNS(value.getNS());
+        }
+    }
+
+    private Set<Boolean> unmarshallList(List<AttributeValue> values) {
+        Set<Boolean> result = new HashSet<Boolean>();
+
+        for (AttributeValue value : values) {
+            Boolean bool;
+            if (Boolean.TRUE.equals(value.isNULL())) {
+                bool = null;
+            } else {
+                bool = value.getBOOL();
+                if (bool == null) {
+                    throw new DynamoDBMappingException(
+                            value + " is not a boolean");
+                }
+            }
+
+            if (!result.add(bool)) {
+                throw new DynamoDBMappingException(
+                        "Duplicate value (" + bool + ") found in "
+                        + values);
+            }
+        }
+
+        return result;
+    }
+
+    private Set<Boolean> unmarshallNS(List<String> values) {
         Set<Boolean> result = new HashSet<Boolean>();
 
         for (String s : values) {
             if ("1".equals(s)) {
-                 result.add(Boolean.TRUE);
+                result.add(Boolean.TRUE);
             } else if ("0".equals(s)) {
                 result.add(Boolean.FALSE);
             } else {

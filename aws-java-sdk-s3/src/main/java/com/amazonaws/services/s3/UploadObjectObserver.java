@@ -221,6 +221,7 @@ public class UploadObjectObserver {
             .withPartSize(part.length())
             .withLastPart(event.isLastPart())
             .withUploadId(uploadId)
+            .withObjectMetadata(req.getUploadPartMetadata())
             ;
         return reqUploadPart;
     }

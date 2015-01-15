@@ -34,6 +34,11 @@ import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 public class UploadObjectRequest extends AbstractPutObjectRequest implements
         MaterialsDescriptionProvider {
     static final int MIN_PART_SIZE = 5 << 20; // 5 MB
+
+    /**
+     * Optional metadata to be included in each upload part requests.
+     */
+    private ObjectMetadata uploadPartMetadata;
     /**
      * description of encryption materials to be used with this request.
      */
@@ -206,6 +211,30 @@ public class UploadObjectRequest extends AbstractPutObjectRequest implements
     }
 
     /**
+     * Gets the optional metadata to be included in each UploadPart request.
+     */
+    public ObjectMetadata getUploadPartMetadata() {
+        return uploadPartMetadata;
+    }
+
+    /**
+     * Sets the optional metadata to be included in each UploadPart request.
+     */
+    public void setUploadPartMetadata(ObjectMetadata partUploadMetadata) {
+        this.uploadPartMetadata = partUploadMetadata;
+    }
+
+    /**
+     * Fluent API for {@link #setUploadPartMetadata(ObjectMetadata)}.
+     */
+    public <T extends UploadObjectRequest> T withUploadPartMetadata(
+            ObjectMetadata partUploadMetadata) {
+        setUploadPartMetadata(partUploadMetadata);
+        @SuppressWarnings("unchecked") T t = (T)this;
+        return t;
+    }
+
+    /**
      * Returns a clone (as deep as possible) of this request object.
      */
     @Override
@@ -214,6 +243,7 @@ public class UploadObjectRequest extends AbstractPutObjectRequest implements
                 getBucketName(), getKey(), getFile());
         super.copyPutObjectBaseTo(cloned);
         final Map<String, String> materialsDescription = getMaterialsDescription();
+        final ObjectMetadata uploadPartMetadata = getUploadPartMetadata();
         return cloned
                 .withMaterialsDescription(materialsDescription == null
                     ? null
@@ -223,6 +253,8 @@ public class UploadObjectRequest extends AbstractPutObjectRequest implements
                 .withMultiFileOutputStream(getMultiFileOutputStream())
                 .withPartSize(getPartSize())
                 .withUploadObjectObserver(getUploadObjectObserver())
+                .withUploadPartMetadata(uploadPartMetadata == null
+                    ? null : uploadPartMetadata.clone())
                 ;
     }
 }
