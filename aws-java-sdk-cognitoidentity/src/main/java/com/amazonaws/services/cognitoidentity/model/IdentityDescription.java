@@ -39,6 +39,16 @@ public class IdentityDescription implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> logins;
 
     /**
+     * Date on which the identity was created.
+     */
+    private java.util.Date creationDate;
+
+    /**
+     * Date on which the identity was last modified.
+     */
+    private java.util.Date lastModifiedDate;
+
+    /**
      * A unique identifier in the format REGION:GUID.
      * <p>
      * <b>Constraints:</b><br/>
@@ -156,6 +166,72 @@ public class IdentityDescription implements Serializable {
     }
 
     /**
+     * Date on which the identity was created.
+     *
+     * @return Date on which the identity was created.
+     */
+    public java.util.Date getCreationDate() {
+        return creationDate;
+    }
+    
+    /**
+     * Date on which the identity was created.
+     *
+     * @param creationDate Date on which the identity was created.
+     */
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+    }
+    
+    /**
+     * Date on which the identity was created.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param creationDate Date on which the identity was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public IdentityDescription withCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+        return this;
+    }
+
+    /**
+     * Date on which the identity was last modified.
+     *
+     * @return Date on which the identity was last modified.
+     */
+    public java.util.Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+    
+    /**
+     * Date on which the identity was last modified.
+     *
+     * @param lastModifiedDate Date on which the identity was last modified.
+     */
+    public void setLastModifiedDate(java.util.Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+    
+    /**
+     * Date on which the identity was last modified.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param lastModifiedDate Date on which the identity was last modified.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public IdentityDescription withLastModifiedDate(java.util.Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -168,7 +244,9 @@ public class IdentityDescription implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null) sb.append("IdentityId: " + getIdentityId() + ",");
-        if (getLogins() != null) sb.append("Logins: " + getLogins() );
+        if (getLogins() != null) sb.append("Logins: " + getLogins() + ",");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");
+        if (getLastModifiedDate() != null) sb.append("LastModifiedDate: " + getLastModifiedDate() );
         sb.append("}");
         return sb.toString();
     }
@@ -180,6 +258,8 @@ public class IdentityDescription implements Serializable {
         
         hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode()); 
         hashCode = prime * hashCode + ((getLogins() == null) ? 0 : getLogins().hashCode()); 
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode()); 
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode()); 
         return hashCode;
     }
     
@@ -195,6 +275,10 @@ public class IdentityDescription implements Serializable {
         if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false) return false; 
         if (other.getLogins() == null ^ this.getLogins() == null) return false;
         if (other.getLogins() != null && other.getLogins().equals(this.getLogins()) == false) return false; 
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null) return false;
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false) return false; 
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null) return false;
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false) return false; 
         return true;
     }
     

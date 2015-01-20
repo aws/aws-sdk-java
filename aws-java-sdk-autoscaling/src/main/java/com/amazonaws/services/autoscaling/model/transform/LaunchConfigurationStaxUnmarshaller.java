@@ -63,6 +63,14 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                     launchConfiguration.getSecurityGroups().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ClassicLinkVPCId", targetDepth)) {
+                    launchConfiguration.setClassicLinkVPCId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ClassicLinkVPCSecurityGroups/member", targetDepth)) {
+                    launchConfiguration.getClassicLinkVPCSecurityGroups().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("UserData", targetDepth)) {
                     launchConfiguration.setUserData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -40,12 +40,20 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest imp
     /**
      * User identifier for the source user. The value should be a
      * <code>DeveloperUserIdentifier</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      */
     private String sourceUserIdentifier;
 
     /**
      * User identifier for the destination user. The value should be a
      * <code>DeveloperUserIdentifier</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      */
     private String destinationUserIdentifier;
 
@@ -75,6 +83,10 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest imp
     /**
      * User identifier for the source user. The value should be a
      * <code>DeveloperUserIdentifier</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @return User identifier for the source user. The value should be a
      *         <code>DeveloperUserIdentifier</code>.
@@ -86,6 +98,10 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest imp
     /**
      * User identifier for the source user. The value should be a
      * <code>DeveloperUserIdentifier</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @param sourceUserIdentifier User identifier for the source user. The value should be a
      *         <code>DeveloperUserIdentifier</code>.
@@ -99,6 +115,10 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest imp
      * <code>DeveloperUserIdentifier</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @param sourceUserIdentifier User identifier for the source user. The value should be a
      *         <code>DeveloperUserIdentifier</code>.
@@ -114,6 +134,10 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest imp
     /**
      * User identifier for the destination user. The value should be a
      * <code>DeveloperUserIdentifier</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @return User identifier for the destination user. The value should be a
      *         <code>DeveloperUserIdentifier</code>.
@@ -125,6 +149,10 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest imp
     /**
      * User identifier for the destination user. The value should be a
      * <code>DeveloperUserIdentifier</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @param destinationUserIdentifier User identifier for the destination user. The value should be a
      *         <code>DeveloperUserIdentifier</code>.
@@ -138,6 +166,10 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest imp
      * <code>DeveloperUserIdentifier</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @param destinationUserIdentifier User identifier for the destination user. The value should be a
      *         <code>DeveloperUserIdentifier</code>.

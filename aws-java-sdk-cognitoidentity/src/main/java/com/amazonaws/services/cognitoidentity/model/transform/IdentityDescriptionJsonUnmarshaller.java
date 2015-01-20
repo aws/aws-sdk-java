@@ -53,6 +53,14 @@ public class IdentityDescriptionJsonUnmarshaller implements Unmarshaller<Identit
                     context.nextToken();
                     identityDescription.setLogins(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("CreationDate", targetDepth)) {
+                    context.nextToken();
+                    identityDescription.setCreationDate(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    context.nextToken();
+                    identityDescription.setLastModifiedDate(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

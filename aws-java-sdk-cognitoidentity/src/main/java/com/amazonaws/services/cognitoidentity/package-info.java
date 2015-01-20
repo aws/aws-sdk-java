@@ -23,7 +23,15 @@
  * token. <code>GetId</code> returns a unique identifier for the user.
  * </p>
  * <p>
- * Next, make an unsigned call to GetOpenIdToken, which returns the
+ * Next, make an unsigned call to GetCredentialsForIdentity. This call
+ * expects the same <code>Logins</code> map as the <code>GetId</code>
+ * call, as well as the <code>IdentityID</code> originally returned by
+ * <code>GetId</code> . Assuming your identity pool has been configured
+ * via the SetIdentityPoolRoles operation,
+ * <code>GetCredentialsForIdentity</code> will return AWS credentials for
+ * your use. If your pool has not been configured with
+ * <code>SetIdentityPoolRoles</code> , or if you want to follow legacy
+ * flow, make an unsigned call to GetOpenIdToken, which returns the
  * OpenID token necessary to call STS and retrieve AWS credentials. This
  * call expects the same <code>Logins</code> map as the
  * <code>GetId</code> call, as well as the <code>IdentityID</code>
@@ -31,6 +39,13 @@
  * <code>GetOpenIdToken</code> can be passed to the STS operation
  * <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html"> AssumeRoleWithWebIdentity </a>
  * to retrieve AWS credentials.
+ * </p>
+ * <p>
+ * If you want to use Amazon Cognito in an Android, iOS, or Unity
+ * application, you will probably want to make API calls via the AWS
+ * Mobile SDK. To learn more, see the
+ * <a href="http://docs.aws.amazon.com/mobile/index.html"> AWS Mobile SDK Developer Guide </a>
+ * .
  * </p>
  */
  package com.amazonaws.services.cognitoidentity;

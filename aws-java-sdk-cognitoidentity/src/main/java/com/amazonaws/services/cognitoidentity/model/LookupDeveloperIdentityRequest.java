@@ -61,6 +61,10 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest impl
      * A unique ID used by your backend authentication process to identify a
      * user. Typically, a developer identity provider would issue many
      * developer user identifiers, in keeping with the number of users.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      */
     private String developerUserIdentifier;
 
@@ -181,6 +185,10 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest impl
      * A unique ID used by your backend authentication process to identify a
      * user. Typically, a developer identity provider would issue many
      * developer user identifiers, in keeping with the number of users.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @return A unique ID used by your backend authentication process to identify a
      *         user. Typically, a developer identity provider would issue many
@@ -194,6 +202,10 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest impl
      * A unique ID used by your backend authentication process to identify a
      * user. Typically, a developer identity provider would issue many
      * developer user identifiers, in keeping with the number of users.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @param developerUserIdentifier A unique ID used by your backend authentication process to identify a
      *         user. Typically, a developer identity provider would issue many
@@ -209,6 +221,10 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest impl
      * developer user identifiers, in keeping with the number of users.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @param developerUserIdentifier A unique ID used by your backend authentication process to identify a
      *         user. Typically, a developer identity provider would issue many

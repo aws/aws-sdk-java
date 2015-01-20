@@ -62,6 +62,10 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest impl
     /**
      * A unique ID used by your backend authentication process to identify a
      * user.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      */
     private String developerUserIdentifier;
 
@@ -203,6 +207,10 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest impl
     /**
      * A unique ID used by your backend authentication process to identify a
      * user.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @return A unique ID used by your backend authentication process to identify a
      *         user.
@@ -214,6 +222,10 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest impl
     /**
      * A unique ID used by your backend authentication process to identify a
      * user.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @param developerUserIdentifier A unique ID used by your backend authentication process to identify a
      *         user.
@@ -227,6 +239,10 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest impl
      * user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     * <b>Pattern: </b>[\w.@_-]+<br/>
      *
      * @param developerUserIdentifier A unique ID used by your backend authentication process to identify a
      *         user.

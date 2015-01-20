@@ -113,6 +113,38 @@ public class JobFlowInstancesConfig implements Serializable {
     private String ec2SubnetId;
 
     /**
+     * The identifier of the Amazon EC2 security group (managed by Amazon
+     * ElasticMapReduce) for the master node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     */
+    private String emrManagedMasterSecurityGroup;
+
+    /**
+     * The identifier of the Amazon EC2 security group (managed by Amazon
+     * ElasticMapReduce) for the slave nodes.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     */
+    private String emrManagedSlaveSecurityGroup;
+
+    /**
+     * A list of additional Amazon EC2 security group IDs for the master
+     * node.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> additionalMasterSecurityGroups;
+
+    /**
+     * A list of additional Amazon EC2 security group IDs for the slave
+     * nodes.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> additionalSlaveSecurityGroups;
+
+    /**
      * Default constructor for a new JobFlowInstancesConfig object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -658,6 +690,260 @@ public class JobFlowInstancesConfig implements Serializable {
     }
 
     /**
+     * The identifier of the Amazon EC2 security group (managed by Amazon
+     * ElasticMapReduce) for the master node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @return The identifier of the Amazon EC2 security group (managed by Amazon
+     *         ElasticMapReduce) for the master node.
+     */
+    public String getEmrManagedMasterSecurityGroup() {
+        return emrManagedMasterSecurityGroup;
+    }
+    
+    /**
+     * The identifier of the Amazon EC2 security group (managed by Amazon
+     * ElasticMapReduce) for the master node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param emrManagedMasterSecurityGroup The identifier of the Amazon EC2 security group (managed by Amazon
+     *         ElasticMapReduce) for the master node.
+     */
+    public void setEmrManagedMasterSecurityGroup(String emrManagedMasterSecurityGroup) {
+        this.emrManagedMasterSecurityGroup = emrManagedMasterSecurityGroup;
+    }
+    
+    /**
+     * The identifier of the Amazon EC2 security group (managed by Amazon
+     * ElasticMapReduce) for the master node.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param emrManagedMasterSecurityGroup The identifier of the Amazon EC2 security group (managed by Amazon
+     *         ElasticMapReduce) for the master node.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobFlowInstancesConfig withEmrManagedMasterSecurityGroup(String emrManagedMasterSecurityGroup) {
+        this.emrManagedMasterSecurityGroup = emrManagedMasterSecurityGroup;
+        return this;
+    }
+
+    /**
+     * The identifier of the Amazon EC2 security group (managed by Amazon
+     * ElasticMapReduce) for the slave nodes.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @return The identifier of the Amazon EC2 security group (managed by Amazon
+     *         ElasticMapReduce) for the slave nodes.
+     */
+    public String getEmrManagedSlaveSecurityGroup() {
+        return emrManagedSlaveSecurityGroup;
+    }
+    
+    /**
+     * The identifier of the Amazon EC2 security group (managed by Amazon
+     * ElasticMapReduce) for the slave nodes.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param emrManagedSlaveSecurityGroup The identifier of the Amazon EC2 security group (managed by Amazon
+     *         ElasticMapReduce) for the slave nodes.
+     */
+    public void setEmrManagedSlaveSecurityGroup(String emrManagedSlaveSecurityGroup) {
+        this.emrManagedSlaveSecurityGroup = emrManagedSlaveSecurityGroup;
+    }
+    
+    /**
+     * The identifier of the Amazon EC2 security group (managed by Amazon
+     * ElasticMapReduce) for the slave nodes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param emrManagedSlaveSecurityGroup The identifier of the Amazon EC2 security group (managed by Amazon
+     *         ElasticMapReduce) for the slave nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobFlowInstancesConfig withEmrManagedSlaveSecurityGroup(String emrManagedSlaveSecurityGroup) {
+        this.emrManagedSlaveSecurityGroup = emrManagedSlaveSecurityGroup;
+        return this;
+    }
+
+    /**
+     * A list of additional Amazon EC2 security group IDs for the master
+     * node.
+     *
+     * @return A list of additional Amazon EC2 security group IDs for the master
+     *         node.
+     */
+    public java.util.List<String> getAdditionalMasterSecurityGroups() {
+        if (additionalMasterSecurityGroups == null) {
+              additionalMasterSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              additionalMasterSecurityGroups.setAutoConstruct(true);
+        }
+        return additionalMasterSecurityGroups;
+    }
+    
+    /**
+     * A list of additional Amazon EC2 security group IDs for the master
+     * node.
+     *
+     * @param additionalMasterSecurityGroups A list of additional Amazon EC2 security group IDs for the master
+     *         node.
+     */
+    public void setAdditionalMasterSecurityGroups(java.util.Collection<String> additionalMasterSecurityGroups) {
+        if (additionalMasterSecurityGroups == null) {
+            this.additionalMasterSecurityGroups = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> additionalMasterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(additionalMasterSecurityGroups.size());
+        additionalMasterSecurityGroupsCopy.addAll(additionalMasterSecurityGroups);
+        this.additionalMasterSecurityGroups = additionalMasterSecurityGroupsCopy;
+    }
+    
+    /**
+     * A list of additional Amazon EC2 security group IDs for the master
+     * node.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalMasterSecurityGroups A list of additional Amazon EC2 security group IDs for the master
+     *         node.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobFlowInstancesConfig withAdditionalMasterSecurityGroups(String... additionalMasterSecurityGroups) {
+        if (getAdditionalMasterSecurityGroups() == null) setAdditionalMasterSecurityGroups(new java.util.ArrayList<String>(additionalMasterSecurityGroups.length));
+        for (String value : additionalMasterSecurityGroups) {
+            getAdditionalMasterSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of additional Amazon EC2 security group IDs for the master
+     * node.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalMasterSecurityGroups A list of additional Amazon EC2 security group IDs for the master
+     *         node.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobFlowInstancesConfig withAdditionalMasterSecurityGroups(java.util.Collection<String> additionalMasterSecurityGroups) {
+        if (additionalMasterSecurityGroups == null) {
+            this.additionalMasterSecurityGroups = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> additionalMasterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(additionalMasterSecurityGroups.size());
+            additionalMasterSecurityGroupsCopy.addAll(additionalMasterSecurityGroups);
+            this.additionalMasterSecurityGroups = additionalMasterSecurityGroupsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * A list of additional Amazon EC2 security group IDs for the slave
+     * nodes.
+     *
+     * @return A list of additional Amazon EC2 security group IDs for the slave
+     *         nodes.
+     */
+    public java.util.List<String> getAdditionalSlaveSecurityGroups() {
+        if (additionalSlaveSecurityGroups == null) {
+              additionalSlaveSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              additionalSlaveSecurityGroups.setAutoConstruct(true);
+        }
+        return additionalSlaveSecurityGroups;
+    }
+    
+    /**
+     * A list of additional Amazon EC2 security group IDs for the slave
+     * nodes.
+     *
+     * @param additionalSlaveSecurityGroups A list of additional Amazon EC2 security group IDs for the slave
+     *         nodes.
+     */
+    public void setAdditionalSlaveSecurityGroups(java.util.Collection<String> additionalSlaveSecurityGroups) {
+        if (additionalSlaveSecurityGroups == null) {
+            this.additionalSlaveSecurityGroups = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> additionalSlaveSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(additionalSlaveSecurityGroups.size());
+        additionalSlaveSecurityGroupsCopy.addAll(additionalSlaveSecurityGroups);
+        this.additionalSlaveSecurityGroups = additionalSlaveSecurityGroupsCopy;
+    }
+    
+    /**
+     * A list of additional Amazon EC2 security group IDs for the slave
+     * nodes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalSlaveSecurityGroups A list of additional Amazon EC2 security group IDs for the slave
+     *         nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobFlowInstancesConfig withAdditionalSlaveSecurityGroups(String... additionalSlaveSecurityGroups) {
+        if (getAdditionalSlaveSecurityGroups() == null) setAdditionalSlaveSecurityGroups(new java.util.ArrayList<String>(additionalSlaveSecurityGroups.length));
+        for (String value : additionalSlaveSecurityGroups) {
+            getAdditionalSlaveSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of additional Amazon EC2 security group IDs for the slave
+     * nodes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalSlaveSecurityGroups A list of additional Amazon EC2 security group IDs for the slave
+     *         nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobFlowInstancesConfig withAdditionalSlaveSecurityGroups(java.util.Collection<String> additionalSlaveSecurityGroups) {
+        if (additionalSlaveSecurityGroups == null) {
+            this.additionalSlaveSecurityGroups = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> additionalSlaveSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(additionalSlaveSecurityGroups.size());
+            additionalSlaveSecurityGroupsCopy.addAll(additionalSlaveSecurityGroups);
+            this.additionalSlaveSecurityGroups = additionalSlaveSecurityGroupsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -678,7 +964,11 @@ public class JobFlowInstancesConfig implements Serializable {
         if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ",");
         if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");
         if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() + ",");
-        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() );
+        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() + ",");
+        if (getEmrManagedMasterSecurityGroup() != null) sb.append("EmrManagedMasterSecurityGroup: " + getEmrManagedMasterSecurityGroup() + ",");
+        if (getEmrManagedSlaveSecurityGroup() != null) sb.append("EmrManagedSlaveSecurityGroup: " + getEmrManagedSlaveSecurityGroup() + ",");
+        if (getAdditionalMasterSecurityGroups() != null) sb.append("AdditionalMasterSecurityGroups: " + getAdditionalMasterSecurityGroups() + ",");
+        if (getAdditionalSlaveSecurityGroups() != null) sb.append("AdditionalSlaveSecurityGroups: " + getAdditionalSlaveSecurityGroups() );
         sb.append("}");
         return sb.toString();
     }
@@ -698,6 +988,10 @@ public class JobFlowInstancesConfig implements Serializable {
         hashCode = prime * hashCode + ((isTerminationProtected() == null) ? 0 : isTerminationProtected().hashCode()); 
         hashCode = prime * hashCode + ((getHadoopVersion() == null) ? 0 : getHadoopVersion().hashCode()); 
         hashCode = prime * hashCode + ((getEc2SubnetId() == null) ? 0 : getEc2SubnetId().hashCode()); 
+        hashCode = prime * hashCode + ((getEmrManagedMasterSecurityGroup() == null) ? 0 : getEmrManagedMasterSecurityGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getEmrManagedSlaveSecurityGroup() == null) ? 0 : getEmrManagedSlaveSecurityGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getAdditionalMasterSecurityGroups() == null) ? 0 : getAdditionalMasterSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getAdditionalSlaveSecurityGroups() == null) ? 0 : getAdditionalSlaveSecurityGroups().hashCode()); 
         return hashCode;
     }
     
@@ -729,6 +1023,14 @@ public class JobFlowInstancesConfig implements Serializable {
         if (other.getHadoopVersion() != null && other.getHadoopVersion().equals(this.getHadoopVersion()) == false) return false; 
         if (other.getEc2SubnetId() == null ^ this.getEc2SubnetId() == null) return false;
         if (other.getEc2SubnetId() != null && other.getEc2SubnetId().equals(this.getEc2SubnetId()) == false) return false; 
+        if (other.getEmrManagedMasterSecurityGroup() == null ^ this.getEmrManagedMasterSecurityGroup() == null) return false;
+        if (other.getEmrManagedMasterSecurityGroup() != null && other.getEmrManagedMasterSecurityGroup().equals(this.getEmrManagedMasterSecurityGroup()) == false) return false; 
+        if (other.getEmrManagedSlaveSecurityGroup() == null ^ this.getEmrManagedSlaveSecurityGroup() == null) return false;
+        if (other.getEmrManagedSlaveSecurityGroup() != null && other.getEmrManagedSlaveSecurityGroup().equals(this.getEmrManagedSlaveSecurityGroup()) == false) return false; 
+        if (other.getAdditionalMasterSecurityGroups() == null ^ this.getAdditionalMasterSecurityGroups() == null) return false;
+        if (other.getAdditionalMasterSecurityGroups() != null && other.getAdditionalMasterSecurityGroups().equals(this.getAdditionalMasterSecurityGroups()) == false) return false; 
+        if (other.getAdditionalSlaveSecurityGroups() == null ^ this.getAdditionalSlaveSecurityGroups() == null) return false;
+        if (other.getAdditionalSlaveSecurityGroups() != null && other.getAdditionalSlaveSecurityGroups().equals(this.getAdditionalSlaveSecurityGroups()) == false) return false; 
         return true;
     }
     

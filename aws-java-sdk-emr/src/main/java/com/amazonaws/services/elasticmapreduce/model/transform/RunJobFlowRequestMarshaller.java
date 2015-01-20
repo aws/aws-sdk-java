@@ -147,6 +147,40 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                 if (instances.getEc2SubnetId() != null) {
                     jsonWriter.key("Ec2SubnetId").value(instances.getEc2SubnetId());
                 }
+                if (instances.getEmrManagedMasterSecurityGroup() != null) {
+                    jsonWriter.key("EmrManagedMasterSecurityGroup").value(instances.getEmrManagedMasterSecurityGroup());
+                }
+                if (instances.getEmrManagedSlaveSecurityGroup() != null) {
+                    jsonWriter.key("EmrManagedSlaveSecurityGroup").value(instances.getEmrManagedSlaveSecurityGroup());
+                }
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<String> additionalMasterSecurityGroupsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(instances.getAdditionalMasterSecurityGroups());
+                if (additionalMasterSecurityGroupsList != null && !(additionalMasterSecurityGroupsList.isAutoConstruct() && additionalMasterSecurityGroupsList.isEmpty())) {
+
+                    jsonWriter.key("AdditionalMasterSecurityGroups");
+                    jsonWriter.array();
+
+                    for (String additionalMasterSecurityGroupsListValue : additionalMasterSecurityGroupsList) {
+                        if (additionalMasterSecurityGroupsListValue != null) {
+                            jsonWriter.value(additionalMasterSecurityGroupsListValue);
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<String> additionalSlaveSecurityGroupsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(instances.getAdditionalSlaveSecurityGroups());
+                if (additionalSlaveSecurityGroupsList != null && !(additionalSlaveSecurityGroupsList.isAutoConstruct() && additionalSlaveSecurityGroupsList.isEmpty())) {
+
+                    jsonWriter.key("AdditionalSlaveSecurityGroups");
+                    jsonWriter.array();
+
+                    for (String additionalSlaveSecurityGroupsListValue : additionalSlaveSecurityGroupsList) {
+                        if (additionalSlaveSecurityGroupsListValue != null) {
+                            jsonWriter.value(additionalSlaveSecurityGroupsListValue);
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
                 jsonWriter.endObject();
             }
 

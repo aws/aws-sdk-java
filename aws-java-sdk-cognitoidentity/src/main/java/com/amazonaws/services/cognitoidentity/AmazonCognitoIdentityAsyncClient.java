@@ -55,7 +55,15 @@ import com.amazonaws.services.cognitoidentity.model.*;
  * token. <code>GetId</code> returns a unique identifier for the user.
  * </p>
  * <p>
- * Next, make an unsigned call to GetOpenIdToken, which returns the
+ * Next, make an unsigned call to GetCredentialsForIdentity. This call
+ * expects the same <code>Logins</code> map as the <code>GetId</code>
+ * call, as well as the <code>IdentityID</code> originally returned by
+ * <code>GetId</code> . Assuming your identity pool has been configured
+ * via the SetIdentityPoolRoles operation,
+ * <code>GetCredentialsForIdentity</code> will return AWS credentials for
+ * your use. If your pool has not been configured with
+ * <code>SetIdentityPoolRoles</code> , or if you want to follow legacy
+ * flow, make an unsigned call to GetOpenIdToken, which returns the
  * OpenID token necessary to call STS and retrieve AWS credentials. This
  * call expects the same <code>Logins</code> map as the
  * <code>GetId</code> call, as well as the <code>IdentityID</code>
@@ -63,6 +71,13 @@ import com.amazonaws.services.cognitoidentity.model.*;
  * <code>GetOpenIdToken</code> can be passed to the STS operation
  * <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html"> AssumeRoleWithWebIdentity </a>
  * to retrieve AWS credentials.
+ * </p>
+ * <p>
+ * If you want to use Amazon Cognito in an Android, iOS, or Unity
+ * application, you will probably want to make API calls via the AWS
+ * Mobile SDK. To learn more, see the
+ * <a href="http://docs.aws.amazon.com/mobile/index.html"> AWS Mobile SDK Developer Guide </a>
+ * .
  * </p>
  */
 public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClient
@@ -299,14 +314,19 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
             
     /**
      * <p>
-     * Lists all of the Cognito identity pools registered for your account.
+     * Unlinks a <code>DeveloperUserIdentifier</code> from an existing
+     * identity. Unlinked developer users will be considered new identities
+     * next time they are seen. If, for a given Cognito identity, you remove
+     * all federated identities as well as the developer user identifier, the
+     * Cognito identity becomes inaccessible.
      * </p>
      *
-     * @param listIdentityPoolsRequest Container for the necessary parameters
-     *           to execute the ListIdentityPools operation on AmazonCognitoIdentity.
+     * @param unlinkDeveloperIdentityRequest Container for the necessary
+     *           parameters to execute the UnlinkDeveloperIdentity operation on
+     *           AmazonCognitoIdentity.
      * 
      * @return A Java Future object containing the response from the
-     *         ListIdentityPools service method, as returned by
+     *         UnlinkDeveloperIdentity service method, as returned by
      *         AmazonCognitoIdentity.
      * 
      *
@@ -318,29 +338,35 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ListIdentityPoolsResult> listIdentityPoolsAsync(final ListIdentityPoolsRequest listIdentityPoolsRequest) 
+    public Future<Void> unlinkDeveloperIdentityAsync(final UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListIdentityPoolsResult>() {
-            public ListIdentityPoolsResult call() throws Exception {
-                return listIdentityPools(listIdentityPoolsRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                unlinkDeveloperIdentity(unlinkDeveloperIdentityRequest);
+                return null;
         }
     });
     }
 
     /**
      * <p>
-     * Lists all of the Cognito identity pools registered for your account.
+     * Unlinks a <code>DeveloperUserIdentifier</code> from an existing
+     * identity. Unlinked developer users will be considered new identities
+     * next time they are seen. If, for a given Cognito identity, you remove
+     * all federated identities as well as the developer user identifier, the
+     * Cognito identity becomes inaccessible.
      * </p>
      *
-     * @param listIdentityPoolsRequest Container for the necessary parameters
-     *           to execute the ListIdentityPools operation on AmazonCognitoIdentity.
+     * @param unlinkDeveloperIdentityRequest Container for the necessary
+     *           parameters to execute the UnlinkDeveloperIdentity operation on
+     *           AmazonCognitoIdentity.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         ListIdentityPools service method, as returned by
+     *         UnlinkDeveloperIdentity service method, as returned by
      *         AmazonCognitoIdentity.
      * 
      *
@@ -352,20 +378,407 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ListIdentityPoolsResult> listIdentityPoolsAsync(
-            final ListIdentityPoolsRequest listIdentityPoolsRequest,
-            final AsyncHandler<ListIdentityPoolsRequest, ListIdentityPoolsResult> asyncHandler)
+    public Future<Void> unlinkDeveloperIdentityAsync(
+            final UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest,
+            final AsyncHandler<UnlinkDeveloperIdentityRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListIdentityPoolsResult>() {
-            public ListIdentityPoolsResult call() throws Exception {
-              ListIdentityPoolsResult result;
-                try {
-                result = listIdentityPools(listIdentityPoolsRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                unlinkDeveloperIdentity(unlinkDeveloperIdentityRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(listIdentityPoolsRequest, result);
+              asyncHandler.onSuccess(unlinkDeveloperIdentityRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets details about a particular identity pool, including the pool
+     * name, ID description, creation date, and current number of users.
+     * </p>
+     *
+     * @param describeIdentityPoolRequest Container for the necessary
+     *           parameters to execute the DescribeIdentityPool operation on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeIdentityPool service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeIdentityPoolResult> describeIdentityPoolAsync(final DescribeIdentityPoolRequest describeIdentityPoolRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeIdentityPoolResult>() {
+            public DescribeIdentityPoolResult call() throws Exception {
+                return describeIdentityPool(describeIdentityPoolRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets details about a particular identity pool, including the pool
+     * name, ID description, creation date, and current number of users.
+     * </p>
+     *
+     * @param describeIdentityPoolRequest Container for the necessary
+     *           parameters to execute the DescribeIdentityPool operation on
+     *           AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeIdentityPool service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeIdentityPoolResult> describeIdentityPoolAsync(
+            final DescribeIdentityPoolRequest describeIdentityPoolRequest,
+            final AsyncHandler<DescribeIdentityPoolRequest, DescribeIdentityPoolResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeIdentityPoolResult>() {
+            public DescribeIdentityPoolResult call() throws Exception {
+              DescribeIdentityPoolResult result;
+                try {
+                result = describeIdentityPool(describeIdentityPoolRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeIdentityPoolRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
+     * create an implicit linked account.
+     * </p>
+     *
+     * @param getIdRequest Container for the necessary parameters to execute
+     *           the GetId operation on AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the GetId
+     *         service method, as returned by AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetIdResult> getIdAsync(final GetIdRequest getIdRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetIdResult>() {
+            public GetIdResult call() throws Exception {
+                return getId(getIdRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
+     * create an implicit linked account.
+     * </p>
+     *
+     * @param getIdRequest Container for the necessary parameters to execute
+     *           the GetId operation on AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the GetId
+     *         service method, as returned by AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetIdResult> getIdAsync(
+            final GetIdRequest getIdRequest,
+            final AsyncHandler<GetIdRequest, GetIdResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetIdResult>() {
+            public GetIdResult call() throws Exception {
+              GetIdResult result;
+                try {
+                result = getId(getIdRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getIdRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a user pool. Once a pool is deleted, users will not be able
+     * to authenticate with the pool.
+     * </p>
+     *
+     * @param deleteIdentityPoolRequest Container for the necessary
+     *           parameters to execute the DeleteIdentityPool operation on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteIdentityPool service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteIdentityPoolAsync(final DeleteIdentityPoolRequest deleteIdentityPoolRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteIdentityPool(deleteIdentityPoolRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a user pool. Once a pool is deleted, users will not be able
+     * to authenticate with the pool.
+     * </p>
+     *
+     * @param deleteIdentityPoolRequest Container for the necessary
+     *           parameters to execute the DeleteIdentityPool operation on
+     *           AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteIdentityPool service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteIdentityPoolAsync(
+            final DeleteIdentityPoolRequest deleteIdentityPoolRequest,
+            final AsyncHandler<DeleteIdentityPoolRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteIdentityPool(deleteIdentityPoolRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteIdentityPoolRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Updates a user pool.
+     * </p>
+     *
+     * @param updateIdentityPoolRequest Container for the necessary
+     *           parameters to execute the UpdateIdentityPool operation on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateIdentityPool service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateIdentityPoolResult> updateIdentityPoolAsync(final UpdateIdentityPoolRequest updateIdentityPoolRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateIdentityPoolResult>() {
+            public UpdateIdentityPoolResult call() throws Exception {
+                return updateIdentityPool(updateIdentityPoolRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates a user pool.
+     * </p>
+     *
+     * @param updateIdentityPoolRequest Container for the necessary
+     *           parameters to execute the UpdateIdentityPool operation on
+     *           AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateIdentityPool service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateIdentityPoolResult> updateIdentityPoolAsync(
+            final UpdateIdentityPoolRequest updateIdentityPoolRequest,
+            final AsyncHandler<UpdateIdentityPoolRequest, UpdateIdentityPoolResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateIdentityPoolResult>() {
+            public UpdateIdentityPoolResult call() throws Exception {
+              UpdateIdentityPoolResult result;
+                try {
+                result = updateIdentityPool(updateIdentityPoolRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateIdentityPoolRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns credentials for the the provided identity ID. Any provided
+     * logins will be validated against supported login providers. If the
+     * token is for cognito-identity.amazonaws.com, it will be passed through
+     * to AWS Security Token Service with the appropriate role for the token.
+     * </p>
+     *
+     * @param getCredentialsForIdentityRequest Container for the necessary
+     *           parameters to execute the GetCredentialsForIdentity operation on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetCredentialsForIdentity service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetCredentialsForIdentityResult> getCredentialsForIdentityAsync(final GetCredentialsForIdentityRequest getCredentialsForIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetCredentialsForIdentityResult>() {
+            public GetCredentialsForIdentityResult call() throws Exception {
+                return getCredentialsForIdentity(getCredentialsForIdentityRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns credentials for the the provided identity ID. Any provided
+     * logins will be validated against supported login providers. If the
+     * token is for cognito-identity.amazonaws.com, it will be passed through
+     * to AWS Security Token Service with the appropriate role for the token.
+     * </p>
+     *
+     * @param getCredentialsForIdentityRequest Container for the necessary
+     *           parameters to execute the GetCredentialsForIdentity operation on
+     *           AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetCredentialsForIdentity service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetCredentialsForIdentityResult> getCredentialsForIdentityAsync(
+            final GetCredentialsForIdentityRequest getCredentialsForIdentityRequest,
+            final AsyncHandler<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetCredentialsForIdentityResult>() {
+            public GetCredentialsForIdentityResult call() throws Exception {
+              GetCredentialsForIdentityResult result;
+                try {
+                result = getCredentialsForIdentity(getCredentialsForIdentityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getCredentialsForIdentityRequest, result);
                  return result;
         }
     });
@@ -467,6 +880,80 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     
     /**
      * <p>
+     * Lists all of the Cognito identity pools registered for your account.
+     * </p>
+     *
+     * @param listIdentityPoolsRequest Container for the necessary parameters
+     *           to execute the ListIdentityPools operation on AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListIdentityPools service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListIdentityPoolsResult> listIdentityPoolsAsync(final ListIdentityPoolsRequest listIdentityPoolsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListIdentityPoolsResult>() {
+            public ListIdentityPoolsResult call() throws Exception {
+                return listIdentityPools(listIdentityPoolsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Lists all of the Cognito identity pools registered for your account.
+     * </p>
+     *
+     * @param listIdentityPoolsRequest Container for the necessary parameters
+     *           to execute the ListIdentityPools operation on AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListIdentityPools service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListIdentityPoolsResult> listIdentityPoolsAsync(
+            final ListIdentityPoolsRequest listIdentityPoolsRequest,
+            final AsyncHandler<ListIdentityPoolsRequest, ListIdentityPoolsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListIdentityPoolsResult>() {
+            public ListIdentityPoolsResult call() throws Exception {
+              ListIdentityPoolsResult result;
+                try {
+                result = listIdentityPools(listIdentityPoolsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listIdentityPoolsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Gets an OpenID token, using a known Cognito ID. This known Cognito ID
      * is returned by GetId. You can optionally add additional logins for the
      * identity. Supplying multiple logins creates an implicit link.
@@ -549,20 +1036,15 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     
     /**
      * <p>
-     * Unlinks a <code>DeveloperUserIdentifier</code> from an existing
-     * identity. Unlinked developer users will be considered new identities
-     * next time they are seen. If, for a given Cognito identity, you remove
-     * all federated identities as well as the developer user identifier, the
-     * Cognito identity becomes inaccessible.
+     * Returns metadata related to the given identity, including when the
+     * identity was created and any associated linked logins.
      * </p>
      *
-     * @param unlinkDeveloperIdentityRequest Container for the necessary
-     *           parameters to execute the UnlinkDeveloperIdentity operation on
-     *           AmazonCognitoIdentity.
+     * @param describeIdentityRequest Container for the necessary parameters
+     *           to execute the DescribeIdentity operation on AmazonCognitoIdentity.
      * 
      * @return A Java Future object containing the response from the
-     *         UnlinkDeveloperIdentity service method, as returned by
-     *         AmazonCognitoIdentity.
+     *         DescribeIdentity service method, as returned by AmazonCognitoIdentity.
      * 
      *
      * @throws AmazonClientException
@@ -573,36 +1055,30 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> unlinkDeveloperIdentityAsync(final UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) 
+    public Future<DescribeIdentityResult> describeIdentityAsync(final DescribeIdentityRequest describeIdentityRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                unlinkDeveloperIdentity(unlinkDeveloperIdentityRequest);
-                return null;
+        return executorService.submit(new Callable<DescribeIdentityResult>() {
+            public DescribeIdentityResult call() throws Exception {
+                return describeIdentity(describeIdentityRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Unlinks a <code>DeveloperUserIdentifier</code> from an existing
-     * identity. Unlinked developer users will be considered new identities
-     * next time they are seen. If, for a given Cognito identity, you remove
-     * all federated identities as well as the developer user identifier, the
-     * Cognito identity becomes inaccessible.
+     * Returns metadata related to the given identity, including when the
+     * identity was created and any associated linked logins.
      * </p>
      *
-     * @param unlinkDeveloperIdentityRequest Container for the necessary
-     *           parameters to execute the UnlinkDeveloperIdentity operation on
-     *           AmazonCognitoIdentity.
+     * @param describeIdentityRequest Container for the necessary parameters
+     *           to execute the DescribeIdentity operation on AmazonCognitoIdentity.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         UnlinkDeveloperIdentity service method, as returned by
-     *         AmazonCognitoIdentity.
+     *         DescribeIdentity service method, as returned by AmazonCognitoIdentity.
      * 
      *
      * @throws AmazonClientException
@@ -613,20 +1089,21 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> unlinkDeveloperIdentityAsync(
-            final UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest,
-            final AsyncHandler<UnlinkDeveloperIdentityRequest, Void> asyncHandler)
+    public Future<DescribeIdentityResult> describeIdentityAsync(
+            final DescribeIdentityRequest describeIdentityRequest,
+            final AsyncHandler<DescribeIdentityRequest, DescribeIdentityResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                unlinkDeveloperIdentity(unlinkDeveloperIdentityRequest);
+        return executorService.submit(new Callable<DescribeIdentityResult>() {
+            public DescribeIdentityResult call() throws Exception {
+              DescribeIdentityResult result;
+                try {
+                result = describeIdentity(describeIdentityRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(unlinkDeveloperIdentityRequest, null);
-                 return null;
+              asyncHandler.onSuccess(describeIdentityRequest, result);
+                 return result;
         }
     });
     }
@@ -731,6 +1208,84 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     
     /**
      * <p>
+     * Sets the roles for an identity pool. These roles are used when making
+     * calls to <code>GetCredentialsForIdentity</code> action.
+     * </p>
+     *
+     * @param setIdentityPoolRolesRequest Container for the necessary
+     *           parameters to execute the SetIdentityPoolRoles operation on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetIdentityPoolRoles service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setIdentityPoolRolesAsync(final SetIdentityPoolRolesRequest setIdentityPoolRolesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                setIdentityPoolRoles(setIdentityPoolRolesRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Sets the roles for an identity pool. These roles are used when making
+     * calls to <code>GetCredentialsForIdentity</code> action.
+     * </p>
+     *
+     * @param setIdentityPoolRolesRequest Container for the necessary
+     *           parameters to execute the SetIdentityPoolRoles operation on
+     *           AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetIdentityPoolRoles service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setIdentityPoolRolesAsync(
+            final SetIdentityPoolRolesRequest setIdentityPoolRolesRequest,
+            final AsyncHandler<SetIdentityPoolRolesRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                setIdentityPoolRoles(setIdentityPoolRolesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setIdentityPoolRolesRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Unlinks a federated identity from an existing account. Unlinked
      * logins will be considered new identities next time they are seen.
      * Removing the last linked login will make this identity inaccessible.
@@ -801,84 +1356,6 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
               }
               asyncHandler.onSuccess(unlinkIdentityRequest, null);
                  return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Gets details about a particular identity pool, including the pool
-     * name, ID description, creation date, and current number of users.
-     * </p>
-     *
-     * @param describeIdentityPoolRequest Container for the necessary
-     *           parameters to execute the DescribeIdentityPool operation on
-     *           AmazonCognitoIdentity.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeIdentityPool service method, as returned by
-     *         AmazonCognitoIdentity.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeIdentityPoolResult> describeIdentityPoolAsync(final DescribeIdentityPoolRequest describeIdentityPoolRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeIdentityPoolResult>() {
-            public DescribeIdentityPoolResult call() throws Exception {
-                return describeIdentityPool(describeIdentityPoolRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Gets details about a particular identity pool, including the pool
-     * name, ID description, creation date, and current number of users.
-     * </p>
-     *
-     * @param describeIdentityPoolRequest Container for the necessary
-     *           parameters to execute the DescribeIdentityPool operation on
-     *           AmazonCognitoIdentity.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeIdentityPool service method, as returned by
-     *         AmazonCognitoIdentity.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeIdentityPoolResult> describeIdentityPoolAsync(
-            final DescribeIdentityPoolRequest describeIdentityPoolRequest,
-            final AsyncHandler<DescribeIdentityPoolRequest, DescribeIdentityPoolResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeIdentityPoolResult>() {
-            public DescribeIdentityPoolResult call() throws Exception {
-              DescribeIdentityPoolResult result;
-                try {
-                result = describeIdentityPool(describeIdentityPoolRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeIdentityPoolRequest, result);
-                 return result;
         }
     });
     }
@@ -957,16 +1434,15 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     
     /**
      * <p>
-     * Deletes a user pool. Once a pool is deleted, users will not be able
-     * to authenticate with the pool.
+     * Gets the roles for an identity pool.
      * </p>
      *
-     * @param deleteIdentityPoolRequest Container for the necessary
-     *           parameters to execute the DeleteIdentityPool operation on
+     * @param getIdentityPoolRolesRequest Container for the necessary
+     *           parameters to execute the GetIdentityPoolRoles operation on
      *           AmazonCognitoIdentity.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteIdentityPool service method, as returned by
+     *         GetIdentityPoolRoles service method, as returned by
      *         AmazonCognitoIdentity.
      * 
      *
@@ -978,24 +1454,22 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> deleteIdentityPoolAsync(final DeleteIdentityPoolRequest deleteIdentityPoolRequest) 
+    public Future<GetIdentityPoolRolesResult> getIdentityPoolRolesAsync(final GetIdentityPoolRolesRequest getIdentityPoolRolesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteIdentityPool(deleteIdentityPoolRequest);
-                return null;
+        return executorService.submit(new Callable<GetIdentityPoolRolesResult>() {
+            public GetIdentityPoolRolesResult call() throws Exception {
+                return getIdentityPoolRoles(getIdentityPoolRolesRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Deletes a user pool. Once a pool is deleted, users will not be able
-     * to authenticate with the pool.
+     * Gets the roles for an identity pool.
      * </p>
      *
-     * @param deleteIdentityPoolRequest Container for the necessary
-     *           parameters to execute the DeleteIdentityPool operation on
+     * @param getIdentityPoolRolesRequest Container for the necessary
+     *           parameters to execute the GetIdentityPoolRoles operation on
      *           AmazonCognitoIdentity.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -1003,7 +1477,7 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteIdentityPool service method, as returned by
+     *         GetIdentityPoolRoles service method, as returned by
      *         AmazonCognitoIdentity.
      * 
      *
@@ -1015,93 +1489,20 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> deleteIdentityPoolAsync(
-            final DeleteIdentityPoolRequest deleteIdentityPoolRequest,
-            final AsyncHandler<DeleteIdentityPoolRequest, Void> asyncHandler)
+    public Future<GetIdentityPoolRolesResult> getIdentityPoolRolesAsync(
+            final GetIdentityPoolRolesRequest getIdentityPoolRolesRequest,
+            final AsyncHandler<GetIdentityPoolRolesRequest, GetIdentityPoolRolesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteIdentityPool(deleteIdentityPoolRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteIdentityPoolRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
-     * create an implicit linked account.
-     * </p>
-     *
-     * @param getIdRequest Container for the necessary parameters to execute
-     *           the GetId operation on AmazonCognitoIdentity.
-     * 
-     * @return A Java Future object containing the response from the GetId
-     *         service method, as returned by AmazonCognitoIdentity.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetIdResult> getIdAsync(final GetIdRequest getIdRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetIdResult>() {
-            public GetIdResult call() throws Exception {
-                return getId(getIdRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
-     * create an implicit linked account.
-     * </p>
-     *
-     * @param getIdRequest Container for the necessary parameters to execute
-     *           the GetId operation on AmazonCognitoIdentity.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the GetId
-     *         service method, as returned by AmazonCognitoIdentity.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetIdResult> getIdAsync(
-            final GetIdRequest getIdRequest,
-            final AsyncHandler<GetIdRequest, GetIdResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetIdResult>() {
-            public GetIdResult call() throws Exception {
-              GetIdResult result;
+        return executorService.submit(new Callable<GetIdentityPoolRolesResult>() {
+            public GetIdentityPoolRolesResult call() throws Exception {
+              GetIdentityPoolRolesResult result;
                 try {
-                result = getId(getIdRequest);
+                result = getIdentityPoolRoles(getIdentityPoolRolesRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(getIdRequest, result);
+              asyncHandler.onSuccess(getIdentityPoolRolesRequest, result);
                  return result;
         }
     });
@@ -1212,82 +1613,6 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
             throw ex;
               }
               asyncHandler.onSuccess(getOpenIdTokenForDeveloperIdentityRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Updates a user pool.
-     * </p>
-     *
-     * @param updateIdentityPoolRequest Container for the necessary
-     *           parameters to execute the UpdateIdentityPool operation on
-     *           AmazonCognitoIdentity.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateIdentityPool service method, as returned by
-     *         AmazonCognitoIdentity.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateIdentityPoolResult> updateIdentityPoolAsync(final UpdateIdentityPoolRequest updateIdentityPoolRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateIdentityPoolResult>() {
-            public UpdateIdentityPoolResult call() throws Exception {
-                return updateIdentityPool(updateIdentityPoolRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Updates a user pool.
-     * </p>
-     *
-     * @param updateIdentityPoolRequest Container for the necessary
-     *           parameters to execute the UpdateIdentityPool operation on
-     *           AmazonCognitoIdentity.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateIdentityPool service method, as returned by
-     *         AmazonCognitoIdentity.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateIdentityPoolResult> updateIdentityPoolAsync(
-            final UpdateIdentityPoolRequest updateIdentityPoolRequest,
-            final AsyncHandler<UpdateIdentityPoolRequest, UpdateIdentityPoolResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UpdateIdentityPoolResult>() {
-            public UpdateIdentityPoolResult call() throws Exception {
-              UpdateIdentityPoolResult result;
-                try {
-                result = updateIdentityPool(updateIdentityPoolRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(updateIdentityPoolRequest, result);
                  return result;
         }
     });
