@@ -61,6 +61,22 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2In
                     context.nextToken();
                     ec2InstanceAttributes.setIamInstanceProfile(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EmrManagedMasterSecurityGroup", targetDepth)) {
+                    context.nextToken();
+                    ec2InstanceAttributes.setEmrManagedMasterSecurityGroup(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EmrManagedSlaveSecurityGroup", targetDepth)) {
+                    context.nextToken();
+                    ec2InstanceAttributes.setEmrManagedSlaveSecurityGroup(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AdditionalMasterSecurityGroups", targetDepth)) {
+                    context.nextToken();
+                    ec2InstanceAttributes.setAdditionalMasterSecurityGroups(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("AdditionalSlaveSecurityGroups", targetDepth)) {
+                    context.nextToken();
+                    ec2InstanceAttributes.setAdditionalSlaveSecurityGroups(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

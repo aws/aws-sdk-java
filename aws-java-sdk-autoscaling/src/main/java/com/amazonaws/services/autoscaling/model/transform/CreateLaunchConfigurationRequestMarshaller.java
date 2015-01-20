@@ -61,6 +61,20 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
 
             securityGroupsListIndex++;
         }
+        if (createLaunchConfigurationRequest.getClassicLinkVPCId() != null) {
+            request.addParameter("ClassicLinkVPCId", StringUtils.fromString(createLaunchConfigurationRequest.getClassicLinkVPCId()));
+        }
+
+        java.util.List<String> classicLinkVPCSecurityGroupsList = createLaunchConfigurationRequest.getClassicLinkVPCSecurityGroups();
+        int classicLinkVPCSecurityGroupsListIndex = 1;
+
+        for (String classicLinkVPCSecurityGroupsListValue : classicLinkVPCSecurityGroupsList) {
+            if (classicLinkVPCSecurityGroupsListValue != null) {
+                request.addParameter("ClassicLinkVPCSecurityGroups.member." + classicLinkVPCSecurityGroupsListIndex, StringUtils.fromString(classicLinkVPCSecurityGroupsListValue));
+            }
+
+            classicLinkVPCSecurityGroupsListIndex++;
+        }
         if (createLaunchConfigurationRequest.getUserData() != null) {
             request.addParameter("UserData", StringUtils.fromString(createLaunchConfigurationRequest.getUserData()));
         }

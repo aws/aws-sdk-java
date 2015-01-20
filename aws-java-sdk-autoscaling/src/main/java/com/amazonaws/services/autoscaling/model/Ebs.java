@@ -43,7 +43,7 @@ public class Ebs implements Serializable {
      * <code>io1</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1024<br/>
+     * <b>Range: </b>1 - 16384<br/>
      */
     private Integer volumeSize;
 
@@ -68,7 +68,7 @@ public class Ebs implements Serializable {
      * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>100 - 4000<br/>
+     * <b>Range: </b>100 - 30000<br/>
      */
     private Integer iops;
 
@@ -128,7 +128,7 @@ public class Ebs implements Serializable {
      * <code>io1</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1024<br/>
+     * <b>Range: </b>1 - 16384<br/>
      *
      * @return The volume size, in gigabytes. <p>Valid values: If the volume type is
      *         <code>io1</code>, the minimum size of the volume is 10 GiB. If you
@@ -154,7 +154,7 @@ public class Ebs implements Serializable {
      * <code>io1</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1024<br/>
+     * <b>Range: </b>1 - 16384<br/>
      *
      * @param volumeSize The volume size, in gigabytes. <p>Valid values: If the volume type is
      *         <code>io1</code>, the minimum size of the volume is 10 GiB. If you
@@ -182,7 +182,7 @@ public class Ebs implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1024<br/>
+     * <b>Range: </b>1 - 16384<br/>
      *
      * @param volumeSize The volume size, in gigabytes. <p>Valid values: If the volume type is
      *         <code>io1</code>, the minimum size of the volume is 10 GiB. If you
@@ -305,7 +305,7 @@ public class Ebs implements Serializable {
      * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>100 - 4000<br/>
+     * <b>Range: </b>100 - 30000<br/>
      *
      * @return For Provisioned IOPS (SSD) volumes only. The number of I/O operations
      *         per second (IOPS) to provision for the volume. <p>Valid values: Range
@@ -321,7 +321,7 @@ public class Ebs implements Serializable {
      * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>100 - 4000<br/>
+     * <b>Range: </b>100 - 30000<br/>
      *
      * @param iops For Provisioned IOPS (SSD) volumes only. The number of I/O operations
      *         per second (IOPS) to provision for the volume. <p>Valid values: Range
@@ -339,7 +339,7 @@ public class Ebs implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>100 - 4000<br/>
+     * <b>Range: </b>100 - 30000<br/>
      *
      * @param iops For Provisioned IOPS (SSD) volumes only. The number of I/O operations
      *         per second (IOPS) to provision for the volume. <p>Valid values: Range

@@ -65,6 +65,29 @@ public class LaunchConfiguration implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
     /**
+     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to. This parameter can only be used if you are launching EC2-Classic
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     */
+    private String classicLinkVPCId;
+
+    /**
+     * The IDs of one or more security groups for the VPC specified in
+     * <code>ClassicLinkVPCId</code>. This parameter is required if
+     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> classicLinkVPCSecurityGroups;
+
+    /**
      * The user data available to the EC2 instances.
      * <p>
      * <b>Constraints:</b><br/>
@@ -403,6 +426,183 @@ public class LaunchConfiguration implements Serializable {
             com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
             this.securityGroups = securityGroupsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to. This parameter can only be used if you are launching EC2-Classic
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @return The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     *         to. This parameter can only be used if you are launching EC2-Classic
+     *         instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+    public String getClassicLinkVPCId() {
+        return classicLinkVPCId;
+    }
+    
+    /**
+     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to. This parameter can only be used if you are launching EC2-Classic
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param classicLinkVPCId The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     *         to. This parameter can only be used if you are launching EC2-Classic
+     *         instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+    public void setClassicLinkVPCId(String classicLinkVPCId) {
+        this.classicLinkVPCId = classicLinkVPCId;
+    }
+    
+    /**
+     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to. This parameter can only be used if you are launching EC2-Classic
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param classicLinkVPCId The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     *         to. This parameter can only be used if you are launching EC2-Classic
+     *         instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public LaunchConfiguration withClassicLinkVPCId(String classicLinkVPCId) {
+        this.classicLinkVPCId = classicLinkVPCId;
+        return this;
+    }
+
+    /**
+     * The IDs of one or more security groups for the VPC specified in
+     * <code>ClassicLinkVPCId</code>. This parameter is required if
+     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *
+     * @return The IDs of one or more security groups for the VPC specified in
+     *         <code>ClassicLinkVPCId</code>. This parameter is required if
+     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     *         otherwise. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+    public java.util.List<String> getClassicLinkVPCSecurityGroups() {
+        if (classicLinkVPCSecurityGroups == null) {
+              classicLinkVPCSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              classicLinkVPCSecurityGroups.setAutoConstruct(true);
+        }
+        return classicLinkVPCSecurityGroups;
+    }
+    
+    /**
+     * The IDs of one or more security groups for the VPC specified in
+     * <code>ClassicLinkVPCId</code>. This parameter is required if
+     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *
+     * @param classicLinkVPCSecurityGroups The IDs of one or more security groups for the VPC specified in
+     *         <code>ClassicLinkVPCId</code>. This parameter is required if
+     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     *         otherwise. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+    public void setClassicLinkVPCSecurityGroups(java.util.Collection<String> classicLinkVPCSecurityGroups) {
+        if (classicLinkVPCSecurityGroups == null) {
+            this.classicLinkVPCSecurityGroups = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> classicLinkVPCSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(classicLinkVPCSecurityGroups.size());
+        classicLinkVPCSecurityGroupsCopy.addAll(classicLinkVPCSecurityGroups);
+        this.classicLinkVPCSecurityGroups = classicLinkVPCSecurityGroupsCopy;
+    }
+    
+    /**
+     * The IDs of one or more security groups for the VPC specified in
+     * <code>ClassicLinkVPCId</code>. This parameter is required if
+     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param classicLinkVPCSecurityGroups The IDs of one or more security groups for the VPC specified in
+     *         <code>ClassicLinkVPCId</code>. This parameter is required if
+     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     *         otherwise. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public LaunchConfiguration withClassicLinkVPCSecurityGroups(String... classicLinkVPCSecurityGroups) {
+        if (getClassicLinkVPCSecurityGroups() == null) setClassicLinkVPCSecurityGroups(new java.util.ArrayList<String>(classicLinkVPCSecurityGroups.length));
+        for (String value : classicLinkVPCSecurityGroups) {
+            getClassicLinkVPCSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The IDs of one or more security groups for the VPC specified in
+     * <code>ClassicLinkVPCId</code>. This parameter is required if
+     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param classicLinkVPCSecurityGroups The IDs of one or more security groups for the VPC specified in
+     *         <code>ClassicLinkVPCId</code>. This parameter is required if
+     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     *         otherwise. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public LaunchConfiguration withClassicLinkVPCSecurityGroups(java.util.Collection<String> classicLinkVPCSecurityGroups) {
+        if (classicLinkVPCSecurityGroups == null) {
+            this.classicLinkVPCSecurityGroups = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> classicLinkVPCSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(classicLinkVPCSecurityGroups.size());
+            classicLinkVPCSecurityGroupsCopy.addAll(classicLinkVPCSecurityGroups);
+            this.classicLinkVPCSecurityGroups = classicLinkVPCSecurityGroupsCopy;
         }
 
         return this;
@@ -1017,6 +1217,8 @@ public class LaunchConfiguration implements Serializable {
         if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
         if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");
         if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+        if (getClassicLinkVPCId() != null) sb.append("ClassicLinkVPCId: " + getClassicLinkVPCId() + ",");
+        if (getClassicLinkVPCSecurityGroups() != null) sb.append("ClassicLinkVPCSecurityGroups: " + getClassicLinkVPCSecurityGroups() + ",");
         if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
         if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
         if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
@@ -1043,6 +1245,8 @@ public class LaunchConfiguration implements Serializable {
         hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getClassicLinkVPCId() == null) ? 0 : getClassicLinkVPCId().hashCode()); 
+        hashCode = prime * hashCode + ((getClassicLinkVPCSecurityGroups() == null) ? 0 : getClassicLinkVPCSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
@@ -1076,6 +1280,10 @@ public class LaunchConfiguration implements Serializable {
         if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false) return false; 
         if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
+        if (other.getClassicLinkVPCId() == null ^ this.getClassicLinkVPCId() == null) return false;
+        if (other.getClassicLinkVPCId() != null && other.getClassicLinkVPCId().equals(this.getClassicLinkVPCId()) == false) return false; 
+        if (other.getClassicLinkVPCSecurityGroups() == null ^ this.getClassicLinkVPCSecurityGroups() == null) return false;
+        if (other.getClassicLinkVPCSecurityGroups() != null && other.getClassicLinkVPCSecurityGroups().equals(this.getClassicLinkVPCSecurityGroups()) == false) return false; 
         if (other.getUserData() == null ^ this.getUserData() == null) return false;
         if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false) return false; 
         if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
