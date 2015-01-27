@@ -99,6 +99,63 @@ public interface AmazonImportExportAsync extends AmazonImportExport {
 
     /**
      * <p>
+     * This operation returns information about a job, including where the
+     * job is in the processing pipeline, the status of the results, and the
+     * signature value associated with the job. You can only return
+     * information about jobs you own.
+     * </p>
+     *
+     * @param getShippingLabelRequest Container for the necessary parameters
+     *           to execute the GetShippingLabel operation on AmazonImportExport.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetShippingLabel service method, as returned by AmazonImportExport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonImportExport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetShippingLabelResult> getShippingLabelAsync(GetShippingLabelRequest getShippingLabelRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation returns information about a job, including where the
+     * job is in the processing pipeline, the status of the results, and the
+     * signature value associated with the job. You can only return
+     * information about jobs you own.
+     * </p>
+     *
+     * @param getShippingLabelRequest Container for the necessary parameters
+     *           to execute the GetShippingLabel operation on AmazonImportExport.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetShippingLabel service method, as returned by AmazonImportExport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonImportExport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetShippingLabelResult> getShippingLabelAsync(GetShippingLabelRequest getShippingLabelRequest,
+            AsyncHandler<GetShippingLabelRequest, GetShippingLabelResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation cancels a specified job. Only the job owner can cancel
      * it. The operation fails if the job has already started or is complete.
      * </p>

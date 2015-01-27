@@ -51,6 +51,10 @@ public class UpdateJobResultStaxUnmarshaller implements Unmarshaller<UpdateJobRe
                     updateJobResult.setWarningMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ArtifactList/member", targetDepth)) {
+                    updateJobResult.getArtifactList().add(ArtifactStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return updateJobResult;

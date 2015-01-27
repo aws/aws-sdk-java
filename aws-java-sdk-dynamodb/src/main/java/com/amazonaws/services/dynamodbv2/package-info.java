@@ -2,7 +2,10 @@
 /**
  * Synchronous and asynchronous client classes for accessing AmazonDynamoDBv2.
  *
- * Amazon DynamoDB <b>Overview</b> <p>
+ * Amazon DynamoDB <p>
+ * <b>Overview</b>
+ * </p>
+ * <p>
  * This is the Amazon DynamoDB API Reference. This guide provides
  * descriptions and samples of the low-level DynamoDB API. For
  * information about DynamoDB application development, go to the
@@ -33,7 +36,6 @@
  * <p>
  * <b>Managing Tables</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -68,8 +70,6 @@
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about managing tables, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html"> Working with Tables </a>
@@ -78,7 +78,6 @@
  * <p>
  * <b>Reading Data</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -116,8 +115,6 @@
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about reading data, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
@@ -126,7 +123,6 @@
  * <p>
  * <b>Modifying Data</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -161,8 +157,6 @@
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about modifying data, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>

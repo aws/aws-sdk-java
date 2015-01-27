@@ -219,13 +219,12 @@ public class ExpectedAttributeValue implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. <p>For information on specifying data types in
-     * JSON, see <a
+     * unsigned when it compares binary values. <p>For information on
+     * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -1788,13 +1787,12 @@ public class ExpectedAttributeValue implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. <p>For information on specifying data types in
-     * JSON, see <a
+     * unsigned when it compares binary values. <p>For information on
+     * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
@@ -1803,13 +1801,12 @@ public class ExpectedAttributeValue implements Serializable {
      *         being used. <p>For type Number, value comparisons are numeric.
      *         <p>String value comparisons for greater than, equals, or less than are
      *         based on ASCII character code values. For example, <code>a</code> is
-     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         greater than <code>A</code>, and <code>a</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. <p>For information on specifying data types in
-     *         JSON, see <a
+     *         unsigned when it compares binary values. <p>For information on
+     *         specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -1823,13 +1820,12 @@ public class ExpectedAttributeValue implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. <p>For information on specifying data types in
-     * JSON, see <a
+     * unsigned when it compares binary values. <p>For information on
+     * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
@@ -1838,13 +1834,12 @@ public class ExpectedAttributeValue implements Serializable {
      *         being used. <p>For type Number, value comparisons are numeric.
      *         <p>String value comparisons for greater than, equals, or less than are
      *         based on ASCII character code values. For example, <code>a</code> is
-     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         greater than <code>A</code>, and <code>a</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. <p>For information on specifying data types in
-     *         JSON, see <a
+     *         unsigned when it compares binary values. <p>For information on
+     *         specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -1864,13 +1859,12 @@ public class ExpectedAttributeValue implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. <p>For information on specifying data types in
-     * JSON, see <a
+     * unsigned when it compares binary values. <p>For information on
+     * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
@@ -1881,13 +1875,12 @@ public class ExpectedAttributeValue implements Serializable {
      *         being used. <p>For type Number, value comparisons are numeric.
      *         <p>String value comparisons for greater than, equals, or less than are
      *         based on ASCII character code values. For example, <code>a</code> is
-     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         greater than <code>A</code>, and <code>a</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. <p>For information on specifying data types in
-     *         JSON, see <a
+     *         unsigned when it compares binary values. <p>For information on
+     *         specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
@@ -1908,13 +1901,12 @@ public class ExpectedAttributeValue implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. <p>For information on specifying data types in
-     * JSON, see <a
+     * unsigned when it compares binary values. <p>For information on
+     * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
@@ -1925,13 +1917,12 @@ public class ExpectedAttributeValue implements Serializable {
      *         being used. <p>For type Number, value comparisons are numeric.
      *         <p>String value comparisons for greater than, equals, or less than are
      *         based on ASCII character code values. For example, <code>a</code> is
-     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         greater than <code>A</code>, and <code>a</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. <p>For information on specifying data types in
-     *         JSON, see <a
+     *         unsigned when it compares binary values. <p>For information on
+     *         specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *

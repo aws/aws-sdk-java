@@ -21,14 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#addEventSource(AddEventSourceRequest) AddEventSource operation}.
  * <p>
- * Identifies an Amazon Kinesis stream as the event source for an AWS
- * Lambda function. AWS Lambda invokes the specified function when
- * records are posted to the stream.
+ * Identifies a stream as an event source for an AWS Lambda function. It
+ * can be either an Amazon Kinesis stream or a Amazon DynamoDB stream.
+ * AWS Lambda invokes the specified function when records are posted to
+ * the stream.
  * </p>
  * <p>
  * This is the pull model, where AWS Lambda invokes the function. For
  * more information, go to
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS LambdaL How it Works </a>
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
  * in the AWS Lambda Developer Guide.
  * </p>
  * <p>
@@ -37,6 +38,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * configuration information (for example, which stream to read from and
  * which AWS Lambda function to invoke) for the event source mapping in
  * the request body.
+ * </p>
+ * <p>
+ * Each event source, such as a Kinesis stream, can only be associated
+ * with one AWS Lambda function. If you call AddEventSource for an event
+ * source that is already mapped to another AWS Lambda function, the
+ * existing mapping is updated to call the new function instead of the
+ * old one.
  * </p>
  * <p>
  * This operation requires permission for the <code>iam:PassRole</code>
@@ -62,7 +70,7 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      */
     private String functionName;
 
@@ -71,7 +79,7 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
      * to read from the stream and invoke the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      */
     private String role;
 
@@ -149,7 +157,7 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @return The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream.
@@ -164,7 +172,7 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream.
@@ -181,7 +189,7 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream.
@@ -199,7 +207,7 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
      * to read from the stream and invoke the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @return The ARN of the IAM role (invocation role) that AWS Lambda can assume
      *         to read from the stream and invoke the function.
@@ -213,7 +221,7 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
      * to read from the stream and invoke the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @param role The ARN of the IAM role (invocation role) that AWS Lambda can assume
      *         to read from the stream and invoke the function.
@@ -229,7 +237,7 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @param role The ARN of the IAM role (invocation role) that AWS Lambda can assume
      *         to read from the stream and invoke the function.

@@ -51,10 +51,6 @@ public class CreateJobResultStaxUnmarshaller implements Unmarshaller<CreateJobRe
                     createJobResult.setJobType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("AwsShippingAddress", targetDepth)) {
-                    createJobResult.setAwsShippingAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
                 if (context.testExpression("Signature", targetDepth)) {
                     createJobResult.setSignature(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -65,6 +61,10 @@ public class CreateJobResultStaxUnmarshaller implements Unmarshaller<CreateJobRe
                 }
                 if (context.testExpression("WarningMessage", targetDepth)) {
                     createJobResult.setWarningMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ArtifactList/member", targetDepth)) {
+                    createJobResult.getArtifactList().add(ArtifactStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

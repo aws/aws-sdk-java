@@ -91,19 +91,19 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <important> <p>There is a newer parameter available. Use
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter does not support lists or maps. </important> <p>A map of
-     * attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>PutItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </important> <p>A map of attribute/condition pairs. <i>Expected</i>
+     * provides a conditional block for the <i>PutItem</i> operation.
+     * <note><p>This parameter does not support attributes of type List or
+     * Map.</note> <p>Each element of <i>Expected</i> consists of an
+     * attribute name, a comparison operator, and one or more values.
+     * DynamoDB compares the attribute with the value(s) you supplied, using
+     * the comparison operator. For each <i>Expected</i> element, the result
+     * of the evaluation is either true or false. <p>If you specify more than
+     * one element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -113,20 +113,20 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type Number, value comparisons are numeric. <p>String value
      * comparisons for greater than, equals, or less than are based on ASCII
      * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     * For a list of code values, see <a
+     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     * a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For type Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
-     * When performing the comparison, DynamoDB uses strongly consistent
-     * reads. <p>The following comparison operators are available:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
-     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
-     * : Equal. <code>EQ</code> is supported for all datatypes, including
-     * lists and maps. <p><i>AttributeValueList</i> can contain only one
+     * unsigned when it compares binary values. </li> <li>
+     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes
+     * in the <i>AttributeValueList</i>. When performing the comparison,
+     * DynamoDB uses strongly consistent reads. <p>The following comparison
+     * operators are available: <p><code>EQ | NE | LE | LT | GE | GT |
+     * NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN |
+     * BETWEEN</code> <p>The following are descriptions of each comparison
+     * operator. <ul> <li> <p><code>EQ</code> : Equal. <code>EQ</code> is
+     * supported for all datatypes, including lists and maps.
+     * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
@@ -254,7 +254,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>not</i> exist in the table. If in fact the value does not exist,
      * then the assumption is valid and the condition evaluates to true. If
      * the value is found, despite the assumption that it does not exist, the
-     * condition evaluates to false.</li> </ul> </li> </ul> <p>The
+     * condition evaluates to false.</li> </ul> <p>Note that the default
+     * value for <i>Exists</i> is <code>true</code>. </li> </ul> <p>The
      * <i>Value</i> and <i>Exists</i> parameters are incompatible with
      * <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if
      * you use both sets of parameters at once, DynamoDB will return a
@@ -305,15 +306,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      * same time, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter does not support lists or maps.
-     * </important> <p>A logical operator to apply to the conditions in the
-     * <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     * conditions evaluate to true, then the entire map evaluates to
-     * true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     * evaluate to true, then the entire map evaluates to true.</li> </ul>
-     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     * the default. <p>The operation will succeed only if the entire map
-     * evaluates to true.
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
@@ -323,45 +324,61 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * A condition that must be satisfied in order for a conditional
      * <i>PutItem</i> operation to succeed. <p>An expression can contain any
-     * of the following: <ul> <li> <p> Boolean functions:
-     * <code>ATTRIBUTE_EXIST | CONTAINS | BEGINS_WITH</code> </li> <li>
-     * <p>Comparison operators: <code> = | <> | < | > | <= | >= | BETWEEN |
-     * IN</code> </li> <li> <p>Logical operators: <code>NOT | AND | OR</code>
-     * </li> </ul>
+     * of the following: <ul> <li> <p>Boolean functions:
+     * <code>attribute_exists | attribute_not_exists | contains |
+     * begins_with</code> <p>These function names are case-sensitive. </li>
+     * <li> <p>Comparison operators: <code> = | <> | < | > | <= | >= |
+     * BETWEEN | IN</code> </li> <li> <p> Logical operators: <code>AND | OR |
+     * NOT</code> </li> </ul> <p>For more information on condition
+     * expressions, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private String conditionExpression;
 
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,String> expressionAttributeNames;
 
     /**
      * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> character in an expression to dereference an attribute
-     * value. For example, consider the following expression:
-     * <ul><li><p><code>ProductStatus IN
-     * ("Available","Backordered","Discontinued")</code></li></ul> <p>Now
-     * suppose that you specified the following for
-     * <i>ExpressionAttributeValues</i>: <ul><li><p><code>{
-     * "a":{"S":"Available"}, "b":{"S":"Backordered"},
-     * "d":{"S":"Discontinued"} }</code></li></ul> <p>The expression can now
-     * be simplified as follows: <ul><li> <p><code>ProductStatus IN
-     * (:a,:b,:c)</code></li></ul>
+     * the <b>:</b> (colon) character in an expression to dereference an
+     * attribute value. For example, suppose that you wanted to check whether
+     * the value of the <i>ProductStatus</i> attribute was one of the
+     * following: <p><code>Available | Backordered | Discontinued</code>
+     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows: <p><code>{ ":avail":{"S":"Available"},
+     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * <p>You could then use these values in an expression, such as this:
+     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
+     * information on expression attribute values, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,AttributeValue> expressionAttributeValues;
 
@@ -666,19 +683,19 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <important> <p>There is a newer parameter available. Use
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter does not support lists or maps. </important> <p>A map of
-     * attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>PutItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </important> <p>A map of attribute/condition pairs. <i>Expected</i>
+     * provides a conditional block for the <i>PutItem</i> operation.
+     * <note><p>This parameter does not support attributes of type List or
+     * Map.</note> <p>Each element of <i>Expected</i> consists of an
+     * attribute name, a comparison operator, and one or more values.
+     * DynamoDB compares the attribute with the value(s) you supplied, using
+     * the comparison operator. For each <i>Expected</i> element, the result
+     * of the evaluation is either true or false. <p>If you specify more than
+     * one element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -688,20 +705,20 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type Number, value comparisons are numeric. <p>String value
      * comparisons for greater than, equals, or less than are based on ASCII
      * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     * For a list of code values, see <a
+     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     * a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For type Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
-     * When performing the comparison, DynamoDB uses strongly consistent
-     * reads. <p>The following comparison operators are available:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
-     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
-     * : Equal. <code>EQ</code> is supported for all datatypes, including
-     * lists and maps. <p><i>AttributeValueList</i> can contain only one
+     * unsigned when it compares binary values. </li> <li>
+     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes
+     * in the <i>AttributeValueList</i>. When performing the comparison,
+     * DynamoDB uses strongly consistent reads. <p>The following comparison
+     * operators are available: <p><code>EQ | NE | LE | LT | GE | GT |
+     * NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN |
+     * BETWEEN</code> <p>The following are descriptions of each comparison
+     * operator. <ul> <li> <p><code>EQ</code> : Equal. <code>EQ</code> is
+     * supported for all datatypes, including lists and maps.
+     * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
@@ -829,7 +846,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>not</i> exist in the table. If in fact the value does not exist,
      * then the assumption is valid and the condition evaluates to true. If
      * the value is found, despite the assumption that it does not exist, the
-     * condition evaluates to false.</li> </ul> </li> </ul> <p>The
+     * condition evaluates to false.</li> </ul> <p>Note that the default
+     * value for <i>Exists</i> is <code>true</code>. </li> </ul> <p>The
      * <i>Value</i> and <i>Exists</i> parameters are incompatible with
      * <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if
      * you use both sets of parameters at once, DynamoDB will return a
@@ -838,19 +856,19 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * @return <important> <p>There is a newer parameter available. Use
      *         <i>ConditionExpression</i> instead. Note that if you use
      *         <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     *         parameter does not support lists or maps. </important> <p>A map of
-     *         attribute/condition pairs. <i>Expected</i> provides a conditional
-     *         block for the <i>PutItem</i> operation. <p>Each element of
-     *         <i>Expected</i> consists of an attribute name, a comparison operator,
-     *         and one or more values. DynamoDB compares the attribute with the
-     *         value(s) you supplied, using the comparison operator. For each
-     *         <i>Expected</i> element, the result of the evaluation is either true
-     *         or false. <p>If you specify more than one element in the
-     *         <i>Expected</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     *         DynamoDB will return a <i>ValidationException</i> exception.
+     *         </important> <p>A map of attribute/condition pairs. <i>Expected</i>
+     *         provides a conditional block for the <i>PutItem</i> operation.
+     *         <note><p>This parameter does not support attributes of type List or
+     *         Map.</note> <p>Each element of <i>Expected</i> consists of an
+     *         attribute name, a comparison operator, and one or more values.
+     *         DynamoDB compares the attribute with the value(s) you supplied, using
+     *         the comparison operator. For each <i>Expected</i> element, the result
+     *         of the evaluation is either true or false. <p>If you specify more than
+     *         one element in the <i>Expected</i> map, then by default all of the
+     *         conditions must evaluate to true. In other words, the conditions are
+     *         ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     *         to OR the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>If the
      *         <i>Expected</i> map evaluates to true, then the conditional operation
      *         succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -860,20 +878,20 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         type Number, value comparisons are numeric. <p>String value
      *         comparisons for greater than, equals, or less than are based on ASCII
      *         character code values. For example, <code>a</code> is greater than
-     *         <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     *         For a list of code values, see <a
+     *         <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     *         a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For type Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
-     *         comparator for evaluating attributes in the <i>AttributeValueList</i>.
-     *         When performing the comparison, DynamoDB uses strongly consistent
-     *         reads. <p>The following comparison operators are available:
-     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
-     *         descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
-     *         : Equal. <code>EQ</code> is supported for all datatypes, including
-     *         lists and maps. <p><i>AttributeValueList</i> can contain only one
+     *         unsigned when it compares binary values. </li> <li>
+     *         <p><i>ComparisonOperator</i> - A comparator for evaluating attributes
+     *         in the <i>AttributeValueList</i>. When performing the comparison,
+     *         DynamoDB uses strongly consistent reads. <p>The following comparison
+     *         operators are available: <p><code>EQ | NE | LE | LT | GE | GT |
+     *         NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN |
+     *         BETWEEN</code> <p>The following are descriptions of each comparison
+     *         operator. <ul> <li> <p><code>EQ</code> : Equal. <code>EQ</code> is
+     *         supported for all datatypes, including lists and maps.
+     *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
@@ -1001,7 +1019,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>not</i> exist in the table. If in fact the value does not exist,
      *         then the assumption is valid and the condition evaluates to true. If
      *         the value is found, despite the assumption that it does not exist, the
-     *         condition evaluates to false.</li> </ul> </li> </ul> <p>The
+     *         condition evaluates to false.</li> </ul> <p>Note that the default
+     *         value for <i>Exists</i> is <code>true</code>. </li> </ul> <p>The
      *         <i>Value</i> and <i>Exists</i> parameters are incompatible with
      *         <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if
      *         you use both sets of parameters at once, DynamoDB will return a
@@ -1016,19 +1035,19 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <important> <p>There is a newer parameter available. Use
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter does not support lists or maps. </important> <p>A map of
-     * attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>PutItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </important> <p>A map of attribute/condition pairs. <i>Expected</i>
+     * provides a conditional block for the <i>PutItem</i> operation.
+     * <note><p>This parameter does not support attributes of type List or
+     * Map.</note> <p>Each element of <i>Expected</i> consists of an
+     * attribute name, a comparison operator, and one or more values.
+     * DynamoDB compares the attribute with the value(s) you supplied, using
+     * the comparison operator. For each <i>Expected</i> element, the result
+     * of the evaluation is either true or false. <p>If you specify more than
+     * one element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -1038,20 +1057,20 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type Number, value comparisons are numeric. <p>String value
      * comparisons for greater than, equals, or less than are based on ASCII
      * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     * For a list of code values, see <a
+     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     * a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For type Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
-     * When performing the comparison, DynamoDB uses strongly consistent
-     * reads. <p>The following comparison operators are available:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
-     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
-     * : Equal. <code>EQ</code> is supported for all datatypes, including
-     * lists and maps. <p><i>AttributeValueList</i> can contain only one
+     * unsigned when it compares binary values. </li> <li>
+     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes
+     * in the <i>AttributeValueList</i>. When performing the comparison,
+     * DynamoDB uses strongly consistent reads. <p>The following comparison
+     * operators are available: <p><code>EQ | NE | LE | LT | GE | GT |
+     * NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN |
+     * BETWEEN</code> <p>The following are descriptions of each comparison
+     * operator. <ul> <li> <p><code>EQ</code> : Equal. <code>EQ</code> is
+     * supported for all datatypes, including lists and maps.
+     * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
@@ -1179,7 +1198,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>not</i> exist in the table. If in fact the value does not exist,
      * then the assumption is valid and the condition evaluates to true. If
      * the value is found, despite the assumption that it does not exist, the
-     * condition evaluates to false.</li> </ul> </li> </ul> <p>The
+     * condition evaluates to false.</li> </ul> <p>Note that the default
+     * value for <i>Exists</i> is <code>true</code>. </li> </ul> <p>The
      * <i>Value</i> and <i>Exists</i> parameters are incompatible with
      * <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if
      * you use both sets of parameters at once, DynamoDB will return a
@@ -1188,19 +1208,19 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param expected <important> <p>There is a newer parameter available. Use
      *         <i>ConditionExpression</i> instead. Note that if you use
      *         <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     *         parameter does not support lists or maps. </important> <p>A map of
-     *         attribute/condition pairs. <i>Expected</i> provides a conditional
-     *         block for the <i>PutItem</i> operation. <p>Each element of
-     *         <i>Expected</i> consists of an attribute name, a comparison operator,
-     *         and one or more values. DynamoDB compares the attribute with the
-     *         value(s) you supplied, using the comparison operator. For each
-     *         <i>Expected</i> element, the result of the evaluation is either true
-     *         or false. <p>If you specify more than one element in the
-     *         <i>Expected</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     *         DynamoDB will return a <i>ValidationException</i> exception.
+     *         </important> <p>A map of attribute/condition pairs. <i>Expected</i>
+     *         provides a conditional block for the <i>PutItem</i> operation.
+     *         <note><p>This parameter does not support attributes of type List or
+     *         Map.</note> <p>Each element of <i>Expected</i> consists of an
+     *         attribute name, a comparison operator, and one or more values.
+     *         DynamoDB compares the attribute with the value(s) you supplied, using
+     *         the comparison operator. For each <i>Expected</i> element, the result
+     *         of the evaluation is either true or false. <p>If you specify more than
+     *         one element in the <i>Expected</i> map, then by default all of the
+     *         conditions must evaluate to true. In other words, the conditions are
+     *         ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     *         to OR the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>If the
      *         <i>Expected</i> map evaluates to true, then the conditional operation
      *         succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -1210,20 +1230,20 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         type Number, value comparisons are numeric. <p>String value
      *         comparisons for greater than, equals, or less than are based on ASCII
      *         character code values. For example, <code>a</code> is greater than
-     *         <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     *         For a list of code values, see <a
+     *         <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     *         a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For type Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
-     *         comparator for evaluating attributes in the <i>AttributeValueList</i>.
-     *         When performing the comparison, DynamoDB uses strongly consistent
-     *         reads. <p>The following comparison operators are available:
-     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
-     *         descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
-     *         : Equal. <code>EQ</code> is supported for all datatypes, including
-     *         lists and maps. <p><i>AttributeValueList</i> can contain only one
+     *         unsigned when it compares binary values. </li> <li>
+     *         <p><i>ComparisonOperator</i> - A comparator for evaluating attributes
+     *         in the <i>AttributeValueList</i>. When performing the comparison,
+     *         DynamoDB uses strongly consistent reads. <p>The following comparison
+     *         operators are available: <p><code>EQ | NE | LE | LT | GE | GT |
+     *         NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN |
+     *         BETWEEN</code> <p>The following are descriptions of each comparison
+     *         operator. <ul> <li> <p><code>EQ</code> : Equal. <code>EQ</code> is
+     *         supported for all datatypes, including lists and maps.
+     *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
@@ -1351,7 +1371,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>not</i> exist in the table. If in fact the value does not exist,
      *         then the assumption is valid and the condition evaluates to true. If
      *         the value is found, despite the assumption that it does not exist, the
-     *         condition evaluates to false.</li> </ul> </li> </ul> <p>The
+     *         condition evaluates to false.</li> </ul> <p>Note that the default
+     *         value for <i>Exists</i> is <code>true</code>. </li> </ul> <p>The
      *         <i>Value</i> and <i>Exists</i> parameters are incompatible with
      *         <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if
      *         you use both sets of parameters at once, DynamoDB will return a
@@ -1365,19 +1386,19 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <important> <p>There is a newer parameter available. Use
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter does not support lists or maps. </important> <p>A map of
-     * attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>PutItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </important> <p>A map of attribute/condition pairs. <i>Expected</i>
+     * provides a conditional block for the <i>PutItem</i> operation.
+     * <note><p>This parameter does not support attributes of type List or
+     * Map.</note> <p>Each element of <i>Expected</i> consists of an
+     * attribute name, a comparison operator, and one or more values.
+     * DynamoDB compares the attribute with the value(s) you supplied, using
+     * the comparison operator. For each <i>Expected</i> element, the result
+     * of the evaluation is either true or false. <p>If you specify more than
+     * one element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -1387,20 +1408,20 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type Number, value comparisons are numeric. <p>String value
      * comparisons for greater than, equals, or less than are based on ASCII
      * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     * For a list of code values, see <a
+     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     * a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For type Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
-     * When performing the comparison, DynamoDB uses strongly consistent
-     * reads. <p>The following comparison operators are available:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
-     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
-     * : Equal. <code>EQ</code> is supported for all datatypes, including
-     * lists and maps. <p><i>AttributeValueList</i> can contain only one
+     * unsigned when it compares binary values. </li> <li>
+     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes
+     * in the <i>AttributeValueList</i>. When performing the comparison,
+     * DynamoDB uses strongly consistent reads. <p>The following comparison
+     * operators are available: <p><code>EQ | NE | LE | LT | GE | GT |
+     * NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN |
+     * BETWEEN</code> <p>The following are descriptions of each comparison
+     * operator. <ul> <li> <p><code>EQ</code> : Equal. <code>EQ</code> is
+     * supported for all datatypes, including lists and maps.
+     * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
@@ -1528,7 +1549,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>not</i> exist in the table. If in fact the value does not exist,
      * then the assumption is valid and the condition evaluates to true. If
      * the value is found, despite the assumption that it does not exist, the
-     * condition evaluates to false.</li> </ul> </li> </ul> <p>The
+     * condition evaluates to false.</li> </ul> <p>Note that the default
+     * value for <i>Exists</i> is <code>true</code>. </li> </ul> <p>The
      * <i>Value</i> and <i>Exists</i> parameters are incompatible with
      * <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if
      * you use both sets of parameters at once, DynamoDB will return a
@@ -1539,19 +1561,19 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param expected <important> <p>There is a newer parameter available. Use
      *         <i>ConditionExpression</i> instead. Note that if you use
      *         <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     *         parameter does not support lists or maps. </important> <p>A map of
-     *         attribute/condition pairs. <i>Expected</i> provides a conditional
-     *         block for the <i>PutItem</i> operation. <p>Each element of
-     *         <i>Expected</i> consists of an attribute name, a comparison operator,
-     *         and one or more values. DynamoDB compares the attribute with the
-     *         value(s) you supplied, using the comparison operator. For each
-     *         <i>Expected</i> element, the result of the evaluation is either true
-     *         or false. <p>If you specify more than one element in the
-     *         <i>Expected</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     *         DynamoDB will return a <i>ValidationException</i> exception.
+     *         </important> <p>A map of attribute/condition pairs. <i>Expected</i>
+     *         provides a conditional block for the <i>PutItem</i> operation.
+     *         <note><p>This parameter does not support attributes of type List or
+     *         Map.</note> <p>Each element of <i>Expected</i> consists of an
+     *         attribute name, a comparison operator, and one or more values.
+     *         DynamoDB compares the attribute with the value(s) you supplied, using
+     *         the comparison operator. For each <i>Expected</i> element, the result
+     *         of the evaluation is either true or false. <p>If you specify more than
+     *         one element in the <i>Expected</i> map, then by default all of the
+     *         conditions must evaluate to true. In other words, the conditions are
+     *         ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     *         to OR the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>If the
      *         <i>Expected</i> map evaluates to true, then the conditional operation
      *         succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -1561,20 +1583,20 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         type Number, value comparisons are numeric. <p>String value
      *         comparisons for greater than, equals, or less than are based on ASCII
      *         character code values. For example, <code>a</code> is greater than
-     *         <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     *         For a list of code values, see <a
+     *         <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     *         a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For type Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
-     *         comparator for evaluating attributes in the <i>AttributeValueList</i>.
-     *         When performing the comparison, DynamoDB uses strongly consistent
-     *         reads. <p>The following comparison operators are available:
-     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
-     *         descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
-     *         : Equal. <code>EQ</code> is supported for all datatypes, including
-     *         lists and maps. <p><i>AttributeValueList</i> can contain only one
+     *         unsigned when it compares binary values. </li> <li>
+     *         <p><i>ComparisonOperator</i> - A comparator for evaluating attributes
+     *         in the <i>AttributeValueList</i>. When performing the comparison,
+     *         DynamoDB uses strongly consistent reads. <p>The following comparison
+     *         operators are available: <p><code>EQ | NE | LE | LT | GE | GT |
+     *         NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN |
+     *         BETWEEN</code> <p>The following are descriptions of each comparison
+     *         operator. <ul> <li> <p><code>EQ</code> : Equal. <code>EQ</code> is
+     *         supported for all datatypes, including lists and maps.
+     *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
@@ -1702,7 +1724,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>not</i> exist in the table. If in fact the value does not exist,
      *         then the assumption is valid and the condition evaluates to true. If
      *         the value is found, despite the assumption that it does not exist, the
-     *         condition evaluates to false.</li> </ul> </li> </ul> <p>The
+     *         condition evaluates to false.</li> </ul> <p>Note that the default
+     *         value for <i>Exists</i> is <code>true</code>. </li> </ul> <p>The
      *         <i>Value</i> and <i>Exists</i> parameters are incompatible with
      *         <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if
      *         you use both sets of parameters at once, DynamoDB will return a
@@ -1720,19 +1743,19 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <important> <p>There is a newer parameter available. Use
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter does not support lists or maps. </important> <p>A map of
-     * attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>PutItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </important> <p>A map of attribute/condition pairs. <i>Expected</i>
+     * provides a conditional block for the <i>PutItem</i> operation.
+     * <note><p>This parameter does not support attributes of type List or
+     * Map.</note> <p>Each element of <i>Expected</i> consists of an
+     * attribute name, a comparison operator, and one or more values.
+     * DynamoDB compares the attribute with the value(s) you supplied, using
+     * the comparison operator. For each <i>Expected</i> element, the result
+     * of the evaluation is either true or false. <p>If you specify more than
+     * one element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -1742,20 +1765,20 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type Number, value comparisons are numeric. <p>String value
      * comparisons for greater than, equals, or less than are based on ASCII
      * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     * For a list of code values, see <a
+     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     * a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For type Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
-     * When performing the comparison, DynamoDB uses strongly consistent
-     * reads. <p>The following comparison operators are available:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
-     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
-     * : Equal. <code>EQ</code> is supported for all datatypes, including
-     * lists and maps. <p><i>AttributeValueList</i> can contain only one
+     * unsigned when it compares binary values. </li> <li>
+     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes
+     * in the <i>AttributeValueList</i>. When performing the comparison,
+     * DynamoDB uses strongly consistent reads. <p>The following comparison
+     * operators are available: <p><code>EQ | NE | LE | LT | GE | GT |
+     * NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN |
+     * BETWEEN</code> <p>The following are descriptions of each comparison
+     * operator. <ul> <li> <p><code>EQ</code> : Equal. <code>EQ</code> is
+     * supported for all datatypes, including lists and maps.
+     * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
@@ -1883,7 +1906,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>not</i> exist in the table. If in fact the value does not exist,
      * then the assumption is valid and the condition evaluates to true. If
      * the value is found, despite the assumption that it does not exist, the
-     * condition evaluates to false.</li> </ul> </li> </ul> <p>The
+     * condition evaluates to false.</li> </ul> <p>Note that the default
+     * value for <i>Exists</i> is <code>true</code>. </li> </ul> <p>The
      * <i>Value</i> and <i>Exists</i> parameters are incompatible with
      * <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if
      * you use both sets of parameters at once, DynamoDB will return a
@@ -2307,15 +2331,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      * same time, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter does not support lists or maps.
-     * </important> <p>A logical operator to apply to the conditions in the
-     * <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     * conditions evaluate to true, then the entire map evaluates to
-     * true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     * evaluate to true, then the entire map evaluates to true.</li> </ul>
-     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     * the default. <p>The operation will succeed only if the entire map
-     * evaluates to true.
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
@@ -2324,15 +2348,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ConditionExpression</i> instead. Note that if you use
      *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      *         same time, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter does not support lists or maps.
-     *         </important> <p>A logical operator to apply to the conditions in the
-     *         <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     *         conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
-     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     *         the default. <p>The operation will succeed only if the entire map
-     *         evaluates to true.
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @see ConditionalOperator
      */
@@ -2345,15 +2369,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      * same time, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter does not support lists or maps.
-     * </important> <p>A logical operator to apply to the conditions in the
-     * <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     * conditions evaluate to true, then the entire map evaluates to
-     * true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     * evaluate to true, then the entire map evaluates to true.</li> </ul>
-     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     * the default. <p>The operation will succeed only if the entire map
-     * evaluates to true.
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
@@ -2362,15 +2386,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ConditionExpression</i> instead. Note that if you use
      *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      *         same time, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter does not support lists or maps.
-     *         </important> <p>A logical operator to apply to the conditions in the
-     *         <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     *         conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
-     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     *         the default. <p>The operation will succeed only if the entire map
-     *         evaluates to true.
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @see ConditionalOperator
      */
@@ -2383,15 +2407,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      * same time, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter does not support lists or maps.
-     * </important> <p>A logical operator to apply to the conditions in the
-     * <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     * conditions evaluate to true, then the entire map evaluates to
-     * true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     * evaluate to true, then the entire map evaluates to true.</li> </ul>
-     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     * the default. <p>The operation will succeed only if the entire map
-     * evaluates to true.
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -2402,15 +2426,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ConditionExpression</i> instead. Note that if you use
      *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      *         same time, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter does not support lists or maps.
-     *         </important> <p>A logical operator to apply to the conditions in the
-     *         <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     *         conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
-     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     *         the default. <p>The operation will succeed only if the entire map
-     *         evaluates to true.
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2427,15 +2451,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      * same time, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter does not support lists or maps.
-     * </important> <p>A logical operator to apply to the conditions in the
-     * <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     * conditions evaluate to true, then the entire map evaluates to
-     * true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     * evaluate to true, then the entire map evaluates to true.</li> </ul>
-     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     * the default. <p>The operation will succeed only if the entire map
-     * evaluates to true.
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
@@ -2444,15 +2468,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ConditionExpression</i> instead. Note that if you use
      *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      *         same time, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter does not support lists or maps.
-     *         </important> <p>A logical operator to apply to the conditions in the
-     *         <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     *         conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
-     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     *         the default. <p>The operation will succeed only if the entire map
-     *         evaluates to true.
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @see ConditionalOperator
      */
@@ -2465,15 +2489,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ConditionExpression</i> instead. Note that if you use
      * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      * same time, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter does not support lists or maps.
-     * </important> <p>A logical operator to apply to the conditions in the
-     * <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     * conditions evaluate to true, then the entire map evaluates to
-     * true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     * evaluate to true, then the entire map evaluates to true.</li> </ul>
-     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     * the default. <p>The operation will succeed only if the entire map
-     * evaluates to true.
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -2484,15 +2508,15 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ConditionExpression</i> instead. Note that if you use
      *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
      *         same time, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter does not support lists or maps.
-     *         </important> <p>A logical operator to apply to the conditions in the
-     *         <i>Expected</i> map: <ul> <li><p><code>AND</code> - If all of the
-     *         conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> <li><p><code>OR</code> - If at least one of the conditions
-     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
-     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
-     *         the default. <p>The operation will succeed only if the entire map
-     *         evaluates to true.
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2507,19 +2531,27 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * A condition that must be satisfied in order for a conditional
      * <i>PutItem</i> operation to succeed. <p>An expression can contain any
-     * of the following: <ul> <li> <p> Boolean functions:
-     * <code>ATTRIBUTE_EXIST | CONTAINS | BEGINS_WITH</code> </li> <li>
-     * <p>Comparison operators: <code> = | <> | < | > | <= | >= | BETWEEN |
-     * IN</code> </li> <li> <p>Logical operators: <code>NOT | AND | OR</code>
-     * </li> </ul>
+     * of the following: <ul> <li> <p>Boolean functions:
+     * <code>attribute_exists | attribute_not_exists | contains |
+     * begins_with</code> <p>These function names are case-sensitive. </li>
+     * <li> <p>Comparison operators: <code> = | <> | < | > | <= | >= |
+     * BETWEEN | IN</code> </li> <li> <p> Logical operators: <code>AND | OR |
+     * NOT</code> </li> </ul> <p>For more information on condition
+     * expressions, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A condition that must be satisfied in order for a conditional
      *         <i>PutItem</i> operation to succeed. <p>An expression can contain any
-     *         of the following: <ul> <li> <p> Boolean functions:
-     *         <code>ATTRIBUTE_EXIST | CONTAINS | BEGINS_WITH</code> </li> <li>
-     *         <p>Comparison operators: <code> = | <> | < | > | <= | >= | BETWEEN |
-     *         IN</code> </li> <li> <p>Logical operators: <code>NOT | AND | OR</code>
-     *         </li> </ul>
+     *         of the following: <ul> <li> <p>Boolean functions:
+     *         <code>attribute_exists | attribute_not_exists | contains |
+     *         begins_with</code> <p>These function names are case-sensitive. </li>
+     *         <li> <p>Comparison operators: <code> = | <> | < | > | <= | >= |
+     *         BETWEEN | IN</code> </li> <li> <p> Logical operators: <code>AND | OR |
+     *         NOT</code> </li> </ul> <p>For more information on condition
+     *         expressions, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public String getConditionExpression() {
         return conditionExpression;
@@ -2528,19 +2560,27 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * A condition that must be satisfied in order for a conditional
      * <i>PutItem</i> operation to succeed. <p>An expression can contain any
-     * of the following: <ul> <li> <p> Boolean functions:
-     * <code>ATTRIBUTE_EXIST | CONTAINS | BEGINS_WITH</code> </li> <li>
-     * <p>Comparison operators: <code> = | <> | < | > | <= | >= | BETWEEN |
-     * IN</code> </li> <li> <p>Logical operators: <code>NOT | AND | OR</code>
-     * </li> </ul>
+     * of the following: <ul> <li> <p>Boolean functions:
+     * <code>attribute_exists | attribute_not_exists | contains |
+     * begins_with</code> <p>These function names are case-sensitive. </li>
+     * <li> <p>Comparison operators: <code> = | <> | < | > | <= | >= |
+     * BETWEEN | IN</code> </li> <li> <p> Logical operators: <code>AND | OR |
+     * NOT</code> </li> </ul> <p>For more information on condition
+     * expressions, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param conditionExpression A condition that must be satisfied in order for a conditional
      *         <i>PutItem</i> operation to succeed. <p>An expression can contain any
-     *         of the following: <ul> <li> <p> Boolean functions:
-     *         <code>ATTRIBUTE_EXIST | CONTAINS | BEGINS_WITH</code> </li> <li>
-     *         <p>Comparison operators: <code> = | <> | < | > | <= | >= | BETWEEN |
-     *         IN</code> </li> <li> <p>Logical operators: <code>NOT | AND | OR</code>
-     *         </li> </ul>
+     *         of the following: <ul> <li> <p>Boolean functions:
+     *         <code>attribute_exists | attribute_not_exists | contains |
+     *         begins_with</code> <p>These function names are case-sensitive. </li>
+     *         <li> <p>Comparison operators: <code> = | <> | < | > | <= | >= |
+     *         BETWEEN | IN</code> </li> <li> <p> Logical operators: <code>AND | OR |
+     *         NOT</code> </li> </ul> <p>For more information on condition
+     *         expressions, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setConditionExpression(String conditionExpression) {
         this.conditionExpression = conditionExpression;
@@ -2549,21 +2589,29 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * A condition that must be satisfied in order for a conditional
      * <i>PutItem</i> operation to succeed. <p>An expression can contain any
-     * of the following: <ul> <li> <p> Boolean functions:
-     * <code>ATTRIBUTE_EXIST | CONTAINS | BEGINS_WITH</code> </li> <li>
-     * <p>Comparison operators: <code> = | <> | < | > | <= | >= | BETWEEN |
-     * IN</code> </li> <li> <p>Logical operators: <code>NOT | AND | OR</code>
-     * </li> </ul>
+     * of the following: <ul> <li> <p>Boolean functions:
+     * <code>attribute_exists | attribute_not_exists | contains |
+     * begins_with</code> <p>These function names are case-sensitive. </li>
+     * <li> <p>Comparison operators: <code> = | <> | < | > | <= | >= |
+     * BETWEEN | IN</code> </li> <li> <p> Logical operators: <code>AND | OR |
+     * NOT</code> </li> </ul> <p>For more information on condition
+     * expressions, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conditionExpression A condition that must be satisfied in order for a conditional
      *         <i>PutItem</i> operation to succeed. <p>An expression can contain any
-     *         of the following: <ul> <li> <p> Boolean functions:
-     *         <code>ATTRIBUTE_EXIST | CONTAINS | BEGINS_WITH</code> </li> <li>
-     *         <p>Comparison operators: <code> = | <> | < | > | <= | >= | BETWEEN |
-     *         IN</code> </li> <li> <p>Logical operators: <code>NOT | AND | OR</code>
-     *         </li> </ul>
+     *         of the following: <ul> <li> <p>Boolean functions:
+     *         <code>attribute_exists | attribute_not_exists | contains |
+     *         begins_with</code> <p>These function names are case-sensitive. </li>
+     *         <li> <p>Comparison operators: <code> = | <> | < | > | <= | >= |
+     *         BETWEEN | IN</code> </li> <li> <p> Logical operators: <code>AND | OR |
+     *         NOT</code> </li> </ul> <p>For more information on condition
+     *         expressions, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2574,37 +2622,57 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
-     * @return One or more substitution tokens for simplifying complex expressions.
-     *         The following are some use cases for an
-     *         <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     *         attribute name that is very long or unwieldy in an expression. </li>
-     *         <li> <p>To create a placeholder for repeating occurrences of an
-     *         attribute name in an expression. </li> <li> <p>To prevent special
-     *         characters in an attribute name from being misinterpreted in an
-     *         expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     *         to dereference an attribute name. For example, consider the following
-     *         expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     *         order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     *         that you specified the following for <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     *         <p>The expression can now be simplified as follows:
-     *         <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * @return One or more substitution tokens for attribute names in an expression.
+     *         The following are some use cases for using
+     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     *         create a placeholder for repeating occurrences of an attribute name in
+     *         an expression. </li> <li> <p>To prevent special characters in an
+     *         attribute name from being misinterpreted in an expression. </li> </ul>
+     *         <p>Use the <b>#</b> character in an expression to dereference an
+     *         attribute name. For example, consider the following attribute name:
+     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     *         attribute conflicts with a reserved word, so it cannot be used
+     *         directly in an expression. (For the complete list of reserved words,
+     *         go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     *         around this, you could specify the following for
+     *         <i>ExpressionAttributeNames</i>:
+     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     *         then use this substitution in an expression, as in this example:
+     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     *         with the <b>:</b> character are <i>expression attribute values</i>,
+     *         which are placeholders for the actual value at runtime.</note> <p>For
+     *         more information on expression attribute names, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,String> getExpressionAttributeNames() {
         
@@ -2612,76 +2680,116 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
-     * @param expressionAttributeNames One or more substitution tokens for simplifying complex expressions.
-     *         The following are some use cases for an
-     *         <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     *         attribute name that is very long or unwieldy in an expression. </li>
-     *         <li> <p>To create a placeholder for repeating occurrences of an
-     *         attribute name in an expression. </li> <li> <p>To prevent special
-     *         characters in an attribute name from being misinterpreted in an
-     *         expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     *         to dereference an attribute name. For example, consider the following
-     *         expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     *         order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     *         that you specified the following for <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     *         <p>The expression can now be simplified as follows:
-     *         <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
+     *         The following are some use cases for using
+     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     *         create a placeholder for repeating occurrences of an attribute name in
+     *         an expression. </li> <li> <p>To prevent special characters in an
+     *         attribute name from being misinterpreted in an expression. </li> </ul>
+     *         <p>Use the <b>#</b> character in an expression to dereference an
+     *         attribute name. For example, consider the following attribute name:
+     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     *         attribute conflicts with a reserved word, so it cannot be used
+     *         directly in an expression. (For the complete list of reserved words,
+     *         go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     *         around this, you could specify the following for
+     *         <i>ExpressionAttributeNames</i>:
+     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     *         then use this substitution in an expression, as in this example:
+     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     *         with the <b>:</b> character are <i>expression attribute values</i>,
+     *         which are placeholders for the actual value at runtime.</note> <p>For
+     *         more information on expression attribute names, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
     }
     
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expressionAttributeNames One or more substitution tokens for simplifying complex expressions.
-     *         The following are some use cases for an
-     *         <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     *         attribute name that is very long or unwieldy in an expression. </li>
-     *         <li> <p>To create a placeholder for repeating occurrences of an
-     *         attribute name in an expression. </li> <li> <p>To prevent special
-     *         characters in an attribute name from being misinterpreted in an
-     *         expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     *         to dereference an attribute name. For example, consider the following
-     *         expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     *         order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     *         that you specified the following for <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     *         <p>The expression can now be simplified as follows:
-     *         <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
+     *         The following are some use cases for using
+     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     *         create a placeholder for repeating occurrences of an attribute name in
+     *         an expression. </li> <li> <p>To prevent special characters in an
+     *         attribute name from being misinterpreted in an expression. </li> </ul>
+     *         <p>Use the <b>#</b> character in an expression to dereference an
+     *         attribute name. For example, consider the following attribute name:
+     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     *         attribute conflicts with a reserved word, so it cannot be used
+     *         directly in an expression. (For the complete list of reserved words,
+     *         go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     *         around this, you could specify the following for
+     *         <i>ExpressionAttributeNames</i>:
+     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     *         then use this substitution in an expression, as in this example:
+     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     *         with the <b>:</b> character are <i>expression attribute values</i>,
+     *         which are placeholders for the actual value at runtime.</note> <p>For
+     *         more information on expression attribute names, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2692,21 +2800,31 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeNames
      * parameter, and returns a reference to this object so that method calls
@@ -2737,28 +2855,32 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     
     /**
      * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> character in an expression to dereference an attribute
-     * value. For example, consider the following expression:
-     * <ul><li><p><code>ProductStatus IN
-     * ("Available","Backordered","Discontinued")</code></li></ul> <p>Now
-     * suppose that you specified the following for
-     * <i>ExpressionAttributeValues</i>: <ul><li><p><code>{
-     * "a":{"S":"Available"}, "b":{"S":"Backordered"},
-     * "d":{"S":"Discontinued"} }</code></li></ul> <p>The expression can now
-     * be simplified as follows: <ul><li> <p><code>ProductStatus IN
-     * (:a,:b,:c)</code></li></ul>
+     * the <b>:</b> (colon) character in an expression to dereference an
+     * attribute value. For example, suppose that you wanted to check whether
+     * the value of the <i>ProductStatus</i> attribute was one of the
+     * following: <p><code>Available | Backordered | Discontinued</code>
+     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows: <p><code>{ ":avail":{"S":"Available"},
+     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * <p>You could then use these values in an expression, such as this:
+     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
+     * information on expression attribute values, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return One or more values that can be substituted in an expression. <p>Use
-     *         the <b>:</b> character in an expression to dereference an attribute
-     *         value. For example, consider the following expression:
-     *         <ul><li><p><code>ProductStatus IN
-     *         ("Available","Backordered","Discontinued")</code></li></ul> <p>Now
-     *         suppose that you specified the following for
-     *         <i>ExpressionAttributeValues</i>: <ul><li><p><code>{
-     *         "a":{"S":"Available"}, "b":{"S":"Backordered"},
-     *         "d":{"S":"Discontinued"} }</code></li></ul> <p>The expression can now
-     *         be simplified as follows: <ul><li> <p><code>ProductStatus IN
-     *         (:a,:b,:c)</code></li></ul>
+     *         the <b>:</b> (colon) character in an expression to dereference an
+     *         attribute value. For example, suppose that you wanted to check whether
+     *         the value of the <i>ProductStatus</i> attribute was one of the
+     *         following: <p><code>Available | Backordered | Discontinued</code>
+     *         <p>You would first need to specify <i>ExpressionAttributeValues</i> as
+     *         follows: <p><code>{ ":avail":{"S":"Available"},
+     *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     *         <p>You could then use these values in an expression, such as this:
+     *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
+     *         information on expression attribute values, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,AttributeValue> getExpressionAttributeValues() {
         
@@ -2767,28 +2889,32 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     
     /**
      * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> character in an expression to dereference an attribute
-     * value. For example, consider the following expression:
-     * <ul><li><p><code>ProductStatus IN
-     * ("Available","Backordered","Discontinued")</code></li></ul> <p>Now
-     * suppose that you specified the following for
-     * <i>ExpressionAttributeValues</i>: <ul><li><p><code>{
-     * "a":{"S":"Available"}, "b":{"S":"Backordered"},
-     * "d":{"S":"Discontinued"} }</code></li></ul> <p>The expression can now
-     * be simplified as follows: <ul><li> <p><code>ProductStatus IN
-     * (:a,:b,:c)</code></li></ul>
+     * the <b>:</b> (colon) character in an expression to dereference an
+     * attribute value. For example, suppose that you wanted to check whether
+     * the value of the <i>ProductStatus</i> attribute was one of the
+     * following: <p><code>Available | Backordered | Discontinued</code>
+     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows: <p><code>{ ":avail":{"S":"Available"},
+     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * <p>You could then use these values in an expression, such as this:
+     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
+     * information on expression attribute values, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeValues One or more values that can be substituted in an expression. <p>Use
-     *         the <b>:</b> character in an expression to dereference an attribute
-     *         value. For example, consider the following expression:
-     *         <ul><li><p><code>ProductStatus IN
-     *         ("Available","Backordered","Discontinued")</code></li></ul> <p>Now
-     *         suppose that you specified the following for
-     *         <i>ExpressionAttributeValues</i>: <ul><li><p><code>{
-     *         "a":{"S":"Available"}, "b":{"S":"Backordered"},
-     *         "d":{"S":"Discontinued"} }</code></li></ul> <p>The expression can now
-     *         be simplified as follows: <ul><li> <p><code>ProductStatus IN
-     *         (:a,:b,:c)</code></li></ul>
+     *         the <b>:</b> (colon) character in an expression to dereference an
+     *         attribute value. For example, suppose that you wanted to check whether
+     *         the value of the <i>ProductStatus</i> attribute was one of the
+     *         following: <p><code>Available | Backordered | Discontinued</code>
+     *         <p>You would first need to specify <i>ExpressionAttributeValues</i> as
+     *         follows: <p><code>{ ":avail":{"S":"Available"},
+     *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     *         <p>You could then use these values in an expression, such as this:
+     *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
+     *         information on expression attribute values, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeValues(java.util.Map<String,AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -2796,30 +2922,34 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     
     /**
      * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> character in an expression to dereference an attribute
-     * value. For example, consider the following expression:
-     * <ul><li><p><code>ProductStatus IN
-     * ("Available","Backordered","Discontinued")</code></li></ul> <p>Now
-     * suppose that you specified the following for
-     * <i>ExpressionAttributeValues</i>: <ul><li><p><code>{
-     * "a":{"S":"Available"}, "b":{"S":"Backordered"},
-     * "d":{"S":"Discontinued"} }</code></li></ul> <p>The expression can now
-     * be simplified as follows: <ul><li> <p><code>ProductStatus IN
-     * (:a,:b,:c)</code></li></ul>
+     * the <b>:</b> (colon) character in an expression to dereference an
+     * attribute value. For example, suppose that you wanted to check whether
+     * the value of the <i>ProductStatus</i> attribute was one of the
+     * following: <p><code>Available | Backordered | Discontinued</code>
+     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows: <p><code>{ ":avail":{"S":"Available"},
+     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * <p>You could then use these values in an expression, such as this:
+     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
+     * information on expression attribute values, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param expressionAttributeValues One or more values that can be substituted in an expression. <p>Use
-     *         the <b>:</b> character in an expression to dereference an attribute
-     *         value. For example, consider the following expression:
-     *         <ul><li><p><code>ProductStatus IN
-     *         ("Available","Backordered","Discontinued")</code></li></ul> <p>Now
-     *         suppose that you specified the following for
-     *         <i>ExpressionAttributeValues</i>: <ul><li><p><code>{
-     *         "a":{"S":"Available"}, "b":{"S":"Backordered"},
-     *         "d":{"S":"Discontinued"} }</code></li></ul> <p>The expression can now
-     *         be simplified as follows: <ul><li> <p><code>ProductStatus IN
-     *         (:a,:b,:c)</code></li></ul>
+     *         the <b>:</b> (colon) character in an expression to dereference an
+     *         attribute value. For example, suppose that you wanted to check whether
+     *         the value of the <i>ProductStatus</i> attribute was one of the
+     *         following: <p><code>Available | Backordered | Discontinued</code>
+     *         <p>You would first need to specify <i>ExpressionAttributeValues</i> as
+     *         follows: <p><code>{ ":avail":{"S":"Available"},
+     *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     *         <p>You could then use these values in an expression, such as this:
+     *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
+     *         information on expression attribute values, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2831,16 +2961,18 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
 
     /**
      * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> character in an expression to dereference an attribute
-     * value. For example, consider the following expression:
-     * <ul><li><p><code>ProductStatus IN
-     * ("Available","Backordered","Discontinued")</code></li></ul> <p>Now
-     * suppose that you specified the following for
-     * <i>ExpressionAttributeValues</i>: <ul><li><p><code>{
-     * "a":{"S":"Available"}, "b":{"S":"Backordered"},
-     * "d":{"S":"Discontinued"} }</code></li></ul> <p>The expression can now
-     * be simplified as follows: <ul><li> <p><code>ProductStatus IN
-     * (:a,:b,:c)</code></li></ul>
+     * the <b>:</b> (colon) character in an expression to dereference an
+     * attribute value. For example, suppose that you wanted to check whether
+     * the value of the <i>ProductStatus</i> attribute was one of the
+     * following: <p><code>Available | Backordered | Discontinued</code>
+     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows: <p><code>{ ":avail":{"S":"Available"},
+     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * <p>You could then use these values in an expression, such as this:
+     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
+     * information on expression attribute values, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeValues
      * parameter, and returns a reference to this object so that method calls

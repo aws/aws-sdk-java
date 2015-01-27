@@ -21,34 +21,44 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateTable(UpdateTableRequest) UpdateTable operation}.
  * <p>
- * Updates the provisioned throughput for the given table. Setting the
- * throughput for a table helps you manage performance and is part of the
- * provisioned throughput feature of DynamoDB.
+ * Updates the provisioned throughput for the given table, or manages the
+ * global secondary indexes on the table.
  * </p>
  * <p>
- * The provisioned throughput values can be upgraded or downgraded based
- * on the maximums and minimums listed in the
+ * You can increase or decrease the table's provisioned throughput values
+ * within the maximums and minimums listed in the
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a>
  * section in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  * <p>
- * The table must be in the <code>ACTIVE</code> state for this operation
- * to succeed. <i>UpdateTable</i> is an asynchronous operation; while
- * executing the operation, the table is in the <code>UPDATING</code>
- * state. While the table is in the <code>UPDATING</code> state, the
- * table still has the provisioned throughput from before the call. The
- * new provisioned throughput setting is in effect only when the table
- * returns to the <code>ACTIVE</code> state after the <i>UpdateTable</i>
- * operation.
+ * In addition, you can use <i>UpdateTable</i> to add, modify or delete
+ * global secondary indexes on the table. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html"> Managing Global Secondary Indexes </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  * <p>
- * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
- * Indexes can only be defined at table creation time.
+ * The table must be in the <code>ACTIVE</code> state for
+ * <i>UpdateTable</i> to succeed. <i>UpdateTable</i> is an asynchronous
+ * operation; while executing the operation, the table is in the
+ * <code>UPDATING</code> state. While the table is in the
+ * <code>UPDATING</code> state, the table still has the provisioned
+ * throughput from before the call. The table's new provisioned
+ * throughput settings go into effect when the table returns to the
+ * <code>ACTIVE</code> state; at that point, the <i>UpdateTable</i>
+ * operation is complete.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateTable(UpdateTableRequest)
  */
 public class UpdateTableRequest extends AmazonWebServiceRequest implements Serializable {
+
+    /**
+     * An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitions;
 
     /**
      * The name of the table to be updated.
@@ -70,8 +80,13 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     private ProvisionedThroughput provisionedThroughput;
 
     /**
-     * An array of one or more global secondary indexes on the table,
-     * together with provisioned throughput settings for each index.
+     * An array of one or more global secondary indexes for the table. For
+     * each index in the array, you can specify one action: <ul>
+     * <li><p><i>Create</i> - add a new global secondary index to the
+     * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     * settings of an existing global secondary index.</li>
+     * <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates;
 
@@ -97,6 +112,94 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     public UpdateTableRequest(String tableName, ProvisionedThroughput provisionedThroughput) {
         setTableName(tableName);
         setProvisionedThroughput(provisionedThroughput);
+    }
+
+    /**
+     * An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.
+     *
+     * @return An array of attributes that describe the key schema for the table and
+     *         indexes. If you are adding a new global secondary index to the table,
+     *         <i>AttributeDefinitions</i> must include the key element(s) of the new
+     *         index.
+     */
+    public java.util.List<AttributeDefinition> getAttributeDefinitions() {
+        return attributeDefinitions;
+    }
+    
+    /**
+     * An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.
+     *
+     * @param attributeDefinitions An array of attributes that describe the key schema for the table and
+     *         indexes. If you are adding a new global secondary index to the table,
+     *         <i>AttributeDefinitions</i> must include the key element(s) of the new
+     *         index.
+     */
+    public void setAttributeDefinitions(java.util.Collection<AttributeDefinition> attributeDefinitions) {
+        if (attributeDefinitions == null) {
+            this.attributeDefinitions = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition>(attributeDefinitions.size());
+        attributeDefinitionsCopy.addAll(attributeDefinitions);
+        this.attributeDefinitions = attributeDefinitionsCopy;
+    }
+    
+    /**
+     * An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attributeDefinitions An array of attributes that describe the key schema for the table and
+     *         indexes. If you are adding a new global secondary index to the table,
+     *         <i>AttributeDefinitions</i> must include the key element(s) of the new
+     *         index.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateTableRequest withAttributeDefinitions(AttributeDefinition... attributeDefinitions) {
+        if (getAttributeDefinitions() == null) setAttributeDefinitions(new java.util.ArrayList<AttributeDefinition>(attributeDefinitions.length));
+        for (AttributeDefinition value : attributeDefinitions) {
+            getAttributeDefinitions().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <i>AttributeDefinitions</i> must include the key element(s) of the new
+     * index.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attributeDefinitions An array of attributes that describe the key schema for the table and
+     *         indexes. If you are adding a new global secondary index to the table,
+     *         <i>AttributeDefinitions</i> must include the key element(s) of the new
+     *         index.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateTableRequest withAttributeDefinitions(java.util.Collection<AttributeDefinition> attributeDefinitions) {
+        if (attributeDefinitions == null) {
+            this.attributeDefinitions = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition>(attributeDefinitions.size());
+            attributeDefinitionsCopy.addAll(attributeDefinitions);
+            this.attributeDefinitions = attributeDefinitionsCopy;
+        }
+
+        return this;
     }
 
     /**
@@ -208,22 +311,42 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * An array of one or more global secondary indexes on the table,
-     * together with provisioned throughput settings for each index.
+     * An array of one or more global secondary indexes for the table. For
+     * each index in the array, you can specify one action: <ul>
+     * <li><p><i>Create</i> - add a new global secondary index to the
+     * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     * settings of an existing global secondary index.</li>
+     * <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</li> </ul>
      *
-     * @return An array of one or more global secondary indexes on the table,
-     *         together with provisioned throughput settings for each index.
+     * @return An array of one or more global secondary indexes for the table. For
+     *         each index in the array, you can specify one action: <ul>
+     *         <li><p><i>Create</i> - add a new global secondary index to the
+     *         table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     *         settings of an existing global secondary index.</li>
+     *         <li><p><i>Delete</i> - remove a global secondary index from the
+     *         table.</li> </ul>
      */
     public java.util.List<GlobalSecondaryIndexUpdate> getGlobalSecondaryIndexUpdates() {
         return globalSecondaryIndexUpdates;
     }
     
     /**
-     * An array of one or more global secondary indexes on the table,
-     * together with provisioned throughput settings for each index.
+     * An array of one or more global secondary indexes for the table. For
+     * each index in the array, you can specify one action: <ul>
+     * <li><p><i>Create</i> - add a new global secondary index to the
+     * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     * settings of an existing global secondary index.</li>
+     * <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</li> </ul>
      *
-     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes on the table,
-     *         together with provisioned throughput settings for each index.
+     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes for the table. For
+     *         each index in the array, you can specify one action: <ul>
+     *         <li><p><i>Create</i> - add a new global secondary index to the
+     *         table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     *         settings of an existing global secondary index.</li>
+     *         <li><p><i>Delete</i> - remove a global secondary index from the
+     *         table.</li> </ul>
      */
     public void setGlobalSecondaryIndexUpdates(java.util.Collection<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates) {
         if (globalSecondaryIndexUpdates == null) {
@@ -236,13 +359,23 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * An array of one or more global secondary indexes on the table,
-     * together with provisioned throughput settings for each index.
+     * An array of one or more global secondary indexes for the table. For
+     * each index in the array, you can specify one action: <ul>
+     * <li><p><i>Create</i> - add a new global secondary index to the
+     * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     * settings of an existing global secondary index.</li>
+     * <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes on the table,
-     *         together with provisioned throughput settings for each index.
+     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes for the table. For
+     *         each index in the array, you can specify one action: <ul>
+     *         <li><p><i>Create</i> - add a new global secondary index to the
+     *         table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     *         settings of an existing global secondary index.</li>
+     *         <li><p><i>Delete</i> - remove a global secondary index from the
+     *         table.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -256,13 +389,23 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * An array of one or more global secondary indexes on the table,
-     * together with provisioned throughput settings for each index.
+     * An array of one or more global secondary indexes for the table. For
+     * each index in the array, you can specify one action: <ul>
+     * <li><p><i>Create</i> - add a new global secondary index to the
+     * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     * settings of an existing global secondary index.</li>
+     * <li><p><i>Delete</i> - remove a global secondary index from the
+     * table.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes on the table,
-     *         together with provisioned throughput settings for each index.
+     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes for the table. For
+     *         each index in the array, you can specify one action: <ul>
+     *         <li><p><i>Create</i> - add a new global secondary index to the
+     *         table.</li> <li><p><i>Update</i> - modify the provisioned throughput
+     *         settings of an existing global secondary index.</li>
+     *         <li><p><i>Delete</i> - remove a global secondary index from the
+     *         table.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -291,6 +434,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAttributeDefinitions() != null) sb.append("AttributeDefinitions: " + getAttributeDefinitions() + ",");
         if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
         if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");
         if (getGlobalSecondaryIndexUpdates() != null) sb.append("GlobalSecondaryIndexUpdates: " + getGlobalSecondaryIndexUpdates() );
@@ -303,6 +447,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
         final int prime = 31;
         int hashCode = 1;
         
+        hashCode = prime * hashCode + ((getAttributeDefinitions() == null) ? 0 : getAttributeDefinitions().hashCode()); 
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode()); 
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode()); 
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexUpdates() == null) ? 0 : getGlobalSecondaryIndexUpdates().hashCode()); 
@@ -317,6 +462,8 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
         if (obj instanceof UpdateTableRequest == false) return false;
         UpdateTableRequest other = (UpdateTableRequest)obj;
         
+        if (other.getAttributeDefinitions() == null ^ this.getAttributeDefinitions() == null) return false;
+        if (other.getAttributeDefinitions() != null && other.getAttributeDefinitions().equals(this.getAttributeDefinitions()) == false) return false; 
         if (other.getTableName() == null ^ this.getTableName() == null) return false;
         if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false) return false; 
         if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null) return false;

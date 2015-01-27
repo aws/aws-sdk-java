@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a global secondary index.
+ * Represents the properties of a global secondary index.
  * </p>
  */
 public class GlobalSecondaryIndex implements Serializable {

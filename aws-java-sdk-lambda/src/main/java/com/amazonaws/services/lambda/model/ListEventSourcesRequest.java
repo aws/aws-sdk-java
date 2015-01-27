@@ -21,8 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#listEventSources(ListEventSourcesRequest) ListEventSources operation}.
  * <p>
- * Returns a list of event source mappings. For each mapping, the API
- * returns configuration information (see AddEventSource). You can
+ * Returns a list of event source mappings you created using the
+ * <code>AddEventSource</code> (see AddEventSource), where you identify a
+ * stream as event source. This list does not include Amazon S3 event
+ * sources.
+ * </p>
+ * <p>
+ * For each mapping, the API returns configuration information. You can
  * optionally specify filters to retrieve specific event source mappings.
  * </p>
  * <p>
@@ -44,7 +49,7 @@ public class ListEventSourcesRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      */
     private String functionName;
 
@@ -102,7 +107,7 @@ public class ListEventSourcesRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @return The name of the AWS Lambda function.
      */
@@ -115,7 +120,7 @@ public class ListEventSourcesRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The name of the AWS Lambda function.
      */
@@ -130,7 +135,7 @@ public class ListEventSourcesRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The name of the AWS Lambda function.
      *

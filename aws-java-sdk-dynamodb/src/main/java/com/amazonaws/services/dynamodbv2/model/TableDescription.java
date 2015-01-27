@@ -57,12 +57,10 @@ public class TableDescription implements Serializable {
 
     /**
      * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     * table is being created, as the result of a <i>CreateTable</i>
-     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     * as the result of an <i>UpdateTable</i> operation. </li> <li>
-     * <p><i>DELETING</i> - The table is being deleted, as the result of a
-     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     * is ready for use. </li> </ul>
+     * table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     * being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     * deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     * </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
@@ -137,14 +135,20 @@ public class TableDescription implements Serializable {
     /**
      * The global secondary indexes, if any, on the table. Each index is
      * scoped to a given hash key value. Each element is composed of: <ul>
-     * <li> <p><i>IndexName</i> - The name of the global secondary index.
-     * </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     * secondary index, in bytes. DynamoDB updates this value approximately
-     * every six hours. Recent changes might not be reflected in this value.
-     * </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     * secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     * created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     * </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     * <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     * the backfilling phase. Backfilling occurs only when a new global
+     * secondary index is added to the table; it is the process by which
+     * DynamoDB populates the new index with data from the table. (This
+     * attribute does not appear for indexes that were created during a
+     * <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     * name of the global secondary index. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. DynamoDB updates this value approximately every six
+     * hours. Recent changes might not be reflected in this value. </li> <li>
+     * <p><i>IndexStatus</i> - The current status of the global secondary
+     * index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     * </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     * <p><i>DELETING</i> - The index is being deleted. </li> <li>
      * <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      * <p><i>ItemCount</i> - The number of items in the global secondary
      * index. DynamoDB updates this value approximately every six hours.
@@ -450,23 +454,19 @@ public class TableDescription implements Serializable {
 
     /**
      * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     * table is being created, as the result of a <i>CreateTable</i>
-     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     * as the result of an <i>UpdateTable</i> operation. </li> <li>
-     * <p><i>DELETING</i> - The table is being deleted, as the result of a
-     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     * is ready for use. </li> </ul>
+     * table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     * being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     * deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     * </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
      * @return The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     *         table is being created, as the result of a <i>CreateTable</i>
-     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
-     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
-     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     *         is ready for use. </li> </ul>
+     *         table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     *         being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     *         deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     *         </li> </ul>
      *
      * @see TableStatus
      */
@@ -476,23 +476,19 @@ public class TableDescription implements Serializable {
     
     /**
      * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     * table is being created, as the result of a <i>CreateTable</i>
-     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     * as the result of an <i>UpdateTable</i> operation. </li> <li>
-     * <p><i>DELETING</i> - The table is being deleted, as the result of a
-     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     * is ready for use. </li> </ul>
+     * table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     * being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     * deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     * </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
      * @param tableStatus The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     *         table is being created, as the result of a <i>CreateTable</i>
-     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
-     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
-     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     *         is ready for use. </li> </ul>
+     *         table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     *         being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     *         deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     *         </li> </ul>
      *
      * @see TableStatus
      */
@@ -502,12 +498,10 @@ public class TableDescription implements Serializable {
     
     /**
      * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     * table is being created, as the result of a <i>CreateTable</i>
-     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     * as the result of an <i>UpdateTable</i> operation. </li> <li>
-     * <p><i>DELETING</i> - The table is being deleted, as the result of a
-     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     * is ready for use. </li> </ul>
+     * table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     * being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     * deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     * </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -515,12 +509,10 @@ public class TableDescription implements Serializable {
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
      * @param tableStatus The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     *         table is being created, as the result of a <i>CreateTable</i>
-     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
-     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
-     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     *         is ready for use. </li> </ul>
+     *         table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     *         being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     *         deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     *         </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -534,23 +526,19 @@ public class TableDescription implements Serializable {
 
     /**
      * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     * table is being created, as the result of a <i>CreateTable</i>
-     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     * as the result of an <i>UpdateTable</i> operation. </li> <li>
-     * <p><i>DELETING</i> - The table is being deleted, as the result of a
-     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     * is ready for use. </li> </ul>
+     * table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     * being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     * deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     * </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
      * @param tableStatus The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     *         table is being created, as the result of a <i>CreateTable</i>
-     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
-     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
-     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     *         is ready for use. </li> </ul>
+     *         table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     *         being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     *         deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     *         </li> </ul>
      *
      * @see TableStatus
      */
@@ -560,12 +548,10 @@ public class TableDescription implements Serializable {
     
     /**
      * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     * table is being created, as the result of a <i>CreateTable</i>
-     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     * as the result of an <i>UpdateTable</i> operation. </li> <li>
-     * <p><i>DELETING</i> - The table is being deleted, as the result of a
-     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     * is ready for use. </li> </ul>
+     * table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     * being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     * deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     * </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -573,12 +559,10 @@ public class TableDescription implements Serializable {
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
      * @param tableStatus The current state of the table: <ul> <li> <p><i>CREATING</i> - The
-     *         table is being created, as the result of a <i>CreateTable</i>
-     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
-     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
-     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
-     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
-     *         is ready for use. </li> </ul>
+     *         table is being created. </li> <li> <p><i>UPDATING</i> - The table is
+     *         being updated. </li> <li> <p><i>DELETING</i> - The table is being
+     *         deleted. </li> <li> <p><i>ACTIVE</i> - The table is ready for use.
+     *         </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1095,14 +1079,20 @@ public class TableDescription implements Serializable {
     /**
      * The global secondary indexes, if any, on the table. Each index is
      * scoped to a given hash key value. Each element is composed of: <ul>
-     * <li> <p><i>IndexName</i> - The name of the global secondary index.
-     * </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     * secondary index, in bytes. DynamoDB updates this value approximately
-     * every six hours. Recent changes might not be reflected in this value.
-     * </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     * secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     * created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     * </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     * <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     * the backfilling phase. Backfilling occurs only when a new global
+     * secondary index is added to the table; it is the process by which
+     * DynamoDB populates the new index with data from the table. (This
+     * attribute does not appear for indexes that were created during a
+     * <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     * name of the global secondary index. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. DynamoDB updates this value approximately every six
+     * hours. Recent changes might not be reflected in this value. </li> <li>
+     * <p><i>IndexStatus</i> - The current status of the global secondary
+     * index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     * </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     * <p><i>DELETING</i> - The index is being deleted. </li> <li>
      * <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      * <p><i>ItemCount</i> - The number of items in the global secondary
      * index. DynamoDB updates this value approximately every six hours.
@@ -1135,14 +1125,20 @@ public class TableDescription implements Serializable {
      *
      * @return The global secondary indexes, if any, on the table. Each index is
      *         scoped to a given hash key value. Each element is composed of: <ul>
-     *         <li> <p><i>IndexName</i> - The name of the global secondary index.
-     *         </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     *         secondary index, in bytes. DynamoDB updates this value approximately
-     *         every six hours. Recent changes might not be reflected in this value.
-     *         </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     *         secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     *         created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     *         </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     *         <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     *         the backfilling phase. Backfilling occurs only when a new global
+     *         secondary index is added to the table; it is the process by which
+     *         DynamoDB populates the new index with data from the table. (This
+     *         attribute does not appear for indexes that were created during a
+     *         <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     *         name of the global secondary index. </li> <li>
+     *         <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     *         index, in bytes. DynamoDB updates this value approximately every six
+     *         hours. Recent changes might not be reflected in this value. </li> <li>
+     *         <p><i>IndexStatus</i> - The current status of the global secondary
+     *         index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     *         </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     *         <p><i>DELETING</i> - The index is being deleted. </li> <li>
      *         <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      *         <p><i>ItemCount</i> - The number of items in the global secondary
      *         index. DynamoDB updates this value approximately every six hours.
@@ -1180,14 +1176,20 @@ public class TableDescription implements Serializable {
     /**
      * The global secondary indexes, if any, on the table. Each index is
      * scoped to a given hash key value. Each element is composed of: <ul>
-     * <li> <p><i>IndexName</i> - The name of the global secondary index.
-     * </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     * secondary index, in bytes. DynamoDB updates this value approximately
-     * every six hours. Recent changes might not be reflected in this value.
-     * </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     * secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     * created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     * </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     * <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     * the backfilling phase. Backfilling occurs only when a new global
+     * secondary index is added to the table; it is the process by which
+     * DynamoDB populates the new index with data from the table. (This
+     * attribute does not appear for indexes that were created during a
+     * <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     * name of the global secondary index. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. DynamoDB updates this value approximately every six
+     * hours. Recent changes might not be reflected in this value. </li> <li>
+     * <p><i>IndexStatus</i> - The current status of the global secondary
+     * index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     * </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     * <p><i>DELETING</i> - The index is being deleted. </li> <li>
      * <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      * <p><i>ItemCount</i> - The number of items in the global secondary
      * index. DynamoDB updates this value approximately every six hours.
@@ -1220,14 +1222,20 @@ public class TableDescription implements Serializable {
      *
      * @param globalSecondaryIndexes The global secondary indexes, if any, on the table. Each index is
      *         scoped to a given hash key value. Each element is composed of: <ul>
-     *         <li> <p><i>IndexName</i> - The name of the global secondary index.
-     *         </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     *         secondary index, in bytes. DynamoDB updates this value approximately
-     *         every six hours. Recent changes might not be reflected in this value.
-     *         </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     *         secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     *         created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     *         </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     *         <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     *         the backfilling phase. Backfilling occurs only when a new global
+     *         secondary index is added to the table; it is the process by which
+     *         DynamoDB populates the new index with data from the table. (This
+     *         attribute does not appear for indexes that were created during a
+     *         <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     *         name of the global secondary index. </li> <li>
+     *         <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     *         index, in bytes. DynamoDB updates this value approximately every six
+     *         hours. Recent changes might not be reflected in this value. </li> <li>
+     *         <p><i>IndexStatus</i> - The current status of the global secondary
+     *         index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     *         </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     *         <p><i>DELETING</i> - The index is being deleted. </li> <li>
      *         <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      *         <p><i>ItemCount</i> - The number of items in the global secondary
      *         index. DynamoDB updates this value approximately every six hours.
@@ -1271,14 +1279,20 @@ public class TableDescription implements Serializable {
     /**
      * The global secondary indexes, if any, on the table. Each index is
      * scoped to a given hash key value. Each element is composed of: <ul>
-     * <li> <p><i>IndexName</i> - The name of the global secondary index.
-     * </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     * secondary index, in bytes. DynamoDB updates this value approximately
-     * every six hours. Recent changes might not be reflected in this value.
-     * </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     * secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     * created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     * </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     * <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     * the backfilling phase. Backfilling occurs only when a new global
+     * secondary index is added to the table; it is the process by which
+     * DynamoDB populates the new index with data from the table. (This
+     * attribute does not appear for indexes that were created during a
+     * <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     * name of the global secondary index. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. DynamoDB updates this value approximately every six
+     * hours. Recent changes might not be reflected in this value. </li> <li>
+     * <p><i>IndexStatus</i> - The current status of the global secondary
+     * index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     * </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     * <p><i>DELETING</i> - The index is being deleted. </li> <li>
      * <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      * <p><i>ItemCount</i> - The number of items in the global secondary
      * index. DynamoDB updates this value approximately every six hours.
@@ -1313,14 +1327,20 @@ public class TableDescription implements Serializable {
      *
      * @param globalSecondaryIndexes The global secondary indexes, if any, on the table. Each index is
      *         scoped to a given hash key value. Each element is composed of: <ul>
-     *         <li> <p><i>IndexName</i> - The name of the global secondary index.
-     *         </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     *         secondary index, in bytes. DynamoDB updates this value approximately
-     *         every six hours. Recent changes might not be reflected in this value.
-     *         </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     *         secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     *         created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     *         </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     *         <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     *         the backfilling phase. Backfilling occurs only when a new global
+     *         secondary index is added to the table; it is the process by which
+     *         DynamoDB populates the new index with data from the table. (This
+     *         attribute does not appear for indexes that were created during a
+     *         <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     *         name of the global secondary index. </li> <li>
+     *         <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     *         index, in bytes. DynamoDB updates this value approximately every six
+     *         hours. Recent changes might not be reflected in this value. </li> <li>
+     *         <p><i>IndexStatus</i> - The current status of the global secondary
+     *         index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     *         </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     *         <p><i>DELETING</i> - The index is being deleted. </li> <li>
      *         <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      *         <p><i>ItemCount</i> - The number of items in the global secondary
      *         index. DynamoDB updates this value approximately every six hours.
@@ -1365,14 +1385,20 @@ public class TableDescription implements Serializable {
     /**
      * The global secondary indexes, if any, on the table. Each index is
      * scoped to a given hash key value. Each element is composed of: <ul>
-     * <li> <p><i>IndexName</i> - The name of the global secondary index.
-     * </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     * secondary index, in bytes. DynamoDB updates this value approximately
-     * every six hours. Recent changes might not be reflected in this value.
-     * </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     * secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     * created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     * </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     * <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     * the backfilling phase. Backfilling occurs only when a new global
+     * secondary index is added to the table; it is the process by which
+     * DynamoDB populates the new index with data from the table. (This
+     * attribute does not appear for indexes that were created during a
+     * <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     * name of the global secondary index. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. DynamoDB updates this value approximately every six
+     * hours. Recent changes might not be reflected in this value. </li> <li>
+     * <p><i>IndexStatus</i> - The current status of the global secondary
+     * index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     * </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     * <p><i>DELETING</i> - The index is being deleted. </li> <li>
      * <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      * <p><i>ItemCount</i> - The number of items in the global secondary
      * index. DynamoDB updates this value approximately every six hours.
@@ -1407,14 +1433,20 @@ public class TableDescription implements Serializable {
      *
      * @param globalSecondaryIndexes The global secondary indexes, if any, on the table. Each index is
      *         scoped to a given hash key value. Each element is composed of: <ul>
-     *         <li> <p><i>IndexName</i> - The name of the global secondary index.
-     *         </li> <li> <p><i>IndexSizeBytes</i> - The total size of the global
-     *         secondary index, in bytes. DynamoDB updates this value approximately
-     *         every six hours. Recent changes might not be reflected in this value.
-     *         </li> <li> <p><i>IndexStatus</i> - The current status of the global
-     *         secondary index: <ul> <li> <p><i>CREATING</i> - The index is being
-     *         created. </li> <li> <p><i>UPDATING</i> - The index is being updated.
-     *         </li> <li> <p><i>DELETING</i> - The index is being deleted. </li> <li>
+     *         <li> <p><i>Backfilling</i> - If true, then the index is currently in
+     *         the backfilling phase. Backfilling occurs only when a new global
+     *         secondary index is added to the table; it is the process by which
+     *         DynamoDB populates the new index with data from the table. (This
+     *         attribute does not appear for indexes that were created during a
+     *         <i>CreateTable</i> operation.) </li> <li> <p><i>IndexName</i> - The
+     *         name of the global secondary index. </li> <li>
+     *         <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     *         index, in bytes. DynamoDB updates this value approximately every six
+     *         hours. Recent changes might not be reflected in this value. </li> <li>
+     *         <p><i>IndexStatus</i> - The current status of the global secondary
+     *         index: <ul> <li> <p><i>CREATING</i> - The index is being created.
+     *         </li> <li> <p><i>UPDATING</i> - The index is being updated. </li> <li>
+     *         <p><i>DELETING</i> - The index is being deleted. </li> <li>
      *         <p><i>ACTIVE</i> - The index is ready for use. </li> </ul> </li> <li>
      *         <p><i>ItemCount</i> - The number of items in the global secondary
      *         index. DynamoDB updates this value approximately every six hours.

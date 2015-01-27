@@ -35,9 +35,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * on an <code>ACTIVE</code> table.
  * </p>
  * <p>
- * If you want to create multiple tables with secondary indexes on them,
- * you must create them sequentially. Only one table with secondary
- * indexes can be in the <code>CREATING</code> state at any given time.
+ * You can optionally define secondary indexes on the new table, as part
+ * of the <i>CreateTable</i> operation. If you want to create multiple
+ * tables with secondary indexes on them, you must create the tables
+ * sequentially. Only one table with secondary indexes can be in the
+ * <code>CREATING</code> state at any given time.
  * </p>
  * <p>
  * You can use the <i>DescribeTable</i> API to check the table status.

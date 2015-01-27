@@ -53,6 +53,9 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
         if (createJobRequest.isValidateOnly() != null) {
             request.addParameter("ValidateOnly", StringUtils.fromBoolean(createJobRequest.isValidateOnly()));
         }
+        if (createJobRequest.getAPIVersion() != null) {
+            request.addParameter("APIVersion", StringUtils.fromString(createJobRequest.getAPIVersion()));
+        }
 
         return request;
     }

@@ -203,6 +203,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
 
     private void init() {
         exceptionUnmarshallers.add(new BucketPermissionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnableToUpdateJobIdExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidFileSystemExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingCustomsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ExpiredJobIdExceptionUnmarshaller());
@@ -215,8 +216,10 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         exceptionUnmarshallers.add(new UnableToCancelJobIdExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CanceledJobIdExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidJobIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidVersionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchBucketExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidAccessKeyIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CreateJobQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidCustomsExceptionUnmarshaller());
         
@@ -253,6 +256,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @throws BucketPermissionException
      * @throws InvalidParameterException
      * @throws MultipleRegionsException
+     * @throws InvalidVersionException
      * @throws MissingParameterException
      * @throws InvalidFileSystemException
      * @throws MissingCustomsException
@@ -261,6 +265,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @throws InvalidManifestFieldException
      * @throws InvalidCustomsException
      * @throws MissingManifestFieldException
+     * @throws CreateJobQuotaExceededException
+     * @throws InvalidJobIdException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -296,6 +302,60 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
     
     /**
      * <p>
+     * This operation returns information about a job, including where the
+     * job is in the processing pipeline, the status of the results, and the
+     * signature value associated with the job. You can only return
+     * information about jobs you own.
+     * </p>
+     *
+     * @param getShippingLabelRequest Container for the necessary parameters
+     *           to execute the GetShippingLabel service method on AmazonImportExport.
+     * 
+     * @return The response from the GetShippingLabel service method, as
+     *         returned by AmazonImportExport.
+     * 
+     * @throws InvalidVersionException
+     * @throws InvalidAddressException
+     * @throws CanceledJobIdException
+     * @throws ExpiredJobIdException
+     * @throws InvalidParameterException
+     * @throws InvalidAccessKeyIdException
+     * @throws InvalidJobIdException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonImportExport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetShippingLabelResult getShippingLabel(GetShippingLabelRequest getShippingLabelRequest) {
+        ExecutionContext executionContext = createExecutionContext(getShippingLabelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetShippingLabelRequest> request = null;
+        Response<GetShippingLabelResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetShippingLabelRequestMarshaller().marshall(getShippingLabelRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetShippingLabelResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * This operation cancels a specified job. Only the job owner can cancel
      * it. The operation fails if the job has already started or is complete.
      * </p>
@@ -306,6 +366,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @return The response from the CancelJob service method, as returned by
      *         AmazonImportExport.
      * 
+     * @throws InvalidVersionException
      * @throws CanceledJobIdException
      * @throws ExpiredJobIdException
      * @throws InvalidAccessKeyIdException
@@ -358,6 +419,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @return The response from the GetStatus service method, as returned by
      *         AmazonImportExport.
      * 
+     * @throws InvalidVersionException
      * @throws CanceledJobIdException
      * @throws ExpiredJobIdException
      * @throws InvalidAccessKeyIdException
@@ -410,6 +472,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @return The response from the ListJobs service method, as returned by
      *         AmazonImportExport.
      * 
+     * @throws InvalidVersionException
      * @throws InvalidParameterException
      * @throws InvalidAccessKeyIdException
      *
@@ -464,7 +527,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @throws BucketPermissionException
      * @throws InvalidAddressException
      * @throws InvalidParameterException
+     * @throws UnableToUpdateJobIdException
      * @throws MultipleRegionsException
+     * @throws InvalidVersionException
      * @throws MissingParameterException
      * @throws InvalidFileSystemException
      * @throws CanceledJobIdException
@@ -521,6 +586,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @return The response from the ListJobs service method, as returned by
      *         AmazonImportExport.
      * 
+     * @throws InvalidVersionException
      * @throws InvalidParameterException
      * @throws InvalidAccessKeyIdException
      *

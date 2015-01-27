@@ -57,6 +57,11 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
     private Boolean validateOnly;
 
     /**
+     * Specifies the version of the client tool.
+     */
+    private String aPIVersion;
+
+    /**
      * A unique identifier which refers to a particular job.
      *
      * @return A unique identifier which refers to a particular job.
@@ -255,6 +260,39 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * Specifies the version of the client tool.
+     *
+     * @return Specifies the version of the client tool.
+     */
+    public String getAPIVersion() {
+        return aPIVersion;
+    }
+    
+    /**
+     * Specifies the version of the client tool.
+     *
+     * @param aPIVersion Specifies the version of the client tool.
+     */
+    public void setAPIVersion(String aPIVersion) {
+        this.aPIVersion = aPIVersion;
+    }
+    
+    /**
+     * Specifies the version of the client tool.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param aPIVersion Specifies the version of the client tool.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateJobRequest withAPIVersion(String aPIVersion) {
+        this.aPIVersion = aPIVersion;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -269,7 +307,8 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");
         if (getManifest() != null) sb.append("Manifest: " + getManifest() + ",");
         if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");
-        if (isValidateOnly() != null) sb.append("ValidateOnly: " + isValidateOnly() );
+        if (isValidateOnly() != null) sb.append("ValidateOnly: " + isValidateOnly() + ",");
+        if (getAPIVersion() != null) sb.append("APIVersion: " + getAPIVersion() );
         sb.append("}");
         return sb.toString();
     }
@@ -283,6 +322,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getManifest() == null) ? 0 : getManifest().hashCode()); 
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode()); 
         hashCode = prime * hashCode + ((isValidateOnly() == null) ? 0 : isValidateOnly().hashCode()); 
+        hashCode = prime * hashCode + ((getAPIVersion() == null) ? 0 : getAPIVersion().hashCode()); 
         return hashCode;
     }
     
@@ -302,6 +342,8 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false) return false; 
         if (other.isValidateOnly() == null ^ this.isValidateOnly() == null) return false;
         if (other.isValidateOnly() != null && other.isValidateOnly().equals(this.isValidateOnly()) == false) return false; 
+        if (other.getAPIVersion() == null ^ this.getAPIVersion() == null) return false;
+        if (other.getAPIVersion() != null && other.getAPIVersion().equals(this.getAPIVersion()) == false) return false; 
         return true;
     }
     

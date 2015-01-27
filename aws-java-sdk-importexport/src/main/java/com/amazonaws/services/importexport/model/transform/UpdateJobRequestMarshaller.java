@@ -53,6 +53,9 @@ public class UpdateJobRequestMarshaller implements Marshaller<Request<UpdateJobR
         if (updateJobRequest.isValidateOnly() != null) {
             request.addParameter("ValidateOnly", StringUtils.fromBoolean(updateJobRequest.isValidateOnly()));
         }
+        if (updateJobRequest.getAPIVersion() != null) {
+            request.addParameter("APIVersion", StringUtils.fromString(updateJobRequest.getAPIVersion()));
+        }
 
         return request;
     }

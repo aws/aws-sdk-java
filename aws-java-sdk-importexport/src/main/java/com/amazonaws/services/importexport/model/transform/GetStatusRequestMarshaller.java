@@ -44,6 +44,9 @@ public class GetStatusRequestMarshaller implements Marshaller<Request<GetStatusR
         if (getStatusRequest.getJobId() != null) {
             request.addParameter("JobId", StringUtils.fromString(getStatusRequest.getJobId()));
         }
+        if (getStatusRequest.getAPIVersion() != null) {
+            request.addParameter("APIVersion", StringUtils.fromString(getStatusRequest.getAPIVersion()));
+        }
 
         return request;
     }

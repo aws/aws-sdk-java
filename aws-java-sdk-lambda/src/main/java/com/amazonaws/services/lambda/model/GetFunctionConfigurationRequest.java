@@ -40,7 +40,7 @@ public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest imp
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      */
     private String functionName;
 
@@ -50,7 +50,7 @@ public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest imp
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @return The name of the Lambda function for which you want to retrieve the
      *         configuration information.
@@ -65,7 +65,7 @@ public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest imp
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The name of the Lambda function for which you want to retrieve the
      *         configuration information.
@@ -82,7 +82,7 @@ public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest imp
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The name of the Lambda function for which you want to retrieve the
      *         configuration information.

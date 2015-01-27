@@ -53,7 +53,7 @@ public class BatchGetItemResult implements Serializable {
     private java.util.Map<String,KeysAndAttributes> unprocessedKeys;
 
     /**
-     * The write capacity units consumed by the operation. <p>Each element
+     * The read capacity units consumed by the operation. <p>Each element
      * consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      * the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      * total number of capacity units consumed. </li> </ul>
@@ -313,12 +313,12 @@ public class BatchGetItemResult implements Serializable {
     }
     
     /**
-     * The write capacity units consumed by the operation. <p>Each element
+     * The read capacity units consumed by the operation. <p>Each element
      * consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      * the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      * total number of capacity units consumed. </li> </ul>
      *
-     * @return The write capacity units consumed by the operation. <p>Each element
+     * @return The read capacity units consumed by the operation. <p>Each element
      *         consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      *         the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      *         total number of capacity units consumed. </li> </ul>
@@ -328,12 +328,12 @@ public class BatchGetItemResult implements Serializable {
     }
     
     /**
-     * The write capacity units consumed by the operation. <p>Each element
+     * The read capacity units consumed by the operation. <p>Each element
      * consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      * the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      * total number of capacity units consumed. </li> </ul>
      *
-     * @param consumedCapacity The write capacity units consumed by the operation. <p>Each element
+     * @param consumedCapacity The read capacity units consumed by the operation. <p>Each element
      *         consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      *         the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      *         total number of capacity units consumed. </li> </ul>
@@ -349,14 +349,14 @@ public class BatchGetItemResult implements Serializable {
     }
     
     /**
-     * The write capacity units consumed by the operation. <p>Each element
+     * The read capacity units consumed by the operation. <p>Each element
      * consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      * the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      * total number of capacity units consumed. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param consumedCapacity The write capacity units consumed by the operation. <p>Each element
+     * @param consumedCapacity The read capacity units consumed by the operation. <p>Each element
      *         consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      *         the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      *         total number of capacity units consumed. </li> </ul>
@@ -373,14 +373,14 @@ public class BatchGetItemResult implements Serializable {
     }
     
     /**
-     * The write capacity units consumed by the operation. <p>Each element
+     * The read capacity units consumed by the operation. <p>Each element
      * consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      * the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      * total number of capacity units consumed. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param consumedCapacity The write capacity units consumed by the operation. <p>Each element
+     * @param consumedCapacity The read capacity units consumed by the operation. <p>Each element
      *         consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      *         the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      *         total number of capacity units consumed. </li> </ul>

@@ -54,12 +54,11 @@ public class Condition implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions.
+     * unsigned when it compares binary values.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue> attributeValueList;
 
@@ -203,24 +202,22 @@ public class Condition implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions.
+     * unsigned when it compares binary values.
      *
      * @return One or more values to evaluate against the supplied attribute. The
      *         number of values in the list depends on the <i>ComparisonOperator</i>
      *         being used. <p>For type Number, value comparisons are numeric.
      *         <p>String value comparisons for greater than, equals, or less than are
      *         based on ASCII character code values. For example, <code>a</code> is
-     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         greater than <code>A</code>, and <code>a</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions.
+     *         unsigned when it compares binary values.
      */
     public java.util.List<AttributeValue> getAttributeValueList() {
         return attributeValueList;
@@ -232,24 +229,22 @@ public class Condition implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions.
+     * unsigned when it compares binary values.
      *
      * @param attributeValueList One or more values to evaluate against the supplied attribute. The
      *         number of values in the list depends on the <i>ComparisonOperator</i>
      *         being used. <p>For type Number, value comparisons are numeric.
      *         <p>String value comparisons for greater than, equals, or less than are
      *         based on ASCII character code values. For example, <code>a</code> is
-     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         greater than <code>A</code>, and <code>a</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions.
+     *         unsigned when it compares binary values.
      */
     public void setAttributeValueList(java.util.Collection<AttributeValue> attributeValueList) {
         if (attributeValueList == null) {
@@ -267,12 +262,11 @@ public class Condition implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions.
+     * unsigned when it compares binary values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -281,12 +275,11 @@ public class Condition implements Serializable {
      *         being used. <p>For type Number, value comparisons are numeric.
      *         <p>String value comparisons for greater than, equals, or less than are
      *         based on ASCII character code values. For example, <code>a</code> is
-     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         greater than <code>A</code>, and <code>a</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions.
+     *         unsigned when it compares binary values.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -305,12 +298,11 @@ public class Condition implements Serializable {
      * being used. <p>For type Number, value comparisons are numeric.
      * <p>String value comparisons for greater than, equals, or less than are
      * based on ASCII character code values. For example, <code>a</code> is
-     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * greater than <code>A</code>, and <code>a</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions.
+     * unsigned when it compares binary values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -319,12 +311,11 @@ public class Condition implements Serializable {
      *         being used. <p>For type Number, value comparisons are numeric.
      *         <p>String value comparisons for greater than, equals, or less than are
      *         based on ASCII character code values. For example, <code>a</code> is
-     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         greater than <code>A</code>, and <code>a</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions.
+     *         unsigned when it compares binary values.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

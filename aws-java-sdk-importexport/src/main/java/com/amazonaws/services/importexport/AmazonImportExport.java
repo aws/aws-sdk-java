@@ -110,6 +110,7 @@ public interface AmazonImportExport {
      * @throws BucketPermissionException
      * @throws InvalidParameterException
      * @throws MultipleRegionsException
+     * @throws InvalidVersionException
      * @throws MissingParameterException
      * @throws InvalidFileSystemException
      * @throws MissingCustomsException
@@ -118,6 +119,8 @@ public interface AmazonImportExport {
      * @throws InvalidManifestFieldException
      * @throws InvalidCustomsException
      * @throws MissingManifestFieldException
+     * @throws CreateJobQuotaExceededException
+     * @throws InvalidJobIdException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -132,6 +135,39 @@ public interface AmazonImportExport {
 
     /**
      * <p>
+     * This operation returns information about a job, including where the
+     * job is in the processing pipeline, the status of the results, and the
+     * signature value associated with the job. You can only return
+     * information about jobs you own.
+     * </p>
+     *
+     * @param getShippingLabelRequest Container for the necessary parameters
+     *           to execute the GetShippingLabel service method on AmazonImportExport.
+     * 
+     * @return The response from the GetShippingLabel service method, as
+     *         returned by AmazonImportExport.
+     * 
+     * @throws InvalidVersionException
+     * @throws InvalidAddressException
+     * @throws CanceledJobIdException
+     * @throws ExpiredJobIdException
+     * @throws InvalidParameterException
+     * @throws InvalidAccessKeyIdException
+     * @throws InvalidJobIdException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonImportExport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetShippingLabelResult getShippingLabel(GetShippingLabelRequest getShippingLabelRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation cancels a specified job. Only the job owner can cancel
      * it. The operation fails if the job has already started or is complete.
      * </p>
@@ -142,6 +178,7 @@ public interface AmazonImportExport {
      * @return The response from the CancelJob service method, as returned by
      *         AmazonImportExport.
      * 
+     * @throws InvalidVersionException
      * @throws CanceledJobIdException
      * @throws ExpiredJobIdException
      * @throws InvalidAccessKeyIdException
@@ -173,6 +210,7 @@ public interface AmazonImportExport {
      * @return The response from the GetStatus service method, as returned by
      *         AmazonImportExport.
      * 
+     * @throws InvalidVersionException
      * @throws CanceledJobIdException
      * @throws ExpiredJobIdException
      * @throws InvalidAccessKeyIdException
@@ -204,6 +242,7 @@ public interface AmazonImportExport {
      * @return The response from the ListJobs service method, as returned by
      *         AmazonImportExport.
      * 
+     * @throws InvalidVersionException
      * @throws InvalidParameterException
      * @throws InvalidAccessKeyIdException
      *
@@ -237,7 +276,9 @@ public interface AmazonImportExport {
      * @throws BucketPermissionException
      * @throws InvalidAddressException
      * @throws InvalidParameterException
+     * @throws UnableToUpdateJobIdException
      * @throws MultipleRegionsException
+     * @throws InvalidVersionException
      * @throws MissingParameterException
      * @throws InvalidFileSystemException
      * @throws CanceledJobIdException
@@ -273,6 +314,7 @@ public interface AmazonImportExport {
      * @return The response from the ListJobs service method, as returned by
      *         AmazonImportExport.
      * 
+     * @throws InvalidVersionException
      * @throws InvalidParameterException
      * @throws InvalidAccessKeyIdException
      *

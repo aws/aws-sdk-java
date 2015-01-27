@@ -36,6 +36,11 @@ public class UpdateJobResult implements Serializable {
     private String warningMessage;
 
     /**
+     * A collection of artifacts.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactList;
+
+    /**
      * Specifies whether (true) or not (false) AWS Import/Export updated your
      * job.
      *
@@ -125,6 +130,74 @@ public class UpdateJobResult implements Serializable {
     }
 
     /**
+     * A collection of artifacts.
+     *
+     * @return A collection of artifacts.
+     */
+    public java.util.List<Artifact> getArtifactList() {
+        if (artifactList == null) {
+              artifactList = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>();
+              artifactList.setAutoConstruct(true);
+        }
+        return artifactList;
+    }
+    
+    /**
+     * A collection of artifacts.
+     *
+     * @param artifactList A collection of artifacts.
+     */
+    public void setArtifactList(java.util.Collection<Artifact> artifactList) {
+        if (artifactList == null) {
+            this.artifactList = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>(artifactList.size());
+        artifactListCopy.addAll(artifactList);
+        this.artifactList = artifactListCopy;
+    }
+    
+    /**
+     * A collection of artifacts.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param artifactList A collection of artifacts.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateJobResult withArtifactList(Artifact... artifactList) {
+        if (getArtifactList() == null) setArtifactList(new java.util.ArrayList<Artifact>(artifactList.length));
+        for (Artifact value : artifactList) {
+            getArtifactList().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A collection of artifacts.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param artifactList A collection of artifacts.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateJobResult withArtifactList(java.util.Collection<Artifact> artifactList) {
+        if (artifactList == null) {
+            this.artifactList = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>(artifactList.size());
+            artifactListCopy.addAll(artifactList);
+            this.artifactList = artifactListCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -137,7 +210,8 @@ public class UpdateJobResult implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (isSuccess() != null) sb.append("Success: " + isSuccess() + ",");
-        if (getWarningMessage() != null) sb.append("WarningMessage: " + getWarningMessage() );
+        if (getWarningMessage() != null) sb.append("WarningMessage: " + getWarningMessage() + ",");
+        if (getArtifactList() != null) sb.append("ArtifactList: " + getArtifactList() );
         sb.append("}");
         return sb.toString();
     }
@@ -149,6 +223,7 @@ public class UpdateJobResult implements Serializable {
         
         hashCode = prime * hashCode + ((isSuccess() == null) ? 0 : isSuccess().hashCode()); 
         hashCode = prime * hashCode + ((getWarningMessage() == null) ? 0 : getWarningMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getArtifactList() == null) ? 0 : getArtifactList().hashCode()); 
         return hashCode;
     }
     
@@ -164,6 +239,8 @@ public class UpdateJobResult implements Serializable {
         if (other.isSuccess() != null && other.isSuccess().equals(this.isSuccess()) == false) return false; 
         if (other.getWarningMessage() == null ^ this.getWarningMessage() == null) return false;
         if (other.getWarningMessage() != null && other.getWarningMessage().equals(this.getWarningMessage()) == false) return false; 
+        if (other.getArtifactList() == null ^ this.getArtifactList() == null) return false;
+        if (other.getArtifactList() != null && other.getArtifactList().equals(this.getArtifactList()) == false) return false; 
         return true;
     }
     

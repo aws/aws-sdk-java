@@ -48,6 +48,11 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
     private String marker;
 
     /**
+     * Specifies the version of the client tool.
+     */
+    private String aPIVersion;
+
+    /**
      * Sets the maximum number of jobs returned in the response. If there are
      * additional jobs that were not returned because MaxJobs was exceeded,
      * the response contains <IsTruncated>true</IsTruncated>. To return the
@@ -144,6 +149,39 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
     }
 
     /**
+     * Specifies the version of the client tool.
+     *
+     * @return Specifies the version of the client tool.
+     */
+    public String getAPIVersion() {
+        return aPIVersion;
+    }
+    
+    /**
+     * Specifies the version of the client tool.
+     *
+     * @param aPIVersion Specifies the version of the client tool.
+     */
+    public void setAPIVersion(String aPIVersion) {
+        this.aPIVersion = aPIVersion;
+    }
+    
+    /**
+     * Specifies the version of the client tool.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param aPIVersion Specifies the version of the client tool.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ListJobsRequest withAPIVersion(String aPIVersion) {
+        this.aPIVersion = aPIVersion;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -156,7 +194,8 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxJobs() != null) sb.append("MaxJobs: " + getMaxJobs() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() );
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getAPIVersion() != null) sb.append("APIVersion: " + getAPIVersion() );
         sb.append("}");
         return sb.toString();
     }
@@ -168,6 +207,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         
         hashCode = prime * hashCode + ((getMaxJobs() == null) ? 0 : getMaxJobs().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getAPIVersion() == null) ? 0 : getAPIVersion().hashCode()); 
         return hashCode;
     }
     
@@ -183,6 +223,8 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         if (other.getMaxJobs() != null && other.getMaxJobs().equals(this.getMaxJobs()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getAPIVersion() == null ^ this.getAPIVersion() == null) return false;
+        if (other.getAPIVersion() != null && other.getAPIVersion().equals(this.getAPIVersion()) == false) return false; 
         return true;
     }
     
