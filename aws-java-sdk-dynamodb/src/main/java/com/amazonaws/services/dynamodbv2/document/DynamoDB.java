@@ -98,7 +98,6 @@ public class DynamoDB implements ListTablesApi, BatchGetItemApi,
             result.getTableDescription());
     }
 
-
     /**
      * Creates the specified table in DynamoDB.
      */

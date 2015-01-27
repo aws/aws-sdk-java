@@ -61,15 +61,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ProjectionExpression</i> instead. Note that if you use
      * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve lists or maps; however, it
-     * cannot retrieve individual list or map elements.</important> <p>The
-     * names of one or more attributes to retrieve. If no attribute names are
-     * specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the
-     * result. <p>Note that <i>AttributesToGet</i> has no effect on
-     * provisioned throughput consumption. DynamoDB determines capacity units
-     * consumed based on item size, not on the amount of data that is
-     * returned to an application.
+     * <p>This parameter allows you to retrieve attributes of type List or
+     * Map; however, it cannot retrieve individual elements within a List or
+     * a Map.</important> <p>The names of one or more attributes to retrieve.
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will
+     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     * effect on provisioned throughput consumption. DynamoDB determines
+     * capacity units consumed based on item size, not on the amount of data
+     * that is returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -96,31 +96,43 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     private String returnConsumedCapacity;
 
     /**
-     * One or more attributes to retrieve from the table. These attributes
-     * can include scalars, sets, or elements of a JSON document. The
-     * attributes in the expression must be separated by commas. <p>If no
-     * attribute names are specified, then all attributes will be returned.
-     * If any of the requested attributes are not found, they will not appear
-     * in the result.
+     * A string that identifies one or more attributes to retrieve from the
+     * table. These attributes can include scalars, sets, or elements of a
+     * JSON document. The attributes in the expression must be separated by
+     * commas. <p>If no attribute names are specified, then all attributes
+     * will be returned. If any of the requested attributes are not found,
+     * they will not appear in the result. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private String projectionExpression;
 
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,String> expressionAttributeNames;
 
@@ -366,15 +378,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ProjectionExpression</i> instead. Note that if you use
      * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve lists or maps; however, it
-     * cannot retrieve individual list or map elements.</important> <p>The
-     * names of one or more attributes to retrieve. If no attribute names are
-     * specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the
-     * result. <p>Note that <i>AttributesToGet</i> has no effect on
-     * provisioned throughput consumption. DynamoDB determines capacity units
-     * consumed based on item size, not on the amount of data that is
-     * returned to an application.
+     * <p>This parameter allows you to retrieve attributes of type List or
+     * Map; however, it cannot retrieve individual elements within a List or
+     * a Map.</important> <p>The names of one or more attributes to retrieve.
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will
+     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     * effect on provisioned throughput consumption. DynamoDB determines
+     * capacity units consumed based on item size, not on the amount of data
+     * that is returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -383,15 +395,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ProjectionExpression</i> instead. Note that if you use
      *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve lists or maps; however, it
-     *         cannot retrieve individual list or map elements.</important> <p>The
-     *         names of one or more attributes to retrieve. If no attribute names are
-     *         specified, then all attributes will be returned. If any of the
-     *         requested attributes are not found, they will not appear in the
-     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
-     *         provisioned throughput consumption. DynamoDB determines capacity units
-     *         consumed based on item size, not on the amount of data that is
-     *         returned to an application.
+     *         <p>This parameter allows you to retrieve attributes of type List or
+     *         Map; however, it cannot retrieve individual elements within a List or
+     *         a Map.</important> <p>The names of one or more attributes to retrieve.
+     *         If no attribute names are specified, then all attributes will be
+     *         returned. If any of the requested attributes are not found, they will
+     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     *         effect on provisioned throughput consumption. DynamoDB determines
+     *         capacity units consumed based on item size, not on the amount of data
+     *         that is returned to an application.
      */
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
@@ -402,15 +414,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ProjectionExpression</i> instead. Note that if you use
      * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve lists or maps; however, it
-     * cannot retrieve individual list or map elements.</important> <p>The
-     * names of one or more attributes to retrieve. If no attribute names are
-     * specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the
-     * result. <p>Note that <i>AttributesToGet</i> has no effect on
-     * provisioned throughput consumption. DynamoDB determines capacity units
-     * consumed based on item size, not on the amount of data that is
-     * returned to an application.
+     * <p>This parameter allows you to retrieve attributes of type List or
+     * Map; however, it cannot retrieve individual elements within a List or
+     * a Map.</important> <p>The names of one or more attributes to retrieve.
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will
+     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     * effect on provisioned throughput consumption. DynamoDB determines
+     * capacity units consumed based on item size, not on the amount of data
+     * that is returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -419,15 +431,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ProjectionExpression</i> instead. Note that if you use
      *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve lists or maps; however, it
-     *         cannot retrieve individual list or map elements.</important> <p>The
-     *         names of one or more attributes to retrieve. If no attribute names are
-     *         specified, then all attributes will be returned. If any of the
-     *         requested attributes are not found, they will not appear in the
-     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
-     *         provisioned throughput consumption. DynamoDB determines capacity units
-     *         consumed based on item size, not on the amount of data that is
-     *         returned to an application.
+     *         <p>This parameter allows you to retrieve attributes of type List or
+     *         Map; however, it cannot retrieve individual elements within a List or
+     *         a Map.</important> <p>The names of one or more attributes to retrieve.
+     *         If no attribute names are specified, then all attributes will be
+     *         returned. If any of the requested attributes are not found, they will
+     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     *         effect on provisioned throughput consumption. DynamoDB determines
+     *         capacity units consumed based on item size, not on the amount of data
+     *         that is returned to an application.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -444,15 +456,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ProjectionExpression</i> instead. Note that if you use
      * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve lists or maps; however, it
-     * cannot retrieve individual list or map elements.</important> <p>The
-     * names of one or more attributes to retrieve. If no attribute names are
-     * specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the
-     * result. <p>Note that <i>AttributesToGet</i> has no effect on
-     * provisioned throughput consumption. DynamoDB determines capacity units
-     * consumed based on item size, not on the amount of data that is
-     * returned to an application.
+     * <p>This parameter allows you to retrieve attributes of type List or
+     * Map; however, it cannot retrieve individual elements within a List or
+     * a Map.</important> <p>The names of one or more attributes to retrieve.
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will
+     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     * effect on provisioned throughput consumption. DynamoDB determines
+     * capacity units consumed based on item size, not on the amount of data
+     * that is returned to an application.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -463,15 +475,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ProjectionExpression</i> instead. Note that if you use
      *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve lists or maps; however, it
-     *         cannot retrieve individual list or map elements.</important> <p>The
-     *         names of one or more attributes to retrieve. If no attribute names are
-     *         specified, then all attributes will be returned. If any of the
-     *         requested attributes are not found, they will not appear in the
-     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
-     *         provisioned throughput consumption. DynamoDB determines capacity units
-     *         consumed based on item size, not on the amount of data that is
-     *         returned to an application.
+     *         <p>This parameter allows you to retrieve attributes of type List or
+     *         Map; however, it cannot retrieve individual elements within a List or
+     *         a Map.</important> <p>The names of one or more attributes to retrieve.
+     *         If no attribute names are specified, then all attributes will be
+     *         returned. If any of the requested attributes are not found, they will
+     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     *         effect on provisioned throughput consumption. DynamoDB determines
+     *         capacity units consumed based on item size, not on the amount of data
+     *         that is returned to an application.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -489,15 +501,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>ProjectionExpression</i> instead. Note that if you use
      * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve lists or maps; however, it
-     * cannot retrieve individual list or map elements.</important> <p>The
-     * names of one or more attributes to retrieve. If no attribute names are
-     * specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the
-     * result. <p>Note that <i>AttributesToGet</i> has no effect on
-     * provisioned throughput consumption. DynamoDB determines capacity units
-     * consumed based on item size, not on the amount of data that is
-     * returned to an application.
+     * <p>This parameter allows you to retrieve attributes of type List or
+     * Map; however, it cannot retrieve individual elements within a List or
+     * a Map.</important> <p>The names of one or more attributes to retrieve.
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will
+     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     * effect on provisioned throughput consumption. DynamoDB determines
+     * capacity units consumed based on item size, not on the amount of data
+     * that is returned to an application.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -508,15 +520,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>ProjectionExpression</i> instead. Note that if you use
      *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve lists or maps; however, it
-     *         cannot retrieve individual list or map elements.</important> <p>The
-     *         names of one or more attributes to retrieve. If no attribute names are
-     *         specified, then all attributes will be returned. If any of the
-     *         requested attributes are not found, they will not appear in the
-     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
-     *         provisioned throughput consumption. DynamoDB determines capacity units
-     *         consumed based on item size, not on the amount of data that is
-     *         returned to an application.
+     *         <p>This parameter allows you to retrieve attributes of type List or
+     *         Map; however, it cannot retrieve individual elements within a List or
+     *         a Map.</important> <p>The names of one or more attributes to retrieve.
+     *         If no attribute names are specified, then all attributes will be
+     *         returned. If any of the requested attributes are not found, they will
+     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     *         effect on provisioned throughput consumption. DynamoDB determines
+     *         capacity units consumed based on item size, not on the amount of data
+     *         that is returned to an application.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -714,59 +726,71 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * One or more attributes to retrieve from the table. These attributes
-     * can include scalars, sets, or elements of a JSON document. The
-     * attributes in the expression must be separated by commas. <p>If no
-     * attribute names are specified, then all attributes will be returned.
-     * If any of the requested attributes are not found, they will not appear
-     * in the result.
+     * A string that identifies one or more attributes to retrieve from the
+     * table. These attributes can include scalars, sets, or elements of a
+     * JSON document. The attributes in the expression must be separated by
+     * commas. <p>If no attribute names are specified, then all attributes
+     * will be returned. If any of the requested attributes are not found,
+     * they will not appear in the result. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
-     * @return One or more attributes to retrieve from the table. These attributes
-     *         can include scalars, sets, or elements of a JSON document. The
-     *         attributes in the expression must be separated by commas. <p>If no
-     *         attribute names are specified, then all attributes will be returned.
-     *         If any of the requested attributes are not found, they will not appear
-     *         in the result.
+     * @return A string that identifies one or more attributes to retrieve from the
+     *         table. These attributes can include scalars, sets, or elements of a
+     *         JSON document. The attributes in the expression must be separated by
+     *         commas. <p>If no attribute names are specified, then all attributes
+     *         will be returned. If any of the requested attributes are not found,
+     *         they will not appear in the result. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public String getProjectionExpression() {
         return projectionExpression;
     }
     
     /**
-     * One or more attributes to retrieve from the table. These attributes
-     * can include scalars, sets, or elements of a JSON document. The
-     * attributes in the expression must be separated by commas. <p>If no
-     * attribute names are specified, then all attributes will be returned.
-     * If any of the requested attributes are not found, they will not appear
-     * in the result.
+     * A string that identifies one or more attributes to retrieve from the
+     * table. These attributes can include scalars, sets, or elements of a
+     * JSON document. The attributes in the expression must be separated by
+     * commas. <p>If no attribute names are specified, then all attributes
+     * will be returned. If any of the requested attributes are not found,
+     * they will not appear in the result. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
-     * @param projectionExpression One or more attributes to retrieve from the table. These attributes
-     *         can include scalars, sets, or elements of a JSON document. The
-     *         attributes in the expression must be separated by commas. <p>If no
-     *         attribute names are specified, then all attributes will be returned.
-     *         If any of the requested attributes are not found, they will not appear
-     *         in the result.
+     * @param projectionExpression A string that identifies one or more attributes to retrieve from the
+     *         table. These attributes can include scalars, sets, or elements of a
+     *         JSON document. The attributes in the expression must be separated by
+     *         commas. <p>If no attribute names are specified, then all attributes
+     *         will be returned. If any of the requested attributes are not found,
+     *         they will not appear in the result. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
     }
     
     /**
-     * One or more attributes to retrieve from the table. These attributes
-     * can include scalars, sets, or elements of a JSON document. The
-     * attributes in the expression must be separated by commas. <p>If no
-     * attribute names are specified, then all attributes will be returned.
-     * If any of the requested attributes are not found, they will not appear
-     * in the result.
+     * A string that identifies one or more attributes to retrieve from the
+     * table. These attributes can include scalars, sets, or elements of a
+     * JSON document. The attributes in the expression must be separated by
+     * commas. <p>If no attribute names are specified, then all attributes
+     * will be returned. If any of the requested attributes are not found,
+     * they will not appear in the result. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param projectionExpression One or more attributes to retrieve from the table. These attributes
-     *         can include scalars, sets, or elements of a JSON document. The
-     *         attributes in the expression must be separated by commas. <p>If no
-     *         attribute names are specified, then all attributes will be returned.
-     *         If any of the requested attributes are not found, they will not appear
-     *         in the result.
+     * @param projectionExpression A string that identifies one or more attributes to retrieve from the
+     *         table. These attributes can include scalars, sets, or elements of a
+     *         JSON document. The attributes in the expression must be separated by
+     *         commas. <p>If no attribute names are specified, then all attributes
+     *         will be returned. If any of the requested attributes are not found,
+     *         they will not appear in the result. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -777,37 +801,57 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
-     * @return One or more substitution tokens for simplifying complex expressions.
-     *         The following are some use cases for an
-     *         <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     *         attribute name that is very long or unwieldy in an expression. </li>
-     *         <li> <p>To create a placeholder for repeating occurrences of an
-     *         attribute name in an expression. </li> <li> <p>To prevent special
-     *         characters in an attribute name from being misinterpreted in an
-     *         expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     *         to dereference an attribute name. For example, consider the following
-     *         expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     *         order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     *         that you specified the following for <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     *         <p>The expression can now be simplified as follows:
-     *         <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * @return One or more substitution tokens for attribute names in an expression.
+     *         The following are some use cases for using
+     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     *         create a placeholder for repeating occurrences of an attribute name in
+     *         an expression. </li> <li> <p>To prevent special characters in an
+     *         attribute name from being misinterpreted in an expression. </li> </ul>
+     *         <p>Use the <b>#</b> character in an expression to dereference an
+     *         attribute name. For example, consider the following attribute name:
+     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     *         attribute conflicts with a reserved word, so it cannot be used
+     *         directly in an expression. (For the complete list of reserved words,
+     *         go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     *         around this, you could specify the following for
+     *         <i>ExpressionAttributeNames</i>:
+     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     *         then use this substitution in an expression, as in this example:
+     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     *         with the <b>:</b> character are <i>expression attribute values</i>,
+     *         which are placeholders for the actual value at runtime.</note> <p>For
+     *         more information on expression attribute names, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,String> getExpressionAttributeNames() {
         
@@ -815,76 +859,116 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
-     * @param expressionAttributeNames One or more substitution tokens for simplifying complex expressions.
-     *         The following are some use cases for an
-     *         <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     *         attribute name that is very long or unwieldy in an expression. </li>
-     *         <li> <p>To create a placeholder for repeating occurrences of an
-     *         attribute name in an expression. </li> <li> <p>To prevent special
-     *         characters in an attribute name from being misinterpreted in an
-     *         expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     *         to dereference an attribute name. For example, consider the following
-     *         expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     *         order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     *         that you specified the following for <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     *         <p>The expression can now be simplified as follows:
-     *         <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
+     *         The following are some use cases for using
+     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     *         create a placeholder for repeating occurrences of an attribute name in
+     *         an expression. </li> <li> <p>To prevent special characters in an
+     *         attribute name from being misinterpreted in an expression. </li> </ul>
+     *         <p>Use the <b>#</b> character in an expression to dereference an
+     *         attribute name. For example, consider the following attribute name:
+     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     *         attribute conflicts with a reserved word, so it cannot be used
+     *         directly in an expression. (For the complete list of reserved words,
+     *         go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     *         around this, you could specify the following for
+     *         <i>ExpressionAttributeNames</i>:
+     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     *         then use this substitution in an expression, as in this example:
+     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     *         with the <b>:</b> character are <i>expression attribute values</i>,
+     *         which are placeholders for the actual value at runtime.</note> <p>For
+     *         more information on expression attribute names, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
     }
     
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expressionAttributeNames One or more substitution tokens for simplifying complex expressions.
-     *         The following are some use cases for an
-     *         <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     *         attribute name that is very long or unwieldy in an expression. </li>
-     *         <li> <p>To create a placeholder for repeating occurrences of an
-     *         attribute name in an expression. </li> <li> <p>To prevent special
-     *         characters in an attribute name from being misinterpreted in an
-     *         expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     *         to dereference an attribute name. For example, consider the following
-     *         expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     *         order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     *         that you specified the following for <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     *         <p>The expression can now be simplified as follows:
-     *         <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
+     *         The following are some use cases for using
+     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     *         create a placeholder for repeating occurrences of an attribute name in
+     *         an expression. </li> <li> <p>To prevent special characters in an
+     *         attribute name from being misinterpreted in an expression. </li> </ul>
+     *         <p>Use the <b>#</b> character in an expression to dereference an
+     *         attribute name. For example, consider the following attribute name:
+     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     *         attribute conflicts with a reserved word, so it cannot be used
+     *         directly in an expression. (For the complete list of reserved words,
+     *         go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     *         around this, you could specify the following for
+     *         <i>ExpressionAttributeNames</i>:
+     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     *         then use this substitution in an expression, as in this example:
+     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     *         with the <b>:</b> character are <i>expression attribute values</i>,
+     *         which are placeholders for the actual value at runtime.</note> <p>For
+     *         more information on expression attribute names, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -895,21 +979,31 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * One or more substitution tokens for simplifying complex expressions.
-     * The following are some use cases for an
-     * <i>ExpressionAttributeNames</i> value: <ul> <li> <p>To shorten an
-     * attribute name that is very long or unwieldy in an expression. </li>
-     * <li> <p>To create a placeholder for repeating occurrences of an
-     * attribute name in an expression. </li> <li> <p>To prevent special
-     * characters in an attribute name from being misinterpreted in an
-     * expression. </li> </ul> <p>Use the <b>#</b> character in an expression
-     * to dereference an attribute name. For example, consider the following
-     * expression: <ul><li><p><code>order.customerInfo.LastName = "Smith" OR
-     * order.customerInfo.LastName = "Jones"</code></li></ul> <p>Now suppose
-     * that you specified the following for <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"n":"order.customerInfo.LastName"}</code></li></ul>
-     * <p>The expression can now be simplified as follows:
-     * <ul><li><p><code>#n = "Smith" OR #n = "Jones"</code></li></ul>
+     * One or more substitution tokens for attribute names in an expression.
+     * The following are some use cases for using
+     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
+     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
+     * create a placeholder for repeating occurrences of an attribute name in
+     * an expression. </li> <li> <p>To prevent special characters in an
+     * attribute name from being misinterpreted in an expression. </li> </ul>
+     * <p>Use the <b>#</b> character in an expression to dereference an
+     * attribute name. For example, consider the following attribute name:
+     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
+     * attribute conflicts with a reserved word, so it cannot be used
+     * directly in an expression. (For the complete list of reserved words,
+     * go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
+     * around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
+     * then use this substitution in an expression, as in this example:
+     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
+     * with the <b>:</b> character are <i>expression attribute values</i>,
+     * which are placeholders for the actual value at runtime.</note> <p>For
+     * more information on expression attribute names, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeNames
      * parameter, and returns a reference to this object so that method calls

@@ -28,7 +28,7 @@ public class FunctionConfiguration implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      */
     private String functionName;
 
@@ -36,7 +36,7 @@ public class FunctionConfiguration implements Serializable {
      * The Amazon Resource Name (ARN) assigned to the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
+     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
      */
     private String functionARN;
 
@@ -60,7 +60,7 @@ public class FunctionConfiguration implements Serializable {
      * (AWS) resources.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      */
     private String role;
 
@@ -109,7 +109,7 @@ public class FunctionConfiguration implements Serializable {
      * multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>64 - 1024<br/>
+     * <b>Range: </b>128 - 1024<br/>
      */
     private Integer memorySize;
 
@@ -123,7 +123,7 @@ public class FunctionConfiguration implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @return The name of the function.
      */
@@ -136,7 +136,7 @@ public class FunctionConfiguration implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The name of the function.
      */
@@ -151,7 +151,7 @@ public class FunctionConfiguration implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The name of the function.
      *
@@ -167,7 +167,7 @@ public class FunctionConfiguration implements Serializable {
      * The Amazon Resource Name (ARN) assigned to the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
+     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
      *
      * @return The Amazon Resource Name (ARN) assigned to the function.
      */
@@ -179,7 +179,7 @@ public class FunctionConfiguration implements Serializable {
      * The Amazon Resource Name (ARN) assigned to the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
+     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
      *
      * @param functionARN The Amazon Resource Name (ARN) assigned to the function.
      */
@@ -193,7 +193,7 @@ public class FunctionConfiguration implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
+     * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
      *
      * @param functionARN The Amazon Resource Name (ARN) assigned to the function.
      *
@@ -332,7 +332,7 @@ public class FunctionConfiguration implements Serializable {
      * (AWS) resources.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @return The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
      *         when it executes your function to access any other Amazon Web Services
@@ -348,7 +348,7 @@ public class FunctionConfiguration implements Serializable {
      * (AWS) resources.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @param role The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
      *         when it executes your function to access any other Amazon Web Services
@@ -366,7 +366,7 @@ public class FunctionConfiguration implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @param role The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
      *         when it executes your function to access any other Amazon Web Services
@@ -644,7 +644,7 @@ public class FunctionConfiguration implements Serializable {
      * multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>64 - 1024<br/>
+     * <b>Range: </b>128 - 1024<br/>
      *
      * @return The memory size, in MB, you configured for the function. Must be a
      *         multiple of 64 MB.
@@ -658,7 +658,7 @@ public class FunctionConfiguration implements Serializable {
      * multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>64 - 1024<br/>
+     * <b>Range: </b>128 - 1024<br/>
      *
      * @param memorySize The memory size, in MB, you configured for the function. Must be a
      *         multiple of 64 MB.
@@ -674,7 +674,7 @@ public class FunctionConfiguration implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>64 - 1024<br/>
+     * <b>Range: </b>128 - 1024<br/>
      *
      * @param memorySize The memory size, in MB, you configured for the function. Must be a
      *         multiple of 64 MB.

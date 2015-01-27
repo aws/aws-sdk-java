@@ -37,11 +37,6 @@ public class GetStatusResult implements Serializable {
     private String jobType;
 
     /**
-     * Address you ship your storage device to.
-     */
-    private String awsShippingAddress;
-
-    /**
      * A token representing the location of the storage device, such as
      * "AtAWS".
      */
@@ -118,6 +113,11 @@ public class GetStatusResult implements Serializable {
      * "2010-03-28T20:27:35Z".
      */
     private java.util.Date creationDate;
+
+    /**
+     * A collection of artifacts.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactList;
 
     /**
      * A unique identifier which refers to a particular job.
@@ -231,39 +231,6 @@ public class GetStatusResult implements Serializable {
      */
     public GetStatusResult withJobType(JobType jobType) {
         this.jobType = jobType.toString();
-        return this;
-    }
-
-    /**
-     * Address you ship your storage device to.
-     *
-     * @return Address you ship your storage device to.
-     */
-    public String getAwsShippingAddress() {
-        return awsShippingAddress;
-    }
-    
-    /**
-     * Address you ship your storage device to.
-     *
-     * @param awsShippingAddress Address you ship your storage device to.
-     */
-    public void setAwsShippingAddress(String awsShippingAddress) {
-        this.awsShippingAddress = awsShippingAddress;
-    }
-    
-    /**
-     * Address you ship your storage device to.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param awsShippingAddress Address you ship your storage device to.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetStatusResult withAwsShippingAddress(String awsShippingAddress) {
-        this.awsShippingAddress = awsShippingAddress;
         return this;
     }
 
@@ -775,6 +742,74 @@ public class GetStatusResult implements Serializable {
     }
 
     /**
+     * A collection of artifacts.
+     *
+     * @return A collection of artifacts.
+     */
+    public java.util.List<Artifact> getArtifactList() {
+        if (artifactList == null) {
+              artifactList = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>();
+              artifactList.setAutoConstruct(true);
+        }
+        return artifactList;
+    }
+    
+    /**
+     * A collection of artifacts.
+     *
+     * @param artifactList A collection of artifacts.
+     */
+    public void setArtifactList(java.util.Collection<Artifact> artifactList) {
+        if (artifactList == null) {
+            this.artifactList = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>(artifactList.size());
+        artifactListCopy.addAll(artifactList);
+        this.artifactList = artifactListCopy;
+    }
+    
+    /**
+     * A collection of artifacts.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param artifactList A collection of artifacts.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetStatusResult withArtifactList(Artifact... artifactList) {
+        if (getArtifactList() == null) setArtifactList(new java.util.ArrayList<Artifact>(artifactList.length));
+        for (Artifact value : artifactList) {
+            getArtifactList().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A collection of artifacts.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param artifactList A collection of artifacts.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetStatusResult withArtifactList(java.util.Collection<Artifact> artifactList) {
+        if (artifactList == null) {
+            this.artifactList = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>(artifactList.size());
+            artifactListCopy.addAll(artifactList);
+            this.artifactList = artifactListCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -788,7 +823,6 @@ public class GetStatusResult implements Serializable {
         sb.append("{");
         if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");
         if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");
-        if (getAwsShippingAddress() != null) sb.append("AwsShippingAddress: " + getAwsShippingAddress() + ",");
         if (getLocationCode() != null) sb.append("LocationCode: " + getLocationCode() + ",");
         if (getLocationMessage() != null) sb.append("LocationMessage: " + getLocationMessage() + ",");
         if (getProgressCode() != null) sb.append("ProgressCode: " + getProgressCode() + ",");
@@ -801,7 +835,8 @@ public class GetStatusResult implements Serializable {
         if (getSignature() != null) sb.append("Signature: " + getSignature() + ",");
         if (getSignatureFileContents() != null) sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");
         if (getCurrentManifest() != null) sb.append("CurrentManifest: " + getCurrentManifest() + ",");
-        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() );
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");
+        if (getArtifactList() != null) sb.append("ArtifactList: " + getArtifactList() );
         sb.append("}");
         return sb.toString();
     }
@@ -813,7 +848,6 @@ public class GetStatusResult implements Serializable {
         
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode()); 
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode()); 
-        hashCode = prime * hashCode + ((getAwsShippingAddress() == null) ? 0 : getAwsShippingAddress().hashCode()); 
         hashCode = prime * hashCode + ((getLocationCode() == null) ? 0 : getLocationCode().hashCode()); 
         hashCode = prime * hashCode + ((getLocationMessage() == null) ? 0 : getLocationMessage().hashCode()); 
         hashCode = prime * hashCode + ((getProgressCode() == null) ? 0 : getProgressCode().hashCode()); 
@@ -827,6 +861,7 @@ public class GetStatusResult implements Serializable {
         hashCode = prime * hashCode + ((getSignatureFileContents() == null) ? 0 : getSignatureFileContents().hashCode()); 
         hashCode = prime * hashCode + ((getCurrentManifest() == null) ? 0 : getCurrentManifest().hashCode()); 
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode()); 
+        hashCode = prime * hashCode + ((getArtifactList() == null) ? 0 : getArtifactList().hashCode()); 
         return hashCode;
     }
     
@@ -842,8 +877,6 @@ public class GetStatusResult implements Serializable {
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false) return false; 
         if (other.getJobType() == null ^ this.getJobType() == null) return false;
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false) return false; 
-        if (other.getAwsShippingAddress() == null ^ this.getAwsShippingAddress() == null) return false;
-        if (other.getAwsShippingAddress() != null && other.getAwsShippingAddress().equals(this.getAwsShippingAddress()) == false) return false; 
         if (other.getLocationCode() == null ^ this.getLocationCode() == null) return false;
         if (other.getLocationCode() != null && other.getLocationCode().equals(this.getLocationCode()) == false) return false; 
         if (other.getLocationMessage() == null ^ this.getLocationMessage() == null) return false;
@@ -870,6 +903,8 @@ public class GetStatusResult implements Serializable {
         if (other.getCurrentManifest() != null && other.getCurrentManifest().equals(this.getCurrentManifest()) == false) return false; 
         if (other.getCreationDate() == null ^ this.getCreationDate() == null) return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false) return false; 
+        if (other.getArtifactList() == null ^ this.getArtifactList() == null) return false;
+        if (other.getArtifactList() != null && other.getArtifactList().equals(this.getArtifactList()) == false) return false; 
         return true;
     }
     

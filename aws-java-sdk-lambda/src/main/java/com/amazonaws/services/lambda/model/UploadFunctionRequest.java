@@ -44,7 +44,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      */
     private String functionName;
 
@@ -74,7 +74,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * (AWS) resources.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      */
     private String role;
 
@@ -125,7 +125,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>64 - 1024<br/>
+     * <b>Range: </b>128 - 1024<br/>
      */
     private Integer memorySize;
 
@@ -137,7 +137,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @return The name you want to assign to the function you are uploading. The
      *         function names appear in the console and are returned in the
@@ -156,7 +156,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The name you want to assign to the function you are uploading. The
      *         function names appear in the console and are returned in the
@@ -177,7 +177,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The name you want to assign to the function you are uploading. The
      *         function names appear in the console and are returned in the
@@ -350,7 +350,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * (AWS) resources.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @return The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
      *         when it executes your function to access any other Amazon Web Services
@@ -366,7 +366,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * (AWS) resources.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @param role The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
      *         when it executes your function to access any other Amazon Web Services
@@ -384,7 +384,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @param role The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
      *         when it executes your function to access any other Amazon Web Services
@@ -655,7 +655,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>64 - 1024<br/>
+     * <b>Range: </b>128 - 1024<br/>
      *
      * @return The amount of memory, in MB, your Lambda function is given. Lambda
      *         uses this memory size to infer the amount of CPU allocated to your
@@ -677,7 +677,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>64 - 1024<br/>
+     * <b>Range: </b>128 - 1024<br/>
      *
      * @param memorySize The amount of memory, in MB, your Lambda function is given. Lambda
      *         uses this memory size to infer the amount of CPU allocated to your
@@ -701,7 +701,7 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>64 - 1024<br/>
+     * <b>Range: </b>128 - 1024<br/>
      *
      * @param memorySize The amount of memory, in MB, your Lambda function is given. Lambda
      *         uses this memory size to infer the amount of CPU allocated to your

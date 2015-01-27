@@ -44,6 +44,9 @@ public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobR
         if (cancelJobRequest.getJobId() != null) {
             request.addParameter("JobId", StringUtils.fromString(cancelJobRequest.getJobId()));
         }
+        if (cancelJobRequest.getAPIVersion() != null) {
+            request.addParameter("APIVersion", StringUtils.fromString(cancelJobRequest.getAPIVersion()));
+        }
 
         return request;
     }

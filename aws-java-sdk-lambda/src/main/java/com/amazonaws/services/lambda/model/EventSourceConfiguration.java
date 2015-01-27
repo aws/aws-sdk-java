@@ -47,7 +47,7 @@ public class EventSourceConfiguration implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      */
     private String functionName;
 
@@ -62,7 +62,7 @@ public class EventSourceConfiguration implements Serializable {
      * to read from the stream and invoke the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      */
     private String role;
 
@@ -203,7 +203,7 @@ public class EventSourceConfiguration implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @return The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream.
@@ -218,7 +218,7 @@ public class EventSourceConfiguration implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream.
@@ -235,7 +235,7 @@ public class EventSourceConfiguration implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The Lambda function to invoke when AWS Lambda detects an event on the
      *         stream.
@@ -327,7 +327,7 @@ public class EventSourceConfiguration implements Serializable {
      * to read from the stream and invoke the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @return The ARN of the IAM role (invocation role) that AWS Lambda can assume
      *         to read from the stream and invoke the function.
@@ -341,7 +341,7 @@ public class EventSourceConfiguration implements Serializable {
      * to read from the stream and invoke the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @param role The ARN of the IAM role (invocation role) that AWS Lambda can assume
      *         to read from the stream and invoke the function.
@@ -357,7 +357,7 @@ public class EventSourceConfiguration implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_]+<br/>
+     * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
      *
      * @param role The ARN of the IAM role (invocation role) that AWS Lambda can assume
      *         to read from the stream and invoke the function.

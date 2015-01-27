@@ -47,6 +47,9 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
         if (listJobsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(listJobsRequest.getMarker()));
         }
+        if (listJobsRequest.getAPIVersion() != null) {
+            request.addParameter("APIVersion", StringUtils.fromString(listJobsRequest.getAPIVersion()));
+        }
 
         return request;
     }

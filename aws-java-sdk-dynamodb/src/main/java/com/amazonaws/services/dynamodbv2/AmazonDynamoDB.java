@@ -20,7 +20,10 @@ import com.amazonaws.services.dynamodbv2.model.*;
 
 /**
  * Interface for accessing AmazonDynamoDBv2.
- * Amazon DynamoDB <b>Overview</b> <p>
+ * Amazon DynamoDB <p>
+ * <b>Overview</b>
+ * </p>
+ * <p>
  * This is the Amazon DynamoDB API Reference. This guide provides
  * descriptions and samples of the low-level DynamoDB API. For
  * information about DynamoDB application development, go to the
@@ -51,7 +54,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <p>
  * <b>Managing Tables</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -86,8 +88,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about managing tables, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html"> Working with Tables </a>
@@ -96,7 +96,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <p>
  * <b>Reading Data</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -134,8 +133,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about reading data, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
@@ -144,7 +141,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <p>
  * <b>Modifying Data</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -179,8 +175,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about modifying data, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
@@ -295,29 +289,31 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
-     * Updates the provisioned throughput for the given table. Setting the
-     * throughput for a table helps you manage performance and is part of the
-     * provisioned throughput feature of DynamoDB.
+     * Updates the provisioned throughput for the given table, or manages
+     * the global secondary indexes on the table.
      * </p>
      * <p>
-     * The provisioned throughput values can be upgraded or downgraded based
-     * on the maximums and minimums listed in the
+     * You can increase or decrease the table's provisioned throughput
+     * values within the maximums and minimums listed in the
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a>
      * section in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
-     * The table must be in the <code>ACTIVE</code> state for this operation
-     * to succeed. <i>UpdateTable</i> is an asynchronous operation; while
-     * executing the operation, the table is in the <code>UPDATING</code>
-     * state. While the table is in the <code>UPDATING</code> state, the
-     * table still has the provisioned throughput from before the call. The
-     * new provisioned throughput setting is in effect only when the table
-     * returns to the <code>ACTIVE</code> state after the <i>UpdateTable</i>
-     * operation.
+     * In addition, you can use <i>UpdateTable</i> to add, modify or delete
+     * global secondary indexes on the table. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html"> Managing Global Secondary Indexes </a>
+     * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
-     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
-     * Indexes can only be defined at table creation time.
+     * The table must be in the <code>ACTIVE</code> state for
+     * <i>UpdateTable</i> to succeed. <i>UpdateTable</i> is an asynchronous
+     * operation; while executing the operation, the table is in the
+     * <code>UPDATING</code> state. While the table is in the
+     * <code>UPDATING</code> state, the table still has the provisioned
+     * throughput from before the call. The table's new provisioned
+     * throughput settings go into effect when the table returns to the
+     * <code>ACTIVE</code> state; at that point, the <i>UpdateTable</i>
+     * operation is complete.
      * </p>
      *
      * @param updateTableRequest Container for the necessary parameters to
@@ -645,9 +641,11 @@ public interface AmazonDynamoDB {
      * on an <code>ACTIVE</code> table.
      * </p>
      * <p>
-     * If you want to create multiple tables with secondary indexes on them,
-     * you must create them sequentially. Only one table with secondary
-     * indexes can be in the <code>CREATING</code> state at any given time.
+     * You can optionally define secondary indexes on the new table, as part
+     * of the <i>CreateTable</i> operation. If you want to create multiple
+     * tables with secondary indexes on them, you must create the tables
+     * sequentially. Only one table with secondary indexes can be in the
+     * <code>CREATING</code> state at any given time.
      * </p>
      * <p>
      * You can use the <i>DescribeTable</i> API to check the table status.
@@ -817,9 +815,11 @@ public interface AmazonDynamoDB {
      * <p>
      * Edits an existing item's attributes, or adds a new item to the table
      * if it does not already exist. You can put, delete, or add attribute
-     * values. You can also perform a conditional update (insert a new
-     * attribute name-value pair if it doesn't exist, or replace an existing
-     * name-value pair if it has certain expected attribute values).
+     * values. You can also perform a conditional update on an existing item
+     * (insert a new attribute name-value pair if it doesn't exist, or
+     * replace an existing name-value pair if it has certain expected
+     * attribute values). If conditions are specified and the item does not
+     * exist, then the operation fails and a new item is not created.
      * </p>
      * <p>
      * You can also return the item's attribute values in the same
@@ -990,15 +990,15 @@ public interface AmazonDynamoDB {
      * available. Use <i>ProjectionExpression</i> instead. Note that if you
      * use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve lists or maps; however, it
-     * cannot retrieve individual list or map elements.</important> <p>The
-     * names of one or more attributes to retrieve. If no attribute names are
-     * specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the
-     * result. <p>Note that <i>AttributesToGet</i> has no effect on
-     * provisioned throughput consumption. DynamoDB determines capacity units
-     * consumed based on item size, not on the amount of data that is
-     * returned to an application.
+     * <p>This parameter allows you to retrieve attributes of type List or
+     * Map; however, it cannot retrieve individual elements within a List or
+     * a Map.</important> <p>The names of one or more attributes to retrieve.
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will
+     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     * effect on provisioned throughput consumption. DynamoDB determines
+     * capacity units consumed based on item size, not on the amount of data
+     * that is returned to an application.
      * 
      * @return The response from the Scan service method, as returned by
      *         AmazonDynamoDBv2.
@@ -1048,12 +1048,13 @@ public interface AmazonDynamoDB {
      * @param scanFilter <important> <p>There is a newer parameter available.
      * Use <i>FilterExpression</i> instead. Note that if you use
      * <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter does not support lists or maps. </important> <p>A condition
-     * that evaluates the scan results and returns only the desired values.
-     * <p>If you specify more than one condition in the <i>ScanFilter</i>
-     * map, then by default all of the conditions must evaluate to true. In
-     * other words, the conditions are ANDed together. (You can use the
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </important> <p>A condition that evaluates the scan results and
+     * returns only the desired values. <note><p>This parameter does not
+     * support attributes of type List or Map.</note> <p>If you specify more
+     * than one condition in the <i>ScanFilter</i> map, then by default all
+     * of the conditions must evaluate to true. In other words, the
+     * conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
      * you do this, then at least one of the conditions must evaluate to
      * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
@@ -1064,13 +1065,12 @@ public interface AmazonDynamoDB {
      * <p>For type Number, value comparisons are numeric. <p>String value
      * comparisons for greater than, equals, or less than are based on ASCII
      * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     * For a list of code values, see <a
+     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     * a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. <p>For information on specifying data types in
-     * JSON, see <a
+     * unsigned when it compares binary values. <p>For information on
+     * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
      * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
@@ -1131,24 +1131,25 @@ public interface AmazonDynamoDB {
      * available. Use <i>ProjectionExpression</i> instead. Note that if you
      * use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
      * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve lists or maps; however, it
-     * cannot retrieve individual list or map elements.</important> <p>The
-     * names of one or more attributes to retrieve. If no attribute names are
-     * specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the
-     * result. <p>Note that <i>AttributesToGet</i> has no effect on
-     * provisioned throughput consumption. DynamoDB determines capacity units
-     * consumed based on item size, not on the amount of data that is
-     * returned to an application.
+     * <p>This parameter allows you to retrieve attributes of type List or
+     * Map; however, it cannot retrieve individual elements within a List or
+     * a Map.</important> <p>The names of one or more attributes to retrieve.
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will
+     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
+     * effect on provisioned throughput consumption. DynamoDB determines
+     * capacity units consumed based on item size, not on the amount of data
+     * that is returned to an application.
      * @param scanFilter <important> <p>There is a newer parameter available.
      * Use <i>FilterExpression</i> instead. Note that if you use
      * <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter does not support lists or maps. </important> <p>A condition
-     * that evaluates the scan results and returns only the desired values.
-     * <p>If you specify more than one condition in the <i>ScanFilter</i>
-     * map, then by default all of the conditions must evaluate to true. In
-     * other words, the conditions are ANDed together. (You can use the
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </important> <p>A condition that evaluates the scan results and
+     * returns only the desired values. <note><p>This parameter does not
+     * support attributes of type List or Map.</note> <p>If you specify more
+     * than one condition in the <i>ScanFilter</i> map, then by default all
+     * of the conditions must evaluate to true. In other words, the
+     * conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
      * you do this, then at least one of the conditions must evaluate to
      * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
@@ -1159,13 +1160,12 @@ public interface AmazonDynamoDB {
      * <p>For type Number, value comparisons are numeric. <p>String value
      * comparisons for greater than, equals, or less than are based on ASCII
      * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>aa</code> is greater than <code>B</code>.
-     * For a list of code values, see <a
+     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
+     * a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values, for example when evaluating
-     * query expressions. <p>For information on specifying data types in
-     * JSON, see <a
+     * unsigned when it compares binary values. <p>For information on
+     * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
      * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
@@ -1197,29 +1197,31 @@ public interface AmazonDynamoDB {
     
     /**
      * <p>
-     * Updates the provisioned throughput for the given table. Setting the
-     * throughput for a table helps you manage performance and is part of the
-     * provisioned throughput feature of DynamoDB.
+     * Updates the provisioned throughput for the given table, or manages
+     * the global secondary indexes on the table.
      * </p>
      * <p>
-     * The provisioned throughput values can be upgraded or downgraded based
-     * on the maximums and minimums listed in the
+     * You can increase or decrease the table's provisioned throughput
+     * values within the maximums and minimums listed in the
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a>
      * section in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
-     * The table must be in the <code>ACTIVE</code> state for this operation
-     * to succeed. <i>UpdateTable</i> is an asynchronous operation; while
-     * executing the operation, the table is in the <code>UPDATING</code>
-     * state. While the table is in the <code>UPDATING</code> state, the
-     * table still has the provisioned throughput from before the call. The
-     * new provisioned throughput setting is in effect only when the table
-     * returns to the <code>ACTIVE</code> state after the <i>UpdateTable</i>
-     * operation.
+     * In addition, you can use <i>UpdateTable</i> to add, modify or delete
+     * global secondary indexes on the table. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html"> Managing Global Secondary Indexes </a>
+     * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
-     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
-     * Indexes can only be defined at table creation time.
+     * The table must be in the <code>ACTIVE</code> state for
+     * <i>UpdateTable</i> to succeed. <i>UpdateTable</i> is an asynchronous
+     * operation; while executing the operation, the table is in the
+     * <code>UPDATING</code> state. While the table is in the
+     * <code>UPDATING</code> state, the table still has the provisioned
+     * throughput from before the call. The table's new provisioned
+     * throughput settings go into effect when the table returns to the
+     * <code>ACTIVE</code> state; at that point, the <i>UpdateTable</i>
+     * operation is complete.
      * </p>
      * 
      * @param tableName The name of the table to be updated.
@@ -1682,9 +1684,11 @@ public interface AmazonDynamoDB {
      * on an <code>ACTIVE</code> table.
      * </p>
      * <p>
-     * If you want to create multiple tables with secondary indexes on them,
-     * you must create them sequentially. Only one table with secondary
-     * indexes can be in the <code>CREATING</code> state at any given time.
+     * You can optionally define secondary indexes on the new table, as part
+     * of the <i>CreateTable</i> operation. If you want to create multiple
+     * tables with secondary indexes on them, you must create the tables
+     * sequentially. Only one table with secondary indexes can be in the
+     * <code>CREATING</code> state at any given time.
      * </p>
      * <p>
      * You can use the <i>DescribeTable</i> API to check the table status.
@@ -1982,9 +1986,11 @@ public interface AmazonDynamoDB {
      * <p>
      * Edits an existing item's attributes, or adds a new item to the table
      * if it does not already exist. You can put, delete, or add attribute
-     * values. You can also perform a conditional update (insert a new
-     * attribute name-value pair if it doesn't exist, or replace an existing
-     * name-value pair if it has certain expected attribute values).
+     * values. You can also perform a conditional update on an existing item
+     * (insert a new attribute name-value pair if it doesn't exist, or
+     * replace an existing name-value pair if it has certain expected
+     * attribute values). If conditions are specified and the item does not
+     * exist, then the operation fails and a new item is not created.
      * </p>
      * <p>
      * You can also return the item's attribute values in the same
@@ -2063,14 +2069,15 @@ public interface AmazonDynamoDB {
      * table, the following values perform the following actions: <ul> <li>
      * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
      * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Causes nothing to happen; there is no
-     * attribute to delete. </li> <li> <p><code>ADD</code> - Causes DynamoDB
-     * to creat an item with the supplied primary key and number (or set of
-     * numbers) for the attribute value. The only data types allowed are
-     * Number and Number Set. </li> </ul> </li> </ul> <p>If you specify any
-     * attributes that are part of an index key, then the data types for
-     * those attributes must match those of the schema in the table's
-     * attribute definition.
+     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
+     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
+     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
+     * DynamoDB to create an item with the supplied primary key and number
+     * (or set of numbers) for the attribute value. The only data types
+     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
+     * specify any attributes that are part of an index key, then the data
+     * types for those attributes must match those of the schema in the
+     * table's attribute definition.
      * 
      * @return The response from the UpdateItem service method, as returned
      *         by AmazonDynamoDBv2.
@@ -2096,9 +2103,11 @@ public interface AmazonDynamoDB {
      * <p>
      * Edits an existing item's attributes, or adds a new item to the table
      * if it does not already exist. You can put, delete, or add attribute
-     * values. You can also perform a conditional update (insert a new
-     * attribute name-value pair if it doesn't exist, or replace an existing
-     * name-value pair if it has certain expected attribute values).
+     * values. You can also perform a conditional update on an existing item
+     * (insert a new attribute name-value pair if it doesn't exist, or
+     * replace an existing name-value pair if it has certain expected
+     * attribute values). If conditions are specified and the item does not
+     * exist, then the operation fails and a new item is not created.
      * </p>
      * <p>
      * You can also return the item's attribute values in the same
@@ -2177,14 +2186,15 @@ public interface AmazonDynamoDB {
      * table, the following values perform the following actions: <ul> <li>
      * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
      * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Causes nothing to happen; there is no
-     * attribute to delete. </li> <li> <p><code>ADD</code> - Causes DynamoDB
-     * to creat an item with the supplied primary key and number (or set of
-     * numbers) for the attribute value. The only data types allowed are
-     * Number and Number Set. </li> </ul> </li> </ul> <p>If you specify any
-     * attributes that are part of an index key, then the data types for
-     * those attributes must match those of the schema in the table's
-     * attribute definition.
+     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
+     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
+     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
+     * DynamoDB to create an item with the supplied primary key and number
+     * (or set of numbers) for the attribute value. The only data types
+     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
+     * specify any attributes that are part of an index key, then the data
+     * types for those attributes must match those of the schema in the
+     * table's attribute definition.
      * @param returnValues Use <i>ReturnValues</i> if you want to get the
      * item attributes as they appeared either before or after they were
      * updated. For <i>UpdateItem</i>, the valid values are: <ul> <li>

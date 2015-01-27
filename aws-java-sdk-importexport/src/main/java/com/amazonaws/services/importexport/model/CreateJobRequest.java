@@ -58,6 +58,11 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
     private Boolean validateOnly;
 
     /**
+     * Specifies the version of the client tool.
+     */
+    private String aPIVersion;
+
+    /**
      * Specifies whether the job to initiate is an import or export job.
      * <p>
      * <b>Constraints:</b><br/>
@@ -256,6 +261,39 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * Specifies the version of the client tool.
+     *
+     * @return Specifies the version of the client tool.
+     */
+    public String getAPIVersion() {
+        return aPIVersion;
+    }
+    
+    /**
+     * Specifies the version of the client tool.
+     *
+     * @param aPIVersion Specifies the version of the client tool.
+     */
+    public void setAPIVersion(String aPIVersion) {
+        this.aPIVersion = aPIVersion;
+    }
+    
+    /**
+     * Specifies the version of the client tool.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param aPIVersion Specifies the version of the client tool.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateJobRequest withAPIVersion(String aPIVersion) {
+        this.aPIVersion = aPIVersion;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -270,7 +308,8 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");
         if (getManifest() != null) sb.append("Manifest: " + getManifest() + ",");
         if (getManifestAddendum() != null) sb.append("ManifestAddendum: " + getManifestAddendum() + ",");
-        if (isValidateOnly() != null) sb.append("ValidateOnly: " + isValidateOnly() );
+        if (isValidateOnly() != null) sb.append("ValidateOnly: " + isValidateOnly() + ",");
+        if (getAPIVersion() != null) sb.append("APIVersion: " + getAPIVersion() );
         sb.append("}");
         return sb.toString();
     }
@@ -284,6 +323,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getManifest() == null) ? 0 : getManifest().hashCode()); 
         hashCode = prime * hashCode + ((getManifestAddendum() == null) ? 0 : getManifestAddendum().hashCode()); 
         hashCode = prime * hashCode + ((isValidateOnly() == null) ? 0 : isValidateOnly().hashCode()); 
+        hashCode = prime * hashCode + ((getAPIVersion() == null) ? 0 : getAPIVersion().hashCode()); 
         return hashCode;
     }
     
@@ -303,6 +343,8 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         if (other.getManifestAddendum() != null && other.getManifestAddendum().equals(this.getManifestAddendum()) == false) return false; 
         if (other.isValidateOnly() == null ^ this.isValidateOnly() == null) return false;
         if (other.isValidateOnly() != null && other.isValidateOnly().equals(this.isValidateOnly()) == false) return false; 
+        if (other.getAPIVersion() == null ^ this.getAPIVersion() == null) return false;
+        if (other.getAPIVersion() != null && other.getAPIVersion().equals(this.getAPIVersion()) == false) return false; 
         return true;
     }
     

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a local secondary index.
+ * Represents the properties of a local secondary index.
  * </p>
  */
 public class LocalSecondaryIndex implements Serializable {

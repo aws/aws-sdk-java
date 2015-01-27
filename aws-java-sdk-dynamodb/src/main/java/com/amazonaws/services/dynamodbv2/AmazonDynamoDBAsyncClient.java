@@ -34,7 +34,10 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * All asynchronous calls made using this client are non-blocking. Callers could either
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
- * Amazon DynamoDB <b>Overview</b> <p>
+ * Amazon DynamoDB <p>
+ * <b>Overview</b>
+ * </p>
+ * <p>
  * This is the Amazon DynamoDB API Reference. This guide provides
  * descriptions and samples of the low-level DynamoDB API. For
  * information about DynamoDB application development, go to the
@@ -65,7 +68,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <p>
  * <b>Managing Tables</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -100,8 +102,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about managing tables, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html"> Working with Tables </a>
@@ -110,7 +110,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <p>
  * <b>Reading Data</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -148,8 +147,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about reading data, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
@@ -158,7 +155,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <p>
  * <b>Modifying Data</b>
  * </p>
- * <p>
  * 
  * <ul>
  * <li> <p>
@@ -193,8 +189,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * 
  * </ul>
- * 
- * </p>
  * <p>
  * For conceptual information about modifying data, go to
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
@@ -549,29 +543,31 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
     
     /**
      * <p>
-     * Updates the provisioned throughput for the given table. Setting the
-     * throughput for a table helps you manage performance and is part of the
-     * provisioned throughput feature of DynamoDB.
+     * Updates the provisioned throughput for the given table, or manages
+     * the global secondary indexes on the table.
      * </p>
      * <p>
-     * The provisioned throughput values can be upgraded or downgraded based
-     * on the maximums and minimums listed in the
+     * You can increase or decrease the table's provisioned throughput
+     * values within the maximums and minimums listed in the
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a>
      * section in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
-     * The table must be in the <code>ACTIVE</code> state for this operation
-     * to succeed. <i>UpdateTable</i> is an asynchronous operation; while
-     * executing the operation, the table is in the <code>UPDATING</code>
-     * state. While the table is in the <code>UPDATING</code> state, the
-     * table still has the provisioned throughput from before the call. The
-     * new provisioned throughput setting is in effect only when the table
-     * returns to the <code>ACTIVE</code> state after the <i>UpdateTable</i>
-     * operation.
+     * In addition, you can use <i>UpdateTable</i> to add, modify or delete
+     * global secondary indexes on the table. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html"> Managing Global Secondary Indexes </a>
+     * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
-     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
-     * Indexes can only be defined at table creation time.
+     * The table must be in the <code>ACTIVE</code> state for
+     * <i>UpdateTable</i> to succeed. <i>UpdateTable</i> is an asynchronous
+     * operation; while executing the operation, the table is in the
+     * <code>UPDATING</code> state. While the table is in the
+     * <code>UPDATING</code> state, the table still has the provisioned
+     * throughput from before the call. The table's new provisioned
+     * throughput settings go into effect when the table returns to the
+     * <code>ACTIVE</code> state; at that point, the <i>UpdateTable</i>
+     * operation is complete.
      * </p>
      *
      * @param updateTableRequest Container for the necessary parameters to
@@ -600,29 +596,31 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
 
     /**
      * <p>
-     * Updates the provisioned throughput for the given table. Setting the
-     * throughput for a table helps you manage performance and is part of the
-     * provisioned throughput feature of DynamoDB.
+     * Updates the provisioned throughput for the given table, or manages
+     * the global secondary indexes on the table.
      * </p>
      * <p>
-     * The provisioned throughput values can be upgraded or downgraded based
-     * on the maximums and minimums listed in the
+     * You can increase or decrease the table's provisioned throughput
+     * values within the maximums and minimums listed in the
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a>
      * section in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
-     * The table must be in the <code>ACTIVE</code> state for this operation
-     * to succeed. <i>UpdateTable</i> is an asynchronous operation; while
-     * executing the operation, the table is in the <code>UPDATING</code>
-     * state. While the table is in the <code>UPDATING</code> state, the
-     * table still has the provisioned throughput from before the call. The
-     * new provisioned throughput setting is in effect only when the table
-     * returns to the <code>ACTIVE</code> state after the <i>UpdateTable</i>
-     * operation.
+     * In addition, you can use <i>UpdateTable</i> to add, modify or delete
+     * global secondary indexes on the table. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html"> Managing Global Secondary Indexes </a>
+     * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
-     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
-     * Indexes can only be defined at table creation time.
+     * The table must be in the <code>ACTIVE</code> state for
+     * <i>UpdateTable</i> to succeed. <i>UpdateTable</i> is an asynchronous
+     * operation; while executing the operation, the table is in the
+     * <code>UPDATING</code> state. While the table is in the
+     * <code>UPDATING</code> state, the table still has the provisioned
+     * throughput from before the call. The table's new provisioned
+     * throughput settings go into effect when the table returns to the
+     * <code>ACTIVE</code> state; at that point, the <i>UpdateTable</i>
+     * operation is complete.
      * </p>
      *
      * @param updateTableRequest Container for the necessary parameters to
@@ -1347,9 +1345,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * on an <code>ACTIVE</code> table.
      * </p>
      * <p>
-     * If you want to create multiple tables with secondary indexes on them,
-     * you must create them sequentially. Only one table with secondary
-     * indexes can be in the <code>CREATING</code> state at any given time.
+     * You can optionally define secondary indexes on the new table, as part
+     * of the <i>CreateTable</i> operation. If you want to create multiple
+     * tables with secondary indexes on them, you must create the tables
+     * sequentially. Only one table with secondary indexes can be in the
+     * <code>CREATING</code> state at any given time.
      * </p>
      * <p>
      * You can use the <i>DescribeTable</i> API to check the table status.
@@ -1395,9 +1395,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * on an <code>ACTIVE</code> table.
      * </p>
      * <p>
-     * If you want to create multiple tables with secondary indexes on them,
-     * you must create them sequentially. Only one table with secondary
-     * indexes can be in the <code>CREATING</code> state at any given time.
+     * You can optionally define secondary indexes on the new table, as part
+     * of the <i>CreateTable</i> operation. If you want to create multiple
+     * tables with secondary indexes on them, you must create the tables
+     * sequentially. Only one table with secondary indexes can be in the
+     * <code>CREATING</code> state at any given time.
      * </p>
      * <p>
      * You can use the <i>DescribeTable</i> API to check the table status.
@@ -1783,9 +1785,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * <p>
      * Edits an existing item's attributes, or adds a new item to the table
      * if it does not already exist. You can put, delete, or add attribute
-     * values. You can also perform a conditional update (insert a new
-     * attribute name-value pair if it doesn't exist, or replace an existing
-     * name-value pair if it has certain expected attribute values).
+     * values. You can also perform a conditional update on an existing item
+     * (insert a new attribute name-value pair if it doesn't exist, or
+     * replace an existing name-value pair if it has certain expected
+     * attribute values). If conditions are specified and the item does not
+     * exist, then the operation fails and a new item is not created.
      * </p>
      * <p>
      * You can also return the item's attribute values in the same
@@ -1820,9 +1824,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * <p>
      * Edits an existing item's attributes, or adds a new item to the table
      * if it does not already exist. You can put, delete, or add attribute
-     * values. You can also perform a conditional update (insert a new
-     * attribute name-value pair if it doesn't exist, or replace an existing
-     * name-value pair if it has certain expected attribute values).
+     * values. You can also perform a conditional update on an existing item
+     * (insert a new attribute name-value pair if it doesn't exist, or
+     * replace an existing name-value pair if it has certain expected
+     * attribute values). If conditions are specified and the item does not
+     * exist, then the operation fails and a new item is not created.
      * </p>
      * <p>
      * You can also return the item's attribute values in the same

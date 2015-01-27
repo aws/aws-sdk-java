@@ -37,11 +37,6 @@ public class CreateJobResult implements Serializable {
     private String jobType;
 
     /**
-     * Address you ship your storage device to.
-     */
-    private String awsShippingAddress;
-
-    /**
      * An encrypted code used to authenticate the request and response, for
      * example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you
      * want to create the signature file yourself. Generally you should use
@@ -59,6 +54,11 @@ public class CreateJobResult implements Serializable {
      * such as use of an incompatible Amazon S3 bucket name.
      */
     private String warningMessage;
+
+    /**
+     * A collection of artifacts.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactList;
 
     /**
      * A unique identifier which refers to a particular job.
@@ -172,39 +172,6 @@ public class CreateJobResult implements Serializable {
      */
     public CreateJobResult withJobType(JobType jobType) {
         this.jobType = jobType.toString();
-        return this;
-    }
-
-    /**
-     * Address you ship your storage device to.
-     *
-     * @return Address you ship your storage device to.
-     */
-    public String getAwsShippingAddress() {
-        return awsShippingAddress;
-    }
-    
-    /**
-     * Address you ship your storage device to.
-     *
-     * @param awsShippingAddress Address you ship your storage device to.
-     */
-    public void setAwsShippingAddress(String awsShippingAddress) {
-        this.awsShippingAddress = awsShippingAddress;
-    }
-    
-    /**
-     * Address you ship your storage device to.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param awsShippingAddress Address you ship your storage device to.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateJobResult withAwsShippingAddress(String awsShippingAddress) {
-        this.awsShippingAddress = awsShippingAddress;
         return this;
     }
 
@@ -332,6 +299,74 @@ public class CreateJobResult implements Serializable {
     }
 
     /**
+     * A collection of artifacts.
+     *
+     * @return A collection of artifacts.
+     */
+    public java.util.List<Artifact> getArtifactList() {
+        if (artifactList == null) {
+              artifactList = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>();
+              artifactList.setAutoConstruct(true);
+        }
+        return artifactList;
+    }
+    
+    /**
+     * A collection of artifacts.
+     *
+     * @param artifactList A collection of artifacts.
+     */
+    public void setArtifactList(java.util.Collection<Artifact> artifactList) {
+        if (artifactList == null) {
+            this.artifactList = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>(artifactList.size());
+        artifactListCopy.addAll(artifactList);
+        this.artifactList = artifactListCopy;
+    }
+    
+    /**
+     * A collection of artifacts.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param artifactList A collection of artifacts.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateJobResult withArtifactList(Artifact... artifactList) {
+        if (getArtifactList() == null) setArtifactList(new java.util.ArrayList<Artifact>(artifactList.length));
+        for (Artifact value : artifactList) {
+            getArtifactList().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A collection of artifacts.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param artifactList A collection of artifacts.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateJobResult withArtifactList(java.util.Collection<Artifact> artifactList) {
+        if (artifactList == null) {
+            this.artifactList = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Artifact> artifactListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Artifact>(artifactList.size());
+            artifactListCopy.addAll(artifactList);
+            this.artifactList = artifactListCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -345,10 +380,10 @@ public class CreateJobResult implements Serializable {
         sb.append("{");
         if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");
         if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");
-        if (getAwsShippingAddress() != null) sb.append("AwsShippingAddress: " + getAwsShippingAddress() + ",");
         if (getSignature() != null) sb.append("Signature: " + getSignature() + ",");
         if (getSignatureFileContents() != null) sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");
-        if (getWarningMessage() != null) sb.append("WarningMessage: " + getWarningMessage() );
+        if (getWarningMessage() != null) sb.append("WarningMessage: " + getWarningMessage() + ",");
+        if (getArtifactList() != null) sb.append("ArtifactList: " + getArtifactList() );
         sb.append("}");
         return sb.toString();
     }
@@ -360,10 +395,10 @@ public class CreateJobResult implements Serializable {
         
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode()); 
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode()); 
-        hashCode = prime * hashCode + ((getAwsShippingAddress() == null) ? 0 : getAwsShippingAddress().hashCode()); 
         hashCode = prime * hashCode + ((getSignature() == null) ? 0 : getSignature().hashCode()); 
         hashCode = prime * hashCode + ((getSignatureFileContents() == null) ? 0 : getSignatureFileContents().hashCode()); 
         hashCode = prime * hashCode + ((getWarningMessage() == null) ? 0 : getWarningMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getArtifactList() == null) ? 0 : getArtifactList().hashCode()); 
         return hashCode;
     }
     
@@ -379,14 +414,14 @@ public class CreateJobResult implements Serializable {
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false) return false; 
         if (other.getJobType() == null ^ this.getJobType() == null) return false;
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false) return false; 
-        if (other.getAwsShippingAddress() == null ^ this.getAwsShippingAddress() == null) return false;
-        if (other.getAwsShippingAddress() != null && other.getAwsShippingAddress().equals(this.getAwsShippingAddress()) == false) return false; 
         if (other.getSignature() == null ^ this.getSignature() == null) return false;
         if (other.getSignature() != null && other.getSignature().equals(this.getSignature()) == false) return false; 
         if (other.getSignatureFileContents() == null ^ this.getSignatureFileContents() == null) return false;
         if (other.getSignatureFileContents() != null && other.getSignatureFileContents().equals(this.getSignatureFileContents()) == false) return false; 
         if (other.getWarningMessage() == null ^ this.getWarningMessage() == null) return false;
         if (other.getWarningMessage() != null && other.getWarningMessage().equals(this.getWarningMessage()) == false) return false; 
+        if (other.getArtifactList() == null ^ this.getArtifactList() == null) return false;
+        if (other.getArtifactList() != null && other.getArtifactList().equals(this.getArtifactList()) == false) return false; 
         return true;
     }
     

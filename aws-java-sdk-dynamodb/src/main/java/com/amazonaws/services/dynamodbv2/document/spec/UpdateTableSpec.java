@@ -14,6 +14,11 @@
  */
 package com.amazonaws.services.dynamodbv2.document.spec;
 
+import java.util.Collection;
+import java.util.List;
+
+import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
+import com.amazonaws.services.dynamodbv2.model.GlobalSecondaryIndexUpdate;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.UpdateTableRequest;
 
@@ -32,6 +37,36 @@ public class UpdateTableSpec extends AbstractSpec<UpdateTableRequest> {
     public UpdateTableSpec withProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         getRequest().setProvisionedThroughput(provisionedThroughput);
+        return this;
+    }
+
+    public List<AttributeDefinition> getAttributeDefinitions() {
+        return getRequest().getAttributeDefinitions();
+    }
+
+    public UpdateTableSpec withAttributeDefinitions(
+            AttributeDefinition... attributeDefinitions) {
+        getRequest().withAttributeDefinitions(attributeDefinitions);
+        return this;
+    }
+
+    public UpdateTableSpec withAttributeDefinitions(
+            Collection<AttributeDefinition> attributeDefinitions) {
+        getRequest().withAttributeDefinitions(attributeDefinitions);
+        return this;
+    }
+
+    public UpdateTableSpec withGlobalSecondaryIndexUpdates(
+            GlobalSecondaryIndexUpdate... globalSecondaryIndexUpdates) {
+        getRequest().withGlobalSecondaryIndexUpdates(
+                globalSecondaryIndexUpdates);
+        return this;
+    }
+
+    public UpdateTableSpec withGlobalSecondaryIndexUpdates(
+            Collection<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates) {
+        getRequest().withGlobalSecondaryIndexUpdates(
+                globalSecondaryIndexUpdates);
         return this;
     }
 }

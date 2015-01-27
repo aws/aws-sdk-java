@@ -15,6 +15,7 @@
 package com.amazonaws.services.dynamodbv2.document;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.http.annotation.ThreadSafe;
@@ -40,12 +41,18 @@ import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
 import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
 import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
 import com.amazonaws.services.dynamodbv2.document.spec.UpdateTableSpec;
+import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
+import com.amazonaws.services.dynamodbv2.model.CreateGlobalSecondaryIndexAction;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableResult;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableResult;
+import com.amazonaws.services.dynamodbv2.model.GlobalSecondaryIndexDescription;
+import com.amazonaws.services.dynamodbv2.model.GlobalSecondaryIndexUpdate;
+import com.amazonaws.services.dynamodbv2.model.IndexStatus;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
+import com.amazonaws.services.dynamodbv2.model.TableStatus;
 import com.amazonaws.services.dynamodbv2.model.UpdateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.UpdateTableResult;
 
@@ -108,6 +115,10 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      * Retrieves the table description from DynamoDB. Involves network calls.
      * Meant to be called as infrequently as possible to avoid throttling
      * exception from the server side.
+     * 
+     * @return a non-null table description
+     *
+     * @throws ResourceNotFoundException if the table doesn't exist
      */
     public TableDescription describe() {
         DescribeTableResult result = client.describeTable(
@@ -316,8 +327,7 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      * returns to the <code>ACTIVE</code> state after the <i>UpdateTable</i>
      * operation.
      * <p>
-     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
-     * Indexes can only be defined at table creation time.
+     * You can create, update or delete indexes using <i>UpdateTable</i>.
      * </p>
      *
      * @param spec used to specify all the detailed parameters
@@ -329,6 +339,66 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
         req.setTableName(getTableName());
         UpdateTableResult result = client.updateTable(req);
         return this.tableDescription = result.getTableDescription();
+    }
+
+    /**
+     * Creates a global secondary index (GSI) with only a hash key on this
+     * table. Involves network calls. This table must be in the
+     * <code>ACTIVE</code> state for this operation to succeed. Creating a
+     * global secondary index is an asynchronous operation; while executing the
+     * operation, the index is in the <code>CREATING</code> state. Once created,
+     * the index will be in <code>ACTIVE</code> state.
+     * 
+     * @param create
+     *            used to specify the details of the index creation
+     * @param hashKeyDefinition
+     *            used to specify the attribute for describing the key schema
+     *            for the hash key of the GSI to be created for this table.
+     * 
+     * @return the index being created
+     */
+    public Index createGSI(
+            CreateGlobalSecondaryIndexAction create,
+            AttributeDefinition hashKeyDefinition) {
+        return doCreateGSI(create, hashKeyDefinition);
+    }
+
+    /**
+     * Creates a global secondary index (GSI) with both a hash key and a range
+     * key on this table. Involves network calls. This table must be in the
+     * <code>ACTIVE</code> state for this operation to succeed. Creating a
+     * global secondary index is an asynchronous operation; while executing the
+     * operation, the index is in the <code>CREATING</code> state. Once created,
+     * the index will be in <code>ACTIVE</code> state.
+     * 
+     * @param create
+     *            used to specify the details of the index creation
+     * @param hashKeyDefinition
+     *            used to specify the attribute for describing the key schema
+     *            for the hash key of the GSI to be created for this table.
+     * @param rangeKeyDefinition
+     *            used to specify the attribute for describing the key schema
+     *            for the range key of the GSI to be created for this table.
+     * 
+     * @return the index being created
+     */
+    public Index createGSI(
+            CreateGlobalSecondaryIndexAction create,
+            AttributeDefinition hashKeyDefinition,
+            AttributeDefinition rangeKeyDefinition) {
+        return doCreateGSI(create, hashKeyDefinition, rangeKeyDefinition);
+    }
+
+    private Index doCreateGSI(
+            CreateGlobalSecondaryIndexAction create,
+            AttributeDefinition ... keyDefinitions) {
+        UpdateTableSpec spec = new UpdateTableSpec()
+            .withAttributeDefinitions(keyDefinitions)
+            .withGlobalSecondaryIndexUpdates(
+                new GlobalSecondaryIndexUpdate().withCreate(create))
+            ;
+        updateTable(spec);
+        return this.getIndex(create.getIndexName());
     }
 
     /**
@@ -350,8 +420,7 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      * returns to the <code>ACTIVE</code> state after the <i>UpdateTable</i>
      * operation.
      * <p>
-     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
-     * Indexes can only be defined at table creation time.
+     * You can create, update or delete indexes using <i>UpdateTable</i>.
      * </p>
      *
      * @param provisionedThroughput target provisioned throughput
@@ -368,20 +437,27 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      * A convenient blocking call that can be used, typically during table
      * creation, to wait for the table to become active by polling the table
      * every 5 seconds.
+     * 
+     * @return the table description when the table has become active
+     * 
+     * @throws IllegalArgumentException if the table is being deleted
+     * @throws ResourceNotFoundException if the table doesn't exist
      */
     public TableDescription waitForActive() throws InterruptedException {
-        TableDescription desc = describe();
-        String status = desc.getTableStatus();
-        for (;; status = desc.getTableStatus()) {
-            if ("ACTIVE".equals(status))
-                return desc;
-            if ("CREATING".equals(status) || "UPDATING".equals(status)) {
-                Thread.sleep(SLEEP_TIME_MILLIS);
-                desc = describe();
-                continue;
+        for (;;) {
+            TableDescription desc = describe();
+            String status = desc.getTableStatus();
+            switch (TableStatus.fromValue(status)) {
+                case ACTIVE:
+                    return desc;
+                case CREATING:
+                case UPDATING:
+                    Thread.sleep(SLEEP_TIME_MILLIS);
+                    continue;
+                default:
+                    throw new IllegalArgumentException("Table " + tableName
+                        + " is not being created (with status=" + status + ")");
             }
-            throw new IllegalArgumentException("Table " + tableName
-                    + " is not being created (with status=" + status + ")");
         }
     }
 
@@ -392,16 +468,14 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      */
     public void waitForDelete() throws InterruptedException {
         try {
-            TableDescription desc = describe();
-            String status = desc.getTableStatus();
-            for (;; status = desc.getTableStatus()) {
-                if ("DELETING".equals(status)) {
+            for (;;) {
+                TableDescription desc = describe();
+                String status = desc.getTableStatus();
+                if (TableStatus.fromValue(status) == TableStatus.DELETING) {
                     Thread.sleep(SLEEP_TIME_MILLIS);
-                    desc = describe();
-                    continue;
-                }
-                throw new IllegalArgumentException("Table " + tableName
-                    + " is not being deleted (with status=" + status + ")");
+                } else
+                    throw new IllegalArgumentException("Table " + tableName
+                        + " is not being deleted (with status=" + status + ")");
             }
         } catch(ResourceNotFoundException deleted) {
         }
@@ -413,24 +487,55 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      * has either become active or deleted (ie no longer exists) by polling the
      * table every 5 seconds.
      *
-     * @return the table description if the table has become active; or null if
-     *         the table has been deleted (or has never exists.);
+     * @return the table description if the table has become active; or null
+     * if the table has been deleted.
      */
     public TableDescription waitForActiveOrDelete() throws InterruptedException {
         try {
-            TableDescription desc = describe();
-            String status = desc.getTableStatus();
-            for (;; status = desc.getTableStatus()) {
-                if ("ACTIVE".equals(status))
+            for (;;) {
+                TableDescription desc = describe();
+                final String status = desc.getTableStatus();
+                if (TableStatus.fromValue(status) == TableStatus.ACTIVE)
                     return desc;
-                if ("CREATING".equals(status)
-                ||  "UPDATING".equals(status)
-                ||  "DELETING".equals(status)) {
+                else
                     Thread.sleep(SLEEP_TIME_MILLIS);
-                    desc = describe();
-                    continue;
+            }
+        } catch(ResourceNotFoundException deleted) {
+        }
+        return null;
+    }
+
+    /**
+     * A convenient blocking call that can be used to wait on a table and all
+     * it's indexes until both the table and it's indexes have either become
+     * active or deleted (ie no longer exists) by polling the table every 5
+     * seconds.
+     * 
+     * @return the table description if the table and all it's indexes have
+     *         become active; or null if the table has been deleted.
+     */
+    public TableDescription waitForAllActiveOrDelete() throws InterruptedException {
+        try {
+            retry: for (;;) {
+                TableDescription desc = describe();
+                String status = desc.getTableStatus();
+                if (TableStatus.fromValue(status) == TableStatus.ACTIVE) {
+                    List<GlobalSecondaryIndexDescription> descriptions =
+                            desc.getGlobalSecondaryIndexes();
+                        if (descriptions != null) {
+                            for (GlobalSecondaryIndexDescription d: descriptions) {
+                                status = d.getIndexStatus();
+                                if (IndexStatus.fromValue(status) != IndexStatus.ACTIVE) {
+                                    // Some index is not active.  Keep waiting.
+                                    Thread.sleep(SLEEP_TIME_MILLIS);
+                                    continue retry;
+                                }
+                            }
+                        }
+                        return desc;
                 }
-                throw new IllegalStateException();
+                Thread.sleep(SLEEP_TIME_MILLIS);
+                continue;
             }
         } catch(ResourceNotFoundException deleted) {
         }

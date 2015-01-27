@@ -41,7 +41,7 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      */
     private String functionName;
 
@@ -50,7 +50,7 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @return The Lambda function name.
      */
@@ -63,7 +63,7 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The Lambda function name.
      */
@@ -78,7 +78,7 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-]+<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
      *
      * @param functionName The Lambda function name.
      *

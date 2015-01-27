@@ -61,6 +61,10 @@ public class GlobalSecondaryIndexDescriptionJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     globalSecondaryIndexDescription.setIndexStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Backfilling", targetDepth)) {
+                    context.nextToken();
+                    globalSecondaryIndexDescription.setBackfilling(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
                     context.nextToken();
                     globalSecondaryIndexDescription.setProvisionedThroughput(ProvisionedThroughputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));

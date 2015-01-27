@@ -51,10 +51,6 @@ public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusRe
                     getStatusResult.setJobType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("AwsShippingAddress", targetDepth)) {
-                    getStatusResult.setAwsShippingAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
                 if (context.testExpression("LocationCode", targetDepth)) {
                     getStatusResult.setLocationCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -105,6 +101,10 @@ public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusRe
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     getStatusResult.setCreationDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ArtifactList/member", targetDepth)) {
+                    getStatusResult.getArtifactList().add(ArtifactStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
