@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -60,9 +61,11 @@ import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.NumberSetToNum
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.NumberToNumberMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.ObjectSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.ObjectToMapMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.ObjectToStringMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.S3LinkToStringMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.StringSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.StringToStringMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.UUIDSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.BigDecimalSetUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.BigDecimalUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.BigIntegerSetUnmarshaller;
@@ -98,6 +101,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ShortSetUnma
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ShortUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.StringSetUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.StringUnmarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.UUIDSetUnmarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.UUIDUnmarshaller;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 /**
@@ -827,6 +832,9 @@ public final class ConversionSchemas {
 
         list.add(Pair.of(String.class,
                 StringToStringMarshaller.instance()));
+        
+        list.add(Pair.of(UUID.class,
+                ObjectToStringMarshaller.instance()));
     }
 
     private static void addStandardBinaryMarshallers(
@@ -878,6 +886,9 @@ public final class ConversionSchemas {
 
         list.add(Pair.of(String.class,
                 StringSetToStringSetMarshaller.instance()));
+
+        list.add(Pair.of(UUID.class,
+                UUIDSetToStringSetMarshaller.instance()));
     }
 
     private static void addStandardBinarySetMarshallers(
@@ -1033,6 +1044,7 @@ public final class ConversionSchemas {
                     ByteArrayUnmarshaller.instance()));
 
             list.add(Pair.of(S3Link.class, S3LinkUnmarshaller.instance()));
+            list.add(Pair.of(UUID.class, UUIDUnmarshaller.instance()));
             list.add(Pair.of(String.class, StringUnmarshaller.instance()));
 
             list.add(Pair.of(List.class, ListUnmarshaller.instance()));
@@ -1083,6 +1095,7 @@ public final class ConversionSchemas {
             list.add(Pair.of(byte[].class,
                     ByteArraySetUnmarshaller.instance()));
 
+            list.add(Pair.of(UUID.class, UUIDSetUnmarshaller.instance()));
             list.add(Pair.of(String.class, StringSetUnmarshaller.instance()));
 
             // Make sure I'm last since I'll catch all other types.
