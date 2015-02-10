@@ -59,6 +59,10 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     image.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("creationDate", targetDepth)) {
+                    image.setCreationDate(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("isPublic", targetDepth)) {
                     image.setPublic(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

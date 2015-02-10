@@ -29,8 +29,8 @@ public class SpotInstanceRequest implements Serializable {
     private String spotInstanceRequestId;
 
     /**
-     * The maximum hourly price for any Spot Instance launched to fulfill the
-     * request.
+     * The maximum hourly price (bid) for any Spot Instance launched to
+     * fulfill the request.
      */
     private String spotPrice;
 
@@ -44,11 +44,11 @@ public class SpotInstanceRequest implements Serializable {
 
     /**
      * The state of the Spot Instance request. Spot bid status information
-     * can help you track your Spot Instance requests. For information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide for Linux</i>.
+     * can help you track your Spot Instance requests. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -164,35 +164,35 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * The maximum hourly price for any Spot Instance launched to fulfill the
-     * request.
+     * The maximum hourly price (bid) for any Spot Instance launched to
+     * fulfill the request.
      *
-     * @return The maximum hourly price for any Spot Instance launched to fulfill the
-     *         request.
+     * @return The maximum hourly price (bid) for any Spot Instance launched to
+     *         fulfill the request.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * The maximum hourly price for any Spot Instance launched to fulfill the
-     * request.
+     * The maximum hourly price (bid) for any Spot Instance launched to
+     * fulfill the request.
      *
-     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
-     *         request.
+     * @param spotPrice The maximum hourly price (bid) for any Spot Instance launched to
+     *         fulfill the request.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * The maximum hourly price for any Spot Instance launched to fulfill the
-     * request.
+     * The maximum hourly price (bid) for any Spot Instance launched to
+     * fulfill the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
-     *         request.
+     * @param spotPrice The maximum hourly price (bid) for any Spot Instance launched to
+     *         fulfill the request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -286,21 +286,21 @@ public class SpotInstanceRequest implements Serializable {
 
     /**
      * The state of the Spot Instance request. Spot bid status information
-     * can help you track your Spot Instance requests. For information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide for Linux</i>.
+     * can help you track your Spot Instance requests. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
      * @return The state of the Spot Instance request. Spot bid status information
-     *         can help you track your Spot Instance requests. For information, see
-     *         <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide for Linux</i>.
+     *         can help you track your Spot Instance requests. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @see SpotInstanceState
      */
@@ -310,21 +310,21 @@ public class SpotInstanceRequest implements Serializable {
     
     /**
      * The state of the Spot Instance request. Spot bid status information
-     * can help you track your Spot Instance requests. For information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide for Linux</i>.
+     * can help you track your Spot Instance requests. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
      * @param state The state of the Spot Instance request. Spot bid status information
-     *         can help you track your Spot Instance requests. For information, see
-     *         <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide for Linux</i>.
+     *         can help you track your Spot Instance requests. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @see SpotInstanceState
      */
@@ -334,11 +334,11 @@ public class SpotInstanceRequest implements Serializable {
     
     /**
      * The state of the Spot Instance request. Spot bid status information
-     * can help you track your Spot Instance requests. For information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide for Linux</i>.
+     * can help you track your Spot Instance requests. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -346,11 +346,11 @@ public class SpotInstanceRequest implements Serializable {
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
      * @param state The state of the Spot Instance request. Spot bid status information
-     *         can help you track your Spot Instance requests. For information, see
-     *         <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide for Linux</i>.
+     *         can help you track your Spot Instance requests. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -364,21 +364,21 @@ public class SpotInstanceRequest implements Serializable {
 
     /**
      * The state of the Spot Instance request. Spot bid status information
-     * can help you track your Spot Instance requests. For information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide for Linux</i>.
+     * can help you track your Spot Instance requests. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
      * @param state The state of the Spot Instance request. Spot bid status information
-     *         can help you track your Spot Instance requests. For information, see
-     *         <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide for Linux</i>.
+     *         can help you track your Spot Instance requests. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @see SpotInstanceState
      */
@@ -388,11 +388,11 @@ public class SpotInstanceRequest implements Serializable {
     
     /**
      * The state of the Spot Instance request. Spot bid status information
-     * can help you track your Spot Instance requests. For information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide for Linux</i>.
+     * can help you track your Spot Instance requests. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -400,11 +400,11 @@ public class SpotInstanceRequest implements Serializable {
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
      * @param state The state of the Spot Instance request. Spot bid status information
-     *         can help you track your Spot Instance requests. For information, see
-     *         <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide for Linux</i>.
+     *         can help you track your Spot Instance requests. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

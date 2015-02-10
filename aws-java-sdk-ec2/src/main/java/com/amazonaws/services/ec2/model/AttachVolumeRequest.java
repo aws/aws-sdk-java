@@ -42,21 +42,18 @@ import com.amazonaws.services.ec2.model.transform.AttachVolumeRequestMarshaller;
  * </p>
  * 
  * <ul>
- * <li>The volume can only be attached as the root device of a stopped
- * instance.</li>
- * <li>You must be subscribed to the AWS Marketplace code that is on the
- * volume.</li>
- * <li>The configuration (instance type, operating system) of the
- * instance must support that specific AWS Marketplace code. For example,
- * you cannot take a volume from a Windows instance and attach it to a
- * Linux instance.</li>
+ * <li>The volume can be attached only to a stopped instance.</li>
  * <li>AWS Marketplace product codes are copied from the volume to the
  * instance.</li>
+ * <li>You must be subscribed to the product.</li>
+ * <li>The instance type and operating system of the instance must
+ * support the product. For example, you can't detach a volume from a
+ * Windows instance and attach it to a Linux instance.</li>
  * 
  * </ul>
  * <p>
  * For an overview of the AWS Marketplace, see
- * <a href="https://aws.amazon.com/marketplace/help/200900000"> https://aws.amazon.com/marketplace/help/200900000 </a> . For more information about how to use the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace"> AWS Marketplace </a>
+ * <a href="https://aws.amazon.com/marketplace/help/200900000"> Introducing AWS Marketplace </a>
  * .
  * </p>
  * <p>

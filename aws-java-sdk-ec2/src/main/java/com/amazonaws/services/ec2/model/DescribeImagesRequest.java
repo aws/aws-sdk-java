@@ -47,7 +47,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * Filters the images by the owner. Specify an AWS account ID,
      * <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      * (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     * the request), or <code>all</code> (all owners).
+     * the request). Omitting this option returns all images for which you
+     * have launch permissions, regardless of ownership.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> owners;
 
@@ -198,12 +199,14 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * Filters the images by the owner. Specify an AWS account ID,
      * <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      * (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     * the request), or <code>all</code> (all owners).
+     * the request). Omitting this option returns all images for which you
+     * have launch permissions, regardless of ownership.
      *
      * @return Filters the images by the owner. Specify an AWS account ID,
      *         <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      *         (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     *         the request), or <code>all</code> (all owners).
+     *         the request). Omitting this option returns all images for which you
+     *         have launch permissions, regardless of ownership.
      */
     public java.util.List<String> getOwners() {
         if (owners == null) {
@@ -217,12 +220,14 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * Filters the images by the owner. Specify an AWS account ID,
      * <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      * (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     * the request), or <code>all</code> (all owners).
+     * the request). Omitting this option returns all images for which you
+     * have launch permissions, regardless of ownership.
      *
      * @param owners Filters the images by the owner. Specify an AWS account ID,
      *         <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      *         (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     *         the request), or <code>all</code> (all owners).
+     *         the request). Omitting this option returns all images for which you
+     *         have launch permissions, regardless of ownership.
      */
     public void setOwners(java.util.Collection<String> owners) {
         if (owners == null) {
@@ -238,14 +243,16 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * Filters the images by the owner. Specify an AWS account ID,
      * <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      * (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     * the request), or <code>all</code> (all owners).
+     * the request). Omitting this option returns all images for which you
+     * have launch permissions, regardless of ownership.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param owners Filters the images by the owner. Specify an AWS account ID,
      *         <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      *         (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     *         the request), or <code>all</code> (all owners).
+     *         the request). Omitting this option returns all images for which you
+     *         have launch permissions, regardless of ownership.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -262,14 +269,16 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * Filters the images by the owner. Specify an AWS account ID,
      * <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      * (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     * the request), or <code>all</code> (all owners).
+     * the request). Omitting this option returns all images for which you
+     * have launch permissions, regardless of ownership.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param owners Filters the images by the owner. Specify an AWS account ID,
      *         <code>amazon</code> (owner is Amazon), <code>aws-marketplace</code>
      *         (owner is AWS Marketplace), <code>self</code> (owner is the sender of
-     *         the request), or <code>all</code> (all owners).
+     *         the request). Omitting this option returns all images for which you
+     *         have launch permissions, regardless of ownership.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

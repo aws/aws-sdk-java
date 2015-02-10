@@ -138,8 +138,8 @@ public class Stack implements Serializable {
     private Source customCookbooksSource;
 
     /**
-     * A default SSH key for the stack's instances. You can override this
-     * value when you create or update an instance.
+     * A default Amazon EC2 key pair for the stack's instances. You can
+     * override this value when you create or update an instance.
      */
     private String defaultSshKeyName;
 
@@ -953,35 +953,35 @@ public class Stack implements Serializable {
     }
 
     /**
-     * A default SSH key for the stack's instances. You can override this
-     * value when you create or update an instance.
+     * A default Amazon EC2 key pair for the stack's instances. You can
+     * override this value when you create or update an instance.
      *
-     * @return A default SSH key for the stack's instances. You can override this
-     *         value when you create or update an instance.
+     * @return A default Amazon EC2 key pair for the stack's instances. You can
+     *         override this value when you create or update an instance.
      */
     public String getDefaultSshKeyName() {
         return defaultSshKeyName;
     }
     
     /**
-     * A default SSH key for the stack's instances. You can override this
-     * value when you create or update an instance.
+     * A default Amazon EC2 key pair for the stack's instances. You can
+     * override this value when you create or update an instance.
      *
-     * @param defaultSshKeyName A default SSH key for the stack's instances. You can override this
-     *         value when you create or update an instance.
+     * @param defaultSshKeyName A default Amazon EC2 key pair for the stack's instances. You can
+     *         override this value when you create or update an instance.
      */
     public void setDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
     }
     
     /**
-     * A default SSH key for the stack's instances. You can override this
-     * value when you create or update an instance.
+     * A default Amazon EC2 key pair for the stack's instances. You can
+     * override this value when you create or update an instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultSshKeyName A default SSH key for the stack's instances. You can override this
-     *         value when you create or update an instance.
+     * @param defaultSshKeyName A default Amazon EC2 key pair for the stack's instances. You can
+     *         override this value when you create or update an instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

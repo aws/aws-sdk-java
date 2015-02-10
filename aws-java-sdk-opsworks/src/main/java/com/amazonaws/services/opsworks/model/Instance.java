@@ -154,7 +154,7 @@ public class Instance implements Serializable {
     private String autoScalingType;
 
     /**
-     * The instance SSH key name.
+     * The instance's Amazon EC2 key pair name.
      */
     private String sshKeyName;
 
@@ -1213,29 +1213,29 @@ public class Instance implements Serializable {
     }
 
     /**
-     * The instance SSH key name.
+     * The instance's Amazon EC2 key pair name.
      *
-     * @return The instance SSH key name.
+     * @return The instance's Amazon EC2 key pair name.
      */
     public String getSshKeyName() {
         return sshKeyName;
     }
     
     /**
-     * The instance SSH key name.
+     * The instance's Amazon EC2 key pair name.
      *
-     * @param sshKeyName The instance SSH key name.
+     * @param sshKeyName The instance's Amazon EC2 key pair name.
      */
     public void setSshKeyName(String sshKeyName) {
         this.sshKeyName = sshKeyName;
     }
     
     /**
-     * The instance SSH key name.
+     * The instance's Amazon EC2 key pair name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sshKeyName The instance SSH key name.
+     * @param sshKeyName The instance's Amazon EC2 key pair name.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

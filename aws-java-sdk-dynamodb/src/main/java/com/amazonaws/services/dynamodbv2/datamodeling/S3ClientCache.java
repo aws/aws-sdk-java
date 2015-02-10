@@ -20,6 +20,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.Region;
@@ -35,20 +37,25 @@ public class S3ClientCache {
     private final ConcurrentMap<Region, AmazonS3Client> clientsByRegion = new ConcurrentHashMap<Region, AmazonS3Client>();
     private final Map<Region, TransferManager> transferManagersByRegion = new EnumMap<Region, TransferManager>(Region.class);
 
-    private final AWSCredentials credentials;
+    private final AWSCredentialsProvider awscredentialsProvider;
+
+    @Deprecated
+    S3ClientCache(AWSCredentials credentials) {
+        this(new StaticCredentialsProvider(credentials));
+    }
 
     /**
-     * Create a client cache with a set of credentials. If
+     * Create a client cache using the given AWSCredentialsProvider. If
      * {@link #getClient(Regions)} or {@link #getTransferManager(Regions)} is
      * called and a client has not been provided for the region, the cache will
-     * instantiate one from the provided {@link AWSCredentials}.
+     * instantiate one from the provided {@link AWSCredentialsProvider}.
      *
-     * @param credentials
-     *            The credentials to use when creating new
+     * @param awsCredentialsProvider
+     *            The credentials provider to use when creating new
      *            {@link AmazonS3Client}.
      */
-    S3ClientCache(AWSCredentials credentials) {
-        this.credentials = credentials;
+    S3ClientCache(AWSCredentialsProvider awsCredentialsProvider) {
+        this.awscredentialsProvider = awsCredentialsProvider;
     }
 
     /**
@@ -102,10 +109,10 @@ public class S3ClientCache {
         if (client != null) {
             return client;
         }
-        if (credentials == null) {
-            throw new IllegalArgumentException("No client provided for S3 region: " + s3region);
+        if (awscredentialsProvider == null) {
+            throw new IllegalArgumentException("No credentials provider found to connect to S3");
         }
-        client = new AmazonS3Client(credentials);
+        client = new AmazonS3Client(awscredentialsProvider);
         client.setRegion(s3region.toAWSRegion());
         AmazonS3Client prev = clientsByRegion.putIfAbsent(s3region, client);
         return prev == null ? client : prev;

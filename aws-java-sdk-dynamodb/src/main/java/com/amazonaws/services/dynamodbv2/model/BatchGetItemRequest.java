@@ -97,9 +97,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * following: <ul> <li> <p><i>Keys</i> - An array of primary key
      * attribute values that define specific items in the table. For each
      * primary key, you must provide <i>all</i> of the key attributes. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * <li> <p><i>AttributesToGet</i> - One or more attributes to be
      * retrieved from the table. By default, all attributes are returned. If
      * a specified attribute is not found, it does not appear in the result.
@@ -146,8 +146,8 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * primary key attribute values that define specific items in the table.
      * For each primary key, you must provide <i>all</i> of the key
      * attributes. For example, with a hash type primary key, you only need
-     * to specify the hash attribute. For a hash-and-range type primary key,
-     * you must specify <i>both</i> the hash attribute and the range
+     * to provide the hash attribute. For a hash-and-range type primary key,
+     * you must provide <i>both</i> the hash attribute and the range
      * attribute. </li> <li> <p><i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table. By default, all attributes
      * are returned. If a specified attribute is not found, it does not
@@ -175,8 +175,8 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * primary key attribute values that define specific items in the table.
      * For each primary key, you must provide <i>all</i> of the key
      * attributes. For example, with a hash type primary key, you only need
-     * to specify the hash attribute. For a hash-and-range type primary key,
-     * you must specify <i>both</i> the hash attribute and the range
+     * to provide the hash attribute. For a hash-and-range type primary key,
+     * you must provide <i>both</i> the hash attribute and the range
      * attribute. </li> <li> <p><i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table. By default, all attributes
      * are returned. If a specified attribute is not found, it does not
@@ -211,8 +211,8 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * primary key attribute values that define specific items in the table.
      * For each primary key, you must provide <i>all</i> of the key
      * attributes. For example, with a hash type primary key, you only need
-     * to specify the hash attribute. For a hash-and-range type primary key,
-     * you must specify <i>both</i> the hash attribute and the range
+     * to provide the hash attribute. For a hash-and-range type primary key,
+     * you must provide <i>both</i> the hash attribute and the range
      * attribute. </li> <li> <p><i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table. By default, all attributes
      * are returned. If a specified attribute is not found, it does not
@@ -242,9 +242,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * following: <ul> <li> <p><i>Keys</i> - An array of primary key
      * attribute values that define specific items in the table. For each
      * primary key, you must provide <i>all</i> of the key attributes. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * <li> <p><i>AttributesToGet</i> - One or more attributes to be
      * retrieved from the table. By default, all attributes are returned. If
      * a specified attribute is not found, it does not appear in the result.
@@ -265,9 +265,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      *         following: <ul> <li> <p><i>Keys</i> - An array of primary key
      *         attribute values that define specific items in the table. For each
      *         primary key, you must provide <i>all</i> of the key attributes. For
-     *         example, with a hash type primary key, you only need to specify the
+     *         example, with a hash type primary key, you only need to provide the
      *         hash attribute. For a hash-and-range type primary key, you must
-     *         specify <i>both</i> the hash attribute and the range attribute. </li>
+     *         provide <i>both</i> the hash attribute and the range attribute. </li>
      *         <li> <p><i>AttributesToGet</i> - One or more attributes to be
      *         retrieved from the table. By default, all attributes are returned. If
      *         a specified attribute is not found, it does not appear in the result.
@@ -291,9 +291,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * following: <ul> <li> <p><i>Keys</i> - An array of primary key
      * attribute values that define specific items in the table. For each
      * primary key, you must provide <i>all</i> of the key attributes. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * <li> <p><i>AttributesToGet</i> - One or more attributes to be
      * retrieved from the table. By default, all attributes are returned. If
      * a specified attribute is not found, it does not appear in the result.
@@ -314,9 +314,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      *         following: <ul> <li> <p><i>Keys</i> - An array of primary key
      *         attribute values that define specific items in the table. For each
      *         primary key, you must provide <i>all</i> of the key attributes. For
-     *         example, with a hash type primary key, you only need to specify the
+     *         example, with a hash type primary key, you only need to provide the
      *         hash attribute. For a hash-and-range type primary key, you must
-     *         specify <i>both</i> the hash attribute and the range attribute. </li>
+     *         provide <i>both</i> the hash attribute and the range attribute. </li>
      *         <li> <p><i>AttributesToGet</i> - One or more attributes to be
      *         retrieved from the table. By default, all attributes are returned. If
      *         a specified attribute is not found, it does not appear in the result.
@@ -339,9 +339,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * following: <ul> <li> <p><i>Keys</i> - An array of primary key
      * attribute values that define specific items in the table. For each
      * primary key, you must provide <i>all</i> of the key attributes. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * <li> <p><i>AttributesToGet</i> - One or more attributes to be
      * retrieved from the table. By default, all attributes are returned. If
      * a specified attribute is not found, it does not appear in the result.
@@ -364,9 +364,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      *         following: <ul> <li> <p><i>Keys</i> - An array of primary key
      *         attribute values that define specific items in the table. For each
      *         primary key, you must provide <i>all</i> of the key attributes. For
-     *         example, with a hash type primary key, you only need to specify the
+     *         example, with a hash type primary key, you only need to provide the
      *         hash attribute. For a hash-and-range type primary key, you must
-     *         specify <i>both</i> the hash attribute and the range attribute. </li>
+     *         provide <i>both</i> the hash attribute and the range attribute. </li>
      *         <li> <p><i>AttributesToGet</i> - One or more attributes to be
      *         retrieved from the table. By default, all attributes are returned. If
      *         a specified attribute is not found, it does not appear in the result.
@@ -393,9 +393,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * following: <ul> <li> <p><i>Keys</i> - An array of primary key
      * attribute values that define specific items in the table. For each
      * primary key, you must provide <i>all</i> of the key attributes. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * <li> <p><i>AttributesToGet</i> - One or more attributes to be
      * retrieved from the table. By default, all attributes are returned. If
      * a specified attribute is not found, it does not appear in the result.

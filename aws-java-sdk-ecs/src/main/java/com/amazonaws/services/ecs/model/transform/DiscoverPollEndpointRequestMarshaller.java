@@ -64,6 +64,9 @@ public class DiscoverPollEndpointRequestMarshaller implements Marshaller<Request
             if (discoverPollEndpointRequest.getContainerInstance() != null) {
                 jsonWriter.key("containerInstance").value(discoverPollEndpointRequest.getContainerInstance());
             }
+            if (discoverPollEndpointRequest.getCluster() != null) {
+                jsonWriter.key("cluster").value(discoverPollEndpointRequest.getCluster());
+            }
 
           jsonWriter.endObject();
 

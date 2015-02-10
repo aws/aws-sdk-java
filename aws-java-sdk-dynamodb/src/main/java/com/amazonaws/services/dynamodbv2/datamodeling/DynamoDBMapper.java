@@ -15,9 +15,6 @@
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -58,8 +55,6 @@ import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
 import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
-import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
-import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteRequest;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
@@ -336,7 +331,7 @@ public class DynamoDBMapper {
         if (s3CredentialsProvider == null) {
             this.s3cc = null;
         } else {
-            this.s3cc = new S3ClientCache(s3CredentialsProvider.getCredentials());
+            this.s3cc = new S3ClientCache(s3CredentialsProvider);
         }
     }
 
@@ -2334,6 +2329,7 @@ public class DynamoDBMapper {
     private ScanRequest createScanRequestFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
         ScanRequest scanRequest = new ScanRequest();
         scanRequest.setTableName(getTableName(clazz, config));
+        scanRequest.setIndexName(scanExpression.getIndexName());
         scanRequest.setScanFilter(scanExpression.getScanFilter());
         scanRequest.setLimit(scanExpression.getLimit());
         scanRequest.setExclusiveStartKey(scanExpression.getExclusiveStartKey());

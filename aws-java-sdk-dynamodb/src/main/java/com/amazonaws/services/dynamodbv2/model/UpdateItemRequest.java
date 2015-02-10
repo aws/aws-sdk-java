@@ -51,8 +51,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute. <p>For the primary key,
      * you must provide all of the attributes. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      */
     private java.util.Map<String,AttributeValue> key;
@@ -129,7 +129,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      */
@@ -177,7 +177,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -185,30 +185,30 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -216,7 +216,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -279,7 +279,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -517,8 +517,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The primary key of the item to be updated. Each element
      * consists of an attribute name and a value for that attribute. <p>For
      * the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to specify the hash
-     * attribute. For a hash-and-range type primary key, you must specify
+     * with a hash type primary key, you only need to provide the hash
+     * attribute. For a hash-and-range type primary key, you must provide
      * both the hash attribute and the range attribute.
      * @param attributeUpdates <important> <p>There is a newer parameter
      * available. Use <i>UpdateExpression</i> instead. Note that if you use
@@ -591,7 +591,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      */
@@ -610,8 +610,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The primary key of the item to be updated. Each element
      * consists of an attribute name and a value for that attribute. <p>For
      * the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to specify the hash
-     * attribute. For a hash-and-range type primary key, you must specify
+     * with a hash type primary key, you only need to provide the hash
+     * attribute. For a hash-and-range type primary key, you must provide
      * both the hash attribute and the range attribute.
      * @param attributeUpdates <important> <p>There is a newer parameter
      * available. Use <i>UpdateExpression</i> instead. Note that if you use
@@ -684,7 +684,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      * @param returnValues Use <i>ReturnValues</i> if you want to get the
@@ -717,8 +717,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The primary key of the item to be updated. Each element
      * consists of an attribute name and a value for that attribute. <p>For
      * the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to specify the hash
-     * attribute. For a hash-and-range type primary key, you must specify
+     * with a hash type primary key, you only need to provide the hash
+     * attribute. For a hash-and-range type primary key, you must provide
      * both the hash attribute and the range attribute.
      * @param attributeUpdates <important> <p>There is a newer parameter
      * available. Use <i>UpdateExpression</i> instead. Note that if you use
@@ -791,7 +791,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      * @param returnValues Use <i>ReturnValues</i> if you want to get the
@@ -864,15 +864,15 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute. <p>For the primary key,
      * you must provide all of the attributes. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      *
      * @return The primary key of the item to be updated. Each element consists of an
      *         attribute name and a value for that attribute. <p>For the primary key,
      *         you must provide all of the attributes. For example, with a hash type
-     *         primary key, you only need to specify the hash attribute. For a
-     *         hash-and-range type primary key, you must specify both the hash
+     *         primary key, you only need to provide the hash attribute. For a
+     *         hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute.
      */
     public java.util.Map<String,AttributeValue> getKey() {
@@ -884,15 +884,15 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute. <p>For the primary key,
      * you must provide all of the attributes. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      *
      * @param key The primary key of the item to be updated. Each element consists of an
      *         attribute name and a value for that attribute. <p>For the primary key,
      *         you must provide all of the attributes. For example, with a hash type
-     *         primary key, you only need to specify the hash attribute. For a
-     *         hash-and-range type primary key, you must specify both the hash
+     *         primary key, you only need to provide the hash attribute. For a
+     *         hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute.
      */
     public void setKey(java.util.Map<String,AttributeValue> key) {
@@ -903,8 +903,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute. <p>For the primary key,
      * you must provide all of the attributes. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -912,8 +912,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The primary key of the item to be updated. Each element consists of an
      *         attribute name and a value for that attribute. <p>For the primary key,
      *         you must provide all of the attributes. For example, with a hash type
-     *         primary key, you only need to specify the hash attribute. For a
-     *         hash-and-range type primary key, you must specify both the hash
+     *         primary key, you only need to provide the hash attribute. For a
+     *         hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -928,8 +928,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute. <p>For the primary key,
      * you must provide all of the attributes. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * <p>
      * This method accepts the hashKey, rangeKey of Key as
@@ -955,8 +955,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute. <p>For the primary key,
      * you must provide all of the attributes. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * <p>
      * This method accepts the hashKey, rangeKey of Key as
@@ -976,8 +976,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute. <p>For the primary key,
      * you must provide all of the attributes. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * <p>
      * The method adds a new key-value pair into Key parameter, and returns a
@@ -1078,7 +1078,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      *
@@ -1153,7 +1153,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         DynamoDB to create an item with the supplied primary key and number
      *         (or set of numbers) for the attribute value. The only data types
      *         allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     *         specify any attributes that are part of an index key, then the data
+     *         provide any attributes that are part of an index key, then the data
      *         types for those attributes must match those of the schema in the
      *         table's attribute definition.
      */
@@ -1234,7 +1234,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      *
@@ -1309,7 +1309,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         DynamoDB to create an item with the supplied primary key and number
      *         (or set of numbers) for the attribute value. The only data types
      *         allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     *         specify any attributes that are part of an index key, then the data
+     *         provide any attributes that are part of an index key, then the data
      *         types for those attributes must match those of the schema in the
      *         table's attribute definition.
      */
@@ -1389,7 +1389,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      * <p>
@@ -1466,7 +1466,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         DynamoDB to create an item with the supplied primary key and number
      *         (or set of numbers) for the attribute value. The only data types
      *         allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     *         specify any attributes that are part of an index key, then the data
+     *         provide any attributes that are part of an index key, then the data
      *         types for those attributes must match those of the schema in the
      *         table's attribute definition.
      *
@@ -1550,7 +1550,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      * <p>
@@ -1623,7 +1623,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1631,30 +1631,30 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1662,7 +1662,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1725,7 +1725,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1796,7 +1796,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1804,30 +1804,30 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1835,7 +1835,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1898,7 +1898,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1975,7 +1975,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1983,30 +1983,30 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -2014,7 +2014,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -2077,7 +2077,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -2148,7 +2148,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -2156,30 +2156,30 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -2187,7 +2187,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -2250,7 +2250,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -2326,7 +2326,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -2334,30 +2334,30 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -2365,7 +2365,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -2428,7 +2428,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -2501,7 +2501,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -2509,30 +2509,30 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -2540,7 +2540,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -2603,7 +2603,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -2683,7 +2683,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -2691,30 +2691,30 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -2722,7 +2722,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -2785,7 +2785,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For

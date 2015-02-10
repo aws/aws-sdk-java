@@ -83,7 +83,7 @@
  * <li> <p>
  * <i>GetItem</i> - Returns a set of attributes for the item that has a
  * given primary key. By default, <i>GetItem</i> performs an eventually
- * consistent read; however, applications can specify a strongly
+ * consistent read; however, applications can request a strongly
  * consistent read instead.
  * </p>
  * </li>

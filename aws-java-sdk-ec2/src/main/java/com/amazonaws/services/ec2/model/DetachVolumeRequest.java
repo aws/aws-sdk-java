@@ -34,9 +34,8 @@ import com.amazonaws.services.ec2.model.transform.DetachVolumeRequestMarshaller;
  * stop the instance first.
  * </p>
  * <p>
- * If the root volume is detached from an instance with an AWS
- * Marketplace product code, then the AWS Marketplace product codes from
- * that volume are no longer associated with the instance.
+ * When a volume with an AWS Marketplace product code is detached from an
+ * instance, the product code is no longer associated with the instance.
  * </p>
  * <p>
  * For more information, see

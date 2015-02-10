@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the Spot Price.
+ * Describes the maximum hourly price (bid) for any Spot Instance
+ * launched to fulfill the request.
  * </p>
  */
 public class SpotPrice implements Serializable {
@@ -40,7 +41,8 @@ public class SpotPrice implements Serializable {
     private String productDescription;
 
     /**
-     * The maximum price you will pay to launch one or more Spot Instances.
+     * The maximum price (bid) that you are willing to pay for a Spot
+     * Instance.
      */
     private String spotPrice;
 
@@ -219,29 +221,35 @@ public class SpotPrice implements Serializable {
     }
 
     /**
-     * The maximum price you will pay to launch one or more Spot Instances.
+     * The maximum price (bid) that you are willing to pay for a Spot
+     * Instance.
      *
-     * @return The maximum price you will pay to launch one or more Spot Instances.
+     * @return The maximum price (bid) that you are willing to pay for a Spot
+     *         Instance.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * The maximum price you will pay to launch one or more Spot Instances.
+     * The maximum price (bid) that you are willing to pay for a Spot
+     * Instance.
      *
-     * @param spotPrice The maximum price you will pay to launch one or more Spot Instances.
+     * @param spotPrice The maximum price (bid) that you are willing to pay for a Spot
+     *         Instance.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * The maximum price you will pay to launch one or more Spot Instances.
+     * The maximum price (bid) that you are willing to pay for a Spot
+     * Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice The maximum price you will pay to launch one or more Spot Instances.
+     * @param spotPrice The maximum price (bid) that you are willing to pay for a Spot
+     *         Instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -123,7 +123,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -180,15 +180,15 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <note><p>If you do not specify a range key
+     * provide the hash key attribute name and value as an <code>EQ</code>
+     * condition. You can optionally provide a second condition, referring to
+     * the range key attribute. <note><p>If you do not provide a range key
      * condition, all of the items that match the hash key will be retrieved.
      * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      * be applied after the items are retrieved.</note> <p>For a query on an
      * index, you can have conditions only on the index key attributes. You
-     * must specify the index hash attribute name and value as an EQ
-     * condition. You can optionally specify a second condition, referring to
+     * must provide the index hash attribute name and value as an EQ
+     * condition. You can optionally provide a second condition, referring to
      * the index key range attribute. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
@@ -219,14 +219,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can contain only one <i>AttributeValue</i> element of type String,
      * Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -234,7 +234,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -242,7 +242,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>BEGINS_WITH</code> : Checks for
@@ -257,7 +257,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -279,7 +279,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * does not support attributes of type List or Map. <note><p>A
      * <i>QueryFilter</i> is applied after the items have already been read;
      * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you specify more than one condition in the
+     * units.</note> <p>If you provide more than one condition in the
      * <i>QueryFilter</i> map, then by default all of the conditions must
      * evaluate to true. In other words, the conditions are ANDed together.
      * (You can use the <i>ConditionalOperator</i> parameter to OR the
@@ -975,7 +975,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -1005,7 +1005,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -1037,7 +1037,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -1067,7 +1067,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -1105,7 +1105,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -1137,7 +1137,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -1176,7 +1176,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -1208,7 +1208,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -1436,15 +1436,15 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <note><p>If you do not specify a range key
+     * provide the hash key attribute name and value as an <code>EQ</code>
+     * condition. You can optionally provide a second condition, referring to
+     * the range key attribute. <note><p>If you do not provide a range key
      * condition, all of the items that match the hash key will be retrieved.
      * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      * be applied after the items are retrieved.</note> <p>For a query on an
      * index, you can have conditions only on the index key attributes. You
-     * must specify the index hash attribute name and value as an EQ
-     * condition. You can optionally specify a second condition, referring to
+     * must provide the index hash attribute name and value as an EQ
+     * condition. You can optionally provide a second condition, referring to
      * the index key range attribute. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
@@ -1475,14 +1475,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can contain only one <i>AttributeValue</i> element of type String,
      * Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1490,7 +1490,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1498,7 +1498,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>BEGINS_WITH</code> : Checks for
@@ -1513,7 +1513,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1525,15 +1525,15 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *
      * @return The selection criteria for the query. For a query on a table, you can
      *         have conditions only on the table primary key attributes. You must
-     *         specify the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <note><p>If you do not specify a range key
+     *         provide the hash key attribute name and value as an <code>EQ</code>
+     *         condition. You can optionally provide a second condition, referring to
+     *         the range key attribute. <note><p>If you do not provide a range key
      *         condition, all of the items that match the hash key will be retrieved.
      *         If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      *         be applied after the items are retrieved.</note> <p>For a query on an
      *         index, you can have conditions only on the index key attributes. You
-     *         must specify the index hash attribute name and value as an EQ
-     *         condition. You can optionally specify a second condition, referring to
+     *         must provide the index hash attribute name and value as an EQ
+     *         condition. You can optionally provide a second condition, referring to
      *         the index key range attribute. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
      *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
@@ -1564,14 +1564,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         can contain only one <i>AttributeValue</i> element of type String,
      *         Number, or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
      *         type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1579,7 +1579,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1587,7 +1587,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>BEGINS_WITH</code> : Checks for
@@ -1602,7 +1602,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1620,15 +1620,15 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <note><p>If you do not specify a range key
+     * provide the hash key attribute name and value as an <code>EQ</code>
+     * condition. You can optionally provide a second condition, referring to
+     * the range key attribute. <note><p>If you do not provide a range key
      * condition, all of the items that match the hash key will be retrieved.
      * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      * be applied after the items are retrieved.</note> <p>For a query on an
      * index, you can have conditions only on the index key attributes. You
-     * must specify the index hash attribute name and value as an EQ
-     * condition. You can optionally specify a second condition, referring to
+     * must provide the index hash attribute name and value as an EQ
+     * condition. You can optionally provide a second condition, referring to
      * the index key range attribute. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
@@ -1659,14 +1659,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can contain only one <i>AttributeValue</i> element of type String,
      * Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1674,7 +1674,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1682,7 +1682,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>BEGINS_WITH</code> : Checks for
@@ -1697,7 +1697,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1709,15 +1709,15 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *
      * @param keyConditions The selection criteria for the query. For a query on a table, you can
      *         have conditions only on the table primary key attributes. You must
-     *         specify the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <note><p>If you do not specify a range key
+     *         provide the hash key attribute name and value as an <code>EQ</code>
+     *         condition. You can optionally provide a second condition, referring to
+     *         the range key attribute. <note><p>If you do not provide a range key
      *         condition, all of the items that match the hash key will be retrieved.
      *         If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      *         be applied after the items are retrieved.</note> <p>For a query on an
      *         index, you can have conditions only on the index key attributes. You
-     *         must specify the index hash attribute name and value as an EQ
-     *         condition. You can optionally specify a second condition, referring to
+     *         must provide the index hash attribute name and value as an EQ
+     *         condition. You can optionally provide a second condition, referring to
      *         the index key range attribute. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
      *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
@@ -1748,14 +1748,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         can contain only one <i>AttributeValue</i> element of type String,
      *         Number, or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
      *         type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1763,7 +1763,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1771,7 +1771,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>BEGINS_WITH</code> : Checks for
@@ -1786,7 +1786,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1803,15 +1803,15 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <note><p>If you do not specify a range key
+     * provide the hash key attribute name and value as an <code>EQ</code>
+     * condition. You can optionally provide a second condition, referring to
+     * the range key attribute. <note><p>If you do not provide a range key
      * condition, all of the items that match the hash key will be retrieved.
      * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      * be applied after the items are retrieved.</note> <p>For a query on an
      * index, you can have conditions only on the index key attributes. You
-     * must specify the index hash attribute name and value as an EQ
-     * condition. You can optionally specify a second condition, referring to
+     * must provide the index hash attribute name and value as an EQ
+     * condition. You can optionally provide a second condition, referring to
      * the index key range attribute. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
@@ -1842,14 +1842,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can contain only one <i>AttributeValue</i> element of type String,
      * Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1857,7 +1857,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1865,7 +1865,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>BEGINS_WITH</code> : Checks for
@@ -1880,7 +1880,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1894,15 +1894,15 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *
      * @param keyConditions The selection criteria for the query. For a query on a table, you can
      *         have conditions only on the table primary key attributes. You must
-     *         specify the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <note><p>If you do not specify a range key
+     *         provide the hash key attribute name and value as an <code>EQ</code>
+     *         condition. You can optionally provide a second condition, referring to
+     *         the range key attribute. <note><p>If you do not provide a range key
      *         condition, all of the items that match the hash key will be retrieved.
      *         If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      *         be applied after the items are retrieved.</note> <p>For a query on an
      *         index, you can have conditions only on the index key attributes. You
-     *         must specify the index hash attribute name and value as an EQ
-     *         condition. You can optionally specify a second condition, referring to
+     *         must provide the index hash attribute name and value as an EQ
+     *         condition. You can optionally provide a second condition, referring to
      *         the index key range attribute. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
      *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
@@ -1933,14 +1933,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         can contain only one <i>AttributeValue</i> element of type String,
      *         Number, or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
      *         type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1948,7 +1948,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1956,7 +1956,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>BEGINS_WITH</code> : Checks for
@@ -1971,7 +1971,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1992,15 +1992,15 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <note><p>If you do not specify a range key
+     * provide the hash key attribute name and value as an <code>EQ</code>
+     * condition. You can optionally provide a second condition, referring to
+     * the range key attribute. <note><p>If you do not provide a range key
      * condition, all of the items that match the hash key will be retrieved.
      * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      * be applied after the items are retrieved.</note> <p>For a query on an
      * index, you can have conditions only on the index key attributes. You
-     * must specify the index hash attribute name and value as an EQ
-     * condition. You can optionally specify a second condition, referring to
+     * must provide the index hash attribute name and value as an EQ
+     * condition. You can optionally provide a second condition, referring to
      * the index key range attribute. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
@@ -2031,14 +2031,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can contain only one <i>AttributeValue</i> element of type String,
      * Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -2046,7 +2046,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -2054,7 +2054,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>BEGINS_WITH</code> : Checks for
@@ -2069,7 +2069,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -2116,7 +2116,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * does not support attributes of type List or Map. <note><p>A
      * <i>QueryFilter</i> is applied after the items have already been read;
      * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you specify more than one condition in the
+     * units.</note> <p>If you provide more than one condition in the
      * <i>QueryFilter</i> map, then by default all of the conditions must
      * evaluate to true. In other words, the conditions are ANDed together.
      * (You can use the <i>ConditionalOperator</i> parameter to OR the
@@ -2157,7 +2157,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         does not support attributes of type List or Map. <note><p>A
      *         <i>QueryFilter</i> is applied after the items have already been read;
      *         the process of filtering does not consume any additional read capacity
-     *         units.</note> <p>If you specify more than one condition in the
+     *         units.</note> <p>If you provide more than one condition in the
      *         <i>QueryFilter</i> map, then by default all of the conditions must
      *         evaluate to true. In other words, the conditions are ANDed together.
      *         (You can use the <i>ConditionalOperator</i> parameter to OR the
@@ -2204,7 +2204,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * does not support attributes of type List or Map. <note><p>A
      * <i>QueryFilter</i> is applied after the items have already been read;
      * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you specify more than one condition in the
+     * units.</note> <p>If you provide more than one condition in the
      * <i>QueryFilter</i> map, then by default all of the conditions must
      * evaluate to true. In other words, the conditions are ANDed together.
      * (You can use the <i>ConditionalOperator</i> parameter to OR the
@@ -2245,7 +2245,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         does not support attributes of type List or Map. <note><p>A
      *         <i>QueryFilter</i> is applied after the items have already been read;
      *         the process of filtering does not consume any additional read capacity
-     *         units.</note> <p>If you specify more than one condition in the
+     *         units.</note> <p>If you provide more than one condition in the
      *         <i>QueryFilter</i> map, then by default all of the conditions must
      *         evaluate to true. In other words, the conditions are ANDed together.
      *         (You can use the <i>ConditionalOperator</i> parameter to OR the
@@ -2291,7 +2291,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * does not support attributes of type List or Map. <note><p>A
      * <i>QueryFilter</i> is applied after the items have already been read;
      * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you specify more than one condition in the
+     * units.</note> <p>If you provide more than one condition in the
      * <i>QueryFilter</i> map, then by default all of the conditions must
      * evaluate to true. In other words, the conditions are ANDed together.
      * (You can use the <i>ConditionalOperator</i> parameter to OR the
@@ -2334,7 +2334,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         does not support attributes of type List or Map. <note><p>A
      *         <i>QueryFilter</i> is applied after the items have already been read;
      *         the process of filtering does not consume any additional read capacity
-     *         units.</note> <p>If you specify more than one condition in the
+     *         units.</note> <p>If you provide more than one condition in the
      *         <i>QueryFilter</i> map, then by default all of the conditions must
      *         evaluate to true. In other words, the conditions are ANDed together.
      *         (You can use the <i>ConditionalOperator</i> parameter to OR the
@@ -2384,7 +2384,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * does not support attributes of type List or Map. <note><p>A
      * <i>QueryFilter</i> is applied after the items have already been read;
      * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you specify more than one condition in the
+     * units.</note> <p>If you provide more than one condition in the
      * <i>QueryFilter</i> map, then by default all of the conditions must
      * evaluate to true. In other words, the conditions are ANDed together.
      * (You can use the <i>ConditionalOperator</i> parameter to OR the

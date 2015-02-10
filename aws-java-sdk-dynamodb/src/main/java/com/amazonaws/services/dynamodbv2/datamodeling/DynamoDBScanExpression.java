@@ -101,6 +101,36 @@ public class DynamoDBScanExpression {
     private java.util.Map<String,AttributeValue> expressionAttributeValues;
 
     /**
+     * Optional index name that can be specified for the scan operation.
+     */
+    private String indexName;
+
+    /**
+     * Returns the name of the index to be used by this scan; or null if there
+     * is none.
+     */
+    public String getIndexName() {
+        return indexName;
+    }
+
+    /**
+     * Sets the name of the index to be used by this scan.
+     */
+    public void setIndexName(String indexName) {
+        this.indexName = indexName;
+    }
+
+    /**
+     * Sets the name of the index to be used by this scan.
+     * <p>
+     * Returns a pointer to this object for method-chaining.
+     */
+    public DynamoDBScanExpression withIndexName(String indexName) {
+        setIndexName(indexName);
+        return this;
+    }
+
+    /**
      * Returns the scan filter as a map of attribute names to conditions.
      *
      * @return The scan filter as a map of attribute names to conditions.

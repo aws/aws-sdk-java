@@ -36,8 +36,8 @@ public enum IOUtils {
     private static final Log defaultLog = LogFactory.getLog(IOUtils.class);
 
     /**
-     * Reads and returns the rest of the given input stream as a byte array,
-     * closing the input stream afterwards.
+     * Reads and returns the rest of the given input stream as a byte array.
+     * Caller is responsible for closing the given input stream.
      */
     public static byte[] toByteArray(InputStream is) throws IOException {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
@@ -54,8 +54,8 @@ public enum IOUtils {
     }
 
     /**
-     * Reads and returns the rest of the given input stream as a string,
-     * closing the input stream afterwards.
+     * Reads and returns the rest of the given input stream as a string.
+     * Caller is responsible for closing the given input stream.
      */
     public static String toString(InputStream is) throws IOException {
         return new String(toByteArray(is), StringUtils.UTF8);

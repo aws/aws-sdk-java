@@ -81,7 +81,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * An array of one or more global secondary indexes for the table. For
-     * each index in the array, you can specify one action: <ul>
+     * each index in the array, you can request one action: <ul>
      * <li><p><i>Create</i> - add a new global secondary index to the
      * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      * settings of an existing global secondary index.</li>
@@ -312,7 +312,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * An array of one or more global secondary indexes for the table. For
-     * each index in the array, you can specify one action: <ul>
+     * each index in the array, you can request one action: <ul>
      * <li><p><i>Create</i> - add a new global secondary index to the
      * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      * settings of an existing global secondary index.</li>
@@ -320,7 +320,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * table.</li> </ul>
      *
      * @return An array of one or more global secondary indexes for the table. For
-     *         each index in the array, you can specify one action: <ul>
+     *         each index in the array, you can request one action: <ul>
      *         <li><p><i>Create</i> - add a new global secondary index to the
      *         table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      *         settings of an existing global secondary index.</li>
@@ -333,7 +333,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * An array of one or more global secondary indexes for the table. For
-     * each index in the array, you can specify one action: <ul>
+     * each index in the array, you can request one action: <ul>
      * <li><p><i>Create</i> - add a new global secondary index to the
      * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      * settings of an existing global secondary index.</li>
@@ -341,7 +341,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * table.</li> </ul>
      *
      * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes for the table. For
-     *         each index in the array, you can specify one action: <ul>
+     *         each index in the array, you can request one action: <ul>
      *         <li><p><i>Create</i> - add a new global secondary index to the
      *         table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      *         settings of an existing global secondary index.</li>
@@ -360,7 +360,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * An array of one or more global secondary indexes for the table. For
-     * each index in the array, you can specify one action: <ul>
+     * each index in the array, you can request one action: <ul>
      * <li><p><i>Create</i> - add a new global secondary index to the
      * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      * settings of an existing global secondary index.</li>
@@ -370,7 +370,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes for the table. For
-     *         each index in the array, you can specify one action: <ul>
+     *         each index in the array, you can request one action: <ul>
      *         <li><p><i>Create</i> - add a new global secondary index to the
      *         table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      *         settings of an existing global secondary index.</li>
@@ -390,7 +390,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * An array of one or more global secondary indexes for the table. For
-     * each index in the array, you can specify one action: <ul>
+     * each index in the array, you can request one action: <ul>
      * <li><p><i>Create</i> - add a new global secondary index to the
      * table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      * settings of an existing global secondary index.</li>
@@ -400,7 +400,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes for the table. For
-     *         each index in the array, you can specify one action: <ul>
+     *         each index in the array, you can request one action: <ul>
      *         <li><p><i>Create</i> - add a new global secondary index to the
      *         table.</li> <li><p><i>Update</i> - modify the provisioned throughput
      *         settings of an existing global secondary index.</li>

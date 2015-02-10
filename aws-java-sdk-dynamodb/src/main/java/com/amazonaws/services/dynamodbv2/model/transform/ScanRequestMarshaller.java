@@ -64,6 +64,9 @@ public class ScanRequestMarshaller implements Marshaller<Request<ScanRequest>, S
             if (scanRequest.getTableName() != null) {
                 jsonWriter.key("TableName").value(scanRequest.getTableName());
             }
+            if (scanRequest.getIndexName() != null) {
+                jsonWriter.key("IndexName").value(scanRequest.getIndexName());
+            }
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(scanRequest.getAttributesToGet());
             if (attributesToGetList != null && !(attributesToGetList.isAutoConstruct() && attributesToGetList.isEmpty())) {

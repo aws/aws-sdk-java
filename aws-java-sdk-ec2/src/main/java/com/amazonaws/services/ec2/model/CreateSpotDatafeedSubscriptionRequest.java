@@ -23,10 +23,10 @@ import com.amazonaws.services.ec2.model.transform.CreateSpotDatafeedSubscription
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest) CreateSpotDatafeedSubscription operation}.
  * <p>
- * Creates a datafeed for Spot Instances, enabling you to view Spot
+ * Creates a data feed for Spot Instances, enabling you to view Spot
  * Instance usage logs. You can create one data feed per AWS account. For
  * more information, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
@@ -35,14 +35,12 @@ import com.amazonaws.services.ec2.model.transform.CreateSpotDatafeedSubscription
 public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSpotDatafeedSubscriptionRequest> {
 
     /**
-     * The Amazon S3 bucket in which to store the Spot Instance datafeed.
-     * <p>Constraints: Must be a valid bucket associated with your AWS
-     * account.
+     * The Amazon S3 bucket in which to store the Spot Instance data feed.
      */
     private String bucket;
 
     /**
-     * A prefix for the datafeed file names.
+     * A prefix for the data feed file names.
      */
     private String prefix;
 
@@ -58,49 +56,36 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      * initialize any additional object members.
      * 
      * @param bucket The Amazon S3 bucket in which to store the Spot Instance
-     * datafeed. <p>Constraints: Must be a valid bucket associated with your
-     * AWS account.
+     * data feed.
      */
     public CreateSpotDatafeedSubscriptionRequest(String bucket) {
         setBucket(bucket);
     }
 
     /**
-     * The Amazon S3 bucket in which to store the Spot Instance datafeed.
-     * <p>Constraints: Must be a valid bucket associated with your AWS
-     * account.
+     * The Amazon S3 bucket in which to store the Spot Instance data feed.
      *
-     * @return The Amazon S3 bucket in which to store the Spot Instance datafeed.
-     *         <p>Constraints: Must be a valid bucket associated with your AWS
-     *         account.
+     * @return The Amazon S3 bucket in which to store the Spot Instance data feed.
      */
     public String getBucket() {
         return bucket;
     }
     
     /**
-     * The Amazon S3 bucket in which to store the Spot Instance datafeed.
-     * <p>Constraints: Must be a valid bucket associated with your AWS
-     * account.
+     * The Amazon S3 bucket in which to store the Spot Instance data feed.
      *
-     * @param bucket The Amazon S3 bucket in which to store the Spot Instance datafeed.
-     *         <p>Constraints: Must be a valid bucket associated with your AWS
-     *         account.
+     * @param bucket The Amazon S3 bucket in which to store the Spot Instance data feed.
      */
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
     
     /**
-     * The Amazon S3 bucket in which to store the Spot Instance datafeed.
-     * <p>Constraints: Must be a valid bucket associated with your AWS
-     * account.
+     * The Amazon S3 bucket in which to store the Spot Instance data feed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bucket The Amazon S3 bucket in which to store the Spot Instance datafeed.
-     *         <p>Constraints: Must be a valid bucket associated with your AWS
-     *         account.
+     * @param bucket The Amazon S3 bucket in which to store the Spot Instance data feed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -111,29 +96,29 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
     }
 
     /**
-     * A prefix for the datafeed file names.
+     * A prefix for the data feed file names.
      *
-     * @return A prefix for the datafeed file names.
+     * @return A prefix for the data feed file names.
      */
     public String getPrefix() {
         return prefix;
     }
     
     /**
-     * A prefix for the datafeed file names.
+     * A prefix for the data feed file names.
      *
-     * @param prefix A prefix for the datafeed file names.
+     * @param prefix A prefix for the data feed file names.
      */
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
     
     /**
-     * A prefix for the datafeed file names.
+     * A prefix for the data feed file names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param prefix A prefix for the datafeed file names.
+     * @param prefix A prefix for the data feed file names.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

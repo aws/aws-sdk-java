@@ -116,7 +116,7 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -169,7 +169,7 @@ public class TableDescription implements Serializable {
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -770,7 +770,7 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -805,7 +805,7 @@ public class TableDescription implements Serializable {
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         secondary index. The total count of attributes specified in
+     *         secondary index. The total count of attributes provided in
      *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      *         must not exceed 20. If you project the same attribute into two
      *         different indexes, this counts as two distinct attributes when
@@ -845,7 +845,7 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -880,7 +880,7 @@ public class TableDescription implements Serializable {
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         secondary index. The total count of attributes specified in
+     *         secondary index. The total count of attributes provided in
      *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      *         must not exceed 20. If you project the same attribute into two
      *         different indexes, this counts as two distinct attributes when
@@ -926,7 +926,7 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -963,7 +963,7 @@ public class TableDescription implements Serializable {
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         secondary index. The total count of attributes specified in
+     *         secondary index. The total count of attributes provided in
      *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      *         must not exceed 20. If you project the same attribute into two
      *         different indexes, this counts as two distinct attributes when
@@ -1010,7 +1010,7 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -1047,7 +1047,7 @@ public class TableDescription implements Serializable {
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         secondary index. The total count of attributes specified in
+     *         secondary index. The total count of attributes provided in
      *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      *         must not exceed 20. If you project the same attribute into two
      *         different indexes, this counts as two distinct attributes when
@@ -1113,7 +1113,7 @@ public class TableDescription implements Serializable {
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -1159,7 +1159,7 @@ public class TableDescription implements Serializable {
      *         table attributes are projected into the index. </li> </ul> </li> <li>
      *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      *         names that are projected into the secondary index. The total count of
-     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         attributes provided in <i>NonKeyAttributes</i>, summed across all of
      *         the secondary indexes, must not exceed 20. If you project the same
      *         attribute into two different indexes, this counts as two distinct
      *         attributes when determining the total. </li> </ul> </li> <li>
@@ -1210,7 +1210,7 @@ public class TableDescription implements Serializable {
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -1256,7 +1256,7 @@ public class TableDescription implements Serializable {
      *         table attributes are projected into the index. </li> </ul> </li> <li>
      *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      *         names that are projected into the secondary index. The total count of
-     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         attributes provided in <i>NonKeyAttributes</i>, summed across all of
      *         the secondary indexes, must not exceed 20. If you project the same
      *         attribute into two different indexes, this counts as two distinct
      *         attributes when determining the total. </li> </ul> </li> <li>
@@ -1313,7 +1313,7 @@ public class TableDescription implements Serializable {
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -1361,7 +1361,7 @@ public class TableDescription implements Serializable {
      *         table attributes are projected into the index. </li> </ul> </li> <li>
      *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      *         names that are projected into the secondary index. The total count of
-     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         attributes provided in <i>NonKeyAttributes</i>, summed across all of
      *         the secondary indexes, must not exceed 20. If you project the same
      *         attribute into two different indexes, this counts as two distinct
      *         attributes when determining the total. </li> </ul> </li> <li>
@@ -1419,7 +1419,7 @@ public class TableDescription implements Serializable {
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -1467,7 +1467,7 @@ public class TableDescription implements Serializable {
      *         table attributes are projected into the index. </li> </ul> </li> <li>
      *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      *         names that are projected into the secondary index. The total count of
-     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         attributes provided in <i>NonKeyAttributes</i>, summed across all of
      *         the secondary indexes, must not exceed 20. If you project the same
      *         attribute into two different indexes, this counts as two distinct
      *         attributes when determining the total. </li> </ul> </li> <li>

@@ -22,14 +22,14 @@ import java.io.Serializable;
 public class RequestSpotInstancesResult implements Serializable {
 
     /**
-     * Information about the Spot Instance request.
+     * One or more Spot Instance requests.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest> spotInstanceRequests;
 
     /**
-     * Information about the Spot Instance request.
+     * One or more Spot Instance requests.
      *
-     * @return Information about the Spot Instance request.
+     * @return One or more Spot Instance requests.
      */
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
         if (spotInstanceRequests == null) {
@@ -40,9 +40,9 @@ public class RequestSpotInstancesResult implements Serializable {
     }
     
     /**
-     * Information about the Spot Instance request.
+     * One or more Spot Instance requests.
      *
-     * @param spotInstanceRequests Information about the Spot Instance request.
+     * @param spotInstanceRequests One or more Spot Instance requests.
      */
     public void setSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
         if (spotInstanceRequests == null) {
@@ -55,11 +55,11 @@ public class RequestSpotInstancesResult implements Serializable {
     }
     
     /**
-     * Information about the Spot Instance request.
+     * One or more Spot Instance requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequests Information about the Spot Instance request.
+     * @param spotInstanceRequests One or more Spot Instance requests.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -73,11 +73,11 @@ public class RequestSpotInstancesResult implements Serializable {
     }
     
     /**
-     * Information about the Spot Instance request.
+     * One or more Spot Instance requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequests Information about the Spot Instance request.
+     * @param spotInstanceRequests One or more Spot Instance requests.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

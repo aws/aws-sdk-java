@@ -167,8 +167,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     private Source customCookbooksSource;
 
     /**
-     * A default SSH key for the stack instances. You can override this value
-     * when you create or update an instance.
+     * A default Amazon EC2 key pair name. The default value is none. If you
+     * specify a key pair name, AWS OpsWorks installs the public key on the
+     * instance and you can use the private key with an SSH client to log in
+     * to the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
+     * Using SSH to Communicate with an Instance</a> and <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
+     * Managing SSH Access</a>. You can override this setting by specifying a
+     * different key pair, or no key pair, when you <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     * create an instance</a>.
      */
     private String defaultSshKeyName;
 
@@ -1073,35 +1082,89 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * A default SSH key for the stack instances. You can override this value
-     * when you create or update an instance.
+     * A default Amazon EC2 key pair name. The default value is none. If you
+     * specify a key pair name, AWS OpsWorks installs the public key on the
+     * instance and you can use the private key with an SSH client to log in
+     * to the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
+     * Using SSH to Communicate with an Instance</a> and <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
+     * Managing SSH Access</a>. You can override this setting by specifying a
+     * different key pair, or no key pair, when you <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     * create an instance</a>.
      *
-     * @return A default SSH key for the stack instances. You can override this value
-     *         when you create or update an instance.
+     * @return A default Amazon EC2 key pair name. The default value is none. If you
+     *         specify a key pair name, AWS OpsWorks installs the public key on the
+     *         instance and you can use the private key with an SSH client to log in
+     *         to the instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
+     *         Using SSH to Communicate with an Instance</a> and <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
+     *         Managing SSH Access</a>. You can override this setting by specifying a
+     *         different key pair, or no key pair, when you <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     *         create an instance</a>.
      */
     public String getDefaultSshKeyName() {
         return defaultSshKeyName;
     }
     
     /**
-     * A default SSH key for the stack instances. You can override this value
-     * when you create or update an instance.
+     * A default Amazon EC2 key pair name. The default value is none. If you
+     * specify a key pair name, AWS OpsWorks installs the public key on the
+     * instance and you can use the private key with an SSH client to log in
+     * to the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
+     * Using SSH to Communicate with an Instance</a> and <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
+     * Managing SSH Access</a>. You can override this setting by specifying a
+     * different key pair, or no key pair, when you <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     * create an instance</a>.
      *
-     * @param defaultSshKeyName A default SSH key for the stack instances. You can override this value
-     *         when you create or update an instance.
+     * @param defaultSshKeyName A default Amazon EC2 key pair name. The default value is none. If you
+     *         specify a key pair name, AWS OpsWorks installs the public key on the
+     *         instance and you can use the private key with an SSH client to log in
+     *         to the instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
+     *         Using SSH to Communicate with an Instance</a> and <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
+     *         Managing SSH Access</a>. You can override this setting by specifying a
+     *         different key pair, or no key pair, when you <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     *         create an instance</a>.
      */
     public void setDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
     }
     
     /**
-     * A default SSH key for the stack instances. You can override this value
-     * when you create or update an instance.
+     * A default Amazon EC2 key pair name. The default value is none. If you
+     * specify a key pair name, AWS OpsWorks installs the public key on the
+     * instance and you can use the private key with an SSH client to log in
+     * to the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
+     * Using SSH to Communicate with an Instance</a> and <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
+     * Managing SSH Access</a>. You can override this setting by specifying a
+     * different key pair, or no key pair, when you <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     * create an instance</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultSshKeyName A default SSH key for the stack instances. You can override this value
-     *         when you create or update an instance.
+     * @param defaultSshKeyName A default Amazon EC2 key pair name. The default value is none. If you
+     *         specify a key pair name, AWS OpsWorks installs the public key on the
+     *         instance and you can use the private key with an SSH client to log in
+     *         to the instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
+     *         Using SSH to Communicate with an Instance</a> and <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
+     *         Managing SSH Access</a>. You can override this setting by specifying a
+     *         different key pair, or no key pair, when you <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     *         create an instance</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -49,6 +49,11 @@ public class Image implements Serializable {
     private String ownerId;
 
     /**
+     * The date and time the image was created.
+     */
+    private String creationDate;
+
+    /**
      * Indicates whether the image has public launch permissions. The value
      * is <code>true</code> if this image has public launch permissions or
      * <code>false</code> if it has only implicit and explicit launch
@@ -362,6 +367,39 @@ public class Image implements Serializable {
      */
     public Image withOwnerId(String ownerId) {
         this.ownerId = ownerId;
+        return this;
+    }
+
+    /**
+     * The date and time the image was created.
+     *
+     * @return The date and time the image was created.
+     */
+    public String getCreationDate() {
+        return creationDate;
+    }
+    
+    /**
+     * The date and time the image was created.
+     *
+     * @param creationDate The date and time the image was created.
+     */
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
+    }
+    
+    /**
+     * The date and time the image was created.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param creationDate The date and time the image was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Image withCreationDate(String creationDate) {
+        this.creationDate = creationDate;
         return this;
     }
 
@@ -1441,6 +1479,7 @@ public class Image implements Serializable {
         if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ",");
         if (getState() != null) sb.append("State: " + getState() + ",");
         if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");
         if (isPublic() != null) sb.append("Public: " + isPublic() + ",");
         if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
@@ -1472,6 +1511,7 @@ public class Image implements Serializable {
         hashCode = prime * hashCode + ((getImageLocation() == null) ? 0 : getImageLocation().hashCode()); 
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode()); 
         hashCode = prime * hashCode + ((isPublic() == null) ? 0 : isPublic().hashCode()); 
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
@@ -1509,6 +1549,8 @@ public class Image implements Serializable {
         if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
         if (other.getOwnerId() == null ^ this.getOwnerId() == null) return false;
         if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null) return false;
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false) return false; 
         if (other.isPublic() == null ^ this.isPublic() == null) return false;
         if (other.isPublic() != null && other.isPublic().equals(this.isPublic()) == false) return false; 
         if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;

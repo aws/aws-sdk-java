@@ -74,9 +74,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
      * <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     * key that consists of a hash attribute, you must specify exactly one
+     * key that consists of a hash attribute, you must provide exactly one
      * element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     * key that consists of hash and range attributes, you must specify
+     * key that consists of hash and range attributes, you must provide
      * exactly two elements, in this order: The first element must have a
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -111,7 +111,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -138,7 +138,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -180,9 +180,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
      * <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     * key that consists of a hash attribute, you must specify exactly one
+     * key that consists of a hash attribute, you must provide exactly one
      * element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     * key that consists of hash and range attributes, you must specify
+     * key that consists of hash and range attributes, you must provide
      * exactly two elements, in this order: The first element must have a
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -213,9 +213,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
      * <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     * key that consists of a hash attribute, you must specify exactly one
+     * key that consists of a hash attribute, you must provide exactly one
      * element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     * key that consists of hash and range attributes, you must specify
+     * key that consists of hash and range attributes, you must provide
      * exactly two elements, in this order: The first element must have a
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -363,9 +363,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
      * <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     * key that consists of a hash attribute, you must specify exactly one
+     * key that consists of a hash attribute, you must provide exactly one
      * element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     * key that consists of hash and range attributes, you must specify
+     * key that consists of hash and range attributes, you must provide
      * exactly two elements, in this order: The first element must have a
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -385,9 +385,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      *         <p><i>KeyType</i> - Determines whether the key attribute is
      *         <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     *         key that consists of a hash attribute, you must specify exactly one
+     *         key that consists of a hash attribute, you must provide exactly one
      *         element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     *         key that consists of hash and range attributes, you must specify
+     *         key that consists of hash and range attributes, you must provide
      *         exactly two elements, in this order: The first element must have a
      *         <i>KeyType</i> of <code>HASH</code>, and the second element must have
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -409,9 +409,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
      * <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     * key that consists of a hash attribute, you must specify exactly one
+     * key that consists of a hash attribute, you must provide exactly one
      * element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     * key that consists of hash and range attributes, you must specify
+     * key that consists of hash and range attributes, you must provide
      * exactly two elements, in this order: The first element must have a
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -431,9 +431,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      *         <p><i>KeyType</i> - Determines whether the key attribute is
      *         <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     *         key that consists of a hash attribute, you must specify exactly one
+     *         key that consists of a hash attribute, you must provide exactly one
      *         element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     *         key that consists of hash and range attributes, you must specify
+     *         key that consists of hash and range attributes, you must provide
      *         exactly two elements, in this order: The first element must have a
      *         <i>KeyType</i> of <code>HASH</code>, and the second element must have
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -461,9 +461,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
      * <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     * key that consists of a hash attribute, you must specify exactly one
+     * key that consists of a hash attribute, you must provide exactly one
      * element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     * key that consists of hash and range attributes, you must specify
+     * key that consists of hash and range attributes, you must provide
      * exactly two elements, in this order: The first element must have a
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -485,9 +485,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      *         <p><i>KeyType</i> - Determines whether the key attribute is
      *         <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     *         key that consists of a hash attribute, you must specify exactly one
+     *         key that consists of a hash attribute, you must provide exactly one
      *         element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     *         key that consists of hash and range attributes, you must specify
+     *         key that consists of hash and range attributes, you must provide
      *         exactly two elements, in this order: The first element must have a
      *         <i>KeyType</i> of <code>HASH</code>, and the second element must have
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -516,9 +516,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
      * <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     * key that consists of a hash attribute, you must specify exactly one
+     * key that consists of a hash attribute, you must provide exactly one
      * element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     * key that consists of hash and range attributes, you must specify
+     * key that consists of hash and range attributes, you must provide
      * exactly two elements, in this order: The first element must have a
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -540,9 +540,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      *         <p><i>KeyType</i> - Determines whether the key attribute is
      *         <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     *         key that consists of a hash attribute, you must specify exactly one
+     *         key that consists of a hash attribute, you must provide exactly one
      *         element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     *         key that consists of hash and range attributes, you must specify
+     *         key that consists of hash and range attributes, you must provide
      *         exactly two elements, in this order: The first element must have a
      *         <i>KeyType</i> of <code>HASH</code>, and the second element must have
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -587,7 +587,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -614,7 +614,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         secondary index. The total count of attributes specified in
+     *         secondary index. The total count of attributes provided in
      *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      *         must not exceed 20. If you project the same attribute into two
      *         different indexes, this counts as two distinct attributes when
@@ -646,7 +646,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -673,7 +673,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         secondary index. The total count of attributes specified in
+     *         secondary index. The total count of attributes provided in
      *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      *         must not exceed 20. If you project the same attribute into two
      *         different indexes, this counts as two distinct attributes when
@@ -711,7 +711,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -740,7 +740,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         secondary index. The total count of attributes specified in
+     *         secondary index. The total count of attributes provided in
      *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      *         must not exceed 20. If you project the same attribute into two
      *         different indexes, this counts as two distinct attributes when
@@ -779,7 +779,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * secondary index. The total count of attributes specified in
+     * secondary index. The total count of attributes provided in
      * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
@@ -808,7 +808,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         secondary index. The total count of attributes specified in
+     *         secondary index. The total count of attributes provided in
      *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
      *         must not exceed 20. If you project the same attribute into two
      *         different indexes, this counts as two distinct attributes when
@@ -848,7 +848,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -874,7 +874,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         table attributes are projected into the index. </li> </ul> </li> <li>
      *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      *         names that are projected into the secondary index. The total count of
-     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         attributes provided in <i>NonKeyAttributes</i>, summed across all of
      *         the secondary indexes, must not exceed 20. If you project the same
      *         attribute into two different indexes, this counts as two distinct
      *         attributes when determining the total. </li> </ul> </li> <li>
@@ -905,7 +905,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -931,7 +931,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         table attributes are projected into the index. </li> </ul> </li> <li>
      *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      *         names that are projected into the secondary index. The total count of
-     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         attributes provided in <i>NonKeyAttributes</i>, summed across all of
      *         the secondary indexes, must not exceed 20. If you project the same
      *         attribute into two different indexes, this counts as two distinct
      *         attributes when determining the total. </li> </ul> </li> <li>
@@ -968,7 +968,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -996,7 +996,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         table attributes are projected into the index. </li> </ul> </li> <li>
      *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      *         names that are projected into the secondary index. The total count of
-     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         attributes provided in <i>NonKeyAttributes</i>, summed across all of
      *         the secondary indexes, must not exceed 20. If you project the same
      *         attribute into two different indexes, this counts as two distinct
      *         attributes when determining the total. </li> </ul> </li> <li>
@@ -1034,7 +1034,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * table attributes are projected into the index. </li> </ul> </li> <li>
      * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      * names that are projected into the secondary index. The total count of
-     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * attributes provided in <i>NonKeyAttributes</i>, summed across all of
      * the secondary indexes, must not exceed 20. If you project the same
      * attribute into two different indexes, this counts as two distinct
      * attributes when determining the total. </li> </ul> </li> <li>
@@ -1062,7 +1062,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         table attributes are projected into the index. </li> </ul> </li> <li>
      *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
      *         names that are projected into the secondary index. The total count of
-     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         attributes provided in <i>NonKeyAttributes</i>, summed across all of
      *         the secondary indexes, must not exceed 20. If you project the same
      *         attribute into two different indexes, this counts as two distinct
      *         attributes when determining the total. </li> </ul> </li> <li>

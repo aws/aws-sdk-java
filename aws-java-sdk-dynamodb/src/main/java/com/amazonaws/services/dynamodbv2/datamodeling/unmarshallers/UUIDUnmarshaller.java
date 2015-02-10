@@ -14,14 +14,14 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers;
 
-import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-
 import java.util.UUID;
+
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 /**
  * An unmarshaller that unmarshals UUIDs as Java
  * {@code UUID} objects.
- * 
+ *
  * @author Sergei Egorov
  */
 public class UUIDUnmarshaller extends SUnmarshaller {
@@ -37,7 +37,7 @@ public class UUIDUnmarshaller extends SUnmarshaller {
     }
 
     @Override
-    public Object unmarshall(AttributeValue value) {
+    public UUID unmarshall(AttributeValue value) {
         return UUID.fromString(value.getS());
     }
 }

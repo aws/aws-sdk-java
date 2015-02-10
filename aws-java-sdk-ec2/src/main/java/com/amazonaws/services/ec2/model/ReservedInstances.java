@@ -114,7 +114,7 @@ public class ReservedInstances implements Serializable {
      * The Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      */
     private String offeringType;
 
@@ -889,7 +889,7 @@ public class ReservedInstances implements Serializable {
      * The Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @return The Reserved Instance offering type.
      *
@@ -903,7 +903,7 @@ public class ReservedInstances implements Serializable {
      * The Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @param offeringType The Reserved Instance offering type.
      *
@@ -919,7 +919,7 @@ public class ReservedInstances implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @param offeringType The Reserved Instance offering type.
      *
@@ -937,7 +937,7 @@ public class ReservedInstances implements Serializable {
      * The Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @param offeringType The Reserved Instance offering type.
      *
@@ -953,7 +953,7 @@ public class ReservedInstances implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @param offeringType The Reserved Instance offering type.
      *

@@ -832,7 +832,7 @@ public final class ConversionSchemas {
 
         list.add(Pair.of(String.class,
                 StringToStringMarshaller.instance()));
-        
+
         list.add(Pair.of(UUID.class,
                 ObjectToStringMarshaller.instance()));
     }

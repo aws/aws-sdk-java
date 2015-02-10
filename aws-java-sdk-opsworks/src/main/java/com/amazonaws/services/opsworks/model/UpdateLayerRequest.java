@@ -47,10 +47,15 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     private String name;
 
     /**
-     * The layer short name, which is used internally by AWS OpsWorksand by
-     * Chef. The short name is also used as the name for the directory where
-     * your app files are installed. It can have a maximum of 200 characters
-     * and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * For custom layers only, use this parameter to specify the layer's
+     * short name, which is used internally by AWS OpsWorksand by Chef. The
+     * short name is also used as the name for the directory where your app
+     * files are installed. It can have a maximum of 200 characters and must
+     * be in the following format: /\A[a-z0-9\-\_\.]+\Z/. <p>The built-in
+     * layers' short names are defined by AWS OpsWorks. For more information,
+     * see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * Reference</a>
      */
     private String shortname;
 
@@ -204,47 +209,77 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The layer short name, which is used internally by AWS OpsWorksand by
-     * Chef. The short name is also used as the name for the directory where
-     * your app files are installed. It can have a maximum of 200 characters
-     * and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * For custom layers only, use this parameter to specify the layer's
+     * short name, which is used internally by AWS OpsWorksand by Chef. The
+     * short name is also used as the name for the directory where your app
+     * files are installed. It can have a maximum of 200 characters and must
+     * be in the following format: /\A[a-z0-9\-\_\.]+\Z/. <p>The built-in
+     * layers' short names are defined by AWS OpsWorks. For more information,
+     * see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * Reference</a>
      *
-     * @return The layer short name, which is used internally by AWS OpsWorksand by
-     *         Chef. The short name is also used as the name for the directory where
-     *         your app files are installed. It can have a maximum of 200 characters
-     *         and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * @return For custom layers only, use this parameter to specify the layer's
+     *         short name, which is used internally by AWS OpsWorksand by Chef. The
+     *         short name is also used as the name for the directory where your app
+     *         files are installed. It can have a maximum of 200 characters and must
+     *         be in the following format: /\A[a-z0-9\-\_\.]+\Z/. <p>The built-in
+     *         layers' short names are defined by AWS OpsWorks. For more information,
+     *         see the <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     *         Reference</a>
      */
     public String getShortname() {
         return shortname;
     }
     
     /**
-     * The layer short name, which is used internally by AWS OpsWorksand by
-     * Chef. The short name is also used as the name for the directory where
-     * your app files are installed. It can have a maximum of 200 characters
-     * and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * For custom layers only, use this parameter to specify the layer's
+     * short name, which is used internally by AWS OpsWorksand by Chef. The
+     * short name is also used as the name for the directory where your app
+     * files are installed. It can have a maximum of 200 characters and must
+     * be in the following format: /\A[a-z0-9\-\_\.]+\Z/. <p>The built-in
+     * layers' short names are defined by AWS OpsWorks. For more information,
+     * see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * Reference</a>
      *
-     * @param shortname The layer short name, which is used internally by AWS OpsWorksand by
-     *         Chef. The short name is also used as the name for the directory where
-     *         your app files are installed. It can have a maximum of 200 characters
-     *         and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * @param shortname For custom layers only, use this parameter to specify the layer's
+     *         short name, which is used internally by AWS OpsWorksand by Chef. The
+     *         short name is also used as the name for the directory where your app
+     *         files are installed. It can have a maximum of 200 characters and must
+     *         be in the following format: /\A[a-z0-9\-\_\.]+\Z/. <p>The built-in
+     *         layers' short names are defined by AWS OpsWorks. For more information,
+     *         see the <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     *         Reference</a>
      */
     public void setShortname(String shortname) {
         this.shortname = shortname;
     }
     
     /**
-     * The layer short name, which is used internally by AWS OpsWorksand by
-     * Chef. The short name is also used as the name for the directory where
-     * your app files are installed. It can have a maximum of 200 characters
-     * and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * For custom layers only, use this parameter to specify the layer's
+     * short name, which is used internally by AWS OpsWorksand by Chef. The
+     * short name is also used as the name for the directory where your app
+     * files are installed. It can have a maximum of 200 characters and must
+     * be in the following format: /\A[a-z0-9\-\_\.]+\Z/. <p>The built-in
+     * layers' short names are defined by AWS OpsWorks. For more information,
+     * see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * Reference</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param shortname The layer short name, which is used internally by AWS OpsWorksand by
-     *         Chef. The short name is also used as the name for the directory where
-     *         your app files are installed. It can have a maximum of 200 characters
-     *         and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * @param shortname For custom layers only, use this parameter to specify the layer's
+     *         short name, which is used internally by AWS OpsWorksand by Chef. The
+     *         short name is also used as the name for the directory where your app
+     *         files are installed. It can have a maximum of 200 characters and must
+     *         be in the following format: /\A[a-z0-9\-\_\.]+\Z/. <p>The built-in
+     *         layers' short names are defined by AWS OpsWorks. For more information,
+     *         see the <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     *         Reference</a>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

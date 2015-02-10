@@ -34,6 +34,9 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
+    /**
+     * One or more security group IDs.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupIds;
 
     /**
@@ -247,9 +250,9 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the GroupIds property for this object.
+     * One or more security group IDs.
      *
-     * @return The value of the GroupIds property for this object.
+     * @return One or more security group IDs.
      */
     public java.util.List<String> getGroupIds() {
         if (groupIds == null) {
@@ -260,9 +263,9 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the GroupIds property for this object.
+     * One or more security group IDs.
      *
-     * @param groupIds The new value for the GroupIds property for this object.
+     * @param groupIds One or more security group IDs.
      */
     public void setGroupIds(java.util.Collection<String> groupIds) {
         if (groupIds == null) {
@@ -275,11 +278,11 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the GroupIds property for this object.
+     * One or more security group IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupIds The new value for the GroupIds property for this object.
+     * @param groupIds One or more security group IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -293,11 +296,11 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the GroupIds property for this object.
+     * One or more security group IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupIds The new value for the GroupIds property for this object.
+     * @param groupIds One or more security group IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -558,9 +558,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * stop the instance first.
      * </p>
      * <p>
-     * If the root volume is detached from an instance with an AWS
-     * Marketplace product code, then the AWS Marketplace product codes from
-     * that volume are no longer associated with the instance.
+     * When a volume with an AWS Marketplace product code is detached from
+     * an instance, the product code is no longer associated with the
+     * instance.
      * </p>
      * <p>
      * For more information, see
@@ -605,9 +605,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * stop the instance first.
      * </p>
      * <p>
-     * If the root volume is detached from an instance with an AWS
-     * Marketplace product code, then the AWS Marketplace product codes from
-     * that volume are no longer associated with the instance.
+     * When a volume with an AWS Marketplace product code is detached from
+     * an instance, the product code is no longer associated with the
+     * instance.
      * </p>
      * <p>
      * For more information, see
@@ -2009,30 +2009,18 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes the Spot Price history. Spot Instances are instances that
-     * Amazon EC2 starts on your behalf when the maximum price that you
-     * specify exceeds the current Spot Price. Amazon EC2 periodically sets
-     * the Spot Price based on available Spot Instance capacity and current
-     * Spot Instance requests. For more information about Spot Instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Describes the Spot Price history. The prices returned are listed in
+     * chronological order, from the oldest to the most recent, for up to the
+     * past 90 days. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html"> Spot Instance Pricing History </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
-     * When you specify an Availability Zone, this operation describes the
-     * price history for the specified Availability Zone with the most recent
-     * set of prices listed first. If you don't specify an Availability Zone,
-     * you get the prices across all Availability Zones, starting with the
-     * most recent set. However, if you're using an API version earlier than
-     * 2011-05-15, you get the lowest price across the region for the
-     * specified time period. The prices returned are listed in chronological
-     * order, from the oldest to the most recent.
-     * </p>
-     * <p>
-     * When you specify the start and end time options, this operation
-     * returns two pieces of data: the prices of the instance types within
-     * the time range that you specified and the time when the price changed.
-     * The price is valid within the time period that you specified; the
-     * response merely indicates the last time that the price changed.
+     * When you specify a start and end time, this operation returns the
+     * prices of the instance types within the time range that you specified
+     * and the time when the price changed. The price is valid within the
+     * time period that you specified; the response merely indicates the last
+     * time that the price changed.
      * </p>
      *
      * @param describeSpotPriceHistoryRequest Container for the necessary
@@ -2062,30 +2050,18 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Describes the Spot Price history. Spot Instances are instances that
-     * Amazon EC2 starts on your behalf when the maximum price that you
-     * specify exceeds the current Spot Price. Amazon EC2 periodically sets
-     * the Spot Price based on available Spot Instance capacity and current
-     * Spot Instance requests. For more information about Spot Instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Describes the Spot Price history. The prices returned are listed in
+     * chronological order, from the oldest to the most recent, for up to the
+     * past 90 days. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html"> Spot Instance Pricing History </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
-     * When you specify an Availability Zone, this operation describes the
-     * price history for the specified Availability Zone with the most recent
-     * set of prices listed first. If you don't specify an Availability Zone,
-     * you get the prices across all Availability Zones, starting with the
-     * most recent set. However, if you're using an API version earlier than
-     * 2011-05-15, you get the lowest price across the region for the
-     * specified time period. The prices returned are listed in chronological
-     * order, from the oldest to the most recent.
-     * </p>
-     * <p>
-     * When you specify the start and end time options, this operation
-     * returns two pieces of data: the prices of the instance types within
-     * the time range that you specified and the time when the price changed.
-     * The price is valid within the time period that you specified; the
-     * response merely indicates the last time that the price changed.
+     * When you specify a start and end time, this operation returns the
+     * prices of the instance types within the time range that you specified
+     * and the time when the price changed. The price is valid within the
+     * time period that you specified; the response merely indicates the last
+     * time that the price changed.
      * </p>
      *
      * @param describeSpotPriceHistoryRequest Container for the necessary
@@ -3229,8 +3205,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes the datafeed for Spot Instances. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Describes the data feed for Spot Instances. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
@@ -3262,8 +3238,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Describes the datafeed for Spot Instances. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Describes the data feed for Spot Instances. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
@@ -3972,21 +3948,18 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * 
      * <ul>
-     * <li>The volume can only be attached as the root device of a stopped
-     * instance.</li>
-     * <li>You must be subscribed to the AWS Marketplace code that is on the
-     * volume.</li>
-     * <li>The configuration (instance type, operating system) of the
-     * instance must support that specific AWS Marketplace code. For example,
-     * you cannot take a volume from a Windows instance and attach it to a
-     * Linux instance.</li>
+     * <li>The volume can be attached only to a stopped instance.</li>
      * <li>AWS Marketplace product codes are copied from the volume to the
      * instance.</li>
+     * <li>You must be subscribed to the product.</li>
+     * <li>The instance type and operating system of the instance must
+     * support the product. For example, you can't detach a volume from a
+     * Windows instance and attach it to a Linux instance.</li>
      * 
      * </ul>
      * <p>
      * For an overview of the AWS Marketplace, see
-     * <a href="https://aws.amazon.com/marketplace/help/200900000"> https://aws.amazon.com/marketplace/help/200900000 </a> . For more information about how to use the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace"> AWS Marketplace </a>
+     * <a href="https://aws.amazon.com/marketplace/help/200900000"> Introducing AWS Marketplace </a>
      * .
      * </p>
      * <p>
@@ -4040,21 +4013,18 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * 
      * <ul>
-     * <li>The volume can only be attached as the root device of a stopped
-     * instance.</li>
-     * <li>You must be subscribed to the AWS Marketplace code that is on the
-     * volume.</li>
-     * <li>The configuration (instance type, operating system) of the
-     * instance must support that specific AWS Marketplace code. For example,
-     * you cannot take a volume from a Windows instance and attach it to a
-     * Linux instance.</li>
+     * <li>The volume can be attached only to a stopped instance.</li>
      * <li>AWS Marketplace product codes are copied from the volume to the
      * instance.</li>
+     * <li>You must be subscribed to the product.</li>
+     * <li>The instance type and operating system of the instance must
+     * support the product. For example, you can't detach a volume from a
+     * Windows instance and attach it to a Linux instance.</li>
      * 
      * </ul>
      * <p>
      * For an overview of the AWS Marketplace, see
-     * <a href="https://aws.amazon.com/marketplace/help/200900000"> https://aws.amazon.com/marketplace/help/200900000 </a> . For more information about how to use the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace"> AWS Marketplace </a>
+     * <a href="https://aws.amazon.com/marketplace/help/200900000"> Introducing AWS Marketplace </a>
      * .
      * </p>
      * <p>
@@ -7429,10 +7399,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Creates a datafeed for Spot Instances, enabling you to view Spot
+     * Creates a data feed for Spot Instances, enabling you to view Spot
      * Instance usage logs. You can create one data feed per AWS account. For
      * more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
@@ -7464,10 +7434,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Creates a datafeed for Spot Instances, enabling you to view Spot
+     * Creates a data feed for Spot Instances, enabling you to view Spot
      * Instance usage logs. You can create one data feed per AWS account. For
      * more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
@@ -9386,12 +9356,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Describes the Spot Instance requests that belong to your account.
-     * Spot Instances are instances that Amazon EC2 starts on your behalf
-     * when the maximum price that you specify exceeds the current Spot
-     * Price. Amazon EC2 periodically sets the Spot Price based on available
-     * Spot Instance capacity and current Spot Instance requests. For more
-     * information about Spot Instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Spot Instances are instances that Amazon EC2 launches when the bid
+     * price that you specify exceeds the current Spot Price. Amazon EC2
+     * periodically sets the Spot Price based on available Spot Instance
+     * capacity and current Spot Instance requests. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
@@ -9431,12 +9400,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Describes the Spot Instance requests that belong to your account.
-     * Spot Instances are instances that Amazon EC2 starts on your behalf
-     * when the maximum price that you specify exceeds the current Spot
-     * Price. Amazon EC2 periodically sets the Spot Price based on available
-     * Spot Instance capacity and current Spot Instance requests. For more
-     * information about Spot Instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Spot Instances are instances that Amazon EC2 launches when the bid
+     * price that you specify exceeds the current Spot Price. Amazon EC2
+     * periodically sets the Spot Price based on available Spot Instance
+     * capacity and current Spot Instance requests. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
@@ -10366,16 +10334,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Creates a Spot Instance request. Spot Instances are instances that
-     * Amazon EC2 starts on your behalf when the maximum price that you
-     * specify exceeds the current Spot Price. Amazon EC2 periodically sets
-     * the Spot Price based on available Spot Instance capacity and current
-     * Spot Instance requests. For more information about Spot Instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Amazon EC2 launches when the bid price that you specify exceeds the
+     * current Spot Price. Amazon EC2 periodically sets the Spot Price based
+     * on available Spot Instance capacity and current Spot Instance
+     * requests. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
-     * </p>
-     * <p>
-     * Users must be subscribed to the required product to run an instance
-     * with AWS Marketplace product codes.
      * </p>
      *
      * @param requestSpotInstancesRequest Container for the necessary
@@ -10405,16 +10369,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Creates a Spot Instance request. Spot Instances are instances that
-     * Amazon EC2 starts on your behalf when the maximum price that you
-     * specify exceeds the current Spot Price. Amazon EC2 periodically sets
-     * the Spot Price based on available Spot Instance capacity and current
-     * Spot Instance requests. For more information about Spot Instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Amazon EC2 launches when the bid price that you specify exceeds the
+     * current Spot Price. Amazon EC2 periodically sets the Spot Price based
+     * on available Spot Instance capacity and current Spot Instance
+     * requests. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
-     * </p>
-     * <p>
-     * Users must be subscribed to the required product to run an instance
-     * with AWS Marketplace product codes.
      * </p>
      *
      * @param requestSpotInstancesRequest Container for the necessary
@@ -11024,12 +10984,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Cancels one or more Spot Instance requests. Spot Instances are
-     * instances that Amazon EC2 starts on your behalf when the maximum price
+     * instances that Amazon EC2 starts on your behalf when the bid price
      * that you specify exceeds the current Spot Price. Amazon EC2
      * periodically sets the Spot Price based on available Spot Instance
-     * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * capacity and current Spot Instance requests. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
@@ -11065,12 +11024,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Cancels one or more Spot Instance requests. Spot Instances are
-     * instances that Amazon EC2 starts on your behalf when the maximum price
+     * instances that Amazon EC2 starts on your behalf when the bid price
      * that you specify exceeds the current Spot Price. Amazon EC2
      * periodically sets the Spot Price based on available Spot Instance
-     * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * capacity and current Spot Instance requests. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
@@ -11543,8 +11501,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Deletes the datafeed for Spot Instances. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Deletes the data feed for Spot Instances. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
@@ -11577,8 +11535,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Deletes the datafeed for Spot Instances. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * Deletes the data feed for Spot Instances. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *

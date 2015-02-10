@@ -19,9 +19,9 @@ import java.io.Serializable;
 /**
  * <p>
  * Represents an operation to perform - either <i>DeleteItem</i> or
- * <i>PutItem</i> . You can only specify one of these operations, not
+ * <i>PutItem</i> . You can only request one of these operations, not
  * both, in a single <i>WriteRequest</i> . If you do need to perform both
- * of these operations, you will need to specify two separate
+ * of these operations, you will need to provide two separate
  * <i>WriteRequest</i> objects.
  * </p>
  */

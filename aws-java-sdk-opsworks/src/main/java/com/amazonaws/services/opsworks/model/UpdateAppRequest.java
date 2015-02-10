@@ -93,12 +93,19 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. You can specify
-     * up to ten environment variables. After you deploy the app, these
-     * variables are defined on the associated app server instances.
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you
-     * have specified one or more environment variables, you cannot modify
-     * the stack's Chef version.</note>
+     * environment variables to be associated with the app. After you deploy
+     * the app, these variables are defined on the associated app server
+     * instances.For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     * Environment Variables</a>. <p> There is no specific limit on the
+     * number of environment variables. However, the size of the associated
+     * data structure - which includes the variables' names, values, and
+     * protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     * should accommodate most if not all use cases. Exceeding it will cause
+     * an exception with the message, "Environment: is too large (maximum is
+     * 10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     * If you have specified one or more environment variables, you cannot
+     * modify the stack's Chef version. </note>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentVariable> environment;
 
@@ -611,20 +618,34 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. You can specify
-     * up to ten environment variables. After you deploy the app, these
-     * variables are defined on the associated app server instances.
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you
-     * have specified one or more environment variables, you cannot modify
-     * the stack's Chef version.</note>
+     * environment variables to be associated with the app. After you deploy
+     * the app, these variables are defined on the associated app server
+     * instances.For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     * Environment Variables</a>. <p> There is no specific limit on the
+     * number of environment variables. However, the size of the associated
+     * data structure - which includes the variables' names, values, and
+     * protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     * should accommodate most if not all use cases. Exceeding it will cause
+     * an exception with the message, "Environment: is too large (maximum is
+     * 10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     * If you have specified one or more environment variables, you cannot
+     * modify the stack's Chef version. </note>
      *
      * @return An array of <code>EnvironmentVariable</code> objects that specify
-     *         environment variables to be associated with the app. You can specify
-     *         up to ten environment variables. After you deploy the app, these
-     *         variables are defined on the associated app server instances.
-     *         <note>This parameter is supported only by Chef 11.10 stacks. If you
-     *         have specified one or more environment variables, you cannot modify
-     *         the stack's Chef version.</note>
+     *         environment variables to be associated with the app. After you deploy
+     *         the app, these variables are defined on the associated app server
+     *         instances.For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     *         Environment Variables</a>. <p> There is no specific limit on the
+     *         number of environment variables. However, the size of the associated
+     *         data structure - which includes the variables' names, values, and
+     *         protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     *         should accommodate most if not all use cases. Exceeding it will cause
+     *         an exception with the message, "Environment: is too large (maximum is
+     *         10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     *         If you have specified one or more environment variables, you cannot
+     *         modify the stack's Chef version. </note>
      */
     public java.util.List<EnvironmentVariable> getEnvironment() {
         if (environment == null) {
@@ -636,20 +657,34 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. You can specify
-     * up to ten environment variables. After you deploy the app, these
-     * variables are defined on the associated app server instances.
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you
-     * have specified one or more environment variables, you cannot modify
-     * the stack's Chef version.</note>
+     * environment variables to be associated with the app. After you deploy
+     * the app, these variables are defined on the associated app server
+     * instances.For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     * Environment Variables</a>. <p> There is no specific limit on the
+     * number of environment variables. However, the size of the associated
+     * data structure - which includes the variables' names, values, and
+     * protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     * should accommodate most if not all use cases. Exceeding it will cause
+     * an exception with the message, "Environment: is too large (maximum is
+     * 10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     * If you have specified one or more environment variables, you cannot
+     * modify the stack's Chef version. </note>
      *
      * @param environment An array of <code>EnvironmentVariable</code> objects that specify
-     *         environment variables to be associated with the app. You can specify
-     *         up to ten environment variables. After you deploy the app, these
-     *         variables are defined on the associated app server instances.
-     *         <note>This parameter is supported only by Chef 11.10 stacks. If you
-     *         have specified one or more environment variables, you cannot modify
-     *         the stack's Chef version.</note>
+     *         environment variables to be associated with the app. After you deploy
+     *         the app, these variables are defined on the associated app server
+     *         instances.For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     *         Environment Variables</a>. <p> There is no specific limit on the
+     *         number of environment variables. However, the size of the associated
+     *         data structure - which includes the variables' names, values, and
+     *         protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     *         should accommodate most if not all use cases. Exceeding it will cause
+     *         an exception with the message, "Environment: is too large (maximum is
+     *         10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     *         If you have specified one or more environment variables, you cannot
+     *         modify the stack's Chef version. </note>
      */
     public void setEnvironment(java.util.Collection<EnvironmentVariable> environment) {
         if (environment == null) {
@@ -663,22 +698,36 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. You can specify
-     * up to ten environment variables. After you deploy the app, these
-     * variables are defined on the associated app server instances.
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you
-     * have specified one or more environment variables, you cannot modify
-     * the stack's Chef version.</note>
+     * environment variables to be associated with the app. After you deploy
+     * the app, these variables are defined on the associated app server
+     * instances.For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     * Environment Variables</a>. <p> There is no specific limit on the
+     * number of environment variables. However, the size of the associated
+     * data structure - which includes the variables' names, values, and
+     * protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     * should accommodate most if not all use cases. Exceeding it will cause
+     * an exception with the message, "Environment: is too large (maximum is
+     * 10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     * If you have specified one or more environment variables, you cannot
+     * modify the stack's Chef version. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environment An array of <code>EnvironmentVariable</code> objects that specify
-     *         environment variables to be associated with the app. You can specify
-     *         up to ten environment variables. After you deploy the app, these
-     *         variables are defined on the associated app server instances.
-     *         <note>This parameter is supported only by Chef 11.10 stacks. If you
-     *         have specified one or more environment variables, you cannot modify
-     *         the stack's Chef version.</note>
+     *         environment variables to be associated with the app. After you deploy
+     *         the app, these variables are defined on the associated app server
+     *         instances.For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     *         Environment Variables</a>. <p> There is no specific limit on the
+     *         number of environment variables. However, the size of the associated
+     *         data structure - which includes the variables' names, values, and
+     *         protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     *         should accommodate most if not all use cases. Exceeding it will cause
+     *         an exception with the message, "Environment: is too large (maximum is
+     *         10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     *         If you have specified one or more environment variables, you cannot
+     *         modify the stack's Chef version. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -693,22 +742,36 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. You can specify
-     * up to ten environment variables. After you deploy the app, these
-     * variables are defined on the associated app server instances.
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you
-     * have specified one or more environment variables, you cannot modify
-     * the stack's Chef version.</note>
+     * environment variables to be associated with the app. After you deploy
+     * the app, these variables are defined on the associated app server
+     * instances.For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     * Environment Variables</a>. <p> There is no specific limit on the
+     * number of environment variables. However, the size of the associated
+     * data structure - which includes the variables' names, values, and
+     * protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     * should accommodate most if not all use cases. Exceeding it will cause
+     * an exception with the message, "Environment: is too large (maximum is
+     * 10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     * If you have specified one or more environment variables, you cannot
+     * modify the stack's Chef version. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environment An array of <code>EnvironmentVariable</code> objects that specify
-     *         environment variables to be associated with the app. You can specify
-     *         up to ten environment variables. After you deploy the app, these
-     *         variables are defined on the associated app server instances.
-     *         <note>This parameter is supported only by Chef 11.10 stacks. If you
-     *         have specified one or more environment variables, you cannot modify
-     *         the stack's Chef version.</note>
+     *         environment variables to be associated with the app. After you deploy
+     *         the app, these variables are defined on the associated app server
+     *         instances.For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     *         Environment Variables</a>. <p> There is no specific limit on the
+     *         number of environment variables. However, the size of the associated
+     *         data structure - which includes the variables' names, values, and
+     *         protected flag values - cannot exceed 10 KB (10240 Bytes). This limit
+     *         should accommodate most if not all use cases. Exceeding it will cause
+     *         an exception with the message, "Environment: is too large (maximum is
+     *         10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
+     *         If you have specified one or more environment variables, you cannot
+     *         modify the stack's Chef version. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

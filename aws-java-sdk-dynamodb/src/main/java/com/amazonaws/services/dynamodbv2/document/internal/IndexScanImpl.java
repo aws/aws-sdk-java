@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,24 +17,24 @@ package com.amazonaws.services.dynamodbv2.document.internal;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Index;
 import com.amazonaws.services.dynamodbv2.document.ItemCollection;
-import com.amazonaws.services.dynamodbv2.document.QueryOutcome;
-import com.amazonaws.services.dynamodbv2.document.api.QueryApi;
-import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
+import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
+import com.amazonaws.services.dynamodbv2.document.api.ScanApi;
+import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
 
 /**
- * The implementation for <code>QueryApi</code> for an index.
+ * The implementation for <code>ScanApi</code> for an index.
  */
-public class IndexQueryImpl extends QueryImpl implements QueryApi {
+public class IndexScanImpl extends ScanImpl implements ScanApi {
     private final Index index;
 
-    public IndexQueryImpl(AmazonDynamoDB client, Index index) { 
+    public IndexScanImpl(AmazonDynamoDB client, Index index) { 
         super(client, index.getTable());
         this.index = index;
     }
 
     @Override
-    protected ItemCollection<QueryOutcome> doQuery(QuerySpec spec) {
+    protected ItemCollection<ScanOutcome> doScan(ScanSpec spec) {
         spec.getRequest().setIndexName(index.getIndexName());
-        return super.doQuery(spec);
+        return super.doScan(spec);
     }
 }

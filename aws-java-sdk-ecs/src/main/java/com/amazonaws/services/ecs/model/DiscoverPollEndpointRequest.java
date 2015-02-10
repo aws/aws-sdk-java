@@ -45,6 +45,11 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest impleme
     private String containerInstance;
 
     /**
+     * The cluster that the container instance belongs to.
+     */
+    private String cluster;
+
+    /**
      * The container instance UUID or full Amazon Resource Name (ARN) of the
      * container instance. The ARN contains the <code>arn:aws:ecs</code>
      * namespace, followed by the region of the container instance, the AWS
@@ -114,6 +119,39 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
+     * The cluster that the container instance belongs to.
+     *
+     * @return The cluster that the container instance belongs to.
+     */
+    public String getCluster() {
+        return cluster;
+    }
+    
+    /**
+     * The cluster that the container instance belongs to.
+     *
+     * @param cluster The cluster that the container instance belongs to.
+     */
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+    }
+    
+    /**
+     * The cluster that the container instance belongs to.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cluster The cluster that the container instance belongs to.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DiscoverPollEndpointRequest withCluster(String cluster) {
+        this.cluster = cluster;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -125,7 +163,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest impleme
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getContainerInstance() != null) sb.append("ContainerInstance: " + getContainerInstance() );
+        if (getContainerInstance() != null) sb.append("ContainerInstance: " + getContainerInstance() + ",");
+        if (getCluster() != null) sb.append("Cluster: " + getCluster() );
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +175,7 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest impleme
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getContainerInstance() == null) ? 0 : getContainerInstance().hashCode()); 
+        hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode()); 
         return hashCode;
     }
     
@@ -149,6 +189,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest impleme
         
         if (other.getContainerInstance() == null ^ this.getContainerInstance() == null) return false;
         if (other.getContainerInstance() != null && other.getContainerInstance().equals(this.getContainerInstance()) == false) return false; 
+        if (other.getCluster() == null ^ this.getCluster() == null) return false;
+        if (other.getCluster() != null && other.getCluster().equals(this.getCluster()) == false) return false; 
         return true;
     }
     

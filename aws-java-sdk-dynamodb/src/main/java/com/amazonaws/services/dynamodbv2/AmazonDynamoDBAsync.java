@@ -106,7 +106,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <li> <p>
  * <i>GetItem</i> - Returns a set of attributes for the item that has a
  * given primary key. By default, <i>GetItem</i> performs an eventually
- * consistent read; however, applications can specify a strongly
+ * consistent read; however, applications can request a strongly
  * consistent read instead.
  * </p>
  * </li>
@@ -190,8 +190,9 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
     /**
      * <p>
      * The <i>Scan</i> operation returns one or more items and item
-     * attributes by accessing every item in the table. To have DynamoDB
-     * return fewer items, you can provide a <i>ScanFilter</i> operation.
+     * attributes by accessing every item in a table or a secondary index. To
+     * have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
+     * operation.
      * </p>
      * <p>
      * If the total number of scanned items exceeds the maximum data set
@@ -206,9 +207,10 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <p>
      * By default, <i>Scan</i> operations proceed sequentially; however, for
-     * faster performance on large tables, applications can request a
-     * parallel <i>Scan</i> operation by specifying the <i>Segment</i> and
-     * <i>TotalSegments</i> parameters. For more information, see
+     * faster performance on a large table or secondary index, applications
+     * can request a parallel <i>Scan</i> operation by providing the
+     * <i>Segment</i> and <i>TotalSegments</i> parameters. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
      * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
@@ -234,8 +236,9 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
     /**
      * <p>
      * The <i>Scan</i> operation returns one or more items and item
-     * attributes by accessing every item in the table. To have DynamoDB
-     * return fewer items, you can provide a <i>ScanFilter</i> operation.
+     * attributes by accessing every item in a table or a secondary index. To
+     * have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
+     * operation.
      * </p>
      * <p>
      * If the total number of scanned items exceeds the maximum data set
@@ -250,9 +253,10 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <p>
      * By default, <i>Scan</i> operations proceed sequentially; however, for
-     * faster performance on large tables, applications can request a
-     * parallel <i>Scan</i> operation by specifying the <i>Segment</i> and
-     * <i>TotalSegments</i> parameters. For more information, see
+     * faster performance on a large table or secondary index, applications
+     * can request a parallel <i>Scan</i> operation by providing the
+     * <i>Segment</i> and <i>TotalSegments</i> parameters. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
      * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
@@ -514,7 +518,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * copy data from another database into DynamoDB. In order to improve
      * performance with these large-scale operations, <i>BatchWriteItem</i>
      * does not behave in the same way as individual <i>PutItem</i> and
-     * <i>DeleteItem</i> calls would For example, you cannot specify
+     * <i>DeleteItem</i> calls would. For example, you cannot specify
      * conditions on individual put and delete requests, and
      * <i>BatchWriteItem</i> does not return deleted items in the response.
      * </p>
@@ -522,12 +526,10 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
      * must include the necessary logic to manage the threads. With languages
-     * that don't support threading, such as PHP, you must update or delete
-     * the specified items one at a time. In both situations,
-     * <i>BatchWriteItem</i> provides an alternative where the API performs
-     * the specified put and delete operations in parallel, giving you the
-     * power of the thread pool approach without having to introduce
-     * complexity into your application.
+     * that don't support threading, such as PHP, you must update provides an
+     * alternative where the API performs the specified put and delete
+     * operations in parallel, giving you the power of the thread pool
+     * approach without having to introduce complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and
@@ -636,7 +638,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * copy data from another database into DynamoDB. In order to improve
      * performance with these large-scale operations, <i>BatchWriteItem</i>
      * does not behave in the same way as individual <i>PutItem</i> and
-     * <i>DeleteItem</i> calls would For example, you cannot specify
+     * <i>DeleteItem</i> calls would. For example, you cannot specify
      * conditions on individual put and delete requests, and
      * <i>BatchWriteItem</i> does not return deleted items in the response.
      * </p>
@@ -644,12 +646,10 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
      * must include the necessary logic to manage the threads. With languages
-     * that don't support threading, such as PHP, you must update or delete
-     * the specified items one at a time. In both situations,
-     * <i>BatchWriteItem</i> provides an alternative where the API performs
-     * the specified put and delete operations in parallel, giving you the
-     * power of the thread pool approach without having to introduce
-     * complexity into your application.
+     * that don't support threading, such as PHP, you must update provides an
+     * alternative where the API performs the specified put and delete
+     * operations in parallel, giving you the power of the thread pool
+     * approach without having to introduce complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and
