@@ -24,16 +24,12 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest) RequestSpotInstances operation}.
  * <p>
  * Creates a Spot Instance request. Spot Instances are instances that
- * Amazon EC2 starts on your behalf when the maximum price that you
- * specify exceeds the current Spot Price. Amazon EC2 periodically sets
- * the Spot Price based on available Spot Instance capacity and current
- * Spot Instance requests. For more information about Spot Instances, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+ * Amazon EC2 launches when the bid price that you specify exceeds the
+ * current Spot Price. Amazon EC2 periodically sets the Spot Price based
+ * on available Spot Instance capacity and current Spot Instance
+ * requests. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
- * </p>
- * <p>
- * Users must be subscribed to the required product to run an instance
- * with AWS Marketplace product codes.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest)
@@ -41,8 +37,8 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
 public class RequestSpotInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RequestSpotInstancesRequest> {
 
     /**
-     * The maximum hourly price for any Spot Instance launched to fulfill the
-     * request.
+     * The maximum hourly price (bid) for any Spot Instance launched to
+     * fulfill the request.
      */
     private String spotPrice;
 
@@ -122,7 +118,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param spotPrice The maximum hourly price for any Spot Instance
+     * @param spotPrice The maximum hourly price (bid) for any Spot Instance
      * launched to fulfill the request.
      */
     public RequestSpotInstancesRequest(String spotPrice) {
@@ -130,35 +126,35 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The maximum hourly price for any Spot Instance launched to fulfill the
-     * request.
+     * The maximum hourly price (bid) for any Spot Instance launched to
+     * fulfill the request.
      *
-     * @return The maximum hourly price for any Spot Instance launched to fulfill the
-     *         request.
+     * @return The maximum hourly price (bid) for any Spot Instance launched to
+     *         fulfill the request.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * The maximum hourly price for any Spot Instance launched to fulfill the
-     * request.
+     * The maximum hourly price (bid) for any Spot Instance launched to
+     * fulfill the request.
      *
-     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
-     *         request.
+     * @param spotPrice The maximum hourly price (bid) for any Spot Instance launched to
+     *         fulfill the request.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * The maximum hourly price for any Spot Instance launched to fulfill the
-     * request.
+     * The maximum hourly price (bid) for any Spot Instance launched to
+     * fulfill the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
-     *         request.
+     * @param spotPrice The maximum hourly price (bid) for any Spot Instance launched to
+     *         fulfill the request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -75,8 +75,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * primary key attributes are required; you can optionally provide other
      * attribute name-value pairs for the item. <p>You must provide all of
      * the attributes for the primary key. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute. <p>If you specify any attributes
      * that are part of an index key, then the data types for those
      * attributes must match those of the schema in the table's attribute
@@ -130,7 +130,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -138,30 +138,30 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -169,7 +169,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -232,7 +232,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -398,9 +398,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * attribute. Only the primary key attributes are required; you can
      * optionally provide other attribute name-value pairs for the item.
      * <p>You must provide all of the attributes for the primary key. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify both the hash attribute and the range attribute. <p>If you
+     * provide both the hash attribute and the range attribute. <p>If you
      * specify any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition. <p>For more information about primary
@@ -424,9 +424,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * attribute. Only the primary key attributes are required; you can
      * optionally provide other attribute name-value pairs for the item.
      * <p>You must provide all of the attributes for the primary key. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify both the hash attribute and the range attribute. <p>If you
+     * provide both the hash attribute and the range attribute. <p>If you
      * specify any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition. <p>For more information about primary
@@ -460,9 +460,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * attribute. Only the primary key attributes are required; you can
      * optionally provide other attribute name-value pairs for the item.
      * <p>You must provide all of the attributes for the primary key. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify both the hash attribute and the range attribute. <p>If you
+     * provide both the hash attribute and the range attribute. <p>If you
      * specify any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition. <p>For more information about primary
@@ -536,8 +536,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * primary key attributes are required; you can optionally provide other
      * attribute name-value pairs for the item. <p>You must provide all of
      * the attributes for the primary key. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute. <p>If you specify any attributes
      * that are part of an index key, then the data types for those
      * attributes must match those of the schema in the table's attribute
@@ -550,8 +550,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         primary key attributes are required; you can optionally provide other
      *         attribute name-value pairs for the item. <p>You must provide all of
      *         the attributes for the primary key. For example, with a hash type
-     *         primary key, you only need to specify the hash attribute. For a
-     *         hash-and-range type primary key, you must specify both the hash
+     *         primary key, you only need to provide the hash attribute. For a
+     *         hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute. <p>If you specify any attributes
      *         that are part of an index key, then the data types for those
      *         attributes must match those of the schema in the table's attribute
@@ -570,8 +570,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * primary key attributes are required; you can optionally provide other
      * attribute name-value pairs for the item. <p>You must provide all of
      * the attributes for the primary key. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute. <p>If you specify any attributes
      * that are part of an index key, then the data types for those
      * attributes must match those of the schema in the table's attribute
@@ -584,8 +584,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         primary key attributes are required; you can optionally provide other
      *         attribute name-value pairs for the item. <p>You must provide all of
      *         the attributes for the primary key. For example, with a hash type
-     *         primary key, you only need to specify the hash attribute. For a
-     *         hash-and-range type primary key, you must specify both the hash
+     *         primary key, you only need to provide the hash attribute. For a
+     *         hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute. <p>If you specify any attributes
      *         that are part of an index key, then the data types for those
      *         attributes must match those of the schema in the table's attribute
@@ -603,8 +603,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * primary key attributes are required; you can optionally provide other
      * attribute name-value pairs for the item. <p>You must provide all of
      * the attributes for the primary key. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute. <p>If you specify any attributes
      * that are part of an index key, then the data types for those
      * attributes must match those of the schema in the table's attribute
@@ -619,8 +619,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         primary key attributes are required; you can optionally provide other
      *         attribute name-value pairs for the item. <p>You must provide all of
      *         the attributes for the primary key. For example, with a hash type
-     *         primary key, you only need to specify the hash attribute. For a
-     *         hash-and-range type primary key, you must specify both the hash
+     *         primary key, you only need to provide the hash attribute. For a
+     *         hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute. <p>If you specify any attributes
      *         that are part of an index key, then the data types for those
      *         attributes must match those of the schema in the table's attribute
@@ -642,8 +642,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * primary key attributes are required; you can optionally provide other
      * attribute name-value pairs for the item. <p>You must provide all of
      * the attributes for the primary key. For example, with a hash type
-     * primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute. <p>If you specify any attributes
      * that are part of an index key, then the data types for those
      * attributes must match those of the schema in the table's attribute
@@ -722,7 +722,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -730,30 +730,30 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -761,7 +761,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -824,7 +824,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -895,7 +895,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -903,30 +903,30 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -934,7 +934,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -997,7 +997,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1074,7 +1074,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1082,30 +1082,30 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1113,7 +1113,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1176,7 +1176,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1247,7 +1247,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1255,30 +1255,30 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1286,7 +1286,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1349,7 +1349,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1425,7 +1425,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1433,30 +1433,30 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1464,7 +1464,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1527,7 +1527,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1600,7 +1600,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1608,30 +1608,30 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1639,7 +1639,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1702,7 +1702,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
@@ -1782,7 +1782,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1790,30 +1790,30 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1821,7 +1821,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1884,7 +1884,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For

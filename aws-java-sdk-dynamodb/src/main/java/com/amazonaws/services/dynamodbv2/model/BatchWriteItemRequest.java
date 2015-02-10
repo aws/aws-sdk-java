@@ -65,7 +65,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * data from another database into DynamoDB. In order to improve
  * performance with these large-scale operations, <i>BatchWriteItem</i>
  * does not behave in the same way as individual <i>PutItem</i> and
- * <i>DeleteItem</i> calls would For example, you cannot specify
+ * <i>DeleteItem</i> calls would. For example, you cannot specify
  * conditions on individual put and delete requests, and
  * <i>BatchWriteItem</i> does not return deleted items in the response.
  * </p>
@@ -73,12 +73,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * If you use a programming language that supports concurrency, such as
  * Java, you can use threads to write items in parallel. Your application
  * must include the necessary logic to manage the threads. With languages
- * that don't support threading, such as PHP, you must update or delete
- * the specified items one at a time. In both situations,
- * <i>BatchWriteItem</i> provides an alternative where the API performs
- * the specified put and delete operations in parallel, giving you the
- * power of the thread pool approach without having to introduce
- * complexity into your application.
+ * that don't support threading, such as PHP, you must update provides an
+ * alternative where the API performs the specified put and delete
+ * operations in parallel, giving you the power of the thread pool
+ * approach without having to introduce complexity into your application.
  * </p>
  * <p>
  * Parallel processing reduces latency, but each specified put and delete
@@ -137,9 +135,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For
      * each primary key, you must provide <i>all</i> of the key attributes.
-     * For example, with a hash type primary key, you only need to specify
+     * For example, with a hash type primary key, you only need to provide
      * the hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      * operation on the specified item. The item to be put is identified by
      * an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -200,9 +198,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For
      * each primary key, you must provide <i>all</i> of the key attributes.
-     * For example, with a hash type primary key, you only need to specify
+     * For example, with a hash type primary key, you only need to provide
      * the hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      * operation on the specified item. The item to be put is identified by
      * an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -229,9 +227,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For
      * each primary key, you must provide <i>all</i> of the key attributes.
-     * For example, with a hash type primary key, you only need to specify
+     * For example, with a hash type primary key, you only need to provide
      * the hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      * operation on the specified item. The item to be put is identified by
      * an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -256,9 +254,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         key attribute values that uniquely identify the ! item. Each entry in
      *         this map consists of an attribute name and an attribute value. For
      *         each primary key, you must provide <i>all</i> of the key attributes.
-     *         For example, with a hash type primary key, you only need to specify
+     *         For example, with a hash type primary key, you only need to provide
      *         the hash attribute. For a hash-and-range type primary key, you must
-     *         specify <i>both</i> the hash attribute and the range attribute. </li>
+     *         provide <i>both</i> the hash attribute and the range attribute. </li>
      *         </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      *         operation on the specified item. The item to be put is identified by
      *         an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -286,9 +284,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For
      * each primary key, you must provide <i>all</i> of the key attributes.
-     * For example, with a hash type primary key, you only need to specify
+     * For example, with a hash type primary key, you only need to provide
      * the hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      * operation on the specified item. The item to be put is identified by
      * an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -313,9 +311,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         key attribute values that uniquely identify the ! item. Each entry in
      *         this map consists of an attribute name and an attribute value. For
      *         each primary key, you must provide <i>all</i> of the key attributes.
-     *         For example, with a hash type primary key, you only need to specify
+     *         For example, with a hash type primary key, you only need to provide
      *         the hash attribute. For a hash-and-range type primary key, you must
-     *         specify <i>both</i> the hash attribute and the range attribute. </li>
+     *         provide <i>both</i> the hash attribute and the range attribute. </li>
      *         </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      *         operation on the specified item. The item to be put is identified by
      *         an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -342,9 +340,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For
      * each primary key, you must provide <i>all</i> of the key attributes.
-     * For example, with a hash type primary key, you only need to specify
+     * For example, with a hash type primary key, you only need to provide
      * the hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      * operation on the specified item. The item to be put is identified by
      * an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -371,9 +369,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         key attribute values that uniquely identify the ! item. Each entry in
      *         this map consists of an attribute name and an attribute value. For
      *         each primary key, you must provide <i>all</i> of the key attributes.
-     *         For example, with a hash type primary key, you only need to specify
+     *         For example, with a hash type primary key, you only need to provide
      *         the hash attribute. For a hash-and-range type primary key, you must
-     *         specify <i>both</i> the hash attribute and the range attribute. </li>
+     *         provide <i>both</i> the hash attribute and the range attribute. </li>
      *         </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      *         operation on the specified item. The item to be put is identified by
      *         an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -404,9 +402,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For
      * each primary key, you must provide <i>all</i> of the key attributes.
-     * For example, with a hash type primary key, you only need to specify
+     * For example, with a hash type primary key, you only need to provide
      * the hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      * operation on the specified item. The item to be put is identified by
      * an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of

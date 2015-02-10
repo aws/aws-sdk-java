@@ -439,6 +439,9 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * NOT YET IMPLEMENTED.
+     * </p>
+     * <p>
      * Deregisters the specified task definition. You will no longer be able
      * to run tasks from this definition after deregistration.
      * </p>

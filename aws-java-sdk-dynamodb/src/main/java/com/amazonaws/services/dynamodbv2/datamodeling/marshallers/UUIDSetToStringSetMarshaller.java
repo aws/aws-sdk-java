@@ -14,18 +14,18 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling.marshallers;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.StringSetAttributeMarshaller;
-import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.StringSetAttributeMarshaller;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+
 /**
  * A marshaller that marshals sets of Java {@code Object} objects into
  * DynamoDB StringSets.
- * 
+ *
  * @author Sergei Egorov
  */
 public class UUIDSetToStringSetMarshaller

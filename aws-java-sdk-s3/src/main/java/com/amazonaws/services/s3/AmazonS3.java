@@ -92,6 +92,7 @@ import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.SetObjectAclRequest;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
@@ -1497,6 +1498,36 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     public void setObjectAcl(String bucketName, String key, String versionId, CannedAccessControlList acl)
         throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Sets the {@link AccessControlList} for the specified Amazon S3 object
+     * with an optional version ID.
+     * <p>
+     * Each bucket and object in Amazon S3 has an ACL that defines its access
+     * control policy. When a request is made, Amazon S3 authenticates the
+     * request using its standard authentication procedure and then checks the
+     * ACL to verify the sender was granted access to the bucket or object. If
+     * the sender is approved, the request proceeds. Otherwise, Amazon S3
+     * returns an error.
+     * <p>
+     * When constructing a custom <code>AccessControlList</code>, callers
+     * typically retrieve the existing <code>AccessControlList</code> for a
+     * bucket ({@link AmazonS3Client#getObjectAcl(String, String)}), modify it
+     * as necessary, and then use this method to upload the new ACL.
+     *
+     * @param setObjectAclRequest
+     *            The request object containing the S3 object to modify and the
+     *            ACL to set.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void setObjectAcl(SetObjectAclRequest setObjectAclRequest)
+            throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>

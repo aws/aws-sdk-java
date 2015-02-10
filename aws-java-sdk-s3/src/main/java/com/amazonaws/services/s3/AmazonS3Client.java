@@ -20,6 +20,8 @@ import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSour
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.Throwables.failure;
+import static com.amazonaws.SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.ENFORCE_S3_SIGV4_SYSTEM_PROPERTY;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -178,6 +180,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
+import com.amazonaws.services.s3.model.SetObjectAclRequest;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
@@ -265,8 +268,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         SignerFactory.registerSigner(S3_V4_SIGNER, AWSS3V4Signer.class);
     }
 
+    /** Provider for AWS credentials. */
+    protected final AWSCredentialsProvider awsCredentialsProvider;
+
     /** Responsible for handling error responses from all S3 service calls. */
-    private final S3ErrorResponseHandler errorResponseHandler = new S3ErrorResponseHandler();
+    protected final S3ErrorResponseHandler errorResponseHandler = new S3ErrorResponseHandler();
 
     /** Shared response handler for operations with no response.  */
     private final S3XmlResponseHandler<Void> voidResponseHandler = new S3XmlResponseHandler<Void>(null);
@@ -279,9 +285,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     /** S3 specific client configuration options */
     private S3ClientOptions clientOptions = new S3ClientOptions();
-
-    /** Provider for AWS credentials. */
-    private final AWSCredentialsProvider awsCredentialsProvider;
 
     /** Whether or not this client has an explicit region configured. */
     private boolean hasExplicitRegion;
@@ -835,7 +838,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public void setObjectAcl(String bucketName, String key, String versionId, AccessControlList acl)
             throws AmazonClientException, AmazonServiceException {
-        setObjectAcl0(bucketName, key, versionId, acl, null);
+        setObjectAcl(new SetObjectAclRequest(bucketName, key, versionId, acl));
     }
 
     /**
@@ -845,25 +848,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public void setObjectAcl(String bucketName, String key, String versionId,
             AccessControlList acl, RequestMetricCollector requestMetricCollector)
             throws AmazonClientException, AmazonServiceException {
-        setObjectAcl0(bucketName, key, versionId, acl, requestMetricCollector);
-    }
-
-    private void setObjectAcl0(String bucketName, String key, String versionId,
-            AccessControlList acl, RequestMetricCollector requestMetricCollector)
-            throws AmazonClientException, AmazonServiceException {
-        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting an object's ACL");
-        assertParameterNotNull(key, "The key parameter must be specified when setting an object's ACL");
-        assertParameterNotNull(acl, "The ACL parameter must be specified when setting an object's ACL");
-
-        setAcl(bucketName, key, versionId, acl,
-            new GenericBucketRequest(bucketName)
-                .withRequestMetricCollector(requestMetricCollector));
+        setObjectAcl(new SetObjectAclRequest(bucketName, key, versionId, acl)
+                .<SetObjectAclRequest> withRequestMetricCollector(requestMetricCollector));
     }
 
     @Override
     public void setObjectAcl(String bucketName, String key, String versionId, CannedAccessControlList acl)
             throws AmazonClientException, AmazonServiceException {
-        setObjectAcl0(bucketName, key, versionId, acl, null);
+        setObjectAcl(new SetObjectAclRequest(bucketName, key, versionId, acl));
     }
 
     /**
@@ -873,19 +865,44 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public void setObjectAcl(String bucketName, String key, String versionId,
             CannedAccessControlList acl,
             RequestMetricCollector requestMetricCollector) {
-        setObjectAcl0(bucketName, key, versionId, acl, requestMetricCollector);
+        setObjectAcl(new SetObjectAclRequest(bucketName, key, versionId, acl)
+                .<SetObjectAclRequest> withRequestMetricCollector(requestMetricCollector));
     }
 
-    private void setObjectAcl0(String bucketName, String key, String versionId,
-            CannedAccessControlList acl, RequestMetricCollector requestMetricCollector)
+    @Override
+    public void setObjectAcl(SetObjectAclRequest setObjectAclRequest)
             throws AmazonClientException, AmazonServiceException {
-        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting an object's ACL");
-        assertParameterNotNull(key, "The key parameter must be specified when setting an object's ACL");
-        assertParameterNotNull(acl, "The ACL parameter must be specified when setting an object's ACL");
 
-        setAcl(bucketName, key, versionId, acl,
-            new GenericBucketRequest(bucketName)
-                .withRequestMetricCollector(requestMetricCollector));
+        assertParameterNotNull(setObjectAclRequest,
+                "The request must not be null.");
+        assertParameterNotNull(setObjectAclRequest.getBucketName(),
+                "The bucket name parameter must be specified when setting an object's ACL");
+        assertParameterNotNull(setObjectAclRequest.getKey(),
+                "The key parameter must be specified when setting an object's ACL");
+
+        if (setObjectAclRequest.getAcl() != null && setObjectAclRequest.getCannedAcl() != null) {
+            throw new IllegalArgumentException(
+                    "Only one of the ACL and CannedACL parameters can be specified, not both.");
+        }
+
+        if (setObjectAclRequest.getAcl() != null) {
+            setAcl(setObjectAclRequest.getBucketName(),
+                   setObjectAclRequest.getKey(),
+                   setObjectAclRequest.getVersionId(),
+                   setObjectAclRequest.getAcl(),
+                   setObjectAclRequest);
+
+        } else if (setObjectAclRequest.getCannedAcl() != null) {
+            setAcl(setObjectAclRequest.getBucketName(),
+                   setObjectAclRequest.getKey(),
+                   setObjectAclRequest.getVersionId(),
+                   setObjectAclRequest.getCannedAcl(),
+                   setObjectAclRequest);
+
+        } else {
+            throw new IllegalArgumentException(
+                    "At least one of the ACL and CannedACL parameters should be specified");
+        }
     }
 
     /**
@@ -1410,7 +1427,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     // refers to the cipher-text data stream (ie not the underlying
                     // plain-text data stream which in turn may have been wrapped
                     // with it's own length check input stream.)
-                    @SuppressWarnings("resource")
                     LengthCheckInputStream lcis = new LengthCheckInputStream(
                         input,
                         expectedLength, // expected data length to be uploaded
@@ -3014,52 +3030,40 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected Signer createSigner(final Request<?> request,
                                   final String bucketName,
                                   final String key) {
+        final Signer signer = getSigner();
+        final boolean isSignerOverridden = 
+                clientConfiguration != null 
+             && clientConfiguration.getSignerOverride() != null;
 
-        Signer signer = getSigner();
+        if (!isSignerOverridden) {
+            final AmazonWebServiceRequest req = request.getOriginalRequest();
 
-        final AmazonWebServiceRequest originalRequest = request
-                .getOriginalRequest();
-        final boolean isStandardEnpoint = getEndpoint().getHost().equals(
-                Constants.S3_HOSTNAME);
-        // For all GetObject requests, we default to SigV4 if the endpoint is a
-        // non-standard endpoint. This is because, we know the region name to be
-        // used for SigV4 signing.
-        final boolean sigv4ForGetRequests = ((originalRequest instanceof GetObjectRequest) && !isStandardEnpoint);
-
-        if (
-                !(signer instanceof AWSS3V4Signer) &&
-                (upgradeToSigV4() || sigv4ForGetRequests)
-           ) {
-
-            AWSS3V4Signer v4Signer = new AWSS3V4Signer();
-
-            // Always set the service name; if the user has overridden it via
-            // setEndpoint(String, String, String), this will return the right
-            // value. Otherwise it will return "s3", which is an appropriate
-            // default.
-            v4Signer.setServiceName(getServiceNameIntern());
-
-            // If the user has set an authentication region override, pass it
-            // to the signer. Otherwise leave it null - the signer will parse
-            // region from the request endpoint.
-
-            String regionOverride = getSignerRegionOverride();
-            if (regionOverride == null) {
-                if (!hasExplicitRegion) {
-                    throw new AmazonClientException(
-                        "Signature Version 4 requires knowing the region of "
-                        + "the bucket you're trying to access. You can "
-                        + "configure a region by calling AmazonS3Client."
-                        + "setRegion(Region) or AmazonS3Client.setEndpoint("
-                        + "String) with a region-specific endpoint such as "
-                        + "\"s3-us-west-2.amazonaws.com\".");
+            if (!(signer instanceof AWSS3V4Signer) && (upgradeToSigV4(req))) {
+                final AWSS3V4Signer v4Signer = new AWSS3V4Signer();
+                // Always set the service name; if the user has overridden it via
+                // setEndpoint(String, String, String), this will return the right
+                // value. Otherwise it will return "s3", which is an appropriate
+                // default.
+                v4Signer.setServiceName(getServiceNameIntern());
+                // If the user has set an authentication region override, pass it
+                // to the signer. Otherwise leave it null - the signer will parse
+                // region from the request endpoint.
+                String regionOverride = getSignerRegionOverride();
+                if (regionOverride == null) {
+                    if (!hasExplicitRegion) {
+                        throw new AmazonClientException(
+                            "Signature Version 4 requires knowing the region of "
+                            + "the bucket you're trying to access. You can "
+                            + "configure a region by calling AmazonS3Client."
+                            + "setRegion(Region) or AmazonS3Client.setEndpoint("
+                            + "String) with a region-specific endpoint such as "
+                            + "\"s3-us-west-2.amazonaws.com\".");
+                    }
+                } else {
+                    v4Signer.setRegionName(regionOverride);
                 }
-            } else {
-                v4Signer.setRegionName(regionOverride);
+                return v4Signer;
             }
-
-            return v4Signer;
-
         }
 
         if (signer instanceof S3Signer) {
@@ -3081,27 +3085,45 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return signer;
     }
 
-    private boolean upgradeToSigV4() {
+    private boolean isKMSPutRequest(AmazonWebServiceRequest originalRequest) {
+
+        boolean putRequest = (originalRequest instanceof PutObjectRequest);
+
+        if (putRequest) {
+            return (((PutObjectRequest) originalRequest)
+                    .getSSEAwsKeyManagementParams() != null);
+        }
+
+        return false;
+    }
+
+    private boolean upgradeToSigV4(AmazonWebServiceRequest req) {
+
+        final boolean isStandardEnpoint = getEndpoint().getHost().equals(
+                Constants.S3_HOSTNAME);
 
         // User has said to always use SigV4 - this will fail if the user
         // attempts to read from or write to a non-US-Standard bucket without
         // explicitly setting the region.
 
-        if (System.getProperty(SDKGlobalConfiguration
-                .ENFORCE_S3_SIGV4_SYSTEM_PROPERTY) != null) {
-
+        if (System.getProperty(ENFORCE_S3_SIGV4_SYSTEM_PROPERTY) != null) {
             return true;
         }
 
-        // User has said to enable SigV4 if it's safe - this will fall back
+        // User can ask to enable SigV4 if it's safe - this will fall back
         // to SigV2 if the endpoint has not been set to one of the explicit
         // regional endpoints because we can't be sure it will work otherwise.
 
-        if (System.getProperty(SDKGlobalConfiguration
-                .ENABLE_S3_SIGV4_SYSTEM_PROPERTY) != null
-            && !endpoint.getHost().endsWith(Constants.S3_HOSTNAME)) {
+        // For all GetObject requests, we default to SigV4 if the endpoint is a
+        // non-standard endpoint. This is because, we know the region name to be
+        // used for SigV4 signing.
 
-            return true;
+        // For all PutObjectRequests that involve KMS we upgrade to SigV4 if the
+        // endpoint is a non-standard endpoint.
+
+        if (!isStandardEnpoint) {
+            return ((System.getProperty(ENABLE_S3_SIGV4_SYSTEM_PROPERTY) != null)
+                    || (req instanceof GetObjectRequest) || (isKMSPutRequest(req)));
         }
 
         // Go with the default (SigV4 only if we know we're talking to an

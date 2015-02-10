@@ -21,8 +21,12 @@ import org.apache.http.annotation.ThreadSafe;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.api.QueryApi;
+import com.amazonaws.services.dynamodbv2.document.api.ScanApi;
 import com.amazonaws.services.dynamodbv2.document.internal.IndexQueryImpl;
+import com.amazonaws.services.dynamodbv2.document.internal.IndexScanImpl;
+import com.amazonaws.services.dynamodbv2.document.internal.ScanImpl;
 import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
+import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
 import com.amazonaws.services.dynamodbv2.document.spec.UpdateTableSpec;
 import com.amazonaws.services.dynamodbv2.model.DeleteGlobalSecondaryIndexAction;
 import com.amazonaws.services.dynamodbv2.model.GlobalSecondaryIndexDescription;
@@ -39,11 +43,12 @@ import com.amazonaws.services.dynamodbv2.model.UpdateGlobalSecondaryIndexAction;
  * of this class can be obtained via {@link Table#getIndex(String)}.
  */
 @ThreadSafe
-public class Index implements QueryApi {
+public class Index implements QueryApi, ScanApi {
     private static final long SLEEP_TIME_MILLIS = 5000;
     private final Table table;
     private final String indexName;
     private final QueryApi queryDelegate;
+    private final ScanImpl scanDelegate;
 
     Index(AmazonDynamoDB client, String indexName, Table table) {
         if (client == null)
@@ -55,6 +60,7 @@ public class Index implements QueryApi {
         this.table = table;
         this.indexName = indexName;
         this.queryDelegate = new IndexQueryImpl(client, this);
+        this.scanDelegate  = new IndexScanImpl(client, this);
     }
 
     /**
@@ -326,5 +332,28 @@ public class Index implements QueryApi {
             }
             return desc;
         }
+    }
+
+    @Override
+    public ItemCollection<ScanOutcome> scan(ScanFilter... scanFilters) {
+        return scanDelegate.scan(scanFilters);
+    }
+
+    @Override
+    public ItemCollection<ScanOutcome> scan(String filterExpression,
+            Map<String, String> nameMap, Map<String, Object> valueMap) {
+        return scanDelegate.scan(filterExpression, nameMap, valueMap);
+    }
+
+    @Override
+    public ItemCollection<ScanOutcome> scan(String filterExpression,
+            String projectionExpression, Map<String, String> nameMap,
+            Map<String, Object> valueMap) {
+        return scanDelegate.scan(filterExpression, projectionExpression, nameMap, valueMap);
+    }
+
+    @Override
+    public ItemCollection<ScanOutcome> scan(ScanSpec params) {
+        return scanDelegate.scan(params);
     }
 }

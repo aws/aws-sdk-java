@@ -101,7 +101,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <li> <p>
  * <i>GetItem</i> - Returns a set of attributes for the item that has a
  * given primary key. By default, <i>GetItem</i> performs an eventually
- * consistent read; however, applications can specify a strongly
+ * consistent read; however, applications can request a strongly
  * consistent read instead.
  * </p>
  * </li>
@@ -243,8 +243,9 @@ public interface AmazonDynamoDB {
     /**
      * <p>
      * The <i>Scan</i> operation returns one or more items and item
-     * attributes by accessing every item in the table. To have DynamoDB
-     * return fewer items, you can provide a <i>ScanFilter</i> operation.
+     * attributes by accessing every item in a table or a secondary index. To
+     * have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
+     * operation.
      * </p>
      * <p>
      * If the total number of scanned items exceeds the maximum data set
@@ -259,9 +260,10 @@ public interface AmazonDynamoDB {
      * </p>
      * <p>
      * By default, <i>Scan</i> operations proceed sequentially; however, for
-     * faster performance on large tables, applications can request a
-     * parallel <i>Scan</i> operation by specifying the <i>Segment</i> and
-     * <i>TotalSegments</i> parameters. For more information, see
+     * faster performance on a large table or secondary index, applications
+     * can request a parallel <i>Scan</i> operation by providing the
+     * <i>Segment</i> and <i>TotalSegments</i> parameters. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
      * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
@@ -430,7 +432,7 @@ public interface AmazonDynamoDB {
      * copy data from another database into DynamoDB. In order to improve
      * performance with these large-scale operations, <i>BatchWriteItem</i>
      * does not behave in the same way as individual <i>PutItem</i> and
-     * <i>DeleteItem</i> calls would For example, you cannot specify
+     * <i>DeleteItem</i> calls would. For example, you cannot specify
      * conditions on individual put and delete requests, and
      * <i>BatchWriteItem</i> does not return deleted items in the response.
      * </p>
@@ -438,12 +440,10 @@ public interface AmazonDynamoDB {
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
      * must include the necessary logic to manage the threads. With languages
-     * that don't support threading, such as PHP, you must update or delete
-     * the specified items one at a time. In both situations,
-     * <i>BatchWriteItem</i> provides an alternative where the API performs
-     * the specified put and delete operations in parallel, giving you the
-     * power of the thread pool approach without having to introduce
-     * complexity into your application.
+     * that don't support threading, such as PHP, you must update provides an
+     * alternative where the API performs the specified put and delete
+     * operations in parallel, giving you the power of the thread pool
+     * approach without having to introduce complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and
@@ -962,8 +962,9 @@ public interface AmazonDynamoDB {
     /**
      * <p>
      * The <i>Scan</i> operation returns one or more items and item
-     * attributes by accessing every item in the table. To have DynamoDB
-     * return fewer items, you can provide a <i>ScanFilter</i> operation.
+     * attributes by accessing every item in a table or a secondary index. To
+     * have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
+     * operation.
      * </p>
      * <p>
      * If the total number of scanned items exceeds the maximum data set
@@ -978,14 +979,17 @@ public interface AmazonDynamoDB {
      * </p>
      * <p>
      * By default, <i>Scan</i> operations proceed sequentially; however, for
-     * faster performance on large tables, applications can request a
-     * parallel <i>Scan</i> operation by specifying the <i>Segment</i> and
-     * <i>TotalSegments</i> parameters. For more information, see
+     * faster performance on a large table or secondary index, applications
+     * can request a parallel <i>Scan</i> operation by providing the
+     * <i>Segment</i> and <i>TotalSegments</i> parameters. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
      * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * 
-     * @param tableName The name of the table containing the requested items.
+     * @param tableName The name of the table containing the requested items;
+     * or, if you provide <code>IndexName</code>, the name of the table to
+     * which that index belongs.
      * @param attributesToGet <important><p>There is a newer parameter
      * available. Use <i>ProjectionExpression</i> instead. Note that if you
      * use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
@@ -993,7 +997,7 @@ public interface AmazonDynamoDB {
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -1021,8 +1025,9 @@ public interface AmazonDynamoDB {
     /**
      * <p>
      * The <i>Scan</i> operation returns one or more items and item
-     * attributes by accessing every item in the table. To have DynamoDB
-     * return fewer items, you can provide a <i>ScanFilter</i> operation.
+     * attributes by accessing every item in a table or a secondary index. To
+     * have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
+     * operation.
      * </p>
      * <p>
      * If the total number of scanned items exceeds the maximum data set
@@ -1037,14 +1042,17 @@ public interface AmazonDynamoDB {
      * </p>
      * <p>
      * By default, <i>Scan</i> operations proceed sequentially; however, for
-     * faster performance on large tables, applications can request a
-     * parallel <i>Scan</i> operation by specifying the <i>Segment</i> and
-     * <i>TotalSegments</i> parameters. For more information, see
+     * faster performance on a large table or secondary index, applications
+     * can request a parallel <i>Scan</i> operation by providing the
+     * <i>Segment</i> and <i>TotalSegments</i> parameters. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
      * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * 
-     * @param tableName The name of the table containing the requested items.
+     * @param tableName The name of the table containing the requested items;
+     * or, if you provide <code>IndexName</code>, the name of the table to
+     * which that index belongs.
      * @param scanFilter <important> <p>There is a newer parameter available.
      * Use <i>FilterExpression</i> instead. Note that if you use
      * <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
@@ -1103,8 +1111,9 @@ public interface AmazonDynamoDB {
     /**
      * <p>
      * The <i>Scan</i> operation returns one or more items and item
-     * attributes by accessing every item in the table. To have DynamoDB
-     * return fewer items, you can provide a <i>ScanFilter</i> operation.
+     * attributes by accessing every item in a table or a secondary index. To
+     * have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
+     * operation.
      * </p>
      * <p>
      * If the total number of scanned items exceeds the maximum data set
@@ -1119,14 +1128,17 @@ public interface AmazonDynamoDB {
      * </p>
      * <p>
      * By default, <i>Scan</i> operations proceed sequentially; however, for
-     * faster performance on large tables, applications can request a
-     * parallel <i>Scan</i> operation by specifying the <i>Segment</i> and
-     * <i>TotalSegments</i> parameters. For more information, see
+     * faster performance on a large table or secondary index, applications
+     * can request a parallel <i>Scan</i> operation by providing the
+     * <i>Segment</i> and <i>TotalSegments</i> parameters. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
      * in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * 
-     * @param tableName The name of the table containing the requested items.
+     * @param tableName The name of the table containing the requested items;
+     * or, if you provide <code>IndexName</code>, the name of the table to
+     * which that index belongs.
      * @param attributesToGet <important><p>There is a newer parameter
      * available. Use <i>ProjectionExpression</i> instead. Note that if you
      * use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
@@ -1134,7 +1146,7 @@ public interface AmazonDynamoDB {
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -1342,7 +1354,7 @@ public interface AmazonDynamoDB {
      * copy data from another database into DynamoDB. In order to improve
      * performance with these large-scale operations, <i>BatchWriteItem</i>
      * does not behave in the same way as individual <i>PutItem</i> and
-     * <i>DeleteItem</i> calls would For example, you cannot specify
+     * <i>DeleteItem</i> calls would. For example, you cannot specify
      * conditions on individual put and delete requests, and
      * <i>BatchWriteItem</i> does not return deleted items in the response.
      * </p>
@@ -1350,12 +1362,10 @@ public interface AmazonDynamoDB {
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
      * must include the necessary logic to manage the threads. With languages
-     * that don't support threading, such as PHP, you must update or delete
-     * the specified items one at a time. In both situations,
-     * <i>BatchWriteItem</i> provides an alternative where the API performs
-     * the specified put and delete operations in parallel, giving you the
-     * power of the thread pool approach without having to introduce
-     * complexity into your application.
+     * that don't support threading, such as PHP, you must update provides an
+     * alternative where the API performs the specified put and delete
+     * operations in parallel, giving you the power of the thread pool
+     * approach without having to introduce complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and
@@ -1409,9 +1419,9 @@ public interface AmazonDynamoDB {
      * key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For
      * each primary key, you must provide <i>all</i> of the key attributes.
-     * For example, with a hash type primary key, you only need to specify
+     * For example, with a hash type primary key, you only need to provide
      * the hash attribute. For a hash-and-range type primary key, you must
-     * specify <i>both</i> the hash attribute and the range attribute. </li>
+     * provide <i>both</i> the hash attribute and the range attribute. </li>
      * </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
      * operation on the specified item. The item to be put is identified by
      * an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
@@ -1495,8 +1505,8 @@ public interface AmazonDynamoDB {
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * 
      * @return The response from the GetItem service method, as returned by
@@ -1535,8 +1545,8 @@ public interface AmazonDynamoDB {
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * @param consistentRead A value that if set to <code>true</code>, then
      * the operation uses strongly consistent reads; otherwise, eventually
@@ -1586,8 +1596,8 @@ public interface AmazonDynamoDB {
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to delete. <p>For the primary
      * key, you must provide all of the attributes. For example, with a hash
-     * type primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * type primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * 
      * @return The response from the DeleteItem service method, as returned
@@ -1636,8 +1646,8 @@ public interface AmazonDynamoDB {
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to delete. <p>For the primary
      * key, you must provide all of the attributes. For example, with a hash
-     * type primary key, you only need to specify the hash attribute. For a
-     * hash-and-range type primary key, you must specify both the hash
+     * type primary key, you only need to provide the hash attribute. For a
+     * hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * @param returnValues Use <i>ReturnValues</i> if you want to get the
      * item attributes as they appeared before they were deleted. For
@@ -1707,9 +1717,9 @@ public interface AmazonDynamoDB {
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
      * <code>HASH</code> or <code>RANGE</code>. </li> </ul> <p>For a primary
-     * key that consists of a hash attribute, you must specify exactly one
+     * key that consists of a hash attribute, you must provide exactly one
      * element with a <i>KeyType</i> of <code>HASH</code>. <p>For a primary
-     * key that consists of hash and range attributes, you must specify
+     * key that consists of hash and range attributes, you must provide
      * exactly two elements, in this order: The first element must have a
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
@@ -1784,9 +1794,9 @@ public interface AmazonDynamoDB {
      * attribute. Only the primary key attributes are required; you can
      * optionally provide other attribute name-value pairs for the item.
      * <p>You must provide all of the attributes for the primary key. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify both the hash attribute and the range attribute. <p>If you
+     * provide both the hash attribute and the range attribute. <p>If you
      * specify any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition. <p>For more information about primary
@@ -1858,9 +1868,9 @@ public interface AmazonDynamoDB {
      * attribute. Only the primary key attributes are required; you can
      * optionally provide other attribute name-value pairs for the item.
      * <p>You must provide all of the attributes for the primary key. For
-     * example, with a hash type primary key, you only need to specify the
+     * example, with a hash type primary key, you only need to provide the
      * hash attribute. For a hash-and-range type primary key, you must
-     * specify both the hash attribute and the range attribute. <p>If you
+     * provide both the hash attribute and the range attribute. <p>If you
      * specify any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition. <p>For more information about primary
@@ -2001,8 +2011,8 @@ public interface AmazonDynamoDB {
      * @param key The primary key of the item to be updated. Each element
      * consists of an attribute name and a value for that attribute. <p>For
      * the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to specify the hash
-     * attribute. For a hash-and-range type primary key, you must specify
+     * with a hash type primary key, you only need to provide the hash
+     * attribute. For a hash-and-range type primary key, you must provide
      * both the hash attribute and the range attribute.
      * @param attributeUpdates <important> <p>There is a newer parameter
      * available. Use <i>UpdateExpression</i> instead. Note that if you use
@@ -2075,7 +2085,7 @@ public interface AmazonDynamoDB {
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      * 
@@ -2118,8 +2128,8 @@ public interface AmazonDynamoDB {
      * @param key The primary key of the item to be updated. Each element
      * consists of an attribute name and a value for that attribute. <p>For
      * the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to specify the hash
-     * attribute. For a hash-and-range type primary key, you must specify
+     * with a hash type primary key, you only need to provide the hash
+     * attribute. For a hash-and-range type primary key, you must provide
      * both the hash attribute and the range attribute.
      * @param attributeUpdates <important> <p>There is a newer parameter
      * available. Use <i>UpdateExpression</i> instead. Note that if you use
@@ -2192,7 +2202,7 @@ public interface AmazonDynamoDB {
      * DynamoDB to create an item with the supplied primary key and number
      * (or set of numbers) for the attribute value. The only data types
      * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * specify any attributes that are part of an index key, then the data
+     * provide any attributes that are part of an index key, then the data
      * types for those attributes must match those of the schema in the
      * table's attribute definition.
      * @param returnValues Use <i>ReturnValues</i> if you want to get the
@@ -2303,8 +2313,8 @@ public interface AmazonDynamoDB {
      * primary key attribute values that define specific items in the table.
      * For each primary key, you must provide <i>all</i> of the key
      * attributes. For example, with a hash type primary key, you only need
-     * to specify the hash attribute. For a hash-and-range type primary key,
-     * you must specify <i>both</i> the hash attribute and the range
+     * to provide the hash attribute. For a hash-and-range type primary key,
+     * you must provide <i>both</i> the hash attribute and the range
      * attribute. </li> <li> <p><i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table. By default, all attributes
      * are returned. If a specified attribute is not found, it does not
@@ -2414,8 +2424,8 @@ public interface AmazonDynamoDB {
      * primary key attribute values that define specific items in the table.
      * For each primary key, you must provide <i>all</i> of the key
      * attributes. For example, with a hash type primary key, you only need
-     * to specify the hash attribute. For a hash-and-range type primary key,
-     * you must specify <i>both</i> the hash attribute and the range
+     * to provide the hash attribute. For a hash-and-range type primary key,
+     * you must provide <i>both</i> the hash attribute and the range
      * attribute. </li> <li> <p><i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table. By default, all attributes
      * are returned. If a specified attribute is not found, it does not

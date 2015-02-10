@@ -14,14 +14,16 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers;
 
-import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
-import java.util.*;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 /**
  * An unmarshaller that unmarshals sets of UUIDs as sets of
  * Java {@code UUID} objects.
- * 
+ *
  * @author Sergei Egorov
  */
 public class UUIDSetUnmarshaller extends SSUnmarshaller {
@@ -37,7 +39,7 @@ public class UUIDSetUnmarshaller extends SSUnmarshaller {
     }
 
     @Override
-    public Object unmarshall(AttributeValue value) {
+    public Set<UUID> unmarshall(AttributeValue value) {
         Set<UUID> result = new HashSet<UUID>();
 
         for (String s : value.getSS()) {

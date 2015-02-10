@@ -30,7 +30,7 @@ public class EbsBlockDevice implements Serializable {
 
     /**
      * The size of the volume, in GiB. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
+     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
      * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
      * specify a snapshot, the volume size must be equal to or larger than
      * the snapshot size. <p>Default: If you're creating the volume from a
@@ -116,7 +116,7 @@ public class EbsBlockDevice implements Serializable {
 
     /**
      * The size of the volume, in GiB. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
+     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
      * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
      * specify a snapshot, the volume size must be equal to or larger than
      * the snapshot size. <p>Default: If you're creating the volume from a
@@ -124,7 +124,7 @@ public class EbsBlockDevice implements Serializable {
      * size.
      *
      * @return The size of the volume, in GiB. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
      *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
      *         specify a snapshot, the volume size must be equal to or larger than
      *         the snapshot size. <p>Default: If you're creating the volume from a
@@ -137,7 +137,7 @@ public class EbsBlockDevice implements Serializable {
     
     /**
      * The size of the volume, in GiB. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
+     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
      * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
      * specify a snapshot, the volume size must be equal to or larger than
      * the snapshot size. <p>Default: If you're creating the volume from a
@@ -145,7 +145,7 @@ public class EbsBlockDevice implements Serializable {
      * size.
      *
      * @param volumeSize The size of the volume, in GiB. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
      *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
      *         specify a snapshot, the volume size must be equal to or larger than
      *         the snapshot size. <p>Default: If you're creating the volume from a
@@ -158,7 +158,7 @@ public class EbsBlockDevice implements Serializable {
     
     /**
      * The size of the volume, in GiB. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
+     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
      * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
      * specify a snapshot, the volume size must be equal to or larger than
      * the snapshot size. <p>Default: If you're creating the volume from a
@@ -168,7 +168,7 @@ public class EbsBlockDevice implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeSize The size of the volume, in GiB. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
      *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
      *         specify a snapshot, the volume size must be equal to or larger than
      *         the snapshot size. <p>Default: If you're creating the volume from a

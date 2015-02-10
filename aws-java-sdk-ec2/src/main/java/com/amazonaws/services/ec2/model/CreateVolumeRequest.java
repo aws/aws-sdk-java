@@ -54,9 +54,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
-     * If you're creating the volume from a snapshot and don't specify a
-     * volume size, the default is the snapshot size.
+     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
+     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     * specify a snapshot, the volume size must be equal to or larger than
+     * the snapshot size. <p>Default: If you're creating the volume from a
+     * snapshot and don't specify a volume size, the default is the snapshot
+     * size.
      */
     private Integer size;
 
@@ -128,8 +131,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param size The size of the volume, in GiBs. <p>Constraints: If the
      * volume type is <code>io1</code>, the minimum size of the volume is 4
-     * GiB. <p>Default: If you're creating the volume from a snapshot and
-     * don't specify a volume size, the default is the snapshot size.
+     * GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is
+     * 1024 GiB. If you specify a snapshot, the volume size must be equal to
+     * or larger than the snapshot size. <p>Default: If you're creating the
+     * volume from a snapshot and don't specify a volume size, the default is
+     * the snapshot size.
      * @param availabilityZone The Availability Zone in which to create the
      * volume. Use <a>DescribeAvailabilityZones</a> to list the Availability
      * Zones that are currently available to you.
@@ -156,14 +162,20 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
-     * If you're creating the volume from a snapshot and don't specify a
-     * volume size, the default is the snapshot size.
+     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
+     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     * specify a snapshot, the volume size must be equal to or larger than
+     * the snapshot size. <p>Default: If you're creating the volume from a
+     * snapshot and don't specify a volume size, the default is the snapshot
+     * size.
      *
      * @return The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
-     *         If you're creating the volume from a snapshot and don't specify a
-     *         volume size, the default is the snapshot size.
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
+     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     *         specify a snapshot, the volume size must be equal to or larger than
+     *         the snapshot size. <p>Default: If you're creating the volume from a
+     *         snapshot and don't specify a volume size, the default is the snapshot
+     *         size.
      */
     public Integer getSize() {
         return size;
@@ -171,14 +183,20 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
-     * If you're creating the volume from a snapshot and don't specify a
-     * volume size, the default is the snapshot size.
+     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
+     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     * specify a snapshot, the volume size must be equal to or larger than
+     * the snapshot size. <p>Default: If you're creating the volume from a
+     * snapshot and don't specify a volume size, the default is the snapshot
+     * size.
      *
      * @param size The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
-     *         If you're creating the volume from a snapshot and don't specify a
-     *         volume size, the default is the snapshot size.
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
+     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     *         specify a snapshot, the volume size must be equal to or larger than
+     *         the snapshot size. <p>Default: If you're creating the volume from a
+     *         snapshot and don't specify a volume size, the default is the snapshot
+     *         size.
      */
     public void setSize(Integer size) {
         this.size = size;
@@ -186,16 +204,22 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
-     * If you're creating the volume from a snapshot and don't specify a
-     * volume size, the default is the snapshot size.
+     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
+     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     * specify a snapshot, the volume size must be equal to or larger than
+     * the snapshot size. <p>Default: If you're creating the volume from a
+     * snapshot and don't specify a volume size, the default is the snapshot
+     * size.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB. <p>Default:
-     *         If you're creating the volume from a snapshot and don't specify a
-     *         volume size, the default is the snapshot size.
+     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
+     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     *         specify a snapshot, the volume size must be equal to or larger than
+     *         the snapshot size. <p>Default: If you're creating the volume from a
+     *         snapshot and don't specify a volume size, the default is the snapshot
+     *         size.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

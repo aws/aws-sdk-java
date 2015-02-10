@@ -79,7 +79,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * The IP protocol name (<code>tcp</code>, <code>udp</code>,
      * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
      */
     private String ipProtocol;
 
@@ -278,12 +278,12 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * The IP protocol name (<code>tcp</code>, <code>udp</code>,
      * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
      *
      * @return The IP protocol name (<code>tcp</code>, <code>udp</code>,
      *         <code>icmp</code>) or number (see <a
      *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     *         Numbers</a>). Use <code>-1</code> to specify all.
+     *         Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
      */
     public String getIpProtocol() {
         return ipProtocol;
@@ -293,12 +293,12 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * The IP protocol name (<code>tcp</code>, <code>udp</code>,
      * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
      *
      * @param ipProtocol The IP protocol name (<code>tcp</code>, <code>udp</code>,
      *         <code>icmp</code>) or number (see <a
      *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     *         Numbers</a>). Use <code>-1</code> to specify all.
+     *         Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
      */
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
@@ -308,14 +308,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * The IP protocol name (<code>tcp</code>, <code>udp</code>,
      * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipProtocol The IP protocol name (<code>tcp</code>, <code>udp</code>,
      *         <code>icmp</code>) or number (see <a
      *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     *         Numbers</a>). Use <code>-1</code> to specify all.
+     *         Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

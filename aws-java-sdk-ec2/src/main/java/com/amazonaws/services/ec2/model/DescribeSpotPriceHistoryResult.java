@@ -27,8 +27,8 @@ public class DescribeSpotPriceHistoryResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<SpotPrice> spotPriceHistory;
 
     /**
-     * The string marking the next set of results. This is empty if there are
-     * no more results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      */
     private String nextToken;
 
@@ -101,35 +101,35 @@ public class DescribeSpotPriceHistoryResult implements Serializable {
     }
 
     /**
-     * The string marking the next set of results. This is empty if there are
-     * no more results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      *
-     * @return The string marking the next set of results. This is empty if there are
-     *         no more results.
+     * @return The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The string marking the next set of results. This is empty if there are
-     * no more results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      *
-     * @param nextToken The string marking the next set of results. This is empty if there are
-     *         no more results.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The string marking the next set of results. This is empty if there are
-     * no more results.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The string marking the next set of results. This is empty if there are
-     *         no more results.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

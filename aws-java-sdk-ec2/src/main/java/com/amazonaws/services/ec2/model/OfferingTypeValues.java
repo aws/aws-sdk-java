@@ -21,7 +21,10 @@ public enum OfferingTypeValues {
     
     HeavyUtilization("Heavy Utilization"),
     MediumUtilization("Medium Utilization"),
-    LightUtilization("Light Utilization");
+    LightUtilization("Light Utilization"),
+    NoUpfront("No Upfront"),
+    PartialUpfront("Partial Upfront"),
+    AllUpfront("All Upfront");
 
     private String value;
 
@@ -51,6 +54,12 @@ public enum OfferingTypeValues {
             return OfferingTypeValues.MediumUtilization;
         } else if ("Light Utilization".equals(value)) {
             return OfferingTypeValues.LightUtilization;
+        } else if ("No Upfront".equals(value)) {
+            return OfferingTypeValues.NoUpfront;
+        } else if ("Partial Upfront".equals(value)) {
+            return OfferingTypeValues.PartialUpfront;
+        } else if ("All Upfront".equals(value)) {
+            return OfferingTypeValues.AllUpfront;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

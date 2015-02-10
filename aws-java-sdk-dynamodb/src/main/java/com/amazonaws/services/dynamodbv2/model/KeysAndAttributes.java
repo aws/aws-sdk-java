@@ -24,8 +24,8 @@ import java.io.Serializable;
  * <p>
  * For each primary key, you must provide <i>all</i> of the key
  * attributes. For example, with a hash type primary key, you only need
- * to specify the hash attribute. For a hash-and-range type primary key,
- * you must specify <i>both</i> the hash attribute and the range
+ * to provide the hash attribute. For a hash-and-range type primary key,
+ * you must provide <i>both</i> the hash attribute and the range
  * attribute.
  * </p>
  */

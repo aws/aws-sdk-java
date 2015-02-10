@@ -18,6 +18,7 @@
 package com.amazonaws.services.s3.internal;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -33,6 +34,7 @@ import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
  * Utilities useful for REST/HTTP S3Service implementations.
  */
 public class RestUtils {
+
     /**
      * The set of request parameters which must be included in the canonical
      * string to sign.
@@ -50,12 +52,38 @@ public class RestUtils {
     });
 
     /**
+     * Calculate the canonical string for a REST/HTTP request to S3 by only
+     * including query parameters that are mentioned in SIGNED_PARAMETERS.
+     *
+     * @see RestUtils#makeS3CanonicalString(String, String, Request, String, boolean)
+     */
+    public static <T> String makeS3CanonicalString(String method,
+            String resource, Request<T> request, String expires) {
+        return makeS3CanonicalString(method, resource, request, expires, null);
+    }
+
+    /**
      * Calculate the canonical string for a REST/HTTP request to S3.
      *
-     * When expires is non-null, it will be used instead of the Date header.
+     * @param method
+     *            The HTTP verb.
+     * @param resource
+     *            The HTTP-encoded resource path.
+     * @param request
+     *            The request to be canonicalized.
+     * @param expires
+     *            When expires is non-null, it will be used instead of the Date
+     *            header.
+     * @param additionalQueryParamsToSign
+     *            A collection of user-specified query parameters that should be
+     *            included in the canonical request, in addition to those
+     *            default parameters that are always signed.
+     * @return The canonical string representation for the given S3 request.
      */
-    public static <T> String makeS3CanonicalString(String method, String resource, Request<T> request, String expires)
-    {
+    public static <T> String makeS3CanonicalString(String method,
+            String resource, Request<T> request, String expires,
+            Collection<String> additionalQueryParamsToSign) {
+
         StringBuilder buf = new StringBuilder();
         buf.append(method + "\n");
 
@@ -134,8 +162,14 @@ public class RestUtils {
         Arrays.sort(parameterNames);
         char separator = '?';
         for (String parameterName : parameterNames) {
-            // Skip any parameters that aren't part of the canonical signed string
-            if (SIGNED_PARAMETERS.contains(parameterName) == false) continue;
+
+            if ( !SIGNED_PARAMETERS.contains(parameterName)
+                 &&
+                 (additionalQueryParamsToSign == null ||
+                 !additionalQueryParamsToSign.contains(parameterName))
+               ) {
+                continue;
+            }
 
             buf.append(separator);
             buf.append(parameterName);

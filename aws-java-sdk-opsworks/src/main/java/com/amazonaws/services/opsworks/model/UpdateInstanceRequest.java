@@ -100,7 +100,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     private String amiId;
 
     /**
-     * The instance SSH key name.
+     * The instance's Amazon EC2 key name.
      */
     private String sshKeyName;
 
@@ -600,29 +600,29 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The instance SSH key name.
+     * The instance's Amazon EC2 key name.
      *
-     * @return The instance SSH key name.
+     * @return The instance's Amazon EC2 key name.
      */
     public String getSshKeyName() {
         return sshKeyName;
     }
     
     /**
-     * The instance SSH key name.
+     * The instance's Amazon EC2 key name.
      *
-     * @param sshKeyName The instance SSH key name.
+     * @param sshKeyName The instance's Amazon EC2 key name.
      */
     public void setSshKeyName(String sshKeyName) {
         this.sshKeyName = sshKeyName;
     }
     
     /**
-     * The instance SSH key name.
+     * The instance's Amazon EC2 key name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sshKeyName The instance SSH key name.
+     * @param sshKeyName The instance's Amazon EC2 key name.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -38,7 +38,7 @@ public class ScanImpl extends AbstractImpl implements ScanApi {
 
     @Override
     public ItemCollection<ScanOutcome> scan(ScanFilter... scanFilters) {
-        return scan(new ScanSpec()
+        return doScan(new ScanSpec()
                 .withScanFilters(scanFilters));
     }
 
@@ -46,7 +46,7 @@ public class ScanImpl extends AbstractImpl implements ScanApi {
     @Override
     public ItemCollection<ScanOutcome> scan(String filterExpression,
             Map<String, String> nameMap, Map<String, Object> valueMap) {
-        return scan(new ScanSpec()
+        return doScan(new ScanSpec()
                 .withFilterExpression(filterExpression)
                 .withNameMap(nameMap)
                 .withValueMap(valueMap));
@@ -57,7 +57,7 @@ public class ScanImpl extends AbstractImpl implements ScanApi {
     public ItemCollection<ScanOutcome> scan(String filterExpression,
             String projectionExpression, Map<String, String> nameMap,
             Map<String, Object> valueMap) {
-        return scan(new ScanSpec()
+        return doScan(new ScanSpec()
                 .withFilterExpression(filterExpression)
                 .withProjectionExpression(projectionExpression)
                 .withNameMap(nameMap)
@@ -66,6 +66,10 @@ public class ScanImpl extends AbstractImpl implements ScanApi {
 
     @Override
     public ItemCollection<ScanOutcome> scan(ScanSpec spec) {
+        return doScan(spec);
+    }
+
+    protected ItemCollection<ScanOutcome> doScan(ScanSpec spec) {
         // set the table name
         String tableName = getTable().getTableName();
         ScanRequest req = spec.getRequest().withTableName(tableName);

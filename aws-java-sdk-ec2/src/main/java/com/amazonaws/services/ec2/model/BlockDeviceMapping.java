@@ -24,13 +24,16 @@ import java.io.Serializable;
 public class BlockDeviceMapping implements Serializable {
 
     /**
-     * The virtual device name (ephemeral[0..3]). The number of available
-     * instance store volumes depends on the instance type. After you connect
-     * to the instance, you must mount the volume. <p>Constraints: For M3
-     * instances, you must specify instance store volumes in the block device
-     * mapping for the instance. When you launch an M3 instance, we ignore
-     * any instance store volumes specified in the block device mapping for
-     * the AMI.
+     * The virtual device name (<code>ephemeral</code>N). Instance store
+     * volumes are numbered starting from 0. An instance type with 2
+     * available instance store volumes can specify mappings for
+     * <code>ephemeral0</code> and <code>ephemeral1</code>.The number of
+     * available instance store volumes depends on the instance type. After
+     * you connect to the instance, you must mount the volume.
+     * <p>Constraints: For M3 instances, you must specify instance store
+     * volumes in the block device mapping for the instance. When you launch
+     * an M3 instance, we ignore any instance store volumes specified in the
+     * block device mapping for the AMI.
      */
     private String virtualName;
 
@@ -53,65 +56,83 @@ public class BlockDeviceMapping implements Serializable {
     private String noDevice;
 
     /**
-     * The virtual device name (ephemeral[0..3]). The number of available
-     * instance store volumes depends on the instance type. After you connect
-     * to the instance, you must mount the volume. <p>Constraints: For M3
-     * instances, you must specify instance store volumes in the block device
-     * mapping for the instance. When you launch an M3 instance, we ignore
-     * any instance store volumes specified in the block device mapping for
-     * the AMI.
+     * The virtual device name (<code>ephemeral</code>N). Instance store
+     * volumes are numbered starting from 0. An instance type with 2
+     * available instance store volumes can specify mappings for
+     * <code>ephemeral0</code> and <code>ephemeral1</code>.The number of
+     * available instance store volumes depends on the instance type. After
+     * you connect to the instance, you must mount the volume.
+     * <p>Constraints: For M3 instances, you must specify instance store
+     * volumes in the block device mapping for the instance. When you launch
+     * an M3 instance, we ignore any instance store volumes specified in the
+     * block device mapping for the AMI.
      *
-     * @return The virtual device name (ephemeral[0..3]). The number of available
-     *         instance store volumes depends on the instance type. After you connect
-     *         to the instance, you must mount the volume. <p>Constraints: For M3
-     *         instances, you must specify instance store volumes in the block device
-     *         mapping for the instance. When you launch an M3 instance, we ignore
-     *         any instance store volumes specified in the block device mapping for
-     *         the AMI.
+     * @return The virtual device name (<code>ephemeral</code>N). Instance store
+     *         volumes are numbered starting from 0. An instance type with 2
+     *         available instance store volumes can specify mappings for
+     *         <code>ephemeral0</code> and <code>ephemeral1</code>.The number of
+     *         available instance store volumes depends on the instance type. After
+     *         you connect to the instance, you must mount the volume.
+     *         <p>Constraints: For M3 instances, you must specify instance store
+     *         volumes in the block device mapping for the instance. When you launch
+     *         an M3 instance, we ignore any instance store volumes specified in the
+     *         block device mapping for the AMI.
      */
     public String getVirtualName() {
         return virtualName;
     }
     
     /**
-     * The virtual device name (ephemeral[0..3]). The number of available
-     * instance store volumes depends on the instance type. After you connect
-     * to the instance, you must mount the volume. <p>Constraints: For M3
-     * instances, you must specify instance store volumes in the block device
-     * mapping for the instance. When you launch an M3 instance, we ignore
-     * any instance store volumes specified in the block device mapping for
-     * the AMI.
+     * The virtual device name (<code>ephemeral</code>N). Instance store
+     * volumes are numbered starting from 0. An instance type with 2
+     * available instance store volumes can specify mappings for
+     * <code>ephemeral0</code> and <code>ephemeral1</code>.The number of
+     * available instance store volumes depends on the instance type. After
+     * you connect to the instance, you must mount the volume.
+     * <p>Constraints: For M3 instances, you must specify instance store
+     * volumes in the block device mapping for the instance. When you launch
+     * an M3 instance, we ignore any instance store volumes specified in the
+     * block device mapping for the AMI.
      *
-     * @param virtualName The virtual device name (ephemeral[0..3]). The number of available
-     *         instance store volumes depends on the instance type. After you connect
-     *         to the instance, you must mount the volume. <p>Constraints: For M3
-     *         instances, you must specify instance store volumes in the block device
-     *         mapping for the instance. When you launch an M3 instance, we ignore
-     *         any instance store volumes specified in the block device mapping for
-     *         the AMI.
+     * @param virtualName The virtual device name (<code>ephemeral</code>N). Instance store
+     *         volumes are numbered starting from 0. An instance type with 2
+     *         available instance store volumes can specify mappings for
+     *         <code>ephemeral0</code> and <code>ephemeral1</code>.The number of
+     *         available instance store volumes depends on the instance type. After
+     *         you connect to the instance, you must mount the volume.
+     *         <p>Constraints: For M3 instances, you must specify instance store
+     *         volumes in the block device mapping for the instance. When you launch
+     *         an M3 instance, we ignore any instance store volumes specified in the
+     *         block device mapping for the AMI.
      */
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
     
     /**
-     * The virtual device name (ephemeral[0..3]). The number of available
-     * instance store volumes depends on the instance type. After you connect
-     * to the instance, you must mount the volume. <p>Constraints: For M3
-     * instances, you must specify instance store volumes in the block device
-     * mapping for the instance. When you launch an M3 instance, we ignore
-     * any instance store volumes specified in the block device mapping for
-     * the AMI.
+     * The virtual device name (<code>ephemeral</code>N). Instance store
+     * volumes are numbered starting from 0. An instance type with 2
+     * available instance store volumes can specify mappings for
+     * <code>ephemeral0</code> and <code>ephemeral1</code>.The number of
+     * available instance store volumes depends on the instance type. After
+     * you connect to the instance, you must mount the volume.
+     * <p>Constraints: For M3 instances, you must specify instance store
+     * volumes in the block device mapping for the instance. When you launch
+     * an M3 instance, we ignore any instance store volumes specified in the
+     * block device mapping for the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param virtualName The virtual device name (ephemeral[0..3]). The number of available
-     *         instance store volumes depends on the instance type. After you connect
-     *         to the instance, you must mount the volume. <p>Constraints: For M3
-     *         instances, you must specify instance store volumes in the block device
-     *         mapping for the instance. When you launch an M3 instance, we ignore
-     *         any instance store volumes specified in the block device mapping for
-     *         the AMI.
+     * @param virtualName The virtual device name (<code>ephemeral</code>N). Instance store
+     *         volumes are numbered starting from 0. An instance type with 2
+     *         available instance store volumes can specify mappings for
+     *         <code>ephemeral0</code> and <code>ephemeral1</code>.The number of
+     *         available instance store volumes depends on the instance type. After
+     *         you connect to the instance, you must mount the volume.
+     *         <p>Constraints: For M3 instances, you must specify instance store
+     *         volumes in the block device mapping for the instance. When you launch
+     *         an M3 instance, we ignore any instance store volumes specified in the
+     *         block device mapping for the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

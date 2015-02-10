@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a Spot Instance request.
+ * Describes the status of a Spot Instance request.
  * </p>
  */
 public class SpotInstanceStatus implements Serializable {
 
     /**
-     * The status code of the request.
+     * The status code.
      */
     private String code;
 
@@ -34,34 +34,34 @@ public class SpotInstanceStatus implements Serializable {
     private java.util.Date updateTime;
 
     /**
-     * The description for the status code for the Spot request.
+     * The description for the status code.
      */
     private String message;
 
     /**
-     * The status code of the request.
+     * The status code.
      *
-     * @return The status code of the request.
+     * @return The status code.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * The status code of the request.
+     * The status code.
      *
-     * @param code The status code of the request.
+     * @param code The status code.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * The status code of the request.
+     * The status code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code The status code of the request.
+     * @param code The status code.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -105,29 +105,29 @@ public class SpotInstanceStatus implements Serializable {
     }
 
     /**
-     * The description for the status code for the Spot request.
+     * The description for the status code.
      *
-     * @return The description for the status code for the Spot request.
+     * @return The description for the status code.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * The description for the status code for the Spot request.
+     * The description for the status code.
      *
-     * @param message The description for the status code for the Spot request.
+     * @param message The description for the status code.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * The description for the status code for the Spot request.
+     * The description for the status code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message The description for the status code for the Spot request.
+     * @param message The description for the status code.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

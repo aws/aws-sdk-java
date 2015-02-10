@@ -485,25 +485,24 @@ public class DynamoDBMapperConfig {
      * @author Raniz
      */
     public static class DefaultTableNameResolver implements TableNameResolver {
-
         public static final DefaultTableNameResolver INSTANCE = new DefaultTableNameResolver();
-
         private final DynamoDBReflector reflector = new DynamoDBReflector();
 
         @Override
         public String getTableName(Class<?> clazz, DynamoDBMapperConfig config) {
-            DynamoDBTable table = reflector.getTable(clazz);
-            String tableName = table.tableName();
-            if ( config.getTableNameOverride() != null ) {
-                if ( config.getTableNameOverride().getTableName() != null ) {
-                    tableName = config.getTableNameOverride().getTableName();
-                } else {
-                    tableName = config.getTableNameOverride().getTableNamePrefix()
-                                + tableName;
+            final TableNameOverride override = config.getTableNameOverride();
+
+            if (override != null) {
+                final String tableName = override.getTableName();
+                if (tableName != null) {
+                    return tableName;
                 }
             }
 
-            return tableName;
+            final String tableName = reflector.getTable(clazz).tableName();
+            final String prefix = override == null
+                ? null : override.getTableNamePrefix();
+            return prefix == null ? tableName : prefix + tableName;
         }
     }
 

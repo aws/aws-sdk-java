@@ -14,7 +14,11 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -38,40 +42,53 @@ public class S3Signer extends AbstractAWSSigner {
     private static final Log log = LogFactory.getLog(S3Signer.class);
 
     /**
-     * The HTTP verb (GET, PUT, HEAD, DELETE) the request to sign
-     * is using.
+     * The HTTP verb (GET, PUT, HEAD, DELETE) the request to sign is using.
      *
-     * TODO: We need to know the HTTP verb in order to
-     *       create the authentication signature, but we don't
-     *       have easy access to it through the request object.
+     * TODO: We need to know the HTTP verb in order to create the authentication
+     * signature, but we don't have easy access to it through the request
+     * object.
      *
-     *       Maybe it'd be better for the S3 signer (or all signers?)
-     *       to work directly off of the HttpRequest instead of
-     *       the Request object?
+     * Maybe it'd be better for the S3 signer (or all signers?) to work directly
+     * off of the HttpRequest instead of the Request object?
      */
     private final String httpVerb;
 
     /**
-     * The canonical resource path portion of the S3 string to sign.
-     * Examples: "/", "/<bucket name>/", or "/<bucket name>/<key>"
+     * The canonical resource path portion of the S3 string to sign. Examples:
+     * "/", "/<bucket name>/", or "/<bucket name>/<key>"
      *
      * TODO: We don't want to hold the resource path as member data in the S3
-     *       signer, but we need access to it and can't get it through the
-     *       request yet.
+     * signer, but we need access to it and can't get it through the request
+     * yet.
      */
     private final String resourcePath;
 
     /**
-     * Create a dummy instance of the S3Signer.
+     * The names of all the user-specified query parameters that should be
+     * included in the canonical request, in addition to those default
+     * parameters that are always signed.
+     *
+     * @see RestUtils#makeS3CanonicalString(String, String, Request, String)
+     */
+    private final Set<String> additionalQueryParamsToSign;
+
+    /**
+     * Create a dummy instance of the S3Signer. This constructor will be invoked
+     * by internal config via reflection.
      */
     public S3Signer() {
+        /*
+         * NOTE: don't delegate to the other ctors, otherwise an IAE will be
+         * thrown since the resourcePath is lazily initialized to null.
+         */
         this.httpVerb = null;
         this.resourcePath = null;
+        this.additionalQueryParamsToSign = null;
     }
 
     /**
-     * Constructs a new S3Signer to sign requests based on the
-     * AWS credentials, HTTP method and canonical S3 resource path.
+     * Constructs a new S3Signer to sign requests based on the AWS credentials,
+     * HTTP method and canonical S3 resource path.
      *
      * @param httpVerb
      *            The HTTP verb (GET, PUT, POST, HEAD, DELETE) the request is
@@ -81,11 +98,38 @@ public class S3Signer extends AbstractAWSSigner {
      *            "/<bucket name>/<key>".
      */
     public S3Signer(String httpVerb, String resourcePath) {
+        this(httpVerb, resourcePath, null);
+    }
+
+    /**
+     * Constructs a new S3Signer to sign requests based on the AWS credentials,
+     * HTTP method and canonical S3 resource path.
+     *
+     * @param httpVerb
+     *            The HTTP verb (GET, PUT, POST, HEAD, DELETE) the request is
+     *            using.
+     * @param resourcePath
+     *            The canonical S3 resource path (ex: "/", "/<bucket name>/", or
+     *            "/<bucket name>/<key>".
+     * @param additionalQueryParamsToSign
+     *            A collection of user-specified query parameters that should be
+     *            included in the canonical request, in addition to those
+     *            default parameters that are always signed.
+     *
+     * @see RestUtils#makeS3CanonicalString(String, String, Request, String)
+     */
+    public S3Signer(String httpVerb, String resourcePath,
+            Collection<String> additionalQueryParamsToSign) {
+        if (resourcePath == null)
+            throw new IllegalArgumentException(
+                    "Parameter resourcePath is empty");
+
         this.httpVerb = httpVerb;
         this.resourcePath = resourcePath;
-
-        if (resourcePath == null)
-            throw new IllegalArgumentException("Parameter resourcePath is empty");
+        this.additionalQueryParamsToSign = additionalQueryParamsToSign == null
+                ? null
+                : Collections.unmodifiableSet(new HashSet<String>(
+                        additionalQueryParamsToSign));
     }
 
     @Override
@@ -93,9 +137,8 @@ public class S3Signer extends AbstractAWSSigner {
 
         if (resourcePath == null) {
             throw new UnsupportedOperationException(
-                "Cannot sign a request using a dummy S3Signer instance with "
-                + "no resource path"
-            );
+                    "Cannot sign a request using a dummy S3Signer instance with "
+                            + "no resource path");
         }
 
         if (credentials == null || credentials.getAWSSecretKey() == null) {
@@ -104,8 +147,9 @@ public class S3Signer extends AbstractAWSSigner {
         }
 
         AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
-        if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
-            addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
+        if (sanitizedCredentials instanceof AWSSessionCredentials) {
+            addSessionCredentials(request,
+                    (AWSSessionCredentials) sanitizedCredentials);
         }
 
         /*
@@ -115,21 +159,27 @@ public class S3Signer extends AbstractAWSSigner {
          * httpclient works, we need to do the same encoding here for the
          * resource path.
          */
-        String encodedResourcePath = HttpUtils.appendUri(request.getEndpoint().getPath(), resourcePath, true);
+        String encodedResourcePath = HttpUtils.appendUri(request.getEndpoint()
+                .getPath(), resourcePath, true);
 
         int timeOffset = request.getTimeOffset();
         Date date = getSignatureDate(timeOffset);
         request.addHeader(Headers.DATE, ServiceUtils.formatRfc822Date(date));
-        String canonicalString = RestUtils.makeS3CanonicalString(
-                httpVerb, encodedResourcePath, request, null);
+        String canonicalString = RestUtils.makeS3CanonicalString(httpVerb,
+                encodedResourcePath, request, null, additionalQueryParamsToSign);
         log.debug("Calculated string to sign:\n\"" + canonicalString + "\"");
 
-        String signature = super.signAndBase64Encode(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);
-        request.addHeader("Authorization", "AWS " + sanitizedCredentials.getAWSAccessKeyId() + ":" + signature);
+        String signature = super.signAndBase64Encode(canonicalString,
+                sanitizedCredentials.getAWSSecretKey(),
+                SigningAlgorithm.HmacSHA1);
+        request.addHeader("Authorization",
+                "AWS " + sanitizedCredentials.getAWSAccessKeyId() + ":"
+                        + signature);
     }
 
     @Override
-    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+    protected void addSessionCredentials(Request<?> request,
+            AWSSessionCredentials credentials) {
         request.addHeader("x-amz-security-token", credentials.getSessionToken());
     }
 }

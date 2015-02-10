@@ -32,34 +32,41 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteClusterRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The cluster you want to delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that
+     * you want to delete.
      */
     private String cluster;
 
     /**
-     * The cluster you want to delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that
+     * you want to delete.
      *
-     * @return The cluster you want to delete.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster that
+     *         you want to delete.
      */
     public String getCluster() {
         return cluster;
     }
     
     /**
-     * The cluster you want to delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that
+     * you want to delete.
      *
-     * @param cluster The cluster you want to delete.
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
+     *         you want to delete.
      */
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
     
     /**
-     * The cluster you want to delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that
+     * you want to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cluster The cluster you want to delete.
+     * @param cluster The short name or full Amazon Resource Name (ARN) of the cluster that
+     *         you want to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

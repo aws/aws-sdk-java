@@ -21,6 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#deregisterTaskDefinition(DeregisterTaskDefinitionRequest) DeregisterTaskDefinition operation}.
  * <p>
+ * NOT YET IMPLEMENTED.
+ * </p>
+ * <p>
  * Deregisters the specified task definition. You will no longer be able
  * to run tasks from this definition after deregistration.
  * </p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#scan(ScanRequest) Scan operation}.
  * <p>
  * The <i>Scan</i> operation returns one or more items and item
- * attributes by accessing every item in the table. To have DynamoDB
- * return fewer items, you can provide a <i>ScanFilter</i> operation.
+ * attributes by accessing every item in a table or a secondary index. To
+ * have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
+ * operation.
  * </p>
  * <p>
  * If the total number of scanned items exceeds the maximum data set size
@@ -37,9 +38,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * By default, <i>Scan</i> operations proceed sequentially; however, for
- * faster performance on large tables, applications can request a
- * parallel <i>Scan</i> operation by specifying the <i>Segment</i> and
- * <i>TotalSegments</i> parameters. For more information, see
+ * faster performance on a large table or secondary index, applications
+ * can request a parallel <i>Scan</i> operation by providing the
+ * <i>Segment</i> and <i>TotalSegments</i> parameters. For more
+ * information, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
@@ -49,13 +51,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ScanRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the table containing the requested items.
+     * The name of the table containing the requested items; or, if you
+     * provide <code>IndexName</code>, the name of the table to which that
+     * index belongs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      */
     private String tableName;
+
+    /**
+     * The name of a secondary index to scan. This index can be any local
+     * secondary index or global secondary index. Note that if you use the
+     * <code>IndexName</code> parameter, you must also provide
+     * <code>TableName</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
+    private String indexName;
 
     /**
      * <important><p>There is a newer parameter available. Use
@@ -65,7 +81,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -208,13 +224,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * the total number of segments into which the <i>Scan</i> operation will
      * be divided. The value of <i>TotalSegments</i> corresponds to the
      * number of application workers that will perform the parallel scan. For
-     * example, if you want to scan a table using four application threads,
-     * specify a <i>TotalSegments</i> value of 4. <p>The value for
-     * <i>TotalSegments</i> must be greater than or equal to 1, and less than
-     * or equal to 1000000. If you specify a <i>TotalSegments</i> value of 1,
-     * the <i>Scan</i> operation will be sequential rather than parallel.
-     * <p>If you specify <i>TotalSegments</i>, you must also specify
-     * <i>Segment</i>.
+     * example, if you want to use four application threads to scan a table
+     * or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
+     * for <i>TotalSegments</i> must be greater than or equal to 1, and less
+     * than or equal to 1000000. If you specify a <i>TotalSegments</i> value
+     * of 1, the <i>Scan</i> operation will be sequential rather than
+     * parallel. <p>If you specify <i>TotalSegments</i>, you must also
+     * specify <i>Segment</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000000<br/>
@@ -225,15 +241,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      * individual segment to be scanned by an application worker. <p>Segment
      * IDs are zero-based, so the first segment is always 0. For example, if
-     * you want to scan a table using four application threads, the first
-     * thread specifies a <i>Segment</i> value of 0, the second thread
-     * specifies 1, and so on. <p>The value of <i>LastEvaluatedKey</i>
-     * returned from a parallel <i>Scan</i> request must be used as
-     * <i>ExclusiveStartKey</i> with the same segment ID in a subsequent
-     * <i>Scan</i> operation. <p>The value for <i>Segment</i> must be greater
-     * than or equal to 0, and less than the value provided for
-     * <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
-     * specify <i>TotalSegments</i>.
+     * you want to use four application threads to scan a table or an index,
+     * then the first thread specifies a <i>Segment</i> value of 0, the
+     * second thread specifies 1, and so on. <p>The value of
+     * <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
+     * must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
+     * subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
+     * be greater than or equal to 0, and less than the value provided for
+     * <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
+     * provide <i>TotalSegments</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 999999<br/>
@@ -242,11 +258,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
 
     /**
      * A string that identifies one or more attributes to retrieve from the
-     * table. These attributes can include scalars, sets, or elements of a
-     * JSON document. The attributes in the expression must be separated by
-     * commas. <p>If no attribute names are specified, then all attributes
-     * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * specified table or index. These attributes can include scalars, sets,
+     * or elements of a JSON document. The attributes in the expression must
+     * be separated by commas. <p>If no attribute names are specified, then
+     * all attributes will be returned. If any of the requested attributes
+     * are not found, they will not appear in the result. <p>For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -322,40 +339,52 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param tableName The name of the table containing the requested items.
+     * @param tableName The name of the table containing the requested items;
+     * or, if you provide <code>IndexName</code>, the name of the table to
+     * which that index belongs.
      */
     public ScanRequest(String tableName) {
         setTableName(tableName);
     }
 
     /**
-     * The name of the table containing the requested items.
+     * The name of the table containing the requested items; or, if you
+     * provide <code>IndexName</code>, the name of the table to which that
+     * index belongs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The name of the table containing the requested items.
+     * @return The name of the table containing the requested items; or, if you
+     *         provide <code>IndexName</code>, the name of the table to which that
+     *         index belongs.
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * The name of the table containing the requested items.
+     * The name of the table containing the requested items; or, if you
+     * provide <code>IndexName</code>, the name of the table to which that
+     * index belongs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The name of the table containing the requested items.
+     * @param tableName The name of the table containing the requested items; or, if you
+     *         provide <code>IndexName</code>, the name of the table to which that
+     *         index belongs.
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * The name of the table containing the requested items.
+     * The name of the table containing the requested items; or, if you
+     * provide <code>IndexName</code>, the name of the table to which that
+     * index belongs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -363,13 +392,78 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The name of the table containing the requested items.
+     * @param tableName The name of the table containing the requested items; or, if you
+     *         provide <code>IndexName</code>, the name of the table to which that
+     *         index belongs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withTableName(String tableName) {
         this.tableName = tableName;
+        return this;
+    }
+
+    /**
+     * The name of a secondary index to scan. This index can be any local
+     * secondary index or global secondary index. Note that if you use the
+     * <code>IndexName</code> parameter, you must also provide
+     * <code>TableName</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     *
+     * @return The name of a secondary index to scan. This index can be any local
+     *         secondary index or global secondary index. Note that if you use the
+     *         <code>IndexName</code> parameter, you must also provide
+     *         <code>TableName</code>.
+     */
+    public String getIndexName() {
+        return indexName;
+    }
+    
+    /**
+     * The name of a secondary index to scan. This index can be any local
+     * secondary index or global secondary index. Note that if you use the
+     * <code>IndexName</code> parameter, you must also provide
+     * <code>TableName</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     *
+     * @param indexName The name of a secondary index to scan. This index can be any local
+     *         secondary index or global secondary index. Note that if you use the
+     *         <code>IndexName</code> parameter, you must also provide
+     *         <code>TableName</code>.
+     */
+    public void setIndexName(String indexName) {
+        this.indexName = indexName;
+    }
+    
+    /**
+     * The name of a secondary index to scan. This index can be any local
+     * secondary index or global secondary index. Note that if you use the
+     * <code>IndexName</code> parameter, you must also provide
+     * <code>TableName</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     *
+     * @param indexName The name of a secondary index to scan. This index can be any local
+     *         secondary index or global secondary index. Note that if you use the
+     *         <code>IndexName</code> parameter, you must also provide
+     *         <code>TableName</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ScanRequest withIndexName(String indexName) {
+        this.indexName = indexName;
         return this;
     }
 
@@ -381,7 +475,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -398,7 +492,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -417,7 +511,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -434,7 +528,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -459,7 +553,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -478,7 +572,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -504,7 +598,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -523,7 +617,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -1688,13 +1782,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * the total number of segments into which the <i>Scan</i> operation will
      * be divided. The value of <i>TotalSegments</i> corresponds to the
      * number of application workers that will perform the parallel scan. For
-     * example, if you want to scan a table using four application threads,
-     * specify a <i>TotalSegments</i> value of 4. <p>The value for
-     * <i>TotalSegments</i> must be greater than or equal to 1, and less than
-     * or equal to 1000000. If you specify a <i>TotalSegments</i> value of 1,
-     * the <i>Scan</i> operation will be sequential rather than parallel.
-     * <p>If you specify <i>TotalSegments</i>, you must also specify
-     * <i>Segment</i>.
+     * example, if you want to use four application threads to scan a table
+     * or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
+     * for <i>TotalSegments</i> must be greater than or equal to 1, and less
+     * than or equal to 1000000. If you specify a <i>TotalSegments</i> value
+     * of 1, the <i>Scan</i> operation will be sequential rather than
+     * parallel. <p>If you specify <i>TotalSegments</i>, you must also
+     * specify <i>Segment</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000000<br/>
@@ -1703,13 +1797,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         the total number of segments into which the <i>Scan</i> operation will
      *         be divided. The value of <i>TotalSegments</i> corresponds to the
      *         number of application workers that will perform the parallel scan. For
-     *         example, if you want to scan a table using four application threads,
-     *         specify a <i>TotalSegments</i> value of 4. <p>The value for
-     *         <i>TotalSegments</i> must be greater than or equal to 1, and less than
-     *         or equal to 1000000. If you specify a <i>TotalSegments</i> value of 1,
-     *         the <i>Scan</i> operation will be sequential rather than parallel.
-     *         <p>If you specify <i>TotalSegments</i>, you must also specify
-     *         <i>Segment</i>.
+     *         example, if you want to use four application threads to scan a table
+     *         or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
+     *         for <i>TotalSegments</i> must be greater than or equal to 1, and less
+     *         than or equal to 1000000. If you specify a <i>TotalSegments</i> value
+     *         of 1, the <i>Scan</i> operation will be sequential rather than
+     *         parallel. <p>If you specify <i>TotalSegments</i>, you must also
+     *         specify <i>Segment</i>.
      */
     public Integer getTotalSegments() {
         return totalSegments;
@@ -1720,13 +1814,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * the total number of segments into which the <i>Scan</i> operation will
      * be divided. The value of <i>TotalSegments</i> corresponds to the
      * number of application workers that will perform the parallel scan. For
-     * example, if you want to scan a table using four application threads,
-     * specify a <i>TotalSegments</i> value of 4. <p>The value for
-     * <i>TotalSegments</i> must be greater than or equal to 1, and less than
-     * or equal to 1000000. If you specify a <i>TotalSegments</i> value of 1,
-     * the <i>Scan</i> operation will be sequential rather than parallel.
-     * <p>If you specify <i>TotalSegments</i>, you must also specify
-     * <i>Segment</i>.
+     * example, if you want to use four application threads to scan a table
+     * or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
+     * for <i>TotalSegments</i> must be greater than or equal to 1, and less
+     * than or equal to 1000000. If you specify a <i>TotalSegments</i> value
+     * of 1, the <i>Scan</i> operation will be sequential rather than
+     * parallel. <p>If you specify <i>TotalSegments</i>, you must also
+     * specify <i>Segment</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000000<br/>
@@ -1735,13 +1829,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         the total number of segments into which the <i>Scan</i> operation will
      *         be divided. The value of <i>TotalSegments</i> corresponds to the
      *         number of application workers that will perform the parallel scan. For
-     *         example, if you want to scan a table using four application threads,
-     *         specify a <i>TotalSegments</i> value of 4. <p>The value for
-     *         <i>TotalSegments</i> must be greater than or equal to 1, and less than
-     *         or equal to 1000000. If you specify a <i>TotalSegments</i> value of 1,
-     *         the <i>Scan</i> operation will be sequential rather than parallel.
-     *         <p>If you specify <i>TotalSegments</i>, you must also specify
-     *         <i>Segment</i>.
+     *         example, if you want to use four application threads to scan a table
+     *         or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
+     *         for <i>TotalSegments</i> must be greater than or equal to 1, and less
+     *         than or equal to 1000000. If you specify a <i>TotalSegments</i> value
+     *         of 1, the <i>Scan</i> operation will be sequential rather than
+     *         parallel. <p>If you specify <i>TotalSegments</i>, you must also
+     *         specify <i>Segment</i>.
      */
     public void setTotalSegments(Integer totalSegments) {
         this.totalSegments = totalSegments;
@@ -1752,13 +1846,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * the total number of segments into which the <i>Scan</i> operation will
      * be divided. The value of <i>TotalSegments</i> corresponds to the
      * number of application workers that will perform the parallel scan. For
-     * example, if you want to scan a table using four application threads,
-     * specify a <i>TotalSegments</i> value of 4. <p>The value for
-     * <i>TotalSegments</i> must be greater than or equal to 1, and less than
-     * or equal to 1000000. If you specify a <i>TotalSegments</i> value of 1,
-     * the <i>Scan</i> operation will be sequential rather than parallel.
-     * <p>If you specify <i>TotalSegments</i>, you must also specify
-     * <i>Segment</i>.
+     * example, if you want to use four application threads to scan a table
+     * or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
+     * for <i>TotalSegments</i> must be greater than or equal to 1, and less
+     * than or equal to 1000000. If you specify a <i>TotalSegments</i> value
+     * of 1, the <i>Scan</i> operation will be sequential rather than
+     * parallel. <p>If you specify <i>TotalSegments</i>, you must also
+     * specify <i>Segment</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1769,13 +1863,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         the total number of segments into which the <i>Scan</i> operation will
      *         be divided. The value of <i>TotalSegments</i> corresponds to the
      *         number of application workers that will perform the parallel scan. For
-     *         example, if you want to scan a table using four application threads,
-     *         specify a <i>TotalSegments</i> value of 4. <p>The value for
-     *         <i>TotalSegments</i> must be greater than or equal to 1, and less than
-     *         or equal to 1000000. If you specify a <i>TotalSegments</i> value of 1,
-     *         the <i>Scan</i> operation will be sequential rather than parallel.
-     *         <p>If you specify <i>TotalSegments</i>, you must also specify
-     *         <i>Segment</i>.
+     *         example, if you want to use four application threads to scan a table
+     *         or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
+     *         for <i>TotalSegments</i> must be greater than or equal to 1, and less
+     *         than or equal to 1000000. If you specify a <i>TotalSegments</i> value
+     *         of 1, the <i>Scan</i> operation will be sequential rather than
+     *         parallel. <p>If you specify <i>TotalSegments</i>, you must also
+     *         specify <i>Segment</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1789,15 +1883,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      * individual segment to be scanned by an application worker. <p>Segment
      * IDs are zero-based, so the first segment is always 0. For example, if
-     * you want to scan a table using four application threads, the first
-     * thread specifies a <i>Segment</i> value of 0, the second thread
-     * specifies 1, and so on. <p>The value of <i>LastEvaluatedKey</i>
-     * returned from a parallel <i>Scan</i> request must be used as
-     * <i>ExclusiveStartKey</i> with the same segment ID in a subsequent
-     * <i>Scan</i> operation. <p>The value for <i>Segment</i> must be greater
-     * than or equal to 0, and less than the value provided for
-     * <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
-     * specify <i>TotalSegments</i>.
+     * you want to use four application threads to scan a table or an index,
+     * then the first thread specifies a <i>Segment</i> value of 0, the
+     * second thread specifies 1, and so on. <p>The value of
+     * <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
+     * must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
+     * subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
+     * be greater than or equal to 0, and less than the value provided for
+     * <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
+     * provide <i>TotalSegments</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 999999<br/>
@@ -1805,15 +1899,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @return For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      *         individual segment to be scanned by an application worker. <p>Segment
      *         IDs are zero-based, so the first segment is always 0. For example, if
-     *         you want to scan a table using four application threads, the first
-     *         thread specifies a <i>Segment</i> value of 0, the second thread
-     *         specifies 1, and so on. <p>The value of <i>LastEvaluatedKey</i>
-     *         returned from a parallel <i>Scan</i> request must be used as
-     *         <i>ExclusiveStartKey</i> with the same segment ID in a subsequent
-     *         <i>Scan</i> operation. <p>The value for <i>Segment</i> must be greater
-     *         than or equal to 0, and less than the value provided for
-     *         <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
-     *         specify <i>TotalSegments</i>.
+     *         you want to use four application threads to scan a table or an index,
+     *         then the first thread specifies a <i>Segment</i> value of 0, the
+     *         second thread specifies 1, and so on. <p>The value of
+     *         <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
+     *         must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
+     *         subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
+     *         be greater than or equal to 0, and less than the value provided for
+     *         <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
+     *         provide <i>TotalSegments</i>.
      */
     public Integer getSegment() {
         return segment;
@@ -1823,15 +1917,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      * individual segment to be scanned by an application worker. <p>Segment
      * IDs are zero-based, so the first segment is always 0. For example, if
-     * you want to scan a table using four application threads, the first
-     * thread specifies a <i>Segment</i> value of 0, the second thread
-     * specifies 1, and so on. <p>The value of <i>LastEvaluatedKey</i>
-     * returned from a parallel <i>Scan</i> request must be used as
-     * <i>ExclusiveStartKey</i> with the same segment ID in a subsequent
-     * <i>Scan</i> operation. <p>The value for <i>Segment</i> must be greater
-     * than or equal to 0, and less than the value provided for
-     * <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
-     * specify <i>TotalSegments</i>.
+     * you want to use four application threads to scan a table or an index,
+     * then the first thread specifies a <i>Segment</i> value of 0, the
+     * second thread specifies 1, and so on. <p>The value of
+     * <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
+     * must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
+     * subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
+     * be greater than or equal to 0, and less than the value provided for
+     * <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
+     * provide <i>TotalSegments</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 999999<br/>
@@ -1839,15 +1933,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @param segment For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      *         individual segment to be scanned by an application worker. <p>Segment
      *         IDs are zero-based, so the first segment is always 0. For example, if
-     *         you want to scan a table using four application threads, the first
-     *         thread specifies a <i>Segment</i> value of 0, the second thread
-     *         specifies 1, and so on. <p>The value of <i>LastEvaluatedKey</i>
-     *         returned from a parallel <i>Scan</i> request must be used as
-     *         <i>ExclusiveStartKey</i> with the same segment ID in a subsequent
-     *         <i>Scan</i> operation. <p>The value for <i>Segment</i> must be greater
-     *         than or equal to 0, and less than the value provided for
-     *         <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
-     *         specify <i>TotalSegments</i>.
+     *         you want to use four application threads to scan a table or an index,
+     *         then the first thread specifies a <i>Segment</i> value of 0, the
+     *         second thread specifies 1, and so on. <p>The value of
+     *         <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
+     *         must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
+     *         subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
+     *         be greater than or equal to 0, and less than the value provided for
+     *         <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
+     *         provide <i>TotalSegments</i>.
      */
     public void setSegment(Integer segment) {
         this.segment = segment;
@@ -1857,15 +1951,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      * individual segment to be scanned by an application worker. <p>Segment
      * IDs are zero-based, so the first segment is always 0. For example, if
-     * you want to scan a table using four application threads, the first
-     * thread specifies a <i>Segment</i> value of 0, the second thread
-     * specifies 1, and so on. <p>The value of <i>LastEvaluatedKey</i>
-     * returned from a parallel <i>Scan</i> request must be used as
-     * <i>ExclusiveStartKey</i> with the same segment ID in a subsequent
-     * <i>Scan</i> operation. <p>The value for <i>Segment</i> must be greater
-     * than or equal to 0, and less than the value provided for
-     * <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
-     * specify <i>TotalSegments</i>.
+     * you want to use four application threads to scan a table or an index,
+     * then the first thread specifies a <i>Segment</i> value of 0, the
+     * second thread specifies 1, and so on. <p>The value of
+     * <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
+     * must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
+     * subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
+     * be greater than or equal to 0, and less than the value provided for
+     * <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
+     * provide <i>TotalSegments</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1875,15 +1969,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @param segment For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      *         individual segment to be scanned by an application worker. <p>Segment
      *         IDs are zero-based, so the first segment is always 0. For example, if
-     *         you want to scan a table using four application threads, the first
-     *         thread specifies a <i>Segment</i> value of 0, the second thread
-     *         specifies 1, and so on. <p>The value of <i>LastEvaluatedKey</i>
-     *         returned from a parallel <i>Scan</i> request must be used as
-     *         <i>ExclusiveStartKey</i> with the same segment ID in a subsequent
-     *         <i>Scan</i> operation. <p>The value for <i>Segment</i> must be greater
-     *         than or equal to 0, and less than the value provided for
-     *         <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
-     *         specify <i>TotalSegments</i>.
+     *         you want to use four application threads to scan a table or an index,
+     *         then the first thread specifies a <i>Segment</i> value of 0, the
+     *         second thread specifies 1, and so on. <p>The value of
+     *         <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
+     *         must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
+     *         subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
+     *         be greater than or equal to 0, and less than the value provided for
+     *         <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
+     *         provide <i>TotalSegments</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1895,20 +1989,22 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
 
     /**
      * A string that identifies one or more attributes to retrieve from the
-     * table. These attributes can include scalars, sets, or elements of a
-     * JSON document. The attributes in the expression must be separated by
-     * commas. <p>If no attribute names are specified, then all attributes
-     * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * specified table or index. These attributes can include scalars, sets,
+     * or elements of a JSON document. The attributes in the expression must
+     * be separated by commas. <p>If no attribute names are specified, then
+     * all attributes will be returned. If any of the requested attributes
+     * are not found, they will not appear in the result. <p>For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A string that identifies one or more attributes to retrieve from the
-     *         table. These attributes can include scalars, sets, or elements of a
-     *         JSON document. The attributes in the expression must be separated by
-     *         commas. <p>If no attribute names are specified, then all attributes
-     *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         specified table or index. These attributes can include scalars, sets,
+     *         or elements of a JSON document. The attributes in the expression must
+     *         be separated by commas. <p>If no attribute names are specified, then
+     *         all attributes will be returned. If any of the requested attributes
+     *         are not found, they will not appear in the result. <p>For more
+     *         information, go to <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -1918,20 +2014,22 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     
     /**
      * A string that identifies one or more attributes to retrieve from the
-     * table. These attributes can include scalars, sets, or elements of a
-     * JSON document. The attributes in the expression must be separated by
-     * commas. <p>If no attribute names are specified, then all attributes
-     * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * specified table or index. These attributes can include scalars, sets,
+     * or elements of a JSON document. The attributes in the expression must
+     * be separated by commas. <p>If no attribute names are specified, then
+     * all attributes will be returned. If any of the requested attributes
+     * are not found, they will not appear in the result. <p>For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param projectionExpression A string that identifies one or more attributes to retrieve from the
-     *         table. These attributes can include scalars, sets, or elements of a
-     *         JSON document. The attributes in the expression must be separated by
-     *         commas. <p>If no attribute names are specified, then all attributes
-     *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         specified table or index. These attributes can include scalars, sets,
+     *         or elements of a JSON document. The attributes in the expression must
+     *         be separated by commas. <p>If no attribute names are specified, then
+     *         all attributes will be returned. If any of the requested attributes
+     *         are not found, they will not appear in the result. <p>For more
+     *         information, go to <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -1941,22 +2039,24 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     
     /**
      * A string that identifies one or more attributes to retrieve from the
-     * table. These attributes can include scalars, sets, or elements of a
-     * JSON document. The attributes in the expression must be separated by
-     * commas. <p>If no attribute names are specified, then all attributes
-     * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * specified table or index. These attributes can include scalars, sets,
+     * or elements of a JSON document. The attributes in the expression must
+     * be separated by commas. <p>If no attribute names are specified, then
+     * all attributes will be returned. If any of the requested attributes
+     * are not found, they will not appear in the result. <p>For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param projectionExpression A string that identifies one or more attributes to retrieve from the
-     *         table. These attributes can include scalars, sets, or elements of a
-     *         JSON document. The attributes in the expression must be separated by
-     *         commas. <p>If no attribute names are specified, then all attributes
-     *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         specified table or index. These attributes can include scalars, sets,
+     *         or elements of a JSON document. The attributes in the expression must
+     *         be separated by commas. <p>If no attribute names are specified, then
+     *         all attributes will be returned. If any of the requested attributes
+     *         are not found, they will not appear in the result. <p>For more
+     *         information, go to <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
@@ -2442,6 +2542,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getIndexName() != null) sb.append("IndexName: " + getIndexName() + ",");
         if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ",");
         if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
         if (getSelect() != null) sb.append("Select: " + getSelect() + ",");
@@ -2465,6 +2566,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode()); 
+        hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode()); 
         hashCode = prime * hashCode + ((getAttributesToGet() == null) ? 0 : getAttributesToGet().hashCode()); 
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
         hashCode = prime * hashCode + ((getSelect() == null) ? 0 : getSelect().hashCode()); 
@@ -2491,6 +2593,8 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
         
         if (other.getTableName() == null ^ this.getTableName() == null) return false;
         if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false) return false; 
+        if (other.getIndexName() == null ^ this.getIndexName() == null) return false;
+        if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false) return false; 
         if (other.getAttributesToGet() == null ^ this.getAttributesToGet() == null) return false;
         if (other.getAttributesToGet() != null && other.getAttributesToGet().equals(this.getAttributesToGet()) == false) return false; 
         if (other.getLimit() == null ^ this.getLimit() == null) return false;

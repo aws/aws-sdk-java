@@ -110,7 +110,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      */
     private String offeringType;
 
@@ -793,7 +793,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @return The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
@@ -811,7 +811,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @param offeringType The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
@@ -831,7 +831,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @param offeringType The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
@@ -853,7 +853,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @param offeringType The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
@@ -873,7 +873,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
      * @param offeringType The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the

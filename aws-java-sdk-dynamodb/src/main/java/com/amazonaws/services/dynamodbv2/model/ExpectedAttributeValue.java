@@ -84,7 +84,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <li> <p><i>Exists</i> is <code>true</code> but there is no
      * <i>Value</i> to check. (You expect a value to exist, but don't specify
      * what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     * but you also specify a <i>Value</i>. (You cannot expect an attribute
+     * but you also provide a <i>Value</i>. (You cannot expect an attribute
      * to have a value, while also expecting it not to exist.) </li> </ul>
      */
     private Boolean exists;
@@ -101,7 +101,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -109,30 +109,30 @@ public class ExpectedAttributeValue implements Serializable {
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -140,7 +140,7 @@ public class ExpectedAttributeValue implements Serializable {
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -203,7 +203,7 @@ public class ExpectedAttributeValue implements Serializable {
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -275,7 +275,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <li> <p><i>Exists</i> is <code>true</code> but there is no
      * <i>Value</i> to check. (You expect a value to exist, but don't specify
      * what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     * but you also specify a <i>Value</i>. (You cannot expect an attribute
+     * but you also provide a <i>Value</i>. (You cannot expect an attribute
      * to have a value, while also expecting it not to exist.) </li> </ul>
      */
     public ExpectedAttributeValue(Boolean exists) {
@@ -364,7 +364,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <li> <p><i>Exists</i> is <code>true</code> but there is no
      * <i>Value</i> to check. (You expect a value to exist, but don't specify
      * what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     * but you also specify a <i>Value</i>. (You cannot expect an attribute
+     * but you also provide a <i>Value</i>. (You cannot expect an attribute
      * to have a value, while also expecting it not to exist.) </li> </ul>
      *
      * @return Causes DynamoDB to evaluate the value before attempting a conditional
@@ -385,7 +385,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <li> <p><i>Exists</i> is <code>true</code> but there is no
      *         <i>Value</i> to check. (You expect a value to exist, but don't specify
      *         what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     *         but you also specify a <i>Value</i>. (You cannot expect an attribute
+     *         but you also provide a <i>Value</i>. (You cannot expect an attribute
      *         to have a value, while also expecting it not to exist.) </li> </ul>
      */
     public Boolean isExists() {
@@ -411,7 +411,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <li> <p><i>Exists</i> is <code>true</code> but there is no
      * <i>Value</i> to check. (You expect a value to exist, but don't specify
      * what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     * but you also specify a <i>Value</i>. (You cannot expect an attribute
+     * but you also provide a <i>Value</i>. (You cannot expect an attribute
      * to have a value, while also expecting it not to exist.) </li> </ul>
      *
      * @param exists Causes DynamoDB to evaluate the value before attempting a conditional
@@ -432,7 +432,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <li> <p><i>Exists</i> is <code>true</code> but there is no
      *         <i>Value</i> to check. (You expect a value to exist, but don't specify
      *         what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     *         but you also specify a <i>Value</i>. (You cannot expect an attribute
+     *         but you also provide a <i>Value</i>. (You cannot expect an attribute
      *         to have a value, while also expecting it not to exist.) </li> </ul>
      */
     public void setExists(Boolean exists) {
@@ -458,7 +458,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <li> <p><i>Exists</i> is <code>true</code> but there is no
      * <i>Value</i> to check. (You expect a value to exist, but don't specify
      * what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     * but you also specify a <i>Value</i>. (You cannot expect an attribute
+     * but you also provide a <i>Value</i>. (You cannot expect an attribute
      * to have a value, while also expecting it not to exist.) </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -481,7 +481,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <li> <p><i>Exists</i> is <code>true</code> but there is no
      *         <i>Value</i> to check. (You expect a value to exist, but don't specify
      *         what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     *         but you also specify a <i>Value</i>. (You cannot expect an attribute
+     *         but you also provide a <i>Value</i>. (You cannot expect an attribute
      *         to have a value, while also expecting it not to exist.) </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -511,7 +511,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <li> <p><i>Exists</i> is <code>true</code> but there is no
      * <i>Value</i> to check. (You expect a value to exist, but don't specify
      * what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     * but you also specify a <i>Value</i>. (You cannot expect an attribute
+     * but you also provide a <i>Value</i>. (You cannot expect an attribute
      * to have a value, while also expecting it not to exist.) </li> </ul>
      *
      * @return Causes DynamoDB to evaluate the value before attempting a conditional
@@ -532,7 +532,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <li> <p><i>Exists</i> is <code>true</code> but there is no
      *         <i>Value</i> to check. (You expect a value to exist, but don't specify
      *         what that value is.) </li> <li> <p><i>Exists</i> is <code>false</code>
-     *         but you also specify a <i>Value</i>. (You cannot expect an attribute
+     *         but you also provide a <i>Value</i>. (You cannot expect an attribute
      *         to have a value, while also expecting it not to exist.) </li> </ul>
      */
     public Boolean getExists() {
@@ -551,7 +551,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -559,30 +559,30 @@ public class ExpectedAttributeValue implements Serializable {
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -590,7 +590,7 @@ public class ExpectedAttributeValue implements Serializable {
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -653,7 +653,7 @@ public class ExpectedAttributeValue implements Serializable {
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -672,7 +672,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -680,30 +680,30 @@ public class ExpectedAttributeValue implements Serializable {
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -711,7 +711,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -774,7 +774,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -797,7 +797,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -805,30 +805,30 @@ public class ExpectedAttributeValue implements Serializable {
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -836,7 +836,7 @@ public class ExpectedAttributeValue implements Serializable {
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -899,7 +899,7 @@ public class ExpectedAttributeValue implements Serializable {
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -918,7 +918,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -926,30 +926,30 @@ public class ExpectedAttributeValue implements Serializable {
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -957,7 +957,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1020,7 +1020,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -1043,7 +1043,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1051,30 +1051,30 @@ public class ExpectedAttributeValue implements Serializable {
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1082,7 +1082,7 @@ public class ExpectedAttributeValue implements Serializable {
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1145,7 +1145,7 @@ public class ExpectedAttributeValue implements Serializable {
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -1166,7 +1166,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1174,30 +1174,30 @@ public class ExpectedAttributeValue implements Serializable {
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1205,7 +1205,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1268,7 +1268,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -1295,7 +1295,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1303,30 +1303,30 @@ public class ExpectedAttributeValue implements Serializable {
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1334,7 +1334,7 @@ public class ExpectedAttributeValue implements Serializable {
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1397,7 +1397,7 @@ public class ExpectedAttributeValue implements Serializable {
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -1416,7 +1416,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1424,30 +1424,30 @@ public class ExpectedAttributeValue implements Serializable {
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1455,7 +1455,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1518,7 +1518,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -1541,7 +1541,7 @@ public class ExpectedAttributeValue implements Serializable {
      * <i>AttributeValue</i> element of type String, Number, Binary, String
      * Set, Number Set, or Binary Set. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1549,30 +1549,30 @@ public class ExpectedAttributeValue implements Serializable {
      * maps. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, Binary, String Set,
      * Number Set, or Binary Set. If an item contains an
-     * <i>AttributeValue</i> of a different type than the one specified in
-     * the request, the value does not match. For example,
+     * <i>AttributeValue</i> of a different type than the one provided in the
+     * request, the value does not match. For example, <code>{"S":"6"}</code>
+     * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     * does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> element of type String,
+     * Number, or Binary (not a set type). If an item contains an
+     * <i>AttributeValue</i> element of a different type than the one
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     * type). If an item contains an <i>AttributeValue</i> element of a
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one specified in the request, the
-     * value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     * compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a
      * set type). If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1580,7 +1580,7 @@ public class ExpectedAttributeValue implements Serializable {
      * contain only one <i>AttributeValue</i> element of type String, Number,
      * or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one
-     * specified in the request, the value does not match. For example,
+     * provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      * "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1643,7 +1643,7 @@ public class ExpectedAttributeValue implements Serializable {
      * type). A target attribute matches if the target value is greater than,
      * or equal to, the first element and less than, or equal to, the second
      * element. If an item contains an <i>AttributeValue</i> element of a
-     * different type than the one specified in the request, the value does
+     * different type than the one provided in the request, the value does
      * not match. For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
@@ -1664,7 +1664,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <i>AttributeValue</i> element of type String, Number, Binary, String
      *         Set, Number Set, or Binary Set. If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
@@ -1672,30 +1672,30 @@ public class ExpectedAttributeValue implements Serializable {
      *         maps. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
      *         Number Set, or Binary Set. If an item contains an
-     *         <i>AttributeValue</i> of a different type than the one specified in
-     *         the request, the value does not match. For example,
+     *         <i>AttributeValue</i> of a different type than the one provided in the
+     *         request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
+     *         does not equal <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     *         can contain only one <i>AttributeValue</i> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an
+     *         <i>AttributeValue</i> element of a different type than the one
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
      *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
-     *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set
+     *         type). If an item contains an <i>AttributeValue</i> element of a
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i>
-     *         element of a different type than the one specified in the request, the
-     *         value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-     *         compare to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
      *         <p><code>GE</code> : Greater than or equal.
      *         <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> element of type String, Number, or Binary (not a
      *         set type). If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not equal
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
@@ -1703,7 +1703,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         contain only one <i>AttributeValue</i> element of type String, Number,
      *         or Binary (not a set type). If an item contains an
      *         <i>AttributeValue</i> element of a different type than the one
-     *         specified in the request, the value does not match. For example,
+     *         provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
      *         "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The attribute
@@ -1766,7 +1766,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         type). A target attribute matches if the target value is greater than,
      *         or equal to, the first element and less than, or equal to, the second
      *         element. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one specified in the request, the value does
+     *         different type than the one provided in the request, the value does
      *         not match. For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>

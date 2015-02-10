@@ -50,8 +50,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      */
     private java.util.Map<String,AttributeValue> key;
@@ -64,7 +64,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -151,8 +151,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      */
     public GetItemRequest(String tableName, java.util.Map<String,AttributeValue> key) {
@@ -169,8 +169,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * @param consistentRead A value that if set to <code>true</code>, then
      * the operation uses strongly consistent reads; otherwise, eventually
@@ -231,15 +231,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      *
      * @return A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to retrieve. <p>For the
      *         primary key, you must provide all of the attributes. For example, with
-     *         a hash type primary key, you only need to specify the hash attribute.
-     *         For a hash-and-range type primary key, you must specify both the hash
+     *         a hash type primary key, you only need to provide the hash attribute.
+     *         For a hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute.
      */
     public java.util.Map<String,AttributeValue> getKey() {
@@ -251,15 +251,15 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      *
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to retrieve. <p>For the
      *         primary key, you must provide all of the attributes. For example, with
-     *         a hash type primary key, you only need to specify the hash attribute.
-     *         For a hash-and-range type primary key, you must specify both the hash
+     *         a hash type primary key, you only need to provide the hash attribute.
+     *         For a hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute.
      */
     public void setKey(java.util.Map<String,AttributeValue> key) {
@@ -270,8 +270,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -279,8 +279,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to retrieve. <p>For the
      *         primary key, you must provide all of the attributes. For example, with
-     *         a hash type primary key, you only need to specify the hash attribute.
-     *         For a hash-and-range type primary key, you must specify both the hash
+     *         a hash type primary key, you only need to provide the hash attribute.
+     *         For a hash-and-range type primary key, you must provide both the hash
      *         attribute and the range attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -295,8 +295,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * <p>
      * This method accepts the hashKey, rangeKey of Key as
@@ -322,8 +322,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * <p>
      * This method accepts the hashKey, rangeKey of Key as
@@ -343,8 +343,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * A map of attribute names to <i>AttributeValue</i> objects,
      * representing the primary key of the item to retrieve. <p>For the
      * primary key, you must provide all of the attributes. For example, with
-     * a hash type primary key, you only need to specify the hash attribute.
-     * For a hash-and-range type primary key, you must specify both the hash
+     * a hash type primary key, you only need to provide the hash attribute.
+     * For a hash-and-range type primary key, you must provide both the hash
      * attribute and the range attribute.
      * <p>
      * The method adds a new key-value pair into Key parameter, and returns a
@@ -381,7 +381,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -398,7 +398,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -417,7 +417,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -434,7 +434,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -459,7 +459,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -478,7 +478,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines
@@ -504,7 +504,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <p>This parameter allows you to retrieve attributes of type List or
      * Map; however, it cannot retrieve individual elements within a List or
      * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are specified, then all attributes will be
+     * If no attribute names are provided, then all attributes will be
      * returned. If any of the requested attributes are not found, they will
      * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      * effect on provisioned throughput consumption. DynamoDB determines
@@ -523,7 +523,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <p>This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a List or
      *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are specified, then all attributes will be
+     *         If no attribute names are provided, then all attributes will be
      *         returned. If any of the requested attributes are not found, they will
      *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
      *         effect on provisioned throughput consumption. DynamoDB determines

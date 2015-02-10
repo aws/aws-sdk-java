@@ -74,7 +74,7 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
     private final DeleteItemImpl deleteItemDelegate;
 
     private final QueryImpl queryDelegate;
-    private final ScanImpl  scanDelegate;
+    private final ScanImpl scanDelegate;
 
     public Table(AmazonDynamoDB client, String tableName) {
         this(client, tableName, null);

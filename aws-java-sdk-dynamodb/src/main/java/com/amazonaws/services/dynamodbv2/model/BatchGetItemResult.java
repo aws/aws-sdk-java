@@ -40,7 +40,7 @@ public class BatchGetItemResult implements Serializable {
      * attribute values that define specific items in the table. </li> <li>
      * <p><i>AttributesToGet</i> - One or more attributes to be retrieved
      * from the table or index. By default, all attributes are returned. If a
-     * specified attribute is not found, it does not appear in the result.
+     * requested attribute is not found, it does not appear in the result.
      * </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent
      * read is used; otherwise, an eventually consistent read is used. </li>
@@ -148,7 +148,7 @@ public class BatchGetItemResult implements Serializable {
      * attribute values that define specific items in the table. </li> <li>
      * <p><i>AttributesToGet</i> - One or more attributes to be retrieved
      * from the table or index. By default, all attributes are returned. If a
-     * specified attribute is not found, it does not appear in the result.
+     * requested attribute is not found, it does not appear in the result.
      * </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent
      * read is used; otherwise, an eventually consistent read is used. </li>
@@ -167,7 +167,7 @@ public class BatchGetItemResult implements Serializable {
      *         attribute values that define specific items in the table. </li> <li>
      *         <p><i>AttributesToGet</i> - One or more attributes to be retrieved
      *         from the table or index. By default, all attributes are returned. If a
-     *         specified attribute is not found, it does not appear in the result.
+     *         requested attribute is not found, it does not appear in the result.
      *         </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
      *         operation. If set to <code>true</code>, then a strongly consistent
      *         read is used; otherwise, an eventually consistent read is used. </li>
@@ -189,7 +189,7 @@ public class BatchGetItemResult implements Serializable {
      * attribute values that define specific items in the table. </li> <li>
      * <p><i>AttributesToGet</i> - One or more attributes to be retrieved
      * from the table or index. By default, all attributes are returned. If a
-     * specified attribute is not found, it does not appear in the result.
+     * requested attribute is not found, it does not appear in the result.
      * </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent
      * read is used; otherwise, an eventually consistent read is used. </li>
@@ -208,7 +208,7 @@ public class BatchGetItemResult implements Serializable {
      *         attribute values that define specific items in the table. </li> <li>
      *         <p><i>AttributesToGet</i> - One or more attributes to be retrieved
      *         from the table or index. By default, all attributes are returned. If a
-     *         specified attribute is not found, it does not appear in the result.
+     *         requested attribute is not found, it does not appear in the result.
      *         </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
      *         operation. If set to <code>true</code>, then a strongly consistent
      *         read is used; otherwise, an eventually consistent read is used. </li>
@@ -229,7 +229,7 @@ public class BatchGetItemResult implements Serializable {
      * attribute values that define specific items in the table. </li> <li>
      * <p><i>AttributesToGet</i> - One or more attributes to be retrieved
      * from the table or index. By default, all attributes are returned. If a
-     * specified attribute is not found, it does not appear in the result.
+     * requested attribute is not found, it does not appear in the result.
      * </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent
      * read is used; otherwise, an eventually consistent read is used. </li>
@@ -250,7 +250,7 @@ public class BatchGetItemResult implements Serializable {
      *         attribute values that define specific items in the table. </li> <li>
      *         <p><i>AttributesToGet</i> - One or more attributes to be retrieved
      *         from the table or index. By default, all attributes are returned. If a
-     *         specified attribute is not found, it does not appear in the result.
+     *         requested attribute is not found, it does not appear in the result.
      *         </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
      *         operation. If set to <code>true</code>, then a strongly consistent
      *         read is used; otherwise, an eventually consistent read is used. </li>
@@ -275,7 +275,7 @@ public class BatchGetItemResult implements Serializable {
      * attribute values that define specific items in the table. </li> <li>
      * <p><i>AttributesToGet</i> - One or more attributes to be retrieved
      * from the table or index. By default, all attributes are returned. If a
-     * specified attribute is not found, it does not appear in the result.
+     * requested attribute is not found, it does not appear in the result.
      * </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent
      * read is used; otherwise, an eventually consistent read is used. </li>
