@@ -97,12 +97,18 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
     public ProfileCredentialsProvider(ProfilesConfigFile profilesConfigFile, String profileName) {
         this.profilesConfigFile = profilesConfigFile;
         if (profileName == null) {
-            String profileOverride = System.getenv(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
-            profileOverride = StringUtils.trim(profileOverride);
-            if (!StringUtils.isNullOrEmpty(profileOverride)) {
-                this.profileName = profileOverride;
+            String profileEnvVarOverride = System.getenv(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            profileEnvVarOverride = StringUtils.trim(profileEnvVarOverride);
+            if (!StringUtils.isNullOrEmpty(profileEnvVarOverride)) {
+                this.profileName = profileEnvVarOverride;
             } else {
-                this.profileName = ProfilesConfigFile.DEFAULT_PROFILE_NAME;
+                String profileSysPropOverride = System.getProperty(ProfilesConfigFile.AWS_PROFILE_SYSTEM_PROPERTY);
+                profileSysPropOverride = StringUtils.trim(profileSysPropOverride);
+                if (!StringUtils.isNullOrEmpty(profileSysPropOverride)) {
+                    this.profileName = profileSysPropOverride;
+                } else {
+                    this.profileName = ProfilesConfigFile.DEFAULT_PROFILE_NAME;
+                }
             }
         } else {
             this.profileName = profileName;
