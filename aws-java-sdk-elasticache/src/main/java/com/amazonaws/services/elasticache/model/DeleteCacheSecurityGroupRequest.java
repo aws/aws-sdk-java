@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest) DeleteCacheSecurityGroup operation}.
  * <p>
- * The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security
+ * The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
  * group.
  * </p>
  * <p>

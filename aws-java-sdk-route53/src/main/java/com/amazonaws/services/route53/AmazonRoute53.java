@@ -217,6 +217,7 @@ public interface AmazonRoute53 {
      * @throws PriorRequestNotCompleteException
      * @throws NoSuchHealthCheckException
      * @throws ThrottlingException
+     * @throws NoSuchHostedZoneException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -701,6 +702,7 @@ public interface AmazonRoute53 {
      * @throws PriorRequestNotCompleteException
      * @throws NoSuchHealthCheckException
      * @throws ThrottlingException
+     * @throws NoSuchHostedZoneException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -999,6 +1001,7 @@ public interface AmazonRoute53 {
      * @throws PriorRequestNotCompleteException
      * @throws NoSuchHealthCheckException
      * @throws ThrottlingException
+     * @throws NoSuchHostedZoneException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException

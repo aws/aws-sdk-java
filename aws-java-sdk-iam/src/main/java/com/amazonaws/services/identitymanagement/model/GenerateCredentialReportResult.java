@@ -18,14 +18,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * GenerateCredentialReport action.
+ * Contains the response to a successful GenerateCredentialReport
+ * request.
  * </p>
  */
 public class GenerateCredentialReportResult implements Serializable {
 
     /**
-     * Information about the state of a credential report.
+     * Information about the state of the credential report.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>STARTED, INPROGRESS, COMPLETE
@@ -38,12 +38,12 @@ public class GenerateCredentialReportResult implements Serializable {
     private String description;
 
     /**
-     * Information about the state of a credential report.
+     * Information about the state of the credential report.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>STARTED, INPROGRESS, COMPLETE
      *
-     * @return Information about the state of a credential report.
+     * @return Information about the state of the credential report.
      *
      * @see ReportStateType
      */
@@ -52,12 +52,12 @@ public class GenerateCredentialReportResult implements Serializable {
     }
     
     /**
-     * Information about the state of a credential report.
+     * Information about the state of the credential report.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>STARTED, INPROGRESS, COMPLETE
      *
-     * @param state Information about the state of a credential report.
+     * @param state Information about the state of the credential report.
      *
      * @see ReportStateType
      */
@@ -66,14 +66,14 @@ public class GenerateCredentialReportResult implements Serializable {
     }
     
     /**
-     * Information about the state of a credential report.
+     * Information about the state of the credential report.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>STARTED, INPROGRESS, COMPLETE
      *
-     * @param state Information about the state of a credential report.
+     * @param state Information about the state of the credential report.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -86,12 +86,12 @@ public class GenerateCredentialReportResult implements Serializable {
     }
 
     /**
-     * Information about the state of a credential report.
+     * Information about the state of the credential report.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>STARTED, INPROGRESS, COMPLETE
      *
-     * @param state Information about the state of a credential report.
+     * @param state Information about the state of the credential report.
      *
      * @see ReportStateType
      */
@@ -100,14 +100,14 @@ public class GenerateCredentialReportResult implements Serializable {
     }
     
     /**
-     * Information about the state of a credential report.
+     * Information about the state of the credential report.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>STARTED, INPROGRESS, COMPLETE
      *
-     * @param state Information about the state of a credential report.
+     * @param state Information about the state of the credential report.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

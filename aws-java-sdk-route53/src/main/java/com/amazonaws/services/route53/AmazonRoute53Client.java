@@ -458,6 +458,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws PriorRequestNotCompleteException
      * @throws NoSuchHealthCheckException
      * @throws ThrottlingException
+     * @throws NoSuchHostedZoneException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -1215,6 +1216,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws PriorRequestNotCompleteException
      * @throws NoSuchHealthCheckException
      * @throws ThrottlingException
+     * @throws NoSuchHostedZoneException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -1681,6 +1683,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws PriorRequestNotCompleteException
      * @throws NoSuchHealthCheckException
      * @throws ThrottlingException
+     * @throws NoSuchHostedZoneException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException

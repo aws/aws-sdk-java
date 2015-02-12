@@ -297,6 +297,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         exceptionUnmarshallers.add(new EntityTemporarilyUnmodifiableExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MalformedCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MalformedPolicyDocumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ServiceFailureExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CredentialReportExpiredExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
@@ -324,6 +325,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -365,6 +367,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListGroups service method, as returned
      *         by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -400,49 +403,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Deletes the access key associated with the specified user.
-     * </p>
-     * <p>
-     * If you do not specify a user name, IAM determines the user name
-     * implicitly based on the AWS access key ID signing the request. Because
-     * this action works for access keys under the AWS account, you can use
-     * this action to manage root credentials even if the AWS account has no
-     * associated users.
-     * </p>
-     *
-     * @param deleteAccessKeyRequest Container for the necessary parameters
-     *           to execute the DeleteAccessKey service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteAccessKeyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteAccessKeyRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteAccessKeyRequestMarshaller().marshall(deleteAccessKeyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Deletes a virtual MFA device.
      * </p>
      * <p>
@@ -456,6 +416,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
      * @throws LimitExceededException
@@ -485,60 +446,28 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Deletes the specified policy associated with the specified user.
+     * Adds (or updates) an inline policy document that is embedded in the
+     * specified user.
      * </p>
-     *
-     * @param deleteUserPolicyRequest Container for the necessary parameters
-     *           to execute the DeleteUserPolicy service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteUserPolicy(DeleteUserPolicyRequest deleteUserPolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteUserPolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteUserPolicyRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteUserPolicyRequestMarshaller().marshall(deleteUserPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
      * <p>
-     * Adds (or updates) a policy document associated with the specified
-     * user. For information about policies, refer to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
+     * A user can also have a managed policy attached to it. To attach a
+     * managed policy to a user, use AttachUserPolicy. To create a new
+     * managed policy, use CreatePolicy. For information about policies,
+     * refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * For information about limits on the number of policies you can
-     * associate with a user, see
+     * For information about limits on the number of inline policies that
+     * you can embed in a user, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b> Because policy documents can be large, you should use
-     * POST rather than GET when calling PutUserPolicy. For information about
-     * setting up signatures and authorization through the API, go to Signing
-     * AWS API Requests in the AWS General Reference. For general information
-     * about using the Query API with IAM, go to Making Query Requests in the
-     * Using IAM guide.
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutUserPolicy. For general
+     * information about using the Query API with IAM, go to Making Query
+     * Requests in the Using IAM guide.
      * </p>
      *
      * @param putUserPolicyRequest Container for the necessary parameters to
@@ -546,6 +475,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * 
      * 
      * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -574,56 +504,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Lists the server certificates that have the specified path prefix. If
-     * none exist, the action returns an empty list.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listServerCertificatesRequest Container for the necessary
-     *           parameters to execute the ListServerCertificates service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the ListServerCertificates service method,
-     *         as returned by AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListServerCertificatesResult listServerCertificates(ListServerCertificatesRequest listServerCertificatesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listServerCertificatesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListServerCertificatesRequest> request = null;
-        Response<ListServerCertificatesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListServerCertificatesRequestMarshaller().marshall(listServerCertificatesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListServerCertificatesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Lists the SAML providers in the account.
      * </p>
      * <p>
@@ -637,6 +517,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListSAMLProviders service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -672,11 +553,19 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Retrieves the specified policy document for the specified user. The
-     * returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
+     * Retrieves the specified inline policy document that is embedded in
+     * the specified user.
+     * </p>
+     * <p>
+     * A user can also have managed policies attached to it. To retrieve a
+     * managed policy document that is attached to a user, use GetPolicy to
+     * determine the policy's default version, then use GetPolicyVersion to
+     * retrieve the policy document.
+     * </p>
+     * <p>
+     * For more information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param getUserPolicyRequest Container for the necessary parameters to
@@ -685,6 +574,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetUserPolicy service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -721,106 +611,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Updates the name and/or the path of the specified server certificate.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing
-     * a server certificate's path or name. For more information, see
-     * Managing Server Certificates in the Using IAM guide.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> To change a server certificate name the requester must
-     * have appropriate permissions on both the source object and the target
-     * object. For example, to change the name from ProductionCert to
-     * ProdCert, the entity making the request must have permission on
-     * ProductionCert and ProdCert, or must have permission on all (*). For
-     * more information about permissions, see Permissions and Policies.
-     * </p>
-     *
-     * @param updateServerCertificateRequest Container for the necessary
-     *           parameters to execute the UpdateServerCertificate service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     * @throws EntityAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateServerCertificate(UpdateServerCertificateRequest updateServerCertificateRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateServerCertificateRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateServerCertificateRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new UpdateServerCertificateRequestMarshaller().marshall(updateServerCertificateRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Updates the name and/or the path of the specified user.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing
-     * a user's path or name. For more information, see Renaming Users and
-     * Groups in the Using IAM guide.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> To change a user name the requester must have
-     * appropriate permissions on both the source object and the target
-     * object. For example, to change Bob to Robert, the entity making the
-     * request must have permission on Bob and Robert, or must have
-     * permission on all (*). For more information about permissions, see
-     * Permissions and Policies.
-     * </p>
-     *
-     * @param updateUserRequest Container for the necessary parameters to
-     *           execute the UpdateUser service method on AmazonIdentityManagement.
-     * 
-     * 
-     * @throws EntityTemporarilyUnmodifiableException
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     * @throws EntityAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateUser(UpdateUserRequest updateUserRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateUserRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateUserRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new UpdateUserRequestMarshaller().marshall(updateUserRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Deletes an IAM OpenID Connect identity provider.
      * </p>
      * <p>
@@ -839,6 +629,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           on AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws InvalidInputException
      * @throws NoSuchEntityException
      *
@@ -857,59 +648,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DeleteOpenIDConnectProviderRequestMarshaller().marshall(deleteOpenIDConnectProviderRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Adds (or updates) a policy document associated with the specified
-     * role. For information about policies, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * <p>
-     * For information about limits on the policies you can associate with a
-     * role, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Because policy documents can be large, you should use
-     * POST rather than GET when calling PutRolePolicy. For information about
-     * setting up signatures and authorization through the API, go to Signing
-     * AWS API Requests in the AWS General Reference. For general information
-     * about using the Query API with IAM, go to Making Query Requests in the
-     * Using IAM guide.
-     * </p>
-     *
-     * @param putRolePolicyRequest Container for the necessary parameters to
-     *           execute the PutRolePolicy service method on AmazonIdentityManagement.
-     * 
-     * 
-     * @throws MalformedPolicyDocumentException
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void putRolePolicy(PutRolePolicyRequest putRolePolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(putRolePolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<PutRolePolicyRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new PutRolePolicyRequestMarshaller().marshall(putRolePolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             invoke(request, null, executionContext);
@@ -943,6 +681,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -971,43 +710,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Deletes the specified policy that is associated with the specified
-     * group.
-     * </p>
-     *
-     * @param deleteGroupPolicyRequest Container for the necessary parameters
-     *           to execute the DeleteGroupPolicy service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteGroupPolicy(DeleteGroupPolicyRequest deleteGroupPolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteGroupPolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteGroupPolicyRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteGroupPolicyRequestMarshaller().marshall(deleteGroupPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Lists the IAM users that have the specified path prefix. If no path
      * prefix is specified, the action returns all users in the AWS account.
      * If there are none, the action returns an empty list.
@@ -1023,6 +725,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListUsers service method, as returned by
      *         AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1058,125 +761,29 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Updates the name and/or the path of the specified group.
+     * Attaches the specified managed policy to the specified role.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing
-     * a group's path or name. For more information, see Renaming Users and
-     * Groups in the Using IAM guide.
+     * When you attach a managed policy to a role, the managed policy is
+     * used as the role's access (permissions) policy. You cannot use a
+     * managed policy as the role's trust policy. The role's trust policy is
+     * created at the same time as the role, using CreateRole. You can update
+     * a role's trust policy using UpdateAssumeRolePolicy.
      * </p>
      * <p>
-     * <b>NOTE:</b> To change a group name the requester must have
-     * appropriate permissions on both the source object and the target
-     * object. For example, to change Managers to MGRs, the entity making the
-     * request must have permission on Managers and MGRs, or must have
-     * permission on all (*). For more information about permissions, see
-     * Permissions and Policies.
-     * </p>
-     *
-     * @param updateGroupRequest Container for the necessary parameters to
-     *           execute the UpdateGroup service method on AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     * @throws EntityAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateGroup(UpdateGroupRequest updateGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateGroupRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new UpdateGroupRequestMarshaller().marshall(updateGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Creates a new user for your AWS account.
-     * </p>
-     * <p>
-     * For information about limitations on the number of users you can
-     * create, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * Use this API to attach a managed policy to a role. To embed an inline
+     * policy in a role, use PutRolePolicy. For more information about
+     * policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
      * in the <i>Using IAM</i> guide.
      * </p>
      *
-     * @param createUserRequest Container for the necessary parameters to
-     *           execute the CreateUser service method on AmazonIdentityManagement.
-     * 
-     * @return The response from the CreateUser service method, as returned
-     *         by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     * @throws EntityAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateUserResult createUser(CreateUserRequest createUserRequest) {
-        ExecutionContext executionContext = createExecutionContext(createUserRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateUserRequest> request = null;
-        Response<CreateUserResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateUserRequestMarshaller().marshall(createUserRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new CreateUserResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deletes a SAML provider.
-     * </p>
-     * <p>
-     * Deleting the provider does not update any roles that reference the
-     * SAML provider as a principal in their trust policies. Any attempt to
-     * assume a role that references a SAML provider that has been deleted
-     * will fail.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This operation requires Signature Version 4.
-     * </p>
-     *
-     * @param deleteSAMLProviderRequest Container for the necessary
-     *           parameters to execute the DeleteSAMLProvider service method on
+     * @param attachRolePolicyRequest Container for the necessary parameters
+     *           to execute the AttachRolePolicy service method on
      *           AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws InvalidInputException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1189,55 +796,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteSAMLProvider(DeleteSAMLProviderRequest deleteSAMLProviderRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteSAMLProviderRequest);
+    public void attachRolePolicy(AttachRolePolicyRequest attachRolePolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(attachRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteSAMLProviderRequest> request = null;
+        Request<AttachRolePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new DeleteSAMLProviderRequestMarshaller().marshall(deleteSAMLProviderRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Adds a new client ID (also known as audience) to the list of client
-     * IDs already registered for the specified IAM OpenID Connect provider.
-     * </p>
-     * <p>
-     * This action is idempotent; it does not fail or return an error if you
-     * add an existing client ID to the provider.
-     * </p>
-     *
-     * @param addClientIDToOpenIDConnectProviderRequest Container for the
-     *           necessary parameters to execute the AddClientIDToOpenIDConnectProvider
-     *           service method on AmazonIdentityManagement.
-     * 
-     * 
-     * @throws InvalidInputException
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void addClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest) {
-        ExecutionContext executionContext = createExecutionContext(addClientIDToOpenIDConnectProviderRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<AddClientIDToOpenIDConnectProviderRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new AddClientIDToOpenIDConnectProviderRequestMarshaller().marshall(addClientIDToOpenIDConnectProviderRequest);
+            request = new AttachRolePolicyRequestMarshaller().marshall(attachRolePolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             invoke(request, null, executionContext);
@@ -1261,6 +826,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetCredentialReport service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws CredentialReportNotPresentException
      * @throws CredentialReportNotReadyException
      * @throws CredentialReportExpiredException
@@ -1310,6 +876,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * 
      * 
      * @throws EntityTemporarilyUnmodifiableException
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws InvalidAuthenticationCodeException
      * @throws LimitExceededException
@@ -1348,6 +915,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           on AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -1388,6 +956,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetLoginProfile service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -1437,6 +1006,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the UpdateSAMLProvider service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws InvalidInputException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1475,101 +1045,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Removes the specified client ID (also known as audience) from the
-     * list of client IDs registered for the specified IAM OpenID Connect
-     * provider.
-     * </p>
-     * <p>
-     * This action is idempotent; it does not fail or return an error if you
-     * try to remove a client ID that was removed previously.
-     * </p>
-     *
-     * @param removeClientIDFromOpenIDConnectProviderRequest Container for
-     *           the necessary parameters to execute the
-     *           RemoveClientIDFromOpenIDConnectProvider service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws InvalidInputException
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void removeClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest) {
-        ExecutionContext executionContext = createExecutionContext(removeClientIDFromOpenIDConnectProviderRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<RemoveClientIDFromOpenIDConnectProviderRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller().marshall(removeClientIDFromOpenIDConnectProviderRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Creates a new group.
-     * </p>
-     * <p>
-     * For information about the number of groups you can create, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     *
-     * @param createGroupRequest Container for the necessary parameters to
-     *           execute the CreateGroup service method on AmazonIdentityManagement.
-     * 
-     * @return The response from the CreateGroup service method, as returned
-     *         by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     * @throws EntityAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateGroupResult createGroup(CreateGroupRequest createGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(createGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateGroupRequest> request = null;
-        Response<CreateGroupResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateGroupRequestMarshaller().marshall(createGroupRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new CreateGroupResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Uploads a server certificate entity for the AWS account. The server
      * certificate entity includes a public key certificate, a private key,
      * and an optional certificate chain, which should all be PEM-encoded.
@@ -1598,6 +1073,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         as returned by AmazonIdentityManagement.
      * 
      * @throws KeyPairMismatchException
+     * @throws ServiceFailureException
      * @throws MalformedCertificateException
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
@@ -1647,6 +1123,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
      *
@@ -1675,14 +1152,101 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Deletes the specified user. The user must not belong to any groups,
-     * have any keys or signing certificates, or have any attached policies.
+     * Lists all managed policies that are attached to the specified user.
+     * </p>
+     * <p>
+     * A user can also have inline policies embedded with it. To list the
+     * inline policies for a user, use the ListUserPolicies API. For
+     * information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters. You can use the
+     * <code>PathPrefix</code> parameter to limit the list of policies to
+     * only those matching the specified path prefix. If there are no
+     * policies attached to the specified group (or none that match the
+     * specified path prefix), the action returns an empty list.
      * </p>
      *
-     * @param deleteUserRequest Container for the necessary parameters to
-     *           execute the DeleteUser service method on AmazonIdentityManagement.
+     * @param listAttachedUserPoliciesRequest Container for the necessary
+     *           parameters to execute the ListAttachedUserPolicies service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListAttachedUserPolicies service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListAttachedUserPoliciesResult listAttachedUserPolicies(ListAttachedUserPoliciesRequest listAttachedUserPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAttachedUserPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAttachedUserPoliciesRequest> request = null;
+        Response<ListAttachedUserPoliciesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAttachedUserPoliciesRequestMarshaller().marshall(listAttachedUserPoliciesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListAttachedUserPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified managed policy.
+     * </p>
+     * <p>
+     * Before you can delete a managed policy, you must detach the policy
+     * from all users, groups, and roles that it is attached to, and you must
+     * delete all of the policy's versions. The following steps describe the
+     * process for deleting a managed policy: <ol> <li>Detach the policy from
+     * all users, groups, and roles that the policy is attached to, using the
+     * DetachUserPolicy, DetachGroupPolicy, or DetachRolePolicy APIs. To list
+     * all the users, groups, and roles that a policy is attached to, use
+     * ListEntitiesForPolicy. </li>
+     * <li>Delete all versions of the policy using DeletePolicyVersion. To
+     * list the policy's versions, use ListPolicyVersions. You cannot use
+     * DeletePolicyVersion to delete the version that is marked as the
+     * default version. You delete the policy's default version in the next
+     * step of the process. </li>
+     * <li>Delete the policy (this automatically deletes the policy's
+     * default version) using this API. </li>
+     * </ol>
+     * </p>
+     * <p>
+     * For information about managed policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param deletePolicyRequest Container for the necessary parameters to
+     *           execute the DeletePolicy service method on AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
      * @throws LimitExceededException
@@ -1695,142 +1259,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteUser(DeleteUserRequest deleteUserRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
+    public void deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteUserRequest> request = null;
+        Request<DeletePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new DeleteUserRequestMarshaller().marshall(deleteUserRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deactivates the specified MFA device and removes it from association
-     * with the user name for which it was originally enabled.
-     * </p>
-     * <p>
-     * For more information about creating and working with virtual MFA
-     * devices, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     *
-     * @param deactivateMFADeviceRequest Container for the necessary
-     *           parameters to execute the DeactivateMFADevice service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws EntityTemporarilyUnmodifiableException
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deactivateMFADevice(DeactivateMFADeviceRequest deactivateMFADeviceRequest) {
-        ExecutionContext executionContext = createExecutionContext(deactivateMFADeviceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeactivateMFADeviceRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeactivateMFADeviceRequestMarshaller().marshall(deactivateMFADeviceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Generates a credential report for the AWS account. For more
-     * information about the credential report, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     *
-     * @param generateCredentialReportRequest Container for the necessary
-     *           parameters to execute the GenerateCredentialReport service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the GenerateCredentialReport service method,
-     *         as returned by AmazonIdentityManagement.
-     * 
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GenerateCredentialReportResult generateCredentialReport(GenerateCredentialReportRequest generateCredentialReportRequest) {
-        ExecutionContext executionContext = createExecutionContext(generateCredentialReportRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GenerateCredentialReportRequest> request = null;
-        Response<GenerateCredentialReportResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GenerateCredentialReportRequestMarshaller().marshall(generateCredentialReportRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new GenerateCredentialReportResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Removes the specified user from the specified group.
-     * </p>
-     *
-     * @param removeUserFromGroupRequest Container for the necessary
-     *           parameters to execute the RemoveUserFromGroup service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void removeUserFromGroup(RemoveUserFromGroupRequest removeUserFromGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(removeUserFromGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<RemoveUserFromGroupRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new RemoveUserFromGroupRequestMarshaller().marshall(removeUserFromGroupRequest);
+            request = new DeletePolicyRequestMarshaller().marshall(deletePolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             invoke(request, null, executionContext);
@@ -1857,6 +1292,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           execute the DeleteRole service method on AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
      * @throws LimitExceededException
@@ -1876,55 +1312,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DeleteRoleRequestMarshaller().marshall(deleteRoleRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deletes the specified server certificate.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> If you are using a server certificate with Elastic
-     * Load Balancing, deleting the certificate could have implications for
-     * your application. If Elastic Load Balancing doesn't detect the
-     * deletion of bound certificates, it may continue to use the
-     * certificates. This could cause Elastic Load Balancing to stop
-     * accepting traffic. We recommend that you remove the reference to the
-     * certificate from Elastic Load Balancing before using this command to
-     * delete the certificate. For more information, go to
-     * DeleteLoadBalancerListeners in the Elastic Load Balancing API
-     * Reference.
-     * </p>
-     *
-     * @param deleteServerCertificateRequest Container for the necessary
-     *           parameters to execute the DeleteServerCertificate service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws DeleteConflictException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteServerCertificate(DeleteServerCertificateRequest deleteServerCertificateRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteServerCertificateRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteServerCertificateRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteServerCertificateRequestMarshaller().marshall(deleteServerCertificateRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             invoke(request, null, executionContext);
@@ -1967,6 +1354,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the CreateAccessKey service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -2018,6 +1406,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetUser service method, as returned by
      *         AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -2054,23 +1443,34 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Synchronizes the specified MFA device with AWS servers.
+     * Lists all managed policies that are attached to the specified group.
      * </p>
      * <p>
-     * For more information about creating and working with virtual MFA
-     * devices, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * A group can also have inline policies embedded with it. To list the
+     * inline policies for a group, use the ListGroupPolicies API. For
+     * information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
      * in the <i>Using IAM</i> guide.
      * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters. You can use the
+     * <code>PathPrefix</code> parameter to limit the list of policies to
+     * only those matching the specified path prefix. If there are no
+     * policies attached to the specified group (or none that match the
+     * specified path prefix), the action returns an empty list.
+     * </p>
      *
-     * @param resyncMFADeviceRequest Container for the necessary parameters
-     *           to execute the ResyncMFADevice service method on
+     * @param listAttachedGroupPoliciesRequest Container for the necessary
+     *           parameters to execute the ListAttachedGroupPolicies service method on
      *           AmazonIdentityManagement.
      * 
+     * @return The response from the ListAttachedGroupPolicies service
+     *         method, as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
      * @throws NoSuchEntityException
-     * @throws InvalidAuthenticationCodeException
-     * @throws LimitExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2080,18 +1480,27 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void resyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest) {
-        ExecutionContext executionContext = createExecutionContext(resyncMFADeviceRequest);
+    public ListAttachedGroupPoliciesResult listAttachedGroupPolicies(ListAttachedGroupPoliciesRequest listAttachedGroupPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAttachedGroupPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ResyncMFADeviceRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAttachedGroupPoliciesRequest> request = null;
+        Response<ListAttachedGroupPoliciesResult> response = null;
+        
         try {
-            request = new ResyncMFADeviceRequestMarshaller().marshall(resyncMFADeviceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAttachedGroupPoliciesRequestMarshaller().marshall(listAttachedGroupPoliciesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListAttachedGroupPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, null);
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -2113,6 +1522,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListMFADevices service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -2149,9 +1559,55 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Synchronizes the specified MFA device with AWS servers.
+     * </p>
+     * <p>
+     * For more information about creating and working with virtual MFA
+     * devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param resyncMFADeviceRequest Container for the necessary parameters
+     *           to execute the ResyncMFADevice service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws InvalidAuthenticationCodeException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void resyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest) {
+        ExecutionContext executionContext = createExecutionContext(resyncMFADeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ResyncMFADeviceRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ResyncMFADeviceRequestMarshaller().marshall(resyncMFADeviceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Creates a new virtual MFA device for the AWS account. After creating
-     * the virtual MFA, use
-     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html"> EnableMFADevice </a> to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * the virtual MFA, use EnableMFADevice to attach the MFA device to an
+     * IAM user. For more information about creating and working with virtual
+     * MFA devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
@@ -2175,6 +1631,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the CreateVirtualMFADevice service method,
      *         as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
      *
@@ -2212,164 +1669,29 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Lists the instance profiles that have the specified path prefix. If
-     * there are none, the action returns an empty list. For more information
-     * about instance profiles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
-     * .
+     * Deletes the specified version of the specified managed policy.
      * </p>
      * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listInstanceProfilesRequest Container for the necessary
-     *           parameters to execute the ListInstanceProfiles service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the ListInstanceProfiles service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listInstanceProfilesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListInstanceProfilesRequest> request = null;
-        Response<ListInstanceProfilesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListInstanceProfilesRequestMarshaller().marshall(listInstanceProfilesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListInstanceProfilesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Changes the status of the specified access key from Active to
-     * Inactive, or vice versa. This action can be used to disable a user's
-     * key as part of a key rotation work flow.
+     * You cannot delete the default version of a policy using this API. To
+     * delete the default version of a policy, use DeletePolicy. To find out
+     * which version of a policy is marked as the default version, use
+     * ListPolicyVersions.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the UserName is
-     * determined implicitly based on the AWS access key ID used to sign the
-     * request. Because this action works for access keys under the AWS
-     * account, you can use this action to manage root credentials even if
-     * the AWS account has no associated users.
-     * </p>
-     * <p>
-     * For information about rotating keys, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
+     * For information about versions for managed policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"> Versioning for Managed Policies </a>
      * in the <i>Using IAM</i> guide.
      * </p>
      *
-     * @param updateAccessKeyRequest Container for the necessary parameters
-     *           to execute the UpdateAccessKey service method on
+     * @param deletePolicyVersionRequest Container for the necessary
+     *           parameters to execute the DeletePolicyVersion service method on
      *           AmazonIdentityManagement.
      * 
      * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateAccessKey(UpdateAccessKeyRequest updateAccessKeyRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateAccessKeyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateAccessKeyRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new UpdateAccessKeyRequestMarshaller().marshall(updateAccessKeyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Returns information about the specified OpenID Connect provider.
-     * </p>
-     *
-     * @param getOpenIDConnectProviderRequest Container for the necessary
-     *           parameters to execute the GetOpenIDConnectProvider service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the GetOpenIDConnectProvider service method,
-     *         as returned by AmazonIdentityManagement.
-     * 
+     * @throws ServiceFailureException
      * @throws InvalidInputException
      * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetOpenIDConnectProviderResult getOpenIDConnectProvider(GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest) {
-        ExecutionContext executionContext = createExecutionContext(getOpenIDConnectProviderRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetOpenIDConnectProviderRequest> request = null;
-        Response<GetOpenIDConnectProviderResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetOpenIDConnectProviderRequestMarshaller().marshall(getOpenIDConnectProviderRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new GetOpenIDConnectProviderResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Adds the specified user to the specified group.
-     * </p>
-     *
-     * @param addUserToGroupRequest Container for the necessary parameters to
-     *           execute the AddUserToGroup service method on AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
+     * @throws DeleteConflictException
      * @throws LimitExceededException
      *
      * @throws AmazonClientException
@@ -2380,13 +1702,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void addUserToGroup(AddUserToGroupRequest addUserToGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(addUserToGroupRequest);
+    public void deletePolicyVersion(DeletePolicyVersionRequest deletePolicyVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deletePolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<AddUserToGroupRequest> request = null;
+        Request<DeletePolicyVersionRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new AddUserToGroupRequestMarshaller().marshall(addUserToGroupRequest);
+            request = new DeletePolicyVersionRequestMarshaller().marshall(deletePolicyVersionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             invoke(request, null, executionContext);
@@ -2430,6 +1752,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the CreateOpenIDConnectProvider service
      *         method, as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws InvalidInputException
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
@@ -2468,53 +1791,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Returns a list of users that are in the specified group. You can
-     * paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param getGroupRequest Container for the necessary parameters to
-     *           execute the GetGroup service method on AmazonIdentityManagement.
-     * 
-     * @return The response from the GetGroup service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetGroupResult getGroup(GetGroupRequest getGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(getGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetGroupRequest> request = null;
-        Response<GetGroupResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetGroupRequestMarshaller().marshall(getGroupRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new GetGroupResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Lists the account aliases associated with the account. For
      * information about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
@@ -2532,6 +1808,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListAccountAliases service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2567,43 +1844,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Deletes the specified group. The group must not contain any users or
-     * have any attached policies.
-     * </p>
-     *
-     * @param deleteGroupRequest Container for the necessary parameters to
-     *           execute the DeleteGroup service method on AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws DeleteConflictException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteGroup(DeleteGroupRequest deleteGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteGroupRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteGroupRequestMarshaller().marshall(deleteGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Retrieves information about the specified role, including the role's
      * path, GUID, ARN, and the policy granting permission to assume the
      * role. For more information about ARNs, go to
@@ -2623,6 +1863,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetRole service method, as returned by
      *         AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -2659,72 +1900,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Returns information about the signing certificates associated with
-     * the specified user. If there are none, the action returns an empty
-     * list.
+     * Lists the names of the inline policies that are embedded in the
+     * specified role.
      * </p>
      * <p>
-     * Although each user is limited to a small number of signing
-     * certificates, you can still paginate the results using the
-     * <code>MaxItems</code> and <code>Marker</code> parameters.
-     * </p>
-     * <p>
-     * If the <code>UserName</code> field is not specified, the user name is
-     * determined implicitly based on the AWS access key ID used to sign the
-     * request. Because this action works for access keys under the AWS
-     * account, you can use this action to manage root credentials even if
-     * the AWS account has no associated users.
-     * </p>
-     *
-     * @param listSigningCertificatesRequest Container for the necessary
-     *           parameters to execute the ListSigningCertificates service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the ListSigningCertificates service method,
-     *         as returned by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListSigningCertificatesResult listSigningCertificates(ListSigningCertificatesRequest listSigningCertificatesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listSigningCertificatesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListSigningCertificatesRequest> request = null;
-        Response<ListSigningCertificatesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListSigningCertificatesRequestMarshaller().marshall(listSigningCertificatesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListSigningCertificatesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Lists the names of the policies associated with the specified role.
-     * If there are none, the action returns an empty list.
+     * A role can also have managed policies attached to it. To list the
+     * managed policies that are attached to a role, use
+     * ListAttachedRolePolicies. For more information about policies, refer
+     * to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
+     * <code>Marker</code> parameters. If there are no inline policies
+     * embedded with the specified role, the action returns an empty list.
      * </p>
      *
      * @param listRolePoliciesRequest Container for the necessary parameters
@@ -2734,6 +1924,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListRolePolicies service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -2761,6 +1952,67 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
             response = invoke(request, new ListRolePoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Returns information about the signing certificates associated with
+     * the specified user. If there are none, the action returns an empty
+     * list.
+     * </p>
+     * <p>
+     * Although each user is limited to a small number of signing
+     * certificates, you can still paginate the results using the
+     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * If the <code>UserName</code> field is not specified, the user name is
+     * determined implicitly based on the AWS access key ID used to sign the
+     * request. Because this action works for access keys under the AWS
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
+     * </p>
+     *
+     * @param listSigningCertificatesRequest Container for the necessary
+     *           parameters to execute the ListSigningCertificates service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListSigningCertificates service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListSigningCertificatesResult listSigningCertificates(ListSigningCertificatesRequest listSigningCertificatesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listSigningCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSigningCertificatesRequest> request = null;
+        Response<ListSigningCertificatesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSigningCertificatesRequestMarshaller().marshall(listSigningCertificatesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListSigningCertificatesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -2801,6 +2053,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * 
      * @throws DuplicateCertificateException
      * @throws InvalidCertificateException
+     * @throws ServiceFailureException
      * @throws MalformedCertificateException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -2840,55 +2093,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Deletes the specified instance profile. The instance profile must not
-     * have an associated role.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
-     * running with the instance profile you are about to delete. Deleting a
-     * role or instance profile that is associated with a running instance
-     * will break any applications running on the instance.
-     * </p>
-     * <p>
-     * For more information about instance profiles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
-     * .
-     * </p>
-     *
-     * @param deleteInstanceProfileRequest Container for the necessary
-     *           parameters to execute the DeleteInstanceProfile service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws DeleteConflictException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteInstanceProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteInstanceProfileRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteInstanceProfileRequestMarshaller().marshall(deleteInstanceProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Retrieves information about all IAM users, groups, and roles in your
      * account, including their relationships to one another and their
      * policies. Use this API to obtain a snapshot of the configuration of
@@ -2908,6 +2112,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetAccountAuthorizationDetails service
      *         method, as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2943,204 +2148,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Creates a new role for your AWS account. For more information about
-     * roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * <p>
-     * The example policy grants permission to an EC2 instance to assume the
-     * role. The policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
-     * </p>
-     *
-     * @param createRoleRequest Container for the necessary parameters to
-     *           execute the CreateRole service method on AmazonIdentityManagement.
-     * 
-     * @return The response from the CreateRole service method, as returned
-     *         by AmazonIdentityManagement.
-     * 
-     * @throws MalformedPolicyDocumentException
-     * @throws LimitExceededException
-     * @throws EntityAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateRoleResult createRole(CreateRoleRequest createRoleRequest) {
-        ExecutionContext executionContext = createExecutionContext(createRoleRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateRoleRequest> request = null;
-        Response<CreateRoleResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateRoleRequestMarshaller().marshall(createRoleRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new CreateRoleResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Returns the SAML provider metadocument that was uploaded when the
-     * provider was created or updated.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This operation requires Signature Version 4.
-     * </p>
-     *
-     * @param getSAMLProviderRequest Container for the necessary parameters
-     *           to execute the GetSAMLProvider service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the GetSAMLProvider service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     * @throws InvalidInputException
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetSAMLProviderResult getSAMLProvider(GetSAMLProviderRequest getSAMLProviderRequest) {
-        ExecutionContext executionContext = createExecutionContext(getSAMLProviderRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetSAMLProviderRequest> request = null;
-        Response<GetSAMLProviderResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetSAMLProviderRequestMarshaller().marshall(getSAMLProviderRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new GetSAMLProviderResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Changes the password for the specified user.
-     * </p>
-     * <p>
-     * Users can change their own passwords by calling ChangePassword. For
-     * more information about modifying passwords, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     *
-     * @param updateLoginProfileRequest Container for the necessary
-     *           parameters to execute the UpdateLoginProfile service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws PasswordPolicyViolationException
-     * @throws EntityTemporarilyUnmodifiableException
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateLoginProfile(UpdateLoginProfileRequest updateLoginProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateLoginProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateLoginProfileRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new UpdateLoginProfileRequestMarshaller().marshall(updateLoginProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deletes the password for the specified user, which terminates the
-     * user's ability to access AWS services through the AWS Management
-     * Console.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> Deleting a user's password does not prevent a user
-     * from accessing IAM through the command line interface or the API. To
-     * prevent all user access you must also either make the access key
-     * inactive or delete it. For more information about making keys inactive
-     * or deleting them, see UpdateAccessKey and DeleteAccessKey.
-     * </p>
-     *
-     * @param deleteLoginProfileRequest Container for the necessary
-     *           parameters to execute the DeleteLoginProfile service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws EntityTemporarilyUnmodifiableException
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteLoginProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteLoginProfileRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteLoginProfileRequestMarshaller().marshall(deleteLoginProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Changes the password of the IAM user who is calling this action. The
      * root account password is not affected by this action.
      * </p>
@@ -3157,6 +2164,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * 
      * @throws PasswordPolicyViolationException
      * @throws EntityTemporarilyUnmodifiableException
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      * @throws InvalidUserTypeException
@@ -3186,68 +2194,26 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Retrieves information about the specified server certificate.
+     * Adds (or updates) an inline policy document that is embedded in the
+     * specified group.
      * </p>
-     *
-     * @param getServerCertificateRequest Container for the necessary
-     *           parameters to execute the GetServerCertificate service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the GetServerCertificate service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetServerCertificateResult getServerCertificate(GetServerCertificateRequest getServerCertificateRequest) {
-        ExecutionContext executionContext = createExecutionContext(getServerCertificateRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetServerCertificateRequest> request = null;
-        Response<GetServerCertificateResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetServerCertificateRequestMarshaller().marshall(getServerCertificateRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new GetServerCertificateResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
      * <p>
-     * Adds (or updates) a policy document associated with the specified
-     * group. For information about policies, refer to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
+     * A user can also have managed policies attached to it. To attach a
+     * managed policy to a group, use AttachGroupPolicy. To create a new
+     * managed policy, use CreatePolicy. For information about policies,
+     * refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * For information about limits on the number of policies you can
-     * associate with a group, see
+     * For information about limits on the number of inline policies that
+     * you can embed in a group, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b> Because policy documents can be large, you should use
-     * POST rather than GET when calling PutGroupPolicy. For information
-     * about setting up signatures and authorization through the API, go to
-     * Signing AWS API Requests in the AWS General Reference. For general
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutGroupPolicy. For general
      * information about using the Query API with IAM, go to Making Query
      * Requests in the Using IAM guide.
      * </p>
@@ -3257,6 +2223,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * 
      * 
      * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -3301,6 +2268,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -3324,57 +2292,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             invoke(request, null, executionContext);
         } finally {
             endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Lists the names of the policies associated with the specified user.
-     * If there are none, the action returns an empty list.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listUserPoliciesRequest Container for the necessary parameters
-     *           to execute the ListUserPolicies service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the ListUserPolicies service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListUserPoliciesResult listUserPolicies(ListUserPoliciesRequest listUserPoliciesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listUserPoliciesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListUserPoliciesRequest> request = null;
-        Response<ListUserPoliciesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListUserPoliciesRequestMarshaller().marshall(listUserPoliciesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListUserPoliciesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -3406,6 +2323,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListAccessKeys service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -3453,6 +2371,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListOpenIDConnectProviders service
      *         method, as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3488,96 +2407,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Lists the groups the specified user belongs to.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listGroupsForUserRequest Container for the necessary parameters
-     *           to execute the ListGroupsForUser service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the ListGroupsForUser service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListGroupsForUserResult listGroupsForUser(ListGroupsForUserRequest listGroupsForUserRequest) {
-        ExecutionContext executionContext = createExecutionContext(listGroupsForUserRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListGroupsForUserRequest> request = null;
-        Response<ListGroupsForUserResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListGroupsForUserRequestMarshaller().marshall(listGroupsForUserRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListGroupsForUserResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Adds the specified role to the specified instance profile. For more
-     * information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
-     * .
-     * </p>
-     *
-     * @param addRoleToInstanceProfileRequest Container for the necessary
-     *           parameters to execute the AddRoleToInstanceProfile service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     * @throws EntityAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void addRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(addRoleToInstanceProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<AddRoleToInstanceProfileRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new AddRoleToInstanceProfileRequestMarshaller().marshall(addRoleToInstanceProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Replaces the existing list of server certificate thumbprints with a
      * new list.
      * </p>
@@ -3589,7 +2418,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * Typically, you need to update a thumbprint only when the identity
      * provider's certificate changes, which occurs rarely. However, if the
      * provider's certificate <i>does</i> change, any attempt to assume an
-     * IAM role that specifies the IAM provider as a principal will fail
+     * IAM role that specifies the OIDC provider as a principal will fail
      * until the certificate thumbprint is updated.
      * </p>
      * <p>
@@ -3606,6 +2435,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
      * @throws InvalidInputException
      * @throws NoSuchEntityException
      *
@@ -3634,224 +2464,23 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Retrieves the specified policy document for the specified group. The
-     * returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
-     * </p>
-     *
-     * @param getGroupPolicyRequest Container for the necessary parameters to
-     *           execute the GetGroupPolicy service method on AmazonIdentityManagement.
-     * 
-     * @return The response from the GetGroupPolicy service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetGroupPolicyResult getGroupPolicy(GetGroupPolicyRequest getGroupPolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(getGroupPolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetGroupPolicyRequest> request = null;
-        Response<GetGroupPolicyResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetGroupPolicyRequestMarshaller().marshall(getGroupPolicyRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new GetGroupPolicyResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Retrieves the specified policy document for the specified role. For
-     * more information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
-     * .
+     * Removes the specified managed policy from the specified role.
      * </p>
      * <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
+     * A role can also have inline policies embedded with it. To delete an
+     * inline policy, use the DeleteRolePolicy API. For information about
+     * policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
-     * @param getRolePolicyRequest Container for the necessary parameters to
-     *           execute the GetRolePolicy service method on AmazonIdentityManagement.
-     * 
-     * @return The response from the GetRolePolicy service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetRolePolicyResult getRolePolicy(GetRolePolicyRequest getRolePolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(getRolePolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetRolePolicyRequest> request = null;
-        Response<GetRolePolicyResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetRolePolicyRequestMarshaller().marshall(getRolePolicyRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new GetRolePolicyResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Lists the instance profiles that have the specified associated role.
-     * If there are none, the action returns an empty list. For more
-     * information about instance profiles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
-     * .
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listInstanceProfilesForRoleRequest Container for the necessary
-     *           parameters to execute the ListInstanceProfilesForRole service method
-     *           on AmazonIdentityManagement.
-     * 
-     * @return The response from the ListInstanceProfilesForRole service
-     *         method, as returned by AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListInstanceProfilesForRoleResult listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest) {
-        ExecutionContext executionContext = createExecutionContext(listInstanceProfilesForRoleRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListInstanceProfilesForRoleRequest> request = null;
-        Response<ListInstanceProfilesForRoleResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListInstanceProfilesForRoleRequestMarshaller().marshall(listInstanceProfilesForRoleRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListInstanceProfilesForRoleResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Lists the virtual MFA devices under the AWS account by assignment
-     * status. If you do not specify an assignment status, the action returns
-     * a list of all virtual MFA devices. Assignment status can be
-     * <code>Assigned</code> , <code>Unassigned</code> , or <code>Any</code>
-     * .
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listVirtualMFADevicesRequest Container for the necessary
-     *           parameters to execute the ListVirtualMFADevices service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the ListVirtualMFADevices service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListVirtualMFADevicesResult listVirtualMFADevices(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listVirtualMFADevicesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListVirtualMFADevicesRequest> request = null;
-        Response<ListVirtualMFADevicesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListVirtualMFADevicesRequestMarshaller().marshall(listVirtualMFADevicesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListVirtualMFADevicesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deletes the specified policy associated with the specified role.
-     * </p>
-     *
-     * @param deleteRolePolicyRequest Container for the necessary parameters
-     *           to execute the DeleteRolePolicy service method on
+     * @param detachRolePolicyRequest Container for the necessary parameters
+     *           to execute the DetachRolePolicy service method on
      *           AmazonIdentityManagement.
      * 
      * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -3863,18 +2492,79 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteRolePolicyRequest);
+    public void detachRolePolicy(DetachRolePolicyRequest detachRolePolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(detachRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteRolePolicyRequest> request = null;
+        Request<DetachRolePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new DeleteRolePolicyRequestMarshaller().marshall(deleteRolePolicyRequest);
+            request = new DetachRolePolicyRequestMarshaller().marshall(detachRolePolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             invoke(request, null, executionContext);
         } finally {
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a new managed policy for your AWS account.
+     * </p>
+     * <p>
+     * This operation creates a policy version with a version identifier of
+     * <code>v1</code> and sets v1 as the policy's default version. For more
+     * information about policy versions, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"> Versioning for Managed Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * For more information about managed policies in general, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param createPolicyRequest Container for the necessary parameters to
+     *           execute the CreatePolicy service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the CreatePolicy service method, as returned
+     *         by AmazonIdentityManagement.
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreatePolicyResult createPolicy(CreatePolicyRequest createPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(createPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePolicyRequest> request = null;
+        Response<CreatePolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePolicyRequestMarshaller().marshall(createPolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CreatePolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -3899,6 +2589,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the CreateInstanceProfile service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
      *
@@ -3936,22 +2627,29 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Lists the names of the policies associated with the specified group.
-     * If there are none, the action returns an empty list.
+     * Removes the specified role from the specified instance profile.
      * </p>
      * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
+     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
+     * running with the role you are about to remove from the instance
+     * profile. Removing a role from an instance profile that is associated
+     * with a running instance will break any applications running on the
+     * instance.
+     * </p>
+     * <p>
+     * For more information about roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+     * .
      * </p>
      *
-     * @param listGroupPoliciesRequest Container for the necessary parameters
-     *           to execute the ListGroupPolicies service method on
-     *           AmazonIdentityManagement.
+     * @param removeRoleFromInstanceProfileRequest Container for the
+     *           necessary parameters to execute the RemoveRoleFromInstanceProfile
+     *           service method on AmazonIdentityManagement.
      * 
-     * @return The response from the ListGroupPolicies service method, as
-     *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
+     * @throws LimitExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3961,27 +2659,18 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListGroupPoliciesResult listGroupPolicies(ListGroupPoliciesRequest listGroupPoliciesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listGroupPoliciesRequest);
+    public void removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeRoleFromInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RemoveRoleFromInstanceProfileRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListGroupPoliciesRequest> request = null;
-        Response<ListGroupPoliciesResult> response = null;
-        
         try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListGroupPoliciesRequestMarshaller().marshall(listGroupPoliciesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListGroupPoliciesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
+            request = new RemoveRoleFromInstanceProfileRequestMarshaller().marshall(removeRoleFromInstanceProfileRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     
@@ -4002,6 +2691,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         returned by AmazonIdentityManagement.
      * 
      * @throws PasswordPolicyViolationException
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
@@ -4040,54 +2730,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Removes the specified role from the specified instance profile.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
-     * running with the role you are about to remove from the instance
-     * profile. Removing a role from an instance profile that is associated
-     * with a running instance will break any applications running on the
-     * instance.
-     * </p>
-     * <p>
-     * For more information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
-     * .
-     * </p>
-     *
-     * @param removeRoleFromInstanceProfileRequest Container for the
-     *           necessary parameters to execute the RemoveRoleFromInstanceProfile
-     *           service method on AmazonIdentityManagement.
-     * 
-     * 
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest) {
-        ExecutionContext executionContext = createExecutionContext(removeRoleFromInstanceProfileRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<RemoveRoleFromInstanceProfileRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new RemoveRoleFromInstanceProfileRequestMarshaller().marshall(removeRoleFromInstanceProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Updates the password policy settings for the AWS account.
      * </p>
      * <p>
@@ -4108,6 +2750,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * 
      * 
      * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -4136,46 +2779,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Updates the policy that grants an entity permission to assume a role.
-     * For more information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
-     * .
-     * </p>
-     *
-     * @param updateAssumeRolePolicyRequest Container for the necessary
-     *           parameters to execute the UpdateAssumeRolePolicy service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws MalformedPolicyDocumentException
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateAssumeRolePolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateAssumeRolePolicyRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new UpdateAssumeRolePolicyRequestMarshaller().marshall(updateAssumeRolePolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Retrieves information about the specified instance profile, including
      * the instance profile's path, GUID, ARN, and role. For more information
      * about instance profiles, go to
@@ -4190,6 +2793,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetInstanceProfile service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -4226,29 +2830,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Lists the roles that have the specified path prefix. If there are
-     * none, the action returns an empty list. For more information about
-     * roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
-     * .
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     * <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
+     * Updates the policy that grants an entity permission to assume a role.
+     * For more information about roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
      * .
      * </p>
      *
-     * @param listRolesRequest Container for the necessary parameters to
-     *           execute the ListRoles service method on AmazonIdentityManagement.
+     * @param updateAssumeRolePolicyRequest Container for the necessary
+     *           parameters to execute the UpdateAssumeRolePolicy service method on
+     *           AmazonIdentityManagement.
      * 
-     * @return The response from the ListRoles service method, as returned by
-     *         AmazonIdentityManagement.
      * 
+     * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4258,34 +2854,25 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListRolesResult listRoles(ListRolesRequest listRolesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listRolesRequest);
+    public void updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateAssumeRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateAssumeRolePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListRolesRequest> request = null;
-        Response<ListRolesResult> response = null;
-        
         try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListRolesRequestMarshaller().marshall(listRolesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListRolesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
+            request = new UpdateAssumeRolePolicyRequestMarshaller().marshall(updateAssumeRolePolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     
     /**
      * <p>
-     * Retrieves account level information about account entity usage and
-     * IAM quotas.
+     * Retrieves information about IAM entity usage and IAM quotas in the
+     * AWS account.
      * </p>
      * <p>
      * For information about limitations on IAM entities, see
@@ -4300,6 +2887,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetAccountSummary service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4369,6 +2957,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the CreateSAMLProvider service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws InvalidInputException
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
@@ -4407,6 +2996,2656 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Retrieves information about the specified managed policy, including
+     * the policy's default version and the total number of users, groups,
+     * and roles that the policy is attached to. For a list of the specific
+     * users, groups, and roles that the policy is attached to, use the
+     * ListEntitiesForPolicy API. This API returns metadata about the policy.
+     * To retrieve the policy document for a specific version of the policy,
+     * use GetPolicyVersion.
+     * </p>
+     * <p>
+     * This API retrieves information about managed policies. To retrieve
+     * information about an inline policy that is embedded with a user,
+     * group, or role, use the GetUserPolicy, GetGroupPolicy, or
+     * GetRolePolicy API.
+     * </p>
+     * <p>
+     * For more information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param getPolicyRequest Container for the necessary parameters to
+     *           execute the GetPolicy service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the GetPolicy service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPolicyRequest> request = null;
+        Response<GetPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPolicyRequestMarshaller().marshall(getPolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists information about the versions of the specified managed policy,
+     * including the version that is set as the policy's default version.
+     * </p>
+     * <p>
+     * For more information about managed policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param listPolicyVersionsRequest Container for the necessary
+     *           parameters to execute the ListPolicyVersions service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListPolicyVersions service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListPolicyVersionsResult listPolicyVersions(ListPolicyVersionsRequest listPolicyVersionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPolicyVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPolicyVersionsRequest> request = null;
+        Response<ListPolicyVersionsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPolicyVersionsRequestMarshaller().marshall(listPolicyVersionsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListPolicyVersionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the access key associated with the specified user.
+     * </p>
+     * <p>
+     * If you do not specify a user name, IAM determines the user name
+     * implicitly based on the AWS access key ID signing the request. Because
+     * this action works for access keys under the AWS account, you can use
+     * this action to manage root credentials even if the AWS account has no
+     * associated users.
+     * </p>
+     *
+     * @param deleteAccessKeyRequest Container for the necessary parameters
+     *           to execute the DeleteAccessKey service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteAccessKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteAccessKeyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteAccessKeyRequestMarshaller().marshall(deleteAccessKeyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified inline policy that is embedded in the specified
+     * user.
+     * </p>
+     * <p>
+     * A user can also have managed policies attached to it. To detach a
+     * managed policy from a user, use DetachUserPolicy. For more information
+     * about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param deleteUserPolicyRequest Container for the necessary parameters
+     *           to execute the DeleteUserPolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteUserPolicy(DeleteUserPolicyRequest deleteUserPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteUserPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteUserPolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteUserPolicyRequestMarshaller().marshall(deleteUserPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the server certificates that have the specified path prefix. If
+     * none exist, the action returns an empty list.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listServerCertificatesRequest Container for the necessary
+     *           parameters to execute the ListServerCertificates service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListServerCertificates service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListServerCertificatesResult listServerCertificates(ListServerCertificatesRequest listServerCertificatesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listServerCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListServerCertificatesRequest> request = null;
+        Response<ListServerCertificatesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListServerCertificatesRequestMarshaller().marshall(listServerCertificatesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListServerCertificatesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Updates the name and/or the path of the specified server certificate.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a server certificate's path or name. For more information, see
+     * Managing Server Certificates in the Using IAM guide.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> To change a server certificate name the requester must
+     * have appropriate permissions on both the source object and the target
+     * object. For example, to change the name from ProductionCert to
+     * ProdCert, the entity making the request must have permission on
+     * ProductionCert and ProdCert, or must have permission on all (*). For
+     * more information about permissions, see Permissions and Policies.
+     * </p>
+     *
+     * @param updateServerCertificateRequest Container for the necessary
+     *           parameters to execute the UpdateServerCertificate service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateServerCertificate(UpdateServerCertificateRequest updateServerCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateServerCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateServerCertificateRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateServerCertificateRequestMarshaller().marshall(updateServerCertificateRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Updates the name and/or the path of the specified user.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a user's path or name. For more information, see Renaming Users and
+     * Groups in the Using IAM guide.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> To change a user name the requester must have
+     * appropriate permissions on both the source object and the target
+     * object. For example, to change Bob to Robert, the entity making the
+     * request must have permission on Bob and Robert, or must have
+     * permission on all (*). For more information about permissions, see
+     * Permissions and Policies.
+     * </p>
+     *
+     * @param updateUserRequest Container for the necessary parameters to
+     *           execute the UpdateUser service method on AmazonIdentityManagement.
+     * 
+     * 
+     * @throws EntityTemporarilyUnmodifiableException
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateUser(UpdateUserRequest updateUserRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateUserRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateUserRequestMarshaller().marshall(updateUserRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Adds (or updates) an inline policy document that is embedded in the
+     * specified role.
+     * </p>
+     * <p>
+     * When you embed an inline policy in a role, the inline policy is used
+     * as the role's access (permissions) policy. The role's trust policy is
+     * created at the same time as the role, using CreateRole. You can update
+     * a role's trust policy using UpdateAssumeRolePolicy. For more
+     * information about roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
+     * .
+     * </p>
+     * <p>
+     * A role can also have a managed policy attached to it. To attach a
+     * managed policy to a role, use AttachRolePolicy. To create a new
+     * managed policy, use CreatePolicy. For information about policies,
+     * refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * For information about limits on the number of inline policies that
+     * you can embed with a role, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutRolePolicy. For general
+     * information about using the Query API with IAM, go to Making Query
+     * Requests in the Using IAM guide.
+     * </p>
+     *
+     * @param putRolePolicyRequest Container for the necessary parameters to
+     *           execute the PutRolePolicy service method on AmazonIdentityManagement.
+     * 
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void putRolePolicy(PutRolePolicyRequest putRolePolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(putRolePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<PutRolePolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new PutRolePolicyRequestMarshaller().marshall(putRolePolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified inline policy that is embedded in the specified
+     * group.
+     * </p>
+     * <p>
+     * A group can also have managed policies attached to it. To detach a
+     * managed policy from a group, use DetachGroupPolicy. For more
+     * information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param deleteGroupPolicyRequest Container for the necessary parameters
+     *           to execute the DeleteGroupPolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteGroupPolicy(DeleteGroupPolicyRequest deleteGroupPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteGroupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteGroupPolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteGroupPolicyRequestMarshaller().marshall(deleteGroupPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Updates the name and/or the path of the specified group.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a group's path or name. For more information, see Renaming Users and
+     * Groups in the Using IAM guide.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> To change a group name the requester must have
+     * appropriate permissions on both the source object and the target
+     * object. For example, to change Managers to MGRs, the entity making the
+     * request must have permission on Managers and MGRs, or must have
+     * permission on all (*). For more information about permissions, see
+     * Permissions and Policies.
+     * </p>
+     *
+     * @param updateGroupRequest Container for the necessary parameters to
+     *           execute the UpdateGroup service method on AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateGroup(UpdateGroupRequest updateGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateGroupRequestMarshaller().marshall(updateGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists all the managed policies that are available to your account,
+     * including your own customer managed policies and all AWS managed
+     * policies.
+     * </p>
+     * <p>
+     * You can filter the list of policies that is returned using the
+     * optional <code>OnlyAttached</code> , <code>Scope</code> , and
+     * <code>PathPrefix</code> parameters. For example, to list only the
+     * customer managed policies in your AWS account, set <code>Scope</code>
+     * to <code>Local</code> . To list only AWS managed policies, set
+     * <code>Scope</code> to <code>AWS</code> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * For more information about managed policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param listPoliciesRequest Container for the necessary parameters to
+     *           execute the ListPolicies service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the ListPolicies service method, as returned
+     *         by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListPoliciesResult listPolicies(ListPoliciesRequest listPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPoliciesRequest> request = null;
+        Response<ListPoliciesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPoliciesRequestMarshaller().marshall(listPoliciesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a new user for your AWS account.
+     * </p>
+     * <p>
+     * For information about limitations on the number of users you can
+     * create, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param createUserRequest Container for the necessary parameters to
+     *           execute the CreateUser service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the CreateUser service method, as returned
+     *         by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateUserResult createUser(CreateUserRequest createUserRequest) {
+        ExecutionContext executionContext = createExecutionContext(createUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserRequest> request = null;
+        Response<CreateUserResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserRequestMarshaller().marshall(createUserRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CreateUserResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Adds a new client ID (also known as audience) to the list of client
+     * IDs already registered for the specified IAM OpenID Connect provider.
+     * </p>
+     * <p>
+     * This action is idempotent; it does not fail or return an error if you
+     * add an existing client ID to the provider.
+     * </p>
+     *
+     * @param addClientIDToOpenIDConnectProviderRequest Container for the
+     *           necessary parameters to execute the AddClientIDToOpenIDConnectProvider
+     *           service method on AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void addClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest) {
+        ExecutionContext executionContext = createExecutionContext(addClientIDToOpenIDConnectProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AddClientIDToOpenIDConnectProviderRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AddClientIDToOpenIDConnectProviderRequestMarshaller().marshall(addClientIDToOpenIDConnectProviderRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes a SAML provider.
+     * </p>
+     * <p>
+     * Deleting the provider does not update any roles that reference the
+     * SAML provider as a principal in their trust policies. Any attempt to
+     * assume a role that references a SAML provider that has been deleted
+     * will fail.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This operation requires Signature Version 4.
+     * </p>
+     *
+     * @param deleteSAMLProviderRequest Container for the necessary
+     *           parameters to execute the DeleteSAMLProvider service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteSAMLProvider(DeleteSAMLProviderRequest deleteSAMLProviderRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteSAMLProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteSAMLProviderRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteSAMLProviderRequestMarshaller().marshall(deleteSAMLProviderRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Removes the specified client ID (also known as audience) from the
+     * list of client IDs registered for the specified IAM OpenID Connect
+     * provider.
+     * </p>
+     * <p>
+     * This action is idempotent; it does not fail or return an error if you
+     * try to remove a client ID that was removed previously.
+     * </p>
+     *
+     * @param removeClientIDFromOpenIDConnectProviderRequest Container for
+     *           the necessary parameters to execute the
+     *           RemoveClientIDFromOpenIDConnectProvider service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void removeClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeClientIDFromOpenIDConnectProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RemoveClientIDFromOpenIDConnectProviderRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller().marshall(removeClientIDFromOpenIDConnectProviderRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a new group.
+     * </p>
+     * <p>
+     * For information about the number of groups you can create, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param createGroupRequest Container for the necessary parameters to
+     *           execute the CreateGroup service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the CreateGroup service method, as returned
+     *         by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateGroupResult createGroup(CreateGroupRequest createGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGroupRequest> request = null;
+        Response<CreateGroupResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGroupRequestMarshaller().marshall(createGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CreateGroupResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified user. The user must not belong to any groups,
+     * have any keys or signing certificates, or have any attached policies.
+     * </p>
+     *
+     * @param deleteUserRequest Container for the necessary parameters to
+     *           execute the DeleteUser service method on AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws DeleteConflictException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteUser(DeleteUserRequest deleteUserRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteUserRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteUserRequestMarshaller().marshall(deleteUserRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deactivates the specified MFA device and removes it from association
+     * with the user name for which it was originally enabled.
+     * </p>
+     * <p>
+     * For more information about creating and working with virtual MFA
+     * devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param deactivateMFADeviceRequest Container for the necessary
+     *           parameters to execute the DeactivateMFADevice service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws EntityTemporarilyUnmodifiableException
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deactivateMFADevice(DeactivateMFADeviceRequest deactivateMFADeviceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deactivateMFADeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeactivateMFADeviceRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeactivateMFADeviceRequestMarshaller().marshall(deactivateMFADeviceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Retrieves information about the specified version of the specified
+     * managed policy, including the policy document.
+     * </p>
+     * <p>
+     * To list the available versions for a policy, use ListPolicyVersions.
+     * </p>
+     * <p>
+     * This API retrieves information about managed policies. To retrieve
+     * information about an inline policy that is embedded in a user, group,
+     * or role, use the GetUserPolicy, GetGroupPolicy, or GetRolePolicy API.
+     * </p>
+     * <p>
+     * For more information about the types of policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param getPolicyVersionRequest Container for the necessary parameters
+     *           to execute the GetPolicyVersion service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GetPolicyVersion service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetPolicyVersionResult getPolicyVersion(GetPolicyVersionRequest getPolicyVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getPolicyVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPolicyVersionRequest> request = null;
+        Response<GetPolicyVersionResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPolicyVersionRequestMarshaller().marshall(getPolicyVersionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetPolicyVersionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Generates a credential report for the AWS account. For more
+     * information about the credential report, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param generateCredentialReportRequest Container for the necessary
+     *           parameters to execute the GenerateCredentialReport service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GenerateCredentialReport service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GenerateCredentialReportResult generateCredentialReport(GenerateCredentialReportRequest generateCredentialReportRequest) {
+        ExecutionContext executionContext = createExecutionContext(generateCredentialReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GenerateCredentialReportRequest> request = null;
+        Response<GenerateCredentialReportResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GenerateCredentialReportRequestMarshaller().marshall(generateCredentialReportRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GenerateCredentialReportResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Removes the specified user from the specified group.
+     * </p>
+     *
+     * @param removeUserFromGroupRequest Container for the necessary
+     *           parameters to execute the RemoveUserFromGroup service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void removeUserFromGroup(RemoveUserFromGroupRequest removeUserFromGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeUserFromGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RemoveUserFromGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RemoveUserFromGroupRequestMarshaller().marshall(removeUserFromGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists all managed policies that are attached to the specified role.
+     * </p>
+     * <p>
+     * A role can also have inline policies embedded with it. To list the
+     * inline policies for a role, use the ListRolePolicies API. For
+     * information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters. You can use the
+     * <code>PathPrefix</code> parameter to limit the list of policies to
+     * only those matching the specified path prefix. If there are no
+     * policies attached to the specified role (or none that match the
+     * specified path prefix), the action returns an empty list.
+     * </p>
+     *
+     * @param listAttachedRolePoliciesRequest Container for the necessary
+     *           parameters to execute the ListAttachedRolePolicies service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListAttachedRolePolicies service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListAttachedRolePoliciesResult listAttachedRolePolicies(ListAttachedRolePoliciesRequest listAttachedRolePoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAttachedRolePoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAttachedRolePoliciesRequest> request = null;
+        Response<ListAttachedRolePoliciesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAttachedRolePoliciesRequestMarshaller().marshall(listAttachedRolePoliciesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListAttachedRolePoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified server certificate.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> If you are using a server certificate with Elastic
+     * Load Balancing, deleting the certificate could have implications for
+     * your application. If Elastic Load Balancing doesn't detect the
+     * deletion of bound certificates, it may continue to use the
+     * certificates. This could cause Elastic Load Balancing to stop
+     * accepting traffic. We recommend that you remove the reference to the
+     * certificate from Elastic Load Balancing before using this command to
+     * delete the certificate. For more information, go to
+     * DeleteLoadBalancerListeners in the Elastic Load Balancing API
+     * Reference.
+     * </p>
+     *
+     * @param deleteServerCertificateRequest Container for the necessary
+     *           parameters to execute the DeleteServerCertificate service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws DeleteConflictException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteServerCertificate(DeleteServerCertificateRequest deleteServerCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteServerCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteServerCertificateRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteServerCertificateRequestMarshaller().marshall(deleteServerCertificateRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists all users, groups, and roles that the specified managed policy
+     * is attached to.
+     * </p>
+     * <p>
+     * You can use the optional <code>EntityFilter</code> parameter to limit
+     * the results to a particular type of entity (users, groups, or roles).
+     * For example, to list only the roles that are attached to the specified
+     * policy, set <code>EntityFilter</code> to <code>Role</code> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listEntitiesForPolicyRequest Container for the necessary
+     *           parameters to execute the ListEntitiesForPolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListEntitiesForPolicy service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListEntitiesForPolicyResult listEntitiesForPolicy(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(listEntitiesForPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEntitiesForPolicyRequest> request = null;
+        Response<ListEntitiesForPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEntitiesForPolicyRequestMarshaller().marshall(listEntitiesForPolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListEntitiesForPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Removes the specified managed policy from the specified group.
+     * </p>
+     * <p>
+     * A group can also have inline policies embedded with it. To delete an
+     * inline policy, use the DeleteGroupPolicy API. For information about
+     * policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param detachGroupPolicyRequest Container for the necessary parameters
+     *           to execute the DetachGroupPolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void detachGroupPolicy(DetachGroupPolicyRequest detachGroupPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(detachGroupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DetachGroupPolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DetachGroupPolicyRequestMarshaller().marshall(detachGroupPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the instance profiles that have the specified path prefix. If
+     * there are none, the action returns an empty list. For more information
+     * about instance profiles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+     * .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listInstanceProfilesRequest Container for the necessary
+     *           parameters to execute the ListInstanceProfiles service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListInstanceProfiles service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listInstanceProfilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInstanceProfilesRequest> request = null;
+        Response<ListInstanceProfilesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInstanceProfilesRequestMarshaller().marshall(listInstanceProfilesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListInstanceProfilesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Changes the status of the specified access key from Active to
+     * Inactive, or vice versa. This action can be used to disable a user's
+     * key as part of a key rotation work flow.
+     * </p>
+     * <p>
+     * If the <code>UserName</code> field is not specified, the UserName is
+     * determined implicitly based on the AWS access key ID used to sign the
+     * request. Because this action works for access keys under the AWS
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
+     * </p>
+     * <p>
+     * For information about rotating keys, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param updateAccessKeyRequest Container for the necessary parameters
+     *           to execute the UpdateAccessKey service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateAccessKey(UpdateAccessKeyRequest updateAccessKeyRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateAccessKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateAccessKeyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateAccessKeyRequestMarshaller().marshall(updateAccessKeyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Returns information about the specified OpenID Connect provider.
+     * </p>
+     *
+     * @param getOpenIDConnectProviderRequest Container for the necessary
+     *           parameters to execute the GetOpenIDConnectProvider service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GetOpenIDConnectProvider service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetOpenIDConnectProviderResult getOpenIDConnectProvider(GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest) {
+        ExecutionContext executionContext = createExecutionContext(getOpenIDConnectProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOpenIDConnectProviderRequest> request = null;
+        Response<GetOpenIDConnectProviderResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOpenIDConnectProviderRequestMarshaller().marshall(getOpenIDConnectProviderRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetOpenIDConnectProviderResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Adds the specified user to the specified group.
+     * </p>
+     *
+     * @param addUserToGroupRequest Container for the necessary parameters to
+     *           execute the AddUserToGroup service method on AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void addUserToGroup(AddUserToGroupRequest addUserToGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(addUserToGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AddUserToGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AddUserToGroupRequestMarshaller().marshall(addUserToGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Returns a list of users that are in the specified group. You can
+     * paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param getGroupRequest Container for the necessary parameters to
+     *           execute the GetGroup service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the GetGroup service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetGroupResult getGroup(GetGroupRequest getGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(getGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupRequest> request = null;
+        Response<GetGroupResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupRequestMarshaller().marshall(getGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetGroupResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified group. The group must not contain any users or
+     * have any attached policies.
+     * </p>
+     *
+     * @param deleteGroupRequest Container for the necessary parameters to
+     *           execute the DeleteGroup service method on AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws DeleteConflictException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteGroup(DeleteGroupRequest deleteGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteGroupRequestMarshaller().marshall(deleteGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Removes the specified managed policy from the specified user.
+     * </p>
+     * <p>
+     * A user can also have inline policies embedded with it. To delete an
+     * inline policy, use the DeleteUserPolicy API. For information about
+     * policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param detachUserPolicyRequest Container for the necessary parameters
+     *           to execute the DetachUserPolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void detachUserPolicy(DetachUserPolicyRequest detachUserPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(detachUserPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DetachUserPolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DetachUserPolicyRequestMarshaller().marshall(detachUserPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified instance profile. The instance profile must not
+     * have an associated role.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
+     * running with the instance profile you are about to delete. Deleting a
+     * role or instance profile that is associated with a running instance
+     * will break any applications running on the instance.
+     * </p>
+     * <p>
+     * For more information about instance profiles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+     * .
+     * </p>
+     *
+     * @param deleteInstanceProfileRequest Container for the necessary
+     *           parameters to execute the DeleteInstanceProfile service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws DeleteConflictException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteInstanceProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteInstanceProfileRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteInstanceProfileRequestMarshaller().marshall(deleteInstanceProfileRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a new role for your AWS account. For more information about
+     * roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * The example policy grants permission to an EC2 instance to assume the
+     * role. The policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to
+     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
+     * .
+     * </p>
+     *
+     * @param createRoleRequest Container for the necessary parameters to
+     *           execute the CreateRole service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the CreateRole service method, as returned
+     *         by AmazonIdentityManagement.
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateRoleResult createRole(CreateRoleRequest createRoleRequest) {
+        ExecutionContext executionContext = createExecutionContext(createRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRoleRequest> request = null;
+        Response<CreateRoleResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRoleRequestMarshaller().marshall(createRoleRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CreateRoleResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Returns the SAML provider metadocument that was uploaded when the
+     * provider was created or updated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This operation requires Signature Version 4.
+     * </p>
+     *
+     * @param getSAMLProviderRequest Container for the necessary parameters
+     *           to execute the GetSAMLProvider service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GetSAMLProvider service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetSAMLProviderResult getSAMLProvider(GetSAMLProviderRequest getSAMLProviderRequest) {
+        ExecutionContext executionContext = createExecutionContext(getSAMLProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSAMLProviderRequest> request = null;
+        Response<GetSAMLProviderResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSAMLProviderRequestMarshaller().marshall(getSAMLProviderRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetSAMLProviderResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Changes the password for the specified user.
+     * </p>
+     * <p>
+     * Users can change their own passwords by calling ChangePassword. For
+     * more information about modifying passwords, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param updateLoginProfileRequest Container for the necessary
+     *           parameters to execute the UpdateLoginProfile service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws PasswordPolicyViolationException
+     * @throws EntityTemporarilyUnmodifiableException
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateLoginProfile(UpdateLoginProfileRequest updateLoginProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateLoginProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateLoginProfileRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateLoginProfileRequestMarshaller().marshall(updateLoginProfileRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the password for the specified user, which terminates the
+     * user's ability to access AWS services through the AWS Management
+     * Console.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Deleting a user's password does not prevent a user
+     * from accessing IAM through the command line interface or the API. To
+     * prevent all user access you must also either make the access key
+     * inactive or delete it. For more information about making keys inactive
+     * or deleting them, see UpdateAccessKey and DeleteAccessKey.
+     * </p>
+     *
+     * @param deleteLoginProfileRequest Container for the necessary
+     *           parameters to execute the DeleteLoginProfile service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws EntityTemporarilyUnmodifiableException
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteLoginProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteLoginProfileRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteLoginProfileRequestMarshaller().marshall(deleteLoginProfileRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Attaches the specified managed policy to the specified user.
+     * </p>
+     * <p>
+     * You use this API to attach a managed policy to a user. To embed an
+     * inline policy in a user, use PutUserPolicy.
+     * </p>
+     * <p>
+     * For more information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param attachUserPolicyRequest Container for the necessary parameters
+     *           to execute the AttachUserPolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void attachUserPolicy(AttachUserPolicyRequest attachUserPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(attachUserPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AttachUserPolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AttachUserPolicyRequestMarshaller().marshall(attachUserPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Retrieves information about the specified server certificate.
+     * </p>
+     *
+     * @param getServerCertificateRequest Container for the necessary
+     *           parameters to execute the GetServerCertificate service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GetServerCertificate service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetServerCertificateResult getServerCertificate(GetServerCertificateRequest getServerCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(getServerCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetServerCertificateRequest> request = null;
+        Response<GetServerCertificateResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetServerCertificateRequestMarshaller().marshall(getServerCertificateRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetServerCertificateResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Sets the specified version of the specified policy as the policy's
+     * default (operative) version.
+     * </p>
+     * <p>
+     * This action affects all users, groups, and roles that the policy is
+     * attached to. To list the users, groups, and roles that the policy is
+     * attached to, use the ListEntitiesForPolicy API.
+     * </p>
+     * <p>
+     * For information about managed policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param setDefaultPolicyVersionRequest Container for the necessary
+     *           parameters to execute the SetDefaultPolicyVersion service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setDefaultPolicyVersion(SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(setDefaultPolicyVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetDefaultPolicyVersionRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetDefaultPolicyVersionRequestMarshaller().marshall(setDefaultPolicyVersionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Attaches the specified managed policy to the specified group.
+     * </p>
+     * <p>
+     * You use this API to attach a managed policy to a group. To embed an
+     * inline policy in a group, use PutGroupPolicy.
+     * </p>
+     * <p>
+     * For more information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param attachGroupPolicyRequest Container for the necessary parameters
+     *           to execute the AttachGroupPolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void attachGroupPolicy(AttachGroupPolicyRequest attachGroupPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(attachGroupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AttachGroupPolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AttachGroupPolicyRequestMarshaller().marshall(attachGroupPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the names of the inline policies embedded in the specified
+     * user.
+     * </p>
+     * <p>
+     * A user can also have managed policies attached to it. To list the
+     * managed policies that are attached to a user, use
+     * ListAttachedUserPolicies. For more information about policies, refer
+     * to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters. If there are no inline policies
+     * embedded with the specified user, the action returns an empty list.
+     * </p>
+     *
+     * @param listUserPoliciesRequest Container for the necessary parameters
+     *           to execute the ListUserPolicies service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListUserPolicies service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListUserPoliciesResult listUserPolicies(ListUserPoliciesRequest listUserPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listUserPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUserPoliciesRequest> request = null;
+        Response<ListUserPoliciesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUserPoliciesRequestMarshaller().marshall(listUserPoliciesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListUserPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the groups the specified user belongs to.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listGroupsForUserRequest Container for the necessary parameters
+     *           to execute the ListGroupsForUser service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListGroupsForUser service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListGroupsForUserResult listGroupsForUser(ListGroupsForUserRequest listGroupsForUserRequest) {
+        ExecutionContext executionContext = createExecutionContext(listGroupsForUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGroupsForUserRequest> request = null;
+        Response<ListGroupsForUserResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGroupsForUserRequestMarshaller().marshall(listGroupsForUserRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListGroupsForUserResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a new version of the specified managed policy. To update a
+     * managed policy, you create a new policy version. A managed policy can
+     * have up to five versions. If the policy has five versions, you must
+     * delete an existing version using DeletePolicyVersion before you create
+     * a new version.
+     * </p>
+     * <p>
+     * Optionally, you can set the new version as the policy's default
+     * version. The default version is the operative version; that is, the
+     * version that is in effect for the IAM users, groups, and roles that
+     * the policy is attached to.
+     * </p>
+     * <p>
+     * For more information about managed policy versions, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"> Versioning for Managed Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param createPolicyVersionRequest Container for the necessary
+     *           parameters to execute the CreatePolicyVersion service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the CreatePolicyVersion service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest createPolicyVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createPolicyVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePolicyVersionRequest> request = null;
+        Response<CreatePolicyVersionResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePolicyVersionRequestMarshaller().marshall(createPolicyVersionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CreatePolicyVersionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Adds the specified role to the specified instance profile. For more
+     * information about roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+     * .
+     * </p>
+     *
+     * @param addRoleToInstanceProfileRequest Container for the necessary
+     *           parameters to execute the AddRoleToInstanceProfile service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void addRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(addRoleToInstanceProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AddRoleToInstanceProfileRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AddRoleToInstanceProfileRequestMarshaller().marshall(addRoleToInstanceProfileRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Retrieves the specified inline policy document that is embedded in
+     * the specified group.
+     * </p>
+     * <p>
+     * A group can also have managed policies attached to it. To retrieve a
+     * managed policy document that is attached to a group, use GetPolicy to
+     * determine the policy's default version, then use GetPolicyVersion to
+     * retrieve the policy document.
+     * </p>
+     * <p>
+     * For more information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param getGroupPolicyRequest Container for the necessary parameters to
+     *           execute the GetGroupPolicy service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the GetGroupPolicy service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetGroupPolicyResult getGroupPolicy(GetGroupPolicyRequest getGroupPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getGroupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupPolicyRequest> request = null;
+        Response<GetGroupPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupPolicyRequestMarshaller().marshall(getGroupPolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetGroupPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Retrieves the specified inline policy document that is embedded with
+     * the specified role.
+     * </p>
+     * <p>
+     * A role can also have managed policies attached to it. To retrieve a
+     * managed policy document that is attached to a role, use GetPolicy to
+     * determine the policy's default version, then use GetPolicyVersion to
+     * retrieve the policy document.
+     * </p>
+     * <p>
+     * For more information about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * For more information about roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
+     * .
+     * </p>
+     *
+     * @param getRolePolicyRequest Container for the necessary parameters to
+     *           execute the GetRolePolicy service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the GetRolePolicy service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetRolePolicyResult getRolePolicy(GetRolePolicyRequest getRolePolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getRolePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRolePolicyRequest> request = null;
+        Response<GetRolePolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRolePolicyRequestMarshaller().marshall(getRolePolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetRolePolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the instance profiles that have the specified associated role.
+     * If there are none, the action returns an empty list. For more
+     * information about instance profiles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+     * .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listInstanceProfilesForRoleRequest Container for the necessary
+     *           parameters to execute the ListInstanceProfilesForRole service method
+     *           on AmazonIdentityManagement.
+     * 
+     * @return The response from the ListInstanceProfilesForRole service
+     *         method, as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListInstanceProfilesForRoleResult listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest) {
+        ExecutionContext executionContext = createExecutionContext(listInstanceProfilesForRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInstanceProfilesForRoleRequest> request = null;
+        Response<ListInstanceProfilesForRoleResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInstanceProfilesForRoleRequestMarshaller().marshall(listInstanceProfilesForRoleRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListInstanceProfilesForRoleResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified inline policy that is embedded in the specified
+     * role.
+     * </p>
+     * <p>
+     * A role can also have managed policies attached to it. To detach a
+     * managed policy from a role, use DetachRolePolicy. For more information
+     * about policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param deleteRolePolicyRequest Container for the necessary parameters
+     *           to execute the DeleteRolePolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteRolePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteRolePolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteRolePolicyRequestMarshaller().marshall(deleteRolePolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the virtual MFA devices under the AWS account by assignment
+     * status. If you do not specify an assignment status, the action returns
+     * a list of all virtual MFA devices. Assignment status can be
+     * <code>Assigned</code> , <code>Unassigned</code> , or <code>Any</code>
+     * .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listVirtualMFADevicesRequest Container for the necessary
+     *           parameters to execute the ListVirtualMFADevices service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListVirtualMFADevices service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListVirtualMFADevicesResult listVirtualMFADevices(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listVirtualMFADevicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVirtualMFADevicesRequest> request = null;
+        Response<ListVirtualMFADevicesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVirtualMFADevicesRequestMarshaller().marshall(listVirtualMFADevicesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListVirtualMFADevicesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the names of the inline policies that are embedded in the
+     * specified group.
+     * </p>
+     * <p>
+     * A group can also have managed policies attached to it. To list the
+     * managed policies that are attached to a group, use
+     * ListAttachedGroupPolicies. For more information about policies, refer
+     * to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters. If there are no inline policies
+     * embedded with the specified group, the action returns an empty list.
+     * </p>
+     *
+     * @param listGroupPoliciesRequest Container for the necessary parameters
+     *           to execute the ListGroupPolicies service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListGroupPolicies service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListGroupPoliciesResult listGroupPolicies(ListGroupPoliciesRequest listGroupPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listGroupPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGroupPoliciesRequest> request = null;
+        Response<ListGroupPoliciesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGroupPoliciesRequestMarshaller().marshall(listGroupPoliciesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListGroupPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the roles that have the specified path prefix. If there are
+     * none, the action returns an empty list. For more information about
+     * roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
+     * .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * The returned policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to
+     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
+     * .
+     * </p>
+     *
+     * @param listRolesRequest Container for the necessary parameters to
+     *           execute the ListRoles service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the ListRoles service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListRolesResult listRoles(ListRolesRequest listRolesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listRolesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRolesRequest> request = null;
+        Response<ListRolesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRolesRequestMarshaller().marshall(listRolesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListRolesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Retrieves the password policy for the AWS account. For more
      * information about using a password policy, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a>
@@ -4420,6 +5659,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetAccountPasswordPolicy service method,
      *         as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -4466,6 +5706,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListGroups service method, as returned
      *         by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4481,32 +5722,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Lists the server certificates that have the specified path prefix. If
-     * none exist, the action returns an empty list.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     * 
-     * @return The response from the ListServerCertificates service method,
-     *         as returned by AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListServerCertificatesResult listServerCertificates() throws AmazonServiceException, AmazonClientException {
-        return listServerCertificates(new ListServerCertificatesRequest());
-    }
-    
-    /**
-     * <p>
      * Lists the SAML providers in the account.
      * </p>
      * <p>
@@ -4516,6 +5731,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListSAMLProviders service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4543,6 +5759,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListUsers service method, as returned by
      *         AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4567,6 +5784,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetCredentialReport service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws CredentialReportNotPresentException
      * @throws CredentialReportNotReadyException
      * @throws CredentialReportExpiredException
@@ -4589,6 +5807,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * 
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -4602,31 +5821,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     public void deleteAccountPasswordPolicy() throws AmazonServiceException, AmazonClientException {
         deleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
-    }
-    
-    /**
-     * <p>
-     * Generates a credential report for the AWS account. For more
-     * information about the credential report, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * 
-     * @return The response from the GenerateCredentialReport service method,
-     *         as returned by AmazonIdentityManagement.
-     * 
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GenerateCredentialReportResult generateCredentialReport() throws AmazonServiceException, AmazonClientException {
-        return generateCredentialReport(new GenerateCredentialReportRequest());
     }
     
     /**
@@ -4659,6 +5853,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the CreateAccessKey service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -4687,6 +5882,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetUser service method, as returned by
      *         AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -4716,6 +5912,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListMFADevices service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -4728,35 +5925,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     public ListMFADevicesResult listMFADevices() throws AmazonServiceException, AmazonClientException {
         return listMFADevices(new ListMFADevicesRequest());
-    }
-    
-    /**
-     * <p>
-     * Lists the instance profiles that have the specified path prefix. If
-     * there are none, the action returns an empty list. For more information
-     * about instance profiles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
-     * .
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     * 
-     * @return The response from the ListInstanceProfiles service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListInstanceProfilesResult listInstanceProfiles() throws AmazonServiceException, AmazonClientException {
-        return listInstanceProfiles(new ListInstanceProfilesRequest());
     }
     
     /**
@@ -4774,6 +5942,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListAccountAliases service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4809,6 +5978,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListSigningCertificates service method,
      *         as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -4840,6 +6010,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetAccountAuthorizationDetails service
      *         method, as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4878,6 +6049,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListAccessKeys service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException
@@ -4901,6 +6073,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListOpenIDConnectProviders service
      *         method, as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4912,6 +6085,158 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     public ListOpenIDConnectProvidersResult listOpenIDConnectProviders() throws AmazonServiceException, AmazonClientException {
         return listOpenIDConnectProviders(new ListOpenIDConnectProvidersRequest());
+    }
+    
+    /**
+     * <p>
+     * Retrieves information about IAM entity usage and IAM quotas in the
+     * AWS account.
+     * </p>
+     * <p>
+     * For information about limitations on IAM entities, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @return The response from the GetAccountSummary service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetAccountSummaryResult getAccountSummary() throws AmazonServiceException, AmazonClientException {
+        return getAccountSummary(new GetAccountSummaryRequest());
+    }
+    
+    /**
+     * <p>
+     * Lists the server certificates that have the specified path prefix. If
+     * none exist, the action returns an empty list.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * 
+     * @return The response from the ListServerCertificates service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListServerCertificatesResult listServerCertificates() throws AmazonServiceException, AmazonClientException {
+        return listServerCertificates(new ListServerCertificatesRequest());
+    }
+    
+    /**
+     * <p>
+     * Lists all the managed policies that are available to your account,
+     * including your own customer managed policies and all AWS managed
+     * policies.
+     * </p>
+     * <p>
+     * You can filter the list of policies that is returned using the
+     * optional <code>OnlyAttached</code> , <code>Scope</code> , and
+     * <code>PathPrefix</code> parameters. For example, to list only the
+     * customer managed policies in your AWS account, set <code>Scope</code>
+     * to <code>Local</code> . To list only AWS managed policies, set
+     * <code>Scope</code> to <code>AWS</code> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * For more information about managed policies, refer to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @return The response from the ListPolicies service method, as returned
+     *         by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListPoliciesResult listPolicies() throws AmazonServiceException, AmazonClientException {
+        return listPolicies(new ListPoliciesRequest());
+    }
+    
+    /**
+     * <p>
+     * Generates a credential report for the AWS account. For more
+     * information about the credential report, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @return The response from the GenerateCredentialReport service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GenerateCredentialReportResult generateCredentialReport() throws AmazonServiceException, AmazonClientException {
+        return generateCredentialReport(new GenerateCredentialReportRequest());
+    }
+    
+    /**
+     * <p>
+     * Lists the instance profiles that have the specified path prefix. If
+     * there are none, the action returns an empty list. For more information
+     * about instance profiles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+     * .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * 
+     * @return The response from the ListInstanceProfiles service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListInstanceProfilesResult listInstanceProfiles() throws AmazonServiceException, AmazonClientException {
+        return listInstanceProfiles(new ListInstanceProfilesRequest());
     }
     
     /**
@@ -4965,6 +6290,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the ListRoles service method, as returned by
      *         AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4980,33 +6306,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Retrieves account level information about account entity usage and
-     * IAM quotas.
-     * </p>
-     * <p>
-     * For information about limitations on IAM entities, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * 
-     * @return The response from the GetAccountSummary service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetAccountSummaryResult getAccountSummary() throws AmazonServiceException, AmazonClientException {
-        return getAccountSummary(new GetAccountSummaryRequest());
-    }
-    
-    /**
-     * <p>
      * Retrieves the password policy for the AWS account. For more
      * information about using a password policy, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a>
@@ -5016,6 +6315,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @return The response from the GetAccountPasswordPolicy service method,
      *         as returned by AmazonIdentityManagement.
      * 
+     * @throws ServiceFailureException
      * @throws NoSuchEntityException
      *
      * @throws AmazonClientException

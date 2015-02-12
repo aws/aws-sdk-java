@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createReplicationGroup(CreateReplicationGroupRequest) CreateReplicationGroup operation}.
  * <p>
- * The <i>CreateReplicationGroup</i> operation creates a replication
- * group. A replication group is a collection of cache clusters, where
- * one of the cache clusters is a read/write primary and the others are
+ * The <i>CreateReplicationGroup</i> action creates a replication group.
+ * A replication group is a collection of cache clusters, where one of
+ * the cache clusters is a read/write primary and the others are
  * read-only replicas. Writes to the primary are automatically propagated
  * to the replicas.
  * </p>
@@ -66,21 +66,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * Specifies whether a read-only replica will be automatically promoted
      * to read/write primary if the existing primary fails. <p>If
-     * <code>true</code>, automatic failover is enabled for this replication
-     * group. If <code>false</code>, automatic failover is disabled for this
-     * replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * <code>true</code>, Multi-AZ is enabled for this replication group. If
+     * <code>false</code>, Multi-AZ is disabled for this replication group.
+     * <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     * not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li> </ul> </note>
      */
     private Boolean automaticFailoverEnabled;
 
     /**
      * The number of cache clusters this replication group will initially
-     * have. <p>If <i>AutomaticFailover</i> is <code>enabled</code>, the
-     * value of this parameter must be at least 2. <p>The maximum permitted
-     * value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If
-     * you need to exceed this limit, please fill out the ElastiCache Limit
-     * Increase Request forrm at <a
+     * have. <p>If <i>Multi-AZ</i> is <code>enabled</code>, the value of this
+     * parameter must be at least 2. <p>The maximum permitted value for
+     * <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
+     * exceed this limit, please fill out the ElastiCache Limit Increase
+     * Request forrm at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      */
     private Integer numCacheClusters;
@@ -95,9 +95,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      * chosen availability zones. <p>Example: One Redis cache cluster in each
      * of three availability zones.
-     * PreferredAvailabilityZones.member.1=us-east-1a
-     * PreferredAvailabilityZones.member.2=us-east-1c
-     * PreferredAvailabilityZones.member.3=us-east-1d
+     * PreferredAvailabilityZones.member.1=us-west-2a
+     * PreferredAvailabilityZones.member.2=us-west-2c
+     * PreferredAvailabilityZones.member.3=us-west-2c
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> preferredCacheClusterAZs;
 
@@ -141,7 +141,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * The version number of the cach engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
-     * versions, use the <i>DescribeCacheEngineVersions</i> operation.
+     * versions, use the <i>DescribeCacheEngineVersions</i> action.
      */
     private String engineVersion;
 
@@ -170,6 +170,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * replication group in an Amazon Virtual Private Cloud (VPC).
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
+
+    /**
+     * A list of cost allocation tags to be added to this resource. A tag is
+     * a key-value pair. A tag key must be accompanied by a tag value.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * A single-element string list containing an Amazon Resource Name (ARN)
@@ -211,10 +217,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     private String notificationTopicArn;
 
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to the node group during the maintenance window. A value of
-     * <code>true</code> allows these upgrades to occur; <code>false</code>
-     * disables automatic upgrades. <p>Default: <code>true</code>
+     * This parameter is currently disabled.
      */
     private Boolean autoMinorVersionUpgrade;
 
@@ -383,19 +386,19 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * Specifies whether a read-only replica will be automatically promoted
      * to read/write primary if the existing primary fails. <p>If
-     * <code>true</code>, automatic failover is enabled for this replication
-     * group. If <code>false</code>, automatic failover is disabled for this
-     * replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * <code>true</code>, Multi-AZ is enabled for this replication group. If
+     * <code>false</code>, Multi-AZ is disabled for this replication group.
+     * <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     * not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li> </ul> </note>
      *
      * @return Specifies whether a read-only replica will be automatically promoted
      *         to read/write primary if the existing primary fails. <p>If
-     *         <code>true</code>, automatic failover is enabled for this replication
-     *         group. If <code>false</code>, automatic failover is disabled for this
-     *         replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     *         replication groups is not supported on: <ul> <li>Redis version
-     *         2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     *         <code>true</code>, Multi-AZ is enabled for this replication group. If
+     *         <code>false</code>, Multi-AZ is disabled for this replication group.
+     *         <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     *         not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     *         <li>T1 and T2 cache node types.</li> </ul> </note>
      */
     public Boolean isAutomaticFailoverEnabled() {
         return automaticFailoverEnabled;
@@ -404,19 +407,19 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * Specifies whether a read-only replica will be automatically promoted
      * to read/write primary if the existing primary fails. <p>If
-     * <code>true</code>, automatic failover is enabled for this replication
-     * group. If <code>false</code>, automatic failover is disabled for this
-     * replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * <code>true</code>, Multi-AZ is enabled for this replication group. If
+     * <code>false</code>, Multi-AZ is disabled for this replication group.
+     * <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     * not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li> </ul> </note>
      *
      * @param automaticFailoverEnabled Specifies whether a read-only replica will be automatically promoted
      *         to read/write primary if the existing primary fails. <p>If
-     *         <code>true</code>, automatic failover is enabled for this replication
-     *         group. If <code>false</code>, automatic failover is disabled for this
-     *         replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     *         replication groups is not supported on: <ul> <li>Redis version
-     *         2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     *         <code>true</code>, Multi-AZ is enabled for this replication group. If
+     *         <code>false</code>, Multi-AZ is disabled for this replication group.
+     *         <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     *         not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     *         <li>T1 and T2 cache node types.</li> </ul> </note>
      */
     public void setAutomaticFailoverEnabled(Boolean automaticFailoverEnabled) {
         this.automaticFailoverEnabled = automaticFailoverEnabled;
@@ -425,21 +428,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * Specifies whether a read-only replica will be automatically promoted
      * to read/write primary if the existing primary fails. <p>If
-     * <code>true</code>, automatic failover is enabled for this replication
-     * group. If <code>false</code>, automatic failover is disabled for this
-     * replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * <code>true</code>, Multi-AZ is enabled for this replication group. If
+     * <code>false</code>, Multi-AZ is disabled for this replication group.
+     * <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     * not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li> </ul> </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param automaticFailoverEnabled Specifies whether a read-only replica will be automatically promoted
      *         to read/write primary if the existing primary fails. <p>If
-     *         <code>true</code>, automatic failover is enabled for this replication
-     *         group. If <code>false</code>, automatic failover is disabled for this
-     *         replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     *         replication groups is not supported on: <ul> <li>Redis version
-     *         2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     *         <code>true</code>, Multi-AZ is enabled for this replication group. If
+     *         <code>false</code>, Multi-AZ is disabled for this replication group.
+     *         <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     *         not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     *         <li>T1 and T2 cache node types.</li> </ul> </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -452,19 +455,19 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * Specifies whether a read-only replica will be automatically promoted
      * to read/write primary if the existing primary fails. <p>If
-     * <code>true</code>, automatic failover is enabled for this replication
-     * group. If <code>false</code>, automatic failover is disabled for this
-     * replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * <code>true</code>, Multi-AZ is enabled for this replication group. If
+     * <code>false</code>, Multi-AZ is disabled for this replication group.
+     * <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     * not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li> </ul> </note>
      *
      * @return Specifies whether a read-only replica will be automatically promoted
      *         to read/write primary if the existing primary fails. <p>If
-     *         <code>true</code>, automatic failover is enabled for this replication
-     *         group. If <code>false</code>, automatic failover is disabled for this
-     *         replication group. <p>Default: false <note><p>ElastiCache Multi-AZ
-     *         replication groups is not supported on: <ul> <li>Redis version
-     *         2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     *         <code>true</code>, Multi-AZ is enabled for this replication group. If
+     *         <code>false</code>, Multi-AZ is disabled for this replication group.
+     *         <p>Default: false <note><p>ElastiCache Multi-AZ replication groups is
+     *         not supported on: <ul> <li>Redis versions earlier than 2.8.6.</li>
+     *         <li>T1 and T2 cache node types.</li> </ul> </note>
      */
     public Boolean getAutomaticFailoverEnabled() {
         return automaticFailoverEnabled;
@@ -472,19 +475,19 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The number of cache clusters this replication group will initially
-     * have. <p>If <i>AutomaticFailover</i> is <code>enabled</code>, the
-     * value of this parameter must be at least 2. <p>The maximum permitted
-     * value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If
-     * you need to exceed this limit, please fill out the ElastiCache Limit
-     * Increase Request forrm at <a
+     * have. <p>If <i>Multi-AZ</i> is <code>enabled</code>, the value of this
+     * parameter must be at least 2. <p>The maximum permitted value for
+     * <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
+     * exceed this limit, please fill out the ElastiCache Limit Increase
+     * Request forrm at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      *
      * @return The number of cache clusters this replication group will initially
-     *         have. <p>If <i>AutomaticFailover</i> is <code>enabled</code>, the
-     *         value of this parameter must be at least 2. <p>The maximum permitted
-     *         value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If
-     *         you need to exceed this limit, please fill out the ElastiCache Limit
-     *         Increase Request forrm at <a
+     *         have. <p>If <i>Multi-AZ</i> is <code>enabled</code>, the value of this
+     *         parameter must be at least 2. <p>The maximum permitted value for
+     *         <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
+     *         exceed this limit, please fill out the ElastiCache Limit Increase
+     *         Request forrm at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      */
     public Integer getNumCacheClusters() {
@@ -493,19 +496,19 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The number of cache clusters this replication group will initially
-     * have. <p>If <i>AutomaticFailover</i> is <code>enabled</code>, the
-     * value of this parameter must be at least 2. <p>The maximum permitted
-     * value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If
-     * you need to exceed this limit, please fill out the ElastiCache Limit
-     * Increase Request forrm at <a
+     * have. <p>If <i>Multi-AZ</i> is <code>enabled</code>, the value of this
+     * parameter must be at least 2. <p>The maximum permitted value for
+     * <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
+     * exceed this limit, please fill out the ElastiCache Limit Increase
+     * Request forrm at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      *
      * @param numCacheClusters The number of cache clusters this replication group will initially
-     *         have. <p>If <i>AutomaticFailover</i> is <code>enabled</code>, the
-     *         value of this parameter must be at least 2. <p>The maximum permitted
-     *         value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If
-     *         you need to exceed this limit, please fill out the ElastiCache Limit
-     *         Increase Request forrm at <a
+     *         have. <p>If <i>Multi-AZ</i> is <code>enabled</code>, the value of this
+     *         parameter must be at least 2. <p>The maximum permitted value for
+     *         <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
+     *         exceed this limit, please fill out the ElastiCache Limit Increase
+     *         Request forrm at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      */
     public void setNumCacheClusters(Integer numCacheClusters) {
@@ -514,21 +517,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The number of cache clusters this replication group will initially
-     * have. <p>If <i>AutomaticFailover</i> is <code>enabled</code>, the
-     * value of this parameter must be at least 2. <p>The maximum permitted
-     * value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If
-     * you need to exceed this limit, please fill out the ElastiCache Limit
-     * Increase Request forrm at <a
+     * have. <p>If <i>Multi-AZ</i> is <code>enabled</code>, the value of this
+     * parameter must be at least 2. <p>The maximum permitted value for
+     * <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
+     * exceed this limit, please fill out the ElastiCache Limit Increase
+     * Request forrm at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numCacheClusters The number of cache clusters this replication group will initially
-     *         have. <p>If <i>AutomaticFailover</i> is <code>enabled</code>, the
-     *         value of this parameter must be at least 2. <p>The maximum permitted
-     *         value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If
-     *         you need to exceed this limit, please fill out the ElastiCache Limit
-     *         Increase Request forrm at <a
+     *         have. <p>If <i>Multi-AZ</i> is <code>enabled</code>, the value of this
+     *         parameter must be at least 2. <p>The maximum permitted value for
+     *         <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
+     *         exceed this limit, please fill out the ElastiCache Limit Increase
+     *         Request forrm at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -549,9 +552,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      * chosen availability zones. <p>Example: One Redis cache cluster in each
      * of three availability zones.
-     * PreferredAvailabilityZones.member.1=us-east-1a
-     * PreferredAvailabilityZones.member.2=us-east-1c
-     * PreferredAvailabilityZones.member.3=us-east-1d
+     * PreferredAvailabilityZones.member.1=us-west-2a
+     * PreferredAvailabilityZones.member.2=us-west-2c
+     * PreferredAvailabilityZones.member.3=us-west-2c
      *
      * @return A list of EC2 availability zones in which the replication group's
      *         cache clusters will be created. The order of the availability zones in
@@ -562,9 +565,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      *         chosen availability zones. <p>Example: One Redis cache cluster in each
      *         of three availability zones.
-     *         PreferredAvailabilityZones.member.1=us-east-1a
-     *         PreferredAvailabilityZones.member.2=us-east-1c
-     *         PreferredAvailabilityZones.member.3=us-east-1d
+     *         PreferredAvailabilityZones.member.1=us-west-2a
+     *         PreferredAvailabilityZones.member.2=us-west-2c
+     *         PreferredAvailabilityZones.member.3=us-west-2c
      */
     public java.util.List<String> getPreferredCacheClusterAZs() {
         if (preferredCacheClusterAZs == null) {
@@ -584,9 +587,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      * chosen availability zones. <p>Example: One Redis cache cluster in each
      * of three availability zones.
-     * PreferredAvailabilityZones.member.1=us-east-1a
-     * PreferredAvailabilityZones.member.2=us-east-1c
-     * PreferredAvailabilityZones.member.3=us-east-1d
+     * PreferredAvailabilityZones.member.1=us-west-2a
+     * PreferredAvailabilityZones.member.2=us-west-2c
+     * PreferredAvailabilityZones.member.3=us-west-2c
      *
      * @param preferredCacheClusterAZs A list of EC2 availability zones in which the replication group's
      *         cache clusters will be created. The order of the availability zones in
@@ -597,9 +600,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      *         chosen availability zones. <p>Example: One Redis cache cluster in each
      *         of three availability zones.
-     *         PreferredAvailabilityZones.member.1=us-east-1a
-     *         PreferredAvailabilityZones.member.2=us-east-1c
-     *         PreferredAvailabilityZones.member.3=us-east-1d
+     *         PreferredAvailabilityZones.member.1=us-west-2a
+     *         PreferredAvailabilityZones.member.2=us-west-2c
+     *         PreferredAvailabilityZones.member.3=us-west-2c
      */
     public void setPreferredCacheClusterAZs(java.util.Collection<String> preferredCacheClusterAZs) {
         if (preferredCacheClusterAZs == null) {
@@ -621,9 +624,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      * chosen availability zones. <p>Example: One Redis cache cluster in each
      * of three availability zones.
-     * PreferredAvailabilityZones.member.1=us-east-1a
-     * PreferredAvailabilityZones.member.2=us-east-1c
-     * PreferredAvailabilityZones.member.3=us-east-1d
+     * PreferredAvailabilityZones.member.1=us-west-2a
+     * PreferredAvailabilityZones.member.2=us-west-2c
+     * PreferredAvailabilityZones.member.3=us-west-2c
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -636,9 +639,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      *         chosen availability zones. <p>Example: One Redis cache cluster in each
      *         of three availability zones.
-     *         PreferredAvailabilityZones.member.1=us-east-1a
-     *         PreferredAvailabilityZones.member.2=us-east-1c
-     *         PreferredAvailabilityZones.member.3=us-east-1d
+     *         PreferredAvailabilityZones.member.1=us-west-2a
+     *         PreferredAvailabilityZones.member.2=us-west-2c
+     *         PreferredAvailabilityZones.member.3=us-west-2c
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -661,9 +664,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      * chosen availability zones. <p>Example: One Redis cache cluster in each
      * of three availability zones.
-     * PreferredAvailabilityZones.member.1=us-east-1a
-     * PreferredAvailabilityZones.member.2=us-east-1c
-     * PreferredAvailabilityZones.member.3=us-east-1d
+     * PreferredAvailabilityZones.member.1=us-west-2a
+     * PreferredAvailabilityZones.member.2=us-west-2c
+     * PreferredAvailabilityZones.member.3=us-west-2c
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -676,9 +679,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         equal the value of <i>NumCacheClusters</i>.</note> <p>Default: system
      *         chosen availability zones. <p>Example: One Redis cache cluster in each
      *         of three availability zones.
-     *         PreferredAvailabilityZones.member.1=us-east-1a
-     *         PreferredAvailabilityZones.member.2=us-east-1c
-     *         PreferredAvailabilityZones.member.3=us-east-1d
+     *         PreferredAvailabilityZones.member.1=us-west-2a
+     *         PreferredAvailabilityZones.member.2=us-west-2c
+     *         PreferredAvailabilityZones.member.3=us-west-2c
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -926,11 +929,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * The version number of the cach engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
-     * versions, use the <i>DescribeCacheEngineVersions</i> operation.
+     * versions, use the <i>DescribeCacheEngineVersions</i> action.
      *
      * @return The version number of the cach engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
-     *         versions, use the <i>DescribeCacheEngineVersions</i> operation.
+     *         versions, use the <i>DescribeCacheEngineVersions</i> action.
      */
     public String getEngineVersion() {
         return engineVersion;
@@ -939,11 +942,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * The version number of the cach engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
-     * versions, use the <i>DescribeCacheEngineVersions</i> operation.
+     * versions, use the <i>DescribeCacheEngineVersions</i> action.
      *
      * @param engineVersion The version number of the cach engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
-     *         versions, use the <i>DescribeCacheEngineVersions</i> operation.
+     *         versions, use the <i>DescribeCacheEngineVersions</i> action.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -952,13 +955,13 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * The version number of the cach engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
-     * versions, use the <i>DescribeCacheEngineVersions</i> operation.
+     * versions, use the <i>DescribeCacheEngineVersions</i> action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version number of the cach engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
-     *         versions, use the <i>DescribeCacheEngineVersions</i> operation.
+     *         versions, use the <i>DescribeCacheEngineVersions</i> action.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1207,6 +1210,82 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
             com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
             securityGroupIdsCopy.addAll(securityGroupIds);
             this.securityGroupIds = securityGroupIdsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * A list of cost allocation tags to be added to this resource. A tag is
+     * a key-value pair. A tag key must be accompanied by a tag value.
+     *
+     * @return A list of cost allocation tags to be added to this resource. A tag is
+     *         a key-value pair. A tag key must be accompanied by a tag value.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of cost allocation tags to be added to this resource. A tag is
+     * a key-value pair. A tag key must be accompanied by a tag value.
+     *
+     * @param tags A list of cost allocation tags to be added to this resource. A tag is
+     *         a key-value pair. A tag key must be accompanied by a tag value.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of cost allocation tags to be added to this resource. A tag is
+     * a key-value pair. A tag key must be accompanied by a tag value.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of cost allocation tags to be added to this resource. A tag is
+     *         a key-value pair. A tag key must be accompanied by a tag value.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateReplicationGroupRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of cost allocation tags to be added to this resource. A tag is
+     * a key-value pair. A tag key must be accompanied by a tag value.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of cost allocation tags to be added to this resource. A tag is
+     *         a key-value pair. A tag key must be accompanied by a tag value.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateReplicationGroupRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
 
         return this;
@@ -1509,47 +1588,29 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to the node group during the maintenance window. A value of
-     * <code>true</code> allows these upgrades to occur; <code>false</code>
-     * disables automatic upgrades. <p>Default: <code>true</code>
+     * This parameter is currently disabled.
      *
-     * @return Determines whether minor engine upgrades will be applied automatically
-     *         to the node group during the maintenance window. A value of
-     *         <code>true</code> allows these upgrades to occur; <code>false</code>
-     *         disables automatic upgrades. <p>Default: <code>true</code>
+     * @return This parameter is currently disabled.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to the node group during the maintenance window. A value of
-     * <code>true</code> allows these upgrades to occur; <code>false</code>
-     * disables automatic upgrades. <p>Default: <code>true</code>
+     * This parameter is currently disabled.
      *
-     * @param autoMinorVersionUpgrade Determines whether minor engine upgrades will be applied automatically
-     *         to the node group during the maintenance window. A value of
-     *         <code>true</code> allows these upgrades to occur; <code>false</code>
-     *         disables automatic upgrades. <p>Default: <code>true</code>
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to the node group during the maintenance window. A value of
-     * <code>true</code> allows these upgrades to occur; <code>false</code>
-     * disables automatic upgrades. <p>Default: <code>true</code>
+     * This parameter is currently disabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade Determines whether minor engine upgrades will be applied automatically
-     *         to the node group during the maintenance window. A value of
-     *         <code>true</code> allows these upgrades to occur; <code>false</code>
-     *         disables automatic upgrades. <p>Default: <code>true</code>
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1560,15 +1621,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to the node group during the maintenance window. A value of
-     * <code>true</code> allows these upgrades to occur; <code>false</code>
-     * disables automatic upgrades. <p>Default: <code>true</code>
+     * This parameter is currently disabled.
      *
-     * @return Determines whether minor engine upgrades will be applied automatically
-     *         to the node group during the maintenance window. A value of
-     *         <code>true</code> allows these upgrades to occur; <code>false</code>
-     *         disables automatic upgrades. <p>Default: <code>true</code>
+     * @return This parameter is currently disabled.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
@@ -1731,6 +1786,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
         if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
         if (getCacheSecurityGroupNames() != null) sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ",");
         if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getSnapshotArns() != null) sb.append("SnapshotArns: " + getSnapshotArns() + ",");
         if (getSnapshotName() != null) sb.append("SnapshotName: " + getSnapshotName() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
@@ -1761,6 +1817,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getCacheSubnetGroupName() == null) ? 0 : getCacheSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotArns() == null) ? 0 : getSnapshotArns().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotName() == null) ? 0 : getSnapshotName().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
@@ -1806,6 +1863,8 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
         if (other.getCacheSecurityGroupNames() != null && other.getCacheSecurityGroupNames().equals(this.getCacheSecurityGroupNames()) == false) return false; 
         if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null) return false;
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getSnapshotArns() == null ^ this.getSnapshotArns() == null) return false;
         if (other.getSnapshotArns() != null && other.getSnapshotArns().equals(this.getSnapshotArns()) == false) return false; 
         if (other.getSnapshotName() == null ^ this.getSnapshotName() == null) return false;

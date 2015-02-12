@@ -23,7 +23,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Updates the policy that grants an entity permission to assume a role.
  * For more information about roles, go to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
  * .
  * </p>
  *

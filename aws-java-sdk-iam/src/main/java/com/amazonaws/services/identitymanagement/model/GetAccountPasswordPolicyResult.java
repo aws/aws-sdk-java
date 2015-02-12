@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * GetAccountPasswordPolicy action.
+ * Contains the response to a successful GetAccountPasswordPolicy
+ * request.
  * </p>
  */
 public class GetAccountPasswordPolicyResult implements Serializable {

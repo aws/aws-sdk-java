@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createSnapshot(CreateSnapshotRequest) CreateSnapshot operation}.
  * <p>
- * The <i>CreateSnapshot</i> operation creates a copy of an entire cache
+ * The <i>CreateSnapshot</i> action creates a copy of an entire cache
  * cluster at a specific moment in time.
  * </p>
  *

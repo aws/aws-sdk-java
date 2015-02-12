@@ -39,7 +39,7 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
 
         Request<CreateCacheClusterRequest> request = new DefaultRequest<CreateCacheClusterRequest>(createCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateCacheCluster");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (createCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(createCacheClusterRequest.getCacheClusterId()));
@@ -103,6 +103,23 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             }
 
             securityGroupIdsListIndex++;
+        }
+
+        java.util.List<Tag> tagsList = createCacheClusterRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+            }
+
+            tagsListIndex++;
         }
 
         java.util.List<String> snapshotArnsList = createCacheClusterRequest.getSnapshotArns();

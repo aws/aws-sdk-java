@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * CreateVirtualMFADevice action.
+ * Contains the response to a successful CreateVirtualMFADevice request.
  * </p>
  */
 public class CreateVirtualMFADeviceResult implements Serializable {

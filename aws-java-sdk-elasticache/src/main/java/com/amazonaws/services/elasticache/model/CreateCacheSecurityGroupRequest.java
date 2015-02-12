@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSecurityGroup(CreateCacheSecurityGroupRequest) CreateCacheSecurityGroup operation}.
  * <p>
- * The <i>CreateCacheSecurityGroup</i> operation creates a new cache
+ * The <i>CreateCacheSecurityGroup</i> action creates a new cache
  * security group. Use a cache security group to control access to one or
  * more cache clusters.
  * </p>

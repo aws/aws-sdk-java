@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateAccountAliasRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the account alias to create.
+     * The account alias to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
@@ -51,40 +51,40 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param accountAlias The name of the account alias to create.
+     * @param accountAlias The account alias to create.
      */
     public CreateAccountAliasRequest(String accountAlias) {
         setAccountAlias(accountAlias);
     }
 
     /**
-     * The name of the account alias to create.
+     * The account alias to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @return The name of the account alias to create.
+     * @return The account alias to create.
      */
     public String getAccountAlias() {
         return accountAlias;
     }
     
     /**
-     * The name of the account alias to create.
+     * The account alias to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @param accountAlias The name of the account alias to create.
+     * @param accountAlias The account alias to create.
      */
     public void setAccountAlias(String accountAlias) {
         this.accountAlias = accountAlias;
     }
     
     /**
-     * The name of the account alias to create.
+     * The account alias to create.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -92,7 +92,7 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @param accountAlias The name of the account alias to create.
+     * @param accountAlias The account alias to create.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

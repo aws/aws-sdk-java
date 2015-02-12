@@ -21,15 +21,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRolePolicy(GetRolePolicyRequest) GetRolePolicy operation}.
  * <p>
- * Retrieves the specified policy document for the specified role. For
- * more information about roles, go to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
- * .
+ * Retrieves the specified inline policy document that is embedded with
+ * the specified role.
  * </p>
  * <p>
- * The returned policy is URL-encoded according to RFC 3986. For more
- * information about RFC 3986, go to
- * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
+ * A role can also have managed policies attached to it. To retrieve a
+ * managed policy document that is attached to a role, use GetPolicy to
+ * determine the policy's default version, then use GetPolicyVersion to
+ * retrieve the policy document.
+ * </p>
+ * <p>
+ * For more information about policies, refer to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+ * in the <i>Using IAM</i> guide.
+ * </p>
+ * <p>
+ * For more information about roles, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
  * .
  * </p>
  *

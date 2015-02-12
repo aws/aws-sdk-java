@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeReplicationGroups(DescribeReplicationGroupsRequest) DescribeReplicationGroups operation}.
  * <p>
- * The <i>DescribeReplicationGroups</i> operation returns information
- * about a particular replication group. If no identifier is specified,
+ * The <i>DescribeReplicationGroups</i> action returns information about
+ * a particular replication group. If no identifier is specified,
  * <i>DescribeReplicationGroups</i> returns information about all
  * replication groups.
  * </p>
@@ -48,7 +48,7 @@ public class DescribeReplicationGroupsRequest extends AmazonWebServiceRequest im
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      */
@@ -152,12 +152,12 @@ public class DescribeReplicationGroupsRequest extends AmazonWebServiceRequest im
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @return An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -167,12 +167,12 @@ public class DescribeReplicationGroupsRequest extends AmazonWebServiceRequest im
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -182,14 +182,14 @@ public class DescribeReplicationGroupsRequest extends AmazonWebServiceRequest im
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *

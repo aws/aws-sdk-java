@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * ListServerCertificates action.
+ * Contains the response to a successful ListServerCertificates request.
  * </p>
  */
 public class ListServerCertificatesResult implements Serializable {

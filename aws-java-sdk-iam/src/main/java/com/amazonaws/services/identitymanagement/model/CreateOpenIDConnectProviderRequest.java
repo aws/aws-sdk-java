@@ -95,7 +95,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      * <code>server.example.com</code> and the provider stores its keys at
      * "https://keys.server.example.com/openid-connect", the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate
-     * used by https://keys.server.example.com.
+     * used by https://keys.server.example.com. <p>For more information about
+     * obtaining the OIDC provider's thumbprint, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     * the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     * IAM</i> guide.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> thumbprintList;
 
@@ -343,7 +347,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      * <code>server.example.com</code> and the provider stores its keys at
      * "https://keys.server.example.com/openid-connect", the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate
-     * used by https://keys.server.example.com.
+     * used by https://keys.server.example.com. <p>For more information about
+     * obtaining the OIDC provider's thumbprint, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     * the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     * IAM</i> guide.
      *
      * @return A list of server certificate thumbprints for the OpenID Connect (OIDC)
      *         identity provider's server certificate(s). Typically this list
@@ -358,7 +366,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      *         <code>server.example.com</code> and the provider stores its keys at
      *         "https://keys.server.example.com/openid-connect", the thumbprint
      *         string would be the hex-encoded SHA-1 hash value of the certificate
-     *         used by https://keys.server.example.com.
+     *         used by https://keys.server.example.com. <p>For more information about
+     *         obtaining the OIDC provider's thumbprint, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     *         the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     *         IAM</i> guide.
      */
     public java.util.List<String> getThumbprintList() {
         if (thumbprintList == null) {
@@ -382,7 +394,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      * <code>server.example.com</code> and the provider stores its keys at
      * "https://keys.server.example.com/openid-connect", the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate
-     * used by https://keys.server.example.com.
+     * used by https://keys.server.example.com. <p>For more information about
+     * obtaining the OIDC provider's thumbprint, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     * the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     * IAM</i> guide.
      *
      * @param thumbprintList A list of server certificate thumbprints for the OpenID Connect (OIDC)
      *         identity provider's server certificate(s). Typically this list
@@ -397,7 +413,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      *         <code>server.example.com</code> and the provider stores its keys at
      *         "https://keys.server.example.com/openid-connect", the thumbprint
      *         string would be the hex-encoded SHA-1 hash value of the certificate
-     *         used by https://keys.server.example.com.
+     *         used by https://keys.server.example.com. <p>For more information about
+     *         obtaining the OIDC provider's thumbprint, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     *         the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     *         IAM</i> guide.
      */
     public void setThumbprintList(java.util.Collection<String> thumbprintList) {
         if (thumbprintList == null) {
@@ -423,7 +443,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      * <code>server.example.com</code> and the provider stores its keys at
      * "https://keys.server.example.com/openid-connect", the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate
-     * used by https://keys.server.example.com.
+     * used by https://keys.server.example.com. <p>For more information about
+     * obtaining the OIDC provider's thumbprint, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     * the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     * IAM</i> guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -440,7 +464,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      *         <code>server.example.com</code> and the provider stores its keys at
      *         "https://keys.server.example.com/openid-connect", the thumbprint
      *         string would be the hex-encoded SHA-1 hash value of the certificate
-     *         used by https://keys.server.example.com.
+     *         used by https://keys.server.example.com. <p>For more information about
+     *         obtaining the OIDC provider's thumbprint, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     *         the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     *         IAM</i> guide.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -467,7 +495,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      * <code>server.example.com</code> and the provider stores its keys at
      * "https://keys.server.example.com/openid-connect", the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate
-     * used by https://keys.server.example.com.
+     * used by https://keys.server.example.com. <p>For more information about
+     * obtaining the OIDC provider's thumbprint, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     * the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     * IAM</i> guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -484,7 +516,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      *         <code>server.example.com</code> and the provider stores its keys at
      *         "https://keys.server.example.com/openid-connect", the thumbprint
      *         string would be the hex-encoded SHA-1 hash value of the certificate
-     *         used by https://keys.server.example.com.
+     *         used by https://keys.server.example.com. <p>For more information about
+     *         obtaining the OIDC provider's thumbprint, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+     *         the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
+     *         IAM</i> guide.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

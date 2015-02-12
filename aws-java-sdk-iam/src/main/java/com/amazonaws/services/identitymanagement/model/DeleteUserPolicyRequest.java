@@ -21,7 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(DeleteUserPolicyRequest) DeleteUserPolicy operation}.
  * <p>
- * Deletes the specified policy associated with the specified user.
+ * Deletes the specified inline policy that is embedded in the specified
+ * user.
+ * </p>
+ * <p>
+ * A user can also have managed policies attached to it. To detach a
+ * managed policy from a user, use DetachUserPolicy. For more information
+ * about policies, refer to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+ * in the <i>Using IAM</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(DeleteUserPolicyRequest)
@@ -29,7 +37,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the user the policy is associated with.
+     * The name (friendly name, not ARN) identifying the user that the policy
+     * is embedded in.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -38,7 +47,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
     private String userName;
 
     /**
-     * The name of the policy document to delete.
+     * The name identifying the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -57,8 +66,9 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName The name of the user the policy is associated with.
-     * @param policyName The name of the policy document to delete.
+     * @param userName The name (friendly name, not ARN) identifying the user
+     * that the policy is embedded in.
+     * @param policyName The name identifying the policy document to delete.
      */
     public DeleteUserPolicyRequest(String userName, String policyName) {
         setUserName(userName);
@@ -66,33 +76,38 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The name of the user the policy is associated with.
+     * The name (friendly name, not ARN) identifying the user that the policy
+     * is embedded in.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the user the policy is associated with.
+     * @return The name (friendly name, not ARN) identifying the user that the policy
+     *         is embedded in.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The name of the user the policy is associated with.
+     * The name (friendly name, not ARN) identifying the user that the policy
+     * is embedded in.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user the policy is associated with.
+     * @param userName The name (friendly name, not ARN) identifying the user that the policy
+     *         is embedded in.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name of the user the policy is associated with.
+     * The name (friendly name, not ARN) identifying the user that the policy
+     * is embedded in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -100,7 +115,8 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user the policy is associated with.
+     * @param userName The name (friendly name, not ARN) identifying the user that the policy
+     *         is embedded in.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -111,33 +127,33 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The name of the policy document to delete.
+     * The name identifying the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the policy document to delete.
+     * @return The name identifying the policy document to delete.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * The name of the policy document to delete.
+     * The name identifying the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName The name of the policy document to delete.
+     * @param policyName The name identifying the policy document to delete.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * The name of the policy document to delete.
+     * The name identifying the policy document to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -145,7 +161,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName The name of the policy document to delete.
+     * @param policyName The name identifying the policy document to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

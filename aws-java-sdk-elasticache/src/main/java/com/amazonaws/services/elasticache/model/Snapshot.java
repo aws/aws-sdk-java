@@ -69,7 +69,9 @@ public class Snapshot implements Serializable {
     private String engineVersion;
 
     /**
-     * The number of cache nodes in the source cache cluster.
+     * The number of cache nodes in the source cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      */
     private Integer numCacheNodes;
 
@@ -120,9 +122,7 @@ public class Snapshot implements Serializable {
     private String vpcId;
 
     /**
-     * For the source cache cluster, indicates whether minor version patches
-     * are applied automatically (<code>true</code>) or not
-     * (<code>false</code>).
+     * This parameter is currently disabled.
      */
     private Boolean autoMinorVersionUpgrade;
 
@@ -434,29 +434,41 @@ public class Snapshot implements Serializable {
     }
 
     /**
-     * The number of cache nodes in the source cache cluster.
+     * The number of cache nodes in the source cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      *
-     * @return The number of cache nodes in the source cache cluster.
+     * @return The number of cache nodes in the source cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
     }
     
     /**
-     * The number of cache nodes in the source cache cluster.
+     * The number of cache nodes in the source cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      *
-     * @param numCacheNodes The number of cache nodes in the source cache cluster.
+     * @param numCacheNodes The number of cache nodes in the source cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
     }
     
     /**
-     * The number of cache nodes in the source cache cluster.
+     * The number of cache nodes in the source cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param numCacheNodes The number of cache nodes in the source cache cluster.
+     * @param numCacheNodes The number of cache nodes in the source cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -767,41 +779,29 @@ public class Snapshot implements Serializable {
     }
 
     /**
-     * For the source cache cluster, indicates whether minor version patches
-     * are applied automatically (<code>true</code>) or not
-     * (<code>false</code>).
+     * This parameter is currently disabled.
      *
-     * @return For the source cache cluster, indicates whether minor version patches
-     *         are applied automatically (<code>true</code>) or not
-     *         (<code>false</code>).
+     * @return This parameter is currently disabled.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * For the source cache cluster, indicates whether minor version patches
-     * are applied automatically (<code>true</code>) or not
-     * (<code>false</code>).
+     * This parameter is currently disabled.
      *
-     * @param autoMinorVersionUpgrade For the source cache cluster, indicates whether minor version patches
-     *         are applied automatically (<code>true</code>) or not
-     *         (<code>false</code>).
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * For the source cache cluster, indicates whether minor version patches
-     * are applied automatically (<code>true</code>) or not
-     * (<code>false</code>).
+     * This parameter is currently disabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade For the source cache cluster, indicates whether minor version patches
-     *         are applied automatically (<code>true</code>) or not
-     *         (<code>false</code>).
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -812,13 +812,9 @@ public class Snapshot implements Serializable {
     }
 
     /**
-     * For the source cache cluster, indicates whether minor version patches
-     * are applied automatically (<code>true</code>) or not
-     * (<code>false</code>).
+     * This parameter is currently disabled.
      *
-     * @return For the source cache cluster, indicates whether minor version patches
-     *         are applied automatically (<code>true</code>) or not
-     *         (<code>false</code>).
+     * @return This parameter is currently disabled.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;

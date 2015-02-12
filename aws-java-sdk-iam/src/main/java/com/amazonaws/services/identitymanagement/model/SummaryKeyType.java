@@ -32,7 +32,18 @@ public enum SummaryKeyType {
     AccessKeysPerUserQuota("AccessKeysPerUserQuota"),
     MFADevices("MFADevices"),
     MFADevicesInUse("MFADevicesInUse"),
-    AccountMFAEnabled("AccountMFAEnabled");
+    AccountMFAEnabled("AccountMFAEnabled"),
+    AccountAccessKeysPresent("AccountAccessKeysPresent"),
+    AccountSigningCertificatesPresent("AccountSigningCertificatesPresent"),
+    AttachedPoliciesPerGroupQuota("AttachedPoliciesPerGroupQuota"),
+    AttachedPoliciesPerRoleQuota("AttachedPoliciesPerRoleQuota"),
+    AttachedPoliciesPerUserQuota("AttachedPoliciesPerUserQuota"),
+    Policies("Policies"),
+    PoliciesQuota("PoliciesQuota"),
+    PolicySizeQuota("PolicySizeQuota"),
+    PolicyVersionsInUse("PolicyVersionsInUse"),
+    PolicyVersionsInUseQuota("PolicyVersionsInUseQuota"),
+    VersionsPerPolicyQuota("VersionsPerPolicyQuota");
 
     private String value;
 
@@ -84,6 +95,28 @@ public enum SummaryKeyType {
             return SummaryKeyType.MFADevicesInUse;
         } else if ("AccountMFAEnabled".equals(value)) {
             return SummaryKeyType.AccountMFAEnabled;
+        } else if ("AccountAccessKeysPresent".equals(value)) {
+            return SummaryKeyType.AccountAccessKeysPresent;
+        } else if ("AccountSigningCertificatesPresent".equals(value)) {
+            return SummaryKeyType.AccountSigningCertificatesPresent;
+        } else if ("AttachedPoliciesPerGroupQuota".equals(value)) {
+            return SummaryKeyType.AttachedPoliciesPerGroupQuota;
+        } else if ("AttachedPoliciesPerRoleQuota".equals(value)) {
+            return SummaryKeyType.AttachedPoliciesPerRoleQuota;
+        } else if ("AttachedPoliciesPerUserQuota".equals(value)) {
+            return SummaryKeyType.AttachedPoliciesPerUserQuota;
+        } else if ("Policies".equals(value)) {
+            return SummaryKeyType.Policies;
+        } else if ("PoliciesQuota".equals(value)) {
+            return SummaryKeyType.PoliciesQuota;
+        } else if ("PolicySizeQuota".equals(value)) {
+            return SummaryKeyType.PolicySizeQuota;
+        } else if ("PolicyVersionsInUse".equals(value)) {
+            return SummaryKeyType.PolicyVersionsInUse;
+        } else if ("PolicyVersionsInUseQuota".equals(value)) {
+            return SummaryKeyType.PolicyVersionsInUseQuota;
+        } else if ("VersionsPerPolicyQuota".equals(value)) {
+            return SummaryKeyType.VersionsPerPolicyQuota;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

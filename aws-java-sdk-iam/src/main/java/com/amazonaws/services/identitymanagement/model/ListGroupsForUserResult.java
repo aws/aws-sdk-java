@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * ListGroupsForUser action.
+ * Contains the response to a successful ListGroupsForUser request.
  * </p>
  */
 public class ListGroupsForUserResult implements Serializable {

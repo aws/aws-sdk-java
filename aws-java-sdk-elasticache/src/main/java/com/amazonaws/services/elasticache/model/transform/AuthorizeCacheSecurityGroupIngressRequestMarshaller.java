@@ -39,7 +39,7 @@ public class AuthorizeCacheSecurityGroupIngressRequestMarshaller implements Mars
 
         Request<AuthorizeCacheSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeCacheSecurityGroupIngressRequest>(authorizeCacheSecurityGroupIngressRequest, "AmazonElastiCache");
         request.addParameter("Action", "AuthorizeCacheSecurityGroupIngress");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (authorizeCacheSecurityGroupIngressRequest.getCacheSecurityGroupName() != null) {
             request.addParameter("CacheSecurityGroupName", StringUtils.fromString(authorizeCacheSecurityGroupIngressRequest.getCacheSecurityGroupName()));

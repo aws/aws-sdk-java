@@ -68,13 +68,15 @@ public class CacheCluster implements Serializable {
     private String cacheClusterStatus;
 
     /**
-     * The number of cache nodes in the cache cluster.
+     * The number of cache nodes in the cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      */
     private Integer numCacheNodes;
 
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located or "Multiple" if the cache nodes are located in different
+     * located or "Multiple"if the cache nodes are located in different
      * Availability Zones.
      */
     private String preferredAvailabilityZone;
@@ -125,9 +127,7 @@ public class CacheCluster implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode> cacheNodes;
 
     /**
-     * If <code>true</code>, then minor version patches are applied
-     * automatically; if <code>false</code>, then automatic minor version
-     * patches are disabled.
+     * This parameter is currently disabled.
      */
     private Boolean autoMinorVersionUpgrade;
 
@@ -446,29 +446,41 @@ public class CacheCluster implements Serializable {
     }
 
     /**
-     * The number of cache nodes in the cache cluster.
+     * The number of cache nodes in the cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      *
-     * @return The number of cache nodes in the cache cluster.
+     * @return The number of cache nodes in the cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
     }
     
     /**
-     * The number of cache nodes in the cache cluster.
+     * The number of cache nodes in the cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      *
-     * @param numCacheNodes The number of cache nodes in the cache cluster.
+     * @param numCacheNodes The number of cache nodes in the cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
     }
     
     /**
-     * The number of cache nodes in the cache cluster.
+     * The number of cache nodes in the cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param numCacheNodes The number of cache nodes in the cache cluster.
+     * @param numCacheNodes The number of cache nodes in the cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -480,11 +492,11 @@ public class CacheCluster implements Serializable {
 
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located or "Multiple" if the cache nodes are located in different
+     * located or "Multiple"if the cache nodes are located in different
      * Availability Zones.
      *
      * @return The name of the Availability Zone in which the cache cluster is
-     *         located or "Multiple" if the cache nodes are located in different
+     *         located or "Multiple"if the cache nodes are located in different
      *         Availability Zones.
      */
     public String getPreferredAvailabilityZone() {
@@ -493,11 +505,11 @@ public class CacheCluster implements Serializable {
     
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located or "Multiple" if the cache nodes are located in different
+     * located or "Multiple"if the cache nodes are located in different
      * Availability Zones.
      *
      * @param preferredAvailabilityZone The name of the Availability Zone in which the cache cluster is
-     *         located or "Multiple" if the cache nodes are located in different
+     *         located or "Multiple"if the cache nodes are located in different
      *         Availability Zones.
      */
     public void setPreferredAvailabilityZone(String preferredAvailabilityZone) {
@@ -506,13 +518,13 @@ public class CacheCluster implements Serializable {
     
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located or "Multiple" if the cache nodes are located in different
+     * located or "Multiple"if the cache nodes are located in different
      * Availability Zones.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredAvailabilityZone The name of the Availability Zone in which the cache cluster is
-     *         located or "Multiple" if the cache nodes are located in different
+     *         located or "Multiple"if the cache nodes are located in different
      *         Availability Zones.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -890,41 +902,29 @@ public class CacheCluster implements Serializable {
     }
 
     /**
-     * If <code>true</code>, then minor version patches are applied
-     * automatically; if <code>false</code>, then automatic minor version
-     * patches are disabled.
+     * This parameter is currently disabled.
      *
-     * @return If <code>true</code>, then minor version patches are applied
-     *         automatically; if <code>false</code>, then automatic minor version
-     *         patches are disabled.
+     * @return This parameter is currently disabled.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * If <code>true</code>, then minor version patches are applied
-     * automatically; if <code>false</code>, then automatic minor version
-     * patches are disabled.
+     * This parameter is currently disabled.
      *
-     * @param autoMinorVersionUpgrade If <code>true</code>, then minor version patches are applied
-     *         automatically; if <code>false</code>, then automatic minor version
-     *         patches are disabled.
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * If <code>true</code>, then minor version patches are applied
-     * automatically; if <code>false</code>, then automatic minor version
-     * patches are disabled.
+     * This parameter is currently disabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade If <code>true</code>, then minor version patches are applied
-     *         automatically; if <code>false</code>, then automatic minor version
-     *         patches are disabled.
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -935,13 +935,9 @@ public class CacheCluster implements Serializable {
     }
 
     /**
-     * If <code>true</code>, then minor version patches are applied
-     * automatically; if <code>false</code>, then automatic minor version
-     * patches are disabled.
+     * This parameter is currently disabled.
      *
-     * @return If <code>true</code>, then minor version patches are applied
-     *         automatically; if <code>false</code>, then automatic minor version
-     *         patches are disabled.
+     * @return This parameter is currently disabled.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;

@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * GetOpenIDConnectProvider action.
+ * Contains the response to a successful GetOpenIDConnectProvider
+ * request.
  * </p>
  */
 public class GetOpenIDConnectProviderResult implements Serializable {

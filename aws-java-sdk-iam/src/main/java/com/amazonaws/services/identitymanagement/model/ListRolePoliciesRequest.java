@@ -21,12 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRolePolicies(ListRolePoliciesRequest) ListRolePolicies operation}.
  * <p>
- * Lists the names of the policies associated with the specified role.
- * If there are none, the action returns an empty list.
+ * Lists the names of the inline policies that are embedded in the
+ * specified role.
+ * </p>
+ * <p>
+ * A role can also have managed policies attached to it. To list the
+ * managed policies that are attached to a role, use
+ * ListAttachedRolePolicies. For more information about policies, refer
+ * to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+ * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and
- * <code>Marker</code> parameters.
+ * <code>Marker</code> parameters. If there are no inline policies
+ * embedded with the specified role, the action returns an empty list.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRolePolicies(ListRolePoliciesRequest)

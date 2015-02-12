@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * CreateInstanceProfileaction.
+ * Contains the response to a successful CreateInstanceProfile request.
  * </p>
  */
 public class CreateInstanceProfileResult implements Serializable {

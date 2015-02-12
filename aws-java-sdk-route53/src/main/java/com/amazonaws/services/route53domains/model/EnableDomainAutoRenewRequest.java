@@ -27,9 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * The period during which you can renew a domain name varies by TLD. For
- * a list of TLDs and their renewal policies, see "Renewal, restoration,
- * and deletion times"
- * iki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times)
+ * a list of TLDs and their renewal policies, see
+ * <a href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times"> "Renewal, restoration, and deletion times" </a>
  * on the website for our registrar partner, Gandi. Route 53 requires
  * that you renew before the end of the renewal period that is listed on
  * the Gandi website so we can complete processing before the deadline.

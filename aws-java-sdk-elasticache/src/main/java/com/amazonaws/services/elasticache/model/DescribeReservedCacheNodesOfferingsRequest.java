@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest) DescribeReservedCacheNodesOfferings operation}.
  * <p>
- * The <i>DescribeReservedCacheNodesOfferings</i> operation lists
- * available reserved cache node offerings.
+ * The <i>DescribeReservedCacheNodesOfferings</i> action lists available
+ * reserved cache node offerings.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest)
@@ -59,7 +59,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     /**
      * The offering type filter value. Use this parameter to show only the
      * available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     * Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy
      * Utilization"</code>
      */
     private String offeringType;
@@ -74,7 +74,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      */
@@ -257,12 +257,12 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     /**
      * The offering type filter value. Use this parameter to show only the
      * available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     * Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy
      * Utilization"</code>
      *
      * @return The offering type filter value. Use this parameter to show only the
      *         available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     *         Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy
      *         Utilization"</code>
      */
     public String getOfferingType() {
@@ -272,12 +272,12 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     /**
      * The offering type filter value. Use this parameter to show only the
      * available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     * Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy
      * Utilization"</code>
      *
      * @param offeringType The offering type filter value. Use this parameter to show only the
      *         available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     *         Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy
      *         Utilization"</code>
      */
     public void setOfferingType(String offeringType) {
@@ -287,14 +287,14 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     /**
      * The offering type filter value. Use this parameter to show only the
      * available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     * Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy
      * Utilization"</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offeringType The offering type filter value. Use this parameter to show only the
      *         available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     *         Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy
      *         Utilization"</code>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -358,12 +358,12 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @return An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -373,12 +373,12 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -388,14 +388,14 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *

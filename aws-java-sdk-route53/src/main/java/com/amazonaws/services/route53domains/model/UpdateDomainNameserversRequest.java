@@ -50,6 +50,11 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest impl
     private String domainName;
 
     /**
+     * The authorization key for .fi domains
+     */
+    private String fIAuthKey;
+
+    /**
      * A list of new name servers for the domain. <p>Type: Complex
      * <p>Children: <code>Name</code>, <code>GlueIps</code> <p>Required: Yes
      */
@@ -115,6 +120,39 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest impl
      */
     public UpdateDomainNameserversRequest withDomainName(String domainName) {
         this.domainName = domainName;
+        return this;
+    }
+
+    /**
+     * The authorization key for .fi domains
+     *
+     * @return The authorization key for .fi domains
+     */
+    public String getFIAuthKey() {
+        return fIAuthKey;
+    }
+    
+    /**
+     * The authorization key for .fi domains
+     *
+     * @param fIAuthKey The authorization key for .fi domains
+     */
+    public void setFIAuthKey(String fIAuthKey) {
+        this.fIAuthKey = fIAuthKey;
+    }
+    
+    /**
+     * The authorization key for .fi domains
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param fIAuthKey The authorization key for .fi domains
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateDomainNameserversRequest withFIAuthKey(String fIAuthKey) {
+        this.fIAuthKey = fIAuthKey;
         return this;
     }
 
@@ -207,6 +245,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
+        if (getFIAuthKey() != null) sb.append("FIAuthKey: " + getFIAuthKey() + ",");
         if (getNameservers() != null) sb.append("Nameservers: " + getNameservers() );
         sb.append("}");
         return sb.toString();
@@ -218,6 +257,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest impl
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
+        hashCode = prime * hashCode + ((getFIAuthKey() == null) ? 0 : getFIAuthKey().hashCode()); 
         hashCode = prime * hashCode + ((getNameservers() == null) ? 0 : getNameservers().hashCode()); 
         return hashCode;
     }
@@ -232,6 +272,8 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest impl
         
         if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
+        if (other.getFIAuthKey() == null ^ this.getFIAuthKey() == null) return false;
+        if (other.getFIAuthKey() != null && other.getFIAuthKey().equals(this.getFIAuthKey()) == false) return false; 
         if (other.getNameservers() == null ^ this.getNameservers() == null) return false;
         if (other.getNameservers() != null && other.getNameservers().equals(this.getNameservers()) == false) return false; 
         return true;

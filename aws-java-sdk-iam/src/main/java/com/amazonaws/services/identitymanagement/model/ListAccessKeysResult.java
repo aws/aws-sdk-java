@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListAccessKeys
- * action.
+ * Contains the response to a successful ListAccessKeys request.
  * </p>
  */
 public class ListAccessKeysResult implements Serializable {

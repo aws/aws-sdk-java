@@ -21,24 +21,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putGroupPolicy(PutGroupPolicyRequest) PutGroupPolicy operation}.
  * <p>
- * Adds (or updates) a policy document associated with the specified
- * group. For information about policies, refer to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
+ * Adds (or updates) an inline policy document that is embedded in the
+ * specified group.
+ * </p>
+ * <p>
+ * A user can also have managed policies attached to it. To attach a
+ * managed policy to a group, use AttachGroupPolicy. To create a new
+ * managed policy, use CreatePolicy. For information about policies,
+ * refer to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * For information about limits on the number of policies you can
- * associate with a group, see
+ * For information about limits on the number of inline policies that you
+ * can embed in a group, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * <b>NOTE:</b> Because policy documents can be large, you should use
- * POST rather than GET when calling PutGroupPolicy. For information
- * about setting up signatures and authorization through the API, go to
- * Signing AWS API Requests in the AWS General Reference. For general
- * information about using the Query API with IAM, go to Making Query
- * Requests in the Using IAM guide.
+ * <b>NOTE:</b>Because policy documents can be large, you should use POST
+ * rather than GET when calling PutGroupPolicy. For general information
+ * about using the Query API with IAM, go to Making Query Requests in the
+ * Using IAM guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putGroupPolicy(PutGroupPolicyRequest)

@@ -39,7 +39,7 @@ public class ModifyCacheParameterGroupRequestMarshaller implements Marshaller<Re
 
         Request<ModifyCacheParameterGroupRequest> request = new DefaultRequest<ModifyCacheParameterGroupRequest>(modifyCacheParameterGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyCacheParameterGroup");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (modifyCacheParameterGroupRequest.getCacheParameterGroupName() != null) {
             request.addParameter("CacheParameterGroupName", StringUtils.fromString(modifyCacheParameterGroupRequest.getCacheParameterGroupName()));

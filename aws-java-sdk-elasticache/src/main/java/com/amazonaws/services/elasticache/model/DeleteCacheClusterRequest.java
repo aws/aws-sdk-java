@@ -21,17 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest) DeleteCacheCluster operation}.
  * <p>
- * The <i>DeleteCacheCluster</i> operation deletes a previously
- * provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all
- * associated cache nodes, node endpoints and the cache cluster itself.
- * When you receive a successful response from this operation, Amazon
- * ElastiCache immediately begins deleting the cache cluster; you cannot
- * cancel or revert this operation.
+ * The <i>DeleteCacheCluster</i> action deletes a previously provisioned
+ * cache cluster. <i>DeleteCacheCluster</i> deletes all associated cache
+ * nodes, node endpoints and the cache cluster itself. When you receive a
+ * successful response from this action, Amazon ElastiCache immediately
+ * begins deleting the cache cluster; you cannot cancel or revert this
+ * action.
  * </p>
  * <p>
  * This API cannot be used to delete a cache cluster that is the last
- * read replica of a replication group that has automatic failover mode
- * enabled.
+ * read replica of a replication group that has Multi-AZ mode enabled.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest)

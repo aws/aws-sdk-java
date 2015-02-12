@@ -19,7 +19,8 @@ package com.amazonaws.services.route53.model;
  */
 public enum TagResourceType {
     
-    Healthcheck("healthcheck");
+    Healthcheck("healthcheck"),
+    Hostedzone("hostedzone");
 
     private String value;
 
@@ -45,6 +46,8 @@ public enum TagResourceType {
         
         } else if ("healthcheck".equals(value)) {
             return TagResourceType.Healthcheck;
+        } else if ("hostedzone".equals(value)) {
+            return TagResourceType.Hostedzone;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

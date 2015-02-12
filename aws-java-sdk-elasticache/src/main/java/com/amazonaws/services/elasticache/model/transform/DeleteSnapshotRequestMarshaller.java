@@ -39,7 +39,7 @@ public class DeleteSnapshotRequestMarshaller implements Marshaller<Request<Delet
 
         Request<DeleteSnapshotRequest> request = new DefaultRequest<DeleteSnapshotRequest>(deleteSnapshotRequest, "AmazonElastiCache");
         request.addParameter("Action", "DeleteSnapshot");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (deleteSnapshotRequest.getSnapshotName() != null) {
             request.addParameter("SnapshotName", StringUtils.fromString(deleteSnapshotRequest.getSnapshotName()));

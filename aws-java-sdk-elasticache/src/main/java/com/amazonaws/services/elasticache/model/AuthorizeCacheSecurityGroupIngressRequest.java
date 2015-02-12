@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest) AuthorizeCacheSecurityGroupIngress operation}.
  * <p>
- * The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network
+ * The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network
  * ingress to a cache security group. Applications using ElastiCache must
  * be running on Amazon EC2, and Amazon EC2 security groups are used as
  * the authorization mechanism.

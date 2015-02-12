@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest) DescribeEngineDefaultParameters operation}.
  * <p>
- * The <i>DescribeEngineDefaultParameters</i> operation returns the
- * default engine and system parameter information for the specified
- * cache engine.
+ * The <i>DescribeEngineDefaultParameters</i> action returns the default
+ * engine and system parameter information for the specified cache
+ * engine.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)
@@ -47,7 +47,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      */
@@ -170,12 +170,12 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @return An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -185,12 +185,12 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -200,14 +200,14 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *

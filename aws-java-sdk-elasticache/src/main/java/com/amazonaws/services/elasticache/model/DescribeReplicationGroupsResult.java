@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeReplicationGroups</i> operation.
+ * Represents the output of a <i>DescribeReplicationGroups</i> action.
  * </p>
  */
 public class DescribeReplicationGroupsResult implements Serializable {

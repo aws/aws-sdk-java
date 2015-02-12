@@ -22,42 +22,35 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.route53domains.AmazonRoute53Domains#transferDomain(TransferDomainRequest) TransferDomain operation}.
  * <p>
  * This operation transfers a domain from another registrar to Amazon
- * Route 53. Domains are registered by the AWS registrar, Gandi upon
- * transfer.
+ * Route 53. When the transfer is complete, the domain is registered with
+ * the AWS registrar partner, Gandi.
  * </p>
  * <p>
- * To transfer a domain, you need to meet all the domain transfer
- * criteria, including the following:
- * </p>
- * 
- * <ul>
- * <li>You must supply nameservers to transfer a domain.</li>
- * <li>You must disable the domain transfer lock (if any) before
- * transferring the domain.</li>
- * <li>A minimum of 60 days must have elapsed since the domain's
- * registration or last transfer.</li>
- * 
- * </ul>
- * <p>
- * We recommend you use the Amazon Route 53 as the DNS service for your
- * domain. You can create a hosted zone in Amazon Route 53 for your
- * current domain before transferring your domain.
+ * For transfer requirements, a detailed procedure, and information about
+ * viewing the status of a domain transfer, see
+ * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html"> Transferring Registration for a Domain to Amazon Route 53 </a>
+ * in the Amazon Route 53 Developer Guide.
  * </p>
  * <p>
- * Note that upon transfer, the domain duration is extended for a year if
- * not otherwise specified. Autorenew is enabled by default.
+ * If the registrar for your domain is also the DNS service provider for
+ * the domain, we highly recommend that you consider transferring your
+ * DNS service to Amazon Route 53 or to another DNS service provider
+ * before you transfer your registration. Some registrars provide free
+ * DNS service when you purchase a domain registration. When you transfer
+ * the registration, the previous registrar will not renew your domain
+ * registration and could end your DNS service at any time.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>Caution! If the registrar for your domain is also the DNS
+ * service provider for the domain and you don't transfer DNS service to
+ * another provider, your website, email, and the web applications
+ * associated with the domain might become unavailable.
  * </p>
  * <p>
  * If the transfer is successful, this method returns an operation ID
  * that you can use to track the progress and completion of the action.
- * If the request is not completed successfully, the domain registrant
+ * If the transfer doesn't complete successfully, the domain registrant
  * will be notified by email.
- * </p>
- * <p>
- * Transferring domains charges your AWS account an amount based on the
- * top-level domain. For more information, see
- * <a href="http://aws.amazon.com/route53/pricing/"> Amazon Route 53 Pricing </a>
- * .
  * </p>
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#transferDomain(TransferDomainRequest)
@@ -97,7 +90,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * Contains details for the host and glue IP addresses. <p>Type: Complex
-     * <p>Children: <code>GlueIps</code>, <code>Name</code>
+     * <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Nameserver> nameservers;
 
@@ -351,10 +344,10 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * Contains details for the host and glue IP addresses. <p>Type: Complex
-     * <p>Children: <code>GlueIps</code>, <code>Name</code>
+     * <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      *
      * @return Contains details for the host and glue IP addresses. <p>Type: Complex
-     *         <p>Children: <code>GlueIps</code>, <code>Name</code>
+     *         <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      */
     public java.util.List<Nameserver> getNameservers() {
         if (nameservers == null) {
@@ -366,10 +359,10 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * Contains details for the host and glue IP addresses. <p>Type: Complex
-     * <p>Children: <code>GlueIps</code>, <code>Name</code>
+     * <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      *
      * @param nameservers Contains details for the host and glue IP addresses. <p>Type: Complex
-     *         <p>Children: <code>GlueIps</code>, <code>Name</code>
+     *         <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      */
     public void setNameservers(java.util.Collection<Nameserver> nameservers) {
         if (nameservers == null) {
@@ -383,12 +376,12 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * Contains details for the host and glue IP addresses. <p>Type: Complex
-     * <p>Children: <code>GlueIps</code>, <code>Name</code>
+     * <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nameservers Contains details for the host and glue IP addresses. <p>Type: Complex
-     *         <p>Children: <code>GlueIps</code>, <code>Name</code>
+     *         <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -403,12 +396,12 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * Contains details for the host and glue IP addresses. <p>Type: Complex
-     * <p>Children: <code>GlueIps</code>, <code>Name</code>
+     * <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nameservers Contains details for the host and glue IP addresses. <p>Type: Complex
-     *         <p>Children: <code>GlueIps</code>, <code>Name</code>
+     *         <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

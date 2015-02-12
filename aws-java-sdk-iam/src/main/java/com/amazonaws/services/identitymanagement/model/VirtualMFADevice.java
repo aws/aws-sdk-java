@@ -52,9 +52,9 @@ public class VirtualMFADevice implements Serializable {
 
     /**
      * Contains information about an IAM user entity. <p> This data type is
-     * used as a response element in the following actions: <ul>
-     * <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
-     * <li><p><a>ListUsers</a></li> </ul>
+     * used as a response element in the following actions: <ul> <li> <p>
+     * <a>CreateUser</a> </li> <li> <p> <a>GetUser</a> </li> <li> <p>
+     * <a>ListUsers</a> </li> </ul>
      */
     private User user;
 
@@ -224,14 +224,14 @@ public class VirtualMFADevice implements Serializable {
 
     /**
      * Contains information about an IAM user entity. <p> This data type is
-     * used as a response element in the following actions: <ul>
-     * <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
-     * <li><p><a>ListUsers</a></li> </ul>
+     * used as a response element in the following actions: <ul> <li> <p>
+     * <a>CreateUser</a> </li> <li> <p> <a>GetUser</a> </li> <li> <p>
+     * <a>ListUsers</a> </li> </ul>
      *
      * @return Contains information about an IAM user entity. <p> This data type is
-     *         used as a response element in the following actions: <ul>
-     *         <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
-     *         <li><p><a>ListUsers</a></li> </ul>
+     *         used as a response element in the following actions: <ul> <li> <p>
+     *         <a>CreateUser</a> </li> <li> <p> <a>GetUser</a> </li> <li> <p>
+     *         <a>ListUsers</a> </li> </ul>
      */
     public User getUser() {
         return user;
@@ -239,14 +239,14 @@ public class VirtualMFADevice implements Serializable {
     
     /**
      * Contains information about an IAM user entity. <p> This data type is
-     * used as a response element in the following actions: <ul>
-     * <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
-     * <li><p><a>ListUsers</a></li> </ul>
+     * used as a response element in the following actions: <ul> <li> <p>
+     * <a>CreateUser</a> </li> <li> <p> <a>GetUser</a> </li> <li> <p>
+     * <a>ListUsers</a> </li> </ul>
      *
      * @param user Contains information about an IAM user entity. <p> This data type is
-     *         used as a response element in the following actions: <ul>
-     *         <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
-     *         <li><p><a>ListUsers</a></li> </ul>
+     *         used as a response element in the following actions: <ul> <li> <p>
+     *         <a>CreateUser</a> </li> <li> <p> <a>GetUser</a> </li> <li> <p>
+     *         <a>ListUsers</a> </li> </ul>
      */
     public void setUser(User user) {
         this.user = user;
@@ -254,16 +254,16 @@ public class VirtualMFADevice implements Serializable {
     
     /**
      * Contains information about an IAM user entity. <p> This data type is
-     * used as a response element in the following actions: <ul>
-     * <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
-     * <li><p><a>ListUsers</a></li> </ul>
+     * used as a response element in the following actions: <ul> <li> <p>
+     * <a>CreateUser</a> </li> <li> <p> <a>GetUser</a> </li> <li> <p>
+     * <a>ListUsers</a> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param user Contains information about an IAM user entity. <p> This data type is
-     *         used as a response element in the following actions: <ul>
-     *         <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
-     *         <li><p><a>ListUsers</a></li> </ul>
+     *         used as a response element in the following actions: <ul> <li> <p>
+     *         <a>CreateUser</a> </li> <li> <p> <a>GetUser</a> </li> <li> <p>
+     *         <a>ListUsers</a> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

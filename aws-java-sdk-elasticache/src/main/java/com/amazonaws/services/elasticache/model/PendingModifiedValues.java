@@ -25,7 +25,9 @@ import java.io.Serializable;
 public class PendingModifiedValues implements Serializable {
 
     /**
-     * The new number of cache nodes for the cache cluster.
+     * The new number of cache nodes for the cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      */
     private Integer numCacheNodes;
 
@@ -48,29 +50,41 @@ public class PendingModifiedValues implements Serializable {
     public PendingModifiedValues() {}
     
     /**
-     * The new number of cache nodes for the cache cluster.
+     * The new number of cache nodes for the cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      *
-     * @return The new number of cache nodes for the cache cluster.
+     * @return The new number of cache nodes for the cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
     }
     
     /**
-     * The new number of cache nodes for the cache cluster.
+     * The new number of cache nodes for the cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      *
-     * @param numCacheNodes The new number of cache nodes for the cache cluster.
+     * @param numCacheNodes The new number of cache nodes for the cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
     }
     
     /**
-     * The new number of cache nodes for the cache cluster.
+     * The new number of cache nodes for the cache cluster. <p>For clusters
+     * running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 50.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param numCacheNodes The new number of cache nodes for the cache cluster.
+     * @param numCacheNodes The new number of cache nodes for the cache cluster. <p>For clusters
+     *         running Redis, this value must be 1. For clusters running Memcached,
+     *         this value must be between 1 and 50.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

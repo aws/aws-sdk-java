@@ -39,7 +39,7 @@ public class DescribeCacheSubnetGroupsRequestMarshaller implements Marshaller<Re
 
         Request<DescribeCacheSubnetGroupsRequest> request = new DefaultRequest<DescribeCacheSubnetGroupsRequest>(describeCacheSubnetGroupsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheSubnetGroups");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (describeCacheSubnetGroupsRequest.getCacheSubnetGroupName() != null) {
             request.addParameter("CacheSubnetGroupName", StringUtils.fromString(describeCacheSubnetGroupsRequest.getCacheSubnetGroupName()));
