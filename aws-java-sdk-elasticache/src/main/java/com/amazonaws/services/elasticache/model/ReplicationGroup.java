@@ -64,10 +64,10 @@ public class ReplicationGroup implements Serializable {
     private String snapshottingClusterId;
 
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
@@ -410,18 +410,18 @@ public class ReplicationGroup implements Serializable {
     }
 
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
      *
-     * @return Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @return Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @see AutomaticFailoverStatus
      */
@@ -430,18 +430,18 @@ public class ReplicationGroup implements Serializable {
     }
     
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
      *
-     * @param automaticFailover Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @param automaticFailover Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @see AutomaticFailoverStatus
      */
@@ -450,20 +450,20 @@ public class ReplicationGroup implements Serializable {
     }
     
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
      *
-     * @param automaticFailover Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @param automaticFailover Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -476,18 +476,18 @@ public class ReplicationGroup implements Serializable {
     }
 
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
      *
-     * @param automaticFailover Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @param automaticFailover Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @see AutomaticFailoverStatus
      */
@@ -496,20 +496,20 @@ public class ReplicationGroup implements Serializable {
     }
     
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
      *
-     * @param automaticFailover Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @param automaticFailover Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

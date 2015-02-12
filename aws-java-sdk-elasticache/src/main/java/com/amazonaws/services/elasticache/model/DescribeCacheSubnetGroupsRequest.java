@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest) DescribeCacheSubnetGroups operation}.
  * <p>
- * The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache
+ * The <i>DescribeCacheSubnetGroups</i> action returns a list of cache
  * subnet group descriptions. If a subnet group name is specified, the
  * list will contain only the description of that group.
  * </p>
@@ -45,7 +45,7 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      */
@@ -137,12 +137,12 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @return An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -152,12 +152,12 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -167,14 +167,14 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *

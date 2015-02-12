@@ -21,7 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(DeleteRolePolicyRequest) DeleteRolePolicy operation}.
  * <p>
- * Deletes the specified policy associated with the specified role.
+ * Deletes the specified inline policy that is embedded in the specified
+ * role.
+ * </p>
+ * <p>
+ * A role can also have managed policies attached to it. To detach a
+ * managed policy from a role, use DetachRolePolicy. For more information
+ * about policies, refer to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
+ * in the <i>Using IAM</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(DeleteRolePolicyRequest)
@@ -29,7 +37,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the role the associated with the policy.
+     * The name (friendly name, not ARN) identifying the role that the policy
+     * is embedded in.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -38,7 +47,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
     private String roleName;
 
     /**
-     * The name of the policy document to delete.
+     * The name identifying the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -47,33 +56,38 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
     private String policyName;
 
     /**
-     * The name of the role the associated with the policy.
+     * The name (friendly name, not ARN) identifying the role that the policy
+     * is embedded in.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the role the associated with the policy.
+     * @return The name (friendly name, not ARN) identifying the role that the policy
+     *         is embedded in.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * The name of the role the associated with the policy.
+     * The name (friendly name, not ARN) identifying the role that the policy
+     * is embedded in.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName The name of the role the associated with the policy.
+     * @param roleName The name (friendly name, not ARN) identifying the role that the policy
+     *         is embedded in.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * The name of the role the associated with the policy.
+     * The name (friendly name, not ARN) identifying the role that the policy
+     * is embedded in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -81,7 +95,8 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName The name of the role the associated with the policy.
+     * @param roleName The name (friendly name, not ARN) identifying the role that the policy
+     *         is embedded in.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -92,33 +107,33 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The name of the policy document to delete.
+     * The name identifying the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the policy document to delete.
+     * @return The name identifying the policy document to delete.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * The name of the policy document to delete.
+     * The name identifying the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName The name of the policy document to delete.
+     * @param policyName The name identifying the policy document to delete.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * The name of the policy document to delete.
+     * The name identifying the policy document to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -126,7 +141,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName The name of the policy document to delete.
+     * @param policyName The name identifying the policy document to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

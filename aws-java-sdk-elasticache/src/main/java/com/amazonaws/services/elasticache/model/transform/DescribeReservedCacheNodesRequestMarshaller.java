@@ -39,7 +39,7 @@ public class DescribeReservedCacheNodesRequestMarshaller implements Marshaller<R
 
         Request<DescribeReservedCacheNodesRequest> request = new DefaultRequest<DescribeReservedCacheNodesRequest>(describeReservedCacheNodesRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeReservedCacheNodes");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (describeReservedCacheNodesRequest.getReservedCacheNodeId() != null) {
             request.addParameter("ReservedCacheNodeId", StringUtils.fromString(describeReservedCacheNodesRequest.getReservedCacheNodeId()));

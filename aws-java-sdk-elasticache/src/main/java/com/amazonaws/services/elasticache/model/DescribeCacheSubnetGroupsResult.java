@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeCacheSubnetGroups</i> operation.
+ * Represents the output of a <i>DescribeCacheSubnetGroups</i> action.
  * </p>
  */
 public class DescribeCacheSubnetGroupsResult implements Serializable {

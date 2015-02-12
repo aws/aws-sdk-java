@@ -26,7 +26,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * validate requests that are signed with a corresponding private key.
  * When you upload the certificate, its default status is
  * <code>Active</code> .
- * 
  * </p>
  * <p>
  * If the <code>UserName</code> field is not specified, the user name is

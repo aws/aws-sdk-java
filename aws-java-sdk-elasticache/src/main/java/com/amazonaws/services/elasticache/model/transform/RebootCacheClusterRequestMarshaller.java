@@ -39,7 +39,7 @@ public class RebootCacheClusterRequestMarshaller implements Marshaller<Request<R
 
         Request<RebootCacheClusterRequest> request = new DefaultRequest<RebootCacheClusterRequest>(rebootCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "RebootCacheCluster");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (rebootCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(rebootCacheClusterRequest.getCacheClusterId()));

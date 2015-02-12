@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeCacheClusters</i> operation.
+ * Represents the output of a <i>DescribeCacheClusters</i> action.
  * </p>
  */
 public class DescribeCacheClustersResult implements Serializable {

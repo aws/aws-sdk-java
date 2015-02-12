@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeCacheParameters</i> operation.
+ * Represents the output of a <i>DescribeCacheParameters</i> action.
  * </p>
  */
 public class DescribeCacheParametersResult implements Serializable {

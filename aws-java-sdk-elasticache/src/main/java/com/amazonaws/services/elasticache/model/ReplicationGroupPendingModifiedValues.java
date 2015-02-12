@@ -32,10 +32,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     private String primaryClusterId;
 
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled
@@ -88,18 +88,18 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     }
 
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled
      *
-     * @return Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @return Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @see PendingAutomaticFailoverStatus
      */
@@ -108,18 +108,18 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     }
     
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled
      *
-     * @param automaticFailoverStatus Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @param automaticFailoverStatus Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @see PendingAutomaticFailoverStatus
      */
@@ -128,20 +128,20 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     }
     
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled
      *
-     * @param automaticFailoverStatus Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @param automaticFailoverStatus Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -154,18 +154,18 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     }
 
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled
      *
-     * @param automaticFailoverStatus Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @param automaticFailoverStatus Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @see PendingAutomaticFailoverStatus
      */
@@ -174,20 +174,20 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     }
     
     /**
-     * Indicates the status of automatic failover for this replication group.
-     * <note><p>ElastiCache AutoFailover replication groups are not supported
-     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     * types.</li> </ul> </note>
+     * Indicates the status of Multi-AZ for this replication group.
+     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     * node types.</li> </ul> </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>enabled, disabled
      *
-     * @param automaticFailoverStatus Indicates the status of automatic failover for this replication group.
-     *         <note><p>ElastiCache AutoFailover replication groups are not supported
-     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
-     *         types.</li> </ul> </note>
+     * @param automaticFailoverStatus Indicates the status of Multi-AZ for this replication group.
+     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
+     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
+     *         node types.</li> </ul> </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

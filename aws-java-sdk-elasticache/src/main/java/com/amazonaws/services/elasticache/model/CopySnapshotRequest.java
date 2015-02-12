@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#copySnapshot(CopySnapshotRequest) CopySnapshot operation}.
  * <p>
- * The <i>CopySnapshot</i> operation makes a copy of an existing
- * snapshot.
+ * The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#copySnapshot(CopySnapshotRequest)

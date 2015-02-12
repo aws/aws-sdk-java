@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeCacheSecurityGroups</i>
- * operation.
+ * Represents the output of a <i>DescribeCacheSecurityGroups</i> action.
  * </p>
  */
 public class DescribeCacheSecurityGroupsResult implements Serializable {

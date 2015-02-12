@@ -18,123 +18,200 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * GetAccountSummary action.
+ * Contains the response to a successful GetAccountSummary request.
  * </p>
  */
 public class GetAccountSummaryResult implements Serializable {
 
     /**
-     * A set of key value pairs containing account-level information. <p>
-     * <code>SummaryMap</code> contains the following keys: <ul>
-     * <li><p><code>AccessKeysPerUserQuota</code> - Maximum number of access
-     * keys that can be created per user</li>
-     * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
-     * MFA device assigned to it, 0 otherwise</li>
-     * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes)</li>
-     * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
-     * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
-     * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
-     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
-     * groups allowed for the AWS account</li>
-     * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
-     * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
-     * Maximum instance profiles allowed for the AWS account</li>
-     * <li><p><code>MFADevices</code> - Number of MFA devices, either
-     * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
-     * Number of MFA devices that have been assigned to an IAM user or to the
-     * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes)</li>
-     * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
-     * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
-     * account</li> <li><p><code>ServerCertificates</code> - Number of server
-     * certificates for the AWS account</li>
-     * <li><p><code>ServerCertificatesQuota</code> - Maximum server
-     * certificates allowed for the AWS account</li>
-     * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
-     * of X509 certificates allowed for a user</li>
-     * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
-     * Number of users for the AWS account</li>
-     * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
-     * account</li> </ul>
+     * A set of key value pairs containing information about IAM entity usage
+     * and IAM quotas. <p> <code>SummaryMap</code> contains the following
+     * keys: <ul> <li> <p><b>AccessKeysPerUserQuota</b> <p>The maximum number
+     * of active access keys allowed for each IAM user. </li> <li>
+     * <p><b>AccountAccessKeysPresent</b> <p>This value is 1 if the AWS
+     * account (root) has an access key, otherwise it is 0. </li> <li>
+     * <p><b>AccountMFAEnabled</b> <p>This value is 1 if the AWS account
+     * (root) has an MFA device assigned, otherwise it is 0. </li> <li>
+     * <p><b>AccountSigningCertificatesPresent</b> <p>This value is 1 if the
+     * AWS account (root) has a signing certificate, otherwise it is 0. </li>
+     * <li> <p><b>AssumeRolePolicySizeQuota</b> <p>The maximum allowed size
+     * for assume role policy documents (trust policies), in non-whitespace
+     * characters. </li> <li> <p><b>AttachedPoliciesPerGroupQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * group. </li> <li> <p><b>AttachedPoliciesPerRoleQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * role. </li> <li> <p><b>AttachedPoliciesPerUserQuota</b> <p>The maximum
+     * number of managed policies that can be attached to an IAM user. </li>
+     * <li> <p><b>GroupPolicySizeQuota</b> <p>The maximum allowed size for
+     * the aggregate of all inline policies embedded in an IAM group, in
+     * non-whitespace characters. </li> <li> <p><b>Groups</b> <p>The number
+     * of IAM groups in the AWS account. </li> <li>
+     * <p><b>GroupsPerUserQuota</b> <p>The maximum number of IAM groups each
+     * IAM user can belong to. </li> <li> <p><b>GroupsQuota</b> <p>The
+     * maximum number of IAM groups allowed in the AWS account. </li> <li>
+     * <p><b>InstanceProfiles</b> <p>The number of instance profiles in the
+     * AWS account. </li> <li> <p><b>InstanceProfilesQuota</b> <p>The maximum
+     * number of instance profiles allowed in the AWS account. </li> <li>
+     * <p><b>MFADevices</b> <p>The number of MFA devices in the AWS account,
+     * including those assigned and unassigned. </li> <li>
+     * <p><b>MFADevicesInUse</b> <p>The number of MFA devices that have been
+     * assigned to an IAM user or to the AWS account (root). </li> <li>
+     * <p><b>Policies</b> <p>The number of customer managed policies in the
+     * AWS account. </li> <li> <p><b>PoliciesQuota</b> <p>The maximum number
+     * of customer managed policies allowed in the AWS account. </li> <li>
+     * <p><b>PolicySizeQuota</b> <p>The maximum allowed size of a customer
+     * managed policy, in non-whitespace characters. </li> <li>
+     * <p><b>PolicyVersionsInUse</b> <p>The number of managed policies that
+     * are attached to IAM users, groups, or roles in the AWS account. </li>
+     * <li> <p><b>PolicyVersionsInUseQuota</b> <p>The maximum number of
+     * managed policies that can be attached to IAM users, groups, or roles
+     * in the AWS account. </li> <li> <p><b>Providers</b> <p>The number of
+     * identity providers in the AWS account. </li> <li>
+     * <p><b>RolePolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies (access policies, not the trust
+     * policy) embedded in an IAM role, in non-whitespace characters. </li>
+     * <li> <p><b>Roles</b> <p>The number of IAM roles in the AWS account.
+     * </li> <li> <p><b>RolesQuota</b> <p>The maximum number of IAM roles
+     * allowed in the AWS account. </li> <li> <p><b>ServerCertificates</b>
+     * <p>The number of server certificates in the AWS account. </li> <li>
+     * <p><b>ServerCertificatesQuota</b> <p>The maximum number of server
+     * certificates allowed in the AWS account. </li> <li>
+     * <p><b>SigningCertificatesPerUserQuota</b> <p>The maximum number of
+     * X.509 signing certificates allowed for each IAM user. </li> <li>
+     * <p><b>UserPolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies embedded in an IAM user, in
+     * non-whitespace characters. </li> <li> <p><b>Users</b> <p>The number of
+     * IAM users in the AWS account. </li> <li> <p><b>UsersQuota</b> <p>The
+     * maximum number of IAM users allowed in the AWS account. </li> <li>
+     * <p><b>VersionsPerPolicyQuota</b> <p>The maximum number of policy
+     * versions allowed for each managed policy. </li> </ul>
      */
     private java.util.Map<String,Integer> summaryMap;
 
     /**
-     * A set of key value pairs containing account-level information. <p>
-     * <code>SummaryMap</code> contains the following keys: <ul>
-     * <li><p><code>AccessKeysPerUserQuota</code> - Maximum number of access
-     * keys that can be created per user</li>
-     * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
-     * MFA device assigned to it, 0 otherwise</li>
-     * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes)</li>
-     * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
-     * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
-     * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
-     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
-     * groups allowed for the AWS account</li>
-     * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
-     * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
-     * Maximum instance profiles allowed for the AWS account</li>
-     * <li><p><code>MFADevices</code> - Number of MFA devices, either
-     * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
-     * Number of MFA devices that have been assigned to an IAM user or to the
-     * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes)</li>
-     * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
-     * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
-     * account</li> <li><p><code>ServerCertificates</code> - Number of server
-     * certificates for the AWS account</li>
-     * <li><p><code>ServerCertificatesQuota</code> - Maximum server
-     * certificates allowed for the AWS account</li>
-     * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
-     * of X509 certificates allowed for a user</li>
-     * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
-     * Number of users for the AWS account</li>
-     * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
-     * account</li> </ul>
+     * A set of key value pairs containing information about IAM entity usage
+     * and IAM quotas. <p> <code>SummaryMap</code> contains the following
+     * keys: <ul> <li> <p><b>AccessKeysPerUserQuota</b> <p>The maximum number
+     * of active access keys allowed for each IAM user. </li> <li>
+     * <p><b>AccountAccessKeysPresent</b> <p>This value is 1 if the AWS
+     * account (root) has an access key, otherwise it is 0. </li> <li>
+     * <p><b>AccountMFAEnabled</b> <p>This value is 1 if the AWS account
+     * (root) has an MFA device assigned, otherwise it is 0. </li> <li>
+     * <p><b>AccountSigningCertificatesPresent</b> <p>This value is 1 if the
+     * AWS account (root) has a signing certificate, otherwise it is 0. </li>
+     * <li> <p><b>AssumeRolePolicySizeQuota</b> <p>The maximum allowed size
+     * for assume role policy documents (trust policies), in non-whitespace
+     * characters. </li> <li> <p><b>AttachedPoliciesPerGroupQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * group. </li> <li> <p><b>AttachedPoliciesPerRoleQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * role. </li> <li> <p><b>AttachedPoliciesPerUserQuota</b> <p>The maximum
+     * number of managed policies that can be attached to an IAM user. </li>
+     * <li> <p><b>GroupPolicySizeQuota</b> <p>The maximum allowed size for
+     * the aggregate of all inline policies embedded in an IAM group, in
+     * non-whitespace characters. </li> <li> <p><b>Groups</b> <p>The number
+     * of IAM groups in the AWS account. </li> <li>
+     * <p><b>GroupsPerUserQuota</b> <p>The maximum number of IAM groups each
+     * IAM user can belong to. </li> <li> <p><b>GroupsQuota</b> <p>The
+     * maximum number of IAM groups allowed in the AWS account. </li> <li>
+     * <p><b>InstanceProfiles</b> <p>The number of instance profiles in the
+     * AWS account. </li> <li> <p><b>InstanceProfilesQuota</b> <p>The maximum
+     * number of instance profiles allowed in the AWS account. </li> <li>
+     * <p><b>MFADevices</b> <p>The number of MFA devices in the AWS account,
+     * including those assigned and unassigned. </li> <li>
+     * <p><b>MFADevicesInUse</b> <p>The number of MFA devices that have been
+     * assigned to an IAM user or to the AWS account (root). </li> <li>
+     * <p><b>Policies</b> <p>The number of customer managed policies in the
+     * AWS account. </li> <li> <p><b>PoliciesQuota</b> <p>The maximum number
+     * of customer managed policies allowed in the AWS account. </li> <li>
+     * <p><b>PolicySizeQuota</b> <p>The maximum allowed size of a customer
+     * managed policy, in non-whitespace characters. </li> <li>
+     * <p><b>PolicyVersionsInUse</b> <p>The number of managed policies that
+     * are attached to IAM users, groups, or roles in the AWS account. </li>
+     * <li> <p><b>PolicyVersionsInUseQuota</b> <p>The maximum number of
+     * managed policies that can be attached to IAM users, groups, or roles
+     * in the AWS account. </li> <li> <p><b>Providers</b> <p>The number of
+     * identity providers in the AWS account. </li> <li>
+     * <p><b>RolePolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies (access policies, not the trust
+     * policy) embedded in an IAM role, in non-whitespace characters. </li>
+     * <li> <p><b>Roles</b> <p>The number of IAM roles in the AWS account.
+     * </li> <li> <p><b>RolesQuota</b> <p>The maximum number of IAM roles
+     * allowed in the AWS account. </li> <li> <p><b>ServerCertificates</b>
+     * <p>The number of server certificates in the AWS account. </li> <li>
+     * <p><b>ServerCertificatesQuota</b> <p>The maximum number of server
+     * certificates allowed in the AWS account. </li> <li>
+     * <p><b>SigningCertificatesPerUserQuota</b> <p>The maximum number of
+     * X.509 signing certificates allowed for each IAM user. </li> <li>
+     * <p><b>UserPolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies embedded in an IAM user, in
+     * non-whitespace characters. </li> <li> <p><b>Users</b> <p>The number of
+     * IAM users in the AWS account. </li> <li> <p><b>UsersQuota</b> <p>The
+     * maximum number of IAM users allowed in the AWS account. </li> <li>
+     * <p><b>VersionsPerPolicyQuota</b> <p>The maximum number of policy
+     * versions allowed for each managed policy. </li> </ul>
      *
-     * @return A set of key value pairs containing account-level information. <p>
-     *         <code>SummaryMap</code> contains the following keys: <ul>
-     *         <li><p><code>AccessKeysPerUserQuota</code> - Maximum number of access
-     *         keys that can be created per user</li>
-     *         <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
-     *         MFA device assigned to it, 0 otherwise</li>
-     *         <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     *         for assume role policy documents (in kilobytes)</li>
-     *         <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
-     *         Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
-     *         - Number of Groups for the AWS account</li>
-     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
-     *         IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
-     *         groups allowed for the AWS account</li>
-     *         <li><p><code>InstanceProfiles</code> - Number of instance profiles for
-     *         the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
-     *         Maximum instance profiles allowed for the AWS account</li>
-     *         <li><p><code>MFADevices</code> - Number of MFA devices, either
-     *         assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
-     *         Number of MFA devices that have been assigned to an IAM user or to the
-     *         root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     *         allowed size for role policy documents (in kilobytes)</li>
-     *         <li><p><code>Roles</code> - Number of roles for the AWS account</li>
-     *         <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
-     *         account</li> <li><p><code>ServerCertificates</code> - Number of server
-     *         certificates for the AWS account</li>
-     *         <li><p><code>ServerCertificatesQuota</code> - Maximum server
-     *         certificates allowed for the AWS account</li>
-     *         <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
-     *         of X509 certificates allowed for a user</li>
-     *         <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     *         user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
-     *         Number of users for the AWS account</li>
-     *         <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
-     *         account</li> </ul>
+     * @return A set of key value pairs containing information about IAM entity usage
+     *         and IAM quotas. <p> <code>SummaryMap</code> contains the following
+     *         keys: <ul> <li> <p><b>AccessKeysPerUserQuota</b> <p>The maximum number
+     *         of active access keys allowed for each IAM user. </li> <li>
+     *         <p><b>AccountAccessKeysPresent</b> <p>This value is 1 if the AWS
+     *         account (root) has an access key, otherwise it is 0. </li> <li>
+     *         <p><b>AccountMFAEnabled</b> <p>This value is 1 if the AWS account
+     *         (root) has an MFA device assigned, otherwise it is 0. </li> <li>
+     *         <p><b>AccountSigningCertificatesPresent</b> <p>This value is 1 if the
+     *         AWS account (root) has a signing certificate, otherwise it is 0. </li>
+     *         <li> <p><b>AssumeRolePolicySizeQuota</b> <p>The maximum allowed size
+     *         for assume role policy documents (trust policies), in non-whitespace
+     *         characters. </li> <li> <p><b>AttachedPoliciesPerGroupQuota</b> <p>The
+     *         maximum number of managed policies that can be attached to an IAM
+     *         group. </li> <li> <p><b>AttachedPoliciesPerRoleQuota</b> <p>The
+     *         maximum number of managed policies that can be attached to an IAM
+     *         role. </li> <li> <p><b>AttachedPoliciesPerUserQuota</b> <p>The maximum
+     *         number of managed policies that can be attached to an IAM user. </li>
+     *         <li> <p><b>GroupPolicySizeQuota</b> <p>The maximum allowed size for
+     *         the aggregate of all inline policies embedded in an IAM group, in
+     *         non-whitespace characters. </li> <li> <p><b>Groups</b> <p>The number
+     *         of IAM groups in the AWS account. </li> <li>
+     *         <p><b>GroupsPerUserQuota</b> <p>The maximum number of IAM groups each
+     *         IAM user can belong to. </li> <li> <p><b>GroupsQuota</b> <p>The
+     *         maximum number of IAM groups allowed in the AWS account. </li> <li>
+     *         <p><b>InstanceProfiles</b> <p>The number of instance profiles in the
+     *         AWS account. </li> <li> <p><b>InstanceProfilesQuota</b> <p>The maximum
+     *         number of instance profiles allowed in the AWS account. </li> <li>
+     *         <p><b>MFADevices</b> <p>The number of MFA devices in the AWS account,
+     *         including those assigned and unassigned. </li> <li>
+     *         <p><b>MFADevicesInUse</b> <p>The number of MFA devices that have been
+     *         assigned to an IAM user or to the AWS account (root). </li> <li>
+     *         <p><b>Policies</b> <p>The number of customer managed policies in the
+     *         AWS account. </li> <li> <p><b>PoliciesQuota</b> <p>The maximum number
+     *         of customer managed policies allowed in the AWS account. </li> <li>
+     *         <p><b>PolicySizeQuota</b> <p>The maximum allowed size of a customer
+     *         managed policy, in non-whitespace characters. </li> <li>
+     *         <p><b>PolicyVersionsInUse</b> <p>The number of managed policies that
+     *         are attached to IAM users, groups, or roles in the AWS account. </li>
+     *         <li> <p><b>PolicyVersionsInUseQuota</b> <p>The maximum number of
+     *         managed policies that can be attached to IAM users, groups, or roles
+     *         in the AWS account. </li> <li> <p><b>Providers</b> <p>The number of
+     *         identity providers in the AWS account. </li> <li>
+     *         <p><b>RolePolicySizeQuota</b> <p>The maximum allowed size for the
+     *         aggregate of all inline policies (access policies, not the trust
+     *         policy) embedded in an IAM role, in non-whitespace characters. </li>
+     *         <li> <p><b>Roles</b> <p>The number of IAM roles in the AWS account.
+     *         </li> <li> <p><b>RolesQuota</b> <p>The maximum number of IAM roles
+     *         allowed in the AWS account. </li> <li> <p><b>ServerCertificates</b>
+     *         <p>The number of server certificates in the AWS account. </li> <li>
+     *         <p><b>ServerCertificatesQuota</b> <p>The maximum number of server
+     *         certificates allowed in the AWS account. </li> <li>
+     *         <p><b>SigningCertificatesPerUserQuota</b> <p>The maximum number of
+     *         X.509 signing certificates allowed for each IAM user. </li> <li>
+     *         <p><b>UserPolicySizeQuota</b> <p>The maximum allowed size for the
+     *         aggregate of all inline policies embedded in an IAM user, in
+     *         non-whitespace characters. </li> <li> <p><b>Users</b> <p>The number of
+     *         IAM users in the AWS account. </li> <li> <p><b>UsersQuota</b> <p>The
+     *         maximum number of IAM users allowed in the AWS account. </li> <li>
+     *         <p><b>VersionsPerPolicyQuota</b> <p>The maximum number of policy
+     *         versions allowed for each managed policy. </li> </ul>
      */
     public java.util.Map<String,Integer> getSummaryMap() {
         
@@ -145,156 +222,260 @@ public class GetAccountSummaryResult implements Serializable {
     }
     
     /**
-     * A set of key value pairs containing account-level information. <p>
-     * <code>SummaryMap</code> contains the following keys: <ul>
-     * <li><p><code>AccessKeysPerUserQuota</code> - Maximum number of access
-     * keys that can be created per user</li>
-     * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
-     * MFA device assigned to it, 0 otherwise</li>
-     * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes)</li>
-     * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
-     * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
-     * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
-     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
-     * groups allowed for the AWS account</li>
-     * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
-     * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
-     * Maximum instance profiles allowed for the AWS account</li>
-     * <li><p><code>MFADevices</code> - Number of MFA devices, either
-     * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
-     * Number of MFA devices that have been assigned to an IAM user or to the
-     * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes)</li>
-     * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
-     * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
-     * account</li> <li><p><code>ServerCertificates</code> - Number of server
-     * certificates for the AWS account</li>
-     * <li><p><code>ServerCertificatesQuota</code> - Maximum server
-     * certificates allowed for the AWS account</li>
-     * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
-     * of X509 certificates allowed for a user</li>
-     * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
-     * Number of users for the AWS account</li>
-     * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
-     * account</li> </ul>
+     * A set of key value pairs containing information about IAM entity usage
+     * and IAM quotas. <p> <code>SummaryMap</code> contains the following
+     * keys: <ul> <li> <p><b>AccessKeysPerUserQuota</b> <p>The maximum number
+     * of active access keys allowed for each IAM user. </li> <li>
+     * <p><b>AccountAccessKeysPresent</b> <p>This value is 1 if the AWS
+     * account (root) has an access key, otherwise it is 0. </li> <li>
+     * <p><b>AccountMFAEnabled</b> <p>This value is 1 if the AWS account
+     * (root) has an MFA device assigned, otherwise it is 0. </li> <li>
+     * <p><b>AccountSigningCertificatesPresent</b> <p>This value is 1 if the
+     * AWS account (root) has a signing certificate, otherwise it is 0. </li>
+     * <li> <p><b>AssumeRolePolicySizeQuota</b> <p>The maximum allowed size
+     * for assume role policy documents (trust policies), in non-whitespace
+     * characters. </li> <li> <p><b>AttachedPoliciesPerGroupQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * group. </li> <li> <p><b>AttachedPoliciesPerRoleQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * role. </li> <li> <p><b>AttachedPoliciesPerUserQuota</b> <p>The maximum
+     * number of managed policies that can be attached to an IAM user. </li>
+     * <li> <p><b>GroupPolicySizeQuota</b> <p>The maximum allowed size for
+     * the aggregate of all inline policies embedded in an IAM group, in
+     * non-whitespace characters. </li> <li> <p><b>Groups</b> <p>The number
+     * of IAM groups in the AWS account. </li> <li>
+     * <p><b>GroupsPerUserQuota</b> <p>The maximum number of IAM groups each
+     * IAM user can belong to. </li> <li> <p><b>GroupsQuota</b> <p>The
+     * maximum number of IAM groups allowed in the AWS account. </li> <li>
+     * <p><b>InstanceProfiles</b> <p>The number of instance profiles in the
+     * AWS account. </li> <li> <p><b>InstanceProfilesQuota</b> <p>The maximum
+     * number of instance profiles allowed in the AWS account. </li> <li>
+     * <p><b>MFADevices</b> <p>The number of MFA devices in the AWS account,
+     * including those assigned and unassigned. </li> <li>
+     * <p><b>MFADevicesInUse</b> <p>The number of MFA devices that have been
+     * assigned to an IAM user or to the AWS account (root). </li> <li>
+     * <p><b>Policies</b> <p>The number of customer managed policies in the
+     * AWS account. </li> <li> <p><b>PoliciesQuota</b> <p>The maximum number
+     * of customer managed policies allowed in the AWS account. </li> <li>
+     * <p><b>PolicySizeQuota</b> <p>The maximum allowed size of a customer
+     * managed policy, in non-whitespace characters. </li> <li>
+     * <p><b>PolicyVersionsInUse</b> <p>The number of managed policies that
+     * are attached to IAM users, groups, or roles in the AWS account. </li>
+     * <li> <p><b>PolicyVersionsInUseQuota</b> <p>The maximum number of
+     * managed policies that can be attached to IAM users, groups, or roles
+     * in the AWS account. </li> <li> <p><b>Providers</b> <p>The number of
+     * identity providers in the AWS account. </li> <li>
+     * <p><b>RolePolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies (access policies, not the trust
+     * policy) embedded in an IAM role, in non-whitespace characters. </li>
+     * <li> <p><b>Roles</b> <p>The number of IAM roles in the AWS account.
+     * </li> <li> <p><b>RolesQuota</b> <p>The maximum number of IAM roles
+     * allowed in the AWS account. </li> <li> <p><b>ServerCertificates</b>
+     * <p>The number of server certificates in the AWS account. </li> <li>
+     * <p><b>ServerCertificatesQuota</b> <p>The maximum number of server
+     * certificates allowed in the AWS account. </li> <li>
+     * <p><b>SigningCertificatesPerUserQuota</b> <p>The maximum number of
+     * X.509 signing certificates allowed for each IAM user. </li> <li>
+     * <p><b>UserPolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies embedded in an IAM user, in
+     * non-whitespace characters. </li> <li> <p><b>Users</b> <p>The number of
+     * IAM users in the AWS account. </li> <li> <p><b>UsersQuota</b> <p>The
+     * maximum number of IAM users allowed in the AWS account. </li> <li>
+     * <p><b>VersionsPerPolicyQuota</b> <p>The maximum number of policy
+     * versions allowed for each managed policy. </li> </ul>
      *
-     * @param summaryMap A set of key value pairs containing account-level information. <p>
-     *         <code>SummaryMap</code> contains the following keys: <ul>
-     *         <li><p><code>AccessKeysPerUserQuota</code> - Maximum number of access
-     *         keys that can be created per user</li>
-     *         <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
-     *         MFA device assigned to it, 0 otherwise</li>
-     *         <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     *         for assume role policy documents (in kilobytes)</li>
-     *         <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
-     *         Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
-     *         - Number of Groups for the AWS account</li>
-     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
-     *         IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
-     *         groups allowed for the AWS account</li>
-     *         <li><p><code>InstanceProfiles</code> - Number of instance profiles for
-     *         the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
-     *         Maximum instance profiles allowed for the AWS account</li>
-     *         <li><p><code>MFADevices</code> - Number of MFA devices, either
-     *         assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
-     *         Number of MFA devices that have been assigned to an IAM user or to the
-     *         root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     *         allowed size for role policy documents (in kilobytes)</li>
-     *         <li><p><code>Roles</code> - Number of roles for the AWS account</li>
-     *         <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
-     *         account</li> <li><p><code>ServerCertificates</code> - Number of server
-     *         certificates for the AWS account</li>
-     *         <li><p><code>ServerCertificatesQuota</code> - Maximum server
-     *         certificates allowed for the AWS account</li>
-     *         <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
-     *         of X509 certificates allowed for a user</li>
-     *         <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     *         user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
-     *         Number of users for the AWS account</li>
-     *         <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
-     *         account</li> </ul>
+     * @param summaryMap A set of key value pairs containing information about IAM entity usage
+     *         and IAM quotas. <p> <code>SummaryMap</code> contains the following
+     *         keys: <ul> <li> <p><b>AccessKeysPerUserQuota</b> <p>The maximum number
+     *         of active access keys allowed for each IAM user. </li> <li>
+     *         <p><b>AccountAccessKeysPresent</b> <p>This value is 1 if the AWS
+     *         account (root) has an access key, otherwise it is 0. </li> <li>
+     *         <p><b>AccountMFAEnabled</b> <p>This value is 1 if the AWS account
+     *         (root) has an MFA device assigned, otherwise it is 0. </li> <li>
+     *         <p><b>AccountSigningCertificatesPresent</b> <p>This value is 1 if the
+     *         AWS account (root) has a signing certificate, otherwise it is 0. </li>
+     *         <li> <p><b>AssumeRolePolicySizeQuota</b> <p>The maximum allowed size
+     *         for assume role policy documents (trust policies), in non-whitespace
+     *         characters. </li> <li> <p><b>AttachedPoliciesPerGroupQuota</b> <p>The
+     *         maximum number of managed policies that can be attached to an IAM
+     *         group. </li> <li> <p><b>AttachedPoliciesPerRoleQuota</b> <p>The
+     *         maximum number of managed policies that can be attached to an IAM
+     *         role. </li> <li> <p><b>AttachedPoliciesPerUserQuota</b> <p>The maximum
+     *         number of managed policies that can be attached to an IAM user. </li>
+     *         <li> <p><b>GroupPolicySizeQuota</b> <p>The maximum allowed size for
+     *         the aggregate of all inline policies embedded in an IAM group, in
+     *         non-whitespace characters. </li> <li> <p><b>Groups</b> <p>The number
+     *         of IAM groups in the AWS account. </li> <li>
+     *         <p><b>GroupsPerUserQuota</b> <p>The maximum number of IAM groups each
+     *         IAM user can belong to. </li> <li> <p><b>GroupsQuota</b> <p>The
+     *         maximum number of IAM groups allowed in the AWS account. </li> <li>
+     *         <p><b>InstanceProfiles</b> <p>The number of instance profiles in the
+     *         AWS account. </li> <li> <p><b>InstanceProfilesQuota</b> <p>The maximum
+     *         number of instance profiles allowed in the AWS account. </li> <li>
+     *         <p><b>MFADevices</b> <p>The number of MFA devices in the AWS account,
+     *         including those assigned and unassigned. </li> <li>
+     *         <p><b>MFADevicesInUse</b> <p>The number of MFA devices that have been
+     *         assigned to an IAM user or to the AWS account (root). </li> <li>
+     *         <p><b>Policies</b> <p>The number of customer managed policies in the
+     *         AWS account. </li> <li> <p><b>PoliciesQuota</b> <p>The maximum number
+     *         of customer managed policies allowed in the AWS account. </li> <li>
+     *         <p><b>PolicySizeQuota</b> <p>The maximum allowed size of a customer
+     *         managed policy, in non-whitespace characters. </li> <li>
+     *         <p><b>PolicyVersionsInUse</b> <p>The number of managed policies that
+     *         are attached to IAM users, groups, or roles in the AWS account. </li>
+     *         <li> <p><b>PolicyVersionsInUseQuota</b> <p>The maximum number of
+     *         managed policies that can be attached to IAM users, groups, or roles
+     *         in the AWS account. </li> <li> <p><b>Providers</b> <p>The number of
+     *         identity providers in the AWS account. </li> <li>
+     *         <p><b>RolePolicySizeQuota</b> <p>The maximum allowed size for the
+     *         aggregate of all inline policies (access policies, not the trust
+     *         policy) embedded in an IAM role, in non-whitespace characters. </li>
+     *         <li> <p><b>Roles</b> <p>The number of IAM roles in the AWS account.
+     *         </li> <li> <p><b>RolesQuota</b> <p>The maximum number of IAM roles
+     *         allowed in the AWS account. </li> <li> <p><b>ServerCertificates</b>
+     *         <p>The number of server certificates in the AWS account. </li> <li>
+     *         <p><b>ServerCertificatesQuota</b> <p>The maximum number of server
+     *         certificates allowed in the AWS account. </li> <li>
+     *         <p><b>SigningCertificatesPerUserQuota</b> <p>The maximum number of
+     *         X.509 signing certificates allowed for each IAM user. </li> <li>
+     *         <p><b>UserPolicySizeQuota</b> <p>The maximum allowed size for the
+     *         aggregate of all inline policies embedded in an IAM user, in
+     *         non-whitespace characters. </li> <li> <p><b>Users</b> <p>The number of
+     *         IAM users in the AWS account. </li> <li> <p><b>UsersQuota</b> <p>The
+     *         maximum number of IAM users allowed in the AWS account. </li> <li>
+     *         <p><b>VersionsPerPolicyQuota</b> <p>The maximum number of policy
+     *         versions allowed for each managed policy. </li> </ul>
      */
     public void setSummaryMap(java.util.Map<String,Integer> summaryMap) {
         this.summaryMap = summaryMap;
     }
     
     /**
-     * A set of key value pairs containing account-level information. <p>
-     * <code>SummaryMap</code> contains the following keys: <ul>
-     * <li><p><code>AccessKeysPerUserQuota</code> - Maximum number of access
-     * keys that can be created per user</li>
-     * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
-     * MFA device assigned to it, 0 otherwise</li>
-     * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes)</li>
-     * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
-     * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
-     * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
-     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
-     * groups allowed for the AWS account</li>
-     * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
-     * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
-     * Maximum instance profiles allowed for the AWS account</li>
-     * <li><p><code>MFADevices</code> - Number of MFA devices, either
-     * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
-     * Number of MFA devices that have been assigned to an IAM user or to the
-     * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes)</li>
-     * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
-     * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
-     * account</li> <li><p><code>ServerCertificates</code> - Number of server
-     * certificates for the AWS account</li>
-     * <li><p><code>ServerCertificatesQuota</code> - Maximum server
-     * certificates allowed for the AWS account</li>
-     * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
-     * of X509 certificates allowed for a user</li>
-     * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
-     * Number of users for the AWS account</li>
-     * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
-     * account</li> </ul>
+     * A set of key value pairs containing information about IAM entity usage
+     * and IAM quotas. <p> <code>SummaryMap</code> contains the following
+     * keys: <ul> <li> <p><b>AccessKeysPerUserQuota</b> <p>The maximum number
+     * of active access keys allowed for each IAM user. </li> <li>
+     * <p><b>AccountAccessKeysPresent</b> <p>This value is 1 if the AWS
+     * account (root) has an access key, otherwise it is 0. </li> <li>
+     * <p><b>AccountMFAEnabled</b> <p>This value is 1 if the AWS account
+     * (root) has an MFA device assigned, otherwise it is 0. </li> <li>
+     * <p><b>AccountSigningCertificatesPresent</b> <p>This value is 1 if the
+     * AWS account (root) has a signing certificate, otherwise it is 0. </li>
+     * <li> <p><b>AssumeRolePolicySizeQuota</b> <p>The maximum allowed size
+     * for assume role policy documents (trust policies), in non-whitespace
+     * characters. </li> <li> <p><b>AttachedPoliciesPerGroupQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * group. </li> <li> <p><b>AttachedPoliciesPerRoleQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * role. </li> <li> <p><b>AttachedPoliciesPerUserQuota</b> <p>The maximum
+     * number of managed policies that can be attached to an IAM user. </li>
+     * <li> <p><b>GroupPolicySizeQuota</b> <p>The maximum allowed size for
+     * the aggregate of all inline policies embedded in an IAM group, in
+     * non-whitespace characters. </li> <li> <p><b>Groups</b> <p>The number
+     * of IAM groups in the AWS account. </li> <li>
+     * <p><b>GroupsPerUserQuota</b> <p>The maximum number of IAM groups each
+     * IAM user can belong to. </li> <li> <p><b>GroupsQuota</b> <p>The
+     * maximum number of IAM groups allowed in the AWS account. </li> <li>
+     * <p><b>InstanceProfiles</b> <p>The number of instance profiles in the
+     * AWS account. </li> <li> <p><b>InstanceProfilesQuota</b> <p>The maximum
+     * number of instance profiles allowed in the AWS account. </li> <li>
+     * <p><b>MFADevices</b> <p>The number of MFA devices in the AWS account,
+     * including those assigned and unassigned. </li> <li>
+     * <p><b>MFADevicesInUse</b> <p>The number of MFA devices that have been
+     * assigned to an IAM user or to the AWS account (root). </li> <li>
+     * <p><b>Policies</b> <p>The number of customer managed policies in the
+     * AWS account. </li> <li> <p><b>PoliciesQuota</b> <p>The maximum number
+     * of customer managed policies allowed in the AWS account. </li> <li>
+     * <p><b>PolicySizeQuota</b> <p>The maximum allowed size of a customer
+     * managed policy, in non-whitespace characters. </li> <li>
+     * <p><b>PolicyVersionsInUse</b> <p>The number of managed policies that
+     * are attached to IAM users, groups, or roles in the AWS account. </li>
+     * <li> <p><b>PolicyVersionsInUseQuota</b> <p>The maximum number of
+     * managed policies that can be attached to IAM users, groups, or roles
+     * in the AWS account. </li> <li> <p><b>Providers</b> <p>The number of
+     * identity providers in the AWS account. </li> <li>
+     * <p><b>RolePolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies (access policies, not the trust
+     * policy) embedded in an IAM role, in non-whitespace characters. </li>
+     * <li> <p><b>Roles</b> <p>The number of IAM roles in the AWS account.
+     * </li> <li> <p><b>RolesQuota</b> <p>The maximum number of IAM roles
+     * allowed in the AWS account. </li> <li> <p><b>ServerCertificates</b>
+     * <p>The number of server certificates in the AWS account. </li> <li>
+     * <p><b>ServerCertificatesQuota</b> <p>The maximum number of server
+     * certificates allowed in the AWS account. </li> <li>
+     * <p><b>SigningCertificatesPerUserQuota</b> <p>The maximum number of
+     * X.509 signing certificates allowed for each IAM user. </li> <li>
+     * <p><b>UserPolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies embedded in an IAM user, in
+     * non-whitespace characters. </li> <li> <p><b>Users</b> <p>The number of
+     * IAM users in the AWS account. </li> <li> <p><b>UsersQuota</b> <p>The
+     * maximum number of IAM users allowed in the AWS account. </li> <li>
+     * <p><b>VersionsPerPolicyQuota</b> <p>The maximum number of policy
+     * versions allowed for each managed policy. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param summaryMap A set of key value pairs containing account-level information. <p>
-     *         <code>SummaryMap</code> contains the following keys: <ul>
-     *         <li><p><code>AccessKeysPerUserQuota</code> - Maximum number of access
-     *         keys that can be created per user</li>
-     *         <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
-     *         MFA device assigned to it, 0 otherwise</li>
-     *         <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     *         for assume role policy documents (in kilobytes)</li>
-     *         <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
-     *         Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
-     *         - Number of Groups for the AWS account</li>
-     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
-     *         IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
-     *         groups allowed for the AWS account</li>
-     *         <li><p><code>InstanceProfiles</code> - Number of instance profiles for
-     *         the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
-     *         Maximum instance profiles allowed for the AWS account</li>
-     *         <li><p><code>MFADevices</code> - Number of MFA devices, either
-     *         assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
-     *         Number of MFA devices that have been assigned to an IAM user or to the
-     *         root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     *         allowed size for role policy documents (in kilobytes)</li>
-     *         <li><p><code>Roles</code> - Number of roles for the AWS account</li>
-     *         <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
-     *         account</li> <li><p><code>ServerCertificates</code> - Number of server
-     *         certificates for the AWS account</li>
-     *         <li><p><code>ServerCertificatesQuota</code> - Maximum server
-     *         certificates allowed for the AWS account</li>
-     *         <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
-     *         of X509 certificates allowed for a user</li>
-     *         <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     *         user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
-     *         Number of users for the AWS account</li>
-     *         <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
-     *         account</li> </ul>
+     * @param summaryMap A set of key value pairs containing information about IAM entity usage
+     *         and IAM quotas. <p> <code>SummaryMap</code> contains the following
+     *         keys: <ul> <li> <p><b>AccessKeysPerUserQuota</b> <p>The maximum number
+     *         of active access keys allowed for each IAM user. </li> <li>
+     *         <p><b>AccountAccessKeysPresent</b> <p>This value is 1 if the AWS
+     *         account (root) has an access key, otherwise it is 0. </li> <li>
+     *         <p><b>AccountMFAEnabled</b> <p>This value is 1 if the AWS account
+     *         (root) has an MFA device assigned, otherwise it is 0. </li> <li>
+     *         <p><b>AccountSigningCertificatesPresent</b> <p>This value is 1 if the
+     *         AWS account (root) has a signing certificate, otherwise it is 0. </li>
+     *         <li> <p><b>AssumeRolePolicySizeQuota</b> <p>The maximum allowed size
+     *         for assume role policy documents (trust policies), in non-whitespace
+     *         characters. </li> <li> <p><b>AttachedPoliciesPerGroupQuota</b> <p>The
+     *         maximum number of managed policies that can be attached to an IAM
+     *         group. </li> <li> <p><b>AttachedPoliciesPerRoleQuota</b> <p>The
+     *         maximum number of managed policies that can be attached to an IAM
+     *         role. </li> <li> <p><b>AttachedPoliciesPerUserQuota</b> <p>The maximum
+     *         number of managed policies that can be attached to an IAM user. </li>
+     *         <li> <p><b>GroupPolicySizeQuota</b> <p>The maximum allowed size for
+     *         the aggregate of all inline policies embedded in an IAM group, in
+     *         non-whitespace characters. </li> <li> <p><b>Groups</b> <p>The number
+     *         of IAM groups in the AWS account. </li> <li>
+     *         <p><b>GroupsPerUserQuota</b> <p>The maximum number of IAM groups each
+     *         IAM user can belong to. </li> <li> <p><b>GroupsQuota</b> <p>The
+     *         maximum number of IAM groups allowed in the AWS account. </li> <li>
+     *         <p><b>InstanceProfiles</b> <p>The number of instance profiles in the
+     *         AWS account. </li> <li> <p><b>InstanceProfilesQuota</b> <p>The maximum
+     *         number of instance profiles allowed in the AWS account. </li> <li>
+     *         <p><b>MFADevices</b> <p>The number of MFA devices in the AWS account,
+     *         including those assigned and unassigned. </li> <li>
+     *         <p><b>MFADevicesInUse</b> <p>The number of MFA devices that have been
+     *         assigned to an IAM user or to the AWS account (root). </li> <li>
+     *         <p><b>Policies</b> <p>The number of customer managed policies in the
+     *         AWS account. </li> <li> <p><b>PoliciesQuota</b> <p>The maximum number
+     *         of customer managed policies allowed in the AWS account. </li> <li>
+     *         <p><b>PolicySizeQuota</b> <p>The maximum allowed size of a customer
+     *         managed policy, in non-whitespace characters. </li> <li>
+     *         <p><b>PolicyVersionsInUse</b> <p>The number of managed policies that
+     *         are attached to IAM users, groups, or roles in the AWS account. </li>
+     *         <li> <p><b>PolicyVersionsInUseQuota</b> <p>The maximum number of
+     *         managed policies that can be attached to IAM users, groups, or roles
+     *         in the AWS account. </li> <li> <p><b>Providers</b> <p>The number of
+     *         identity providers in the AWS account. </li> <li>
+     *         <p><b>RolePolicySizeQuota</b> <p>The maximum allowed size for the
+     *         aggregate of all inline policies (access policies, not the trust
+     *         policy) embedded in an IAM role, in non-whitespace characters. </li>
+     *         <li> <p><b>Roles</b> <p>The number of IAM roles in the AWS account.
+     *         </li> <li> <p><b>RolesQuota</b> <p>The maximum number of IAM roles
+     *         allowed in the AWS account. </li> <li> <p><b>ServerCertificates</b>
+     *         <p>The number of server certificates in the AWS account. </li> <li>
+     *         <p><b>ServerCertificatesQuota</b> <p>The maximum number of server
+     *         certificates allowed in the AWS account. </li> <li>
+     *         <p><b>SigningCertificatesPerUserQuota</b> <p>The maximum number of
+     *         X.509 signing certificates allowed for each IAM user. </li> <li>
+     *         <p><b>UserPolicySizeQuota</b> <p>The maximum allowed size for the
+     *         aggregate of all inline policies embedded in an IAM user, in
+     *         non-whitespace characters. </li> <li> <p><b>Users</b> <p>The number of
+     *         IAM users in the AWS account. </li> <li> <p><b>UsersQuota</b> <p>The
+     *         maximum number of IAM users allowed in the AWS account. </li> <li>
+     *         <p><b>VersionsPerPolicyQuota</b> <p>The maximum number of policy
+     *         versions allowed for each managed policy. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -305,41 +486,67 @@ public class GetAccountSummaryResult implements Serializable {
     }
 
     /**
-     * A set of key value pairs containing account-level information. <p>
-     * <code>SummaryMap</code> contains the following keys: <ul>
-     * <li><p><code>AccessKeysPerUserQuota</code> - Maximum number of access
-     * keys that can be created per user</li>
-     * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
-     * MFA device assigned to it, 0 otherwise</li>
-     * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes)</li>
-     * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
-     * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
-     * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
-     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
-     * groups allowed for the AWS account</li>
-     * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
-     * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
-     * Maximum instance profiles allowed for the AWS account</li>
-     * <li><p><code>MFADevices</code> - Number of MFA devices, either
-     * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
-     * Number of MFA devices that have been assigned to an IAM user or to the
-     * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes)</li>
-     * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
-     * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
-     * account</li> <li><p><code>ServerCertificates</code> - Number of server
-     * certificates for the AWS account</li>
-     * <li><p><code>ServerCertificatesQuota</code> - Maximum server
-     * certificates allowed for the AWS account</li>
-     * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
-     * of X509 certificates allowed for a user</li>
-     * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
-     * Number of users for the AWS account</li>
-     * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
-     * account</li> </ul>
+     * A set of key value pairs containing information about IAM entity usage
+     * and IAM quotas. <p> <code>SummaryMap</code> contains the following
+     * keys: <ul> <li> <p><b>AccessKeysPerUserQuota</b> <p>The maximum number
+     * of active access keys allowed for each IAM user. </li> <li>
+     * <p><b>AccountAccessKeysPresent</b> <p>This value is 1 if the AWS
+     * account (root) has an access key, otherwise it is 0. </li> <li>
+     * <p><b>AccountMFAEnabled</b> <p>This value is 1 if the AWS account
+     * (root) has an MFA device assigned, otherwise it is 0. </li> <li>
+     * <p><b>AccountSigningCertificatesPresent</b> <p>This value is 1 if the
+     * AWS account (root) has a signing certificate, otherwise it is 0. </li>
+     * <li> <p><b>AssumeRolePolicySizeQuota</b> <p>The maximum allowed size
+     * for assume role policy documents (trust policies), in non-whitespace
+     * characters. </li> <li> <p><b>AttachedPoliciesPerGroupQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * group. </li> <li> <p><b>AttachedPoliciesPerRoleQuota</b> <p>The
+     * maximum number of managed policies that can be attached to an IAM
+     * role. </li> <li> <p><b>AttachedPoliciesPerUserQuota</b> <p>The maximum
+     * number of managed policies that can be attached to an IAM user. </li>
+     * <li> <p><b>GroupPolicySizeQuota</b> <p>The maximum allowed size for
+     * the aggregate of all inline policies embedded in an IAM group, in
+     * non-whitespace characters. </li> <li> <p><b>Groups</b> <p>The number
+     * of IAM groups in the AWS account. </li> <li>
+     * <p><b>GroupsPerUserQuota</b> <p>The maximum number of IAM groups each
+     * IAM user can belong to. </li> <li> <p><b>GroupsQuota</b> <p>The
+     * maximum number of IAM groups allowed in the AWS account. </li> <li>
+     * <p><b>InstanceProfiles</b> <p>The number of instance profiles in the
+     * AWS account. </li> <li> <p><b>InstanceProfilesQuota</b> <p>The maximum
+     * number of instance profiles allowed in the AWS account. </li> <li>
+     * <p><b>MFADevices</b> <p>The number of MFA devices in the AWS account,
+     * including those assigned and unassigned. </li> <li>
+     * <p><b>MFADevicesInUse</b> <p>The number of MFA devices that have been
+     * assigned to an IAM user or to the AWS account (root). </li> <li>
+     * <p><b>Policies</b> <p>The number of customer managed policies in the
+     * AWS account. </li> <li> <p><b>PoliciesQuota</b> <p>The maximum number
+     * of customer managed policies allowed in the AWS account. </li> <li>
+     * <p><b>PolicySizeQuota</b> <p>The maximum allowed size of a customer
+     * managed policy, in non-whitespace characters. </li> <li>
+     * <p><b>PolicyVersionsInUse</b> <p>The number of managed policies that
+     * are attached to IAM users, groups, or roles in the AWS account. </li>
+     * <li> <p><b>PolicyVersionsInUseQuota</b> <p>The maximum number of
+     * managed policies that can be attached to IAM users, groups, or roles
+     * in the AWS account. </li> <li> <p><b>Providers</b> <p>The number of
+     * identity providers in the AWS account. </li> <li>
+     * <p><b>RolePolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies (access policies, not the trust
+     * policy) embedded in an IAM role, in non-whitespace characters. </li>
+     * <li> <p><b>Roles</b> <p>The number of IAM roles in the AWS account.
+     * </li> <li> <p><b>RolesQuota</b> <p>The maximum number of IAM roles
+     * allowed in the AWS account. </li> <li> <p><b>ServerCertificates</b>
+     * <p>The number of server certificates in the AWS account. </li> <li>
+     * <p><b>ServerCertificatesQuota</b> <p>The maximum number of server
+     * certificates allowed in the AWS account. </li> <li>
+     * <p><b>SigningCertificatesPerUserQuota</b> <p>The maximum number of
+     * X.509 signing certificates allowed for each IAM user. </li> <li>
+     * <p><b>UserPolicySizeQuota</b> <p>The maximum allowed size for the
+     * aggregate of all inline policies embedded in an IAM user, in
+     * non-whitespace characters. </li> <li> <p><b>Users</b> <p>The number of
+     * IAM users in the AWS account. </li> <li> <p><b>UsersQuota</b> <p>The
+     * maximum number of IAM users allowed in the AWS account. </li> <li>
+     * <p><b>VersionsPerPolicyQuota</b> <p>The maximum number of policy
+     * versions allowed for each managed policy. </li> </ul>
      * <p>
      * The method adds a new key-value pair into SummaryMap parameter, and
      * returns a reference to this object so that method calls can be chained

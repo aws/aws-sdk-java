@@ -18,14 +18,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeSnapshots</i> operation.
+ * Represents the output of a <i>DescribeSnapshots</i> action.
  * </p>
  */
 public class DescribeSnapshotsResult implements Serializable {
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      */
@@ -39,12 +39,12 @@ public class DescribeSnapshotsResult implements Serializable {
 
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @return An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -54,12 +54,12 @@ public class DescribeSnapshotsResult implements Serializable {
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      */
@@ -69,14 +69,14 @@ public class DescribeSnapshotsResult implements Serializable {
     
     /**
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this operation. If this parameter is
+     * pagination of results from this action. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this operation. If this parameter is
+     *         pagination of results from this action. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *

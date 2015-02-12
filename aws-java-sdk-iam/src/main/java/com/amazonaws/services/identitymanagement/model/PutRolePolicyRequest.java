@@ -21,22 +21,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putRolePolicy(PutRolePolicyRequest) PutRolePolicy operation}.
  * <p>
- * Adds (or updates) a policy document associated with the specified
- * role. For information about policies, go to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
+ * Adds (or updates) an inline policy document that is embedded in the
+ * specified role.
+ * </p>
+ * <p>
+ * When you embed an inline policy in a role, the inline policy is used
+ * as the role's access (permissions) policy. The role's trust policy is
+ * created at the same time as the role, using CreateRole. You can update
+ * a role's trust policy using UpdateAssumeRolePolicy. For more
+ * information about roles, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
+ * .
+ * </p>
+ * <p>
+ * A role can also have a managed policy attached to it. To attach a
+ * managed policy to a role, use AttachRolePolicy. To create a new
+ * managed policy, use CreatePolicy. For information about policies,
+ * refer to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * For information about limits on the policies you can associate with a
- * role, see
+ * For information about limits on the number of inline policies that you
+ * can embed with a role, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * <b>NOTE:</b> Because policy documents can be large, you should use
- * POST rather than GET when calling PutRolePolicy. For information about
- * setting up signatures and authorization through the API, go to Signing
- * AWS API Requests in the AWS General Reference. For general information
+ * <b>NOTE:</b>Because policy documents can be large, you should use POST
+ * rather than GET when calling PutRolePolicy. For general information
  * about using the Query API with IAM, go to Making Query Requests in the
  * Using IAM guide.
  * </p>

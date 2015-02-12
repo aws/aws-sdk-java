@@ -39,7 +39,7 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
 
         Request<CopySnapshotRequest> request = new DefaultRequest<CopySnapshotRequest>(copySnapshotRequest, "AmazonElastiCache");
         request.addParameter("Action", "CopySnapshot");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (copySnapshotRequest.getSourceSnapshotName() != null) {
             request.addParameter("SourceSnapshotName", StringUtils.fromString(copySnapshotRequest.getSourceSnapshotName()));

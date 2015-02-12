@@ -24,11 +24,12 @@ import java.io.Serializable;
 public class ResourceTagSet implements Serializable {
 
     /**
-     * The type of the resource. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resource. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      */
     private String resourceType;
 
@@ -49,14 +50,16 @@ public class ResourceTagSet implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The type of the resource. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resource. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @return The type of the resource. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @return The type of the resource. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @see TagResourceType
      */
@@ -65,14 +68,16 @@ public class ResourceTagSet implements Serializable {
     }
     
     /**
-     * The type of the resource. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resource. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @param resourceType The type of the resource. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @param resourceType The type of the resource. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @see TagResourceType
      */
@@ -81,16 +86,18 @@ public class ResourceTagSet implements Serializable {
     }
     
     /**
-     * The type of the resource. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resource. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @param resourceType The type of the resource. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @param resourceType The type of the resource. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -103,14 +110,16 @@ public class ResourceTagSet implements Serializable {
     }
 
     /**
-     * The type of the resource. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resource. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @param resourceType The type of the resource. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @param resourceType The type of the resource. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @see TagResourceType
      */
@@ -119,16 +128,18 @@ public class ResourceTagSet implements Serializable {
     }
     
     /**
-     * The type of the resource. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resource. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @param resourceType The type of the resource. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @param resourceType The type of the resource. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

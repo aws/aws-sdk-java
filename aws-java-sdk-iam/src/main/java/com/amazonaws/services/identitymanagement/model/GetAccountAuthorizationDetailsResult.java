@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * GetAccountAuthorizationDetails action.
+ * Contains the response to a successful GetAccountAuthorizationDetails
+ * request.
  * </p>
  */
 public class GetAccountAuthorizationDetailsResult implements Serializable {

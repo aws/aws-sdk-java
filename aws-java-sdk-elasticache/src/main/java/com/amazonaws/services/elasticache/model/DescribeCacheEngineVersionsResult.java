@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a DescribeCacheEngineVersions operation.
+ * Represents the output of a DescribeCacheEngineVersions action.
  * </p>
  */
 public class DescribeCacheEngineVersionsResult implements Serializable {

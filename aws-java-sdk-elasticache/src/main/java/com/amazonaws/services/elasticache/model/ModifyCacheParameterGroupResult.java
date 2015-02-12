@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of one of the following operations:
+ * Represents the output of one of the following actions:
  * </p>
  * 
  * <ul>

@@ -31,14 +31,15 @@ public class ExtraParam implements Serializable {
      * | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     * <p>Required: Yes
+     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     * <code>ExtraParams</code> <p>Required: Yes
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
+     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, ES_IDENTIFICATION, ES_IDENTIFICATION_TYPE, ES_LEGAL_FORM, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
      */
     private String name;
 
@@ -61,14 +62,15 @@ public class ExtraParam implements Serializable {
      * | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     * <p>Required: Yes
+     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     * <code>ExtraParams</code> <p>Required: Yes
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
+     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, ES_IDENTIFICATION, ES_IDENTIFICATION_TYPE, ES_LEGAL_FORM, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
      *
      * @return Name of the additional parameter required by the top-level domain.
      *         <p>Type: String <p>Default: None <p>Valid values:
@@ -77,11 +79,12 @@ public class ExtraParam implements Serializable {
      *         | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      *         <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      *         <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     *         <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     *         <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *         <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     *         <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     *         <p>Required: Yes
+     *         <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     *         <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     *         <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     *         <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     *         <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     *         <code>ExtraParams</code> <p>Required: Yes
      *
      * @see ExtraParamName
      */
@@ -97,14 +100,15 @@ public class ExtraParam implements Serializable {
      * | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     * <p>Required: Yes
+     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     * <code>ExtraParams</code> <p>Required: Yes
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
+     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, ES_IDENTIFICATION, ES_IDENTIFICATION_TYPE, ES_LEGAL_FORM, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
      *
      * @param name Name of the additional parameter required by the top-level domain.
      *         <p>Type: String <p>Default: None <p>Valid values:
@@ -113,11 +117,12 @@ public class ExtraParam implements Serializable {
      *         | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      *         <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      *         <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     *         <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     *         <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *         <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     *         <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     *         <p>Required: Yes
+     *         <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     *         <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     *         <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     *         <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     *         <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     *         <code>ExtraParams</code> <p>Required: Yes
      *
      * @see ExtraParamName
      */
@@ -133,16 +138,17 @@ public class ExtraParam implements Serializable {
      * | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     * <p>Required: Yes
+     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     * <code>ExtraParams</code> <p>Required: Yes
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
+     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, ES_IDENTIFICATION, ES_IDENTIFICATION_TYPE, ES_LEGAL_FORM, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
      *
      * @param name Name of the additional parameter required by the top-level domain.
      *         <p>Type: String <p>Default: None <p>Valid values:
@@ -151,11 +157,12 @@ public class ExtraParam implements Serializable {
      *         | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      *         <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      *         <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     *         <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     *         <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *         <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     *         <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     *         <p>Required: Yes
+     *         <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     *         <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     *         <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     *         <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     *         <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     *         <code>ExtraParams</code> <p>Required: Yes
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -175,14 +182,15 @@ public class ExtraParam implements Serializable {
      * | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     * <p>Required: Yes
+     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     * <code>ExtraParams</code> <p>Required: Yes
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
+     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, ES_IDENTIFICATION, ES_IDENTIFICATION_TYPE, ES_LEGAL_FORM, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
      *
      * @param name Name of the additional parameter required by the top-level domain.
      *         <p>Type: String <p>Default: None <p>Valid values:
@@ -191,11 +199,12 @@ public class ExtraParam implements Serializable {
      *         | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      *         <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      *         <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     *         <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     *         <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *         <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     *         <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     *         <p>Required: Yes
+     *         <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     *         <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     *         <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     *         <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     *         <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     *         <code>ExtraParams</code> <p>Required: Yes
      *
      * @see ExtraParamName
      */
@@ -211,16 +220,17 @@ public class ExtraParam implements Serializable {
      * | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     * <p>Required: Yes
+     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     * <code>ExtraParams</code> <p>Required: Yes
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
+     * <b>Allowed Values: </b>DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, ES_IDENTIFICATION, ES_IDENTIFICATION_TYPE, ES_LEGAL_FORM, FI_BUSINESS_NUMBER, FI_ID_NUMBER, IT_PIN, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER
      *
      * @param name Name of the additional parameter required by the top-level domain.
      *         <p>Type: String <p>Default: None <p>Valid values:
@@ -229,11 +239,12 @@ public class ExtraParam implements Serializable {
      *         | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      *         <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      *         <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     *         <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     *         <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *         <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     *         <code>VAT_NUMBER</code> <p>Parent: <code>ExtraParams</code>
-     *         <p>Required: Yes
+     *         <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
+     *         <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
+     *         <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
+     *         <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
+     *         <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code> <p>Parent:
+     *         <code>ExtraParams</code> <p>Required: Yes
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

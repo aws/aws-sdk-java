@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * GetCredentialReport action.
+ * Contains the response to a successful GetCredentialReport request.
  * </p>
  */
 public class GetCredentialReportResult implements Serializable {

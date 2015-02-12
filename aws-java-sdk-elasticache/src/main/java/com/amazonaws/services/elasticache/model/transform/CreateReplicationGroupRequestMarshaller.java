@@ -39,7 +39,7 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         Request<CreateReplicationGroupRequest> request = new DefaultRequest<CreateReplicationGroupRequest>(createReplicationGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateReplicationGroup");
-        request.addParameter("Version", "2014-09-30");
+        request.addParameter("Version", "2015-02-02");
 
         if (createReplicationGroupRequest.getReplicationGroupId() != null) {
             request.addParameter("ReplicationGroupId", StringUtils.fromString(createReplicationGroupRequest.getReplicationGroupId()));
@@ -103,6 +103,23 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             }
 
             securityGroupIdsListIndex++;
+        }
+
+        java.util.List<Tag> tagsList = createReplicationGroupRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+            }
+
+            tagsListIndex++;
         }
 
         java.util.List<String> snapshotArnsList = createReplicationGroupRequest.getSnapshotArns();

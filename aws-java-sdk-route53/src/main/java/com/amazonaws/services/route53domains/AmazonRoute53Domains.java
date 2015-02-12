@@ -83,6 +83,35 @@ public interface AmazonRoute53Domains {
     
     /**
      * <p>
+     * This operation checks the availability of one domain name. You can
+     * access this API without authenticating. Note that if the availability
+     * status of a domain is pending, you must submit another request to
+     * determine the availability of the domain name.
+     * </p>
+     *
+     * @param checkDomainAvailabilityRequest Container for the necessary
+     *           parameters to execute the CheckDomainAvailability service method on
+     *           AmazonRoute53Domains.
+     * 
+     * @return The response from the CheckDomainAvailability service method,
+     *         as returned by AmazonRoute53Domains.
+     * 
+     * @throws UnsupportedTLDException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation updates the contact information for a particular
      * domain. Information for at least one contact (registrant,
      * administrator, or technical) must be supplied for update.
@@ -119,44 +148,14 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation checks the availability of one domain name. You can
-     * access this API without authenticating. Note that if the availability
-     * status of a domain is pending, you must submit another request to
-     * determine the availability of the domain name.
-     * </p>
-     *
-     * @param checkDomainAvailabilityRequest Container for the necessary
-     *           parameters to execute the CheckDomainAvailability service method on
-     *           AmazonRoute53Domains.
-     * 
-     * @return The response from the CheckDomainAvailability service method,
-     *         as returned by AmazonRoute53Domains.
-     * 
-     * @throws UnsupportedTLDException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * This operation configures Amazon Route 53 to automatically renew the
      * specified domain before the domain registration expires. The cost of
      * renewing your domain registration is billed to your AWS account.
      * </p>
      * <p>
      * The period during which you can renew a domain name varies by TLD.
-     * For a list of TLDs and their renewal policies, see "Renewal,
-     * restoration, and deletion times"
-     * iki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times)
+     * For a list of TLDs and their renewal policies, see
+     * <a href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times"> "Renewal, restoration, and deletion times" </a>
      * on the website for our registrar partner, Gandi. Route 53 requires
      * that you renew before the end of the renewal period that is listed on
      * the Gandi website so we can complete processing before the deadline.
@@ -294,6 +293,39 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
+     * This operation sets the transfer lock on the domain (specifically the
+     * <code>clientTransferProhibited</code> status) to prevent domain
+     * transfers. Successful submission returns an operation ID that you can
+     * use to track the progress and completion of the action. If the request
+     * is not completed successfully, the domain registrant will be notified
+     * by email.
+     * </p>
+     *
+     * @param enableDomainTransferLockRequest Container for the necessary
+     *           parameters to execute the EnableDomainTransferLock service method on
+     *           AmazonRoute53Domains.
+     * 
+     * @return The response from the EnableDomainTransferLock service method,
+     *         as returned by AmazonRoute53Domains.
+     * 
+     * @throws InvalidInputException
+     * @throws DuplicateRequestException
+     * @throws TLDRulesViolationException
+     * @throws OperationLimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation replaces the current set of name servers for the
      * domain with the specified set of name servers. If you use Amazon Route
      * 53 as your DNS service, specify the four name servers in the
@@ -327,39 +359,6 @@ public interface AmazonRoute53Domains {
      *             either a problem with the data in the request, or a server side issue.
      */
     public UpdateDomainNameserversResult updateDomainNameservers(UpdateDomainNameserversRequest updateDomainNameserversRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This operation sets the transfer lock on the domain (specifically the
-     * <code>clientTransferProhibited</code> status) to prevent domain
-     * transfers. Successful submission returns an operation ID that you can
-     * use to track the progress and completion of the action. If the request
-     * is not completed successfully, the domain registrant will be notified
-     * by email.
-     * </p>
-     *
-     * @param enableDomainTransferLockRequest Container for the necessary
-     *           parameters to execute the EnableDomainTransferLock service method on
-     *           AmazonRoute53Domains.
-     * 
-     * @return The response from the EnableDomainTransferLock service method,
-     *         as returned by AmazonRoute53Domains.
-     * 
-     * @throws InvalidInputException
-     * @throws DuplicateRequestException
-     * @throws TLDRulesViolationException
-     * @throws OperationLimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53Domains indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -477,6 +476,36 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
+     * This operation adds or updates tags for a specified domain.
+     * </p>
+     * <p>
+     * All tag operations are eventually consistent; subsequent operations
+     * may not immediately represent all issued operations.
+     * </p>
+     *
+     * @param updateTagsForDomainRequest Container for the necessary
+     *           parameters to execute the UpdateTagsForDomain service method on
+     *           AmazonRoute53Domains.
+     * 
+     * @return The response from the UpdateTagsForDomain service method, as
+     *         returned by AmazonRoute53Domains.
+     * 
+     * @throws InvalidInputException
+     * @throws OperationLimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateTagsForDomainResult updateTagsForDomain(UpdateTagsForDomainRequest updateTagsForDomainRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation returns the AuthCode for the domain. To transfer a
      * domain to another registrar, you provide this value to the new
      * registrar.
@@ -505,42 +534,35 @@ public interface AmazonRoute53Domains {
     /**
      * <p>
      * This operation transfers a domain from another registrar to Amazon
-     * Route 53. Domains are registered by the AWS registrar, Gandi upon
-     * transfer.
+     * Route 53. When the transfer is complete, the domain is registered with
+     * the AWS registrar partner, Gandi.
      * </p>
      * <p>
-     * To transfer a domain, you need to meet all the domain transfer
-     * criteria, including the following:
-     * </p>
-     * 
-     * <ul>
-     * <li>You must supply nameservers to transfer a domain.</li>
-     * <li>You must disable the domain transfer lock (if any) before
-     * transferring the domain.</li>
-     * <li>A minimum of 60 days must have elapsed since the domain's
-     * registration or last transfer.</li>
-     * 
-     * </ul>
-     * <p>
-     * We recommend you use the Amazon Route 53 as the DNS service for your
-     * domain. You can create a hosted zone in Amazon Route 53 for your
-     * current domain before transferring your domain.
+     * For transfer requirements, a detailed procedure, and information
+     * about viewing the status of a domain transfer, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html"> Transferring Registration for a Domain to Amazon Route 53 </a>
+     * in the Amazon Route 53 Developer Guide.
      * </p>
      * <p>
-     * Note that upon transfer, the domain duration is extended for a year
-     * if not otherwise specified. Autorenew is enabled by default.
+     * If the registrar for your domain is also the DNS service provider for
+     * the domain, we highly recommend that you consider transferring your
+     * DNS service to Amazon Route 53 or to another DNS service provider
+     * before you transfer your registration. Some registrars provide free
+     * DNS service when you purchase a domain registration. When you transfer
+     * the registration, the previous registrar will not renew your domain
+     * registration and could end your DNS service at any time.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Caution! If the registrar for your domain is also the DNS
+     * service provider for the domain and you don't transfer DNS service to
+     * another provider, your website, email, and the web applications
+     * associated with the domain might become unavailable.
      * </p>
      * <p>
      * If the transfer is successful, this method returns an operation ID
      * that you can use to track the progress and completion of the action.
-     * If the request is not completed successfully, the domain registrant
+     * If the transfer doesn't complete successfully, the domain registrant
      * will be notified by email.
-     * </p>
-     * <p>
-     * Transferring domains charges your AWS account an amount based on the
-     * top-level domain. For more information, see
-     * <a href="http://aws.amazon.com/route53/pricing/"> Amazon Route 53 Pricing </a>
-     * .
      * </p>
      *
      * @param transferDomainRequest Container for the necessary parameters to
@@ -606,6 +628,67 @@ public interface AmazonRoute53Domains {
      *             either a problem with the data in the request, or a server side issue.
      */
     public UpdateDomainContactPrivacyResult updateDomainContactPrivacy(UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation returns all of the tags that are associated with the
+     * specified domain.
+     * </p>
+     * <p>
+     * All tag operations are eventually consistent; subsequent operations
+     * may not immediately represent all issued operations.
+     * </p>
+     *
+     * @param listTagsForDomainRequest Container for the necessary parameters
+     *           to execute the ListTagsForDomain service method on
+     *           AmazonRoute53Domains.
+     * 
+     * @return The response from the ListTagsForDomain service method, as
+     *         returned by AmazonRoute53Domains.
+     * 
+     * @throws InvalidInputException
+     * @throws OperationLimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTagsForDomainResult listTagsForDomain(ListTagsForDomainRequest listTagsForDomainRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation deletes the specified tags for a domain.
+     * </p>
+     * <p>
+     * All tag operations are eventually consistent; subsequent operations
+     * may not immediately represent all issued operations.
+     * </p>
+     *
+     * @param deleteTagsForDomainRequest Container for the necessary
+     *           parameters to execute the DeleteTagsForDomain service method on
+     *           AmazonRoute53Domains.
+     * 
+     * @return The response from the DeleteTagsForDomain service method, as
+     *         returned by AmazonRoute53Domains.
+     * 
+     * @throws InvalidInputException
+     * @throws OperationLimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest deleteTagsForDomainRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

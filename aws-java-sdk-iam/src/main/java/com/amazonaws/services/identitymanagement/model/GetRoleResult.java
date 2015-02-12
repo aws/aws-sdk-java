@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the GetRole action.
+ * Contains the response to a successful GetRole request.
  * </p>
  */
 public class GetRoleResult implements Serializable {

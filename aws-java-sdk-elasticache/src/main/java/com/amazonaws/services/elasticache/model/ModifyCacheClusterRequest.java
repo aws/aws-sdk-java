@@ -21,10 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheCluster(ModifyCacheClusterRequest) ModifyCacheCluster operation}.
  * <p>
- * The <i>ModifyCacheCluster</i> operation modifies the settings for a
- * cache cluster. You can use this operation to change one or more
- * cluster configuration parameters by specifying the parameters and the
- * new values.
+ * The <i>ModifyCacheCluster</i> action modifies the settings for a cache
+ * cluster. You can use this action to change one or more cluster
+ * configuration parameters by specifying the parameters and the new
+ * values.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheCluster(ModifyCacheClusterRequest)
@@ -47,10 +47,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * nodes, then any pending add or remove requests are canceled. <p>If you
      * are removing cache nodes, you must use the
      * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
-     * specific cache nodes to remove. <p>For cache clusters running Redis,
-     * the value of <code>NumCacheNodes</code>must be 1.
-     * <p><b>Note:</b><br/>Adding or removing Memcached cache nodes can be
-     * applied immediately or as a pending action. See
+     * specific cache nodes to remove. <p>For clusters running Redis, this
+     * value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     * cache nodes can be applied immediately or as a pending action. See
      * <code>ApplyImmediately</code>.<br/> A pending action to modify the
      * number of cache nodes in a cluster during its maintenance window,
      * whether by adding or removing nodes in accordance with the scale out
@@ -67,16 +67,16 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * explicitly cancel the pending request and retry the new request. To
      * cancel pending actions to modify the number of cache nodes in a
      * cluster, use the <code>ModifyCacheCluster</code> request and set
-     * <code>NumCacheNodes</code> equal to the number of cache nodes
-     * currently in the cache cluster.
+     * <i>NumCacheNodes</i> equal to the number of cache nodes currently in
+     * the cache cluster.
      */
     private Integer numCacheNodes;
 
     /**
      * A list of cache node IDs to be removed. A node ID is a numeric
      * identifier (0001, 0002, etc.). This parameter is only valid when
-     * NumCacheNodes is less than the existing number of cache nodes. The
-     * number of cache node IDs supplied in this parameter must match the
+     * <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     * The number of cache node IDs supplied in this parameter must match the
      * difference between the existing number of cache nodes in the cluster
      * or pending cache nodes, whichever is greater, and the value of
      * <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -110,8 +110,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The list of Availability Zones where the new Memcached cache nodes
      * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
+     * <i>NumCacheNodes</i> in the request is greater than the sum of the
+     * number of active cache nodes and the number of cache nodes pending
      * creation (which may be zero). The number of Availability Zones
      * supplied in this list must match the cache nodes being added in this
      * request. <p>This option is only supported on Memcached clusters.
@@ -136,7 +136,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      * delete, pending or immediate, replaces the pending delete.</td> </tr>
      * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -149,7 +149,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * are performed immediately. If the new create request is <b>Apply
      * Immediately - No</b>, all creates are pending.</td> </tr> </table>
      * <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> newAvailabilityZones;
 
@@ -222,10 +222,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     private String engineVersion;
 
     /**
-     * If <code>true</code>, then minor engine upgrades will be applied
-     * automatically to the cache cluster during the maintenance window.
-     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     * <code>true</code>
+     * This parameter is currently disabled.
      */
     private Boolean autoMinorVersionUpgrade;
 
@@ -312,10 +309,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * nodes, then any pending add or remove requests are canceled. <p>If you
      * are removing cache nodes, you must use the
      * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
-     * specific cache nodes to remove. <p>For cache clusters running Redis,
-     * the value of <code>NumCacheNodes</code>must be 1.
-     * <p><b>Note:</b><br/>Adding or removing Memcached cache nodes can be
-     * applied immediately or as a pending action. See
+     * specific cache nodes to remove. <p>For clusters running Redis, this
+     * value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     * cache nodes can be applied immediately or as a pending action. See
      * <code>ApplyImmediately</code>.<br/> A pending action to modify the
      * number of cache nodes in a cluster during its maintenance window,
      * whether by adding or removing nodes in accordance with the scale out
@@ -332,8 +329,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * explicitly cancel the pending request and retry the new request. To
      * cancel pending actions to modify the number of cache nodes in a
      * cluster, use the <code>ModifyCacheCluster</code> request and set
-     * <code>NumCacheNodes</code> equal to the number of cache nodes
-     * currently in the cache cluster.
+     * <i>NumCacheNodes</i> equal to the number of cache nodes currently in
+     * the cache cluster.
      *
      * @return The number of cache nodes that the cache cluster should have. If the
      *         value for <code>NumCacheNodes</code> is greater than the sum of the
@@ -344,10 +341,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         nodes, then any pending add or remove requests are canceled. <p>If you
      *         are removing cache nodes, you must use the
      *         <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
-     *         specific cache nodes to remove. <p>For cache clusters running Redis,
-     *         the value of <code>NumCacheNodes</code>must be 1.
-     *         <p><b>Note:</b><br/>Adding or removing Memcached cache nodes can be
-     *         applied immediately or as a pending action. See
+     *         specific cache nodes to remove. <p>For clusters running Redis, this
+     *         value must be 1. For clusters running Memcached, this value must be
+     *         between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     *         cache nodes can be applied immediately or as a pending action. See
      *         <code>ApplyImmediately</code>.<br/> A pending action to modify the
      *         number of cache nodes in a cluster during its maintenance window,
      *         whether by adding or removing nodes in accordance with the scale out
@@ -364,8 +361,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         explicitly cancel the pending request and retry the new request. To
      *         cancel pending actions to modify the number of cache nodes in a
      *         cluster, use the <code>ModifyCacheCluster</code> request and set
-     *         <code>NumCacheNodes</code> equal to the number of cache nodes
-     *         currently in the cache cluster.
+     *         <i>NumCacheNodes</i> equal to the number of cache nodes currently in
+     *         the cache cluster.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
@@ -381,10 +378,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * nodes, then any pending add or remove requests are canceled. <p>If you
      * are removing cache nodes, you must use the
      * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
-     * specific cache nodes to remove. <p>For cache clusters running Redis,
-     * the value of <code>NumCacheNodes</code>must be 1.
-     * <p><b>Note:</b><br/>Adding or removing Memcached cache nodes can be
-     * applied immediately or as a pending action. See
+     * specific cache nodes to remove. <p>For clusters running Redis, this
+     * value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     * cache nodes can be applied immediately or as a pending action. See
      * <code>ApplyImmediately</code>.<br/> A pending action to modify the
      * number of cache nodes in a cluster during its maintenance window,
      * whether by adding or removing nodes in accordance with the scale out
@@ -401,8 +398,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * explicitly cancel the pending request and retry the new request. To
      * cancel pending actions to modify the number of cache nodes in a
      * cluster, use the <code>ModifyCacheCluster</code> request and set
-     * <code>NumCacheNodes</code> equal to the number of cache nodes
-     * currently in the cache cluster.
+     * <i>NumCacheNodes</i> equal to the number of cache nodes currently in
+     * the cache cluster.
      *
      * @param numCacheNodes The number of cache nodes that the cache cluster should have. If the
      *         value for <code>NumCacheNodes</code> is greater than the sum of the
@@ -413,10 +410,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         nodes, then any pending add or remove requests are canceled. <p>If you
      *         are removing cache nodes, you must use the
      *         <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
-     *         specific cache nodes to remove. <p>For cache clusters running Redis,
-     *         the value of <code>NumCacheNodes</code>must be 1.
-     *         <p><b>Note:</b><br/>Adding or removing Memcached cache nodes can be
-     *         applied immediately or as a pending action. See
+     *         specific cache nodes to remove. <p>For clusters running Redis, this
+     *         value must be 1. For clusters running Memcached, this value must be
+     *         between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     *         cache nodes can be applied immediately or as a pending action. See
      *         <code>ApplyImmediately</code>.<br/> A pending action to modify the
      *         number of cache nodes in a cluster during its maintenance window,
      *         whether by adding or removing nodes in accordance with the scale out
@@ -433,8 +430,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         explicitly cancel the pending request and retry the new request. To
      *         cancel pending actions to modify the number of cache nodes in a
      *         cluster, use the <code>ModifyCacheCluster</code> request and set
-     *         <code>NumCacheNodes</code> equal to the number of cache nodes
-     *         currently in the cache cluster.
+     *         <i>NumCacheNodes</i> equal to the number of cache nodes currently in
+     *         the cache cluster.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
@@ -450,10 +447,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * nodes, then any pending add or remove requests are canceled. <p>If you
      * are removing cache nodes, you must use the
      * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
-     * specific cache nodes to remove. <p>For cache clusters running Redis,
-     * the value of <code>NumCacheNodes</code>must be 1.
-     * <p><b>Note:</b><br/>Adding or removing Memcached cache nodes can be
-     * applied immediately or as a pending action. See
+     * specific cache nodes to remove. <p>For clusters running Redis, this
+     * value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     * cache nodes can be applied immediately or as a pending action. See
      * <code>ApplyImmediately</code>.<br/> A pending action to modify the
      * number of cache nodes in a cluster during its maintenance window,
      * whether by adding or removing nodes in accordance with the scale out
@@ -470,8 +467,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * explicitly cancel the pending request and retry the new request. To
      * cancel pending actions to modify the number of cache nodes in a
      * cluster, use the <code>ModifyCacheCluster</code> request and set
-     * <code>NumCacheNodes</code> equal to the number of cache nodes
-     * currently in the cache cluster.
+     * <i>NumCacheNodes</i> equal to the number of cache nodes currently in
+     * the cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -484,10 +481,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         nodes, then any pending add or remove requests are canceled. <p>If you
      *         are removing cache nodes, you must use the
      *         <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
-     *         specific cache nodes to remove. <p>For cache clusters running Redis,
-     *         the value of <code>NumCacheNodes</code>must be 1.
-     *         <p><b>Note:</b><br/>Adding or removing Memcached cache nodes can be
-     *         applied immediately or as a pending action. See
+     *         specific cache nodes to remove. <p>For clusters running Redis, this
+     *         value must be 1. For clusters running Memcached, this value must be
+     *         between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     *         cache nodes can be applied immediately or as a pending action. See
      *         <code>ApplyImmediately</code>.<br/> A pending action to modify the
      *         number of cache nodes in a cluster during its maintenance window,
      *         whether by adding or removing nodes in accordance with the scale out
@@ -504,8 +501,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         explicitly cancel the pending request and retry the new request. To
      *         cancel pending actions to modify the number of cache nodes in a
      *         cluster, use the <code>ModifyCacheCluster</code> request and set
-     *         <code>NumCacheNodes</code> equal to the number of cache nodes
-     *         currently in the cache cluster.
+     *         <i>NumCacheNodes</i> equal to the number of cache nodes currently in
+     *         the cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -518,8 +515,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A list of cache node IDs to be removed. A node ID is a numeric
      * identifier (0001, 0002, etc.). This parameter is only valid when
-     * NumCacheNodes is less than the existing number of cache nodes. The
-     * number of cache node IDs supplied in this parameter must match the
+     * <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     * The number of cache node IDs supplied in this parameter must match the
      * difference between the existing number of cache nodes in the cluster
      * or pending cache nodes, whichever is greater, and the value of
      * <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -529,8 +526,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *
      * @return A list of cache node IDs to be removed. A node ID is a numeric
      *         identifier (0001, 0002, etc.). This parameter is only valid when
-     *         NumCacheNodes is less than the existing number of cache nodes. The
-     *         number of cache node IDs supplied in this parameter must match the
+     *         <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     *         The number of cache node IDs supplied in this parameter must match the
      *         difference between the existing number of cache nodes in the cluster
      *         or pending cache nodes, whichever is greater, and the value of
      *         <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -549,8 +546,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A list of cache node IDs to be removed. A node ID is a numeric
      * identifier (0001, 0002, etc.). This parameter is only valid when
-     * NumCacheNodes is less than the existing number of cache nodes. The
-     * number of cache node IDs supplied in this parameter must match the
+     * <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     * The number of cache node IDs supplied in this parameter must match the
      * difference between the existing number of cache nodes in the cluster
      * or pending cache nodes, whichever is greater, and the value of
      * <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -560,8 +557,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *
      * @param cacheNodeIdsToRemove A list of cache node IDs to be removed. A node ID is a numeric
      *         identifier (0001, 0002, etc.). This parameter is only valid when
-     *         NumCacheNodes is less than the existing number of cache nodes. The
-     *         number of cache node IDs supplied in this parameter must match the
+     *         <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     *         The number of cache node IDs supplied in this parameter must match the
      *         difference between the existing number of cache nodes in the cluster
      *         or pending cache nodes, whichever is greater, and the value of
      *         <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -582,8 +579,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A list of cache node IDs to be removed. A node ID is a numeric
      * identifier (0001, 0002, etc.). This parameter is only valid when
-     * NumCacheNodes is less than the existing number of cache nodes. The
-     * number of cache node IDs supplied in this parameter must match the
+     * <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     * The number of cache node IDs supplied in this parameter must match the
      * difference between the existing number of cache nodes in the cluster
      * or pending cache nodes, whichever is greater, and the value of
      * <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -595,8 +592,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *
      * @param cacheNodeIdsToRemove A list of cache node IDs to be removed. A node ID is a numeric
      *         identifier (0001, 0002, etc.). This parameter is only valid when
-     *         NumCacheNodes is less than the existing number of cache nodes. The
-     *         number of cache node IDs supplied in this parameter must match the
+     *         <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     *         The number of cache node IDs supplied in this parameter must match the
      *         difference between the existing number of cache nodes in the cluster
      *         or pending cache nodes, whichever is greater, and the value of
      *         <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -618,8 +615,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A list of cache node IDs to be removed. A node ID is a numeric
      * identifier (0001, 0002, etc.). This parameter is only valid when
-     * NumCacheNodes is less than the existing number of cache nodes. The
-     * number of cache node IDs supplied in this parameter must match the
+     * <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     * The number of cache node IDs supplied in this parameter must match the
      * difference between the existing number of cache nodes in the cluster
      * or pending cache nodes, whichever is greater, and the value of
      * <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -631,8 +628,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *
      * @param cacheNodeIdsToRemove A list of cache node IDs to be removed. A node ID is a numeric
      *         identifier (0001, 0002, etc.). This parameter is only valid when
-     *         NumCacheNodes is less than the existing number of cache nodes. The
-     *         number of cache node IDs supplied in this parameter must match the
+     *         <i>NumCacheNodes</i> is less than the existing number of cache nodes.
+     *         The number of cache node IDs supplied in this parameter must match the
      *         difference between the existing number of cache nodes in the cluster
      *         or pending cache nodes, whichever is greater, and the value of
      *         <i>NumCacheNodes</i> in the request. <p>For example: If you have 3
@@ -870,8 +867,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The list of Availability Zones where the new Memcached cache nodes
      * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
+     * <i>NumCacheNodes</i> in the request is greater than the sum of the
+     * number of active cache nodes and the number of cache nodes pending
      * creation (which may be zero). The number of Availability Zones
      * supplied in this list must match the cache nodes being added in this
      * request. <p>This option is only supported on Memcached clusters.
@@ -896,7 +893,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      * delete, pending or immediate, replaces the pending delete.</td> </tr>
      * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -909,12 +906,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * are performed immediately. If the new create request is <b>Apply
      * Immediately - No</b>, all creates are pending.</td> </tr> </table>
      * <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      *
      * @return The list of Availability Zones where the new Memcached cache nodes
      *         will be created. <p>This parameter is only valid when
-     *         <code>NumCacheNodes</code> in the request is greater than the sum of
-     *         the number of active cache nodes and the number of cache nodes pending
+     *         <i>NumCacheNodes</i> in the request is greater than the sum of the
+     *         number of active cache nodes and the number of cache nodes pending
      *         creation (which may be zero). The number of Availability Zones
      *         supplied in this list must match the cache nodes being added in this
      *         request. <p>This option is only supported on Memcached clusters.
@@ -939,7 +936,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     *         <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     *         <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      *         delete, pending or immediate, replaces the pending delete.</td> </tr>
      *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -952,7 +949,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         are performed immediately. If the new create request is <b>Apply
      *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
      *         <p>Example:
-     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     *         <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      */
     public java.util.List<String> getNewAvailabilityZones() {
         if (newAvailabilityZones == null) {
@@ -965,8 +962,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The list of Availability Zones where the new Memcached cache nodes
      * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
+     * <i>NumCacheNodes</i> in the request is greater than the sum of the
+     * number of active cache nodes and the number of cache nodes pending
      * creation (which may be zero). The number of Availability Zones
      * supplied in this list must match the cache nodes being added in this
      * request. <p>This option is only supported on Memcached clusters.
@@ -991,7 +988,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      * delete, pending or immediate, replaces the pending delete.</td> </tr>
      * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -1004,12 +1001,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * are performed immediately. If the new create request is <b>Apply
      * Immediately - No</b>, all creates are pending.</td> </tr> </table>
      * <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      *
      * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
      *         will be created. <p>This parameter is only valid when
-     *         <code>NumCacheNodes</code> in the request is greater than the sum of
-     *         the number of active cache nodes and the number of cache nodes pending
+     *         <i>NumCacheNodes</i> in the request is greater than the sum of the
+     *         number of active cache nodes and the number of cache nodes pending
      *         creation (which may be zero). The number of Availability Zones
      *         supplied in this list must match the cache nodes being added in this
      *         request. <p>This option is only supported on Memcached clusters.
@@ -1034,7 +1031,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     *         <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     *         <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      *         delete, pending or immediate, replaces the pending delete.</td> </tr>
      *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -1047,7 +1044,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         are performed immediately. If the new create request is <b>Apply
      *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
      *         <p>Example:
-     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     *         <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      */
     public void setNewAvailabilityZones(java.util.Collection<String> newAvailabilityZones) {
         if (newAvailabilityZones == null) {
@@ -1062,8 +1059,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The list of Availability Zones where the new Memcached cache nodes
      * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
+     * <i>NumCacheNodes</i> in the request is greater than the sum of the
+     * number of active cache nodes and the number of cache nodes pending
      * creation (which may be zero). The number of Availability Zones
      * supplied in this list must match the cache nodes being added in this
      * request. <p>This option is only supported on Memcached clusters.
@@ -1088,7 +1085,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      * delete, pending or immediate, replaces the pending delete.</td> </tr>
      * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -1101,14 +1098,14 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * are performed immediately. If the new create request is <b>Apply
      * Immediately - No</b>, all creates are pending.</td> </tr> </table>
      * <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
      *         will be created. <p>This parameter is only valid when
-     *         <code>NumCacheNodes</code> in the request is greater than the sum of
-     *         the number of active cache nodes and the number of cache nodes pending
+     *         <i>NumCacheNodes</i> in the request is greater than the sum of the
+     *         number of active cache nodes and the number of cache nodes pending
      *         creation (which may be zero). The number of Availability Zones
      *         supplied in this list must match the cache nodes being added in this
      *         request. <p>This option is only supported on Memcached clusters.
@@ -1133,7 +1130,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     *         <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     *         <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      *         delete, pending or immediate, replaces the pending delete.</td> </tr>
      *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -1146,7 +1143,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         are performed immediately. If the new create request is <b>Apply
      *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
      *         <p>Example:
-     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     *         <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1162,8 +1159,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The list of Availability Zones where the new Memcached cache nodes
      * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
+     * <i>NumCacheNodes</i> in the request is greater than the sum of the
+     * number of active cache nodes and the number of cache nodes pending
      * creation (which may be zero). The number of Availability Zones
      * supplied in this list must match the cache nodes being added in this
      * request. <p>This option is only supported on Memcached clusters.
@@ -1188,7 +1185,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      * delete, pending or immediate, replaces the pending delete.</td> </tr>
      * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -1201,14 +1198,14 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * are performed immediately. If the new create request is <b>Apply
      * Immediately - No</b>, all creates are pending.</td> </tr> </table>
      * <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
      *         will be created. <p>This parameter is only valid when
-     *         <code>NumCacheNodes</code> in the request is greater than the sum of
-     *         the number of active cache nodes and the number of cache nodes pending
+     *         <i>NumCacheNodes</i> in the request is greater than the sum of the
+     *         number of active cache nodes and the number of cache nodes pending
      *         creation (which may be zero). The number of Availability Zones
      *         supplied in this list must match the cache nodes being added in this
      *         request. <p>This option is only supported on Memcached clusters.
@@ -1233,7 +1230,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
      *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     *         <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     *         <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
      *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
      *         delete, pending or immediate, replaces the pending delete.</td> </tr>
      *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
@@ -1246,7 +1243,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         are performed immediately. If the new create request is <b>Apply
      *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
      *         <p>Example:
-     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     *         <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1809,47 +1806,29 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * If <code>true</code>, then minor engine upgrades will be applied
-     * automatically to the cache cluster during the maintenance window.
-     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     * <code>true</code>
+     * This parameter is currently disabled.
      *
-     * @return If <code>true</code>, then minor engine upgrades will be applied
-     *         automatically to the cache cluster during the maintenance window.
-     *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     *         <code>true</code>
+     * @return This parameter is currently disabled.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * If <code>true</code>, then minor engine upgrades will be applied
-     * automatically to the cache cluster during the maintenance window.
-     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     * <code>true</code>
+     * This parameter is currently disabled.
      *
-     * @param autoMinorVersionUpgrade If <code>true</code>, then minor engine upgrades will be applied
-     *         automatically to the cache cluster during the maintenance window.
-     *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     *         <code>true</code>
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * If <code>true</code>, then minor engine upgrades will be applied
-     * automatically to the cache cluster during the maintenance window.
-     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     * <code>true</code>
+     * This parameter is currently disabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade If <code>true</code>, then minor engine upgrades will be applied
-     *         automatically to the cache cluster during the maintenance window.
-     *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     *         <code>true</code>
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1860,15 +1839,9 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * If <code>true</code>, then minor engine upgrades will be applied
-     * automatically to the cache cluster during the maintenance window.
-     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     * <code>true</code>
+     * This parameter is currently disabled.
      *
-     * @return If <code>true</code>, then minor engine upgrades will be applied
-     *         automatically to the cache cluster during the maintenance window.
-     *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
-     *         <code>true</code>
+     * @return This parameter is currently disabled.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;

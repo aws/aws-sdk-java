@@ -64,6 +64,9 @@ public class UpdateDomainNameserversRequestMarshaller implements Marshaller<Requ
             if (updateDomainNameserversRequest.getDomainName() != null) {
                 jsonWriter.key("DomainName").value(updateDomainNameserversRequest.getDomainName());
             }
+            if (updateDomainNameserversRequest.getFIAuthKey() != null) {
+                jsonWriter.key("FIAuthKey").value(updateDomainNameserversRequest.getFIAuthKey());
+            }
 
             com.amazonaws.internal.ListWithAutoConstructFlag<Nameserver> nameserversList = (com.amazonaws.internal.ListWithAutoConstructFlag<Nameserver>)(updateDomainNameserversRequest.getNameservers());
             if (nameserversList != null && !(nameserversList.isAutoConstruct() && nameserversList.isEmpty())) {

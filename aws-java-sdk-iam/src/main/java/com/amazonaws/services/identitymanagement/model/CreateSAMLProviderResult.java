@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * CreateSAMLProvider action.
+ * Contains the response to a successful CreateSAMLProvider request.
  * </p>
  */
 public class CreateSAMLProviderResult implements Serializable {

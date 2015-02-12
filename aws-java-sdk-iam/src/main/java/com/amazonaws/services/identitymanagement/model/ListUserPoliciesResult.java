@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListUserPolicies
- * action.
+ * Contains the response to a successful ListUserPolicies request.
  * </p>
  */
 public class ListUserPoliciesResult implements Serializable {

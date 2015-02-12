@@ -26,39 +26,39 @@ import java.io.Serializable;
 public class Subnet implements Serializable {
 
     /**
-     * The unique identifier for the subnet
+     * The unique identifier for the subnet.
      */
     private String subnetIdentifier;
 
     /**
-     * The Availability Zone associated with the subnet
+     * The Availability Zone associated with the subnet.
      */
     private AvailabilityZone subnetAvailabilityZone;
 
     /**
-     * The unique identifier for the subnet
+     * The unique identifier for the subnet.
      *
-     * @return The unique identifier for the subnet
+     * @return The unique identifier for the subnet.
      */
     public String getSubnetIdentifier() {
         return subnetIdentifier;
     }
     
     /**
-     * The unique identifier for the subnet
+     * The unique identifier for the subnet.
      *
-     * @param subnetIdentifier The unique identifier for the subnet
+     * @param subnetIdentifier The unique identifier for the subnet.
      */
     public void setSubnetIdentifier(String subnetIdentifier) {
         this.subnetIdentifier = subnetIdentifier;
     }
     
     /**
-     * The unique identifier for the subnet
+     * The unique identifier for the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetIdentifier The unique identifier for the subnet
+     * @param subnetIdentifier The unique identifier for the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -69,29 +69,29 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * The Availability Zone associated with the subnet
+     * The Availability Zone associated with the subnet.
      *
-     * @return The Availability Zone associated with the subnet
+     * @return The Availability Zone associated with the subnet.
      */
     public AvailabilityZone getSubnetAvailabilityZone() {
         return subnetAvailabilityZone;
     }
     
     /**
-     * The Availability Zone associated with the subnet
+     * The Availability Zone associated with the subnet.
      *
-     * @param subnetAvailabilityZone The Availability Zone associated with the subnet
+     * @param subnetAvailabilityZone The Availability Zone associated with the subnet.
      */
     public void setSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
         this.subnetAvailabilityZone = subnetAvailabilityZone;
     }
     
     /**
-     * The Availability Zone associated with the subnet
+     * The Availability Zone associated with the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetAvailabilityZone The Availability Zone associated with the subnet
+     * @param subnetAvailabilityZone The Availability Zone associated with the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

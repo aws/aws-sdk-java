@@ -43,7 +43,7 @@ public class CacheNode implements Serializable {
     private java.util.Date cacheNodeCreateTime;
 
     /**
-     * The hostname and IP address for connecting to this cache node.
+     * The hostname for connecting to this cache node.
      */
     private Endpoint endpoint;
 
@@ -182,29 +182,29 @@ public class CacheNode implements Serializable {
     }
 
     /**
-     * The hostname and IP address for connecting to this cache node.
+     * The hostname for connecting to this cache node.
      *
-     * @return The hostname and IP address for connecting to this cache node.
+     * @return The hostname for connecting to this cache node.
      */
     public Endpoint getEndpoint() {
         return endpoint;
     }
     
     /**
-     * The hostname and IP address for connecting to this cache node.
+     * The hostname for connecting to this cache node.
      *
-     * @param endpoint The hostname and IP address for connecting to this cache node.
+     * @param endpoint The hostname for connecting to this cache node.
      */
     public void setEndpoint(Endpoint endpoint) {
         this.endpoint = endpoint;
     }
     
     /**
-     * The hostname and IP address for connecting to this cache node.
+     * The hostname for connecting to this cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endpoint The hostname and IP address for connecting to this cache node.
+     * @param endpoint The hostname for connecting to this cache node.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

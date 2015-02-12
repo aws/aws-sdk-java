@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the GetGroup action.
+ * Contains the response to a successful GetGroup request.
  * </p>
  */
 public class GetGroupResult implements Serializable {

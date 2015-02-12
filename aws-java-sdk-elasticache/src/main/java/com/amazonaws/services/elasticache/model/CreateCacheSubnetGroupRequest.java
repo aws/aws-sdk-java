@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSubnetGroup(CreateCacheSubnetGroupRequest) CreateCacheSubnetGroup operation}.
  * <p>
- * The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet
+ * The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet
  * group.
  * </p>
  * <p>

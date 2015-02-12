@@ -27,11 +27,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListTagsForResourcesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The type of the resources. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resources. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      */
     private String resourceType;
 
@@ -45,14 +46,16 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest impleme
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceIds;
 
     /**
-     * The type of the resources. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resources. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @return The type of the resources. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @return The type of the resources. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @see TagResourceType
      */
@@ -61,14 +64,16 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The type of the resources. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resources. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @param resourceType The type of the resources. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @param resourceType The type of the resources. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @see TagResourceType
      */
@@ -77,16 +82,18 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The type of the resources. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resources. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @param resourceType The type of the resources. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @param resourceType The type of the resources. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -99,14 +106,16 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The type of the resources. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resources. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @param resourceType The type of the resources. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @param resourceType The type of the resources. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @see TagResourceType
      */
@@ -115,16 +124,18 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The type of the resources. The resource type for health checks is
-     * <code>healthcheck</code>.
+     * The type of the resources. <p>- The resource type for health checks is
+     * <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>healthcheck
+     * <b>Allowed Values: </b>healthcheck, hostedzone
      *
-     * @param resourceType The type of the resources. The resource type for health checks is
-     *         <code>healthcheck</code>.
+     * @param resourceType The type of the resources. <p>- The resource type for health checks is
+     *         <code>healthcheck</code>. <p>- The resource type for hosted zones is
+     *         <code>hostedzone</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyReplicationGroup(ModifyReplicationGroupRequest) ModifyReplicationGroup operation}.
  * <p>
- * The <i>ModifyReplicationGroup</i> operation modifies the settings for
- * a replication group.
+ * The <i>ModifyReplicationGroup</i> action modifies the settings for a
+ * replication group.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyReplicationGroup(ModifyReplicationGroupRequest)
@@ -58,8 +58,9 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * Whether a read replica will be automatically promoted to read/write
      * primary if the existing primary encounters a failure. <p>Valid values:
      * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * replication groups are not supported on: <ul> <li>Redis versions
+     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     * </note>
      */
     private Boolean automaticFailoverEnabled;
 
@@ -132,10 +133,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     private String engineVersion;
 
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to all of the clusters in the replication group during the maintenance
-     * window. A value of <code>true</code> allows these upgrades to occur;
-     * <code>false</code> disables automatic upgrades.
+     * This parameter is currently disabled.
      */
     private Boolean autoMinorVersionUpgrade;
 
@@ -324,14 +322,16 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * Whether a read replica will be automatically promoted to read/write
      * primary if the existing primary encounters a failure. <p>Valid values:
      * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * replication groups are not supported on: <ul> <li>Redis versions
+     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     * </note>
      *
      * @return Whether a read replica will be automatically promoted to read/write
      *         primary if the existing primary encounters a failure. <p>Valid values:
      *         <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     *         replication groups is not supported on: <ul> <li>Redis version
-     *         2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     *         replication groups are not supported on: <ul> <li>Redis versions
+     *         earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     *         </note>
      */
     public Boolean isAutomaticFailoverEnabled() {
         return automaticFailoverEnabled;
@@ -341,14 +341,16 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * Whether a read replica will be automatically promoted to read/write
      * primary if the existing primary encounters a failure. <p>Valid values:
      * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * replication groups are not supported on: <ul> <li>Redis versions
+     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     * </note>
      *
      * @param automaticFailoverEnabled Whether a read replica will be automatically promoted to read/write
      *         primary if the existing primary encounters a failure. <p>Valid values:
      *         <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     *         replication groups is not supported on: <ul> <li>Redis version
-     *         2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     *         replication groups are not supported on: <ul> <li>Redis versions
+     *         earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     *         </note>
      */
     public void setAutomaticFailoverEnabled(Boolean automaticFailoverEnabled) {
         this.automaticFailoverEnabled = automaticFailoverEnabled;
@@ -358,16 +360,18 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * Whether a read replica will be automatically promoted to read/write
      * primary if the existing primary encounters a failure. <p>Valid values:
      * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * replication groups are not supported on: <ul> <li>Redis versions
+     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param automaticFailoverEnabled Whether a read replica will be automatically promoted to read/write
      *         primary if the existing primary encounters a failure. <p>Valid values:
      *         <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     *         replication groups is not supported on: <ul> <li>Redis version
-     *         2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     *         replication groups are not supported on: <ul> <li>Redis versions
+     *         earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     *         </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -381,14 +385,16 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * Whether a read replica will be automatically promoted to read/write
      * primary if the existing primary encounters a failure. <p>Valid values:
      * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups is not supported on: <ul> <li>Redis version
-     * 2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * replication groups are not supported on: <ul> <li>Redis versions
+     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     * </note>
      *
      * @return Whether a read replica will be automatically promoted to read/write
      *         primary if the existing primary encounters a failure. <p>Valid values:
      *         <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     *         replication groups is not supported on: <ul> <li>Redis version
-     *         2.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     *         replication groups are not supported on: <ul> <li>Redis versions
+     *         earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     *         </note>
      */
     public Boolean getAutomaticFailoverEnabled() {
         return automaticFailoverEnabled;
@@ -936,47 +942,29 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to all of the clusters in the replication group during the maintenance
-     * window. A value of <code>true</code> allows these upgrades to occur;
-     * <code>false</code> disables automatic upgrades.
+     * This parameter is currently disabled.
      *
-     * @return Determines whether minor engine upgrades will be applied automatically
-     *         to all of the clusters in the replication group during the maintenance
-     *         window. A value of <code>true</code> allows these upgrades to occur;
-     *         <code>false</code> disables automatic upgrades.
+     * @return This parameter is currently disabled.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to all of the clusters in the replication group during the maintenance
-     * window. A value of <code>true</code> allows these upgrades to occur;
-     * <code>false</code> disables automatic upgrades.
+     * This parameter is currently disabled.
      *
-     * @param autoMinorVersionUpgrade Determines whether minor engine upgrades will be applied automatically
-     *         to all of the clusters in the replication group during the maintenance
-     *         window. A value of <code>true</code> allows these upgrades to occur;
-     *         <code>false</code> disables automatic upgrades.
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to all of the clusters in the replication group during the maintenance
-     * window. A value of <code>true</code> allows these upgrades to occur;
-     * <code>false</code> disables automatic upgrades.
+     * This parameter is currently disabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade Determines whether minor engine upgrades will be applied automatically
-     *         to all of the clusters in the replication group during the maintenance
-     *         window. A value of <code>true</code> allows these upgrades to occur;
-     *         <code>false</code> disables automatic upgrades.
+     * @param autoMinorVersionUpgrade This parameter is currently disabled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -987,15 +975,9 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Determines whether minor engine upgrades will be applied automatically
-     * to all of the clusters in the replication group during the maintenance
-     * window. A value of <code>true</code> allows these upgrades to occur;
-     * <code>false</code> disables automatic upgrades.
+     * This parameter is currently disabled.
      *
-     * @return Determines whether minor engine upgrades will be applied automatically
-     *         to all of the clusters in the replication group during the maintenance
-     *         window. A value of <code>true</code> allows these upgrades to occur;
-     *         <code>false</code> disables automatic upgrades.
+     * @return This parameter is currently disabled.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;

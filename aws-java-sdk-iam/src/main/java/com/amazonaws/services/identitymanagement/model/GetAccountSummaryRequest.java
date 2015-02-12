@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountSummary(GetAccountSummaryRequest) GetAccountSummary operation}.
  * <p>
- * Retrieves account level information about account entity usage and IAM
- * quotas.
+ * Retrieves information about IAM entity usage and IAM quotas in the AWS
+ * account.
  * </p>
  * <p>
  * For information about limitations on IAM entities, see

@@ -21,10 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteSnapshot(DeleteSnapshotRequest) DeleteSnapshot operation}.
  * <p>
- * The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When
- * you receive a successful response from this operation, ElastiCache
+ * The <i>DeleteSnapshot</i> action deletes an existing snapshot. When
+ * you receive a successful response from this action, ElastiCache
  * immediately begins deleting the snapshot; you cannot cancel or revert
- * this operation.
+ * this action.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteSnapshot(DeleteSnapshotRequest)
