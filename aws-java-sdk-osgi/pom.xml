@@ -325,8 +325,8 @@
         <configuration>
           <instructions>
             <Export-Package>com.amazonaws.*</Export-Package>
-            <Import-Package>!org.junit.*,!org.springframework.*,!org.aspectj.*,*</Import-Package>
-            <Embed-Dependency>*;scope=compile</Embed-Dependency>
+            <Import-Package>!org.junit.*,!org.springframework.*,!org.apache.avalon.*,!org.apache.log.*,!org.aspectj.*,org.apache.http.conn.routing,*</Import-Package>
+            <Embed-Dependency>*;scope=compile;inline=true</Embed-Dependency>
             <Embed-Transitive>false</Embed-Transitive>
           </instructions>
         </configuration>
