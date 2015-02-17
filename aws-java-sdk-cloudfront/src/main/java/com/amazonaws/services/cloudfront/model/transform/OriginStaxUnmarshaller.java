@@ -50,6 +50,10 @@ public class OriginStaxUnmarshaller implements Unmarshaller<Origin, StaxUnmarsha
                     origin.setDomainName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("OriginPath", targetDepth)) {
+                    origin.setOriginPath(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("S3OriginConfig", targetDepth)) {
                     origin.setS3OriginConfig(S3OriginConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

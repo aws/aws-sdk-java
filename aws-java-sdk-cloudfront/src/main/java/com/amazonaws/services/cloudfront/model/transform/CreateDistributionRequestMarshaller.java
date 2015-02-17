@@ -45,7 +45,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2014-10-21/distribution"; 
+        String uriResourcePath = "2014-11-06/distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-10-21/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-11-06/");
 
                     if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
@@ -124,6 +124,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                     }
                                     if (originsOriginsitemsListValue.getDomainName() != null) {
                                         xmlWriter.startElement("DomainName").value(originsOriginsitemsListValue.getDomainName()).endElement();
+                                    }
+                                    if (originsOriginsitemsListValue.getOriginPath() != null) {
+                                        xmlWriter.startElement("OriginPath").value(originsOriginsitemsListValue.getOriginPath()).endElement();
                                     }
                                     if (originsOriginsitemsListValue != null) {
                                         S3OriginConfig s3OriginConfigS3OriginConfig = originsOriginsitemsListValue.getS3OriginConfig();

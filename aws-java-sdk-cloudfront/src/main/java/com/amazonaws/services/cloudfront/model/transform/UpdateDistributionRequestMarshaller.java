@@ -47,7 +47,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         if (updateDistributionRequest.getIfMatch() != null)
           request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
 
-        String uriResourcePath = "2014-10-21/distribution/{Id}/config"; 
+        String uriResourcePath = "2014-11-06/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -67,7 +67,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-10-21/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-11-06/");
 
                     if (updateDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
@@ -127,6 +127,9 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                                     }
                                     if (originsOriginsitemsListValue.getDomainName() != null) {
                                         xmlWriter.startElement("DomainName").value(originsOriginsitemsListValue.getDomainName()).endElement();
+                                    }
+                                    if (originsOriginsitemsListValue.getOriginPath() != null) {
+                                        xmlWriter.startElement("OriginPath").value(originsOriginsitemsListValue.getOriginPath()).endElement();
                                     }
                                     if (originsOriginsitemsListValue != null) {
                                         S3OriginConfig s3OriginConfigS3OriginConfig = originsOriginsitemsListValue.getS3OriginConfig();

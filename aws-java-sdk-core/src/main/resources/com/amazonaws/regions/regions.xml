@@ -123,6 +123,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>email</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -180,7 +186,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
+        <Hostname>sts.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -247,6 +253,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>elastictranscoder.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
     </Region>
     <Region>
@@ -325,6 +337,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>sdb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -377,8 +395,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
-        <AuthRegion>us-east-1</AuthRegion>
+        <Hostname>sts.us-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -517,6 +534,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>email</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -575,8 +598,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
-        <AuthRegion>us-east-1</AuthRegion>
+        <Hostname>sts.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -709,6 +731,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>sdb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -761,8 +789,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
-        <AuthRegion>us-east-1</AuthRegion>
+        <Hostname>sts.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -895,6 +922,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>sdb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -947,8 +980,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
-        <AuthRegion>us-east-1</AuthRegion>
+        <Hostname>sts.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1075,6 +1107,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>sdb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1127,8 +1165,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
-        <AuthRegion>us-east-1</AuthRegion>
+        <Hostname>sts.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1255,6 +1292,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>sdb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1307,8 +1350,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
-        <AuthRegion>us-east-1</AuthRegion>
+        <Hostname>sts.sa-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1441,6 +1483,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>email</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1499,8 +1547,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
-        <AuthRegion>us-east-1</AuthRegion>
+        <Hostname>sts.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1640,6 +1687,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>sns</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1681,8 +1734,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.amazonaws.com</Hostname>
-        <AuthRegion>us-east-1</AuthRegion>
+        <Hostname>sts.eu-central-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -2165,6 +2217,19 @@
       <RegionName>eu-central-1</RegionName>
     </Service>
     <Service>
+      <Name>route53domains</Name>
+      <FullName>Amazon Route 53 Domains</FullName>
+      <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
+      <RegionName>sa-east-1</RegionName>
+      <RegionName>eu-west-1</RegionName>
+      <RegionName>eu-central-1</RegionName>
+    </Service>
+    <Service>
       <Name>email</Name>
       <FullName>Amazon Simple Email Service</FullName>
       <RegionName>us-east-1</RegionName>
@@ -2420,6 +2485,11 @@
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>eu-west-1</RegionName>
+    </Service>
+    <Service>
+      <Name>ssm</Name>
+      <FullName>Amazon Simple Systems Management</FullName>
+      <RegionName>us-east-1</RegionName>
     </Service>
   </Services>
 </XML>
