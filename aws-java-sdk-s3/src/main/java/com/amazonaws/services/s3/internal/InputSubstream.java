@@ -17,6 +17,7 @@ package com.amazonaws.services.s3.internal;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
@@ -24,36 +25,38 @@ import com.amazonaws.internal.SdkFilterInputStream;
  * as a new input stream.
  */
 public final class InputSubstream extends SdkFilterInputStream {
-	private long currentPosition;
-	private final long requestedOffset;
-	private final long requestedLength;
-	private final boolean closeSourceStream;
-	private long markedPosition = 0;
+    private static final int MAX_SKIPS = 100;
+    private long currentPosition;
+    private final long requestedOffset;
+    private final long requestedLength;
+    private final boolean closeSourceStream;
+    private long markedPosition = 0;
 
-	/**
-	 * Constructs a new InputSubstream so that when callers start reading from
-	 * this stream they'll start at the specified offset in the real stream and
-	 * after they've read the specified length, this stream will look empty.
-	 * 
-	 * @param in
-	 *            The input stream to wrap.
-	 * @param offset
-	 *            The offset, in bytes, into the specified input stream at which
-	 *            to start reading data.
-	 * @param length
-	 *            The length, in bytes, of the specified input stream to return
-	 *            through this stream.
-	 * @param closeSourceStream
-	 *            True if the wrapped InputStream should be closed when this
-	 *            InputSubstream is closed.
-	 */
-    public InputSubstream(InputStream in, long offset, long length, boolean closeSourceStream) {
-    	super(in);
-    	
-    	this.currentPosition = 0;
-    	this.requestedLength = length;
-    	this.requestedOffset = offset;
-    	this.closeSourceStream = closeSourceStream;
+    /**
+     * Constructs a new InputSubstream so that when callers start reading from
+     * this stream they'll start at the specified offset in the real stream and
+     * after they've read the specified length, this stream will look empty.
+     * 
+     * @param in
+     *            The input stream to wrap.
+     * @param offset
+     *            The offset, in bytes, into the specified input stream at which
+     *            to start reading data.
+     * @param length
+     *            The length, in bytes, of the specified input stream to return
+     *            through this stream.
+     * @param closeSourceStream
+     *            True if the wrapped InputStream should be closed when this
+     *            InputSubstream is closed.
+     */
+    public InputSubstream(InputStream in, long offset, long length,
+            boolean closeSourceStream) {
+        super(in);
+
+        this.currentPosition = 0;
+        this.requestedLength = length;
+        this.requestedOffset = offset;
+        this.closeSourceStream = closeSourceStream;
     }
 
     @Override
@@ -61,19 +64,32 @@ public final class InputSubstream extends SdkFilterInputStream {
         byte[] b = new byte[1];
         int bytesRead = read(b, 0, 1);
 
-        if (bytesRead == -1) return bytesRead;
+        if (bytesRead == -1)
+            return bytesRead;
         return b[0];
     }
 
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
+        int count = 0;
         while (currentPosition < requestedOffset) {
             long skippedBytes = super.skip(requestedOffset - currentPosition);
+            if (skippedBytes == 0) {
+                count++;
+                if (count > MAX_SKIPS) {
+                    throw new AmazonClientException(
+                            "Unable to position the currentPosition from "
+                                    + currentPosition + " to "
+                                    + requestedOffset);
+                }
+            }
             currentPosition += skippedBytes;
         }
 
-        long bytesRemaining = (requestedLength + requestedOffset) - currentPosition;
-		if (bytesRemaining <= 0) return -1;
+        long bytesRemaining = 
+            (requestedLength + requestedOffset) - currentPosition;
+        if (bytesRemaining <= 0)
+            return -1;
 
         len = (int) Math.min(len, bytesRemaining);
         int bytesRead = super.read(b, off, len);
@@ -82,32 +98,37 @@ public final class InputSubstream extends SdkFilterInputStream {
         return bytesRead;
     }
 
-	@Override
-	public synchronized void mark(int readlimit) {
-		markedPosition = currentPosition;
-		super.mark(readlimit);
-	}
+    @Override
+    public synchronized void mark(int readlimit) {
+        markedPosition = currentPosition;
+        super.mark(readlimit);
+    }
 
-	@Override
-	public synchronized void reset() throws IOException {
-		currentPosition = markedPosition;
-		super.reset();
-	}
+    @Override
+    public synchronized void reset() throws IOException {
+        currentPosition = markedPosition;
+        super.reset();
+    }
 
-	@Override
-	public void close() throws IOException {
-		// Only close the wrapped input stream if we're at the end of
-		// the wrapped stream.  We don't want to close the wrapped input
-		// stream just because we've reached the end of one subsection.
-		if (closeSourceStream) super.close();
-	}
+    @Override
+    public void close() throws IOException {
+        // Only close the wrapped input stream if we're at the end of
+        // the wrapped stream. We don't want to close the wrapped input
+        // stream just because we've reached the end of one subsection.
+        if (closeSourceStream)
+            super.close();
+    }
 
-	@Override
+    @Override
     public int available() throws IOException {
-		long bytesRemaining;
-		if (currentPosition < requestedOffset) bytesRemaining = requestedLength;
-		else bytesRemaining = (requestedLength + requestedOffset) - currentPosition;
+        long bytesRemaining;
+        if (currentPosition < requestedOffset)
+            bytesRemaining = requestedLength;
+        else {
+            bytesRemaining = 
+                (requestedLength + requestedOffset) - currentPosition;
+        }
 
-		return (int)Math.min(bytesRemaining, super.available());
+        return (int) Math.min(bytesRemaining, super.available());
     }
 }

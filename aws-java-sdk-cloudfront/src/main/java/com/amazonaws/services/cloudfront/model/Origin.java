@@ -44,6 +44,15 @@ public class Origin implements Serializable {
     private String domainName;
 
     /**
+     * An optional element that causes CloudFront to request your content
+     * from a directory in your Amazon S3 bucket or your custom origin. When
+     * you include the OriginPath element, specify the directory name,
+     * beginning with a /. CloudFront appends the directory name to the value
+     * of DomainName.
+     */
+    private String originPath;
+
+    /**
      * A complex type that contains information about the Amazon S3 origin.
      * If the origin is a custom origin, use the CustomOriginConfig element
      * instead.
@@ -171,6 +180,63 @@ public class Origin implements Serializable {
     }
 
     /**
+     * An optional element that causes CloudFront to request your content
+     * from a directory in your Amazon S3 bucket or your custom origin. When
+     * you include the OriginPath element, specify the directory name,
+     * beginning with a /. CloudFront appends the directory name to the value
+     * of DomainName.
+     *
+     * @return An optional element that causes CloudFront to request your content
+     *         from a directory in your Amazon S3 bucket or your custom origin. When
+     *         you include the OriginPath element, specify the directory name,
+     *         beginning with a /. CloudFront appends the directory name to the value
+     *         of DomainName.
+     */
+    public String getOriginPath() {
+        return originPath;
+    }
+    
+    /**
+     * An optional element that causes CloudFront to request your content
+     * from a directory in your Amazon S3 bucket or your custom origin. When
+     * you include the OriginPath element, specify the directory name,
+     * beginning with a /. CloudFront appends the directory name to the value
+     * of DomainName.
+     *
+     * @param originPath An optional element that causes CloudFront to request your content
+     *         from a directory in your Amazon S3 bucket or your custom origin. When
+     *         you include the OriginPath element, specify the directory name,
+     *         beginning with a /. CloudFront appends the directory name to the value
+     *         of DomainName.
+     */
+    public void setOriginPath(String originPath) {
+        this.originPath = originPath;
+    }
+    
+    /**
+     * An optional element that causes CloudFront to request your content
+     * from a directory in your Amazon S3 bucket or your custom origin. When
+     * you include the OriginPath element, specify the directory name,
+     * beginning with a /. CloudFront appends the directory name to the value
+     * of DomainName.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param originPath An optional element that causes CloudFront to request your content
+     *         from a directory in your Amazon S3 bucket or your custom origin. When
+     *         you include the OriginPath element, specify the directory name,
+     *         beginning with a /. CloudFront appends the directory name to the value
+     *         of DomainName.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Origin withOriginPath(String originPath) {
+        this.originPath = originPath;
+        return this;
+    }
+
+    /**
      * A complex type that contains information about the Amazon S3 origin.
      * If the origin is a custom origin, use the CustomOriginConfig element
      * instead.
@@ -268,6 +334,7 @@ public class Origin implements Serializable {
         sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
+        if (getOriginPath() != null) sb.append("OriginPath: " + getOriginPath() + ",");
         if (getS3OriginConfig() != null) sb.append("S3OriginConfig: " + getS3OriginConfig() + ",");
         if (getCustomOriginConfig() != null) sb.append("CustomOriginConfig: " + getCustomOriginConfig() );
         sb.append("}");
@@ -281,6 +348,7 @@ public class Origin implements Serializable {
         
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
+        hashCode = prime * hashCode + ((getOriginPath() == null) ? 0 : getOriginPath().hashCode()); 
         hashCode = prime * hashCode + ((getS3OriginConfig() == null) ? 0 : getS3OriginConfig().hashCode()); 
         hashCode = prime * hashCode + ((getCustomOriginConfig() == null) ? 0 : getCustomOriginConfig().hashCode()); 
         return hashCode;
@@ -298,6 +366,8 @@ public class Origin implements Serializable {
         if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
         if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
+        if (other.getOriginPath() == null ^ this.getOriginPath() == null) return false;
+        if (other.getOriginPath() != null && other.getOriginPath().equals(this.getOriginPath()) == false) return false; 
         if (other.getS3OriginConfig() == null ^ this.getS3OriginConfig() == null) return false;
         if (other.getS3OriginConfig() != null && other.getS3OriginConfig().equals(this.getS3OriginConfig()) == false) return false; 
         if (other.getCustomOriginConfig() == null ^ this.getCustomOriginConfig() == null) return false;

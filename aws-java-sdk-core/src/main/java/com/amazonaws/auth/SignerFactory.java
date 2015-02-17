@@ -115,7 +115,7 @@ public final class SignerFactory {
             final String serviceName) {
         Class<? extends Signer> signerClass = SIGNERS.get(signerType);
         if (signerClass == null)
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("unknown signer type: " + signerType);
         Signer signer;
         try {
             signer = signerClass.newInstance();
