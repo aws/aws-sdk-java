@@ -186,7 +186,7 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.us-east-1.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -395,7 +395,8 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.us-west-1.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -598,7 +599,8 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.us-west-2.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -789,7 +791,8 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.ap-northeast-1.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -980,7 +983,8 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.ap-southeast-1.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1165,7 +1169,8 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.ap-southeast-2.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1350,7 +1355,8 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.sa-east-1.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1547,7 +1553,8 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.eu-west-1.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1734,7 +1741,8 @@
         <ServiceName>sts</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
-        <Hostname>sts.eu-central-1.amazonaws.com</Hostname>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
