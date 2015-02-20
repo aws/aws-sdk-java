@@ -21,7 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#describeTaskDefinition(DescribeTaskDefinitionRequest) DescribeTaskDefinition operation}.
  * <p>
- * Describes a task definition.
+ * Describes a task definition. You can specify a <code>family</code> and
+ * <code>revision</code> to find information on a specific task
+ * definition, or you can simply specify the family to find the latest
+ * revision in that family.
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#describeTaskDefinition(DescribeTaskDefinitionRequest)
@@ -29,19 +32,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
+     * The <code>family</code> for the latest revision, <code>family</code>
+     * and <code>revision</code> (<code>family:revision</code>) for a
+     * specific revision in the family, or full Amazon Resource Name (ARN) of
      * the task definition that you want to describe.
      */
     private String taskDefinition;
 
     /**
-     * The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
+     * The <code>family</code> for the latest revision, <code>family</code>
+     * and <code>revision</code> (<code>family:revision</code>) for a
+     * specific revision in the family, or full Amazon Resource Name (ARN) of
      * the task definition that you want to describe.
      *
-     * @return The <code>family</code> and <code>revision</code>
-     *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
+     * @return The <code>family</code> for the latest revision, <code>family</code>
+     *         and <code>revision</code> (<code>family:revision</code>) for a
+     *         specific revision in the family, or full Amazon Resource Name (ARN) of
      *         the task definition that you want to describe.
      */
     public String getTaskDefinition() {
@@ -49,12 +55,14 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
+     * The <code>family</code> for the latest revision, <code>family</code>
+     * and <code>revision</code> (<code>family:revision</code>) for a
+     * specific revision in the family, or full Amazon Resource Name (ARN) of
      * the task definition that you want to describe.
      *
-     * @param taskDefinition The <code>family</code> and <code>revision</code>
-     *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
+     * @param taskDefinition The <code>family</code> for the latest revision, <code>family</code>
+     *         and <code>revision</code> (<code>family:revision</code>) for a
+     *         specific revision in the family, or full Amazon Resource Name (ARN) of
      *         the task definition that you want to describe.
      */
     public void setTaskDefinition(String taskDefinition) {
@@ -62,14 +70,16 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
+     * The <code>family</code> for the latest revision, <code>family</code>
+     * and <code>revision</code> (<code>family:revision</code>) for a
+     * specific revision in the family, or full Amazon Resource Name (ARN) of
      * the task definition that you want to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param taskDefinition The <code>family</code> and <code>revision</code>
-     *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
+     * @param taskDefinition The <code>family</code> for the latest revision, <code>family</code>
+     *         and <code>revision</code> (<code>family:revision</code>) for a
+     *         specific revision in the family, or full Amazon Resource Name (ARN) of
      *         the task definition that you want to describe.
      *
      * @return A reference to this updated object so that method calls can be chained

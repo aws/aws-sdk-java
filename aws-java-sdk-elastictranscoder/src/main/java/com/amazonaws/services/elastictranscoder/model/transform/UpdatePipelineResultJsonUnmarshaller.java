@@ -49,6 +49,10 @@ public class UpdatePipelineResultJsonUnmarshaller implements Unmarshaller<Update
                     context.nextToken();
                     updatePipelineResult.setPipeline(PipelineJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Warnings", targetDepth)) {
+                    context.nextToken();
+                    updatePipelineResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

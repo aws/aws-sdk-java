@@ -173,6 +173,80 @@ public class RegisterTaskDefinitionRequestMarshaller implements Marshaller<Reque
                             }
                             jsonWriter.endArray();
                         }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<MountPoint> mountPointsList = (com.amazonaws.internal.ListWithAutoConstructFlag<MountPoint>)(containerDefinitionsListValue.getMountPoints());
+                        if (mountPointsList != null && !(mountPointsList.isAutoConstruct() && mountPointsList.isEmpty())) {
+
+                            jsonWriter.key("mountPoints");
+                            jsonWriter.array();
+
+                            for (MountPoint mountPointsListValue : mountPointsList) {
+                                if (mountPointsListValue != null) {
+                                    jsonWriter.object();
+                                    if (mountPointsListValue.getSourceVolume() != null) {
+                                        jsonWriter.key("sourceVolume").value(mountPointsListValue.getSourceVolume());
+                                    }
+                                    if (mountPointsListValue.getContainerPath() != null) {
+                                        jsonWriter.key("containerPath").value(mountPointsListValue.getContainerPath());
+                                    }
+                                    if (mountPointsListValue.isReadOnly() != null) {
+                                        jsonWriter.key("readOnly").value(mountPointsListValue.isReadOnly());
+                                    }
+                                    jsonWriter.endObject();
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<VolumeFrom> volumesFromList = (com.amazonaws.internal.ListWithAutoConstructFlag<VolumeFrom>)(containerDefinitionsListValue.getVolumesFrom());
+                        if (volumesFromList != null && !(volumesFromList.isAutoConstruct() && volumesFromList.isEmpty())) {
+
+                            jsonWriter.key("volumesFrom");
+                            jsonWriter.array();
+
+                            for (VolumeFrom volumesFromListValue : volumesFromList) {
+                                if (volumesFromListValue != null) {
+                                    jsonWriter.object();
+                                    if (volumesFromListValue.getSourceContainer() != null) {
+                                        jsonWriter.key("sourceContainer").value(volumesFromListValue.getSourceContainer());
+                                    }
+                                    if (volumesFromListValue.isReadOnly() != null) {
+                                        jsonWriter.key("readOnly").value(volumesFromListValue.isReadOnly());
+                                    }
+                                    jsonWriter.endObject();
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumesList = (com.amazonaws.internal.ListWithAutoConstructFlag<Volume>)(registerTaskDefinitionRequest.getVolumes());
+            if (volumesList != null && !(volumesList.isAutoConstruct() && volumesList.isEmpty())) {
+
+                jsonWriter.key("volumes");
+                jsonWriter.array();
+
+                for (Volume volumesListValue : volumesList) {
+                    if (volumesListValue != null) {
+                        jsonWriter.object();
+                        if (volumesListValue.getName() != null) {
+                            jsonWriter.key("name").value(volumesListValue.getName());
+                        }
+                        HostVolumeProperties host = volumesListValue.getHost();
+                        if (host != null) {
+
+                            jsonWriter.key("host");
+                            jsonWriter.object();
+
+                            if (host.getSourcePath() != null) {
+                                jsonWriter.key("sourcePath").value(host.getSourcePath());
+                            }
+                            jsonWriter.endObject();
+                        }
                         jsonWriter.endObject();
                     }
                 }

@@ -35,6 +35,8 @@ import com.amazonaws.services.ecs.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * <p>
+ * </p>
+ * <p>
  * Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast,
  * container management service that makes it easy to run, stop, and
  * manage Docker containers on a cluster of Amazon EC2 instances. Amazon
@@ -759,6 +761,84 @@ public class AmazonECSAsyncClient extends AmazonECSClient
             throw ex;
               }
               asyncHandler.onSuccess(listTaskDefinitionsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns a list of task definition families that are registered to
+     * your account. You can filter the results with the
+     * <code>familyPrefix</code> parameter.
+     * </p>
+     *
+     * @param listTaskDefinitionFamiliesRequest Container for the necessary
+     *           parameters to execute the ListTaskDefinitionFamilies operation on
+     *           AmazonECS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTaskDefinitionFamilies service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(final ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTaskDefinitionFamiliesResult>() {
+            public ListTaskDefinitionFamiliesResult call() throws Exception {
+                return listTaskDefinitionFamilies(listTaskDefinitionFamiliesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns a list of task definition families that are registered to
+     * your account. You can filter the results with the
+     * <code>familyPrefix</code> parameter.
+     * </p>
+     *
+     * @param listTaskDefinitionFamiliesRequest Container for the necessary
+     *           parameters to execute the ListTaskDefinitionFamilies operation on
+     *           AmazonECS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTaskDefinitionFamilies service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(
+            final ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest,
+            final AsyncHandler<ListTaskDefinitionFamiliesRequest, ListTaskDefinitionFamiliesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTaskDefinitionFamiliesResult>() {
+            public ListTaskDefinitionFamiliesResult call() throws Exception {
+              ListTaskDefinitionFamiliesResult result;
+                try {
+                result = listTaskDefinitionFamilies(listTaskDefinitionFamiliesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTaskDefinitionFamiliesRequest, result);
                  return result;
         }
     });
@@ -1534,7 +1614,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
-     * Describes a task definition.
+     * Describes a task definition. You can specify a <code>family</code>
+     * and <code>revision</code> to find information on a specific task
+     * definition, or you can simply specify the family to find the latest
+     * revision in that family.
      * </p>
      *
      * @param describeTaskDefinitionRequest Container for the necessary
@@ -1564,7 +1647,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient
 
     /**
      * <p>
-     * Describes a task definition.
+     * Describes a task definition. You can specify a <code>family</code>
+     * and <code>revision</code> to find information on a specific task
+     * definition, or you can simply specify the family to find the latest
+     * revision in that family.
      * </p>
      *
      * @param describeTaskDefinitionRequest Container for the necessary
@@ -1685,7 +1771,11 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Registers a new task definition from the supplied <code>family</code>
-     * and <code>containerDefinitions</code> .
+     * and <code>containerDefinitions</code> . Optionally, you can add data
+     * volumes to your containers with the <code>volumes</code> parameter.
+     * For more information on task definition parameters and defaults, see
+     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
+     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
      * </p>
      *
      * @param registerTaskDefinitionRequest Container for the necessary
@@ -1716,7 +1806,11 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Registers a new task definition from the supplied <code>family</code>
-     * and <code>containerDefinitions</code> .
+     * and <code>containerDefinitions</code> . Optionally, you can add data
+     * volumes to your containers with the <code>volumes</code> parameter.
+     * For more information on task definition parameters and defaults, see
+     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
+     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
      * </p>
      *
      * @param registerTaskDefinitionRequest Container for the necessary

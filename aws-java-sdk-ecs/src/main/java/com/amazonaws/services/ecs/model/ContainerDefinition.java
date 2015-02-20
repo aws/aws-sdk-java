@@ -77,8 +77,13 @@ public class ContainerDefinition implements Serializable {
     private Boolean essential;
 
     /**
-     * The <code>ENTRYPOINT</code> that is passed to the container. For more
-     * information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * <important> <p>Early versions of the Amazon ECS container agent do not
+     * properly handle <code>entryPoint</code> parameters. If you have
+     * problems using <code>entryPoint</code>, update your container agent or
+     * enter your commands and arguments as <code>command</code> array items
+     * instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     * the container. For more information on the Docker
+     * <code>ENTRYPOINT</code> parameter, see <a
      * href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> entryPoint;
@@ -94,6 +99,16 @@ public class ContainerDefinition implements Serializable {
      * The environment variables to pass to a container.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<KeyValuePair> environment;
+
+    /**
+     * The mount points for data volumes in your container.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<MountPoint> mountPoints;
+
+    /**
+     * Data volumes to mount from another container.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeFrom> volumesFrom;
 
     /**
      * The name of a container. If you are linking multiple containers
@@ -524,12 +539,22 @@ public class ContainerDefinition implements Serializable {
     }
 
     /**
-     * The <code>ENTRYPOINT</code> that is passed to the container. For more
-     * information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * <important> <p>Early versions of the Amazon ECS container agent do not
+     * properly handle <code>entryPoint</code> parameters. If you have
+     * problems using <code>entryPoint</code>, update your container agent or
+     * enter your commands and arguments as <code>command</code> array items
+     * instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     * the container. For more information on the Docker
+     * <code>ENTRYPOINT</code> parameter, see <a
      * href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      *
-     * @return The <code>ENTRYPOINT</code> that is passed to the container. For more
-     *         information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * @return <important> <p>Early versions of the Amazon ECS container agent do not
+     *         properly handle <code>entryPoint</code> parameters. If you have
+     *         problems using <code>entryPoint</code>, update your container agent or
+     *         enter your commands and arguments as <code>command</code> array items
+     *         instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     *         the container. For more information on the Docker
+     *         <code>ENTRYPOINT</code> parameter, see <a
      *         href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      */
     public java.util.List<String> getEntryPoint() {
@@ -541,12 +566,22 @@ public class ContainerDefinition implements Serializable {
     }
     
     /**
-     * The <code>ENTRYPOINT</code> that is passed to the container. For more
-     * information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * <important> <p>Early versions of the Amazon ECS container agent do not
+     * properly handle <code>entryPoint</code> parameters. If you have
+     * problems using <code>entryPoint</code>, update your container agent or
+     * enter your commands and arguments as <code>command</code> array items
+     * instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     * the container. For more information on the Docker
+     * <code>ENTRYPOINT</code> parameter, see <a
      * href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      *
-     * @param entryPoint The <code>ENTRYPOINT</code> that is passed to the container. For more
-     *         information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * @param entryPoint <important> <p>Early versions of the Amazon ECS container agent do not
+     *         properly handle <code>entryPoint</code> parameters. If you have
+     *         problems using <code>entryPoint</code>, update your container agent or
+     *         enter your commands and arguments as <code>command</code> array items
+     *         instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     *         the container. For more information on the Docker
+     *         <code>ENTRYPOINT</code> parameter, see <a
      *         href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      */
     public void setEntryPoint(java.util.Collection<String> entryPoint) {
@@ -560,14 +595,24 @@ public class ContainerDefinition implements Serializable {
     }
     
     /**
-     * The <code>ENTRYPOINT</code> that is passed to the container. For more
-     * information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * <important> <p>Early versions of the Amazon ECS container agent do not
+     * properly handle <code>entryPoint</code> parameters. If you have
+     * problems using <code>entryPoint</code>, update your container agent or
+     * enter your commands and arguments as <code>command</code> array items
+     * instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     * the container. For more information on the Docker
+     * <code>ENTRYPOINT</code> parameter, see <a
      * href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param entryPoint The <code>ENTRYPOINT</code> that is passed to the container. For more
-     *         information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * @param entryPoint <important> <p>Early versions of the Amazon ECS container agent do not
+     *         properly handle <code>entryPoint</code> parameters. If you have
+     *         problems using <code>entryPoint</code>, update your container agent or
+     *         enter your commands and arguments as <code>command</code> array items
+     *         instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     *         the container. For more information on the Docker
+     *         <code>ENTRYPOINT</code> parameter, see <a
      *         href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -582,14 +627,24 @@ public class ContainerDefinition implements Serializable {
     }
     
     /**
-     * The <code>ENTRYPOINT</code> that is passed to the container. For more
-     * information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * <important> <p>Early versions of the Amazon ECS container agent do not
+     * properly handle <code>entryPoint</code> parameters. If you have
+     * problems using <code>entryPoint</code>, update your container agent or
+     * enter your commands and arguments as <code>command</code> array items
+     * instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     * the container. For more information on the Docker
+     * <code>ENTRYPOINT</code> parameter, see <a
      * href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param entryPoint The <code>ENTRYPOINT</code> that is passed to the container. For more
-     *         information on the Docker <code>ENTRYPOINT</code> parameter, see <a
+     * @param entryPoint <important> <p>Early versions of the Amazon ECS container agent do not
+     *         properly handle <code>entryPoint</code> parameters. If you have
+     *         problems using <code>entryPoint</code>, update your container agent or
+     *         enter your commands and arguments as <code>command</code> array items
+     *         instead. </important> <p>The <code>ENTRYPOINT</code> that is passed to
+     *         the container. For more information on the Docker
+     *         <code>ENTRYPOINT</code> parameter, see <a
      *         href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -760,6 +815,142 @@ public class ContainerDefinition implements Serializable {
     }
 
     /**
+     * The mount points for data volumes in your container.
+     *
+     * @return The mount points for data volumes in your container.
+     */
+    public java.util.List<MountPoint> getMountPoints() {
+        if (mountPoints == null) {
+              mountPoints = new com.amazonaws.internal.ListWithAutoConstructFlag<MountPoint>();
+              mountPoints.setAutoConstruct(true);
+        }
+        return mountPoints;
+    }
+    
+    /**
+     * The mount points for data volumes in your container.
+     *
+     * @param mountPoints The mount points for data volumes in your container.
+     */
+    public void setMountPoints(java.util.Collection<MountPoint> mountPoints) {
+        if (mountPoints == null) {
+            this.mountPoints = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<MountPoint> mountPointsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MountPoint>(mountPoints.size());
+        mountPointsCopy.addAll(mountPoints);
+        this.mountPoints = mountPointsCopy;
+    }
+    
+    /**
+     * The mount points for data volumes in your container.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param mountPoints The mount points for data volumes in your container.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerDefinition withMountPoints(MountPoint... mountPoints) {
+        if (getMountPoints() == null) setMountPoints(new java.util.ArrayList<MountPoint>(mountPoints.length));
+        for (MountPoint value : mountPoints) {
+            getMountPoints().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The mount points for data volumes in your container.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param mountPoints The mount points for data volumes in your container.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerDefinition withMountPoints(java.util.Collection<MountPoint> mountPoints) {
+        if (mountPoints == null) {
+            this.mountPoints = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<MountPoint> mountPointsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MountPoint>(mountPoints.size());
+            mountPointsCopy.addAll(mountPoints);
+            this.mountPoints = mountPointsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * Data volumes to mount from another container.
+     *
+     * @return Data volumes to mount from another container.
+     */
+    public java.util.List<VolumeFrom> getVolumesFrom() {
+        if (volumesFrom == null) {
+              volumesFrom = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeFrom>();
+              volumesFrom.setAutoConstruct(true);
+        }
+        return volumesFrom;
+    }
+    
+    /**
+     * Data volumes to mount from another container.
+     *
+     * @param volumesFrom Data volumes to mount from another container.
+     */
+    public void setVolumesFrom(java.util.Collection<VolumeFrom> volumesFrom) {
+        if (volumesFrom == null) {
+            this.volumesFrom = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<VolumeFrom> volumesFromCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeFrom>(volumesFrom.size());
+        volumesFromCopy.addAll(volumesFrom);
+        this.volumesFrom = volumesFromCopy;
+    }
+    
+    /**
+     * Data volumes to mount from another container.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param volumesFrom Data volumes to mount from another container.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerDefinition withVolumesFrom(VolumeFrom... volumesFrom) {
+        if (getVolumesFrom() == null) setVolumesFrom(new java.util.ArrayList<VolumeFrom>(volumesFrom.length));
+        for (VolumeFrom value : volumesFrom) {
+            getVolumesFrom().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Data volumes to mount from another container.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param volumesFrom Data volumes to mount from another container.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerDefinition withVolumesFrom(java.util.Collection<VolumeFrom> volumesFrom) {
+        if (volumesFrom == null) {
+            this.volumesFrom = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<VolumeFrom> volumesFromCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeFrom>(volumesFrom.size());
+            volumesFromCopy.addAll(volumesFrom);
+            this.volumesFrom = volumesFromCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -780,7 +971,9 @@ public class ContainerDefinition implements Serializable {
         if (isEssential() != null) sb.append("Essential: " + isEssential() + ",");
         if (getEntryPoint() != null) sb.append("EntryPoint: " + getEntryPoint() + ",");
         if (getCommand() != null) sb.append("Command: " + getCommand() + ",");
-        if (getEnvironment() != null) sb.append("Environment: " + getEnvironment() );
+        if (getEnvironment() != null) sb.append("Environment: " + getEnvironment() + ",");
+        if (getMountPoints() != null) sb.append("MountPoints: " + getMountPoints() + ",");
+        if (getVolumesFrom() != null) sb.append("VolumesFrom: " + getVolumesFrom() );
         sb.append("}");
         return sb.toString();
     }
@@ -800,6 +993,8 @@ public class ContainerDefinition implements Serializable {
         hashCode = prime * hashCode + ((getEntryPoint() == null) ? 0 : getEntryPoint().hashCode()); 
         hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode()); 
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode()); 
+        hashCode = prime * hashCode + ((getMountPoints() == null) ? 0 : getMountPoints().hashCode()); 
+        hashCode = prime * hashCode + ((getVolumesFrom() == null) ? 0 : getVolumesFrom().hashCode()); 
         return hashCode;
     }
     
@@ -831,6 +1026,10 @@ public class ContainerDefinition implements Serializable {
         if (other.getCommand() != null && other.getCommand().equals(this.getCommand()) == false) return false; 
         if (other.getEnvironment() == null ^ this.getEnvironment() == null) return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false) return false; 
+        if (other.getMountPoints() == null ^ this.getMountPoints() == null) return false;
+        if (other.getMountPoints() != null && other.getMountPoints().equals(this.getMountPoints()) == false) return false; 
+        if (other.getVolumesFrom() == null ^ this.getVolumesFrom() == null) return false;
+        if (other.getVolumesFrom() != null && other.getVolumesFrom().equals(this.getVolumesFrom()) == false) return false; 
         return true;
     }
     

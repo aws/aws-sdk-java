@@ -49,6 +49,10 @@ public class ReadPipelineResultJsonUnmarshaller implements Unmarshaller<ReadPipe
                     context.nextToken();
                     readPipelineResult.setPipeline(PipelineJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Warnings", targetDepth)) {
+                    context.nextToken();
+                    readPipelineResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

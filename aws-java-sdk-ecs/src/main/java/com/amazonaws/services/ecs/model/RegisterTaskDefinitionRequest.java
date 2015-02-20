@@ -22,7 +22,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#registerTaskDefinition(RegisterTaskDefinitionRequest) RegisterTaskDefinition operation}.
  * <p>
  * Registers a new task definition from the supplied <code>family</code>
- * and <code>containerDefinitions</code> .
+ * and <code>containerDefinitions</code> . Optionally, you can add data
+ * volumes to your containers with the <code>volumes</code> parameter.
+ * For more information on task definition parameters and defaults, see
+ * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
+ * in the <i>Amazon EC2 Container Service Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#registerTaskDefinition(RegisterTaskDefinitionRequest)
@@ -30,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * You can specify a <code>family</code> for a task definition, which
+     * You must specify a <code>family</code> for a task definition, which
      * allows you to track multiple versions of the same task definition. You
      * can think of the <code>family</code> as a name for your task
      * definition.
@@ -44,12 +48,18 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.ListWithAutoConstructFlag<ContainerDefinition> containerDefinitions;
 
     /**
-     * You can specify a <code>family</code> for a task definition, which
+     * A list of volume definitions in JSON format that containers in your
+     * task may use.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumes;
+
+    /**
+     * You must specify a <code>family</code> for a task definition, which
      * allows you to track multiple versions of the same task definition. You
      * can think of the <code>family</code> as a name for your task
      * definition.
      *
-     * @return You can specify a <code>family</code> for a task definition, which
+     * @return You must specify a <code>family</code> for a task definition, which
      *         allows you to track multiple versions of the same task definition. You
      *         can think of the <code>family</code> as a name for your task
      *         definition.
@@ -59,12 +69,12 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * You can specify a <code>family</code> for a task definition, which
+     * You must specify a <code>family</code> for a task definition, which
      * allows you to track multiple versions of the same task definition. You
      * can think of the <code>family</code> as a name for your task
      * definition.
      *
-     * @param family You can specify a <code>family</code> for a task definition, which
+     * @param family You must specify a <code>family</code> for a task definition, which
      *         allows you to track multiple versions of the same task definition. You
      *         can think of the <code>family</code> as a name for your task
      *         definition.
@@ -74,14 +84,14 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * You can specify a <code>family</code> for a task definition, which
+     * You must specify a <code>family</code> for a task definition, which
      * allows you to track multiple versions of the same task definition. You
      * can think of the <code>family</code> as a name for your task
      * definition.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param family You can specify a <code>family</code> for a task definition, which
+     * @param family You must specify a <code>family</code> for a task definition, which
      *         allows you to track multiple versions of the same task definition. You
      *         can think of the <code>family</code> as a name for your task
      *         definition.
@@ -171,6 +181,82 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * A list of volume definitions in JSON format that containers in your
+     * task may use.
+     *
+     * @return A list of volume definitions in JSON format that containers in your
+     *         task may use.
+     */
+    public java.util.List<Volume> getVolumes() {
+        if (volumes == null) {
+              volumes = new com.amazonaws.internal.ListWithAutoConstructFlag<Volume>();
+              volumes.setAutoConstruct(true);
+        }
+        return volumes;
+    }
+    
+    /**
+     * A list of volume definitions in JSON format that containers in your
+     * task may use.
+     *
+     * @param volumes A list of volume definitions in JSON format that containers in your
+     *         task may use.
+     */
+    public void setVolumes(java.util.Collection<Volume> volumes) {
+        if (volumes == null) {
+            this.volumes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Volume>(volumes.size());
+        volumesCopy.addAll(volumes);
+        this.volumes = volumesCopy;
+    }
+    
+    /**
+     * A list of volume definitions in JSON format that containers in your
+     * task may use.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param volumes A list of volume definitions in JSON format that containers in your
+     *         task may use.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RegisterTaskDefinitionRequest withVolumes(Volume... volumes) {
+        if (getVolumes() == null) setVolumes(new java.util.ArrayList<Volume>(volumes.length));
+        for (Volume value : volumes) {
+            getVolumes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of volume definitions in JSON format that containers in your
+     * task may use.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param volumes A list of volume definitions in JSON format that containers in your
+     *         task may use.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RegisterTaskDefinitionRequest withVolumes(java.util.Collection<Volume> volumes) {
+        if (volumes == null) {
+            this.volumes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Volume>(volumes.size());
+            volumesCopy.addAll(volumes);
+            this.volumes = volumesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -183,7 +269,8 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFamily() != null) sb.append("Family: " + getFamily() + ",");
-        if (getContainerDefinitions() != null) sb.append("ContainerDefinitions: " + getContainerDefinitions() );
+        if (getContainerDefinitions() != null) sb.append("ContainerDefinitions: " + getContainerDefinitions() + ",");
+        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() );
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +282,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
         
         hashCode = prime * hashCode + ((getFamily() == null) ? 0 : getFamily().hashCode()); 
         hashCode = prime * hashCode + ((getContainerDefinitions() == null) ? 0 : getContainerDefinitions().hashCode()); 
+        hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode()); 
         return hashCode;
     }
     
@@ -210,6 +298,8 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
         if (other.getFamily() != null && other.getFamily().equals(this.getFamily()) == false) return false; 
         if (other.getContainerDefinitions() == null ^ this.getContainerDefinitions() == null) return false;
         if (other.getContainerDefinitions() != null && other.getContainerDefinitions().equals(this.getContainerDefinitions()) == false) return false; 
+        if (other.getVolumes() == null ^ this.getVolumes() == null) return false;
+        if (other.getVolumes() != null && other.getVolumes().equals(this.getVolumes()) == false) return false; 
         return true;
     }
     

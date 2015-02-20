@@ -3,6 +3,8 @@
  * Synchronous and asynchronous client classes for accessing AmazonECS.
  *
  * <p>
+ * </p>
+ * <p>
  * Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast,
  * container management service that makes it easy to run, stop, and
  * manage Docker containers on a cluster of Amazon EC2 instances. Amazon

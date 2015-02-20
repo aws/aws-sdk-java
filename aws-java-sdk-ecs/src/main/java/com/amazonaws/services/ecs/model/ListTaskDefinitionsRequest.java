@@ -31,10 +31,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the family that you want to filter the
+     * The full family name that you want to filter the
      * <code>ListTaskDefinitions</code> results with. Specifying a
      * <code>familyPrefix</code> will limit the listed task definitions to
-     * definitions that belong to that family.
+     * task definition revisions that belong to that family.
      */
     private String familyPrefix;
 
@@ -64,47 +64,47 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
     private Integer maxResults;
 
     /**
-     * The name of the family that you want to filter the
+     * The full family name that you want to filter the
      * <code>ListTaskDefinitions</code> results with. Specifying a
      * <code>familyPrefix</code> will limit the listed task definitions to
-     * definitions that belong to that family.
+     * task definition revisions that belong to that family.
      *
-     * @return The name of the family that you want to filter the
+     * @return The full family name that you want to filter the
      *         <code>ListTaskDefinitions</code> results with. Specifying a
      *         <code>familyPrefix</code> will limit the listed task definitions to
-     *         definitions that belong to that family.
+     *         task definition revisions that belong to that family.
      */
     public String getFamilyPrefix() {
         return familyPrefix;
     }
     
     /**
-     * The name of the family that you want to filter the
+     * The full family name that you want to filter the
      * <code>ListTaskDefinitions</code> results with. Specifying a
      * <code>familyPrefix</code> will limit the listed task definitions to
-     * definitions that belong to that family.
+     * task definition revisions that belong to that family.
      *
-     * @param familyPrefix The name of the family that you want to filter the
+     * @param familyPrefix The full family name that you want to filter the
      *         <code>ListTaskDefinitions</code> results with. Specifying a
      *         <code>familyPrefix</code> will limit the listed task definitions to
-     *         definitions that belong to that family.
+     *         task definition revisions that belong to that family.
      */
     public void setFamilyPrefix(String familyPrefix) {
         this.familyPrefix = familyPrefix;
     }
     
     /**
-     * The name of the family that you want to filter the
+     * The full family name that you want to filter the
      * <code>ListTaskDefinitions</code> results with. Specifying a
      * <code>familyPrefix</code> will limit the listed task definitions to
-     * definitions that belong to that family.
+     * task definition revisions that belong to that family.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param familyPrefix The name of the family that you want to filter the
+     * @param familyPrefix The full family name that you want to filter the
      *         <code>ListTaskDefinitions</code> results with. Specifying a
      *         <code>familyPrefix</code> will limit the listed task definitions to
-     *         definitions that belong to that family.
+     *         task definition revisions that belong to that family.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
