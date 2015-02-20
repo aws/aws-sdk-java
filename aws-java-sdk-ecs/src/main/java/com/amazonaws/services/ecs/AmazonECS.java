@@ -21,6 +21,8 @@ import com.amazonaws.services.ecs.model.*;
 /**
  * Interface for accessing AmazonECS.
  * <p>
+ * </p>
+ * <p>
  * Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast,
  * container management service that makes it easy to run, stop, and
  * manage Docker containers on a cluster of Amazon EC2 instances. Amazon
@@ -270,6 +272,34 @@ public interface AmazonECS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListTaskDefinitionsResult listTaskDefinitions(ListTaskDefinitionsRequest listTaskDefinitionsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of task definition families that are registered to
+     * your account. You can filter the results with the
+     * <code>familyPrefix</code> parameter.
+     * </p>
+     *
+     * @param listTaskDefinitionFamiliesRequest Container for the necessary
+     *           parameters to execute the ListTaskDefinitionFamilies service method on
+     *           AmazonECS.
+     * 
+     * @return The response from the ListTaskDefinitionFamilies service
+     *         method, as returned by AmazonECS.
+     * 
+     * @throws ServerException
+     * @throws ClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -549,7 +579,10 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Describes a task definition.
+     * Describes a task definition. You can specify a <code>family</code>
+     * and <code>revision</code> to find information on a specific task
+     * definition, or you can simply specify the family to find the latest
+     * revision in that family.
      * </p>
      *
      * @param describeTaskDefinitionRequest Container for the necessary
@@ -603,7 +636,11 @@ public interface AmazonECS {
     /**
      * <p>
      * Registers a new task definition from the supplied <code>family</code>
-     * and <code>containerDefinitions</code> .
+     * and <code>containerDefinitions</code> . Optionally, you can add data
+     * volumes to your containers with the <code>volumes</code> parameter.
+     * For more information on task definition parameters and defaults, see
+     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"> Amazon ECS Task Definitions </a>
+     * in the <i>Amazon EC2 Container Service Developer Guide</i> .
      * </p>
      *
      * @param registerTaskDefinitionRequest Container for the necessary
@@ -699,6 +736,29 @@ public interface AmazonECS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListTaskDefinitionsResult listTaskDefinitions() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a list of task definition families that are registered to
+     * your account. You can filter the results with the
+     * <code>familyPrefix</code> parameter.
+     * </p>
+     * 
+     * @return The response from the ListTaskDefinitionFamilies service
+     *         method, as returned by AmazonECS.
+     * 
+     * @throws ServerException
+     * @throws ClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

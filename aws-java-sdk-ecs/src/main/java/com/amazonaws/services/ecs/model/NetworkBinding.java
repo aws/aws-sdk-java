@@ -28,14 +28,13 @@ public class NetworkBinding implements Serializable {
     private String bindIP;
 
     /**
-     * The port number on the container that should be used with the network
+     * The port number on the container that is be used with the network
      * binding.
      */
     private Integer containerPort;
 
     /**
-     * The port number on the host that should be used with the network
-     * binding.
+     * The port number on the host that is used with the network binding.
      */
     private Integer hostPort;
 
@@ -79,10 +78,10 @@ public class NetworkBinding implements Serializable {
     }
 
     /**
-     * The port number on the container that should be used with the network
+     * The port number on the container that is be used with the network
      * binding.
      *
-     * @return The port number on the container that should be used with the network
+     * @return The port number on the container that is be used with the network
      *         binding.
      */
     public Integer getContainerPort() {
@@ -90,10 +89,10 @@ public class NetworkBinding implements Serializable {
     }
     
     /**
-     * The port number on the container that should be used with the network
+     * The port number on the container that is be used with the network
      * binding.
      *
-     * @param containerPort The port number on the container that should be used with the network
+     * @param containerPort The port number on the container that is be used with the network
      *         binding.
      */
     public void setContainerPort(Integer containerPort) {
@@ -101,12 +100,12 @@ public class NetworkBinding implements Serializable {
     }
     
     /**
-     * The port number on the container that should be used with the network
+     * The port number on the container that is be used with the network
      * binding.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerPort The port number on the container that should be used with the network
+     * @param containerPort The port number on the container that is be used with the network
      *         binding.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -118,35 +117,29 @@ public class NetworkBinding implements Serializable {
     }
 
     /**
-     * The port number on the host that should be used with the network
-     * binding.
+     * The port number on the host that is used with the network binding.
      *
-     * @return The port number on the host that should be used with the network
-     *         binding.
+     * @return The port number on the host that is used with the network binding.
      */
     public Integer getHostPort() {
         return hostPort;
     }
     
     /**
-     * The port number on the host that should be used with the network
-     * binding.
+     * The port number on the host that is used with the network binding.
      *
-     * @param hostPort The port number on the host that should be used with the network
-     *         binding.
+     * @param hostPort The port number on the host that is used with the network binding.
      */
     public void setHostPort(Integer hostPort) {
         this.hostPort = hostPort;
     }
     
     /**
-     * The port number on the host that should be used with the network
-     * binding.
+     * The port number on the host that is used with the network binding.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hostPort The port number on the host that should be used with the network
-     *         binding.
+     * @param hostPort The port number on the host that is used with the network binding.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

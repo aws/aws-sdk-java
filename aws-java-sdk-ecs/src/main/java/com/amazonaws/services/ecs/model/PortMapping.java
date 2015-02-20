@@ -26,46 +26,74 @@ import java.io.Serializable;
 public class PortMapping implements Serializable {
 
     /**
-     * The port number on the container that should be used with the port
-     * mapping.
+     * The port number on the container that is bound to the user-specified
+     * or automatically assigned host port. If you specify a container port
+     * and not a host port, your container will automatically receive a host
+     * port in the 49153 to 65535 port range.
      */
     private Integer containerPort;
 
     /**
-     * The port number on the host that should be used with the port mapping.
+     * The port number on the container instance to reserve for your
+     * container. You can specify a non-reserved host port for your container
+     * port mapping, or you can omit the <code>hostPort</code> while
+     * specifying a <code>containerPort</code> and your container will
+     * automatically receive a port in the 49153 to 65535 port range. You
+     * should not attempt to specify a host port in the 49153 to 65535 port
+     * range, since these are reserved for automatic assignment. <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
+     * and the Amazon ECS Container Agent port 51678. Any host port that was
+     * previously specified in a running task is also reserved while the task
+     * is running (once a task stops, the host port is released).The current
+     * reserved ports are displayed in the <code>remainingResources</code> of
+     * <a>DescribeContainerInstances</a> output, and a container instance may
+     * have up to 50 reserved ports at a time, including the default reserved
+     * ports (automatically assigned ports do not count toward this limit).
      */
     private Integer hostPort;
 
     /**
-     * The port number on the container that should be used with the port
-     * mapping.
+     * The port number on the container that is bound to the user-specified
+     * or automatically assigned host port. If you specify a container port
+     * and not a host port, your container will automatically receive a host
+     * port in the 49153 to 65535 port range.
      *
-     * @return The port number on the container that should be used with the port
-     *         mapping.
+     * @return The port number on the container that is bound to the user-specified
+     *         or automatically assigned host port. If you specify a container port
+     *         and not a host port, your container will automatically receive a host
+     *         port in the 49153 to 65535 port range.
      */
     public Integer getContainerPort() {
         return containerPort;
     }
     
     /**
-     * The port number on the container that should be used with the port
-     * mapping.
+     * The port number on the container that is bound to the user-specified
+     * or automatically assigned host port. If you specify a container port
+     * and not a host port, your container will automatically receive a host
+     * port in the 49153 to 65535 port range.
      *
-     * @param containerPort The port number on the container that should be used with the port
-     *         mapping.
+     * @param containerPort The port number on the container that is bound to the user-specified
+     *         or automatically assigned host port. If you specify a container port
+     *         and not a host port, your container will automatically receive a host
+     *         port in the 49153 to 65535 port range.
      */
     public void setContainerPort(Integer containerPort) {
         this.containerPort = containerPort;
     }
     
     /**
-     * The port number on the container that should be used with the port
-     * mapping.
+     * The port number on the container that is bound to the user-specified
+     * or automatically assigned host port. If you specify a container port
+     * and not a host port, your container will automatically receive a host
+     * port in the 49153 to 65535 port range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerPort The port number on the container that should be used with the port
-     *         mapping.
+     * @param containerPort The port number on the container that is bound to the user-specified
+     *         or automatically assigned host port. If you specify a container port
+     *         and not a host port, your container will automatically receive a host
+     *         port in the 49153 to 65535 port range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -76,29 +104,113 @@ public class PortMapping implements Serializable {
     }
 
     /**
-     * The port number on the host that should be used with the port mapping.
+     * The port number on the container instance to reserve for your
+     * container. You can specify a non-reserved host port for your container
+     * port mapping, or you can omit the <code>hostPort</code> while
+     * specifying a <code>containerPort</code> and your container will
+     * automatically receive a port in the 49153 to 65535 port range. You
+     * should not attempt to specify a host port in the 49153 to 65535 port
+     * range, since these are reserved for automatic assignment. <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
+     * and the Amazon ECS Container Agent port 51678. Any host port that was
+     * previously specified in a running task is also reserved while the task
+     * is running (once a task stops, the host port is released).The current
+     * reserved ports are displayed in the <code>remainingResources</code> of
+     * <a>DescribeContainerInstances</a> output, and a container instance may
+     * have up to 50 reserved ports at a time, including the default reserved
+     * ports (automatically assigned ports do not count toward this limit).
      *
-     * @return The port number on the host that should be used with the port mapping.
+     * @return The port number on the container instance to reserve for your
+     *         container. You can specify a non-reserved host port for your container
+     *         port mapping, or you can omit the <code>hostPort</code> while
+     *         specifying a <code>containerPort</code> and your container will
+     *         automatically receive a port in the 49153 to 65535 port range. You
+     *         should not attempt to specify a host port in the 49153 to 65535 port
+     *         range, since these are reserved for automatic assignment. <p>The
+     *         default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
+     *         and the Amazon ECS Container Agent port 51678. Any host port that was
+     *         previously specified in a running task is also reserved while the task
+     *         is running (once a task stops, the host port is released).The current
+     *         reserved ports are displayed in the <code>remainingResources</code> of
+     *         <a>DescribeContainerInstances</a> output, and a container instance may
+     *         have up to 50 reserved ports at a time, including the default reserved
+     *         ports (automatically assigned ports do not count toward this limit).
      */
     public Integer getHostPort() {
         return hostPort;
     }
     
     /**
-     * The port number on the host that should be used with the port mapping.
+     * The port number on the container instance to reserve for your
+     * container. You can specify a non-reserved host port for your container
+     * port mapping, or you can omit the <code>hostPort</code> while
+     * specifying a <code>containerPort</code> and your container will
+     * automatically receive a port in the 49153 to 65535 port range. You
+     * should not attempt to specify a host port in the 49153 to 65535 port
+     * range, since these are reserved for automatic assignment. <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
+     * and the Amazon ECS Container Agent port 51678. Any host port that was
+     * previously specified in a running task is also reserved while the task
+     * is running (once a task stops, the host port is released).The current
+     * reserved ports are displayed in the <code>remainingResources</code> of
+     * <a>DescribeContainerInstances</a> output, and a container instance may
+     * have up to 50 reserved ports at a time, including the default reserved
+     * ports (automatically assigned ports do not count toward this limit).
      *
-     * @param hostPort The port number on the host that should be used with the port mapping.
+     * @param hostPort The port number on the container instance to reserve for your
+     *         container. You can specify a non-reserved host port for your container
+     *         port mapping, or you can omit the <code>hostPort</code> while
+     *         specifying a <code>containerPort</code> and your container will
+     *         automatically receive a port in the 49153 to 65535 port range. You
+     *         should not attempt to specify a host port in the 49153 to 65535 port
+     *         range, since these are reserved for automatic assignment. <p>The
+     *         default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
+     *         and the Amazon ECS Container Agent port 51678. Any host port that was
+     *         previously specified in a running task is also reserved while the task
+     *         is running (once a task stops, the host port is released).The current
+     *         reserved ports are displayed in the <code>remainingResources</code> of
+     *         <a>DescribeContainerInstances</a> output, and a container instance may
+     *         have up to 50 reserved ports at a time, including the default reserved
+     *         ports (automatically assigned ports do not count toward this limit).
      */
     public void setHostPort(Integer hostPort) {
         this.hostPort = hostPort;
     }
     
     /**
-     * The port number on the host that should be used with the port mapping.
+     * The port number on the container instance to reserve for your
+     * container. You can specify a non-reserved host port for your container
+     * port mapping, or you can omit the <code>hostPort</code> while
+     * specifying a <code>containerPort</code> and your container will
+     * automatically receive a port in the 49153 to 65535 port range. You
+     * should not attempt to specify a host port in the 49153 to 65535 port
+     * range, since these are reserved for automatic assignment. <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
+     * and the Amazon ECS Container Agent port 51678. Any host port that was
+     * previously specified in a running task is also reserved while the task
+     * is running (once a task stops, the host port is released).The current
+     * reserved ports are displayed in the <code>remainingResources</code> of
+     * <a>DescribeContainerInstances</a> output, and a container instance may
+     * have up to 50 reserved ports at a time, including the default reserved
+     * ports (automatically assigned ports do not count toward this limit).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hostPort The port number on the host that should be used with the port mapping.
+     * @param hostPort The port number on the container instance to reserve for your
+     *         container. You can specify a non-reserved host port for your container
+     *         port mapping, or you can omit the <code>hostPort</code> while
+     *         specifying a <code>containerPort</code> and your container will
+     *         automatically receive a port in the 49153 to 65535 port range. You
+     *         should not attempt to specify a host port in the 49153 to 65535 port
+     *         range, since these are reserved for automatic assignment. <p>The
+     *         default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
+     *         and the Amazon ECS Container Agent port 51678. Any host port that was
+     *         previously specified in a running task is also reserved while the task
+     *         is running (once a task stops, the host port is released).The current
+     *         reserved ports are displayed in the <code>remainingResources</code> of
+     *         <a>DescribeContainerInstances</a> output, and a container instance may
+     *         have up to 50 reserved ports at a time, including the default reserved
+     *         ports (automatically assigned ports do not count toward this limit).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
