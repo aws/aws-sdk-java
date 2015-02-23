@@ -52,7 +52,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * Specifies the status to be set on all the objects in
      * <code>objectIds</code>. For components, this can be either
      * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     * either <code>CANCEL</code>, <code>RERUN</code>, or
+     * either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -186,7 +186,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * Specifies the status to be set on all the objects in
      * <code>objectIds</code>. For components, this can be either
      * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     * either <code>CANCEL</code>, <code>RERUN</code>, or
+     * either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -196,7 +196,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * @return Specifies the status to be set on all the objects in
      *         <code>objectIds</code>. For components, this can be either
      *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     *         either <code>CANCEL</code>, <code>RERUN</code>, or
+     *         either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
      *         <code>MARK_FINISHED</code>.
      */
     public String getStatus() {
@@ -207,7 +207,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * Specifies the status to be set on all the objects in
      * <code>objectIds</code>. For components, this can be either
      * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     * either <code>CANCEL</code>, <code>RERUN</code>, or
+     * either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -217,7 +217,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * @param status Specifies the status to be set on all the objects in
      *         <code>objectIds</code>. For components, this can be either
      *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     *         either <code>CANCEL</code>, <code>RERUN</code>, or
+     *         either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
      *         <code>MARK_FINISHED</code>.
      */
     public void setStatus(String status) {
@@ -228,7 +228,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * Specifies the status to be set on all the objects in
      * <code>objectIds</code>. For components, this can be either
      * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     * either <code>CANCEL</code>, <code>RERUN</code>, or
+     * either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -240,7 +240,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * @param status Specifies the status to be set on all the objects in
      *         <code>objectIds</code>. For components, this can be either
      *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     *         either <code>CANCEL</code>, <code>RERUN</code>, or
+     *         either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
      *         <code>MARK_FINISHED</code>.
      *
      * @return A reference to this updated object so that method calls can be chained

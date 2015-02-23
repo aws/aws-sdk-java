@@ -241,12 +241,13 @@ public class AmazonHttpClient {
 
         try {
             SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
-
-            SdkTLSSocketFactory sf = new SdkTLSSocketFactory(
-                    SSLContext.getDefault(),
-                    SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+            SSLSocketFactory sf = config.getApacheHttpClientConfig().getSslSocketFactory();
+            if (sf == null) {
+                sf = new SdkTLSSocketFactory(
+                        SSLContext.getDefault(),
+                        SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+            }
             Scheme https = new Scheme("https", 443, sf);
-
             schemeRegistry.register(https);
         } catch (NoSuchAlgorithmException e) {
             throw new AmazonClientException("Unable to access default SSL context to disable strict hostname verification");

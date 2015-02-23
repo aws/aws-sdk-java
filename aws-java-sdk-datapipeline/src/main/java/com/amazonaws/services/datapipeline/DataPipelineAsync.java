@@ -40,7 +40,7 @@ import com.amazonaws.services.datapipeline.model.*;
  * </p>
  * <p>
  * The second set of actions are used by a task runner application that
- * calls the AWS Data Pipeline API to receive the next task ready for
+ * calls the AWS Data Pipeline service to receive the next task ready for
  * processing. The logic for performing the task, such as querying the
  * data, running data analysis, or converting the data from one format to
  * another, is contained within the task runner. The task runner performs
@@ -264,63 +264,6 @@ public interface DataPipelineAsync extends DataPipeline {
 
     /**
      * <p>
-     * Tests the pipeline definition with a set of validation checks to
-     * ensure that it is well formed and can run without error.
-     * </p>
-     *
-     * @param validatePipelineDefinitionRequest Container for the necessary
-     *           parameters to execute the ValidatePipelineDefinition operation on
-     *           DataPipeline.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ValidatePipelineDefinition service method, as returned by
-     *         DataPipeline.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Tests the pipeline definition with a set of validation checks to
-     * ensure that it is well formed and can run without error.
-     * </p>
-     *
-     * @param validatePipelineDefinitionRequest Container for the necessary
-     *           parameters to execute the ValidatePipelineDefinition operation on
-     *           DataPipeline.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ValidatePipelineDefinition service method, as returned by
-     *         DataPipeline.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest,
-            AsyncHandler<ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Task runners call this action to receive a task to perform from AWS
      * Data Pipeline. The task runner specifies which tasks it can perform by
      * setting a value for the workerGroup parameter of the PollForTask call.
@@ -400,6 +343,63 @@ public interface DataPipelineAsync extends DataPipeline {
      */
     public Future<PollForTaskResult> pollForTaskAsync(PollForTaskRequest pollForTaskRequest,
             AsyncHandler<PollForTaskRequest, PollForTaskResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Tests the pipeline definition with a set of validation checks to
+     * ensure that it is well formed and can run without error.
+     * </p>
+     *
+     * @param validatePipelineDefinitionRequest Container for the necessary
+     *           parameters to execute the ValidatePipelineDefinition operation on
+     *           DataPipeline.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ValidatePipelineDefinition service method, as returned by
+     *         DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Tests the pipeline definition with a set of validation checks to
+     * ensure that it is well formed and can run without error.
+     * </p>
+     *
+     * @param validatePipelineDefinitionRequest Container for the necessary
+     *           parameters to execute the ValidatePipelineDefinition operation on
+     *           DataPipeline.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ValidatePipelineDefinition service method, as returned by
+     *         DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest,
+            AsyncHandler<ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -955,6 +955,57 @@ public interface DataPipelineAsync extends DataPipeline {
 
     /**
      * <p>
+     * Remove existing tags from a pipeline.
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags operation on DataPipeline.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveTags service method, as returned by DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest removeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Remove existing tags from a pipeline.
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags operation on DataPipeline.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveTags service method, as returned by DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest removeTagsRequest,
+            AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to
      * indicate that they are operational. In the case of AWS Data Pipeline
      * Task Runner launched on a resource managed by AWS Data Pipeline, the
@@ -1012,6 +1063,57 @@ public interface DataPipelineAsync extends DataPipeline {
      */
     public Future<ReportTaskRunnerHeartbeatResult> reportTaskRunnerHeartbeatAsync(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest,
             AsyncHandler<ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Add or modify tags in an existing pipeline.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags operation on DataPipeline.
+     * 
+     * @return A Java Future object containing the response from the AddTags
+     *         service method, as returned by DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Add or modify tags in an existing pipeline.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags operation on DataPipeline.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the AddTags
+     *         service method, as returned by DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest,
+            AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

@@ -17,7 +17,7 @@
  * </p>
  * <p>
  * The second set of actions are used by a task runner application that
- * calls the AWS Data Pipeline API to receive the next task ready for
+ * calls the AWS Data Pipeline service to receive the next task ready for
  * processing. The logic for performing the task, such as querying the
  * data, running data analysis, or converting the data from one format to
  * another, is contained within the task runner. The task runner performs

@@ -71,6 +71,27 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
                 jsonWriter.key("description").value(createPipelineRequest.getDescription());
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Tag>)(createPipelineRequest.getTags());
+            if (tagsList != null && !(tagsList.isAutoConstruct() && tagsList.isEmpty())) {
+
+                jsonWriter.key("tags");
+                jsonWriter.array();
+
+                for (Tag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
+                        jsonWriter.object();
+                        if (tagsListValue.getKey() != null) {
+                            jsonWriter.key("key").value(tagsListValue.getKey());
+                        }
+                        if (tagsListValue.getValue() != null) {
+                            jsonWriter.key("value").value(tagsListValue.getValue());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();
