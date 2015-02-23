@@ -1114,6 +1114,90 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * To retrieve a list of the IP ranges used by Amazon Route 53 health
+     * checkers to check the health of your resources, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
+     * addresses to configure router and firewall rules to allow health
+     * checkers to check the health of your resources.
+     * </p>
+     *
+     * @param getCheckerIpRangesRequest Container for the necessary
+     *           parameters to execute the GetCheckerIpRanges operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetCheckerIpRanges service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(final GetCheckerIpRangesRequest getCheckerIpRangesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetCheckerIpRangesResult>() {
+            public GetCheckerIpRangesResult call() throws Exception {
+                return getCheckerIpRanges(getCheckerIpRangesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * To retrieve a list of the IP ranges used by Amazon Route 53 health
+     * checkers to check the health of your resources, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
+     * addresses to configure router and firewall rules to allow health
+     * checkers to check the health of your resources.
+     * </p>
+     *
+     * @param getCheckerIpRangesRequest Container for the necessary
+     *           parameters to execute the GetCheckerIpRanges operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetCheckerIpRanges service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(
+            final GetCheckerIpRangesRequest getCheckerIpRangesRequest,
+            final AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetCheckerIpRangesResult>() {
+            public GetCheckerIpRangesResult call() throws Exception {
+              GetCheckerIpRangesResult result;
+                try {
+                result = getCheckerIpRanges(getCheckerIpRangesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getCheckerIpRangesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * This action creates a reusable delegationSet.
      * </p>
      * <p>
@@ -1207,90 +1291,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(createReusableDelegationSetRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * To retrieve a list of the IP ranges used by Amazon Route 53 health
-     * checkers to check the health of your resources, send a
-     * <code>GET</code> request to the
-     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
-     * addresses to configure router and firewall rules to allow health
-     * checkers to check the health of your resources.
-     * </p>
-     *
-     * @param getCheckerIpRangesRequest Container for the necessary
-     *           parameters to execute the GetCheckerIpRanges operation on
-     *           AmazonRoute53.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetCheckerIpRanges service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(final GetCheckerIpRangesRequest getCheckerIpRangesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetCheckerIpRangesResult>() {
-            public GetCheckerIpRangesResult call() throws Exception {
-                return getCheckerIpRanges(getCheckerIpRangesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * To retrieve a list of the IP ranges used by Amazon Route 53 health
-     * checkers to check the health of your resources, send a
-     * <code>GET</code> request to the
-     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
-     * addresses to configure router and firewall rules to allow health
-     * checkers to check the health of your resources.
-     * </p>
-     *
-     * @param getCheckerIpRangesRequest Container for the necessary
-     *           parameters to execute the GetCheckerIpRanges operation on
-     *           AmazonRoute53.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetCheckerIpRanges service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(
-            final GetCheckerIpRangesRequest getCheckerIpRangesRequest,
-            final AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetCheckerIpRangesResult>() {
-            public GetCheckerIpRangesResult call() throws Exception {
-              GetCheckerIpRangesResult result;
-                try {
-                result = getCheckerIpRanges(getCheckerIpRangesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getCheckerIpRangesRequest, result);
                  return result;
         }
     });
@@ -1482,6 +1482,112 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * To retrieve a list of supported geo locations, send a
+     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or
+     * multiple <code>GeoLocationDetails</code> child elements. The list is
+     * sorted by country code, and then subdivision code, followed by
+     * continents at the end of the list.
+     * </p>
+     * <p>
+     * By default, the list of geo locations is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. If the list is truncated,
+     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
+     * of <code>NextContinentCode, NextCountryCode,
+     * NextSubdivisionCode</code> will be populated. You can pass these as
+     * parameters to <code>StartContinentCode, StartCountryCode,
+     * StartSubdivisionCode</code> to control the geo location that the list
+     * begins with.
+     * </p>
+     *
+     * @param listGeoLocationsRequest Container for the necessary parameters
+     *           to execute the ListGeoLocations operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListGeoLocations service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListGeoLocationsResult> listGeoLocationsAsync(final ListGeoLocationsRequest listGeoLocationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListGeoLocationsResult>() {
+            public ListGeoLocationsResult call() throws Exception {
+                return listGeoLocations(listGeoLocationsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * To retrieve a list of supported geo locations, send a
+     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or
+     * multiple <code>GeoLocationDetails</code> child elements. The list is
+     * sorted by country code, and then subdivision code, followed by
+     * continents at the end of the list.
+     * </p>
+     * <p>
+     * By default, the list of geo locations is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. If the list is truncated,
+     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
+     * of <code>NextContinentCode, NextCountryCode,
+     * NextSubdivisionCode</code> will be populated. You can pass these as
+     * parameters to <code>StartContinentCode, StartCountryCode,
+     * StartSubdivisionCode</code> to control the geo location that the list
+     * begins with.
+     * </p>
+     *
+     * @param listGeoLocationsRequest Container for the necessary parameters
+     *           to execute the ListGeoLocations operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListGeoLocations service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListGeoLocationsResult> listGeoLocationsAsync(
+            final ListGeoLocationsRequest listGeoLocationsRequest,
+            final AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListGeoLocationsResult>() {
+            public ListGeoLocationsResult call() throws Exception {
+              ListGeoLocationsResult result;
+                try {
+                result = listGeoLocations(listGeoLocationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listGeoLocationsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * This action creates a new health check.
      * </p>
      * <p>
@@ -1659,112 +1765,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(listHealthChecksRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * To retrieve a list of supported geo locations, send a
-     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
-     * resource. The response to this request includes a
-     * <code>GeoLocationDetailsList</code> element with zero, one, or
-     * multiple <code>GeoLocationDetails</code> child elements. The list is
-     * sorted by country code, and then subdivision code, followed by
-     * continents at the end of the list.
-     * </p>
-     * <p>
-     * By default, the list of geo locations is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. If the list is truncated,
-     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
-     * of <code>NextContinentCode, NextCountryCode,
-     * NextSubdivisionCode</code> will be populated. You can pass these as
-     * parameters to <code>StartContinentCode, StartCountryCode,
-     * StartSubdivisionCode</code> to control the geo location that the list
-     * begins with.
-     * </p>
-     *
-     * @param listGeoLocationsRequest Container for the necessary parameters
-     *           to execute the ListGeoLocations operation on AmazonRoute53.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListGeoLocations service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListGeoLocationsResult> listGeoLocationsAsync(final ListGeoLocationsRequest listGeoLocationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListGeoLocationsResult>() {
-            public ListGeoLocationsResult call() throws Exception {
-                return listGeoLocations(listGeoLocationsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * To retrieve a list of supported geo locations, send a
-     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
-     * resource. The response to this request includes a
-     * <code>GeoLocationDetailsList</code> element with zero, one, or
-     * multiple <code>GeoLocationDetails</code> child elements. The list is
-     * sorted by country code, and then subdivision code, followed by
-     * continents at the end of the list.
-     * </p>
-     * <p>
-     * By default, the list of geo locations is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. If the list is truncated,
-     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
-     * of <code>NextContinentCode, NextCountryCode,
-     * NextSubdivisionCode</code> will be populated. You can pass these as
-     * parameters to <code>StartContinentCode, StartCountryCode,
-     * StartSubdivisionCode</code> to control the geo location that the list
-     * begins with.
-     * </p>
-     *
-     * @param listGeoLocationsRequest Container for the necessary parameters
-     *           to execute the ListGeoLocations operation on AmazonRoute53.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListGeoLocations service method, as returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListGeoLocationsResult> listGeoLocationsAsync(
-            final ListGeoLocationsRequest listGeoLocationsRequest,
-            final AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListGeoLocationsResult>() {
-            public ListGeoLocationsResult call() throws Exception {
-              ListGeoLocationsResult result;
-                try {
-                result = listGeoLocations(listGeoLocationsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listGeoLocationsRequest, result);
                  return result;
         }
     });
@@ -2094,6 +2094,82 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * To retrieve a count of all your hosted zones, send a <code>GET</code>
+     * request to the <code>2013-04-01/hostedzonecount</code> resource.
+     * </p>
+     *
+     * @param getHostedZoneCountRequest Container for the necessary
+     *           parameters to execute the GetHostedZoneCount operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetHostedZoneCount service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetHostedZoneCountResult> getHostedZoneCountAsync(final GetHostedZoneCountRequest getHostedZoneCountRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetHostedZoneCountResult>() {
+            public GetHostedZoneCountResult call() throws Exception {
+                return getHostedZoneCount(getHostedZoneCountRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * To retrieve a count of all your hosted zones, send a <code>GET</code>
+     * request to the <code>2013-04-01/hostedzonecount</code> resource.
+     * </p>
+     *
+     * @param getHostedZoneCountRequest Container for the necessary
+     *           parameters to execute the GetHostedZoneCount operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetHostedZoneCount service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetHostedZoneCountResult> getHostedZoneCountAsync(
+            final GetHostedZoneCountRequest getHostedZoneCountRequest,
+            final AsyncHandler<GetHostedZoneCountRequest, GetHostedZoneCountResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetHostedZoneCountResult>() {
+            public GetHostedZoneCountResult call() throws Exception {
+              GetHostedZoneCountResult result;
+                try {
+                result = getHostedZoneCount(getHostedZoneCountRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getHostedZoneCountRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * To retrieve the reusable delegation set, send a <code>GET</code>
      * request to the <code>2013-04-01/delegationset/delegation set ID
      * </code> resource.
@@ -2260,6 +2336,108 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     
     /**
      * <p>
+     * To retrieve a list of your hosted zones in lexicographic order, send
+     * a <code>GET</code> request to the
+     * <code>2013-04-01/hostedzonesbyname</code> resource. The response to
+     * this request includes a <code>HostedZones</code> element with zero or
+     * more <code>HostedZone</code> child elements lexicographically ordered
+     * by DNS name. By default, the list of hosted zones is displayed on a
+     * single page. You can control the length of the page that is displayed
+     * by using the <code>MaxItems</code> parameter. You can use the
+     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to
+     * control the hosted zone that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     *
+     * @param listHostedZonesByNameRequest Container for the necessary
+     *           parameters to execute the ListHostedZonesByName operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListHostedZonesByName service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListHostedZonesByNameResult> listHostedZonesByNameAsync(final ListHostedZonesByNameRequest listHostedZonesByNameRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListHostedZonesByNameResult>() {
+            public ListHostedZonesByNameResult call() throws Exception {
+                return listHostedZonesByName(listHostedZonesByNameRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * To retrieve a list of your hosted zones in lexicographic order, send
+     * a <code>GET</code> request to the
+     * <code>2013-04-01/hostedzonesbyname</code> resource. The response to
+     * this request includes a <code>HostedZones</code> element with zero or
+     * more <code>HostedZone</code> child elements lexicographically ordered
+     * by DNS name. By default, the list of hosted zones is displayed on a
+     * single page. You can control the length of the page that is displayed
+     * by using the <code>MaxItems</code> parameter. You can use the
+     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to
+     * control the hosted zone that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     *
+     * @param listHostedZonesByNameRequest Container for the necessary
+     *           parameters to execute the ListHostedZonesByName operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListHostedZonesByName service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListHostedZonesByNameResult> listHostedZonesByNameAsync(
+            final ListHostedZonesByNameRequest listHostedZonesByNameRequest,
+            final AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListHostedZonesByNameResult>() {
+            public ListHostedZonesByNameResult call() throws Exception {
+              ListHostedZonesByNameResult result;
+                try {
+                result = listHostedZonesByName(listHostedZonesByNameRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listHostedZonesByNameRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * This action deletes a hosted zone. To delete a hosted zone, send a
      * <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted
      * zone ID </code> resource.
@@ -2359,106 +2537,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(deleteHostedZoneRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * This action associates a VPC with an hosted zone.
-     * </p>
-     * <p>
-     * To associate a VPC with an hosted zone, send a <code>POST</code>
-     * request to the <code>2013-04-01/hostedzone/hosted zone
-     * ID/associatevpc</code> resource. The request body must include an XML
-     * document with a <code>AssociateVPCWithHostedZoneRequest</code>
-     * element. The response returns the
-     * <code>AssociateVPCWithHostedZoneResponse</code> element that contains
-     * <code>ChangeInfo</code> for you to track the progress of the
-     * <code>AssociateVPCWithHostedZoneRequest</code> you made. See
-     * <code>GetChange</code> operation for how to track the progress of your
-     * change.
-     * </p>
-     *
-     * @param associateVPCWithHostedZoneRequest Container for the necessary
-     *           parameters to execute the AssociateVPCWithHostedZone operation on
-     *           AmazonRoute53.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AssociateVPCWithHostedZone service method, as returned by
-     *         AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<AssociateVPCWithHostedZoneResult> associateVPCWithHostedZoneAsync(final AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<AssociateVPCWithHostedZoneResult>() {
-            public AssociateVPCWithHostedZoneResult call() throws Exception {
-                return associateVPCWithHostedZone(associateVPCWithHostedZoneRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * This action associates a VPC with an hosted zone.
-     * </p>
-     * <p>
-     * To associate a VPC with an hosted zone, send a <code>POST</code>
-     * request to the <code>2013-04-01/hostedzone/hosted zone
-     * ID/associatevpc</code> resource. The request body must include an XML
-     * document with a <code>AssociateVPCWithHostedZoneRequest</code>
-     * element. The response returns the
-     * <code>AssociateVPCWithHostedZoneResponse</code> element that contains
-     * <code>ChangeInfo</code> for you to track the progress of the
-     * <code>AssociateVPCWithHostedZoneRequest</code> you made. See
-     * <code>GetChange</code> operation for how to track the progress of your
-     * change.
-     * </p>
-     *
-     * @param associateVPCWithHostedZoneRequest Container for the necessary
-     *           parameters to execute the AssociateVPCWithHostedZone operation on
-     *           AmazonRoute53.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AssociateVPCWithHostedZone service method, as returned by
-     *         AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<AssociateVPCWithHostedZoneResult> associateVPCWithHostedZoneAsync(
-            final AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest,
-            final AsyncHandler<AssociateVPCWithHostedZoneRequest, AssociateVPCWithHostedZoneResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<AssociateVPCWithHostedZoneResult>() {
-            public AssociateVPCWithHostedZoneResult call() throws Exception {
-              AssociateVPCWithHostedZoneResult result;
-                try {
-                result = associateVPCWithHostedZone(associateVPCWithHostedZoneRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(associateVPCWithHostedZoneRequest, result);
                  return result;
         }
     });
@@ -2585,6 +2663,106 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
             throw ex;
               }
               asyncHandler.onSuccess(createHostedZoneRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * This action associates a VPC with an hosted zone.
+     * </p>
+     * <p>
+     * To associate a VPC with an hosted zone, send a <code>POST</code>
+     * request to the <code>2013-04-01/hostedzone/hosted zone
+     * ID/associatevpc</code> resource. The request body must include an XML
+     * document with a <code>AssociateVPCWithHostedZoneRequest</code>
+     * element. The response returns the
+     * <code>AssociateVPCWithHostedZoneResponse</code> element that contains
+     * <code>ChangeInfo</code> for you to track the progress of the
+     * <code>AssociateVPCWithHostedZoneRequest</code> you made. See
+     * <code>GetChange</code> operation for how to track the progress of your
+     * change.
+     * </p>
+     *
+     * @param associateVPCWithHostedZoneRequest Container for the necessary
+     *           parameters to execute the AssociateVPCWithHostedZone operation on
+     *           AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AssociateVPCWithHostedZone service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AssociateVPCWithHostedZoneResult> associateVPCWithHostedZoneAsync(final AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AssociateVPCWithHostedZoneResult>() {
+            public AssociateVPCWithHostedZoneResult call() throws Exception {
+                return associateVPCWithHostedZone(associateVPCWithHostedZoneRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * This action associates a VPC with an hosted zone.
+     * </p>
+     * <p>
+     * To associate a VPC with an hosted zone, send a <code>POST</code>
+     * request to the <code>2013-04-01/hostedzone/hosted zone
+     * ID/associatevpc</code> resource. The request body must include an XML
+     * document with a <code>AssociateVPCWithHostedZoneRequest</code>
+     * element. The response returns the
+     * <code>AssociateVPCWithHostedZoneResponse</code> element that contains
+     * <code>ChangeInfo</code> for you to track the progress of the
+     * <code>AssociateVPCWithHostedZoneRequest</code> you made. See
+     * <code>GetChange</code> operation for how to track the progress of your
+     * change.
+     * </p>
+     *
+     * @param associateVPCWithHostedZoneRequest Container for the necessary
+     *           parameters to execute the AssociateVPCWithHostedZone operation on
+     *           AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AssociateVPCWithHostedZone service method, as returned by
+     *         AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AssociateVPCWithHostedZoneResult> associateVPCWithHostedZoneAsync(
+            final AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest,
+            final AsyncHandler<AssociateVPCWithHostedZoneRequest, AssociateVPCWithHostedZoneResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AssociateVPCWithHostedZoneResult>() {
+            public AssociateVPCWithHostedZoneResult call() throws Exception {
+              AssociateVPCWithHostedZoneResult result;
+                try {
+                result = associateVPCWithHostedZone(associateVPCWithHostedZoneRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(associateVPCWithHostedZoneRequest, result);
                  return result;
         }
     });

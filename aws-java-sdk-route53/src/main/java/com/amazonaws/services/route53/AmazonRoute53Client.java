@@ -758,6 +758,56 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve a list of the IP ranges used by Amazon Route 53 health
+     * checkers to check the health of your resources, send a
+     * <code>GET</code> request to the
+     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
+     * addresses to configure router and firewall rules to allow health
+     * checkers to check the health of your resources.
+     * </p>
+     *
+     * @param getCheckerIpRangesRequest Container for the necessary
+     *           parameters to execute the GetCheckerIpRanges service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the GetCheckerIpRanges service method, as
+     *         returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getCheckerIpRangesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCheckerIpRangesRequest> request = null;
+        Response<GetCheckerIpRangesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCheckerIpRangesRequestMarshaller().marshall(getCheckerIpRangesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetCheckerIpRangesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * This action creates a reusable delegationSet.
      * </p>
      * <p>
@@ -813,56 +863,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
             response = invoke(request, new CreateReusableDelegationSetResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * To retrieve a list of the IP ranges used by Amazon Route 53 health
-     * checkers to check the health of your resources, send a
-     * <code>GET</code> request to the
-     * <code>2013-04-01/checkeripranges</code> resource. You can use these IP
-     * addresses to configure router and firewall rules to allow health
-     * checkers to check the health of your resources.
-     * </p>
-     *
-     * @param getCheckerIpRangesRequest Container for the necessary
-     *           parameters to execute the GetCheckerIpRanges service method on
-     *           AmazonRoute53.
-     * 
-     * @return The response from the GetCheckerIpRanges service method, as
-     *         returned by AmazonRoute53.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
-        ExecutionContext executionContext = createExecutionContext(getCheckerIpRangesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetCheckerIpRangesRequest> request = null;
-        Response<GetCheckerIpRangesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetCheckerIpRangesRequestMarshaller().marshall(getCheckerIpRangesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new GetCheckerIpRangesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -984,6 +984,68 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve a list of supported geo locations, send a
+     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or
+     * multiple <code>GeoLocationDetails</code> child elements. The list is
+     * sorted by country code, and then subdivision code, followed by
+     * continents at the end of the list.
+     * </p>
+     * <p>
+     * By default, the list of geo locations is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. If the list is truncated,
+     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
+     * of <code>NextContinentCode, NextCountryCode,
+     * NextSubdivisionCode</code> will be populated. You can pass these as
+     * parameters to <code>StartContinentCode, StartCountryCode,
+     * StartSubdivisionCode</code> to control the geo location that the list
+     * begins with.
+     * </p>
+     *
+     * @param listGeoLocationsRequest Container for the necessary parameters
+     *           to execute the ListGeoLocations service method on AmazonRoute53.
+     * 
+     * @return The response from the ListGeoLocations service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listGeoLocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGeoLocationsRequest> request = null;
+        Response<ListGeoLocationsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGeoLocationsRequestMarshaller().marshall(listGeoLocationsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListGeoLocationsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * This action creates a new health check.
      * </p>
      * <p>
@@ -1088,68 +1150,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
             response = invoke(request, new ListHealthChecksResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * To retrieve a list of supported geo locations, send a
-     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
-     * resource. The response to this request includes a
-     * <code>GeoLocationDetailsList</code> element with zero, one, or
-     * multiple <code>GeoLocationDetails</code> child elements. The list is
-     * sorted by country code, and then subdivision code, followed by
-     * continents at the end of the list.
-     * </p>
-     * <p>
-     * By default, the list of geo locations is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. If the list is truncated,
-     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
-     * of <code>NextContinentCode, NextCountryCode,
-     * NextSubdivisionCode</code> will be populated. You can pass these as
-     * parameters to <code>StartContinentCode, StartCountryCode,
-     * StartSubdivisionCode</code> to control the geo location that the list
-     * begins with.
-     * </p>
-     *
-     * @param listGeoLocationsRequest Container for the necessary parameters
-     *           to execute the ListGeoLocations service method on AmazonRoute53.
-     * 
-     * @return The response from the ListGeoLocations service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listGeoLocationsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListGeoLocationsRequest> request = null;
-        Response<ListGeoLocationsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListGeoLocationsRequestMarshaller().marshall(listGeoLocationsRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListGeoLocationsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1361,6 +1361,53 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve a count of all your hosted zones, send a <code>GET</code>
+     * request to the <code>2013-04-01/hostedzonecount</code> resource.
+     * </p>
+     *
+     * @param getHostedZoneCountRequest Container for the necessary
+     *           parameters to execute the GetHostedZoneCount service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the GetHostedZoneCount service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest getHostedZoneCountRequest) {
+        ExecutionContext executionContext = createExecutionContext(getHostedZoneCountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetHostedZoneCountRequest> request = null;
+        Response<GetHostedZoneCountResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetHostedZoneCountRequestMarshaller().marshall(getHostedZoneCountRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetHostedZoneCountResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * To retrieve the reusable delegation set, send a <code>GET</code>
      * request to the <code>2013-04-01/delegationset/delegation set ID
      * </code> resource.
@@ -1466,6 +1513,67 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve a list of your hosted zones in lexicographic order, send
+     * a <code>GET</code> request to the
+     * <code>2013-04-01/hostedzonesbyname</code> resource. The response to
+     * this request includes a <code>HostedZones</code> element with zero or
+     * more <code>HostedZone</code> child elements lexicographically ordered
+     * by DNS name. By default, the list of hosted zones is displayed on a
+     * single page. You can control the length of the page that is displayed
+     * by using the <code>MaxItems</code> parameter. You can use the
+     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to
+     * control the hosted zone that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     *
+     * @param listHostedZonesByNameRequest Container for the necessary
+     *           parameters to execute the ListHostedZonesByName service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListHostedZonesByName service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     * @throws InvalidDomainNameException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest listHostedZonesByNameRequest) {
+        ExecutionContext executionContext = createExecutionContext(listHostedZonesByNameRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHostedZonesByNameRequest> request = null;
+        Response<ListHostedZonesByNameResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHostedZonesByNameRequestMarshaller().marshall(listHostedZonesByNameRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListHostedZonesByNameResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * This action deletes a hosted zone. To delete a hosted zone, send a
      * <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted
      * zone ID </code> resource.
@@ -1522,68 +1630,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
             response = invoke(request, new DeleteHostedZoneResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * This action associates a VPC with an hosted zone.
-     * </p>
-     * <p>
-     * To associate a VPC with an hosted zone, send a <code>POST</code>
-     * request to the <code>2013-04-01/hostedzone/hosted zone
-     * ID/associatevpc</code> resource. The request body must include an XML
-     * document with a <code>AssociateVPCWithHostedZoneRequest</code>
-     * element. The response returns the
-     * <code>AssociateVPCWithHostedZoneResponse</code> element that contains
-     * <code>ChangeInfo</code> for you to track the progress of the
-     * <code>AssociateVPCWithHostedZoneRequest</code> you made. See
-     * <code>GetChange</code> operation for how to track the progress of your
-     * change.
-     * </p>
-     *
-     * @param associateVPCWithHostedZoneRequest Container for the necessary
-     *           parameters to execute the AssociateVPCWithHostedZone service method on
-     *           AmazonRoute53.
-     * 
-     * @return The response from the AssociateVPCWithHostedZone service
-     *         method, as returned by AmazonRoute53.
-     * 
-     * @throws ConflictingDomainExistsException
-     * @throws InvalidVPCIdException
-     * @throws NoSuchHostedZoneException
-     * @throws PublicZoneVPCAssociationException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
-        ExecutionContext executionContext = createExecutionContext(associateVPCWithHostedZoneRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<AssociateVPCWithHostedZoneRequest> request = null;
-        Response<AssociateVPCWithHostedZoneResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AssociateVPCWithHostedZoneRequestMarshaller().marshall(associateVPCWithHostedZoneRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new AssociateVPCWithHostedZoneResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1664,6 +1710,68 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
             response = invoke(request, new CreateHostedZoneResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * This action associates a VPC with an hosted zone.
+     * </p>
+     * <p>
+     * To associate a VPC with an hosted zone, send a <code>POST</code>
+     * request to the <code>2013-04-01/hostedzone/hosted zone
+     * ID/associatevpc</code> resource. The request body must include an XML
+     * document with a <code>AssociateVPCWithHostedZoneRequest</code>
+     * element. The response returns the
+     * <code>AssociateVPCWithHostedZoneResponse</code> element that contains
+     * <code>ChangeInfo</code> for you to track the progress of the
+     * <code>AssociateVPCWithHostedZoneRequest</code> you made. See
+     * <code>GetChange</code> operation for how to track the progress of your
+     * change.
+     * </p>
+     *
+     * @param associateVPCWithHostedZoneRequest Container for the necessary
+     *           parameters to execute the AssociateVPCWithHostedZone service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the AssociateVPCWithHostedZone service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws ConflictingDomainExistsException
+     * @throws InvalidVPCIdException
+     * @throws NoSuchHostedZoneException
+     * @throws PublicZoneVPCAssociationException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(associateVPCWithHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateVPCWithHostedZoneRequest> request = null;
+        Response<AssociateVPCWithHostedZoneResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateVPCWithHostedZoneRequestMarshaller().marshall(associateVPCWithHostedZoneRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new AssociateVPCWithHostedZoneResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1921,41 +2029,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * To retrieve a list of your health checks, send a <code>GET</code>
-     * request to the <code>2013-04-01/healthcheck</code> resource. The
-     * response to this request includes a <code>HealthChecks</code> element
-     * with zero, one, or multiple <code>HealthCheck</code> child elements.
-     * By default, the list of health checks is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-     * parameter to control the health check that the list begins with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
-     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
-     * the first 100.
-     * </p>
-     * 
-     * @return The response from the ListHealthChecks service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws IncompatibleVersionException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListHealthChecksResult listHealthChecks() throws AmazonServiceException, AmazonClientException {
-        return listHealthChecks(new ListHealthChecksRequest());
-    }
-    
-    /**
-     * <p>
      * To retrieve a list of supported geo locations, send a
      * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
      * resource. The response to this request includes a
@@ -1991,6 +2064,41 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     public ListGeoLocationsResult listGeoLocations() throws AmazonServiceException, AmazonClientException {
         return listGeoLocations(new ListGeoLocationsRequest());
+    }
+    
+    /**
+     * <p>
+     * To retrieve a list of your health checks, send a <code>GET</code>
+     * request to the <code>2013-04-01/healthcheck</code> resource. The
+     * response to this request includes a <code>HealthChecks</code> element
+     * with zero, one, or multiple <code>HealthCheck</code> child elements.
+     * By default, the list of health checks is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the health check that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     * 
+     * @return The response from the ListHealthChecks service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws IncompatibleVersionException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListHealthChecksResult listHealthChecks() throws AmazonServiceException, AmazonClientException {
+        return listHealthChecks(new ListHealthChecksRequest());
     }
     
     /**
@@ -2050,6 +2158,66 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     public ListHostedZonesResult listHostedZones() throws AmazonServiceException, AmazonClientException {
         return listHostedZones(new ListHostedZonesRequest());
+    }
+    
+    /**
+     * <p>
+     * To retrieve a count of all your hosted zones, send a <code>GET</code>
+     * request to the <code>2013-04-01/hostedzonecount</code> resource.
+     * </p>
+     * 
+     * @return The response from the GetHostedZoneCount service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetHostedZoneCountResult getHostedZoneCount() throws AmazonServiceException, AmazonClientException {
+        return getHostedZoneCount(new GetHostedZoneCountRequest());
+    }
+    
+    /**
+     * <p>
+     * To retrieve a list of your hosted zones in lexicographic order, send
+     * a <code>GET</code> request to the
+     * <code>2013-04-01/hostedzonesbyname</code> resource. The response to
+     * this request includes a <code>HostedZones</code> element with zero or
+     * more <code>HostedZone</code> child elements lexicographically ordered
+     * by DNS name. By default, the list of hosted zones is displayed on a
+     * single page. You can control the length of the page that is displayed
+     * by using the <code>MaxItems</code> parameter. You can use the
+     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to
+     * control the hosted zone that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     * 
+     * @return The response from the ListHostedZonesByName service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     * @throws InvalidDomainNameException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListHostedZonesByNameResult listHostedZonesByName() throws AmazonServiceException, AmazonClientException {
+        return listHostedZonesByName(new ListHostedZonesByNameRequest());
     }
     
     /**

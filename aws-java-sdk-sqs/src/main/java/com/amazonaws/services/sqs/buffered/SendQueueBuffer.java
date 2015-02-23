@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -188,8 +187,9 @@ public class SendQueueBuffer {
      * @return new {@code OutboundBatchTask} of appropriate type, never null
      */
     @SuppressWarnings("unchecked")
-    private <R extends AmazonWebServiceRequest, Result> OutboundBatchTask<R, Result> newOutboundBatchTask(
-            R request) {
+    private <R extends AmazonWebServiceRequest, Result>
+            OutboundBatchTask<R, Result> newOutboundBatchTask(R request) {
+
         if (request instanceof SendMessageRequest)
             return (OutboundBatchTask<R, Result>) new SendMessageBatchTask();
         else if (request instanceof DeleteMessageRequest)
@@ -270,16 +270,20 @@ public class SendQueueBuffer {
         try {
             synchronized (operationLock) {
                 if (openOutboundBatchTask[0] == null || ((theFuture = openOutboundBatchTask[0].addRequest(request, callback))) == null) {
+
                     OBT obt = (OBT) newOutboundBatchTask(request);
                     inflightOperationBatches.acquire();
                     openOutboundBatchTask[0] = obt;
+
                     // Register a listener for the event signaling that the
                     // batch task has completed (successfully or not).
-                    openOutboundBatchTask[0].onCompleted = new Listener<OutboundBatchTask<R, Result>>() {
+                    openOutboundBatchTask[0].setOnCompleted(
+                            new Listener<OutboundBatchTask<R, Result>>() {
+                        @Override
                         public void invoke(OutboundBatchTask<R, Result> task) {
                             inflightOperationBatches.release();
                         }
-                    };
+                    });
 
                     if ( log.isTraceEnabled() ) {
                         log.trace("Queue " + qUrl + " created new batch for " + request.getClass().toString()
@@ -325,14 +329,21 @@ public class SendQueueBuffer {
      *            the type of result he futures issued by this task will return
      */
     private abstract class OutboundBatchTask<R extends AmazonWebServiceRequest, Result> implements Runnable {
-        final List<R> requests;
-        final ArrayList<QueueBufferFuture<R, Result>> futures;
-        AtomicBoolean open = new AtomicBoolean(true);
-        volatile Listener<OutboundBatchTask<R, Result>> onCompleted = null;
 
-        OutboundBatchTask() {
-            requests = new ArrayList<R>(config.getMaxBatchSize());
-            futures = new ArrayList<QueueBufferFuture<R, Result>>(config.getMaxBatchSize());
+        protected final List<R> requests;
+        protected final ArrayList<QueueBufferFuture<R, Result>> futures;
+
+        private boolean closed;
+
+        private volatile Listener<OutboundBatchTask<R, Result>> onCompleted;
+
+        public OutboundBatchTask() {
+            this.requests = new ArrayList<R>(config.getMaxBatchSize());
+            this.futures = new ArrayList<QueueBufferFuture<R, Result>>(config.getMaxBatchSize());
+        }
+
+        public void setOnCompleted(Listener<OutboundBatchTask<R, Result>> value) {
+            onCompleted = value;
         }
 
         /**
@@ -341,83 +352,126 @@ public class SendQueueBuffer {
          * @return the future that can be used to get the results of the
          * execution, or null if the addition failed.
          */
-        synchronized QueueBufferFuture<R, Result> addRequest(R request, QueueBufferCallback<R, Result> callback) {
-            if (!open.get())
+        public synchronized QueueBufferFuture<R, Result> addRequest(
+                R request,
+                QueueBufferCallback<R, Result> callback) {
+
+            if (closed) {
                 return null;
-
-            QueueBufferFuture<R, Result> theFuture = addIfAllowed(request, callback);
-
-            // if the addition did not work, or this addition made us full,
-            // we can close the request
-            if ((null == theFuture) || isFull()) {
-                open.set(false);
             }
 
-            // the batch request is as full as it will ever be. no need to wait
-            // for the timeout, we can run it now.
-            if (!open.get())
+            QueueBufferFuture<R, Result> theFuture =
+                    addIfAllowed(request, callback);
+
+            // if the addition did not work, or this addition made us full,
+            // we can close the request.
+            if ((null == theFuture) || isFull()) {
+                closed = true;
                 notify();
+            }
 
             return theFuture;
         }
 
         /**
-         * Adds the request to the batch if capacity allows it.
+         * Adds the request to the batch if capacity allows it. Called by
+         * {@code addRequest} with a lock on {@code this} held.
          *
          * @param request
          * @return the future that will be signaled when the request is
          *         completed and can be used to retrieve the result. Can be null
          *         if the addition could not be done
          */
-        synchronized QueueBufferFuture<R, Result> addIfAllowed(R request, QueueBufferCallback<R,Result> callback) {
+        private QueueBufferFuture<R, Result> addIfAllowed(
+                R request,
+                QueueBufferCallback<R,Result> callback) {
+
             if (isOkToAdd(request)) {
+
                 requests.add(request);
 
-                QueueBufferFuture<R, Result> theFuture = new QueueBufferFuture<R, Result>(callback);
+                QueueBufferFuture<R, Result> theFuture =
+                        new QueueBufferFuture<R, Result>(callback);
 
                 futures.add(theFuture);
                 onRequestAdded(request);
                 return theFuture;
-            } else
+
+            } else {
                 return null;
+            }
         }
 
-        protected synchronized boolean isOkToAdd(R request) {
+        /**
+         * Checks whether it's okay to add the request to this buffer. Called
+         * by {@code addIfAllowed} with a lock on {@code this} held.
+         *
+         * @param request the request to add
+         * @return true if the request is okay to add, false otherwise
+         */
+        protected boolean isOkToAdd(R request) {
             return requests.size() < config.getMaxBatchSize();
         }
 
-        protected synchronized void onRequestAdded(R request) {
+        /**
+         * A hook to be run when a request is successfully added to this
+         * buffer. Called by {@code addIfAllowed} with a lock on {@code this}
+         * held.
+         *
+         * @param request the request that was added
+         */
+        protected void onRequestAdded(R request) {
             // to be overridden by subclasses
         }
 
         /**
+         * Checks whether the buffer is now full. Called by
+         * {@code addIfAllowed} with a lock on {@code this} held.
+         *
          * @return whether the buffer is filled to capacity
          */
-        synchronized boolean isFull() {
+        protected boolean isFull() {
             return requests.size() >= config.getMaxBatchSize();
         }
 
         /**
-         * Processes the batch once closed.
+         * Processes the batch once closed. Is <em>NOT</em> called with a lock
+         * on {@code this}. However, it's passed a local copy of both the
+         * {@code requests} and {@code futures} lists made while holding the
+         * lock.
          */
-        abstract void process();
+        protected abstract void process(
+                List<R> requests,
+                List<QueueBufferFuture<R, Result>> futures);
 
         @Override
-        public synchronized void run() {
+        public final void run() {
             try {
-                long deadlineMs = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS ) +
-                        config.getMaxBatchOpenMs() +1;
-                long t = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS );
-                while (open.get()  && (t  < deadlineMs ) ) {
-                    t = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS );
 
-                    //zero means "wait forever", can't have that.
-                    long toWait = Math.max(1, deadlineMs - t);
-                    wait(toWait);
+                long deadlineMs = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS ) +
+                        config.getMaxBatchOpenMs() + 1;
+                long t = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS );
+
+                List<R> requests;
+                List<QueueBufferFuture<R, Result>> futures;
+
+                synchronized (this) {
+                    while (!closed  && (t  < deadlineMs ) ) {
+                        t = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS );
+
+                        // zero means "wait forever", can't have that.
+                        long toWait = Math.max(1, deadlineMs - t);
+                        wait(toWait);
+                    }
+
+                    closed = true;
+
+                    requests = new ArrayList<R>(this.requests);
+                    futures = new ArrayList<QueueBufferFuture<R, Result>>(this.futures);
                 }
 
-                open.set(false);
-                process();
+                process(requests, futures);
+
             } catch (InterruptedException e) {
                 failAll( e );
             } catch (AmazonClientException e) {
@@ -429,10 +483,12 @@ public class SendQueueBuffer {
                 failAll( new AmazonClientException("Error encountered", e) );
                 throw e;
             } finally {
-                //make a copy of the listener since it can be modified from outside
-                Listener<OutboundBatchTask<R, Result>> completionListener = onCompleted;
-                if (completionListener != null)
-                    completionListener.invoke(this);
+                // make a copy of the listener since it (theoretically) can be
+                // modified from the outside.
+                Listener<OutboundBatchTask<R, Result>> listener = onCompleted;
+                if (listener != null) {
+                    listener.invoke(this);
+                }
             }
         }
 
@@ -445,10 +501,11 @@ public class SendQueueBuffer {
 
     private class SendMessageBatchTask extends
             OutboundBatchTask<SendMessageRequest, SendMessageResult> {
+
         int batchSizeBytes = 0;
 
         @Override
-        protected synchronized boolean isOkToAdd(SendMessageRequest request) {
+        protected boolean isOkToAdd(SendMessageRequest request) {
             return ( requests.size() < config.getMaxBatchSize() ) &&
                     ((request.getMessageBody().getBytes().length + batchSizeBytes) < config.getMaxBatchSizeBytes());
         }
@@ -459,15 +516,19 @@ public class SendQueueBuffer {
         }
 
         @Override
-        synchronized boolean isFull() {
+        protected boolean isFull() {
             return ( requests.size() >= config.getMaxBatchSize() ) ||
                     ( batchSizeBytes >= config.getMaxBatchSizeBytes());
         }
 
         @Override
-        void process() {
-            if (requests.isEmpty())
+        protected void process(
+                List<SendMessageRequest> requests,
+                List<QueueBufferFuture<SendMessageRequest, SendMessageResult>> futures) {
+
+            if (requests.isEmpty()) {
                 return;
+            }
 
             SendMessageBatchRequest batchRequest = new SendMessageBatchRequest()
                     .withQueueUrl(qUrl);
@@ -475,12 +536,13 @@ public class SendQueueBuffer {
 
             List<SendMessageBatchRequestEntry> entries = new ArrayList<SendMessageBatchRequestEntry>(
                     requests.size());
-            for (int i = 0, n = requests.size(); i < n; i++)
+            for (int i = 0, n = requests.size(); i < n; i++) {
                 entries.add(new SendMessageBatchRequestEntry()
                         .withId(Integer.toString(i))
                         .withMessageBody(requests.get(i).getMessageBody())
                         .withDelaySeconds(requests.get(i).getDelaySeconds())
                         .withMessageAttributes(requests.get(i).getMessageAttributes()));
+            }
             batchRequest.setEntries(entries);
 
             SendMessageBatchResult batchResult = sqsClient
@@ -515,9 +577,13 @@ public class SendQueueBuffer {
             OutboundBatchTask<DeleteMessageRequest, Void> {
 
         @Override
-        void process() {
-            if (requests.isEmpty())
+        protected void process(
+                List<DeleteMessageRequest> requests,
+                List<QueueBufferFuture<DeleteMessageRequest, Void>> futures) {
+
+            if (requests.isEmpty()) {
                 return;
+            }
 
             DeleteMessageBatchRequest batchRequest = new DeleteMessageBatchRequest()
                     .withQueueUrl(qUrl);
@@ -525,10 +591,11 @@ public class SendQueueBuffer {
 
             List<DeleteMessageBatchRequestEntry> entries = new ArrayList<DeleteMessageBatchRequestEntry>(
                     requests.size());
-            for (int i = 0, n = requests.size(); i < n; i++)
+            for (int i = 0, n = requests.size(); i < n; i++) {
                 entries.add(new DeleteMessageBatchRequestEntry().withId(
                         Integer.toString(i)).withReceiptHandle(
                         requests.get(i).getReceiptHandle()));
+            }
             batchRequest.setEntries(entries);
 
             DeleteMessageBatchResult batchResult = sqsClient
@@ -561,9 +628,13 @@ public class SendQueueBuffer {
             OutboundBatchTask<ChangeMessageVisibilityRequest, Void> {
 
         @Override
-        void process() {
-            if (requests.isEmpty())
+        protected void process(
+                List<ChangeMessageVisibilityRequest> requests,
+                List<QueueBufferFuture<ChangeMessageVisibilityRequest, Void>> futures) {
+
+            if (requests.isEmpty()) {
                 return;
+            }
 
             ChangeMessageVisibilityBatchRequest batchRequest = new ChangeMessageVisibilityBatchRequest()
                     .withQueueUrl(qUrl);
@@ -571,12 +642,13 @@ public class SendQueueBuffer {
 
             List<ChangeMessageVisibilityBatchRequestEntry> entries = new ArrayList<ChangeMessageVisibilityBatchRequestEntry>(
                     requests.size());
-            for (int i = 0, n = requests.size(); i < n; i++)
+            for (int i = 0, n = requests.size(); i < n; i++) {
                 entries.add(new ChangeMessageVisibilityBatchRequestEntry()
                         .withId(Integer.toString(i))
                         .withReceiptHandle(requests.get(i).getReceiptHandle())
                         .withVisibilityTimeout(
                                 requests.get(i).getVisibilityTimeout()));
+            }
             batchRequest.setEntries(entries);
 
             ChangeMessageVisibilityBatchResult batchResult = sqsClient
