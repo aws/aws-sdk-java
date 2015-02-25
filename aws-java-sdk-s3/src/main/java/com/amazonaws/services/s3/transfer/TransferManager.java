@@ -777,29 +777,32 @@ public class TransferManager {
                     }
                 }, listenerChain);
         getObjectRequest.setGeneralProgressListener(listeners);
-        GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
-                getObjectRequest.getBucketName(), getObjectRequest.getKey());
-        if (getObjectRequest.getSSECustomerKey() != null) {
-            getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
-        }
-        if (getObjectRequest.getVersionId() != null) {
-            getObjectMetadataRequest.setVersionId(getObjectRequest.getVersionId());
-        }
-        final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
-
-        // We still pass the unfiltered listener chain into DownloadImpl
-        final DownloadImpl download = new DownloadImpl(description,
-                transferProgress, listenerChain, null, stateListener,
-                getObjectRequest, file);
 
         long startingByte = 0;
-        long lastByte = objectMetadata.getContentLength() - 1;
+        long lastByte;
 
         if (getObjectRequest.getRange() != null
                 && getObjectRequest.getRange().length == 2) {
             startingByte = getObjectRequest.getRange()[0];
             lastByte = getObjectRequest.getRange()[1];
+        } else {
+            GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
+                    getObjectRequest.getBucketName(), getObjectRequest.getKey());
+            if (getObjectRequest.getSSECustomerKey() != null) {
+                getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
+            }
+            if (getObjectRequest.getVersionId() != null) {
+                getObjectMetadataRequest.setVersionId(getObjectRequest.getVersionId());
+            }
+            final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
+
+            lastByte = objectMetadata.getContentLength() - 1;
         }
+
+        // We still pass the unfiltered listener chain into DownloadImpl
+        final DownloadImpl download = new DownloadImpl(description,
+                transferProgress, listenerChain, null, stateListener,
+                getObjectRequest, file);
 
         long totalBytesToDownload = lastByte - startingByte + 1;
         transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
