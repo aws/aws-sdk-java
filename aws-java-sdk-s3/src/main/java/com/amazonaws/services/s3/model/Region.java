@@ -115,7 +115,7 @@ public enum Region {
      *
      * <pre>
      * AmazonS3Client s3 = new AmazonS3Client();
-     * s3.setRegion(RegionUtils.getRegion("eu-central-1");
+     * s3.setRegion(RegionUtils.getRegion("eu-central-1"));
      * </pre>
      *
      * </p>
