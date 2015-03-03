@@ -25,6 +25,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.SDKGlobalConfiguration;
@@ -70,9 +71,16 @@ import com.amazonaws.util.AWSServiceMetrics;
  */
 public enum AwsSdkMetrics {
     ;
+    private static final Log log = LogFactory.getLog(AwsSdkMetrics.class);
     public static final String DEFAULT_METRIC_NAMESPACE = "AWSSDK/Java";
     private static final String MBEAN_OBJECT_NAME =
         "com.amazonaws.management:type=" + AwsSdkMetrics.class.getSimpleName();
+
+    /**
+     * Object name under which the Admin Mbean of the current classloader is
+     * registered. 
+     */
+    private static volatile String registeredAdminMbeanName;
     /**
      * Used to enable the use of a single metric namespace for all levels of SDK
      * generated CloudWatch metrics such as JVM level, host level, etc.
@@ -317,27 +325,64 @@ public enum AwsSdkMetrics {
      */
     public static boolean isMetricAdminMBeanRegistered() {
         SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
-        return registry.isMBeanRegistered(MBEAN_OBJECT_NAME);
+        return registry.isMBeanRegistered(registeredAdminMbeanName);
     }
 
     /**
-     * Registers the metric admin MBean for JMX access.
+     * Returns the name of the registered admin mbean; or null if the admin
+     * mbean is not currently registered.
+     */
+    public static String getRegisteredAdminMbeanName() {
+        return registeredAdminMbeanName;
+    }
+
+    /**
+     * Registers the metric admin MBean for JMX access for the current
+     * classloader. If an AdminMbean is found to have been registered under a
+     * different class loader, the AdminMBean of the current class loader would
+     * be registered under the same name {@link #MBEAN_OBJECT_NAME} but with an
+     * additional suffix in the format of "/<count>", where count is a counter
+     * incrementing from 1.
      * 
      * @return true if the registeration succeeded; false otherwise.
      */
     public static boolean registerMetricAdminMBean() {
         SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
-        return registry.registerMetricAdminMBean(MBEAN_OBJECT_NAME);
+        synchronized(AwsSdkMetrics.class) {
+            if (registeredAdminMbeanName != null)
+                return false;   // already registered
+            boolean registered = registry.registerMetricAdminMBean(MBEAN_OBJECT_NAME);
+            if (registered) {
+                registeredAdminMbeanName = MBEAN_OBJECT_NAME;
+            } else {
+                String mbeanName = MBEAN_OBJECT_NAME;
+                int count = 0;
+                while (registry.isMBeanRegistered(mbeanName)) {
+                    mbeanName = MBEAN_OBJECT_NAME + "/" + ++count;
+                }
+                registered = registry.registerMetricAdminMBean(mbeanName);
+                if (registered)
+                    registeredAdminMbeanName = mbeanName;
+            }
+            if (registered)
+                log.debug("Admin mbean registered under " + registeredAdminMbeanName);
+            return registered;
+        }
     }
 
     /**
-     * Unregisters the metric admin MBean from JMX.
+     * Unregisters the metric admin MBean from JMX for the current classloader.
      * 
      * @return true if the unregisteration succeeded; false otherwise.
      */
     public static boolean unregisterMetricAdminMBean() {
         SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
-        return registry.unregisterMBean(MBEAN_OBJECT_NAME);
+        synchronized(AwsSdkMetrics.class) {
+            boolean success = registry.unregisterMBean(registeredAdminMbeanName);
+            if (success)
+                registeredAdminMbeanName = null;
+            return success;
+        }
     }
     /**
      * Returns a non-null request metric collector for the SDK. If no custom
