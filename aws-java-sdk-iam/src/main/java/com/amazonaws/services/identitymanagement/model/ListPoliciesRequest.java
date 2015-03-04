@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listPolicies(ListPoliciesRequest)
  */
-public class ListPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The scope to use for filtering the results. <p>To list only AWS
@@ -548,5 +548,11 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public ListPoliciesRequest clone() {
+        
+            return (ListPoliciesRequest) super.clone();
+    }
+
 }
     

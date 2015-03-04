@@ -26,7 +26,7 @@ import java.io.Serializable;
  * GetAccountAuthorizationDetails action.
  * </p>
  */
-public class RoleDetail implements Serializable {
+public class RoleDetail implements Serializable, Cloneable {
 
     /**
      * The path to the role. For more information about paths, see <a
@@ -629,5 +629,19 @@ public class RoleDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public RoleDetail clone() {
+        try {
+            return (RoleDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

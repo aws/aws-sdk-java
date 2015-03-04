@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * List Gateways Result
  */
-public class ListGatewaysResult implements Serializable {
+public class ListGatewaysResult implements Serializable, Cloneable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<GatewayInfo> gateways;
 
@@ -178,5 +178,19 @@ public class ListGatewaysResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListGatewaysResult clone() {
+        try {
+            return (ListGatewaysResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

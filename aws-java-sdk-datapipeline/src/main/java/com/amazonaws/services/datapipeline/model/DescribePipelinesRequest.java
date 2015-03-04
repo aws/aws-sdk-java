@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#describePipelines(DescribePipelinesRequest)
  */
-public class DescribePipelinesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribePipelinesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifiers of the pipelines to describe. You can pass as many as 25
@@ -168,5 +168,11 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DescribePipelinesRequest clone() {
+        
+            return (DescribePipelinesRequest) super.clone();
+    }
+
 }
     

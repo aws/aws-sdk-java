@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#resumeProcesses(ResumeProcessesRequest)
  */
-public class ResumeProcessesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ResumeProcessesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
@@ -230,5 +230,11 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public ResumeProcessesRequest clone() {
+        
+            return (ResumeProcessesRequest) super.clone();
+    }
+
 }
     

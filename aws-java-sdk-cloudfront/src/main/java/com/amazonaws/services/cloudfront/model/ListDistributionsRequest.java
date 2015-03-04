@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#listDistributions(ListDistributionsRequest)
  */
-public class ListDistributionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDistributionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Use this when paginating results to indicate where to begin in your
@@ -181,5 +181,11 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListDistributionsRequest clone() {
+        
+            return (ListDistributionsRequest) super.clone();
+    }
+
 }
     

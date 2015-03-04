@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The status and configuration of a search domain's scaling parameters.
  * </p>
  */
-public class ScalingParametersStatus implements Serializable {
+public class ScalingParametersStatus implements Serializable, Cloneable {
 
     /**
      * The desired instance type and desired number of replicas of each index
@@ -149,5 +149,19 @@ public class ScalingParametersStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public ScalingParametersStatus clone() {
+        try {
+            return (ScalingParametersStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

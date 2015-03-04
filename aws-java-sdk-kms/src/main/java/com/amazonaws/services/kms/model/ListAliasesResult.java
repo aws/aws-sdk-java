@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListAliasesResult implements Serializable {
+public class ListAliasesResult implements Serializable, Cloneable {
 
     /**
      * A list of key aliases in the user's account.
@@ -283,5 +283,19 @@ public class ListAliasesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListAliasesResult clone() {
+        try {
+            return (ListAliasesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

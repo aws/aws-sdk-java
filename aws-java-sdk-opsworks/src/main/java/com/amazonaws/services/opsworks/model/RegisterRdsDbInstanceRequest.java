@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#registerRdsDbInstance(RegisterRdsDbInstanceRequest)
  */
-public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -239,5 +239,11 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public RegisterRdsDbInstanceRequest clone() {
+        
+            return (RegisterRdsDbInstanceRequest) super.clone();
+    }
+
 }
     

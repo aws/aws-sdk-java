@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#createHapg(CreateHapgRequest)
  */
-public class CreateHapgRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateHapgRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The label of the new high-availability partition group.
@@ -119,5 +119,11 @@ public class CreateHapgRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public CreateHapgRequest clone() {
+        
+            return (CreateHapgRequest) super.clone();
+    }
+
 }
     

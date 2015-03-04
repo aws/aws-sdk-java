@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Detailed information about an activity type.
  * </p>
  */
-public class ActivityTypeDetail implements Serializable {
+public class ActivityTypeDetail implements Serializable, Cloneable {
 
     /**
      * General information about the activity type. <p>The status of activity
@@ -191,5 +191,19 @@ public class ActivityTypeDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTypeDetail clone() {
+        try {
+            return (ActivityTypeDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

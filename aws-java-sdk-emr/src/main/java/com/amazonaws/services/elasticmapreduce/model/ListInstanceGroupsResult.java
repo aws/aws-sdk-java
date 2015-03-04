@@ -21,7 +21,7 @@ import java.io.Serializable;
  * This input determines which instance groups to retrieve.
  * </p>
  */
-public class ListInstanceGroupsResult implements Serializable {
+public class ListInstanceGroupsResult implements Serializable, Cloneable {
 
     /**
      * The list of instance groups for the cluster and given filters.
@@ -184,5 +184,19 @@ public class ListInstanceGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListInstanceGroupsResult clone() {
+        try {
+            return (ListInstanceGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

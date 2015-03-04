@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeRouteTablesRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeRouteTables(DescribeRouteTablesRequest)
  */
-public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeRouteTablesRequest> {
+public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeRouteTablesRequest> {
 
     /**
      * One or more route table IDs. <p>Default: Describes all your route
@@ -605,5 +605,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeRouteTablesRequest clone() {
+        
+            return (DescribeRouteTablesRequest) super.clone();
+    }
+
 }
     

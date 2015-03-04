@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteEventSubscription(DeleteEventSubscriptionRequest)
  */
-public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the RDS event notification subscription you want to
@@ -112,5 +112,11 @@ public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DeleteEventSubscriptionRequest clone() {
+        
+            return (DeleteEventSubscriptionRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The TemplateParameter data type.
  * </p>
  */
-public class TemplateParameter implements Serializable {
+public class TemplateParameter implements Serializable, Cloneable {
 
     /**
      * The name associated with the parameter.
@@ -244,5 +244,19 @@ public class TemplateParameter implements Serializable {
         return true;
     }
     
+    @Override
+    public TemplateParameter clone() {
+        try {
+            return (TemplateParameter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

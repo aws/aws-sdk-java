@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for ListStacks action.
  * </p>
  */
-public class ListStacksResult implements Serializable {
+public class ListStacksResult implements Serializable, Cloneable {
 
     /**
      * A list of <code>StackSummary</code> structures containing information
@@ -205,5 +205,19 @@ public class ListStacksResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListStacksResult clone() {
+        try {
+            return (ListStacksResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

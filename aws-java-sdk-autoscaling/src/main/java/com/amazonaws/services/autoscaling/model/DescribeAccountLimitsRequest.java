@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAccountLimits(DescribeAccountLimitsRequest)
  */
-public class DescribeAccountLimitsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAccountLimitsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -69,5 +69,11 @@ public class DescribeAccountLimitsRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeAccountLimitsRequest clone() {
+        
+            return (DescribeAccountLimitsRequest) super.clone();
+    }
+
 }
     

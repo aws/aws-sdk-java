@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#describeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest)
  */
-public class DescribeConfigurationRecorderStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeConfigurationRecorderStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name(s) of the configuration recorder. If the name is not
@@ -164,5 +164,11 @@ public class DescribeConfigurationRecorderStatusRequest extends AmazonWebService
         return true;
     }
     
+    @Override
+    public DescribeConfigurationRecorderStatusRequest clone() {
+        
+            return (DescribeConfigurationRecorderStatusRequest) super.clone();
+    }
+
 }
     

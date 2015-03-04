@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeAlarmsForMetric action.
  * </p>
  */
-public class DescribeAlarmsForMetricResult implements Serializable {
+public class DescribeAlarmsForMetricResult implements Serializable, Cloneable {
 
     /**
      * A list of information for each alarm with the specified metric.
@@ -135,5 +135,19 @@ public class DescribeAlarmsForMetricResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAlarmsForMetricResult clone() {
+        try {
+            return (DescribeAlarmsForMetricResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

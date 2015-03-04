@@ -23,7 +23,7 @@ import java.io.Serializable;
  * computed information in the search results.
  * </p>
  */
-public class Expression implements Serializable {
+public class Expression implements Serializable, Cloneable {
 
     /**
      * Names must begin with a letter and can contain the following
@@ -214,5 +214,19 @@ public class Expression implements Serializable {
         return true;
     }
     
+    @Override
+    public Expression clone() {
+        try {
+            return (Expression) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

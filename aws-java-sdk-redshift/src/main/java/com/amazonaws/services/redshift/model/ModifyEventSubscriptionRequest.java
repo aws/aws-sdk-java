@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyEventSubscription(ModifyEventSubscriptionRequest)
  */
-public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the modified Amazon Redshift event notification
@@ -571,5 +571,11 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public ModifyEventSubscriptionRequest clone() {
+        
+            return (ModifyEventSubscriptionRequest) super.clone();
+    }
+
 }
     

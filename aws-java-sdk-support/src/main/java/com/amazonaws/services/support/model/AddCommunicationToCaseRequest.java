@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#addCommunicationToCase(AddCommunicationToCaseRequest)
  */
-public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The AWS Support case ID requested or returned in the call. The case ID
@@ -335,5 +335,11 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public AddCommunicationToCaseRequest clone() {
+        
+            return (AddCommunicationToCaseRequest) super.clone();
+    }
+
 }
     

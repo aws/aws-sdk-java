@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addRoleToInstanceProfile(AddRoleToInstanceProfileRequest)
  */
-public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the instance profile to update.
@@ -182,5 +182,11 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public AddRoleToInstanceProfileRequest clone() {
+        
+            return (AddRoleToInstanceProfileRequest) super.clone();
+    }
+
 }
     

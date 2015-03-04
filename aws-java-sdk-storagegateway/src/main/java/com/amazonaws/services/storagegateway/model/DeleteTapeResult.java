@@ -21,7 +21,7 @@ import java.io.Serializable;
  * DeleteTapeOutput
  * </p>
  */
-public class DeleteTapeResult implements Serializable {
+public class DeleteTapeResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the deleted virtual tape.
@@ -112,5 +112,19 @@ public class DeleteTapeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteTapeResult clone() {
+        try {
+            return (DeleteTapeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

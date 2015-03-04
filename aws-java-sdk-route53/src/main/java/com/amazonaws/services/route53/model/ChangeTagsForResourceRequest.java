@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#changeTagsForResource(ChangeTagsForResourceRequest)
  */
-public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The type of the resource. <p>- The resource type for health checks is
@@ -449,5 +449,11 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public ChangeTagsForResourceRequest clone() {
+        
+            return (ChangeTagsForResourceRequest) super.clone();
+    }
+
 }
     

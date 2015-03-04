@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#cancelRetrieval(CancelRetrievalRequest)
  */
-public class CancelRetrievalRequest extends AmazonWebServiceRequest implements Serializable {
+public class CancelRetrievalRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -194,5 +194,11 @@ public class CancelRetrievalRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public CancelRetrievalRequest clone() {
+        
+            return (CancelRetrievalRequest) super.clone();
+    }
+
 }
     

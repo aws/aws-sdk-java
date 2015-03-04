@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DeleteLoadBalancerPolicy action.
  * </p>
  */
-public class DeleteLoadBalancerPolicyResult implements Serializable {
+public class DeleteLoadBalancerPolicyResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class DeleteLoadBalancerPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteLoadBalancerPolicyResult clone() {
+        try {
+            return (DeleteLoadBalancerPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

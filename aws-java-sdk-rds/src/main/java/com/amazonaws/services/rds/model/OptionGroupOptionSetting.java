@@ -23,7 +23,7 @@ import java.io.Serializable;
  * values are used with the DescribeOptionGroupOptions action.
  * </p>
  */
-public class OptionGroupOptionSetting implements Serializable {
+public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * The name of the option group option.
@@ -330,5 +330,19 @@ public class OptionGroupOptionSetting implements Serializable {
         return true;
     }
     
+    @Override
+    public OptionGroupOptionSetting clone() {
+        try {
+            return (OptionGroupOptionSetting) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

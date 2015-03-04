@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeLaunchConfigurationsResult implements Serializable {
+public class DescribeLaunchConfigurationsResult implements Serializable, Cloneable {
 
     /**
      * The launch configurations.
@@ -194,5 +194,19 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLaunchConfigurationsResult clone() {
+        try {
+            return (DescribeLaunchConfigurationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

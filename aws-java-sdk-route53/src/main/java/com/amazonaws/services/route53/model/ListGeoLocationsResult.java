@@ -22,7 +22,7 @@ import java.io.Serializable;
  * are returned by the request and information about the response.
  * </p>
  */
-public class ListGeoLocationsResult implements Serializable {
+public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains information about the geo locations that
@@ -524,5 +524,19 @@ public class ListGeoLocationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListGeoLocationsResult clone() {
+        try {
+            return (ListGeoLocationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

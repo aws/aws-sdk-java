@@ -22,7 +22,7 @@ import java.io.Serializable;
  * AddAttachmentsToSet operation.
  * </p>
  */
-public class AddAttachmentsToSetResult implements Serializable {
+public class AddAttachmentsToSetResult implements Serializable, Cloneable {
 
     /**
      * The ID of the attachment set. If an <code>AttachmentSetId</code> was
@@ -171,5 +171,19 @@ public class AddAttachmentsToSetResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AddAttachmentsToSetResult clone() {
+        try {
+            return (AddAttachmentsToSetResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

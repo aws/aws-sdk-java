@@ -22,7 +22,7 @@ import java.io.Serializable;
  * ModifyDBParameterGroup or ResetDBParameterGroup action.
  * </p>
  */
-public class ResetDBParameterGroupResult implements Serializable {
+public class ResetDBParameterGroupResult implements Serializable, Cloneable {
 
     /**
      * The name of the DB parameter group.
@@ -101,5 +101,19 @@ public class ResetDBParameterGroupResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ResetDBParameterGroupResult clone() {
+        try {
+            return (ResetDBParameterGroupResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

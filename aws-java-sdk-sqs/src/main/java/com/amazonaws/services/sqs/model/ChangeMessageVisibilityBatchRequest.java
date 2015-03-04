@@ -47,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest)
  */
-public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest implements Serializable {
+public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -232,5 +232,11 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public ChangeMessageVisibilityBatchRequest clone() {
+        
+            return (ChangeMessageVisibilityBatchRequest) super.clone();
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeNetworkAclsResult implements Serializable {
+public class DescribeNetworkAclsResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more network ACLs.
@@ -133,5 +133,19 @@ public class DescribeNetworkAclsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeNetworkAclsResult clone() {
+        try {
+            return (DescribeNetworkAclsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -342,12 +342,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteAccountAliasRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteAccountAliasRequestMarshaller().marshall(deleteAccountAliasRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccountAliasRequestMarshaller().marshall(super.beforeMarshalling(deleteAccountAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -387,14 +396,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGroupsRequestMarshaller().marshall(listGroupsRequest);
+                request = new ListGroupsRequestMarshaller().marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -434,12 +445,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteVirtualMFADeviceRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteVirtualMFADeviceRequestMarshaller().marshall(deleteVirtualMFADeviceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVirtualMFADeviceRequestMarshaller().marshall(super.beforeMarshalling(deleteVirtualMFADeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -492,12 +512,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<PutUserPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new PutUserPolicyRequestMarshaller().marshall(putUserPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutUserPolicyRequestMarshaller().marshall(super.beforeMarshalling(putUserPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -537,14 +566,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListSAMLProvidersRequestMarshaller().marshall(listSAMLProvidersRequest);
+                request = new ListSAMLProvidersRequestMarshaller().marshall(super.beforeMarshalling(listSAMLProvidersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListSAMLProvidersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -595,14 +626,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUserPolicyRequestMarshaller().marshall(getUserPolicyRequest);
+                request = new GetUserPolicyRequestMarshaller().marshall(super.beforeMarshalling(getUserPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetUserPolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -646,12 +679,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteOpenIDConnectProviderRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteOpenIDConnectProviderRequestMarshaller().marshall(deleteOpenIDConnectProviderRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOpenIDConnectProviderRequestMarshaller().marshall(super.beforeMarshalling(deleteOpenIDConnectProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -698,12 +740,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateSigningCertificateRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateSigningCertificateRequestMarshaller().marshall(updateSigningCertificateRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSigningCertificateRequestMarshaller().marshall(super.beforeMarshalling(updateSigningCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -745,14 +796,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUsersRequestMarshaller().marshall(listUsersRequest);
+                request = new ListUsersRequestMarshaller().marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListUsersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -801,12 +854,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AttachRolePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new AttachRolePolicyRequestMarshaller().marshall(attachRolePolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachRolePolicyRequestMarshaller().marshall(super.beforeMarshalling(attachRolePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -849,14 +911,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCredentialReportRequestMarshaller().marshall(getCredentialReportRequest);
+                request = new GetCredentialReportRequestMarshaller().marshall(super.beforeMarshalling(getCredentialReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetCredentialReportResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -895,12 +959,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<EnableMFADeviceRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new EnableMFADeviceRequestMarshaller().marshall(enableMFADeviceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableMFADeviceRequestMarshaller().marshall(super.beforeMarshalling(enableMFADeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -932,12 +1005,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteAccountPasswordPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteAccountPasswordPolicyRequestMarshaller().marshall(deleteAccountPasswordPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccountPasswordPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteAccountPasswordPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -977,14 +1059,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetLoginProfileRequestMarshaller().marshall(getLoginProfileRequest);
+                request = new GetLoginProfileRequestMarshaller().marshall(super.beforeMarshalling(getLoginProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetLoginProfileResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1029,14 +1113,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSAMLProviderRequestMarshaller().marshall(updateSAMLProviderRequest);
+                request = new UpdateSAMLProviderRequestMarshaller().marshall(super.beforeMarshalling(updateSAMLProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new UpdateSAMLProviderResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1096,14 +1182,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadServerCertificateRequestMarshaller().marshall(uploadServerCertificateRequest);
+                request = new UploadServerCertificateRequestMarshaller().marshall(super.beforeMarshalling(uploadServerCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new UploadServerCertificateResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1140,12 +1228,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateAccountAliasRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new CreateAccountAliasRequestMarshaller().marshall(createAccountAliasRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAccountAliasRequestMarshaller().marshall(super.beforeMarshalling(createAccountAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1199,14 +1296,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttachedUserPoliciesRequestMarshaller().marshall(listAttachedUserPoliciesRequest);
+                request = new ListAttachedUserPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listAttachedUserPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListAttachedUserPoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1264,12 +1363,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeletePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeletePolicyRequestMarshaller().marshall(deletePolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePolicyRequestMarshaller().marshall(super.beforeMarshalling(deletePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1310,12 +1418,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteRoleRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteRoleRequestMarshaller().marshall(deleteRoleRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRoleRequestMarshaller().marshall(super.beforeMarshalling(deleteRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1376,14 +1493,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAccessKeyRequestMarshaller().marshall(createAccessKeyRequest);
+                request = new CreateAccessKeyRequestMarshaller().marshall(super.beforeMarshalling(createAccessKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateAccessKeyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1427,14 +1546,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUserRequestMarshaller().marshall(getUserRequest);
+                request = new GetUserRequestMarshaller().marshall(super.beforeMarshalling(getUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetUserResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1490,14 +1611,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttachedGroupPoliciesRequestMarshaller().marshall(listAttachedGroupPoliciesRequest);
+                request = new ListAttachedGroupPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listAttachedGroupPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListAttachedGroupPoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1543,14 +1666,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListMFADevicesRequestMarshaller().marshall(listMFADevicesRequest);
+                request = new ListMFADevicesRequestMarshaller().marshall(super.beforeMarshalling(listMFADevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListMFADevicesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1591,12 +1716,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ResyncMFADeviceRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new ResyncMFADeviceRequestMarshaller().marshall(resyncMFADeviceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResyncMFADeviceRequestMarshaller().marshall(super.beforeMarshalling(resyncMFADeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1653,14 +1787,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateVirtualMFADeviceRequestMarshaller().marshall(createVirtualMFADeviceRequest);
+                request = new CreateVirtualMFADeviceRequestMarshaller().marshall(super.beforeMarshalling(createVirtualMFADeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateVirtualMFADeviceResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1707,12 +1843,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeletePolicyVersionRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeletePolicyVersionRequestMarshaller().marshall(deletePolicyVersionRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePolicyVersionRequestMarshaller().marshall(super.beforeMarshalling(deletePolicyVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1775,14 +1920,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateOpenIDConnectProviderRequestMarshaller().marshall(createOpenIDConnectProviderRequest);
+                request = new CreateOpenIDConnectProviderRequestMarshaller().marshall(super.beforeMarshalling(createOpenIDConnectProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateOpenIDConnectProviderResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1828,14 +1975,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAccountAliasesRequestMarshaller().marshall(listAccountAliasesRequest);
+                request = new ListAccountAliasesRequestMarshaller().marshall(super.beforeMarshalling(listAccountAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListAccountAliasesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1884,14 +2033,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRoleRequestMarshaller().marshall(getRoleRequest);
+                request = new GetRoleRequestMarshaller().marshall(super.beforeMarshalling(getRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetRoleResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1945,14 +2096,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRolePoliciesRequestMarshaller().marshall(listRolePoliciesRequest);
+                request = new ListRolePoliciesRequestMarshaller().marshall(super.beforeMarshalling(listRolePoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListRolePoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2006,14 +2159,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListSigningCertificatesRequestMarshaller().marshall(listSigningCertificatesRequest);
+                request = new ListSigningCertificatesRequestMarshaller().marshall(super.beforeMarshalling(listSigningCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListSigningCertificatesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2077,14 +2232,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadSigningCertificateRequestMarshaller().marshall(uploadSigningCertificateRequest);
+                request = new UploadSigningCertificateRequestMarshaller().marshall(super.beforeMarshalling(uploadSigningCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new UploadSigningCertificateResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2132,14 +2289,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAccountAuthorizationDetailsRequestMarshaller().marshall(getAccountAuthorizationDetailsRequest);
+                request = new GetAccountAuthorizationDetailsRequestMarshaller().marshall(super.beforeMarshalling(getAccountAuthorizationDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetAccountAuthorizationDetailsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2182,12 +2341,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ChangePasswordRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new ChangePasswordRequestMarshaller().marshall(changePasswordRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ChangePasswordRequestMarshaller().marshall(super.beforeMarshalling(changePasswordRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2240,12 +2408,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<PutGroupPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new PutGroupPolicyRequestMarshaller().marshall(putGroupPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutGroupPolicyRequestMarshaller().marshall(super.beforeMarshalling(putGroupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2285,12 +2462,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteSigningCertificateRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteSigningCertificateRequestMarshaller().marshall(deleteSigningCertificateRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSigningCertificateRequestMarshaller().marshall(super.beforeMarshalling(deleteSigningCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2344,14 +2530,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAccessKeysRequestMarshaller().marshall(listAccessKeysRequest);
+                request = new ListAccessKeysRequestMarshaller().marshall(super.beforeMarshalling(listAccessKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListAccessKeysResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2391,14 +2579,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListOpenIDConnectProvidersRequestMarshaller().marshall(listOpenIDConnectProvidersRequest);
+                request = new ListOpenIDConnectProvidersRequestMarshaller().marshall(super.beforeMarshalling(listOpenIDConnectProvidersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListOpenIDConnectProvidersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2452,12 +2642,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateOpenIDConnectProviderThumbprintRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateOpenIDConnectProviderThumbprintRequestMarshaller().marshall(updateOpenIDConnectProviderThumbprintRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOpenIDConnectProviderThumbprintRequestMarshaller().marshall(super.beforeMarshalling(updateOpenIDConnectProviderThumbprintRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2497,12 +2696,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DetachRolePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DetachRolePolicyRequestMarshaller().marshall(detachRolePolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachRolePolicyRequestMarshaller().marshall(super.beforeMarshalling(detachRolePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2554,14 +2762,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePolicyRequestMarshaller().marshall(createPolicyRequest);
+                request = new CreatePolicyRequestMarshaller().marshall(super.beforeMarshalling(createPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreatePolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2611,14 +2821,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstanceProfileRequestMarshaller().marshall(createInstanceProfileRequest);
+                request = new CreateInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(createInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateInstanceProfileResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2664,12 +2876,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<RemoveRoleFromInstanceProfileRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new RemoveRoleFromInstanceProfileRequestMarshaller().marshall(removeRoleFromInstanceProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveRoleFromInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(removeRoleFromInstanceProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2714,14 +2935,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLoginProfileRequestMarshaller().marshall(createLoginProfileRequest);
+                request = new CreateLoginProfileRequestMarshaller().marshall(super.beforeMarshalling(createLoginProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateLoginProfileResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2767,12 +2990,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateAccountPasswordPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateAccountPasswordPolicyRequestMarshaller().marshall(updateAccountPasswordPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccountPasswordPolicyRequestMarshaller().marshall(super.beforeMarshalling(updateAccountPasswordPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2814,14 +3046,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceProfileRequestMarshaller().marshall(getInstanceProfileRequest);
+                request = new GetInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(getInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetInstanceProfileResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2859,12 +3093,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateAssumeRolePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateAssumeRolePolicyRequestMarshaller().marshall(updateAssumeRolePolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAssumeRolePolicyRequestMarshaller().marshall(super.beforeMarshalling(updateAssumeRolePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2907,14 +3150,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAccountSummaryRequestMarshaller().marshall(getAccountSummaryRequest);
+                request = new GetAccountSummaryRequestMarshaller().marshall(super.beforeMarshalling(getAccountSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetAccountSummaryResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2980,14 +3225,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSAMLProviderRequestMarshaller().marshall(createSAMLProviderRequest);
+                request = new CreateSAMLProviderRequestMarshaller().marshall(super.beforeMarshalling(createSAMLProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateSAMLProviderResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3044,14 +3291,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPolicyRequestMarshaller().marshall(getPolicyRequest);
+                request = new GetPolicyRequestMarshaller().marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetPolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3098,14 +3347,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPolicyVersionsRequestMarshaller().marshall(listPolicyVersionsRequest);
+                request = new ListPolicyVersionsRequestMarshaller().marshall(super.beforeMarshalling(listPolicyVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListPolicyVersionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3146,12 +3397,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteAccessKeyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteAccessKeyRequestMarshaller().marshall(deleteAccessKeyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessKeyRequestMarshaller().marshall(super.beforeMarshalling(deleteAccessKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3191,12 +3451,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteUserPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteUserPolicyRequestMarshaller().marshall(deleteUserPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteUserPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3238,14 +3507,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListServerCertificatesRequestMarshaller().marshall(listServerCertificatesRequest);
+                request = new ListServerCertificatesRequestMarshaller().marshall(super.beforeMarshalling(listServerCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListServerCertificatesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3293,12 +3564,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateServerCertificateRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateServerCertificateRequestMarshaller().marshall(updateServerCertificateRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateServerCertificateRequestMarshaller().marshall(super.beforeMarshalling(updateServerCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3344,12 +3624,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateUserRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateUserRequestMarshaller().marshall(updateUserRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateUserRequestMarshaller().marshall(super.beforeMarshalling(updateUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3411,12 +3700,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<PutRolePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new PutRolePolicyRequestMarshaller().marshall(putRolePolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRolePolicyRequestMarshaller().marshall(super.beforeMarshalling(putRolePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3456,12 +3754,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteGroupPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteGroupPolicyRequestMarshaller().marshall(deleteGroupPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGroupPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteGroupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3506,12 +3813,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateGroupRequestMarshaller().marshall(updateGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGroupRequestMarshaller().marshall(super.beforeMarshalling(updateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3566,14 +3882,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPoliciesRequestMarshaller().marshall(listPoliciesRequest);
+                request = new ListPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListPoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3620,14 +3938,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserRequestMarshaller().marshall(createUserRequest);
+                request = new CreateUserRequestMarshaller().marshall(super.beforeMarshalling(createUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateUserResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3667,12 +3987,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AddClientIDToOpenIDConnectProviderRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new AddClientIDToOpenIDConnectProviderRequestMarshaller().marshall(addClientIDToOpenIDConnectProviderRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddClientIDToOpenIDConnectProviderRequestMarshaller().marshall(super.beforeMarshalling(addClientIDToOpenIDConnectProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3714,12 +4043,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteSAMLProviderRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteSAMLProviderRequestMarshaller().marshall(deleteSAMLProviderRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSAMLProviderRequestMarshaller().marshall(super.beforeMarshalling(deleteSAMLProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3758,12 +4096,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<RemoveClientIDFromOpenIDConnectProviderRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller().marshall(removeClientIDFromOpenIDConnectProviderRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller().marshall(super.beforeMarshalling(removeClientIDFromOpenIDConnectProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3807,14 +4154,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGroupRequestMarshaller().marshall(createGroupRequest);
+                request = new CreateGroupRequestMarshaller().marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateGroupResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3849,12 +4198,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteUserRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteUserRequestMarshaller().marshall(deleteUserRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserRequestMarshaller().marshall(super.beforeMarshalling(deleteUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3894,12 +4252,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeactivateMFADeviceRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeactivateMFADeviceRequestMarshaller().marshall(deactivateMFADeviceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeactivateMFADeviceRequestMarshaller().marshall(super.beforeMarshalling(deactivateMFADeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -3952,14 +4319,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPolicyVersionRequestMarshaller().marshall(getPolicyVersionRequest);
+                request = new GetPolicyVersionRequestMarshaller().marshall(super.beforeMarshalling(getPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetPolicyVersionResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4002,14 +4371,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateCredentialReportRequestMarshaller().marshall(generateCredentialReportRequest);
+                request = new GenerateCredentialReportRequestMarshaller().marshall(super.beforeMarshalling(generateCredentialReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GenerateCredentialReportResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4043,12 +4414,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<RemoveUserFromGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new RemoveUserFromGroupRequestMarshaller().marshall(removeUserFromGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveUserFromGroupRequestMarshaller().marshall(super.beforeMarshalling(removeUserFromGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4102,14 +4482,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttachedRolePoliciesRequestMarshaller().marshall(listAttachedRolePoliciesRequest);
+                request = new ListAttachedRolePoliciesRequestMarshaller().marshall(super.beforeMarshalling(listAttachedRolePoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListAttachedRolePoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4156,12 +4538,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteServerCertificateRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteServerCertificateRequestMarshaller().marshall(deleteServerCertificateRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteServerCertificateRequestMarshaller().marshall(super.beforeMarshalling(deleteServerCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4211,14 +4602,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListEntitiesForPolicyRequestMarshaller().marshall(listEntitiesForPolicyRequest);
+                request = new ListEntitiesForPolicyRequestMarshaller().marshall(super.beforeMarshalling(listEntitiesForPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListEntitiesForPolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4260,12 +4653,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DetachGroupPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DetachGroupPolicyRequestMarshaller().marshall(detachGroupPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachGroupPolicyRequestMarshaller().marshall(super.beforeMarshalling(detachGroupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4310,14 +4712,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListInstanceProfilesRequestMarshaller().marshall(listInstanceProfilesRequest);
+                request = new ListInstanceProfilesRequestMarshaller().marshall(super.beforeMarshalling(listInstanceProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListInstanceProfilesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4365,12 +4769,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateAccessKeyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateAccessKeyRequestMarshaller().marshall(updateAccessKeyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccessKeyRequestMarshaller().marshall(super.beforeMarshalling(updateAccessKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4409,14 +4822,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOpenIDConnectProviderRequestMarshaller().marshall(getOpenIDConnectProviderRequest);
+                request = new GetOpenIDConnectProviderRequestMarshaller().marshall(super.beforeMarshalling(getOpenIDConnectProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetOpenIDConnectProviderResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4449,12 +4864,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AddUserToGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new AddUserToGroupRequestMarshaller().marshall(addUserToGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddUserToGroupRequestMarshaller().marshall(super.beforeMarshalling(addUserToGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4493,14 +4917,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetGroupRequestMarshaller().marshall(getGroupRequest);
+                request = new GetGroupRequestMarshaller().marshall(super.beforeMarshalling(getGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetGroupResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4535,12 +4961,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteGroupRequestMarshaller().marshall(deleteGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4580,12 +5015,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DetachUserPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DetachUserPolicyRequestMarshaller().marshall(detachUserPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachUserPolicyRequestMarshaller().marshall(super.beforeMarshalling(detachUserPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4630,12 +5074,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteInstanceProfileRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteInstanceProfileRequestMarshaller().marshall(deleteInstanceProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(deleteInstanceProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4684,14 +5137,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateRoleRequestMarshaller().marshall(createRoleRequest);
+                request = new CreateRoleRequestMarshaller().marshall(super.beforeMarshalling(createRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateRoleResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4736,14 +5191,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSAMLProviderRequestMarshaller().marshall(getSAMLProviderRequest);
+                request = new GetSAMLProviderRequestMarshaller().marshall(super.beforeMarshalling(getSAMLProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetSAMLProviderResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4785,12 +5242,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateLoginProfileRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new UpdateLoginProfileRequestMarshaller().marshall(updateLoginProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLoginProfileRequestMarshaller().marshall(super.beforeMarshalling(updateLoginProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4832,12 +5298,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteLoginProfileRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteLoginProfileRequestMarshaller().marshall(deleteLoginProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLoginProfileRequestMarshaller().marshall(super.beforeMarshalling(deleteLoginProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4879,12 +5354,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AttachUserPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new AttachUserPolicyRequestMarshaller().marshall(attachUserPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachUserPolicyRequestMarshaller().marshall(super.beforeMarshalling(attachUserPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -4922,14 +5406,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetServerCertificateRequestMarshaller().marshall(getServerCertificateRequest);
+                request = new GetServerCertificateRequestMarshaller().marshall(super.beforeMarshalling(getServerCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetServerCertificateResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -4975,12 +5461,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SetDefaultPolicyVersionRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new SetDefaultPolicyVersionRequestMarshaller().marshall(setDefaultPolicyVersionRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetDefaultPolicyVersionRequestMarshaller().marshall(super.beforeMarshalling(setDefaultPolicyVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -5022,12 +5517,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AttachGroupPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new AttachGroupPolicyRequestMarshaller().marshall(attachGroupPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachGroupPolicyRequestMarshaller().marshall(super.beforeMarshalling(attachGroupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -5079,14 +5583,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUserPoliciesRequestMarshaller().marshall(listUserPoliciesRequest);
+                request = new ListUserPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listUserPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListUserPoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5130,14 +5636,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGroupsForUserRequestMarshaller().marshall(listGroupsForUserRequest);
+                request = new ListGroupsForUserRequestMarshaller().marshall(super.beforeMarshalling(listGroupsForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListGroupsForUserResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5195,14 +5703,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePolicyVersionRequestMarshaller().marshall(createPolicyVersionRequest);
+                request = new CreatePolicyVersionRequestMarshaller().marshall(super.beforeMarshalling(createPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreatePolicyVersionResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5240,12 +5750,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AddRoleToInstanceProfileRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new AddRoleToInstanceProfileRequestMarshaller().marshall(addRoleToInstanceProfileRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddRoleToInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(addRoleToInstanceProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -5294,14 +5813,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetGroupPolicyRequestMarshaller().marshall(getGroupPolicyRequest);
+                request = new GetGroupPolicyRequestMarshaller().marshall(super.beforeMarshalling(getGroupPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetGroupPolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5357,14 +5878,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRolePolicyRequestMarshaller().marshall(getRolePolicyRequest);
+                request = new GetRolePolicyRequestMarshaller().marshall(super.beforeMarshalling(getRolePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetRolePolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5412,14 +5935,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListInstanceProfilesForRoleRequestMarshaller().marshall(listInstanceProfilesForRoleRequest);
+                request = new ListInstanceProfilesForRoleRequestMarshaller().marshall(super.beforeMarshalling(listInstanceProfilesForRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListInstanceProfilesForRoleResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5461,12 +5986,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteRolePolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteRolePolicyRequestMarshaller().marshall(deleteRolePolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRolePolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteRolePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -5510,14 +6044,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVirtualMFADevicesRequestMarshaller().marshall(listVirtualMFADevicesRequest);
+                request = new ListVirtualMFADevicesRequestMarshaller().marshall(super.beforeMarshalling(listVirtualMFADevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListVirtualMFADevicesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5571,14 +6107,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGroupPoliciesRequestMarshaller().marshall(listGroupPoliciesRequest);
+                request = new ListGroupPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listGroupPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListGroupPoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5630,14 +6168,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRolesRequestMarshaller().marshall(listRolesRequest);
+                request = new ListRolesRequestMarshaller().marshall(super.beforeMarshalling(listRolesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListRolesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -5680,14 +6220,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAccountPasswordPolicyRequestMarshaller().marshall(getAccountPasswordPolicyRequest);
+                request = new GetAccountPasswordPolicyRequestMarshaller().marshall(super.beforeMarshalling(getAccountPasswordPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetAccountPasswordPolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);

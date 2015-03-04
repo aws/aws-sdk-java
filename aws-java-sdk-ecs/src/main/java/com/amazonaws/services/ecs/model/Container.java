@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class Container implements Serializable {
+public class Container implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the container.
@@ -392,5 +392,19 @@ public class Container implements Serializable {
         return true;
     }
     
+    @Override
+    public Container clone() {
+        try {
+            return (Container) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listClusters(ListClustersRequest)
  */
-public class ListClustersRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListClustersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The creation date and time beginning value filter for listing clusters
@@ -308,5 +308,11 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public ListClustersRequest clone() {
+        
+            return (ListClustersRequest) super.clone();
+    }
+
 }
     

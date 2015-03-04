@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#listDomainNames(ListDomainNamesRequest)
  */
-public class ListDomainNamesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDomainNamesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -63,5 +63,11 @@ public class ListDomainNamesRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public ListDomainNamesRequest clone() {
+        
+            return (ListDomainNamesRequest) super.clone();
+    }
+
 }
     

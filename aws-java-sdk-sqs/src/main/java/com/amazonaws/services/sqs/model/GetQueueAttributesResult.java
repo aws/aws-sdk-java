@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of returned queue attributes.
  * </p>
  */
-public class GetQueueAttributesResult implements Serializable {
+public class GetQueueAttributesResult implements Serializable, Cloneable {
 
     /**
      * A map of attributes to the respective values.
@@ -134,5 +134,19 @@ public class GetQueueAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetQueueAttributesResult clone() {
+        try {
+            return (GetQueueAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

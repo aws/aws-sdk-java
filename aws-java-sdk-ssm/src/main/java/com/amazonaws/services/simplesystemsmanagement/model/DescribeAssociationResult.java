@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAssociationResult implements Serializable {
+public class DescribeAssociationResult implements Serializable, Cloneable {
 
     /**
      * Information about the association.
@@ -98,5 +98,19 @@ public class DescribeAssociationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAssociationResult clone() {
+        try {
+            return (DescribeAssociationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

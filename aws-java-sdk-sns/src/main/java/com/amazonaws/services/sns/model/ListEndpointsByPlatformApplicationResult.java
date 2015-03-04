@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for ListEndpointsByPlatformApplication action.
  * </p>
  */
-public class ListEndpointsByPlatformApplicationResult implements Serializable {
+public class ListEndpointsByPlatformApplicationResult implements Serializable, Cloneable {
 
     /**
      * Endpoints returned for ListEndpointsByPlatformApplication action.
@@ -191,5 +191,19 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListEndpointsByPlatformApplicationResult clone() {
+        try {
+            return (ListEndpointsByPlatformApplicationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

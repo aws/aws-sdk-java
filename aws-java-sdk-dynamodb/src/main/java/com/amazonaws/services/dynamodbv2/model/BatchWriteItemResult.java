@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>BatchWriteItem</i> operation.
  * </p>
  */
-public class BatchWriteItemResult implements Serializable {
+public class BatchWriteItemResult implements Serializable, Cloneable {
 
     /**
      * A map of tables and requests against those tables that were not
@@ -623,5 +623,19 @@ public class BatchWriteItemResult implements Serializable {
         return true;
     }
     
+    @Override
+    public BatchWriteItemResult clone() {
+        try {
+            return (BatchWriteItemResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

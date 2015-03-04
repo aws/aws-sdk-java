@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class CreateOpenIDConnectProviderResult implements Serializable {
+public class CreateOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that
@@ -127,5 +127,19 @@ public class CreateOpenIDConnectProviderResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateOpenIDConnectProviderResult clone() {
+        try {
+            return (CreateOpenIDConnectProviderResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

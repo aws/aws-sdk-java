@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The InstanceState data type.
  * </p>
  */
-public class InstanceState implements Serializable {
+public class InstanceState implements Serializable, Cloneable {
 
     /**
      * Provides an EC2 instance ID.
@@ -260,5 +260,19 @@ public class InstanceState implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceState clone() {
+        try {
+            return (InstanceState) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

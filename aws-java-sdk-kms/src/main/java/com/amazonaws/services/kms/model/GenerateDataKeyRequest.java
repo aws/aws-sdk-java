@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#generateDataKey(GenerateDataKeyRequest)
  */
-public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the key. This can be an ARN, an alias, or a
@@ -492,5 +492,11 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public GenerateDataKeyRequest clone() {
+        
+            return (GenerateDataKeyRequest) super.clone();
+    }
+
 }
     

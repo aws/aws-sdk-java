@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deregisterRdsDbInstance(DeregisterRdsDbInstanceRequest)
  */
-public class DeregisterRdsDbInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeregisterRdsDbInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon RDS instance's ARN.
@@ -113,5 +113,11 @@ public class DeregisterRdsDbInstanceRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DeregisterRdsDbInstanceRequest clone() {
+        
+            return (DeregisterRdsDbInstanceRequest) super.clone();
+    }
+
 }
     

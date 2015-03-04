@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBParameterGroups(DescribeDBParameterGroupsRequest)
  */
-public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a specific DB parameter group to return details for.
@@ -344,5 +344,11 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeDBParameterGroupsRequest clone() {
+        
+            return (DescribeDBParameterGroupsRequest) super.clone();
+    }
+
 }
     

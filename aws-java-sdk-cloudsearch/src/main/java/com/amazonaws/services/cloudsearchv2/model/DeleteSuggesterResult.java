@@ -22,7 +22,7 @@ import java.io.Serializable;
  * status of the deleted suggester.
  * </p>
  */
-public class DeleteSuggesterResult implements Serializable {
+public class DeleteSuggesterResult implements Serializable, Cloneable {
 
     /**
      * The status of the suggester being deleted.
@@ -101,5 +101,19 @@ public class DeleteSuggesterResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteSuggesterResult clone() {
+        try {
+            return (DeleteSuggesterResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

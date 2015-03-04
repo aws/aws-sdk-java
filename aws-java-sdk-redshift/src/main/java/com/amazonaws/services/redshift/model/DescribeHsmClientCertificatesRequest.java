@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeHsmClientCertificates(DescribeHsmClientCertificatesRequest)
  */
-public class DescribeHsmClientCertificatesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeHsmClientCertificatesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of a specific HSM client certificate for which you want
@@ -567,5 +567,11 @@ public class DescribeHsmClientCertificatesRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DescribeHsmClientCertificatesRequest clone() {
+        
+            return (DescribeHsmClientCertificatesRequest) super.clone();
+    }
+
 }
     

@@ -60,7 +60,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listDomains(ListDomainsRequest)
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDomainsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * If a <code>NextPageToken</code> was returned by a previous call, there
@@ -438,5 +438,11 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListDomainsRequest clone() {
+        
+            return (ListDomainsRequest) super.clone();
+    }
+
 }
     

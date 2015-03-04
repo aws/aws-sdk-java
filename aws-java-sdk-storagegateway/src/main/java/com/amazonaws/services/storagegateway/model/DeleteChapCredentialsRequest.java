@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteChapCredentials(DeleteChapCredentialsRequest)
  */
-public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
@@ -190,5 +190,11 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteChapCredentialsRequest clone() {
+        
+            return (DeleteChapCredentialsRequest) super.clone();
+    }
+
 }
     

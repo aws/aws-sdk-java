@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Get Shipping Label Result
  */
-public class GetShippingLabelResult implements Serializable {
+public class GetShippingLabelResult implements Serializable, Cloneable {
 
     private String shippingLabelURL;
 
@@ -134,5 +134,19 @@ public class GetShippingLabelResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetShippingLabelResult clone() {
+        try {
+            return (GetShippingLabelResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

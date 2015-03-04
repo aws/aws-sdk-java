@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#updateAssociationStatus(UpdateAssociationStatusRequest)
  */
-public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -222,5 +222,11 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public UpdateAssociationStatusRequest clone() {
+        
+            return (UpdateAssociationStatusRequest) super.clone();
+    }
+
 }
     

@@ -45,7 +45,7 @@ import com.amazonaws.services.ec2.model.transform.DetachVolumeRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachVolume(DetachVolumeRequest)
  */
-public class DetachVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachVolumeRequest> {
+public class DetachVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DetachVolumeRequest> {
 
     /**
      * The ID of the volume.
@@ -351,5 +351,11 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DetachVolumeRequest clone() {
+        
+            return (DetachVolumeRequest) super.clone();
+    }
+
 }
     

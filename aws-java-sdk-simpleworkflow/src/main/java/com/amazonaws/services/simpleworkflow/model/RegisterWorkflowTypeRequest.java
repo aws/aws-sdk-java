@@ -73,7 +73,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerWorkflowType(RegisterWorkflowTypeRequest)
  */
-public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which to register the workflow type.
@@ -1026,5 +1026,11 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public RegisterWorkflowTypeRequest clone() {
+        
+            return (RegisterWorkflowTypeRequest) super.clone();
+    }
+
 }
     

@@ -56,7 +56,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchdomain.AmazonCloudSearchDomain#search(SearchRequest)
  */
-public class SearchRequest extends AmazonWebServiceRequest implements Serializable {
+public class SearchRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Retrieves a cursor value you can use to page through large result
@@ -2821,5 +2821,11 @@ public class SearchRequest extends AmazonWebServiceRequest implements Serializab
         return true;
     }
     
+    @Override
+    public SearchRequest clone() {
+        
+            return (SearchRequest) super.clone();
+    }
+
 }
     

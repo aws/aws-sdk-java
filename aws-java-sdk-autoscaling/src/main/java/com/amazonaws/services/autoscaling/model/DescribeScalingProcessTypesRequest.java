@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingProcessTypes(DescribeScalingProcessTypesRequest)
  */
-public class DescribeScalingProcessTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeScalingProcessTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -64,5 +64,11 @@ public class DescribeScalingProcessTypesRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DescribeScalingProcessTypesRequest clone() {
+        
+            return (DescribeScalingProcessTypesRequest) super.clone();
+    }
+
 }
     

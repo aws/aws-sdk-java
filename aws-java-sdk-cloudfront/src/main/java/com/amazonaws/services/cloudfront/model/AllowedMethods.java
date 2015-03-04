@@ -29,7 +29,7 @@ import java.io.Serializable;
  * users to have permission to delete objects from your origin.
  * </p>
  */
-public class AllowedMethods implements Serializable {
+public class AllowedMethods implements Serializable, Cloneable {
 
     /**
      * The number of HTTP methods that you want CloudFront to forward to your
@@ -324,5 +324,19 @@ public class AllowedMethods implements Serializable {
         return true;
     }
     
+    @Override
+    public AllowedMethods clone() {
+        try {
+            return (AllowedMethods) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

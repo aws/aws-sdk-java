@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the EnableAvailabilityZonesForLoadBalancer action.
  * </p>
  */
-public class EnableAvailabilityZonesForLoadBalancerResult implements Serializable {
+public class EnableAvailabilityZonesForLoadBalancerResult implements Serializable, Cloneable {
 
     /**
      * An updated list of Availability Zones for the load balancer.
@@ -135,5 +135,19 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements Serializabl
         return true;
     }
     
+    @Override
+    public EnableAvailabilityZonesForLoadBalancerResult clone() {
+        try {
+            return (EnableAvailabilityZonesForLoadBalancerResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

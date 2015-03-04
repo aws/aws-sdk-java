@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>CrossZoneLoadBalancing</code> data type.
  * </p>
  */
-public class CrossZoneLoadBalancing implements Serializable {
+public class CrossZoneLoadBalancing implements Serializable, Cloneable {
 
     /**
      * Specifies whether cross-zone load balancing is enabled for the load
@@ -118,5 +118,19 @@ public class CrossZoneLoadBalancing implements Serializable {
         return true;
     }
     
+    @Override
+    public CrossZoneLoadBalancing clone() {
+        try {
+            return (CrossZoneLoadBalancing) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

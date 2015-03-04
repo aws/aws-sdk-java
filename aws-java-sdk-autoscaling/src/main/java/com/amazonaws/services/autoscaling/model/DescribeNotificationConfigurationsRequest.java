@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeNotificationConfigurations(DescribeNotificationConfigurationsRequest)
  */
-public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group.
@@ -244,5 +244,11 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
         return true;
     }
     
+    @Override
+    public DescribeNotificationConfigurationsRequest clone() {
+        
+            return (DescribeNotificationConfigurationsRequest) super.clone();
+    }
+
 }
     

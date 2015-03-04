@@ -22,7 +22,7 @@ import java.io.Serializable;
  * distribution of your content.
  * </p>
  */
-public class Restrictions implements Serializable {
+public class Restrictions implements Serializable, Cloneable {
 
     /**
      * A complex type that controls the countries in which your content is
@@ -159,5 +159,19 @@ public class Restrictions implements Serializable {
         return true;
     }
     
+    @Override
+    public Restrictions clone() {
+        try {
+            return (Restrictions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

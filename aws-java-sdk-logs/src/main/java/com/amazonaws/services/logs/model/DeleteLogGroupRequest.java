@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#deleteLogGroup(DeleteLogGroupRequest)
  */
-public class DeleteLogGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteLogGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -132,5 +132,11 @@ public class DeleteLogGroupRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeleteLogGroupRequest clone() {
+        
+            return (DeleteLogGroupRequest) super.clone();
+    }
+
 }
     

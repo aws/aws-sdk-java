@@ -36,7 +36,7 @@ import com.amazonaws.services.ec2.model.transform.CopyImageRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#copyImage(CopyImageRequest)
  */
-public class CopyImageRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CopyImageRequest> {
+public class CopyImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CopyImageRequest> {
 
     /**
      * The name of the region that contains the AMI to copy.
@@ -323,5 +323,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CopyImageRequest clone() {
+        
+            return (CopyImageRequest) super.clone();
+    }
+
 }
     

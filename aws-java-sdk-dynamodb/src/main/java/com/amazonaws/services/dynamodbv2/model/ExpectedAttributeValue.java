@@ -53,7 +53,7 @@ import java.io.Serializable;
  * <i>ValidationException</i> exception.
  * </p>
  */
-public class ExpectedAttributeValue implements Serializable {
+public class ExpectedAttributeValue implements Serializable, Cloneable {
 
     /**
      * Represents the data for an attribute. You can set one, and only one,
@@ -1992,5 +1992,19 @@ public class ExpectedAttributeValue implements Serializable {
         return true;
     }
     
+    @Override
+    public ExpectedAttributeValue clone() {
+        try {
+            return (ExpectedAttributeValue) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

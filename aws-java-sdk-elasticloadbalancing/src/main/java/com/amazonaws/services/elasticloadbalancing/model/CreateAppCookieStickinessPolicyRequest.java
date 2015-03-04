@@ -51,7 +51,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest)
  */
-public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer.
@@ -243,5 +243,11 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public CreateAppCookieStickinessPolicyRequest clone() {
+        
+            return (CreateAppCookieStickinessPolicyRequest) super.clone();
+    }
+
 }
     

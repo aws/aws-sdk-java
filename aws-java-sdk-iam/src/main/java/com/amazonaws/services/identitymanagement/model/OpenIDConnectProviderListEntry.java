@@ -22,7 +22,7 @@ import java.io.Serializable;
  * provider.
  * </p>
  */
-public class OpenIDConnectProviderListEntry implements Serializable {
+public class OpenIDConnectProviderListEntry implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
@@ -141,5 +141,19 @@ public class OpenIDConnectProviderListEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public OpenIDConnectProviderListEntry clone() {
+        try {
+            return (OpenIDConnectProviderListEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class UpdateCloudFrontOriginAccessIdentityResult implements Serializable {
+public class UpdateCloudFrontOriginAccessIdentityResult implements Serializable, Cloneable {
 
     /**
      * The origin access identity's information.
@@ -142,5 +142,19 @@ public class UpdateCloudFrontOriginAccessIdentityResult implements Serializable 
         return true;
     }
     
+    @Override
+    public UpdateCloudFrontOriginAccessIdentityResult clone() {
+        try {
+            return (UpdateCloudFrontOriginAccessIdentityResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

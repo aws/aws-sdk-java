@@ -22,7 +22,7 @@ import java.io.Serializable;
  * environment.
  * </p>
  */
-public class DescribeConfigurationSettingsResult implements Serializable {
+public class DescribeConfigurationSettingsResult implements Serializable, Cloneable {
 
     /**
      * A list of <a>ConfigurationSettingsDescription</a>.
@@ -136,5 +136,19 @@ public class DescribeConfigurationSettingsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeConfigurationSettingsResult clone() {
+        try {
+            return (DescribeConfigurationSettingsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

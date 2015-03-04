@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeElasticIps</code> request.
  * </p>
  */
-public class DescribeElasticIpsResult implements Serializable {
+public class DescribeElasticIpsResult implements Serializable, Cloneable {
 
     /**
      * An <code>ElasticIps</code> object that describes the specified Elastic
@@ -144,5 +144,19 @@ public class DescribeElasticIpsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeElasticIpsResult clone() {
+        try {
+            return (DescribeElasticIpsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#getConfig(GetConfigRequest)
  */
-public class GetConfigRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetConfigRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the client.
@@ -298,5 +298,11 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public GetConfigRequest clone() {
+        
+            return (GetConfigRequest) super.clone();
+    }
+
 }
     

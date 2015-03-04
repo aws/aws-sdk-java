@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeTerminationPolicyTypesResult implements Serializable {
+public class DescribeTerminationPolicyTypesResult implements Serializable, Cloneable {
 
     /**
      * The Termination policies supported by Auto Scaling. They are:
@@ -160,5 +160,19 @@ public class DescribeTerminationPolicyTypesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTerminationPolicyTypesResult clone() {
+        try {
+            return (DescribeTerminationPolicyTypesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

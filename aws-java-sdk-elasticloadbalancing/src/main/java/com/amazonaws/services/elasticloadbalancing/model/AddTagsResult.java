@@ -24,7 +24,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class AddTagsResult implements Serializable {
+public class AddTagsResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -61,5 +61,19 @@ public class AddTagsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AddTagsResult clone() {
+        try {
+            return (AddTagsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

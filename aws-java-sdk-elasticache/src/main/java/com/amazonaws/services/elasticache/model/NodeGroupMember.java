@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a single node within a node group.
  * </p>
  */
-public class NodeGroupMember implements Serializable {
+public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * The ID of the cache cluster to which the node belongs.
@@ -289,5 +289,19 @@ public class NodeGroupMember implements Serializable {
         return true;
     }
     
+    @Override
+    public NodeGroupMember clone() {
+        try {
+            return (NodeGroupMember) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class Item implements Serializable {
+public class Item implements Serializable, Cloneable {
 
     /**
      * The name of the item.
@@ -237,5 +237,19 @@ public class Item implements Serializable {
         return true;
     }
     
+    @Override
+    public Item clone() {
+        try {
+            return (Item) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -29,7 +29,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class AvailabilityZone implements Serializable {
+public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * The name of the availability zone.
@@ -108,5 +108,19 @@ public class AvailabilityZone implements Serializable {
         return true;
     }
     
+    @Override
+    public AvailabilityZone clone() {
+        try {
+            return (AvailabilityZone) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

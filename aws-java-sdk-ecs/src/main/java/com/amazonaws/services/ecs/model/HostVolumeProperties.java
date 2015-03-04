@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class HostVolumeProperties implements Serializable {
+public class HostVolumeProperties implements Serializable, Cloneable {
 
     /**
      * The path on the host container instance that is presented to the
@@ -112,5 +112,19 @@ public class HostVolumeProperties implements Serializable {
         return true;
     }
     
+    @Override
+    public HostVolumeProperties clone() {
+        try {
+            return (HostVolumeProperties) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

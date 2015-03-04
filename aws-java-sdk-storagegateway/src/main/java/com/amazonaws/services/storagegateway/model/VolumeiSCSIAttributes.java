@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Lists iSCSI information about a volume.
  * </p>
  */
-public class VolumeiSCSIAttributes implements Serializable {
+public class VolumeiSCSIAttributes implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume target.
@@ -313,5 +313,19 @@ public class VolumeiSCSIAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeiSCSIAttributes clone() {
+        try {
+            return (VolumeiSCSIAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

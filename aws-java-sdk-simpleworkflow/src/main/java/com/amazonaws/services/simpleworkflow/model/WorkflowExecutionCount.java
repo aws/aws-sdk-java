@@ -22,7 +22,7 @@ import java.io.Serializable;
  * CountOpenWorkflowExecutions or CountClosedWorkflowExecutions
  * </p>
  */
-public class WorkflowExecutionCount implements Serializable {
+public class WorkflowExecutionCount implements Serializable, Cloneable {
 
     /**
      * The number of workflow executions.
@@ -182,5 +182,19 @@ public class WorkflowExecutionCount implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionCount clone() {
+        try {
+            return (WorkflowExecutionCount) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

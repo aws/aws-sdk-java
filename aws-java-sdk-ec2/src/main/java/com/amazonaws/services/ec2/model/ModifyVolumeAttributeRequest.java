@@ -40,7 +40,7 @@ import com.amazonaws.services.ec2.model.transform.ModifyVolumeAttributeRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyVolumeAttribute(ModifyVolumeAttributeRequest)
  */
-public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ModifyVolumeAttributeRequest> {
+public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyVolumeAttributeRequest> {
 
     /**
      * The ID of the volume.
@@ -191,5 +191,11 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public ModifyVolumeAttributeRequest clone() {
+        
+            return (ModifyVolumeAttributeRequest) super.clone();
+    }
+
 }
     

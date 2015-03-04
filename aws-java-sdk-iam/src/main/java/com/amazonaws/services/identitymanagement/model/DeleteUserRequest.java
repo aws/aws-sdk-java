@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUser(DeleteUserRequest)
  */
-public class DeleteUserRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteUserRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user to delete.
@@ -139,5 +139,11 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DeleteUserRequest clone() {
+        
+            return (DeleteUserRequest) super.clone();
+    }
+
 }
     

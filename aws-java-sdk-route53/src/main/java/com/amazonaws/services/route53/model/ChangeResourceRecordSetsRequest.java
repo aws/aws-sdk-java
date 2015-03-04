@@ -66,7 +66,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#changeResourceRecordSets(ChangeResourceRecordSetsRequest)
  */
-public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the hosted zone that contains the resource record sets that
@@ -234,5 +234,11 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ChangeResourceRecordSetsRequest clone() {
+        
+            return (ChangeResourceRecordSetsRequest) super.clone();
+    }
+
 }
     

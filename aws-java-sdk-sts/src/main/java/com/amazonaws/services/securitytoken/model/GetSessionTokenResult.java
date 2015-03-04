@@ -23,7 +23,7 @@ import java.io.Serializable;
  * AWS requests.
  * </p>
  */
-public class GetSessionTokenResult implements Serializable {
+public class GetSessionTokenResult implements Serializable, Cloneable {
 
     /**
      * The session credentials for API authentication.
@@ -102,5 +102,19 @@ public class GetSessionTokenResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetSessionTokenResult clone() {
+        try {
+            return (GetSessionTokenResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

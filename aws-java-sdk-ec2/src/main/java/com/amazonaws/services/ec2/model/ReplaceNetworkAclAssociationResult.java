@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ReplaceNetworkAclAssociationResult implements Serializable {
+public class ReplaceNetworkAclAssociationResult implements Serializable, Cloneable {
 
     /**
      * The ID of the new association.
@@ -98,5 +98,19 @@ public class ReplaceNetworkAclAssociationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ReplaceNetworkAclAssociationResult clone() {
+        try {
+            return (ReplaceNetworkAclAssociationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

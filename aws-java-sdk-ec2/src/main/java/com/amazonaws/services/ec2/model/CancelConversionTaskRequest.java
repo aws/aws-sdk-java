@@ -37,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.CancelConversionTaskRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelConversionTask(CancelConversionTaskRequest)
  */
-public class CancelConversionTaskRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CancelConversionTaskRequest> {
+public class CancelConversionTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CancelConversionTaskRequest> {
 
     /**
      * The ID of the conversion task.
@@ -170,5 +170,11 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public CancelConversionTaskRequest clone() {
+        
+            return (CancelConversionTaskRequest) super.clone();
+    }
+
 }
     

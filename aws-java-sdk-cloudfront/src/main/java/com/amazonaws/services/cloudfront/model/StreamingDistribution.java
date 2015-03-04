@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A streaming distribution.
  * </p>
  */
-public class StreamingDistribution implements Serializable {
+public class StreamingDistribution implements Serializable, Cloneable {
 
     /**
      * The identifier for the streaming distribution. For example:
@@ -400,5 +400,19 @@ public class StreamingDistribution implements Serializable {
         return true;
     }
     
+    @Override
+    public StreamingDistribution clone() {
+        try {
+            return (StreamingDistribution) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

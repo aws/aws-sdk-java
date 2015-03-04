@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#resetDBParameterGroup(ResetDBParameterGroupRequest)
  */
-public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be 1
@@ -381,5 +381,11 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public ResetDBParameterGroupRequest clone() {
+        
+            return (ResetDBParameterGroupRequest) super.clone();
+    }
+
 }
     

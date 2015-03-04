@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeInstanceHealth(DescribeInstanceHealthRequest)
  */
-public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer.
@@ -205,5 +205,11 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeInstanceHealthRequest clone() {
+        
+            return (DescribeInstanceHealthRequest) super.clone();
+    }
+
 }
     

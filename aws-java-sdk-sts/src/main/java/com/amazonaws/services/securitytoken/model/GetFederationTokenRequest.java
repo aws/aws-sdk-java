@@ -107,7 +107,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest)
  */
-public class GetFederationTokenRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetFederationTokenRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the federated user. The name is used as an identifier for
@@ -517,5 +517,11 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public GetFederationTokenRequest clone() {
+        
+            return (GetFederationTokenRequest) super.clone();
+    }
+
 }
     

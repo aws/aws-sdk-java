@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The ParameterDeclaration data type.
  * </p>
  */
-public class ParameterDeclaration implements Serializable {
+public class ParameterDeclaration implements Serializable, Cloneable {
 
     /**
      * The name that is associated with the parameter.
@@ -286,5 +286,19 @@ public class ParameterDeclaration implements Serializable {
         return true;
     }
     
+    @Override
+    public ParameterDeclaration clone() {
+        try {
+            return (ParameterDeclaration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

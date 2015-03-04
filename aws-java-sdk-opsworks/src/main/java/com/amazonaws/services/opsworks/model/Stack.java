@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a stack.
  * </p>
  */
-public class Stack implements Serializable {
+public class Stack implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -1265,5 +1265,19 @@ public class Stack implements Serializable {
         return true;
     }
     
+    @Override
+    public Stack clone() {
+        try {
+            return (Stack) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

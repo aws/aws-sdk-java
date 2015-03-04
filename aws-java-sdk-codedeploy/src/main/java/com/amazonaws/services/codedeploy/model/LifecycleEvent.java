@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about a deployment lifecycle event.
  * </p>
  */
-public class LifecycleEvent implements Serializable {
+public class LifecycleEvent implements Serializable, Cloneable {
 
     /**
      * The deployment lifecycle event name, such as ApplicationStop,
@@ -393,5 +393,19 @@ public class LifecycleEvent implements Serializable {
         return true;
     }
     
+    @Override
+    public LifecycleEvent clone() {
+        try {
+            return (LifecycleEvent) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

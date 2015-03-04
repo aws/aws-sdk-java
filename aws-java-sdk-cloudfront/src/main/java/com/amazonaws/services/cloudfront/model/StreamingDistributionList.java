@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A streaming distribution list.
  * </p>
  */
-public class StreamingDistributionList implements Serializable {
+public class StreamingDistributionList implements Serializable, Cloneable {
 
     /**
      * The value you provided for the Marker request parameter.
@@ -417,5 +417,19 @@ public class StreamingDistributionList implements Serializable {
         return true;
     }
     
+    @Override
+    public StreamingDistributionList clone() {
+        try {
+            return (StreamingDistributionList) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

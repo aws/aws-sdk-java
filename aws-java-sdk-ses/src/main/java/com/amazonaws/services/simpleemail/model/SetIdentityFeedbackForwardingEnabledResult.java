@@ -22,7 +22,7 @@ import java.io.Serializable;
  * completed successfully.
  * </p>
  */
-public class SetIdentityFeedbackForwardingEnabledResult implements Serializable {
+public class SetIdentityFeedbackForwardingEnabledResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -59,5 +59,19 @@ public class SetIdentityFeedbackForwardingEnabledResult implements Serializable 
         return true;
     }
     
+    @Override
+    public SetIdentityFeedbackForwardingEnabledResult clone() {
+        try {
+            return (SetIdentityFeedbackForwardingEnabledResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

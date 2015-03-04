@@ -21,7 +21,7 @@ import java.io.Serializable;
  * An update operation for a record.
  * </p>
  */
-public class RecordPatch implements Serializable {
+public class RecordPatch implements Serializable, Cloneable {
 
     /**
      * An operation, either replace or remove.
@@ -344,5 +344,19 @@ public class RecordPatch implements Serializable {
         return true;
     }
     
+    @Override
+    public RecordPatch clone() {
+        try {
+            return (RecordPatch) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

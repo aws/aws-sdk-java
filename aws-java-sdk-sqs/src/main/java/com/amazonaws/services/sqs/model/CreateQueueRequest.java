@@ -62,7 +62,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest)
  */
-public class CreateQueueRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateQueueRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name for the queue to be created.
@@ -426,5 +426,11 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateQueueRequest clone() {
+        
+            return (CreateQueueRequest) super.clone();
+    }
+
 }
     

@@ -263,19 +263,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBootstrapActionsRequestMarshaller().marshall(listBootstrapActionsRequest);
+                request = new ListBootstrapActionsRequestMarshaller().marshall(super.beforeMarshalling(listBootstrapActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListBootstrapActionsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListBootstrapActionsResultJsonUnmarshaller();
             JsonResponseHandler<ListBootstrapActionsResult> responseHandler =
                 new JsonResponseHandler<ListBootstrapActionsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -319,19 +320,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller().marshall(addTagsRequest);
+                request = new AddTagsRequestMarshaller().marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddTagsResult, JsonUnmarshallerContext> unmarshaller =
                 new AddTagsResultJsonUnmarshaller();
             JsonResponseHandler<AddTagsResult> responseHandler =
                 new JsonResponseHandler<AddTagsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -374,14 +376,16 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetVisibleToAllUsersRequestMarshaller().marshall(setVisibleToAllUsersRequest);
+                request = new SetVisibleToAllUsersRequestMarshaller().marshall(super.beforeMarshalling(setVisibleToAllUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -420,19 +424,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStepsRequestMarshaller().marshall(listStepsRequest);
+                request = new ListStepsRequestMarshaller().marshall(super.beforeMarshalling(listStepsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListStepsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListStepsResultJsonUnmarshaller();
             JsonResponseHandler<ListStepsResult> responseHandler =
                 new JsonResponseHandler<ListStepsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -500,19 +505,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddJobFlowStepsRequestMarshaller().marshall(addJobFlowStepsRequest);
+                request = new AddJobFlowStepsRequestMarshaller().marshall(super.beforeMarshalling(addJobFlowStepsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddJobFlowStepsResult, JsonUnmarshallerContext> unmarshaller =
                 new AddJobFlowStepsResultJsonUnmarshaller();
             JsonResponseHandler<AddJobFlowStepsResult> responseHandler =
                 new JsonResponseHandler<AddJobFlowStepsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -552,19 +558,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStepRequestMarshaller().marshall(describeStepRequest);
+                request = new DescribeStepRequestMarshaller().marshall(super.beforeMarshalling(describeStepRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeStepResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeStepResultJsonUnmarshaller();
             JsonResponseHandler<DescribeStepResult> responseHandler =
                 new JsonResponseHandler<DescribeStepResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -609,19 +616,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClustersRequestMarshaller().marshall(listClustersRequest);
+                request = new ListClustersRequestMarshaller().marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListClustersResult, JsonUnmarshallerContext> unmarshaller =
                 new ListClustersResultJsonUnmarshaller();
             JsonResponseHandler<ListClustersResult> responseHandler =
                 new JsonResponseHandler<ListClustersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -669,19 +677,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller().marshall(removeTagsRequest);
+                request = new RemoveTagsRequestMarshaller().marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RemoveTagsResult, JsonUnmarshallerContext> unmarshaller =
                 new RemoveTagsResultJsonUnmarshaller();
             JsonResponseHandler<RemoveTagsResult> responseHandler =
                 new JsonResponseHandler<RemoveTagsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -723,19 +732,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListInstanceGroupsRequestMarshaller().marshall(listInstanceGroupsRequest);
+                request = new ListInstanceGroupsRequestMarshaller().marshall(super.beforeMarshalling(listInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListInstanceGroupsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListInstanceGroupsResultJsonUnmarshaller();
             JsonResponseHandler<ListInstanceGroupsResult> responseHandler =
                 new JsonResponseHandler<ListInstanceGroupsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -775,14 +785,16 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyInstanceGroupsRequestMarshaller().marshall(modifyInstanceGroupsRequest);
+                request = new ModifyInstanceGroupsRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -825,19 +837,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListInstancesRequestMarshaller().marshall(listInstancesRequest);
+                request = new ListInstancesRequestMarshaller().marshall(super.beforeMarshalling(listInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListInstancesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListInstancesResultJsonUnmarshaller();
             JsonResponseHandler<ListInstancesResult> responseHandler =
                 new JsonResponseHandler<ListInstancesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -877,19 +890,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddInstanceGroupsRequestMarshaller().marshall(addInstanceGroupsRequest);
+                request = new AddInstanceGroupsRequestMarshaller().marshall(super.beforeMarshalling(addInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddInstanceGroupsResult, JsonUnmarshallerContext> unmarshaller =
                 new AddInstanceGroupsResultJsonUnmarshaller();
             JsonResponseHandler<AddInstanceGroupsResult> responseHandler =
                 new JsonResponseHandler<AddInstanceGroupsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -937,14 +951,16 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TerminateJobFlowsRequestMarshaller().marshall(terminateJobFlowsRequest);
+                request = new TerminateJobFlowsRequestMarshaller().marshall(super.beforeMarshalling(terminateJobFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1003,14 +1019,16 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTerminationProtectionRequestMarshaller().marshall(setTerminationProtectionRequest);
+                request = new SetTerminationProtectionRequestMarshaller().marshall(super.beforeMarshalling(setTerminationProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1078,19 +1096,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeJobFlowsRequestMarshaller().marshall(describeJobFlowsRequest);
+                request = new DescribeJobFlowsRequestMarshaller().marshall(super.beforeMarshalling(describeJobFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeJobFlowsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeJobFlowsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeJobFlowsResult> responseHandler =
                 new JsonResponseHandler<DescribeJobFlowsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1159,19 +1178,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RunJobFlowRequestMarshaller().marshall(runJobFlowRequest);
+                request = new RunJobFlowRequestMarshaller().marshall(super.beforeMarshalling(runJobFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RunJobFlowResult, JsonUnmarshallerContext> unmarshaller =
                 new RunJobFlowResultJsonUnmarshaller();
             JsonResponseHandler<RunJobFlowResult> responseHandler =
                 new JsonResponseHandler<RunJobFlowResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1214,19 +1234,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterRequestMarshaller().marshall(describeClusterRequest);
+                request = new DescribeClusterRequestMarshaller().marshall(super.beforeMarshalling(describeClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeClusterResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeClusterResultJsonUnmarshaller();
             JsonResponseHandler<DescribeClusterResult> responseHandler =
                 new JsonResponseHandler<DescribeClusterResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

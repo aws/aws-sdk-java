@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the properties of a table.
  * </p>
  */
-public class TableDescription implements Serializable {
+public class TableDescription implements Serializable, Cloneable {
 
     /**
      * An array of <i>AttributeDefinition</i> objects. Each of these objects
@@ -1567,5 +1567,19 @@ public class TableDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public TableDescription clone() {
+        try {
+            return (TableDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpcClassicLinkRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcClassicLink(DescribeVpcClassicLinkRequest)
  */
-public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpcClassicLinkRequest> {
+public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVpcClassicLinkRequest> {
 
     /**
      * One or more VPCs for which you want to describe the ClassicLink
@@ -375,5 +375,11 @@ public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeVpcClassicLinkRequest clone() {
+        
+            return (DescribeVpcClassicLinkRequest) super.clone();
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#updateIdentityPool(UpdateIdentityPoolRequest)
  */
-public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -449,5 +449,11 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public UpdateIdentityPoolRequest clone() {
+        
+            return (UpdateIdentityPoolRequest) super.clone();
+    }
+
 }
     

@@ -54,7 +54,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#addEventSource(AddEventSourceRequest)
  */
-public class AddEventSourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddEventSourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is
@@ -453,5 +453,11 @@ public class AddEventSourceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public AddEventSourceRequest clone() {
+        
+            return (AddEventSourceRequest) super.clone();
+    }
+
 }
     

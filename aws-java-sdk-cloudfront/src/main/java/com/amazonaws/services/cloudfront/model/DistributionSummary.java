@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A summary of the information for an Amazon CloudFront distribution.
  * </p>
  */
-public class DistributionSummary implements Serializable {
+public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -800,5 +800,19 @@ public class DistributionSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public DistributionSummary clone() {
+        try {
+            return (DistributionSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

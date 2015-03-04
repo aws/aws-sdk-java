@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ImportInstanceLaunchSpecification implements Serializable {
+public class ImportInstanceLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * The architecture of the instance.
@@ -899,5 +899,19 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         return true;
     }
     
+    @Override
+    public ImportInstanceLaunchSpecification clone() {
+        try {
+            return (ImportInstanceLaunchSpecification) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

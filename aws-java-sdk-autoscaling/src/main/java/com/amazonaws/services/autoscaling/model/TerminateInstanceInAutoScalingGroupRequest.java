@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest)
  */
-public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the EC2 instance.
@@ -186,5 +186,11 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
         return true;
     }
     
+    @Override
+    public TerminateInstanceInAutoScalingGroupRequest clone() {
+        
+            return (TerminateInstanceInAutoScalingGroupRequest) super.clone();
+    }
+
 }
     

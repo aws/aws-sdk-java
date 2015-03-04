@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a list applications operation.
  * </p>
  */
-public class ListApplicationsResult implements Serializable {
+public class ListApplicationsResult implements Serializable, Cloneable {
 
     /**
      * A list of application names.
@@ -198,5 +198,19 @@ public class ListApplicationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListApplicationsResult clone() {
+        try {
+            return (ListApplicationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

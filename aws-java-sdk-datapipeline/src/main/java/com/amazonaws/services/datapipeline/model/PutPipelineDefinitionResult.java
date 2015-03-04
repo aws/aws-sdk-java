@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output of the PutPipelineDefinition action.
  * </p>
  */
-public class PutPipelineDefinitionResult implements Serializable {
+public class PutPipelineDefinitionResult implements Serializable, Cloneable {
 
     /**
      * A list of the validation errors that are associated with the objects
@@ -308,5 +308,19 @@ public class PutPipelineDefinitionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public PutPipelineDefinitionResult clone() {
+        try {
+            return (PutPipelineDefinitionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

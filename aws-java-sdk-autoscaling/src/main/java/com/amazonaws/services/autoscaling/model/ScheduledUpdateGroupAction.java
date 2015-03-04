@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a scheduled update to an Auto Scaling group.
  * </p>
  */
-public class ScheduledUpdateGroupAction implements Serializable {
+public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * The name of the group.
@@ -584,5 +584,19 @@ public class ScheduledUpdateGroupAction implements Serializable {
         return true;
     }
     
+    @Override
+    public ScheduledUpdateGroupAction clone() {
+        try {
+            return (ScheduledUpdateGroupAction) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

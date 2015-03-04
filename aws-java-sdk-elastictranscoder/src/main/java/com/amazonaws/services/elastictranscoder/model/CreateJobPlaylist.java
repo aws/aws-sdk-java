@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about the master playlist.
  * </p>
  */
-public class CreateJobPlaylist implements Serializable {
+public class CreateJobPlaylist implements Serializable, Cloneable {
 
     /**
      * The name that you want Elastic Transcoder to assign to the master
@@ -643,5 +643,19 @@ public class CreateJobPlaylist implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateJobPlaylist clone() {
+        try {
+            return (CreateJobPlaylist) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

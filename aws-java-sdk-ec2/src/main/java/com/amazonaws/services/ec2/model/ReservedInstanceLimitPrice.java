@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the limit price of a Reserved Instance offering.
  * </p>
  */
-public class ReservedInstanceLimitPrice implements Serializable {
+public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
 
     /**
      * Used for Reserved Instance Marketplace offerings. Specifies the limit
@@ -212,5 +212,19 @@ public class ReservedInstanceLimitPrice implements Serializable {
         return true;
     }
     
+    @Override
+    public ReservedInstanceLimitPrice clone() {
+        try {
+            return (ReservedInstanceLimitPrice) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

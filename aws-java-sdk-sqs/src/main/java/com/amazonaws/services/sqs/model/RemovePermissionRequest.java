@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest)
  */
-public class RemovePermissionRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemovePermissionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -176,5 +176,11 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public RemovePermissionRequest clone() {
+        
+            return (RemovePermissionRequest) super.clone();
+    }
+
 }
     

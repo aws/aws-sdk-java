@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about a deployment configuration.
  * </p>
  */
-public class DeploymentConfigInfo implements Serializable {
+public class DeploymentConfigInfo implements Serializable, Cloneable {
 
     /**
      * The deployment configuration ID.
@@ -245,5 +245,19 @@ public class DeploymentConfigInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public DeploymentConfigInfo clone() {
+        try {
+            return (DeploymentConfigInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

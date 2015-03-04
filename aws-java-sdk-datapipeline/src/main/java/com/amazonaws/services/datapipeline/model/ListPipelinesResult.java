@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the ListPipelines action.
  * </p>
  */
-public class ListPipelinesResult implements Serializable {
+public class ListPipelinesResult implements Serializable, Cloneable {
 
     /**
      * A list of all the pipeline identifiers that your account has
@@ -294,5 +294,19 @@ public class ListPipelinesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListPipelinesResult clone() {
+        try {
+            return (ListPipelinesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

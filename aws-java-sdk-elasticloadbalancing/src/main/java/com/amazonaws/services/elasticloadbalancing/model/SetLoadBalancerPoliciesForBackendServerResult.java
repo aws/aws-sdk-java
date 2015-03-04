@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the SetLoadBalancerPoliciesForBackendServer action.
  * </p>
  */
-public class SetLoadBalancerPoliciesForBackendServerResult implements Serializable {
+public class SetLoadBalancerPoliciesForBackendServerResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class SetLoadBalancerPoliciesForBackendServerResult implements Serializab
         return true;
     }
     
+    @Override
+    public SetLoadBalancerPoliciesForBackendServerResult clone() {
+        try {
+            return (SetLoadBalancerPoliciesForBackendServerResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

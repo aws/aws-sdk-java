@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an instance's RAID array.
  * </p>
  */
-public class RaidArray implements Serializable {
+public class RaidArray implements Serializable, Cloneable {
 
     /**
      * The array ID.
@@ -625,5 +625,19 @@ public class RaidArray implements Serializable {
         return true;
     }
     
+    @Override
+    public RaidArray clone() {
+        try {
+            return (RaidArray) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

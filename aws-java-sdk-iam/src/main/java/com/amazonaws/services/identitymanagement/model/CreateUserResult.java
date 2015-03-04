@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful CreateUser request.
  * </p>
  */
-public class CreateUserResult implements Serializable {
+public class CreateUserResult implements Serializable, Cloneable {
 
     /**
      * Information about the user.
@@ -100,5 +100,19 @@ public class CreateUserResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateUserResult clone() {
+        try {
+            return (CreateUserResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

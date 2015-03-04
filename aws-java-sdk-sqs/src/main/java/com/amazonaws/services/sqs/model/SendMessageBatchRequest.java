@@ -63,7 +63,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#sendMessageBatch(SendMessageBatchRequest)
  */
-public class SendMessageBatchRequest extends AmazonWebServiceRequest implements Serializable {
+public class SendMessageBatchRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -249,5 +249,11 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public SendMessageBatchRequest clone() {
+        
+            return (SendMessageBatchRequest) super.clone();
+    }
+
 }
     

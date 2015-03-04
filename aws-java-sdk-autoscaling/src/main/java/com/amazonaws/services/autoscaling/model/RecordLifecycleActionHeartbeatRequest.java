@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#recordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest)
  */
-public class RecordLifecycleActionHeartbeatRequest extends AmazonWebServiceRequest implements Serializable {
+public class RecordLifecycleActionHeartbeatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the lifecycle hook.
@@ -267,5 +267,11 @@ public class RecordLifecycleActionHeartbeatRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public RecordLifecycleActionHeartbeatRequest clone() {
+        
+            return (RecordLifecycleActionHeartbeatRequest) super.clone();
+    }
+
 }
     

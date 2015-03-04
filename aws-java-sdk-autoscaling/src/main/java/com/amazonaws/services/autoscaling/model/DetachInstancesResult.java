@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DetachInstancesResult implements Serializable {
+public class DetachInstancesResult implements Serializable, Cloneable {
 
     /**
      * The activities related to detaching the instances from the Auto
@@ -142,5 +142,19 @@ public class DetachInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DetachInstancesResult clone() {
+        try {
+            return (DetachInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

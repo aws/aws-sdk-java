@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateRouteTableResult implements Serializable {
+public class CreateRouteTableResult implements Serializable, Cloneable {
 
     /**
      * Information about the route table.
@@ -98,5 +98,19 @@ public class CreateRouteTableResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateRouteTableResult clone() {
+        try {
+            return (CreateRouteTableResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

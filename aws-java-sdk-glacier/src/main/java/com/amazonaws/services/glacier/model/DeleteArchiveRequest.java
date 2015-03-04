@@ -57,7 +57,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#deleteArchive(DeleteArchiveRequest)
  */
-public class DeleteArchiveRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteArchiveRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -286,5 +286,11 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DeleteArchiveRequest clone() {
+        
+            return (DeleteArchiveRequest) super.clone();
+    }
+
 }
     

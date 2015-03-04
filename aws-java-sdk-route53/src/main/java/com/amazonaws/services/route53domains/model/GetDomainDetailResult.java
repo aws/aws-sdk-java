@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The GetDomainDetail response includes the following elements.
  * </p>
  */
-public class GetDomainDetailResult implements Serializable {
+public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String
@@ -1535,5 +1535,19 @@ public class GetDomainDetailResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetDomainDetailResult clone() {
+        try {
+            return (GetDomainDetailResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

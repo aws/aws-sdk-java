@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of available AWS Elastic Beanstalk solution stacks.
  * </p>
  */
-public class ListAvailableSolutionStacksResult implements Serializable {
+public class ListAvailableSolutionStacksResult implements Serializable, Cloneable {
 
     /**
      * A list of available solution stacks.
@@ -221,5 +221,19 @@ public class ListAvailableSolutionStacksResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListAvailableSolutionStacksResult clone() {
+        try {
+            return (ListAvailableSolutionStacksResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

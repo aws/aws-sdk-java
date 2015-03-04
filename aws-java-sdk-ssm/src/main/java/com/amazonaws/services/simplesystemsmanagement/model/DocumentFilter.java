@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a filter.
  * </p>
  */
-public class DocumentFilter implements Serializable {
+public class DocumentFilter implements Serializable, Cloneable {
 
     /**
      * The name of the filter.
@@ -206,5 +206,19 @@ public class DocumentFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public DocumentFilter clone() {
+        try {
+            return (DocumentFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

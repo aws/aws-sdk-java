@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest)
  */
-public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An email address to be removed from the list of verified addresses.
@@ -114,5 +114,11 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DeleteVerifiedEmailAddressRequest clone() {
+        
+            return (DeleteVerifiedEmailAddressRequest) super.clone();
+    }
+
 }
     

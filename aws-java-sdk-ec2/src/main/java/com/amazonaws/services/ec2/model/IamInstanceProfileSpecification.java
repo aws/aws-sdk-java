@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an IAM instance profile.
  * </p>
  */
-public class IamInstanceProfileSpecification implements Serializable {
+public class IamInstanceProfileSpecification implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the instance profile.
@@ -142,5 +142,19 @@ public class IamInstanceProfileSpecification implements Serializable {
         return true;
     }
     
+    @Override
+    public IamInstanceProfileSpecification clone() {
+        try {
+            return (IamInstanceProfileSpecification) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeMyUserProfile</code> request.
  * </p>
  */
-public class DescribeMyUserProfileResult implements Serializable {
+public class DescribeMyUserProfileResult implements Serializable, Cloneable {
 
     /**
      * A <code>UserProfile</code> object that describes the user's SSH
@@ -107,5 +107,19 @@ public class DescribeMyUserProfileResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeMyUserProfileResult clone() {
+        try {
+            return (DescribeMyUserProfileResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

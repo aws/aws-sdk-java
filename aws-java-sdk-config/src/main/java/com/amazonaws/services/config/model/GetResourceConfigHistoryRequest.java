@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#getResourceConfigHistory(GetResourceConfigHistoryRequest)
  */
-public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The resource type.
@@ -523,5 +523,11 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public GetResourceConfigHistoryRequest clone() {
+        
+            return (GetResourceConfigHistoryRequest) super.clone();
+    }
+
 }
     

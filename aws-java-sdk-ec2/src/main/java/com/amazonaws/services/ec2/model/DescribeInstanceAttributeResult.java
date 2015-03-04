@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeInstanceAttributeResult implements Serializable {
+public class DescribeInstanceAttributeResult implements Serializable, Cloneable {
 
     /**
      * 
@@ -98,5 +98,19 @@ public class DescribeInstanceAttributeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeInstanceAttributeResult clone() {
+        try {
+            return (DescribeInstanceAttributeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

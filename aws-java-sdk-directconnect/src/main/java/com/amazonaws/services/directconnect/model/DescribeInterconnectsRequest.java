@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeInterconnects(DescribeInterconnectsRequest)
  */
-public class DescribeInterconnectsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeInterconnectsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the interconnect. <p>Example: dxcon-abc123
@@ -109,5 +109,11 @@ public class DescribeInterconnectsRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeInterconnectsRequest clone() {
+        
+            return (DescribeInterconnectsRequest) super.clone();
+    }
+
 }
     

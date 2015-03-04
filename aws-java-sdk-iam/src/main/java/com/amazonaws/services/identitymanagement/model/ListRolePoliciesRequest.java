@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRolePolicies(ListRolePoliciesRequest)
  */
-public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the role to list policies for.
@@ -296,5 +296,11 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ListRolePoliciesRequest clone() {
+        
+            return (ListRolePoliciesRequest) super.clone();
+    }
+
 }
     

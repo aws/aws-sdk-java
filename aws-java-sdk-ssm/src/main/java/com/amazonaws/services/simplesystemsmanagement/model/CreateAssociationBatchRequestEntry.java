@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the association of a configuration document and an instance.
  * </p>
  */
-public class CreateAssociationBatchRequestEntry implements Serializable {
+public class CreateAssociationBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -174,5 +174,19 @@ public class CreateAssociationBatchRequestEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateAssociationBatchRequestEntry clone() {
+        try {
+            return (CreateAssociationBatchRequestEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

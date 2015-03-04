@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The CheckDomainAvailability response includes the following elements.
  * </p>
  */
-public class CheckDomainAvailabilityResult implements Serializable {
+public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
 
     /**
      * Whether the domain name is available for registering. <note> <p>You
@@ -284,5 +284,19 @@ public class CheckDomainAvailabilityResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CheckDomainAvailabilityResult clone() {
+        try {
+            return (CheckDomainAvailabilityResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

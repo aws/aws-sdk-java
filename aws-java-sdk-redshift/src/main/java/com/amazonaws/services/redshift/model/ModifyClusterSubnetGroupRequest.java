@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest)
  */
-public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the subnet group to be modified.
@@ -235,5 +235,11 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ModifyClusterSubnetGroupRequest clone() {
+        
+            return (ModifyClusterSubnetGroupRequest) super.clone();
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DecryptResult implements Serializable {
+public class DecryptResult implements Serializable, Cloneable {
 
     /**
      * Unique identifier created by the system for the key. This value is
@@ -192,5 +192,19 @@ public class DecryptResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DecryptResult clone() {
+        try {
+            return (DecryptResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

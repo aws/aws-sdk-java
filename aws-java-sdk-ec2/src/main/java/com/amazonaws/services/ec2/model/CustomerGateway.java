@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a customer gateway.
  * </p>
  */
-public class CustomerGateway implements Serializable {
+public class CustomerGateway implements Serializable, Cloneable {
 
     /**
      * The ID of the customer gateway.
@@ -373,5 +373,19 @@ public class CustomerGateway implements Serializable {
         return true;
     }
     
+    @Override
+    public CustomerGateway clone() {
+        try {
+            return (CustomerGateway) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -44,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest)
  */
-public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identity for which to set bounce and complaint notification
@@ -251,5 +251,11 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServic
         return true;
     }
     
+    @Override
+    public SetIdentityFeedbackForwardingEnabledRequest clone() {
+        
+            return (SetIdentityFeedbackForwardingEnabledRequest) super.clone();
+    }
+
 }
     

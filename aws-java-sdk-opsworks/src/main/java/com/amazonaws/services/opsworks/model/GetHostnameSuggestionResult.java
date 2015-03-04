@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>GetHostnameSuggestion</code> request.
  * </p>
  */
-public class GetHostnameSuggestionResult implements Serializable {
+public class GetHostnameSuggestionResult implements Serializable, Cloneable {
 
     /**
      * The layer ID.
@@ -142,5 +142,19 @@ public class GetHostnameSuggestionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetHostnameSuggestionResult clone() {
+        try {
+            return (GetHostnameSuggestionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

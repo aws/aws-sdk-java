@@ -26,7 +26,7 @@ import java.io.Serializable;
  * which preset you want to use when you create a job.
  * </p>
  */
-public class Preset implements Serializable {
+public class Preset implements Serializable, Cloneable {
 
     /**
      * Identifier for the new preset. You use this value to get settings for
@@ -557,5 +557,19 @@ public class Preset implements Serializable {
         return true;
     }
     
+    @Override
+    public Preset clone() {
+        try {
+            return (Preset) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

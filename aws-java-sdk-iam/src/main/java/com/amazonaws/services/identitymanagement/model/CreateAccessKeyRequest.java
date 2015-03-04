@@ -48,7 +48,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccessKey(CreateAccessKeyRequest)
  */
-public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The user name that the new key will belong to.
@@ -160,5 +160,11 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public CreateAccessKeyRequest clone() {
+        
+            return (CreateAccessKeyRequest) super.clone();
+    }
+
 }
     

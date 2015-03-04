@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeContainerInstancesResult implements Serializable {
+public class DescribeContainerInstancesResult implements Serializable, Cloneable {
 
     /**
      * The list of container instances.
@@ -210,5 +210,19 @@ public class DescribeContainerInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeContainerInstancesResult clone() {
+        try {
+            return (DescribeContainerInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

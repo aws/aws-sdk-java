@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplication(CreateApplicationRequest)
  */
-public class CreateApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application. <p> Constraint: This name must be unique
@@ -206,5 +206,11 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CreateApplicationRequest clone() {
+        
+            return (CreateApplicationRequest) super.clone();
+    }
+
 }
     

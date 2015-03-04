@@ -22,7 +22,7 @@ import java.io.Serializable;
  * <code>DescribeLoadBalancerAttributesResult</code> .
  * </p>
  */
-public class DescribeLoadBalancerAttributesResult implements Serializable {
+public class DescribeLoadBalancerAttributesResult implements Serializable, Cloneable {
 
     /**
      * The load balancer attributes structure.
@@ -101,5 +101,19 @@ public class DescribeLoadBalancerAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLoadBalancerAttributesResult clone() {
+        try {
+            return (DescribeLoadBalancerAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

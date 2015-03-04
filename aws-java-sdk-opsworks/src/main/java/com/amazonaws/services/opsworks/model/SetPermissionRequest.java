@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#setPermission(SetPermissionRequest)
  */
-public class SetPermissionRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetPermissionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -350,5 +350,11 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public SetPermissionRequest clone() {
+        
+            return (SetPermissionRequest) super.clone();
+    }
+
 }
     

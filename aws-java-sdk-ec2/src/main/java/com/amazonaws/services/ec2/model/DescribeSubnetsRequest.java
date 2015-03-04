@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSubnetsRequestMarshall
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSubnets(DescribeSubnetsRequest)
  */
-public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSubnetsRequest> {
+public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSubnetsRequest> {
 
     /**
      * One or more subnet IDs. <p>Default: Describes all your subnets.
@@ -488,5 +488,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DescribeSubnetsRequest clone() {
+        
+            return (DescribeSubnetsRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class DescribeTimeBasedAutoScalingResult implements Serializable {
+public class DescribeTimeBasedAutoScalingResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>TimeBasedAutoScalingConfiguration</code> objects
@@ -145,5 +145,19 @@ public class DescribeTimeBasedAutoScalingResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTimeBasedAutoScalingResult clone() {
+        try {
+            return (DescribeTimeBasedAutoScalingResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

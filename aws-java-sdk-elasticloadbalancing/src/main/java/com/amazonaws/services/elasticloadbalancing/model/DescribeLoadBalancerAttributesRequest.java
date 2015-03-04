@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest)
  */
-public class DescribeLoadBalancerAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLoadBalancerAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer.
@@ -106,5 +106,11 @@ public class DescribeLoadBalancerAttributesRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public DescribeLoadBalancerAttributesRequest clone() {
+        
+            return (DescribeLoadBalancerAttributesRequest) super.clone();
+    }
+
 }
     

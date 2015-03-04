@@ -25,7 +25,7 @@ import java.io.Serializable;
  * notifications.
  * </p>
  */
-public class IdentityNotificationAttributes implements Serializable {
+public class IdentityNotificationAttributes implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
@@ -305,5 +305,19 @@ public class IdentityNotificationAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public IdentityNotificationAttributes clone() {
+        try {
+            return (IdentityNotificationAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

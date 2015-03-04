@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest)
  */
-public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
@@ -157,5 +157,11 @@ public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public CreatePrivateVirtualInterfaceRequest clone() {
+        
+            return (CreatePrivateVirtualInterfaceRequest) super.clone();
+    }
+
 }
     

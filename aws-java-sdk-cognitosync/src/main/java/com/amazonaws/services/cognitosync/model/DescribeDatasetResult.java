@@ -21,10 +21,10 @@ import java.io.Serializable;
  * Response to a successful DescribeDataset request.
  * </p>
  */
-public class DescribeDatasetResult implements Serializable {
+public class DescribeDatasetResult implements Serializable, Cloneable {
 
     /**
-     * Metadata for a collection of data for an identity. An identity can
+     * Meta data for a collection of data for an identity. An identity can
      * have multiple datasets. A dataset can be general or associated with a
      * particular entity in an application (like a saved game). Datasets are
      * automatically created if they don't exist. Data is synced by dataset,
@@ -33,13 +33,13 @@ public class DescribeDatasetResult implements Serializable {
     private Dataset dataset;
 
     /**
-     * Metadata for a collection of data for an identity. An identity can
+     * Meta data for a collection of data for an identity. An identity can
      * have multiple datasets. A dataset can be general or associated with a
      * particular entity in an application (like a saved game). Datasets are
      * automatically created if they don't exist. Data is synced by dataset,
      * and a dataset can hold up to 1MB of key-value pairs.
      *
-     * @return Metadata for a collection of data for an identity. An identity can
+     * @return Meta data for a collection of data for an identity. An identity can
      *         have multiple datasets. A dataset can be general or associated with a
      *         particular entity in an application (like a saved game). Datasets are
      *         automatically created if they don't exist. Data is synced by dataset,
@@ -50,13 +50,13 @@ public class DescribeDatasetResult implements Serializable {
     }
     
     /**
-     * Metadata for a collection of data for an identity. An identity can
+     * Meta data for a collection of data for an identity. An identity can
      * have multiple datasets. A dataset can be general or associated with a
      * particular entity in an application (like a saved game). Datasets are
      * automatically created if they don't exist. Data is synced by dataset,
      * and a dataset can hold up to 1MB of key-value pairs.
      *
-     * @param dataset Metadata for a collection of data for an identity. An identity can
+     * @param dataset Meta data for a collection of data for an identity. An identity can
      *         have multiple datasets. A dataset can be general or associated with a
      *         particular entity in an application (like a saved game). Datasets are
      *         automatically created if they don't exist. Data is synced by dataset,
@@ -67,7 +67,7 @@ public class DescribeDatasetResult implements Serializable {
     }
     
     /**
-     * Metadata for a collection of data for an identity. An identity can
+     * Meta data for a collection of data for an identity. An identity can
      * have multiple datasets. A dataset can be general or associated with a
      * particular entity in an application (like a saved game). Datasets are
      * automatically created if they don't exist. Data is synced by dataset,
@@ -75,7 +75,7 @@ public class DescribeDatasetResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dataset Metadata for a collection of data for an identity. An identity can
+     * @param dataset Meta data for a collection of data for an identity. An identity can
      *         have multiple datasets. A dataset can be general or associated with a
      *         particular entity in an application (like a saved game). Datasets are
      *         automatically created if they don't exist. Data is synced by dataset,
@@ -128,5 +128,19 @@ public class DescribeDatasetResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDatasetResult clone() {
+        try {
+            return (DescribeDatasetResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

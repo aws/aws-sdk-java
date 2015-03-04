@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest)
  */
-public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cluster parameter group family.
@@ -272,5 +272,11 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
         return true;
     }
     
+    @Override
+    public DescribeDefaultClusterParametersRequest clone() {
+        
+            return (DescribeDefaultClusterParametersRequest) super.clone();
+    }
+
 }
     

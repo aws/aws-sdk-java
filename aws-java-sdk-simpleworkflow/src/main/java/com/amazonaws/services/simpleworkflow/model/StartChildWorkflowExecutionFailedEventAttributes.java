@@ -22,7 +22,7 @@ import java.io.Serializable;
  * event.
  * </p>
  */
-public class StartChildWorkflowExecutionFailedEventAttributes implements Serializable {
+public class StartChildWorkflowExecutionFailedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The workflow type provided in the
@@ -499,5 +499,19 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
         return true;
     }
     
+    @Override
+    public StartChildWorkflowExecutionFailedEventAttributes clone() {
+        try {
+            return (StartChildWorkflowExecutionFailedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -59,7 +59,7 @@ import com.amazonaws.services.ec2.model.transform.CreateSubnetRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSubnet(CreateSubnetRequest)
  */
-public class CreateSubnetRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSubnetRequest> {
+public class CreateSubnetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateSubnetRequest> {
 
     /**
      * The ID of the VPC.
@@ -268,5 +268,11 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CreateSubnetRequest clone() {
+        
+            return (CreateSubnetRequest) super.clone();
+    }
+
 }
     

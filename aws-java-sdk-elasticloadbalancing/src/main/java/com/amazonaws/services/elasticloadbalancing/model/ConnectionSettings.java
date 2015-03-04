@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>ConnectionSettings</code> data type.
  * </p>
  */
-public class ConnectionSettings implements Serializable {
+public class ConnectionSettings implements Serializable, Cloneable {
 
     /**
      * Specifies the time (in seconds) the connection is allowed to be idle
@@ -126,5 +126,19 @@ public class ConnectionSettings implements Serializable {
         return true;
     }
     
+    @Override
+    public ConnectionSettings clone() {
+        try {
+            return (ConnectionSettings) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

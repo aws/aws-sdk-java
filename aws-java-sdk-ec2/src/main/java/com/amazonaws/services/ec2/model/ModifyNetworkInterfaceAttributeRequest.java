@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.ModifyNetworkInterfaceAttribut
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest)
  */
-public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ModifyNetworkInterfaceAttributeRequest> {
+public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyNetworkInterfaceAttributeRequest> {
 
     /**
      * The ID of the network interface.
@@ -418,5 +418,11 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public ModifyNetworkInterfaceAttributeRequest clone() {
+        
+            return (ModifyNetworkInterfaceAttributeRequest) super.clone();
+    }
+
 }
     

@@ -116,7 +116,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstanceStatusRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstanceStatus(DescribeInstanceStatusRequest)
  */
-public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeInstanceStatusRequest> {
+public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeInstanceStatusRequest> {
 
     /**
      * One or more instance IDs. <p>Default: Describes all your instances.
@@ -824,5 +824,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeInstanceStatusRequest clone() {
+        
+            return (DescribeInstanceStatusRequest) super.clone();
+    }
+
 }
     

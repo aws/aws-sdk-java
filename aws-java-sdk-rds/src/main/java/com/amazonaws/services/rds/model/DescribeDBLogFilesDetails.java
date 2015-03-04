@@ -21,7 +21,7 @@ import java.io.Serializable;
  * This data type is used as a response element to DescribeDBLogFiles.
  * </p>
  */
-public class DescribeDBLogFilesDetails implements Serializable {
+public class DescribeDBLogFilesDetails implements Serializable, Cloneable {
 
     /**
      * The name of the log file for the specified DB instance.
@@ -184,5 +184,19 @@ public class DescribeDBLogFilesDetails implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDBLogFilesDetails clone() {
+        try {
+            return (DescribeDBLogFilesDetails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

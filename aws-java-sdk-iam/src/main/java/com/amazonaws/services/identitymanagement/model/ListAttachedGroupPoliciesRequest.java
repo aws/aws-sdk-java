@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAttachedGroupPolicies(ListAttachedGroupPoliciesRequest)
  */
-public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the group to list attached
@@ -372,5 +372,11 @@ public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public ListAttachedGroupPoliciesRequest clone() {
+        
+            return (ListAttachedGroupPoliciesRequest) super.clone();
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteTableRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createRouteTable(CreateRouteTableRequest)
  */
-public class CreateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateRouteTableRequest> {
+public class CreateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateRouteTableRequest> {
 
     /**
      * The ID of the VPC.
@@ -125,5 +125,11 @@ public class CreateRouteTableRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateRouteTableRequest clone() {
+        
+            return (CreateRouteTableRequest) super.clone();
+    }
+
 }
     

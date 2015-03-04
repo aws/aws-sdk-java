@@ -39,7 +39,7 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteTableAssociationRe
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest)
  */
-public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceRouteTableAssociationRequest> {
+public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ReplaceRouteTableAssociationRequest> {
 
     /**
      * The association ID.
@@ -172,5 +172,11 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public ReplaceRouteTableAssociationRequest clone() {
+        
+            return (ReplaceRouteTableAssociationRequest) super.clone();
+    }
+
 }
     

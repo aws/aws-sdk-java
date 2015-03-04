@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityDkimEnabled(SetIdentityDkimEnabledRequest)
  */
-public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identity for which DKIM signing should be enabled or disabled.
@@ -198,5 +198,11 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public SetIdentityDkimEnabledRequest clone() {
+        
+            return (SetIdentityDkimEnabledRequest) super.clone();
+    }
+
 }
     

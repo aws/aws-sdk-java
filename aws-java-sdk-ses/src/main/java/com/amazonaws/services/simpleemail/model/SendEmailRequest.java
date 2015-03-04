@@ -52,7 +52,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendEmail(SendEmailRequest)
  */
-public class SendEmailRequest extends AmazonWebServiceRequest implements Serializable {
+public class SendEmailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identity's email address. <p> By default, the string must be 7-bit
@@ -433,5 +433,11 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public SendEmailRequest clone() {
+        
+            return (SendEmailRequest) super.clone();
+    }
+
 }
     

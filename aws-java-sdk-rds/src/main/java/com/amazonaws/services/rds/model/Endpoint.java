@@ -29,7 +29,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Endpoint implements Serializable {
+public class Endpoint implements Serializable, Cloneable {
 
     /**
      * Specifies the DNS address of the DB instance.
@@ -156,5 +156,19 @@ public class Endpoint implements Serializable {
         return true;
     }
     
+    @Override
+    public Endpoint clone() {
+        try {
+            return (Endpoint) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -23,7 +23,7 @@ import java.io.Serializable;
  * BatchResultErrorEntry tag if the message cannot be deleted.
  * </p>
  */
-public class DeleteMessageBatchResult implements Serializable {
+public class DeleteMessageBatchResult implements Serializable, Cloneable {
 
     /**
      * A list of <a>DeleteMessageBatchResultEntry</a> items.
@@ -214,5 +214,19 @@ public class DeleteMessageBatchResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteMessageBatchResult clone() {
+        try {
+            return (DeleteMessageBatchResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

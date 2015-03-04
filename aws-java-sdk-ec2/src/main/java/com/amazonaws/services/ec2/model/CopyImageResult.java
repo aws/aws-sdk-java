@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CopyImageResult implements Serializable {
+public class CopyImageResult implements Serializable, Cloneable {
 
     /**
      * The ID of the new AMI.
@@ -98,5 +98,19 @@ public class CopyImageResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CopyImageResult clone() {
+        try {
+            return (CopyImageResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

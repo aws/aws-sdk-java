@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest)
  */
-public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest implements Serializable {
+public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the hosted zone you want to associate your VPC with. <p>Note
@@ -234,5 +234,11 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public AssociateVPCWithHostedZoneRequest clone() {
+        
+            return (AssociateVPCWithHostedZoneRequest) super.clone();
+    }
+
 }
     

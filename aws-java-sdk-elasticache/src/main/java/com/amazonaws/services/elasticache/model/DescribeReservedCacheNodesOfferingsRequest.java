@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest)
  */
-public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The offering identifier filter value. Use this parameter to show only
@@ -39,7 +39,33 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
 
     /**
      * The cache node type filter value. Use this parameter to show only the
-     * available offerings matching the specified cache node type.
+     * available offerings matching the specified cache node type. <p>Valid
+     * node types are as follows: <ul> <li>General purpose: <ul> <li>Current
+     * generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     * <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
+     * <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code></li> <li>Previous generation:
+     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized:
+     * <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul>
+     * <li>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
+     * <li>Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * </ul></li> </ul> <p><b>Notes:</b> <ul> <li>All t2 instances are
+     * created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis
+     * backup/restore is not supported for t2 instances.</li> <li>Redis
+     * Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.</li> </ul> <p>For a complete listing of cache node types
+     * and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> or <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a>.
      */
     private String cacheNodeType;
 
@@ -133,10 +159,62 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
 
     /**
      * The cache node type filter value. Use this parameter to show only the
-     * available offerings matching the specified cache node type.
+     * available offerings matching the specified cache node type. <p>Valid
+     * node types are as follows: <ul> <li>General purpose: <ul> <li>Current
+     * generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     * <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
+     * <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code></li> <li>Previous generation:
+     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized:
+     * <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul>
+     * <li>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
+     * <li>Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * </ul></li> </ul> <p><b>Notes:</b> <ul> <li>All t2 instances are
+     * created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis
+     * backup/restore is not supported for t2 instances.</li> <li>Redis
+     * Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.</li> </ul> <p>For a complete listing of cache node types
+     * and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> or <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a>.
      *
      * @return The cache node type filter value. Use this parameter to show only the
-     *         available offerings matching the specified cache node type.
+     *         available offerings matching the specified cache node type. <p>Valid
+     *         node types are as follows: <ul> <li>General purpose: <ul> <li>Current
+     *         generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
+     *         <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     *         <code>cache.m3.2xlarge</code></li> <li>Previous generation:
+     *         <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     *         <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     *         <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized:
+     *         <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul>
+     *         <li>Current generation: <code>cache.r3.large</code>,
+     *         <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
+     *         <li>Previous generation: <code>cache.m2.xlarge</code>,
+     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *         </ul></li> </ul> <p><b>Notes:</b> <ul> <li>All t2 instances are
+     *         created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis
+     *         backup/restore is not supported for t2 instances.</li> <li>Redis
+     *         Append-only files (AOF) functionality is not supported for t1 or t2
+     *         instances.</li> </ul> <p>For a complete listing of cache node types
+     *         and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Memcached</a> or <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Redis</a>.
      */
     public String getCacheNodeType() {
         return cacheNodeType;
@@ -144,10 +222,62 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     /**
      * The cache node type filter value. Use this parameter to show only the
-     * available offerings matching the specified cache node type.
+     * available offerings matching the specified cache node type. <p>Valid
+     * node types are as follows: <ul> <li>General purpose: <ul> <li>Current
+     * generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     * <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
+     * <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code></li> <li>Previous generation:
+     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized:
+     * <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul>
+     * <li>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
+     * <li>Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * </ul></li> </ul> <p><b>Notes:</b> <ul> <li>All t2 instances are
+     * created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis
+     * backup/restore is not supported for t2 instances.</li> <li>Redis
+     * Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.</li> </ul> <p>For a complete listing of cache node types
+     * and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> or <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a>.
      *
      * @param cacheNodeType The cache node type filter value. Use this parameter to show only the
-     *         available offerings matching the specified cache node type.
+     *         available offerings matching the specified cache node type. <p>Valid
+     *         node types are as follows: <ul> <li>General purpose: <ul> <li>Current
+     *         generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
+     *         <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     *         <code>cache.m3.2xlarge</code></li> <li>Previous generation:
+     *         <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     *         <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     *         <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized:
+     *         <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul>
+     *         <li>Current generation: <code>cache.r3.large</code>,
+     *         <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
+     *         <li>Previous generation: <code>cache.m2.xlarge</code>,
+     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *         </ul></li> </ul> <p><b>Notes:</b> <ul> <li>All t2 instances are
+     *         created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis
+     *         backup/restore is not supported for t2 instances.</li> <li>Redis
+     *         Append-only files (AOF) functionality is not supported for t1 or t2
+     *         instances.</li> </ul> <p>For a complete listing of cache node types
+     *         and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Memcached</a> or <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Redis</a>.
      */
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
@@ -155,12 +285,64 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     /**
      * The cache node type filter value. Use this parameter to show only the
-     * available offerings matching the specified cache node type.
+     * available offerings matching the specified cache node type. <p>Valid
+     * node types are as follows: <ul> <li>General purpose: <ul> <li>Current
+     * generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     * <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
+     * <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code></li> <li>Previous generation:
+     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized:
+     * <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul>
+     * <li>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
+     * <li>Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * </ul></li> </ul> <p><b>Notes:</b> <ul> <li>All t2 instances are
+     * created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis
+     * backup/restore is not supported for t2 instances.</li> <li>Redis
+     * Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.</li> </ul> <p>For a complete listing of cache node types
+     * and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> or <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeType The cache node type filter value. Use this parameter to show only the
-     *         available offerings matching the specified cache node type.
+     *         available offerings matching the specified cache node type. <p>Valid
+     *         node types are as follows: <ul> <li>General purpose: <ul> <li>Current
+     *         generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
+     *         <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     *         <code>cache.m3.2xlarge</code></li> <li>Previous generation:
+     *         <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     *         <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     *         <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized:
+     *         <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul>
+     *         <li>Current generation: <code>cache.r3.large</code>,
+     *         <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
+     *         <li>Previous generation: <code>cache.m2.xlarge</code>,
+     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *         </ul></li> </ul> <p><b>Notes:</b> <ul> <li>All t2 instances are
+     *         created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis
+     *         backup/restore is not supported for t2 instances.</li> <li>Redis
+     *         Append-only files (AOF) functionality is not supported for t1 or t2
+     *         instances.</li> </ul> <p>For a complete listing of cache node types
+     *         and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Memcached</a> or <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Redis</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -470,5 +652,11 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
         return true;
     }
     
+    @Override
+    public DescribeReservedCacheNodesOfferingsRequest clone() {
+        
+            return (DescribeReservedCacheNodesOfferingsRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a DescribeCacheEngineVersions action.
  * </p>
  */
-public class DescribeCacheEngineVersionsResult implements Serializable {
+public class DescribeCacheEngineVersionsResult implements Serializable, Cloneable {
 
     /**
      * Provides an identifier to allow retrieval of paginated results.
@@ -186,5 +186,19 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeCacheEngineVersionsResult clone() {
+        try {
+            return (DescribeCacheEngineVersionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

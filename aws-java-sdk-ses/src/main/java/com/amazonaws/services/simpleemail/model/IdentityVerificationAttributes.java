@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the verification attributes of a single identity.
  * </p>
  */
-public class IdentityVerificationAttributes implements Serializable {
+public class IdentityVerificationAttributes implements Serializable, Cloneable {
 
     /**
      * The verification status of the identity: "Pending", "Success",
@@ -212,5 +212,19 @@ public class IdentityVerificationAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public IdentityVerificationAttributes clone() {
+        try {
+            return (IdentityVerificationAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -25,7 +25,7 @@ import java.io.Serializable;
  * Elastic Transcoder to use to encrypt your output files.
  * </p>
  */
-public class Encryption implements Serializable {
+public class Encryption implements Serializable, Cloneable {
 
     /**
      * The specific server-side encryption mode that you want Elastic
@@ -516,5 +516,19 @@ public class Encryption implements Serializable {
         return true;
     }
     
+    @Override
+    public Encryption clone() {
+        try {
+            return (Encryption) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#listDomains(ListDomainsRequest)
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDomainsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The maximum number of domain names you want returned. The range is 1
@@ -174,5 +174,11 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListDomainsRequest clone() {
+        
+            return (ListDomainsRequest) super.clone();
+    }
+
 }
     

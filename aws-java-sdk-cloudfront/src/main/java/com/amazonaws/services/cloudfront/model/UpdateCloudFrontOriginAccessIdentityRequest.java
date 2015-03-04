@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest)
  */
-public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identity's configuration information.
@@ -219,5 +219,11 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
         return true;
     }
     
+    @Override
+    public UpdateCloudFrontOriginAccessIdentityRequest clone() {
+        
+            return (UpdateCloudFrontOriginAccessIdentityRequest) super.clone();
+    }
+
 }
     

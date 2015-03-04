@@ -53,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityDkimAttributes(GetIdentityDkimAttributesRequest)
  */
-public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of one or more verified identities - email addresses, domains,
@@ -176,5 +176,11 @@ public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public GetIdentityDkimAttributesRequest clone() {
+        
+            return (GetIdentityDkimAttributesRequest) super.clone();
+    }
+
 }
     

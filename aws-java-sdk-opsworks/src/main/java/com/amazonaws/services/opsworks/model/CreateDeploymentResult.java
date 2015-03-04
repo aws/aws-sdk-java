@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateDeployment</code> request.
  * </p>
  */
-public class CreateDeploymentResult implements Serializable {
+public class CreateDeploymentResult implements Serializable, Cloneable {
 
     /**
      * The deployment ID, which can be used with other requests to identify
@@ -107,5 +107,19 @@ public class CreateDeploymentResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateDeploymentResult clone() {
+        try {
+            return (CreateDeploymentResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

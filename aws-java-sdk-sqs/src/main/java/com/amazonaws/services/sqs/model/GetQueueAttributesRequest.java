@@ -87,7 +87,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#getQueueAttributes(GetQueueAttributesRequest)
  */
-public class GetQueueAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetQueueAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -297,5 +297,11 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public GetQueueAttributesRequest clone() {
+        
+            return (GetQueueAttributesRequest) super.clone();
+    }
+
 }
     

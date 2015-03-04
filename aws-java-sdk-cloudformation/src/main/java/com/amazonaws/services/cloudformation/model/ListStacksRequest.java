@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#listStacks(ListStacksRequest)
  */
-public class ListStacksRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListStacksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * String that identifies the start of the next list of stacks, if there
@@ -262,5 +262,11 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ListStacksRequest clone() {
+        
+            return (ListStacksRequest) super.clone();
+    }
+
 }
     

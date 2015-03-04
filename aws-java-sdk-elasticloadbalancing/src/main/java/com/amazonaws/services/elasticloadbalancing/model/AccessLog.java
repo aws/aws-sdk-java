@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>AccessLog</code> data type.
  * </p>
  */
-public class AccessLog implements Serializable {
+public class AccessLog implements Serializable, Cloneable {
 
     /**
      * Specifies whether access log is enabled for the load balancer.
@@ -256,5 +256,19 @@ public class AccessLog implements Serializable {
         return true;
     }
     
+    @Override
+    public AccessLog clone() {
+        try {
+            return (AccessLog) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

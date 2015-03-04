@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a Reserved Instance offering.
  * </p>
  */
-public class PricingDetail implements Serializable {
+public class PricingDetail implements Serializable, Cloneable {
 
     /**
      * The price per instance.
@@ -142,5 +142,19 @@ public class PricingDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public PricingDetail clone() {
+        try {
+            return (PricingDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

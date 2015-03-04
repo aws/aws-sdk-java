@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output for <code>PutRecord</code> .
  * </p>
  */
-public class PutRecordResult implements Serializable {
+public class PutRecordResult implements Serializable, Cloneable {
 
     /**
      * The shard ID of the shard where the data record was placed.
@@ -191,5 +191,19 @@ public class PutRecordResult implements Serializable {
         return true;
     }
     
+    @Override
+    public PutRecordResult clone() {
+        try {
+            return (PutRecordResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

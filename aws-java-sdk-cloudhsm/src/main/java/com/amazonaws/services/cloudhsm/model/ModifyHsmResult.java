@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output of the ModifyHsm action.
  * </p>
  */
-public class ModifyHsmResult implements Serializable {
+public class ModifyHsmResult implements Serializable, Cloneable {
 
     /**
      * The ARN of the HSM.
@@ -112,5 +112,19 @@ public class ModifyHsmResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ModifyHsmResult clone() {
+        try {
+            return (ModifyHsmResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

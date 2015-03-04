@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#listStackResources(ListStackResourcesRequest)
  */
-public class ListStackResourcesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListStackResourcesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or the unique identifier associated with the stack, which are
@@ -198,5 +198,11 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public ListStackResourcesRequest clone() {
+        
+            return (ListStackResourcesRequest) super.clone();
+    }
+
 }
     

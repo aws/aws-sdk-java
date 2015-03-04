@@ -23,7 +23,7 @@ import java.io.Serializable;
  * is used for HDFS.
  * </p>
  */
-public class InstanceGroup implements Serializable {
+public class InstanceGroup implements Serializable, Cloneable {
 
     /**
      * The identifier of the instance group.
@@ -576,5 +576,19 @@ public class InstanceGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceGroup clone() {
+        try {
+            return (InstanceGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

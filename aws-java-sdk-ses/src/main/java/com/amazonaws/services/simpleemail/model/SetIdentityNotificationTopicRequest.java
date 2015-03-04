@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityNotificationTopic(SetIdentityNotificationTopicRequest)
  */
-public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identity for which the Amazon SNS topic will be set. Examples:
@@ -289,5 +289,11 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public SetIdentityNotificationTopicRequest clone() {
+        
+            return (SetIdentityNotificationTopicRequest) super.clone();
+    }
+
 }
     

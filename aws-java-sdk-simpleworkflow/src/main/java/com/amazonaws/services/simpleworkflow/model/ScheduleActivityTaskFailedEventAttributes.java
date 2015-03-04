@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>ScheduleActivityTaskFailed</code> event.
  * </p>
  */
-public class ScheduleActivityTaskFailedEventAttributes implements Serializable {
+public class ScheduleActivityTaskFailedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The activity type provided in the <code>ScheduleActivityTask</code>
@@ -380,5 +380,19 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public ScheduleActivityTaskFailedEventAttributes clone() {
+        try {
+            return (ScheduleActivityTaskFailedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

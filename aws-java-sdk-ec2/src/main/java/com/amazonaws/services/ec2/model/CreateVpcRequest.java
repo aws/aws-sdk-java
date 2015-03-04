@@ -42,7 +42,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVpcRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest)
  */
-public class CreateVpcRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVpcRequest> {
+public class CreateVpcRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateVpcRequest> {
 
     /**
      * The network range for the VPC, in CIDR notation. For example,
@@ -318,5 +318,11 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CreateVpcRequest clone() {
+        
+            return (CreateVpcRequest) super.clone();
+    }
+
 }
     

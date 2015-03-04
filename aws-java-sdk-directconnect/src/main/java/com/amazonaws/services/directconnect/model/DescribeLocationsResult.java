@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Describe Locations Result
  */
-public class DescribeLocationsResult implements Serializable {
+public class DescribeLocationsResult implements Serializable, Cloneable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<Location> locations;
 
@@ -130,5 +130,19 @@ public class DescribeLocationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLocationsResult clone() {
+        try {
+            return (DescribeLocationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

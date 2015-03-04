@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteSigningCertificate(DeleteSigningCertificateRequest)
  */
-public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user the signing certificate belongs to.
@@ -204,5 +204,11 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DeleteSigningCertificateRequest clone() {
+        
+            return (DeleteSigningCertificateRequest) super.clone();
+    }
+
 }
     

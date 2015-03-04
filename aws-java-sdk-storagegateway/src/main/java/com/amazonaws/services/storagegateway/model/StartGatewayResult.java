@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the of the gateway that was restarted.
  * </p>
  */
-public class StartGatewayResult implements Serializable {
+public class StartGatewayResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -126,5 +126,19 @@ public class StartGatewayResult implements Serializable {
         return true;
     }
     
+    @Override
+    public StartGatewayResult clone() {
+        try {
+            return (StartGatewayResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

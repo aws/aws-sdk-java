@@ -51,7 +51,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest)
  */
-public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier for the Trusted Advisor check.
@@ -193,5 +193,11 @@ public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public DescribeTrustedAdvisorCheckResultRequest clone() {
+        
+            return (DescribeTrustedAdvisorCheckResultRequest) super.clone();
+    }
+
 }
     

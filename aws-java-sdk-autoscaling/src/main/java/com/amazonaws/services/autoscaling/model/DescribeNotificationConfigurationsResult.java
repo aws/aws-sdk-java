@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeNotificationConfigurationsResult implements Serializable {
+public class DescribeNotificationConfigurationsResult implements Serializable, Cloneable {
 
     /**
      * The notification configurations.
@@ -194,5 +194,19 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeNotificationConfigurationsResult clone() {
+        try {
+            return (DescribeNotificationConfigurationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

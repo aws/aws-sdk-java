@@ -22,7 +22,7 @@ import java.io.Serializable;
  * (VTS).
  * </p>
  */
-public class TapeArchive implements Serializable {
+public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of an archived virtual tape.
@@ -379,5 +379,19 @@ public class TapeArchive implements Serializable {
         return true;
     }
     
+    @Override
+    public TapeArchive clone() {
+        try {
+            return (TapeArchive) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

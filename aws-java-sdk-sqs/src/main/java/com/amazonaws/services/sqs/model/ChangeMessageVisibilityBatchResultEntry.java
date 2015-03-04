@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Encloses the id of an entry in ChangeMessageVisibilityBatch.
  * </p>
  */
-public class ChangeMessageVisibilityBatchResultEntry implements Serializable {
+public class ChangeMessageVisibilityBatchResultEntry implements Serializable, Cloneable {
 
     /**
      * Represents a message whose visibility timeout has been changed
@@ -107,5 +107,19 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public ChangeMessageVisibilityBatchResultEntry clone() {
+        try {
+            return (ChangeMessageVisibilityBatchResultEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output of the DescribeHapg action.
  * </p>
  */
-public class DescribeHapgResult implements Serializable {
+public class DescribeHapgResult implements Serializable, Cloneable {
 
     /**
      * The ARN of the high-availability partition group.
@@ -692,5 +692,19 @@ public class DescribeHapgResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeHapgResult clone() {
+        try {
+            return (DescribeHapgResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

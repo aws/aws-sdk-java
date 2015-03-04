@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#createReusableDelegationSet(CreateReusableDelegationSetRequest)
  */
-public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique string that identifies the request and that allows failed
@@ -246,5 +246,11 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public CreateReusableDelegationSetRequest clone() {
+        
+            return (CreateReusableDelegationSetRequest) super.clone();
+    }
+
 }
     

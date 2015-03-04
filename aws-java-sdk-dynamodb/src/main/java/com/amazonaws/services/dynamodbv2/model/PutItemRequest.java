@@ -59,7 +59,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#putItem(PutItemRequest)
  */
-public class PutItemRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutItemRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the table to contain the item.
@@ -3076,5 +3076,11 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public PutItemRequest clone() {
+        
+            return (PutItemRequest) super.clone();
+    }
+
 }
     

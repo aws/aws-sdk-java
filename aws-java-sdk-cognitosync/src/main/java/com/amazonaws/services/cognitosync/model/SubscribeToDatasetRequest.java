@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#subscribeToDataset(SubscribeToDatasetRequest)
  */
-public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implements Serializable {
+public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -306,5 +306,11 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public SubscribeToDatasetRequest clone() {
+        
+            return (SubscribeToDatasetRequest) super.clone();
+    }
+
 }
     

@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#mergeDeveloperIdentities(MergeDeveloperIdentitiesRequest)
  */
-public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest implements Serializable {
+public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * User identifier for the source user. The value should be a
@@ -353,5 +353,11 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public MergeDeveloperIdentitiesRequest clone() {
+        
+            return (MergeDeveloperIdentitiesRequest) super.clone();
+    }
+
 }
     

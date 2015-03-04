@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * List Volume Recovery Points Result
  */
-public class ListVolumeRecoveryPointsResult implements Serializable {
+public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -205,5 +205,19 @@ public class ListVolumeRecoveryPointsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListVolumeRecoveryPointsResult clone() {
+        try {
+            return (ListVolumeRecoveryPointsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

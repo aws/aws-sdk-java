@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Metric Transformation
  */
-public class MetricTransformation implements Serializable {
+public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * The name of the CloudWatch metric to which the monitored log
@@ -261,5 +261,19 @@ public class MetricTransformation implements Serializable {
         return true;
     }
     
+    @Override
+    public MetricTransformation clone() {
+        try {
+            return (MetricTransformation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

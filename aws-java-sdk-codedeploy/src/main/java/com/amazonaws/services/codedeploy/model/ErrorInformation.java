@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about a deployment error.
  * </p>
  */
-public class ErrorInformation implements Serializable {
+public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * The error code: <ul> <li>APPLICATION_MISSING: The application was
@@ -403,5 +403,19 @@ public class ErrorInformation implements Serializable {
         return true;
     }
     
+    @Override
+    public ErrorInformation clone() {
+        try {
+            return (ErrorInformation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#updateTrail(UpdateTrailRequest)
  */
-public class UpdateTrailRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateTrailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the trail.
@@ -403,5 +403,11 @@ public class UpdateTrailRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public UpdateTrailRequest clone() {
+        
+            return (UpdateTrailRequest) super.clone();
+    }
+
 }
     

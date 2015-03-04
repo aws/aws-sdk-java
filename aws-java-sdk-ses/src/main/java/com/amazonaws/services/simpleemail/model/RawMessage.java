@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the raw data of the message.
  * </p>
  */
-public class RawMessage implements Serializable {
+public class RawMessage implements Serializable, Cloneable {
 
     /**
      * The raw data of the message. The client must ensure that the message
@@ -165,5 +165,19 @@ public class RawMessage implements Serializable {
         return true;
     }
     
+    @Override
+    public RawMessage clone() {
+        try {
+            return (RawMessage) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

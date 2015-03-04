@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSnapshot(DeleteClusterSnapshotRequest)
  */
-public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of the manual snapshot to be deleted.
@@ -192,5 +192,11 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteClusterSnapshotRequest clone() {
+        
+            return (DeleteClusterSnapshotRequest) super.clone();
+    }
+
 }
     

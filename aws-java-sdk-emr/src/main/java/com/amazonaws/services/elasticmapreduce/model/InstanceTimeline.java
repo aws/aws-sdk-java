@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The timeline of the instance lifecycle.
  * </p>
  */
-public class InstanceTimeline implements Serializable {
+public class InstanceTimeline implements Serializable, Cloneable {
 
     /**
      * The creation date and time of the instance.
@@ -184,5 +184,19 @@ public class InstanceTimeline implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceTimeline clone() {
+        try {
+            return (InstanceTimeline) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

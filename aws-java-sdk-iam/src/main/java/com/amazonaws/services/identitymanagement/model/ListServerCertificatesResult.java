@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListServerCertificates request.
  * </p>
  */
-public class ListServerCertificatesResult implements Serializable {
+public class ListServerCertificatesResult implements Serializable, Cloneable {
 
     /**
      * A list of server certificates.
@@ -285,5 +285,19 @@ public class ListServerCertificatesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListServerCertificatesResult clone() {
+        try {
+            return (ListServerCertificatesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

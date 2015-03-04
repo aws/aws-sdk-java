@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByStatus(ListJobsByStatusRequest)
  */
-public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * To get information about all of the jobs associated with the current
@@ -276,5 +276,11 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ListJobsByStatusRequest clone() {
+        
+            return (ListJobsByStatusRequest) super.clone();
+    }
+
 }
     

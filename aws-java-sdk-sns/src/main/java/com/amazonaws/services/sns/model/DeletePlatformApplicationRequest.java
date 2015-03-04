@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#deletePlatformApplication(DeletePlatformApplicationRequest)
  */
-public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * PlatformApplicationArn of platform application object to delete.
@@ -108,5 +108,11 @@ public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DeletePlatformApplicationRequest clone() {
+        
+            return (DeletePlatformApplicationRequest) super.clone();
+    }
+
 }
     

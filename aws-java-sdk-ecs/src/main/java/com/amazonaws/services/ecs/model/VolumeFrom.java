@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class VolumeFrom implements Serializable {
+public class VolumeFrom implements Serializable, Cloneable {
 
     /**
      * The name of the container to mount volumes from.
@@ -167,5 +167,19 @@ public class VolumeFrom implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeFrom clone() {
+        try {
+            return (VolumeFrom) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

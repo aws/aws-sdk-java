@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Thumbnails for videos.
  * </p>
  */
-public class Thumbnails implements Serializable {
+public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * The format of thumbnails, if any. Valid values are <code>jpg</code>
@@ -896,5 +896,19 @@ public class Thumbnails implements Serializable {
         return true;
     }
     
+    @Override
+    public Thumbnails clone() {
+        try {
+            return (Thumbnails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

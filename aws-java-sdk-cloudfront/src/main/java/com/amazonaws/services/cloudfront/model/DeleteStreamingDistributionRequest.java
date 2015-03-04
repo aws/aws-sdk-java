@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#deleteStreamingDistribution(DeleteStreamingDistributionRequest)
  */
-public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The distribution id.
@@ -174,5 +174,11 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DeleteStreamingDistributionRequest clone() {
+        
+            return (DeleteStreamingDistributionRequest) super.clone();
+    }
+
 }
     

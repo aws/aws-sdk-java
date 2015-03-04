@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#updateKeyDescription(UpdateKeyDescriptionRequest)
  */
-public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique value that identifies the key for which the description is to
@@ -178,5 +178,11 @@ public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public UpdateKeyDescriptionRequest clone() {
+        
+            return (UpdateKeyDescriptionRequest) super.clone();
+    }
+
 }
     

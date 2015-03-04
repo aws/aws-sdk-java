@@ -22,7 +22,7 @@ import java.io.Serializable;
  * <code>DescribeStackProvisioningParameters</code> request.
  * </p>
  */
-public class DescribeStackProvisioningParametersResult implements Serializable {
+public class DescribeStackProvisioningParametersResult implements Serializable, Cloneable {
 
     /**
      * The AWS OpsWorks agent installer's URL.
@@ -177,5 +177,19 @@ public class DescribeStackProvisioningParametersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeStackProvisioningParametersResult clone() {
+        try {
+            return (DescribeStackProvisioningParametersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#attachUserPolicy(AttachUserPolicyRequest)
  */
-public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the user to attach the policy to.
@@ -212,5 +212,11 @@ public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public AttachUserPolicyRequest clone() {
+        
+            return (AttachUserPolicyRequest) super.clone();
+    }
+
 }
     

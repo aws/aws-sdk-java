@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#startTask(StartTaskRequest)
  */
-public class StartTaskRequest extends AmazonWebServiceRequest implements Serializable {
+public class StartTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -314,5 +314,11 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public StartTaskRequest clone() {
+        
+            return (StartTaskRequest) super.clone();
+    }
+
 }
     

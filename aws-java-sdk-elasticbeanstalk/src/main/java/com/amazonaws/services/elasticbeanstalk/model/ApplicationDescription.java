@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the properties of an application.
  * </p>
  */
-public class ApplicationDescription implements Serializable {
+public class ApplicationDescription implements Serializable, Cloneable {
 
     /**
      * The name of the application.
@@ -419,5 +419,19 @@ public class ApplicationDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public ApplicationDescription clone() {
+        try {
+            return (ApplicationDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

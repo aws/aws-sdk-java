@@ -52,7 +52,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#query(QueryRequest)
  */
-public class QueryRequest extends AmazonWebServiceRequest implements Serializable {
+public class QueryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the table containing the requested items.
@@ -3589,5 +3589,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         return true;
     }
     
+    @Override
+    public QueryRequest clone() {
+        
+            return (QueryRequest) super.clone();
+    }
+
 }
     

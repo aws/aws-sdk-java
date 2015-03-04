@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#rebootCacheCluster(RebootCacheClusterRequest)
  */
-public class RebootCacheClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class RebootCacheClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The cache cluster identifier. This parameter is stored as a lowercase
@@ -241,5 +241,11 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public RebootCacheClusterRequest clone() {
+        
+            return (RebootCacheClusterRequest) super.clone();
+    }
+
 }
     

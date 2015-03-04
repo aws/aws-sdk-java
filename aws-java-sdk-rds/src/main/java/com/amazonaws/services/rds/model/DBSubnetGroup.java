@@ -34,7 +34,7 @@ import java.io.Serializable;
  * DescribeDBSubnetGroups action.
  * </p>
  */
-public class DBSubnetGroup implements Serializable {
+public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the DB subnet group.
@@ -316,5 +316,19 @@ public class DBSubnetGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public DBSubnetGroup clone() {
+        try {
+            return (DBSubnetGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

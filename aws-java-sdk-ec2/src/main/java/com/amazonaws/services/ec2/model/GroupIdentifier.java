@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a security group.
  * </p>
  */
-public class GroupIdentifier implements Serializable {
+public class GroupIdentifier implements Serializable, Cloneable {
 
     /**
      * The name of the security group.
@@ -142,5 +142,19 @@ public class GroupIdentifier implements Serializable {
         return true;
     }
     
+    @Override
+    public GroupIdentifier clone() {
+        try {
+            return (GroupIdentifier) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

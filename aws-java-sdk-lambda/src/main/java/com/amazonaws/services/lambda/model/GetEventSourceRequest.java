@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#getEventSource(GetEventSourceRequest)
  */
-public class GetEventSourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetEventSourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The AWS Lambda assigned ID of the event source mapping.
@@ -110,5 +110,11 @@ public class GetEventSourceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GetEventSourceRequest clone() {
+        
+            return (GetEventSourceRequest) super.clone();
+    }
+
 }
     

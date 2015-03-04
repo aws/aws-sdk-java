@@ -37,7 +37,7 @@ import java.io.Serializable;
  * phpapp2 folder.
  * </p>
  */
-public class Recipes implements Serializable {
+public class Recipes implements Serializable, Cloneable {
 
     /**
      * An array of custom recipe names to be run following a
@@ -504,5 +504,19 @@ public class Recipes implements Serializable {
         return true;
     }
     
+    @Override
+    public Recipes clone() {
+        try {
+            return (Recipes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

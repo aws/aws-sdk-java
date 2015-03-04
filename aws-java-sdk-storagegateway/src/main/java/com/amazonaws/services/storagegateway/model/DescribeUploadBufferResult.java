@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Describe Upload Buffer Result
  */
-public class DescribeUploadBufferResult implements Serializable {
+public class DescribeUploadBufferResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -287,5 +287,19 @@ public class DescribeUploadBufferResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeUploadBufferResult clone() {
+        try {
+            return (DescribeUploadBufferResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a queue.
  * </p>
  */
-public class Queue implements Serializable {
+public class Queue implements Serializable, Cloneable {
 
     /**
      * The name of the queue.
@@ -142,5 +142,19 @@ public class Queue implements Serializable {
         return true;
     }
     
+    @Override
+    public Queue clone() {
+        try {
+            return (Queue) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

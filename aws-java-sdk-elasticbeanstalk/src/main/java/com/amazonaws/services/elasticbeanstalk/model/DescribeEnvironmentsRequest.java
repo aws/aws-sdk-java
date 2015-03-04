@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEnvironments(DescribeEnvironmentsRequest)
  */
-public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
@@ -511,5 +511,11 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeEnvironmentsRequest clone() {
+        
+            return (DescribeEnvironmentsRequest) super.clone();
+    }
+
 }
     

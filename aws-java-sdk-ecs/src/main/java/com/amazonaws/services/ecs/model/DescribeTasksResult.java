@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeTasksResult implements Serializable {
+public class DescribeTasksResult implements Serializable, Cloneable {
 
     /**
      * The list of tasks.
@@ -210,5 +210,19 @@ public class DescribeTasksResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTasksResult clone() {
+        try {
+            return (DescribeTasksResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

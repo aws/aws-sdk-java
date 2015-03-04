@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A distribution list.
  * </p>
  */
-public class DistributionList implements Serializable {
+public class DistributionList implements Serializable, Cloneable {
 
     /**
      * The value you provided for the Marker request parameter.
@@ -417,5 +417,19 @@ public class DistributionList implements Serializable {
         return true;
     }
     
+    @Override
+    public DistributionList clone() {
+        try {
+            return (DistributionList) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

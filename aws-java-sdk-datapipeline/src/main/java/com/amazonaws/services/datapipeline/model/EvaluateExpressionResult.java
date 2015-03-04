@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the EvaluateExpression action.
  * </p>
  */
-public class EvaluateExpressionResult implements Serializable {
+public class EvaluateExpressionResult implements Serializable, Cloneable {
 
     /**
      * The evaluated expression.
@@ -116,5 +116,19 @@ public class EvaluateExpressionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public EvaluateExpressionResult clone() {
+        try {
+            return (EvaluateExpressionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

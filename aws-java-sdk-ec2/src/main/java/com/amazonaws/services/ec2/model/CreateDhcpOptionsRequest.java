@@ -76,7 +76,7 @@ import com.amazonaws.services.ec2.model.transform.CreateDhcpOptionsRequestMarsha
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest)
  */
-public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateDhcpOptionsRequest> {
+public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateDhcpOptionsRequest> {
 
     /**
      * A DHCP configuration option.
@@ -219,5 +219,11 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CreateDhcpOptionsRequest clone() {
+        
+            return (CreateDhcpOptionsRequest) super.clone();
+    }
+
 }
     

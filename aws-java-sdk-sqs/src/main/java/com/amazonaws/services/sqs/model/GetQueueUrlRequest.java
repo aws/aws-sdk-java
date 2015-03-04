@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest)
  */
-public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the queue whose URL must be fetched. Maximum 80
@@ -191,5 +191,11 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public GetQueueUrlRequest clone() {
+        
+            return (GetQueueUrlRequest) super.clone();
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest)
  */
-public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the resource to return pending maintenance actions for.
@@ -341,5 +341,11 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public DescribePendingMaintenanceActionsRequest clone() {
+        
+            return (DescribePendingMaintenanceActionsRequest) super.clone();
+    }
+
 }
     

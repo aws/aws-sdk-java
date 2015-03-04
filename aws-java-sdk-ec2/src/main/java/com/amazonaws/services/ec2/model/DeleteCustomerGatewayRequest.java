@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteCustomerGatewayRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest)
  */
-public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteCustomerGatewayRequest> {
+public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteCustomerGatewayRequest> {
 
     /**
      * The ID of the customer gateway.
@@ -137,5 +137,11 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteCustomerGatewayRequest clone() {
+        
+            return (DeleteCustomerGatewayRequest) super.clone();
+    }
+
 }
     

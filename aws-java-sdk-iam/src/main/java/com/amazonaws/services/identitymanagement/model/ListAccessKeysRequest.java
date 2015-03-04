@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccessKeys(ListAccessKeysRequest)
  */
-public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user.
@@ -305,5 +305,11 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ListAccessKeysRequest clone() {
+        
+            return (ListAccessKeysRequest) super.clone();
+    }
+
 }
     

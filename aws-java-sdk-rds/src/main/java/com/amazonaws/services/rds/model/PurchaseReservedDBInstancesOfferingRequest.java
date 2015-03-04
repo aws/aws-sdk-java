@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest)
  */
-public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebServiceRequest implements Serializable {
+public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the Reserved DB instance offering to purchase. <p>Example:
@@ -299,5 +299,11 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
         return true;
     }
     
+    @Override
+    public PurchaseReservedDBInstancesOfferingRequest clone() {
+        
+            return (PurchaseReservedDBInstancesOfferingRequest) super.clone();
+    }
+
 }
     

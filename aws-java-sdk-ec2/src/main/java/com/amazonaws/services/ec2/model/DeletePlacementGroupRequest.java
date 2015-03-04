@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DeletePlacementGroupRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deletePlacementGroup(DeletePlacementGroupRequest)
  */
-public class DeletePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeletePlacementGroupRequest> {
+public class DeletePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeletePlacementGroupRequest> {
 
     /**
      * The name of the placement group.
@@ -141,5 +141,11 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DeletePlacementGroupRequest clone() {
+        
+            return (DeletePlacementGroupRequest) super.clone();
+    }
+
 }
     

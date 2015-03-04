@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeCluster(DescribeClusterRequest)
  */
-public class DescribeClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster to describe.
@@ -107,5 +107,11 @@ public class DescribeClusterRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DescribeClusterRequest clone() {
+        
+            return (DescribeClusterRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * contains statistics for a 15-minute period of sending activity.
  * </p>
  */
-public class SendDataPoint implements Serializable {
+public class SendDataPoint implements Serializable, Cloneable {
 
     /**
      * Time of the data point.
@@ -269,5 +269,19 @@ public class SendDataPoint implements Serializable {
         return true;
     }
     
+    @Override
+    public SendDataPoint clone() {
+        try {
+            return (SendDataPoint) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

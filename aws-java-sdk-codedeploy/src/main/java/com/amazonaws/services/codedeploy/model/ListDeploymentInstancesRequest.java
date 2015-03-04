@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeploymentInstances(ListDeploymentInstancesRequest)
  */
-public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique ID of a deployment.
@@ -361,5 +361,11 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public ListDeploymentInstancesRequest clone() {
+        
+            return (ListDeploymentInstancesRequest) super.clone();
+    }
+
 }
     

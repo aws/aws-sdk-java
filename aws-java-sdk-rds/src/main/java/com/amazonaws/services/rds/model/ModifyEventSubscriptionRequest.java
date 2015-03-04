@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyEventSubscription(ModifyEventSubscriptionRequest)
  */
-public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the RDS event notification subscription.
@@ -415,5 +415,11 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public ModifyEventSubscriptionRequest clone() {
+        
+            return (ModifyEventSubscriptionRequest) super.clone();
+    }
+
 }
     

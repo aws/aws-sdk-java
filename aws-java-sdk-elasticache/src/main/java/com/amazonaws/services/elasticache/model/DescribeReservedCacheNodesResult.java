@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeReservedCacheNodes</i> action.
  * </p>
  */
-public class DescribeReservedCacheNodesResult implements Serializable {
+public class DescribeReservedCacheNodesResult implements Serializable, Cloneable {
 
     /**
      * Provides an identifier to allow retrieval of paginated results.
@@ -186,5 +186,19 @@ public class DescribeReservedCacheNodesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeReservedCacheNodesResult clone() {
+        try {
+            return (DescribeReservedCacheNodesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

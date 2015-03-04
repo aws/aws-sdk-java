@@ -23,7 +23,7 @@ import java.io.Serializable;
  * <code>literal-array</code> . All options are enabled by default.
  * </p>
  */
-public class LiteralArrayOptions implements Serializable {
+public class LiteralArrayOptions implements Serializable, Cloneable {
 
     /**
      * A value to use for the field if the field isn't specified for a
@@ -337,5 +337,19 @@ public class LiteralArrayOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public LiteralArrayOptions clone() {
+        try {
+            return (LiteralArrayOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

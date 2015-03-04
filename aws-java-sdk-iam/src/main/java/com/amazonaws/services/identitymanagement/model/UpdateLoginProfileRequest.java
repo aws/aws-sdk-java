@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateLoginProfile(UpdateLoginProfileRequest)
  */
-public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user whose password you want to update.
@@ -254,5 +254,11 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public UpdateLoginProfileRequest clone() {
+        
+            return (UpdateLoginProfileRequest) super.clone();
+    }
+
 }
     

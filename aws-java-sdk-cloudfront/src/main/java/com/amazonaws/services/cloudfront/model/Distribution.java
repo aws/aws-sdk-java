@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A distribution.
  * </p>
  */
-public class Distribution implements Serializable {
+public class Distribution implements Serializable, Cloneable {
 
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -462,5 +462,19 @@ public class Distribution implements Serializable {
         return true;
     }
     
+    @Override
+    public Distribution clone() {
+        try {
+            return (Distribution) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

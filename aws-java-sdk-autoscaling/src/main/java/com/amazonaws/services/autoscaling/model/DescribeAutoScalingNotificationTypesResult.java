@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAutoScalingNotificationTypesResult implements Serializable {
+public class DescribeAutoScalingNotificationTypesResult implements Serializable, Cloneable {
 
     /**
      * One or more of the following notification types: <ul>
@@ -340,5 +340,19 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
         return true;
     }
     
+    @Override
+    public DescribeAutoScalingNotificationTypesResult clone() {
+        try {
+            return (DescribeAutoScalingNotificationTypesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

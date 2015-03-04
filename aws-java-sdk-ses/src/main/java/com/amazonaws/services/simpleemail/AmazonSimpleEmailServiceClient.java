@@ -253,14 +253,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIdentityRequestMarshaller().marshall(deleteIdentityRequest);
+                request = new DeleteIdentityRequestMarshaller().marshall(super.beforeMarshalling(deleteIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DeleteIdentityResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -307,14 +309,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVerifiedEmailAddressesRequestMarshaller().marshall(listVerifiedEmailAddressesRequest);
+                request = new ListVerifiedEmailAddressesRequestMarshaller().marshall(super.beforeMarshalling(listVerifiedEmailAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListVerifiedEmailAddressesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -360,14 +364,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSendStatisticsRequestMarshaller().marshall(getSendStatisticsRequest);
+                request = new GetSendStatisticsRequestMarshaller().marshall(super.beforeMarshalling(getSendStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetSendStatisticsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -409,14 +415,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new VerifyEmailIdentityRequestMarshaller().marshall(verifyEmailIdentityRequest);
+                request = new VerifyEmailIdentityRequestMarshaller().marshall(super.beforeMarshalling(verifyEmailIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new VerifyEmailIdentityResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -464,14 +472,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIdentityNotificationAttributesRequestMarshaller().marshall(getIdentityNotificationAttributesRequest);
+                request = new GetIdentityNotificationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityNotificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetIdentityNotificationAttributesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -528,14 +538,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new VerifyDomainDkimRequestMarshaller().marshall(verifyDomainDkimRequest);
+                request = new VerifyDomainDkimRequestMarshaller().marshall(super.beforeMarshalling(verifyDomainDkimRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new VerifyDomainDkimResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -600,14 +612,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIdentityDkimAttributesRequestMarshaller().marshall(getIdentityDkimAttributesRequest);
+                request = new GetIdentityDkimAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityDkimAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetIdentityDkimAttributesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -647,12 +661,21 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<VerifyEmailAddressRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new VerifyEmailAddressRequestMarshaller().marshall(verifyEmailAddressRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new VerifyEmailAddressRequestMarshaller().marshall(super.beforeMarshalling(verifyEmailAddressRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -722,14 +745,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendRawEmailRequestMarshaller().marshall(sendRawEmailRequest);
+                request = new SendRawEmailRequestMarshaller().marshall(super.beforeMarshalling(sendRawEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SendRawEmailResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -771,14 +796,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIdentitiesRequestMarshaller().marshall(listIdentitiesRequest);
+                request = new ListIdentitiesRequestMarshaller().marshall(super.beforeMarshalling(listIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListIdentitiesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -821,14 +848,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIdentityVerificationAttributesRequestMarshaller().marshall(getIdentityVerificationAttributesRequest);
+                request = new GetIdentityVerificationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityVerificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetIdentityVerificationAttributesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -890,14 +919,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetIdentityDkimEnabledRequestMarshaller().marshall(setIdentityDkimEnabledRequest);
+                request = new SetIdentityDkimEnabledRequestMarshaller().marshall(super.beforeMarshalling(setIdentityDkimEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SetIdentityDkimEnabledResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -937,14 +968,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSendQuotaRequestMarshaller().marshall(getSendQuotaRequest);
+                request = new GetSendQuotaRequestMarshaller().marshall(super.beforeMarshalling(getSendQuotaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetSendQuotaResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1001,14 +1034,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetIdentityFeedbackForwardingEnabledRequestMarshaller().marshall(setIdentityFeedbackForwardingEnabledRequest);
+                request = new SetIdentityFeedbackForwardingEnabledRequestMarshaller().marshall(super.beforeMarshalling(setIdentityFeedbackForwardingEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SetIdentityFeedbackForwardingEnabledResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1049,14 +1084,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new VerifyDomainIdentityRequestMarshaller().marshall(verifyDomainIdentityRequest);
+                request = new VerifyDomainIdentityRequestMarshaller().marshall(super.beforeMarshalling(verifyDomainIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new VerifyDomainIdentityResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1120,14 +1157,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendEmailRequestMarshaller().marshall(sendEmailRequest);
+                request = new SendEmailRequestMarshaller().marshall(super.beforeMarshalling(sendEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SendEmailResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1167,12 +1206,21 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteVerifiedEmailAddressRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteVerifiedEmailAddressRequestMarshaller().marshall(deleteVerifiedEmailAddressRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVerifiedEmailAddressRequestMarshaller().marshall(super.beforeMarshalling(deleteVerifiedEmailAddressRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1224,14 +1272,16 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetIdentityNotificationTopicRequestMarshaller().marshall(setIdentityNotificationTopicRequest);
+                request = new SetIdentityNotificationTopicRequestMarshaller().marshall(super.beforeMarshalling(setIdentityNotificationTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SetIdentityNotificationTopicResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);

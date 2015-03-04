@@ -23,7 +23,7 @@ import java.io.Serializable;
  * iSCSI initiators.
  * </p>
  */
-public class ChapInfo implements Serializable {
+public class ChapInfo implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. <p><i>Valid Values</i>:
@@ -301,5 +301,19 @@ public class ChapInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public ChapInfo clone() {
+        try {
+            return (ChapInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

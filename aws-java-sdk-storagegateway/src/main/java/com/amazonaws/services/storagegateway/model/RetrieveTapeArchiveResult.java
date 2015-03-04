@@ -21,7 +21,7 @@ import java.io.Serializable;
  * RetrieveTapeArchiveOutput
  * </p>
  */
-public class RetrieveTapeArchiveResult implements Serializable {
+public class RetrieveTapeArchiveResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the retrieved virtual tape.
@@ -112,5 +112,19 @@ public class RetrieveTapeArchiveResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RetrieveTapeArchiveResult clone() {
+        try {
+            return (RetrieveTapeArchiveResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.AttachInternetGatewayRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachInternetGateway(AttachInternetGatewayRequest)
  */
-public class AttachInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AttachInternetGatewayRequest> {
+public class AttachInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AttachInternetGatewayRequest> {
 
     /**
      * The ID of the Internet gateway.
@@ -165,5 +165,11 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public AttachInternetGatewayRequest clone() {
+        
+            return (AttachInternetGatewayRequest) super.clone();
+    }
+
 }
     

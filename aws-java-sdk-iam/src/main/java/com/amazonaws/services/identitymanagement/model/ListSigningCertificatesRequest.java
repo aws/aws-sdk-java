@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest)
  */
-public class ListSigningCertificatesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListSigningCertificatesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user.
@@ -302,5 +302,11 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public ListSigningCertificatesRequest clone() {
+        
+            return (ListSigningCertificatesRequest) super.clone();
+    }
+
 }
     

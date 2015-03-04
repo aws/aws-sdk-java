@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful GetAccountSummary request.
  * </p>
  */
-public class GetAccountSummaryResult implements Serializable {
+public class GetAccountSummaryResult implements Serializable, Cloneable {
 
     /**
      * A set of key value pairs containing information about IAM entity usage
@@ -614,5 +614,19 @@ public class GetAccountSummaryResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetAccountSummaryResult clone() {
+        try {
+            return (GetAccountSummaryResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * stored in Amazon S3.
  * </p>
  */
-public class S3Location implements Serializable {
+public class S3Location implements Serializable, Cloneable {
 
     /**
      * The name of the Amazon S3 bucket where the application revision is
@@ -396,5 +396,19 @@ public class S3Location implements Serializable {
         return true;
     }
     
+    @Override
+    public S3Location clone() {
+        try {
+            return (S3Location) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

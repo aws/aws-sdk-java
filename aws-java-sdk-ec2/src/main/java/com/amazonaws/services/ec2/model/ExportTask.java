@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an export task.
  * </p>
  */
-public class ExportTask implements Serializable {
+public class ExportTask implements Serializable, Cloneable {
 
     /**
      * The ID of the export task.
@@ -362,5 +362,19 @@ public class ExportTask implements Serializable {
         return true;
     }
     
+    @Override
+    public ExportTask clone() {
+        try {
+            return (ExportTask) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

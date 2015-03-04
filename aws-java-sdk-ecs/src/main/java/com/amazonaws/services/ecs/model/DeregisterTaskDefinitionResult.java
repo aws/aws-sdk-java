@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeregisterTaskDefinitionResult implements Serializable {
+public class DeregisterTaskDefinitionResult implements Serializable, Cloneable {
 
     /**
      * The full description of the deregistered task.
@@ -98,5 +98,19 @@ public class DeregisterTaskDefinitionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeregisterTaskDefinitionResult clone() {
+        try {
+            return (DeregisterTaskDefinitionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

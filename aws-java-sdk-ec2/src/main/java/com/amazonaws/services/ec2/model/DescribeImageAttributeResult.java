@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeImageAttributeResult implements Serializable {
+public class DescribeImageAttributeResult implements Serializable, Cloneable {
 
     /**
      * Information about the image attribute.
@@ -98,5 +98,19 @@ public class DescribeImageAttributeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeImageAttributeResult clone() {
+        try {
+            return (DescribeImageAttributeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#getPipelineDefinition(GetPipelineDefinitionRequest)
  */
-public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the pipeline.
@@ -209,5 +209,11 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public GetPipelineDefinitionRequest clone() {
+        
+            return (GetPipelineDefinitionRequest) super.clone();
+    }
+
 }
     

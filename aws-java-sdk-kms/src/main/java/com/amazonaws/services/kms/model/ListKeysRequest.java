@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#listKeys(ListKeysRequest)
  */
-public class ListKeysRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListKeysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specify this parameter only when paginating results to indicate the
@@ -224,5 +224,11 @@ public class ListKeysRequest extends AmazonWebServiceRequest implements Serializ
         return true;
     }
     
+    @Override
+    public ListKeysRequest clone() {
+        
+            return (ListKeysRequest) super.clone();
+    }
+
 }
     

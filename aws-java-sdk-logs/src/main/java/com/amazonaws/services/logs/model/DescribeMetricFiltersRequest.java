@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#describeMetricFilters(DescribeMetricFiltersRequest)
  */
-public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -315,5 +315,11 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeMetricFiltersRequest clone() {
+        
+            return (DescribeMetricFiltersRequest) super.clone();
+    }
+
 }
     

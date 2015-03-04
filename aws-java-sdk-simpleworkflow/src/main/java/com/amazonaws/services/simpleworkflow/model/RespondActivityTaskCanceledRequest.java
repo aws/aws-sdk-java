@@ -73,7 +73,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCanceled(RespondActivityTaskCanceledRequest)
  */
-public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest implements Serializable {
+public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>taskToken</code> of the <a>ActivityTask</a>.
@@ -246,5 +246,11 @@ public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public RespondActivityTaskCanceledRequest clone() {
+        
+            return (RespondActivityTaskCanceledRequest) super.clone();
+    }
+
 }
     

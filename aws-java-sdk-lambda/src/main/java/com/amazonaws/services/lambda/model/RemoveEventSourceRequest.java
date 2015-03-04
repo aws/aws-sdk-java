@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#removeEventSource(RemoveEventSourceRequest)
  */
-public class RemoveEventSourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveEventSourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The event source mapping ID.
@@ -110,5 +110,11 @@ public class RemoveEventSourceRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public RemoveEventSourceRequest clone() {
+        
+            return (RemoveEventSourceRequest) super.clone();
+    }
+
 }
     

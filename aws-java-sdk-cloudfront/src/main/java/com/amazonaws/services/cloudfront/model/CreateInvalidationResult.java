@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class CreateInvalidationResult implements Serializable {
+public class CreateInvalidationResult implements Serializable, Cloneable {
 
     /**
      * The fully qualified URI of the distribution and invalidation batch
@@ -149,5 +149,19 @@ public class CreateInvalidationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateInvalidationResult clone() {
+        try {
+            return (CreateInvalidationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

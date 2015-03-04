@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest)
  */
-public class DescribeMetricCollectionTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeMetricCollectionTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -69,5 +69,11 @@ public class DescribeMetricCollectionTypesRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DescribeMetricCollectionTypesRequest clone() {
+        
+            return (DescribeMetricCollectionTypesRequest) super.clone();
+    }
+
 }
     

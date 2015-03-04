@@ -22,7 +22,7 @@ import java.io.Serializable;
  * status, last refresh, and number of resources examined.
  * </p>
  */
-public class TrustedAdvisorCheckSummary implements Serializable {
+public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
 
     /**
      * The unique identifier for the Trusted Advisor check.
@@ -341,5 +341,19 @@ public class TrustedAdvisorCheckSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public TrustedAdvisorCheckSummary clone() {
+        try {
+            return (TrustedAdvisorCheckSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

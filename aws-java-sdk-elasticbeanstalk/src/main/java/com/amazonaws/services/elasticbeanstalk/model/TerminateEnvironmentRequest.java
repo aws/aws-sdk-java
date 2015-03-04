@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#terminateEnvironment(TerminateEnvironmentRequest)
  */
-public class TerminateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable {
+public class TerminateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the environment to terminate. <p> Condition: You must
@@ -393,5 +393,11 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public TerminateEnvironmentRequest clone() {
+        
+            return (TerminateEnvironmentRequest) super.clone();
+    }
+
 }
     

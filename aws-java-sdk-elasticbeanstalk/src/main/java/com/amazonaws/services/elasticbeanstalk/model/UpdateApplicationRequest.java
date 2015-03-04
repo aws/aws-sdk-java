@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateApplication(UpdateApplicationRequest)
  */
-public class UpdateApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application to update. If no such application is
@@ -216,5 +216,11 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public UpdateApplicationRequest clone() {
+        
+            return (UpdateApplicationRequest) super.clone();
+    }
+
 }
     

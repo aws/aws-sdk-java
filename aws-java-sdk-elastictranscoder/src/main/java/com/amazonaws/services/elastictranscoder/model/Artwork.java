@@ -32,7 +32,7 @@ import java.io.Serializable;
  * <code>Artwork</code> array.
  * </p>
  */
-public class Artwork implements Serializable {
+public class Artwork implements Serializable, Cloneable {
 
     /**
      * The name of the file to be used as album art. To determine which
@@ -761,5 +761,19 @@ public class Artwork implements Serializable {
         return true;
     }
     
+    @Override
+    public Artwork clone() {
+        try {
+            return (Artwork) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

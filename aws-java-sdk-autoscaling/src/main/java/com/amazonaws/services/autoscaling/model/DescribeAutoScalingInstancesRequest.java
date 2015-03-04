@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingInstances(DescribeAutoScalingInstancesRequest)
  */
-public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more Auto Scaling instances to describe, up to 50 instances. If
@@ -269,5 +269,11 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeAutoScalingInstancesRequest clone() {
+        
+            return (DescribeAutoScalingInstancesRequest) super.clone();
+    }
+
 }
     

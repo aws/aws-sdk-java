@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#attachElasticLoadBalancer(AttachElasticLoadBalancerRequest)
  */
-public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
+public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Elastic Load Balancing instance's name.
@@ -170,5 +170,11 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public AttachElasticLoadBalancerRequest clone() {
+        
+            return (AttachElasticLoadBalancerRequest) super.clone();
+    }
+
 }
     

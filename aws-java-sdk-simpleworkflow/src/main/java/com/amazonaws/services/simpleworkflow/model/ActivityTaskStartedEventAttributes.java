@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskStarted</code> event.
  * </p>
  */
-public class ActivityTaskStartedEventAttributes implements Serializable {
+public class ActivityTaskStartedEventAttributes implements Serializable, Cloneable {
 
     /**
      * Identity of the worker that was assigned this task. This aids
@@ -189,5 +189,19 @@ public class ActivityTaskStartedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTaskStartedEventAttributes clone() {
+        try {
+            return (ActivityTaskStartedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Volume Info
  */
-public class VolumeInfo implements Serializable {
+public class VolumeInfo implements Serializable, Cloneable {
 
     private String volumeARN;
 
@@ -152,5 +152,19 @@ public class VolumeInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeInfo clone() {
+        try {
+            return (VolumeInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

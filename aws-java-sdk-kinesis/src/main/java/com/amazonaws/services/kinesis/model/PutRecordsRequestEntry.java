@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output for <code>PutRecords</code> .
  * </p>
  */
-public class PutRecordsRequestEntry implements Serializable {
+public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * The data blob to put into the record, which is base64-encoded when the
@@ -290,5 +290,19 @@ public class PutRecordsRequestEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public PutRecordsRequestEntry clone() {
+        try {
+            return (PutRecordsRequestEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

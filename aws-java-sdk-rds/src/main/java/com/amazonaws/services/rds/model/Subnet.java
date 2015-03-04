@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeDBSubnetGroups action.
  * </p>
  */
-public class Subnet implements Serializable {
+public class Subnet implements Serializable, Cloneable {
 
     /**
      * Specifies the identifier of the subnet.
@@ -199,5 +199,19 @@ public class Subnet implements Serializable {
         return true;
     }
     
+    @Override
+    public Subnet clone() {
+        try {
+            return (Subnet) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

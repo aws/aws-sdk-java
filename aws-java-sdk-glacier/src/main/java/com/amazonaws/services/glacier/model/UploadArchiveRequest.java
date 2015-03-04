@@ -73,7 +73,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#uploadArchive(UploadArchiveRequest)
  */
-public class UploadArchiveRequest extends AmazonWebServiceRequest implements Serializable {
+public class UploadArchiveRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private Long contentLength;
 
@@ -447,5 +447,11 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public UploadArchiveRequest clone() {
+        
+            return (UploadArchiveRequest) super.clone();
+    }
+
 }
     

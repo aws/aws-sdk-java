@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a snapshot.
  * </p>
  */
-public class Snapshot implements Serializable {
+public class Snapshot implements Serializable, Cloneable {
 
     /**
      * The snapshot identifier that is provided in the request.
@@ -1470,5 +1470,19 @@ public class Snapshot implements Serializable {
         return true;
     }
     
+    @Override
+    public Snapshot clone() {
+        try {
+            return (Snapshot) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

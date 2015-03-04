@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteReusableDelegationSet(DeleteReusableDelegationSetRequest)
  */
-public class DeleteReusableDelegationSetRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteReusableDelegationSetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the reusable delegation set you want to delete.
@@ -127,5 +127,11 @@ public class DeleteReusableDelegationSetRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DeleteReusableDelegationSetRequest clone() {
+        
+            return (DeleteReusableDelegationSetRequest) super.clone();
+    }
+
 }
     

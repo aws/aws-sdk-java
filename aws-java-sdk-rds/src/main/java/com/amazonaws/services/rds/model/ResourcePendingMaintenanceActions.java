@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the pending maintenance actions for a resource.
  * </p>
  */
-public class ResourcePendingMaintenanceActions implements Serializable {
+public class ResourcePendingMaintenanceActions implements Serializable, Cloneable {
 
     /**
      * The ARN of this resource that has pending maintenance actions.
@@ -186,5 +186,19 @@ public class ResourcePendingMaintenanceActions implements Serializable {
         return true;
     }
     
+    @Override
+    public ResourcePendingMaintenanceActions clone() {
+        try {
+            return (ResourcePendingMaintenanceActions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

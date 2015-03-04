@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a Reserved Instance modification.
  * </p>
  */
-public class ReservedInstancesModification implements Serializable {
+public class ReservedInstancesModification implements Serializable, Cloneable {
 
     /**
      * A unique ID for the Reserved Instance modification.
@@ -522,5 +522,19 @@ public class ReservedInstancesModification implements Serializable {
         return true;
     }
     
+    @Override
+    public ReservedInstancesModification clone() {
+        try {
+            return (ReservedInstancesModification) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

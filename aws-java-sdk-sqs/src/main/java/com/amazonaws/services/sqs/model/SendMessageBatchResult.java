@@ -23,7 +23,7 @@ import java.io.Serializable;
  * BatchResultErrorEntry tag if the message fails.
  * </p>
  */
-public class SendMessageBatchResult implements Serializable {
+public class SendMessageBatchResult implements Serializable, Cloneable {
 
     /**
      * A list of <a>SendMessageBatchResultEntry</a> items.
@@ -223,5 +223,19 @@ public class SendMessageBatchResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SendMessageBatchResult clone() {
+        try {
+            return (SendMessageBatchResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest)
  */
-public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
@@ -337,5 +337,11 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ModifyDBParameterGroupRequest clone() {
+        
+            return (ModifyDBParameterGroupRequest) super.clone();
+    }
+
 }
     

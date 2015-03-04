@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Output from an AddInstanceGroups call.
  * </p>
  */
-public class AddInstanceGroupsResult implements Serializable {
+public class AddInstanceGroupsResult implements Serializable, Cloneable {
 
     /**
      * The job flow ID in which the instance groups are added.
@@ -193,5 +193,19 @@ public class AddInstanceGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AddInstanceGroupsResult clone() {
+        try {
+            return (AddInstanceGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

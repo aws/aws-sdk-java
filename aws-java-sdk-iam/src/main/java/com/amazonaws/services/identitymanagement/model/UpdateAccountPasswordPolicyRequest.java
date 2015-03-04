@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest)
  */
-public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The minimum number of characters allowed in an IAM user password.
@@ -678,5 +678,11 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public UpdateAccountPasswordPolicyRequest clone() {
+        
+            return (UpdateAccountPasswordPolicyRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type that contains the <code>ChangeInfo</code> element.
  * </p>
  */
-public class GetChangeResult implements Serializable {
+public class GetChangeResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains information about the specified change
@@ -114,5 +114,19 @@ public class GetChangeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetChangeResult clone() {
+        try {
+            return (GetChangeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

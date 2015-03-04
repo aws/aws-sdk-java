@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a get deployment instance operation.
  * </p>
  */
-public class GetDeploymentInstanceResult implements Serializable {
+public class GetDeploymentInstanceResult implements Serializable, Cloneable {
 
     /**
      * Information about the instance.
@@ -100,5 +100,19 @@ public class GetDeploymentInstanceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetDeploymentInstanceResult clone() {
+        try {
+            return (GetDeploymentInstanceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

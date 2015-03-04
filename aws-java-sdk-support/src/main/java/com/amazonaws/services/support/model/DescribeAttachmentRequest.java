@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeAttachment(DescribeAttachmentRequest)
  */
-public class DescribeAttachmentRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAttachmentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the attachment to return. Attachment IDs are returned by the
@@ -116,5 +116,11 @@ public class DescribeAttachmentRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DescribeAttachmentRequest clone() {
+        
+            return (DescribeAttachmentRequest) super.clone();
+    }
+
 }
     

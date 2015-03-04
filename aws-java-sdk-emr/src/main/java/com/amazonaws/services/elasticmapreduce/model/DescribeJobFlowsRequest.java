@@ -57,7 +57,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeJobFlows(DescribeJobFlowsRequest)
  */
-public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Return only job flows created after this date and time.
@@ -373,5 +373,11 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribeJobFlowsRequest clone() {
+        
+            return (DescribeJobFlowsRequest) super.clone();
+    }
+
 }
     

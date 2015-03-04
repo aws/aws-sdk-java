@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The Instance data type.
  * </p>
  */
-public class Instance implements Serializable {
+public class Instance implements Serializable, Cloneable {
 
     /**
      * Provides an EC2 instance ID.
@@ -117,5 +117,19 @@ public class Instance implements Serializable {
         return true;
     }
     
+    @Override
+    public Instance clone() {
+        try {
+            return (Instance) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

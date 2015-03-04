@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyReplicationGroup(ModifyReplicationGroupRequest)
  */
-public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the replication group to modify.
@@ -83,12 +83,15 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
 
     /**
-     * The weekly time range (in UTC) during which replication group system
-     * maintenance can occur. Note that system maintenance may result in an
-     * outage. This change is made immediately. If you are moving this window
-     * to the current time, there must be at least 120 minutes between the
-     * current time and end of the window to ensure that pending changes are
-     * applied.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      */
     private String preferredMaintenanceWindow;
 
@@ -601,59 +604,77 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The weekly time range (in UTC) during which replication group system
-     * maintenance can occur. Note that system maintenance may result in an
-     * outage. This change is made immediately. If you are moving this window
-     * to the current time, there must be at least 120 minutes between the
-     * current time and end of the window to ensure that pending changes are
-     * applied.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @return The weekly time range (in UTC) during which replication group system
-     *         maintenance can occur. Note that system maintenance may result in an
-     *         outage. This change is made immediately. If you are moving this window
-     *         to the current time, there must be at least 120 minutes between the
-     *         current time and end of the window to ensure that pending changes are
-     *         applied.
+     * @return Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
     }
     
     /**
-     * The weekly time range (in UTC) during which replication group system
-     * maintenance can occur. Note that system maintenance may result in an
-     * outage. This change is made immediately. If you are moving this window
-     * to the current time, there must be at least 120 minutes between the
-     * current time and end of the window to ensure that pending changes are
-     * applied.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which replication group system
-     *         maintenance can occur. Note that system maintenance may result in an
-     *         outage. This change is made immediately. If you are moving this window
-     *         to the current time, there must be at least 120 minutes between the
-     *         current time and end of the window to ensure that pending changes are
-     *         applied.
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
     }
     
     /**
-     * The weekly time range (in UTC) during which replication group system
-     * maintenance can occur. Note that system maintenance may result in an
-     * outage. This change is made immediately. If you are moving this window
-     * to the current time, there must be at least 120 minutes between the
-     * current time and end of the window to ensure that pending changes are
-     * applied.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which replication group system
-     *         maintenance can occur. Note that system maintenance may result in an
-     *         outage. This change is made immediately. If you are moving this window
-     *         to the current time, there must be at least 120 minutes between the
-     *         current time and end of the window to ensure that pending changes are
-     *         applied.
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1202,5 +1223,11 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ModifyReplicationGroupRequest clone() {
+        
+            return (ModifyReplicationGroupRequest) super.clone();
+    }
+
 }
     

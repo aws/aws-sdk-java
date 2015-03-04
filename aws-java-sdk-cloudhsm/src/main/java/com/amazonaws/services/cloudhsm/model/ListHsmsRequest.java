@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#listHsms(ListHsmsRequest)
  */
-public class ListHsmsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListHsmsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <i>NextToken</i> value from a previous call to <a>ListHsms</a>.
@@ -131,5 +131,11 @@ public class ListHsmsRequest extends AmazonWebServiceRequest implements Serializ
         return true;
     }
     
+    @Override
+    public ListHsmsRequest clone() {
+        
+            return (ListHsmsRequest) super.clone();
+    }
+
 }
     

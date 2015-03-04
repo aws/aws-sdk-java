@@ -69,7 +69,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerActivityType(RegisterActivityTypeRequest)
  */
-public class RegisterActivityTypeRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterActivityTypeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which this activity is to be registered.
@@ -970,5 +970,11 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public RegisterActivityTypeRequest clone() {
+        
+            return (RegisterActivityTypeRequest) super.clone();
+    }
+
 }
     

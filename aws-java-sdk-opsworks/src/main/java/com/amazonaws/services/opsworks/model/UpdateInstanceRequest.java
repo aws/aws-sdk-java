@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateInstance(UpdateInstanceRequest)
  */
-public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -981,5 +981,11 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public UpdateInstanceRequest clone() {
+        
+            return (UpdateInstanceRequest) super.clone();
+    }
+
 }
     

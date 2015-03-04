@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the ReportTaskProgress action.
  * </p>
  */
-public class ReportTaskProgressResult implements Serializable {
+public class ReportTaskProgressResult implements Serializable, Cloneable {
 
     /**
      * If <code>True</code>, the calling task runner should cancel processing
@@ -127,5 +127,19 @@ public class ReportTaskProgressResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ReportTaskProgressResult clone() {
+        try {
+            return (ReportTaskProgressResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

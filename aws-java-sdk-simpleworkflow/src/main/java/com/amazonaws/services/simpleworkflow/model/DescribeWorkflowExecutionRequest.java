@@ -57,7 +57,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeWorkflowExecution(DescribeWorkflowExecutionRequest)
  */
-public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain containing the workflow execution.
@@ -190,5 +190,11 @@ public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeWorkflowExecutionRequest clone() {
+        
+            return (DescribeWorkflowExecutionRequest) super.clone();
+    }
+
 }
     

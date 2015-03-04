@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Update Health Check Result
  */
-public class UpdateHealthCheckResult implements Serializable {
+public class UpdateHealthCheckResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains identifying information about the health
@@ -105,5 +105,19 @@ public class UpdateHealthCheckResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateHealthCheckResult clone() {
+        try {
+            return (UpdateHealthCheckResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

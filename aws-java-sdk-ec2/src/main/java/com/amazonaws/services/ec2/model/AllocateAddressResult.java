@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class AllocateAddressResult implements Serializable {
+public class AllocateAddressResult implements Serializable, Cloneable {
 
     /**
      * The Elastic IP address.
@@ -263,5 +263,19 @@ public class AllocateAddressResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AllocateAddressResult clone() {
+        try {
+            return (AllocateAddressResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

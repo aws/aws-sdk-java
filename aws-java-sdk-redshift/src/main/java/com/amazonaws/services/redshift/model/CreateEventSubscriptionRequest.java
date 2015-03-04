@@ -52,7 +52,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createEventSubscription(CreateEventSubscriptionRequest)
  */
-public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the event subscription to be created. <p>Constraints: <ul>
@@ -711,5 +711,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public CreateEventSubscriptionRequest clone() {
+        
+            return (CreateEventSubscriptionRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CloneStack</code> request.
  * </p>
  */
-public class CloneStackResult implements Serializable {
+public class CloneStackResult implements Serializable, Cloneable {
 
     /**
      * The cloned stack ID.
@@ -100,5 +100,19 @@ public class CloneStackResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CloneStackResult clone() {
+        try {
+            return (CloneStackResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

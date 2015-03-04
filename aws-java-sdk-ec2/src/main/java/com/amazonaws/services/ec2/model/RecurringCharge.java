@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a recurring charge.
  * </p>
  */
-public class RecurringCharge implements Serializable {
+public class RecurringCharge implements Serializable, Cloneable {
 
     /**
      * The frequency of the recurring charge.
@@ -194,5 +194,19 @@ public class RecurringCharge implements Serializable {
         return true;
     }
     
+    @Override
+    public RecurringCharge clone() {
+        try {
+            return (RecurringCharge) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

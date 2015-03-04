@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#modifyHsm(ModifyHsmRequest)
  */
-public class ModifyHsmRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyHsmRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the HSM to modify.
@@ -394,5 +394,11 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public ModifyHsmRequest clone() {
+        
+            return (ModifyHsmRequest) super.clone();
+    }
+
 }
     

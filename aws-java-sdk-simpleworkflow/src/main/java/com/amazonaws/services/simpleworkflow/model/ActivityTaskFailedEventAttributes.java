@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskFailed</code> event.
  * </p>
  */
-public class ActivityTaskFailedEventAttributes implements Serializable {
+public class ActivityTaskFailedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The reason provided for the failure (if any).
@@ -292,5 +292,19 @@ public class ActivityTaskFailedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTaskFailedEventAttributes clone() {
+        try {
+            return (ActivityTaskFailedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

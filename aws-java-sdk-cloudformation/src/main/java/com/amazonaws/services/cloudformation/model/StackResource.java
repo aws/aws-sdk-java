@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The StackResource data type.
  * </p>
  */
-public class StackResource implements Serializable {
+public class StackResource implements Serializable, Cloneable {
 
     /**
      * The name associated with the stack.
@@ -516,5 +516,19 @@ public class StackResource implements Serializable {
         return true;
     }
     
+    @Override
+    public StackResource clone() {
+        try {
+            return (StackResource) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

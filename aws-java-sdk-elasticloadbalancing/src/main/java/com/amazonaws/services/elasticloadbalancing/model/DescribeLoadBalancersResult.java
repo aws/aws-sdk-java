@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeLoadBalancers action.
  * </p>
  */
-public class DescribeLoadBalancersResult implements Serializable {
+public class DescribeLoadBalancersResult implements Serializable, Cloneable {
 
     /**
      * A list of load balancer description structures.
@@ -184,5 +184,19 @@ public class DescribeLoadBalancersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLoadBalancersResult clone() {
+        try {
+            return (DescribeLoadBalancersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

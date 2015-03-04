@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of the pipelines associated with the current AWS account.
  * </p>
  */
-public class ListPipelinesResult implements Serializable {
+public class ListPipelinesResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>Pipeline</code> objects.
@@ -210,5 +210,19 @@ public class ListPipelinesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListPipelinesResult clone() {
+        try {
+            return (ListPipelinesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

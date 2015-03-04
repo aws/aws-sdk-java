@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribePermissions</code> request.
  * </p>
  */
-public class DescribePermissionsResult implements Serializable {
+public class DescribePermissionsResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>Permission</code> objects that describe the stack
@@ -207,5 +207,19 @@ public class DescribePermissionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribePermissionsResult clone() {
+        try {
+            return (DescribePermissionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

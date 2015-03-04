@@ -22,7 +22,7 @@ import java.io.Serializable;
  * version.
  * </p>
  */
-public class UpdateApplicationVersionResult implements Serializable {
+public class UpdateApplicationVersionResult implements Serializable, Cloneable {
 
     /**
      * The <a>ApplicationVersionDescription</a> of the application version.
@@ -101,5 +101,19 @@ public class UpdateApplicationVersionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateApplicationVersionResult clone() {
+        try {
+            return (UpdateApplicationVersionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

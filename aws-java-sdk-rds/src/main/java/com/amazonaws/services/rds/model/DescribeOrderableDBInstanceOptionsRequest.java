@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest)
  */
-public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the engine to retrieve DB instance options for.
@@ -523,5 +523,11 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         return true;
     }
     
+    @Override
+    public DescribeOrderableDBInstanceOptionsRequest clone() {
+        
+            return (DescribeOrderableDBInstanceOptionsRequest) super.clone();
+    }
+
 }
     

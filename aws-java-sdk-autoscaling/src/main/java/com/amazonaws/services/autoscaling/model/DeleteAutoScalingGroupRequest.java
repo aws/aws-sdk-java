@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest)
  */
-public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group to delete.
@@ -208,5 +208,11 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteAutoScalingGroupRequest clone() {
+        
+            return (DeleteAutoScalingGroupRequest) super.clone();
+    }
+
 }
     

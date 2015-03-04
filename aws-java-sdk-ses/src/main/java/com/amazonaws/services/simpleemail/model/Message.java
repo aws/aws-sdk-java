@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the message to be sent, composed of a subject and a body.
  * </p>
  */
-public class Message implements Serializable {
+public class Message implements Serializable, Cloneable {
 
     /**
      * The subject of the message: A short summary of the content, which will
@@ -169,5 +169,19 @@ public class Message implements Serializable {
         return true;
     }
     
+    @Override
+    public Message clone() {
+        try {
+            return (Message) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

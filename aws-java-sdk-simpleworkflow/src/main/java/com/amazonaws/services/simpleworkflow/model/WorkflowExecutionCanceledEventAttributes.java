@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionCanceled</code> event.
  * </p>
  */
-public class WorkflowExecutionCanceledEventAttributes implements Serializable {
+public class WorkflowExecutionCanceledEventAttributes implements Serializable, Cloneable {
 
     /**
      * Details for the cancellation (if any).
@@ -182,5 +182,19 @@ public class WorkflowExecutionCanceledEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionCanceledEventAttributes clone() {
+        try {
+            return (WorkflowExecutionCanceledEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

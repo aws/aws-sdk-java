@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#enableMetricsCollection(EnableMetricsCollectionRequest)
  */
-public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or ARN of the Auto Scaling group.
@@ -341,5 +341,11 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public EnableMetricsCollectionRequest clone() {
+        
+            return (EnableMetricsCollectionRequest) super.clone();
+    }
+
 }
     

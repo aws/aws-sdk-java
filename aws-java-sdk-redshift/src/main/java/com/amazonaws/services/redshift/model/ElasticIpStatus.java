@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the status of the elastic IP (EIP) address.
  * </p>
  */
-public class ElasticIpStatus implements Serializable {
+public class ElasticIpStatus implements Serializable, Cloneable {
 
     /**
      * The elastic IP (EIP) address for the cluster.
@@ -142,5 +142,19 @@ public class ElasticIpStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public ElasticIpStatus clone() {
+        try {
+            return (ElasticIpStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

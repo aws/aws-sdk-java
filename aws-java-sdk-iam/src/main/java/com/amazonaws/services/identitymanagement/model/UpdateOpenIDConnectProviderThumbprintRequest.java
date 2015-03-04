@@ -45,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest)
  */
-public class UpdateOpenIDConnectProviderThumbprintRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateOpenIDConnectProviderThumbprintRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
@@ -245,5 +245,11 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends AmazonWebServi
         return true;
     }
     
+    @Override
+    public UpdateOpenIDConnectProviderThumbprintRequest clone() {
+        
+            return (UpdateOpenIDConnectProviderThumbprintRequest) super.clone();
+    }
+
 }
     

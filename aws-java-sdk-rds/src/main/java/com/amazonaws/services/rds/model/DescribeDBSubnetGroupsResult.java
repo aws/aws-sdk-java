@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeDBSubnetGroups action.
  * </p>
  */
-public class DescribeDBSubnetGroupsResult implements Serializable {
+public class DescribeDBSubnetGroupsResult implements Serializable, Cloneable {
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -192,5 +192,19 @@ public class DescribeDBSubnetGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDBSubnetGroupsResult clone() {
+        try {
+            return (DescribeDBSubnetGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

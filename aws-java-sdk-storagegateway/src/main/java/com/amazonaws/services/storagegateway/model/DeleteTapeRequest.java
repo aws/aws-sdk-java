@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteTape(DeleteTapeRequest)
  */
-public class DeleteTapeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteTapeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique Amazon Resource Name (ARN) of the gateway that the virtual
@@ -185,5 +185,11 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DeleteTapeRequest clone() {
+        
+            return (DeleteTapeRequest) super.clone();
+    }
+
 }
     

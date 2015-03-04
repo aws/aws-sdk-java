@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSecurityGroup(DeleteDBSecurityGroupRequest)
  */
-public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB security group to delete. <note>You cannot delete
@@ -166,5 +166,11 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteDBSecurityGroupRequest clone() {
+        
+            return (DeleteDBSecurityGroupRequest) super.clone();
+    }
+
 }
     

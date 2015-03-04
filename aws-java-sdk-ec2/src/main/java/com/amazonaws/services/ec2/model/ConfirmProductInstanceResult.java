@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ConfirmProductInstanceResult implements Serializable {
+public class ConfirmProductInstanceResult implements Serializable, Cloneable {
 
     /**
      * The AWS account ID of the instance owner. This is only present if the
@@ -105,5 +105,19 @@ public class ConfirmProductInstanceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfirmProductInstanceResult clone() {
+        try {
+            return (ConfirmProductInstanceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

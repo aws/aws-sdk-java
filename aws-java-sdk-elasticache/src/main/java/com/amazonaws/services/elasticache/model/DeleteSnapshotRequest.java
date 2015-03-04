@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteSnapshot(DeleteSnapshotRequest)
  */
-public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the snapshot to be deleted.
@@ -108,5 +108,11 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeleteSnapshotRequest clone() {
+        
+            return (DeleteSnapshotRequest) super.clone();
+    }
+
 }
     

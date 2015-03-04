@@ -312,19 +312,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeliveryChannelStatusRequestMarshaller().marshall(describeDeliveryChannelStatusRequest);
+                request = new DescribeDeliveryChannelStatusRequestMarshaller().marshall(super.beforeMarshalling(describeDeliveryChannelStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeDeliveryChannelStatusResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeDeliveryChannelStatusResultJsonUnmarshaller();
             JsonResponseHandler<DescribeDeliveryChannelStatusResult> responseHandler =
                 new JsonResponseHandler<DescribeDeliveryChannelStatusResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -370,19 +371,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigurationRecordersRequestMarshaller().marshall(describeConfigurationRecordersRequest);
+                request = new DescribeConfigurationRecordersRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationRecordersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeConfigurationRecordersResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeConfigurationRecordersResultJsonUnmarshaller();
             JsonResponseHandler<DescribeConfigurationRecordersResult> responseHandler =
                 new JsonResponseHandler<DescribeConfigurationRecordersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -425,14 +427,16 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartConfigurationRecorderRequestMarshaller().marshall(startConfigurationRecorderRequest);
+                request = new StartConfigurationRecorderRequestMarshaller().marshall(super.beforeMarshalling(startConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -487,14 +491,16 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutDeliveryChannelRequestMarshaller().marshall(putDeliveryChannelRequest);
+                request = new PutDeliveryChannelRequestMarshaller().marshall(super.beforeMarshalling(putDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -537,14 +543,16 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeliveryChannelRequestMarshaller().marshall(deleteDeliveryChannelRequest);
+                request = new DeleteDeliveryChannelRequestMarshaller().marshall(super.beforeMarshalling(deleteDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -581,14 +589,16 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopConfigurationRecorderRequestMarshaller().marshall(stopConfigurationRecorderRequest);
+                request = new StopConfigurationRecorderRequestMarshaller().marshall(super.beforeMarshalling(stopConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -641,19 +651,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeliverConfigSnapshotRequestMarshaller().marshall(deliverConfigSnapshotRequest);
+                request = new DeliverConfigSnapshotRequestMarshaller().marshall(super.beforeMarshalling(deliverConfigSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeliverConfigSnapshotResult, JsonUnmarshallerContext> unmarshaller =
                 new DeliverConfigSnapshotResultJsonUnmarshaller();
             JsonResponseHandler<DeliverConfigSnapshotResult> responseHandler =
                 new JsonResponseHandler<DeliverConfigSnapshotResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -702,14 +713,16 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutConfigurationRecorderRequestMarshaller().marshall(putConfigurationRecorderRequest);
+                request = new PutConfigurationRecorderRequestMarshaller().marshall(super.beforeMarshalling(putConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -764,19 +777,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetResourceConfigHistoryRequestMarshaller().marshall(getResourceConfigHistoryRequest);
+                request = new GetResourceConfigHistoryRequestMarshaller().marshall(super.beforeMarshalling(getResourceConfigHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetResourceConfigHistoryResult, JsonUnmarshallerContext> unmarshaller =
                 new GetResourceConfigHistoryResultJsonUnmarshaller();
             JsonResponseHandler<GetResourceConfigHistoryResult> responseHandler =
                 new JsonResponseHandler<GetResourceConfigHistoryResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -822,19 +836,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeliveryChannelsRequestMarshaller().marshall(describeDeliveryChannelsRequest);
+                request = new DescribeDeliveryChannelsRequestMarshaller().marshall(super.beforeMarshalling(describeDeliveryChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeDeliveryChannelsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeDeliveryChannelsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeDeliveryChannelsResult> responseHandler =
                 new JsonResponseHandler<DescribeDeliveryChannelsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -880,19 +895,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigurationRecorderStatusRequestMarshaller().marshall(describeConfigurationRecorderStatusRequest);
+                request = new DescribeConfigurationRecorderStatusRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationRecorderStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeConfigurationRecorderStatusResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeConfigurationRecorderStatusResultJsonUnmarshaller();
             JsonResponseHandler<DescribeConfigurationRecorderStatusResult> responseHandler =
                 new JsonResponseHandler<DescribeConfigurationRecorderStatusResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

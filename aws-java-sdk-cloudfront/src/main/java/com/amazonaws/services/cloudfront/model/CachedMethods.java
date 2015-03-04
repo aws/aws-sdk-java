@@ -27,7 +27,7 @@ import java.io.Serializable;
  * Origin headers for the responses to be cached correctly.
  * </p>
  */
-public class CachedMethods implements Serializable {
+public class CachedMethods implements Serializable, Cloneable {
 
     /**
      * The number of HTTP methods for which you want CloudFront to cache
@@ -238,5 +238,19 @@ public class CachedMethods implements Serializable {
         return true;
     }
     
+    @Override
+    public CachedMethods clone() {
+        try {
+            return (CachedMethods) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

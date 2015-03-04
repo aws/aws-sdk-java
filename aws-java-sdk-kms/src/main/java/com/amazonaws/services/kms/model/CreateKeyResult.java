@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateKeyResult implements Serializable {
+public class CreateKeyResult implements Serializable, Cloneable {
 
     /**
      * Metadata associated with the key.
@@ -98,5 +98,19 @@ public class CreateKeyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateKeyResult clone() {
+        try {
+            return (CreateKeyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

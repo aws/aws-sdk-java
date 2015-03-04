@@ -49,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createOpenIDConnectProvider(CreateOpenIDConnectProviderRequest)
  */
-public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the identity provider. The URL must begin with "https://"
@@ -584,5 +584,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public CreateOpenIDConnectProviderRequest clone() {
+        
+            return (CreateOpenIDConnectProviderRequest) super.clone();
+    }
+
 }
     

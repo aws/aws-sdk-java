@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarms(DescribeAlarmsRequest)
  */
-public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of alarm names to retrieve information for.
@@ -470,5 +470,11 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeAlarmsRequest clone() {
+        
+            return (DescribeAlarmsRequest) super.clone();
+    }
+
 }
     

@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#listMetrics(ListMetricsRequest)
  */
-public class ListMetricsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListMetricsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The namespace to filter against.
@@ -328,5 +328,11 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListMetricsRequest clone() {
+        
+            return (ListMetricsRequest) super.clone();
+    }
+
 }
     

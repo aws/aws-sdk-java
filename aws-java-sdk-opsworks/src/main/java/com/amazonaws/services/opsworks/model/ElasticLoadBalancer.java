@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Elastic Load Balancing instance.
  * </p>
  */
-public class ElasticLoadBalancer implements Serializable {
+public class ElasticLoadBalancer implements Serializable, Cloneable {
 
     /**
      * The Elastic Load Balancing instance's name.
@@ -550,5 +550,19 @@ public class ElasticLoadBalancer implements Serializable {
         return true;
     }
     
+    @Override
+    public ElasticLoadBalancer clone() {
+        try {
+            return (ElasticLoadBalancer) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

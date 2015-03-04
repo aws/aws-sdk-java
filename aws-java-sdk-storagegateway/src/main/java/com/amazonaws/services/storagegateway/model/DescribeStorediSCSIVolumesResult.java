@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Describe Storedi S C S I Volumes Result
  */
-public class DescribeStorediSCSIVolumesResult implements Serializable {
+public class DescribeStorediSCSIVolumesResult implements Serializable, Cloneable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<StorediSCSIVolume> storediSCSIVolumes;
 
@@ -130,5 +130,19 @@ public class DescribeStorediSCSIVolumesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeStorediSCSIVolumesResult clone() {
+        try {
+            return (DescribeStorediSCSIVolumesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

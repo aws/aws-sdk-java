@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>MarkerRecorded</code> event.
  * </p>
  */
-public class MarkerRecordedEventAttributes implements Serializable {
+public class MarkerRecordedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The name of the marker.
@@ -236,5 +236,19 @@ public class MarkerRecordedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public MarkerRecordedEventAttributes clone() {
+        try {
+            return (MarkerRecordedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

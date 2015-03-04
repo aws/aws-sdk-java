@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheEngineVersions(DescribeCacheEngineVersionsRequest)
  */
-public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The cache engine to return. Valid values: <code>memcached</code> |
@@ -413,5 +413,11 @@ public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DescribeCacheEngineVersionsRequest clone() {
+        
+            return (DescribeCacheEngineVersionsRequest) super.clone();
+    }
+
 }
     

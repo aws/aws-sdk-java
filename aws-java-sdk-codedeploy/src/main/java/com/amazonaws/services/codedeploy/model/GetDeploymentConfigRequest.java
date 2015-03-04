@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#getDeploymentConfig(GetDeploymentConfigRequest)
  */
-public class GetDeploymentConfigRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetDeploymentConfigRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing deployment configuration within the AWS user
@@ -124,5 +124,11 @@ public class GetDeploymentConfigRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public GetDeploymentConfigRequest clone() {
+        
+            return (GetDeploymentConfigRequest) super.clone();
+    }
+
 }
     

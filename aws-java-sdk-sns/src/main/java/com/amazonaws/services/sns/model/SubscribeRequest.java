@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#subscribe(SubscribeRequest)
  */
-public class SubscribeRequest extends AmazonWebServiceRequest implements Serializable {
+public class SubscribeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the topic you want to subscribe to.
@@ -366,5 +366,11 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public SubscribeRequest clone() {
+        
+            return (SubscribeRequest) super.clone();
+    }
+
 }
     

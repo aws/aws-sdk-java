@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheParameterGroup(ModifyCacheParameterGroupRequest)
  */
-public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache parameter group to modify.
@@ -234,5 +234,11 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public ModifyCacheParameterGroupRequest clone() {
+        
+            return (ModifyCacheParameterGroupRequest) super.clone();
+    }
+
 }
     

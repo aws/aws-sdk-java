@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest)
  */
-public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The IDs of the Trusted Advisor checks.
@@ -142,5 +142,11 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
         return true;
     }
     
+    @Override
+    public DescribeTrustedAdvisorCheckRefreshStatusesRequest clone() {
+        
+            return (DescribeTrustedAdvisorCheckRefreshStatusesRequest) super.clone();
+    }
+
 }
     

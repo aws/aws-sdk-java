@@ -68,7 +68,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#requestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest)
  */
-public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable {
+public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain containing the workflow execution to cancel.
@@ -267,5 +267,11 @@ public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public RequestCancelWorkflowExecutionRequest clone() {
+        
+            return (RequestCancelWorkflowExecutionRequest) super.clone();
+    }
+
 }
     

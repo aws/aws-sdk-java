@@ -43,7 +43,7 @@ import com.amazonaws.services.ec2.model.transform.PurchaseReservedInstancesOffer
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest)
  */
-public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<PurchaseReservedInstancesOfferingRequest> {
+public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<PurchaseReservedInstancesOfferingRequest> {
 
     /**
      * The ID of the Reserved Instance offering to purchase.
@@ -252,5 +252,11 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public PurchaseReservedInstancesOfferingRequest clone() {
+        
+            return (PurchaseReservedInstancesOfferingRequest) super.clone();
+    }
+
 }
     

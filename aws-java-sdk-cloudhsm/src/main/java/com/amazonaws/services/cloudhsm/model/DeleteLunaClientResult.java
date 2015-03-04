@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteLunaClientResult implements Serializable {
+public class DeleteLunaClientResult implements Serializable, Cloneable {
 
     /**
      * The status of the action.
@@ -110,5 +110,19 @@ public class DeleteLunaClientResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteLunaClientResult clone() {
+        try {
+            return (DeleteLunaClientResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

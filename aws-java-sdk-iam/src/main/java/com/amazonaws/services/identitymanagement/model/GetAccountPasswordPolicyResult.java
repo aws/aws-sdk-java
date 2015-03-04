@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GetAccountPasswordPolicyResult implements Serializable {
+public class GetAccountPasswordPolicyResult implements Serializable, Cloneable {
 
     /**
      * Contains information about the account password policy. <p> This data
@@ -115,5 +115,19 @@ public class GetAccountPasswordPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetAccountPasswordPolicyResult clone() {
+        try {
+            return (GetAccountPasswordPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHostedZone(GetHostedZoneRequest)
  */
-public class GetHostedZoneRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetHostedZoneRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the hosted zone for which you want to get a list of the name
@@ -145,5 +145,11 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public GetHostedZoneRequest clone() {
+        
+            return (GetHostedZoneRequest) super.clone();
+    }
+
 }
     

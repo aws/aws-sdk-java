@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeCacheParameters</i> action.
  * </p>
  */
-public class DescribeCacheParametersResult implements Serializable {
+public class DescribeCacheParametersResult implements Serializable, Cloneable {
 
     /**
      * Provides an identifier to allow retrieval of paginated results.
@@ -263,5 +263,19 @@ public class DescribeCacheParametersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeCacheParametersResult clone() {
+        try {
+            return (DescribeCacheParametersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

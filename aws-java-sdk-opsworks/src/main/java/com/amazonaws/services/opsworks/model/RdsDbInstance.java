@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Amazon RDS instance.
  * </p>
  */
-public class RdsDbInstance implements Serializable {
+public class RdsDbInstance implements Serializable, Cloneable {
 
     /**
      * The instance's ARN.
@@ -472,5 +472,19 @@ public class RdsDbInstance implements Serializable {
         return true;
     }
     
+    @Override
+    public RdsDbInstance clone() {
+        try {
+            return (RdsDbInstance) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

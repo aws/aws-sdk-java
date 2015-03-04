@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the options for a range inventory retrieval job.
  * </p>
  */
-public class InventoryRetrievalJobDescription implements Serializable {
+public class InventoryRetrievalJobDescription implements Serializable, Cloneable {
 
     /**
      * The output format for the vault inventory list, which is set by the
@@ -373,5 +373,19 @@ public class InventoryRetrievalJobDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public InventoryRetrievalJobDescription clone() {
+        try {
+            return (InventoryRetrievalJobDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

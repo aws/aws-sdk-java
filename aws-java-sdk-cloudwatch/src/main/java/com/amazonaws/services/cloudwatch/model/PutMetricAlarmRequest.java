@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#putMetricAlarm(PutMetricAlarmRequest)
  */
-public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The descriptive name for the alarm. This name must be unique within
@@ -1299,5 +1299,11 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public PutMetricAlarmRequest clone() {
+        
+            return (PutMetricAlarmRequest) super.clone();
+    }
+
 }
     

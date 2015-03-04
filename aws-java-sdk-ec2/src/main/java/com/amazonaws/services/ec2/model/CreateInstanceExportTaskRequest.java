@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createInstanceExportTask(CreateInstanceExportTaskRequest)
  */
-public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A description for the conversion task or the resource being exported.
@@ -296,5 +296,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public CreateInstanceExportTaskRequest clone() {
+        
+            return (CreateInstanceExportTaskRequest) super.clone();
+    }
+
 }
     

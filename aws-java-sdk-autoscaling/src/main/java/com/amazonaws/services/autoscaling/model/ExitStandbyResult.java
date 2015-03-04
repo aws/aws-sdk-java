@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ExitStandbyResult implements Serializable {
+public class ExitStandbyResult implements Serializable, Cloneable {
 
     /**
      * The activities related to moving instances out of <code>Standby</code>
@@ -142,5 +142,19 @@ public class ExitStandbyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ExitStandbyResult clone() {
+        try {
+            return (ExitStandbyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

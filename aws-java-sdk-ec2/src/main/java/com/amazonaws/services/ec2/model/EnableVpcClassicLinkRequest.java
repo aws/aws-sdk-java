@@ -36,7 +36,7 @@ import com.amazonaws.services.ec2.model.transform.EnableVpcClassicLinkRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#enableVpcClassicLink(EnableVpcClassicLinkRequest)
  */
-public class EnableVpcClassicLinkRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<EnableVpcClassicLinkRequest> {
+public class EnableVpcClassicLinkRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<EnableVpcClassicLinkRequest> {
 
     /**
      * The ID of the VPC.
@@ -127,5 +127,11 @@ public class EnableVpcClassicLinkRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public EnableVpcClassicLinkRequest clone() {
+        
+            return (EnableVpcClassicLinkRequest) super.clone();
+    }
+
 }
     

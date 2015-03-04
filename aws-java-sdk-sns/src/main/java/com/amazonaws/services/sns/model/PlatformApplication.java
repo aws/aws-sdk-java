@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Platform application object.
  * </p>
  */
-public class PlatformApplication implements Serializable {
+public class PlatformApplication implements Serializable, Cloneable {
 
     /**
      * PlatformApplicationArn for platform application object.
@@ -176,5 +176,19 @@ public class PlatformApplication implements Serializable {
         return true;
     }
     
+    @Override
+    public PlatformApplication clone() {
+        try {
+            return (PlatformApplication) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

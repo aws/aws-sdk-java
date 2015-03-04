@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeExportTasks(DescribeExportTasksRequest)
  */
-public class DescribeExportTasksRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeExportTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more export task IDs.
@@ -140,5 +140,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeExportTasksRequest clone() {
+        
+            return (DescribeExportTasksRequest) super.clone();
+    }
+
 }
     

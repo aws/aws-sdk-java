@@ -26,7 +26,7 @@ import java.io.Serializable;
  * GetAccountAuthorizationDetails action.
  * </p>
  */
-public class GroupDetail implements Serializable {
+public class GroupDetail implements Serializable, Cloneable {
 
     /**
      * The path to the group. For more information about paths, see <a
@@ -480,5 +480,19 @@ public class GroupDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public GroupDetail clone() {
+        try {
+            return (GroupDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

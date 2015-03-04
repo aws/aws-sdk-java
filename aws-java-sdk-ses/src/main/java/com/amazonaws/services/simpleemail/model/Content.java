@@ -27,7 +27,7 @@ import java.io.Serializable;
  * ISO-8859-1, and Shift_JIS.
  * </p>
  */
-public class Content implements Serializable {
+public class Content implements Serializable, Cloneable {
 
     /**
      * The textual data of the content.
@@ -165,5 +165,19 @@ public class Content implements Serializable {
         return true;
     }
     
+    @Override
+    public Content clone() {
+        try {
+            return (Content) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

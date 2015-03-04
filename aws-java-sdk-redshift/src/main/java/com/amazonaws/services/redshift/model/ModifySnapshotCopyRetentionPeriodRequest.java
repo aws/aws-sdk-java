@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest)
  */
-public class ModifySnapshotCopyRetentionPeriodRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifySnapshotCopyRetentionPeriodRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of the cluster for which you want to change the
@@ -211,5 +211,11 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public ModifySnapshotCopyRetentionPeriodRequest clone() {
+        
+            return (ModifySnapshotCopyRetentionPeriodRequest) super.clone();
+    }
+
 }
     

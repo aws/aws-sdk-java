@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateUserProfile</code> request.
  * </p>
  */
-public class CreateUserProfileResult implements Serializable {
+public class CreateUserProfileResult implements Serializable, Cloneable {
 
     /**
      * The user's IAM ARN.
@@ -100,5 +100,19 @@ public class CreateUserProfileResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateUserProfileResult clone() {
+        try {
+            return (CreateUserProfileResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

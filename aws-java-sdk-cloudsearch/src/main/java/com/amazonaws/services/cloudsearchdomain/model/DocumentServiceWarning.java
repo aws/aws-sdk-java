@@ -22,7 +22,7 @@ import java.io.Serializable;
  * while processing an upload request.
  * </p>
  */
-public class DocumentServiceWarning implements Serializable {
+public class DocumentServiceWarning implements Serializable, Cloneable {
 
     /**
      * The description for a warning returned by the document service.
@@ -101,5 +101,19 @@ public class DocumentServiceWarning implements Serializable {
         return true;
     }
     
+    @Override
+    public DocumentServiceWarning clone() {
+        try {
+            return (DocumentServiceWarning) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

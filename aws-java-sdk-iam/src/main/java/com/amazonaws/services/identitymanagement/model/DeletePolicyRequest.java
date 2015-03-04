@@ -49,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deletePolicy(DeletePolicyRequest)
  */
-public class DeletePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeletePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
@@ -168,5 +168,11 @@ public class DeletePolicyRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeletePolicyRequest clone() {
+        
+            return (DeletePolicyRequest) super.clone();
+    }
+
 }
     

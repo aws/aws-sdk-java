@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#createLunaClient(CreateLunaClientRequest)
  */
-public class CreateLunaClientRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLunaClientRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The label for the client.
@@ -182,5 +182,11 @@ public class CreateLunaClientRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateLunaClientRequest clone() {
+        
+            return (CreateLunaClientRequest) super.clone();
+    }
+
 }
     

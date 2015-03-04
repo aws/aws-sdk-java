@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an import volume task.
  * </p>
  */
-public class ImportInstanceVolumeDetailItem implements Serializable {
+public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
 
     /**
      * The number of bytes converted so far.
@@ -352,5 +352,19 @@ public class ImportInstanceVolumeDetailItem implements Serializable {
         return true;
     }
     
+    @Override
+    public ImportInstanceVolumeDetailItem clone() {
+        try {
+            return (ImportInstanceVolumeDetailItem) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

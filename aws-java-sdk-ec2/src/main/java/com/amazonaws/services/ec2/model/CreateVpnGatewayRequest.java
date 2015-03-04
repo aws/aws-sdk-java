@@ -35,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVpnGatewayRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest)
  */
-public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVpnGatewayRequest> {
+public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateVpnGatewayRequest> {
 
     /**
      * The type of VPN connection this virtual private gateway supports.
@@ -250,5 +250,11 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateVpnGatewayRequest clone() {
+        
+            return (CreateVpnGatewayRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * status of the indexing operation, including the fields being indexed.
  * </p>
  */
-public class IndexDocumentsResult implements Serializable {
+public class IndexDocumentsResult implements Serializable, Cloneable {
 
     /**
      * The names of the fields that are currently being indexed.
@@ -136,5 +136,19 @@ public class IndexDocumentsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public IndexDocumentsResult clone() {
+        try {
+            return (IndexDocumentsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

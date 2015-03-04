@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a device object associated with a gateway-VTL.
  * </p>
  */
-public class VTLDevice implements Serializable {
+public class VTLDevice implements Serializable, Cloneable {
 
     /**
      * Specifies the unique Amazon Resource Name (ARN) of the device (tape
@@ -283,5 +283,19 @@ public class VTLDevice implements Serializable {
         return true;
     }
     
+    @Override
+    public VTLDevice clone() {
+        try {
+            return (VTLDevice) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

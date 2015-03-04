@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>BatchGetItem</i> operation.
  * </p>
  */
-public class BatchGetItemResult implements Serializable {
+public class BatchGetItemResult implements Serializable, Cloneable {
 
     /**
      * A map of table name to a list of items. Each object in
@@ -447,5 +447,19 @@ public class BatchGetItemResult implements Serializable {
         return true;
     }
     
+    @Override
+    public BatchGetItemResult clone() {
+        try {
+            return (BatchGetItemResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

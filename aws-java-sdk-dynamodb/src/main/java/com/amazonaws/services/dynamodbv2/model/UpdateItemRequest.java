@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateItem(UpdateItemRequest)
  */
-public class UpdateItemRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateItemRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the table containing the item to update.
@@ -4441,5 +4441,11 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public UpdateItemRequest clone() {
+        
+            return (UpdateItemRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeReservedDBInstancesOfferings action.
  * </p>
  */
-public class DescribeReservedDBInstancesOfferingsResult implements Serializable {
+public class DescribeReservedDBInstancesOfferingsResult implements Serializable, Cloneable {
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -192,5 +192,19 @@ public class DescribeReservedDBInstancesOfferingsResult implements Serializable 
         return true;
     }
     
+    @Override
+    public DescribeReservedDBInstancesOfferingsResult clone() {
+        try {
+            return (DescribeReservedDBInstancesOfferingsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

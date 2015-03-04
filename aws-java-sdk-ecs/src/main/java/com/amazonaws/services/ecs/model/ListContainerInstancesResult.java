@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListContainerInstancesResult implements Serializable {
+public class ListContainerInstancesResult implements Serializable, Cloneable {
 
     /**
      * The list of container instance full Amazon Resource Name (ARN) entries
@@ -219,5 +219,19 @@ public class ListContainerInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListContainerInstancesResult clone() {
+        try {
+            return (ListContainerInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

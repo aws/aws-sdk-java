@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an alarm.
  * </p>
  */
-public class Alarm implements Serializable {
+public class Alarm implements Serializable, Cloneable {
 
     /**
      * The name of the alarm.
@@ -174,5 +174,19 @@ public class Alarm implements Serializable {
         return true;
     }
     
+    @Override
+    public Alarm clone() {
+        try {
+            return (Alarm) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

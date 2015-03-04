@@ -42,7 +42,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotInstanceRequestsRe
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest)
  */
-public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSpotInstanceRequestsRequest> {
+public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSpotInstanceRequestsRequest> {
 
     /**
      * One or more Spot Instance request IDs.
@@ -983,5 +983,11 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeSpotInstanceRequestsRequest clone() {
+        
+            return (DescribeSpotInstanceRequestsRequest) super.clone();
+    }
+
 }
     

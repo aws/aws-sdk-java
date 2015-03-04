@@ -56,7 +56,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countPendingActivityTasks(CountPendingActivityTasksRequest)
  */
-public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest implements Serializable {
+public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain that contains the task list.
@@ -189,5 +189,11 @@ public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public CountPendingActivityTasksRequest clone() {
+        
+            return (CountPendingActivityTasksRequest) super.clone();
+    }
+
 }
     

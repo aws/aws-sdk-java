@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeClusters action.
  * </p>
  */
-public class DescribeClustersResult implements Serializable {
+public class DescribeClustersResult implements Serializable, Cloneable {
 
     /**
      * A value that indicates the starting point for the next set of response
@@ -221,5 +221,19 @@ public class DescribeClustersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeClustersResult clone() {
+        try {
+            return (DescribeClustersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

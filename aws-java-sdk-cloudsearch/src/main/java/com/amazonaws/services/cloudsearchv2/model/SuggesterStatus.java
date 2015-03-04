@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The value of a <code>Suggester</code> and its current status.
  * </p>
  */
-public class SuggesterStatus implements Serializable {
+public class SuggesterStatus implements Serializable, Cloneable {
 
     /**
      * Configuration information for a search suggester. Each suggester has a
@@ -163,5 +163,19 @@ public class SuggesterStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public SuggesterStatus clone() {
+        try {
+            return (SuggesterStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest)
  */
-public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of entity types (user, group, or role) for filtering the
@@ -344,5 +344,11 @@ public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public GetAccountAuthorizationDetailsRequest clone() {
+        
+            return (GetAccountAuthorizationDetailsRequest) super.clone();
+    }
+
 }
     

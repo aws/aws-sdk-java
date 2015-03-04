@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest)
  */
-public class ChangePasswordRequest extends AmazonWebServiceRequest implements Serializable {
+public class ChangePasswordRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The IAM user's current password.
@@ -193,5 +193,11 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ChangePasswordRequest clone() {
+        
+            return (ChangePasswordRequest) super.clone();
+    }
+
 }
     

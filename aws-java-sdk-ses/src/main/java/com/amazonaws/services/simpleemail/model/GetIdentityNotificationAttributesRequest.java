@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest)
  */
-public class GetIdentityNotificationAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetIdentityNotificationAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of one or more identities.
@@ -150,5 +150,11 @@ public class GetIdentityNotificationAttributesRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public GetIdentityNotificationAttributesRequest clone() {
+        
+            return (GetIdentityNotificationAttributesRequest) super.clone();
+    }
+
 }
     

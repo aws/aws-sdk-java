@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#addWorkingStorage(AddWorkingStorageRequest)
  */
-public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -249,5 +249,11 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public AddWorkingStorageRequest clone() {
+        
+            return (AddWorkingStorageRequest) super.clone();
+    }
+
 }
     

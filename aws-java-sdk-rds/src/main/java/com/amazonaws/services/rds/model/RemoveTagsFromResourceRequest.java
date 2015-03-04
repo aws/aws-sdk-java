@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#removeTagsFromResource(RemoveTagsFromResourceRequest)
  */
-public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon RDS resource the tags will be removed from. This value is
@@ -215,5 +215,11 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public RemoveTagsFromResourceRequest clone() {
+        
+            return (RemoveTagsFromResourceRequest) super.clone();
+    }
+
 }
     

@@ -23,7 +23,7 @@ import java.io.Serializable;
  * so on.
  * </p>
  */
-public class Ec2InstanceAttributes implements Serializable {
+public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * The name of the Amazon EC2 key pair to use when connecting with SSH
@@ -554,5 +554,19 @@ public class Ec2InstanceAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public Ec2InstanceAttributes clone() {
+        try {
+            return (Ec2InstanceAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

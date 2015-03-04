@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeElasticIps(DescribeElasticIpsRequest)
  */
-public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID. If you include this parameter,
@@ -292,5 +292,11 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DescribeElasticIpsRequest clone() {
+        
+            return (DescribeElasticIpsRequest) super.clone();
+    }
+
 }
     

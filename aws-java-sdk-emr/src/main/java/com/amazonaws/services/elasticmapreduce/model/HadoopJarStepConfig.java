@@ -23,7 +23,7 @@ import java.io.Serializable;
  * waits for the job to finish or fail.
  * </p>
  */
-public class HadoopJarStepConfig implements Serializable {
+public class HadoopJarStepConfig implements Serializable, Cloneable {
 
     /**
      * A list of Java properties that are set when the step runs. You can use
@@ -379,5 +379,19 @@ public class HadoopJarStepConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public HadoopJarStepConfig clone() {
+        try {
+            return (HadoopJarStepConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

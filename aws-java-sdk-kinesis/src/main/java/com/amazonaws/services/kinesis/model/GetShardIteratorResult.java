@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output for <code>GetShardIterator</code> .
  * </p>
  */
-public class GetShardIteratorResult implements Serializable {
+public class GetShardIteratorResult implements Serializable, Cloneable {
 
     /**
      * The position in the shard from which to start reading data records
@@ -126,5 +126,19 @@ public class GetShardIteratorResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetShardIteratorResult clone() {
+        try {
+            return (GetShardIteratorResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

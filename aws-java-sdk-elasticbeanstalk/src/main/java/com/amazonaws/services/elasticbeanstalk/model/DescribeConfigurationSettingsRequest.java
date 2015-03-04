@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeConfigurationSettings(DescribeConfigurationSettingsRequest)
  */
-public class DescribeConfigurationSettingsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeConfigurationSettingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The application for the environment or configuration template.
@@ -330,5 +330,11 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DescribeConfigurationSettingsRequest clone() {
+        
+            return (DescribeConfigurationSettingsRequest) super.clone();
+    }
+
 }
     

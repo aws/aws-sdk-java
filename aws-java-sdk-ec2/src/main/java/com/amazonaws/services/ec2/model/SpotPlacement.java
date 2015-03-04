@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes Spot Instance placement.
  * </p>
  */
-public class SpotPlacement implements Serializable {
+public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * The Availability Zone.
@@ -159,5 +159,19 @@ public class SpotPlacement implements Serializable {
         return true;
     }
     
+    @Override
+    public SpotPlacement clone() {
+        try {
+            return (SpotPlacement) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

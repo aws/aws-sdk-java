@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeEventCategories action.
  * </p>
  */
-public class EventCategoriesMap implements Serializable {
+public class EventCategoriesMap implements Serializable, Cloneable {
 
     /**
      * The source type that the returned categories belong to
@@ -178,5 +178,19 @@ public class EventCategoriesMap implements Serializable {
         return true;
     }
     
+    @Override
+    public EventCategoriesMap clone() {
+        try {
+            return (EventCategoriesMap) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

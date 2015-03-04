@@ -22,7 +22,7 @@ import java.io.Serializable;
  * status of the newly-configured expression.
  * </p>
  */
-public class DefineExpressionResult implements Serializable {
+public class DefineExpressionResult implements Serializable, Cloneable {
 
     /**
      * The value of an <code>Expression</code> and its current status.
@@ -101,5 +101,19 @@ public class DefineExpressionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DefineExpressionResult clone() {
+        try {
+            return (DefineExpressionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

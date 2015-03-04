@@ -77,7 +77,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#putAttributes(PutAttributesRequest)
  */
-public class PutAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which to perform the operation.
@@ -381,5 +381,11 @@ public class PutAttributesRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public PutAttributesRequest clone() {
+        
+            return (PutAttributesRequest) super.clone();
+    }
+
 }
     

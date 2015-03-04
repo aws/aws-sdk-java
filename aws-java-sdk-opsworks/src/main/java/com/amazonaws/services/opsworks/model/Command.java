@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a command.
  * </p>
  */
-public class Command implements Serializable {
+public class Command implements Serializable, Cloneable {
 
     /**
      * The command ID.
@@ -534,5 +534,19 @@ public class Command implements Serializable {
         return true;
     }
     
+    @Override
+    public Command clone() {
+        try {
+            return (Command) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

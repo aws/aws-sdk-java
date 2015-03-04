@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeDocumentResult implements Serializable {
+public class DescribeDocumentResult implements Serializable, Cloneable {
 
     /**
      * Information about the configuration document.
@@ -98,5 +98,19 @@ public class DescribeDocumentResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDocumentResult clone() {
+        try {
+            return (DescribeDocumentResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

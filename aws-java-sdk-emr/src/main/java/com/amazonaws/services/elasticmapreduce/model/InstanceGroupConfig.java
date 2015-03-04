@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Configuration defining a new instance group.
  * </p>
  */
-public class InstanceGroupConfig implements Serializable {
+public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * Friendly name given to the instance group.
@@ -509,5 +509,19 @@ public class InstanceGroupConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceGroupConfig clone() {
+        try {
+            return (InstanceGroupConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeUploadBuffer(DescribeUploadBufferRequest)
  */
-public class DescribeUploadBufferRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeUploadBufferRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -138,5 +138,11 @@ public class DescribeUploadBufferRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeUploadBufferRequest clone() {
+        
+            return (DescribeUploadBufferRequest) super.clone();
+    }
+
 }
     

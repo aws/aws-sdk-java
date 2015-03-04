@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeDBSecurityGroups action.
  * </p>
  */
-public class IPRange implements Serializable {
+public class IPRange implements Serializable, Cloneable {
 
     /**
      * Specifies the status of the IP range. Status can be "authorizing",
@@ -156,5 +156,19 @@ public class IPRange implements Serializable {
         return true;
     }
     
+    @Override
+    public IPRange clone() {
+        try {
+            return (IPRange) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

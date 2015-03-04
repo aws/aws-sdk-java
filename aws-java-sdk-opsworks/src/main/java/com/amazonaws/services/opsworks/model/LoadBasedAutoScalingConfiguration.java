@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a layer's load-based auto scaling configuration.
  * </p>
  */
-public class LoadBasedAutoScalingConfiguration implements Serializable {
+public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * The layer ID.
@@ -263,5 +263,19 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public LoadBasedAutoScalingConfiguration clone() {
+        try {
+            return (LoadBasedAutoScalingConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

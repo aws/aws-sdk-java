@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#updatePipelineNotifications(UpdatePipelineNotificationsRequest)
  */
-public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the pipeline for which you want to change
@@ -290,5 +290,11 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public UpdatePipelineNotificationsRequest clone() {
+        
+            return (UpdatePipelineNotificationsRequest) super.clone();
+    }
+
 }
     

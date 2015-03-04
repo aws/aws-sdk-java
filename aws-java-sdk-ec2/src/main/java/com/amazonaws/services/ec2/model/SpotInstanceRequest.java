@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describe a Spot Instance request.
  * </p>
  */
-public class SpotInstanceRequest implements Serializable {
+public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the Spot Instance request.
@@ -1067,5 +1067,19 @@ public class SpotInstanceRequest implements Serializable {
         return true;
     }
     
+    @Override
+    public SpotInstanceRequest clone() {
+        try {
+            return (SpotInstanceRequest) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

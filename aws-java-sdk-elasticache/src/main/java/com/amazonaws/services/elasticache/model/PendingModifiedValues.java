@@ -22,12 +22,12 @@ import java.io.Serializable;
  * future, or that are currently being applied.
  * </p>
  */
-public class PendingModifiedValues implements Serializable {
+public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * The new number of cache nodes for the cache cluster. <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 50.
+     * this value must be between 1 and 20.
      */
     private Integer numCacheNodes;
 
@@ -52,11 +52,11 @@ public class PendingModifiedValues implements Serializable {
     /**
      * The new number of cache nodes for the cache cluster. <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 50.
+     * this value must be between 1 and 20.
      *
      * @return The new number of cache nodes for the cache cluster. <p>For clusters
      *         running Redis, this value must be 1. For clusters running Memcached,
-     *         this value must be between 1 and 50.
+     *         this value must be between 1 and 20.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
@@ -65,11 +65,11 @@ public class PendingModifiedValues implements Serializable {
     /**
      * The new number of cache nodes for the cache cluster. <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 50.
+     * this value must be between 1 and 20.
      *
      * @param numCacheNodes The new number of cache nodes for the cache cluster. <p>For clusters
      *         running Redis, this value must be 1. For clusters running Memcached,
-     *         this value must be between 1 and 50.
+     *         this value must be between 1 and 20.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
@@ -78,13 +78,13 @@ public class PendingModifiedValues implements Serializable {
     /**
      * The new number of cache nodes for the cache cluster. <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 50.
+     * this value must be between 1 and 20.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numCacheNodes The new number of cache nodes for the cache cluster. <p>For clusters
      *         running Redis, this value must be 1. For clusters running Memcached,
-     *         this value must be between 1 and 50.
+     *         this value must be between 1 and 20.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -258,5 +258,19 @@ public class PendingModifiedValues implements Serializable {
         return true;
     }
     
+    @Override
+    public PendingModifiedValues clone() {
+        try {
+            return (PendingModifiedValues) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

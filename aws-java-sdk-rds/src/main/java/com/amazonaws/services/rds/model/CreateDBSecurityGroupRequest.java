@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSecurityGroup(CreateDBSecurityGroupRequest)
  */
-public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name for the DB security group. This value is stored as a
@@ -285,5 +285,11 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public CreateDBSecurityGroupRequest clone() {
+        
+            return (CreateDBSecurityGroupRequest) super.clone();
+    }
+
 }
     

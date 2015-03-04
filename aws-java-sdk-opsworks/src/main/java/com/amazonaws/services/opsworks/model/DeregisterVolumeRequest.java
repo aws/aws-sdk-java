@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deregisterVolume(DeregisterVolumeRequest)
  */
-public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The volume ID.
@@ -116,5 +116,11 @@ public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeregisterVolumeRequest clone() {
+        
+            return (DeregisterVolumeRequest) super.clone();
+    }
+
 }
     

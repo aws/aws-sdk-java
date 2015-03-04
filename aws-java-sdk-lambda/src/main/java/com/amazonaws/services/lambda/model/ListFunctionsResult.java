@@ -22,7 +22,7 @@ import java.io.Serializable;
  * API_FunctionConfiguration.
  * </p>
  */
-public class ListFunctionsResult implements Serializable {
+public class ListFunctionsResult implements Serializable, Cloneable {
 
     /**
      * A string, present if there are more functions.
@@ -178,5 +178,19 @@ public class ListFunctionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListFunctionsResult clone() {
+        try {
+            return (ListFunctionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

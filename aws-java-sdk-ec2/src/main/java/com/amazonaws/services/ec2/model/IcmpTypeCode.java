@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the ICMP type and code.
  * </p>
  */
-public class IcmpTypeCode implements Serializable {
+public class IcmpTypeCode implements Serializable, Cloneable {
 
     /**
      * The ICMP code. A value of -1 means all codes for the specified ICMP
@@ -149,5 +149,19 @@ public class IcmpTypeCode implements Serializable {
         return true;
     }
     
+    @Override
+    public IcmpTypeCode clone() {
+        try {
+            return (IcmpTypeCode) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

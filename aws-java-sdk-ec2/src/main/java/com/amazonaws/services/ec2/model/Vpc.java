@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a VPC.
  * </p>
  */
-public class Vpc implements Serializable {
+public class Vpc implements Serializable, Cloneable {
 
     /**
      * The ID of the VPC.
@@ -514,5 +514,19 @@ public class Vpc implements Serializable {
         return true;
     }
     
+    @Override
+    public Vpc clone() {
+        try {
+            return (Vpc) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#checkDNSAvailability(CheckDNSAvailabilityRequest)
  */
-public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest implements Serializable {
+public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The prefix used when this CNAME is reserved.
@@ -134,5 +134,11 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public CheckDNSAvailabilityRequest clone() {
+        
+            return (CheckDNSAvailabilityRequest) super.clone();
+    }
+
 }
     

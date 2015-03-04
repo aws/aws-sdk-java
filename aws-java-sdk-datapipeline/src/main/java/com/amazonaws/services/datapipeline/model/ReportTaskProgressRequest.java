@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskProgress(ReportTaskProgressRequest)
  */
-public class ReportTaskProgressRequest extends AmazonWebServiceRequest implements Serializable {
+public class ReportTaskProgressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifier of the task assigned to the task runner. This value is
@@ -234,5 +234,11 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public ReportTaskProgressRequest clone() {
+        
+            return (ReportTaskProgressRequest) super.clone();
+    }
+
 }
     

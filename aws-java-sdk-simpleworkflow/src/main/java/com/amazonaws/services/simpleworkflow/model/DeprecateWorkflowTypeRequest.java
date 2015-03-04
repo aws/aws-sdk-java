@@ -68,7 +68,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateWorkflowType(DeprecateWorkflowTypeRequest)
  */
-public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which the workflow type is registered.
@@ -201,5 +201,11 @@ public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeprecateWorkflowTypeRequest clone() {
+        
+            return (DeprecateWorkflowTypeRequest) super.clone();
+    }
+
 }
     

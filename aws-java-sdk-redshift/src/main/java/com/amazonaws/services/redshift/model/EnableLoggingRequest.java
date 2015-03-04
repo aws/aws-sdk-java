@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#enableLogging(EnableLoggingRequest)
  */
-public class EnableLoggingRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnableLoggingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster on which logging is to be started.
@@ -253,5 +253,11 @@ public class EnableLoggingRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public EnableLoggingRequest clone() {
+        
+            return (EnableLoggingRequest) super.clone();
+    }
+
 }
     

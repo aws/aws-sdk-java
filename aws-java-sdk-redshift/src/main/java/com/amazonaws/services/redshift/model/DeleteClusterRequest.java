@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteCluster(DeleteClusterRequest)
  */
-public class DeleteClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster to be deleted. <p>Constraints: <ul>
@@ -335,5 +335,11 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DeleteClusterRequest clone() {
+        
+            return (DeleteClusterRequest) super.clone();
+    }
+
 }
     

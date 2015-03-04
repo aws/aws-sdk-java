@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The AppCookieStickinessPolicy data type.
  * </p>
  */
-public class AppCookieStickinessPolicy implements Serializable {
+public class AppCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * The mnemonic name for the policy being created. The name must be
@@ -170,5 +170,19 @@ public class AppCookieStickinessPolicy implements Serializable {
         return true;
     }
     
+    @Override
+    public AppCookieStickinessPolicy clone() {
+        try {
+            return (AppCookieStickinessPolicy) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

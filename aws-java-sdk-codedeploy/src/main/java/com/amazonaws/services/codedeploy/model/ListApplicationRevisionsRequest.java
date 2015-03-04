@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listApplicationRevisions(ListApplicationRevisionsRequest)
  */
-public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing AWS CodeDeploy application within the AWS user
@@ -725,5 +725,11 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ListApplicationRevisionsRequest clone() {
+        
+            return (ListApplicationRevisionsRequest) super.clone();
+    }
+
 }
     

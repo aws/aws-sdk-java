@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#setDesiredCapacity(SetDesiredCapacityRequest)
  */
-public class SetDesiredCapacityRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetDesiredCapacityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the Auto Scaling group.
@@ -266,5 +266,11 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public SetDesiredCapacityRequest clone() {
+        
+            return (SetDesiredCapacityRequest) super.clone();
+    }
+
 }
     

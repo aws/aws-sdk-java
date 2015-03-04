@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains all of the attributes of a specific replication group.
  * </p>
  */
-public class ReplicationGroup implements Serializable {
+public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * The identifier for the replication group.
@@ -588,5 +588,19 @@ public class ReplicationGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public ReplicationGroup clone() {
+        try {
+            return (ReplicationGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

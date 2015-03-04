@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#disableKeyRotation(DisableKeyRotationRequest)
  */
-public class DisableKeyRotationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableKeyRotationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the customer master key for which rotation is to
@@ -131,5 +131,11 @@ public class DisableKeyRotationRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DisableKeyRotationRequest clone() {
+        
+            return (DisableKeyRotationRequest) super.clone();
+    }
+
 }
     

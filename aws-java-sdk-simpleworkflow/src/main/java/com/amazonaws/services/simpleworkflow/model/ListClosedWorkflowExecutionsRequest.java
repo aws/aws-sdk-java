@@ -69,7 +69,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest)
  */
-public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain that contains the workflow executions to list.
@@ -855,5 +855,11 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public ListClosedWorkflowExecutionsRequest clone() {
+        
+            return (ListClosedWorkflowExecutionsRequest) super.clone();
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#disableDomainAutoRenew(DisableDomainAutoRenewRequest)
  */
-public class DisableDomainAutoRenewRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableDomainAutoRenewRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String domainName;
 
@@ -121,5 +121,11 @@ public class DisableDomainAutoRenewRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DisableDomainAutoRenewRequest clone() {
+        
+            return (DisableDomainAutoRenewRequest) super.clone();
+    }
+
 }
     

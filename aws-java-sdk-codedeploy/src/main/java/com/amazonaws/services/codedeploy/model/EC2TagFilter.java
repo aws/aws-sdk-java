@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about an Amazon EC2 tag filter.
  * </p>
  */
-public class EC2TagFilter implements Serializable {
+public class EC2TagFilter implements Serializable, Cloneable {
 
     /**
      * The Amazon EC2 tag filter key.
@@ -258,5 +258,19 @@ public class EC2TagFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public EC2TagFilter clone() {
+        try {
+            return (EC2TagFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

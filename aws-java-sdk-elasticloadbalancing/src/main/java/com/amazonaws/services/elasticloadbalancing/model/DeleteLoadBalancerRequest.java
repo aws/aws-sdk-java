@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancer(DeleteLoadBalancerRequest)
  */
-public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer.
@@ -138,5 +138,11 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteLoadBalancerRequest clone() {
+        
+            return (DeleteLoadBalancerRequest) super.clone();
+    }
+
 }
     

@@ -54,7 +54,7 @@ import com.amazonaws.services.ec2.model.transform.RegisterImageRequestMarshaller
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#registerImage(RegisterImageRequest)
  */
-public class RegisterImageRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RegisterImageRequest> {
+public class RegisterImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RegisterImageRequest> {
 
     /**
      * The full path to your AMI manifest in Amazon S3 storage.
@@ -706,5 +706,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public RegisterImageRequest clone() {
+        
+            return (RegisterImageRequest) super.clone();
+    }
+
 }
     

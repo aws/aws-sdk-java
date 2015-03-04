@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateClusterResult implements Serializable {
+public class CreateClusterResult implements Serializable, Cloneable {
 
     /**
      * The full description of your new cluster.
@@ -98,5 +98,19 @@ public class CreateClusterResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateClusterResult clone() {
+        try {
+            return (CreateClusterResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

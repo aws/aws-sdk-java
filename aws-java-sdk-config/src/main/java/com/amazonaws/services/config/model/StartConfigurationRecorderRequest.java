@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#startConfigurationRecorder(StartConfigurationRecorderRequest)
  */
-public class StartConfigurationRecorderRequest extends AmazonWebServiceRequest implements Serializable {
+public class StartConfigurationRecorderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the recorder object that records each configuration change
@@ -129,5 +129,11 @@ public class StartConfigurationRecorderRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public StartConfigurationRecorderRequest clone() {
+        
+            return (StartConfigurationRecorderRequest) super.clone();
+    }
+
 }
     

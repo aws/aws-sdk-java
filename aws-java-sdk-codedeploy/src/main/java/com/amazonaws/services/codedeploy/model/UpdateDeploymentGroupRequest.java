@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#updateDeploymentGroup(UpdateDeploymentGroupRequest)
  */
-public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The application name corresponding to the deployment group to update.
@@ -500,5 +500,11 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public UpdateDeploymentGroupRequest clone() {
+        
+            return (UpdateDeploymentGroupRequest) super.clone();
+    }
+
 }
     

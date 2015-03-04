@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroups(ListGroupsRequest)
  */
-public class ListGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path prefix for filtering the results. For example, the prefix
@@ -320,5 +320,11 @@ public class ListGroupsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ListGroupsRequest clone() {
+        
+            return (ListGroupsRequest) super.clone();
+    }
+
 }
     

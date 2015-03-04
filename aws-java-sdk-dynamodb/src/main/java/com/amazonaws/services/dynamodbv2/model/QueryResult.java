@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>Query</i> operation.
  * </p>
  */
-public class QueryResult implements Serializable {
+public class QueryResult implements Serializable, Cloneable {
 
     /**
      * An array of item attributes that match the query criteria. Each
@@ -530,5 +530,19 @@ public class QueryResult implements Serializable {
         return true;
     }
     
+    @Override
+    public QueryResult clone() {
+        try {
+            return (QueryResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

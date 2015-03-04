@@ -22,7 +22,7 @@ import java.io.Serializable;
  * that defines a point for pagination in the result set.
  * </p>
  */
-public class DescribeCasesResult implements Serializable {
+public class DescribeCasesResult implements Serializable, Cloneable {
 
     /**
      * The details for the cases that match the request.
@@ -178,5 +178,19 @@ public class DescribeCasesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeCasesResult clone() {
+        try {
+            return (DescribeCasesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

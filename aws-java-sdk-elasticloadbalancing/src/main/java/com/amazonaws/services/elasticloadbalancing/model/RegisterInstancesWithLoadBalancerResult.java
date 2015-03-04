@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the RegisterInstancesWithLoadBalancer action.
  * </p>
  */
-public class RegisterInstancesWithLoadBalancerResult implements Serializable {
+public class RegisterInstancesWithLoadBalancerResult implements Serializable, Cloneable {
 
     /**
      * An updated list of instances for the load balancer.
@@ -135,5 +135,19 @@ public class RegisterInstancesWithLoadBalancerResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RegisterInstancesWithLoadBalancerResult clone() {
+        try {
+            return (RegisterInstancesWithLoadBalancerResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -325,7 +325,8 @@ public enum AwsSdkMetrics {
      */
     public static boolean isMetricAdminMBeanRegistered() {
         SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
-        return registry.isMBeanRegistered(registeredAdminMbeanName);
+        return registeredAdminMbeanName != null
+                && registry.isMBeanRegistered(registeredAdminMbeanName);
     }
 
     /**
@@ -373,11 +374,14 @@ public enum AwsSdkMetrics {
     /**
      * Unregisters the metric admin MBean from JMX for the current classloader.
      * 
-     * @return true if the unregisteration succeeded; false otherwise.
+     * @return true if the unregistration succeeded or if there is no admin
+     *         MBean registered; false otherwise.
      */
     public static boolean unregisterMetricAdminMBean() {
         SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
         synchronized(AwsSdkMetrics.class) {
+            if (registeredAdminMbeanName == null)
+                return true;
             boolean success = registry.unregisterMBean(registeredAdminMbeanName);
             if (success)
                 registeredAdminMbeanName = null;

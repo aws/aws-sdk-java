@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#modifyHapg(ModifyHapgRequest)
  */
-public class ModifyHapgRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyHapgRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the high-availability partition group to modify.
@@ -257,5 +257,11 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ModifyHapgRequest clone() {
+        
+            return (ModifyHapgRequest) super.clone();
+    }
+
 }
     

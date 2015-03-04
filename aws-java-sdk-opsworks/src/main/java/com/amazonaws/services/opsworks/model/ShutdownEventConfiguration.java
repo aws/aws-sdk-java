@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The Shutdown event configuration.
  * </p>
  */
-public class ShutdownEventConfiguration implements Serializable {
+public class ShutdownEventConfiguration implements Serializable, Cloneable {
 
     /**
      * The time, in seconds, that AWS OpsWorks will wait after triggering a
@@ -185,5 +185,19 @@ public class ShutdownEventConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public ShutdownEventConfiguration clone() {
+        try {
+            return (ShutdownEventConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

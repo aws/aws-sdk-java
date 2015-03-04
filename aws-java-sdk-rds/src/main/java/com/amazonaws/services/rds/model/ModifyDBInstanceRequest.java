@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBInstance(ModifyDBInstanceRequest)
  */
-public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The DB instance identifier. This value is stored as a lowercase
@@ -2514,5 +2514,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ModifyDBInstanceRequest clone() {
+        
+            return (ModifyDBInstanceRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The result of a <code> DeleteIndexField </code> request.
  * </p>
  */
-public class DeleteIndexFieldResult implements Serializable {
+public class DeleteIndexFieldResult implements Serializable, Cloneable {
 
     /**
      * The status of the index field being deleted.
@@ -100,5 +100,19 @@ public class DeleteIndexFieldResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteIndexFieldResult clone() {
+        try {
+            return (DeleteIndexFieldResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * index fields configured for the domain specified in the request.
  * </p>
  */
-public class DescribeIndexFieldsResult implements Serializable {
+public class DescribeIndexFieldsResult implements Serializable, Cloneable {
 
     /**
      * The index fields configured for the domain.
@@ -136,5 +136,19 @@ public class DescribeIndexFieldsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeIndexFieldsResult clone() {
+        try {
+            return (DescribeIndexFieldsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

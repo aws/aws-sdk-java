@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeCommands(DescribeCommandsRequest)
  */
-public class DescribeCommandsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCommandsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The deployment ID. If you include this parameter,
@@ -281,5 +281,11 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribeCommandsRequest clone() {
+        
+            return (DescribeCommandsRequest) super.clone();
+    }
+
 }
     

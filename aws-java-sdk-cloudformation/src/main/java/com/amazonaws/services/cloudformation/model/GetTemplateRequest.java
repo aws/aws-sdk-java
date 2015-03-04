@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#getTemplate(GetTemplateRequest)
  */
-public class GetTemplateRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetTemplateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or the unique identifier associated with the stack, which are
@@ -142,5 +142,11 @@ public class GetTemplateRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public GetTemplateRequest clone() {
+        
+            return (GetTemplateRequest) super.clone();
+    }
+
 }
     

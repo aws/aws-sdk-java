@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deregisterElasticIp(DeregisterElasticIpRequest)
  */
-public class DeregisterElasticIpRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeregisterElasticIpRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Elastic IP address.
@@ -116,5 +116,11 @@ public class DeregisterElasticIpRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DeregisterElasticIpRequest clone() {
+        
+            return (DeregisterElasticIpRequest) super.clone();
+    }
+
 }
     

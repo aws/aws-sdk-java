@@ -36,7 +36,7 @@ import java.io.Serializable;
  * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  */
-public class LifecycleHook implements Serializable {
+public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * The name of the lifecycle hook.
@@ -671,5 +671,19 @@ public class LifecycleHook implements Serializable {
         return true;
     }
     
+    @Override
+    public LifecycleHook clone() {
+        try {
+            return (LifecycleHook) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

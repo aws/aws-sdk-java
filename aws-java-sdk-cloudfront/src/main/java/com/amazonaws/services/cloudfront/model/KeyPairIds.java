@@ -22,7 +22,7 @@ import java.io.Serializable;
  * that are associated with AwsAccountNumber.
  * </p>
  */
-public class KeyPairIds implements Serializable {
+public class KeyPairIds implements Serializable, Cloneable {
 
     /**
      * The number of active CloudFront key pairs for AwsAccountNumber.
@@ -187,5 +187,19 @@ public class KeyPairIds implements Serializable {
         return true;
     }
     
+    @Override
+    public KeyPairIds clone() {
+        try {
+            return (KeyPairIds) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountSummary(GetAccountSummaryRequest)
  */
-public class GetAccountSummaryRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetAccountSummaryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -69,5 +69,11 @@ public class GetAccountSummaryRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public GetAccountSummaryRequest clone() {
+        
+            return (GetAccountSummaryRequest) super.clone();
+    }
+
 }
     

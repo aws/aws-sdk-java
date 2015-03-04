@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#listVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest)
  */
-public class ListVerifiedEmailAddressesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListVerifiedEmailAddressesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -72,5 +72,11 @@ public class ListVerifiedEmailAddressesRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public ListVerifiedEmailAddressesRequest clone() {
+        
+            return (ListVerifiedEmailAddressesRequest) super.clone();
+    }
+
 }
     

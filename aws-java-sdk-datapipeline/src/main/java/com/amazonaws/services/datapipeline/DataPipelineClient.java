@@ -299,19 +299,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ActivatePipelineRequestMarshaller().marshall(activatePipelineRequest);
+                request = new ActivatePipelineRequestMarshaller().marshall(super.beforeMarshalling(activatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ActivatePipelineResult, JsonUnmarshallerContext> unmarshaller =
                 new ActivatePipelineResultJsonUnmarshaller();
             JsonResponseHandler<ActivatePipelineResult> responseHandler =
                 new JsonResponseHandler<ActivatePipelineResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -353,19 +354,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPipelinesRequestMarshaller().marshall(listPipelinesRequest);
+                request = new ListPipelinesRequestMarshaller().marshall(super.beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListPipelinesResultJsonUnmarshaller();
             JsonResponseHandler<ListPipelinesResult> responseHandler =
                 new JsonResponseHandler<ListPipelinesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -422,19 +424,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReportTaskProgressRequestMarshaller().marshall(reportTaskProgressRequest);
+                request = new ReportTaskProgressRequestMarshaller().marshall(super.beforeMarshalling(reportTaskProgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ReportTaskProgressResult, JsonUnmarshallerContext> unmarshaller =
                 new ReportTaskProgressResultJsonUnmarshaller();
             JsonResponseHandler<ReportTaskProgressResult> responseHandler =
                 new JsonResponseHandler<ReportTaskProgressResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -491,19 +494,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForTaskRequestMarshaller().marshall(pollForTaskRequest);
+                request = new PollForTaskRequestMarshaller().marshall(super.beforeMarshalling(pollForTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<PollForTaskResult, JsonUnmarshallerContext> unmarshaller =
                 new PollForTaskResultJsonUnmarshaller();
             JsonResponseHandler<PollForTaskResult> responseHandler =
                 new JsonResponseHandler<PollForTaskResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -547,19 +551,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ValidatePipelineDefinitionRequestMarshaller().marshall(validatePipelineDefinitionRequest);
+                request = new ValidatePipelineDefinitionRequestMarshaller().marshall(super.beforeMarshalling(validatePipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ValidatePipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller =
                 new ValidatePipelineDefinitionResultJsonUnmarshaller();
             JsonResponseHandler<ValidatePipelineDefinitionResult> responseHandler =
                 new JsonResponseHandler<ValidatePipelineDefinitionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -610,19 +615,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new QueryObjectsRequestMarshaller().marshall(queryObjectsRequest);
+                request = new QueryObjectsRequestMarshaller().marshall(super.beforeMarshalling(queryObjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<QueryObjectsResult, JsonUnmarshallerContext> unmarshaller =
                 new QueryObjectsResultJsonUnmarshaller();
             JsonResponseHandler<QueryObjectsResult> responseHandler =
                 new JsonResponseHandler<QueryObjectsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -666,14 +672,16 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetStatusRequestMarshaller().marshall(setStatusRequest);
+                request = new SetStatusRequestMarshaller().marshall(super.beforeMarshalling(setStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -719,14 +727,16 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePipelineRequestMarshaller().marshall(deletePipelineRequest);
+                request = new DeletePipelineRequestMarshaller().marshall(super.beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -770,19 +780,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPipelineDefinitionRequestMarshaller().marshall(getPipelineDefinitionRequest);
+                request = new GetPipelineDefinitionRequestMarshaller().marshall(super.beforeMarshalling(getPipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetPipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller =
                 new GetPipelineDefinitionResultJsonUnmarshaller();
             JsonResponseHandler<GetPipelineDefinitionResult> responseHandler =
                 new JsonResponseHandler<GetPipelineDefinitionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -829,19 +840,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTaskStatusRequestMarshaller().marshall(setTaskStatusRequest);
+                request = new SetTaskStatusRequestMarshaller().marshall(super.beforeMarshalling(setTaskStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<SetTaskStatusResult, JsonUnmarshallerContext> unmarshaller =
                 new SetTaskStatusResultJsonUnmarshaller();
             JsonResponseHandler<SetTaskStatusResult> responseHandler =
                 new JsonResponseHandler<SetTaskStatusResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -887,19 +899,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EvaluateExpressionRequestMarshaller().marshall(evaluateExpressionRequest);
+                request = new EvaluateExpressionRequestMarshaller().marshall(super.beforeMarshalling(evaluateExpressionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<EvaluateExpressionResult, JsonUnmarshallerContext> unmarshaller =
                 new EvaluateExpressionResultJsonUnmarshaller();
             JsonResponseHandler<EvaluateExpressionResult> responseHandler =
                 new JsonResponseHandler<EvaluateExpressionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -951,19 +964,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePipelinesRequestMarshaller().marshall(describePipelinesRequest);
+                request = new DescribePipelinesRequestMarshaller().marshall(super.beforeMarshalling(describePipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribePipelinesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribePipelinesResultJsonUnmarshaller();
             JsonResponseHandler<DescribePipelinesResult> responseHandler =
                 new JsonResponseHandler<DescribePipelinesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1004,19 +1018,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePipelineRequestMarshaller().marshall(createPipelineRequest);
+                request = new CreatePipelineRequestMarshaller().marshall(super.beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller =
                 new CreatePipelineResultJsonUnmarshaller();
             JsonResponseHandler<CreatePipelineResult> responseHandler =
                 new JsonResponseHandler<CreatePipelineResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1060,19 +1075,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeObjectsRequestMarshaller().marshall(describeObjectsRequest);
+                request = new DescribeObjectsRequestMarshaller().marshall(super.beforeMarshalling(describeObjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeObjectsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeObjectsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeObjectsResult> responseHandler =
                 new JsonResponseHandler<DescribeObjectsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1114,19 +1130,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller().marshall(removeTagsRequest);
+                request = new RemoveTagsRequestMarshaller().marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RemoveTagsResult, JsonUnmarshallerContext> unmarshaller =
                 new RemoveTagsResultJsonUnmarshaller();
             JsonResponseHandler<RemoveTagsResult> responseHandler =
                 new JsonResponseHandler<RemoveTagsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1171,19 +1188,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReportTaskRunnerHeartbeatRequestMarshaller().marshall(reportTaskRunnerHeartbeatRequest);
+                request = new ReportTaskRunnerHeartbeatRequestMarshaller().marshall(super.beforeMarshalling(reportTaskRunnerHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ReportTaskRunnerHeartbeatResult, JsonUnmarshallerContext> unmarshaller =
                 new ReportTaskRunnerHeartbeatResultJsonUnmarshaller();
             JsonResponseHandler<ReportTaskRunnerHeartbeatResult> responseHandler =
                 new JsonResponseHandler<ReportTaskRunnerHeartbeatResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1225,19 +1243,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller().marshall(addTagsRequest);
+                request = new AddTagsRequestMarshaller().marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddTagsResult, JsonUnmarshallerContext> unmarshaller =
                 new AddTagsResultJsonUnmarshaller();
             JsonResponseHandler<AddTagsResult> responseHandler =
                 new JsonResponseHandler<AddTagsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1297,19 +1316,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutPipelineDefinitionRequestMarshaller().marshall(putPipelineDefinitionRequest);
+                request = new PutPipelineDefinitionRequestMarshaller().marshall(super.beforeMarshalling(putPipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<PutPipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller =
                 new PutPipelineDefinitionResultJsonUnmarshaller();
             JsonResponseHandler<PutPipelineDefinitionResult> responseHandler =
                 new JsonResponseHandler<PutPipelineDefinitionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

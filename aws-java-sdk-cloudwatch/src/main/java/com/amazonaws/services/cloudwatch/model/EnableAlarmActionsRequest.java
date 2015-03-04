@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#enableAlarmActions(EnableAlarmActionsRequest)
  */
-public class EnableAlarmActionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnableAlarmActionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The names of the alarms to enable actions for.
@@ -155,5 +155,11 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public EnableAlarmActionsRequest clone() {
+        
+            return (EnableAlarmActionsRequest) super.clone();
+    }
+
 }
     

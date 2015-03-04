@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest)
  */
-public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer.
@@ -251,5 +251,11 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
         return true;
     }
     
+    @Override
+    public SetLoadBalancerListenerSSLCertificateRequest clone() {
+        
+            return (SetLoadBalancerListenerSSLCertificateRequest) super.clone();
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSecurityGroupsRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSecurityGroups(DescribeSecurityGroupsRequest)
  */
-public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSecurityGroupsRequest> {
+public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSecurityGroupsRequest> {
 
     /**
      * [EC2-Classic, default VPC] One or more security group names. You can
@@ -539,5 +539,11 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeSecurityGroupsRequest clone() {
+        
+            return (DescribeSecurityGroupsRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a failed association.
  * </p>
  */
-public class FailedCreateAssociation implements Serializable {
+public class FailedCreateAssociation implements Serializable, Cloneable {
 
     /**
      * The association.
@@ -236,5 +236,19 @@ public class FailedCreateAssociation implements Serializable {
         return true;
     }
     
+    @Override
+    public FailedCreateAssociation clone() {
+        try {
+            return (FailedCreateAssociation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

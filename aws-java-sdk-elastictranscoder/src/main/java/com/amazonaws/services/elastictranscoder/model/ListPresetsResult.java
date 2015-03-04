@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>ListPresetsResponse</code> structure.
  * </p>
  */
-public class ListPresetsResult implements Serializable {
+public class ListPresetsResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>Preset</code> objects.
@@ -210,5 +210,19 @@ public class ListPresetsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListPresetsResult clone() {
+        try {
+            return (ListPresetsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

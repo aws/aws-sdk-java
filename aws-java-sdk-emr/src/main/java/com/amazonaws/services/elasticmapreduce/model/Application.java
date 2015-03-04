@@ -37,7 +37,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Application implements Serializable {
+public class Application implements Serializable, Cloneable {
 
     /**
      * The name of the application.
@@ -327,5 +327,19 @@ public class Application implements Serializable {
         return true;
     }
     
+    @Override
+    public Application clone() {
+        try {
+            return (Application) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

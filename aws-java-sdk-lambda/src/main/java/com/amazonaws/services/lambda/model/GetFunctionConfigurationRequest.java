@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#getFunctionConfiguration(GetFunctionConfigurationRequest)
  */
-public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the Lambda function for which you want to retrieve the
@@ -134,5 +134,11 @@ public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public GetFunctionConfigurationRequest clone() {
+        
+            return (GetFunctionConfigurationRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The endpoint to which service requests can be submitted.
  * </p>
  */
-public class ServiceEndpoint implements Serializable {
+public class ServiceEndpoint implements Serializable, Cloneable {
 
     /**
      * The endpoint to which service requests can be submitted. For example,
@@ -121,5 +121,19 @@ public class ServiceEndpoint implements Serializable {
         return true;
     }
     
+    @Override
+    public ServiceEndpoint clone() {
+        try {
+            return (ServiceEndpoint) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

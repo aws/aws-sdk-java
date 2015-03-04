@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclEntryRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest)
  */
-public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceNetworkAclEntryRequest> {
+public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ReplaceNetworkAclEntryRequest> {
 
     /**
      * The ID of the ACL.
@@ -507,5 +507,11 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ReplaceNetworkAclEntryRequest clone() {
+        
+            return (ReplaceNetworkAclEntryRequest) super.clone();
+    }
+
 }
     

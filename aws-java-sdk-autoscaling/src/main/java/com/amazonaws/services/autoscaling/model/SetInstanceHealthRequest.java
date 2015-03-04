@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#setInstanceHealth(SetInstanceHealthRequest)
  */
-public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the EC2 instance.
@@ -310,5 +310,11 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public SetInstanceHealthRequest clone() {
+        
+            return (SetInstanceHealthRequest) super.clone();
+    }
+
 }
     

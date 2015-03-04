@@ -327,12 +327,21 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteDBSubnetGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteDBSubnetGroupRequestMarshaller().marshall(deleteDBSubnetGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBSubnetGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -370,14 +379,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CopyOptionGroupRequestMarshaller().marshall(copyOptionGroupRequest);
+                request = new CopyOptionGroupRequestMarshaller().marshall(super.beforeMarshalling(copyOptionGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new OptionGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -437,14 +448,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RestoreDBInstanceToPointInTimeRequestMarshaller().marshall(restoreDBInstanceToPointInTimeRequest);
+                request = new RestoreDBInstanceToPointInTimeRequestMarshaller().marshall(super.beforeMarshalling(restoreDBInstanceToPointInTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -486,14 +499,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CopyDBSnapshotRequestMarshaller().marshall(copyDBSnapshotRequest);
+                request = new CopyDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(copyDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBSnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -533,14 +548,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePendingMaintenanceActionsRequestMarshaller().marshall(describePendingMaintenanceActionsRequest);
+                request = new DescribePendingMaintenanceActionsRequestMarshaller().marshall(super.beforeMarshalling(describePendingMaintenanceActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribePendingMaintenanceActionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -592,14 +609,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDBInstanceRequestMarshaller().marshall(createDBInstanceRequest);
+                request = new CreateDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(createDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -641,14 +660,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDBSecurityGroupRequestMarshaller().marshall(createDBSecurityGroupRequest);
+                request = new CreateDBSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(createDBSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBSecurityGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -687,14 +708,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeOptionGroupsRequestMarshaller().marshall(describeOptionGroupsRequest);
+                request = new DescribeOptionGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeOptionGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeOptionGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -734,14 +757,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDBInstancesRequestMarshaller().marshall(describeDBInstancesRequest);
+                request = new DescribeDBInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeDBInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDBInstancesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -782,14 +807,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller().marshall(removeSourceIdentifierFromSubscriptionRequest);
+                request = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(removeSourceIdentifierFromSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -826,12 +853,21 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteDBSecurityGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteDBSecurityGroupRequestMarshaller().marshall(deleteDBSecurityGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBSecurityGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -889,14 +925,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AuthorizeDBSecurityGroupIngressRequestMarshaller().marshall(authorizeDBSecurityGroupIngressRequest);
+                request = new AuthorizeDBSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(authorizeDBSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBSecurityGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -935,14 +973,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ApplyPendingMaintenanceActionRequestMarshaller().marshall(applyPendingMaintenanceActionRequest);
+                request = new ApplyPendingMaintenanceActionRequestMarshaller().marshall(super.beforeMarshalling(applyPendingMaintenanceActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ResourcePendingMaintenanceActionsStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -995,14 +1035,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyDBInstanceRequestMarshaller().marshall(modifyDBInstanceRequest);
+                request = new ModifyDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(modifyDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1042,14 +1084,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteEventSubscriptionRequestMarshaller().marshall(deleteEventSubscriptionRequest);
+                request = new DeleteEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(deleteEventSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1087,12 +1131,21 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<RemoveTagsFromResourceRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new RemoveTagsFromResourceRequestMarshaller().marshall(removeTagsFromResourceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTagsFromResourceRequestMarshaller().marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1132,14 +1185,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventCategoriesRequestMarshaller().marshall(describeEventCategoriesRequest);
+                request = new DescribeEventCategoriesRequestMarshaller().marshall(super.beforeMarshalling(describeEventCategoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeEventCategoriesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1180,14 +1235,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CopyDBParameterGroupRequestMarshaller().marshall(copyDBParameterGroupRequest);
+                request = new CopyDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(copyDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBParameterGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1254,14 +1311,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDBInstanceReadReplicaRequestMarshaller().marshall(createDBInstanceReadReplicaRequest);
+                request = new CreateDBInstanceReadReplicaRequestMarshaller().marshall(super.beforeMarshalling(createDBInstanceReadReplicaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1305,14 +1364,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDBSnapshotRequestMarshaller().marshall(deleteDBSnapshotRequest);
+                request = new DeleteDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(deleteDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBSnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1372,14 +1433,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebootDBInstanceRequestMarshaller().marshall(rebootDBInstanceRequest);
+                request = new RebootDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(rebootDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1420,14 +1483,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
+                request = new DescribeEventsRequestMarshaller().marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeEventsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1472,14 +1537,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller().marshall(listTagsForResourceRequest);
+                request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListTagsForResourceResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1517,14 +1584,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeOptionGroupOptionsRequestMarshaller().marshall(describeOptionGroupOptionsRequest);
+                request = new DescribeOptionGroupOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeOptionGroupOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeOptionGroupOptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1564,14 +1633,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDBParametersRequestMarshaller().marshall(describeDBParametersRequest);
+                request = new DescribeDBParametersRequestMarshaller().marshall(super.beforeMarshalling(describeDBParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDBParametersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1612,14 +1683,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PurchaseReservedDBInstancesOfferingRequestMarshaller().marshall(purchaseReservedDBInstancesOfferingRequest);
+                request = new PurchaseReservedDBInstancesOfferingRequestMarshaller().marshall(super.beforeMarshalling(purchaseReservedDBInstancesOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ReservedDBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1660,14 +1733,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDBSecurityGroupsRequestMarshaller().marshall(describeDBSecurityGroupsRequest);
+                request = new DescribeDBSecurityGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDBSecurityGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1722,14 +1797,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyEventSubscriptionRequestMarshaller().marshall(modifyEventSubscriptionRequest);
+                request = new ModifyEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(modifyEventSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1781,14 +1858,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDBInstanceRequestMarshaller().marshall(deleteDBInstanceRequest);
+                request = new DeleteDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(deleteDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1856,14 +1935,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().marshall(restoreDBInstanceFromDBSnapshotRequest);
+                request = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(restoreDBInstanceFromDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1902,14 +1983,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateOptionGroupRequestMarshaller().marshall(createOptionGroupRequest);
+                request = new CreateOptionGroupRequestMarshaller().marshall(super.beforeMarshalling(createOptionGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new OptionGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1948,14 +2031,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyOptionGroupRequestMarshaller().marshall(modifyOptionGroupRequest);
+                request = new ModifyOptionGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyOptionGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new OptionGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2001,14 +2086,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDBSubnetGroupsRequestMarshaller().marshall(describeDBSubnetGroupsRequest);
+                request = new DescribeDBSubnetGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBSubnetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDBSubnetGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2049,14 +2136,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDBParameterGroupsRequestMarshaller().marshall(describeDBParameterGroupsRequest);
+                request = new DescribeDBParameterGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBParameterGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDBParameterGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2101,14 +2190,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventSubscriptionsRequestMarshaller().marshall(describeEventSubscriptionsRequest);
+                request = new DescribeEventSubscriptionsRequestMarshaller().marshall(super.beforeMarshalling(describeEventSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeEventSubscriptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2152,14 +2243,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyDBSubnetGroupRequestMarshaller().marshall(modifyDBSubnetGroupRequest);
+                request = new ModifyDBSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyDBSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBSubnetGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2198,14 +2291,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDBSnapshotsRequestMarshaller().marshall(describeDBSnapshotsRequest);
+                request = new DescribeDBSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(describeDBSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDBSnapshotsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2249,14 +2344,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDBSubnetGroupRequestMarshaller().marshall(createDBSubnetGroupRequest);
+                request = new CreateDBSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(createDBSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBSubnetGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2294,14 +2391,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDBEngineVersionsRequestMarshaller().marshall(describeDBEngineVersionsRequest);
+                request = new DescribeDBEngineVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeDBEngineVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDBEngineVersionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2364,14 +2463,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyDBParameterGroupRequestMarshaller().marshall(modifyDBParameterGroupRequest);
+                request = new ModifyDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ModifyDBParameterGroupResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2410,14 +2511,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
+                request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(super.beforeMarshalling(describeEngineDefaultParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EngineDefaultsStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2459,14 +2562,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDBSnapshotRequestMarshaller().marshall(createDBSnapshotRequest);
+                request = new CreateDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBSnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2507,14 +2612,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddSourceIdentifierToSubscriptionRequestMarshaller().marshall(addSourceIdentifierToSubscriptionRequest);
+                request = new AddSourceIdentifierToSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(addSourceIdentifierToSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2562,14 +2669,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResetDBParameterGroupRequestMarshaller().marshall(resetDBParameterGroupRequest);
+                request = new ResetDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(resetDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ResetDBParameterGroupResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2607,12 +2716,21 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteDBParameterGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteDBParameterGroupRequestMarshaller().marshall(deleteDBParameterGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBParameterGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2649,14 +2767,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDBLogFilesRequestMarshaller().marshall(describeDBLogFilesRequest);
+                request = new DescribeDBLogFilesRequestMarshaller().marshall(super.beforeMarshalling(describeDBLogFilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDBLogFilesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2696,14 +2816,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReservedDBInstancesRequestMarshaller().marshall(describeReservedDBInstancesRequest);
+                request = new DescribeReservedDBInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeReservedDBInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeReservedDBInstancesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2750,14 +2872,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PromoteReadReplicaRequestMarshaller().marshall(promoteReadReplicaRequest);
+                request = new PromoteReadReplicaRequestMarshaller().marshall(super.beforeMarshalling(promoteReadReplicaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2797,12 +2921,21 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AddTagsToResourceRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new AddTagsToResourceRequestMarshaller().marshall(addTagsToResourceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsToResourceRequestMarshaller().marshall(super.beforeMarshalling(addTagsToResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2839,14 +2972,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DownloadDBLogFilePortionRequestMarshaller().marshall(downloadDBLogFilePortionRequest);
+                request = new DownloadDBLogFilePortionRequestMarshaller().marshall(super.beforeMarshalling(downloadDBLogFilePortionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DownloadDBLogFilePortionResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2913,14 +3048,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateEventSubscriptionRequestMarshaller().marshall(createEventSubscriptionRequest);
+                request = new CreateEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(createEventSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2965,14 +3102,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RevokeDBSecurityGroupIngressRequestMarshaller().marshall(revokeDBSecurityGroupIngressRequest);
+                request = new RevokeDBSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(revokeDBSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBSecurityGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3011,14 +3150,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeOrderableDBInstanceOptionsRequestMarshaller().marshall(describeOrderableDBInstanceOptionsRequest);
+                request = new DescribeOrderableDBInstanceOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeOrderableDBInstanceOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeOrderableDBInstanceOptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3082,14 +3223,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDBParameterGroupRequestMarshaller().marshall(createDBParameterGroupRequest);
+                request = new CreateDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(createDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DBParameterGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3128,14 +3271,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReservedDBInstancesOfferingsRequestMarshaller().marshall(describeReservedDBInstancesOfferingsRequest);
+                request = new DescribeReservedDBInstancesOfferingsRequestMarshaller().marshall(super.beforeMarshalling(describeReservedDBInstancesOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeReservedDBInstancesOfferingsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3167,12 +3312,21 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteOptionGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteOptionGroupRequestMarshaller().marshall(deleteOptionGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOptionGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteOptionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }

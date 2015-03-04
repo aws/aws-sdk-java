@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#createHealthCheck(CreateHealthCheckRequest)
  */
-public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique string that identifies the request and that allows failed
@@ -216,5 +216,11 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CreateHealthCheckRequest clone() {
+        
+            return (CreateHealthCheckRequest) super.clone();
+    }
+
 }
     

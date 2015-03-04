@@ -38,7 +38,7 @@ import com.amazonaws.services.ec2.model.transform.AssociateRouteTableRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateRouteTable(AssociateRouteTableRequest)
  */
-public class AssociateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AssociateRouteTableRequest> {
+public class AssociateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AssociateRouteTableRequest> {
 
     /**
      * The ID of the subnet.
@@ -171,5 +171,11 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public AssociateRouteTableRequest clone() {
+        
+            return (AssociateRouteTableRequest) super.clone();
+    }
+
 }
     

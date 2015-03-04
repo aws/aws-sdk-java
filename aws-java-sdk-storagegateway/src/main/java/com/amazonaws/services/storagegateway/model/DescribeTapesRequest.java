@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeTapes(DescribeTapesRequest)
  */
-public class DescribeTapesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTapesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -381,5 +381,11 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DescribeTapesRequest clone() {
+        
+            return (DescribeTapesRequest) super.clone();
+    }
+
 }
     

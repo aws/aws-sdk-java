@@ -65,7 +65,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskFailed(RespondActivityTaskFailedRequest)
  */
-public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest implements Serializable {
+public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>taskToken</code> of the <a>ActivityTask</a>. <important>
@@ -292,5 +292,11 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public RespondActivityTaskFailedRequest clone() {
+        
+            return (RespondActivityTaskFailedRequest) super.clone();
+    }
+
 }
     

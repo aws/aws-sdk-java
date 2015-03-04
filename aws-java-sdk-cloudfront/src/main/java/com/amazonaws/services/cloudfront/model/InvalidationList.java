@@ -21,7 +21,7 @@ import java.io.Serializable;
  * An invalidation list.
  * </p>
  */
-public class InvalidationList implements Serializable {
+public class InvalidationList implements Serializable, Cloneable {
 
     /**
      * The value you provided for the Marker request parameter.
@@ -417,5 +417,19 @@ public class InvalidationList implements Serializable {
         return true;
     }
     
+    @Override
+    public InvalidationList clone() {
+        try {
+            return (InvalidationList) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

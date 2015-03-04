@@ -50,7 +50,7 @@ import com.amazonaws.services.ec2.model.transform.CreateCustomerGatewayRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createCustomerGateway(CreateCustomerGatewayRequest)
  */
-public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateCustomerGatewayRequest> {
+public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateCustomerGatewayRequest> {
 
     /**
      * The type of VPN connection that this customer gateway supports
@@ -344,5 +344,11 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public CreateCustomerGatewayRequest clone() {
+        
+            return (CreateCustomerGatewayRequest) super.clone();
+    }
+
 }
     

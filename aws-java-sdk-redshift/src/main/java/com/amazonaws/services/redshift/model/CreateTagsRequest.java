@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createTags(CreateTagsRequest)
  */
-public class CreateTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) to which you want to add the tag or
@@ -277,5 +277,11 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public CreateTagsRequest clone() {
+        
+            return (CreateTagsRequest) super.clone();
+    }
+
 }
     

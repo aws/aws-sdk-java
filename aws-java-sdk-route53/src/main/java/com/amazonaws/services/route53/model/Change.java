@@ -22,7 +22,7 @@ import java.io.Serializable;
  * change batch request.
  * </p>
  */
-public class Change implements Serializable {
+public class Change implements Serializable, Cloneable {
 
     /**
      * The action to perform. <p>Valid values: <code>CREATE</code> |
@@ -242,5 +242,19 @@ public class Change implements Serializable {
         return true;
     }
     
+    @Override
+    public Change clone() {
+        try {
+            return (Change) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

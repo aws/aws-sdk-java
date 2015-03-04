@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#registerVolume(RegisterVolumeRequest)
  */
-public class RegisterVolumeRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon EBS volume ID.
@@ -160,5 +160,11 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public RegisterVolumeRequest clone() {
+        
+            return (RegisterVolumeRequest) super.clone();
+    }
+
 }
     

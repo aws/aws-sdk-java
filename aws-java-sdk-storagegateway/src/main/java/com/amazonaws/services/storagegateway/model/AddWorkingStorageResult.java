@@ -22,7 +22,7 @@ import java.io.Serializable;
  * was configured.
  * </p>
  */
-public class AddWorkingStorageResult implements Serializable {
+public class AddWorkingStorageResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -127,5 +127,19 @@ public class AddWorkingStorageResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AddWorkingStorageResult clone() {
+        try {
+            return (AddWorkingStorageResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

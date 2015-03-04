@@ -47,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#rebootDBInstance(RebootDBInstanceRequest)
  */
-public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The DB instance identifier. This parameter is stored as a lowercase
@@ -244,5 +244,11 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public RebootDBInstanceRequest clone() {
+        
+            return (RebootDBInstanceRequest) super.clone();
+    }
+
 }
     

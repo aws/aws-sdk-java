@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listPlatformApplications(ListPlatformApplicationsRequest)
  */
-public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * NextToken string is used when calling ListPlatformApplications action
@@ -129,5 +129,11 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ListPlatformApplicationsRequest clone() {
+        
+            return (ListPlatformApplicationsRequest) super.clone();
+    }
+
 }
     

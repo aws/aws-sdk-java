@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class UploadMultipartPartResult implements Serializable {
+public class UploadMultipartPartResult implements Serializable, Cloneable {
 
     /**
      * The SHA256 tree hash that Amazon Glacier computed for the uploaded
@@ -107,5 +107,19 @@ public class UploadMultipartPartResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UploadMultipartPartResult clone() {
+        try {
+            return (UploadMultipartPartResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

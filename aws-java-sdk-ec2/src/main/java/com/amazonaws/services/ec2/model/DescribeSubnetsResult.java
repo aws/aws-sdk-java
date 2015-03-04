@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeSubnetsResult implements Serializable {
+public class DescribeSubnetsResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more subnets.
@@ -133,5 +133,19 @@ public class DescribeSubnetsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSubnetsResult clone() {
+        try {
+            return (DescribeSubnetsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

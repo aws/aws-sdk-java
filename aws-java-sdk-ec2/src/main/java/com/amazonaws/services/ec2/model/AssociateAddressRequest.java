@@ -52,7 +52,7 @@ import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest)
  */
-public class AssociateAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AssociateAddressRequest> {
+public class AssociateAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AssociateAddressRequest> {
 
     /**
      * The ID of the instance. This is required for EC2-Classic. For EC2-VPC,
@@ -462,5 +462,11 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public AssociateAddressRequest clone() {
+        
+            return (AssociateAddressRequest) super.clone();
+    }
+
 }
     

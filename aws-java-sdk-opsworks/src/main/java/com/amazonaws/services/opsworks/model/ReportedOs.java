@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A registered instance's reported operating system.
  * </p>
  */
-public class ReportedOs implements Serializable {
+public class ReportedOs implements Serializable, Cloneable {
 
     /**
      * The operating system family.
@@ -184,5 +184,19 @@ public class ReportedOs implements Serializable {
         return true;
     }
     
+    @Override
+    public ReportedOs clone() {
+        try {
+            return (ReportedOs) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the GetPipelineDefinition action.
  * </p>
  */
-public class GetPipelineDefinitionResult implements Serializable {
+public class GetPipelineDefinitionResult implements Serializable, Cloneable {
 
     /**
      * An array of objects defined in the pipeline.
@@ -289,5 +289,19 @@ public class GetPipelineDefinitionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetPipelineDefinitionResult clone() {
+        try {
+            return (GetPipelineDefinitionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

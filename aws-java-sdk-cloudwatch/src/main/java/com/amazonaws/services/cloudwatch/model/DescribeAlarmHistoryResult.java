@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeAlarmHistory action.
  * </p>
  */
-public class DescribeAlarmHistoryResult implements Serializable {
+public class DescribeAlarmHistoryResult implements Serializable, Cloneable {
 
     /**
      * A list of alarm histories in JSON format.
@@ -177,5 +177,19 @@ public class DescribeAlarmHistoryResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAlarmHistoryResult clone() {
+        try {
+            return (DescribeAlarmHistoryResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

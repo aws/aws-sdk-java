@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>CreatePresetResponse</code> structure.
  * </p>
  */
-public class CreatePresetResult implements Serializable {
+public class CreatePresetResult implements Serializable, Cloneable {
 
     /**
      * A section of the response body that provides information about the
@@ -177,5 +177,19 @@ public class CreatePresetResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreatePresetResult clone() {
+        try {
+            return (CreatePresetResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

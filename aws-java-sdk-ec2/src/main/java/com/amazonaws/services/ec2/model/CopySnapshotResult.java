@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CopySnapshotResult implements Serializable {
+public class CopySnapshotResult implements Serializable, Cloneable {
 
     /**
      * The ID of the new snapshot.
@@ -98,5 +98,19 @@ public class CopySnapshotResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CopySnapshotResult clone() {
+        try {
+            return (CopySnapshotResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * a <code>SuggestRequest</code> .
  * </p>
  */
-public class SuggestionMatch implements Serializable {
+public class SuggestionMatch implements Serializable, Cloneable {
 
     /**
      * The string that matches the query string specified in the
@@ -192,5 +192,19 @@ public class SuggestionMatch implements Serializable {
         return true;
     }
     
+    @Override
+    public SuggestionMatch clone() {
+        try {
+            return (SuggestionMatch) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

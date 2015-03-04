@@ -22,7 +22,7 @@ import java.io.Serializable;
  * resource.
  * </p>
  */
-public class PendingMaintenanceAction implements Serializable {
+public class PendingMaintenanceAction implements Serializable, Cloneable {
 
     /**
      * The type of pending maintenance action that is available for the
@@ -367,5 +367,19 @@ public class PendingMaintenanceAction implements Serializable {
         return true;
     }
     
+    @Override
+    public PendingMaintenanceAction clone() {
+        try {
+            return (PendingMaintenanceAction) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

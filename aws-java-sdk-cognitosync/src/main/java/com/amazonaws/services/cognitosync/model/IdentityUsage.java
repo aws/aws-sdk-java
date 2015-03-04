@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Usage information for the identity.
  * </p>
  */
-public class IdentityUsage implements Serializable {
+public class IdentityUsage implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -328,5 +328,19 @@ public class IdentityUsage implements Serializable {
         return true;
     }
     
+    @Override
+    public IdentityUsage clone() {
+        try {
+            return (IdentityUsage) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

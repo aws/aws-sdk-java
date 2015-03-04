@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#registerInstance(RegisterInstanceRequest)
  */
-public class RegisterInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the stack that the instance is to be registered with.
@@ -381,5 +381,11 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public RegisterInstanceRequest clone() {
+        
+            return (RegisterInstanceRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a volume status operation code.
  * </p>
  */
-public class VolumeStatusAction implements Serializable {
+public class VolumeStatusAction implements Serializable, Cloneable {
 
     /**
      * The code identifying the operation, for example,
@@ -233,5 +233,19 @@ public class VolumeStatusAction implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeStatusAction clone() {
+        try {
+            return (VolumeStatusAction) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

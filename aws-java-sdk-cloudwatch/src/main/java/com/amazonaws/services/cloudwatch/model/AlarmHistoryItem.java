@@ -24,7 +24,7 @@ import java.io.Serializable;
  * of the DescribeAlarmHistoryResult data type.
  * </p>
  */
-public class AlarmHistoryItem implements Serializable {
+public class AlarmHistoryItem implements Serializable, Cloneable {
 
     /**
      * The descriptive name for the alarm.
@@ -359,5 +359,19 @@ public class AlarmHistoryItem implements Serializable {
         return true;
     }
     
+    @Override
+    public AlarmHistoryItem clone() {
+        try {
+            return (AlarmHistoryItem) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

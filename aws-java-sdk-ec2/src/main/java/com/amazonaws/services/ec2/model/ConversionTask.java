@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a conversion task.
  * </p>
  */
-public class ConversionTask implements Serializable {
+public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * The ID of the conversion task.
@@ -460,5 +460,19 @@ public class ConversionTask implements Serializable {
         return true;
     }
     
+    @Override
+    public ConversionTask clone() {
+        try {
+            return (ConversionTask) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

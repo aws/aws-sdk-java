@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeMetricCollectionTypesResult implements Serializable {
+public class DescribeMetricCollectionTypesResult implements Serializable, Cloneable {
 
     /**
      * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
@@ -273,5 +273,19 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeMetricCollectionTypesResult clone() {
+        try {
+            return (DescribeMetricCollectionTypesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

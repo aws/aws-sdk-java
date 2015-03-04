@@ -23,7 +23,7 @@ import java.io.Serializable;
  * involved and the status of the operation on the parameter group.
  * </p>
  */
-public class ResetClusterParameterGroupResult implements Serializable {
+public class ResetClusterParameterGroupResult implements Serializable, Cloneable {
 
     /**
      * The name of the cluster parameter group.
@@ -158,5 +158,19 @@ public class ResetClusterParameterGroupResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ResetClusterParameterGroupResult clone() {
+        try {
+            return (ResetClusterParameterGroupResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

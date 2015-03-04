@@ -22,7 +22,7 @@ import java.io.Serializable;
  * domain names), if any, for this distribution.
  * </p>
  */
-public class Aliases implements Serializable {
+public class Aliases implements Serializable, Cloneable {
 
     /**
      * The number of CNAMEs, if any, for this distribution.
@@ -187,5 +187,19 @@ public class Aliases implements Serializable {
         return true;
     }
     
+    @Override
+    public Aliases clone() {
+        try {
+            return (Aliases) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

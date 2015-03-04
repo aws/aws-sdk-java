@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>RecordMarkerFailed</code> event.
  * </p>
  */
-public class RecordMarkerFailedEventAttributes implements Serializable {
+public class RecordMarkerFailedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The marker's name.
@@ -331,5 +331,19 @@ public class RecordMarkerFailedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public RecordMarkerFailedEventAttributes clone() {
+        try {
+            return (RecordMarkerFailedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The details of the instance group status.
  * </p>
  */
-public class InstanceGroupStatus implements Serializable {
+public class InstanceGroupStatus implements Serializable, Cloneable {
 
     /**
      * The current state of the instance group.
@@ -236,5 +236,19 @@ public class InstanceGroupStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceGroupStatus clone() {
+        try {
+            return (InstanceGroupStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

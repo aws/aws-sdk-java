@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateUserProfile(UpdateUserProfileRequest)
  */
-public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The user IAM ARN.
@@ -302,5 +302,11 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public UpdateUserProfileRequest clone() {
+        
+            return (UpdateUserProfileRequest) super.clone();
+    }
+
 }
     

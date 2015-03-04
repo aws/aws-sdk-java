@@ -22,7 +22,7 @@ import java.io.Serializable;
  * was updated.
  * </p>
  */
-public class UpdateBandwidthRateLimitResult implements Serializable {
+public class UpdateBandwidthRateLimitResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -127,5 +127,19 @@ public class UpdateBandwidthRateLimitResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateBandwidthRateLimitResult clone() {
+        try {
+            return (UpdateBandwidthRateLimitResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

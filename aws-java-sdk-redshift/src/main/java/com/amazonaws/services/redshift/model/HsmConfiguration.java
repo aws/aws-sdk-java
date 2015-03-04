@@ -24,7 +24,7 @@ import java.io.Serializable;
  * keys.
  * </p>
  */
-public class HsmConfiguration implements Serializable {
+public class HsmConfiguration implements Serializable, Cloneable {
 
     /**
      * The name of the Amazon Redshift HSM configuration.
@@ -320,5 +320,19 @@ public class HsmConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public HsmConfiguration clone() {
+        try {
+            return (HsmConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

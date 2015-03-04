@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#defineSuggester(DefineSuggesterRequest)
  */
-public class DefineSuggesterRequest extends AmazonWebServiceRequest implements Serializable {
+public class DefineSuggesterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -211,5 +211,11 @@ public class DefineSuggesterRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DefineSuggesterRequest clone() {
+        
+            return (DefineSuggesterRequest) super.clone();
+    }
+
 }
     

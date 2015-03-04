@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest)
  */
-public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -63,5 +63,11 @@ public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DeleteAccountPasswordPolicyRequest clone() {
+        
+            return (DeleteAccountPasswordPolicyRequest) super.clone();
+    }
+
 }
     

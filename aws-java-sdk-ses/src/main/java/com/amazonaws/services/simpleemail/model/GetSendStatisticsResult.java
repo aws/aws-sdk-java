@@ -23,7 +23,7 @@ import java.io.Serializable;
  * aggregated data from the previous two weeks of sending activity.
  * </p>
  */
-public class GetSendStatisticsResult implements Serializable {
+public class GetSendStatisticsResult implements Serializable, Cloneable {
 
     /**
      * A list of data points, each of which represents 15 minutes of
@@ -146,5 +146,19 @@ public class GetSendStatisticsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetSendStatisticsResult clone() {
+        try {
+            return (GetSendStatisticsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

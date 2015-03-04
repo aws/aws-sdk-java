@@ -45,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainDkim(VerifyDomainDkimRequest)
  */
-public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements Serializable {
+public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain to be verified for Easy DKIM signing.
@@ -124,5 +124,11 @@ public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public VerifyDomainDkimRequest clone() {
+        
+            return (VerifyDomainDkimRequest) super.clone();
+    }
+
 }
     

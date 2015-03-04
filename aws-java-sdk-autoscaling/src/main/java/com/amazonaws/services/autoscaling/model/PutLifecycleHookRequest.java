@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putLifecycleHook(PutLifecycleHookRequest)
  */
-public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the lifecycle hook.
@@ -755,5 +755,11 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public PutLifecycleHookRequest clone() {
+        
+            return (PutLifecycleHookRequest) super.clone();
+    }
+
 }
     

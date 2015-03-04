@@ -23,7 +23,7 @@ import java.io.Serializable;
  * requests.
  * </p>
  */
-public class AssumeRoleResult implements Serializable {
+public class AssumeRoleResult implements Serializable, Cloneable {
 
     /**
      * The temporary security credentials, which include an access key ID, a
@@ -254,5 +254,19 @@ public class AssumeRoleResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AssumeRoleResult clone() {
+        try {
+            return (AssumeRoleResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

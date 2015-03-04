@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the properties of a local secondary index.
  * </p>
  */
-public class LocalSecondaryIndexDescription implements Serializable {
+public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
 
     /**
      * Represents the name of the local secondary index.
@@ -390,5 +390,19 @@ public class LocalSecondaryIndexDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public LocalSecondaryIndexDescription clone() {
+        try {
+            return (LocalSecondaryIndexDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -48,7 +48,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class SignalExternalWorkflowExecutionDecisionAttributes implements Serializable {
+public class SignalExternalWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The <code>workflowId</code> of the workflow execution
@@ -390,5 +390,19 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
         return true;
     }
     
+    @Override
+    public SignalExternalWorkflowExecutionDecisionAttributes clone() {
+        try {
+            return (SignalExternalWorkflowExecutionDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#listGrants(ListGrantsRequest)
  */
-public class ListGrantsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListGrantsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the key. This can be an ARN, an alias, or a
@@ -285,5 +285,11 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ListGrantsRequest clone() {
+        
+            return (ListGrantsRequest) super.clone();
+    }
+
 }
     

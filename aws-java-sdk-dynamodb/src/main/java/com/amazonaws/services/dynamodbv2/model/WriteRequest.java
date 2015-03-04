@@ -25,7 +25,7 @@ import java.io.Serializable;
  * <i>WriteRequest</i> objects.
  * </p>
  */
-public class WriteRequest implements Serializable {
+public class WriteRequest implements Serializable, Cloneable {
 
     /**
      * A request to perform a <i>PutItem</i> operation.
@@ -175,5 +175,19 @@ public class WriteRequest implements Serializable {
         return true;
     }
     
+    @Override
+    public WriteRequest clone() {
+        try {
+            return (WriteRequest) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

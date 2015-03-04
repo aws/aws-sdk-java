@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class ListOpenIDConnectProvidersResult implements Serializable {
+public class ListOpenIDConnectProvidersResult implements Serializable, Cloneable {
 
     /**
      * The list of IAM OpenID Connect providers in the AWS account.
@@ -136,5 +136,19 @@ public class ListOpenIDConnectProvidersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListOpenIDConnectProvidersResult clone() {
+        try {
+            return (ListOpenIDConnectProvidersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

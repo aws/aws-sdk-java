@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the current state of the instance.
  * </p>
  */
-public class InstanceState implements Serializable {
+public class InstanceState implements Serializable, Cloneable {
 
     /**
      * The low byte represents the state. The high byte is an opaque internal
@@ -243,5 +243,19 @@ public class InstanceState implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceState clone() {
+        try {
+            return (InstanceState) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

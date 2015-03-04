@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the CreatePipeline action.
  * </p>
  */
-public class CreatePipelineResult implements Serializable {
+public class CreatePipelineResult implements Serializable, Cloneable {
 
     /**
      * The ID that AWS Data Pipeline assigns the newly created pipeline. The
@@ -123,5 +123,19 @@ public class CreatePipelineResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreatePipelineResult clone() {
+        try {
+            return (CreatePipelineResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

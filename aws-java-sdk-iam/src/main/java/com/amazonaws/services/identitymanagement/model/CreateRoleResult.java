@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful CreateRole request.
  * </p>
  */
-public class CreateRoleResult implements Serializable {
+public class CreateRoleResult implements Serializable, Cloneable {
 
     /**
      * Information about the role.
@@ -100,5 +100,19 @@ public class CreateRoleResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateRoleResult clone() {
+        try {
+            return (CreateRoleResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

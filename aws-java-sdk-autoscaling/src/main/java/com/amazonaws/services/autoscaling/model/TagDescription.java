@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a tag applied to an Auto Scaling group.
  * </p>
  */
-public class TagDescription implements Serializable {
+public class TagDescription implements Serializable, Cloneable {
 
     /**
      * The name of the group.
@@ -367,5 +367,19 @@ public class TagDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public TagDescription clone() {
+        try {
+            return (TagDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

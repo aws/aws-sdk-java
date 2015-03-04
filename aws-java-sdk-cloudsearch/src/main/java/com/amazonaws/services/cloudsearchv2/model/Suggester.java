@@ -25,7 +25,7 @@ import java.io.Serializable;
  * <code>SortExpression</code> .
  * </p>
  */
-public class Suggester implements Serializable {
+public class Suggester implements Serializable, Cloneable {
 
     /**
      * Names must begin with a letter and can contain the following
@@ -169,5 +169,19 @@ public class Suggester implements Serializable {
         return true;
     }
     
+    @Override
+    public Suggester clone() {
+        try {
+            return (Suggester) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

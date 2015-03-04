@@ -22,7 +22,7 @@ import java.io.Serializable;
  * you specified in the request.
  * </p>
  */
-public class UpdatePipelineResult implements Serializable {
+public class UpdatePipelineResult implements Serializable, Cloneable {
 
     /**
      * The pipeline (queue) that is used to manage jobs.
@@ -214,5 +214,19 @@ public class UpdatePipelineResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdatePipelineResult clone() {
+        try {
+            return (UpdatePipelineResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

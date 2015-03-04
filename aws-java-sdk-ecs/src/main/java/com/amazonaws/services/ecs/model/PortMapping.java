@@ -23,7 +23,7 @@ import java.io.Serializable;
  * part of the container definition.
  * </p>
  */
-public class PortMapping implements Serializable {
+public class PortMapping implements Serializable, Cloneable {
 
     /**
      * The port number on the container that is bound to the user-specified
@@ -263,5 +263,19 @@ public class PortMapping implements Serializable {
         return true;
     }
     
+    @Override
+    public PortMapping clone() {
+        try {
+            return (PortMapping) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

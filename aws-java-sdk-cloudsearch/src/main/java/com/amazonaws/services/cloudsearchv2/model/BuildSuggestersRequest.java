@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#buildSuggesters(BuildSuggestersRequest)
  */
-public class BuildSuggestersRequest extends AmazonWebServiceRequest implements Serializable {
+public class BuildSuggestersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -144,5 +144,11 @@ public class BuildSuggestersRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public BuildSuggestersRequest clone() {
+        
+            return (BuildSuggestersRequest) super.clone();
+    }
+
 }
     

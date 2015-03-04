@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest)
  */
-public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The DB instance identifier for the DB instance to be deleted. This
@@ -364,5 +364,11 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteDBInstanceRequest clone() {
+        
+            return (DeleteDBInstanceRequest) super.clone();
+    }
+
 }
     

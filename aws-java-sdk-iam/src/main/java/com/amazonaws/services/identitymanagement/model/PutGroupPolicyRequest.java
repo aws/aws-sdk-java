@@ -47,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putGroupPolicy(PutGroupPolicyRequest)
  */
-public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group to associate the policy with.
@@ -279,5 +279,11 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public PutGroupPolicyRequest clone() {
+        
+            return (PutGroupPolicyRequest) super.clone();
+    }
+
 }
     

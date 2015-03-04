@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createUser(CreateUserRequest)
  */
-public class CreateUserRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateUserRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path for the user name. For more information about paths, see <a
@@ -223,5 +223,11 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public CreateUserRequest clone() {
+        
+            return (CreateUserRequest) super.clone();
+    }
+
 }
     

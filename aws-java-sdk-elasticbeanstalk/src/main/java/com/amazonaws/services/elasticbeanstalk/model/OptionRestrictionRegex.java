@@ -22,7 +22,7 @@ import java.io.Serializable;
  * configuration option value.
  * </p>
  */
-public class OptionRestrictionRegex implements Serializable {
+public class OptionRestrictionRegex implements Serializable, Cloneable {
 
     /**
      * The regular expression pattern that a string configuration option
@@ -156,5 +156,19 @@ public class OptionRestrictionRegex implements Serializable {
         return true;
     }
     
+    @Override
+    public OptionRestrictionRegex clone() {
+        try {
+            return (OptionRestrictionRegex) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

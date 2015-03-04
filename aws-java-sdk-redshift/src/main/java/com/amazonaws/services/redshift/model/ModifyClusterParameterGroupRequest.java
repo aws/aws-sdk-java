@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyClusterParameterGroup(ModifyClusterParameterGroupRequest)
  */
-public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the parameter group to be modified.
@@ -232,5 +232,11 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public ModifyClusterParameterGroupRequest clone() {
+        
+            return (ModifyClusterParameterGroupRequest) super.clone();
+    }
+
 }
     

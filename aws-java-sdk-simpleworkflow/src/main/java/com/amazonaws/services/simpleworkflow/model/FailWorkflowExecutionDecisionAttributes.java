@@ -47,7 +47,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class FailWorkflowExecutionDecisionAttributes implements Serializable {
+public class FailWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * A descriptive reason for the failure that may help in diagnostics.
@@ -192,5 +192,19 @@ public class FailWorkflowExecutionDecisionAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public FailWorkflowExecutionDecisionAttributes clone() {
+        try {
+            return (FailWorkflowExecutionDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

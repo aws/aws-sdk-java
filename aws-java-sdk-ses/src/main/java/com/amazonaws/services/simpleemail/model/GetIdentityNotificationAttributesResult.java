@@ -24,7 +24,7 @@ import java.io.Serializable;
  * for bounce and complaint notifications.
  * </p>
  */
-public class GetIdentityNotificationAttributesResult implements Serializable {
+public class GetIdentityNotificationAttributesResult implements Serializable, Cloneable {
 
     /**
      * A map of Identity to IdentityNotificationAttributes.
@@ -137,5 +137,19 @@ public class GetIdentityNotificationAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetIdentityNotificationAttributesResult clone() {
+        try {
+            return (GetIdentityNotificationAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

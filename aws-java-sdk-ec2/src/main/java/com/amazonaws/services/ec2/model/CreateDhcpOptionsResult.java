@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateDhcpOptionsResult implements Serializable {
+public class CreateDhcpOptionsResult implements Serializable, Cloneable {
 
     /**
      * A set of DHCP options.
@@ -98,5 +98,19 @@ public class CreateDhcpOptionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateDhcpOptionsResult clone() {
+        try {
+            return (CreateDhcpOptionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

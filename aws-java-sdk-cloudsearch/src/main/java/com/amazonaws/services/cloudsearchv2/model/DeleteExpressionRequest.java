@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#deleteExpression(DeleteExpressionRequest)
  */
-public class DeleteExpressionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteExpressionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -203,5 +203,11 @@ public class DeleteExpressionRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteExpressionRequest clone() {
+        
+            return (DeleteExpressionRequest) super.clone();
+    }
+
 }
     

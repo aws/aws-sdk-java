@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#queryObjects(QueryObjectsRequest)
  */
-public class QueryObjectsRequest extends AmazonWebServiceRequest implements Serializable {
+public class QueryObjectsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifier of the pipeline to be queried for object names.
@@ -400,5 +400,11 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public QueryObjectsRequest clone() {
+        
+            return (QueryObjectsRequest) super.clone();
+    }
+
 }
     

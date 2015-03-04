@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetConfigResult implements Serializable {
+public class GetConfigResult implements Serializable, Cloneable {
 
     /**
      * The type of credentials.
@@ -218,5 +218,19 @@ public class GetConfigResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetConfigResult clone() {
+        try {
+            return (GetConfigResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

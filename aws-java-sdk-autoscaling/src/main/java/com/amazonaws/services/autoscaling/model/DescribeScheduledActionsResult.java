@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeScheduledActionsResult implements Serializable {
+public class DescribeScheduledActionsResult implements Serializable, Cloneable {
 
     /**
      * The scheduled actions.
@@ -194,5 +194,19 @@ public class DescribeScheduledActionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeScheduledActionsResult clone() {
+        try {
+            return (DescribeScheduledActionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

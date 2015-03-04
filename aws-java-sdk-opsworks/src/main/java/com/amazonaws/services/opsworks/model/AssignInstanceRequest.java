@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#assignInstance(AssignInstanceRequest)
  */
-public class AssignInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class AssignInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -200,5 +200,11 @@ public class AssignInstanceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public AssignInstanceRequest clone() {
+        
+            return (AssignInstanceRequest) super.clone();
+    }
+
 }
     

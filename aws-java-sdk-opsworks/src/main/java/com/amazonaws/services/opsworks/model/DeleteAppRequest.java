@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteApp(DeleteAppRequest)
  */
-public class DeleteAppRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAppRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The app ID.
@@ -113,5 +113,11 @@ public class DeleteAppRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public DeleteAppRequest clone() {
+        
+            return (DeleteAppRequest) super.clone();
+    }
+
 }
     

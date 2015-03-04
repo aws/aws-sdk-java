@@ -23,7 +23,7 @@ import java.io.Serializable;
  * returned in response to an AWS request.
  * </p>
  */
-public class DecodeAuthorizationMessageResult implements Serializable {
+public class DecodeAuthorizationMessageResult implements Serializable, Cloneable {
 
     /**
      * An XML document that contains the decoded message. For more
@@ -109,5 +109,19 @@ public class DecodeAuthorizationMessageResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DecodeAuthorizationMessageResult clone() {
+        try {
+            return (DecodeAuthorizationMessageResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

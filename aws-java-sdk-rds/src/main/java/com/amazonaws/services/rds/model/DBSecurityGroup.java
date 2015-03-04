@@ -34,7 +34,7 @@ import java.io.Serializable;
  * DescribeDBSecurityGroups action.
  * </p>
  */
-public class DBSecurityGroup implements Serializable {
+public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * Provides the AWS ID of the owner of a specific DB security group.
@@ -393,5 +393,19 @@ public class DBSecurityGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public DBSecurityGroup clone() {
+        try {
+            return (DBSecurityGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

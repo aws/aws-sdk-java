@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The collection of documents that match the search request.
  * </p>
  */
-public class Hits implements Serializable {
+public class Hits implements Serializable, Cloneable {
 
     /**
      * The total number of documents that match the search request.
@@ -268,5 +268,19 @@ public class Hits implements Serializable {
         return true;
     }
     
+    @Override
+    public Hits clone() {
+        try {
+            return (Hits) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

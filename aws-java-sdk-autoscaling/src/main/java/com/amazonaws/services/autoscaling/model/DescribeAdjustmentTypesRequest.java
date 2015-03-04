@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAdjustmentTypes(DescribeAdjustmentTypesRequest)
  */
-public class DescribeAdjustmentTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAdjustmentTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -63,5 +63,11 @@ public class DescribeAdjustmentTypesRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeAdjustmentTypesRequest clone() {
+        
+            return (DescribeAdjustmentTypesRequest) super.clone();
+    }
+
 }
     

@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest)
  */
-public class ActivateGatewayRequest extends AmazonWebServiceRequest implements Serializable {
+public class ActivateGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Your gateway activation key. You can obtain the activation key by
@@ -646,5 +646,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public ActivateGatewayRequest clone() {
+        
+            return (ActivateGatewayRequest) super.clone();
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateRdsDbInstance(UpdateRdsDbInstanceRequest)
  */
-public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon RDS instance's ARN.
@@ -197,5 +197,11 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public UpdateRdsDbInstanceRequest clone() {
+        
+            return (UpdateRdsDbInstanceRequest) super.clone();
+    }
+
 }
     

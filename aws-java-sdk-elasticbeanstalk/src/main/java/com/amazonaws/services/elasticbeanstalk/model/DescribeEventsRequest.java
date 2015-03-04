@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEvents(DescribeEventsRequest)
  */
-public class DescribeEventsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
@@ -743,5 +743,11 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeEventsRequest clone() {
+        
+            return (DescribeEventsRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the solution stack.
  * </p>
  */
-public class SolutionStackDescription implements Serializable {
+public class SolutionStackDescription implements Serializable, Cloneable {
 
     /**
      * The name of the solution stack.
@@ -189,5 +189,19 @@ public class SolutionStackDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public SolutionStackDescription clone() {
+        try {
+            return (SolutionStackDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

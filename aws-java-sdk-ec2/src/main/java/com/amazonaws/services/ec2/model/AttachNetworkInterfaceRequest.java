@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.AttachNetworkInterfaceRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachNetworkInterface(AttachNetworkInterfaceRequest)
  */
-public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AttachNetworkInterfaceRequest> {
+public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AttachNetworkInterfaceRequest> {
 
     /**
      * The ID of the network interface.
@@ -203,5 +203,11 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public AttachNetworkInterfaceRequest clone() {
+        
+            return (AttachNetworkInterfaceRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * want to invalidate.
  * </p>
  */
-public class Paths implements Serializable {
+public class Paths implements Serializable, Cloneable {
 
     /**
      * The number of objects that you want to invalidate.
@@ -187,5 +187,19 @@ public class Paths implements Serializable {
         return true;
     }
     
+    @Override
+    public Paths clone() {
+        try {
+            return (Paths) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheParameterGroup(CreateCacheParameterGroupRequest)
  */
-public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A user-specified name for the cache parameter group.
@@ -231,5 +231,11 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public CreateCacheParameterGroupRequest clone() {
+        
+            return (CreateCacheParameterGroupRequest) super.clone();
+    }
+
 }
     

@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingActivities(DescribeScalingActivitiesRequest)
  */
-public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list containing the activity IDs of the desired scaling activities.
@@ -356,5 +356,11 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeScalingActivitiesRequest clone() {
+        
+            return (DescribeScalingActivitiesRequest) super.clone();
+    }
+
 }
     

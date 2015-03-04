@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#disableMetricsCollection(DisableMetricsCollectionRequest)
  */
-public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or Amazon Resource Name (ARN) of the group.
@@ -244,5 +244,11 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DisableMetricsCollectionRequest clone() {
+        
+            return (DisableMetricsCollectionRequest) super.clone();
+    }
+
 }
     

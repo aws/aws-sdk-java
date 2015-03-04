@@ -22,7 +22,7 @@ import java.io.Serializable;
  * description of the result of an action on each entry in the request.
  * </p>
  */
-public class BatchResultErrorEntry implements Serializable {
+public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * The id of an entry in a batch request.
@@ -236,5 +236,19 @@ public class BatchResultErrorEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public BatchResultErrorEntry clone() {
+        try {
+            return (BatchResultErrorEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

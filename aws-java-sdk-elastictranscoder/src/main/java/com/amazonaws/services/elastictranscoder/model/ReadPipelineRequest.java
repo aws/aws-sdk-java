@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPipeline(ReadPipelineRequest)
  */
-public class ReadPipelineRequest extends AmazonWebServiceRequest implements Serializable {
+public class ReadPipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the pipeline to read.
@@ -117,5 +117,11 @@ public class ReadPipelineRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public ReadPipelineRequest clone() {
+        
+            return (ReadPipelineRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * An Amazon SQS message.
  * </p>
  */
-public class Message implements Serializable {
+public class Message implements Serializable, Cloneable {
 
     /**
      * A unique identifier for the message. Message IDs are considered unique
@@ -562,5 +562,19 @@ public class Message implements Serializable {
         return true;
     }
     
+    @Override
+    public Message clone() {
+        try {
+            return (Message) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The status of the case returned by the ResolveCase operation.
  * </p>
  */
-public class ResolveCaseResult implements Serializable {
+public class ResolveCaseResult implements Serializable, Cloneable {
 
     /**
      * The status of the case when the <a>ResolveCase</a> request was sent.
@@ -149,5 +149,19 @@ public class ResolveCaseResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ResolveCaseResult clone() {
+        try {
+            return (ResolveCaseResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

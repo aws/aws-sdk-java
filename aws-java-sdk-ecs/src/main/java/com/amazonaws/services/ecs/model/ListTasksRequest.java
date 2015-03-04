@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#listTasks(ListTasksRequest)
  */
-public class ListTasksRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -415,5 +415,11 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public ListTasksRequest clone() {
+        
+            return (ListTasksRequest) super.clone();
+    }
+
 }
     

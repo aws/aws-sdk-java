@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the GetTemplateSummary action.
  * </p>
  */
-public class GetTemplateSummaryResult implements Serializable {
+public class GetTemplateSummaryResult implements Serializable, Cloneable {
 
     /**
      * A list of parameter declarations that describe various properties for
@@ -439,5 +439,19 @@ public class GetTemplateSummaryResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetTemplateSummaryResult clone() {
+        try {
+            return (GetTemplateSummaryResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

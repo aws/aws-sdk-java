@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteServerCertificate(DeleteServerCertificateRequest)
  */
-public class DeleteServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteServerCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the server certificate you want to delete.
@@ -151,5 +151,11 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DeleteServerCertificateRequest clone() {
+        
+            return (DeleteServerCertificateRequest) super.clone();
+    }
+
 }
     

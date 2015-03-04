@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#resetCache(ResetCacheRequest)
  */
-public class ResetCacheRequest extends AmazonWebServiceRequest implements Serializable {
+public class ResetCacheRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -134,5 +134,11 @@ public class ResetCacheRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ResetCacheRequest clone() {
+        
+            return (ResetCacheRequest) super.clone();
+    }
+
 }
     

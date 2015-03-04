@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#describeTrails(DescribeTrailsRequest)
  */
-public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The trail returned.
@@ -141,5 +141,11 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeTrailsRequest clone() {
+        
+            return (DescribeTrailsRequest) super.clone();
+    }
+
 }
     

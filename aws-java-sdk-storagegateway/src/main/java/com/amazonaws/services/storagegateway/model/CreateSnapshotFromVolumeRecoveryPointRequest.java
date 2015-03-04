@@ -49,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest)
  */
-public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String volumeARN;
 
@@ -182,5 +182,11 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
         return true;
     }
     
+    @Override
+    public CreateSnapshotFromVolumeRecoveryPointRequest clone() {
+        
+            return (CreateSnapshotFromVolumeRecoveryPointRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class DescribeElasticLoadBalancersResult implements Serializable {
+public class DescribeElasticLoadBalancersResult implements Serializable, Cloneable {
 
     /**
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
@@ -145,5 +145,19 @@ public class DescribeElasticLoadBalancersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeElasticLoadBalancersResult clone() {
+        try {
+            return (DescribeElasticLoadBalancersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

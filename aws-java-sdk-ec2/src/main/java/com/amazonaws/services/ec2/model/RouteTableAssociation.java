@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an association between a route table and a subnet.
  * </p>
  */
-public class RouteTableAssociation implements Serializable {
+public class RouteTableAssociation implements Serializable, Cloneable {
 
     /**
      * The ID of the association between a route table and a subnet.
@@ -235,5 +235,19 @@ public class RouteTableAssociation implements Serializable {
         return true;
     }
     
+    @Override
+    public RouteTableAssociation clone() {
+        try {
+            return (RouteTableAssociation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the monitoring for the instance.
  * </p>
  */
-public class Monitoring implements Serializable {
+public class Monitoring implements Serializable, Cloneable {
 
     /**
      * Indicates whether monitoring is enabled for the instance.
@@ -152,5 +152,19 @@ public class Monitoring implements Serializable {
         return true;
     }
     
+    @Override
+    public Monitoring clone() {
+        try {
+            return (Monitoring) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

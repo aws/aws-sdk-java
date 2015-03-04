@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#enableDomainAutoRenew(EnableDomainAutoRenewRequest)
  */
-public class EnableDomainAutoRenewRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnableDomainAutoRenewRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String domainName;
 
@@ -124,5 +124,11 @@ public class EnableDomainAutoRenewRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public EnableDomainAutoRenewRequest clone() {
+        
+            return (EnableDomainAutoRenewRequest) super.clone();
+    }
+
 }
     

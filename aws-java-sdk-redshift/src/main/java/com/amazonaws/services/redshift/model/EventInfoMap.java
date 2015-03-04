@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class EventInfoMap implements Serializable {
+public class EventInfoMap implements Serializable, Cloneable {
 
     /**
      * The identifier of an Amazon Redshift event.
@@ -259,5 +259,19 @@ public class EventInfoMap implements Serializable {
         return true;
     }
     
+    @Override
+    public EventInfoMap clone() {
+        try {
+            return (EventInfoMap) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

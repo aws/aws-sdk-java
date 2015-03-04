@@ -28,7 +28,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class CacheSecurityGroup implements Serializable {
+public class CacheSecurityGroup implements Serializable, Cloneable {
 
     /**
      * The AWS account ID of the cache security group owner.
@@ -277,5 +277,19 @@ public class CacheSecurityGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheSecurityGroup clone() {
+        try {
+            return (CacheSecurityGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

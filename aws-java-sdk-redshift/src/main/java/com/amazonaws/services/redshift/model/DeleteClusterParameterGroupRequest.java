@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterParameterGroup(DeleteClusterParameterGroupRequest)
  */
-public class DeleteClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the parameter group to be deleted. <p>Constraints: <ul>
@@ -123,5 +123,11 @@ public class DeleteClusterParameterGroupRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DeleteClusterParameterGroupRequest clone() {
+        
+            return (DeleteClusterParameterGroupRequest) super.clone();
+    }
+
 }
     

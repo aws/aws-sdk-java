@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBEngineVersions(DescribeDBEngineVersionsRequest)
  */
-public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The database engine to return.
@@ -548,5 +548,11 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeDBEngineVersionsRequest clone() {
+        
+            return (DescribeDBEngineVersionsRequest) super.clone();
+    }
+
 }
     

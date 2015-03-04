@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The ListTagsForDomain response includes the following elements.
  * </p>
  */
-public class ListTagsForDomainResult implements Serializable {
+public class ListTagsForDomainResult implements Serializable, Cloneable {
 
     /**
      * A list of the tags that are associated with the specified domain.
@@ -171,5 +171,19 @@ public class ListTagsForDomainResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListTagsForDomainResult clone() {
+        try {
+            return (ListTagsForDomainResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

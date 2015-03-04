@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a state change.
  * </p>
  */
-public class StateReason implements Serializable {
+public class StateReason implements Serializable, Cloneable {
 
     /**
      * The reason code for the state change.
@@ -247,5 +247,19 @@ public class StateReason implements Serializable {
         return true;
     }
     
+    @Override
+    public StateReason clone() {
+        try {
+            return (StateReason) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

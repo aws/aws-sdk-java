@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest)
  */
-public class DescribeReservedInstancesModificationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeReservedInstancesModificationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * IDs for the submitted modification request.
@@ -501,5 +501,11 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
         return true;
     }
     
+    @Override
+    public DescribeReservedInstancesModificationsRequest clone() {
+        
+            return (DescribeReservedInstancesModificationsRequest) super.clone();
+    }
+
 }
     

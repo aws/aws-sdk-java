@@ -23,10 +23,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Gets a list of identity pools registered with Cognito.
  * </p>
+ * <p>
+ * <code>ListIdentityPoolUsage</code> can only be called with developer
+ * credentials. You cannot make this API call with the temporary user
+ * credentials provided by Cognito Identity.
+ * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#listIdentityPoolUsage(ListIdentityPoolUsageRequest)
  */
-public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A pagination token for obtaining the next page of results.
@@ -163,5 +168,11 @@ public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public ListIdentityPoolUsageRequest clone() {
+        
+            return (ListIdentityPoolUsageRequest) super.clone();
+    }
+
 }
     

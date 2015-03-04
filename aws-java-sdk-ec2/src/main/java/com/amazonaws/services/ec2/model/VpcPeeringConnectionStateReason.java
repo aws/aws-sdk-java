@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the status of a VPC peering connection.
  * </p>
  */
-public class VpcPeeringConnectionStateReason implements Serializable {
+public class VpcPeeringConnectionStateReason implements Serializable, Cloneable {
 
     /**
      * The status of the VPC peering connection.
@@ -149,5 +149,19 @@ public class VpcPeeringConnectionStateReason implements Serializable {
         return true;
     }
     
+    @Override
+    public VpcPeeringConnectionStateReason clone() {
+        try {
+            return (VpcPeeringConnectionStateReason) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

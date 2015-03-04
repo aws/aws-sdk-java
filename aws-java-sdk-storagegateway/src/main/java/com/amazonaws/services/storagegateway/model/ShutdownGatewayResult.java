@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the of the gateway that was shut down.
  * </p>
  */
-public class ShutdownGatewayResult implements Serializable {
+public class ShutdownGatewayResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -126,5 +126,19 @@ public class ShutdownGatewayResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ShutdownGatewayResult clone() {
+        try {
+            return (ShutdownGatewayResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

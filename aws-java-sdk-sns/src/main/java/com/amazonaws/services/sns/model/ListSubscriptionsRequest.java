@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest)
  */
-public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Token returned by the previous <code>ListSubscriptions</code> request.
@@ -127,5 +127,11 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListSubscriptionsRequest clone() {
+        
+            return (ListSubscriptionsRequest) super.clone();
+    }
+
 }
     

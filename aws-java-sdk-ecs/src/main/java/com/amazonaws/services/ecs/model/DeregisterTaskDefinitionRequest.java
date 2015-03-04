@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#deregisterTaskDefinition(DeregisterTaskDefinitionRequest)
  */
-public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>family</code> and <code>revision</code>
@@ -123,5 +123,11 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DeregisterTaskDefinitionRequest clone() {
+        
+            return (DeregisterTaskDefinitionRequest) super.clone();
+    }
+
 }
     

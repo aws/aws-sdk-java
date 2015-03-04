@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an image attribute.
  * </p>
  */
-public class ImageAttribute implements Serializable {
+public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * The ID of the AMI.
@@ -499,5 +499,19 @@ public class ImageAttribute implements Serializable {
         return true;
     }
     
+    @Override
+    public ImageAttribute clone() {
+        try {
+            return (ImageAttribute) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes whether a VPC is enabled for ClassicLink.
  * </p>
  */
-public class VpcClassicLink implements Serializable {
+public class VpcClassicLink implements Serializable, Cloneable {
 
     /**
      * The ID of the VPC.
@@ -228,5 +228,19 @@ public class VpcClassicLink implements Serializable {
         return true;
     }
     
+    @Override
+    public VpcClassicLink clone() {
+        try {
+            return (VpcClassicLink) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeCustomerGatewaysReques
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeCustomerGateways(DescribeCustomerGatewaysRequest)
  */
-public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeCustomerGatewaysRequest> {
+public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeCustomerGatewaysRequest> {
 
     /**
      * One or more customer gateway IDs. <p>Default: Describes all your
@@ -443,5 +443,11 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeCustomerGatewaysRequest clone() {
+        
+            return (DescribeCustomerGatewaysRequest) super.clone();
+    }
+
 }
     

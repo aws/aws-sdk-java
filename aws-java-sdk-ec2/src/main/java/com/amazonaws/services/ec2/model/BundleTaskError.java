@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an error for BundleInstance.
  * </p>
  */
-public class BundleTaskError implements Serializable {
+public class BundleTaskError implements Serializable, Cloneable {
 
     /**
      * The error code.
@@ -142,5 +142,19 @@ public class BundleTaskError implements Serializable {
         return true;
     }
     
+    @Override
+    public BundleTaskError clone() {
+        try {
+            return (BundleTaskError) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

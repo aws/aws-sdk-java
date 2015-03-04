@@ -31,7 +31,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class Destination implements Serializable {
+public class Destination implements Serializable, Cloneable {
 
     /**
      * The To: field(s) of the message.
@@ -316,5 +316,19 @@ public class Destination implements Serializable {
         return true;
     }
     
+    @Override
+    public Destination clone() {
+        try {
+            return (Destination) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

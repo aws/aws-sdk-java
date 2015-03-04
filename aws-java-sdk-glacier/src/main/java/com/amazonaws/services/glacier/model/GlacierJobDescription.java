@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Amazon Glacier job.
  * </p>
  */
-public class GlacierJobDescription implements Serializable {
+public class GlacierJobDescription implements Serializable, Cloneable {
 
     /**
      * An opaque string that identifies an Amazon Glacier job.
@@ -1071,5 +1071,19 @@ public class GlacierJobDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public GlacierJobDescription clone() {
+        try {
+            return (GlacierJobDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

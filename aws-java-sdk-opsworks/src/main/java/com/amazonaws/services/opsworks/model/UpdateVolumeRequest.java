@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateVolume(UpdateVolumeRequest)
  */
-public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The volume ID.
@@ -200,5 +200,11 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public UpdateVolumeRequest clone() {
+        
+            return (UpdateVolumeRequest) super.clone();
+    }
+
 }
     

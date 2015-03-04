@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest)
  */
-public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An array of strings where each string represents the Amazon Resource
@@ -170,5 +170,11 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DescribeStorediSCSIVolumesRequest clone() {
+        
+            return (DescribeStorediSCSIVolumesRequest) super.clone();
+    }
+
 }
     

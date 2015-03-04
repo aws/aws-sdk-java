@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterVersions(DescribeClusterVersionsRequest)
  */
-public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The specific cluster version to return. <p>Example: <code>1.0</code>
@@ -334,5 +334,11 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeClusterVersionsRequest clone() {
+        
+            return (DescribeClusterVersionsRequest) super.clone();
+    }
+
 }
     

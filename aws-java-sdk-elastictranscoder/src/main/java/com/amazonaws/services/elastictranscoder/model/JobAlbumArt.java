@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The .jpg or .png file associated with an audio file.
  * </p>
  */
-public class JobAlbumArt implements Serializable {
+public class JobAlbumArt implements Serializable, Cloneable {
 
     /**
      * A policy that determines how Elastic Transcoder will handle the
@@ -277,5 +277,19 @@ public class JobAlbumArt implements Serializable {
         return true;
     }
     
+    @Override
+    public JobAlbumArt clone() {
+        try {
+            return (JobAlbumArt) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

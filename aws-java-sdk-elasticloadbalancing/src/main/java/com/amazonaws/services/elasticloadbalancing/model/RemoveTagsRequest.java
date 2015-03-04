@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#removeTags(RemoveTagsRequest)
  */
-public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer. You can specify a maximum of one load
@@ -241,5 +241,11 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public RemoveTagsRequest clone() {
+        
+            return (RemoveTagsRequest) super.clone();
+    }
+
 }
     

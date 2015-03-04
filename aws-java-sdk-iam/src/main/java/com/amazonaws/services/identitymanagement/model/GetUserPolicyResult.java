@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful GetUserPolicy request.
  * </p>
  */
-public class GetUserPolicyResult implements Serializable {
+public class GetUserPolicyResult implements Serializable, Cloneable {
 
     /**
      * The user the policy is associated with.
@@ -232,5 +232,19 @@ public class GetUserPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetUserPolicyResult clone() {
+        try {
+            return (GetUserPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

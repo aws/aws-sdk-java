@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeAttachment operation.
  * </p>
  */
-public class DescribeAttachmentResult implements Serializable {
+public class DescribeAttachmentResult implements Serializable, Cloneable {
 
     /**
      * The attachment content and file name.
@@ -101,5 +101,19 @@ public class DescribeAttachmentResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAttachmentResult clone() {
+        try {
+            return (DescribeAttachmentResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

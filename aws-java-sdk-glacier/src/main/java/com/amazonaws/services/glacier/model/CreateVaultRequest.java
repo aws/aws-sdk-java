@@ -65,7 +65,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#createVault(CreateVaultRequest)
  */
-public class CreateVaultRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateVaultRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -248,5 +248,11 @@ public class CreateVaultRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateVaultRequest clone() {
+        
+            return (CreateVaultRequest) super.clone();
+    }
+
 }
     

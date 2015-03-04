@@ -51,7 +51,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshot(CreateSnapshotRequest)
  */
-public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. Use the
@@ -224,5 +224,11 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CreateSnapshotRequest clone() {
+        
+            return (CreateSnapshotRequest) super.clone();
+    }
+
 }
     

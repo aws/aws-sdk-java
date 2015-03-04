@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest)
  */
-public class CancelReservedInstancesListingRequest extends AmazonWebServiceRequest implements Serializable {
+public class CancelReservedInstancesListingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the Reserved Instance listing.
@@ -111,5 +111,11 @@ public class CancelReservedInstancesListingRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public CancelReservedInstancesListingRequest clone() {
+        
+            return (CancelReservedInstancesListingRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response from CreateTopic action.
  * </p>
  */
-public class CreateTopicResult implements Serializable {
+public class CreateTopicResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) assigned to the created topic.
@@ -100,5 +100,19 @@ public class CreateTopicResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateTopicResult clone() {
+        try {
+            return (CreateTopicResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

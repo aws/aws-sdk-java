@@ -22,7 +22,7 @@ import java.io.Serializable;
  * (see API_FunctionCodeLocation
  * </p>
  */
-public class GetFunctionResult implements Serializable {
+public class GetFunctionResult implements Serializable, Cloneable {
 
     /**
      * A complex type that describes function metadata.
@@ -143,5 +143,19 @@ public class GetFunctionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetFunctionResult clone() {
+        try {
+            return (GetFunctionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

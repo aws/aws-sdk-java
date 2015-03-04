@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Unit of work sent to an activity worker.
  * </p>
  */
-public class ActivityTask implements Serializable {
+public class ActivityTask implements Serializable, Cloneable {
 
     /**
      * The opaque string used as a handle on the task. This token is used by
@@ -381,5 +381,19 @@ public class ActivityTask implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTask clone() {
+        try {
+            return (ActivityTask) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

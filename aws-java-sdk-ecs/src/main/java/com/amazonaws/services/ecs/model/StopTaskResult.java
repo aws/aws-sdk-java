@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StopTaskResult implements Serializable {
+public class StopTaskResult implements Serializable, Cloneable {
 
     /**
      * 
@@ -98,5 +98,19 @@ public class StopTaskResult implements Serializable {
         return true;
     }
     
+    @Override
+    public StopTaskResult clone() {
+        try {
+            return (StopTaskResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

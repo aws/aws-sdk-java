@@ -49,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterParameterGroups(DescribeClusterParameterGroupsRequest)
  */
-public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a specific parameter group for which to return details. By
@@ -565,5 +565,11 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public DescribeClusterParameterGroupsRequest clone() {
+        
+            return (DescribeClusterParameterGroupsRequest) super.clone();
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(DeleteUserPolicyRequest)
  */
-public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) identifying the user that the policy
@@ -214,5 +214,11 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteUserPolicyRequest clone() {
+        
+            return (DeleteUserPolicyRequest) super.clone();
+    }
+
 }
     

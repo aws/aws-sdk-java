@@ -47,7 +47,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class RecordMarkerDecisionAttributes implements Serializable {
+public class RecordMarkerDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The name of the marker.
@@ -192,5 +192,19 @@ public class RecordMarkerDecisionAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public RecordMarkerDecisionAttributes clone() {
+        try {
+            return (RecordMarkerDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

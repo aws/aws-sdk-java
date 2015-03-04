@@ -22,7 +22,7 @@ import java.io.Serializable;
  * returns an error.
  * </p>
  */
-public class GetTrailStatusResult implements Serializable {
+public class GetTrailStatusResult implements Serializable, Cloneable {
 
     /**
      * Whether the CloudTrail is currently logging AWS API calls.
@@ -543,5 +543,19 @@ public class GetTrailStatusResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetTrailStatusResult clone() {
+        try {
+            return (GetTrailStatusResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#addTags(AddTagsRequest)
  */
-public class AddTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer to tag. You can specify a maximum of one
@@ -253,5 +253,11 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public AddTagsRequest clone() {
+        
+            return (AddTagsRequest) super.clone();
+    }
+
 }
     

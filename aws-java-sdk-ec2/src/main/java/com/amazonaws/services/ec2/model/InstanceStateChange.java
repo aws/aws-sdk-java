@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an instance state change.
  * </p>
  */
-public class InstanceStateChange implements Serializable {
+public class InstanceStateChange implements Serializable, Cloneable {
 
     /**
      * The ID of the instance.
@@ -184,5 +184,19 @@ public class InstanceStateChange implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceStateChange clone() {
+        try {
+            return (InstanceStateChange) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

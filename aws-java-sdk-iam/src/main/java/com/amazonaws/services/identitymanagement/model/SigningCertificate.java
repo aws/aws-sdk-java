@@ -25,7 +25,7 @@ import java.io.Serializable;
  * UploadSigningCertificate and ListSigningCertificates actions.
  * </p>
  */
-public class SigningCertificate implements Serializable {
+public class SigningCertificate implements Serializable, Cloneable {
 
     /**
      * The name of the user the signing certificate is associated with.
@@ -440,5 +440,19 @@ public class SigningCertificate implements Serializable {
         return true;
     }
     
+    @Override
+    public SigningCertificate clone() {
+        try {
+            return (SigningCertificate) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

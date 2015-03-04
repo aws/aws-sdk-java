@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#registerContainerInstance(RegisterContainerInstanceRequest)
  */
-public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -285,5 +285,11 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public RegisterContainerInstanceRequest clone() {
+        
+            return (RegisterContainerInstanceRequest) super.clone();
+    }
+
 }
     

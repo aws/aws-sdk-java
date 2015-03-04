@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#deleteAlias(DeleteAliasRequest)
  */
-public class DeleteAliasRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The alias to be deleted.
@@ -121,5 +121,11 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteAliasRequest clone() {
+        
+            return (DeleteAliasRequest) super.clone();
+    }
+
 }
     

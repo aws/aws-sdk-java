@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#startGateway(StartGatewayRequest)
  */
-public class StartGatewayRequest extends AmazonWebServiceRequest implements Serializable {
+public class StartGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -145,5 +145,11 @@ public class StartGatewayRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public StartGatewayRequest clone() {
+        
+            return (StartGatewayRequest) super.clone();
+    }
+
 }
     

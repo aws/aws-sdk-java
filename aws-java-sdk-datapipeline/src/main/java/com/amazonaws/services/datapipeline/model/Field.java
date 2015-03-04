@@ -24,7 +24,7 @@ import java.io.Serializable;
  * as both.
  * </p>
  */
-public class Field implements Serializable {
+public class Field implements Serializable, Cloneable {
 
     /**
      * The field identifier.
@@ -235,5 +235,19 @@ public class Field implements Serializable {
         return true;
     }
     
+    @Override
+    public Field clone() {
+        try {
+            return (Field) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

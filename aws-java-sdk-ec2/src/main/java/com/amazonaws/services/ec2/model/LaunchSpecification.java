@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the launch specification for an instance.
  * </p>
  */
-public class LaunchSpecification implements Serializable {
+public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * The ID of the AMI.
@@ -1039,5 +1039,19 @@ public class LaunchSpecification implements Serializable {
         return true;
     }
     
+    @Override
+    public LaunchSpecification clone() {
+        try {
+            return (LaunchSpecification) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

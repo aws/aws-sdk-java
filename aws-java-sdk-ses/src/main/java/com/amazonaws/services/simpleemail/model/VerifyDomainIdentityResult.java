@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a token used for domain ownership verification.
  * </p>
  */
-public class VerifyDomainIdentityResult implements Serializable {
+public class VerifyDomainIdentityResult implements Serializable, Cloneable {
 
     /**
      * A TXT record that must be placed in the DNS settings for the domain,
@@ -107,5 +107,19 @@ public class VerifyDomainIdentityResult implements Serializable {
         return true;
     }
     
+    @Override
+    public VerifyDomainIdentityResult clone() {
+        try {
+            return (VerifyDomainIdentityResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

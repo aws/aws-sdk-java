@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>TimerCanceled</code> event.
  * </p>
  */
-public class TimerCanceledEventAttributes implements Serializable {
+public class TimerCanceledEventAttributes implements Serializable, Cloneable {
 
     /**
      * The unique Id of the timer that was canceled.
@@ -238,5 +238,19 @@ public class TimerCanceledEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public TimerCanceledEventAttributes clone() {
+        try {
+            return (TimerCanceledEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

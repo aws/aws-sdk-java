@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains constraints on the grant.
  * </p>
  */
-public class GrantConstraints implements Serializable {
+public class GrantConstraints implements Serializable, Cloneable {
 
     /**
      * The constraint equals the full encryption context.
@@ -218,5 +218,19 @@ public class GrantConstraints implements Serializable {
         return true;
     }
     
+    @Override
+    public GrantConstraints clone() {
+        try {
+            return (GrantConstraints) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

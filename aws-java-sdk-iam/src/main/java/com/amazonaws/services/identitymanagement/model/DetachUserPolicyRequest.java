@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#detachUserPolicy(DetachUserPolicyRequest)
  */
-public class DetachUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DetachUserPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the user to detach the policy
@@ -217,5 +217,11 @@ public class DetachUserPolicyRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DetachUserPolicyRequest clone() {
+        
+            return (DetachUserPolicyRequest) super.clone();
+    }
+
 }
     

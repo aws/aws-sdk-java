@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output of the CreateLunaClient action.
  * </p>
  */
-public class CreateLunaClientResult implements Serializable {
+public class CreateLunaClientResult implements Serializable, Cloneable {
 
     /**
      * The ARN of the client.
@@ -112,5 +112,19 @@ public class CreateLunaClientResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateLunaClientResult clone() {
+        try {
+            return (CreateLunaClientResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

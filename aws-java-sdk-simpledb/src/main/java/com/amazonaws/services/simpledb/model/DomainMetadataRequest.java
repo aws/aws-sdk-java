@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#domainMetadata(DomainMetadataRequest)
  */
-public class DomainMetadataRequest extends AmazonWebServiceRequest implements Serializable {
+public class DomainMetadataRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain for which to display the metadata of.
@@ -125,5 +125,11 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DomainMetadataRequest clone() {
+        
+            return (DomainMetadataRequest) super.clone();
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StartInstancesResult implements Serializable {
+public class StartInstancesResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more started instances.
@@ -133,5 +133,19 @@ public class StartInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public StartInstancesResult clone() {
+        try {
+            return (StartInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

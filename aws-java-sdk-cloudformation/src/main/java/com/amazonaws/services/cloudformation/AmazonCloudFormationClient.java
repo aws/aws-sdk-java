@@ -281,14 +281,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTemplateSummaryRequestMarshaller().marshall(getTemplateSummaryRequest);
+                request = new GetTemplateSummaryRequestMarshaller().marshall(super.beforeMarshalling(getTemplateSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetTemplateSummaryResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -326,14 +328,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ValidateTemplateRequestMarshaller().marshall(validateTemplateRequest);
+                request = new ValidateTemplateRequestMarshaller().marshall(super.beforeMarshalling(validateTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ValidateTemplateResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -371,14 +375,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStacksRequestMarshaller().marshall(describeStacksRequest);
+                request = new DescribeStacksRequestMarshaller().marshall(super.beforeMarshalling(describeStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeStacksResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -424,14 +430,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTemplateRequestMarshaller().marshall(getTemplateRequest);
+                request = new GetTemplateRequestMarshaller().marshall(super.beforeMarshalling(getTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetTemplateResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -469,14 +477,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetStackPolicyRequestMarshaller().marshall(getStackPolicyRequest);
+                request = new GetStackPolicyRequestMarshaller().marshall(super.beforeMarshalling(getStackPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetStackPolicyResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -518,14 +528,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStacksRequestMarshaller().marshall(listStacksRequest);
+                request = new ListStacksRequestMarshaller().marshall(super.beforeMarshalling(listStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListStacksResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -555,12 +567,21 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SetStackPolicyRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new SetStackPolicyRequestMarshaller().marshall(setStackPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetStackPolicyRequestMarshaller().marshall(super.beforeMarshalling(setStackPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -600,14 +621,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStackRequestMarshaller().marshall(createStackRequest);
+                request = new CreateStackRequestMarshaller().marshall(super.beforeMarshalling(createStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateStackResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -647,14 +670,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EstimateTemplateCostRequestMarshaller().marshall(estimateTemplateCostRequest);
+                request = new EstimateTemplateCostRequestMarshaller().marshall(super.beforeMarshalling(estimateTemplateCostRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EstimateTemplateCostResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -700,14 +725,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackEventsRequestMarshaller().marshall(describeStackEventsRequest);
+                request = new DescribeStackEventsRequestMarshaller().marshall(super.beforeMarshalling(describeStackEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeStackEventsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -750,14 +777,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackResourceRequestMarshaller().marshall(describeStackResourceRequest);
+                request = new DescribeStackResourceRequestMarshaller().marshall(super.beforeMarshalling(describeStackResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeStackResourceResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -793,12 +822,21 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SignalResourceRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new SignalResourceRequestMarshaller().marshall(signalResourceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SignalResourceRequestMarshaller().marshall(super.beforeMarshalling(signalResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -833,12 +871,21 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CancelUpdateStackRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new CancelUpdateStackRequestMarshaller().marshall(cancelUpdateStackRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelUpdateStackRequestMarshaller().marshall(super.beforeMarshalling(cancelUpdateStackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -891,14 +938,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStackRequestMarshaller().marshall(updateStackRequest);
+                request = new UpdateStackRequestMarshaller().marshall(super.beforeMarshalling(updateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new UpdateStackResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -964,14 +1013,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackResourcesRequestMarshaller().marshall(describeStackResourcesRequest);
+                request = new DescribeStackResourcesRequestMarshaller().marshall(super.beforeMarshalling(describeStackResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeStackResourcesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1013,14 +1064,16 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStackResourcesRequestMarshaller().marshall(listStackResourcesRequest);
+                request = new ListStackResourcesRequestMarshaller().marshall(super.beforeMarshalling(listStackResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListStackResourcesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1052,12 +1105,21 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteStackRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteStackRequestMarshaller().marshall(super.beforeMarshalling(deleteStackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }

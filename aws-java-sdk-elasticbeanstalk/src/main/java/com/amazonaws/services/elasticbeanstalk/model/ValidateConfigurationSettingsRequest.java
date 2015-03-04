@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#validateConfigurationSettings(ValidateConfigurationSettingsRequest)
  */
-public class ValidateConfigurationSettingsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ValidateConfigurationSettingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application that the configuration template or
@@ -364,5 +364,11 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public ValidateConfigurationSettingsRequest clone() {
+        
+            return (ValidateConfigurationSettingsRequest) super.clone();
+    }
+
 }
     

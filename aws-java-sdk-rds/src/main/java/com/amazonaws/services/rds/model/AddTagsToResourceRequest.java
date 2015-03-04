@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addTagsToResource(AddTagsToResourceRequest)
  */
-public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon RDS resource the tags will be added to. This value is an
@@ -218,5 +218,11 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public AddTagsToResourceRequest clone() {
+        
+            return (AddTagsToResourceRequest) super.clone();
+    }
+
 }
     

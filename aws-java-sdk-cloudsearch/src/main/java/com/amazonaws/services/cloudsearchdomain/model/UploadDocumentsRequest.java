@@ -53,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchdomain.AmazonCloudSearchDomain#uploadDocuments(UploadDocumentsRequest)
  */
-public class UploadDocumentsRequest extends AmazonWebServiceRequest implements Serializable {
+public class UploadDocumentsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private Long contentLength;
 
@@ -299,5 +299,11 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public UploadDocumentsRequest clone() {
+        
+            return (UploadDocumentsRequest) super.clone();
+    }
+
 }
     

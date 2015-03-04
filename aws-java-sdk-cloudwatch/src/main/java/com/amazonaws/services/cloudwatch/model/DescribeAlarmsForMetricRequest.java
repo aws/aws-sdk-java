@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmsForMetric(DescribeAlarmsForMetricRequest)
  */
-public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the metric.
@@ -510,5 +510,11 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeAlarmsForMetricRequest clone() {
+        
+            return (DescribeAlarmsForMetricRequest) super.clone();
+    }
+
 }
     

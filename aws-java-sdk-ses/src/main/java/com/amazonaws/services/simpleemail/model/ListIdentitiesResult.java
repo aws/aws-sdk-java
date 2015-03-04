@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a list of all verified identities for the AWS Account.
  * </p>
  */
-public class ListIdentitiesResult implements Serializable {
+public class ListIdentitiesResult implements Serializable, Cloneable {
 
     /**
      * A list of identities.
@@ -177,5 +177,19 @@ public class ListIdentitiesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListIdentitiesResult clone() {
+        try {
+            return (ListIdentitiesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

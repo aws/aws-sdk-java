@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#invokeAsync(InvokeAsyncRequest)
  */
-public class InvokeAsyncRequest extends AmazonWebServiceRequest implements Serializable {
+public class InvokeAsyncRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Lambda function name.
@@ -224,5 +224,11 @@ public class InvokeAsyncRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public InvokeAsyncRequest clone() {
+        
+            return (InvokeAsyncRequest) super.clone();
+    }
+
 }
     

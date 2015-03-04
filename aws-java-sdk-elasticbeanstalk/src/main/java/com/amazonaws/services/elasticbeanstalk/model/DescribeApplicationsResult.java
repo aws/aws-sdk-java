@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Result message containing a list of application descriptions.
  * </p>
  */
-public class DescribeApplicationsResult implements Serializable {
+public class DescribeApplicationsResult implements Serializable, Cloneable {
 
     /**
      * This parameter contains a list of <a>ApplicationDescription</a>.
@@ -135,5 +135,19 @@ public class DescribeApplicationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeApplicationsResult clone() {
+        try {
+            return (DescribeApplicationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

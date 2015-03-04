@@ -22,7 +22,7 @@ import java.io.Serializable;
  * checker and the reason for the health check status.
  * </p>
  */
-public class HealthCheckObservation implements Serializable {
+public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * The IP address of the Route 53 health checker that performed the
@@ -173,5 +173,19 @@ public class HealthCheckObservation implements Serializable {
         return true;
     }
     
+    @Override
+    public HealthCheckObservation clone() {
+        try {
+            return (HealthCheckObservation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

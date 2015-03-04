@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#confirmConnection(ConfirmConnectionRequest)
  */
-public class ConfirmConnectionRequest extends AmazonWebServiceRequest implements Serializable {
+public class ConfirmConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
@@ -110,5 +110,11 @@ public class ConfirmConnectionRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ConfirmConnectionRequest clone() {
+        
+            return (ConfirmConnectionRequest) super.clone();
+    }
+
 }
     

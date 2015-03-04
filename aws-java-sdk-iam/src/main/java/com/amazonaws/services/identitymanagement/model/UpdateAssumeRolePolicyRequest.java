@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest)
  */
-public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the role to update.
@@ -182,5 +182,11 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public UpdateAssumeRolePolicyRequest clone() {
+        
+            return (UpdateAssumeRolePolicyRequest) super.clone();
+    }
+
 }
     

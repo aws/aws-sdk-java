@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest)
  */
-public class CreateTopicRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateTopicRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names
@@ -151,5 +151,11 @@ public class CreateTopicRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateTopicRequest clone() {
+        
+            return (CreateTopicRequest) super.clone();
+    }
+
 }
     

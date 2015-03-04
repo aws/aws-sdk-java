@@ -41,7 +41,7 @@ import com.amazonaws.services.ec2.model.transform.BundleInstanceRequestMarshalle
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#bundleInstance(BundleInstanceRequest)
  */
-public class BundleInstanceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<BundleInstanceRequest> {
+public class BundleInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<BundleInstanceRequest> {
 
     /**
      * The ID of the instance to bundle. <p>Type: String <p>Default: None
@@ -225,5 +225,11 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public BundleInstanceRequest clone() {
+        
+            return (BundleInstanceRequest) super.clone();
+    }
+
 }
     

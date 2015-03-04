@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeImageAttributeRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeImageAttribute(DescribeImageAttributeRequest)
  */
-public class DescribeImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeImageAttributeRequest> {
+public class DescribeImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeImageAttributeRequest> {
 
     /**
      * The ID of the AMI.
@@ -246,5 +246,11 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeImageAttributeRequest clone() {
+        
+            return (DescribeImageAttributeRequest) super.clone();
+    }
+
 }
     

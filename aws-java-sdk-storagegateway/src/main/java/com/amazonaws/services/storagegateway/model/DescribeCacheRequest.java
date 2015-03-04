@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeCache(DescribeCacheRequest)
  */
-public class DescribeCacheRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCacheRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -137,5 +137,11 @@ public class DescribeCacheRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DescribeCacheRequest clone() {
+        
+            return (DescribeCacheRequest) super.clone();
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Log Group
  */
-public class LogGroup implements Serializable {
+public class LogGroup implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -353,5 +353,19 @@ public class LogGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public LogGroup clone() {
+        try {
+            return (LogGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

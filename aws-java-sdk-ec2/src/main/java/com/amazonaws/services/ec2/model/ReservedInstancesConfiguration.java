@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Instances.
  * </p>
  */
-public class ReservedInstancesConfiguration implements Serializable {
+public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * The Availability Zone for the modified Reserved Instances.
@@ -286,5 +286,19 @@ public class ReservedInstancesConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public ReservedInstancesConfiguration clone() {
+        try {
+            return (ReservedInstancesConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

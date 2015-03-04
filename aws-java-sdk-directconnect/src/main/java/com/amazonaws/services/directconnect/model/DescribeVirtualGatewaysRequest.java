@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeVirtualGateways(DescribeVirtualGatewaysRequest)
  */
-public class DescribeVirtualGatewaysRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeVirtualGatewaysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -71,5 +71,11 @@ public class DescribeVirtualGatewaysRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeVirtualGatewaysRequest clone() {
+        
+            return (DescribeVirtualGatewaysRequest) super.clone();
+    }
+
 }
     

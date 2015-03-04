@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSubnetGroups(DescribeDBSubnetGroupsRequest)
  */
-public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB subnet group to return details for.
@@ -322,5 +322,11 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeDBSubnetGroupsRequest clone() {
+        
+            return (DescribeDBSubnetGroupsRequest) super.clone();
+    }
+
 }
     

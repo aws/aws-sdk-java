@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest)
  */
-public class RequestSpotInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RequestSpotInstancesRequest> {
+public class RequestSpotInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RequestSpotInstancesRequest> {
 
     /**
      * The maximum hourly price (bid) for any Spot Instance launched to
@@ -685,5 +685,11 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public RequestSpotInstancesRequest clone() {
+        
+            return (RequestSpotInstancesRequest) super.clone();
+    }
+
 }
     

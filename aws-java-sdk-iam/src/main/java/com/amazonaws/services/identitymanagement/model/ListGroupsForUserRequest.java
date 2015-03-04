@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroupsForUser(ListGroupsForUserRequest)
  */
-public class ListGroupsForUserRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListGroupsForUserRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user to list groups for.
@@ -303,5 +303,11 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListGroupsForUserRequest clone() {
+        
+            return (ListGroupsForUserRequest) super.clone();
+    }
+
 }
     

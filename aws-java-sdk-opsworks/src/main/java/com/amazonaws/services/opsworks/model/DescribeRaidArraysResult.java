@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeRaidArrays</code> request.
  * </p>
  */
-public class DescribeRaidArraysResult implements Serializable {
+public class DescribeRaidArraysResult implements Serializable, Cloneable {
 
     /**
      * A <code>RaidArrays</code> object that describes the specified RAID
@@ -144,5 +144,19 @@ public class DescribeRaidArraysResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeRaidArraysResult clone() {
+        try {
+            return (DescribeRaidArraysResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

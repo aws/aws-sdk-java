@@ -26,7 +26,7 @@ import java.io.Serializable;
  * pairs.
  * </p>
  */
-public class Dataset implements Serializable {
+public class Dataset implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -410,5 +410,19 @@ public class Dataset implements Serializable {
         return true;
     }
     
+    @Override
+    public Dataset clone() {
+        try {
+            return (Dataset) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

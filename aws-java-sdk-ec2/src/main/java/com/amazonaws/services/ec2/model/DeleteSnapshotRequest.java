@@ -47,7 +47,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteSnapshotRequestMarshalle
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSnapshot(DeleteSnapshotRequest)
  */
-public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteSnapshotRequest> {
+public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteSnapshotRequest> {
 
     /**
      * The ID of the Amazon EBS snapshot.
@@ -155,5 +155,11 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeleteSnapshotRequest clone() {
+        
+            return (DeleteSnapshotRequest) super.clone();
+    }
+
 }
     

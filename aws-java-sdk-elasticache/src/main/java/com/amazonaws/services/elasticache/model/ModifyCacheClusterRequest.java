@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheCluster(ModifyCacheClusterRequest)
  */
-public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The cache cluster identifier. This value is stored as a lowercase
@@ -49,7 +49,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
      * specific cache nodes to remove. <p>For clusters running Redis, this
      * value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     * between 1 and 20. <p><b>Note:</b><br/>Adding or removing Memcached
      * cache nodes can be applied immediately or as a pending action. See
      * <code>ApplyImmediately</code>.<br/> A pending action to modify the
      * number of cache nodes in a cluster during its maintenance window,
@@ -171,11 +171,15 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
 
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. Note that system maintenance may result in an outage. This
-     * change is made immediately. If you are moving this window to the
-     * current time, there must be at least 120 minutes between the current
-     * time and end of the window to ensure that pending changes are applied.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      */
     private String preferredMaintenanceWindow;
 
@@ -311,7 +315,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
      * specific cache nodes to remove. <p>For clusters running Redis, this
      * value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     * between 1 and 20. <p><b>Note:</b><br/>Adding or removing Memcached
      * cache nodes can be applied immediately or as a pending action. See
      * <code>ApplyImmediately</code>.<br/> A pending action to modify the
      * number of cache nodes in a cluster during its maintenance window,
@@ -343,7 +347,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
      *         specific cache nodes to remove. <p>For clusters running Redis, this
      *         value must be 1. For clusters running Memcached, this value must be
-     *         between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     *         between 1 and 20. <p><b>Note:</b><br/>Adding or removing Memcached
      *         cache nodes can be applied immediately or as a pending action. See
      *         <code>ApplyImmediately</code>.<br/> A pending action to modify the
      *         number of cache nodes in a cluster during its maintenance window,
@@ -380,7 +384,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
      * specific cache nodes to remove. <p>For clusters running Redis, this
      * value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     * between 1 and 20. <p><b>Note:</b><br/>Adding or removing Memcached
      * cache nodes can be applied immediately or as a pending action. See
      * <code>ApplyImmediately</code>.<br/> A pending action to modify the
      * number of cache nodes in a cluster during its maintenance window,
@@ -412,7 +416,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
      *         specific cache nodes to remove. <p>For clusters running Redis, this
      *         value must be 1. For clusters running Memcached, this value must be
-     *         between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     *         between 1 and 20. <p><b>Note:</b><br/>Adding or removing Memcached
      *         cache nodes can be applied immediately or as a pending action. See
      *         <code>ApplyImmediately</code>.<br/> A pending action to modify the
      *         number of cache nodes in a cluster during its maintenance window,
@@ -449,7 +453,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
      * specific cache nodes to remove. <p>For clusters running Redis, this
      * value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     * between 1 and 20. <p><b>Note:</b><br/>Adding or removing Memcached
      * cache nodes can be applied immediately or as a pending action. See
      * <code>ApplyImmediately</code>.<br/> A pending action to modify the
      * number of cache nodes in a cluster during its maintenance window,
@@ -483,7 +487,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the
      *         specific cache nodes to remove. <p>For clusters running Redis, this
      *         value must be 1. For clusters running Memcached, this value must be
-     *         between 1 and 50. <p><b>Note:</b><br/>Adding or removing Memcached
+     *         between 1 and 20. <p><b>Note:</b><br/>Adding or removing Memcached
      *         cache nodes can be applied immediately or as a pending action. See
      *         <code>ApplyImmediately</code>.<br/> A pending action to modify the
      *         number of cache nodes in a cluster during its maintenance window,
@@ -1453,53 +1457,77 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. Note that system maintenance may result in an outage. This
-     * change is made immediately. If you are moving this window to the
-     * current time, there must be at least 120 minutes between the current
-     * time and end of the window to ensure that pending changes are applied.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @return The weekly time range (in UTC) during which system maintenance can
-     *         occur. Note that system maintenance may result in an outage. This
-     *         change is made immediately. If you are moving this window to the
-     *         current time, there must be at least 120 minutes between the current
-     *         time and end of the window to ensure that pending changes are applied.
+     * @return Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
     }
     
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. Note that system maintenance may result in an outage. This
-     * change is made immediately. If you are moving this window to the
-     * current time, there must be at least 120 minutes between the current
-     * time and end of the window to ensure that pending changes are applied.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. Note that system maintenance may result in an outage. This
-     *         change is made immediately. If you are moving this window to the
-     *         current time, there must be at least 120 minutes between the current
-     *         time and end of the window to ensure that pending changes are applied.
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
     }
     
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. Note that system maintenance may result in an outage. This
-     * change is made immediately. If you are moving this window to the
-     * current time, there must be at least 120 minutes between the current
-     * time and end of the window to ensure that pending changes are applied.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. Note that system maintenance may result in an outage. This
-     *         change is made immediately. If you are moving this window to the
-     *         current time, there must be at least 120 minutes between the current
-     *         time and end of the window to ensure that pending changes are applied.
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2048,5 +2076,11 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public ModifyCacheClusterRequest clone() {
+        
+            return (ModifyCacheClusterRequest) super.clone();
+    }
+
 }
     

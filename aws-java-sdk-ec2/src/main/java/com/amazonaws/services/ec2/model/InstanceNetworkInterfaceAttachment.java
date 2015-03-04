@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a network interface attachment.
  * </p>
  */
-public class InstanceNetworkInterfaceAttachment implements Serializable {
+public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneable {
 
     /**
      * The ID of the network interface attachment.
@@ -345,5 +345,19 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceNetworkInterfaceAttachment clone() {
+        try {
+            return (InstanceNetworkInterfaceAttachment) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

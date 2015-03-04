@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#deleteFunction(DeleteFunctionRequest)
  */
-public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Lambda function to delete.
@@ -125,5 +125,11 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeleteFunctionRequest clone() {
+        
+            return (DeleteFunctionRequest) super.clone();
+    }
+
 }
     

@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#attachRolePolicy(AttachRolePolicyRequest)
  */
-public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the role to attach the policy to.
@@ -217,5 +217,11 @@ public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public AttachRolePolicyRequest clone() {
+        
+            return (AttachRolePolicyRequest) super.clone();
+    }
+
 }
     

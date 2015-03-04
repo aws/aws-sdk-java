@@ -24,7 +24,7 @@ import java.io.Serializable;
  * <i>maxmemory</i> value than a <i>cache.m1.small</i> type.
  * </p>
  */
-public class CacheNodeTypeSpecificParameter implements Serializable {
+public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * The name of the parameter.
@@ -474,5 +474,19 @@ public class CacheNodeTypeSpecificParameter implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheNodeTypeSpecificParameter clone() {
+        try {
+            return (CacheNodeTypeSpecificParameter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

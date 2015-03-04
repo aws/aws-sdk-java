@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the ReportTaskRunnerHeartbeat action.
  * </p>
  */
-public class ReportTaskRunnerHeartbeatResult implements Serializable {
+public class ReportTaskRunnerHeartbeatResult implements Serializable, Cloneable {
 
     /**
      * Indicates whether the calling task runner should terminate. If
@@ -127,5 +127,19 @@ public class ReportTaskRunnerHeartbeatResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ReportTaskRunnerHeartbeatResult clone() {
+        try {
+            return (ReportTaskRunnerHeartbeatResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

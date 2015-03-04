@@ -79,7 +79,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForDecisionTask(PollForDecisionTaskRequest)
  */
-public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implements Serializable {
+public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain containing the task lists to poll.
@@ -604,5 +604,11 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public PollForDecisionTaskRequest clone() {
+        
+            return (PollForDecisionTaskRequest) super.clone();
+    }
+
 }
     

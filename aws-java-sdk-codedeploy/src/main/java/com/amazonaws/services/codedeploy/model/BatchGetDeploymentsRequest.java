@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#batchGetDeployments(BatchGetDeploymentsRequest)
  */
-public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest implements Serializable {
+public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of deployment IDs, with multiple deployment IDs separated by
@@ -149,5 +149,11 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public BatchGetDeploymentsRequest clone() {
+        
+            return (BatchGetDeploymentsRequest) super.clone();
+    }
+
 }
     

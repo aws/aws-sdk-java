@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getChange(GetChangeRequest)
  */
-public class GetChangeRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetChangeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the change batch request. The value that you specify here is
@@ -160,5 +160,11 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public GetChangeRequest clone() {
+        
+            return (GetChangeRequest) super.clone();
+    }
+
 }
     

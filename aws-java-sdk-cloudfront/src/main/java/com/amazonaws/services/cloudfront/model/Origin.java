@@ -23,7 +23,7 @@ import java.io.Serializable;
  * must create at least one origin.
  * </p>
  */
-public class Origin implements Serializable {
+public class Origin implements Serializable, Cloneable {
 
     /**
      * A unique identifier for the origin. The value of Id must be unique
@@ -375,5 +375,19 @@ public class Origin implements Serializable {
         return true;
     }
     
+    @Override
+    public Origin clone() {
+        try {
+            return (Origin) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

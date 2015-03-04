@@ -47,7 +47,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstanceAttributeReque
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstanceAttribute(DescribeInstanceAttributeRequest)
  */
-public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeInstanceAttributeRequest> {
+public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeInstanceAttributeRequest> {
 
     /**
      * The ID of the instance.
@@ -264,5 +264,11 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeInstanceAttributeRequest clone() {
+        
+            return (DescribeInstanceAttributeRequest) super.clone();
+    }
+
 }
     

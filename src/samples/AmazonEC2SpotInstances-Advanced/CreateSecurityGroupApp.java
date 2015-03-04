@@ -41,7 +41,7 @@ public class CreateSecurityGroupApp {
      *      credentials from.
      *      https://console.aws.amazon.com/iam/home?#security_credential
      *
-     * WANRNING:
+     * WARNING:
      *      To avoid accidental leakage of your credentials, DO NOT keep
      *      the credentials file in your source directory.
      */

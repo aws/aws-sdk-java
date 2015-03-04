@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#disableDomainTransferLock(DisableDomainTransferLockRequest)
  */
-public class DisableDomainTransferLockRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableDomainTransferLockRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String <p>Default: None <p>Constraints:
@@ -148,5 +148,11 @@ public class DisableDomainTransferLockRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DisableDomainTransferLockRequest clone() {
+        
+            return (DisableDomainTransferLockRequest) super.clone();
+    }
+
 }
     

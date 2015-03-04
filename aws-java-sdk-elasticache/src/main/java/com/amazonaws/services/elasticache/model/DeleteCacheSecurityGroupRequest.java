@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest)
  */
-public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache security group to delete. <note>You cannot
@@ -135,5 +135,11 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DeleteCacheSecurityGroupRequest clone() {
+        
+            return (DeleteCacheSecurityGroupRequest) super.clone();
+    }
+
 }
     

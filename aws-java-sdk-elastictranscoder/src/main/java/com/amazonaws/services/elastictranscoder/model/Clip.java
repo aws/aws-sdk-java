@@ -22,7 +22,7 @@ import java.io.Serializable;
  * have the same clip settings.
  * </p>
  */
-public class Clip implements Serializable {
+public class Clip implements Serializable, Cloneable {
 
     /**
      * Settings that determine when a clip begins and how long it lasts.
@@ -101,5 +101,19 @@ public class Clip implements Serializable {
         return true;
     }
     
+    @Override
+    public Clip clone() {
+        try {
+            return (Clip) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

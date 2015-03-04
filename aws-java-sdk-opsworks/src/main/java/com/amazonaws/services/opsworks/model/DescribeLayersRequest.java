@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeLayers(DescribeLayersRequest)
  */
-public class DescribeLayersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLayersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -211,5 +211,11 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeLayersRequest clone() {
+        
+            return (DescribeLayersRequest) super.clone();
+    }
+
 }
     

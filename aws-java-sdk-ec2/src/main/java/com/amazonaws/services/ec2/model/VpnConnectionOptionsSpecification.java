@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes VPN connection options.
  * </p>
  */
-public class VpnConnectionOptionsSpecification implements Serializable {
+public class VpnConnectionOptionsSpecification implements Serializable, Cloneable {
 
     /**
      * Indicates whether the VPN connection uses static routes only. Static
@@ -118,5 +118,19 @@ public class VpnConnectionOptionsSpecification implements Serializable {
         return true;
     }
     
+    @Override
+    public VpnConnectionOptionsSpecification clone() {
+        try {
+            return (VpnConnectionOptionsSpecification) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

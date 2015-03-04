@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DNS to complete DKIM setup.
  * </p>
  */
-public class VerifyDomainDkimResult implements Serializable {
+public class VerifyDomainDkimResult implements Serializable, Cloneable {
 
     /**
      * A set of character strings that represent the domain's identity. If
@@ -226,5 +226,19 @@ public class VerifyDomainDkimResult implements Serializable {
         return true;
     }
     
+    @Override
+    public VerifyDomainDkimResult clone() {
+        try {
+            return (VerifyDomainDkimResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

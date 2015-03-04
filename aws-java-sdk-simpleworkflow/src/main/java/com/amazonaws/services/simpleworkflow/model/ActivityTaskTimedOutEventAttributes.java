@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskTimedOut</code> event.
  * </p>
  */
-public class ActivityTaskTimedOutEventAttributes implements Serializable {
+public class ActivityTaskTimedOutEventAttributes implements Serializable, Cloneable {
 
     /**
      * The type of the timeout that caused this event.
@@ -346,5 +346,19 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTaskTimedOutEventAttributes clone() {
+        try {
+            return (ActivityTaskTimedOutEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Summarizes the number of layers, instances, and apps in a stack.
  * </p>
  */
-public class StackSummary implements Serializable {
+public class StackSummary implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -317,5 +317,19 @@ public class StackSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public StackSummary clone() {
+        try {
+            return (StackSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

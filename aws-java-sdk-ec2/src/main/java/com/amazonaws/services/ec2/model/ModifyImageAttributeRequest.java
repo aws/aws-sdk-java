@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.ModifyImageAttributeRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyImageAttribute(ModifyImageAttributeRequest)
  */
-public class ModifyImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ModifyImageAttributeRequest> {
+public class ModifyImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyImageAttributeRequest> {
 
     /**
      * The ID of the AMI.
@@ -627,5 +627,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public ModifyImageAttributeRequest clone() {
+        
+            return (ModifyImageAttributeRequest) super.clone();
+    }
+
 }
     

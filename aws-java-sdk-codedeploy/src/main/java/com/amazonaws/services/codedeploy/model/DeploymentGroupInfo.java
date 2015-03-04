@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about a deployment group.
  * </p>
  */
-public class DeploymentGroupInfo implements Serializable {
+public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * The application name.
@@ -507,5 +507,19 @@ public class DeploymentGroupInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public DeploymentGroupInfo clone() {
+        try {
+            return (DeploymentGroupInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScheduledActions(DescribeScheduledActionsRequest)
  */
-public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group.
@@ -455,5 +455,11 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeScheduledActionsRequest clone() {
+        
+            return (DescribeScheduledActionsRequest) super.clone();
+    }
+
 }
     

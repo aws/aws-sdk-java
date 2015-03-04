@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeIndexFields(DescribeIndexFieldsRequest)
  */
-public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain you want to describe.
@@ -283,5 +283,11 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeIndexFieldsRequest clone() {
+        
+            return (DescribeIndexFieldsRequest) super.clone();
+    }
+
 }
     

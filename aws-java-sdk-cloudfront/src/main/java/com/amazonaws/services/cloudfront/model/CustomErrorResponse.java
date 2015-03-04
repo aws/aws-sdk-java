@@ -32,7 +32,7 @@ import java.io.Serializable;
  * want to include in the updated distribution.
  * </p>
  */
-public class CustomErrorResponse implements Serializable {
+public class CustomErrorResponse implements Serializable, Cloneable {
 
     /**
      * The 4xx or 5xx HTTP status code that you want to customize. For a list
@@ -321,5 +321,19 @@ public class CustomErrorResponse implements Serializable {
         return true;
     }
     
+    @Override
+    public CustomErrorResponse clone() {
+        try {
+            return (CustomErrorResponse) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

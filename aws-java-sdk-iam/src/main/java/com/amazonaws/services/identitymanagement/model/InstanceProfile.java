@@ -44,7 +44,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class InstanceProfile implements Serializable {
+public class InstanceProfile implements Serializable, Cloneable {
 
     /**
      * The path to the instance profile. For more information about paths,
@@ -491,5 +491,19 @@ public class InstanceProfile implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceProfile clone() {
+        try {
+            return (InstanceProfile) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

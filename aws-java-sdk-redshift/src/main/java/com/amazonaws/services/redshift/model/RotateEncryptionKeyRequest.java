@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#rotateEncryptionKey(RotateEncryptionKeyRequest)
  */
-public class RotateEncryptionKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class RotateEncryptionKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of the cluster that you want to rotate the
@@ -119,5 +119,11 @@ public class RotateEncryptionKeyRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public RotateEncryptionKeyRequest clone() {
+        
+            return (RotateEncryptionKeyRequest) super.clone();
+    }
+
 }
     

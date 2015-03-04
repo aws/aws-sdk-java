@@ -22,7 +22,7 @@ import java.io.Serializable;
  * or the configuration history to the specified Amazon S3 bucket.
  * </p>
  */
-public class ConfigExportDeliveryInfo implements Serializable {
+public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
 
     /**
      * Status of the last attempted delivery.
@@ -321,5 +321,19 @@ public class ConfigExportDeliveryInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfigExportDeliveryInfo clone() {
+        try {
+            return (ConfigExportDeliveryInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

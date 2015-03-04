@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListVaultsResult implements Serializable {
+public class ListVaultsResult implements Serializable, Cloneable {
 
     /**
      * List of vaults.
@@ -191,5 +191,19 @@ public class ListVaultsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListVaultsResult clone() {
+        try {
+            return (ListVaultsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

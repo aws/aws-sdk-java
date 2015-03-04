@@ -23,7 +23,7 @@ import java.io.Serializable;
  * distribution.
  * </p>
  */
-public class S3Origin implements Serializable {
+public class S3Origin implements Serializable, Cloneable {
 
     /**
      * The DNS name of the S3 origin.
@@ -174,5 +174,19 @@ public class S3Origin implements Serializable {
         return true;
     }
     
+    @Override
+    public S3Origin clone() {
+        try {
+            return (S3Origin) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

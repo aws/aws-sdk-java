@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listHealthChecks(ListHealthChecksRequest)
  */
-public class ListHealthChecksRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListHealthChecksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * If the request returned more than one page of results, submit another
@@ -199,5 +199,11 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ListHealthChecksRequest clone() {
+        
+            return (ListHealthChecksRequest) super.clone();
+    }
+
 }
     

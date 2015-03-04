@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#validateTemplate(ValidateTemplateRequest)
  */
-public class ValidateTemplateRequest extends AmazonWebServiceRequest implements Serializable {
+public class ValidateTemplateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Structure containing the template body with a minimum length of 1 byte
@@ -248,5 +248,11 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ValidateTemplateRequest clone() {
+        
+            return (ValidateTemplateRequest) super.clone();
+    }
+
 }
     

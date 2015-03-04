@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeInstances</code> request.
  * </p>
  */
-public class DescribeInstancesResult implements Serializable {
+public class DescribeInstancesResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>Instance</code> objects that describe the instances.
@@ -135,5 +135,19 @@ public class DescribeInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeInstancesResult clone() {
+        try {
+            return (DescribeInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

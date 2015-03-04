@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createInstanceProfile(CreateInstanceProfileRequest)
  */
-public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the instance profile to create.
@@ -216,5 +216,11 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public CreateInstanceProfileRequest clone() {
+        
+            return (CreateInstanceProfileRequest) super.clone();
+    }
+
 }
     

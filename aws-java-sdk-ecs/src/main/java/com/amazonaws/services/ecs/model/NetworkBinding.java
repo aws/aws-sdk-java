@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class NetworkBinding implements Serializable {
+public class NetworkBinding implements Serializable, Cloneable {
 
     /**
      * The IP address that the container is bound to on the container
@@ -196,5 +196,19 @@ public class NetworkBinding implements Serializable {
         return true;
     }
     
+    @Override
+    public NetworkBinding clone() {
+        try {
+            return (NetworkBinding) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

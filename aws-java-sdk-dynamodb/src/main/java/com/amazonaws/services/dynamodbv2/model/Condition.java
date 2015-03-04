@@ -46,7 +46,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Condition implements Serializable {
+public class Condition implements Serializable, Cloneable {
 
     /**
      * One or more values to evaluate against the supplied attribute. The
@@ -1657,5 +1657,19 @@ public class Condition implements Serializable {
         return true;
     }
     
+    @Override
+    public Condition clone() {
+        try {
+            return (Condition) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

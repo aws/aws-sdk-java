@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateGroup(UpdateGroupRequest)
  */
-public class UpdateGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Name of the group to update. If you're changing the name of the group,
@@ -289,5 +289,11 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public UpdateGroupRequest clone() {
+        
+            return (UpdateGroupRequest) super.clone();
+    }
+
 }
     

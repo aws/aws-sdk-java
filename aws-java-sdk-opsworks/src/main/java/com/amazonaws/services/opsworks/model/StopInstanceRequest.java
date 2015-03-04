@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#stopInstance(StopInstanceRequest)
  */
-public class StopInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class StopInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -118,5 +118,11 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public StopInstanceRequest clone() {
+        
+            return (StopInstanceRequest) super.clone();
+    }
+
 }
     

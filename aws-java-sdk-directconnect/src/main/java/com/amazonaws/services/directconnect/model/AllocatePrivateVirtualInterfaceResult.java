@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Direct Connect location and the customer.
  * </p>
  */
-public class AllocatePrivateVirtualInterfaceResult implements Serializable {
+public class AllocatePrivateVirtualInterfaceResult implements Serializable, Cloneable {
 
     private String ownerAccount;
 
@@ -1029,5 +1029,19 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AllocatePrivateVirtualInterfaceResult clone() {
+        try {
+            return (AllocatePrivateVirtualInterfaceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

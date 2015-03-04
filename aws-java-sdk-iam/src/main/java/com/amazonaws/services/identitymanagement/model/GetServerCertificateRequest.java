@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(GetServerCertificateRequest)
  */
-public class GetServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetServerCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the server certificate you want to retrieve information
@@ -146,5 +146,11 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public GetServerCertificateRequest clone() {
+        
+            return (GetServerCertificateRequest) super.clone();
+    }
+
 }
     

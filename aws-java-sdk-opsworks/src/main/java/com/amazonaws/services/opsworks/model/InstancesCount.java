@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes how many instances a stack has for each status.
  * </p>
  */
-public class InstancesCount implements Serializable {
+public class InstancesCount implements Serializable, Cloneable {
 
     /**
      * The number of instances in the Assigning state.
@@ -856,5 +856,19 @@ public class InstancesCount implements Serializable {
         return true;
     }
     
+    @Override
+    public InstancesCount clone() {
+        try {
+            return (InstancesCount) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

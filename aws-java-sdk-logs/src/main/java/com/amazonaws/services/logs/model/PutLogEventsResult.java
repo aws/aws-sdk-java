@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Put Log Events Result
  */
-public class PutLogEventsResult implements Serializable {
+public class PutLogEventsResult implements Serializable, Cloneable {
 
     /**
      * A string token used for making PutLogEvents requests. A <code
@@ -138,5 +138,19 @@ public class PutLogEventsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public PutLogEventsResult clone() {
+        try {
+            return (PutLogEventsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

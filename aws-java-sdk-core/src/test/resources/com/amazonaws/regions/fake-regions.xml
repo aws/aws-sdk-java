@@ -1,0 +1,17 @@
+<XML>
+  <Regions>
+    <Region>
+      <Name>us-east-1</Name>
+      <Domain>hostname.com</Domain>
+      <Endpoint>
+        <ServiceName>cloudformation</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>fake.hostname.com</Hostname>
+      </Endpoint>
+    </Region>
+    <Region>
+      <Name>us-west-1</Name>
+    </Region>
+  </Regions>
+</XML>

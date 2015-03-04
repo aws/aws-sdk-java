@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createInstance(CreateInstanceRequest)
  */
-public class CreateInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -1264,5 +1264,11 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CreateInstanceRequest clone() {
+        
+            return (CreateInstanceRequest) super.clone();
+    }
+
 }
     

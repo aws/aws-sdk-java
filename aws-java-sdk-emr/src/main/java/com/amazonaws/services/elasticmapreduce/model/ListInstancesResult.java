@@ -21,7 +21,7 @@ import java.io.Serializable;
  * This output contains the list of instances.
  * </p>
  */
-public class ListInstancesResult implements Serializable {
+public class ListInstancesResult implements Serializable, Cloneable {
 
     /**
      * The list of instances for the cluster and given filters.
@@ -184,5 +184,19 @@ public class ListInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListInstancesResult clone() {
+        try {
+            return (ListInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListSAMLProviders request.
  * </p>
  */
-public class ListSAMLProvidersResult implements Serializable {
+public class ListSAMLProvidersResult implements Serializable, Cloneable {
 
     /**
      * The list of SAML providers for this account.
@@ -135,5 +135,19 @@ public class ListSAMLProvidersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListSAMLProvidersResult clone() {
+        try {
+            return (ListSAMLProvidersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

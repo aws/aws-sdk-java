@@ -22,7 +22,7 @@ import java.io.Serializable;
  * AWS resource.
  * </p>
  */
-public class DeliveryChannel implements Serializable {
+public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * The name of the delivery channel. By default, AWS Config automatically
@@ -267,5 +267,19 @@ public class DeliveryChannel implements Serializable {
         return true;
     }
     
+    @Override
+    public DeliveryChannel clone() {
+        try {
+            return (DeliveryChannel) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

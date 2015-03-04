@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a tag applied to a resource in an environment.
  * </p>
  */
-public class Tag implements Serializable {
+public class Tag implements Serializable, Cloneable {
 
     /**
      * The key of the tag.
@@ -166,5 +166,19 @@ public class Tag implements Serializable {
         return true;
     }
     
+    @Override
+    public Tag clone() {
+        try {
+            return (Tag) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

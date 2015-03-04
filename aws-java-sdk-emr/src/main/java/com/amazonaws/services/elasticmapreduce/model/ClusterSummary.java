@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The summary description of the cluster.
  * </p>
  */
-public class ClusterSummary implements Serializable {
+public class ClusterSummary implements Serializable, Cloneable {
 
     /**
      * The unique identifier for the cluster.
@@ -261,5 +261,19 @@ public class ClusterSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterSummary clone() {
+        try {
+            return (ClusterSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

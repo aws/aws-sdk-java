@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#updateStack(UpdateStackRequest)
  */
-public class UpdateStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or stack ID of the stack to update. <note> Must contain only
@@ -1327,5 +1327,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public UpdateStackRequest clone() {
+        
+            return (UpdateStackRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the DescribePipelines action.
  * </p>
  */
-public class DescribePipelinesResult implements Serializable {
+public class DescribePipelinesResult implements Serializable, Cloneable {
 
     /**
      * An array of descriptions returned for the specified pipelines.
@@ -135,5 +135,19 @@ public class DescribePipelinesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribePipelinesResult clone() {
+        try {
+            return (DescribePipelinesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

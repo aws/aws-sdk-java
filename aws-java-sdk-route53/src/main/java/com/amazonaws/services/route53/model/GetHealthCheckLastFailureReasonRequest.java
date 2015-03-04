@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest)
  */
-public class GetHealthCheckLastFailureReasonRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetHealthCheckLastFailureReasonRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the health check for which you want to retrieve the reason
@@ -128,5 +128,11 @@ public class GetHealthCheckLastFailureReasonRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public GetHealthCheckLastFailureReasonRequest clone() {
+        
+            return (GetHealthCheckLastFailureReasonRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * that is created.
  * </p>
  */
-public class Job implements Serializable {
+public class Job implements Serializable, Cloneable {
 
     /**
      * The identifier that Elastic Transcoder assigned to the job. You use
@@ -930,5 +930,19 @@ public class Job implements Serializable {
         return true;
     }
     
+    @Override
+    public Job clone() {
+        try {
+            return (Job) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

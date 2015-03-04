@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#defineIndexField(DefineIndexFieldRequest)
  */
-public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements Serializable {
+public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -193,5 +193,11 @@ public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DefineIndexFieldRequest clone() {
+        
+            return (DefineIndexFieldRequest) super.clone();
+    }
+
 }
     

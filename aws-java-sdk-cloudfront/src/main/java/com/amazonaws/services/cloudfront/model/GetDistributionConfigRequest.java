@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#getDistributionConfig(GetDistributionConfigRequest)
  */
-public class GetDistributionConfigRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetDistributionConfigRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The distribution's id.
@@ -122,5 +122,11 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public GetDistributionConfigRequest clone() {
+        
+            return (GetDistributionConfigRequest) super.clone();
+    }
+
 }
     

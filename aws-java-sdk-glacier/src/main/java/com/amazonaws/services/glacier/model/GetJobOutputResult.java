@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class GetJobOutputResult implements Serializable {
+public class GetJobOutputResult implements Serializable, Cloneable {
 
     /**
      * The job data, either archive data or inventory data.
@@ -518,5 +518,19 @@ public class GetJobOutputResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetJobOutputResult clone() {
+        try {
+            return (GetJobOutputResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

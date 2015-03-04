@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Amazon EBS volume.
  * </p>
  */
-public class Ebs implements Serializable {
+public class Ebs implements Serializable, Cloneable {
 
     /**
      * The ID of the snapshot.
@@ -408,5 +408,19 @@ public class Ebs implements Serializable {
         return true;
     }
     
+    @Override
+    public Ebs clone() {
+        try {
+            return (Ebs) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

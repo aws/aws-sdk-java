@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainIdentity(VerifyDomainIdentityRequest)
  */
-public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The domain to be verified.
@@ -108,5 +108,11 @@ public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public VerifyDomainIdentityRequest clone() {
+        
+            return (VerifyDomainIdentityRequest) super.clone();
+    }
+
 }
     

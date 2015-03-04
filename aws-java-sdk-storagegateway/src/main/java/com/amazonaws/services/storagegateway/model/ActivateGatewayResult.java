@@ -25,7 +25,7 @@ import java.io.Serializable;
  * authorization.
  * </p>
  */
-public class ActivateGatewayResult implements Serializable {
+public class ActivateGatewayResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -130,5 +130,19 @@ public class ActivateGatewayResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivateGatewayResult clone() {
+        try {
+            return (ActivateGatewayResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

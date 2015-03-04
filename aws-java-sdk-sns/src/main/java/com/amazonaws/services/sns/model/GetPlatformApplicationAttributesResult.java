@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for GetPlatformApplicationAttributes action.
  * </p>
  */
-public class GetPlatformApplicationAttributesResult implements Serializable {
+public class GetPlatformApplicationAttributesResult implements Serializable, Cloneable {
 
     /**
      * Attributes include the following: <ul>
@@ -214,5 +214,19 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetPlatformApplicationAttributesResult clone() {
+        try {
+            return (GetPlatformApplicationAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

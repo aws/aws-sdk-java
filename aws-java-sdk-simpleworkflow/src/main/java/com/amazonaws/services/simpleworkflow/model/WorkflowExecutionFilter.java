@@ -22,7 +22,7 @@ import java.io.Serializable;
  * <code>workflowId</code> .
  * </p>
  */
-public class WorkflowExecutionFilter implements Serializable {
+public class WorkflowExecutionFilter implements Serializable, Cloneable {
 
     /**
      * The workflowId to pass of match the criteria of this filter.
@@ -113,5 +113,19 @@ public class WorkflowExecutionFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionFilter clone() {
+        try {
+            return (WorkflowExecutionFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

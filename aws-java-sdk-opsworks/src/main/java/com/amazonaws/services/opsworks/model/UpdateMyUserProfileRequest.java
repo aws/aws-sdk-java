@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateMyUserProfile(UpdateMyUserProfileRequest)
  */
-public class UpdateMyUserProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateMyUserProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The user's SSH public key.
@@ -112,5 +112,11 @@ public class UpdateMyUserProfileRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public UpdateMyUserProfileRequest clone() {
+        
+            return (UpdateMyUserProfileRequest) super.clone();
+    }
+
 }
     

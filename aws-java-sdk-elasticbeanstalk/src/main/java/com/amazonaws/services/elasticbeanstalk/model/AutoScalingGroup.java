@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Auto Scaling launch configuration.
  * </p>
  */
-public class AutoScalingGroup implements Serializable {
+public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * The name of the <code>AutoScalingGroup</code> .
@@ -106,5 +106,19 @@ public class AutoScalingGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public AutoScalingGroup clone() {
+        try {
+            return (AutoScalingGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -55,7 +55,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#shutdownGateway(ShutdownGatewayRequest)
  */
-public class ShutdownGatewayRequest extends AmazonWebServiceRequest implements Serializable {
+public class ShutdownGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -160,5 +160,11 @@ public class ShutdownGatewayRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public ShutdownGatewayRequest clone() {
+        
+            return (ShutdownGatewayRequest) super.clone();
+    }
+
 }
     

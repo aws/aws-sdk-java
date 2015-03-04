@@ -51,7 +51,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#deleteVault(DeleteVaultRequest)
  */
-public class DeleteVaultRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteVaultRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -234,5 +234,11 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteVaultRequest clone() {
+        
+            return (DeleteVaultRequest) super.clone();
+    }
+
 }
     

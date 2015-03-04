@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#discoverPollEndpoint(DiscoverPollEndpointRequest)
  */
-public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest implements Serializable {
+public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The container instance UUID or full Amazon Resource Name (ARN) of the
@@ -194,5 +194,11 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DiscoverPollEndpointRequest clone() {
+        
+            return (DiscoverPollEndpointRequest) super.clone();
+    }
+
 }
     

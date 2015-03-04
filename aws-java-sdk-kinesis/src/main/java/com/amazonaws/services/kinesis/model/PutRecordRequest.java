@@ -79,7 +79,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#putRecord(PutRecordRequest)
  */
-public class PutRecordRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutRecordRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream to put the data record into.
@@ -502,5 +502,11 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public PutRecordRequest clone() {
+        
+            return (PutRecordRequest) super.clone();
+    }
+
 }
     

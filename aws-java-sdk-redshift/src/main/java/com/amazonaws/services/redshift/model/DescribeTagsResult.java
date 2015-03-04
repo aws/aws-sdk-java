@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the <code>DescribeTags</code> action.
  * </p>
  */
-public class DescribeTagsResult implements Serializable {
+public class DescribeTagsResult implements Serializable, Cloneable {
 
     /**
      * A list of tags with their associated resources.
@@ -212,5 +212,19 @@ public class DescribeTagsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTagsResult clone() {
+        try {
+            return (DescribeTagsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

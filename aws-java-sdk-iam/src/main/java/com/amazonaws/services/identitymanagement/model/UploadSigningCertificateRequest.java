@@ -45,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadSigningCertificate(UploadSigningCertificateRequest)
  */
-public class UploadSigningCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class UploadSigningCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user the signing certificate is for.
@@ -215,5 +215,11 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public UploadSigningCertificateRequest clone() {
+        
+            return (UploadSigningCertificateRequest) super.clone();
+    }
+
 }
     

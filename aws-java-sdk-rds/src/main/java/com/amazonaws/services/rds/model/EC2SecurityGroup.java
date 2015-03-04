@@ -29,7 +29,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class EC2SecurityGroup implements Serializable {
+public class EC2SecurityGroup implements Serializable, Cloneable {
 
     /**
      * Provides the status of the EC2 security group. Status can be
@@ -254,5 +254,19 @@ public class EC2SecurityGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public EC2SecurityGroup clone() {
+        try {
+            return (EC2SecurityGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

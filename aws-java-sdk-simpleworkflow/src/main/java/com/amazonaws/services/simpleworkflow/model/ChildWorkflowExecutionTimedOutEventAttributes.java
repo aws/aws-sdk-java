@@ -22,7 +22,7 @@ import java.io.Serializable;
  * event.
  * </p>
  */
-public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializable {
+public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializable, Cloneable {
 
     /**
      * The child workflow execution that timed out.
@@ -381,5 +381,19 @@ public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializab
         return true;
     }
     
+    @Override
+    public ChildWorkflowExecutionTimedOutEventAttributes clone() {
+        try {
+            return (ChildWorkflowExecutionTimedOutEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

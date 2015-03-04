@@ -26,7 +26,7 @@ import java.io.Serializable;
  * instances).
  * </p>
  */
-public class ConfigurationItem implements Serializable {
+public class ConfigurationItem implements Serializable, Cloneable {
 
     /**
      * The version number of the resource configuration.
@@ -967,5 +967,19 @@ public class ConfigurationItem implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfigurationItem clone() {
+        try {
+            return (ConfigurationItem) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

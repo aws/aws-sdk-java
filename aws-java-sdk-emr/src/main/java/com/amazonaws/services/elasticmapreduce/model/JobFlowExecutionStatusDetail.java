@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the status of the job flow.
  * </p>
  */
-public class JobFlowExecutionStatusDetail implements Serializable {
+public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
 
     /**
      * The state of the job flow.
@@ -417,5 +417,19 @@ public class JobFlowExecutionStatusDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public JobFlowExecutionStatusDetail clone() {
+        try {
+            return (JobFlowExecutionStatusDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

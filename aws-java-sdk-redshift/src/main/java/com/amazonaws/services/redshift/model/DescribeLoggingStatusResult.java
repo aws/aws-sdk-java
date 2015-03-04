@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the status of logging for a cluster.
  * </p>
  */
-public class DescribeLoggingStatusResult implements Serializable {
+public class DescribeLoggingStatusResult implements Serializable, Cloneable {
 
     /**
      * <code>true</code> if logging is on, <code>false</code> if logging is
@@ -328,5 +328,19 @@ public class DescribeLoggingStatusResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLoggingStatusResult clone() {
+        try {
+            return (DescribeLoggingStatusResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -55,7 +55,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#transferDomain(TransferDomainRequest)
  */
-public class TransferDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class TransferDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String <p>Default: None <p>Constraints:
@@ -1086,5 +1086,11 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public TransferDomainRequest clone() {
+        
+            return (TransferDomainRequest) super.clone();
+    }
+
 }
     

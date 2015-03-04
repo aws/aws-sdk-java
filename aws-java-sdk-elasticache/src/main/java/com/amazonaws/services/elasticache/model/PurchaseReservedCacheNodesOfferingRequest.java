@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest)
  */
-public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceRequest implements Serializable {
+public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the reserved cache node offering to purchase. <p>Example:
@@ -211,5 +211,11 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
         return true;
     }
     
+    @Override
+    public PurchaseReservedCacheNodesOfferingRequest clone() {
+        
+            return (PurchaseReservedCacheNodesOfferingRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * event.
  * </p>
  */
-public class ActivityTaskCancelRequestedEventAttributes implements Serializable {
+public class ActivityTaskCancelRequestedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
@@ -183,5 +183,19 @@ public class ActivityTaskCancelRequestedEventAttributes implements Serializable 
         return true;
     }
     
+    @Override
+    public ActivityTaskCancelRequestedEventAttributes clone() {
+        try {
+            return (ActivityTaskCancelRequestedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

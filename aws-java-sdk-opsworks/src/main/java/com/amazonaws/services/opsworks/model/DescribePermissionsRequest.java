@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describePermissions(DescribePermissionsRequest)
  */
-public class DescribePermissionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribePermissionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The user's IAM ARN. For more information about IAM ARNs, see <a
@@ -169,5 +169,11 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribePermissionsRequest clone() {
+        
+            return (DescribePermissionsRequest) super.clone();
+    }
+
 }
     

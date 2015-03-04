@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAttachedRolePolicies(ListAttachedRolePoliciesRequest)
  */
-public class ListAttachedRolePoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAttachedRolePoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the role to list attached
@@ -372,5 +372,11 @@ public class ListAttachedRolePoliciesRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ListAttachedRolePoliciesRequest clone() {
+        
+            return (ListAttachedRolePoliciesRequest) super.clone();
+    }
+
 }
     

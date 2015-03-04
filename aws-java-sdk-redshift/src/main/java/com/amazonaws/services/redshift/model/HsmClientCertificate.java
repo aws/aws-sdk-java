@@ -23,7 +23,7 @@ import java.io.Serializable;
  * Amazon Redshift cluster to encrypt data files.
  * </p>
  */
-public class HsmClientCertificate implements Serializable {
+public class HsmClientCertificate implements Serializable, Cloneable {
 
     /**
      * The identifier of the HSM client certificate.
@@ -228,5 +228,19 @@ public class HsmClientCertificate implements Serializable {
         return true;
     }
     
+    @Override
+    public HsmClientCertificate clone() {
+        try {
+            return (HsmClientCertificate) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -34,7 +34,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class DBParameterGroupStatus implements Serializable {
+public class DBParameterGroupStatus implements Serializable, Cloneable {
 
     /**
      * The name of the DP parameter group.
@@ -161,5 +161,19 @@ public class DBParameterGroupStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public DBParameterGroupStatus clone() {
+        try {
+            return (DBParameterGroupStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

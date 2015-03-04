@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteScheduledAction(DeleteScheduledActionRequest)
  */
-public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the Auto Scaling group.
@@ -179,5 +179,11 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteScheduledActionRequest clone() {
+        
+            return (DeleteScheduledActionRequest) super.clone();
+    }
+
 }
     

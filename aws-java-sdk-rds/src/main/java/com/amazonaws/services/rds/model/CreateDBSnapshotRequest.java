@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSnapshot(CreateDBSnapshotRequest)
  */
-public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
@@ -309,5 +309,11 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateDBSnapshotRequest clone() {
+        
+            return (CreateDBSnapshotRequest) super.clone();
+    }
+
 }
     

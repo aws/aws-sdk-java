@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteClusterResult implements Serializable {
+public class DeleteClusterResult implements Serializable, Cloneable {
 
     /**
      * The full description of the deleted cluster.
@@ -98,5 +98,19 @@ public class DeleteClusterResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteClusterResult clone() {
+        try {
+            return (DeleteClusterResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

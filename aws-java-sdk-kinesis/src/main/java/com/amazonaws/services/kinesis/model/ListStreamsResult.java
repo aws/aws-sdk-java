@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output for <code>ListStreams</code> .
  * </p>
  */
-public class ListStreamsResult implements Serializable {
+public class ListStreamsResult implements Serializable, Cloneable {
 
     /**
      * The names of the streams that are associated with the AWS account
@@ -195,5 +195,19 @@ public class ListStreamsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListStreamsResult clone() {
+        try {
+            return (ListStreamsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

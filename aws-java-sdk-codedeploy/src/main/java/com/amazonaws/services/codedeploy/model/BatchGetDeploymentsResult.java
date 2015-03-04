@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a batch get deployments operation.
  * </p>
  */
-public class BatchGetDeploymentsResult implements Serializable {
+public class BatchGetDeploymentsResult implements Serializable, Cloneable {
 
     /**
      * Information about the deployments.
@@ -135,5 +135,19 @@ public class BatchGetDeploymentsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public BatchGetDeploymentsResult clone() {
+        try {
+            return (BatchGetDeploymentsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

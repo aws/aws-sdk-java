@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Configuration of the script to run during a bootstrap action.
  * </p>
  */
-public class ScriptBootstrapActionConfig implements Serializable {
+public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
 
     /**
      * Location of the script to run during a bootstrap action. Can be either
@@ -230,5 +230,19 @@ public class ScriptBootstrapActionConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public ScriptBootstrapActionConfig clone() {
+        try {
+            return (ScriptBootstrapActionConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

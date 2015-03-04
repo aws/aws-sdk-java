@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DeregisterInstancesFromLoadBalancer action.
  * </p>
  */
-public class DeregisterInstancesFromLoadBalancerResult implements Serializable {
+public class DeregisterInstancesFromLoadBalancerResult implements Serializable, Cloneable {
 
     /**
      * An updated list of remaining instances registered with the load
@@ -144,5 +144,19 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeregisterInstancesFromLoadBalancerResult clone() {
+        try {
+            return (DeregisterInstancesFromLoadBalancerResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

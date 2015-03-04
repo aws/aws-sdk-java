@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#listOperations(ListOperationsRequest)
  */
-public class ListOperationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListOperationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * For an initial request for a list of operations, omit this element. If
@@ -228,5 +228,11 @@ public class ListOperationsRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ListOperationsRequest clone() {
+        
+            return (ListOperationsRequest) super.clone();
+    }
+
 }
     

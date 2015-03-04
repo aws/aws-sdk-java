@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#deleteDeploymentConfig(DeleteDeploymentConfigRequest)
  */
-public class DeleteDeploymentConfigRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDeploymentConfigRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing deployment configuration within the AWS user
@@ -128,5 +128,11 @@ public class DeleteDeploymentConfigRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteDeploymentConfigRequest clone() {
+        
+            return (DeleteDeploymentConfigRequest) super.clone();
+    }
+
 }
     

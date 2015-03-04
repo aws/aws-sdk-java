@@ -51,7 +51,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createReservedInstancesListing(CreateReservedInstancesListingRequest)
  */
-public class CreateReservedInstancesListingRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateReservedInstancesListingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the active Reserved Instance.
@@ -356,5 +356,11 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public CreateReservedInstancesListingRequest clone() {
+        
+            return (CreateReservedInstancesListingRequest) super.clone();
+    }
+
 }
     

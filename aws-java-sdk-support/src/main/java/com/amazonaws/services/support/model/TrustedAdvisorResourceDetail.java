@@ -22,7 +22,7 @@ import java.io.Serializable;
  * check.
  * </p>
  */
-public class TrustedAdvisorResourceDetail implements Serializable {
+public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
 
     /**
      * The status code for the resource identified in the Trusted Advisor
@@ -374,5 +374,19 @@ public class TrustedAdvisorResourceDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public TrustedAdvisorResourceDetail clone() {
+        try {
+            return (TrustedAdvisorResourceDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#createInvalidation(CreateInvalidationRequest)
  */
-public class CreateInvalidationRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateInvalidationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The distribution's id.
@@ -166,5 +166,11 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateInvalidationRequest clone() {
+        
+            return (CreateInvalidationRequest) super.clone();
+    }
+
 }
     

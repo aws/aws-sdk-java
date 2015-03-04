@@ -72,7 +72,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancer(CreateLoadBalancerRequest)
  */
-public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer. <p> The name must be
@@ -835,5 +835,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateLoadBalancerRequest clone() {
+        
+            return (CreateLoadBalancerRequest) super.clone();
+    }
+
 }
     

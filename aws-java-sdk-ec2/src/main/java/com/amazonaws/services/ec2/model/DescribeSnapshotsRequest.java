@@ -77,7 +77,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarsha
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest)
  */
-public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSnapshotsRequest> {
+public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSnapshotsRequest> {
 
     /**
      * One or more snapshot IDs. <p>Default: Describes snapshots for which
@@ -686,5 +686,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DescribeSnapshotsRequest clone() {
+        
+            return (DescribeSnapshotsRequest) super.clone();
+    }
+
 }
     

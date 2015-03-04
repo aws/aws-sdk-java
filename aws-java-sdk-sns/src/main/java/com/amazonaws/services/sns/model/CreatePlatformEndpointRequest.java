@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#createPlatformEndpoint(CreatePlatformEndpointRequest)
  */
-public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * PlatformApplicationArn returned from CreatePlatformApplication is used
@@ -342,5 +342,11 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreatePlatformEndpointRequest clone() {
+        
+            return (CreatePlatformEndpointRequest) super.clone();
+    }
+
 }
     

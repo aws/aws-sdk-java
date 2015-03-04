@@ -25,7 +25,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class ConfigurationOptionSetting implements Serializable {
+public class ConfigurationOptionSetting implements Serializable, Cloneable {
 
     /**
      * A unique namespace identifying the option's associated AWS resource.
@@ -210,5 +210,19 @@ public class ConfigurationOptionSetting implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfigurationOptionSetting clone() {
+        try {
+            return (ConfigurationOptionSetting) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The DisableDomainTransferLock response includes the following element.
  * </p>
  */
-public class DisableDomainTransferLockResult implements Serializable {
+public class DisableDomainTransferLockResult implements Serializable, Cloneable {
 
     /**
      * Identifier for tracking the progress of the request. To use this ID to
@@ -126,5 +126,19 @@ public class DisableDomainTransferLockResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DisableDomainTransferLockResult clone() {
+        try {
+            return (DisableDomainTransferLockResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

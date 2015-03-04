@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeDBParameters action.
  * </p>
  */
-public class DescribeDBParametersResult implements Serializable {
+public class DescribeDBParametersResult implements Serializable, Cloneable {
 
     /**
      * A list of <a>Parameter</a> values.
@@ -192,5 +192,19 @@ public class DescribeDBParametersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDBParametersResult clone() {
+        try {
+            return (DescribeDBParametersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

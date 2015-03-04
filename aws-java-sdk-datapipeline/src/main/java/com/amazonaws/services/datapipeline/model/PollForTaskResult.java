@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the PollForTask action.
  * </p>
  */
-public class PollForTaskResult implements Serializable {
+public class PollForTaskResult implements Serializable, Cloneable {
 
     /**
      * An instance of <a>TaskObject</a>. The returned object contains all the
@@ -135,5 +135,19 @@ public class PollForTaskResult implements Serializable {
         return true;
     }
     
+    @Override
+    public PollForTaskResult clone() {
+        try {
+            return (PollForTaskResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

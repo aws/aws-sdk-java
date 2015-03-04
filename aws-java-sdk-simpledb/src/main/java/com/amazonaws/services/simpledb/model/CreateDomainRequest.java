@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#createDomain(CreateDomainRequest)
  */
-public class CreateDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain to create. The name can range between 3 and 255
@@ -154,5 +154,11 @@ public class CreateDomainRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CreateDomainRequest clone() {
+        
+            return (CreateDomainRequest) super.clone();
+    }
+
 }
     

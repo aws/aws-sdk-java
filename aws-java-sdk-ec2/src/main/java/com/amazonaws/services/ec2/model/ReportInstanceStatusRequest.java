@@ -37,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.ReportInstanceStatusRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#reportInstanceStatus(ReportInstanceStatusRequest)
  */
-public class ReportInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReportInstanceStatusRequest> {
+public class ReportInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ReportInstanceStatusRequest> {
 
     /**
      * One or more instances.
@@ -670,5 +670,11 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public ReportInstanceStatusRequest clone() {
+        
+            return (ReportInstanceStatusRequest) super.clone();
+    }
+
 }
     

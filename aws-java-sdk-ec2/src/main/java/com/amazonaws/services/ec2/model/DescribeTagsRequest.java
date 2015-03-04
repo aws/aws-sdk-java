@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeTagsRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeTags(DescribeTagsRequest)
  */
-public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeTagsRequest> {
+public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeTagsRequest> {
 
     /**
      * One or more filters. <ul> <li> <p><code>key</code> - The tag key.
@@ -398,5 +398,11 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DescribeTagsRequest clone() {
+        
+            return (DescribeTagsRequest) super.clone();
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#decrypt(DecryptRequest)
  */
-public class DecryptRequest extends AmazonWebServiceRequest implements Serializable {
+public class DecryptRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Ciphertext including metadata.
@@ -327,5 +327,11 @@ public class DecryptRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public DecryptRequest clone() {
+        
+            return (DecryptRequest) super.clone();
+    }
+
 }
     

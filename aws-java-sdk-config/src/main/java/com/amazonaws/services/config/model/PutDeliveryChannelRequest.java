@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#putDeliveryChannel(PutDeliveryChannelRequest)
  */
-public class PutDeliveryChannelRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutDeliveryChannelRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The configuration delivery channel object that delivers the
@@ -132,5 +132,11 @@ public class PutDeliveryChannelRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public PutDeliveryChannelRequest clone() {
+        
+            return (PutDeliveryChannelRequest) super.clone();
+    }
+
 }
     

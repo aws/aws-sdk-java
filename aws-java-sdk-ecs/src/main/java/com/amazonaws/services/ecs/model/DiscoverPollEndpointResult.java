@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DiscoverPollEndpointResult implements Serializable {
+public class DiscoverPollEndpointResult implements Serializable, Cloneable {
 
     /**
      * The endpoint for the Amazon ECS agent to poll.
@@ -98,5 +98,19 @@ public class DiscoverPollEndpointResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DiscoverPollEndpointResult clone() {
+        try {
+            return (DiscoverPollEndpointResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

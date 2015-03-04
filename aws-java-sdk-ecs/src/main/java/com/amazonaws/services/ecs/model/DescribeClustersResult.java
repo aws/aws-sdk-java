@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeClustersResult implements Serializable {
+public class DescribeClustersResult implements Serializable, Cloneable {
 
     /**
      * The list of clusters.
@@ -210,5 +210,19 @@ public class DescribeClustersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeClustersResult clone() {
+        try {
+            return (DescribeClustersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

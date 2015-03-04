@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createClusterParameterGroup(CreateClusterParameterGroupRequest)
  */
-public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cluster parameter group. <p> Constraints: <ul>
@@ -371,5 +371,11 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public CreateClusterParameterGroupRequest clone() {
+        
+            return (CreateClusterParameterGroupRequest) super.clone();
+    }
+
 }
     

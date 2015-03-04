@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class Volume implements Serializable {
+public class Volume implements Serializable, Cloneable {
 
     /**
      * The name of the volume. This name is referenced in the
@@ -168,5 +168,19 @@ public class Volume implements Serializable {
         return true;
     }
     
+    @Override
+    public Volume clone() {
+        try {
+            return (Volume) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

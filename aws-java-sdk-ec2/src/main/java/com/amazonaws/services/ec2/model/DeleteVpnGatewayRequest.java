@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpnGatewayRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnGateway(DeleteVpnGatewayRequest)
  */
-public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVpnGatewayRequest> {
+public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteVpnGatewayRequest> {
 
     /**
      * The ID of the virtual private gateway.
@@ -140,5 +140,11 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteVpnGatewayRequest clone() {
+        
+            return (DeleteVpnGatewayRequest) super.clone();
+    }
+
 }
     

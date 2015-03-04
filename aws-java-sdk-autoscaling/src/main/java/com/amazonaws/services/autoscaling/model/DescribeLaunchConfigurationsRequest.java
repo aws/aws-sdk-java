@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest)
  */
-public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The launch configuration names.
@@ -257,5 +257,11 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeLaunchConfigurationsRequest clone() {
+        
+            return (DescribeLaunchConfigurationsRequest) super.clone();
+    }
+
 }
     

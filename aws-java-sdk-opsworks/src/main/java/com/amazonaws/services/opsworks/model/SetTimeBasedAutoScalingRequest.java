@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest)
  */
-public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -158,5 +158,11 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public SetTimeBasedAutoScalingRequest clone() {
+        
+            return (SetTimeBasedAutoScalingRequest) super.clone();
+    }
+
 }
     

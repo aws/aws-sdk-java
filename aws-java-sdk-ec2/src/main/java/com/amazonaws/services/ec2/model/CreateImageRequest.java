@@ -41,7 +41,7 @@ import com.amazonaws.services.ec2.model.transform.CreateImageRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest)
  */
-public class CreateImageRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateImageRequest> {
+public class CreateImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateImageRequest> {
 
     /**
      * The ID of the instance.
@@ -432,5 +432,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateImageRequest clone() {
+        
+            return (CreateImageRequest) super.clone();
+    }
+
 }
     

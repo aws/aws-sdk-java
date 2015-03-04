@@ -22,7 +22,7 @@ import java.io.Serializable;
  * types.
  * </p>
  */
-public class WorkflowTypeInfos implements Serializable {
+public class WorkflowTypeInfos implements Serializable, Cloneable {
 
     /**
      * The list of workflow type information.
@@ -221,5 +221,19 @@ public class WorkflowTypeInfos implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowTypeInfos clone() {
+        try {
+            return (WorkflowTypeInfos) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#createPipeline(CreatePipelineRequest)
  */
-public class CreatePipelineRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreatePipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the new pipeline. You can use the same name for multiple
@@ -464,5 +464,11 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CreatePipelineRequest clone() {
+        
+            return (CreatePipelineRequest) super.clone();
+    }
+
 }
     

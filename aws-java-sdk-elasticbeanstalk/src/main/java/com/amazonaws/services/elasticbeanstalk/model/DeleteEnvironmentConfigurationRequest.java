@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest)
  */
-public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application the environment is associated with.
@@ -202,5 +202,11 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public DeleteEnvironmentConfigurationRequest clone() {
+        
+            return (DeleteEnvironmentConfigurationRequest) super.clone();
+    }
+
 }
     

@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#enterStandby(EnterStandbyRequest)
  */
-public class EnterStandbyRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnterStandbyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more instances to move into <code>Standby</code> mode. You must
@@ -290,5 +290,11 @@ public class EnterStandbyRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public EnterStandbyRequest clone() {
+        
+            return (EnterStandbyRequest) super.clone();
+    }
+
 }
     

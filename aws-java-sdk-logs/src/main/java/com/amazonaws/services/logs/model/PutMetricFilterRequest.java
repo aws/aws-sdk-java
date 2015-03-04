@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#putMetricFilter(PutMetricFilterRequest)
  */
-public class PutMetricFilterRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutMetricFilterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -363,5 +363,11 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public PutMetricFilterRequest clone() {
+        
+            return (PutMetricFilterRequest) super.clone();
+    }
+
 }
     

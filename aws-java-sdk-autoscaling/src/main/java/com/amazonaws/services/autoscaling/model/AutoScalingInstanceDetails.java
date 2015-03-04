@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an EC2 instance associated with an Auto Scaling group.
  * </p>
  */
-public class AutoScalingInstanceDetails implements Serializable {
+public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * The ID of the instance.
@@ -448,5 +448,19 @@ public class AutoScalingInstanceDetails implements Serializable {
         return true;
     }
     
+    @Override
+    public AutoScalingInstanceDetails clone() {
+        try {
+            return (AutoScalingInstanceDetails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

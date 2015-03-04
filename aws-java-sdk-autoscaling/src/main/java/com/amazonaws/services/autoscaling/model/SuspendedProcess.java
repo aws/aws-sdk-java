@@ -22,7 +22,7 @@ import java.io.Serializable;
  * information, see ProcessType.
  * </p>
  */
-public class SuspendedProcess implements Serializable {
+public class SuspendedProcess implements Serializable, Cloneable {
 
     /**
      * The name of the suspended process.
@@ -175,5 +175,19 @@ public class SuspendedProcess implements Serializable {
         return true;
     }
     
+    @Override
+    public SuspendedProcess clone() {
+        try {
+            return (SuspendedProcess) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

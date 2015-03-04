@@ -21,7 +21,7 @@ import java.io.Serializable;
  * This output contains the description of the cluster.
  * </p>
  */
-public class DescribeClusterResult implements Serializable {
+public class DescribeClusterResult implements Serializable, Cloneable {
 
     /**
      * This output contains the details for the requested cluster.
@@ -100,5 +100,19 @@ public class DescribeClusterResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeClusterResult clone() {
+        try {
+            return (DescribeClusterResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

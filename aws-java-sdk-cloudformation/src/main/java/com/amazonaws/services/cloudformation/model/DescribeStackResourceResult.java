@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for a DescribeStackResource action.
  * </p>
  */
-public class DescribeStackResourceResult implements Serializable {
+public class DescribeStackResourceResult implements Serializable, Cloneable {
 
     /**
      * A <code>StackResourceDetail</code> structure containing the
@@ -107,5 +107,19 @@ public class DescribeStackResourceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeStackResourceResult clone() {
+        try {
+            return (DescribeStackResourceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

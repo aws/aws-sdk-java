@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#deleteTrail(DeleteTrailRequest)
  */
-public class DeleteTrailRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteTrailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a trail to be deleted.
@@ -105,5 +105,11 @@ public class DeleteTrailRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteTrailRequest clone() {
+        
+            return (DeleteTrailRequest) super.clone();
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class MountPoint implements Serializable {
+public class MountPoint implements Serializable, Cloneable {
 
     /**
      * The name of the volume to mount.
@@ -209,5 +209,19 @@ public class MountPoint implements Serializable {
         return true;
     }
     
+    @Override
+    public MountPoint clone() {
+        try {
+            return (MountPoint) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

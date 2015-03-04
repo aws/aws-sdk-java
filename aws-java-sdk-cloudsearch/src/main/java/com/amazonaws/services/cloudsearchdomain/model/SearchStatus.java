@@ -22,7 +22,7 @@ import java.io.Serializable;
  * process the request ( <code>timems</code> ).
  * </p>
  */
-public class SearchStatus implements Serializable {
+public class SearchStatus implements Serializable, Cloneable {
 
     /**
      * How long it took to process the request, in milliseconds.
@@ -143,5 +143,19 @@ public class SearchStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public SearchStatus clone() {
+        try {
+            return (SearchStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest)
  */
-public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest implements Serializable {
+public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the data's environment. <p> If no such environment is found,
@@ -346,5 +346,11 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public RetrieveEnvironmentInfoRequest clone() {
+        
+            return (RetrieveEnvironmentInfoRequest) super.clone();
+    }
+
 }
     

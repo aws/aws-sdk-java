@@ -23,13 +23,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Deletes the specific dataset. The dataset will be deleted permanently,
  * and the action can't be undone. Datasets that this dataset was merged
- * with will no longer report the merge. Any consequent operation on this
- * dataset will result in a ResourceNotFoundException.
+ * with will no longer report the merge. Any subsequent operation on this
+ * dataset will result in a <code>ResourceNotFoundException</code> .
+ * </p>
+ * <p>
+ * <code>DeleteDataset</code> can be called with temporary user
+ * credentials provided by Cognito Identity or with developer
+ * credentials.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#deleteDataset(DeleteDatasetRequest)
  */
-public class DeleteDatasetRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDatasetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -275,5 +280,11 @@ public class DeleteDatasetRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DeleteDatasetRequest clone() {
+        
+            return (DeleteDatasetRequest) super.clone();
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeInstanceStatusResult implements Serializable {
+public class DescribeInstanceStatusResult implements Serializable, Cloneable {
 
     /**
      * One or more instance status descriptions.
@@ -175,5 +175,19 @@ public class DescribeInstanceStatusResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeInstanceStatusResult clone() {
+        try {
+            return (DescribeInstanceStatusResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

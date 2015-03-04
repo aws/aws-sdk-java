@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful CreateInstanceProfile request.
  * </p>
  */
-public class CreateInstanceProfileResult implements Serializable {
+public class CreateInstanceProfileResult implements Serializable, Cloneable {
 
     /**
      * Information about the instance profile.
@@ -100,5 +100,19 @@ public class CreateInstanceProfileResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateInstanceProfileResult clone() {
+        try {
+            return (CreateInstanceProfileResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

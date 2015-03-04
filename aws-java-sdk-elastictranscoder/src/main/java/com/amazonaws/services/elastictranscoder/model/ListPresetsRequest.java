@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPresets(ListPresetsRequest)
  */
-public class ListPresetsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListPresetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * To list presets in chronological order by the date and time that they
@@ -201,5 +201,11 @@ public class ListPresetsRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListPresetsRequest clone() {
+        
+            return (ListPresetsRequest) super.clone();
+    }
+
 }
     

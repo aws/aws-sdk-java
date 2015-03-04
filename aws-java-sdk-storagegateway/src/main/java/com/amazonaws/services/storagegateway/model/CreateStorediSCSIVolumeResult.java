@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the following fields:
  * </p>
  */
-public class CreateStorediSCSIVolumeResult implements Serializable {
+public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the configured volume.
@@ -215,5 +215,19 @@ public class CreateStorediSCSIVolumeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateStorediSCSIVolumeResult clone() {
+        try {
+            return (CreateStorediSCSIVolumeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

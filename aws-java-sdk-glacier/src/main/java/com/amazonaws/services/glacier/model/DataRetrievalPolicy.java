@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Data retrieval policy.
  * </p>
  */
-public class DataRetrievalPolicy implements Serializable {
+public class DataRetrievalPolicy implements Serializable, Cloneable {
 
     /**
      * The policy rule. Although this is a list type, currently there must be
@@ -153,5 +153,19 @@ public class DataRetrievalPolicy implements Serializable {
         return true;
     }
     
+    @Override
+    public DataRetrievalPolicy clone() {
+        try {
+            return (DataRetrievalPolicy) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

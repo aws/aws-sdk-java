@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class GetStreamingDistributionConfigResult implements Serializable {
+public class GetStreamingDistributionConfigResult implements Serializable, Cloneable {
 
     /**
      * The streaming distribution's configuration information.
@@ -142,5 +142,19 @@ public class GetStreamingDistributionConfigResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetStreamingDistributionConfigResult clone() {
+        try {
+            return (GetStreamingDistributionConfigResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

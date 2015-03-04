@@ -23,7 +23,7 @@ import java.io.Serializable;
  * response for each AWS service.
  * </p>
  */
-public class Category implements Serializable {
+public class Category implements Serializable, Cloneable {
 
     /**
      * The category code for the support case.
@@ -144,5 +144,19 @@ public class Category implements Serializable {
         return true;
     }
     
+    @Override
+    public Category clone() {
+        try {
+            return (Category) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

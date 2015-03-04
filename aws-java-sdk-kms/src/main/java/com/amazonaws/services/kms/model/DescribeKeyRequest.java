@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#describeKey(DescribeKeyRequest)
  */
-public class DescribeKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the customer master key to be described. This can
@@ -124,5 +124,11 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DescribeKeyRequest clone() {
+        
+            return (DescribeKeyRequest) super.clone();
+    }
+
 }
     

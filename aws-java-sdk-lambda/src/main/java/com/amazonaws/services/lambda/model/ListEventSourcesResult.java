@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains a list of event sources (see API_EventSourceConfiguration)
  * </p>
  */
-public class ListEventSourcesResult implements Serializable {
+public class ListEventSourcesResult implements Serializable, Cloneable {
 
     /**
      * A string, present if there are more event source mappings.
@@ -177,5 +177,19 @@ public class ListEventSourcesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListEventSourcesResult clone() {
+        try {
+            return (ListEventSourcesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

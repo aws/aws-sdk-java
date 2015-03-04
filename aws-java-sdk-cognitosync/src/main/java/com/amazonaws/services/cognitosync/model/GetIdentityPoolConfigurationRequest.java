@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest)
  */
-public class GetIdentityPoolConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetIdentityPoolConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -142,5 +142,11 @@ public class GetIdentityPoolConfigurationRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public GetIdentityPoolConfigurationRequest clone() {
+        
+            return (GetIdentityPoolConfigurationRequest) super.clone();
+    }
+
 }
     

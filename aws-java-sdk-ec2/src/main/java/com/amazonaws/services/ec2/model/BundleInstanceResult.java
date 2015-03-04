@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class BundleInstanceResult implements Serializable {
+public class BundleInstanceResult implements Serializable, Cloneable {
 
     /**
      * Information about the bundle task.
@@ -98,5 +98,19 @@ public class BundleInstanceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public BundleInstanceResult clone() {
+        try {
+            return (BundleInstanceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

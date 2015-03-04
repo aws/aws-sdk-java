@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a VPN connection.
  * </p>
  */
-public class VpnConnection implements Serializable {
+public class VpnConnection implements Serializable, Cloneable {
 
     /**
      * The ID of the VPN connection.
@@ -722,5 +722,19 @@ public class VpnConnection implements Serializable {
         return true;
     }
     
+    @Override
+    public VpnConnection clone() {
+        try {
+            return (VpnConnection) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

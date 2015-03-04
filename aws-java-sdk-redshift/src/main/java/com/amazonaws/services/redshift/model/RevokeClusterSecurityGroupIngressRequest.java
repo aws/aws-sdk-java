@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#revokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest)
  */
-public class RevokeClusterSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
+public class RevokeClusterSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the security Group from which to revoke the ingress rule.
@@ -314,5 +314,11 @@ public class RevokeClusterSecurityGroupIngressRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public RevokeClusterSecurityGroupIngressRequest clone() {
+        
+            return (RevokeClusterSecurityGroupIngressRequest) super.clone();
+    }
+
 }
     

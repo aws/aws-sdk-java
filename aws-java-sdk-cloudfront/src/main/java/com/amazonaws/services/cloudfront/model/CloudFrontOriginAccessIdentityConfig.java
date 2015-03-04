@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Origin access identity configuration.
  * </p>
  */
-public class CloudFrontOriginAccessIdentityConfig implements Serializable {
+public class CloudFrontOriginAccessIdentityConfig implements Serializable, Cloneable {
 
     /**
      * A unique number that ensures the request can't be replayed. If the
@@ -247,5 +247,19 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public CloudFrontOriginAccessIdentityConfig clone() {
+        try {
+            return (CloudFrontOriginAccessIdentityConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The HealthCheck data type.
  * </p>
  */
-public class HealthCheck implements Serializable {
+public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * Specifies the instance being checked. The protocol is either TCP,
@@ -495,5 +495,19 @@ public class HealthCheck implements Serializable {
         return true;
     }
     
+    @Override
+    public HealthCheck clone() {
+        try {
+            return (HealthCheck) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

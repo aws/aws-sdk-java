@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>VideoParameters</code> structure.
  * </p>
  */
-public class VideoParameters implements Serializable {
+public class VideoParameters implements Serializable, Cloneable {
 
     /**
      * The video codec for the output file. Valid values include
@@ -2356,5 +2356,19 @@ public class VideoParameters implements Serializable {
         return true;
     }
     
+    @Override
+    public VideoParameters clone() {
+        try {
+            return (VideoParameters) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

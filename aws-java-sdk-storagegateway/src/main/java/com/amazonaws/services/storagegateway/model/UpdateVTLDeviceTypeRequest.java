@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateVTLDeviceType(UpdateVTLDeviceTypeRequest)
  */
-public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the medium changer you want to
@@ -188,5 +188,11 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public UpdateVTLDeviceTypeRequest clone() {
+        
+            return (UpdateVTLDeviceTypeRequest) super.clone();
+    }
+
 }
     

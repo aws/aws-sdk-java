@@ -37,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesOffer
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest)
  */
-public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeReservedInstancesOfferingsRequest> {
+public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeReservedInstancesOfferingsRequest> {
 
     /**
      * One or more Reserved Instances offering IDs.
@@ -1219,5 +1219,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         return true;
     }
     
+    @Override
+    public DescribeReservedInstancesOfferingsRequest clone() {
+        
+            return (DescribeReservedInstancesOfferingsRequest) super.clone();
+    }
+
 }
     

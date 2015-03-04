@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output of the DeleteHapg action.
  * </p>
  */
-public class DeleteHapgResult implements Serializable {
+public class DeleteHapgResult implements Serializable, Cloneable {
 
     /**
      * The status of the action.
@@ -112,5 +112,19 @@ public class DeleteHapgResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteHapgResult clone() {
+        try {
+            return (DeleteHapgResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

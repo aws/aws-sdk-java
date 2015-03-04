@@ -28,7 +28,7 @@ import java.io.Serializable;
  * <code>Outputs</code> object.
  * </p>
  */
-public class JobOutput implements Serializable {
+public class JobOutput implements Serializable, Cloneable {
 
     /**
      * A sequential counter, starting with 1, that identifies an output among
@@ -1896,5 +1896,19 @@ public class JobOutput implements Serializable {
         return true;
     }
     
+    @Override
+    public JobOutput clone() {
+        try {
+            return (JobOutput) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

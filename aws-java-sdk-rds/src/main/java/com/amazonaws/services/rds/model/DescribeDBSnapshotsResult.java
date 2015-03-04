@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeDBSnapshots action.
  * </p>
  */
-public class DescribeDBSnapshotsResult implements Serializable {
+public class DescribeDBSnapshotsResult implements Serializable, Cloneable {
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -192,5 +192,19 @@ public class DescribeDBSnapshotsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDBSnapshotsResult clone() {
+        try {
+            return (DescribeDBSnapshotsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

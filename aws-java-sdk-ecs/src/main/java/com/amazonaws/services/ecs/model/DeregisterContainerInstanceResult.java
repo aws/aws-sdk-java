@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeregisterContainerInstanceResult implements Serializable {
+public class DeregisterContainerInstanceResult implements Serializable, Cloneable {
 
     /**
      * An Amazon EC2 instance that is running the Amazon ECS agent and has
@@ -105,5 +105,19 @@ public class DeregisterContainerInstanceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeregisterContainerInstanceResult clone() {
+        try {
+            return (DeregisterContainerInstanceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateNetworkInterfaceResult implements Serializable {
+public class CreateNetworkInterfaceResult implements Serializable, Cloneable {
 
     /**
      * Information about the network interface.
@@ -98,5 +98,19 @@ public class CreateNetworkInterfaceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateNetworkInterfaceResult clone() {
+        try {
+            return (CreateNetworkInterfaceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

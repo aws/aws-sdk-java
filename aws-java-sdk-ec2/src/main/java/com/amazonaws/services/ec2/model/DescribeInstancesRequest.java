@@ -40,7 +40,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstancesRequestMarsha
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest)
  */
-public class DescribeInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeInstancesRequest> {
+public class DescribeInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeInstancesRequest> {
 
     /**
      * One or more instance IDs. <p>Default: Describes all your instances.
@@ -1948,5 +1948,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DescribeInstancesRequest clone() {
+        
+            return (DescribeInstancesRequest) super.clone();
+    }
+
 }
     

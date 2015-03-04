@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeOptionGroupOptions(DescribeOptionGroupOptionsRequest)
  */
-public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A required parameter. Options available for the given Engine name will
@@ -364,5 +364,11 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DescribeOptionGroupOptionsRequest clone() {
+        
+            return (DescribeOptionGroupOptionsRequest) super.clone();
+    }
+
 }
     

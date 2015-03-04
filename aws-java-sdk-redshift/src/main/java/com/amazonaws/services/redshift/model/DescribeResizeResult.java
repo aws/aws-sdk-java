@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the result of a cluster resize operation.
  * </p>
  */
-public class DescribeResizeResult implements Serializable {
+public class DescribeResizeResult implements Serializable, Cloneable {
 
     /**
      * The node type that the cluster will have after the resize operation is
@@ -827,5 +827,19 @@ public class DescribeResizeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeResizeResult clone() {
+        try {
+            return (DescribeResizeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

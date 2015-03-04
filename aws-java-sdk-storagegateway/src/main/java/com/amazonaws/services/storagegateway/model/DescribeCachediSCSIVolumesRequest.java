@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest)
  */
-public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeARNs;
 
@@ -144,5 +144,11 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DescribeCachediSCSIVolumesRequest clone() {
+        
+            return (DescribeCachediSCSIVolumesRequest) super.clone();
+    }
+
 }
     

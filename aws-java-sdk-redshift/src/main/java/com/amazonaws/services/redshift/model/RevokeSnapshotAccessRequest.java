@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#revokeSnapshotAccess(RevokeSnapshotAccessRequest)
  */
-public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest implements Serializable {
+public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the snapshot that the account can no longer access.
@@ -224,5 +224,11 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public RevokeSnapshotAccessRequest clone() {
+        
+            return (RevokeSnapshotAccessRequest) super.clone();
+    }
+
 }
     

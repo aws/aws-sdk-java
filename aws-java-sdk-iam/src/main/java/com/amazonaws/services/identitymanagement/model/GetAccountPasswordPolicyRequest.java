@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountPasswordPolicy(GetAccountPasswordPolicyRequest)
  */
-public class GetAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -66,5 +66,11 @@ public class GetAccountPasswordPolicyRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public GetAccountPasswordPolicyRequest clone() {
+        
+            return (GetAccountPasswordPolicyRequest) super.clone();
+    }
+
 }
     

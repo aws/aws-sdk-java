@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeApps(DescribeAppsRequest)
  */
-public class DescribeAppsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAppsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The app stack ID. If you use this parameter, <code>DescribeApps</code>
@@ -218,5 +218,11 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DescribeAppsRequest clone() {
+        
+            return (DescribeAppsRequest) super.clone();
+    }
+
 }
     

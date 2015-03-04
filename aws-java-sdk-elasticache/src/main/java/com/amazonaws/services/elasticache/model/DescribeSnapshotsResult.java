@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeSnapshots</i> action.
  * </p>
  */
-public class DescribeSnapshotsResult implements Serializable {
+public class DescribeSnapshotsResult implements Serializable, Cloneable {
 
     /**
      * An optional marker returned from a prior request. Use this marker for
@@ -207,5 +207,19 @@ public class DescribeSnapshotsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSnapshotsResult clone() {
+        try {
+            return (DescribeSnapshotsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

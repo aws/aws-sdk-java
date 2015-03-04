@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest)
  */
-public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer.
@@ -225,5 +225,11 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
         return true;
     }
     
+    @Override
+    public DeregisterInstancesFromLoadBalancerRequest clone() {
+        
+            return (DeregisterInstancesFromLoadBalancerRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a deployment of a stack or app.
  * </p>
  */
-public class Deployment implements Serializable {
+public class Deployment implements Serializable, Cloneable {
 
     /**
      * The deployment ID.
@@ -646,5 +646,19 @@ public class Deployment implements Serializable {
         return true;
     }
     
+    @Override
+    public Deployment clone() {
+        try {
+            return (Deployment) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

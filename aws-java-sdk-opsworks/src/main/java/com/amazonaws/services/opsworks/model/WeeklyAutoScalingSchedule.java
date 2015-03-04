@@ -45,7 +45,7 @@ import java.io.Serializable;
  * <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
  * </p>
  */
-public class WeeklyAutoScalingSchedule implements Serializable {
+public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
 
     /**
      * The schedule for Monday.
@@ -614,5 +614,19 @@ public class WeeklyAutoScalingSchedule implements Serializable {
         return true;
     }
     
+    @Override
+    public WeeklyAutoScalingSchedule clone() {
+        try {
+            return (WeeklyAutoScalingSchedule) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

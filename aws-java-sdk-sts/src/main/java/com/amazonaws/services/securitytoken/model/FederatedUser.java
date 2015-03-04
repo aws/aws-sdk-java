@@ -22,7 +22,7 @@ import java.io.Serializable;
  * credentials.
  * </p>
  */
-public class FederatedUser implements Serializable {
+public class FederatedUser implements Serializable, Cloneable {
 
     /**
      * The string that identifies the federated user associated with the
@@ -231,5 +231,19 @@ public class FederatedUser implements Serializable {
         return true;
     }
     
+    @Override
+    public FederatedUser clone() {
+        try {
+            return (FederatedUser) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

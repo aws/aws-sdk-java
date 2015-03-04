@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#describeIdentity(DescribeIdentityRequest)
  */
-public class DescribeIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -122,5 +122,11 @@ public class DescribeIdentityRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribeIdentityRequest clone() {
+        
+            return (DescribeIdentityRequest) super.clone();
+    }
+
 }
     

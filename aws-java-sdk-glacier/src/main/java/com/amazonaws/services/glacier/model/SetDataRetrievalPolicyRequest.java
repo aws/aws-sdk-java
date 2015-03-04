@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#setDataRetrievalPolicy(SetDataRetrievalPolicyRequest)
  */
-public class SetDataRetrievalPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetDataRetrievalPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -185,5 +185,11 @@ public class SetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public SetDataRetrievalPolicyRequest clone() {
+        
+            return (SetDataRetrievalPolicyRequest) super.clone();
+    }
+
 }
     

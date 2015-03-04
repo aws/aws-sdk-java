@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest)
  */
-public class GetCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identity's id.
@@ -122,5 +122,11 @@ public class GetCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public GetCloudFrontOriginAccessIdentityRequest clone() {
+        
+            return (GetCloudFrontOriginAccessIdentityRequest) super.clone();
+    }
+
 }
     

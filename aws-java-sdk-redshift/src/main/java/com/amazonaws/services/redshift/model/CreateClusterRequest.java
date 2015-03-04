@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createCluster(CreateClusterRequest)
  */
-public class CreateClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the first database to be created when the cluster is
@@ -1986,5 +1986,11 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public CreateClusterRequest clone() {
+        
+            return (CreateClusterRequest) super.clone();
+    }
+
 }
     

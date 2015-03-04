@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.ResetImageAttributeRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest)
  */
-public class ResetImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetImageAttributeRequest> {
+public class ResetImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ResetImageAttributeRequest> {
 
     /**
      * The ID of the AMI.
@@ -261,5 +261,11 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public ResetImageAttributeRequest clone() {
+        
+            return (ResetImageAttributeRequest) super.clone();
+    }
+
 }
     

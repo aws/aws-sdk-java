@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the verification attributes for a list of identities.
  * </p>
  */
-public class GetIdentityVerificationAttributesResult implements Serializable {
+public class GetIdentityVerificationAttributesResult implements Serializable, Cloneable {
 
     /**
      * A map of Identities to IdentityVerificationAttributes objects.
@@ -134,5 +134,19 @@ public class GetIdentityVerificationAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetIdentityVerificationAttributesResult clone() {
+        try {
+            return (GetIdentityVerificationAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

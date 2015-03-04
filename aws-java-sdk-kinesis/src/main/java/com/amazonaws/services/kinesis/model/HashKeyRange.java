@@ -22,7 +22,7 @@ import java.io.Serializable;
  * ordered contiguous positive integers.
  * </p>
  */
-public class HashKeyRange implements Serializable {
+public class HashKeyRange implements Serializable, Cloneable {
 
     /**
      * The starting hash key of the hash key range.
@@ -167,5 +167,19 @@ public class HashKeyRange implements Serializable {
         return true;
     }
     
+    @Override
+    public HashKeyRange clone() {
+        try {
+            return (HashKeyRange) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

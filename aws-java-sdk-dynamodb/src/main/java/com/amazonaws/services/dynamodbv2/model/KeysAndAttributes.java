@@ -29,7 +29,7 @@ import java.io.Serializable;
  * attribute.
  * </p>
  */
-public class KeysAndAttributes implements Serializable {
+public class KeysAndAttributes implements Serializable, Cloneable {
 
     /**
      * The primary key attribute values that define the items and the
@@ -710,5 +710,19 @@ public class KeysAndAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public KeysAndAttributes clone() {
+        try {
+            return (KeysAndAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

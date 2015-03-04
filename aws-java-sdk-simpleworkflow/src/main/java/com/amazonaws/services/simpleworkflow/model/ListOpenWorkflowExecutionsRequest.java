@@ -69,7 +69,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest)
  */
-public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain that contains the workflow executions to list.
@@ -659,5 +659,11 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public ListOpenWorkflowExecutionsRequest clone() {
+        
+            return (ListOpenWorkflowExecutionsRequest) super.clone();
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#batchGetApplications(BatchGetApplicationsRequest)
  */
-public class BatchGetApplicationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class BatchGetApplicationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of application names, with multiple application names separated
@@ -149,5 +149,11 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public BatchGetApplicationsRequest clone() {
+        
+            return (BatchGetApplicationsRequest) super.clone();
+    }
+
 }
     

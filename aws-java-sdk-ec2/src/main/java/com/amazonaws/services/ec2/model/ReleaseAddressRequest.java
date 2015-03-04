@@ -48,7 +48,7 @@ import com.amazonaws.services.ec2.model.transform.ReleaseAddressRequestMarshalle
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest)
  */
-public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReleaseAddressRequest> {
+public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ReleaseAddressRequest> {
 
     /**
      * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
@@ -199,5 +199,11 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ReleaseAddressRequest clone() {
+        
+            return (ReleaseAddressRequest) super.clone();
+    }
+
 }
     

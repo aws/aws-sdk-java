@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a list deployment groups operation.
  * </p>
  */
-public class ListDeploymentGroupsResult implements Serializable {
+public class ListDeploymentGroupsResult implements Serializable, Cloneable {
 
     /**
      * The application name.
@@ -252,5 +252,19 @@ public class ListDeploymentGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListDeploymentGroupsResult clone() {
+        try {
+            return (ListDeploymentGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

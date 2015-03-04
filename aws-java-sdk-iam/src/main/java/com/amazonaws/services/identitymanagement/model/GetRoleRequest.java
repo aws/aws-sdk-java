@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRole(GetRoleRequest)
  */
-public class GetRoleRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetRoleRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the role to get information about.
@@ -131,5 +131,11 @@ public class GetRoleRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public GetRoleRequest clone() {
+        
+            return (GetRoleRequest) super.clone();
+    }
+
 }
     

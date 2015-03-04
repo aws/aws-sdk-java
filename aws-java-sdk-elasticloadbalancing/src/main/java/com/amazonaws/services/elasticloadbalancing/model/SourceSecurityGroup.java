@@ -26,7 +26,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class SourceSecurityGroup implements Serializable {
+public class SourceSecurityGroup implements Serializable, Cloneable {
 
     /**
      * Owner of the source security group. Use this value for the
@@ -189,5 +189,19 @@ public class SourceSecurityGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public SourceSecurityGroup clone() {
+        try {
+            return (SourceSecurityGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

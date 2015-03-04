@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest)
  */
-public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The mnemonic name associated with the load balancer. If no name is
@@ -219,5 +219,11 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeLoadBalancerPoliciesRequest clone() {
+        
+            return (DescribeLoadBalancerPoliciesRequest) super.clone();
+    }
+
 }
     

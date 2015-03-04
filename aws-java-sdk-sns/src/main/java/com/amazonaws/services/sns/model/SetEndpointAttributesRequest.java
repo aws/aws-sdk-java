@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setEndpointAttributes(SetEndpointAttributesRequest)
  */
-public class SetEndpointAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetEndpointAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * EndpointArn used for SetEndpointAttributes action.
@@ -273,5 +273,11 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public SetEndpointAttributesRequest clone() {
+        
+            return (SetEndpointAttributesRequest) super.clone();
+    }
+
 }
     

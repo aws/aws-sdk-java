@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#listDocuments(ListDocumentsRequest)
  */
-public class ListDocumentsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDocumentsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more filters. Use a filter to return a more specific list of
@@ -281,5 +281,11 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public ListDocumentsRequest clone() {
+        
+            return (ListDocumentsRequest) super.clone();
+    }
+
 }
     

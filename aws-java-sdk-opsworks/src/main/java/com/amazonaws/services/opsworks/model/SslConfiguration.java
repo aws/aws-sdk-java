@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an app's SSL configuration.
  * </p>
  */
-public class SslConfiguration implements Serializable {
+public class SslConfiguration implements Serializable, Cloneable {
 
     /**
      * The contents of the certificate's domain.crt file.
@@ -191,5 +191,19 @@ public class SslConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public SslConfiguration clone() {
+        try {
+            return (SslConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

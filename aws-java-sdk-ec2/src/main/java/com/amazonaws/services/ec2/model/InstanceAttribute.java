@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an instance attribute.
  * </p>
  */
-public class InstanceAttribute implements Serializable {
+public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * The ID of the instance.
@@ -828,5 +828,19 @@ public class InstanceAttribute implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceAttribute clone() {
+        try {
+            return (InstanceAttribute) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

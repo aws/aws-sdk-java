@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#promoteReadReplica(PromoteReadReplicaRequest)
  */
-public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implements Serializable {
+public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The DB instance identifier. This value is stored as a lowercase
@@ -308,5 +308,11 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public PromoteReadReplicaRequest clone() {
+        
+            return (PromoteReadReplicaRequest) super.clone();
+    }
+
 }
     

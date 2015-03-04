@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#listTagsForDomain(ListTagsForDomainRequest)
  */
-public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The domain for which you want to get a list of tags.
@@ -126,5 +126,11 @@ public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListTagsForDomainRequest clone() {
+        
+            return (ListTagsForDomainRequest) super.clone();
+    }
+
 }
     

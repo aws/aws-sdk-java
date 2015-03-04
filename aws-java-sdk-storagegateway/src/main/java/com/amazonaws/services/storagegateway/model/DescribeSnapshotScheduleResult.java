@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Describe Snapshot Schedule Result
  */
-public class DescribeSnapshotScheduleResult implements Serializable {
+public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
 
     private String volumeARN;
 
@@ -296,5 +296,19 @@ public class DescribeSnapshotScheduleResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSnapshotScheduleResult clone() {
+        try {
+            return (DescribeSnapshotScheduleResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

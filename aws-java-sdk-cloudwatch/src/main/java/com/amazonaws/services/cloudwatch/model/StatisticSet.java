@@ -23,7 +23,7 @@ import java.io.Serializable;
  * a set of statistics that describes a specific metric.
  * </p>
  */
-public class StatisticSet implements Serializable {
+public class StatisticSet implements Serializable, Cloneable {
 
     /**
      * The number of samples used for the statistic set.
@@ -228,5 +228,19 @@ public class StatisticSet implements Serializable {
         return true;
     }
     
+    @Override
+    public StatisticSet clone() {
+        try {
+            return (StatisticSet) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

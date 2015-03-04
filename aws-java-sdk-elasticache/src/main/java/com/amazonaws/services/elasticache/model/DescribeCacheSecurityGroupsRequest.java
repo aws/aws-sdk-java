@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest)
  */
-public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache security group to return details for.
@@ -251,5 +251,11 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DescribeCacheSecurityGroupsRequest clone() {
+        
+            return (DescribeCacheSecurityGroupsRequest) super.clone();
+    }
+
 }
     

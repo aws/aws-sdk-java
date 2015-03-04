@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createSnapshot(CreateSnapshotRequest)
  */
-public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of an existing cache cluster. The snapshot will be
@@ -155,5 +155,11 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CreateSnapshotRequest clone() {
+        
+            return (CreateSnapshotRequest) super.clone();
+    }
+
 }
     

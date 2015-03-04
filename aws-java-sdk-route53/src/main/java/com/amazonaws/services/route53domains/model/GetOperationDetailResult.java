@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The GetOperationDetail response includes the following elements.
  * </p>
  */
-public class GetOperationDetailResult implements Serializable {
+public class GetOperationDetailResult implements Serializable, Cloneable {
 
     /**
      * The identifier for the operation. <p>Type: String
@@ -460,5 +460,19 @@ public class GetOperationDetailResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetOperationDetailResult clone() {
+        try {
+            return (GetOperationDetailResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

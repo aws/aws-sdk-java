@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Disk
  */
-public class Disk implements Serializable {
+public class Disk implements Serializable, Cloneable {
 
     private String diskId;
 
@@ -348,5 +348,19 @@ public class Disk implements Serializable {
         return true;
     }
     
+    @Override
+    public Disk clone() {
+        try {
+            return (Disk) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

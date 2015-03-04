@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeReplicationGroups(DescribeReplicationGroupsRequest)
  */
-public class DescribeReplicationGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeReplicationGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier for the replication group to be described. This
@@ -248,5 +248,11 @@ public class DescribeReplicationGroupsRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeReplicationGroupsRequest clone() {
+        
+            return (DescribeReplicationGroupsRequest) super.clone();
+    }
+
 }
     

@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#getTemplateSummary(GetTemplateSummaryRequest)
  */
-public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Structure containing the template body with a minimum length of 1 byte
@@ -376,5 +376,11 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public GetTemplateSummaryRequest clone() {
+        
+            return (GetTemplateSummaryRequest) super.clone();
+    }
+
 }
     

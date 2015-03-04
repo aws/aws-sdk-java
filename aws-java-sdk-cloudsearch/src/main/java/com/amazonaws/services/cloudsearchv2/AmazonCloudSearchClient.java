@@ -269,14 +269,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAnalysisSchemesRequestMarshaller().marshall(describeAnalysisSchemesRequest);
+                request = new DescribeAnalysisSchemesRequestMarshaller().marshall(super.beforeMarshalling(describeAnalysisSchemesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeAnalysisSchemesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -320,14 +322,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIndexFieldRequestMarshaller().marshall(deleteIndexFieldRequest);
+                request = new DeleteIndexFieldRequestMarshaller().marshall(super.beforeMarshalling(deleteIndexFieldRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DeleteIndexFieldResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -377,14 +381,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAvailabilityOptionsRequestMarshaller().marshall(updateAvailabilityOptionsRequest);
+                request = new UpdateAvailabilityOptionsRequestMarshaller().marshall(super.beforeMarshalling(updateAvailabilityOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new UpdateAvailabilityOptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -432,14 +438,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIndexFieldsRequestMarshaller().marshall(describeIndexFieldsRequest);
+                request = new DescribeIndexFieldsRequestMarshaller().marshall(super.beforeMarshalling(describeIndexFieldsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeIndexFieldsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -486,14 +494,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DefineExpressionRequestMarshaller().marshall(defineExpressionRequest);
+                request = new DefineExpressionRequestMarshaller().marshall(super.beforeMarshalling(defineExpressionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DefineExpressionResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -539,14 +549,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateServiceAccessPoliciesRequestMarshaller().marshall(updateServiceAccessPoliciesRequest);
+                request = new UpdateServiceAccessPoliciesRequestMarshaller().marshall(super.beforeMarshalling(updateServiceAccessPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new UpdateServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -594,14 +606,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DefineSuggesterRequestMarshaller().marshall(defineSuggesterRequest);
+                request = new DefineSuggesterRequestMarshaller().marshall(super.beforeMarshalling(defineSuggesterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DefineSuggesterResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -645,14 +659,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAnalysisSchemeRequestMarshaller().marshall(deleteAnalysisSchemeRequest);
+                request = new DeleteAnalysisSchemeRequestMarshaller().marshall(super.beforeMarshalling(deleteAnalysisSchemeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DeleteAnalysisSchemeResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -694,14 +710,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new IndexDocumentsRequestMarshaller().marshall(indexDocumentsRequest);
+                request = new IndexDocumentsRequestMarshaller().marshall(super.beforeMarshalling(indexDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new IndexDocumentsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -750,14 +768,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSuggestersRequestMarshaller().marshall(describeSuggestersRequest);
+                request = new DescribeSuggestersRequestMarshaller().marshall(super.beforeMarshalling(describeSuggestersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeSuggestersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -808,14 +828,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateScalingParametersRequestMarshaller().marshall(updateScalingParametersRequest);
+                request = new UpdateScalingParametersRequestMarshaller().marshall(super.beforeMarshalling(updateScalingParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new UpdateScalingParametersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -853,14 +875,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDomainNamesRequestMarshaller().marshall(listDomainNamesRequest);
+                request = new ListDomainNamesRequestMarshaller().marshall(super.beforeMarshalling(listDomainNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ListDomainNamesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -911,14 +935,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DefineIndexFieldRequestMarshaller().marshall(defineIndexFieldRequest);
+                request = new DefineIndexFieldRequestMarshaller().marshall(super.beforeMarshalling(defineIndexFieldRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DefineIndexFieldResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -960,14 +986,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDomainRequestMarshaller().marshall(createDomainRequest);
+                request = new CreateDomainRequestMarshaller().marshall(super.beforeMarshalling(createDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new CreateDomainResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1010,14 +1038,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSuggesterRequestMarshaller().marshall(deleteSuggesterRequest);
+                request = new DeleteSuggesterRequestMarshaller().marshall(super.beforeMarshalling(deleteSuggesterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DeleteSuggesterResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1061,14 +1091,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteExpressionRequestMarshaller().marshall(deleteExpressionRequest);
+                request = new DeleteExpressionRequestMarshaller().marshall(super.beforeMarshalling(deleteExpressionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DeleteExpressionResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1117,14 +1149,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAvailabilityOptionsRequestMarshaller().marshall(describeAvailabilityOptionsRequest);
+                request = new DescribeAvailabilityOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeAvailabilityOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeAvailabilityOptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1171,14 +1205,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DefineAnalysisSchemeRequestMarshaller().marshall(defineAnalysisSchemeRequest);
+                request = new DefineAnalysisSchemeRequestMarshaller().marshall(super.beforeMarshalling(defineAnalysisSchemeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DefineAnalysisSchemeResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1220,14 +1256,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BuildSuggestersRequestMarshaller().marshall(buildSuggestersRequest);
+                request = new BuildSuggestersRequestMarshaller().marshall(super.beforeMarshalling(buildSuggestersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new BuildSuggestersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1274,14 +1312,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServiceAccessPoliciesRequestMarshaller().marshall(describeServiceAccessPoliciesRequest);
+                request = new DescribeServiceAccessPoliciesRequestMarshaller().marshall(super.beforeMarshalling(describeServiceAccessPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1324,14 +1364,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDomainRequestMarshaller().marshall(deleteDomainRequest);
+                request = new DeleteDomainRequestMarshaller().marshall(super.beforeMarshalling(deleteDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DeleteDomainResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1378,14 +1420,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeExpressionsRequestMarshaller().marshall(describeExpressionsRequest);
+                request = new DescribeExpressionsRequestMarshaller().marshall(super.beforeMarshalling(describeExpressionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeExpressionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1431,14 +1475,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDomainsRequestMarshaller().marshall(describeDomainsRequest);
+                request = new DescribeDomainsRequestMarshaller().marshall(super.beforeMarshalling(describeDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeDomainsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1483,14 +1529,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalingParametersRequestMarshaller().marshall(describeScalingParametersRequest);
+                request = new DescribeScalingParametersRequestMarshaller().marshall(super.beforeMarshalling(describeScalingParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeScalingParametersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);

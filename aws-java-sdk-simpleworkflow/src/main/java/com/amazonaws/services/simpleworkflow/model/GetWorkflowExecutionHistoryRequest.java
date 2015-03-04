@@ -59,7 +59,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest)
  */
-public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain containing the workflow execution.
@@ -439,5 +439,11 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public GetWorkflowExecutionHistoryRequest clone() {
+        
+            return (GetWorkflowExecutionHistoryRequest) super.clone();
+    }
+
 }
     

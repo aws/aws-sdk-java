@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#getStatus(GetStatusRequest)
  */
-public class GetStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier which refers to a particular job.
@@ -150,5 +150,11 @@ public class GetStatusRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public GetStatusRequest clone() {
+        
+            return (GetStatusRequest) super.clone();
+    }
+
 }
     

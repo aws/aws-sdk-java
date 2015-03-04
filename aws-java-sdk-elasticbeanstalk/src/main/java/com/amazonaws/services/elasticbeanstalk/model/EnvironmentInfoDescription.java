@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The information retrieved from the Amazon EC2 instances.
  * </p>
  */
-public class EnvironmentInfoDescription implements Serializable {
+public class EnvironmentInfoDescription implements Serializable, Cloneable {
 
     /**
      * The type of information retrieved.
@@ -284,5 +284,19 @@ public class EnvironmentInfoDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public EnvironmentInfoDescription clone() {
+        try {
+            return (EnvironmentInfoDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

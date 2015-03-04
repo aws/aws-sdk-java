@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnectionRoute(CreateVpnConnectionRouteRequest)
  */
-public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the VPN connection.
@@ -162,5 +162,11 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public CreateVpnConnectionRouteRequest clone() {
+        
+            return (CreateVpnConnectionRouteRequest) super.clone();
+    }
+
 }
     

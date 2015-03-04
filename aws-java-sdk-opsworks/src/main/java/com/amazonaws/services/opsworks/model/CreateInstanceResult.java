@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateInstance</code> request.
  * </p>
  */
-public class CreateInstanceResult implements Serializable {
+public class CreateInstanceResult implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -100,5 +100,19 @@ public class CreateInstanceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateInstanceResult clone() {
+        try {
+            return (CreateInstanceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

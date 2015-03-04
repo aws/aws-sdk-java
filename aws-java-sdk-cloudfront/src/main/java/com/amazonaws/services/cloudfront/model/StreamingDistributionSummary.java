@@ -22,7 +22,7 @@ import java.io.Serializable;
  * distribution.
  * </p>
  */
-public class StreamingDistributionSummary implements Serializable {
+public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -675,5 +675,19 @@ public class StreamingDistributionSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public StreamingDistributionSummary clone() {
+        try {
+            return (StreamingDistributionSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

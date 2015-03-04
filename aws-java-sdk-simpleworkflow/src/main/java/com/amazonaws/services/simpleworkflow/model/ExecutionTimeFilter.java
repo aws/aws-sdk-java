@@ -26,7 +26,7 @@ import java.io.Serializable;
  * . For example: <code>"oldestDate": 1325376070.</code>
  * </p>
  */
-public class ExecutionTimeFilter implements Serializable {
+public class ExecutionTimeFilter implements Serializable, Cloneable {
 
     /**
      * Specifies the oldest start or close date and time to return.
@@ -147,5 +147,19 @@ public class ExecutionTimeFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public ExecutionTimeFilter clone() {
+        try {
+            return (ExecutionTimeFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -31,7 +31,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class InstanceIdentity implements Serializable {
+public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * A description of an Amazon EC2 instance that is generated when the
@@ -205,5 +205,19 @@ public class InstanceIdentity implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceIdentity clone() {
+        try {
+            return (InstanceIdentity) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

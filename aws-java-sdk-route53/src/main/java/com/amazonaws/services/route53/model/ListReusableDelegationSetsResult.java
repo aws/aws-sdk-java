@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type that contains the response for the request.
  * </p>
  */
-public class ListReusableDelegationSetsResult implements Serializable {
+public class ListReusableDelegationSetsResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains information about the reusable delegation
@@ -484,5 +484,19 @@ public class ListReusableDelegationSetsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListReusableDelegationSetsResult clone() {
+        try {
+            return (ListReusableDelegationSetsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

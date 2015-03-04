@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createHsmClientCertificate(CreateHsmClientCertificateRequest)
  */
-public class CreateHsmClientCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateHsmClientCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier to be assigned to the new HSM client certificate that
@@ -207,5 +207,11 @@ public class CreateHsmClientCertificateRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public CreateHsmClientCertificateRequest clone() {
+        
+            return (CreateHsmClientCertificateRequest) super.clone();
+    }
+
 }
     

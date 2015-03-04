@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#detachElasticLoadBalancer(DetachElasticLoadBalancerRequest)
  */
-public class DetachElasticLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
+public class DetachElasticLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Elastic Load Balancing instance's name.
@@ -162,5 +162,11 @@ public class DetachElasticLoadBalancerRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DetachElasticLoadBalancerRequest clone() {
+        
+            return (DetachElasticLoadBalancerRequest) super.clone();
+    }
+
 }
     

@@ -17,7 +17,7 @@ package com.amazonaws.services.cognitosync.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonCognitoSync exception
+ * 
  */        
 public class InvalidConfigurationException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

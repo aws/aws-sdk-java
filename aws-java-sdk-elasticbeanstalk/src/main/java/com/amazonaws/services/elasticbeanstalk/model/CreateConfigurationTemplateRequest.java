@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createConfigurationTemplate(CreateConfigurationTemplateRequest)
  */
-public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application to associate with this configuration
@@ -670,5 +670,11 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public CreateConfigurationTemplateRequest clone() {
+        
+            return (CreateConfigurationTemplateRequest) super.clone();
+    }
+
 }
     

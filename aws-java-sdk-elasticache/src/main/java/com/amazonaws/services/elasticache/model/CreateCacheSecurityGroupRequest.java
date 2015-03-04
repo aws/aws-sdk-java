@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSecurityGroup(CreateCacheSecurityGroupRequest)
  */
-public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name for the cache security group. This value is stored as a
@@ -200,5 +200,11 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public CreateCacheSecurityGroupRequest clone() {
+        
+            return (CreateCacheSecurityGroupRequest) super.clone();
+    }
+
 }
     

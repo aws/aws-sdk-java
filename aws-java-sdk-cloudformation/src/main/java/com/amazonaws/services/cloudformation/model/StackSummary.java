@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The StackSummary Data Type
  * </p>
  */
-public class StackSummary implements Serializable {
+public class StackSummary implements Serializable, Cloneable {
 
     /**
      * Unique stack identifier.
@@ -453,5 +453,19 @@ public class StackSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public StackSummary clone() {
+        try {
+            return (StackSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

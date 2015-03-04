@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about an application revision.
  * </p>
  */
-public class GenericRevisionInfo implements Serializable {
+public class GenericRevisionInfo implements Serializable, Cloneable {
 
     /**
      * A comment about the revision.
@@ -303,5 +303,19 @@ public class GenericRevisionInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public GenericRevisionInfo clone() {
+        try {
+            return (GenericRevisionInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

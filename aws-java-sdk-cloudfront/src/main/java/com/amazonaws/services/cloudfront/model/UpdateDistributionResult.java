@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class UpdateDistributionResult implements Serializable {
+public class UpdateDistributionResult implements Serializable, Cloneable {
 
     /**
      * The distribution's information.
@@ -142,5 +142,19 @@ public class UpdateDistributionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateDistributionResult clone() {
+        try {
+            return (UpdateDistributionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeUserProfiles</code> request.
  * </p>
  */
-public class DescribeUserProfilesResult implements Serializable {
+public class DescribeUserProfilesResult implements Serializable, Cloneable {
 
     /**
      * A <code>Users</code> object that describes the specified users.
@@ -135,5 +135,19 @@ public class DescribeUserProfilesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeUserProfilesResult clone() {
+        try {
+            return (DescribeUserProfilesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response to a successful DescribeIdentityPoolUsage request.
  * </p>
  */
-public class DescribeIdentityPoolUsageResult implements Serializable {
+public class DescribeIdentityPoolUsageResult implements Serializable, Cloneable {
 
     /**
      * Information about the usage of the identity pool.
@@ -100,5 +100,19 @@ public class DescribeIdentityPoolUsageResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeIdentityPoolUsageResult clone() {
+        try {
+            return (DescribeIdentityPoolUsageResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

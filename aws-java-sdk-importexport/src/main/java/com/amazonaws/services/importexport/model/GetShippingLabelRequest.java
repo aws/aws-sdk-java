@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#getShippingLabel(GetShippingLabelRequest)
  */
-public class GetShippingLabelRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetShippingLabelRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> jobIds;
 
@@ -569,5 +569,11 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public GetShippingLabelRequest clone() {
+        
+            return (GetShippingLabelRequest) super.clone();
+    }
+
 }
     

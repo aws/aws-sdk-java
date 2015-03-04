@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The response to a ListIdentities request.
  * </p>
  */
-public class ListIdentitiesResult implements Serializable {
+public class ListIdentitiesResult implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -247,5 +247,19 @@ public class ListIdentitiesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListIdentitiesResult clone() {
+        try {
+            return (ListIdentitiesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

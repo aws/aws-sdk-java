@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful GetCredentialReport request.
  * </p>
  */
-public class GetCredentialReportResult implements Serializable {
+public class GetCredentialReportResult implements Serializable, Cloneable {
 
     /**
      * Contains the credential report. The report is Base64-encoded.
@@ -243,5 +243,19 @@ public class GetCredentialReportResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetCredentialReportResult clone() {
+        try {
+            return (GetCredentialReportResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

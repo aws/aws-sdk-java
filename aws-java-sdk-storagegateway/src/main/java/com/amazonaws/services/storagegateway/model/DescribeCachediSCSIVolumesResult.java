@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the following fields:
  * </p>
  */
-public class DescribeCachediSCSIVolumesResult implements Serializable {
+public class DescribeCachediSCSIVolumesResult implements Serializable, Cloneable {
 
     /**
      * An array of objects where each object contains metadata about one
@@ -144,5 +144,19 @@ public class DescribeCachediSCSIVolumesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeCachediSCSIVolumesResult clone() {
+        try {
+            return (DescribeCachediSCSIVolumesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

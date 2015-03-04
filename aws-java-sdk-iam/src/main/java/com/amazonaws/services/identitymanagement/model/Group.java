@@ -32,7 +32,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Group implements Serializable {
+public class Group implements Serializable, Cloneable {
 
     /**
      * The path to the group. For more information about paths, see <a
@@ -438,5 +438,19 @@ public class Group implements Serializable {
         return true;
     }
     
+    @Override
+    public Group clone() {
+        try {
+            return (Group) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -25,7 +25,7 @@ import java.io.Serializable;
  * CreateLoginProfile and GetLoginProfile actions.
  * </p>
  */
-public class LoginProfile implements Serializable {
+public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * The name of the user, which can be used for signing in to the AWS
@@ -249,5 +249,19 @@ public class LoginProfile implements Serializable {
         return true;
     }
     
+    @Override
+    public LoginProfile clone() {
+        try {
+            return (LoginProfile) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class GetInvalidationResult implements Serializable {
+public class GetInvalidationResult implements Serializable, Cloneable {
 
     /**
      * The invalidation's information.
@@ -100,5 +100,19 @@ public class GetInvalidationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetInvalidationResult clone() {
+        try {
+            return (GetInvalidationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -70,7 +70,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#terminateWorkflowExecution(TerminateWorkflowExecutionRequest)
  */
-public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable {
+public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The domain of the workflow execution to terminate.
@@ -632,5 +632,11 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public TerminateWorkflowExecutionRequest clone() {
+        
+            return (TerminateWorkflowExecutionRequest) super.clone();
+    }
+
 }
     

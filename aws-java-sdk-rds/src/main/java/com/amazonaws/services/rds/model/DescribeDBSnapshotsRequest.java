@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSnapshots(DescribeDBSnapshotsRequest)
  */
-public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A DB instance identifier to retrieve the list of DB snapshots for.
@@ -503,5 +503,11 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeDBSnapshotsRequest clone() {
+        
+            return (DescribeDBSnapshotsRequest) super.clone();
+    }
+
 }
     

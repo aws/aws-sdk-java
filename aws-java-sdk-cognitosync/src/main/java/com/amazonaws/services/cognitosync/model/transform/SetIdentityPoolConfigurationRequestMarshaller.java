@@ -135,6 +135,23 @@ public class SetIdentityPoolConfigurationRequestMarshaller implements Marshaller
                 }
                 jsonWriter.endObject();
             }
+            CognitoStreams cognitoStreams = setIdentityPoolConfigurationRequest.getCognitoStreams();
+            if (cognitoStreams != null) {
+
+                jsonWriter.key("CognitoStreams");
+                jsonWriter.object();
+
+                if (cognitoStreams.getStreamName() != null) {
+                    jsonWriter.key("StreamName").value(cognitoStreams.getStreamName());
+                }
+                if (cognitoStreams.getRoleArn() != null) {
+                    jsonWriter.key("RoleArn").value(cognitoStreams.getRoleArn());
+                }
+                if (cognitoStreams.getStreamingStatus() != null) {
+                    jsonWriter.key("StreamingStatus").value(cognitoStreams.getStreamingStatus());
+                }
+                jsonWriter.endObject();
+            }
 
           jsonWriter.endObject();
 

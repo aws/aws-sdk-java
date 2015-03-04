@@ -22,7 +22,7 @@ import java.io.Serializable;
  * table or an index.
  * </p>
  */
-public class Capacity implements Serializable {
+public class Capacity implements Serializable, Cloneable {
 
     /**
      * The total number of capacity units consumed on a table or an index.
@@ -101,5 +101,19 @@ public class Capacity implements Serializable {
         return true;
     }
     
+    @Override
+    public Capacity clone() {
+        try {
+            return (Capacity) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

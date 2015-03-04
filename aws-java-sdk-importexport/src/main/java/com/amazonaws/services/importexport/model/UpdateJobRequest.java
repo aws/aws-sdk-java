@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#updateJob(UpdateJobRequest)
  */
-public class UpdateJobRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateJobRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier which refers to a particular job.
@@ -347,5 +347,11 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public UpdateJobRequest clone() {
+        
+            return (UpdateJobRequest) super.clone();
+    }
+
 }
     

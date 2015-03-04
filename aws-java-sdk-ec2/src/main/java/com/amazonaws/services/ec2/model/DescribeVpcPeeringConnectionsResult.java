@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeVpcPeeringConnectionsResult implements Serializable {
+public class DescribeVpcPeeringConnectionsResult implements Serializable, Cloneable {
 
     /**
      * Information about the VPC peering connections.
@@ -133,5 +133,19 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVpcPeeringConnectionsResult clone() {
+        try {
+            return (DescribeVpcPeeringConnectionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

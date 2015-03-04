@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest)
  */
-public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceRequest implements Serializable {
+public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the source DB instance from which to restore.
@@ -1505,5 +1505,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public RestoreDBInstanceToPointInTimeRequest clone() {
+        
+            return (RestoreDBInstanceToPointInTimeRequest) super.clone();
+    }
+
 }
     

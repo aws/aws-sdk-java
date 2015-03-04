@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an association status.
  * </p>
  */
-public class AssociationStatus implements Serializable {
+public class AssociationStatus implements Serializable, Cloneable {
 
     /**
      * The date when the status changed.
@@ -302,5 +302,19 @@ public class AssociationStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public AssociationStatus clone() {
+        try {
+            return (AssociationStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

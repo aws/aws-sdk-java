@@ -22,7 +22,7 @@ import java.io.Serializable;
  * security group membership.
  * </p>
  */
-public class VpcSecurityGroupMembership implements Serializable {
+public class VpcSecurityGroupMembership implements Serializable, Cloneable {
 
     /**
      * The name of the VPC security group.
@@ -143,5 +143,19 @@ public class VpcSecurityGroupMembership implements Serializable {
         return true;
     }
     
+    @Override
+    public VpcSecurityGroupMembership clone() {
+        try {
+            return (VpcSecurityGroupMembership) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#setDefaultPolicyVersion(SetDefaultPolicyVersionRequest)
  */
-public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
@@ -231,5 +231,11 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public SetDefaultPolicyVersionRequest clone() {
+        
+            return (SetDefaultPolicyVersionRequest) super.clone();
+    }
+
 }
     

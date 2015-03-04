@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeRegionsRequestMarshall
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeRegions(DescribeRegionsRequest)
  */
-public class DescribeRegionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeRegionsRequest> {
+public class DescribeRegionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeRegionsRequest> {
 
     /**
      * The names of one or more regions.
@@ -263,5 +263,11 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DescribeRegionsRequest clone() {
+        
+            return (DescribeRegionsRequest) super.clone();
+    }
+
 }
     

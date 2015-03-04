@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the ConfigureHealthCheck action.
  * </p>
  */
-public class ConfigureHealthCheckResult implements Serializable {
+public class ConfigureHealthCheckResult implements Serializable, Cloneable {
 
     /**
      * The updated healthcheck for the instances.
@@ -100,5 +100,19 @@ public class ConfigureHealthCheckResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfigureHealthCheckResult clone() {
+        try {
+            return (ConfigureHealthCheckResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

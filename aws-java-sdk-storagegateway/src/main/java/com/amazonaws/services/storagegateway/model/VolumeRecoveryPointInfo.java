@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Volume Recovery Point Info
  */
-public class VolumeRecoveryPointInfo implements Serializable {
+public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
 
     private String volumeARN;
 
@@ -226,5 +226,19 @@ public class VolumeRecoveryPointInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeRecoveryPointInfo clone() {
+        try {
+            return (VolumeRecoveryPointInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

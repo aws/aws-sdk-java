@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#deleteDocument(DeleteDocumentRequest)
  */
-public class DeleteDocumentRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDocumentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -125,5 +125,11 @@ public class DeleteDocumentRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeleteDocumentRequest clone() {
+        
+            return (DeleteDocumentRequest) super.clone();
+    }
+
 }
     

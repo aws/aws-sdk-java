@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateApp(UpdateAppRequest)
  */
-public class UpdateAppRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateAppRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The app ID.
@@ -867,5 +867,11 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public UpdateAppRequest clone() {
+        
+            return (UpdateAppRequest) super.clone();
+    }
+
 }
     

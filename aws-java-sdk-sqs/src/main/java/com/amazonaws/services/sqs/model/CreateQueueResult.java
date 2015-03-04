@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Returns the QueueUrl element of the created queue.
  * </p>
  */
-public class CreateQueueResult implements Serializable {
+public class CreateQueueResult implements Serializable, Cloneable {
 
     /**
      * The URL for the created Amazon SQS queue.
@@ -100,5 +100,19 @@ public class CreateQueueResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateQueueResult clone() {
+        try {
+            return (CreateQueueResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

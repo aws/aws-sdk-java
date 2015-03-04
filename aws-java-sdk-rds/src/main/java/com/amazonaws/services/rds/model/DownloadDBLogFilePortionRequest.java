@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#downloadDBLogFilePortion(DownloadDBLogFilePortionRequest)
  */
-public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The customer-assigned name of the DB instance that contains the log
@@ -371,5 +371,11 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DownloadDBLogFilePortionRequest clone() {
+        
+            return (DownloadDBLogFilePortionRequest) super.clone();
+    }
+
 }
     

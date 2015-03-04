@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for ValidateTemplate action.
  * </p>
  */
-public class ValidateTemplateResult implements Serializable {
+public class ValidateTemplateResult implements Serializable, Cloneable {
 
     /**
      * A list of <code>TemplateParameter</code> structures.
@@ -374,5 +374,19 @@ public class ValidateTemplateResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ValidateTemplateResult clone() {
+        try {
+            return (ValidateTemplateResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

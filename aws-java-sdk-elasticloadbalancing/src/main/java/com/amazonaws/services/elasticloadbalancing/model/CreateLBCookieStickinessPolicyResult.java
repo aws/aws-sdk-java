@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the CreateLBCookieStickinessPolicy action.
  * </p>
  */
-public class CreateLBCookieStickinessPolicyResult implements Serializable {
+public class CreateLBCookieStickinessPolicyResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class CreateLBCookieStickinessPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateLBCookieStickinessPolicyResult clone() {
+        try {
+            return (CreateLBCookieStickinessPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#describeTaskDefinition(DescribeTaskDefinitionRequest)
  */
-public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>family</code> for the latest revision, <code>family</code>
@@ -129,5 +129,11 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeTaskDefinitionRequest clone() {
+        
+            return (DescribeTaskDefinitionRequest) super.clone();
+    }
+
 }
     

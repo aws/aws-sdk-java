@@ -125,7 +125,7 @@ import java.io.Serializable;
  * expected.
  * </p>
  */
-public class ProcessType implements Serializable {
+public class ProcessType implements Serializable, Cloneable {
 
     /**
      * The name of the process.
@@ -220,5 +220,19 @@ public class ProcessType implements Serializable {
         return true;
     }
     
+    @Override
+    public ProcessType clone() {
+        try {
+            return (ProcessType) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

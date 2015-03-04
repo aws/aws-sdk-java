@@ -25,7 +25,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class AccessKeyMetadata implements Serializable {
+public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * The name of the IAM user that the key is associated with.
@@ -331,5 +331,19 @@ public class AccessKeyMetadata implements Serializable {
         return true;
     }
     
+    @Override
+    public AccessKeyMetadata clone() {
+        try {
+            return (AccessKeyMetadata) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The policies data type.
  * </p>
  */
-public class Policies implements Serializable {
+public class Policies implements Serializable, Cloneable {
 
     /**
      * A list of the <a>AppCookieStickinessPolicy</a> objects created with
@@ -313,5 +313,19 @@ public class Policies implements Serializable {
         return true;
     }
     
+    @Override
+    public Policies clone() {
+        try {
+            return (Policies) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

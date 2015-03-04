@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getSubscriptionAttributes(GetSubscriptionAttributesRequest)
  */
-public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the subscription whose properties you want to get.
@@ -123,5 +123,11 @@ public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public GetSubscriptionAttributesRequest clone() {
+        
+            return (GetSubscriptionAttributesRequest) super.clone();
+    }
+
 }
     

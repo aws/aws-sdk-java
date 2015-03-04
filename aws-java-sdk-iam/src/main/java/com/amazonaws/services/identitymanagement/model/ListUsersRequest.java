@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUsers(ListUsersRequest)
  */
-public class ListUsersRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListUsersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path prefix for filtering the results. For example:
@@ -329,5 +329,11 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public ListUsersRequest clone() {
+        
+            return (ListUsersRequest) super.clone();
+    }
+
 }
     

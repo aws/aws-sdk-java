@@ -53,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerDomain(RegisterDomainRequest)
  */
-public class RegisterDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Name of the domain to register. The name must be unique in the region
@@ -357,5 +357,11 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public RegisterDomainRequest clone() {
+        
+            return (RegisterDomainRequest) super.clone();
+    }
+
 }
     

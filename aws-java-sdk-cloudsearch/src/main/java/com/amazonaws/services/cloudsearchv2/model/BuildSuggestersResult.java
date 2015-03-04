@@ -22,7 +22,7 @@ import java.io.Serializable;
  * of the fields used for suggestions.
  * </p>
  */
-public class BuildSuggestersResult implements Serializable {
+public class BuildSuggestersResult implements Serializable, Cloneable {
 
     /**
      * A list of field names.
@@ -136,5 +136,19 @@ public class BuildSuggestersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public BuildSuggestersResult clone() {
+        try {
+            return (BuildSuggestersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

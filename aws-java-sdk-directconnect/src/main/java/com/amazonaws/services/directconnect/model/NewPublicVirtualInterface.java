@@ -22,7 +22,7 @@ import java.io.Serializable;
  * interface.
  * </p>
  */
-public class NewPublicVirtualInterface implements Serializable {
+public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * The name of the virtual interface assigned by the customer.
@@ -425,5 +425,19 @@ public class NewPublicVirtualInterface implements Serializable {
         return true;
     }
     
+    @Override
+    public NewPublicVirtualInterface clone() {
+        try {
+            return (NewPublicVirtualInterface) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#createTrail(CreateTrailRequest)
  */
-public class CreateTrailRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateTrailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the trail.
@@ -400,5 +400,11 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateTrailRequest clone() {
+        
+            return (CreateTrailRequest) super.clone();
+    }
+
 }
     

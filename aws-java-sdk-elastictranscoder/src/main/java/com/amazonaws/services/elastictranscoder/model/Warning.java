@@ -27,7 +27,7 @@ import java.io.Serializable;
  * time and prevents cross-regional charges.
  * </p>
  */
-public class Warning implements Serializable {
+public class Warning implements Serializable, Cloneable {
 
     /**
      * The code of the cross-regional warning.
@@ -162,5 +162,19 @@ public class Warning implements Serializable {
         return true;
     }
     
+    @Override
+    public Warning clone() {
+        try {
+            return (Warning) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

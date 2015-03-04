@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLaunchConfiguration(DeleteLaunchConfigurationRequest)
  */
-public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the launch configuration.
@@ -126,5 +126,11 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DeleteLaunchConfigurationRequest clone() {
+        
+            return (DeleteLaunchConfigurationRequest) super.clone();
+    }
+
 }
     

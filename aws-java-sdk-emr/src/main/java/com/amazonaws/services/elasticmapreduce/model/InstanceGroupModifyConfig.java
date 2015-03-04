@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Modify an instance group size.
  * </p>
  */
-public class InstanceGroupModifyConfig implements Serializable {
+public class InstanceGroupModifyConfig implements Serializable, Cloneable {
 
     /**
      * Unique ID of the instance group to expand or shrink.
@@ -273,5 +273,19 @@ public class InstanceGroupModifyConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceGroupModifyConfig clone() {
+        try {
+            return (InstanceGroupModifyConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

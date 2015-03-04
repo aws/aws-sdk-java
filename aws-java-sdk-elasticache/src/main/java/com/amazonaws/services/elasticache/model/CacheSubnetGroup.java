@@ -27,7 +27,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class CacheSubnetGroup implements Serializable {
+public class CacheSubnetGroup implements Serializable, Cloneable {
 
     /**
      * The name of the cache subnet group.
@@ -274,5 +274,19 @@ public class CacheSubnetGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheSubnetGroup clone() {
+        try {
+            return (CacheSubnetGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

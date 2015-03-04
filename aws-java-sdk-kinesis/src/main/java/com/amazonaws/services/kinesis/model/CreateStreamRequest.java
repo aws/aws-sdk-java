@@ -82,7 +82,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#createStream(CreateStreamRequest)
  */
-public class CreateStreamRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name to identify the stream. The stream name is scoped to the AWS
@@ -301,5 +301,11 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CreateStreamRequest clone() {
+        
+            return (CreateStreamRequest) super.clone();
+    }
+
 }
     

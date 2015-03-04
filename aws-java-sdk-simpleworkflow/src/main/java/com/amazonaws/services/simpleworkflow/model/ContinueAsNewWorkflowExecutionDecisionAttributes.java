@@ -59,7 +59,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Serializable {
+public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * The input provided to the new workflow execution.
@@ -990,5 +990,19 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
         return true;
     }
     
+    @Override
+    public ContinueAsNewWorkflowExecutionDecisionAttributes clone() {
+        try {
+            return (ContinueAsNewWorkflowExecutionDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

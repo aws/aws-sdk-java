@@ -21,7 +21,7 @@ import java.io.Serializable;
  * ExtraParam includes the following elements.
  * </p>
  */
-public class ExtraParam implements Serializable {
+public class ExtraParam implements Serializable, Cloneable {
 
     /**
      * Name of the additional parameter required by the top-level domain.
@@ -359,5 +359,19 @@ public class ExtraParam implements Serializable {
         return true;
     }
     
+    @Override
+    public ExtraParam clone() {
+        try {
+            return (ExtraParam) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

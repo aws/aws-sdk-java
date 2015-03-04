@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#evaluateExpression(EvaluateExpressionRequest)
  */
-public class EvaluateExpressionRequest extends AmazonWebServiceRequest implements Serializable {
+public class EvaluateExpressionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the pipeline.
@@ -238,5 +238,11 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public EvaluateExpressionRequest clone() {
+        
+            return (EvaluateExpressionRequest) super.clone();
+    }
+
 }
     

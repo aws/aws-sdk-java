@@ -22,7 +22,7 @@ import java.io.Serializable;
  * operation.
  * </p>
  */
-public class GetIdentityPoolRolesResult implements Serializable {
+public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -213,5 +213,19 @@ public class GetIdentityPoolRolesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetIdentityPoolRolesResult clone() {
+        try {
+            return (GetIdentityPoolRolesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

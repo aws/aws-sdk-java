@@ -38,7 +38,7 @@ import com.amazonaws.services.ec2.model.transform.ImportKeyPairRequestMarshaller
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importKeyPair(ImportKeyPairRequest)
  */
-public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ImportKeyPairRequest> {
+public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportKeyPairRequest> {
 
     /**
      * A unique name for the key pair.
@@ -198,5 +198,11 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public ImportKeyPairRequest clone() {
+        
+            return (ImportKeyPairRequest) super.clone();
+    }
+
 }
     

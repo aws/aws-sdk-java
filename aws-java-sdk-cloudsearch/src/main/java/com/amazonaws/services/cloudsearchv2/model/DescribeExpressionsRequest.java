@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeExpressions(DescribeExpressionsRequest)
  */
-public class DescribeExpressionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeExpressionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain you want to describe.
@@ -282,5 +282,11 @@ public class DescribeExpressionsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeExpressionsRequest clone() {
+        
+            return (DescribeExpressionsRequest) super.clone();
+    }
+
 }
     

@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setTerminationProtection(SetTerminationProtectionRequest)
  */
-public class SetTerminationProtectionRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetTerminationProtectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of strings that uniquely identify the job flows to protect.
@@ -251,5 +251,11 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public SetTerminationProtectionRequest clone() {
+        
+            return (SetTerminationProtectionRequest) super.clone();
+    }
+
 }
     

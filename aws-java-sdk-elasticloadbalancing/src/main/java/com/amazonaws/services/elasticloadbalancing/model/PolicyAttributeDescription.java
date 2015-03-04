@@ -23,7 +23,7 @@ import java.io.Serializable;
  * policy.
  * </p>
  */
-public class PolicyAttributeDescription implements Serializable {
+public class PolicyAttributeDescription implements Serializable, Cloneable {
 
     /**
      * The name of the attribute associated with the policy.
@@ -144,5 +144,19 @@ public class PolicyAttributeDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public PolicyAttributeDescription clone() {
+        try {
+            return (PolicyAttributeDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

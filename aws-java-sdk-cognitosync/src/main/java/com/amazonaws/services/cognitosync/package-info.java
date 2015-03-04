@@ -21,6 +21,13 @@
  * <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html"> Amazon Cognito Identity service </a>
  * .
  * </p>
+ * <p>
+ * If you want to use Cognito Sync in an Android or iOS application, you
+ * will probably want to make API calls via the AWS Mobile SDK. To learn
+ * more, see the
+ * <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html"> Developer Guide for Android </a> and the <a href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html"> Developer Guide for iOS </a>
+ * .
+ * </p>
  */
  package com.amazonaws.services.cognitosync;
         

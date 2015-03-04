@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#listCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest)
  */
-public class ListCloudFrontOriginAccessIdentitiesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListCloudFrontOriginAccessIdentitiesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Use this when paginating results to indicate where to begin in your
@@ -188,5 +188,11 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends AmazonWebServic
         return true;
     }
     
+    @Override
+    public ListCloudFrontOriginAccessIdentitiesRequest clone() {
+        
+            return (ListCloudFrontOriginAccessIdentitiesRequest) super.clone();
+    }
+
 }
     

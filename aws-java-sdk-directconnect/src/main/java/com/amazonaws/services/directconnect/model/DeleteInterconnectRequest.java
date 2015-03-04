@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#deleteInterconnect(DeleteInterconnectRequest)
  */
-public class DeleteInterconnectRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteInterconnectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the interconnect. <p>Example: dxcon-abc123
@@ -105,5 +105,11 @@ public class DeleteInterconnectRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteInterconnectRequest clone() {
+        
+            return (DeleteInterconnectRequest) super.clone();
+    }
+
 }
     

@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateApplicationVersion(UpdateApplicationVersionRequest)
  */
-public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application associated with this version. <p> If no
@@ -284,5 +284,11 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public UpdateApplicationVersionRequest clone() {
+        
+            return (UpdateApplicationVersionRequest) super.clone();
+    }
+
 }
     

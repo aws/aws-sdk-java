@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateLayer(UpdateLayerRequest)
  */
-public class UpdateLayerRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateLayerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The layer ID.
@@ -1139,5 +1139,11 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public UpdateLayerRequest clone() {
+        
+            return (UpdateLayerRequest) super.clone();
+    }
+
 }
     

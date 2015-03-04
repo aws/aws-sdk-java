@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful CreateAccessKey request.
  * </p>
  */
-public class CreateAccessKeyResult implements Serializable {
+public class CreateAccessKeyResult implements Serializable, Cloneable {
 
     /**
      * Information about the access key.
@@ -100,5 +100,19 @@ public class CreateAccessKeyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateAccessKeyResult clone() {
+        try {
+            return (CreateAccessKeyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

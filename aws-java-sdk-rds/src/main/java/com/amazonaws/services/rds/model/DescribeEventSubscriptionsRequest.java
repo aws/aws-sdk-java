@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEventSubscriptions(DescribeEventSubscriptionsRequest)
  */
-public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the RDS event notification subscription you want to
@@ -328,5 +328,11 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DescribeEventSubscriptionsRequest clone() {
+        
+            return (DescribeEventSubscriptionsRequest) super.clone();
+    }
+
 }
     

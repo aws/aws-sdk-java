@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#deleteEndpoint(DeleteEndpointRequest)
  */
-public class DeleteEndpointRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteEndpointRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * EndpointArn of endpoint to delete.
@@ -108,5 +108,11 @@ public class DeleteEndpointRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeleteEndpointRequest clone() {
+        
+            return (DeleteEndpointRequest) super.clone();
+    }
+
 }
     

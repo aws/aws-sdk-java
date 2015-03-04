@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A value that applies only to a certain cache node type.
  * </p>
  */
-public class CacheNodeTypeSpecificValue implements Serializable {
+public class CacheNodeTypeSpecificValue implements Serializable, Cloneable {
 
     /**
      * The cache node type for which this value applies.
@@ -148,5 +148,19 @@ public class CacheNodeTypeSpecificValue implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheNodeTypeSpecificValue clone() {
+        try {
+            return (CacheNodeTypeSpecificValue) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

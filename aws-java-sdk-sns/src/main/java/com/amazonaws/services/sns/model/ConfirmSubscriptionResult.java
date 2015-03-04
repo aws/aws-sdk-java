@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for ConfirmSubscriptions action.
  * </p>
  */
-public class ConfirmSubscriptionResult implements Serializable {
+public class ConfirmSubscriptionResult implements Serializable, Cloneable {
 
     /**
      * The ARN of the created subscription.
@@ -100,5 +100,19 @@ public class ConfirmSubscriptionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfirmSubscriptionResult clone() {
+        try {
+            return (ConfirmSubscriptionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#encrypt(EncryptRequest)
  */
-public class EncryptRequest extends AmazonWebServiceRequest implements Serializable {
+public class EncryptRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the customer master. This can be an ARN, an
@@ -379,5 +379,11 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public EncryptRequest clone() {
+        
+            return (EncryptRequest) super.clone();
+    }
+
 }
     

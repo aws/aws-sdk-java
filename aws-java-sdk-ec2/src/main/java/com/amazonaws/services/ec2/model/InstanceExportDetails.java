@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an instance export task.
  * </p>
  */
-public class InstanceExportDetails implements Serializable {
+public class InstanceExportDetails implements Serializable, Cloneable {
 
     /**
      * The ID of the resource being exported.
@@ -194,5 +194,19 @@ public class InstanceExportDetails implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceExportDetails clone() {
+        try {
+            return (InstanceExportDetails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

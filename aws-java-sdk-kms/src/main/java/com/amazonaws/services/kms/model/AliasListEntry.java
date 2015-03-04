@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains information about an alias.
  * </p>
  */
-public class AliasListEntry implements Serializable {
+public class AliasListEntry implements Serializable, Cloneable {
 
     /**
      * String that contains the alias.
@@ -224,5 +224,19 @@ public class AliasListEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public AliasListEntry clone() {
+        try {
+            return (AliasListEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

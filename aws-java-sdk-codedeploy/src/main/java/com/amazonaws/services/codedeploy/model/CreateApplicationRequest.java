@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#createApplication(CreateApplicationRequest)
  */
-public class CreateApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application. This name must be unique within the AWS
@@ -124,5 +124,11 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CreateApplicationRequest clone() {
+        
+            return (CreateApplicationRequest) super.clone();
+    }
+
 }
     

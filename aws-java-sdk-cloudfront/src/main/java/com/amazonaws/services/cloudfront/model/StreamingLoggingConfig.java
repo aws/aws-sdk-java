@@ -22,7 +22,7 @@ import java.io.Serializable;
  * streaming distribution.
  * </p>
  */
-public class StreamingLoggingConfig implements Serializable {
+public class StreamingLoggingConfig implements Serializable, Cloneable {
 
     /**
      * Specifies whether you want CloudFront to save access logs to an Amazon
@@ -283,5 +283,19 @@ public class StreamingLoggingConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public StreamingLoggingConfig clone() {
+        try {
+            return (StreamingLoggingConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

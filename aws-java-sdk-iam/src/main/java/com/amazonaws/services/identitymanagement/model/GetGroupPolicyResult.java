@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful GetGroupPolicy request.
  * </p>
  */
-public class GetGroupPolicyResult implements Serializable {
+public class GetGroupPolicyResult implements Serializable, Cloneable {
 
     /**
      * The group the policy is associated with.
@@ -232,5 +232,19 @@ public class GetGroupPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetGroupPolicyResult clone() {
+        try {
+            return (GetGroupPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

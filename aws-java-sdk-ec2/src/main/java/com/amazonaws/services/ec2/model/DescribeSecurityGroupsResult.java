@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeSecurityGroupsResult implements Serializable {
+public class DescribeSecurityGroupsResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more security groups.
@@ -133,5 +133,19 @@ public class DescribeSecurityGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSecurityGroupsResult clone() {
+        try {
+            return (DescribeSecurityGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

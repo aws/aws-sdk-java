@@ -336,14 +336,16 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSessionTokenRequestMarshaller().marshall(getSessionTokenRequest);
+                request = new GetSessionTokenRequestMarshaller().marshall(super.beforeMarshalling(getSessionTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetSessionTokenResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -421,14 +423,16 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DecodeAuthorizationMessageRequestMarshaller().marshall(decodeAuthorizationMessageRequest);
+                request = new DecodeAuthorizationMessageRequestMarshaller().marshall(super.beforeMarshalling(decodeAuthorizationMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DecodeAuthorizationMessageResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -551,14 +555,16 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssumeRoleWithSAMLRequestMarshaller().marshall(assumeRoleWithSAMLRequest);
+                request = new AssumeRoleWithSAMLRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleWithSAMLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new AssumeRoleWithSAMLResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -692,14 +698,16 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssumeRoleWithWebIdentityRequestMarshaller().marshall(assumeRoleWithWebIdentityRequest);
+                request = new AssumeRoleWithWebIdentityRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleWithWebIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new AssumeRoleWithWebIdentityResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -820,14 +828,16 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFederationTokenRequestMarshaller().marshall(getFederationTokenRequest);
+                request = new GetFederationTokenRequestMarshaller().marshall(super.beforeMarshalling(getFederationTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new GetFederationTokenResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -974,14 +984,16 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssumeRoleRequestMarshaller().marshall(assumeRoleRequest);
+                request = new AssumeRoleRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new AssumeRoleResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);

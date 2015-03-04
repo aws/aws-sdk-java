@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeRdsDbInstances(DescribeRdsDbInstancesRequest)
  */
-public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID that the instances are registered with. The operation
@@ -197,5 +197,11 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeRdsDbInstancesRequest clone() {
+        
+            return (DescribeRdsDbInstancesRequest) super.clone();
+    }
+
 }
     

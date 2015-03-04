@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeLoggingStatus(DescribeLoggingStatusRequest)
  */
-public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster to get the logging status from.
@@ -113,5 +113,11 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeLoggingStatusRequest clone() {
+        
+            return (DescribeLoggingStatusRequest) super.clone();
+    }
+
 }
     

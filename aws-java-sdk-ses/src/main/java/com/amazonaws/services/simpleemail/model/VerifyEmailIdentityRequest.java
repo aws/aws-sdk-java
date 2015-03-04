@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyEmailIdentity(VerifyEmailIdentityRequest)
  */
-public class VerifyEmailIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class VerifyEmailIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The email address to be verified.
@@ -109,5 +109,11 @@ public class VerifyEmailIdentityRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public VerifyEmailIdentityRequest clone() {
+        
+            return (VerifyEmailIdentityRequest) super.clone();
+    }
+
 }
     

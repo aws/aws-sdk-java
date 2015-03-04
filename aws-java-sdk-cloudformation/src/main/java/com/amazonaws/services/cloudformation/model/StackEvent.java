@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The StackEvent data type.
  * </p>
  */
-public class StackEvent implements Serializable {
+public class StackEvent implements Serializable, Cloneable {
 
     /**
      * The unique ID name of the instance of the stack.
@@ -558,5 +558,19 @@ public class StackEvent implements Serializable {
         return true;
     }
     
+    @Override
+    public StackEvent clone() {
+        try {
+            return (StackEvent) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#cloneStack(CloneStackRequest)
  */
-public class CloneStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class CloneStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The source stack ID.
@@ -1979,5 +1979,11 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public CloneStackRequest clone() {
+        
+            return (CloneStackRequest) super.clone();
+    }
+
 }
     

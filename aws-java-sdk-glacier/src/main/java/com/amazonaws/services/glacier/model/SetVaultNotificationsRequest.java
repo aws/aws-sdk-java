@@ -68,7 +68,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#setVaultNotifications(SetVaultNotificationsRequest)
  */
-public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -299,5 +299,11 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public SetVaultNotificationsRequest clone() {
+        
+            return (SetVaultNotificationsRequest) super.clone();
+    }
+
 }
     

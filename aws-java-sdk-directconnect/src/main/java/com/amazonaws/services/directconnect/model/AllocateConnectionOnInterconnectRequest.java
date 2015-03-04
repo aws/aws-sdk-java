@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest)
  */
-public class AllocateConnectionOnInterconnectRequest extends AmazonWebServiceRequest implements Serializable {
+public class AllocateConnectionOnInterconnectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
@@ -305,5 +305,11 @@ public class AllocateConnectionOnInterconnectRequest extends AmazonWebServiceReq
         return true;
     }
     
+    @Override
+    public AllocateConnectionOnInterconnectRequest clone() {
+        
+            return (AllocateConnectionOnInterconnectRequest) super.clone();
+    }
+
 }
     

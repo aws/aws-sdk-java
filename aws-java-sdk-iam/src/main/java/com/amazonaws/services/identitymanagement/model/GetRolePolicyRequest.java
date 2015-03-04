@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRolePolicy(GetRolePolicyRequest)
  */
-public class GetRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetRolePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the role associated with the policy.
@@ -196,5 +196,11 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public GetRolePolicyRequest clone() {
+        
+            return (GetRolePolicyRequest) super.clone();
+    }
+
 }
     

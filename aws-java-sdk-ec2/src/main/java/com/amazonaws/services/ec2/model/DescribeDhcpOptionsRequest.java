@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeDhcpOptionsRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeDhcpOptions(DescribeDhcpOptionsRequest)
  */
-public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeDhcpOptionsRequest> {
+public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeDhcpOptionsRequest> {
 
     /**
      * The IDs of one or more DHCP options sets. <p>Default: Describes all
@@ -389,5 +389,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeDhcpOptionsRequest clone() {
+        
+            return (DescribeDhcpOptionsRequest) super.clone();
+    }
+
 }
     

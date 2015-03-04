@@ -27,7 +27,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class Listener implements Serializable {
+public class Listener implements Serializable, Cloneable {
 
     /**
      * Specifies the load balancer transport protocol to use for routing -
@@ -460,5 +460,19 @@ public class Listener implements Serializable {
         return true;
     }
     
+    @Override
+    public Listener clone() {
+        try {
+            return (Listener) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

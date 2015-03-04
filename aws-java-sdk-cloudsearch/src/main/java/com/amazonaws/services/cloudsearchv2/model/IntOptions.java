@@ -23,7 +23,7 @@ import java.io.Serializable;
  * <code>int</code> . All options are enabled by default.
  * </p>
  */
-public class IntOptions implements Serializable {
+public class IntOptions implements Serializable, Cloneable {
 
     /**
      * A value to use for the field if the field isn't specified for a
@@ -387,5 +387,19 @@ public class IntOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public IntOptions clone() {
+        try {
+            return (IntOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

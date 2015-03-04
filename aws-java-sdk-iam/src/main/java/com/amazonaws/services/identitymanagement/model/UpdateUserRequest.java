@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(UpdateUserRequest)
  */
-public class UpdateUserRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateUserRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Name of the user to update. If you're changing the name of the user,
@@ -288,5 +288,11 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public UpdateUserRequest clone() {
+        
+            return (UpdateUserRequest) super.clone();
+    }
+
 }
     

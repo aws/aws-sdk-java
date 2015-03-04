@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#submitTaskStateChange(SubmitTaskStateChangeRequest)
  */
-public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest implements Serializable {
+public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -249,5 +249,11 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public SubmitTaskStateChangeRequest clone() {
+        
+            return (SubmitTaskStateChangeRequest) super.clone();
+    }
+
 }
     

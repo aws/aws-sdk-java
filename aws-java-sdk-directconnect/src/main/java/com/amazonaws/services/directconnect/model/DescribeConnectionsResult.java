@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A structure containing a list of connections.
  * </p>
  */
-public class DescribeConnectionsResult implements Serializable {
+public class DescribeConnectionsResult implements Serializable, Cloneable {
 
     /**
      * A list of connections.
@@ -135,5 +135,19 @@ public class DescribeConnectionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeConnectionsResult clone() {
+        try {
+            return (DescribeConnectionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

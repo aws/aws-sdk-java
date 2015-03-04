@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeLoadBalancers.
  * </p>
  */
-public class LoadBalancerDescription implements Serializable {
+public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * Specifies the name associated with the load balancer.
@@ -1112,5 +1112,19 @@ public class LoadBalancerDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public LoadBalancerDescription clone() {
+        try {
+            return (LoadBalancerDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

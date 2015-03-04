@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a security group.
  * </p>
  */
-public class ClusterSecurityGroup implements Serializable {
+public class ClusterSecurityGroup implements Serializable, Cloneable {
 
     /**
      * The name of the cluster security group to which the operation was
@@ -398,5 +398,19 @@ public class ClusterSecurityGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterSecurityGroup clone() {
+        try {
+            return (ClusterSecurityGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

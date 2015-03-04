@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteGateway(DeleteGatewayRequest)
  */
-public class DeleteGatewayRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -151,5 +151,11 @@ public class DeleteGatewayRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DeleteGatewayRequest clone() {
+        
+            return (DeleteGatewayRequest) super.clone();
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GenerateDataKeyWithoutPlaintextResult implements Serializable {
+public class GenerateDataKeyWithoutPlaintextResult implements Serializable, Cloneable {
 
     /**
      * Ciphertext that contains the wrapped key. You must store the blob and
@@ -171,5 +171,19 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GenerateDataKeyWithoutPlaintextResult clone() {
+        try {
+            return (GenerateDataKeyWithoutPlaintextResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

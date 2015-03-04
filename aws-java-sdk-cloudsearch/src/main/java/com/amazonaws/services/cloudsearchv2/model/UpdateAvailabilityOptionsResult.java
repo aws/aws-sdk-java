@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Contains the status of the domain's availability options.
  * </p>
  */
-public class UpdateAvailabilityOptionsResult implements Serializable {
+public class UpdateAvailabilityOptionsResult implements Serializable, Cloneable {
 
     /**
      * The newly-configured availability options. Indicates whether Multi-AZ
@@ -108,5 +108,19 @@ public class UpdateAvailabilityOptionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateAvailabilityOptionsResult clone() {
+        try {
+            return (UpdateAvailabilityOptionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPreset(ReadPresetRequest)
  */
-public class ReadPresetRequest extends AmazonWebServiceRequest implements Serializable {
+public class ReadPresetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the preset for which you want to get detailed
@@ -124,5 +124,11 @@ public class ReadPresetRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ReadPresetRequest clone() {
+        
+            return (ReadPresetRequest) super.clone();
+    }
+
 }
     

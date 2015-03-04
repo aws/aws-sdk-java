@@ -25,7 +25,7 @@ import java.io.Serializable;
  * doesn't exist.
  * </p>
  */
-public class UpdateCondition implements Serializable {
+public class UpdateCondition implements Serializable, Cloneable {
 
     /**
      * The name of the attribute involved in the condition.
@@ -277,5 +277,19 @@ public class UpdateCondition implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateCondition clone() {
+        try {
+            return (UpdateCondition) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

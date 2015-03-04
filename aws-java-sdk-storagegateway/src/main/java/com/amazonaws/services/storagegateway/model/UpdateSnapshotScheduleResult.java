@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the of the updated storage volume.
  * </p>
  */
-public class UpdateSnapshotScheduleResult implements Serializable {
+public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
 
     /**
      * 
@@ -112,5 +112,19 @@ public class UpdateSnapshotScheduleResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateSnapshotScheduleResult clone() {
+        try {
+            return (UpdateSnapshotScheduleResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

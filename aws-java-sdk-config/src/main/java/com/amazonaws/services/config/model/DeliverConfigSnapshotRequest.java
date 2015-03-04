@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#deliverConfigSnapshot(DeliverConfigSnapshotRequest)
  */
-public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the delivery channel through which the snapshot is
@@ -136,5 +136,11 @@ public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeliverConfigSnapshotRequest clone() {
+        
+            return (DeliverConfigSnapshotRequest) super.clone();
+    }
+
 }
     

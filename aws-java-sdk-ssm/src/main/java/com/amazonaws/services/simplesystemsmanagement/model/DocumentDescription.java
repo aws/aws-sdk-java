@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a configuration document.
  * </p>
  */
-public class DocumentDescription implements Serializable {
+public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * The SHA1 hash of the document, which you can use for verification
@@ -301,5 +301,19 @@ public class DocumentDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public DocumentDescription clone() {
+        try {
+            return (DocumentDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

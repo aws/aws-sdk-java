@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains information about a workflow execution.
  * </p>
  */
-public class WorkflowExecutionInfo implements Serializable {
+public class WorkflowExecutionInfo implements Serializable, Cloneable {
 
     /**
      * The workflow execution this information is about.
@@ -757,5 +757,19 @@ public class WorkflowExecutionInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionInfo clone() {
+        try {
+            return (WorkflowExecutionInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

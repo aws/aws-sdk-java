@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateVolumePermissionModifications implements Serializable {
+public class CreateVolumePermissionModifications implements Serializable, Cloneable {
 
     /**
      * Adds a specific AWS account ID or group to a volume's list of create
@@ -228,5 +228,19 @@ public class CreateVolumePermissionModifications implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateVolumePermissionModifications clone() {
+        try {
+            return (CreateVolumePermissionModifications) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

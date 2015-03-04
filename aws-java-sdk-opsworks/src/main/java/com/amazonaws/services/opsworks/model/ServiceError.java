@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an AWS OpsWorks service error.
  * </p>
  */
-public class ServiceError implements Serializable {
+public class ServiceError implements Serializable, Cloneable {
 
     /**
      * The error ID.
@@ -310,5 +310,19 @@ public class ServiceError implements Serializable {
         return true;
     }
     
+    @Override
+    public ServiceError clone() {
+        try {
+            return (ServiceError) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

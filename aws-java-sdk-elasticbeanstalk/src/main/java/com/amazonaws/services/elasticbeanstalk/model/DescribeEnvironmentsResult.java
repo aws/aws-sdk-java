@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Result message containing a list of environment descriptions.
  * </p>
  */
-public class DescribeEnvironmentsResult implements Serializable {
+public class DescribeEnvironmentsResult implements Serializable, Cloneable {
 
     /**
      * Returns an <a>EnvironmentDescription</a> list.
@@ -135,5 +135,19 @@ public class DescribeEnvironmentsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeEnvironmentsResult clone() {
+        try {
+            return (DescribeEnvironmentsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

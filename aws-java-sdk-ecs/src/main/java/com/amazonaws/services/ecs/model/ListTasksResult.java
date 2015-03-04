@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListTasksResult implements Serializable {
+public class ListTasksResult implements Serializable, Cloneable {
 
     /**
      * The list of task Amazon Resource Name (ARN) entries for the
@@ -212,5 +212,19 @@ public class ListTasksResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListTasksResult clone() {
+        try {
+            return (ListTasksResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

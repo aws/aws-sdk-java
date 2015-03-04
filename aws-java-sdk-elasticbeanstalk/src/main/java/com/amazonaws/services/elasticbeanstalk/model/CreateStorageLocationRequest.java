@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createStorageLocation(CreateStorageLocationRequest)
  */
-public class CreateStorageLocationRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateStorageLocationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -66,5 +66,11 @@ public class CreateStorageLocationRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public CreateStorageLocationRequest clone() {
+        
+            return (CreateStorageLocationRequest) super.clone();
+    }
+
 }
     

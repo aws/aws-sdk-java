@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for GetTemplate action.
  * </p>
  */
-public class GetTemplateResult implements Serializable {
+public class GetTemplateResult implements Serializable, Cloneable {
 
     /**
      * Structure containing the template body. (For more information, go to
@@ -133,5 +133,19 @@ public class GetTemplateResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetTemplateResult clone() {
+        try {
+            return (GetTemplateResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

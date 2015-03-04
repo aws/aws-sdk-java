@@ -53,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeDomain(DescribeDomainRequest)
  */
-public class DescribeDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain to describe.
@@ -144,5 +144,11 @@ public class DescribeDomainRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeDomainRequest clone() {
+        
+            return (DescribeDomainRequest) super.clone();
+    }
+
 }
     

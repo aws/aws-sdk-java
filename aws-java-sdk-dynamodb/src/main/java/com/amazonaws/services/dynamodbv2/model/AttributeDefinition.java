@@ -22,7 +22,7 @@ import java.io.Serializable;
  * and indexes.
  * </p>
  */
-public class AttributeDefinition implements Serializable {
+public class AttributeDefinition implements Serializable, Cloneable {
 
     /**
      * A name for the attribute.
@@ -239,5 +239,19 @@ public class AttributeDefinition implements Serializable {
         return true;
     }
     
+    @Override
+    public AttributeDefinition clone() {
+        try {
+            return (AttributeDefinition) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

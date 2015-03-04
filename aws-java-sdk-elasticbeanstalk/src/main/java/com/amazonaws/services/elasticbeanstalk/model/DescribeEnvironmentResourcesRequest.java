@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEnvironmentResources(DescribeEnvironmentResourcesRequest)
  */
-public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the environment to retrieve AWS resource usage data. <p>
@@ -207,5 +207,11 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeEnvironmentResourcesRequest clone() {
+        
+            return (DescribeEnvironmentResourcesRequest) super.clone();
+    }
+
 }
     

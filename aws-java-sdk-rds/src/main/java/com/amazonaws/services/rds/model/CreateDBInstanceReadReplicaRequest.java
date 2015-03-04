@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest)
  */
-public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The DB instance identifier of the Read Replica. This is the unique key
@@ -1093,5 +1093,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public CreateDBInstanceReadReplicaRequest clone() {
+        
+            return (CreateDBInstanceReadReplicaRequest) super.clone();
+    }
+
 }
     

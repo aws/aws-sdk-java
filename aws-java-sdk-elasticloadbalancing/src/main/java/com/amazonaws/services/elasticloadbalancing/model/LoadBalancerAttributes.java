@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>LoadBalancerAttributes</code> data type.
  * </p>
  */
-public class LoadBalancerAttributes implements Serializable {
+public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer attribute. If enabled, the load balancer
@@ -457,5 +457,19 @@ public class LoadBalancerAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public LoadBalancerAttributes clone() {
+        try {
+            return (LoadBalancerAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

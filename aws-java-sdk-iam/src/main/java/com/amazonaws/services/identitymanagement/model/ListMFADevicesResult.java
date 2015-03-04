@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListMFADevices request.
  * </p>
  */
-public class ListMFADevicesResult implements Serializable {
+public class ListMFADevicesResult implements Serializable, Cloneable {
 
     /**
      * A list of MFA devices.
@@ -285,5 +285,19 @@ public class ListMFADevicesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListMFADevicesResult clone() {
+        try {
+            return (ListMFADevicesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

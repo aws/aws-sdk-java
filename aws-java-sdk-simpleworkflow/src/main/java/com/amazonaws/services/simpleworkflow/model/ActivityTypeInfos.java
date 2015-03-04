@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains a paginated list of activity type information structures.
  * </p>
  */
-public class ActivityTypeInfos implements Serializable {
+public class ActivityTypeInfos implements Serializable, Cloneable {
 
     /**
      * List of activity type information.
@@ -220,5 +220,19 @@ public class ActivityTypeInfos implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTypeInfos clone() {
+        try {
+            return (ActivityTypeInfos) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

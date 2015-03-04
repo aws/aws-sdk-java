@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Update Tags For Domain Result
  */
-public class UpdateTagsForDomainResult implements Serializable {
+public class UpdateTagsForDomainResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -56,5 +56,19 @@ public class UpdateTagsForDomainResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateTagsForDomainResult clone() {
+        try {
+            return (UpdateTagsForDomainResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

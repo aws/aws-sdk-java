@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest)
  */
-public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the VPN connection.
@@ -157,5 +157,11 @@ public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DeleteVpnConnectionRouteRequest clone() {
+        
+            return (DeleteVpnConnectionRouteRequest) super.clone();
+    }
+
 }
     

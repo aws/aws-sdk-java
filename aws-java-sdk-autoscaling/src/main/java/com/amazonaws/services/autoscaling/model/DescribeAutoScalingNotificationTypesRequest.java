@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest)
  */
-public class DescribeAutoScalingNotificationTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAutoScalingNotificationTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -63,5 +63,11 @@ public class DescribeAutoScalingNotificationTypesRequest extends AmazonWebServic
         return true;
     }
     
+    @Override
+    public DescribeAutoScalingNotificationTypesRequest clone() {
+        
+            return (DescribeAutoScalingNotificationTypesRequest) super.clone();
+    }
+
 }
     

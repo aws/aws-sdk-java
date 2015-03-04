@@ -22,7 +22,7 @@ import java.io.Serializable;
  * you specified in the request.
  * </p>
  */
-public class CreatePipelineResult implements Serializable {
+public class CreatePipelineResult implements Serializable, Cloneable {
 
     /**
      * A section of the response body that provides information about the
@@ -221,5 +221,19 @@ public class CreatePipelineResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreatePipelineResult clone() {
+        try {
+            return (CreatePipelineResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

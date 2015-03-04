@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#deleteTopic(DeleteTopicRequest)
  */
-public class DeleteTopicRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteTopicRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the topic you want to delete. <examples> <queryrequest>
@@ -213,5 +213,11 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteTopicRequest clone() {
+        
+            return (DeleteTopicRequest) super.clone();
+    }
+
 }
     

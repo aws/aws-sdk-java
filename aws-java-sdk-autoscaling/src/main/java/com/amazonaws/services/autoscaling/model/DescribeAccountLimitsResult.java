@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAccountLimitsResult implements Serializable {
+public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 
     /**
      * The maximum number of groups allowed for your AWS account. The default
@@ -154,5 +154,19 @@ public class DescribeAccountLimitsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAccountLimitsResult clone() {
+        try {
+            return (DescribeAccountLimitsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

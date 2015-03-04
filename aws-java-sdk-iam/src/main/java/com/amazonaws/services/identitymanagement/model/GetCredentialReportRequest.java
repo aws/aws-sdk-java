@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getCredentialReport(GetCredentialReportRequest)
  */
-public class GetCredentialReportRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetCredentialReportRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -66,5 +66,11 @@ public class GetCredentialReportRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public GetCredentialReportRequest clone() {
+        
+            return (GetCredentialReportRequest) super.clone();
+    }
+
 }
     

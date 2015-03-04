@@ -22,7 +22,7 @@ import java.io.Serializable;
  * of the domains owned by an account.
  * </p>
  */
-public class ListDomainNamesResult implements Serializable {
+public class ListDomainNamesResult implements Serializable, Cloneable {
 
     /**
      * The names of the search domains owned by an account.
@@ -135,5 +135,19 @@ public class ListDomainNamesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListDomainNamesResult clone() {
+        try {
+            return (ListDomainNamesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

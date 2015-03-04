@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeScalingActivitiesResult implements Serializable {
+public class DescribeScalingActivitiesResult implements Serializable, Cloneable {
 
     /**
      * The scaling activities.
@@ -194,5 +194,19 @@ public class DescribeScalingActivitiesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeScalingActivitiesResult clone() {
+        try {
+            return (DescribeScalingActivitiesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

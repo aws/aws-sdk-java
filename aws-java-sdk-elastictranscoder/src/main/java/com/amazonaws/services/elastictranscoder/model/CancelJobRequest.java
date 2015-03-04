@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#cancelJob(CancelJobRequest)
  */
-public class CancelJobRequest extends AmazonWebServiceRequest implements Serializable {
+public class CancelJobRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the job that you want to cancel. <p>To get a list of
@@ -137,5 +137,11 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CancelJobRequest clone() {
+        
+            return (CancelJobRequest) super.clone();
+    }
+
 }
     

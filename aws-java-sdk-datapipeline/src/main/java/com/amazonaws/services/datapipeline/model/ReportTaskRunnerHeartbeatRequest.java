@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest)
  */
-public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest implements Serializable {
+public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the task runner. This value should be unique across
@@ -318,5 +318,11 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public ReportTaskRunnerHeartbeatRequest clone() {
+        
+            return (ReportTaskRunnerHeartbeatRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a security group rule.
  * </p>
  */
-public class IpPermission implements Serializable {
+public class IpPermission implements Serializable, Cloneable {
 
     /**
      * The protocol. <p>When you call <a>DescribeSecurityGroups</a>, the
@@ -401,5 +401,19 @@ public class IpPermission implements Serializable {
         return true;
     }
     
+    @Override
+    public IpPermission clone() {
+        try {
+            return (IpPermission) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

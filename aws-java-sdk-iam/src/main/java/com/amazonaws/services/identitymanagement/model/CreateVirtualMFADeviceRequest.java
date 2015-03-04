@@ -44,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest)
  */
-public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path for the virtual MFA device. For more information about paths,
@@ -232,5 +232,11 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateVirtualMFADeviceRequest clone() {
+        
+            return (CreateVirtualMFADeviceRequest) super.clone();
+    }
+
 }
     

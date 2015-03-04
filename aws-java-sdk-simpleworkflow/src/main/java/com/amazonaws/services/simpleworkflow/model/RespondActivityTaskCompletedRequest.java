@@ -71,7 +71,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCompleted(RespondActivityTaskCompletedRequest)
  */
-public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest implements Serializable {
+public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>taskToken</code> of the <a>ActivityTask</a>. <important>
@@ -251,5 +251,11 @@ public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public RespondActivityTaskCompletedRequest clone() {
+        
+            return (RespondActivityTaskCompletedRequest) super.clone();
+    }
+
 }
     

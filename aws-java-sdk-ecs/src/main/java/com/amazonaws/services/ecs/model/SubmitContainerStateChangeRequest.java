@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#submitContainerStateChange(SubmitContainerStateChangeRequest)
  */
-public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest implements Serializable {
+public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -410,5 +410,11 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public SubmitContainerStateChangeRequest clone() {
+        
+            return (SubmitContainerStateChangeRequest) super.clone();
+    }
+
 }
     

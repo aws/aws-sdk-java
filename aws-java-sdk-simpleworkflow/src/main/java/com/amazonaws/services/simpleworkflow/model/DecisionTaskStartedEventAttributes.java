@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>DecisionTaskStarted</code> event.
  * </p>
  */
-public class DecisionTaskStartedEventAttributes implements Serializable {
+public class DecisionTaskStartedEventAttributes implements Serializable, Cloneable {
 
     /**
      * Identity of the decider making the request. This enables diagnostic
@@ -189,5 +189,19 @@ public class DecisionTaskStartedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public DecisionTaskStartedEventAttributes clone() {
+        try {
+            return (DecisionTaskStartedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

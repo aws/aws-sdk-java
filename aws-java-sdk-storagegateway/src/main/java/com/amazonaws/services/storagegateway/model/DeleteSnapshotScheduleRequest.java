@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteSnapshotSchedule(DeleteSnapshotScheduleRequest)
  */
-public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String volumeARN;
 
@@ -123,5 +123,11 @@ public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteSnapshotScheduleRequest clone() {
+        
+            return (DeleteSnapshotScheduleRequest) super.clone();
+    }
+
 }
     

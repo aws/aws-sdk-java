@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a subnet group.
  * </p>
  */
-public class ClusterSubnetGroup implements Serializable {
+public class ClusterSubnetGroup implements Serializable, Cloneable {
 
     /**
      * The name of the cluster subnet group.
@@ -394,5 +394,19 @@ public class ClusterSubnetGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterSubnetGroup clone() {
+        try {
+            return (ClusterSubnetGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

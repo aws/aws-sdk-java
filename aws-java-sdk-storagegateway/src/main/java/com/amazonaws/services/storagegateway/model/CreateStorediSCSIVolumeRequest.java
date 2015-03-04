@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStorediSCSIVolumeRequest)
  */
-public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -554,5 +554,11 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public CreateStorediSCSIVolumeRequest clone() {
+        
+            return (CreateStorediSCSIVolumeRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * for this distribution.
  * </p>
  */
-public class ViewerCertificate implements Serializable {
+public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * If you want viewers to use HTTPS to request your objects and you're
@@ -637,5 +637,19 @@ public class ViewerCertificate implements Serializable {
         return true;
     }
     
+    @Override
+    public ViewerCertificate clone() {
+        try {
+            return (ViewerCertificate) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

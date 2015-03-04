@@ -21,7 +21,7 @@ import java.io.Serializable;
  * AWS credentials for API authentication.
  * </p>
  */
-public class Credentials implements Serializable {
+public class Credentials implements Serializable, Cloneable {
 
     /**
      * The access key ID that identifies the temporary security credentials.
@@ -275,5 +275,19 @@ public class Credentials implements Serializable {
         return true;
     }
     
+    @Override
+    public Credentials clone() {
+        try {
+            return (Credentials) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

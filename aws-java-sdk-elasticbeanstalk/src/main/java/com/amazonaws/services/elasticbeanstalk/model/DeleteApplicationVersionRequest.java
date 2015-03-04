@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplicationVersion(DeleteApplicationVersionRequest)
  */
-public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application to delete releases from.
@@ -291,5 +291,11 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DeleteApplicationVersionRequest clone() {
+        
+            return (DeleteApplicationVersionRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * UpdateVTLDeviceTypeOutput
  * </p>
  */
-public class UpdateVTLDeviceTypeResult implements Serializable {
+public class UpdateVTLDeviceTypeResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the medium changer you have
@@ -119,5 +119,19 @@ public class UpdateVTLDeviceTypeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateVTLDeviceTypeResult clone() {
+        try {
+            return (UpdateVTLDeviceTypeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

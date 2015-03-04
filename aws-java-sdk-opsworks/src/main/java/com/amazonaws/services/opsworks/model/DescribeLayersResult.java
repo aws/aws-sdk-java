@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeLayers</code> request.
  * </p>
  */
-public class DescribeLayersResult implements Serializable {
+public class DescribeLayersResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>Layer</code> objects that describe the layers.
@@ -135,5 +135,19 @@ public class DescribeLayersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLayersResult clone() {
+        try {
+            return (DescribeLayersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

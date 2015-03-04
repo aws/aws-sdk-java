@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#deleteVirtualInterface(DeleteVirtualInterfaceRequest)
  */
-public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
@@ -112,5 +112,11 @@ public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteVirtualInterfaceRequest clone() {
+        
+            return (DeleteVirtualInterfaceRequest) super.clone();
+    }
+
 }
     

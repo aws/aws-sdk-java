@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#updateDomainContact(UpdateDomainContactRequest)
  */
-public class UpdateDomainContactRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateDomainContactRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String <p>Default: None <p>Constraints:
@@ -423,5 +423,11 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public UpdateDomainContactRequest clone() {
+        
+            return (UpdateDomainContactRequest) super.clone();
+    }
+
 }
     

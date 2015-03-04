@@ -49,7 +49,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVpnConnectionRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest)
  */
-public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVpnConnectionRequest> {
+public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateVpnConnectionRequest> {
 
     /**
      * The type of VPN connection (<code>ipsec.1</code>).
@@ -301,5 +301,11 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public CreateVpnConnectionRequest clone() {
+        
+            return (CreateVpnConnectionRequest) super.clone();
+    }
+
 }
     

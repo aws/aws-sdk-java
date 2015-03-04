@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest)
  */
-public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the topic for which you wish to confirm a subscription.
@@ -271,5 +271,11 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public ConfirmSubscriptionRequest clone() {
+        
+            return (ConfirmSubscriptionRequest) super.clone();
+    }
+
 }
     

@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest)
  */
-public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An array of layer IDs.
@@ -151,5 +151,11 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeLoadBasedAutoScalingRequest clone() {
+        
+            return (DescribeLoadBasedAutoScalingRequest) super.clone();
+    }
+
 }
     

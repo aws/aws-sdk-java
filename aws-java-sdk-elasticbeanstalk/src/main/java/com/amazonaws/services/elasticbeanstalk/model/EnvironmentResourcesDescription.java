@@ -22,7 +22,7 @@ import java.io.Serializable;
  * not live data.
  * </p>
  */
-public class EnvironmentResourcesDescription implements Serializable {
+public class EnvironmentResourcesDescription implements Serializable, Cloneable {
 
     /**
      * Describes the LoadBalancer.
@@ -101,5 +101,19 @@ public class EnvironmentResourcesDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public EnvironmentResourcesDescription clone() {
+        try {
+            return (EnvironmentResourcesDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

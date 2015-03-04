@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The configuration settings of a workflow type.
  * </p>
  */
-public class WorkflowTypeConfiguration implements Serializable {
+public class WorkflowTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <i>Optional.</i> The default maximum duration, specified when
@@ -716,5 +716,19 @@ public class WorkflowTypeConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowTypeConfiguration clone() {
+        try {
+            return (WorkflowTypeConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -30,7 +30,7 @@ import java.io.Serializable;
  * another <i>KeySchemaElement</i> for the range attribute.
  * </p>
  */
-public class KeySchemaElement implements Serializable {
+public class KeySchemaElement implements Serializable, Cloneable {
 
     /**
      * The name of a key attribute.
@@ -260,5 +260,19 @@ public class KeySchemaElement implements Serializable {
         return true;
     }
     
+    @Override
+    public KeySchemaElement clone() {
+        try {
+            return (KeySchemaElement) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeDBParameterGroups action.
  * </p>
  */
-public class DescribeDBParameterGroupsResult implements Serializable {
+public class DescribeDBParameterGroupsResult implements Serializable, Cloneable {
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -192,5 +192,19 @@ public class DescribeDBParameterGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDBParameterGroupsResult clone() {
+        try {
+            return (DescribeDBParameterGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

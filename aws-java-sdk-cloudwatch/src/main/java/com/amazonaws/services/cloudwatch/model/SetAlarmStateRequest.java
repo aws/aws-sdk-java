@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#setAlarmState(SetAlarmStateRequest)
  */
-public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The descriptive name for the alarm. This name must be unique within
@@ -344,5 +344,11 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public SetAlarmStateRequest clone() {
+        
+            return (SetAlarmStateRequest) super.clone();
+    }
+
 }
     

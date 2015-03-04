@@ -22,7 +22,7 @@ import java.io.Serializable;
  * successful <code>GetSendQuota</code> request.
  * </p>
  */
-public class GetSendQuotaResult implements Serializable {
+public class GetSendQuotaResult implements Serializable, Cloneable {
 
     /**
      * The maximum number of emails the user is allowed to send in a 24-hour
@@ -192,5 +192,19 @@ public class GetSendQuotaResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetSendQuotaResult clone() {
+        try {
+            return (GetSendQuotaResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

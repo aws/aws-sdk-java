@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#checkDomainAvailability(CheckDomainAvailabilityRequest)
  */
-public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest implements Serializable {
+public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String <p>Default: None <p>Constraints:
@@ -199,5 +199,11 @@ public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public CheckDomainAvailabilityRequest clone() {
+        
+            return (CheckDomainAvailabilityRequest) super.clone();
+    }
+
 }
     

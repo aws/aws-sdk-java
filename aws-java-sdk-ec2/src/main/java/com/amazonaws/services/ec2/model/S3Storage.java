@@ -22,7 +22,7 @@ import java.io.Serializable;
  * store-backed AMI.
  * </p>
  */
-public class S3Storage implements Serializable {
+public class S3Storage implements Serializable, Cloneable {
 
     /**
      * The bucket in which to store the AMI. You can specify a bucket that
@@ -318,5 +318,19 @@ public class S3Storage implements Serializable {
         return true;
     }
     
+    @Override
+    public S3Storage clone() {
+        try {
+            return (S3Storage) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

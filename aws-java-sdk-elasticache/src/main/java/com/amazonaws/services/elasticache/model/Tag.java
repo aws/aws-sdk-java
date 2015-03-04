@@ -23,7 +23,7 @@ import java.io.Serializable;
  * null Value is permitted.
  * </p>
  */
-public class Tag implements Serializable {
+public class Tag implements Serializable, Cloneable {
 
     /**
      * The key for the tag.
@@ -31,7 +31,7 @@ public class Tag implements Serializable {
     private String key;
 
     /**
-     * The tag's value. May be null.
+     * The tag's value. May not be null.
      */
     private String value;
 
@@ -69,29 +69,29 @@ public class Tag implements Serializable {
     }
 
     /**
-     * The tag's value. May be null.
+     * The tag's value. May not be null.
      *
-     * @return The tag's value. May be null.
+     * @return The tag's value. May not be null.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * The tag's value. May be null.
+     * The tag's value. May not be null.
      *
-     * @param value The tag's value. May be null.
+     * @param value The tag's value. May not be null.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * The tag's value. May be null.
+     * The tag's value. May not be null.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value The tag's value. May be null.
+     * @param value The tag's value. May not be null.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -144,5 +144,19 @@ public class Tag implements Serializable {
         return true;
     }
     
+    @Override
+    public Tag clone() {
+        try {
+            return (Tag) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

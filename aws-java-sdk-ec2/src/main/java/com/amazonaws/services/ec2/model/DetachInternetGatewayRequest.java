@@ -30,7 +30,7 @@ import com.amazonaws.services.ec2.model.transform.DetachInternetGatewayRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachInternetGateway(DetachInternetGatewayRequest)
  */
-public class DetachInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachInternetGatewayRequest> {
+public class DetachInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DetachInternetGatewayRequest> {
 
     /**
      * The ID of the Internet gateway.
@@ -163,5 +163,11 @@ public class DetachInternetGatewayRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DetachInternetGatewayRequest clone() {
+        
+            return (DetachInternetGatewayRequest) super.clone();
+    }
+
 }
     

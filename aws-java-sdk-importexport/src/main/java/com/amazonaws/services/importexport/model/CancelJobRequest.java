@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#cancelJob(CancelJobRequest)
  */
-public class CancelJobRequest extends AmazonWebServiceRequest implements Serializable {
+public class CancelJobRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier which refers to a particular job.
@@ -148,5 +148,11 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CancelJobRequest clone() {
+        
+            return (CancelJobRequest) super.clone();
+    }
+
 }
     

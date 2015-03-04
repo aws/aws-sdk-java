@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListPolicyVersions request.
  * </p>
  */
-public class ListPolicyVersionsResult implements Serializable {
+public class ListPolicyVersionsResult implements Serializable, Cloneable {
 
     /**
      * A list of policy versions. <p>For more information about managed
@@ -312,5 +312,19 @@ public class ListPolicyVersionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListPolicyVersionsResult clone() {
+        try {
+            return (ListPolicyVersionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

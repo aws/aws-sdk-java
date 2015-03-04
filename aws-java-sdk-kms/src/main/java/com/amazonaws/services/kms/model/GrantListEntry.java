@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains information about each entry in the grant list.
  * </p>
  */
-public class GrantListEntry implements Serializable {
+public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * Unique grant identifier.
@@ -467,5 +467,19 @@ public class GrantListEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public GrantListEntry clone() {
+        try {
+            return (GrantListEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

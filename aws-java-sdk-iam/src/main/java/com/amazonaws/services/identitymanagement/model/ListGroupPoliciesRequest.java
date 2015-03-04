@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroupPolicies(ListGroupPoliciesRequest)
  */
-public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group to list policies for.
@@ -313,5 +313,11 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListGroupPoliciesRequest clone() {
+        
+            return (ListGroupPoliciesRequest) super.clone();
+    }
+
 }
     

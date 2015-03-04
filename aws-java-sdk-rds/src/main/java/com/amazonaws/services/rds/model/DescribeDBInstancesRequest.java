@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBInstances(DescribeDBInstancesRequest)
  */
-public class DescribeDBInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDBInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The user-supplied instance identifier. If this parameter is specified,
@@ -357,5 +357,11 @@ public class DescribeDBInstancesRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeDBInstancesRequest clone() {
+        
+            return (DescribeDBInstancesRequest) super.clone();
+    }
+
 }
     

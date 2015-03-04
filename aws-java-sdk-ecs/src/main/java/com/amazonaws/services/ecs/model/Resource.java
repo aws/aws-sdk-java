@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the resources available for a container instance.
  * </p>
  */
-public class Resource implements Serializable {
+public class Resource implements Serializable, Cloneable {
 
     /**
      * The name of the resource, such as <code>CPU</code>,
@@ -389,5 +389,19 @@ public class Resource implements Serializable {
         return true;
     }
     
+    @Override
+    public Resource clone() {
+        try {
+            return (Resource) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

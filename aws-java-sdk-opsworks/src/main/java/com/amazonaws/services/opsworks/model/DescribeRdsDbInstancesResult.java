@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class DescribeRdsDbInstancesResult implements Serializable {
+public class DescribeRdsDbInstancesResult implements Serializable, Cloneable {
 
     /**
      * An a array of <code>RdsDbInstance</code> objects that describe the
@@ -145,5 +145,19 @@ public class DescribeRdsDbInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeRdsDbInstancesResult clone() {
+        try {
+            return (DescribeRdsDbInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

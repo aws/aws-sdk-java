@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The result of a <code>DescribeSuggesters</code> request.
  * </p>
  */
-public class DescribeSuggestersResult implements Serializable {
+public class DescribeSuggestersResult implements Serializable, Cloneable {
 
     /**
      * The suggesters configured for the domain specified in the request.
@@ -135,5 +135,19 @@ public class DescribeSuggestersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSuggestersResult clone() {
+        try {
+            return (DescribeSuggestersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

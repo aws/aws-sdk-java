@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest)
  */
-public class ListVolumeRecoveryPointsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListVolumeRecoveryPointsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -140,5 +140,11 @@ public class ListVolumeRecoveryPointsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ListVolumeRecoveryPointsRequest clone() {
+        
+            return (ListVolumeRecoveryPointsRequest) super.clone();
+    }
+
 }
     

@@ -67,7 +67,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateActivityType(DeprecateActivityTypeRequest)
  */
-public class DeprecateActivityTypeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeprecateActivityTypeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which the activity type is registered.
@@ -200,5 +200,11 @@ public class DeprecateActivityTypeRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeprecateActivityTypeRequest clone() {
+        
+            return (DeprecateActivityTypeRequest) super.clone();
+    }
+
 }
     

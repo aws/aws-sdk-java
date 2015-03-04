@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Includes tokenization dictionary for Japanese.
  * </p>
  */
-public class AnalysisOptions implements Serializable {
+public class AnalysisOptions implements Serializable, Cloneable {
 
     /**
      * A JSON object that defines synonym groups and aliases. A synonym group
@@ -541,5 +541,19 @@ public class AnalysisOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public AnalysisOptions clone() {
+        try {
+            return (AnalysisOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

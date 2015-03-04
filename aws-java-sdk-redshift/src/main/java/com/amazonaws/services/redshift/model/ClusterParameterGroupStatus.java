@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the status of a parameter group.
  * </p>
  */
-public class ClusterParameterGroupStatus implements Serializable {
+public class ClusterParameterGroupStatus implements Serializable, Cloneable {
 
     /**
      * The name of the cluster parameter group.
@@ -142,5 +142,19 @@ public class ClusterParameterGroupStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterParameterGroupStatus clone() {
+        try {
+            return (ClusterParameterGroupStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

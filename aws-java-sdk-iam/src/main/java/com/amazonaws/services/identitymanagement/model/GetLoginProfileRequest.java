@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(GetLoginProfileRequest)
  */
-public class GetLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetLoginProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user whose login profile you want to retrieve.
@@ -141,5 +141,11 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public GetLoginProfileRequest clone() {
+        
+            return (GetLoginProfileRequest) super.clone();
+    }
+
 }
     

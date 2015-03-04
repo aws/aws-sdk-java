@@ -22,7 +22,7 @@ import java.io.Serializable;
  * be requested.
  * </p>
  */
-public class Location implements Serializable {
+public class Location implements Serializable, Cloneable {
 
     /**
      * The code used to indicate the AWS Direct Connect location.
@@ -150,5 +150,19 @@ public class Location implements Serializable {
         return true;
     }
     
+    @Override
+    public Location clone() {
+        try {
+            return (Location) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

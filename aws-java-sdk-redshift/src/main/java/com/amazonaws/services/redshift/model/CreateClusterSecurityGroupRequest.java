@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createClusterSecurityGroup(CreateClusterSecurityGroupRequest)
  */
-public class CreateClusterSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateClusterSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name for the security group. Amazon Redshift stores the value as a
@@ -266,5 +266,11 @@ public class CreateClusterSecurityGroupRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public CreateClusterSecurityGroupRequest clone() {
+        
+            return (CreateClusterSecurityGroupRequest) super.clone();
+    }
+
 }
     

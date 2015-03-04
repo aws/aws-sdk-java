@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#deleteApplication(DeleteApplicationRequest)
  */
-public class DeleteApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing AWS CodeDeploy application within the AWS user
@@ -124,5 +124,11 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteApplicationRequest clone() {
+        
+            return (DeleteApplicationRequest) super.clone();
+    }
+
 }
     

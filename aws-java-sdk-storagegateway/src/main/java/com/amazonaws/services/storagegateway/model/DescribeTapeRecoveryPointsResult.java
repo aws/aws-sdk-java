@@ -21,7 +21,7 @@ import java.io.Serializable;
  * DescribeTapeRecoveryPointsOutput
  * </p>
  */
-public class DescribeTapeRecoveryPointsResult implements Serializable {
+public class DescribeTapeRecoveryPointsResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -294,5 +294,19 @@ public class DescribeTapeRecoveryPointsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTapeRecoveryPointsResult clone() {
+        try {
+            return (DescribeTapeRecoveryPointsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

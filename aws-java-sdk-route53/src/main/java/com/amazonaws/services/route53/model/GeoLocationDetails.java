@@ -22,7 +22,7 @@ import java.io.Serializable;
  * <code>GeoLocation</code> .
  * </p>
  */
-public class GeoLocationDetails implements Serializable {
+public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * The code for a continent geo location. Note: only continent locations
@@ -446,5 +446,19 @@ public class GeoLocationDetails implements Serializable {
         return true;
     }
     
+    @Override
+    public GeoLocationDetails clone() {
+        try {
+            return (GeoLocationDetails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

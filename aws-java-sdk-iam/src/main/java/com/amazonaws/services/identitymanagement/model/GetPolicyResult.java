@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful GetPolicy request.
  * </p>
  */
-public class GetPolicyResult implements Serializable {
+public class GetPolicyResult implements Serializable, Cloneable {
 
     /**
      * Information about the policy.
@@ -100,5 +100,19 @@ public class GetPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetPolicyResult clone() {
+        try {
+            return (GetPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

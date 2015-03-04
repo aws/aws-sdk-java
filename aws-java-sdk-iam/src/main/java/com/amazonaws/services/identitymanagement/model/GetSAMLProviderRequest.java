@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getSAMLProvider(GetSAMLProviderRequest)
  */
-public class GetSAMLProviderRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetSAMLProviderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the SAML provider to get information
@@ -128,5 +128,11 @@ public class GetSAMLProviderRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public GetSAMLProviderRequest clone() {
+        
+            return (GetSAMLProviderRequest) super.clone();
+    }
+
 }
     

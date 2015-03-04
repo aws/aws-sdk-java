@@ -22,7 +22,7 @@ import java.io.Serializable;
  * this object.
  * </p>
  */
-public class Selector implements Serializable {
+public class Selector implements Serializable, Cloneable {
 
     /**
      * The name of the field that the operator will be applied to. The field
@@ -187,5 +187,19 @@ public class Selector implements Serializable {
         return true;
     }
     
+    @Override
+    public Selector clone() {
+        try {
+            return (Selector) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

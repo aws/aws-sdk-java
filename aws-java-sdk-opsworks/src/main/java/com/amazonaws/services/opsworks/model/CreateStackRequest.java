@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createStack(CreateStackRequest)
  */
-public class CreateStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack name.
@@ -1778,5 +1778,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateStackRequest clone() {
+        
+            return (CreateStackRequest) super.clone();
+    }
+
 }
     

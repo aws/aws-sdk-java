@@ -21,7 +21,7 @@ import java.io.Serializable;
  * An entity describing an executable that runs on a cluster.
  * </p>
  */
-public class Command implements Serializable {
+public class Command implements Serializable, Cloneable {
 
     /**
      * The name of the command.
@@ -219,5 +219,19 @@ public class Command implements Serializable {
         return true;
     }
     
+    @Override
+    public Command clone() {
+        try {
+            return (Command) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

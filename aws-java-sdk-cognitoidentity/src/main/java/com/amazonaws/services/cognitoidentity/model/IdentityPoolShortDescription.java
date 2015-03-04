@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A description of the identity pool.
  * </p>
  */
-public class IdentityPoolShortDescription implements Serializable {
+public class IdentityPoolShortDescription implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -174,5 +174,19 @@ public class IdentityPoolShortDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public IdentityPoolShortDescription clone() {
+        try {
+            return (IdentityPoolShortDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

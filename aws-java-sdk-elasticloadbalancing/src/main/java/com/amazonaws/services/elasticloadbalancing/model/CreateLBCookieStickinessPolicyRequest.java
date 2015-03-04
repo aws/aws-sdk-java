@@ -49,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest)
  */
-public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer.
@@ -253,5 +253,11 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public CreateLBCookieStickinessPolicyRequest clone() {
+        
+            return (CreateLBCookieStickinessPolicyRequest) super.clone();
+    }
+
 }
     

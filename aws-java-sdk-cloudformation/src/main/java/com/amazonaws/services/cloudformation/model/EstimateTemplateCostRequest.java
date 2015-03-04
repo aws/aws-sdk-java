@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#estimateTemplateCost(EstimateTemplateCostRequest)
  */
-public class EstimateTemplateCostRequest extends AmazonWebServiceRequest implements Serializable {
+public class EstimateTemplateCostRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Structure containing the template body with a minimum length of 1 byte
@@ -336,5 +336,11 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public EstimateTemplateCostRequest clone() {
+        
+            return (EstimateTemplateCostRequest) super.clone();
+    }
+
 }
     

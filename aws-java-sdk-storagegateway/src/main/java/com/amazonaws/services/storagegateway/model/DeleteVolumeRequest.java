@@ -44,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteVolume(DeleteVolumeRequest)
  */
-public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. Use the
@@ -142,5 +142,11 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeleteVolumeRequest clone() {
+        
+            return (DeleteVolumeRequest) super.clone();
+    }
+
 }
     

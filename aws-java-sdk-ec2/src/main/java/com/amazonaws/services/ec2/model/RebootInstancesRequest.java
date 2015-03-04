@@ -40,7 +40,7 @@ import com.amazonaws.services.ec2.model.transform.RebootInstancesRequestMarshall
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest)
  */
-public class RebootInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RebootInstancesRequest> {
+public class RebootInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RebootInstancesRequest> {
 
     /**
      * One or more instance IDs.
@@ -183,5 +183,11 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public RebootInstancesRequest clone() {
+        
+            return (RebootInstancesRequest) super.clone();
+    }
+
 }
     

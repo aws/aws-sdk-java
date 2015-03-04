@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Returned in response to a successful GetOpenIdToken request.
  * </p>
  */
-public class GetOpenIdTokenResult implements Serializable {
+public class GetOpenIdTokenResult implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID. Note that the
@@ -165,5 +165,19 @@ public class GetOpenIdTokenResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetOpenIdTokenResult clone() {
+        try {
+            return (GetOpenIdTokenResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

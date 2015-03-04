@@ -47,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#createTable(CreateTableRequest)
  */
-public class CreateTableRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An array of attributes that describe the key schema for the table and
@@ -1207,5 +1207,11 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateTableRequest clone() {
+        
+            return (CreateTableRequest) super.clone();
+    }
+
 }
     

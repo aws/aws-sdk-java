@@ -22,7 +22,7 @@ import java.io.Serializable;
  * the status of the newly-configured analysis scheme.
  * </p>
  */
-public class DefineAnalysisSchemeResult implements Serializable {
+public class DefineAnalysisSchemeResult implements Serializable, Cloneable {
 
     /**
      * The status and configuration of an <code>AnalysisScheme</code>.
@@ -101,5 +101,19 @@ public class DefineAnalysisSchemeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DefineAnalysisSchemeResult clone() {
+        try {
+            return (DefineAnalysisSchemeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

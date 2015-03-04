@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a connection endpoint.
  * </p>
  */
-public class Endpoint implements Serializable {
+public class Endpoint implements Serializable, Cloneable {
 
     /**
      * The DNS address of the Cluster.
@@ -142,5 +142,19 @@ public class Endpoint implements Serializable {
         return true;
     }
     
+    @Override
+    public Endpoint clone() {
+        try {
+            return (Endpoint) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

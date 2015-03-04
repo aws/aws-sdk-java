@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest)
  */
-public class AllocatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable {
+public class AllocatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The connection ID on which the public virtual interface is
@@ -221,5 +221,11 @@ public class AllocatePublicVirtualInterfaceRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public AllocatePublicVirtualInterfaceRequest clone() {
+        
+            return (AllocatePublicVirtualInterfaceRequest) super.clone();
+    }
+
 }
     

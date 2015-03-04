@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest)
  */
-public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The cache cluster identifier for the cluster to be deleted. This
@@ -195,5 +195,11 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteCacheClusterRequest clone() {
+        
+            return (DeleteCacheClusterRequest) super.clone();
+    }
+
 }
     

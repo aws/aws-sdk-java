@@ -23,7 +23,7 @@ import java.io.Serializable;
  * applied.
  * </p>
  */
-public class PendingModifiedValues implements Serializable {
+public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * The pending or in-progress change of the master user password for the
@@ -382,5 +382,19 @@ public class PendingModifiedValues implements Serializable {
         return true;
     }
     
+    @Override
+    public PendingModifiedValues clone() {
+        try {
+            return (PendingModifiedValues) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

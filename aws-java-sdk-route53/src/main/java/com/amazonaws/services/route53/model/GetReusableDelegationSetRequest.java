@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getReusableDelegationSet(GetReusableDelegationSetRequest)
  */
-public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the reusable delegation set for which you want to get a list
@@ -126,5 +126,11 @@ public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public GetReusableDelegationSetRequest clone() {
+        
+            return (GetReusableDelegationSetRequest) super.clone();
+    }
+
 }
     

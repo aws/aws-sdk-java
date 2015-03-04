@@ -65,7 +65,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#signalWorkflowExecution(SignalWorkflowExecutionRequest)
  */
-public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable {
+public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain containing the workflow execution to signal.
@@ -386,5 +386,11 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public SignalWorkflowExecutionRequest clone() {
+        
+            return (SignalWorkflowExecutionRequest) super.clone();
+    }
+
 }
     

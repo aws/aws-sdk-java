@@ -22,7 +22,7 @@ import java.io.Serializable;
  * specified value.
  * </p>
  */
-public class Operator implements Serializable {
+public class Operator implements Serializable, Cloneable {
 
     /**
      * The logical operation to be performed: equal (<code>EQ</code>), equal
@@ -450,5 +450,19 @@ public class Operator implements Serializable {
         return true;
     }
     
+    @Override
+    public Operator clone() {
+        try {
+            return (Operator) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

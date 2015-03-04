@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHealthCheckCount(GetHealthCheckCountRequest)
  */
-public class GetHealthCheckCountRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetHealthCheckCountRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -65,5 +65,11 @@ public class GetHealthCheckCountRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public GetHealthCheckCountRequest clone() {
+        
+            return (GetHealthCheckCountRequest) super.clone();
+    }
+
 }
     

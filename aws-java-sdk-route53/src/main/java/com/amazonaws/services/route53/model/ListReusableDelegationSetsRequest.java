@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listReusableDelegationSets(ListReusableDelegationSetsRequest)
  */
-public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * If the request returned more than one page of results, submit another
@@ -200,5 +200,11 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public ListReusableDelegationSetsRequest clone() {
+        
+            return (ListReusableDelegationSetsRequest) super.clone();
+    }
+
 }
     

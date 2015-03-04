@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteKeyPairRequestMarshaller
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteKeyPair(DeleteKeyPairRequest)
  */
-public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteKeyPairRequest> {
+public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteKeyPairRequest> {
 
     /**
      * The name of the key pair.
@@ -137,5 +137,11 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DeleteKeyPairRequest clone() {
+        
+            return (DeleteKeyPairRequest) super.clone();
+    }
+
 }
     

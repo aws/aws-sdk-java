@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#deleteMetricFilter(DeleteMetricFilterRequest)
  */
-public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -191,5 +191,11 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteMetricFilterRequest clone() {
+        
+            return (DeleteMetricFilterRequest) super.clone();
+    }
+
 }
     

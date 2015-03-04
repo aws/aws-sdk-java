@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains a paginated collection of DomainInfo structures.
  * </p>
  */
-public class DomainInfos implements Serializable {
+public class DomainInfos implements Serializable, Cloneable {
 
     /**
      * A list of DomainInfo structures.
@@ -220,5 +220,19 @@ public class DomainInfos implements Serializable {
         return true;
     }
     
+    @Override
+    public DomainInfos clone() {
+        try {
+            return (DomainInfos) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

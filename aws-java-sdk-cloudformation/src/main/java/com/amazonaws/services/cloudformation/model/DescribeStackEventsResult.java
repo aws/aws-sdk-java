@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for a DescribeStackEvents action.
  * </p>
  */
-public class DescribeStackEventsResult implements Serializable {
+public class DescribeStackEventsResult implements Serializable, Cloneable {
 
     /**
      * A list of <code>StackEvents</code> structures.
@@ -196,5 +196,19 @@ public class DescribeStackEventsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeStackEventsResult clone() {
+        try {
+            return (DescribeStackEventsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

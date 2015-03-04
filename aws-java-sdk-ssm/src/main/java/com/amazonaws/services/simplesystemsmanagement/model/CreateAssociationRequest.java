@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#createAssociation(CreateAssociationRequest)
  */
-public class CreateAssociationRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateAssociationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -190,5 +190,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CreateAssociationRequest clone() {
+        
+            return (CreateAssociationRequest) super.clone();
+    }
+
 }
     

@@ -22,16 +22,20 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cognitosync.AmazonCognitoSync#listRecords(ListRecordsRequest) ListRecords operation}.
  * <p>
  * Gets paginated records, optionally changed after a particular sync
- * count for a dataset and identity. The credentials used to make this
- * API call need to have access to the identity data. With Amazon Cognito
- * Sync, each identity has access only to its own data. You should use
- * Amazon Cognito Identity service to retrieve the credentials necessary
- * to make this API call.
+ * count for a dataset and identity. With Amazon Cognito Sync, each
+ * identity has access only to its own data. Thus, the credentials used
+ * to make this API call need to have access to the identity data.
+ * </p>
+ * <p>
+ * <code>ListRecords</code> can be called with temporary user
+ * credentials provided by Cognito Identity or with developer
+ * credentials. You should use Cognito Identity credentials to make this
+ * API call.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#listRecords(ListRecordsRequest)
  */
-public class ListRecordsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListRecordsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -477,5 +481,11 @@ public class ListRecordsRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListRecordsRequest clone() {
+        
+            return (ListRecordsRequest) super.clone();
+    }
+
 }
     

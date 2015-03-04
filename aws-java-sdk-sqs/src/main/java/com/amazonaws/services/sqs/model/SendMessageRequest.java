@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#sendMessage(SendMessageRequest)
  */
-public class SendMessageRequest extends AmazonWebServiceRequest implements Serializable {
+public class SendMessageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -349,5 +349,11 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public SendMessageRequest clone() {
+        
+            return (SendMessageRequest) super.clone();
+    }
+
 }
     

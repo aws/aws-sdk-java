@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#validatePipelineDefinition(ValidatePipelineDefinitionRequest)
  */
-public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
+public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifies the pipeline whose definition is to be validated.
@@ -362,5 +362,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public ValidatePipelineDefinitionRequest clone() {
+        
+            return (ValidatePipelineDefinitionRequest) super.clone();
+    }
+
 }
     

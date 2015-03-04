@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeCommands</code> request.
  * </p>
  */
-public class DescribeCommandsResult implements Serializable {
+public class DescribeCommandsResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>Command</code> objects that describe each of the
@@ -144,5 +144,19 @@ public class DescribeCommandsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeCommandsResult clone() {
+        try {
+            return (DescribeCommandsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

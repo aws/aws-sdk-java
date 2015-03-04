@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#deleteStack(DeleteStackRequest)
  */
-public class DeleteStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or the unique identifier associated with the stack.
@@ -107,5 +107,11 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteStackRequest clone() {
+        
+            return (DeleteStackRequest) super.clone();
+    }
+
 }
     

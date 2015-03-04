@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest)
  */
-public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
@@ -179,5 +179,11 @@ public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceR
         return true;
     }
     
+    @Override
+    public ListEndpointsByPlatformApplicationRequest clone() {
+        
+            return (ListEndpointsByPlatformApplicationRequest) super.clone();
+    }
+
 }
     

@@ -53,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesListings(DescribeReservedInstancesListingsRequest)
  */
-public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more Reserved Instance IDs.
@@ -314,5 +314,11 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public DescribeReservedInstancesListingsRequest clone() {
+        
+            return (DescribeReservedInstancesListingsRequest) super.clone();
+    }
+
 }
     

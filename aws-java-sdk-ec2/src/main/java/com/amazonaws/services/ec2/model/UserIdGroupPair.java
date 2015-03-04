@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a security group and AWS account ID pair for EC2-Classic.
  * </p>
  */
-public class UserIdGroupPair implements Serializable {
+public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * The ID of an AWS account.
@@ -184,5 +184,19 @@ public class UserIdGroupPair implements Serializable {
         return true;
     }
     
+    @Override
+    public UserIdGroupPair clone() {
+        try {
+            return (UserIdGroupPair) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

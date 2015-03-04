@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#pollForTask(PollForTaskRequest)
  */
-public class PollForTaskRequest extends AmazonWebServiceRequest implements Serializable {
+public class PollForTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Indicates the type of task the task runner is configured to accept and
@@ -328,5 +328,11 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public PollForTaskRequest clone() {
+        
+            return (PollForTaskRequest) super.clone();
+    }
+
 }
     

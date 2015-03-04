@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#getItem(GetItemRequest)
  */
-public class GetItemRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetItemRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the table containing the requested item.
@@ -1095,5 +1095,11 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public GetItemRequest clone() {
+        
+            return (GetItemRequest) super.clone();
+    }
+
 }
     

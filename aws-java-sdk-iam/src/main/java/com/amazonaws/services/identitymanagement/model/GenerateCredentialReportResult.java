@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GenerateCredentialReportResult implements Serializable {
+public class GenerateCredentialReportResult implements Serializable, Cloneable {
 
     /**
      * Information about the state of the credential report.
@@ -195,5 +195,19 @@ public class GenerateCredentialReportResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GenerateCredentialReportResult clone() {
+        try {
+            return (GenerateCredentialReportResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

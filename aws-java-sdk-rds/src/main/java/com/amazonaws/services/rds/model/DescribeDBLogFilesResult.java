@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The response from a call to DescribeDBLogFiles.
  * </p>
  */
-public class DescribeDBLogFilesResult implements Serializable {
+public class DescribeDBLogFilesResult implements Serializable, Cloneable {
 
     /**
      * The DB log files returned.
@@ -184,5 +184,19 @@ public class DescribeDBLogFilesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDBLogFilesResult clone() {
+        try {
+            return (DescribeDBLogFilesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

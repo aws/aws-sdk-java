@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#detachRolePolicy(DetachRolePolicyRequest)
  */
-public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the role to detach the policy
@@ -217,5 +217,11 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DetachRolePolicyRequest clone() {
+        
+            return (DetachRolePolicyRequest) super.clone();
+    }
+
 }
     

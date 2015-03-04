@@ -48,7 +48,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class CompleteWorkflowExecutionDecisionAttributes implements Serializable {
+public class CompleteWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * The result of the workflow execution. The form of the result is
@@ -146,5 +146,19 @@ public class CompleteWorkflowExecutionDecisionAttributes implements Serializable
         return true;
     }
     
+    @Override
+    public CompleteWorkflowExecutionDecisionAttributes clone() {
+        try {
+            return (CompleteWorkflowExecutionDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

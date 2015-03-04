@@ -29,7 +29,7 @@ import java.io.Serializable;
  * response from the origin once for each header value.
  * </p>
  */
-public class Headers implements Serializable {
+public class Headers implements Serializable, Cloneable {
 
     /**
      * The number of different headers that you want CloudFront to forward to
@@ -245,5 +245,19 @@ public class Headers implements Serializable {
         return true;
     }
     
+    @Override
+    public Headers clone() {
+        try {
+            return (Headers) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#unlinkIdentity(UnlinkIdentityRequest)
  */
-public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -292,5 +292,11 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public UnlinkIdentityRequest clone() {
+        
+            return (UnlinkIdentityRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Metadata assigned to the stream, consisting of a key-value pair.
  * </p>
  */
-public class Tag implements Serializable {
+public class Tag implements Serializable, Cloneable {
 
     /**
      * A unique identifier for the tag. Maximum length: 128 characters. Valid
@@ -187,5 +187,19 @@ public class Tag implements Serializable {
         return true;
     }
     
+    @Override
+    public Tag clone() {
+        try {
+            return (Tag) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getGeoLocation(GetGeoLocationRequest)
  */
-public class GetGeoLocationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetGeoLocationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The code for a continent geo location. Note: only continent locations
@@ -312,5 +312,11 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GetGeoLocationRequest clone() {
+        
+            return (GetGeoLocationRequest) super.clone();
+    }
+
 }
     

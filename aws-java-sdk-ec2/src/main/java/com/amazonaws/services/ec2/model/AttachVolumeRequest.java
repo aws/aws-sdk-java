@@ -64,7 +64,7 @@ import com.amazonaws.services.ec2.model.transform.AttachVolumeRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachVolume(AttachVolumeRequest)
  */
-public class AttachVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AttachVolumeRequest> {
+public class AttachVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AttachVolumeRequest> {
 
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be
@@ -276,5 +276,11 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public AttachVolumeRequest clone() {
+        
+            return (AttachVolumeRequest) super.clone();
+    }
+
 }
     

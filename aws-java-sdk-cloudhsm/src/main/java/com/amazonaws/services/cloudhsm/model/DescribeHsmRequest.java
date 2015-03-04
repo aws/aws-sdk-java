@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#describeHsm(DescribeHsmRequest)
  */
-public class DescribeHsmRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeHsmRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the HSM. Either the <i>HsmArn</i> or the
@@ -186,5 +186,11 @@ public class DescribeHsmRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DescribeHsmRequest clone() {
+        
+            return (DescribeHsmRequest) super.clone();
+    }
+
 }
     

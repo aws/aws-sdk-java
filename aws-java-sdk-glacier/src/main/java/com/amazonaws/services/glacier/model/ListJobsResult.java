@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListJobsResult implements Serializable {
+public class ListJobsResult implements Serializable, Cloneable {
 
     /**
      * A list of job objects. Each job object contains metadata describing
@@ -207,5 +207,19 @@ public class ListJobsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListJobsResult clone() {
+        try {
+            return (ListJobsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

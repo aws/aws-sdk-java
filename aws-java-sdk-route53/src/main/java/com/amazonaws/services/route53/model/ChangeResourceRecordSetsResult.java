@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type containing the response for the request.
  * </p>
  */
-public class ChangeResourceRecordSetsResult implements Serializable {
+public class ChangeResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains information about changes made to your
@@ -121,5 +121,19 @@ public class ChangeResourceRecordSetsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ChangeResourceRecordSetsResult clone() {
+        try {
+            return (ChangeResourceRecordSetsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

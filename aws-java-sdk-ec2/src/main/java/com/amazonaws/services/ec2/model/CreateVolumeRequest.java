@@ -50,7 +50,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVolumeRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest)
  */
-public class CreateVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVolumeRequest> {
+public class CreateVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateVolumeRequest> {
 
     /**
      * The size of the volume, in GiBs. <p>Constraints: If the volume type is
@@ -722,5 +722,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CreateVolumeRequest clone() {
+        
+            return (CreateVolumeRequest) super.clone();
+    }
+
 }
     

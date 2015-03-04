@@ -22,7 +22,7 @@ import java.io.Serializable;
  * status of the newly-configured index field.
  * </p>
  */
-public class DefineIndexFieldResult implements Serializable {
+public class DefineIndexFieldResult implements Serializable, Cloneable {
 
     /**
      * The value of an <code>IndexField</code> and its current status.
@@ -101,5 +101,19 @@ public class DefineIndexFieldResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DefineIndexFieldResult clone() {
+        try {
+            return (DefineIndexFieldResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

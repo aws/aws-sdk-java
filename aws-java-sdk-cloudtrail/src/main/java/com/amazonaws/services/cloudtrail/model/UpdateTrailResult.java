@@ -22,7 +22,7 @@ import java.io.Serializable;
  * returns an error.
  * </p>
  */
-public class UpdateTrailResult implements Serializable {
+public class UpdateTrailResult implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the trail.
@@ -392,5 +392,19 @@ public class UpdateTrailResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateTrailResult clone() {
+        try {
+            return (UpdateTrailResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

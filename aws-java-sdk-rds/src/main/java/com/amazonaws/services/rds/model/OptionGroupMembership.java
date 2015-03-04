@@ -22,7 +22,7 @@ import java.io.Serializable;
  * of.
  * </p>
  */
-public class OptionGroupMembership implements Serializable {
+public class OptionGroupMembership implements Serializable, Cloneable {
 
     /**
      * The name of the option group that the instance belongs to.
@@ -150,5 +150,19 @@ public class OptionGroupMembership implements Serializable {
         return true;
     }
     
+    @Override
+    public OptionGroupMembership clone() {
+        try {
+            return (OptionGroupMembership) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

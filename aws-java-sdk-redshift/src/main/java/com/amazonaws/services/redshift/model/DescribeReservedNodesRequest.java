@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeReservedNodes(DescribeReservedNodesRequest)
  */
-public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifier for the node reservation.
@@ -266,5 +266,11 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeReservedNodesRequest clone() {
+        
+            return (DescribeReservedNodesRequest) super.clone();
+    }
+
 }
     

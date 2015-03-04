@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a static route for a VPN connection.
  * </p>
  */
-public class VpnStaticRoute implements Serializable {
+public class VpnStaticRoute implements Serializable, Cloneable {
 
     /**
      * The CIDR block associated with the local subnet of the customer data
@@ -295,5 +295,19 @@ public class VpnStaticRoute implements Serializable {
         return true;
     }
     
+    @Override
+    public VpnStaticRoute clone() {
+        try {
+            return (VpnStaticRoute) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

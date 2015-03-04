@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyVpcAttribute(ModifyVpcAttributeRequest)
  */
-public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the VPC.
@@ -279,5 +279,11 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public ModifyVpcAttributeRequest clone() {
+        
+            return (ModifyVpcAttributeRequest) super.clone();
+    }
+
 }
     

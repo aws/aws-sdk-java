@@ -22,7 +22,7 @@ import java.io.Serializable;
  * parameter.
  * </p>
  */
-public class ParameterNameValue implements Serializable {
+public class ParameterNameValue implements Serializable, Cloneable {
 
     /**
      * The name of the parameter.
@@ -173,5 +173,19 @@ public class ParameterNameValue implements Serializable {
         return true;
     }
     
+    @Override
+    public ParameterNameValue clone() {
+        try {
+            return (ParameterNameValue) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

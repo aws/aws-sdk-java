@@ -47,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putUserPolicy(PutUserPolicyRequest)
  */
-public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user to associate the policy with.
@@ -279,5 +279,11 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public PutUserPolicyRequest clone() {
+        
+            return (PutUserPolicyRequest) super.clone();
+    }
+
 }
     

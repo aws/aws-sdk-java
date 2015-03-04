@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the list of SAML providers for this account.
  * </p>
  */
-public class SAMLProviderListEntry implements Serializable {
+public class SAMLProviderListEntry implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the SAML provider.
@@ -196,5 +196,19 @@ public class SAMLProviderListEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public SAMLProviderListEntry clone() {
+        try {
+            return (SAMLProviderListEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

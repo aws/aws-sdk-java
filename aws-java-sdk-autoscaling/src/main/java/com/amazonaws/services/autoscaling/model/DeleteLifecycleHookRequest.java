@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLifecycleHook(DeleteLifecycleHookRequest)
  */
-public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the lifecycle hook.
@@ -185,5 +185,11 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DeleteLifecycleHookRequest clone() {
+        
+            return (DeleteLifecycleHookRequest) super.clone();
+    }
+
 }
     

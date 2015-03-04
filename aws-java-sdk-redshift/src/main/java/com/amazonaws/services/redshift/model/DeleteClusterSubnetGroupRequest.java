@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest)
  */
-public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cluster subnet group name to be deleted.
@@ -105,5 +105,11 @@ public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DeleteClusterSubnetGroupRequest clone() {
+        
+            return (DeleteClusterSubnetGroupRequest) super.clone();
+    }
+
 }
     

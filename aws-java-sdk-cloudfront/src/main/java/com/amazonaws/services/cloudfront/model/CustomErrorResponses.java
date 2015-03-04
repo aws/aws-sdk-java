@@ -22,7 +22,7 @@ import java.io.Serializable;
  * elements.
  * </p>
  */
-public class CustomErrorResponses implements Serializable {
+public class CustomErrorResponses implements Serializable, Cloneable {
 
     /**
      * The number of custom error responses for this distribution.
@@ -187,5 +187,19 @@ public class CustomErrorResponses implements Serializable {
         return true;
     }
     
+    @Override
+    public CustomErrorResponses clone() {
+        try {
+            return (CustomErrorResponses) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

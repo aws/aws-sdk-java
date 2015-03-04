@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a range of ports.
  * </p>
  */
-public class PortRange implements Serializable {
+public class PortRange implements Serializable, Cloneable {
 
     /**
      * The first port in the range.
@@ -142,5 +142,19 @@ public class PortRange implements Serializable {
         return true;
     }
     
+    @Override
+    public PortRange clone() {
+        try {
+            return (PortRange) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateStack</code> request.
  * </p>
  */
-public class CreateStackResult implements Serializable {
+public class CreateStackResult implements Serializable, Cloneable {
 
     /**
      * The stack ID, which is an opaque string that you use to identify the
@@ -107,5 +107,19 @@ public class CreateStackResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateStackResult clone() {
+        try {
+            return (CreateStackResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

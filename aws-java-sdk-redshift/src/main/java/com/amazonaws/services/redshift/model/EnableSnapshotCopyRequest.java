@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#enableSnapshotCopy(EnableSnapshotCopyRequest)
  */
-public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of the source cluster to copy snapshots from.
@@ -246,5 +246,11 @@ public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public EnableSnapshotCopyRequest clone() {
+        
+            return (EnableSnapshotCopyRequest) super.clone();
+    }
+
 }
     

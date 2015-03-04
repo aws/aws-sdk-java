@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#listPipelines(ListPipelinesRequest)
  */
-public class ListPipelinesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListPipelinesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The starting point for the results to be returned. The first time you
@@ -151,5 +151,11 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public ListPipelinesRequest clone() {
+        
+            return (ListPipelinesRequest) super.clone();
+    }
+
 }
     

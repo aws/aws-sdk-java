@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains information about a virtual MFA device.
  * </p>
  */
-public class VirtualMFADevice implements Serializable {
+public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * The serial number associated with <code>VirtualMFADevice</code>.
@@ -361,5 +361,19 @@ public class VirtualMFADevice implements Serializable {
         return true;
     }
     
+    @Override
+    public VirtualMFADevice clone() {
+        try {
+            return (VirtualMFADevice) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#startLogging(StartLoggingRequest)
  */
-public class StartLoggingRequest extends AmazonWebServiceRequest implements Serializable {
+public class StartLoggingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the trail for which CloudTrail logs AWS API calls.
@@ -106,5 +106,11 @@ public class StartLoggingRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public StartLoggingRequest clone() {
+        
+            return (StartLoggingRequest) super.clone();
+    }
+
 }
     

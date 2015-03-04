@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The UpdateDomainNameservers response includes the following element.
  * </p>
  */
-public class UpdateDomainNameserversResult implements Serializable {
+public class UpdateDomainNameserversResult implements Serializable, Cloneable {
 
     /**
      * Identifier for tracking the progress of the request. To use this ID to
@@ -126,5 +126,19 @@ public class UpdateDomainNameserversResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateDomainNameserversResult clone() {
+        try {
+            return (UpdateDomainNameserversResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

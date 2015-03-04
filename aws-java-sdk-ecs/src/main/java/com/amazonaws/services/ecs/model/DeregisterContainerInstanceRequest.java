@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#deregisterContainerInstance(DeregisterContainerInstanceRequest)
  */
-public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -282,5 +282,11 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DeregisterContainerInstanceRequest clone() {
+        
+            return (DeregisterContainerInstanceRequest) super.clone();
+    }
+
 }
     

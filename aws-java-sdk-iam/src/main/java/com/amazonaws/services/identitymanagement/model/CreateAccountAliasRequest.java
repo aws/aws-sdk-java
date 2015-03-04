@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccountAlias(CreateAccountAliasRequest)
  */
-public class CreateAccountAliasRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateAccountAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The account alias to create.
@@ -141,5 +141,11 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateAccountAliasRequest clone() {
+        
+            return (CreateAccountAliasRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the AttachLoadBalancerToSubnets action.
  * </p>
  */
-public class AttachLoadBalancerToSubnetsResult implements Serializable {
+public class AttachLoadBalancerToSubnetsResult implements Serializable, Cloneable {
 
     /**
      * A list of subnet IDs attached to the load balancer.
@@ -135,5 +135,19 @@ public class AttachLoadBalancerToSubnetsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AttachLoadBalancerToSubnetsResult clone() {
+        try {
+            return (AttachLoadBalancerToSubnetsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

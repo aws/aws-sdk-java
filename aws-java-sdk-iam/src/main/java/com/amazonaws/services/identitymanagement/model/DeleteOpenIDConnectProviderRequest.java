@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest)
  */
-public class DeleteOpenIDConnectProviderRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteOpenIDConnectProviderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to
@@ -140,5 +140,11 @@ public class DeleteOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DeleteOpenIDConnectProviderRequest clone() {
+        
+            return (DeleteOpenIDConnectProviderRequest) super.clone();
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#putKeyPolicy(PutKeyPolicyRequest)
  */
-public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the key. This can be an ARN, an alias, or a
@@ -247,5 +247,11 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public PutKeyPolicyRequest clone() {
+        
+            return (PutKeyPolicyRequest) super.clone();
+    }
+
 }
     

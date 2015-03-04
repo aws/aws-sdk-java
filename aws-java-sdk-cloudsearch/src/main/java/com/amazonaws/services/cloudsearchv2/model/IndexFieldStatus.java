@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The value of an <code>IndexField</code> and its current status.
  * </p>
  */
-public class IndexFieldStatus implements Serializable {
+public class IndexFieldStatus implements Serializable, Cloneable {
 
     /**
      * Configuration information for a field in the index, including its
@@ -156,5 +156,19 @@ public class IndexFieldStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public IndexFieldStatus clone() {
+        try {
+            return (IndexFieldStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -49,7 +49,7 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkAclEntryRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkAclEntry(CreateNetworkAclEntryRequest)
  */
-public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateNetworkAclEntryRequest> {
+public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateNetworkAclEntryRequest> {
 
     /**
      * The ID of the network ACL.
@@ -532,5 +532,11 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public CreateNetworkAclEntryRequest clone() {
+        
+            return (CreateNetworkAclEntryRequest) super.clone();
+    }
+
 }
     

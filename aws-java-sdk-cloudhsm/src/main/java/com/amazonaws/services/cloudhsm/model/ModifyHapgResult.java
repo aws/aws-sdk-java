@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ModifyHapgResult implements Serializable {
+public class ModifyHapgResult implements Serializable, Cloneable {
 
     /**
      * The ARN of the high-availability partition group.
@@ -110,5 +110,19 @@ public class ModifyHapgResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ModifyHapgResult clone() {
+        try {
+            return (ModifyHapgResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

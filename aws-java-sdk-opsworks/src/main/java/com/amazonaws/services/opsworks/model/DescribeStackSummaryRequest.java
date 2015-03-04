@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeStackSummary(DescribeStackSummaryRequest)
  */
-public class DescribeStackSummaryRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeStackSummaryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -115,5 +115,11 @@ public class DescribeStackSummaryRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeStackSummaryRequest clone() {
+        
+            return (DescribeStackSummaryRequest) super.clone();
+    }
+
 }
     

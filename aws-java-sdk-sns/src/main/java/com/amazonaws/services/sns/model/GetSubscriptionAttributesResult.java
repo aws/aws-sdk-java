@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for GetSubscriptionAttributes action.
  * </p>
  */
-public class GetSubscriptionAttributesResult implements Serializable {
+public class GetSubscriptionAttributesResult implements Serializable, Cloneable {
 
     /**
      * A map of the subscription's attributes. Attributes in this map include
@@ -222,5 +222,19 @@ public class GetSubscriptionAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetSubscriptionAttributesResult clone() {
+        try {
+            return (GetSubscriptionAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

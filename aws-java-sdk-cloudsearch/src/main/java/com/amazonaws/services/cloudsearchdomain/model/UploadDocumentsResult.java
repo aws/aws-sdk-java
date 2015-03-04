@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to an <code>UploadDocuments</code> request.
  * </p>
  */
-public class UploadDocumentsResult implements Serializable {
+public class UploadDocumentsResult implements Serializable, Cloneable {
 
     /**
      * The status of an <code>UploadDocumentsRequest</code>.
@@ -270,5 +270,19 @@ public class UploadDocumentsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UploadDocumentsResult clone() {
+        try {
+            return (UploadDocumentsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

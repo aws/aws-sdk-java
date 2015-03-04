@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateReservedInstancesListingResult implements Serializable {
+public class CreateReservedInstancesListingResult implements Serializable, Cloneable {
 
     /**
      * Information about the Reserved Instances listing.
@@ -133,5 +133,19 @@ public class CreateReservedInstancesListingResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateReservedInstancesListingResult clone() {
+        try {
+            return (CreateReservedInstancesListingResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

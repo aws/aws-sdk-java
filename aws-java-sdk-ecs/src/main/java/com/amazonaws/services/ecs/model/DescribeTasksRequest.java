@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#describeTasks(DescribeTasksRequest)
  */
-public class DescribeTasksRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -205,5 +205,11 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DescribeTasksRequest clone() {
+        
+            return (DescribeTasksRequest) super.clone();
+    }
+
 }
     

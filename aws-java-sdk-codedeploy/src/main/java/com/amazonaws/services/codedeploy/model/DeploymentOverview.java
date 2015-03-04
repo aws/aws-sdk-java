@@ -22,7 +22,7 @@ import java.io.Serializable;
  * deployment.
  * </p>
  */
-public class DeploymentOverview implements Serializable {
+public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * The number of instances that are pending in the deployment.
@@ -269,5 +269,19 @@ public class DeploymentOverview implements Serializable {
         return true;
     }
     
+    @Override
+    public DeploymentOverview clone() {
+        try {
+            return (DeploymentOverview) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

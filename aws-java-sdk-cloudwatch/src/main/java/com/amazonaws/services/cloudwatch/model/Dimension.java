@@ -22,7 +22,7 @@ import java.io.Serializable;
  * of a metric using a Name, Value pair.
  * </p>
  */
-public class Dimension implements Serializable {
+public class Dimension implements Serializable, Cloneable {
 
     /**
      * The name of the dimension.
@@ -167,5 +167,19 @@ public class Dimension implements Serializable {
         return true;
     }
     
+    @Override
+    public Dimension clone() {
+        try {
+            return (Dimension) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

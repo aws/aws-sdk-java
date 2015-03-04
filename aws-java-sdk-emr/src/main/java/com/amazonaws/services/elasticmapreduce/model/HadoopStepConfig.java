@@ -23,7 +23,7 @@ import java.io.Serializable;
  * waits for the job to finish or fail.
  * </p>
  */
-public class HadoopStepConfig implements Serializable {
+public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * The path to the JAR file that runs during the step.
@@ -328,5 +328,19 @@ public class HadoopStepConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public HadoopStepConfig clone() {
+        try {
+            return (HadoopStepConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

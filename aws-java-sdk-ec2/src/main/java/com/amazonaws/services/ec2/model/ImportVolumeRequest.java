@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.ImportVolumeRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importVolume(ImportVolumeRequest)
  */
-public class ImportVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ImportVolumeRequest> {
+public class ImportVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportVolumeRequest> {
 
     /**
      * The Availability Zone for the resulting Amazon EBS volume.
@@ -250,5 +250,11 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public ImportVolumeRequest clone() {
+        
+            return (ImportVolumeRequest) super.clone();
+    }
+
 }
     

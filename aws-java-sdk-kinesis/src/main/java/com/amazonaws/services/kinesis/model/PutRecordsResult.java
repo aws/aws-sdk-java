@@ -21,7 +21,7 @@ import java.io.Serializable;
  * <code>PutRecords</code> results.
  * </p>
  */
-public class PutRecordsResult implements Serializable {
+public class PutRecordsResult implements Serializable, Cloneable {
 
     /**
      * The number of unsuccessfully processed records in a
@@ -256,5 +256,19 @@ public class PutRecordsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public PutRecordsResult clone() {
+        try {
+            return (PutRecordsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

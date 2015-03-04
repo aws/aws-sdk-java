@@ -338,14 +338,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRetentionPolicyRequestMarshaller().marshall(putRetentionPolicyRequest);
+                request = new PutRetentionPolicyRequestMarshaller().marshall(super.beforeMarshalling(putRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -395,19 +397,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMetricFiltersRequestMarshaller().marshall(describeMetricFiltersRequest);
+                request = new DescribeMetricFiltersRequestMarshaller().marshall(super.beforeMarshalling(describeMetricFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeMetricFiltersResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeMetricFiltersResultJsonUnmarshaller();
             JsonResponseHandler<DescribeMetricFiltersResult> responseHandler =
                 new JsonResponseHandler<DescribeMetricFiltersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -458,19 +461,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLogStreamsRequestMarshaller().marshall(describeLogStreamsRequest);
+                request = new DescribeLogStreamsRequestMarshaller().marshall(super.beforeMarshalling(describeLogStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeLogStreamsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeLogStreamsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeLogStreamsResult> responseHandler =
                 new JsonResponseHandler<DescribeLogStreamsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -510,14 +514,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLogGroupRequestMarshaller().marshall(deleteLogGroupRequest);
+                request = new DeleteLogGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -568,14 +574,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLogGroupRequestMarshaller().marshall(createLogGroupRequest);
+                request = new CreateLogGroupRequestMarshaller().marshall(super.beforeMarshalling(createLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -617,14 +625,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMetricFilterRequestMarshaller().marshall(putMetricFilterRequest);
+                request = new PutMetricFilterRequestMarshaller().marshall(super.beforeMarshalling(putMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -663,14 +673,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMetricFilterRequestMarshaller().marshall(deleteMetricFilterRequest);
+                request = new DeleteMetricFilterRequestMarshaller().marshall(super.beforeMarshalling(deleteMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -711,19 +723,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestMetricFilterRequestMarshaller().marshall(testMetricFilterRequest);
+                request = new TestMetricFilterRequestMarshaller().marshall(super.beforeMarshalling(testMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<TestMetricFilterResult, JsonUnmarshallerContext> unmarshaller =
                 new TestMetricFilterResultJsonUnmarshaller();
             JsonResponseHandler<TestMetricFilterResult> responseHandler =
                 new JsonResponseHandler<TestMetricFilterResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -790,19 +803,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutLogEventsRequestMarshaller().marshall(putLogEventsRequest);
+                request = new PutLogEventsRequestMarshaller().marshall(super.beforeMarshalling(putLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<PutLogEventsResult, JsonUnmarshallerContext> unmarshaller =
                 new PutLogEventsResultJsonUnmarshaller();
             JsonResponseHandler<PutLogEventsResult> responseHandler =
                 new JsonResponseHandler<PutLogEventsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -844,14 +858,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRetentionPolicyRequestMarshaller().marshall(deleteRetentionPolicyRequest);
+                request = new DeleteRetentionPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -903,19 +919,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetLogEventsRequestMarshaller().marshall(getLogEventsRequest);
+                request = new GetLogEventsRequestMarshaller().marshall(super.beforeMarshalling(getLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetLogEventsResult, JsonUnmarshallerContext> unmarshaller =
                 new GetLogEventsResultJsonUnmarshaller();
             JsonResponseHandler<GetLogEventsResult> responseHandler =
                 new JsonResponseHandler<GetLogEventsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -965,14 +982,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLogStreamRequestMarshaller().marshall(createLogStreamRequest);
+                request = new CreateLogStreamRequestMarshaller().marshall(super.beforeMarshalling(createLogStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1011,14 +1030,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLogStreamRequestMarshaller().marshall(deleteLogStreamRequest);
+                request = new DeleteLogStreamRequestMarshaller().marshall(super.beforeMarshalling(deleteLogStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1066,19 +1087,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLogGroupsRequestMarshaller().marshall(describeLogGroupsRequest);
+                request = new DescribeLogGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeLogGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeLogGroupsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeLogGroupsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeLogGroupsResult> responseHandler =
                 new JsonResponseHandler<DescribeLogGroupsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

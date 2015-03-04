@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getInstanceProfile(GetInstanceProfileRequest)
  */
-public class GetInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the instance profile to get information about.
@@ -125,5 +125,11 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public GetInstanceProfileRequest clone() {
+        
+            return (GetInstanceProfileRequest) super.clone();
+    }
+
 }
     

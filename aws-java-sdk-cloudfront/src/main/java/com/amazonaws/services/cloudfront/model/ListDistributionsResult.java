@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class ListDistributionsResult implements Serializable {
+public class ListDistributionsResult implements Serializable, Cloneable {
 
     /**
      * The DistributionList type.
@@ -100,5 +100,19 @@ public class ListDistributionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListDistributionsResult clone() {
+        try {
+            return (ListDistributionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

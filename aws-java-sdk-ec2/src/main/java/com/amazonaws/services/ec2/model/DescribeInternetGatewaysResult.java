@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeInternetGatewaysResult implements Serializable {
+public class DescribeInternetGatewaysResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more Internet gateways.
@@ -133,5 +133,19 @@ public class DescribeInternetGatewaysResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeInternetGatewaysResult clone() {
+        try {
+            return (DescribeInternetGatewaysResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

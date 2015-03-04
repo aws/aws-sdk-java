@@ -30,7 +30,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteRouteTableRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteRouteTable(DeleteRouteTableRequest)
  */
-public class DeleteRouteTableRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteRouteTableRequest> {
+public class DeleteRouteTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteRouteTableRequest> {
 
     /**
      * The ID of the route table.
@@ -121,5 +121,11 @@ public class DeleteRouteTableRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteRouteTableRequest clone() {
+        
+            return (DeleteRouteTableRequest) super.clone();
+    }
+
 }
     

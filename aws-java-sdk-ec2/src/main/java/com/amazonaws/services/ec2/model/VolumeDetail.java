@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Amazon EBS volume.
  * </p>
  */
-public class VolumeDetail implements Serializable {
+public class VolumeDetail implements Serializable, Cloneable {
 
     /**
      * The size of the volume, in GiB.
@@ -100,5 +100,19 @@ public class VolumeDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeDetail clone() {
+        try {
+            return (VolumeDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

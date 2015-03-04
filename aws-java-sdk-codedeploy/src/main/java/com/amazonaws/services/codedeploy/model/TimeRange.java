@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about a time range.
  * </p>
  */
-public class TimeRange implements Serializable {
+public class TimeRange implements Serializable, Cloneable {
 
     /**
      * The time range's start time. <note>Specify null to leave the time
@@ -156,5 +156,19 @@ public class TimeRange implements Serializable {
         return true;
     }
     
+    @Override
+    public TimeRange clone() {
+        try {
+            return (TimeRange) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

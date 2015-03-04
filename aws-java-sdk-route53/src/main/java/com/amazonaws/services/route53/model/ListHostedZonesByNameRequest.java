@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listHostedZonesByName(ListHostedZonesByNameRequest)
  */
-public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The first name in the lexicographic ordering of domain names that you
@@ -304,5 +304,11 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public ListHostedZonesByNameRequest clone() {
+        
+            return (ListHostedZonesByNameRequest) super.clone();
+    }
+
 }
     

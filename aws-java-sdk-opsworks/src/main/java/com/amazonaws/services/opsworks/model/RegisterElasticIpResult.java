@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>RegisterElasticIp</code> request.
  * </p>
  */
-public class RegisterElasticIpResult implements Serializable {
+public class RegisterElasticIpResult implements Serializable, Cloneable {
 
     /**
      * The Elastic IP address.
@@ -100,5 +100,19 @@ public class RegisterElasticIpResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RegisterElasticIpResult clone() {
+        try {
+            return (RegisterElasticIpResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

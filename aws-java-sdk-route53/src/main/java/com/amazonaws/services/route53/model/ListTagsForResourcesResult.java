@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type containing tags for the specified resources.
  * </p>
  */
-public class ListTagsForResourcesResult implements Serializable {
+public class ListTagsForResourcesResult implements Serializable, Cloneable {
 
     /**
      * A list of <code>ResourceTagSet</code>s containing tags associated with
@@ -144,5 +144,19 @@ public class ListTagsForResourcesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListTagsForResourcesResult clone() {
+        try {
+            return (ListTagsForResourcesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

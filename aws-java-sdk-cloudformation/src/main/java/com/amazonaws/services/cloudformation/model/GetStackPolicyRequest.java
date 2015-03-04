@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#getStackPolicy(GetStackPolicyRequest)
  */
-public class GetStackPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetStackPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or stack ID that is associated with the stack whose policy
@@ -113,5 +113,11 @@ public class GetStackPolicyRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GetStackPolicyRequest clone() {
+        
+            return (GetStackPolicyRequest) super.clone();
+    }
+
 }
     

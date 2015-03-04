@@ -22,7 +22,7 @@ import java.io.Serializable;
  * canceled, the value of <code>Success</code> is <code>true</code> .
  * </p>
  */
-public class CancelJobResult implements Serializable {
+public class CancelJobResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -59,5 +59,19 @@ public class CancelJobResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CancelJobResult clone() {
+        try {
+            return (CancelJobResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

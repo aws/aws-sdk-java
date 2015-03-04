@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteGroupPolicy(DeleteGroupPolicyRequest)
  */
-public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) identifying the group that the
@@ -214,5 +214,11 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteGroupPolicyRequest clone() {
+        
+            return (DeleteGroupPolicyRequest) super.clone();
+    }
+
 }
     

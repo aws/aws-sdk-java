@@ -24,10 +24,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gets usage details (for example, data storage) about a particular
  * identity pool.
  * </p>
+ * <p>
+ * <code>DescribeIdentityPoolUsage</code> can only be called with
+ * developer credentials. You cannot make this API call with the
+ * temporary user credentials provided by Cognito Identity.
+ * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#describeIdentityPoolUsage(DescribeIdentityPoolUsageRequest)
  */
-public class DescribeIdentityPoolUsageRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeIdentityPoolUsageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -136,5 +141,11 @@ public class DescribeIdentityPoolUsageRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeIdentityPoolUsageRequest clone() {
+        
+            return (DescribeIdentityPoolUsageRequest) super.clone();
+    }
+
 }
     

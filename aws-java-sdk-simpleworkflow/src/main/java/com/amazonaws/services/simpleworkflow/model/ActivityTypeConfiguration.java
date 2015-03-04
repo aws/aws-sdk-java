@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Configuration settings registered with the activity type.
  * </p>
  */
-public class ActivityTypeConfiguration implements Serializable {
+public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <i>Optional.</i> The default maximum duration for tasks of an activity
@@ -671,5 +671,19 @@ public class ActivityTypeConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTypeConfiguration clone() {
+        try {
+            return (ActivityTypeConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

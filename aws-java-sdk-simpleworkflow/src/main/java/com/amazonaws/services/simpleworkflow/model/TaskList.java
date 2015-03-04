@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a task list.
  * </p>
  */
-public class TaskList implements Serializable {
+public class TaskList implements Serializable, Cloneable {
 
     /**
      * The name of the task list.
@@ -112,5 +112,19 @@ public class TaskList implements Serializable {
         return true;
     }
     
+    @Override
+    public TaskList clone() {
+        try {
+            return (TaskList) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Output structure for the CreateJob operation.
  * </p>
  */
-public class CreateJobResult implements Serializable {
+public class CreateJobResult implements Serializable, Cloneable {
 
     /**
      * A unique identifier which refers to a particular job.
@@ -425,5 +425,19 @@ public class CreateJobResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateJobResult clone() {
+        try {
+            return (CreateJobResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionCompleted</code> event.
  * </p>
  */
-public class WorkflowExecutionCompletedEventAttributes implements Serializable {
+public class WorkflowExecutionCompletedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The result produced by the workflow execution upon successful
@@ -189,5 +189,19 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionCompletedEventAttributes clone() {
+        try {
+            return (WorkflowExecutionCompletedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

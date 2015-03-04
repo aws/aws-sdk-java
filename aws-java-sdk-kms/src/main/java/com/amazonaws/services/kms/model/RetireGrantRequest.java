@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#retireGrant(RetireGrantRequest)
  */
-public class RetireGrantRequest extends AmazonWebServiceRequest implements Serializable {
+public class RetireGrantRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Token that identifies the grant to be retired.
@@ -119,5 +119,11 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public RetireGrantRequest clone() {
+        
+            return (RetireGrantRequest) super.clone();
+    }
+
 }
     

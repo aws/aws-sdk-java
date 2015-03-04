@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#listAssociations(ListAssociationsRequest)
  */
-public class ListAssociationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAssociationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more filters. Use a filter to return a more specific list of
@@ -282,5 +282,11 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ListAssociationsRequest clone() {
+        
+            return (ListAssociationsRequest) super.clone();
+    }
+
 }
     

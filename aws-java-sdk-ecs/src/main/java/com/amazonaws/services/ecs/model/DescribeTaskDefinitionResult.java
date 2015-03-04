@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeTaskDefinitionResult implements Serializable {
+public class DescribeTaskDefinitionResult implements Serializable, Cloneable {
 
     /**
      * The full task definition description.
@@ -98,5 +98,19 @@ public class DescribeTaskDefinitionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTaskDefinitionResult clone() {
+        try {
+            return (DescribeTaskDefinitionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

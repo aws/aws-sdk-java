@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The relationship of the related resource to the main resource.
  * </p>
  */
-public class Relationship implements Serializable {
+public class Relationship implements Serializable, Cloneable {
 
     /**
      * The resource type of the related resource.
@@ -243,5 +243,19 @@ public class Relationship implements Serializable {
         return true;
     }
     
+    @Override
+    public Relationship clone() {
+        try {
+            return (Relationship) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

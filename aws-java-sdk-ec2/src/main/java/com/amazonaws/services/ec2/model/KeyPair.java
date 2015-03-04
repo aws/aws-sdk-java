@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a key pair.
  * </p>
  */
-public class KeyPair implements Serializable {
+public class KeyPair implements Serializable, Cloneable {
 
     /**
      * The name of the key pair.
@@ -184,5 +184,19 @@ public class KeyPair implements Serializable {
         return true;
     }
     
+    @Override
+    public KeyPair clone() {
+        try {
+            return (KeyPair) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

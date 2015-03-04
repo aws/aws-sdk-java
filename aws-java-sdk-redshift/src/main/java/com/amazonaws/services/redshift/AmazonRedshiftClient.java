@@ -353,14 +353,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RevokeSnapshotAccessRequestMarshaller().marshall(revokeSnapshotAccessRequest);
+                request = new RevokeSnapshotAccessRequestMarshaller().marshall(super.beforeMarshalling(revokeSnapshotAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -403,14 +405,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifySnapshotCopyRetentionPeriodRequestMarshaller().marshall(modifySnapshotCopyRetentionPeriodRequest);
+                request = new ModifySnapshotCopyRetentionPeriodRequestMarshaller().marshall(super.beforeMarshalling(modifySnapshotCopyRetentionPeriodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -455,14 +459,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyClusterSubnetGroupRequestMarshaller().marshall(modifyClusterSubnetGroupRequest);
+                request = new ModifyClusterSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterSubnetGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -513,14 +519,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PurchaseReservedNodeOfferingRequestMarshaller().marshall(purchaseReservedNodeOfferingRequest);
+                request = new PurchaseReservedNodeOfferingRequestMarshaller().marshall(super.beforeMarshalling(purchaseReservedNodeOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ReservedNodeStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -553,12 +561,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteHsmConfigurationRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteHsmConfigurationRequestMarshaller().marshall(deleteHsmConfigurationRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHsmConfigurationRequestMarshaller().marshall(super.beforeMarshalling(deleteHsmConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -595,14 +612,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableLoggingRequestMarshaller().marshall(disableLoggingRequest);
+                request = new DisableLoggingRequestMarshaller().marshall(super.beforeMarshalling(disableLoggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DisableLoggingResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -665,14 +684,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyClusterRequestMarshaller().marshall(modifyClusterRequest);
+                request = new ModifyClusterRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -704,12 +725,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteTagsRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteTagsRequestMarshaller().marshall(deleteTagsRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTagsRequestMarshaller().marshall(super.beforeMarshalling(deleteTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -764,14 +794,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CopyClusterSnapshotRequestMarshaller().marshall(copyClusterSnapshotRequest);
+                request = new CopyClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(copyClusterSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -818,14 +850,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeOrderableClusterOptionsRequestMarshaller().marshall(describeOrderableClusterOptionsRequest);
+                request = new DescribeOrderableClusterOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeOrderableClusterOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeOrderableClusterOptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -868,14 +902,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableLoggingRequestMarshaller().marshall(enableLoggingRequest);
+                request = new EnableLoggingRequestMarshaller().marshall(super.beforeMarshalling(enableLoggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EnableLoggingResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -927,14 +963,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterSubnetGroupRequestMarshaller().marshall(createClusterSubnetGroupRequest);
+                request = new CreateClusterSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(createClusterSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterSubnetGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -967,12 +1005,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteHsmClientCertificateRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteHsmClientCertificateRequestMarshaller().marshall(deleteHsmClientCertificateRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHsmClientCertificateRequestMarshaller().marshall(super.beforeMarshalling(deleteHsmClientCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1016,14 +1063,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebootClusterRequestMarshaller().marshall(rebootClusterRequest);
+                request = new RebootClusterRequestMarshaller().marshall(super.beforeMarshalling(rebootClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1057,12 +1106,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteClusterSubnetGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteClusterSubnetGroupRequestMarshaller().marshall(deleteClusterSubnetGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteClusterSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteClusterSubnetGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1121,14 +1179,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteClusterRequestMarshaller().marshall(deleteClusterRequest);
+                request = new DeleteClusterRequestMarshaller().marshall(super.beforeMarshalling(deleteClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1178,14 +1238,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterSnapshotRequestMarshaller().marshall(createClusterSnapshotRequest);
+                request = new CreateClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createClusterSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1246,14 +1308,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterRequestMarshaller().marshall(createClusterRequest);
+                request = new CreateClusterRequestMarshaller().marshall(super.beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1294,14 +1358,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
+                request = new DescribeEventsRequestMarshaller().marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeEventsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1365,14 +1431,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AuthorizeClusterSecurityGroupIngressRequestMarshaller().marshall(authorizeClusterSecurityGroupIngressRequest);
+                request = new AuthorizeClusterSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(authorizeClusterSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterSecurityGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1412,14 +1480,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RotateEncryptionKeyRequestMarshaller().marshall(rotateEncryptionKeyRequest);
+                request = new RotateEncryptionKeyRequestMarshaller().marshall(super.beforeMarshalling(rotateEncryptionKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1461,12 +1531,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteClusterSecurityGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteClusterSecurityGroupRequestMarshaller().marshall(deleteClusterSecurityGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteClusterSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteClusterSecurityGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1503,14 +1582,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReservedNodesRequestMarshaller().marshall(describeReservedNodesRequest);
+                request = new DescribeReservedNodesRequestMarshaller().marshall(super.beforeMarshalling(describeReservedNodesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeReservedNodesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1554,14 +1635,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDefaultClusterParametersRequestMarshaller().marshall(describeDefaultClusterParametersRequest);
+                request = new DescribeDefaultClusterParametersRequestMarshaller().marshall(super.beforeMarshalling(describeDefaultClusterParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DefaultClusterParametersStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1608,14 +1691,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyEventSubscriptionRequestMarshaller().marshall(modifyEventSubscriptionRequest);
+                request = new ModifyEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(modifyEventSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1663,14 +1748,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterSecurityGroupRequestMarshaller().marshall(createClusterSecurityGroupRequest);
+                request = new CreateClusterSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(createClusterSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterSecurityGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1717,14 +1804,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeResizeRequestMarshaller().marshall(describeResizeRequest);
+                request = new DescribeResizeRequestMarshaller().marshall(super.beforeMarshalling(describeResizeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeResizeResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1767,14 +1856,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterVersionsRequestMarshaller().marshall(describeClusterVersionsRequest);
+                request = new DescribeClusterVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeClusterVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeClusterVersionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1846,14 +1937,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RestoreFromClusterSnapshotRequestMarshaller().marshall(restoreFromClusterSnapshotRequest);
+                request = new RestoreFromClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(restoreFromClusterSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -1895,12 +1988,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateTagsRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new CreateTagsRequestMarshaller().marshall(createTagsRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTagsRequestMarshaller().marshall(super.beforeMarshalling(createTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -1964,14 +2066,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTagsRequestMarshaller().marshall(describeTagsRequest);
+                request = new DescribeTagsRequestMarshaller().marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeTagsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2016,14 +2120,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyClusterParameterGroupRequestMarshaller().marshall(modifyClusterParameterGroupRequest);
+                request = new ModifyClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ModifyClusterParameterGroupResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2065,14 +2171,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventCategoriesRequestMarshaller().marshall(describeEventCategoriesRequest);
+                request = new DescribeEventCategoriesRequestMarshaller().marshall(super.beforeMarshalling(describeEventCategoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeEventCategoriesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2131,14 +2239,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterSecurityGroupsRequestMarshaller().marshall(describeClusterSecurityGroupsRequest);
+                request = new DescribeClusterSecurityGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeClusterSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeClusterSecurityGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2193,14 +2303,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterSubnetGroupsRequestMarshaller().marshall(describeClusterSubnetGroupsRequest);
+                request = new DescribeClusterSubnetGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeClusterSubnetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeClusterSubnetGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2255,14 +2367,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHsmConfigurationsRequestMarshaller().marshall(describeHsmConfigurationsRequest);
+                request = new DescribeHsmConfigurationsRequestMarshaller().marshall(super.beforeMarshalling(describeHsmConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeHsmConfigurationsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2312,14 +2426,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteClusterSnapshotRequestMarshaller().marshall(deleteClusterSnapshotRequest);
+                request = new DeleteClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(deleteClusterSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2356,12 +2472,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteClusterParameterGroupRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteClusterParameterGroupRequestMarshaller().marshall(deleteClusterParameterGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteClusterParameterGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2402,14 +2527,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableSnapshotCopyRequestMarshaller().marshall(disableSnapshotCopyRequest);
+                request = new DisableSnapshotCopyRequestMarshaller().marshall(super.beforeMarshalling(disableSnapshotCopyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2484,14 +2611,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateEventSubscriptionRequestMarshaller().marshall(createEventSubscriptionRequest);
+                request = new CreateEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(createEventSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2535,14 +2664,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResetClusterParameterGroupRequestMarshaller().marshall(resetClusterParameterGroupRequest);
+                request = new ResetClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(resetClusterParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ResetClusterParameterGroupResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2589,14 +2720,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AuthorizeSnapshotAccessRequestMarshaller().marshall(authorizeSnapshotAccessRequest);
+                request = new AuthorizeSnapshotAccessRequestMarshaller().marshall(super.beforeMarshalling(authorizeSnapshotAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2642,14 +2775,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableSnapshotCopyRequestMarshaller().marshall(enableSnapshotCopyRequest);
+                request = new EnableSnapshotCopyRequestMarshaller().marshall(super.beforeMarshalling(enableSnapshotCopyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2699,14 +2834,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReservedNodeOfferingsRequestMarshaller().marshall(describeReservedNodeOfferingsRequest);
+                request = new DescribeReservedNodeOfferingsRequestMarshaller().marshall(super.beforeMarshalling(describeReservedNodeOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeReservedNodeOfferingsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2747,14 +2884,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventSubscriptionsRequestMarshaller().marshall(describeEventSubscriptionsRequest);
+                request = new DescribeEventSubscriptionsRequestMarshaller().marshall(super.beforeMarshalling(describeEventSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeEventSubscriptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2794,14 +2933,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLoggingStatusRequestMarshaller().marshall(describeLoggingStatusRequest);
+                request = new DescribeLoggingStatusRequestMarshaller().marshall(super.beforeMarshalling(describeLoggingStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeLoggingStatusResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2834,12 +2975,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteEventSubscriptionRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
         try {
-            request = new DeleteEventSubscriptionRequestMarshaller().marshall(deleteEventSubscriptionRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(deleteEventSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
             invoke(request, null, executionContext);
+
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, null);
         }
     }
@@ -2890,14 +3040,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHsmClientCertificateRequestMarshaller().marshall(createHsmClientCertificateRequest);
+                request = new CreateHsmClientCertificateRequestMarshaller().marshall(super.beforeMarshalling(createHsmClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new HsmClientCertificateStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -2952,14 +3104,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHsmClientCertificatesRequestMarshaller().marshall(describeHsmClientCertificatesRequest);
+                request = new DescribeHsmClientCertificatesRequestMarshaller().marshall(super.beforeMarshalling(describeHsmClientCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeHsmClientCertificatesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3012,14 +3166,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterParametersRequestMarshaller().marshall(describeClusterParametersRequest);
+                request = new DescribeClusterParametersRequestMarshaller().marshall(super.beforeMarshalling(describeClusterParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeClusterParametersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3065,14 +3221,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RevokeClusterSecurityGroupIngressRequestMarshaller().marshall(revokeClusterSecurityGroupIngressRequest);
+                request = new RevokeClusterSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(revokeClusterSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterSecurityGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3124,14 +3282,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHsmConfigurationRequestMarshaller().marshall(createHsmConfigurationRequest);
+                request = new CreateHsmConfigurationRequestMarshaller().marshall(super.beforeMarshalling(createHsmConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new HsmConfigurationStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3188,14 +3348,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClustersRequestMarshaller().marshall(describeClustersRequest);
+                request = new DescribeClustersRequestMarshaller().marshall(super.beforeMarshalling(describeClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeClustersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3253,14 +3415,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterSnapshotsRequestMarshaller().marshall(describeClusterSnapshotsRequest);
+                request = new DescribeClusterSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(describeClusterSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeClusterSnapshotsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3315,14 +3479,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterParameterGroupRequestMarshaller().marshall(createClusterParameterGroupRequest);
+                request = new CreateClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(createClusterParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new ClusterParameterGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
@@ -3384,14 +3550,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterParameterGroupsRequestMarshaller().marshall(describeClusterParameterGroupsRequest);
+                request = new DescribeClusterParameterGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeClusterParameterGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             response = invoke(request, new DescribeClusterParameterGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);

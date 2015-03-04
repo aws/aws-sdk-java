@@ -57,7 +57,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listActivityTypes(ListActivityTypesRequest)
  */
-public class ListActivityTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListActivityTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which the activity types have been
@@ -550,5 +550,11 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListActivityTypesRequest clone() {
+        
+            return (ListActivityTypesRequest) super.clone();
+    }
+
 }
     

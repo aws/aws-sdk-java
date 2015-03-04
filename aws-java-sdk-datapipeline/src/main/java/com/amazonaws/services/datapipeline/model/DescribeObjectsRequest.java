@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#describeObjects(DescribeObjectsRequest)
  */
-public class DescribeObjectsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeObjectsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifier of the pipeline that contains the object definitions.
@@ -364,5 +364,11 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DescribeObjectsRequest clone() {
+        
+            return (DescribeObjectsRequest) super.clone();
+    }
+
 }
     

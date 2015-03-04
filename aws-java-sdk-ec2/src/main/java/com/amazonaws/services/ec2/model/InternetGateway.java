@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Internet gateway.
  * </p>
  */
-public class InternetGateway implements Serializable {
+public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * The ID of the Internet gateway.
@@ -254,5 +254,19 @@ public class InternetGateway implements Serializable {
         return true;
     }
     
+    @Override
+    public InternetGateway clone() {
+        try {
+            return (InternetGateway) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

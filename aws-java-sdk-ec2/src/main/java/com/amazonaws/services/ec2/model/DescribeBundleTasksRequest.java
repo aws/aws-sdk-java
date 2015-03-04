@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeBundleTasksRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeBundleTasks(DescribeBundleTasksRequest)
  */
-public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeBundleTasksRequest> {
+public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeBundleTasksRequest> {
 
     /**
      * One or more bundle task IDs. <p>Default: Describes all your bundle
@@ -381,5 +381,11 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeBundleTasksRequest clone() {
+        
+            return (DescribeBundleTasksRequest) super.clone();
+    }
+
 }
     

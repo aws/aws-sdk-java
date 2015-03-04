@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type that contains information about a geo location.
  * </p>
  */
-public class GeoLocation implements Serializable {
+public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * The code for a continent geo location. Note: only continent locations
@@ -304,5 +304,19 @@ public class GeoLocation implements Serializable {
         return true;
     }
     
+    @Override
+    public GeoLocation clone() {
+        try {
+            return (GeoLocation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

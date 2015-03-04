@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a Reserved Instance listing state.
  * </p>
  */
-public class InstanceCount implements Serializable {
+public class InstanceCount implements Serializable, Cloneable {
 
     /**
      * The states of the listed Reserved Instances.
@@ -201,5 +201,19 @@ public class InstanceCount implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceCount clone() {
+        try {
+            return (InstanceCount) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * V P C
  */
-public class VPC implements Serializable {
+public class VPC implements Serializable, Cloneable {
 
     private String vPCRegion;
 
@@ -203,5 +203,19 @@ public class VPC implements Serializable {
         return true;
     }
     
+    @Override
+    public VPC clone() {
+        try {
+            return (VPC) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

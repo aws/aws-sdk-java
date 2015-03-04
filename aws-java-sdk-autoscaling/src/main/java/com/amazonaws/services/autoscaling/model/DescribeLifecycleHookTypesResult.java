@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeLifecycleHookTypesResult implements Serializable {
+public class DescribeLifecycleHookTypesResult implements Serializable, Cloneable {
 
     /**
      * One or more of the following notification types: <ul>
@@ -151,5 +151,19 @@ public class DescribeLifecycleHookTypesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLifecycleHookTypesResult clone() {
+        try {
+            return (DescribeLifecycleHookTypesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -57,7 +57,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class ScheduleActivityTaskDecisionAttributes implements Serializable {
+public class ScheduleActivityTaskDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The type of the activity task to schedule.
@@ -1030,5 +1030,19 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public ScheduleActivityTaskDecisionAttributes clone() {
+        try {
+            return (ScheduleActivityTaskDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

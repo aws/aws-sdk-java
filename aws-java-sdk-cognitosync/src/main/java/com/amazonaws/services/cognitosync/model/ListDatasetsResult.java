@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Returned for a successful ListDatasets request.
  * </p>
  */
-public class ListDatasetsResult implements Serializable {
+public class ListDatasetsResult implements Serializable, Cloneable {
 
     /**
      * A set of datasets.
@@ -219,5 +219,19 @@ public class ListDatasetsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListDatasetsResult clone() {
+        try {
+            return (ListDatasetsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

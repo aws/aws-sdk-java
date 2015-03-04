@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a reservation.
  * </p>
  */
-public class Reservation implements Serializable {
+public class Reservation implements Serializable, Cloneable {
 
     /**
      * The ID of the reservation.
@@ -422,5 +422,19 @@ public class Reservation implements Serializable {
         return true;
     }
     
+    @Override
+    public Reservation clone() {
+        try {
+            return (Reservation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

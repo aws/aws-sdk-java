@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a disk image.
  * </p>
  */
-public class DiskImage implements Serializable {
+public class DiskImage implements Serializable, Cloneable {
 
     /**
      * 
@@ -184,5 +184,19 @@ public class DiskImage implements Serializable {
         return true;
     }
     
+    @Override
+    public DiskImage clone() {
+        try {
+            return (DiskImage) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

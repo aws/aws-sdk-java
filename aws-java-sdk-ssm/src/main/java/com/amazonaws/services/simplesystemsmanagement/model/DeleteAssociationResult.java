@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteAssociationResult implements Serializable {
+public class DeleteAssociationResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -56,5 +56,19 @@ public class DeleteAssociationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteAssociationResult clone() {
+        try {
+            return (DeleteAssociationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

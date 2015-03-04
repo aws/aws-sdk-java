@@ -24,7 +24,7 @@ import java.io.Serializable;
  * exactly one default cache behavior.
  * </p>
  */
-public class DefaultCacheBehavior implements Serializable {
+public class DefaultCacheBehavior implements Serializable, Cloneable {
 
     /**
      * The value of ID for the origin that you want CloudFront to route
@@ -693,5 +693,19 @@ public class DefaultCacheBehavior implements Serializable {
         return true;
     }
     
+    @Override
+    public DefaultCacheBehavior clone() {
+        try {
+            return (DefaultCacheBehavior) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

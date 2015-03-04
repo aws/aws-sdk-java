@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the following fields:
  * </p>
  */
-public class CreateSnapshotResult implements Serializable {
+public class CreateSnapshotResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume of which the snapshot was
@@ -194,5 +194,19 @@ public class CreateSnapshotResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateSnapshotResult clone() {
+        try {
+            return (CreateSnapshotResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

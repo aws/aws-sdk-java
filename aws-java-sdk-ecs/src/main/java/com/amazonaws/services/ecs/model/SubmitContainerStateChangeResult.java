@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class SubmitContainerStateChangeResult implements Serializable {
+public class SubmitContainerStateChangeResult implements Serializable, Cloneable {
 
     /**
      * Acknowledgement of the state change.
@@ -98,5 +98,19 @@ public class SubmitContainerStateChangeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SubmitContainerStateChangeResult clone() {
+        try {
+            return (SubmitContainerStateChangeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

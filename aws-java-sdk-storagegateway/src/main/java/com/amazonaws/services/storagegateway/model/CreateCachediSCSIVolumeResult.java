@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Create Cachedi S C S I Volume Result
  */
-public class CreateCachediSCSIVolumeResult implements Serializable {
+public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
 
     private String volumeARN;
 
@@ -152,5 +152,19 @@ public class CreateCachediSCSIVolumeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateCachediSCSIVolumeResult clone() {
+        try {
+            return (CreateCachediSCSIVolumeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

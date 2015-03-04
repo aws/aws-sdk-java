@@ -27,7 +27,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class ResetCacheParameterGroupResult implements Serializable {
+public class ResetCacheParameterGroupResult implements Serializable, Cloneable {
 
     /**
      * The name of the cache parameter group.
@@ -106,5 +106,19 @@ public class ResetCacheParameterGroupResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ResetCacheParameterGroupResult clone() {
+        try {
+            return (ResetCacheParameterGroupResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

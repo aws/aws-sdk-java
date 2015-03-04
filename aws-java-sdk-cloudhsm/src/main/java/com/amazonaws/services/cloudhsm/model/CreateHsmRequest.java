@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#createHsm(CreateHsmRequest)
  */
-public class CreateHsmRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateHsmRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the subnet in your VPC in which to place the HSM.
@@ -551,5 +551,11 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CreateHsmRequest clone() {
+        
+            return (CreateHsmRequest) super.clone();
+    }
+
 }
     

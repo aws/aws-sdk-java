@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#addTagsToStream(AddTagsToStreamRequest)
  */
-public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream.
@@ -218,5 +218,11 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public AddTagsToStreamRequest clone() {
+        
+            return (AddTagsToStreamRequest) super.clone();
+    }
+
 }
     

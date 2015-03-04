@@ -68,7 +68,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#createCase(CreateCaseRequest)
  */
-public class CreateCaseRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateCaseRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The title of the AWS Support case.
@@ -650,5 +650,11 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public CreateCaseRequest clone() {
+        
+            return (CreateCaseRequest) super.clone();
+    }
+
 }
     

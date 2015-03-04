@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#listGateways(ListGatewaysRequest)
  */
-public class ListGatewaysRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListGatewaysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An opaque string that indicates the position at which to begin the
@@ -198,5 +198,11 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public ListGatewaysRequest clone() {
+        
+            return (ListGatewaysRequest) super.clone();
+    }
+
 }
     

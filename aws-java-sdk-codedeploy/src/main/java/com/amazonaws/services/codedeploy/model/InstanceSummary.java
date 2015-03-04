@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about an Amazon EC2 instance in a deployment.
  * </p>
  */
-public class InstanceSummary implements Serializable {
+public class InstanceSummary implements Serializable, Cloneable {
 
     /**
      * The deployment ID.
@@ -421,5 +421,19 @@ public class InstanceSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceSummary clone() {
+        try {
+            return (InstanceSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

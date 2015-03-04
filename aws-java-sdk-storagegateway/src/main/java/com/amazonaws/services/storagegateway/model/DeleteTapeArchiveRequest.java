@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteTapeArchive(DeleteTapeArchiveRequest)
  */
-public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape to delete from the
@@ -124,5 +124,11 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteTapeArchiveRequest clone() {
+        
+            return (DeleteTapeArchiveRequest) super.clone();
+    }
+
 }
     

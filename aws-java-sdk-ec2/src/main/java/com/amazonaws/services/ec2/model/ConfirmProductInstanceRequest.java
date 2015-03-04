@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.ConfirmProductInstanceRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest)
  */
-public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ConfirmProductInstanceRequest> {
+public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ConfirmProductInstanceRequest> {
 
     /**
      * The product code. This must be a product code that you own.
@@ -184,5 +184,11 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ConfirmProductInstanceRequest clone() {
+        
+            return (ConfirmProductInstanceRequest) super.clone();
+    }
+
 }
     

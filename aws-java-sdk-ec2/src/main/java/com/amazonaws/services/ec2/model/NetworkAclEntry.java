@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an entry in a network ACL.
  * </p>
  */
-public class NetworkAclEntry implements Serializable {
+public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * The rule number for the entry. ACL entries are processed in ascending
@@ -429,5 +429,19 @@ public class NetworkAclEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public NetworkAclEntry clone() {
+        try {
+            return (NetworkAclEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

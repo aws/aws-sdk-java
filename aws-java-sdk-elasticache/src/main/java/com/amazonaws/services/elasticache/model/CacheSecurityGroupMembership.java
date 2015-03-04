@@ -22,7 +22,7 @@ import java.io.Serializable;
  * group.
  * </p>
  */
-public class CacheSecurityGroupMembership implements Serializable {
+public class CacheSecurityGroupMembership implements Serializable, Cloneable {
 
     /**
      * The name of the cache security group.
@@ -163,5 +163,19 @@ public class CacheSecurityGroupMembership implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheSecurityGroupMembership clone() {
+        try {
+            return (CacheSecurityGroupMembership) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

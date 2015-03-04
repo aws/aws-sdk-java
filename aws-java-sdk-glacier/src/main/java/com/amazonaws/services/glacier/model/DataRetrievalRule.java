@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Data retrieval policy rule.
  * </p>
  */
-public class DataRetrievalRule implements Serializable {
+public class DataRetrievalRule implements Serializable, Cloneable {
 
     /**
      * The type of data retrieval policy to set. <p>Valid values:
@@ -177,5 +177,19 @@ public class DataRetrievalRule implements Serializable {
         return true;
     }
     
+    @Override
+    public DataRetrievalRule clone() {
+        try {
+            return (DataRetrievalRule) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

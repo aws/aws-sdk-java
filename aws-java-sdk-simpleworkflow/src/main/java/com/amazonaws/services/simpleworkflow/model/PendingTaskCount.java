@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the count of tasks in a task list.
  * </p>
  */
-public class PendingTaskCount implements Serializable {
+public class PendingTaskCount implements Serializable, Cloneable {
 
     /**
      * The number of tasks in the task list.
@@ -181,5 +181,19 @@ public class PendingTaskCount implements Serializable {
         return true;
     }
     
+    @Override
+    public PendingTaskCount clone() {
+        try {
+            return (PendingTaskCount) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

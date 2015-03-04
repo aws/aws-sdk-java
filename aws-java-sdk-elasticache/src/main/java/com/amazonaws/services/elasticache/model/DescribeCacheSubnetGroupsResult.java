@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeCacheSubnetGroups</i> action.
  * </p>
  */
-public class DescribeCacheSubnetGroupsResult implements Serializable {
+public class DescribeCacheSubnetGroupsResult implements Serializable, Cloneable {
 
     /**
      * Provides an identifier to allow retrieval of paginated results.
@@ -186,5 +186,19 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeCacheSubnetGroupsResult clone() {
+        try {
+            return (DescribeCacheSubnetGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createDeployment(CreateDeploymentRequest)
  */
-public class CreateDeploymentRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDeploymentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -416,5 +416,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateDeploymentRequest clone() {
+        
+            return (CreateDeploymentRequest) super.clone();
+    }
+
 }
     

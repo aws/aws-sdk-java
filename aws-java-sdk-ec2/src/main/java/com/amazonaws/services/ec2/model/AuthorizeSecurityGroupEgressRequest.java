@@ -53,7 +53,7 @@ import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupEgressRe
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest)
  */
-public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AuthorizeSecurityGroupEgressRequest> {
+public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AuthorizeSecurityGroupEgressRequest> {
 
     /**
      * The ID of the security group.
@@ -559,5 +559,11 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public AuthorizeSecurityGroupEgressRequest clone() {
+        
+            return (AuthorizeSecurityGroupEgressRequest) super.clone();
+    }
+
 }
     

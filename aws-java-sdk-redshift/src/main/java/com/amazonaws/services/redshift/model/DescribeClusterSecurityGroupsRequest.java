@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest)
  */
-public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a cluster security group for which you are requesting
@@ -590,5 +590,11 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DescribeClusterSecurityGroupsRequest clone() {
+        
+            return (DescribeClusterSecurityGroupsRequest) super.clone();
+    }
+
 }
     

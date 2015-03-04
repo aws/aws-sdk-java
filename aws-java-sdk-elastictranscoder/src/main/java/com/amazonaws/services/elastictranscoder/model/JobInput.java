@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about the file that you're transcoding.
  * </p>
  */
-public class JobInput implements Serializable {
+public class JobInput implements Serializable, Cloneable {
 
     /**
      * The name of the file to transcode. Elsewhere in the body of the JSON
@@ -683,5 +683,19 @@ public class JobInput implements Serializable {
         return true;
     }
     
+    @Override
+    public JobInput clone() {
+        try {
+            return (JobInput) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

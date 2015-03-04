@@ -22,7 +22,7 @@ import java.io.Serializable;
  * record set.
  * </p>
  */
-public class ResourceRecordSet implements Serializable {
+public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * The domain name of the current resource record set.
@@ -1091,5 +1091,19 @@ public class ResourceRecordSet implements Serializable {
         return true;
     }
     
+    @Override
+    public ResourceRecordSet clone() {
+        try {
+            return (ResourceRecordSet) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     
