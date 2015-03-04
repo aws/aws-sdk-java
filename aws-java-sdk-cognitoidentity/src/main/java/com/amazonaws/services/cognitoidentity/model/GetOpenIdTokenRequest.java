@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getOpenIdToken(GetOpenIdTokenRequest)
  */
-public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -222,5 +222,11 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GetOpenIdTokenRequest clone() {
+        
+            return (GetOpenIdTokenRequest) super.clone();
+    }
+
 }
     

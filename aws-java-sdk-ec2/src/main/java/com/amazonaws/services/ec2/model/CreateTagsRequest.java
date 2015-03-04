@@ -36,7 +36,7 @@ import com.amazonaws.services.ec2.model.transform.CreateTagsRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest)
  */
-public class CreateTagsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateTagsRequest> {
+public class CreateTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateTagsRequest> {
 
     /**
      * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
@@ -279,5 +279,11 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public CreateTagsRequest clone() {
+        
+            return (CreateTagsRequest) super.clone();
+    }
+
 }
     

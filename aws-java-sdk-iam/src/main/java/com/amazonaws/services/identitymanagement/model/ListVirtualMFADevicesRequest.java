@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listVirtualMFADevices(ListVirtualMFADevicesRequest)
  */
-public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The status (unassigned or assigned) of the devices to list. If you do
@@ -359,5 +359,11 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public ListVirtualMFADevicesRequest clone() {
+        
+            return (ListVirtualMFADevicesRequest) super.clone();
+    }
+
 }
     

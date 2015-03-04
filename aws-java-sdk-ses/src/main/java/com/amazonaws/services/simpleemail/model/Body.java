@@ -23,7 +23,7 @@ import java.io.Serializable;
  * the widest variety of email clients.
  * </p>
  */
-public class Body implements Serializable {
+public class Body implements Serializable, Cloneable {
 
     /**
      * The content of the message, in text format. Use this for text-based
@@ -191,5 +191,19 @@ public class Body implements Serializable {
         return true;
     }
     
+    @Override
+    public Body clone() {
+        try {
+            return (Body) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

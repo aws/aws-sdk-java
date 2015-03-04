@@ -100,7 +100,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#putRecords(PutRecordsRequest)
  */
-public class PutRecordsRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutRecordsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The records associated with the request.
@@ -287,5 +287,11 @@ public class PutRecordsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public PutRecordsRequest clone() {
+        
+            return (PutRecordsRequest) super.clone();
+    }
+
 }
     

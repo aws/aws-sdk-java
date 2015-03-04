@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A structure containing a list of virtual private gateways.
  * </p>
  */
-public class DescribeVirtualGatewaysResult implements Serializable {
+public class DescribeVirtualGatewaysResult implements Serializable, Cloneable {
 
     /**
      * A list of virtual private gateways.
@@ -135,5 +135,19 @@ public class DescribeVirtualGatewaysResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVirtualGatewaysResult clone() {
+        try {
+            return (DescribeVirtualGatewaysResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>StartTimerFailed</code> event.
  * </p>
  */
-public class StartTimerFailedEventAttributes implements Serializable {
+public class StartTimerFailedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The timerId provided in the <code>StartTimer</code> decision that
@@ -338,5 +338,19 @@ public class StartTimerFailedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public StartTimerFailedEventAttributes clone() {
+        try {
+            return (StartTimerFailedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

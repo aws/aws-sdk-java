@@ -48,7 +48,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class RequestCancelActivityTaskDecisionAttributes implements Serializable {
+public class RequestCancelActivityTaskDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * The <code>activityId</code> of the activity task to be canceled.
@@ -139,5 +139,19 @@ public class RequestCancelActivityTaskDecisionAttributes implements Serializable
         return true;
     }
     
+    @Override
+    public RequestCancelActivityTaskDecisionAttributes clone() {
+        try {
+            return (RequestCancelActivityTaskDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteTagsRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteTags(DeleteTagsRequest)
  */
-public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteTagsRequest> {
+public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteTagsRequest> {
 
     /**
      * The ID of the resource. For example, ami-1a2b3c4d. You can specify
@@ -291,5 +291,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DeleteTagsRequest clone() {
+        
+            return (DeleteTagsRequest) super.clone();
+    }
+
 }
     

@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest)
  */
-public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of identities.
@@ -145,5 +145,11 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public GetIdentityVerificationAttributesRequest clone() {
+        
+            return (GetIdentityVerificationAttributesRequest) super.clone();
+    }
+
 }
     

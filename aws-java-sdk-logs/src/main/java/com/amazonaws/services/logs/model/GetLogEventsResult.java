@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Get Log Events Result
  */
-public class GetLogEventsResult implements Serializable {
+public class GetLogEventsResult implements Serializable, Cloneable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<OutputLogEvent> events;
 
@@ -242,5 +242,19 @@ public class GetLogEventsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetLogEventsResult clone() {
+        try {
+            return (GetLogEventsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

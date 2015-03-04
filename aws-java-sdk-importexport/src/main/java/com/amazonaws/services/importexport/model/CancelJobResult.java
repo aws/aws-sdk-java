@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Output structure for the CancelJob operation.
  * </p>
  */
-public class CancelJobResult implements Serializable {
+public class CancelJobResult implements Serializable, Cloneable {
 
     /**
      * Specifies whether (true) or not (false) AWS Import/Export updated your
@@ -118,5 +118,19 @@ public class CancelJobResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CancelJobResult clone() {
+        try {
+            return (CancelJobResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

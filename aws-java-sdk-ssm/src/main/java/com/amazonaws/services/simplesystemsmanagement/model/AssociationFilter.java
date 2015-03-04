@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a filter.
  * </p>
  */
-public class AssociationFilter implements Serializable {
+public class AssociationFilter implements Serializable, Cloneable {
 
     /**
      * The name of the filter.
@@ -206,5 +206,19 @@ public class AssociationFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public AssociationFilter clone() {
+        try {
+            return (AssociationFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

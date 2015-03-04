@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a list application revisions operation.
  * </p>
  */
-public class ListApplicationRevisionsResult implements Serializable {
+public class ListApplicationRevisionsResult implements Serializable, Cloneable {
 
     /**
      * A list of revision locations that contain the matching revisions.
@@ -198,5 +198,19 @@ public class ListApplicationRevisionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListApplicationRevisionsResult clone() {
+        try {
+            return (ListApplicationRevisionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Settings that determine when a clip begins and how long it lasts.
  * </p>
  */
-public class TimeSpan implements Serializable {
+public class TimeSpan implements Serializable, Cloneable {
 
     /**
      * The place in the input file where you want a clip to start. The format
@@ -236,5 +236,19 @@ public class TimeSpan implements Serializable {
         return true;
     }
     
+    @Override
+    public TimeSpan clone() {
+        try {
+            return (TimeSpan) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

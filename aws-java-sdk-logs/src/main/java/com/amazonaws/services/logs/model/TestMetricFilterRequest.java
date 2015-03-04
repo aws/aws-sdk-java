@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#testMetricFilter(TestMetricFilterRequest)
  */
-public class TestMetricFilterRequest extends AmazonWebServiceRequest implements Serializable {
+public class TestMetricFilterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
@@ -226,5 +226,11 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public TestMetricFilterRequest clone() {
+        
+            return (TestMetricFilterRequest) super.clone();
+    }
+
 }
     

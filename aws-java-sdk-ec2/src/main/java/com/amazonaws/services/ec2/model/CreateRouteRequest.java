@@ -62,7 +62,7 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createRoute(CreateRouteRequest)
  */
-public class CreateRouteRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateRouteRequest> {
+public class CreateRouteRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateRouteRequest> {
 
     /**
      * The ID of the route table for the route.
@@ -391,5 +391,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateRouteRequest clone() {
+        
+            return (CreateRouteRequest) super.clone();
+    }
+
 }
     

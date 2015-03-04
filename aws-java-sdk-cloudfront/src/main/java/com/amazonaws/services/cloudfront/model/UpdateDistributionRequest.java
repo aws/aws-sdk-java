@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#updateDistribution(UpdateDistributionRequest)
  */
-public class UpdateDistributionRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateDistributionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The distribution's configuration information.
@@ -220,5 +220,11 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public UpdateDistributionRequest clone() {
+        
+            return (UpdateDistributionRequest) super.clone();
+    }
+
 }
     

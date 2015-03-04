@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeSpotInstanceRequestsResult implements Serializable {
+public class DescribeSpotInstanceRequestsResult implements Serializable, Cloneable {
 
     /**
      * One or more Spot Instance requests.
@@ -133,5 +133,19 @@ public class DescribeSpotInstanceRequestsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSpotInstanceRequestsResult clone() {
+        try {
+            return (DescribeSpotInstanceRequestsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

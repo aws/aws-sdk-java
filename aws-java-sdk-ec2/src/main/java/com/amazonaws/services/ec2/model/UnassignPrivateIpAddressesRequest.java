@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest)
  */
-public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest implements Serializable {
+public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the network interface.
@@ -201,5 +201,11 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public UnassignPrivateIpAddressesRequest clone() {
+        
+            return (UnassignPrivateIpAddressesRequest) super.clone();
+    }
+
 }
     

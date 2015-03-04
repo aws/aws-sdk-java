@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest)
  */
-public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The mnemonic name associated with the load balancer. This name must be
@@ -256,5 +256,11 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
         return true;
     }
     
+    @Override
+    public SetLoadBalancerPoliciesForBackendServerRequest clone() {
+        
+            return (SetLoadBalancerPoliciesForBackendServerRequest) super.clone();
+    }
+
 }
     

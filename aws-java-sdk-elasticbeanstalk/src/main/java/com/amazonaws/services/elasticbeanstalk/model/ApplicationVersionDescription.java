@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the properties of an application version.
  * </p>
  */
-public class ApplicationVersionDescription implements Serializable {
+public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * The name of the application associated with this release.
@@ -359,5 +359,19 @@ public class ApplicationVersionDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public ApplicationVersionDescription clone() {
+        try {
+            return (ApplicationVersionDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

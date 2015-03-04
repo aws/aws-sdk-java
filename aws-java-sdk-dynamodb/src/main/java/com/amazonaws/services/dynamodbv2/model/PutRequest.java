@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a request to perform a <i>PutItem</i> operation on an item.
  * </p>
  */
-public class PutRequest implements Serializable {
+public class PutRequest implements Serializable, Cloneable {
 
     /**
      * A map of attribute name to attribute values, representing the primary
@@ -193,5 +193,19 @@ public class PutRequest implements Serializable {
         return true;
     }
     
+    @Override
+    public PutRequest clone() {
+        try {
+            return (PutRequest) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

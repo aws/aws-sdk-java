@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountAlias(DeleteAccountAliasRequest)
  */
-public class DeleteAccountAliasRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAccountAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the account alias to delete.
@@ -141,5 +141,11 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteAccountAliasRequest clone() {
+        
+            return (DeleteAccountAliasRequest) super.clone();
+    }
+
 }
     

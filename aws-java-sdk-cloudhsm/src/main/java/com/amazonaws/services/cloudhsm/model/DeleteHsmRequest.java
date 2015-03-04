@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#deleteHsm(DeleteHsmRequest)
  */
-public class DeleteHsmRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteHsmRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the HSM to delete.
@@ -118,5 +118,11 @@ public class DeleteHsmRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public DeleteHsmRequest clone() {
+        
+            return (DeleteHsmRequest) super.clone();
+    }
+
 }
     

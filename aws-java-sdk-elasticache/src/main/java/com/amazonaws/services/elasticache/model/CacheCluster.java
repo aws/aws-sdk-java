@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains all of the attributes of a specific cache cluster.
  * </p>
  */
-public class CacheCluster implements Serializable {
+public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * The user-supplied identifier of the cache cluster. This identifier is
@@ -43,7 +43,32 @@ public class CacheCluster implements Serializable {
 
     /**
      * The name of the compute and memory capacity node type for the cache
-     * cluster.
+     * cluster. <p>Valid node types are as follows: <ul> <li>General purpose:
+     * <ul> <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> or <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a>.
      */
     private String cacheNodeType;
 
@@ -70,13 +95,13 @@ public class CacheCluster implements Serializable {
     /**
      * The number of cache nodes in the cache cluster. <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 50.
+     * this value must be between 1 and 20.
      */
     private Integer numCacheNodes;
 
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located or "Multiple"if the cache nodes are located in different
+     * located or "Multiple" if the cache nodes are located in different
      * Availability Zones.
      */
     private String preferredAvailabilityZone;
@@ -87,8 +112,15 @@ public class CacheCluster implements Serializable {
     private java.util.Date cacheClusterCreateTime;
 
     /**
-     * The time range (in UTC) during which weekly system maintenance can
-     * occur.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      */
     private String preferredMaintenanceWindow;
 
@@ -279,10 +311,60 @@ public class CacheCluster implements Serializable {
 
     /**
      * The name of the compute and memory capacity node type for the cache
-     * cluster.
+     * cluster. <p>Valid node types are as follows: <ul> <li>General purpose:
+     * <ul> <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> or <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a>.
      *
      * @return The name of the compute and memory capacity node type for the cache
-     *         cluster.
+     *         cluster. <p>Valid node types are as follows: <ul> <li>General purpose:
+     *         <ul> <li>Current generation: <code>cache.t2.micro</code>,
+     *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     *         <li>Memory optimized <ul> <li>Current generation:
+     *         <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     *         <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     *         <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     *         <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     *         Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     *         instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     *         supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     *         of cache node types and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Memcached</a> or <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Redis</a>.
      */
     public String getCacheNodeType() {
         return cacheNodeType;
@@ -290,10 +372,60 @@ public class CacheCluster implements Serializable {
     
     /**
      * The name of the compute and memory capacity node type for the cache
-     * cluster.
+     * cluster. <p>Valid node types are as follows: <ul> <li>General purpose:
+     * <ul> <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> or <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a>.
      *
      * @param cacheNodeType The name of the compute and memory capacity node type for the cache
-     *         cluster.
+     *         cluster. <p>Valid node types are as follows: <ul> <li>General purpose:
+     *         <ul> <li>Current generation: <code>cache.t2.micro</code>,
+     *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     *         <li>Memory optimized <ul> <li>Current generation:
+     *         <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     *         <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     *         <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     *         <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     *         Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     *         instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     *         supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     *         of cache node types and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Memcached</a> or <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Redis</a>.
      */
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
@@ -301,12 +433,62 @@ public class CacheCluster implements Serializable {
     
     /**
      * The name of the compute and memory capacity node type for the cache
-     * cluster.
+     * cluster. <p>Valid node types are as follows: <ul> <li>General purpose:
+     * <ul> <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> or <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeType The name of the compute and memory capacity node type for the cache
-     *         cluster.
+     *         cluster. <p>Valid node types are as follows: <ul> <li>General purpose:
+     *         <ul> <li>Current generation: <code>cache.t2.micro</code>,
+     *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     *         <li>Memory optimized <ul> <li>Current generation:
+     *         <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     *         <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     *         <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     *         <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     *         Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     *         instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     *         supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     *         of cache node types and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Memcached</a> or <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+     *         Node Type-Specific Parameters for Redis</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -448,11 +630,11 @@ public class CacheCluster implements Serializable {
     /**
      * The number of cache nodes in the cache cluster. <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 50.
+     * this value must be between 1 and 20.
      *
      * @return The number of cache nodes in the cache cluster. <p>For clusters
      *         running Redis, this value must be 1. For clusters running Memcached,
-     *         this value must be between 1 and 50.
+     *         this value must be between 1 and 20.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
@@ -461,11 +643,11 @@ public class CacheCluster implements Serializable {
     /**
      * The number of cache nodes in the cache cluster. <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 50.
+     * this value must be between 1 and 20.
      *
      * @param numCacheNodes The number of cache nodes in the cache cluster. <p>For clusters
      *         running Redis, this value must be 1. For clusters running Memcached,
-     *         this value must be between 1 and 50.
+     *         this value must be between 1 and 20.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
@@ -474,13 +656,13 @@ public class CacheCluster implements Serializable {
     /**
      * The number of cache nodes in the cache cluster. <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 50.
+     * this value must be between 1 and 20.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numCacheNodes The number of cache nodes in the cache cluster. <p>For clusters
      *         running Redis, this value must be 1. For clusters running Memcached,
-     *         this value must be between 1 and 50.
+     *         this value must be between 1 and 20.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -492,11 +674,11 @@ public class CacheCluster implements Serializable {
 
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located or "Multiple"if the cache nodes are located in different
+     * located or "Multiple" if the cache nodes are located in different
      * Availability Zones.
      *
      * @return The name of the Availability Zone in which the cache cluster is
-     *         located or "Multiple"if the cache nodes are located in different
+     *         located or "Multiple" if the cache nodes are located in different
      *         Availability Zones.
      */
     public String getPreferredAvailabilityZone() {
@@ -505,11 +687,11 @@ public class CacheCluster implements Serializable {
     
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located or "Multiple"if the cache nodes are located in different
+     * located or "Multiple" if the cache nodes are located in different
      * Availability Zones.
      *
      * @param preferredAvailabilityZone The name of the Availability Zone in which the cache cluster is
-     *         located or "Multiple"if the cache nodes are located in different
+     *         located or "Multiple" if the cache nodes are located in different
      *         Availability Zones.
      */
     public void setPreferredAvailabilityZone(String preferredAvailabilityZone) {
@@ -518,13 +700,13 @@ public class CacheCluster implements Serializable {
     
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located or "Multiple"if the cache nodes are located in different
+     * located or "Multiple" if the cache nodes are located in different
      * Availability Zones.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredAvailabilityZone The name of the Availability Zone in which the cache cluster is
-     *         located or "Multiple"if the cache nodes are located in different
+     *         located or "Multiple" if the cache nodes are located in different
      *         Availability Zones.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -569,35 +751,77 @@ public class CacheCluster implements Serializable {
     }
 
     /**
-     * The time range (in UTC) during which weekly system maintenance can
-     * occur.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @return The time range (in UTC) during which weekly system maintenance can
-     *         occur.
+     * @return Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
     }
     
     /**
-     * The time range (in UTC) during which weekly system maintenance can
-     * occur.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @param preferredMaintenanceWindow The time range (in UTC) during which weekly system maintenance can
-     *         occur.
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
     }
     
     /**
-     * The time range (in UTC) during which weekly system maintenance can
-     * occur.
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preferredMaintenanceWindow The time range (in UTC) during which weekly system maintenance can
-     *         occur.
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1287,5 +1511,19 @@ public class CacheCluster implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheCluster clone() {
+        try {
+            return (CacheCluster) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

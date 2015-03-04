@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#describeClusters(DescribeClustersRequest)
  */
-public class DescribeClustersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeClustersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A space-separated list of cluster names or full cluster Amazon
@@ -158,5 +158,11 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribeClustersRequest clone() {
+        
+            return (DescribeClustersRequest) super.clone();
+    }
+
 }
     

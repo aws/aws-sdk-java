@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.DetachNetworkInterfaceRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachNetworkInterface(DetachNetworkInterfaceRequest)
  */
-public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachNetworkInterfaceRequest> {
+public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DetachNetworkInterfaceRequest> {
 
     /**
      * The ID of the attachment.
@@ -170,5 +170,11 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DetachNetworkInterfaceRequest clone() {
+        
+            return (DetachNetworkInterfaceRequest) super.clone();
+    }
+
 }
     

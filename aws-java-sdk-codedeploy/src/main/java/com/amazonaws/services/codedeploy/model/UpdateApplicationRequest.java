@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#updateApplication(UpdateApplicationRequest)
  */
-public class UpdateApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The current name of the application that you want to change.
@@ -171,5 +171,11 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public UpdateApplicationRequest clone() {
+        
+            return (UpdateApplicationRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an orderable cluster option.
  * </p>
  */
-public class OrderableClusterOption implements Serializable {
+public class OrderableClusterOption implements Serializable, Cloneable {
 
     /**
      * The version of the orderable cluster.
@@ -261,5 +261,19 @@ public class OrderableClusterOption implements Serializable {
         return true;
     }
     
+    @Override
+    public OrderableClusterOption clone() {
+        try {
+            return (OrderableClusterOption) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#getKeyRotationStatus(GetKeyRotationStatusRequest)
  */
-public class GetKeyRotationStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetKeyRotationStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the key. This can be an ARN, an alias, or a
@@ -125,5 +125,11 @@ public class GetKeyRotationStatusRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public GetKeyRotationStatusRequest clone() {
+        
+            return (GetKeyRotationStatusRequest) super.clone();
+    }
+
 }
     

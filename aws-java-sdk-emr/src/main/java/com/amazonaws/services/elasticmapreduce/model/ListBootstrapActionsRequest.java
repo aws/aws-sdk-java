@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listBootstrapActions(ListBootstrapActionsRequest)
  */
-public class ListBootstrapActionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListBootstrapActionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The cluster identifier for the bootstrap actions to list .
@@ -155,5 +155,11 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public ListBootstrapActionsRequest clone() {
+        
+            return (ListBootstrapActionsRequest) super.clone();
+    }
+
 }
     

@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest)
  */
-public class ConfirmPrivateVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable {
+public class ConfirmPrivateVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
@@ -188,5 +188,11 @@ public class ConfirmPrivateVirtualInterfaceRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public ConfirmPrivateVirtualInterfaceRequest clone() {
+        
+            return (ConfirmPrivateVirtualInterfaceRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a trigger.
  * </p>
  */
-public class Trigger implements Serializable {
+public class Trigger implements Serializable, Cloneable {
 
     /**
      * The name of the trigger.
@@ -106,5 +106,19 @@ public class Trigger implements Serializable {
         return true;
     }
     
+    @Override
+    public Trigger clone() {
+        try {
+            return (Trigger) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

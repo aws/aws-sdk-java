@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest)
  */
-public class AddClientIDToOpenIDConnectProviderRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddClientIDToOpenIDConnectProviderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
@@ -197,5 +197,11 @@ public class AddClientIDToOpenIDConnectProviderRequest extends AmazonWebServiceR
         return true;
     }
     
+    @Override
+    public AddClientIDToOpenIDConnectProviderRequest clone() {
+        
+            return (AddClientIDToOpenIDConnectProviderRequest) super.clone();
+    }
+
 }
     

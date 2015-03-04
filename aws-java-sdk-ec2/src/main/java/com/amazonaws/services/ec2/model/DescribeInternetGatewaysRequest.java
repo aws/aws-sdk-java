@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeInternetGatewaysReques
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInternetGateways(DescribeInternetGatewaysRequest)
  */
-public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeInternetGatewaysRequest> {
+public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeInternetGatewaysRequest> {
 
     /**
      * One or more Internet gateway IDs. <p>Default: Describes all your
@@ -402,5 +402,11 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeInternetGatewaysRequest clone() {
+        
+            return (DescribeInternetGatewaysRequest) super.clone();
+    }
+
 }
     

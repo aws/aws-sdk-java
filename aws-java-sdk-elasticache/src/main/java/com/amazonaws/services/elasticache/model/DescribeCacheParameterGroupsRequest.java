@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameterGroups(DescribeCacheParameterGroupsRequest)
  */
-public class DescribeCacheParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCacheParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a specific cache parameter group to return details for.
@@ -251,5 +251,11 @@ public class DescribeCacheParameterGroupsRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeCacheParameterGroupsRequest clone() {
+        
+            return (DescribeCacheParameterGroupsRequest) super.clone();
+    }
+
 }
     

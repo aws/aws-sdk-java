@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response to a successful DeleteDataset request.
  * </p>
  */
-public class DeleteDatasetResult implements Serializable {
+public class DeleteDatasetResult implements Serializable, Cloneable {
 
     /**
      * A collection of data for an identity pool. An identity pool can have
@@ -135,5 +135,19 @@ public class DeleteDatasetResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteDatasetResult clone() {
+        try {
+            return (DeleteDatasetResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

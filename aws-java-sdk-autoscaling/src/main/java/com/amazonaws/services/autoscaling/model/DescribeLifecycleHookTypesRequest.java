@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLifecycleHookTypes(DescribeLifecycleHookTypesRequest)
  */
-public class DescribeLifecycleHookTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLifecycleHookTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -63,5 +63,11 @@ public class DescribeLifecycleHookTypesRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DescribeLifecycleHookTypesRequest clone() {
+        
+            return (DescribeLifecycleHookTypesRequest) super.clone();
+    }
+
 }
     

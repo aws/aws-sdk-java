@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteSAMLProvider(DeleteSAMLProviderRequest)
  */
-public class DeleteSAMLProviderRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteSAMLProviderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the SAML provider to delete.
@@ -126,5 +126,11 @@ public class DeleteSAMLProviderRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteSAMLProviderRequest clone() {
+        
+            return (DeleteSAMLProviderRequest) super.clone();
+    }
+
 }
     

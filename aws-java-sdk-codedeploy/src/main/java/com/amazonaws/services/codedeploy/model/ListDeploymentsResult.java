@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a list deployments operation.
  * </p>
  */
-public class ListDeploymentsResult implements Serializable {
+public class ListDeploymentsResult implements Serializable, Cloneable {
 
     /**
      * A list of deployment IDs.
@@ -198,5 +198,19 @@ public class ListDeploymentsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListDeploymentsResult clone() {
+        try {
+            return (ListDeploymentsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class RegisterInstanceResult implements Serializable {
+public class RegisterInstanceResult implements Serializable, Cloneable {
 
     /**
      * The registered instance's AWS OpsWorks ID.
@@ -101,5 +101,19 @@ public class RegisterInstanceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RegisterInstanceResult clone() {
+        try {
+            return (RegisterInstanceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -60,7 +60,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class StartChildWorkflowExecutionDecisionAttributes implements Serializable {
+public class StartChildWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The type of the workflow execution to be started.
@@ -1198,5 +1198,19 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
         return true;
     }
     
+    @Override
+    public StartChildWorkflowExecutionDecisionAttributes clone() {
+        try {
+            return (StartChildWorkflowExecutionDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

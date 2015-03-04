@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest)
  */
-public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the LoadBalancer for which the policy is
@@ -297,5 +297,11 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public CreateLoadBalancerPolicyRequest clone() {
+        
+            return (CreateLoadBalancerPolicyRequest) super.clone();
+    }
+
 }
     

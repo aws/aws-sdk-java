@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListAccessKeys request.
  * </p>
  */
-public class ListAccessKeysResult implements Serializable {
+public class ListAccessKeysResult implements Serializable, Cloneable {
 
     /**
      * A list of access key metadata.
@@ -285,5 +285,19 @@ public class ListAccessKeysResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListAccessKeysResult clone() {
+        try {
+            return (ListAccessKeysResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

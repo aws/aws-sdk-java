@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Create Snapshot From Volume Recovery Point Result
  */
-public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable {
+public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable, Cloneable {
 
     private String snapshotId;
 
@@ -196,5 +196,19 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
         return true;
     }
     
+    @Override
+    public CreateSnapshotFromVolumeRecoveryPointResult clone() {
+        try {
+            return (CreateSnapshotFromVolumeRecoveryPointResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

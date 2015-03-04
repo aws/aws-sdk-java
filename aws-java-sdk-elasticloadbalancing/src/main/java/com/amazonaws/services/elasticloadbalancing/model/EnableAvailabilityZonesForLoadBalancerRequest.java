@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#enableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest)
  */
-public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer.
@@ -226,5 +226,11 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
         return true;
     }
     
+    @Override
+    public EnableAvailabilityZonesForLoadBalancerRequest clone() {
+        
+            return (EnableAvailabilityZonesForLoadBalancerRequest) super.clone();
+    }
+
 }
     

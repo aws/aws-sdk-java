@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a launch permission.
  * </p>
  */
-public class LaunchPermission implements Serializable {
+public class LaunchPermission implements Serializable, Cloneable {
 
     /**
      * The AWS account ID.
@@ -194,5 +194,19 @@ public class LaunchPermission implements Serializable {
         return true;
     }
     
+    @Override
+    public LaunchPermission clone() {
+        try {
+            return (LaunchPermission) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

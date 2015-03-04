@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteLayer(DeleteLayerRequest)
  */
-public class DeleteLayerRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteLayerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The layer ID.
@@ -117,5 +117,11 @@ public class DeleteLayerRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteLayerRequest clone() {
+        
+            return (DeleteLayerRequest) super.clone();
+    }
+
 }
     

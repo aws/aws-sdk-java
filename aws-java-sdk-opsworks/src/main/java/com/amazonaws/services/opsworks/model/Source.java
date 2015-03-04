@@ -24,7 +24,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class Source implements Serializable {
+public class Source implements Serializable, Cloneable {
 
     /**
      * The repository type.
@@ -442,5 +442,19 @@ public class Source implements Serializable {
         return true;
     }
     
+    @Override
+    public Source clone() {
+        try {
+            return (Source) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

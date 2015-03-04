@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The CloudFrontOriginAccessIdentityList type.
  * </p>
  */
-public class CloudFrontOriginAccessIdentityList implements Serializable {
+public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneable {
 
     /**
      * The value you provided for the Marker request parameter.
@@ -426,5 +426,19 @@ public class CloudFrontOriginAccessIdentityList implements Serializable {
         return true;
     }
     
+    @Override
+    public CloudFrontOriginAccessIdentityList clone() {
+        try {
+            return (CloudFrontOriginAccessIdentityList) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

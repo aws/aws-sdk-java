@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for Publish action.
  * </p>
  */
-public class PublishResult implements Serializable {
+public class PublishResult implements Serializable, Cloneable {
 
     /**
      * Unique identifier assigned to the published message. <p>Length
@@ -107,5 +107,19 @@ public class PublishResult implements Serializable {
         return true;
     }
     
+    @Override
+    public PublishResult clone() {
+        try {
+            return (PublishResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

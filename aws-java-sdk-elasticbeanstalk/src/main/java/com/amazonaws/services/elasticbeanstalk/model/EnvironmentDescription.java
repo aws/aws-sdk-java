@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the properties of an environment.
  * </p>
  */
-public class EnvironmentDescription implements Serializable {
+public class EnvironmentDescription implements Serializable, Cloneable {
 
     /**
      * The name of this environment.
@@ -1179,5 +1179,19 @@ public class EnvironmentDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public EnvironmentDescription clone() {
+        try {
+            return (EnvironmentDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteOptionGroup(DeleteOptionGroupRequest)
  */
-public class DeleteOptionGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteOptionGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the option group to be deleted. <note>You cannot delete
@@ -112,5 +112,11 @@ public class DeleteOptionGroupRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteOptionGroupRequest clone() {
+        
+            return (DeleteOptionGroupRequest) super.clone();
+    }
+
 }
     

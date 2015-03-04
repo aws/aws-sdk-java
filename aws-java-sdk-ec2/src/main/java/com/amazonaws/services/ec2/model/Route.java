@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a route in a route table.
  * </p>
  */
-public class Route implements Serializable {
+public class Route implements Serializable, Cloneable {
 
     /**
      * The CIDR block used for the destination match.
@@ -597,5 +597,19 @@ public class Route implements Serializable {
         return true;
     }
     
+    @Override
+    public Route clone() {
+        try {
+            return (Route) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

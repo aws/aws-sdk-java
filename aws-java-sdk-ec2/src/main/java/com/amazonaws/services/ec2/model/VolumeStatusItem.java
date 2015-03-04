@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the volume status.
  * </p>
  */
-public class VolumeStatusItem implements Serializable {
+public class VolumeStatusItem implements Serializable, Cloneable {
 
     /**
      * The volume ID.
@@ -338,5 +338,19 @@ public class VolumeStatusItem implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeStatusItem clone() {
+        try {
+            return (VolumeStatusItem) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeEventSubscriptions action.
  * </p>
  */
-public class EventSubscription implements Serializable {
+public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * The AWS customer account associated with the RDS event notification
@@ -576,5 +576,19 @@ public class EventSubscription implements Serializable {
         return true;
     }
     
+    @Override
+    public EventSubscription clone() {
+        try {
+            return (EventSubscription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

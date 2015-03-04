@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest)
  */
-public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cluster subnet group for which information is
@@ -551,5 +551,11 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DescribeClusterSubnetGroupsRequest clone() {
+        
+            return (DescribeClusterSubnetGroupsRequest) super.clone();
+    }
+
 }
     

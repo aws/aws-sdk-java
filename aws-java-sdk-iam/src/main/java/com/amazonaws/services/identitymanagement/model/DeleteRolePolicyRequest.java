@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(DeleteRolePolicyRequest)
  */
-public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) identifying the role that the policy
@@ -194,5 +194,11 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteRolePolicyRequest clone() {
+        
+            return (DeleteRolePolicyRequest) super.clone();
+    }
+
 }
     

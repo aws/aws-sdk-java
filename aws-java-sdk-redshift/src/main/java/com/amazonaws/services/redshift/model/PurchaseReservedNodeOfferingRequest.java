@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#purchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest)
  */
-public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest implements Serializable {
+public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of the reserved node offering you want to
@@ -172,5 +172,11 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public PurchaseReservedNodeOfferingRequest clone() {
+        
+            return (PurchaseReservedNodeOfferingRequest) super.clone();
+    }
+
 }
     

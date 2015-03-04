@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptionsByTopic(ListSubscriptionsByTopicRequest)
  */
-public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the topic for which you wish to find subscriptions.
@@ -191,5 +191,11 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ListSubscriptionsByTopicRequest clone() {
+        
+            return (ListSubscriptionsByTopicRequest) super.clone();
+    }
+
 }
     

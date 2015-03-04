@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAutoScalingGroupsResult implements Serializable {
+public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable {
 
     /**
      * The groups.
@@ -194,5 +194,19 @@ public class DescribeAutoScalingGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAutoScalingGroupsResult clone() {
+        try {
+            return (DescribeAutoScalingGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

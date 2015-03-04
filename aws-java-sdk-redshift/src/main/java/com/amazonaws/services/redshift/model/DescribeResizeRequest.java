@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeResize(DescribeResizeRequest)
  */
-public class DescribeResizeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeResizeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of a cluster whose resize progress you are
@@ -127,5 +127,11 @@ public class DescribeResizeRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeResizeRequest clone() {
+        
+            return (DescribeResizeRequest) super.clone();
+    }
+
 }
     

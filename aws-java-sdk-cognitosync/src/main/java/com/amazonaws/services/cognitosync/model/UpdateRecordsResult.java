@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Returned for a successful UpdateRecordsRequest.
  * </p>
  */
-public class UpdateRecordsResult implements Serializable {
+public class UpdateRecordsResult implements Serializable, Cloneable {
 
     /**
      * A list of records that have been updated.
@@ -135,5 +135,19 @@ public class UpdateRecordsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateRecordsResult clone() {
+        try {
+            return (UpdateRecordsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Elastic Transcoder returns an error.
  * </p>
  */
-public class CaptionFormat implements Serializable {
+public class CaptionFormat implements Serializable, Cloneable {
 
     /**
      * The format you specify determines whether Elastic Transcoder generates
@@ -384,5 +384,19 @@ public class CaptionFormat implements Serializable {
         return true;
     }
     
+    @Override
+    public CaptionFormat clone() {
+        try {
+            return (CaptionFormat) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

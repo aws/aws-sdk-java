@@ -44,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#deleteAttributes(DeleteAttributesRequest)
  */
-public class DeleteAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which to perform the operation.
@@ -395,5 +395,11 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteAttributesRequest clone() {
+        
+            return (DeleteAttributesRequest) super.clone();
+    }
+
 }
     

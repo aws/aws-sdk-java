@@ -39,7 +39,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpnConnectionRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnection(DeleteVpnConnectionRequest)
  */
-public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVpnConnectionRequest> {
+public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteVpnConnectionRequest> {
 
     /**
      * The ID of the VPN connection.
@@ -147,5 +147,11 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DeleteVpnConnectionRequest clone() {
+        
+            return (DeleteVpnConnectionRequest) super.clone();
+    }
+
 }
     

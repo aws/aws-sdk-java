@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest)
  */
-public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user whose password you want to delete.
@@ -148,5 +148,11 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteLoginProfileRequest clone() {
+        
+            return (DeleteLoginProfileRequest) super.clone();
+    }
+
 }
     

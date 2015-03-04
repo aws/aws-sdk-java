@@ -86,7 +86,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#getRecords(GetRecordsRequest)
  */
-public class GetRecordsRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetRecordsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The position in the shard from which you want to start sequentially
@@ -259,5 +259,11 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public GetRecordsRequest clone() {
+        
+            return (GetRecordsRequest) super.clone();
+    }
+
 }
     

@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest)
  */
-public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -252,5 +252,11 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public UpdateBandwidthRateLimitRequest clone() {
+        
+            return (UpdateBandwidthRateLimitRequest) super.clone();
+    }
+
 }
     

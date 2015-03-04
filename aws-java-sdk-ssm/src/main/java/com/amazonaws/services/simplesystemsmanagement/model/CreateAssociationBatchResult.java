@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateAssociationBatchResult implements Serializable {
+public class CreateAssociationBatchResult implements Serializable, Cloneable {
 
     /**
      * Information about the associations that succeeded.
@@ -210,5 +210,19 @@ public class CreateAssociationBatchResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateAssociationBatchResult clone() {
+        try {
+            return (CreateAssociationBatchResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

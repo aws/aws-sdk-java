@@ -25,7 +25,7 @@ import java.io.Serializable;
  * DescribeOrderableDBInstanceOptions action.
  * </p>
  */
-public class OrderableDBInstanceOption implements Serializable {
+public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * The engine type of the orderable DB instance.
@@ -622,5 +622,19 @@ public class OrderableDBInstanceOption implements Serializable {
         return true;
     }
     
+    @Override
+    public OrderableDBInstanceOption clone() {
+        try {
+            return (OrderableDBInstanceOption) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

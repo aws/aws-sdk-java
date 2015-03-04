@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpnConnectionsRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnConnections(DescribeVpnConnectionsRequest)
  */
-public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpnConnectionsRequest> {
+public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVpnConnectionsRequest> {
 
     /**
      * One or more VPN connection IDs. <p>Default: Describes your VPN
@@ -524,5 +524,11 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeVpnConnectionsRequest clone() {
+        
+            return (DescribeVpnConnectionsRequest) super.clone();
+    }
+
 }
     

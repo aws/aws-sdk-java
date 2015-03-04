@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeClusterSubnetGroups action.
  * </p>
  */
-public class DescribeClusterSubnetGroupsResult implements Serializable {
+public class DescribeClusterSubnetGroupsResult implements Serializable, Cloneable {
 
     /**
      * A value that indicates the starting point for the next set of response
@@ -212,5 +212,19 @@ public class DescribeClusterSubnetGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeClusterSubnetGroupsResult clone() {
+        try {
+            return (DescribeClusterSubnetGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

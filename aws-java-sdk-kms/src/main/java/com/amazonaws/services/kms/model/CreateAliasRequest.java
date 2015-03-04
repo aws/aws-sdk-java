@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#createAlias(CreateAliasRequest)
  */
-public class CreateAliasRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * String that contains the display name. Aliases that begin with AWS are
@@ -196,5 +196,11 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateAliasRequest clone() {
+        
+            return (CreateAliasRequest) super.clone();
+    }
+
 }
     

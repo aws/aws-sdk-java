@@ -22,7 +22,7 @@ import java.io.Serializable;
  * another call to DescribeObjects.
  * </p>
  */
-public class DescribeObjectsResult implements Serializable {
+public class DescribeObjectsResult implements Serializable, Cloneable {
 
     /**
      * An array of object definitions that are returned by the call to
@@ -261,5 +261,19 @@ public class DescribeObjectsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeObjectsResult clone() {
+        try {
+            return (DescribeObjectsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class Filter implements Serializable {
+public class Filter implements Serializable, Cloneable {
 
     /**
      * This parameter is not currently supported.
@@ -175,5 +175,19 @@ public class Filter implements Serializable {
         return true;
     }
     
+    @Override
+    public Filter clone() {
+        try {
+            return (Filter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

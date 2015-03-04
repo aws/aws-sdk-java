@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A specification for an environment configuration
  * </p>
  */
-public class SourceConfiguration implements Serializable {
+public class SourceConfiguration implements Serializable, Cloneable {
 
     /**
      * The name of the application associated with the configuration.
@@ -172,5 +172,19 @@ public class SourceConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public SourceConfiguration clone() {
+        try {
+            return (SourceConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

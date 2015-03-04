@@ -78,7 +78,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#getShardIterator(GetShardIteratorRequest)
  */
-public class GetShardIteratorRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetShardIteratorRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream.
@@ -485,5 +485,11 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public GetShardIteratorRequest clone() {
+        
+            return (GetShardIteratorRequest) super.clone();
+    }
+
 }
     

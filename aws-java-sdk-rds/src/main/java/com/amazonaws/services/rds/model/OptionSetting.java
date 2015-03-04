@@ -25,7 +25,7 @@ import java.io.Serializable;
  * several different values.
  * </p>
  */
-public class OptionSetting implements Serializable {
+public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * The name of the option that has settings that you can set.
@@ -467,5 +467,19 @@ public class OptionSetting implements Serializable {
         return true;
     }
     
+    @Override
+    public OptionSetting clone() {
+        try {
+            return (OptionSetting) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

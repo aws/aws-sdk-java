@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest)
  */
-public class UploadServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class UploadServerCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path for the server certificate. For more information about paths,
@@ -471,5 +471,11 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public UploadServerCertificateRequest clone() {
+        
+            return (UploadServerCertificateRequest) super.clone();
+    }
+
 }
     

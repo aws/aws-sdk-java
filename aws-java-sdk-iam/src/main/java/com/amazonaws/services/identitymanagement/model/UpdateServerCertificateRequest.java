@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateServerCertificate(UpdateServerCertificateRequest)
  */
-public class UpdateServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateServerCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the server certificate that you want to update.
@@ -282,5 +282,11 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public UpdateServerCertificateRequest clone() {
+        
+            return (UpdateServerCertificateRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * launched to fulfill the request.
  * </p>
  */
-public class SpotPrice implements Serializable {
+public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * The instance type.
@@ -380,5 +380,19 @@ public class SpotPrice implements Serializable {
         return true;
     }
     
+    @Override
+    public SpotPrice clone() {
+        try {
+            return (SpotPrice) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#removeTags(RemoveTagsRequest)
  */
-public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon EMR resource identifier from which tags will be removed.
@@ -229,5 +229,11 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public RemoveTagsRequest clone() {
+        
+            return (RemoveTagsRequest) super.clone();
+    }
+
 }
     

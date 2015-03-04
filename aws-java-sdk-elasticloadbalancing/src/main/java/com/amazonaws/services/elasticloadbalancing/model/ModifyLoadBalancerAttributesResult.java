@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the ModifyLoadBalancerAttributes action.
  * </p>
  */
-public class ModifyLoadBalancerAttributesResult implements Serializable {
+public class ModifyLoadBalancerAttributesResult implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer.
@@ -142,5 +142,19 @@ public class ModifyLoadBalancerAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ModifyLoadBalancerAttributesResult clone() {
+        try {
+            return (ModifyLoadBalancerAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

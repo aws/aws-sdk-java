@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeOrderableClusterOptions action.
  * </p>
  */
-public class DescribeOrderableClusterOptionsResult implements Serializable {
+public class DescribeOrderableClusterOptionsResult implements Serializable, Cloneable {
 
     /**
      * An <a>OrderableClusterOption</a> structure containing information
@@ -221,5 +221,19 @@ public class DescribeOrderableClusterOptionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeOrderableClusterOptionsResult clone() {
+        try {
+            return (DescribeOrderableClusterOptionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

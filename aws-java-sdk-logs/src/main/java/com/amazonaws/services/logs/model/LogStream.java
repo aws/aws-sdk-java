@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A log stream is sequence of log events that share the same emitter.
  * </p>
  */
-public class LogStream implements Serializable {
+public class LogStream implements Serializable, Cloneable {
 
     private String logStreamName;
 
@@ -522,5 +522,19 @@ public class LogStream implements Serializable {
         return true;
     }
     
+    @Override
+    public LogStream clone() {
+        try {
+            return (LogStream) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

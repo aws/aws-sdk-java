@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribePlacementGroupsResult implements Serializable {
+public class DescribePlacementGroupsResult implements Serializable, Cloneable {
 
     /**
      * One or more placement groups.
@@ -133,5 +133,19 @@ public class DescribePlacementGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribePlacementGroupsResult clone() {
+        try {
+            return (DescribePlacementGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

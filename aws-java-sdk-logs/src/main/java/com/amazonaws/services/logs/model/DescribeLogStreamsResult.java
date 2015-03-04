@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Describe Log Streams Result
  */
-public class DescribeLogStreamsResult implements Serializable {
+public class DescribeLogStreamsResult implements Serializable, Cloneable {
 
     /**
      * A list of log streams.
@@ -189,5 +189,19 @@ public class DescribeLogStreamsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLogStreamsResult clone() {
+        try {
+            return (DescribeLogStreamsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

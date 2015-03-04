@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeDomains(DescribeDomainsRequest)
  */
-public class DescribeDomainsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDomainsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The names of the domains you want to include in the response.
@@ -147,5 +147,11 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DescribeDomainsRequest clone() {
+        
+            return (DescribeDomainsRequest) super.clone();
+    }
+
 }
     

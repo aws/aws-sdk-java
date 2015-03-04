@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest)
  */
-public class ListAccountAliasesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAccountAliasesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Use this only when paginating results, and only in a subsequent
@@ -237,5 +237,11 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public ListAccountAliasesRequest clone() {
+        
+            return (ListAccountAliasesRequest) super.clone();
+    }
+
 }
     

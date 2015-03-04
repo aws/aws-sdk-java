@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#generateRandom(GenerateRandomRequest)
  */
-public class GenerateRandomRequest extends AmazonWebServiceRequest implements Serializable {
+public class GenerateRandomRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Integer that contains the number of bytes to generate. Common values
@@ -124,5 +124,11 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GenerateRandomRequest clone() {
+        
+            return (GenerateRandomRequest) super.clone();
+    }
+
 }
     

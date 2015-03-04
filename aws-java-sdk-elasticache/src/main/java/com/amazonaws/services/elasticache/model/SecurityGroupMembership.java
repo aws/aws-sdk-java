@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a single cache security group and its status..
+ * Represents a single cache security group and its status.
  * </p>
  */
-public class SecurityGroupMembership implements Serializable {
+public class SecurityGroupMembership implements Serializable, Cloneable {
 
     /**
      * The identifier of the cache security group.
@@ -156,5 +156,19 @@ public class SecurityGroupMembership implements Serializable {
         return true;
     }
     
+    @Override
+    public SecurityGroupMembership clone() {
+        try {
+            return (SecurityGroupMembership) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

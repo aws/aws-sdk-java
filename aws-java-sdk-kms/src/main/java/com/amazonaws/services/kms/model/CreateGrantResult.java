@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateGrantResult implements Serializable {
+public class CreateGrantResult implements Serializable, Cloneable {
 
     /**
      * The grant token. A grant token is a string that identifies a grant and
@@ -185,5 +185,19 @@ public class CreateGrantResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateGrantResult clone() {
+        try {
+            return (CreateGrantResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

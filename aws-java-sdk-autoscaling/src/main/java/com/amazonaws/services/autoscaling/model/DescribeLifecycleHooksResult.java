@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeLifecycleHooksResult implements Serializable {
+public class DescribeLifecycleHooksResult implements Serializable, Cloneable {
 
     /**
      * The lifecycle hooks for the specified group.
@@ -133,5 +133,19 @@ public class DescribeLifecycleHooksResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLifecycleHooksResult clone() {
+        try {
+            return (DescribeLifecycleHooksResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

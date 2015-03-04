@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#modifyLunaClient(ModifyLunaClientRequest)
  */
-public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the client.
@@ -179,5 +179,11 @@ public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ModifyLunaClientRequest clone() {
+        
+            return (ModifyLunaClientRequest) super.clone();
+    }
+
 }
     

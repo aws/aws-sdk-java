@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest)
  */
-public class SetTopicAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetTopicAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the topic to modify.
@@ -227,5 +227,11 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public SetTopicAttributesRequest clone() {
+        
+            return (SetTopicAttributesRequest) super.clone();
+    }
+
 }
     

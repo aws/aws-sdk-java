@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest)
  */
-public class DescribeBandwidthRateLimitRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeBandwidthRateLimitRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -140,5 +140,11 @@ public class DescribeBandwidthRateLimitRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DescribeBandwidthRateLimitRequest clone() {
+        
+            return (DescribeBandwidthRateLimitRequest) super.clone();
+    }
+
 }
     

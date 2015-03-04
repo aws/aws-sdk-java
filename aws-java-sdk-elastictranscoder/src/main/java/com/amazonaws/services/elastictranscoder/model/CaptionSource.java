@@ -22,7 +22,7 @@ import java.io.Serializable;
  * transcoding process.
  * </p>
  */
-public class CaptionSource implements Serializable {
+public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * The name of the sidecar caption file that you want Elastic Transcoder
@@ -387,5 +387,19 @@ public class CaptionSource implements Serializable {
         return true;
     }
     
+    @Override
+    public CaptionSource clone() {
+        try {
+            return (CaptionSource) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

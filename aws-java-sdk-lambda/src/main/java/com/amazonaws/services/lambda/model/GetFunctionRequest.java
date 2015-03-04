@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#getFunction(GetFunctionRequest)
  */
-public class GetFunctionRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetFunctionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Lambda function name.
@@ -129,5 +129,11 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public GetFunctionRequest clone() {
+        
+            return (GetFunctionRequest) super.clone();
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshalle
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importInstance(ImportInstanceRequest)
  */
-public class ImportInstanceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ImportInstanceRequest> {
+public class ImportInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportInstanceRequest> {
 
     /**
      * A description for the instance being imported.
@@ -337,5 +337,11 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ImportInstanceRequest clone() {
+        
+            return (ImportInstanceRequest) super.clone();
+    }
+
 }
     

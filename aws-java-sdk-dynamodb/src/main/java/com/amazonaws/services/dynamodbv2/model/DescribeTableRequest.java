@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#describeTable(DescribeTableRequest)
  */
-public class DescribeTableRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the table to describe.
@@ -148,5 +148,11 @@ public class DescribeTableRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DescribeTableRequest clone() {
+        
+            return (DescribeTableRequest) super.clone();
+    }
+
 }
     

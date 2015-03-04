@@ -396,19 +396,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentGroupRequestMarshaller().marshall(getDeploymentGroupRequest);
+                request = new GetDeploymentGroupRequestMarshaller().marshall(super.beforeMarshalling(getDeploymentGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetDeploymentGroupResult, JsonUnmarshallerContext> unmarshaller =
                 new GetDeploymentGroupResultJsonUnmarshaller();
             JsonResponseHandler<GetDeploymentGroupResult> responseHandler =
                 new JsonResponseHandler<GetDeploymentGroupResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -447,14 +448,16 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApplicationRequestMarshaller().marshall(updateApplicationRequest);
+                request = new UpdateApplicationRequestMarshaller().marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -497,19 +500,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentConfigRequestMarshaller().marshall(createDeploymentConfigRequest);
+                request = new CreateDeploymentConfigRequestMarshaller().marshall(super.beforeMarshalling(createDeploymentConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateDeploymentConfigResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateDeploymentConfigResultJsonUnmarshaller();
             JsonResponseHandler<CreateDeploymentConfigResult> responseHandler =
                 new JsonResponseHandler<CreateDeploymentConfigResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -555,19 +559,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeploymentInstancesRequestMarshaller().marshall(listDeploymentInstancesRequest);
+                request = new ListDeploymentInstancesRequestMarshaller().marshall(super.beforeMarshalling(listDeploymentInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListDeploymentInstancesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListDeploymentInstancesResultJsonUnmarshaller();
             JsonResponseHandler<ListDeploymentInstancesResult> responseHandler =
                 new JsonResponseHandler<ListDeploymentInstancesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -606,19 +611,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListApplicationsRequestMarshaller().marshall(listApplicationsRequest);
+                request = new ListApplicationsRequestMarshaller().marshall(super.beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListApplicationsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListApplicationsResultJsonUnmarshaller();
             JsonResponseHandler<ListApplicationsResult> responseHandler =
                 new JsonResponseHandler<ListApplicationsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -661,14 +667,16 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterApplicationRevisionRequestMarshaller().marshall(registerApplicationRevisionRequest);
+                request = new RegisterApplicationRevisionRequestMarshaller().marshall(super.beforeMarshalling(registerApplicationRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -709,19 +717,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentConfigRequestMarshaller().marshall(getDeploymentConfigRequest);
+                request = new GetDeploymentConfigRequestMarshaller().marshall(super.beforeMarshalling(getDeploymentConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetDeploymentConfigResult, JsonUnmarshallerContext> unmarshaller =
                 new GetDeploymentConfigResultJsonUnmarshaller();
             JsonResponseHandler<GetDeploymentConfigResult> responseHandler =
                 new JsonResponseHandler<GetDeploymentConfigResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -765,19 +774,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeploymentGroupsRequestMarshaller().marshall(listDeploymentGroupsRequest);
+                request = new ListDeploymentGroupsRequestMarshaller().marshall(super.beforeMarshalling(listDeploymentGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListDeploymentGroupsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListDeploymentGroupsResultJsonUnmarshaller();
             JsonResponseHandler<ListDeploymentGroupsResult> responseHandler =
                 new JsonResponseHandler<ListDeploymentGroupsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -819,19 +829,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetApplicationsRequestMarshaller().marshall(batchGetApplicationsRequest);
+                request = new BatchGetApplicationsRequestMarshaller().marshall(super.beforeMarshalling(batchGetApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<BatchGetApplicationsResult, JsonUnmarshallerContext> unmarshaller =
                 new BatchGetApplicationsResultJsonUnmarshaller();
             JsonResponseHandler<BatchGetApplicationsResult> responseHandler =
                 new JsonResponseHandler<BatchGetApplicationsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -875,19 +886,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeploymentGroupRequestMarshaller().marshall(deleteDeploymentGroupRequest);
+                request = new DeleteDeploymentGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDeploymentGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteDeploymentGroupResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteDeploymentGroupResultJsonUnmarshaller();
             JsonResponseHandler<DeleteDeploymentGroupResult> responseHandler =
                 new JsonResponseHandler<DeleteDeploymentGroupResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -936,19 +948,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListApplicationRevisionsRequestMarshaller().marshall(listApplicationRevisionsRequest);
+                request = new ListApplicationRevisionsRequestMarshaller().marshall(super.beforeMarshalling(listApplicationRevisionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListApplicationRevisionsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListApplicationRevisionsResultJsonUnmarshaller();
             JsonResponseHandler<ListApplicationRevisionsResult> responseHandler =
                 new JsonResponseHandler<ListApplicationRevisionsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -998,19 +1011,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDeploymentGroupRequestMarshaller().marshall(updateDeploymentGroupRequest);
+                request = new UpdateDeploymentGroupRequestMarshaller().marshall(super.beforeMarshalling(updateDeploymentGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateDeploymentGroupResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateDeploymentGroupResultJsonUnmarshaller();
             JsonResponseHandler<UpdateDeploymentGroupResult> responseHandler =
                 new JsonResponseHandler<UpdateDeploymentGroupResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1058,19 +1072,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeploymentsRequestMarshaller().marshall(listDeploymentsRequest);
+                request = new ListDeploymentsRequestMarshaller().marshall(super.beforeMarshalling(listDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListDeploymentsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListDeploymentsResultJsonUnmarshaller();
             JsonResponseHandler<ListDeploymentsResult> responseHandler =
                 new JsonResponseHandler<ListDeploymentsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1111,19 +1126,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApplicationRequestMarshaller().marshall(getApplicationRequest);
+                request = new GetApplicationRequestMarshaller().marshall(super.beforeMarshalling(getApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetApplicationResult, JsonUnmarshallerContext> unmarshaller =
                 new GetApplicationResultJsonUnmarshaller();
             JsonResponseHandler<GetApplicationResult> responseHandler =
                 new JsonResponseHandler<GetApplicationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1165,19 +1181,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateApplicationRequestMarshaller().marshall(createApplicationRequest);
+                request = new CreateApplicationRequestMarshaller().marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateApplicationResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateApplicationResultJsonUnmarshaller();
             JsonResponseHandler<CreateApplicationResult> responseHandler =
                 new JsonResponseHandler<CreateApplicationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1219,19 +1236,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopDeploymentRequestMarshaller().marshall(stopDeploymentRequest);
+                request = new StopDeploymentRequestMarshaller().marshall(super.beforeMarshalling(stopDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<StopDeploymentResult, JsonUnmarshallerContext> unmarshaller =
                 new StopDeploymentResultJsonUnmarshaller();
             JsonResponseHandler<StopDeploymentResult> responseHandler =
                 new JsonResponseHandler<StopDeploymentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1284,19 +1302,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentGroupRequestMarshaller().marshall(createDeploymentGroupRequest);
+                request = new CreateDeploymentGroupRequestMarshaller().marshall(super.beforeMarshalling(createDeploymentGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateDeploymentGroupResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateDeploymentGroupResultJsonUnmarshaller();
             JsonResponseHandler<CreateDeploymentGroupResult> responseHandler =
                 new JsonResponseHandler<CreateDeploymentGroupResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1333,14 +1352,16 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationRequestMarshaller().marshall(deleteApplicationRequest);
+                request = new DeleteApplicationRequestMarshaller().marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1380,19 +1401,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetDeploymentsRequestMarshaller().marshall(batchGetDeploymentsRequest);
+                request = new BatchGetDeploymentsRequestMarshaller().marshall(super.beforeMarshalling(batchGetDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<BatchGetDeploymentsResult, JsonUnmarshallerContext> unmarshaller =
                 new BatchGetDeploymentsResultJsonUnmarshaller();
             JsonResponseHandler<BatchGetDeploymentsResult> responseHandler =
                 new JsonResponseHandler<BatchGetDeploymentsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1436,14 +1458,16 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeploymentConfigRequestMarshaller().marshall(deleteDeploymentConfigRequest);
+                request = new DeleteDeploymentConfigRequestMarshaller().marshall(super.beforeMarshalling(deleteDeploymentConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1483,19 +1507,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentRequestMarshaller().marshall(getDeploymentRequest);
+                request = new GetDeploymentRequestMarshaller().marshall(super.beforeMarshalling(getDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetDeploymentResult, JsonUnmarshallerContext> unmarshaller =
                 new GetDeploymentResultJsonUnmarshaller();
             JsonResponseHandler<GetDeploymentResult> responseHandler =
                 new JsonResponseHandler<GetDeploymentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1545,19 +1570,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentRequestMarshaller().marshall(createDeploymentRequest);
+                request = new CreateDeploymentRequestMarshaller().marshall(super.beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateDeploymentResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateDeploymentResultJsonUnmarshaller();
             JsonResponseHandler<CreateDeploymentResult> responseHandler =
                 new JsonResponseHandler<CreateDeploymentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1602,19 +1628,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentInstanceRequestMarshaller().marshall(getDeploymentInstanceRequest);
+                request = new GetDeploymentInstanceRequestMarshaller().marshall(super.beforeMarshalling(getDeploymentInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetDeploymentInstanceResult, JsonUnmarshallerContext> unmarshaller =
                 new GetDeploymentInstanceResultJsonUnmarshaller();
             JsonResponseHandler<GetDeploymentInstanceResult> responseHandler =
                 new JsonResponseHandler<GetDeploymentInstanceResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1654,19 +1681,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeploymentConfigsRequestMarshaller().marshall(listDeploymentConfigsRequest);
+                request = new ListDeploymentConfigsRequestMarshaller().marshall(super.beforeMarshalling(listDeploymentConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListDeploymentConfigsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListDeploymentConfigsResultJsonUnmarshaller();
             JsonResponseHandler<ListDeploymentConfigsResult> responseHandler =
                 new JsonResponseHandler<ListDeploymentConfigsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1711,19 +1739,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApplicationRevisionRequestMarshaller().marshall(getApplicationRevisionRequest);
+                request = new GetApplicationRevisionRequestMarshaller().marshall(super.beforeMarshalling(getApplicationRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetApplicationRevisionResult, JsonUnmarshallerContext> unmarshaller =
                 new GetApplicationRevisionResultJsonUnmarshaller();
             JsonResponseHandler<GetApplicationRevisionResult> responseHandler =
                 new JsonResponseHandler<GetApplicationRevisionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

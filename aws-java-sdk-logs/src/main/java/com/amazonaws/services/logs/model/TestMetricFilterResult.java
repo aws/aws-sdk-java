@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Test Metric Filter Result
  */
-public class TestMetricFilterResult implements Serializable {
+public class TestMetricFilterResult implements Serializable, Cloneable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<MetricFilterMatchRecord> matches;
 
@@ -130,5 +130,19 @@ public class TestMetricFilterResult implements Serializable {
         return true;
     }
     
+    @Override
+    public TestMetricFilterResult clone() {
+        try {
+            return (TestMetricFilterResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

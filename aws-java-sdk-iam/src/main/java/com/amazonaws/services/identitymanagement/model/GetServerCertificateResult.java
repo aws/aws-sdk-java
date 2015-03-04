@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful GetServerCertificate request.
  * </p>
  */
-public class GetServerCertificateResult implements Serializable {
+public class GetServerCertificateResult implements Serializable, Cloneable {
 
     /**
      * Information about the server certificate.
@@ -100,5 +100,19 @@ public class GetServerCertificateResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetServerCertificateResult clone() {
+        try {
+            return (GetServerCertificateResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

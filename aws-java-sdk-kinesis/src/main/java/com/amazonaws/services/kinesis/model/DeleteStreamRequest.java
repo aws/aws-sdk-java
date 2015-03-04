@@ -53,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#deleteStream(DeleteStreamRequest)
  */
-public class DeleteStreamRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream to delete.
@@ -148,5 +148,11 @@ public class DeleteStreamRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeleteStreamRequest clone() {
+        
+            return (DeleteStreamRequest) super.clone();
+    }
+
 }
     

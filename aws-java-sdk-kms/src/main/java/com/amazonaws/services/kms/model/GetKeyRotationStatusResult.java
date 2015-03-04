@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetKeyRotationStatusResult implements Serializable {
+public class GetKeyRotationStatusResult implements Serializable, Cloneable {
 
     /**
      * A Boolean value that specifies whether key rotation is enabled.
@@ -107,5 +107,19 @@ public class GetKeyRotationStatusResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetKeyRotationStatusResult clone() {
+        try {
+            return (GetKeyRotationStatusResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

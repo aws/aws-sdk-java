@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBInstance(CreateDBInstanceRequest)
  */
-public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The meaning of this parameter differs according to the database engine
@@ -2786,5 +2786,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateDBInstanceRequest clone() {
+        
+            return (CreateDBInstanceRequest) super.clone();
+    }
+
 }
     

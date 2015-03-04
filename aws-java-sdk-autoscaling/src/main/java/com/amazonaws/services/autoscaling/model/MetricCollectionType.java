@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a metric.
  * </p>
  */
-public class MetricCollectionType implements Serializable {
+public class MetricCollectionType implements Serializable, Cloneable {
 
     /**
      * The metric.
@@ -116,5 +116,19 @@ public class MetricCollectionType implements Serializable {
         return true;
     }
     
+    @Override
+    public MetricCollectionType clone() {
+        try {
+            return (MetricCollectionType) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

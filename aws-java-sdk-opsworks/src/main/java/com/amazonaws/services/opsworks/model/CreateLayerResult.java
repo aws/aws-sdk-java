@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateLayer</code> request.
  * </p>
  */
-public class CreateLayerResult implements Serializable {
+public class CreateLayerResult implements Serializable, Cloneable {
 
     /**
      * The layer ID.
@@ -100,5 +100,19 @@ public class CreateLayerResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateLayerResult clone() {
+        try {
+            return (CreateLayerResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

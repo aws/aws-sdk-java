@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Combines the execution state and configuration of a step.
  * </p>
  */
-public class StepDetail implements Serializable {
+public class StepDetail implements Serializable, Cloneable {
 
     /**
      * The step configuration.
@@ -161,5 +161,19 @@ public class StepDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public StepDetail clone() {
+        try {
+            return (StepDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

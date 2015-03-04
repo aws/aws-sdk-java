@@ -61,7 +61,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateDomain(DeprecateDomainRequest)
  */
-public class DeprecateDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeprecateDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain to deprecate.
@@ -152,5 +152,11 @@ public class DeprecateDomainRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DeprecateDomainRequest clone() {
+        
+            return (DeprecateDomainRequest) super.clone();
+    }
+
 }
     

@@ -88,7 +88,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchGetItem(BatchGetItemRequest)
  */
-public class BatchGetItemRequest extends AmazonWebServiceRequest implements Serializable {
+public class BatchGetItemRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A map of one or more table names and, for each table, the
@@ -602,5 +602,11 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public BatchGetItemRequest clone() {
+        
+            return (BatchGetItemRequest) super.clone();
+    }
+
 }
     

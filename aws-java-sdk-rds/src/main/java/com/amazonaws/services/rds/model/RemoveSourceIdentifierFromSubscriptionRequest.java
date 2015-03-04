@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest)
  */
-public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the RDS event notification subscription you want to remove
@@ -169,5 +169,11 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServ
         return true;
     }
     
+    @Override
+    public RemoveSourceIdentifierFromSubscriptionRequest clone() {
+        
+            return (RemoveSourceIdentifierFromSubscriptionRequest) super.clone();
+    }
+
 }
     

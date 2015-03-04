@@ -22,7 +22,7 @@ import java.io.Serializable;
  * element.
  * </p>
  */
-public class UpdateDomainContactPrivacyResult implements Serializable {
+public class UpdateDomainContactPrivacyResult implements Serializable, Cloneable {
 
     /**
      * Identifier for tracking the progress of the request. To use this ID to
@@ -127,5 +127,19 @@ public class UpdateDomainContactPrivacyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateDomainContactPrivacyResult clone() {
+        try {
+            return (UpdateDomainContactPrivacyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

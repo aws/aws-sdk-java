@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>TimerStarted</code> event.
  * </p>
  */
-public class TimerStartedEventAttributes implements Serializable {
+public class TimerStartedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The unique Id of the timer that was started.
@@ -304,5 +304,19 @@ public class TimerStartedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public TimerStartedEventAttributes clone() {
+        try {
+            return (TimerStartedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

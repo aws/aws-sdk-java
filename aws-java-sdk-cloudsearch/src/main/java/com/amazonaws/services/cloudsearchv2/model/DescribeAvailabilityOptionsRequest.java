@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeAvailabilityOptions(DescribeAvailabilityOptionsRequest)
  */
-public class DescribeAvailabilityOptionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAvailabilityOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain you want to describe.
@@ -195,5 +195,11 @@ public class DescribeAvailabilityOptionsRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DescribeAvailabilityOptionsRequest clone() {
+        
+            return (DescribeAvailabilityOptionsRequest) super.clone();
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)
  */
-public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache parameter group family. Valid values are:
@@ -266,5 +266,11 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public DescribeEngineDefaultParametersRequest clone() {
+        
+            return (DescribeEngineDefaultParametersRequest) super.clone();
+    }
+
 }
     

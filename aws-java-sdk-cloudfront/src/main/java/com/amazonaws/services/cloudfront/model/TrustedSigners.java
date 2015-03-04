@@ -33,7 +33,7 @@ import java.io.Serializable;
  * distribution.
  * </p>
  */
-public class TrustedSigners implements Serializable {
+public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * Specifies whether you want to require end users to use signed URLs to
@@ -276,5 +276,19 @@ public class TrustedSigners implements Serializable {
         return true;
     }
     
+    @Override
+    public TrustedSigners clone() {
+        try {
+            return (TrustedSigners) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

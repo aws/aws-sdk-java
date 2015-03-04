@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for ListTopics action.
  * </p>
  */
-public class ListTopicsResult implements Serializable {
+public class ListTopicsResult implements Serializable, Cloneable {
 
     /**
      * A list of topic ARNs.
@@ -184,5 +184,19 @@ public class ListTopicsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListTopicsResult clone() {
+        try {
+            return (ListTopicsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

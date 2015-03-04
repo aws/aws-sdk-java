@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>DecisionTaskTimedOut</code> event.
  * </p>
  */
-public class DecisionTaskTimedOutEventAttributes implements Serializable {
+public class DecisionTaskTimedOutEventAttributes implements Serializable, Cloneable {
 
     /**
      * The type of timeout that expired before the decision task could be
@@ -289,5 +289,19 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public DecisionTaskTimedOutEventAttributes clone() {
+        try {
+            return (DecisionTaskTimedOutEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

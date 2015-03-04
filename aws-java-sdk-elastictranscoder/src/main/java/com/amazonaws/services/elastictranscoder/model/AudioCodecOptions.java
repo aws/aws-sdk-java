@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Options associated with your audio codec.
  * </p>
  */
-public class AudioCodecOptions implements Serializable {
+public class AudioCodecOptions implements Serializable, Cloneable {
 
     /**
      * You can only choose an audio profile when you specify AAC for the
@@ -210,5 +210,19 @@ public class AudioCodecOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public AudioCodecOptions clone() {
+        try {
+            return (AudioCodecOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -69,7 +69,7 @@ import com.amazonaws.services.ec2.model.transform.RunInstancesRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#runInstances(RunInstancesRequest)
  */
-public class RunInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RunInstancesRequest> {
+public class RunInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RunInstancesRequest> {
 
     /**
      * The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
@@ -1835,5 +1835,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public RunInstancesRequest clone() {
+        
+            return (RunInstancesRequest) super.clone();
+    }
+
 }
     

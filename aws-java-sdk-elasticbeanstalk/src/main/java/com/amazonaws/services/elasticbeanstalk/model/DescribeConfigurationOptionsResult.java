@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the settings for a specified configuration set.
  * </p>
  */
-public class DescribeConfigurationOptionsResult implements Serializable {
+public class DescribeConfigurationOptionsResult implements Serializable, Cloneable {
 
     /**
      * The name of the solution stack these configuration options belong to.
@@ -189,5 +189,19 @@ public class DescribeConfigurationOptionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeConfigurationOptionsResult clone() {
+        try {
+            return (DescribeConfigurationOptionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

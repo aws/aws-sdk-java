@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createApp(CreateAppRequest)
  */
-public class CreateAppRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateAppRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -944,5 +944,11 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CreateAppRequest clone() {
+        
+            return (CreateAppRequest) super.clone();
+    }
+
 }
     

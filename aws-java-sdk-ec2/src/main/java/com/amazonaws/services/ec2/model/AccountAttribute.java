@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an account attribute.
  * </p>
  */
-public class AccountAttribute implements Serializable {
+public class AccountAttribute implements Serializable, Cloneable {
 
     /**
      * The name of the account attribute.
@@ -177,5 +177,19 @@ public class AccountAttribute implements Serializable {
         return true;
     }
     
+    @Override
+    public AccountAttribute clone() {
+        try {
+            return (AccountAttribute) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

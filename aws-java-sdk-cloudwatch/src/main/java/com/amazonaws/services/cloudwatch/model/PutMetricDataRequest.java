@@ -44,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#putMetricData(PutMetricDataRequest)
  */
-public class PutMetricDataRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutMetricDataRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The namespace for the metric data.
@@ -216,5 +216,11 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public PutMetricDataRequest clone() {
+        
+            return (PutMetricDataRequest) super.clone();
+    }
+
 }
     

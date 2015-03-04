@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpcPeeringConnectionsR
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest)
  */
-public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpcPeeringConnectionsRequest> {
+public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVpcPeeringConnectionsRequest> {
 
     /**
      * One or more VPC peering connection IDs. <p>Default: Describes all your
@@ -519,5 +519,11 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DescribeVpcPeeringConnectionsRequest clone() {
+        
+            return (DescribeVpcPeeringConnectionsRequest) super.clone();
+    }
+
 }
     

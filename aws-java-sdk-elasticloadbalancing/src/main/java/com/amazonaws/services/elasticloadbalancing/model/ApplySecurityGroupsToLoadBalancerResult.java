@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The out for the ApplySecurityGroupsToLoadBalancer action.
  * </p>
  */
-public class ApplySecurityGroupsToLoadBalancerResult implements Serializable {
+public class ApplySecurityGroupsToLoadBalancerResult implements Serializable, Cloneable {
 
     /**
      * A list of security group IDs associated with your load balancer.
@@ -135,5 +135,19 @@ public class ApplySecurityGroupsToLoadBalancerResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ApplySecurityGroupsToLoadBalancerResult clone() {
+        try {
+            return (ApplySecurityGroupsToLoadBalancerResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The LBCookieStickinessPolicy data type.
  * </p>
  */
-public class LBCookieStickinessPolicy implements Serializable {
+public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * The name for the policy being created. The name must be unique within
@@ -186,5 +186,19 @@ public class LBCookieStickinessPolicy implements Serializable {
         return true;
     }
     
+    @Override
+    public LBCookieStickinessPolicy clone() {
+        try {
+            return (LBCookieStickinessPolicy) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

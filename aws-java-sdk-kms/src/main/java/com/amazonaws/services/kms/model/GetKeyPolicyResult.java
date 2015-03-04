@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetKeyPolicyResult implements Serializable {
+public class GetKeyPolicyResult implements Serializable, Cloneable {
 
     /**
      * A policy document in JSON format.
@@ -114,5 +114,19 @@ public class GetKeyPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetKeyPolicyResult clone() {
+        try {
+            return (GetKeyPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

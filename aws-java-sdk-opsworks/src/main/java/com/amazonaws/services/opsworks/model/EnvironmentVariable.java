@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents an app's environment variable.
  * </p>
  */
-public class EnvironmentVariable implements Serializable {
+public class EnvironmentVariable implements Serializable, Cloneable {
 
     /**
      * (Required) The environment variable's name, which can consist of up to
@@ -273,5 +273,19 @@ public class EnvironmentVariable implements Serializable {
         return true;
     }
     
+    @Override
+    public EnvironmentVariable clone() {
+        try {
+            return (EnvironmentVariable) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHostedZoneCount(GetHostedZoneCountRequest)
  */
-public class GetHostedZoneCountRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetHostedZoneCountRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -64,5 +64,11 @@ public class GetHostedZoneCountRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public GetHostedZoneCountRequest clone() {
+        
+            return (GetHostedZoneCountRequest) super.clone();
+    }
+
 }
     

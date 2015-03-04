@@ -41,7 +41,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVpcPeeringConnectionRequ
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpcPeeringConnection(CreateVpcPeeringConnectionRequest)
  */
-public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVpcPeeringConnectionRequest> {
+public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateVpcPeeringConnectionRequest> {
 
     /**
      * The ID of the requester VPC.
@@ -230,5 +230,11 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public CreateVpcPeeringConnectionRequest clone() {
+        
+            return (CreateVpcPeeringConnectionRequest) super.clone();
+    }
+
 }
     

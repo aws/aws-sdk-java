@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Elastic IP address.
  * </p>
  */
-public class ElasticIp implements Serializable {
+public class ElasticIp implements Serializable, Cloneable {
 
     /**
      * The IP address.
@@ -282,5 +282,19 @@ public class ElasticIp implements Serializable {
         return true;
     }
     
+    @Override
+    public ElasticIp clone() {
+        try {
+            return (ElasticIp) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

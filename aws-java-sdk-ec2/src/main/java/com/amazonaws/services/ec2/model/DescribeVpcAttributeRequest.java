@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpcAttributeRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcAttribute(DescribeVpcAttributeRequest)
  */
-public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpcAttributeRequest> {
+public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVpcAttributeRequest> {
 
     /**
      * The ID of the VPC.
@@ -214,5 +214,11 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeVpcAttributeRequest clone() {
+        
+            return (DescribeVpcAttributeRequest) super.clone();
+    }
+
 }
     

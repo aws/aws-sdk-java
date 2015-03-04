@@ -22,7 +22,7 @@ import java.io.Serializable;
  * operation returns.
  * </p>
  */
-public class AssumedRoleUser implements Serializable {
+public class AssumedRoleUser implements Serializable, Cloneable {
 
     /**
      * A unique identifier that contains the role ID and the role session
@@ -220,5 +220,19 @@ public class AssumedRoleUser implements Serializable {
         return true;
     }
     
+    @Override
+    public AssumedRoleUser clone() {
+        try {
+            return (AssumedRoleUser) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

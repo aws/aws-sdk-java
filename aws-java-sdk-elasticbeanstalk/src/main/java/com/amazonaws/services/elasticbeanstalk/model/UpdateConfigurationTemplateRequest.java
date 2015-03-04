@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateConfigurationTemplate(UpdateConfigurationTemplateRequest)
  */
-public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application associated with the configuration template
@@ -487,5 +487,11 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public UpdateConfigurationTemplateRequest clone() {
+        
+            return (UpdateConfigurationTemplateRequest) super.clone();
+    }
+
 }
     

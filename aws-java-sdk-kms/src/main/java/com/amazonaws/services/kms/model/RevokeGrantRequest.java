@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#revokeGrant(RevokeGrantRequest)
  */
-public class RevokeGrantRequest extends AmazonWebServiceRequest implements Serializable {
+public class RevokeGrantRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the key associated with the grant.
@@ -172,5 +172,11 @@ public class RevokeGrantRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public RevokeGrantRequest clone() {
+        
+            return (RevokeGrantRequest) super.clone();
+    }
+
 }
     

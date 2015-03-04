@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeDBEngineVersions.
  * </p>
  */
-public class DBEngineVersion implements Serializable {
+public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * The name of the database engine.
@@ -417,5 +417,19 @@ public class DBEngineVersion implements Serializable {
         return true;
     }
     
+    @Override
+    public DBEngineVersion clone() {
+        try {
+            return (DBEngineVersion) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

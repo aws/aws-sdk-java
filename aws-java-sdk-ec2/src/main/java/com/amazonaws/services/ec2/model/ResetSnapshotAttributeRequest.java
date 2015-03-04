@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.ResetSnapshotAttributeRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetSnapshotAttribute(ResetSnapshotAttributeRequest)
  */
-public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetSnapshotAttributeRequest> {
+public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ResetSnapshotAttributeRequest> {
 
     /**
      * The ID of the snapshot.
@@ -263,5 +263,11 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ResetSnapshotAttributeRequest clone() {
+        
+            return (ResetSnapshotAttributeRequest) super.clone();
+    }
+
 }
     

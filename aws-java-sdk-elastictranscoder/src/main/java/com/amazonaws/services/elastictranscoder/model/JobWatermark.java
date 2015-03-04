@@ -23,7 +23,7 @@ import java.io.Serializable;
  * transparency.
  * </p>
  */
-public class JobWatermark implements Serializable {
+public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * The ID of the watermark settings that Elastic Transcoder uses to add
@@ -291,5 +291,19 @@ public class JobWatermark implements Serializable {
         return true;
     }
     
+    @Override
+    public JobWatermark clone() {
+        try {
+            return (JobWatermark) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

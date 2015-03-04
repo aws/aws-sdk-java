@@ -25,7 +25,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class MFADevice implements Serializable {
+public class MFADevice implements Serializable, Cloneable {
 
     /**
      * The user with whom the MFA device is associated.
@@ -250,5 +250,19 @@ public class MFADevice implements Serializable {
         return true;
     }
     
+    @Override
+    public MFADevice clone() {
+        try {
+            return (MFADevice) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

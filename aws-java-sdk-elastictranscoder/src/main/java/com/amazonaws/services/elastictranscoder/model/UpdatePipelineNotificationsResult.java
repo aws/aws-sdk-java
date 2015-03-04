@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>UpdatePipelineNotificationsResponse</code> structure.
  * </p>
  */
-public class UpdatePipelineNotificationsResult implements Serializable {
+public class UpdatePipelineNotificationsResult implements Serializable, Cloneable {
 
     /**
      * A section of the response body that provides information about the
@@ -107,5 +107,19 @@ public class UpdatePipelineNotificationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdatePipelineNotificationsResult clone() {
+        try {
+            return (UpdatePipelineNotificationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

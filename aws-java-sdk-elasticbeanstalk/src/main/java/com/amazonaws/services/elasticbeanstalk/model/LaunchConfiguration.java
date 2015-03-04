@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Auto Scaling launch configuration.
  * </p>
  */
-public class LaunchConfiguration implements Serializable {
+public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * The name of the launch configuration.
@@ -106,5 +106,19 @@ public class LaunchConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public LaunchConfiguration clone() {
+        try {
+            return (LaunchConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

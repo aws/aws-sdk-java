@@ -22,7 +22,7 @@ import java.io.Serializable;
  * status of the newly-configured suggester.
  * </p>
  */
-public class DefineSuggesterResult implements Serializable {
+public class DefineSuggesterResult implements Serializable, Cloneable {
 
     /**
      * The value of a <code>Suggester</code> and its current status.
@@ -101,5 +101,19 @@ public class DefineSuggesterResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DefineSuggesterResult clone() {
+        try {
+            return (DefineSuggesterResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

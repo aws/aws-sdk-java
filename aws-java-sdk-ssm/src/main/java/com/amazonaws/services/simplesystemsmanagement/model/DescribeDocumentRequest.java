@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#describeDocument(DescribeDocumentRequest)
  */
-public class DescribeDocumentRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDocumentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -121,5 +121,11 @@ public class DescribeDocumentRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribeDocumentRequest clone() {
+        
+            return (DescribeDocumentRequest) super.clone();
+    }
+
 }
     

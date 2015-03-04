@@ -23,7 +23,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * 
  */
-public class GetConsoleOutputResult implements Serializable {
+public class GetConsoleOutputResult implements Serializable, Cloneable {
 
     /**
      * The ID of the instance.
@@ -202,5 +202,19 @@ public class GetConsoleOutputResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetConsoleOutputResult clone() {
+        try {
+            return (GetConsoleOutputResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

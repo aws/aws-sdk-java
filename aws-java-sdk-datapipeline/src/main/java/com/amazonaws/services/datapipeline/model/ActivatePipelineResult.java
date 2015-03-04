@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the ActivatePipeline action.
  * </p>
  */
-public class ActivatePipelineResult implements Serializable {
+public class ActivatePipelineResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class ActivatePipelineResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivatePipelineResult clone() {
+        try {
+            return (ActivatePipelineResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

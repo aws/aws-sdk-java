@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for a CreateStack action.
  * </p>
  */
-public class CreateStackResult implements Serializable {
+public class CreateStackResult implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the stack.
@@ -100,5 +100,19 @@ public class CreateStackResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateStackResult clone() {
+        try {
+            return (CreateStackResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

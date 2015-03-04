@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Output Log Event
  */
-public class OutputLogEvent implements Serializable {
+public class OutputLogEvent implements Serializable, Cloneable {
 
     /**
      * A point in time expressed as the number milliseconds since Jan 1, 1970
@@ -226,5 +226,19 @@ public class OutputLogEvent implements Serializable {
         return true;
     }
     
+    @Override
+    public OutputLogEvent clone() {
+        try {
+            return (OutputLogEvent) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

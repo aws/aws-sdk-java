@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The result of a <code>DescribeServiceAccessPolicies</code> request.
  * </p>
  */
-public class DescribeServiceAccessPoliciesResult implements Serializable {
+public class DescribeServiceAccessPoliciesResult implements Serializable, Cloneable {
 
     /**
      * The access rules configured for the domain specified in the request.
@@ -100,5 +100,19 @@ public class DescribeServiceAccessPoliciesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeServiceAccessPoliciesResult clone() {
+        try {
+            return (DescribeServiceAccessPoliciesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

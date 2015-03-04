@@ -35,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.CreatePlacementGroupRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createPlacementGroup(CreatePlacementGroupRequest)
  */
-public class CreatePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreatePlacementGroupRequest> {
+public class CreatePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreatePlacementGroupRequest> {
 
     /**
      * A name for the placement group. <p>Constraints: Up to 255 ASCII
@@ -261,5 +261,11 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public CreatePlacementGroupRequest clone() {
+        
+            return (CreatePlacementGroupRequest) super.clone();
+    }
+
 }
     

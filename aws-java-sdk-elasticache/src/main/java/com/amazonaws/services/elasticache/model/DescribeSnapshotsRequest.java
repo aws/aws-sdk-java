@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeSnapshots(DescribeSnapshotsRequest)
  */
-public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A user-supplied cluster identifier. If this parameter is specified,
@@ -360,5 +360,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DescribeSnapshotsRequest clone() {
+        
+            return (DescribeSnapshotsRequest) super.clone();
+    }
+
 }
     

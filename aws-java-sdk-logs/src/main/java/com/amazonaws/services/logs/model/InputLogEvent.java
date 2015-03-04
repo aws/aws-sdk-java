@@ -24,7 +24,7 @@ import java.io.Serializable;
  * timestamp of when the event occurred, and the raw event message.
  * </p>
  */
-public class InputLogEvent implements Serializable {
+public class InputLogEvent implements Serializable, Cloneable {
 
     /**
      * A point in time expressed as the number milliseconds since Jan 1, 1970
@@ -170,5 +170,19 @@ public class InputLogEvent implements Serializable {
         return true;
     }
     
+    @Override
+    public InputLogEvent clone() {
+        try {
+            return (InputLogEvent) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

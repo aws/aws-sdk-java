@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeTrustedAdvisorCheckRefreshStatuses operation.
  * </p>
  */
-public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Serializable {
+public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Serializable, Cloneable {
 
     /**
      * The refresh status of the specified Trusted Advisor checks.
@@ -136,5 +136,19 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Seriali
         return true;
     }
     
+    @Override
+    public DescribeTrustedAdvisorCheckRefreshStatusesResult clone() {
+        try {
+            return (DescribeTrustedAdvisorCheckRefreshStatusesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#createGrant(CreateGrantRequest)
  */
-public class CreateGrantRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateGrantRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique key identifier for a customer master key. This value can be a
@@ -543,5 +543,11 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateGrantRequest clone() {
+        
+            return (CreateGrantRequest) super.clone();
+    }
+
 }
     

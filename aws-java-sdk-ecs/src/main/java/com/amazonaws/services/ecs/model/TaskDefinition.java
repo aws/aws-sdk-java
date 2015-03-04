@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class TaskDefinition implements Serializable {
+public class TaskDefinition implements Serializable, Cloneable {
 
     /**
      * The full Amazon Resource Name (ARN) of the of the task definition.
@@ -452,5 +452,19 @@ public class TaskDefinition implements Serializable {
         return true;
     }
     
+    @Override
+    public TaskDefinition clone() {
+        try {
+            return (TaskDefinition) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

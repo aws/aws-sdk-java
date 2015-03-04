@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains information about a parameter object.
  * </p>
  */
-public class ParameterObject implements Serializable {
+public class ParameterObject implements Serializable, Cloneable {
 
     /**
      * Identifier of the parameter object.
@@ -193,5 +193,19 @@ public class ParameterObject implements Serializable {
         return true;
     }
     
+    @Override
+    public ParameterObject clone() {
+        try {
+            return (ParameterObject) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

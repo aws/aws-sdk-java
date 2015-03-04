@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListVirtualMFADevices request.
  * </p>
  */
-public class ListVirtualMFADevicesResult implements Serializable {
+public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
 
     /**
      * The list of virtual MFA devices in the current account that match the
@@ -294,5 +294,19 @@ public class ListVirtualMFADevicesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListVirtualMFADevicesResult clone() {
+        try {
+            return (ListVirtualMFADevicesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

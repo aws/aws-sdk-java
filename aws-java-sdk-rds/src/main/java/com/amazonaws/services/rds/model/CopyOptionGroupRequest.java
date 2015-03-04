@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#copyOptionGroup(CopyOptionGroupRequest)
  */
-public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier or ARN for the source option group. <p>Constraints:
@@ -350,5 +350,11 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public CopyOptionGroupRequest clone() {
+        
+            return (CopyOptionGroupRequest) super.clone();
+    }
+
 }
     

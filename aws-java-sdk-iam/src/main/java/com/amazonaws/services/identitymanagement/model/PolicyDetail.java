@@ -26,7 +26,7 @@ import java.io.Serializable;
  * GetAccountAuthorizationDetails action.
  * </p>
  */
-public class PolicyDetail implements Serializable {
+public class PolicyDetail implements Serializable, Cloneable {
 
     /**
      * The name of the policy.
@@ -186,5 +186,19 @@ public class PolicyDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public PolicyDetail clone() {
+        try {
+            return (PolicyDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

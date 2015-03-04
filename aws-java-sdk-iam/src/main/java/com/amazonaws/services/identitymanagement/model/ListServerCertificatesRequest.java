@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listServerCertificates(ListServerCertificatesRequest)
  */
-public class ListServerCertificatesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListServerCertificatesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path prefix for filtering the results. For example:
@@ -328,5 +328,11 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ListServerCertificatesRequest clone() {
+        
+            return (ListServerCertificatesRequest) super.clone();
+    }
+
 }
     

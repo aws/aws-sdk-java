@@ -57,7 +57,7 @@ import java.io.Serializable;
  * format.</li>
  * </ol>
  */
-public class CaseDetails implements Serializable {
+public class CaseDetails implements Serializable, Cloneable {
 
     /**
      * The AWS Support case ID requested or returned in the call. The case ID
@@ -719,5 +719,19 @@ public class CaseDetails implements Serializable {
         return true;
     }
     
+    @Override
+    public CaseDetails clone() {
+        try {
+            return (CaseDetails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#deleteVaultNotifications(DeleteVaultNotificationsRequest)
  */
-public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -226,5 +226,11 @@ public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DeleteVaultNotificationsRequest clone() {
+        
+            return (DeleteVaultNotificationsRequest) super.clone();
+    }
+
 }
     

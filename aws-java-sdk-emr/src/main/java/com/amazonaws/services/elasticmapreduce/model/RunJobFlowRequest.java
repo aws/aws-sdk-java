@@ -56,7 +56,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#runJobFlow(RunJobFlowRequest)
  */
-public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serializable {
+public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the job flow.
@@ -1265,5 +1265,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public RunJobFlowRequest clone() {
+        
+            return (RunJobFlowRequest) super.clone();
+    }
+
 }
     

@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest)
  */
-public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the instance profile to update.
@@ -191,5 +191,11 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public RemoveRoleFromInstanceProfileRequest clone() {
+        
+            return (RemoveRoleFromInstanceProfileRequest) super.clone();
+    }
+
 }
     

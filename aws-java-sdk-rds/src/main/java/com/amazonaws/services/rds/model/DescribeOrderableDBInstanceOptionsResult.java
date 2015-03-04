@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeOrderableDBInstanceOptions action.
  * </p>
  */
-public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
+public class DescribeOrderableDBInstanceOptionsResult implements Serializable, Cloneable {
 
     /**
      * An <a>OrderableDBInstanceOption</a> structure containing information
@@ -208,5 +208,19 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeOrderableDBInstanceOptionsResult clone() {
+        try {
+            return (DescribeOrderableDBInstanceOptionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

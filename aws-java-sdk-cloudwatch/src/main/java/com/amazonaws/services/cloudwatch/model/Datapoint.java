@@ -22,7 +22,7 @@ import java.io.Serializable;
  * data that Amazon CloudWatch computes from metric data.
  * </p>
  */
-public class Datapoint implements Serializable {
+public class Datapoint implements Serializable, Cloneable {
 
     /**
      * The time stamp used for the datapoint.
@@ -412,5 +412,19 @@ public class Datapoint implements Serializable {
         return true;
     }
     
+    @Override
+    public Datapoint clone() {
+        try {
+            return (Datapoint) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

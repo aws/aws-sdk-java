@@ -22,7 +22,7 @@ import java.io.Serializable;
  * cookies and headers.
  * </p>
  */
-public class ForwardedValues implements Serializable {
+public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * Indicates whether you want CloudFront to forward query strings to the
@@ -219,5 +219,19 @@ public class ForwardedValues implements Serializable {
         return true;
     }
     
+    @Override
+    public ForwardedValues clone() {
+        try {
+            return (ForwardedValues) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

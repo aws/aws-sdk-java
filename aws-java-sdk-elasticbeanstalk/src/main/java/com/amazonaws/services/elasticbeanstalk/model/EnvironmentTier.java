@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the properties of an environment tier
  * </p>
  */
-public class EnvironmentTier implements Serializable {
+public class EnvironmentTier implements Serializable, Cloneable {
 
     /**
      * The name of this environment tier.
@@ -184,5 +184,19 @@ public class EnvironmentTier implements Serializable {
         return true;
     }
     
+    @Override
+    public EnvironmentTier clone() {
+        try {
+            return (EnvironmentTier) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

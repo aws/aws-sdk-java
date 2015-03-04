@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Indicates if the specified CNAME is available.
  * </p>
  */
-public class CheckDNSAvailabilityResult implements Serializable {
+public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
 
     /**
      * Indicates if the specified CNAME is available: <enumValues> <value
@@ -215,5 +215,19 @@ public class CheckDNSAvailabilityResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CheckDNSAvailabilityResult clone() {
+        try {
+            return (CheckDNSAvailabilityResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

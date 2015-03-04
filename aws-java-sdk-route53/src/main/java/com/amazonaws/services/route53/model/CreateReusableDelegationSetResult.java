@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Create Reusable Delegation Set Result
  */
-public class CreateReusableDelegationSetResult implements Serializable {
+public class CreateReusableDelegationSetResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains name server information.
@@ -152,5 +152,19 @@ public class CreateReusableDelegationSetResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateReusableDelegationSetResult clone() {
+        try {
+            return (CreateReusableDelegationSetResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

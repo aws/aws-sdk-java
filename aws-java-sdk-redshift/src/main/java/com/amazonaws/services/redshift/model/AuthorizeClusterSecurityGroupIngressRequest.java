@@ -48,7 +48,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#authorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest)
  */
-public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
+public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the security group to which the ingress rule is added.
@@ -267,5 +267,11 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
         return true;
     }
     
+    @Override
+    public AuthorizeClusterSecurityGroupIngressRequest clone() {
+        
+            return (AuthorizeClusterSecurityGroupIngressRequest) super.clone();
+    }
+
 }
     

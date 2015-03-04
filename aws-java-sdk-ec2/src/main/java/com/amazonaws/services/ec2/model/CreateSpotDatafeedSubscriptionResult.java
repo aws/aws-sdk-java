@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateSpotDatafeedSubscriptionResult implements Serializable {
+public class CreateSpotDatafeedSubscriptionResult implements Serializable, Cloneable {
 
     /**
      * The Spot Instance data feed subscription.
@@ -98,5 +98,19 @@ public class CreateSpotDatafeedSubscriptionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateSpotDatafeedSubscriptionResult clone() {
+        try {
+            return (CreateSpotDatafeedSubscriptionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

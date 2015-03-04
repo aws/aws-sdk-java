@@ -22,7 +22,7 @@ import java.io.Serializable;
  * stored in GitHub.
  * </p>
  */
-public class GitHubLocation implements Serializable {
+public class GitHubLocation implements Serializable, Cloneable {
 
     /**
      * The GitHub account and repository pair that stores a reference to the
@@ -164,5 +164,19 @@ public class GitHubLocation implements Serializable {
         return true;
     }
     
+    @Override
+    public GitHubLocation clone() {
+        try {
+            return (GitHubLocation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

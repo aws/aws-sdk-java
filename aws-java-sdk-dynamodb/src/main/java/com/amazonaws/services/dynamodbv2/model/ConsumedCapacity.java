@@ -27,7 +27,7 @@ import java.io.Serializable;
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  */
-public class ConsumedCapacity implements Serializable {
+public class ConsumedCapacity implements Serializable, Cloneable {
 
     /**
      * The name of the table that was affected by the operation.
@@ -375,5 +375,19 @@ public class ConsumedCapacity implements Serializable {
         return true;
     }
     
+    @Override
+    public ConsumedCapacity clone() {
+        try {
+            return (ConsumedCapacity) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

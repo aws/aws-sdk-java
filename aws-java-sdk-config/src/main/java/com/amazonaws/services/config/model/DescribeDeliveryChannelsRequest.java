@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#describeDeliveryChannels(DescribeDeliveryChannelsRequest)
  */
-public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of delivery channel names.
@@ -146,5 +146,11 @@ public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeDeliveryChannelsRequest clone() {
+        
+            return (DescribeDeliveryChannelsRequest) super.clone();
+    }
+
 }
     

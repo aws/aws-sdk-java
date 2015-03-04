@@ -23,7 +23,7 @@ import java.io.Serializable;
  * AWS requests.
  * </p>
  */
-public class AssumeRoleWithSAMLResult implements Serializable {
+public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
 
     /**
      * AWS credentials for API authentication.
@@ -414,5 +414,19 @@ public class AssumeRoleWithSAMLResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AssumeRoleWithSAMLResult clone() {
+        try {
+            return (AssumeRoleWithSAMLResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

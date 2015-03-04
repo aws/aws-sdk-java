@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The current status of the configuration recorder.
  * </p>
  */
-public class ConfigurationRecorderStatus implements Serializable {
+public class ConfigurationRecorderStatus implements Serializable, Cloneable {
 
     /**
      * The name of the configuration recorder.
@@ -455,5 +455,19 @@ public class ConfigurationRecorderStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfigurationRecorderStatus clone() {
+        try {
+            return (ConfigurationRecorderStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

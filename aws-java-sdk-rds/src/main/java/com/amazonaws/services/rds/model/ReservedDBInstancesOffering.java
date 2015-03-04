@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeReservedDBInstancesOfferings action.
  * </p>
  */
-public class ReservedDBInstancesOffering implements Serializable {
+public class ReservedDBInstancesOffering implements Serializable, Cloneable {
 
     /**
      * The offering identifier.
@@ -529,5 +529,19 @@ public class ReservedDBInstancesOffering implements Serializable {
         return true;
     }
     
+    @Override
+    public ReservedDBInstancesOffering clone() {
+        try {
+            return (ReservedDBInstancesOffering) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a create application operation.
  * </p>
  */
-public class CreateApplicationResult implements Serializable {
+public class CreateApplicationResult implements Serializable, Cloneable {
 
     /**
      * A unique application ID.
@@ -100,5 +100,19 @@ public class CreateApplicationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateApplicationResult clone() {
+        try {
+            return (CreateApplicationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

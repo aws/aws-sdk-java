@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a layer.
  * </p>
  */
-public class Layer implements Serializable {
+public class Layer implements Serializable, Cloneable {
 
     /**
      * The layer stack ID.
@@ -1443,5 +1443,19 @@ public class Layer implements Serializable {
         return true;
     }
     
+    @Override
+    public Layer clone() {
+        try {
+            return (Layer) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

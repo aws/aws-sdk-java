@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getSendQuota(GetSendQuotaRequest)
  */
-public class GetSendQuotaRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetSendQuotaRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -66,5 +66,11 @@ public class GetSendQuotaRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public GetSendQuotaRequest clone() {
+        
+            return (GetSendQuotaRequest) super.clone();
+    }
+
 }
     

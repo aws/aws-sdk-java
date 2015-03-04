@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a secondary private IP address for a network interface.
  * </p>
  */
-public class PrivateIpAddressSpecification implements Serializable {
+public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * The private IP addresses.
@@ -160,5 +160,19 @@ public class PrivateIpAddressSpecification implements Serializable {
         return true;
     }
     
+    @Override
+    public PrivateIpAddressSpecification clone() {
+        try {
+            return (PrivateIpAddressSpecification) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

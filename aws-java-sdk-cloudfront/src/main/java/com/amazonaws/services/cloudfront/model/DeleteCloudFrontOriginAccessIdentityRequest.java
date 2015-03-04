@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest)
  */
-public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The origin access identity's id.
@@ -174,5 +174,11 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
         return true;
     }
     
+    @Override
+    public DeleteCloudFrontOriginAccessIdentityRequest clone() {
+        
+            return (DeleteCloudFrontOriginAccessIdentityRequest) super.clone();
+    }
+
 }
     

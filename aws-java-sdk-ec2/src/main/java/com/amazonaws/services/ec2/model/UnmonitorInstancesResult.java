@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class UnmonitorInstancesResult implements Serializable {
+public class UnmonitorInstancesResult implements Serializable, Cloneable {
 
     /**
      * Monitoring information for one or more instances.
@@ -133,5 +133,19 @@ public class UnmonitorInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UnmonitorInstancesResult clone() {
+        try {
+            return (UnmonitorInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

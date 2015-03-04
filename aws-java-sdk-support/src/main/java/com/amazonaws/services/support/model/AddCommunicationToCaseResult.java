@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The result of the AddCommunicationToCase operation.
  * </p>
  */
-public class AddCommunicationToCaseResult implements Serializable {
+public class AddCommunicationToCaseResult implements Serializable, Cloneable {
 
     /**
      * True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
@@ -118,5 +118,19 @@ public class AddCommunicationToCaseResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AddCommunicationToCaseResult clone() {
+        try {
+            return (AddCommunicationToCaseResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

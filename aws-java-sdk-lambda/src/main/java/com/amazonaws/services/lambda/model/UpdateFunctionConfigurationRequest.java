@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#updateFunctionConfiguration(UpdateFunctionConfigurationRequest)
  */
-public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the Lambda function.
@@ -476,5 +476,11 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public UpdateFunctionConfigurationRequest clone() {
+        
+            return (UpdateFunctionConfigurationRequest) super.clone();
+    }
+
 }
     

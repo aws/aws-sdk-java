@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listGeoLocations(ListGeoLocationsRequest)
  */
-public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The first continent code in the lexicographic ordering of geo
@@ -375,5 +375,11 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ListGeoLocationsRequest clone() {
+        
+            return (ListGeoLocationsRequest) super.clone();
+    }
+
 }
     

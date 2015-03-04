@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a create deployment group operation.
  * </p>
  */
-public class CreateDeploymentGroupResult implements Serializable {
+public class CreateDeploymentGroupResult implements Serializable, Cloneable {
 
     /**
      * A unique deployment group ID.
@@ -100,5 +100,19 @@ public class CreateDeploymentGroupResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateDeploymentGroupResult clone() {
+        try {
+            return (CreateDeploymentGroupResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class EnableVpcClassicLinkResult implements Serializable {
+public class EnableVpcClassicLinkResult implements Serializable, Cloneable {
 
     /**
      * Returns <code>true</code> if the request succeeds; otherwise, it
@@ -116,5 +116,19 @@ public class EnableVpcClassicLinkResult implements Serializable {
         return true;
     }
     
+    @Override
+    public EnableVpcClassicLinkResult clone() {
+        try {
+            return (EnableVpcClassicLinkResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

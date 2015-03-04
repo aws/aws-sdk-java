@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#deleteIndexField(DeleteIndexFieldRequest)
  */
-public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -210,5 +210,11 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteIndexFieldRequest clone() {
+        
+            return (DeleteIndexFieldRequest) super.clone();
+    }
+
 }
     

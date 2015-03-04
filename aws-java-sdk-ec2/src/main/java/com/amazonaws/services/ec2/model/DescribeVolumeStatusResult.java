@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeVolumeStatusResult implements Serializable {
+public class DescribeVolumeStatusResult implements Serializable, Cloneable {
 
     /**
      * A list of volumes.
@@ -175,5 +175,19 @@ public class DescribeVolumeStatusResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVolumeStatusResult clone() {
+        try {
+            return (DescribeVolumeStatusResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response to a <code>SubscribeToDataset</code> request.
  * </p>
  */
-public class SubscribeToDatasetResult implements Serializable {
+public class SubscribeToDatasetResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class SubscribeToDatasetResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SubscribeToDatasetResult clone() {
+        try {
+            return (SubscribeToDatasetResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The ListDomains response includes the following elements.
  * </p>
  */
-public class ListDomainsResult implements Serializable {
+public class ListDomainsResult implements Serializable, Cloneable {
 
     /**
      * A summary of domains. <p>Type: Complex type containing a list of
@@ -237,5 +237,19 @@ public class ListDomainsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListDomainsResult clone() {
+        try {
+            return (ListDomainsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

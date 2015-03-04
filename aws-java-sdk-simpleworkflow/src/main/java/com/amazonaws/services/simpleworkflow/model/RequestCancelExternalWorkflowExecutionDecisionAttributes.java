@@ -48,7 +48,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements Serializable {
+public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The <code>workflowId</code> of the external workflow
@@ -261,5 +261,19 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
         return true;
     }
     
+    @Override
+    public RequestCancelExternalWorkflowExecutionDecisionAttributes clone() {
+        try {
+            return (RequestCancelExternalWorkflowExecutionDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

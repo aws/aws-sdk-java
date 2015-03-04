@@ -30,7 +30,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotDatafeedSubscripti
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest)
  */
-public class DescribeSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSpotDatafeedSubscriptionRequest> {
+public class DescribeSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSpotDatafeedSubscriptionRequest> {
 
     /**
      * This method is intended for internal use only.
@@ -79,5 +79,11 @@ public class DescribeSpotDatafeedSubscriptionRequest extends AmazonWebServiceReq
         return true;
     }
     
+    @Override
+    public DescribeSpotDatafeedSubscriptionRequest clone() {
+        
+            return (DescribeSpotDatafeedSubscriptionRequest) super.clone();
+    }
+
 }
     

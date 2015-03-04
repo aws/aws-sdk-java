@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides all of the details about a particular cache engine version.
  * </p>
  */
-public class CacheEngineVersion implements Serializable {
+public class CacheEngineVersion implements Serializable, Cloneable {
 
     /**
      * The name of the cache engine.
@@ -275,5 +275,19 @@ public class CacheEngineVersion implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheEngineVersion clone() {
+        try {
+            return (CacheEngineVersion) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

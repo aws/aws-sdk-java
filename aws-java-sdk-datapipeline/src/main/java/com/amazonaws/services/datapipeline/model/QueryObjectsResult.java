@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the QueryObjects action.
  * </p>
  */
-public class QueryObjectsResult implements Serializable {
+public class QueryObjectsResult implements Serializable, Cloneable {
 
     /**
      * A list of identifiers that match the query selectors.
@@ -274,5 +274,19 @@ public class QueryObjectsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public QueryObjectsResult clone() {
+        try {
+            return (QueryObjectsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

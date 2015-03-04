@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAccountAttributesResult implements Serializable {
+public class DescribeAccountAttributesResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more account attributes.
@@ -133,5 +133,19 @@ public class DescribeAccountAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAccountAttributesResult clone() {
+        try {
+            return (DescribeAccountAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

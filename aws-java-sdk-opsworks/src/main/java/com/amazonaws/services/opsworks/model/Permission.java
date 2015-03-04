@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes stack or user permissions.
  * </p>
  */
-public class Permission implements Serializable {
+public class Permission implements Serializable, Cloneable {
 
     /**
      * A stack ID.
@@ -349,5 +349,19 @@ public class Permission implements Serializable {
         return true;
     }
     
+    @Override
+    public Permission clone() {
+        try {
+            return (Permission) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

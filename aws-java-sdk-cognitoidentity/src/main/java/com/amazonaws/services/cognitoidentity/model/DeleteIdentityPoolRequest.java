@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#deleteIdentityPool(DeleteIdentityPoolRequest)
  */
-public class DeleteIdentityPoolRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteIdentityPoolRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -122,5 +122,11 @@ public class DeleteIdentityPoolRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteIdentityPoolRequest clone() {
+        
+            return (DeleteIdentityPoolRequest) super.clone();
+    }
+
 }
     

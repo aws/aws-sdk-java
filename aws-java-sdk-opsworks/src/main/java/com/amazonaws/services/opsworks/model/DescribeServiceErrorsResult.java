@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeServiceErrors</code> request.
  * </p>
  */
-public class DescribeServiceErrorsResult implements Serializable {
+public class DescribeServiceErrorsResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>ServiceError</code> objects that describe the
@@ -144,5 +144,19 @@ public class DescribeServiceErrorsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeServiceErrorsResult clone() {
+        try {
+            return (DescribeServiceErrorsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

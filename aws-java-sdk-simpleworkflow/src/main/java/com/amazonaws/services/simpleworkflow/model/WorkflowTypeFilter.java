@@ -23,7 +23,7 @@ import java.io.Serializable;
  * returned result.
  * </p>
  */
-public class WorkflowTypeFilter implements Serializable {
+public class WorkflowTypeFilter implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> Name of the workflow type.
@@ -168,5 +168,19 @@ public class WorkflowTypeFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowTypeFilter clone() {
+        try {
+            return (WorkflowTypeFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

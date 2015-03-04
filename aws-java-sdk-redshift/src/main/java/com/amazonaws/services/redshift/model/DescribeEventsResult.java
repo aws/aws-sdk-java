@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeEvents action.
  * </p>
  */
-public class DescribeEventsResult implements Serializable {
+public class DescribeEventsResult implements Serializable, Cloneable {
 
     /**
      * A value that indicates the starting point for the next set of response
@@ -212,5 +212,19 @@ public class DescribeEventsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeEventsResult clone() {
+        try {
+            return (DescribeEventsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

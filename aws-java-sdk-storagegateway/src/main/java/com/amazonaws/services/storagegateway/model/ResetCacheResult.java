@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Reset Cache Result
  */
-public class ResetCacheResult implements Serializable {
+public class ResetCacheResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -124,5 +124,19 @@ public class ResetCacheResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ResetCacheResult clone() {
+        try {
+            return (ResetCacheResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

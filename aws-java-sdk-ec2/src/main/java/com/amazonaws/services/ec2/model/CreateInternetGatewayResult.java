@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateInternetGatewayResult implements Serializable {
+public class CreateInternetGatewayResult implements Serializable, Cloneable {
 
     /**
      * Information about the Internet gateway.
@@ -98,5 +98,19 @@ public class CreateInternetGatewayResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateInternetGatewayResult clone() {
+        try {
+            return (CreateInternetGatewayResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

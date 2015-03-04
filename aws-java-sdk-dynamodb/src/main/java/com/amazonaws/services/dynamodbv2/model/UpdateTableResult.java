@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of an <i>UpdateTable</i> operation.
  * </p>
  */
-public class UpdateTableResult implements Serializable {
+public class UpdateTableResult implements Serializable, Cloneable {
 
     /**
      * Represents the properties of a table.
@@ -100,5 +100,19 @@ public class UpdateTableResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateTableResult clone() {
+        try {
+            return (UpdateTableResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

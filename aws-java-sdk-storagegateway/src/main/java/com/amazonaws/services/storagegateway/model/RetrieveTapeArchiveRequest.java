@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#retrieveTapeArchive(RetrieveTapeArchiveRequest)
  */
-public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implements Serializable {
+public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape you want to
@@ -214,5 +214,11 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public RetrieveTapeArchiveRequest clone() {
+        
+            return (RetrieveTapeArchiveRequest) super.clone();
+    }
+
 }
     

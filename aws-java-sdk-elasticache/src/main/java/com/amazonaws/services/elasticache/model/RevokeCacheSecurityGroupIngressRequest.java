@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest)
  */
-public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
+public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache security group to revoke ingress from.
@@ -231,5 +231,11 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public RevokeCacheSecurityGroupIngressRequest clone() {
+        
+            return (RevokeCacheSecurityGroupIngressRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Parameters required for transcoding audio.
  * </p>
  */
-public class AudioParameters implements Serializable {
+public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * The audio codec for the output file. Valid values include
@@ -414,5 +414,19 @@ public class AudioParameters implements Serializable {
         return true;
     }
     
+    @Override
+    public AudioParameters clone() {
+        try {
+            return (AudioParameters) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

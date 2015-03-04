@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeConnections(DescribeConnectionsRequest)
  */
-public class DescribeConnectionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeConnectionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
@@ -109,5 +109,11 @@ public class DescribeConnectionsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeConnectionsRequest clone() {
+        
+            return (DescribeConnectionsRequest) super.clone();
+    }
+
 }
     

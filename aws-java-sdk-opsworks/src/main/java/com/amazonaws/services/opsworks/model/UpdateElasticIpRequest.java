@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateElasticIp(UpdateElasticIpRequest)
  */
-public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The address.
@@ -158,5 +158,11 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public UpdateElasticIpRequest clone() {
+        
+            return (UpdateElasticIpRequest) super.clone();
+    }
+
 }
     

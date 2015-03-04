@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setVisibleToAllUsers(SetVisibleToAllUsersRequest)
  */
-public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifiers of the job flows to receive the new visibility setting.
@@ -242,5 +242,11 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public SetVisibleToAllUsersRequest clone() {
+        
+            return (SetVisibleToAllUsersRequest) super.clone();
+    }
+
 }
     

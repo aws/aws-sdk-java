@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides options for specifying a range inventory retrieval job.
  * </p>
  */
-public class InventoryRetrievalJobInput implements Serializable {
+public class InventoryRetrievalJobInput implements Serializable, Cloneable {
 
     /**
      * The start of the date range in UTC for vault inventory retrieval that
@@ -296,5 +296,19 @@ public class InventoryRetrievalJobInput implements Serializable {
         return true;
     }
     
+    @Override
+    public InventoryRetrievalJobInput clone() {
+        try {
+            return (InventoryRetrievalJobInput) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

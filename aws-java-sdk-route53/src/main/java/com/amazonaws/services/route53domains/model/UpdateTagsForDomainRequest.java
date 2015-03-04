@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#updateTagsForDomain(UpdateTagsForDomainRequest)
  */
-public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The domain for which you want to add or update tags. <p>The name of a
@@ -343,5 +343,11 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public UpdateTagsForDomainRequest clone() {
+        
+            return (UpdateTagsForDomainRequest) super.clone();
+    }
+
 }
     

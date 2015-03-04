@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#getAttributes(GetAttributesRequest)
  */
-public class GetAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which to perform the operation.
@@ -343,5 +343,11 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public GetAttributesRequest clone() {
+        
+            return (GetAttributesRequest) super.clone();
+    }
+
 }
     

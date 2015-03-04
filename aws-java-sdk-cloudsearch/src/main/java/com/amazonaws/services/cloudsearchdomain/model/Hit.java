@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about a document that matches the search request.
  * </p>
  */
-public class Hit implements Serializable {
+public class Hit implements Serializable, Cloneable {
 
     /**
      * The document ID of a document that matches the search request.
@@ -260,5 +260,19 @@ public class Hit implements Serializable {
         return true;
     }
     
+    @Override
+    public Hit clone() {
+        try {
+            return (Hit) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

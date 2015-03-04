@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#deleteConnection(DeleteConnectionRequest)
  */
-public class DeleteConnectionRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
@@ -111,5 +111,11 @@ public class DeleteConnectionRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteConnectionRequest clone() {
+        
+            return (DeleteConnectionRequest) super.clone();
+    }
+
 }
     

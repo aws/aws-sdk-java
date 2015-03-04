@@ -22,7 +22,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class DescribePendingMaintenanceActionsResult implements Serializable {
+public class DescribePendingMaintenanceActionsResult implements Serializable, Cloneable {
 
     /**
      * Provides a list of the pending maintenance actions for the resource.
@@ -206,5 +206,19 @@ public class DescribePendingMaintenanceActionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribePendingMaintenanceActionsResult clone() {
+        try {
+            return (DescribePendingMaintenanceActionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

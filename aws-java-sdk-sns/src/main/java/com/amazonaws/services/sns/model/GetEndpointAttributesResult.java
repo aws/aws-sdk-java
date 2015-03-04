@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response from GetEndpointAttributes of the EndpointArn.
  * </p>
  */
-public class GetEndpointAttributesResult implements Serializable {
+public class GetEndpointAttributesResult implements Serializable, Cloneable {
 
     /**
      * Attributes include the following: <ul> <li><code>CustomUserData</code>
@@ -214,5 +214,19 @@ public class GetEndpointAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetEndpointAttributesResult clone() {
+        try {
+            return (GetEndpointAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

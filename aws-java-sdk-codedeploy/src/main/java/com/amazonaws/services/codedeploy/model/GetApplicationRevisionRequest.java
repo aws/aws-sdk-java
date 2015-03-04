@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#getApplicationRevision(GetApplicationRevisionRequest)
  */
-public class GetApplicationRevisionRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetApplicationRevisionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application that corresponds to the revision.
@@ -166,5 +166,11 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public GetApplicationRevisionRequest clone() {
+        
+            return (GetApplicationRevisionRequest) super.clone();
+    }
+
 }
     

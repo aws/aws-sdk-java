@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#getStreamingDistribution(GetStreamingDistributionRequest)
  */
-public class GetStreamingDistributionRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetStreamingDistributionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The streaming distribution's id.
@@ -122,5 +122,11 @@ public class GetStreamingDistributionRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public GetStreamingDistributionRequest clone() {
+        
+            return (GetStreamingDistributionRequest) super.clone();
+    }
+
 }
     

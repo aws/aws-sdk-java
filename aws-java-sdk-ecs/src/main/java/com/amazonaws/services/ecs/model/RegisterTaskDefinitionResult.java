@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class RegisterTaskDefinitionResult implements Serializable {
+public class RegisterTaskDefinitionResult implements Serializable, Cloneable {
 
     /**
      * 
@@ -98,5 +98,19 @@ public class RegisterTaskDefinitionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RegisterTaskDefinitionResult clone() {
+        try {
+            return (RegisterTaskDefinitionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

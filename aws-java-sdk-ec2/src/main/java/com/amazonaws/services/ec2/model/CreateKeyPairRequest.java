@@ -45,7 +45,7 @@ import com.amazonaws.services.ec2.model.transform.CreateKeyPairRequestMarshaller
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest)
  */
-public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateKeyPairRequest> {
+public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateKeyPairRequest> {
 
     /**
      * A unique name for the key pair. <p>Constraints: Up to 255 ASCII
@@ -161,5 +161,11 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public CreateKeyPairRequest clone() {
+        
+            return (CreateKeyPairRequest) super.clone();
+    }
+
 }
     

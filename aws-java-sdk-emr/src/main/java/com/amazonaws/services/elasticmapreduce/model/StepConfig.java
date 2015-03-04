@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Specification of a job flow step.
  * </p>
  */
-public class StepConfig implements Serializable {
+public class StepConfig implements Serializable, Cloneable {
 
     /**
      * The name of the job flow step.
@@ -271,5 +271,19 @@ public class StepConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public StepConfig clone() {
+        try {
+            return (StepConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

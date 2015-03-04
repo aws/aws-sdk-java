@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#describeHapg(DescribeHapgRequest)
  */
-public class DescribeHapgRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeHapgRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the high-availability partition group to describe.
@@ -117,5 +117,11 @@ public class DescribeHapgRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DescribeHapgRequest clone() {
+        
+            return (DescribeHapgRequest) super.clone();
+    }
+
 }
     

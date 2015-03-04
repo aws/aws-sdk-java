@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListLunaClientsResult implements Serializable {
+public class ListLunaClientsResult implements Serializable, Cloneable {
 
     /**
      * The list of clients.
@@ -194,5 +194,19 @@ public class ListLunaClientsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListLunaClientsResult clone() {
+        try {
+            return (ListLunaClientsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

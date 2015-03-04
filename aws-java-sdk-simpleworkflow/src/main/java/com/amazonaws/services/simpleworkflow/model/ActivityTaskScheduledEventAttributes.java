@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskScheduled</code> event.
  * </p>
  */
-public class ActivityTaskScheduledEventAttributes implements Serializable {
+public class ActivityTaskScheduledEventAttributes implements Serializable, Cloneable {
 
     /**
      * The type of the activity task.
@@ -763,5 +763,19 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTaskScheduledEventAttributes clone() {
+        try {
+            return (ActivityTaskScheduledEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

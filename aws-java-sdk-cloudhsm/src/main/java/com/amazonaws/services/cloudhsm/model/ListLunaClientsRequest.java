@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#listLunaClients(ListLunaClientsRequest)
  */
-public class ListLunaClientsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListLunaClientsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <i>NextToken</i> value from a previous call to
@@ -130,5 +130,11 @@ public class ListLunaClientsRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public ListLunaClientsRequest clone() {
+        
+            return (ListLunaClientsRequest) super.clone();
+    }
+
 }
     

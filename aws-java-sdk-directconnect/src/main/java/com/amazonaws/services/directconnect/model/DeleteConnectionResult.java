@@ -22,7 +22,7 @@ import java.io.Serializable;
  * AWS Direct Connect location and the customer.
  * </p>
  */
-public class DeleteConnectionResult implements Serializable {
+public class DeleteConnectionResult implements Serializable, Cloneable {
 
     private String ownerAccount;
 
@@ -629,5 +629,19 @@ public class DeleteConnectionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteConnectionResult clone() {
+        try {
+            return (DeleteConnectionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

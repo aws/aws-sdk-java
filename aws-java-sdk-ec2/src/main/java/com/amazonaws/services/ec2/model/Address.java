@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Elastic IP address.
  * </p>
  */
-public class Address implements Serializable {
+public class Address implements Serializable, Cloneable {
 
     /**
      * The ID of the instance the address is associated with (if any).
@@ -482,5 +482,19 @@ public class Address implements Serializable {
         return true;
     }
     
+    @Override
+    public Address clone() {
+        try {
+            return (Address) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

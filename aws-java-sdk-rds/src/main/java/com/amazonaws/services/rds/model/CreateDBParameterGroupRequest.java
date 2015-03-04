@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBParameterGroup(CreateDBParameterGroupRequest)
  */
-public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
@@ -368,5 +368,11 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateDBParameterGroupRequest clone() {
+        
+            return (CreateDBParameterGroupRequest) super.clone();
+    }
+
 }
     

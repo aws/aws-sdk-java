@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getCredentialsForIdentity(GetCredentialsForIdentityRequest)
  */
-public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -220,5 +220,11 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public GetCredentialsForIdentityRequest clone() {
+        
+            return (GetCredentialsForIdentityRequest) super.clone();
+    }
+
 }
     

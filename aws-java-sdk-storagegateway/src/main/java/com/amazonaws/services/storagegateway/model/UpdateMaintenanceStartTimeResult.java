@@ -22,7 +22,7 @@ import java.io.Serializable;
  * time is updated.
  * </p>
  */
-public class UpdateMaintenanceStartTimeResult implements Serializable {
+public class UpdateMaintenanceStartTimeResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -127,5 +127,19 @@ public class UpdateMaintenanceStartTimeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateMaintenanceStartTimeResult clone() {
+        try {
+            return (UpdateMaintenanceStartTimeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

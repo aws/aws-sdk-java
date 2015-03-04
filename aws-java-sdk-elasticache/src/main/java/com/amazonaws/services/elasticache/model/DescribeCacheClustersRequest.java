@@ -55,7 +55,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheClusters(DescribeCacheClustersRequest)
  */
-public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The user-supplied cluster identifier. If this parameter is specified,
@@ -340,5 +340,11 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeCacheClustersRequest clone() {
+        
+            return (DescribeCacheClustersRequest) super.clone();
+    }
+
 }
     

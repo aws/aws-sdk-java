@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteLifecycleHookResult implements Serializable {
+public class DeleteLifecycleHookResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -56,5 +56,19 @@ public class DeleteLifecycleHookResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteLifecycleHookResult clone() {
+        try {
+            return (DeleteLifecycleHookResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

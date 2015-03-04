@@ -23,7 +23,7 @@ import java.io.Serializable;
  * that can be used to make AWS requests.
  * </p>
  */
-public class AssumeRoleWithWebIdentityResult implements Serializable {
+public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable {
 
     /**
      * The temporary security credentials, which include an access key ID, a
@@ -483,5 +483,19 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AssumeRoleWithWebIdentityResult clone() {
+        try {
+            return (AssumeRoleWithWebIdentityResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

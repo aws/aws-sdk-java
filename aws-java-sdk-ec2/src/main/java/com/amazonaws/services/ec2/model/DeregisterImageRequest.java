@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.DeregisterImageRequestMarshall
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deregisterImage(DeregisterImageRequest)
  */
-public class DeregisterImageRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeregisterImageRequest> {
+public class DeregisterImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeregisterImageRequest> {
 
     /**
      * The ID of the AMI.
@@ -140,5 +140,11 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DeregisterImageRequest clone() {
+        
+            return (DeregisterImageRequest) super.clone();
+    }
+
 }
     

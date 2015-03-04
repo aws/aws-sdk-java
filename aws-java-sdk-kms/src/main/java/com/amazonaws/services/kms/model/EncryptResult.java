@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class EncryptResult implements Serializable {
+public class EncryptResult implements Serializable, Cloneable {
 
     /**
      * The encrypted plaintext.
@@ -164,5 +164,19 @@ public class EncryptResult implements Serializable {
         return true;
     }
     
+    @Override
+    public EncryptResult clone() {
+        try {
+            return (EncryptResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

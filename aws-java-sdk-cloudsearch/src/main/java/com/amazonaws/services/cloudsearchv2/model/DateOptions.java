@@ -25,7 +25,7 @@ import java.io.Serializable;
  * enabled by default.
  * </p>
  */
-public class DateOptions implements Serializable {
+public class DateOptions implements Serializable, Cloneable {
 
     /**
      * A value to use for the field if the field isn't specified for a
@@ -37,11 +37,19 @@ public class DateOptions implements Serializable {
     private String defaultValue;
 
     /**
-     * A string that represents the name of an index field. Field names begin
-     * with a letter and can contain the following characters: a-z
-     * (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     * cannot be used as a field name. To reference a document's ID, you can
-     * use the name <code>_id</code>.
+     * A string that represents the name of an index field. CloudSearch
+     * supports regular index fields as well as dynamic fields. A dynamic
+     * field's name defines a pattern that begins or ends with a wildcard.
+     * Any document fields that don't map to a regular index field but do
+     * match a dynamic field's pattern are configured with the dynamic
+     * field's indexing options. <p>Regular field names begin with a letter
+     * and can contain the following characters: a-z (lowercase), 0-9, and _
+     * (underscore). Dynamic field names must begin or end with a wildcard
+     * (*). The wildcard can also be the only character in a dynamic field
+     * name. Multiple wildcards, and wildcards embedded within a string are
+     * not supported. <p>The name <code>score</code> is reserved and cannot
+     * be used as a field name. To reference a document's ID, you can use the
+     * name <code>_id</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -119,53 +127,93 @@ public class DateOptions implements Serializable {
     }
 
     /**
-     * A string that represents the name of an index field. Field names begin
-     * with a letter and can contain the following characters: a-z
-     * (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     * cannot be used as a field name. To reference a document's ID, you can
-     * use the name <code>_id</code>.
+     * A string that represents the name of an index field. CloudSearch
+     * supports regular index fields as well as dynamic fields. A dynamic
+     * field's name defines a pattern that begins or ends with a wildcard.
+     * Any document fields that don't map to a regular index field but do
+     * match a dynamic field's pattern are configured with the dynamic
+     * field's indexing options. <p>Regular field names begin with a letter
+     * and can contain the following characters: a-z (lowercase), 0-9, and _
+     * (underscore). Dynamic field names must begin or end with a wildcard
+     * (*). The wildcard can also be the only character in a dynamic field
+     * name. Multiple wildcards, and wildcards embedded within a string are
+     * not supported. <p>The name <code>score</code> is reserved and cannot
+     * be used as a field name. To reference a document's ID, you can use the
+     * name <code>_id</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
      *
-     * @return A string that represents the name of an index field. Field names begin
-     *         with a letter and can contain the following characters: a-z
-     *         (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     *         cannot be used as a field name. To reference a document's ID, you can
-     *         use the name <code>_id</code>.
+     * @return A string that represents the name of an index field. CloudSearch
+     *         supports regular index fields as well as dynamic fields. A dynamic
+     *         field's name defines a pattern that begins or ends with a wildcard.
+     *         Any document fields that don't map to a regular index field but do
+     *         match a dynamic field's pattern are configured with the dynamic
+     *         field's indexing options. <p>Regular field names begin with a letter
+     *         and can contain the following characters: a-z (lowercase), 0-9, and _
+     *         (underscore). Dynamic field names must begin or end with a wildcard
+     *         (*). The wildcard can also be the only character in a dynamic field
+     *         name. Multiple wildcards, and wildcards embedded within a string are
+     *         not supported. <p>The name <code>score</code> is reserved and cannot
+     *         be used as a field name. To reference a document's ID, you can use the
+     *         name <code>_id</code>.
      */
     public String getSourceField() {
         return sourceField;
     }
     
     /**
-     * A string that represents the name of an index field. Field names begin
-     * with a letter and can contain the following characters: a-z
-     * (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     * cannot be used as a field name. To reference a document's ID, you can
-     * use the name <code>_id</code>.
+     * A string that represents the name of an index field. CloudSearch
+     * supports regular index fields as well as dynamic fields. A dynamic
+     * field's name defines a pattern that begins or ends with a wildcard.
+     * Any document fields that don't map to a regular index field but do
+     * match a dynamic field's pattern are configured with the dynamic
+     * field's indexing options. <p>Regular field names begin with a letter
+     * and can contain the following characters: a-z (lowercase), 0-9, and _
+     * (underscore). Dynamic field names must begin or end with a wildcard
+     * (*). The wildcard can also be the only character in a dynamic field
+     * name. Multiple wildcards, and wildcards embedded within a string are
+     * not supported. <p>The name <code>score</code> is reserved and cannot
+     * be used as a field name. To reference a document's ID, you can use the
+     * name <code>_id</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
      *
-     * @param sourceField A string that represents the name of an index field. Field names begin
-     *         with a letter and can contain the following characters: a-z
-     *         (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     *         cannot be used as a field name. To reference a document's ID, you can
-     *         use the name <code>_id</code>.
+     * @param sourceField A string that represents the name of an index field. CloudSearch
+     *         supports regular index fields as well as dynamic fields. A dynamic
+     *         field's name defines a pattern that begins or ends with a wildcard.
+     *         Any document fields that don't map to a regular index field but do
+     *         match a dynamic field's pattern are configured with the dynamic
+     *         field's indexing options. <p>Regular field names begin with a letter
+     *         and can contain the following characters: a-z (lowercase), 0-9, and _
+     *         (underscore). Dynamic field names must begin or end with a wildcard
+     *         (*). The wildcard can also be the only character in a dynamic field
+     *         name. Multiple wildcards, and wildcards embedded within a string are
+     *         not supported. <p>The name <code>score</code> is reserved and cannot
+     *         be used as a field name. To reference a document's ID, you can use the
+     *         name <code>_id</code>.
      */
     public void setSourceField(String sourceField) {
         this.sourceField = sourceField;
     }
     
     /**
-     * A string that represents the name of an index field. Field names begin
-     * with a letter and can contain the following characters: a-z
-     * (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     * cannot be used as a field name. To reference a document's ID, you can
-     * use the name <code>_id</code>.
+     * A string that represents the name of an index field. CloudSearch
+     * supports regular index fields as well as dynamic fields. A dynamic
+     * field's name defines a pattern that begins or ends with a wildcard.
+     * Any document fields that don't map to a regular index field but do
+     * match a dynamic field's pattern are configured with the dynamic
+     * field's indexing options. <p>Regular field names begin with a letter
+     * and can contain the following characters: a-z (lowercase), 0-9, and _
+     * (underscore). Dynamic field names must begin or end with a wildcard
+     * (*). The wildcard can also be the only character in a dynamic field
+     * name. Multiple wildcards, and wildcards embedded within a string are
+     * not supported. <p>The name <code>score</code> is reserved and cannot
+     * be used as a field name. To reference a document's ID, you can use the
+     * name <code>_id</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -173,11 +221,19 @@ public class DateOptions implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
      *
-     * @param sourceField A string that represents the name of an index field. Field names begin
-     *         with a letter and can contain the following characters: a-z
-     *         (lowercase), 0-9, and _ (underscore). The name "score" is reserved and
-     *         cannot be used as a field name. To reference a document's ID, you can
-     *         use the name <code>_id</code>.
+     * @param sourceField A string that represents the name of an index field. CloudSearch
+     *         supports regular index fields as well as dynamic fields. A dynamic
+     *         field's name defines a pattern that begins or ends with a wildcard.
+     *         Any document fields that don't map to a regular index field but do
+     *         match a dynamic field's pattern are configured with the dynamic
+     *         field's indexing options. <p>Regular field names begin with a letter
+     *         and can contain the following characters: a-z (lowercase), 0-9, and _
+     *         (underscore). Dynamic field names must begin or end with a wildcard
+     *         (*). The wildcard can also be the only character in a dynamic field
+     *         name. Multiple wildcards, and wildcards embedded within a string are
+     *         not supported. <p>The name <code>score</code> is reserved and cannot
+     *         be used as a field name. To reference a document's ID, you can use the
+     *         name <code>_id</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -422,5 +478,19 @@ public class DateOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public DateOptions clone() {
+        try {
+            return (DateOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

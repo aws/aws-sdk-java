@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Summary of an invalidation request.
  * </p>
  */
-public class InvalidationSummary implements Serializable {
+public class InvalidationSummary implements Serializable, Cloneable {
 
     /**
      * The unique ID for an invalidation request.
@@ -187,5 +187,19 @@ public class InvalidationSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public InvalidationSummary clone() {
+        try {
+            return (InvalidationSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

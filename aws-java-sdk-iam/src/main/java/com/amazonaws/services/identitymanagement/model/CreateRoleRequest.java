@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest)
  */
-public class CreateRoleRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateRoleRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path to the role. For more information about paths, see <a
@@ -268,5 +268,11 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public CreateRoleRequest clone() {
+        
+            return (CreateRoleRequest) super.clone();
+    }
+
 }
     

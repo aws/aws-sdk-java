@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskCompleted</code> event.
  * </p>
  */
-public class ActivityTaskCompletedEventAttributes implements Serializable {
+public class ActivityTaskCompletedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The results of the activity task (if any).
@@ -238,5 +238,19 @@ public class ActivityTaskCompletedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTaskCompletedEventAttributes clone() {
+        try {
+            return (ActivityTaskCompletedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

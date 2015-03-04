@@ -66,7 +66,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest)
  */
-public class PollForActivityTaskRequest extends AmazonWebServiceRequest implements Serializable {
+public class PollForActivityTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain that contains the task lists being polled.
@@ -302,5 +302,11 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public PollForActivityTaskRequest clone() {
+        
+            return (PollForActivityTaskRequest) super.clone();
+    }
+
 }
     

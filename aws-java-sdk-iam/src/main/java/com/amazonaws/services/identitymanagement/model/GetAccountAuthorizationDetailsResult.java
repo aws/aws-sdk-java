@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GetAccountAuthorizationDetailsResult implements Serializable {
+public class GetAccountAuthorizationDetailsResult implements Serializable, Cloneable {
 
     /**
      * A list containing information about IAM users.
@@ -440,5 +440,19 @@ public class GetAccountAuthorizationDetailsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetAccountAuthorizationDetailsResult clone() {
+        try {
+            return (GetAccountAuthorizationDetailsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

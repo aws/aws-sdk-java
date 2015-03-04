@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#stopTask(StopTaskRequest)
  */
-public class StopTaskRequest extends AmazonWebServiceRequest implements Serializable {
+public class StopTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -168,5 +168,11 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements Serializ
         return true;
     }
     
+    @Override
+    public StopTaskRequest clone() {
+        
+            return (StopTaskRequest) super.clone();
+    }
+
 }
     

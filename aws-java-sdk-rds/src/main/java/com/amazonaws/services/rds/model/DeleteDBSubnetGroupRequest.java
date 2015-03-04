@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSubnetGroup(DeleteDBSubnetGroupRequest)
  */
-public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the database subnet group to delete. <note>You cannot
@@ -137,5 +137,11 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DeleteDBSubnetGroupRequest clone() {
+        
+            return (DeleteDBSubnetGroupRequest) super.clone();
+    }
+
 }
     

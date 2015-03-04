@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a block device mapping entry.
  * </p>
  */
-public class InstanceBlockDeviceMappingSpecification implements Serializable {
+public class InstanceBlockDeviceMappingSpecification implements Serializable, Cloneable {
 
     /**
      * The device name exposed to the instance (for example,
@@ -240,5 +240,19 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceBlockDeviceMappingSpecification clone() {
+        try {
+            return (InstanceBlockDeviceMappingSpecification) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

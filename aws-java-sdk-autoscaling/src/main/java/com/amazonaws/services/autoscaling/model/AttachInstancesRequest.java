@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#attachInstances(AttachInstancesRequest)
  */
-public class AttachInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class AttachInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more EC2 instance IDs. You must specify at least one ID.
@@ -204,5 +204,11 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public AttachInstancesRequest clone() {
+        
+            return (AttachInstancesRequest) super.clone();
+    }
+
 }
     

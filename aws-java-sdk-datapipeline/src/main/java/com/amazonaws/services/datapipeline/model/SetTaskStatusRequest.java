@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setTaskStatus(SetTaskStatusRequest)
  */
-public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifies the task assigned to the task runner. This value is set in
@@ -476,5 +476,11 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public SetTaskStatusRequest clone() {
+        
+            return (SetTaskStatusRequest) super.clone();
+    }
+
 }
     

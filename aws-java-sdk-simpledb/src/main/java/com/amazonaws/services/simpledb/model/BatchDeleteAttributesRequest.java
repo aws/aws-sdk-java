@@ -52,7 +52,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#batchDeleteAttributes(BatchDeleteAttributesRequest)
  */
-public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which the attributes are being deleted.
@@ -228,5 +228,11 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public BatchDeleteAttributesRequest clone() {
+        
+            return (BatchDeleteAttributesRequest) super.clone();
+    }
+
 }
     

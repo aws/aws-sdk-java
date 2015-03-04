@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateEnvironment(UpdateEnvironmentRequest)
  */
-public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the environment to update. <p> If no environment with this
@@ -697,5 +697,11 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public UpdateEnvironmentRequest clone() {
+        
+            return (UpdateEnvironmentRequest) super.clone();
+    }
+
 }
     

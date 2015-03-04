@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#listQueues(ListQueuesRequest)
  */
-public class ListQueuesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListQueuesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string to use for filtering the list results. Only those queues
@@ -134,5 +134,11 @@ public class ListQueuesRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ListQueuesRequest clone() {
+        
+            return (ListQueuesRequest) super.clone();
+    }
+
 }
     

@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteMessageBatch(DeleteMessageBatchRequest)
  */
-public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -233,5 +233,11 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeleteMessageBatchRequest clone() {
+        
+            return (DeleteMessageBatchRequest) super.clone();
+    }
+
 }
     

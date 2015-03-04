@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest)
  */
-public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache subnet group to return details for.
@@ -233,5 +233,11 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeCacheSubnetGroupsRequest clone() {
+        
+            return (DescribeCacheSubnetGroupsRequest) super.clone();
+    }
+
 }
     

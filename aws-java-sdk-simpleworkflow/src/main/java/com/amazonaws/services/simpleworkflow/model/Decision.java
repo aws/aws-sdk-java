@@ -196,7 +196,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Decision implements Serializable {
+public class Decision implements Serializable, Cloneable {
 
     /**
      * Specifies the type of the decision.
@@ -922,5 +922,19 @@ public class Decision implements Serializable {
         return true;
     }
     
+    @Override
+    public Decision clone() {
+        try {
+            return (Decision) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

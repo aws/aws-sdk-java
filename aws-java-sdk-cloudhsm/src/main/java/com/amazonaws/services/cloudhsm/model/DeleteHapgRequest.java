@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#deleteHapg(DeleteHapgRequest)
  */
-public class DeleteHapgRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteHapgRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the high-availability partition group to delete.
@@ -117,5 +117,11 @@ public class DeleteHapgRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DeleteHapgRequest clone() {
+        
+            return (DeleteHapgRequest) super.clone();
+    }
+
 }
     

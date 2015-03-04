@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a workflow type.
  * </p>
  */
-public class WorkflowType implements Serializable {
+public class WorkflowType implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The name of the workflow type. <note>The combination
@@ -194,5 +194,19 @@ public class WorkflowType implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowType clone() {
+        try {
+            return (WorkflowType) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

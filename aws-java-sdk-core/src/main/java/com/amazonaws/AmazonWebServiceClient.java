@@ -396,9 +396,9 @@ public abstract class AmazonWebServiceClient {
 
     /**
      * Convenient method for setting region.
-     * 
+     *
      * @param region region to set to; must not be null.
-     * 
+     *
      * @see #setRegion(Region)
      */
     public final void setRegion(Regions region) {
@@ -507,6 +507,24 @@ public abstract class AmazonWebServiceClient {
 
     public void removeRequestHandler(RequestHandler2 requestHandler2) {
         requestHandler2s.remove(requestHandler2);
+    }
+
+    /**
+     * Runs the {@code beforeMarshalling} method of any
+     * {@code RequestHandler2}s associated with this client.
+     *
+     * @param request the request passed in from the user
+     * @return the (possibly different) request to marshal
+     */
+    @SuppressWarnings("unchecked")
+    protected final <T extends AmazonWebServiceRequest> T beforeMarshalling(
+            T request) {
+
+        T local = request;
+        for (RequestHandler2 handler : requestHandler2s) {
+            local = (T) handler.beforeMarshalling(local);
+        }
+        return local;
     }
 
     protected ExecutionContext createExecutionContext(AmazonWebServiceRequest req) {
@@ -778,7 +796,7 @@ public abstract class AmazonWebServiceClient {
      * Fluent method for {@link #setRegion(Region)}.
      *<pre>
      * Example:
-     * 
+     *
      *   AmazonDynamoDBClient client = new AmazonDynamoDBClient(...).<AmazonDynamoDBClient>withRegion(...);
      *</pre>
      * @see #setRegion(Region)
@@ -791,9 +809,9 @@ public abstract class AmazonWebServiceClient {
 
     /**
      * Convenient fluent method for setting region.
-     * 
+     *
      * @param region region to set to; must not be null.
-     * 
+     *
      * @see #withRegion(Region)
      */
     public <T extends AmazonWebServiceClient> T withRegion(Regions region) {
@@ -805,7 +823,7 @@ public abstract class AmazonWebServiceClient {
      * Fluent method for {@link #setEndpoint(String)}.
      *<pre>
      * Example:
-     * 
+     *
      *   AmazonDynamoDBClient client = new AmazonDynamoDBClient(...).<AmazonDynamoDBClient>withEndPoint(...);
      *</pre>
      * @see #setEndpoint(String)

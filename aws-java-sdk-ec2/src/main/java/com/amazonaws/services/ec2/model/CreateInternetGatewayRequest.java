@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.CreateInternetGatewayRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createInternetGateway(CreateInternetGatewayRequest)
  */
-public class CreateInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateInternetGatewayRequest> {
+public class CreateInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateInternetGatewayRequest> {
 
     /**
      * This method is intended for internal use only.
@@ -83,5 +83,11 @@ public class CreateInternetGatewayRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public CreateInternetGatewayRequest clone() {
+        
+            return (CreateInternetGatewayRequest) super.clone();
+    }
+
 }
     

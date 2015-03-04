@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Specifies the <code>runId</code> of a workflow execution.
  * </p>
  */
-public class Run implements Serializable {
+public class Run implements Serializable, Cloneable {
 
     /**
      * The <code>runId</code> of a workflow execution. This Id is generated
@@ -126,5 +126,19 @@ public class Run implements Serializable {
         return true;
     }
     
+    @Override
+    public Run clone() {
+        try {
+            return (Run) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

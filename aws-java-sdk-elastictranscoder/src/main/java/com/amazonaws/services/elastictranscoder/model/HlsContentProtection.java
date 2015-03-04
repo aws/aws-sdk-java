@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Transcoder to apply to your output files.
  * </p>
  */
-public class HlsContentProtection implements Serializable {
+public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * The content protection method for your output. The only valid value
@@ -544,5 +544,19 @@ public class HlsContentProtection implements Serializable {
         return true;
     }
     
+    @Override
+    public HlsContentProtection clone() {
+        try {
+            return (HlsContentProtection) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

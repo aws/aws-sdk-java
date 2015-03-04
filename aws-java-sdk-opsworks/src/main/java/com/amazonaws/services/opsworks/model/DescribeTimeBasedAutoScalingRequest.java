@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest)
  */
-public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An array of instance IDs.
@@ -152,5 +152,11 @@ public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeTimeBasedAutoScalingRequest clone() {
+        
+            return (DescribeTimeBasedAutoScalingRequest) super.clone();
+    }
+
 }
     

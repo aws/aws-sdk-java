@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#getLogEvents(GetLogEventsRequest)
  */
-public class GetLogEventsRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetLogEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -517,5 +517,11 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public GetLogEventsRequest clone() {
+        
+            return (GetLogEventsRequest) super.clone();
+    }
+
 }
     

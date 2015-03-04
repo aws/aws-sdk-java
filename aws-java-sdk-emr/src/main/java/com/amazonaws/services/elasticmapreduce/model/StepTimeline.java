@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The timeline of the cluster step lifecycle.
  * </p>
  */
-public class StepTimeline implements Serializable {
+public class StepTimeline implements Serializable, Cloneable {
 
     /**
      * The date and time when the cluster step was created.
@@ -184,5 +184,19 @@ public class StepTimeline implements Serializable {
         return true;
     }
     
+    @Override
+    public StepTimeline clone() {
+        try {
+            return (StepTimeline) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

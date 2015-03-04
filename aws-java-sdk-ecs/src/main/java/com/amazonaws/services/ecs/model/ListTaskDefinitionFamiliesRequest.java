@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest)
  */
-public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>familyPrefix</code> is a string that is used to filter the
@@ -317,5 +317,11 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public ListTaskDefinitionFamiliesRequest clone() {
+        
+            return (ListTaskDefinitionFamiliesRequest) super.clone();
+    }
+
 }
     

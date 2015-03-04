@@ -21,13 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cognitosync.AmazonCognitoSync#unsubscribeFromDataset(UnsubscribeFromDatasetRequest) UnsubscribeFromDataset operation}.
  * <p>
- * Unsubscribe from receiving notifications when a dataset is modified by
- * another device.
+ * Unsubscribes from receiving notifications when a dataset is modified
+ * by another device.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#unsubscribeFromDataset(UnsubscribeFromDatasetRequest)
  */
-public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest implements Serializable {
+public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -306,5 +306,11 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public UnsubscribeFromDatasetRequest clone() {
+        
+            return (UnsubscribeFromDatasetRequest) super.clone();
+    }
+
 }
     

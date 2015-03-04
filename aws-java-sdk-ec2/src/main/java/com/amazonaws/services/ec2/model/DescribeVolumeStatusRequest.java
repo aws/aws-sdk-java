@@ -77,7 +77,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumeStatusRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumeStatus(DescribeVolumeStatusRequest)
  */
-public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVolumeStatusRequest> {
+public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVolumeStatusRequest> {
 
     /**
      * One or more volume IDs. <p>Default: Describes all your volumes.
@@ -605,5 +605,11 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeVolumeStatusRequest clone() {
+        
+            return (DescribeVolumeStatusRequest) super.clone();
+    }
+
 }
     

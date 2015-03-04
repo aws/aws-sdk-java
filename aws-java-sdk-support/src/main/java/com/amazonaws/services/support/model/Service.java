@@ -22,7 +22,7 @@ import java.io.Serializable;
  * operation.
  * </p>
  */
-public class Service implements Serializable {
+public class Service implements Serializable, Cloneable {
 
     /**
      * The code for an AWS service returned by the <a>DescribeServices</a>
@@ -268,5 +268,19 @@ public class Service implements Serializable {
         return true;
     }
     
+    @Override
+    public Service clone() {
+        try {
+            return (Service) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

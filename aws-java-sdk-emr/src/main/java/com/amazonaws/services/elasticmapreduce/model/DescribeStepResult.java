@@ -21,7 +21,7 @@ import java.io.Serializable;
  * This output contains the description of the cluster step.
  * </p>
  */
-public class DescribeStepResult implements Serializable {
+public class DescribeStepResult implements Serializable, Cloneable {
 
     /**
      * The step details for the requested step identifier.
@@ -100,5 +100,19 @@ public class DescribeStepResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeStepResult clone() {
+        try {
+            return (DescribeStepResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

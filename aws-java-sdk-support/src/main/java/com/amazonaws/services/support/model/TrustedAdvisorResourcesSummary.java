@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Advisor DescribeTrustedAdvisorCheckSummaries.
  * </p>
  */
-public class TrustedAdvisorResourcesSummary implements Serializable {
+public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
 
     /**
      * The number of AWS resources that were analyzed by the Trusted Advisor
@@ -255,5 +255,19 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public TrustedAdvisorResourcesSummary clone() {
+        try {
+            return (TrustedAdvisorResourcesSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

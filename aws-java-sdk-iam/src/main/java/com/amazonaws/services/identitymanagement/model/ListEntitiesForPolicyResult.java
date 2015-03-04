@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListEntitiesForPolicy request.
  * </p>
  */
-public class ListEntitiesForPolicyResult implements Serializable {
+public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * A list of groups that the policy is attached to.
@@ -439,5 +439,19 @@ public class ListEntitiesForPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListEntitiesForPolicyResult clone() {
+        try {
+            return (ListEntitiesForPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

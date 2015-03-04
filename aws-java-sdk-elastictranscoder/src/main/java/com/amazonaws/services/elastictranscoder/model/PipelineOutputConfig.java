@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>PipelineOutputConfig</code> structure.
  * </p>
  */
-public class PipelineOutputConfig implements Serializable {
+public class PipelineOutputConfig implements Serializable, Cloneable {
 
     /**
      * The Amazon S3 bucket in which you want Elastic Transcoder to save the
@@ -478,5 +478,19 @@ public class PipelineOutputConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public PipelineOutputConfig clone() {
+        try {
+            return (PipelineOutputConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

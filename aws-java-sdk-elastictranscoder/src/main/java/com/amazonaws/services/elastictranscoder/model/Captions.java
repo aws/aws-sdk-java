@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The captions to be created, if any.
  * </p>
  */
-public class Captions implements Serializable {
+public class Captions implements Serializable, Cloneable {
 
     /**
      * A policy that determines how Elastic Transcoder handles the existence
@@ -421,5 +421,19 @@ public class Captions implements Serializable {
         return true;
     }
     
+    @Override
+    public Captions clone() {
+        try {
+            return (Captions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

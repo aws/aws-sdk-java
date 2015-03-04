@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Summary of the information about a CloudFront origin access identity.
  * </p>
  */
-public class CloudFrontOriginAccessIdentitySummary implements Serializable {
+public class CloudFrontOriginAccessIdentitySummary implements Serializable, Cloneable {
 
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
@@ -211,5 +211,19 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable {
         return true;
     }
     
+    @Override
+    public CloudFrontOriginAccessIdentitySummary clone() {
+        try {
+            return (CloudFrontOriginAccessIdentitySummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#deleteDeliveryChannel(DeleteDeliveryChannelRequest)
  */
-public class DeleteDeliveryChannelRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDeliveryChannelRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the delivery channel to delete.
@@ -123,5 +123,11 @@ public class DeleteDeliveryChannelRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteDeliveryChannelRequest clone() {
+        
+            return (DeleteDeliveryChannelRequest) super.clone();
+    }
+
 }
     

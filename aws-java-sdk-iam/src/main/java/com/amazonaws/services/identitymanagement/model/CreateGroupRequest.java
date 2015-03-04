@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createGroup(CreateGroupRequest)
  */
-public class CreateGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path to the group. For more information about paths, see <a
@@ -230,5 +230,11 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateGroupRequest clone() {
+        
+            return (CreateGroupRequest) super.clone();
+    }
+
 }
     

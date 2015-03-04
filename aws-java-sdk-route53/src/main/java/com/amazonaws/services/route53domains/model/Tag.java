@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Each tag includes the following elements.
  * </p>
  */
-public class Tag implements Serializable {
+public class Tag implements Serializable, Cloneable {
 
     /**
      * The key (name) of a tag. <p>Type: String <p>Default: None <p>Valid
@@ -170,5 +170,19 @@ public class Tag implements Serializable {
         return true;
     }
     
+    @Override
+    public Tag clone() {
+        try {
+            return (Tag) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -44,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createLayer(CreateLayerRequest)
  */
-public class CreateLayerRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLayerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The layer stack ID.
@@ -1268,5 +1268,11 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateLayerRequest clone() {
+        
+            return (CreateLayerRequest) super.clone();
+    }
+
 }
     

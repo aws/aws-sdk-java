@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StartTaskResult implements Serializable {
+public class StartTaskResult implements Serializable, Cloneable {
 
     /**
      * A full description of the tasks that were started. Each task that was
@@ -237,5 +237,19 @@ public class StartTaskResult implements Serializable {
         return true;
     }
     
+    @Override
+    public StartTaskResult clone() {
+        try {
+            return (StartTaskResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

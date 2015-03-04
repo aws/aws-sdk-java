@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The execution status details of the cluster step.
  * </p>
  */
-public class StepStatus implements Serializable {
+public class StepStatus implements Serializable, Cloneable {
 
     /**
      * The execution state of the cluster step.
@@ -236,5 +236,19 @@ public class StepStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public StepStatus clone() {
+        try {
+            return (StepStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

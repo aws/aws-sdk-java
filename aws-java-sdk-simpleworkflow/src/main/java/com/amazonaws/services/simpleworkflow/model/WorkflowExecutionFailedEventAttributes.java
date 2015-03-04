@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionFailed</code> event.
  * </p>
  */
-public class WorkflowExecutionFailedEventAttributes implements Serializable {
+public class WorkflowExecutionFailedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The descriptive reason provided for the failure (if any).
@@ -236,5 +236,19 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionFailedEventAttributes clone() {
+        try {
+            return (WorkflowExecutionFailedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

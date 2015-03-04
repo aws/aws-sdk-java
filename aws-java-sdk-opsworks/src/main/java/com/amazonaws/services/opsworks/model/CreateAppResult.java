@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateApp</code> request.
  * </p>
  */
-public class CreateAppResult implements Serializable {
+public class CreateAppResult implements Serializable, Cloneable {
 
     /**
      * The app ID.
@@ -100,5 +100,19 @@ public class CreateAppResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateAppResult clone() {
+        try {
+            return (CreateAppResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

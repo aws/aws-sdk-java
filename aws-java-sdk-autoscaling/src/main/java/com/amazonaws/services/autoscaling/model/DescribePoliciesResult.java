@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribePoliciesResult implements Serializable {
+public class DescribePoliciesResult implements Serializable, Cloneable {
 
     /**
      * The scaling policies.
@@ -194,5 +194,19 @@ public class DescribePoliciesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribePoliciesResult clone() {
+        try {
+            return (DescribePoliciesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

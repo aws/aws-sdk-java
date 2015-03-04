@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createConnection(CreateConnectionRequest)
  */
-public class CreateConnectionRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Where the connection is located. <p>Example: EqSV5 <p>Default: None
@@ -207,5 +207,11 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateConnectionRequest clone() {
+        
+            return (CreateConnectionRequest) super.clone();
+    }
+
 }
     

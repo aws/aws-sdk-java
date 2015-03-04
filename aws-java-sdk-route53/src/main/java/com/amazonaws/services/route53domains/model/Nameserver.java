@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Nameserver includes the following elements.
  * </p>
  */
-public class Nameserver implements Serializable {
+public class Nameserver implements Serializable, Cloneable {
 
     /**
      * The fully qualified host name of the name server. <p>Type: String
@@ -261,5 +261,19 @@ public class Nameserver implements Serializable {
         return true;
     }
     
+    @Override
+    public Nameserver clone() {
+        try {
+            return (Nameserver) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

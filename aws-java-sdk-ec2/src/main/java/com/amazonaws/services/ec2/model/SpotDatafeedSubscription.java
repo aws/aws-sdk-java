@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the data feed for a Spot Instance.
  * </p>
  */
-public class SpotDatafeedSubscription implements Serializable {
+public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * The AWS account ID of the account.
@@ -320,5 +320,19 @@ public class SpotDatafeedSubscription implements Serializable {
         return true;
     }
     
+    @Override
+    public SpotDatafeedSubscription clone() {
+        try {
+            return (SpotDatafeedSubscription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

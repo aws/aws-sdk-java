@@ -45,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusters(DescribeClustersRequest)
  */
-public class DescribeClustersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeClustersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of a cluster whose properties you are
@@ -575,5 +575,11 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribeClustersRequest clone() {
+        
+            return (DescribeClustersRequest) super.clone();
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyReservedInstances(ModifyReservedInstancesRequest)
  */
-public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique, case-sensitive token you provide to ensure idempotency of
@@ -274,5 +274,11 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public ModifyReservedInstancesRequest clone() {
+        
+            return (ModifyReservedInstancesRequest) super.clone();
+    }
+
 }
     

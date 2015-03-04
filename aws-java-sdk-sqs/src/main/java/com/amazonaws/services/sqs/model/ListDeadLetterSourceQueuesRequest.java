@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest)
  */
-public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The queue URL of a dead letter queue.
@@ -128,5 +128,11 @@ public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public ListDeadLetterSourceQueuesRequest clone() {
+        
+            return (ListDeadLetterSourceQueuesRequest) super.clone();
+    }
+
 }
     

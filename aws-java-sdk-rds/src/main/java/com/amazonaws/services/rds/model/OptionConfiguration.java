@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of all available options
  * </p>
  */
-public class OptionConfiguration implements Serializable {
+public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * The configuration of options to include in a group.
@@ -382,5 +382,19 @@ public class OptionConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public OptionConfiguration clone() {
+        try {
+            return (OptionConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

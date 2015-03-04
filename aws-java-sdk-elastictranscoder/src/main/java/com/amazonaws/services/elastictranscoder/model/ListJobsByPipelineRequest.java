@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByPipeline(ListJobsByPipelineRequest)
  */
-public class ListJobsByPipelineRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListJobsByPipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the pipeline for which you want to get job information.
@@ -259,5 +259,11 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public ListJobsByPipelineRequest clone() {
+        
+            return (ListJobsByPipelineRequest) super.clone();
+    }
+
 }
     

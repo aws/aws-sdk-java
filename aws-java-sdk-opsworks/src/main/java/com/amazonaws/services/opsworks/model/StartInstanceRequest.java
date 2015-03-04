@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#startInstance(StartInstanceRequest)
  */
-public class StartInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class StartInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -115,5 +115,11 @@ public class StartInstanceRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public StartInstanceRequest clone() {
+        
+            return (StartInstanceRequest) super.clone();
+    }
+
 }
     

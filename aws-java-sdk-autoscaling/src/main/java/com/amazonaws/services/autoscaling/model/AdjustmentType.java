@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a policy adjustment type.
  * </p>
  */
-public class AdjustmentType implements Serializable {
+public class AdjustmentType implements Serializable, Cloneable {
 
     /**
      * The policy adjustment type. The valid values are
@@ -144,5 +144,19 @@ public class AdjustmentType implements Serializable {
         return true;
     }
     
+    @Override
+    public AdjustmentType clone() {
+        try {
+            return (AdjustmentType) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

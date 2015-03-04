@@ -27,11 +27,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#removeTagsFromResource(RemoveTagsFromResourceRequest)
  */
-public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the ElastiCache resource from which you want the listed
-     * tags removed, for example <code>myCluster01</code>.
+     * tags removed, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      */
     private String resourceName;
 
@@ -46,10 +47,12 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
 
     /**
      * The name of the ElastiCache resource from which you want the listed
-     * tags removed, for example <code>myCluster01</code>.
+     * tags removed, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      *
      * @return The name of the ElastiCache resource from which you want the listed
-     *         tags removed, for example <code>myCluster01</code>.
+     *         tags removed, for example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      */
     public String getResourceName() {
         return resourceName;
@@ -57,10 +60,12 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
     
     /**
      * The name of the ElastiCache resource from which you want the listed
-     * tags removed, for example <code>myCluster01</code>.
+     * tags removed, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      *
      * @param resourceName The name of the ElastiCache resource from which you want the listed
-     *         tags removed, for example <code>myCluster01</code>.
+     *         tags removed, for example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      */
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -68,12 +73,14 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
     
     /**
      * The name of the ElastiCache resource from which you want the listed
-     * tags removed, for example <code>myCluster01</code>.
+     * tags removed, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceName The name of the ElastiCache resource from which you want the listed
-     *         tags removed, for example <code>myCluster01</code>.
+     *         tags removed, for example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -226,5 +233,11 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public RemoveTagsFromResourceRequest clone() {
+        
+            return (RemoveTagsFromResourceRequest) super.clone();
+    }
+
 }
     

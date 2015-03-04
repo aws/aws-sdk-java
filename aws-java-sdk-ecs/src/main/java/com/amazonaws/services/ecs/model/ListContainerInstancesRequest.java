@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#listContainerInstances(ListContainerInstancesRequest)
  */
-public class ListContainerInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListContainerInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -308,5 +308,11 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ListContainerInstancesRequest clone() {
+        
+            return (ListContainerInstancesRequest) super.clone();
+    }
+
 }
     

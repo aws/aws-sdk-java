@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteStack(DeleteStackRequest)
  */
-public class DeleteStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -117,5 +117,11 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteStackRequest clone() {
+        
+            return (DeleteStackRequest) super.clone();
+    }
+
 }
     

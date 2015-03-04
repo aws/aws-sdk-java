@@ -76,7 +76,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#startWorkflowExecution(StartWorkflowExecutionRequest)
  */
-public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable {
+public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which the workflow execution is created.
@@ -1277,5 +1277,11 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public StartWorkflowExecutionRequest clone() {
+        
+            return (StartWorkflowExecutionRequest) super.clone();
+    }
+
 }
     

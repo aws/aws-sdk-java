@@ -64,7 +64,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest)
  */
-public class GetSessionTokenRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetSessionTokenRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The duration, in seconds, that the credentials should remain valid.
@@ -403,5 +403,11 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public GetSessionTokenRequest clone() {
+        
+            return (GetSessionTokenRequest) super.clone();
+    }
+
 }
     

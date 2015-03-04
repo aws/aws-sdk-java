@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DisableVpcClassicLinkRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disableVpcClassicLink(DisableVpcClassicLinkRequest)
  */
-public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DisableVpcClassicLinkRequest> {
+public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DisableVpcClassicLinkRequest> {
 
     /**
      * The ID of the VPC.
@@ -120,5 +120,11 @@ public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DisableVpcClassicLinkRequest clone() {
+        
+            return (DisableVpcClassicLinkRequest) super.clone();
+    }
+
 }
     

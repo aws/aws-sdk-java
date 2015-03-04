@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for a EstimateTemplateCost action.
  * </p>
  */
-public class EstimateTemplateCostResult implements Serializable {
+public class EstimateTemplateCostResult implements Serializable, Cloneable {
 
     /**
      * An AWS Simple Monthly Calculator URL with a query string that
@@ -107,5 +107,19 @@ public class EstimateTemplateCostResult implements Serializable {
         return true;
     }
     
+    @Override
+    public EstimateTemplateCostResult clone() {
+        try {
+            return (EstimateTemplateCostResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

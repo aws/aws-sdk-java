@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAvailabilityZonesResult implements Serializable {
+public class DescribeAvailabilityZonesResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more Availability Zones.
@@ -133,5 +133,19 @@ public class DescribeAvailabilityZonesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAvailabilityZonesResult clone() {
+        try {
+            return (DescribeAvailabilityZonesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

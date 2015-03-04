@@ -40,7 +40,7 @@ import com.amazonaws.services.ec2.model.transform.RevokeSecurityGroupEgressReque
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest)
  */
-public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RevokeSecurityGroupEgressRequest> {
+public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RevokeSecurityGroupEgressRequest> {
 
     /**
      * The ID of the security group.
@@ -546,5 +546,11 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public RevokeSecurityGroupEgressRequest clone() {
+        
+            return (RevokeSecurityGroupEgressRequest) super.clone();
+    }
+
 }
     

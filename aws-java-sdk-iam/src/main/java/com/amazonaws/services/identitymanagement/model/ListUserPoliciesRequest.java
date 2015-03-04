@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(ListUserPoliciesRequest)
  */
-public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user to list policies for.
@@ -312,5 +312,11 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ListUserPoliciesRequest clone() {
+        
+            return (ListUserPoliciesRequest) super.clone();
+    }
+
 }
     

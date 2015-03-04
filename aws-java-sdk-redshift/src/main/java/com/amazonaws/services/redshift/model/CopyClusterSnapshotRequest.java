@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#copyClusterSnapshot(CopyClusterSnapshotRequest)
  */
-public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier for the source snapshot. <p>Constraints: <ul> <li>Must
@@ -281,5 +281,11 @@ public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public CopyClusterSnapshotRequest clone() {
+        
+            return (CopyClusterSnapshotRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * actions are taken.
  * </p>
  */
-public class TrustedAdvisorCostOptimizingSummary implements Serializable {
+public class TrustedAdvisorCostOptimizingSummary implements Serializable, Cloneable {
 
     /**
      * The estimated monthly savings that might be realized if the
@@ -157,5 +157,19 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public TrustedAdvisorCostOptimizingSummary clone() {
+        try {
+            return (TrustedAdvisorCostOptimizingSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

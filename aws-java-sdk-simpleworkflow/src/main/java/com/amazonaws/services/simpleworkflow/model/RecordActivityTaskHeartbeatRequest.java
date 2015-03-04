@@ -89,7 +89,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#recordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest)
  */
-public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest implements Serializable {
+public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>taskToken</code> of the <a>ActivityTask</a>. <important>
@@ -262,5 +262,11 @@ public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public RecordActivityTaskHeartbeatRequest clone() {
+        
+            return (RecordActivityTaskHeartbeatRequest) super.clone();
+    }
+
 }
     

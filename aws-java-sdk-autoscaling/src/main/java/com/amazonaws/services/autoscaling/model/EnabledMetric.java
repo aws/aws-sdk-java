@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an enabled metric.
  * </p>
  */
-public class EnabledMetric implements Serializable {
+public class EnabledMetric implements Serializable, Cloneable {
 
     /**
      * The name of the metric.
@@ -174,5 +174,19 @@ public class EnabledMetric implements Serializable {
         return true;
     }
     
+    @Override
+    public EnabledMetric clone() {
+        try {
+            return (EnabledMetric) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

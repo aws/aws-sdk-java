@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSubnetGroup(CreateCacheSubnetGroupRequest)
  */
-public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name for the cache subnet group. This value is stored as a lowercase
@@ -243,5 +243,11 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateCacheSubnetGroupRequest clone() {
+        
+            return (CreateCacheSubnetGroupRequest) super.clone();
+    }
+
 }
     

@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#deleteCluster(DeleteClusterRequest)
  */
-public class DeleteClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -115,5 +115,11 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DeleteClusterRequest clone() {
+        
+            return (DeleteClusterRequest) super.clone();
+    }
+
 }
     

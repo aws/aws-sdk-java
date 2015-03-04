@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of the part sizes of the multipart upload.
  * </p>
  */
-public class PartListElement implements Serializable {
+public class PartListElement implements Serializable, Cloneable {
 
     /**
      * The byte range of a part, inclusive of the upper value of the range.
@@ -155,5 +155,19 @@ public class PartListElement implements Serializable {
         return true;
     }
     
+    @Override
+    public PartListElement clone() {
+        try {
+            return (PartListElement) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

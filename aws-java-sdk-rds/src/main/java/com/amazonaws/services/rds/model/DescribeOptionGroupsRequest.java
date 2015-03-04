@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeOptionGroups(DescribeOptionGroupsRequest)
  */
-public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the option group to describe. Cannot be supplied together
@@ -427,5 +427,11 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeOptionGroupsRequest clone() {
+        
+            return (DescribeOptionGroupsRequest) super.clone();
+    }
+
 }
     

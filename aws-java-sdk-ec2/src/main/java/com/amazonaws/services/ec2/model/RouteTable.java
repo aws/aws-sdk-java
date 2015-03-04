@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a route table.
  * </p>
  */
-public class RouteTable implements Serializable {
+public class RouteTable implements Serializable, Cloneable {
 
     /**
      * The ID of the route table.
@@ -450,5 +450,19 @@ public class RouteTable implements Serializable {
         return true;
     }
     
+    @Override
+    public RouteTable clone() {
+        try {
+            return (RouteTable) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

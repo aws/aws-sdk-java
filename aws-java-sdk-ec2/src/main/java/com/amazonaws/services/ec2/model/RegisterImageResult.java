@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class RegisterImageResult implements Serializable {
+public class RegisterImageResult implements Serializable, Cloneable {
 
     /**
      * The ID of the newly registered AMI.
@@ -98,5 +98,19 @@ public class RegisterImageResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RegisterImageResult clone() {
+        try {
+            return (RegisterImageResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

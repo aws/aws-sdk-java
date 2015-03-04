@@ -35,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkAclRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkAcl(CreateNetworkAclRequest)
  */
-public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateNetworkAclRequest> {
+public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateNetworkAclRequest> {
 
     /**
      * The ID of the VPC.
@@ -126,5 +126,11 @@ public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateNetworkAclRequest clone() {
+        
+            return (CreateNetworkAclRequest) super.clone();
+    }
+
 }
     

@@ -24,7 +24,7 @@ import java.io.Serializable;
  * the XML document.
  * </p>
  */
-public class HostedZoneConfig implements Serializable {
+public class HostedZoneConfig implements Serializable, Cloneable {
 
     /**
      * An optional comment about your hosted zone. If you don't want to
@@ -195,5 +195,19 @@ public class HostedZoneConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public HostedZoneConfig clone() {
+        try {
+            return (HostedZoneConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

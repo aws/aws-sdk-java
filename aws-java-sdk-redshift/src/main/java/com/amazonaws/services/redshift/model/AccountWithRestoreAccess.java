@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an AWS customer account authorized to restore a snapshot.
  * </p>
  */
-public class AccountWithRestoreAccess implements Serializable {
+public class AccountWithRestoreAccess implements Serializable, Cloneable {
 
     /**
      * The identifier of an AWS customer account authorized to restore a
@@ -107,5 +107,19 @@ public class AccountWithRestoreAccess implements Serializable {
         return true;
     }
     
+    @Override
+    public AccountWithRestoreAccess clone() {
+        try {
+            return (AccountWithRestoreAccess) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

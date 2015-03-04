@@ -26,7 +26,7 @@ import java.io.Serializable;
  * DescribeEngineDefaultParameters and DescribeDBParameters actions.
  * </p>
  */
-public class Parameter implements Serializable {
+public class Parameter implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the parameter.
@@ -568,5 +568,19 @@ public class Parameter implements Serializable {
         return true;
     }
     
+    @Override
+    public Parameter clone() {
+        try {
+            return (Parameter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

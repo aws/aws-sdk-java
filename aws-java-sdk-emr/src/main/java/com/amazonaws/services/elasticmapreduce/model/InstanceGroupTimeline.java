@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The timeline of the instance group lifecycle.
  * </p>
  */
-public class InstanceGroupTimeline implements Serializable {
+public class InstanceGroupTimeline implements Serializable, Cloneable {
 
     /**
      * The creation date and time of the instance group.
@@ -191,5 +191,19 @@ public class InstanceGroupTimeline implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceGroupTimeline clone() {
+        try {
+            return (InstanceGroupTimeline) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

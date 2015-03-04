@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>DecisionTaskCompleted</code> event.
  * </p>
  */
-public class DecisionTaskCompletedEventAttributes implements Serializable {
+public class DecisionTaskCompletedEventAttributes implements Serializable, Cloneable {
 
     /**
      * User defined context for the workflow execution.
@@ -238,5 +238,19 @@ public class DecisionTaskCompletedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public DecisionTaskCompletedEventAttributes clone() {
+        try {
+            return (DecisionTaskCompletedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

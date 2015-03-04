@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the properties of a Listener for the LoadBalancer.
  * </p>
  */
-public class Listener implements Serializable {
+public class Listener implements Serializable, Cloneable {
 
     /**
      * The protocol that is used by the Listener.
@@ -142,5 +142,19 @@ public class Listener implements Serializable {
         return true;
     }
     
+    @Override
+    public Listener clone() {
+        try {
+            return (Listener) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

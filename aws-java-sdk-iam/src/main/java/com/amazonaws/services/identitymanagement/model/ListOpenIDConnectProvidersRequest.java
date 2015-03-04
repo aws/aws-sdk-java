@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listOpenIDConnectProviders(ListOpenIDConnectProvidersRequest)
  */
-public class ListOpenIDConnectProvidersRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListOpenIDConnectProvidersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -64,5 +64,11 @@ public class ListOpenIDConnectProvidersRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public ListOpenIDConnectProvidersRequest clone() {
+        
+            return (ListOpenIDConnectProvidersRequest) super.clone();
+    }
+
 }
     

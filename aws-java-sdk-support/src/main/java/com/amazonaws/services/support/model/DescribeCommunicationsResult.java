@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The communications returned by the DescribeCommunications operation.
  * </p>
  */
-public class DescribeCommunicationsResult implements Serializable {
+public class DescribeCommunicationsResult implements Serializable, Cloneable {
 
     /**
      * The communications for the case.
@@ -177,5 +177,19 @@ public class DescribeCommunicationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeCommunicationsResult clone() {
+        try {
+            return (DescribeCommunicationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

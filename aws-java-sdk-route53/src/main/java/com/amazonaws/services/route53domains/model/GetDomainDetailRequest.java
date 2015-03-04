@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#getDomainDetail(GetDomainDetailRequest)
  */
-public class GetDomainDetailRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetDomainDetailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String <p>Default: None <p>Constraints:
@@ -143,5 +143,11 @@ public class GetDomainDetailRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public GetDomainDetailRequest clone() {
+        
+            return (GetDomainDetailRequest) super.clone();
+    }
+
 }
     

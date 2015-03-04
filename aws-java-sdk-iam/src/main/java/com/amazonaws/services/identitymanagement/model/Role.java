@@ -41,7 +41,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Role implements Serializable {
+public class Role implements Serializable, Cloneable {
 
     /**
      * The path to the role. For more information about paths, see <a
@@ -483,5 +483,19 @@ public class Role implements Serializable {
         return true;
     }
     
+    @Override
+    public Role clone() {
+        try {
+            return (Role) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

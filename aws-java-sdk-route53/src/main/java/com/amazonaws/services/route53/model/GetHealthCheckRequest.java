@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHealthCheck(GetHealthCheckRequest)
  */
-public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the health check to retrieve.
@@ -118,5 +118,11 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GetHealthCheckRequest clone() {
+        
+            return (GetHealthCheckRequest) super.clone();
+    }
+
 }
     

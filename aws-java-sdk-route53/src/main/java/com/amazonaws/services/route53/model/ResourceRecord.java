@@ -22,7 +22,7 @@ import java.io.Serializable;
  * element for the current resource record set.
  * </p>
  */
-public class ResourceRecord implements Serializable {
+public class ResourceRecord implements Serializable, Cloneable {
 
     /**
      * The value of the <code>Value</code> element for the current resource
@@ -138,5 +138,19 @@ public class ResourceRecord implements Serializable {
         return true;
     }
     
+    @Override
+    public ResourceRecord clone() {
+        try {
+            return (ResourceRecord) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

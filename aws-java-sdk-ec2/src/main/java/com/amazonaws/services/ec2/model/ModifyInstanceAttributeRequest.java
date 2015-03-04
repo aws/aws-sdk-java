@@ -35,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.ModifyInstanceAttributeRequest
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyInstanceAttribute(ModifyInstanceAttributeRequest)
  */
-public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ModifyInstanceAttributeRequest> {
+public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyInstanceAttributeRequest> {
 
     /**
      * The ID of the instance.
@@ -1186,5 +1186,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public ModifyInstanceAttributeRequest clone() {
+        
+            return (ModifyInstanceAttributeRequest) super.clone();
+    }
+
 }
     

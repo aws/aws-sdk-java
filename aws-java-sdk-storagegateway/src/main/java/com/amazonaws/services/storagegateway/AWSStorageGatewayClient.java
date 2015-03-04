@@ -303,19 +303,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSnapshotScheduleRequestMarshaller().marshall(deleteSnapshotScheduleRequest);
+                request = new DeleteSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(deleteSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteSnapshotScheduleResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteSnapshotScheduleResultJsonUnmarshaller();
             JsonResponseHandler<DeleteSnapshotScheduleResult> responseHandler =
                 new JsonResponseHandler<DeleteSnapshotScheduleResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -358,19 +359,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceStartTimeRequestMarshaller().marshall(describeMaintenanceStartTimeRequest);
+                request = new DescribeMaintenanceStartTimeRequestMarshaller().marshall(super.beforeMarshalling(describeMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeMaintenanceStartTimeResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeMaintenanceStartTimeResultJsonUnmarshaller();
             JsonResponseHandler<DescribeMaintenanceStartTimeResult> responseHandler =
                 new JsonResponseHandler<DescribeMaintenanceStartTimeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -427,19 +429,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStorediSCSIVolumeRequestMarshaller().marshall(createStorediSCSIVolumeRequest);
+                request = new CreateStorediSCSIVolumeRequestMarshaller().marshall(super.beforeMarshalling(createStorediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateStorediSCSIVolumeResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateStorediSCSIVolumeResultJsonUnmarshaller();
             JsonResponseHandler<CreateStorediSCSIVolumeResult> responseHandler =
                 new JsonResponseHandler<CreateStorediSCSIVolumeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -504,19 +507,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotRequestMarshaller().marshall(createSnapshotRequest);
+                request = new CreateSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateSnapshotResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateSnapshotResultJsonUnmarshaller();
             JsonResponseHandler<CreateSnapshotResult> responseHandler =
                 new JsonResponseHandler<CreateSnapshotResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -570,19 +574,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddWorkingStorageRequestMarshaller().marshall(addWorkingStorageRequest);
+                request = new AddWorkingStorageRequestMarshaller().marshall(super.beforeMarshalling(addWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddWorkingStorageResult, JsonUnmarshallerContext> unmarshaller =
                 new AddWorkingStorageResultJsonUnmarshaller();
             JsonResponseHandler<AddWorkingStorageResult> responseHandler =
                 new JsonResponseHandler<AddWorkingStorageResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -624,19 +629,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelRetrievalRequestMarshaller().marshall(cancelRetrievalRequest);
+                request = new CancelRetrievalRequestMarshaller().marshall(super.beforeMarshalling(cancelRetrievalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CancelRetrievalResult, JsonUnmarshallerContext> unmarshaller =
                 new CancelRetrievalResultJsonUnmarshaller();
             JsonResponseHandler<CancelRetrievalResult> responseHandler =
                 new JsonResponseHandler<CancelRetrievalResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -686,19 +692,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBandwidthRateLimitRequestMarshaller().marshall(describeBandwidthRateLimitRequest);
+                request = new DescribeBandwidthRateLimitRequestMarshaller().marshall(super.beforeMarshalling(describeBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeBandwidthRateLimitResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeBandwidthRateLimitResultJsonUnmarshaller();
             JsonResponseHandler<DescribeBandwidthRateLimitResult> responseHandler =
                 new JsonResponseHandler<DescribeBandwidthRateLimitResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -741,19 +748,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapesRequestMarshaller().marshall(describeTapesRequest);
+                request = new DescribeTapesRequestMarshaller().marshall(super.beforeMarshalling(describeTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTapesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTapesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTapesResult> responseHandler =
                 new JsonResponseHandler<DescribeTapesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -805,19 +813,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveTapeRecoveryPointRequestMarshaller().marshall(retrieveTapeRecoveryPointRequest);
+                request = new RetrieveTapeRecoveryPointRequestMarshaller().marshall(super.beforeMarshalling(retrieveTapeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RetrieveTapeRecoveryPointResult, JsonUnmarshallerContext> unmarshaller =
                 new RetrieveTapeRecoveryPointResultJsonUnmarshaller();
             JsonResponseHandler<RetrieveTapeRecoveryPointResult> responseHandler =
                 new JsonResponseHandler<RetrieveTapeRecoveryPointResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -863,19 +872,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTapesRequestMarshaller().marshall(createTapesRequest);
+                request = new CreateTapesRequestMarshaller().marshall(super.beforeMarshalling(createTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateTapesResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateTapesResultJsonUnmarshaller();
             JsonResponseHandler<CreateTapesResult> responseHandler =
                 new JsonResponseHandler<CreateTapesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -923,19 +933,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUploadBufferRequestMarshaller().marshall(describeUploadBufferRequest);
+                request = new DescribeUploadBufferRequestMarshaller().marshall(super.beforeMarshalling(describeUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeUploadBufferResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeUploadBufferResultJsonUnmarshaller();
             JsonResponseHandler<DescribeUploadBufferResult> responseHandler =
                 new JsonResponseHandler<DescribeUploadBufferResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -977,19 +988,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteChapCredentialsRequestMarshaller().marshall(deleteChapCredentialsRequest);
+                request = new DeleteChapCredentialsRequestMarshaller().marshall(super.beforeMarshalling(deleteChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteChapCredentialsResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteChapCredentialsResultJsonUnmarshaller();
             JsonResponseHandler<DeleteChapCredentialsResult> responseHandler =
                 new JsonResponseHandler<DeleteChapCredentialsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1038,19 +1050,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCacheRequestMarshaller().marshall(addCacheRequest);
+                request = new AddCacheRequestMarshaller().marshall(super.beforeMarshalling(addCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddCacheResult, JsonUnmarshallerContext> unmarshaller =
                 new AddCacheResultJsonUnmarshaller();
             JsonResponseHandler<AddCacheResult> responseHandler =
                 new JsonResponseHandler<AddCacheResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1094,19 +1107,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGatewayInformationRequestMarshaller().marshall(describeGatewayInformationRequest);
+                request = new DescribeGatewayInformationRequestMarshaller().marshall(super.beforeMarshalling(describeGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeGatewayInformationResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeGatewayInformationResultJsonUnmarshaller();
             JsonResponseHandler<DescribeGatewayInformationResult> responseHandler =
                 new JsonResponseHandler<DescribeGatewayInformationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1157,19 +1171,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLocalDisksRequestMarshaller().marshall(listLocalDisksRequest);
+                request = new ListLocalDisksRequestMarshaller().marshall(super.beforeMarshalling(listLocalDisksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListLocalDisksResult, JsonUnmarshallerContext> unmarshaller =
                 new ListLocalDisksResultJsonUnmarshaller();
             JsonResponseHandler<ListLocalDisksResult> responseHandler =
                 new JsonResponseHandler<ListLocalDisksResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1215,19 +1230,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCacheRequestMarshaller().marshall(describeCacheRequest);
+                request = new DescribeCacheRequestMarshaller().marshall(super.beforeMarshalling(describeCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeCacheResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeCacheResultJsonUnmarshaller();
             JsonResponseHandler<DescribeCacheResult> responseHandler =
                 new JsonResponseHandler<DescribeCacheResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1276,19 +1292,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableGatewayRequestMarshaller().marshall(disableGatewayRequest);
+                request = new DisableGatewayRequestMarshaller().marshall(super.beforeMarshalling(disableGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DisableGatewayResult, JsonUnmarshallerContext> unmarshaller =
                 new DisableGatewayResultJsonUnmarshaller();
             JsonResponseHandler<DisableGatewayResult> responseHandler =
                 new JsonResponseHandler<DisableGatewayResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1328,19 +1345,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTapeRequestMarshaller().marshall(deleteTapeRequest);
+                request = new DeleteTapeRequestMarshaller().marshall(super.beforeMarshalling(deleteTapeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteTapeResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteTapeResultJsonUnmarshaller();
             JsonResponseHandler<DeleteTapeResult> responseHandler =
                 new JsonResponseHandler<DeleteTapeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1394,19 +1412,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartGatewayRequestMarshaller().marshall(startGatewayRequest);
+                request = new StartGatewayRequestMarshaller().marshall(super.beforeMarshalling(startGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<StartGatewayResult, JsonUnmarshallerContext> unmarshaller =
                 new StartGatewayResultJsonUnmarshaller();
             JsonResponseHandler<StartGatewayResult> responseHandler =
                 new JsonResponseHandler<StartGatewayResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1471,19 +1490,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller().marshall(createSnapshotFromVolumeRecoveryPointRequest);
+                request = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotFromVolumeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateSnapshotFromVolumeRecoveryPointResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller();
             JsonResponseHandler<CreateSnapshotFromVolumeRecoveryPointResult> responseHandler =
                 new JsonResponseHandler<CreateSnapshotFromVolumeRecoveryPointResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1539,19 +1559,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCachediSCSIVolumeRequestMarshaller().marshall(createCachediSCSIVolumeRequest);
+                request = new CreateCachediSCSIVolumeRequestMarshaller().marshall(super.beforeMarshalling(createCachediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateCachediSCSIVolumeResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateCachediSCSIVolumeResultJsonUnmarshaller();
             JsonResponseHandler<CreateCachediSCSIVolumeResult> responseHandler =
                 new JsonResponseHandler<CreateCachediSCSIVolumeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1620,19 +1641,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ShutdownGatewayRequestMarshaller().marshall(shutdownGatewayRequest);
+                request = new ShutdownGatewayRequestMarshaller().marshall(super.beforeMarshalling(shutdownGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ShutdownGatewayResult, JsonUnmarshallerContext> unmarshaller =
                 new ShutdownGatewayResultJsonUnmarshaller();
             JsonResponseHandler<ShutdownGatewayResult> responseHandler =
                 new JsonResponseHandler<ShutdownGatewayResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1680,19 +1702,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapeRecoveryPointsRequestMarshaller().marshall(describeTapeRecoveryPointsRequest);
+                request = new DescribeTapeRecoveryPointsRequestMarshaller().marshall(super.beforeMarshalling(describeTapeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTapeRecoveryPointsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTapeRecoveryPointsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTapeRecoveryPointsResult> responseHandler =
                 new JsonResponseHandler<DescribeTapeRecoveryPointsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1745,19 +1768,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGatewaysRequestMarshaller().marshall(listGatewaysRequest);
+                request = new ListGatewaysRequestMarshaller().marshall(super.beforeMarshalling(listGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListGatewaysResult, JsonUnmarshallerContext> unmarshaller =
                 new ListGatewaysResultJsonUnmarshaller();
             JsonResponseHandler<ListGatewaysResult> responseHandler =
                 new JsonResponseHandler<ListGatewaysResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1801,19 +1825,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStorediSCSIVolumesRequestMarshaller().marshall(describeStorediSCSIVolumesRequest);
+                request = new DescribeStorediSCSIVolumesRequestMarshaller().marshall(super.beforeMarshalling(describeStorediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeStorediSCSIVolumesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeStorediSCSIVolumesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeStorediSCSIVolumesResult> responseHandler =
                 new JsonResponseHandler<DescribeStorediSCSIVolumesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1863,19 +1888,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumeRecoveryPointsRequestMarshaller().marshall(listVolumeRecoveryPointsRequest);
+                request = new ListVolumeRecoveryPointsRequestMarshaller().marshall(super.beforeMarshalling(listVolumeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListVolumeRecoveryPointsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListVolumeRecoveryPointsResultJsonUnmarshaller();
             JsonResponseHandler<ListVolumeRecoveryPointsResult> responseHandler =
                 new JsonResponseHandler<ListVolumeRecoveryPointsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1921,19 +1947,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVTLDevicesRequestMarshaller().marshall(describeVTLDevicesRequest);
+                request = new DescribeVTLDevicesRequestMarshaller().marshall(super.beforeMarshalling(describeVTLDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeVTLDevicesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeVTLDevicesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeVTLDevicesResult> responseHandler =
                 new JsonResponseHandler<DescribeVTLDevicesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1974,19 +2001,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelArchivalRequestMarshaller().marshall(cancelArchivalRequest);
+                request = new CancelArchivalRequestMarshaller().marshall(super.beforeMarshalling(cancelArchivalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CancelArchivalResult, JsonUnmarshallerContext> unmarshaller =
                 new CancelArchivalResultJsonUnmarshaller();
             JsonResponseHandler<CancelArchivalResult> responseHandler =
                 new JsonResponseHandler<CancelArchivalResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2042,19 +2070,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGatewaySoftwareNowRequestMarshaller().marshall(updateGatewaySoftwareNowRequest);
+                request = new UpdateGatewaySoftwareNowRequestMarshaller().marshall(super.beforeMarshalling(updateGatewaySoftwareNowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateGatewaySoftwareNowResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateGatewaySoftwareNowResultJsonUnmarshaller();
             JsonResponseHandler<UpdateGatewaySoftwareNowResult> responseHandler =
                 new JsonResponseHandler<UpdateGatewaySoftwareNowResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2097,19 +2126,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResetCacheRequestMarshaller().marshall(resetCacheRequest);
+                request = new ResetCacheRequestMarshaller().marshall(super.beforeMarshalling(resetCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ResetCacheResult, JsonUnmarshallerContext> unmarshaller =
                 new ResetCacheResultJsonUnmarshaller();
             JsonResponseHandler<ResetCacheResult> responseHandler =
                 new JsonResponseHandler<ResetCacheResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2158,19 +2188,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateChapCredentialsRequestMarshaller().marshall(updateChapCredentialsRequest);
+                request = new UpdateChapCredentialsRequestMarshaller().marshall(super.beforeMarshalling(updateChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateChapCredentialsResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateChapCredentialsResultJsonUnmarshaller();
             JsonResponseHandler<UpdateChapCredentialsResult> responseHandler =
                 new JsonResponseHandler<UpdateChapCredentialsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2222,19 +2253,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ActivateGatewayRequestMarshaller().marshall(activateGatewayRequest);
+                request = new ActivateGatewayRequestMarshaller().marshall(super.beforeMarshalling(activateGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ActivateGatewayResult, JsonUnmarshallerContext> unmarshaller =
                 new ActivateGatewayResultJsonUnmarshaller();
             JsonResponseHandler<ActivateGatewayResult> responseHandler =
                 new JsonResponseHandler<ActivateGatewayResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2278,19 +2310,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateVTLDeviceTypeRequestMarshaller().marshall(updateVTLDeviceTypeRequest);
+                request = new UpdateVTLDeviceTypeRequestMarshaller().marshall(super.beforeMarshalling(updateVTLDeviceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateVTLDeviceTypeResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateVTLDeviceTypeResultJsonUnmarshaller();
             JsonResponseHandler<UpdateVTLDeviceTypeResult> responseHandler =
                 new JsonResponseHandler<UpdateVTLDeviceTypeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2337,19 +2370,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapeArchivesRequestMarshaller().marshall(describeTapeArchivesRequest);
+                request = new DescribeTapeArchivesRequestMarshaller().marshall(super.beforeMarshalling(describeTapeArchivesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTapeArchivesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTapeArchivesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTapeArchivesResult> responseHandler =
                 new JsonResponseHandler<DescribeTapeArchivesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2392,19 +2426,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGatewayInformationRequestMarshaller().marshall(updateGatewayInformationRequest);
+                request = new UpdateGatewayInformationRequestMarshaller().marshall(super.beforeMarshalling(updateGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateGatewayInformationResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateGatewayInformationResultJsonUnmarshaller();
             JsonResponseHandler<UpdateGatewayInformationResult> responseHandler =
                 new JsonResponseHandler<UpdateGatewayInformationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2444,19 +2479,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTapeArchiveRequestMarshaller().marshall(deleteTapeArchiveRequest);
+                request = new DeleteTapeArchiveRequestMarshaller().marshall(super.beforeMarshalling(deleteTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteTapeArchiveResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteTapeArchiveResultJsonUnmarshaller();
             JsonResponseHandler<DeleteTapeArchiveResult> responseHandler =
                 new JsonResponseHandler<DeleteTapeArchiveResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2510,19 +2546,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBandwidthRateLimitRequestMarshaller().marshall(updateBandwidthRateLimitRequest);
+                request = new UpdateBandwidthRateLimitRequestMarshaller().marshall(super.beforeMarshalling(updateBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateBandwidthRateLimitResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateBandwidthRateLimitResultJsonUnmarshaller();
             JsonResponseHandler<UpdateBandwidthRateLimitResult> responseHandler =
                 new JsonResponseHandler<UpdateBandwidthRateLimitResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2576,19 +2613,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkingStorageRequestMarshaller().marshall(describeWorkingStorageRequest);
+                request = new DescribeWorkingStorageRequestMarshaller().marshall(super.beforeMarshalling(describeWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeWorkingStorageResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeWorkingStorageResultJsonUnmarshaller();
             JsonResponseHandler<DescribeWorkingStorageResult> responseHandler =
                 new JsonResponseHandler<DescribeWorkingStorageResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2631,19 +2669,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMaintenanceStartTimeRequestMarshaller().marshall(updateMaintenanceStartTimeRequest);
+                request = new UpdateMaintenanceStartTimeRequestMarshaller().marshall(super.beforeMarshalling(updateMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateMaintenanceStartTimeResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateMaintenanceStartTimeResultJsonUnmarshaller();
             JsonResponseHandler<UpdateMaintenanceStartTimeResult> responseHandler =
                 new JsonResponseHandler<UpdateMaintenanceStartTimeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2686,19 +2725,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeChapCredentialsRequestMarshaller().marshall(describeChapCredentialsRequest);
+                request = new DescribeChapCredentialsRequestMarshaller().marshall(super.beforeMarshalling(describeChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeChapCredentialsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeChapCredentialsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeChapCredentialsResult> responseHandler =
                 new JsonResponseHandler<DescribeChapCredentialsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2741,19 +2781,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSnapshotScheduleRequestMarshaller().marshall(describeSnapshotScheduleRequest);
+                request = new DescribeSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(describeSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeSnapshotScheduleResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeSnapshotScheduleResultJsonUnmarshaller();
             JsonResponseHandler<DescribeSnapshotScheduleResult> responseHandler =
                 new JsonResponseHandler<DescribeSnapshotScheduleResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2811,19 +2852,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteVolumeRequestMarshaller().marshall(deleteVolumeRequest);
+                request = new DeleteVolumeRequestMarshaller().marshall(super.beforeMarshalling(deleteVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteVolumeResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteVolumeResultJsonUnmarshaller();
             JsonResponseHandler<DeleteVolumeResult> responseHandler =
                 new JsonResponseHandler<DeleteVolumeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2883,19 +2925,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteGatewayRequestMarshaller().marshall(deleteGatewayRequest);
+                request = new DeleteGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteGatewayResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteGatewayResultJsonUnmarshaller();
             JsonResponseHandler<DeleteGatewayResult> responseHandler =
                 new JsonResponseHandler<DeleteGatewayResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2940,19 +2983,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBandwidthRateLimitRequestMarshaller().marshall(deleteBandwidthRateLimitRequest);
+                request = new DeleteBandwidthRateLimitRequestMarshaller().marshall(super.beforeMarshalling(deleteBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteBandwidthRateLimitResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteBandwidthRateLimitResultJsonUnmarshaller();
             JsonResponseHandler<DeleteBandwidthRateLimitResult> responseHandler =
                 new JsonResponseHandler<DeleteBandwidthRateLimitResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3004,19 +3048,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumesRequestMarshaller().marshall(listVolumesRequest);
+                request = new ListVolumesRequestMarshaller().marshall(super.beforeMarshalling(listVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListVolumesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListVolumesResultJsonUnmarshaller();
             JsonResponseHandler<ListVolumesResult> responseHandler =
                 new JsonResponseHandler<ListVolumesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3069,19 +3114,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSnapshotScheduleRequestMarshaller().marshall(updateSnapshotScheduleRequest);
+                request = new UpdateSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(updateSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateSnapshotScheduleResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateSnapshotScheduleResultJsonUnmarshaller();
             JsonResponseHandler<UpdateSnapshotScheduleResult> responseHandler =
                 new JsonResponseHandler<UpdateSnapshotScheduleResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3128,19 +3174,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddUploadBufferRequestMarshaller().marshall(addUploadBufferRequest);
+                request = new AddUploadBufferRequestMarshaller().marshall(super.beforeMarshalling(addUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddUploadBufferResult, JsonUnmarshallerContext> unmarshaller =
                 new AddUploadBufferResultJsonUnmarshaller();
             JsonResponseHandler<AddUploadBufferResult> responseHandler =
                 new JsonResponseHandler<AddUploadBufferResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3188,19 +3235,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCachediSCSIVolumesRequestMarshaller().marshall(describeCachediSCSIVolumesRequest);
+                request = new DescribeCachediSCSIVolumesRequestMarshaller().marshall(super.beforeMarshalling(describeCachediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeCachediSCSIVolumesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeCachediSCSIVolumesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeCachediSCSIVolumesResult> responseHandler =
                 new JsonResponseHandler<DescribeCachediSCSIVolumesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3249,19 +3297,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveTapeArchiveRequestMarshaller().marshall(retrieveTapeArchiveRequest);
+                request = new RetrieveTapeArchiveRequestMarshaller().marshall(super.beforeMarshalling(retrieveTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RetrieveTapeArchiveResult, JsonUnmarshallerContext> unmarshaller =
                 new RetrieveTapeArchiveResultJsonUnmarshaller();
             JsonResponseHandler<RetrieveTapeArchiveResult> responseHandler =
                 new JsonResponseHandler<RetrieveTapeArchiveResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

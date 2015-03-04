@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the default cluster parameters for a parameter group family.
  * </p>
  */
-public class DefaultClusterParameters implements Serializable {
+public class DefaultClusterParameters implements Serializable, Cloneable {
 
     /**
      * The name of the cluster parameter group family to which the engine
@@ -261,5 +261,19 @@ public class DefaultClusterParameters implements Serializable {
         return true;
     }
     
+    @Override
+    public DefaultClusterParameters clone() {
+        try {
+            return (DefaultClusterParameters) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

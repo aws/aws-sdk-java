@@ -330,19 +330,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller().marshall(describeTrustedAdvisorCheckRefreshStatusesRequest);
+                request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller().marshall(super.beforeMarshalling(describeTrustedAdvisorCheckRefreshStatusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTrustedAdvisorCheckRefreshStatusesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTrustedAdvisorCheckRefreshStatusesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult> responseHandler =
                 new JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -401,19 +402,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCasesRequestMarshaller().marshall(describeCasesRequest);
+                request = new DescribeCasesRequestMarshaller().marshall(super.beforeMarshalling(describeCasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeCasesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeCasesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeCasesResult> responseHandler =
                 new JsonResponseHandler<DescribeCasesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -469,19 +471,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddAttachmentsToSetRequestMarshaller().marshall(addAttachmentsToSetRequest);
+                request = new AddAttachmentsToSetRequestMarshaller().marshall(super.beforeMarshalling(addAttachmentsToSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddAttachmentsToSetResult, JsonUnmarshallerContext> unmarshaller =
                 new AddAttachmentsToSetResultJsonUnmarshaller();
             JsonResponseHandler<AddAttachmentsToSetResult> responseHandler =
                 new JsonResponseHandler<AddAttachmentsToSetResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -523,19 +526,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSeverityLevelsRequestMarshaller().marshall(describeSeverityLevelsRequest);
+                request = new DescribeSeverityLevelsRequestMarshaller().marshall(super.beforeMarshalling(describeSeverityLevelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeSeverityLevelsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeSeverityLevelsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeSeverityLevelsResult> responseHandler =
                 new JsonResponseHandler<DescribeSeverityLevelsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -592,19 +596,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCommunicationsRequestMarshaller().marshall(describeCommunicationsRequest);
+                request = new DescribeCommunicationsRequestMarshaller().marshall(super.beforeMarshalling(describeCommunicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeCommunicationsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeCommunicationsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeCommunicationsResult> responseHandler =
                 new JsonResponseHandler<DescribeCommunicationsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -650,19 +655,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAttachmentRequestMarshaller().marshall(describeAttachmentRequest);
+                request = new DescribeAttachmentRequestMarshaller().marshall(super.beforeMarshalling(describeAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeAttachmentResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeAttachmentResultJsonUnmarshaller();
             JsonResponseHandler<DescribeAttachmentResult> responseHandler =
                 new JsonResponseHandler<DescribeAttachmentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -704,19 +710,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResolveCaseRequestMarshaller().marshall(resolveCaseRequest);
+                request = new ResolveCaseRequestMarshaller().marshall(super.beforeMarshalling(resolveCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ResolveCaseResult, JsonUnmarshallerContext> unmarshaller =
                 new ResolveCaseResultJsonUnmarshaller();
             JsonResponseHandler<ResolveCaseResult> responseHandler =
                 new JsonResponseHandler<ResolveCaseResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -769,19 +776,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServicesRequestMarshaller().marshall(describeServicesRequest);
+                request = new DescribeServicesRequestMarshaller().marshall(super.beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeServicesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeServicesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeServicesResult> responseHandler =
                 new JsonResponseHandler<DescribeServicesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -836,19 +844,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCommunicationToCaseRequestMarshaller().marshall(addCommunicationToCaseRequest);
+                request = new AddCommunicationToCaseRequestMarshaller().marshall(super.beforeMarshalling(addCommunicationToCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddCommunicationToCaseResult, JsonUnmarshallerContext> unmarshaller =
                 new AddCommunicationToCaseResultJsonUnmarshaller();
             JsonResponseHandler<AddCommunicationToCaseResult> responseHandler =
                 new JsonResponseHandler<AddCommunicationToCaseResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -932,19 +941,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCaseRequestMarshaller().marshall(createCaseRequest);
+                request = new CreateCaseRequestMarshaller().marshall(super.beforeMarshalling(createCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateCaseResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateCaseResultJsonUnmarshaller();
             JsonResponseHandler<CreateCaseResult> responseHandler =
                 new JsonResponseHandler<CreateCaseResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -988,19 +998,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorChecksRequestMarshaller().marshall(describeTrustedAdvisorChecksRequest);
+                request = new DescribeTrustedAdvisorChecksRequestMarshaller().marshall(super.beforeMarshalling(describeTrustedAdvisorChecksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTrustedAdvisorChecksResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTrustedAdvisorChecksResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTrustedAdvisorChecksResult> responseHandler =
                 new JsonResponseHandler<DescribeTrustedAdvisorChecksResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1065,19 +1076,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckResultRequestMarshaller().marshall(describeTrustedAdvisorCheckResultRequest);
+                request = new DescribeTrustedAdvisorCheckResultRequestMarshaller().marshall(super.beforeMarshalling(describeTrustedAdvisorCheckResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTrustedAdvisorCheckResultResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTrustedAdvisorCheckResultResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTrustedAdvisorCheckResultResult> responseHandler =
                 new JsonResponseHandler<DescribeTrustedAdvisorCheckResultResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1132,19 +1144,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RefreshTrustedAdvisorCheckRequestMarshaller().marshall(refreshTrustedAdvisorCheckRequest);
+                request = new RefreshTrustedAdvisorCheckRequestMarshaller().marshall(super.beforeMarshalling(refreshTrustedAdvisorCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RefreshTrustedAdvisorCheckResult, JsonUnmarshallerContext> unmarshaller =
                 new RefreshTrustedAdvisorCheckResultJsonUnmarshaller();
             JsonResponseHandler<RefreshTrustedAdvisorCheckResult> responseHandler =
                 new JsonResponseHandler<RefreshTrustedAdvisorCheckResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1189,19 +1202,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller().marshall(describeTrustedAdvisorCheckSummariesRequest);
+                request = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller().marshall(super.beforeMarshalling(describeTrustedAdvisorCheckSummariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTrustedAdvisorCheckSummariesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTrustedAdvisorCheckSummariesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTrustedAdvisorCheckSummariesResult> responseHandler =
                 new JsonResponseHandler<DescribeTrustedAdvisorCheckSummariesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

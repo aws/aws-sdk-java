@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the GetResourceConfigHistory action.
  * </p>
  */
-public class GetResourceConfigHistoryResult implements Serializable {
+public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
 
     /**
      * A list that contains the configuration history of one or more
@@ -186,5 +186,19 @@ public class GetResourceConfigHistoryResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetResourceConfigHistoryResult clone() {
+        try {
+            return (GetResourceConfigHistoryResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

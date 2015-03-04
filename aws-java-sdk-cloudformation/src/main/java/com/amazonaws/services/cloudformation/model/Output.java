@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The Output data type.
  * </p>
  */
-public class Output implements Serializable {
+public class Output implements Serializable, Cloneable {
 
     /**
      * The key associated with the output.
@@ -184,5 +184,19 @@ public class Output implements Serializable {
         return true;
     }
     
+    @Override
+    public Output clone() {
+        try {
+            return (Output) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

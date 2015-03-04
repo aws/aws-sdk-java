@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeUserProfiles(DescribeUserProfilesRequest)
  */
-public class DescribeUserProfilesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeUserProfilesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An array of IAM user ARNs that identify the users to be described.
@@ -147,5 +147,11 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeUserProfilesRequest clone() {
+        
+            return (DescribeUserProfilesRequest) super.clone();
+    }
+
 }
     

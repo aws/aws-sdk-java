@@ -58,7 +58,7 @@ import com.amazonaws.services.ec2.model.transform.CreateSecurityGroupRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSecurityGroup(CreateSecurityGroupRequest)
  */
-public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSecurityGroupRequest> {
+public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateSecurityGroupRequest> {
 
     /**
      * The name of the security group. <p>Constraints: Up to 255 characters
@@ -300,5 +300,11 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public CreateSecurityGroupRequest clone() {
+        
+            return (CreateSecurityGroupRequest) super.clone();
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest)
  */
-public class DescribeConnectionsOnInterconnectRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeConnectionsOnInterconnectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * ID of the interconnect on which a list of connection is provisioned.
@@ -113,5 +113,11 @@ public class DescribeConnectionsOnInterconnectRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public DescribeConnectionsOnInterconnectRequest clone() {
+        
+            return (DescribeConnectionsOnInterconnectRequest) super.clone();
+    }
+
 }
     

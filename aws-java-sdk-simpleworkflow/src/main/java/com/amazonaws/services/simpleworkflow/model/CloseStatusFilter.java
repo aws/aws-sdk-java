@@ -22,7 +22,7 @@ import java.io.Serializable;
  * their close status.
  * </p>
  */
-public class CloseStatusFilter implements Serializable {
+public class CloseStatusFilter implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The close status that must match the close status of
@@ -164,5 +164,19 @@ public class CloseStatusFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public CloseStatusFilter clone() {
+        try {
+            return (CloseStatusFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -23,7 +23,7 @@ import java.io.Serializable;
  * Simple Notification Service (SNS).
  * </p>
  */
-public class NotificationConfiguration implements Serializable {
+public class NotificationConfiguration implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) that identifies the topic.
@@ -150,5 +150,19 @@ public class NotificationConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public NotificationConfiguration clone() {
+        try {
+            return (NotificationConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

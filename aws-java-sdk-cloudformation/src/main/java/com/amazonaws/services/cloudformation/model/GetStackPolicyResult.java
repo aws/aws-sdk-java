@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the GetStackPolicy action.
  * </p>
  */
-public class GetStackPolicyResult implements Serializable {
+public class GetStackPolicyResult implements Serializable, Cloneable {
 
     /**
      * Structure containing the stack policy body. (For more information, go
@@ -140,5 +140,19 @@ public class GetStackPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetStackPolicyResult clone() {
+        try {
+            return (GetStackPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

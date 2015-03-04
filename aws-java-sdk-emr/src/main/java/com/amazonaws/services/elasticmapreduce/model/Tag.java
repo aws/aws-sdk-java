@@ -27,7 +27,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class Tag implements Serializable {
+public class Tag implements Serializable, Cloneable {
 
     /**
      * A user-defined key, which is the minimum required information for a
@@ -215,5 +215,19 @@ public class Tag implements Serializable {
         return true;
     }
     
+    @Override
+    public Tag clone() {
+        try {
+            return (Tag) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

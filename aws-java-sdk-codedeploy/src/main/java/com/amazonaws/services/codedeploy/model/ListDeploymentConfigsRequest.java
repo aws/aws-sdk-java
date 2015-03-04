@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeploymentConfigs(ListDeploymentConfigsRequest)
  */
-public class ListDeploymentConfigsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDeploymentConfigsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An identifier that was returned from the previous list deployment
@@ -119,5 +119,11 @@ public class ListDeploymentConfigsRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public ListDeploymentConfigsRequest clone() {
+        
+            return (ListDeploymentConfigsRequest) super.clone();
+    }
+
 }
     

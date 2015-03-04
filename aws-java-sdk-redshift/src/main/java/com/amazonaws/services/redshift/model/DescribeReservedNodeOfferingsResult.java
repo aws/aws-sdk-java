@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeReservedNodeOfferings action.
  * </p>
  */
-public class DescribeReservedNodeOfferingsResult implements Serializable {
+public class DescribeReservedNodeOfferingsResult implements Serializable, Cloneable {
 
     /**
      * A value that indicates the starting point for the next set of response
@@ -212,5 +212,19 @@ public class DescribeReservedNodeOfferingsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeReservedNodeOfferingsResult clone() {
+        try {
+            return (DescribeReservedNodeOfferingsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

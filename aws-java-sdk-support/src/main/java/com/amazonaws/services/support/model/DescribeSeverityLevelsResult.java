@@ -22,7 +22,7 @@ import java.io.Serializable;
  * operation.
  * </p>
  */
-public class DescribeSeverityLevelsResult implements Serializable {
+public class DescribeSeverityLevelsResult implements Serializable, Cloneable {
 
     /**
      * The available severity levels for the support case. Available severity
@@ -145,5 +145,19 @@ public class DescribeSeverityLevelsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSeverityLevelsResult clone() {
+        try {
+            return (DescribeSeverityLevelsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

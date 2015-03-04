@@ -31,7 +31,7 @@ import java.io.Serializable;
  * in the <i>Using IAM</i> guide.
  * </p>
  */
-public class PolicyRole implements Serializable {
+public class PolicyRole implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) identifying the role.
@@ -126,5 +126,19 @@ public class PolicyRole implements Serializable {
         return true;
     }
     
+    @Override
+    public PolicyRole clone() {
+        try {
+            return (PolicyRole) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

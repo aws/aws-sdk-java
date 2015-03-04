@@ -22,7 +22,7 @@ import java.io.Serializable;
  * description of the version.
  * </p>
  */
-public class ClusterVersion implements Serializable {
+public class ClusterVersion implements Serializable, Cloneable {
 
     /**
      * The version number used by the cluster.
@@ -185,5 +185,19 @@ public class ClusterVersion implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterVersion clone() {
+        try {
+            return (ClusterVersion) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#createStack(CreateStackRequest)
  */
-public class CreateStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the stack. The name must be unique within
@@ -1434,5 +1434,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateStackRequest clone() {
+        
+            return (CreateStackRequest) super.clone();
+    }
+
 }
     

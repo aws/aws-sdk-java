@@ -67,7 +67,7 @@ import com.amazonaws.services.ec2.model.transform.StopInstancesRequestMarshaller
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest)
  */
-public class StopInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<StopInstancesRequest> {
+public class StopInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<StopInstancesRequest> {
 
     /**
      * One or more instance IDs.
@@ -297,5 +297,11 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public StopInstancesRequest clone() {
+        
+            return (StopInstancesRequest) super.clone();
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeUserFromGroup(RemoveUserFromGroupRequest)
  */
-public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group to update.
@@ -198,5 +198,11 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public RemoveUserFromGroupRequest clone() {
+        
+            return (RemoveUserFromGroupRequest) super.clone();
+    }
+
 }
     

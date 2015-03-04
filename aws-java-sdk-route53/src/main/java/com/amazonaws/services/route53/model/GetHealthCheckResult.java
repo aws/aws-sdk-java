@@ -22,7 +22,7 @@ import java.io.Serializable;
  * check.
  * </p>
  */
-public class GetHealthCheckResult implements Serializable {
+public class GetHealthCheckResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains the information about the specified
@@ -108,5 +108,19 @@ public class GetHealthCheckResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetHealthCheckResult clone() {
+        try {
+            return (GetHealthCheckResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

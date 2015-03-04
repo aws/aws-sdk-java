@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifySubnetAttribute(ModifySubnetAttributeRequest)
  */
-public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the subnet.
@@ -156,5 +156,11 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public ModifySubnetAttributeRequest clone() {
+        
+            return (ModifySubnetAttributeRequest) super.clone();
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getId(GetIdRequest)
  */
-public class GetIdRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetIdRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A standard AWS account ID (9+ digits).
@@ -300,5 +300,11 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
         return true;
     }
     
+    @Override
+    public GetIdRequest clone() {
+        
+            return (GetIdRequest) super.clone();
+    }
+
 }
     

@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#suspendProcesses(SuspendProcessesRequest)
  */
-public class SuspendProcessesRequest extends AmazonWebServiceRequest implements Serializable {
+public class SuspendProcessesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
@@ -241,5 +241,11 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public SuspendProcessesRequest clone() {
+        
+            return (SuspendProcessesRequest) super.clone();
+    }
+
 }
     

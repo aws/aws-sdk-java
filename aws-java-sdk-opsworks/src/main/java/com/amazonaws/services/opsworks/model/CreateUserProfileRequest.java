@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createUserProfile(CreateUserProfileRequest)
  */
-public class CreateUserProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateUserProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The user's IAM ARN.
@@ -302,5 +302,11 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CreateUserProfileRequest clone() {
+        
+            return (CreateUserProfileRequest) super.clone();
+    }
+
 }
     

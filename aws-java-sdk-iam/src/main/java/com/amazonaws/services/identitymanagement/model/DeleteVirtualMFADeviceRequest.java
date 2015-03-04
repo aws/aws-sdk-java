@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest)
  */
-public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The serial number that uniquely identifies the MFA device. For virtual
@@ -133,5 +133,11 @@ public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteVirtualMFADeviceRequest clone() {
+        
+            return (DeleteVirtualMFADeviceRequest) super.clone();
+    }
+
 }
     

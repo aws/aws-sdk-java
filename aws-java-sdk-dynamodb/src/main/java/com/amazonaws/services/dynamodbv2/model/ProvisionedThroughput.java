@@ -28,7 +28,7 @@ import java.io.Serializable;
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  */
-public class ProvisionedThroughput implements Serializable {
+public class ProvisionedThroughput implements Serializable, Cloneable {
 
     /**
      * The maximum number of strongly consistent reads consumed per second
@@ -265,5 +265,19 @@ public class ProvisionedThroughput implements Serializable {
         return true;
     }
     
+    @Override
+    public ProvisionedThroughput clone() {
+        try {
+            return (ProvisionedThroughput) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

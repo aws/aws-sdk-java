@@ -24,10 +24,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gets usage information for an identity, including number of datasets
  * and data usage.
  * </p>
+ * <p>
+ * <code>DescribeIdentityUsage</code> can be called with temporary user
+ * credentials provided by Cognito Identity or with developer
+ * credentials.
+ * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#describeIdentityUsage(DescribeIdentityUsageRequest)
  */
-public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -208,5 +213,11 @@ public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeIdentityUsageRequest clone() {
+        
+            return (DescribeIdentityUsageRequest) super.clone();
+    }
+
 }
     

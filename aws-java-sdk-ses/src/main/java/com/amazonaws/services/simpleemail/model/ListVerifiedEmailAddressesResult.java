@@ -22,7 +22,7 @@ import java.io.Serializable;
  * user.
  * </p>
  */
-public class ListVerifiedEmailAddressesResult implements Serializable {
+public class ListVerifiedEmailAddressesResult implements Serializable, Cloneable {
 
     /**
      * A list of email addresses that have been verified.
@@ -136,5 +136,19 @@ public class ListVerifiedEmailAddressesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListVerifiedEmailAddressesResult clone() {
+        try {
+            return (ListVerifiedEmailAddressesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

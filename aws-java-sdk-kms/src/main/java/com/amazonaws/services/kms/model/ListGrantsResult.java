@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListGrantsResult implements Serializable {
+public class ListGrantsResult implements Serializable, Cloneable {
 
     /**
      * A list of grants.
@@ -283,5 +283,19 @@ public class ListGrantsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListGrantsResult clone() {
+        try {
+            return (ListGrantsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

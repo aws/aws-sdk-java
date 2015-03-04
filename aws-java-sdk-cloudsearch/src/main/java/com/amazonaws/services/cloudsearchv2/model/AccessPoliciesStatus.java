@@ -22,7 +22,7 @@ import java.io.Serializable;
  * endpoints, and the current status of those rules.
  * </p>
  */
-public class AccessPoliciesStatus implements Serializable {
+public class AccessPoliciesStatus implements Serializable, Cloneable {
 
     /**
      * Access rules for a domain's document or search service endpoints. For
@@ -178,5 +178,19 @@ public class AccessPoliciesStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public AccessPoliciesStatus clone() {
+        try {
+            return (AccessPoliciesStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

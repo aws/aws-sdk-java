@@ -22,7 +22,7 @@ import java.io.Serializable;
  * expressions configured for the domain specified in the request.
  * </p>
  */
-public class DescribeExpressionsResult implements Serializable {
+public class DescribeExpressionsResult implements Serializable, Cloneable {
 
     /**
      * The expressions configured for the domain.
@@ -136,5 +136,19 @@ public class DescribeExpressionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeExpressionsResult clone() {
+        try {
+            return (DescribeExpressionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

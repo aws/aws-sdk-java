@@ -21,7 +21,7 @@ import java.io.Serializable;
  * DisableGatewayOutput
  * </p>
  */
-public class DisableGatewayResult implements Serializable {
+public class DisableGatewayResult implements Serializable, Cloneable {
 
     /**
      * The unique Amazon Resource Name of the disabled gateway.
@@ -112,5 +112,19 @@ public class DisableGatewayResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DisableGatewayResult clone() {
+        try {
+            return (DisableGatewayResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

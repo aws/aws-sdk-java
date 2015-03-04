@@ -51,7 +51,7 @@ import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupIngressR
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest)
  */
-public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AuthorizeSecurityGroupIngressRequest> {
+public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AuthorizeSecurityGroupIngressRequest> {
 
     /**
      * [EC2-Classic, default VPC] The name of the security group.
@@ -613,5 +613,11 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public AuthorizeSecurityGroupIngressRequest clone() {
+        
+            return (AuthorizeSecurityGroupIngressRequest) super.clone();
+    }
+
 }
     

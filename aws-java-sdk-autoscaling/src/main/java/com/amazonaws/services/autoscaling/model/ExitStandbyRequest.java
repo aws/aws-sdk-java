@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#exitStandby(ExitStandbyRequest)
  */
-public class ExitStandbyRequest extends AmazonWebServiceRequest implements Serializable {
+public class ExitStandbyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more instance IDs. You must specify at least one instance ID.
@@ -203,5 +203,11 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ExitStandbyRequest clone() {
+        
+            return (ExitStandbyRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for Subscribe action.
  * </p>
  */
-public class SubscribeResult implements Serializable {
+public class SubscribeResult implements Serializable, Cloneable {
 
     /**
      * The ARN of the subscription, if the service was able to create a
@@ -114,5 +114,19 @@ public class SubscribeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SubscribeResult clone() {
+        try {
+            return (SubscribeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

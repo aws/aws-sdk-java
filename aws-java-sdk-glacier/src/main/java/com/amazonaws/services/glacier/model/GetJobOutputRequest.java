@@ -83,7 +83,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#getJobOutput(GetJobOutputRequest)
  */
-public class GetJobOutputRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetJobOutputRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -385,5 +385,11 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public GetJobOutputRequest clone() {
+        
+            return (GetJobOutputRequest) super.clone();
+    }
+
 }
     

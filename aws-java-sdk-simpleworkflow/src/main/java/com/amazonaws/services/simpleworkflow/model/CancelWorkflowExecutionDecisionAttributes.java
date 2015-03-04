@@ -47,7 +47,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class CancelWorkflowExecutionDecisionAttributes implements Serializable {
+public class CancelWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * <i>Optional.</i> details of the cancellation.
@@ -138,5 +138,19 @@ public class CancelWorkflowExecutionDecisionAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public CancelWorkflowExecutionDecisionAttributes clone() {
+        try {
+            return (CancelWorkflowExecutionDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

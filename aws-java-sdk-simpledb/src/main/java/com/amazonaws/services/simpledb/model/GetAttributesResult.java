@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Get Attributes Result
  */
-public class GetAttributesResult implements Serializable {
+public class GetAttributesResult implements Serializable, Cloneable {
 
     /**
      * The list of attributes returned by the operation.
@@ -133,5 +133,19 @@ public class GetAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetAttributesResult clone() {
+        try {
+            return (GetAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

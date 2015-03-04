@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListMultipartUploadsResult implements Serializable {
+public class ListMultipartUploadsResult implements Serializable, Cloneable {
 
     /**
      * A list of in-progress multipart uploads.
@@ -198,5 +198,19 @@ public class ListMultipartUploadsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListMultipartUploadsResult clone() {
+        try {
+            return (ListMultipartUploadsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

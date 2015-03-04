@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#getHostnameSuggestion(GetHostnameSuggestionRequest)
  */
-public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The layer ID.
@@ -114,5 +114,11 @@ public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public GetHostnameSuggestionRequest clone() {
+        
+            return (GetHostnameSuggestionRequest) super.clone();
+    }
+
 }
     

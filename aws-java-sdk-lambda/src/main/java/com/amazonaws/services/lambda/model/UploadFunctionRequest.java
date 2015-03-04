@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#uploadFunction(UploadFunctionRequest)
  */
-public class UploadFunctionRequest extends AmazonWebServiceRequest implements Serializable {
+public class UploadFunctionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name you want to assign to the function you are uploading. The
@@ -789,5 +789,11 @@ public class UploadFunctionRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public UploadFunctionRequest clone() {
+        
+            return (UploadFunctionRequest) super.clone();
+    }
+
 }
     

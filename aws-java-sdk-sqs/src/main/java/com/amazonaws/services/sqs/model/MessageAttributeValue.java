@@ -31,7 +31,7 @@ import java.io.Serializable;
  * message size restriction, which is currently 256 KB (262,144 bytes).
  * </p>
  */
-public class MessageAttributeValue implements Serializable {
+public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * Strings are Unicode with UTF8 binary encoding. For a list of code
@@ -397,5 +397,19 @@ public class MessageAttributeValue implements Serializable {
         return true;
     }
     
+    @Override
+    public MessageAttributeValue clone() {
+        try {
+            return (MessageAttributeValue) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

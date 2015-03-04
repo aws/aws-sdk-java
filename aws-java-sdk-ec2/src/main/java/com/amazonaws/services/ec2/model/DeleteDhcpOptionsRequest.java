@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteDhcpOptionsRequestMarsha
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteDhcpOptions(DeleteDhcpOptionsRequest)
  */
-public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteDhcpOptionsRequest> {
+public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteDhcpOptionsRequest> {
 
     /**
      * The ID of the DHCP options set.
@@ -139,5 +139,11 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteDhcpOptionsRequest clone() {
+        
+            return (DeleteDhcpOptionsRequest) super.clone();
+    }
+
 }
     

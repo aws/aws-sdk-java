@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class CreateVaultResult implements Serializable {
+public class CreateVaultResult implements Serializable, Cloneable {
 
     /**
      * The URI of the vault that was created.
@@ -100,5 +100,19 @@ public class CreateVaultResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateVaultResult clone() {
+        try {
+            return (CreateVaultResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

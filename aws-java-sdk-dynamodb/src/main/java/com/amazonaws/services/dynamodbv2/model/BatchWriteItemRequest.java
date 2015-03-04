@@ -123,7 +123,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)
  */
-public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Serializable {
+public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A map of one or more table names and, for each table, a list of
@@ -728,5 +728,11 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public BatchWriteItemRequest clone() {
+        
+            return (BatchWriteItemRequest) super.clone();
+    }
+
 }
     

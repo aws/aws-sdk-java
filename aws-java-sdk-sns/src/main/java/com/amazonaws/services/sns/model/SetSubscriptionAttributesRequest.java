@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest)
  */
-public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the subscription to modify.
@@ -227,5 +227,11 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public SetSubscriptionAttributesRequest clone() {
+        
+            return (SetSubscriptionAttributesRequest) super.clone();
+    }
+
 }
     

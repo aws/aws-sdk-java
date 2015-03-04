@@ -22,7 +22,7 @@ import java.io.Serializable;
  * <code>GetDataRetrievalPolicy</code> request.
  * </p>
  */
-public class GetDataRetrievalPolicyResult implements Serializable {
+public class GetDataRetrievalPolicyResult implements Serializable, Cloneable {
 
     /**
      * Contains the returned data retrieval policy in JSON format.
@@ -101,5 +101,19 @@ public class GetDataRetrievalPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetDataRetrievalPolicyResult clone() {
+        try {
+            return (GetDataRetrievalPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

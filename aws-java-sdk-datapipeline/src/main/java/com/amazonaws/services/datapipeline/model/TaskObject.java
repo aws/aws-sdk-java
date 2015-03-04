@@ -22,7 +22,7 @@ import java.io.Serializable;
  * runner.
  * </p>
  */
-public class TaskObject implements Serializable {
+public class TaskObject implements Serializable, Cloneable {
 
     /**
      * An internal identifier for the task. This ID is passed to the
@@ -331,5 +331,19 @@ public class TaskObject implements Serializable {
         return true;
     }
     
+    @Override
+    public TaskObject clone() {
+        try {
+            return (TaskObject) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

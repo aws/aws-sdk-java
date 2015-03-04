@@ -28,8 +28,10 @@ import com.amazonaws.metrics.RequestMetricCollector;
  * Base class for all user facing web service requests.
  */
 @NotThreadSafe
-public abstract class AmazonWebServiceRequest {
+public abstract class AmazonWebServiceRequest implements Cloneable {
+
     public static final AmazonWebServiceRequest NOOP = new AmazonWebServiceRequest() {};
+
     /**
      * The optional progress listener for receiving updates about the progress
      * of the request.
@@ -225,5 +227,23 @@ public abstract class AmazonWebServiceRequest {
         target.setRequestMetricCollector(requestMetricCollector);
         requestClientOptions.copyTo(target.getRequestClientOptions());
         return target;
+    }
+
+    /**
+     * Creates a shallow clone of this request. Explicitly does <em>not</em>
+     * clone the deep structure of the request object.
+     *
+     * @see Object#clone()
+     */
+    @Override
+    public AmazonWebServiceRequest clone() {
+        try {
+            return (AmazonWebServiceRequest) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
     }
 }

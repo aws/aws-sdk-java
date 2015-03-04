@@ -23,7 +23,7 @@ import java.io.Serializable;
  * index key attributes, which are automatically projected.
  * </p>
  */
-public class Projection implements Serializable {
+public class Projection implements Serializable, Cloneable {
 
     /**
      * The set of attributes that are projected into the index: <ul> <li>
@@ -353,5 +353,19 @@ public class Projection implements Serializable {
         return true;
     }
     
+    @Override
+    public Projection clone() {
+        try {
+            return (Projection) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

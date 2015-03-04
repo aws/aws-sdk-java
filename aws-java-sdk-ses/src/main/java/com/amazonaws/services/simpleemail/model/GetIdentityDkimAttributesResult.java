@@ -22,7 +22,7 @@ import java.io.Serializable;
  * identity.
  * </p>
  */
-public class GetIdentityDkimAttributesResult implements Serializable {
+public class GetIdentityDkimAttributesResult implements Serializable, Cloneable {
 
     /**
      * The DKIM attributes for an email address or a domain.
@@ -135,5 +135,19 @@ public class GetIdentityDkimAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetIdentityDkimAttributesResult clone() {
+        try {
+            return (GetIdentityDkimAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

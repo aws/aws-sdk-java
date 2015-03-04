@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteRouteRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteRoute(DeleteRouteRequest)
  */
-public class DeleteRouteRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteRouteRequest> {
+public class DeleteRouteRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteRouteRequest> {
 
     /**
      * The ID of the route table.
@@ -168,5 +168,11 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteRouteRequest clone() {
+        
+            return (DeleteRouteRequest) super.clone();
+    }
+
 }
     

@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.MonitorInstancesRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#monitorInstances(MonitorInstancesRequest)
  */
-public class MonitorInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<MonitorInstancesRequest> {
+public class MonitorInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<MonitorInstancesRequest> {
 
     /**
      * One or more instance IDs.
@@ -174,5 +174,11 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public MonitorInstancesRequest clone() {
+        
+            return (MonitorInstancesRequest) super.clone();
+    }
+
 }
     

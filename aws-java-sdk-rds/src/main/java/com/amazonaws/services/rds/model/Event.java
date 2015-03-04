@@ -22,7 +22,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class Event implements Serializable {
+public class Event implements Serializable, Cloneable {
 
     /**
      * Provides the identifier for the source of the event.
@@ -362,5 +362,19 @@ public class Event implements Serializable {
         return true;
     }
     
+    @Override
+    public Event clone() {
+        try {
+            return (Event) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

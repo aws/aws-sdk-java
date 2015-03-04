@@ -47,7 +47,7 @@ import com.amazonaws.services.ec2.model.transform.GetPasswordDataRequestMarshall
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest)
  */
-public class GetPasswordDataRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<GetPasswordDataRequest> {
+public class GetPasswordDataRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<GetPasswordDataRequest> {
 
     /**
      * The ID of the Windows instance.
@@ -155,5 +155,11 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public GetPasswordDataRequest clone() {
+        
+            return (GetPasswordDataRequest) super.clone();
+    }
+
 }
     

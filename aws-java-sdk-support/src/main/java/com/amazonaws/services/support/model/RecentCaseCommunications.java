@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The five most recent communications associated with the case.
  * </p>
  */
-public class RecentCaseCommunications implements Serializable {
+public class RecentCaseCommunications implements Serializable, Cloneable {
 
     /**
      * The five most recent communications associated with the case.
@@ -177,5 +177,19 @@ public class RecentCaseCommunications implements Serializable {
         return true;
     }
     
+    @Override
+    public RecentCaseCommunications clone() {
+        try {
+            return (RecentCaseCommunications) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

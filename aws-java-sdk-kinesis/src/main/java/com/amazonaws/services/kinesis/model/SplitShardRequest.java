@@ -94,7 +94,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#splitShard(SplitShardRequest)
  */
-public class SplitShardRequest extends AmazonWebServiceRequest implements Serializable {
+public class SplitShardRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream for the shard split.
@@ -350,5 +350,11 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public SplitShardRequest clone() {
+        
+            return (SplitShardRequest) super.clone();
+    }
+
 }
     

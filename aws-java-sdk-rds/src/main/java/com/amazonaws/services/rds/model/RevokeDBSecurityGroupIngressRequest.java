@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest)
  */
-public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
+public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB security group to revoke ingress from.
@@ -407,5 +407,11 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public RevokeDBSecurityGroupIngressRequest clone() {
+        
+            return (RevokeDBSecurityGroupIngressRequest) super.clone();
+    }
+
 }
     

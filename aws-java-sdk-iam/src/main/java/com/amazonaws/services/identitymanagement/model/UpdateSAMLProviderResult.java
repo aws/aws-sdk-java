@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful UpdateSAMLProvider request.
  * </p>
  */
-public class UpdateSAMLProviderResult implements Serializable {
+public class UpdateSAMLProviderResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the SAML provider that was updated.
@@ -112,5 +112,19 @@ public class UpdateSAMLProviderResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateSAMLProviderResult clone() {
+        try {
+            return (UpdateSAMLProviderResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

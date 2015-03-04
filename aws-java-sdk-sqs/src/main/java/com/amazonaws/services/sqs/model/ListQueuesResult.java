@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of your queues.
  * </p>
  */
-public class ListQueuesResult implements Serializable {
+public class ListQueuesResult implements Serializable, Cloneable {
 
     /**
      * A list of queue URLs, up to 1000 entries.
@@ -135,5 +135,19 @@ public class ListQueuesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListQueuesResult clone() {
+        try {
+            return (ListQueuesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

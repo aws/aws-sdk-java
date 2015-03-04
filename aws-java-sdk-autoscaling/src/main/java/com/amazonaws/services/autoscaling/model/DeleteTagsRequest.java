@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteTags(DeleteTagsRequest)
  */
-public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Each tag should be defined by its resource type, resource ID, key,
@@ -176,5 +176,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DeleteTagsRequest clone() {
+        
+            return (DeleteTagsRequest) super.clone();
+    }
+
 }
     

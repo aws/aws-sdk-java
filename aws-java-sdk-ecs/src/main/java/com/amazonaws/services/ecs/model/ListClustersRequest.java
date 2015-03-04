@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#listClusters(ListClustersRequest)
  */
-public class ListClustersRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListClustersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>nextToken</code> value returned from a previous paginated
@@ -238,5 +238,11 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public ListClustersRequest clone() {
+        
+            return (ListClustersRequest) super.clone();
+    }
+
 }
     

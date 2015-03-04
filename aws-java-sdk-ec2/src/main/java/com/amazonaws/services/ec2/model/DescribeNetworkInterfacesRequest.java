@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeNetworkInterfacesReque
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeNetworkInterfaces(DescribeNetworkInterfacesRequest)
  */
-public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeNetworkInterfacesRequest> {
+public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeNetworkInterfacesRequest> {
 
     /**
      * One or more network interface IDs. <p>Default: Describes all your
@@ -924,5 +924,11 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeNetworkInterfacesRequest clone() {
+        
+            return (DescribeNetworkInterfacesRequest) super.clone();
+    }
+
 }
     

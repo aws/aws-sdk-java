@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheCluster(CreateCacheClusterRequest)
  */
-public class CreateCacheClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateCacheClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The node group identifier. This parameter is stored as a lowercase
@@ -98,8 +98,8 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The initial number of cache nodes that the cache cluster will have.
      * <p>For clusters running Redis, this value must be 1. For clusters
-     * running Memcached, this value must be between 1 and 50. <p>If you need
-     * more than 50 nodes for your Memcached cluster, please fill out the
+     * running Memcached, this value must be between 1 and 20. <p>If you need
+     * more than 20 nodes for your Memcached cluster, please fill out the
      * ElastiCache Limit Increase Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      */
@@ -204,8 +204,15 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     private String snapshotName;
 
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      */
     private String preferredMaintenanceWindow;
 
@@ -268,7 +275,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param numCacheNodes The initial number of cache nodes that the cache
      * cluster will have. <p>For clusters running Redis, this value must be
      * 1. For clusters running Memcached, this value must be between 1 and
-     * 50. <p>If you need more than 50 nodes for your Memcached cluster,
+     * 20. <p>If you need more than 20 nodes for your Memcached cluster,
      * please fill out the ElastiCache Limit Increase Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      * @param cacheNodeType The compute and memory capacity of the nodes in
@@ -836,15 +843,15 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The initial number of cache nodes that the cache cluster will have.
      * <p>For clusters running Redis, this value must be 1. For clusters
-     * running Memcached, this value must be between 1 and 50. <p>If you need
-     * more than 50 nodes for your Memcached cluster, please fill out the
+     * running Memcached, this value must be between 1 and 20. <p>If you need
+     * more than 20 nodes for your Memcached cluster, please fill out the
      * ElastiCache Limit Increase Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      *
      * @return The initial number of cache nodes that the cache cluster will have.
      *         <p>For clusters running Redis, this value must be 1. For clusters
-     *         running Memcached, this value must be between 1 and 50. <p>If you need
-     *         more than 50 nodes for your Memcached cluster, please fill out the
+     *         running Memcached, this value must be between 1 and 20. <p>If you need
+     *         more than 20 nodes for your Memcached cluster, please fill out the
      *         ElastiCache Limit Increase Request form at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      */
@@ -855,15 +862,15 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The initial number of cache nodes that the cache cluster will have.
      * <p>For clusters running Redis, this value must be 1. For clusters
-     * running Memcached, this value must be between 1 and 50. <p>If you need
-     * more than 50 nodes for your Memcached cluster, please fill out the
+     * running Memcached, this value must be between 1 and 20. <p>If you need
+     * more than 20 nodes for your Memcached cluster, please fill out the
      * ElastiCache Limit Increase Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      *
      * @param numCacheNodes The initial number of cache nodes that the cache cluster will have.
      *         <p>For clusters running Redis, this value must be 1. For clusters
-     *         running Memcached, this value must be between 1 and 50. <p>If you need
-     *         more than 50 nodes for your Memcached cluster, please fill out the
+     *         running Memcached, this value must be between 1 and 20. <p>If you need
+     *         more than 20 nodes for your Memcached cluster, please fill out the
      *         ElastiCache Limit Increase Request form at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      */
@@ -874,8 +881,8 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The initial number of cache nodes that the cache cluster will have.
      * <p>For clusters running Redis, this value must be 1. For clusters
-     * running Memcached, this value must be between 1 and 50. <p>If you need
-     * more than 50 nodes for your Memcached cluster, please fill out the
+     * running Memcached, this value must be between 1 and 20. <p>If you need
+     * more than 20 nodes for your Memcached cluster, please fill out the
      * ElastiCache Limit Increase Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      * <p>
@@ -883,8 +890,8 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *
      * @param numCacheNodes The initial number of cache nodes that the cache cluster will have.
      *         <p>For clusters running Redis, this value must be 1. For clusters
-     *         running Memcached, this value must be between 1 and 50. <p>If you need
-     *         more than 50 nodes for your Memcached cluster, please fill out the
+     *         running Memcached, this value must be between 1 and 20. <p>If you need
+     *         more than 20 nodes for your Memcached cluster, please fill out the
      *         ElastiCache Limit Increase Request form at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      *
@@ -1677,35 +1684,77 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @return The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * @return Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
     }
     
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
     }
     
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2102,5 +2151,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateCacheClusterRequest clone() {
+        
+            return (CreateCacheClusterRequest) super.clone();
+    }
+
 }
     

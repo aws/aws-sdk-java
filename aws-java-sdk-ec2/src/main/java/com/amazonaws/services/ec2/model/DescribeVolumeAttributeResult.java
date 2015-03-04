@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeVolumeAttributeResult implements Serializable {
+public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
 
     /**
      * The ID of the volume.
@@ -226,5 +226,19 @@ public class DescribeVolumeAttributeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVolumeAttributeResult clone() {
+        try {
+            return (DescribeVolumeAttributeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

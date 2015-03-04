@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBLogFiles(DescribeDBLogFilesRequest)
  */
-public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The customer-assigned name of the DB instance that contains the log
@@ -476,5 +476,11 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DescribeDBLogFilesRequest clone() {
+        
+            return (DescribeDBLogFilesRequest) super.clone();
+    }
+
 }
     

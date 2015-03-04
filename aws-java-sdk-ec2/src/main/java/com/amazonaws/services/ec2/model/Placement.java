@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the placement for the instance.
  * </p>
  */
-public class Placement implements Serializable {
+public class Placement implements Serializable, Cloneable {
 
     /**
      * The Availability Zone of the instance.
@@ -282,5 +282,19 @@ public class Placement implements Serializable {
         return true;
     }
     
+    @Override
+    public Placement clone() {
+        try {
+            return (Placement) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

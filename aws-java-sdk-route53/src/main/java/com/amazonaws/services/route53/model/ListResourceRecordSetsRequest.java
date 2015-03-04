@@ -76,7 +76,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listResourceRecordSets(ListResourceRecordSetsRequest)
  */
-public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the hosted zone that contains the resource record sets that
@@ -592,5 +592,11 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ListResourceRecordSetsRequest clone() {
+        
+            return (ListResourceRecordSetsRequest) super.clone();
+    }
+
 }
     

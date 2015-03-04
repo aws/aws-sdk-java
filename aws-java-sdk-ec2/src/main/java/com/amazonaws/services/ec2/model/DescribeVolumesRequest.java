@@ -43,7 +43,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshall
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest)
  */
-public class DescribeVolumesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVolumesRequest> {
+public class DescribeVolumesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVolumesRequest> {
 
     /**
      * One or more volume IDs.
@@ -767,5 +767,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DescribeVolumesRequest clone() {
+        
+            return (DescribeVolumesRequest) super.clone();
+    }
+
 }
     

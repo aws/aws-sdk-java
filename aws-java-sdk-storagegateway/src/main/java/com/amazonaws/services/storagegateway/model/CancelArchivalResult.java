@@ -21,7 +21,7 @@ import java.io.Serializable;
  * CancelArchivalOutput
  * </p>
  */
-public class CancelArchivalResult implements Serializable {
+public class CancelArchivalResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape for which archiving
@@ -119,5 +119,19 @@ public class CancelArchivalResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CancelArchivalResult clone() {
+        try {
+            return (CancelArchivalResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

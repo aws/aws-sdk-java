@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>TestRoleResponse</code> structure.
  * </p>
  */
-public class TestRoleResult implements Serializable {
+public class TestRoleResult implements Serializable, Cloneable {
 
     /**
      * If the operation is successful, this value is <code>true</code>;
@@ -214,5 +214,19 @@ public class TestRoleResult implements Serializable {
         return true;
     }
     
+    @Override
+    public TestRoleResult clone() {
+        try {
+            return (TestRoleResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

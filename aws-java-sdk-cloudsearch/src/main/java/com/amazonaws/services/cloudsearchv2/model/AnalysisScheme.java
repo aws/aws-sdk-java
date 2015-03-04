@@ -28,7 +28,7 @@ import java.io.Serializable;
  * <code>AlgorithmicStemming</code> .
  * </p>
  */
-public class AnalysisScheme implements Serializable {
+public class AnalysisScheme implements Serializable, Cloneable {
 
     /**
      * Names must begin with a letter and can contain the following
@@ -284,5 +284,19 @@ public class AnalysisScheme implements Serializable {
         return true;
     }
     
+    @Override
+    public AnalysisScheme clone() {
+        try {
+            return (AnalysisScheme) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

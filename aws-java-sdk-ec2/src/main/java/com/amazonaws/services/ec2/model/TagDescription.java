@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a tag.
  * </p>
  */
-public class TagDescription implements Serializable {
+public class TagDescription implements Serializable, Cloneable {
 
     /**
      * The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
@@ -278,5 +278,19 @@ public class TagDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public TagDescription clone() {
+        try {
+            return (TagDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

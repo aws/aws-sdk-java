@@ -37,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeAvailabilityZonesReque
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAvailabilityZones(DescribeAvailabilityZonesRequest)
  */
-public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeAvailabilityZonesRequest> {
+public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeAvailabilityZonesRequest> {
 
     /**
      * The names of one or more Availability Zones.
@@ -303,5 +303,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeAvailabilityZonesRequest clone() {
+        
+            return (DescribeAvailabilityZonesRequest) super.clone();
+    }
+
 }
     

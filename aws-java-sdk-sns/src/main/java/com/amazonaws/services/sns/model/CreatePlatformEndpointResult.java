@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response from CreateEndpoint action.
  * </p>
  */
-public class CreatePlatformEndpointResult implements Serializable {
+public class CreatePlatformEndpointResult implements Serializable, Cloneable {
 
     /**
      * EndpointArn returned from CreateEndpoint action.
@@ -100,5 +100,19 @@ public class CreatePlatformEndpointResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreatePlatformEndpointResult clone() {
+        try {
+            return (CreatePlatformEndpointResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

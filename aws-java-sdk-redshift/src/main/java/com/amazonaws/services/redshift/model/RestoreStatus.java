@@ -22,7 +22,7 @@ import java.io.Serializable;
  * cluster was not created by restoring a snapshot.
  * </p>
  */
-public class RestoreStatus implements Serializable {
+public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * The status of the restore action. Returns starting, restoring,
@@ -346,5 +346,19 @@ public class RestoreStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public RestoreStatus clone() {
+        try {
+            return (RestoreStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

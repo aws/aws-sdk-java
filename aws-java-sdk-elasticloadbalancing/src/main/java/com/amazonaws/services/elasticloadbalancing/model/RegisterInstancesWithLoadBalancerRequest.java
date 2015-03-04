@@ -62,7 +62,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest)
  */
-public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer. The name must be unique
@@ -255,5 +255,11 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public RegisterInstancesWithLoadBalancerRequest clone() {
+        
+            return (RegisterInstancesWithLoadBalancerRequest) super.clone();
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createJob(CreateJobRequest)
  */
-public class CreateJobRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateJobRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>Id</code> of the pipeline that you want Elastic Transcoder
@@ -658,5 +658,11 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CreateJobRequest clone() {
+        
+            return (CreateJobRequest) super.clone();
+    }
+
 }
     

@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createHsmConfiguration(CreateHsmConfigurationRequest)
  */
-public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier to be assigned to the new Amazon Redshift HSM
@@ -430,5 +430,11 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateHsmConfigurationRequest clone() {
+        
+            return (CreateHsmConfigurationRequest) super.clone();
+    }
+
 }
     

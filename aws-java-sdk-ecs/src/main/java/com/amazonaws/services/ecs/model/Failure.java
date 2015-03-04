@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class Failure implements Serializable {
+public class Failure implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the failed resource.
@@ -140,5 +140,19 @@ public class Failure implements Serializable {
         return true;
     }
     
+    @Override
+    public Failure clone() {
+        try {
+            return (Failure) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

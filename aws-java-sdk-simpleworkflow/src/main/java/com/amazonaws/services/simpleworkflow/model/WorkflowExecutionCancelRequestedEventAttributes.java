@@ -22,7 +22,7 @@ import java.io.Serializable;
  * event.
  * </p>
  */
-public class WorkflowExecutionCancelRequestedEventAttributes implements Serializable {
+public class WorkflowExecutionCancelRequestedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The external workflow execution for which the cancellation was
@@ -326,5 +326,19 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
         return true;
     }
     
+    @Override
+    public WorkflowExecutionCancelRequestedEventAttributes clone() {
+        try {
+            return (WorkflowExecutionCancelRequestedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

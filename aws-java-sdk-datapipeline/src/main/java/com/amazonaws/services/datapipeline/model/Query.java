@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Defines the query to run against an object.
  * </p>
  */
-public class Query implements Serializable {
+public class Query implements Serializable, Cloneable {
 
     /**
      * List of selectors that define the query. An object must satisfy all of
@@ -144,5 +144,19 @@ public class Query implements Serializable {
         return true;
     }
     
+    @Override
+    public Query clone() {
+        try {
+            return (Query) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

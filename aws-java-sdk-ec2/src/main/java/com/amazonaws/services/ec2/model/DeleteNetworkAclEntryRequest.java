@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclEntryRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAclEntry(DeleteNetworkAclEntryRequest)
  */
-public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteNetworkAclEntryRequest> {
+public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteNetworkAclEntryRequest> {
 
     /**
      * The ID of the network ACL.
@@ -213,5 +213,11 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteNetworkAclEntryRequest clone() {
+        
+            return (DeleteNetworkAclEntryRequest) super.clone();
+    }
+
 }
     

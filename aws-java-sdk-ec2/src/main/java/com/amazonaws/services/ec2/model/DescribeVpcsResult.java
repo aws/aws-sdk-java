@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeVpcsResult implements Serializable {
+public class DescribeVpcsResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more VPCs.
@@ -133,5 +133,19 @@ public class DescribeVpcsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVpcsResult clone() {
+        try {
+            return (DescribeVpcsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

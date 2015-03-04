@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLifecycleHooks(DescribeLifecycleHooksRequest)
  */
-public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group.
@@ -198,5 +198,11 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeLifecycleHooksRequest clone() {
+        
+            return (DescribeLifecycleHooksRequest) super.clone();
+    }
+
 }
     

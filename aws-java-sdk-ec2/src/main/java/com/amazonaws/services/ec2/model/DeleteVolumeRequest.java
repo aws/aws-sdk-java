@@ -38,7 +38,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVolumeRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVolume(DeleteVolumeRequest)
  */
-public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVolumeRequest> {
+public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteVolumeRequest> {
 
     /**
      * The ID of the volume.
@@ -146,5 +146,11 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeleteVolumeRequest clone() {
+        
+            return (DeleteVolumeRequest) super.clone();
+    }
+
 }
     

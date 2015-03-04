@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPipelines(ListPipelinesRequest)
  */
-public class ListPipelinesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListPipelinesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * To list pipelines in chronological order by the date and time that
@@ -200,5 +200,11 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public ListPipelinesRequest clone() {
+        
+            return (ListPipelinesRequest) super.clone();
+    }
+
 }
     

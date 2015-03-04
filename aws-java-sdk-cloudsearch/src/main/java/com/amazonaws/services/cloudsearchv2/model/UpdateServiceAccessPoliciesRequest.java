@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest)
  */
-public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -194,5 +194,11 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public UpdateServiceAccessPoliciesRequest clone() {
+        
+            return (UpdateServiceAccessPoliciesRequest) super.clone();
+    }
+
 }
     

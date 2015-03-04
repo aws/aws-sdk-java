@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest)
  */
-public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer.
@@ -258,5 +258,11 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public SetLoadBalancerPoliciesOfListenerRequest clone() {
+        
+            return (SetLoadBalancerPoliciesOfListenerRequest) super.clone();
+    }
+
 }
     

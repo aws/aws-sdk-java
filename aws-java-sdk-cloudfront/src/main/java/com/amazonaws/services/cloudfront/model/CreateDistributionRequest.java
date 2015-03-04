@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#createDistribution(CreateDistributionRequest)
  */
-public class CreateDistributionRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDistributionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The distribution's configuration information.
@@ -123,5 +123,11 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateDistributionRequest clone() {
+        
+            return (CreateDistributionRequest) super.clone();
+    }
+
 }
     

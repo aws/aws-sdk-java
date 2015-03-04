@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotAttributeReque
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshotAttribute(DescribeSnapshotAttributeRequest)
  */
-public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSnapshotAttributeRequest> {
+public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSnapshotAttributeRequest> {
 
     /**
      * The ID of the Amazon EBS snapshot.
@@ -251,5 +251,11 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeSnapshotAttributeRequest clone() {
+        
+            return (DescribeSnapshotAttributeRequest) super.clone();
+    }
+
 }
     

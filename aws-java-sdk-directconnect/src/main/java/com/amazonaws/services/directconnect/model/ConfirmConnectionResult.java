@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The response received when ConfirmConnection is called.
  * </p>
  */
-public class ConfirmConnectionResult implements Serializable {
+public class ConfirmConnectionResult implements Serializable, Cloneable {
 
     /**
      * State of the connection. <ul> <li><b>Ordering</b>: The initial state
@@ -284,5 +284,19 @@ public class ConfirmConnectionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfirmConnectionResult clone() {
+        try {
+            return (ConfirmConnectionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

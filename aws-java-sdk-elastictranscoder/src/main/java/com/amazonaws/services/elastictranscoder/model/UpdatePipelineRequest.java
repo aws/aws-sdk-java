@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#updatePipeline(UpdatePipelineRequest)
  */
-public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the pipeline that you want to update.
@@ -1257,5 +1257,11 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public UpdatePipelineRequest clone() {
+        
+            return (UpdatePipelineRequest) super.clone();
+    }
+
 }
     

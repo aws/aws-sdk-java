@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest)
  */
-public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implements Serializable {
+public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the source environment. <p> Condition: You must specify at
@@ -367,5 +367,11 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public SwapEnvironmentCNAMEsRequest clone() {
+        
+            return (SwapEnvironmentCNAMEsRequest) super.clone();
+    }
+
 }
     

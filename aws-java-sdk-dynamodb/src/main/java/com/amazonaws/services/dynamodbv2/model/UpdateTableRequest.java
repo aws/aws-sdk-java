@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateTable(UpdateTableRequest)
  */
-public class UpdateTableRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An array of attributes that describe the key schema for the table and
@@ -473,5 +473,11 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public UpdateTableRequest clone() {
+        
+            return (UpdateTableRequest) super.clone();
+    }
+
 }
     

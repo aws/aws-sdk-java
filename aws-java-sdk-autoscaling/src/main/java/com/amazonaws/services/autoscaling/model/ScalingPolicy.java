@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a scaling policy.
  * </p>
  */
-public class ScalingPolicy implements Serializable {
+public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * The name of the Auto Scaling group associated with this scaling
@@ -549,5 +549,19 @@ public class ScalingPolicy implements Serializable {
         return true;
     }
     
+    @Override
+    public ScalingPolicy clone() {
+        try {
+            return (ScalingPolicy) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

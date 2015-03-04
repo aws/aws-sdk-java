@@ -51,7 +51,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest)
  */
-public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the Auto Scaling group.
@@ -956,5 +956,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public UpdateAutoScalingGroupRequest clone() {
+        
+            return (UpdateAutoScalingGroupRequest) super.clone();
+    }
+
 }
     

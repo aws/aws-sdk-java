@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#createIdentityPool(CreateIdentityPoolRequest)
  */
-public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that you provide.
@@ -435,5 +435,11 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateIdentityPoolRequest clone() {
+        
+            return (CreateIdentityPoolRequest) super.clone();
+    }
+
 }
     

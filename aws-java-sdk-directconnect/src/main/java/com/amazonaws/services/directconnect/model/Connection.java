@@ -22,7 +22,7 @@ import java.io.Serializable;
  * AWS Direct Connect location and the customer.
  * </p>
  */
-public class Connection implements Serializable {
+public class Connection implements Serializable, Cloneable {
 
     private String ownerAccount;
 
@@ -629,5 +629,19 @@ public class Connection implements Serializable {
         return true;
     }
     
+    @Override
+    public Connection clone() {
+        try {
+            return (Connection) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

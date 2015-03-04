@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ImportInstanceTaskDetails implements Serializable {
+public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 
     /**
      * 
@@ -311,5 +311,19 @@ public class ImportInstanceTaskDetails implements Serializable {
         return true;
     }
     
+    @Override
+    public ImportInstanceTaskDetails clone() {
+        try {
+            return (ImportInstanceTaskDetails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A key value pair.
  * </p>
  */
-public class KeyValue implements Serializable {
+public class KeyValue implements Serializable, Cloneable {
 
     /**
      * The unique identifier of a key value pair.
@@ -193,5 +193,19 @@ public class KeyValue implements Serializable {
         return true;
     }
     
+    @Override
+    public KeyValue clone() {
+        try {
+            return (KeyValue) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

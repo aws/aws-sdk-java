@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#deleteDomain(DeleteDomainRequest)
  */
-public class DeleteDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain to delete.
@@ -130,5 +130,11 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeleteDomainRequest clone() {
+        
+            return (DeleteDomainRequest) super.clone();
+    }
+
 }
     

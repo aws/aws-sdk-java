@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful GetRolePolicy request.
  * </p>
  */
-public class GetRolePolicyResult implements Serializable {
+public class GetRolePolicyResult implements Serializable, Cloneable {
 
     /**
      * The role the policy is associated with.
@@ -232,5 +232,19 @@ public class GetRolePolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetRolePolicyResult clone() {
+        try {
+            return (GetRolePolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

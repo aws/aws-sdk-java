@@ -23,7 +23,7 @@ import java.io.Serializable;
  * <code>int-array</code> . All options are enabled by default.
  * </p>
  */
-public class IntArrayOptions implements Serializable {
+public class IntArrayOptions implements Serializable, Cloneable {
 
     /**
      * A value to use for the field if the field isn't specified for a
@@ -325,5 +325,19 @@ public class IntArrayOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public IntArrayOptions clone() {
+        try {
+            return (IntArrayOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

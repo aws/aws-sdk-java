@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class GetVaultNotificationsResult implements Serializable {
+public class GetVaultNotificationsResult implements Serializable, Cloneable {
 
     /**
      * Returns the notification configuration set on the vault.
@@ -100,5 +100,19 @@ public class GetVaultNotificationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetVaultNotificationsResult clone() {
+        try {
+            return (GetVaultNotificationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

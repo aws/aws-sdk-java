@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest)
  */
-public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The layer ID.
@@ -299,5 +299,11 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public SetLoadBasedAutoScalingRequest clone() {
+        
+            return (SetLoadBasedAutoScalingRequest) super.clone();
+    }
+
 }
     

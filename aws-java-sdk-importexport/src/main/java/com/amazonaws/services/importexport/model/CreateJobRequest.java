@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#createJob(CreateJobRequest)
  */
-public class CreateJobRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateJobRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specifies whether the job to initiate is an import or export job.
@@ -348,5 +348,11 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CreateJobRequest clone() {
+        
+            return (CreateJobRequest) super.clone();
+    }
+
 }
     

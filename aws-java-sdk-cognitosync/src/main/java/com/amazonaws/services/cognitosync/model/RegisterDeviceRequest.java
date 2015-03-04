@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#registerDevice(RegisterDeviceRequest)
  */
-public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -329,5 +329,11 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public RegisterDeviceRequest clone() {
+        
+            return (RegisterDeviceRequest) super.clone();
+    }
+
 }
     

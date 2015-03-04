@@ -55,7 +55,7 @@ import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarsh
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest)
  */
-public class TerminateInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<TerminateInstancesRequest> {
+public class TerminateInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<TerminateInstancesRequest> {
 
     /**
      * One or more instance IDs.
@@ -198,5 +198,11 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public TerminateInstancesRequest clone() {
+        
+            return (TerminateInstancesRequest) super.clone();
+    }
+
 }
     

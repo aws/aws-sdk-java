@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the of the storage volume that was deleted
  * </p>
  */
-public class DeleteVolumeResult implements Serializable {
+public class DeleteVolumeResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the storage volume that was deleted.
@@ -119,5 +119,19 @@ public class DeleteVolumeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteVolumeResult clone() {
+        try {
+            return (DeleteVolumeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output for <code>ListTagsForStream</code> .
  * </p>
  */
-public class ListTagsForStreamResult implements Serializable {
+public class ListTagsForStreamResult implements Serializable, Cloneable {
 
     /**
      * A list of tags associated with <code>StreamName</code>, starting with
@@ -237,5 +237,19 @@ public class ListTagsForStreamResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListTagsForStreamResult clone() {
+        try {
+            return (ListTagsForStreamResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

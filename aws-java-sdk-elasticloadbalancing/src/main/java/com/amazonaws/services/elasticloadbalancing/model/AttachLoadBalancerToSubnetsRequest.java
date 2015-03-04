@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest)
  */
-public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest implements Serializable {
+public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer. The name must be unique
@@ -206,5 +206,11 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public AttachLoadBalancerToSubnetsRequest clone() {
+        
+            return (AttachLoadBalancerToSubnetsRequest) super.clone();
+    }
+
 }
     

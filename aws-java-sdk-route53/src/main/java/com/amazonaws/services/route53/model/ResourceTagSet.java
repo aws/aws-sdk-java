@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type containing a resource and its associated tags.
  * </p>
  */
-public class ResourceTagSet implements Serializable {
+public class ResourceTagSet implements Serializable, Cloneable {
 
     /**
      * The type of the resource. <p>- The resource type for health checks is
@@ -320,5 +320,19 @@ public class ResourceTagSet implements Serializable {
         return true;
     }
     
+    @Override
+    public ResourceTagSet clone() {
+        try {
+            return (ResourceTagSet) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

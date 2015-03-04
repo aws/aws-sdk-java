@@ -23,7 +23,7 @@ import java.io.Serializable;
  * load-based instances.
  * </p>
  */
-public class AutoScalingThresholds implements Serializable {
+public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * The number of instances to add or remove when the load exceeds a
@@ -427,5 +427,19 @@ public class AutoScalingThresholds implements Serializable {
         return true;
     }
     
+    @Override
+    public AutoScalingThresholds clone() {
+        try {
+            return (AutoScalingThresholds) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

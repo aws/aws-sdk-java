@@ -35,7 +35,7 @@ import java.io.Serializable;
  * resources are assigned.
  * </p>
  */
-public class Interconnect implements Serializable {
+public class Interconnect implements Serializable, Cloneable {
 
     /**
      * The ID of the interconnect. <p>Example: dxcon-abc123
@@ -467,5 +467,19 @@ public class Interconnect implements Serializable {
         return true;
     }
     
+    @Override
+    public Interconnect clone() {
+        try {
+            return (Interconnect) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

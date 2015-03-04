@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output of the CreateHAPartitionGroup action.
  * </p>
  */
-public class CreateHapgResult implements Serializable {
+public class CreateHapgResult implements Serializable, Cloneable {
 
     /**
      * The ARN of the high-availability partition group.
@@ -112,5 +112,19 @@ public class CreateHapgResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateHapgResult clone() {
+        try {
+            return (CreateHapgResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

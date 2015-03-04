@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>AdditionalAttribute</code> data type.
  * </p>
  */
-public class AdditionalAttribute implements Serializable {
+public class AdditionalAttribute implements Serializable, Cloneable {
 
     /**
      * Reserved for future use.
@@ -142,5 +142,19 @@ public class AdditionalAttribute implements Serializable {
         return true;
     }
     
+    @Override
+    public AdditionalAttribute clone() {
+        try {
+            return (AdditionalAttribute) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

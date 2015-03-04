@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about an application revision's location.
  * </p>
  */
-public class RevisionLocation implements Serializable {
+public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * The application revision's type: <ul> <li>S3: An application revision
@@ -272,5 +272,19 @@ public class RevisionLocation implements Serializable {
         return true;
     }
     
+    @Override
+    public RevisionLocation clone() {
+        try {
+            return (RevisionLocation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeInstances(DescribeInstancesRequest)
  */
-public class DescribeInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A stack ID. If you use this parameter, <code>DescribeInstances</code>
@@ -281,5 +281,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DescribeInstancesRequest clone() {
+        
+            return (DescribeInstancesRequest) super.clone();
+    }
+
 }
     

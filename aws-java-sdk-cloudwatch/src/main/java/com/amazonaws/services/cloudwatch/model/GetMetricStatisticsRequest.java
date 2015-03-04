@@ -59,7 +59,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#getMetricStatistics(GetMetricStatisticsRequest)
  */
-public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The namespace of the metric.
@@ -720,5 +720,11 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public GetMetricStatisticsRequest clone() {
+        
+            return (GetMetricStatisticsRequest) super.clone();
+    }
+
 }
     

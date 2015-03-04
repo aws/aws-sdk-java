@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#assignVolume(AssignVolumeRequest)
  */
-public class AssignVolumeRequest extends AmazonWebServiceRequest implements Serializable {
+public class AssignVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The volume ID.
@@ -159,5 +159,11 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public AssignVolumeRequest clone() {
+        
+            return (AssignVolumeRequest) super.clone();
+    }
+
 }
     

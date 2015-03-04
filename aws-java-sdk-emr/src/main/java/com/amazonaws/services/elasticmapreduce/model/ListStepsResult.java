@@ -21,7 +21,7 @@ import java.io.Serializable;
  * This output contains the list of steps.
  * </p>
  */
-public class ListStepsResult implements Serializable {
+public class ListStepsResult implements Serializable, Cloneable {
 
     /**
      * The filtered list of steps for the cluster.
@@ -184,5 +184,19 @@ public class ListStepsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListStepsResult clone() {
+        try {
+            return (ListStepsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

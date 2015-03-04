@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createCachediSCSIVolume(CreateCachediSCSIVolumeRequest)
  */
-public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -380,5 +380,11 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public CreateCachediSCSIVolumeRequest clone() {
+        
+            return (CreateCachediSCSIVolumeRequest) super.clone();
+    }
+
 }
     

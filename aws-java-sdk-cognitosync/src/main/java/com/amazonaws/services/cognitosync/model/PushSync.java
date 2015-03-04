@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Configuration options to be applied to the identity pool.
  * </p>
  */
-public class PushSync implements Serializable {
+public class PushSync implements Serializable, Cloneable {
 
     /**
      * List of SNS platform application ARNs that could be used by clients.
@@ -200,5 +200,19 @@ public class PushSync implements Serializable {
         return true;
     }
     
+    @Override
+    public PushSync clone() {
+        try {
+            return (PushSync) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

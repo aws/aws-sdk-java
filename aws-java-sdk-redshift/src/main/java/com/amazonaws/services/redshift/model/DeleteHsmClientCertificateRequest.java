@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteHsmClientCertificate(DeleteHsmClientCertificateRequest)
  */
-public class DeleteHsmClientCertificateRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteHsmClientCertificateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the HSM client certificate to be deleted.
@@ -105,5 +105,11 @@ public class DeleteHsmClientCertificateRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DeleteHsmClientCertificateRequest clone() {
+        
+            return (DeleteHsmClientCertificateRequest) super.clone();
+    }
+
 }
     

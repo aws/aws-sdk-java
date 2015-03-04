@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkInterfaceRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkInterface(CreateNetworkInterfaceRequest)
  */
-public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateNetworkInterfaceRequest> {
+public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateNetworkInterfaceRequest> {
 
     /**
      * The ID of the subnet to associate with the network interface.
@@ -495,5 +495,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateNetworkInterfaceRequest clone() {
+        
+            return (CreateNetworkInterfaceRequest) super.clone();
+    }
+
 }
     

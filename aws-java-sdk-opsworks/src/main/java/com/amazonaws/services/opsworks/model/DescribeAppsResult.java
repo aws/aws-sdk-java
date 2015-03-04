@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeApps</code> request.
  * </p>
  */
-public class DescribeAppsResult implements Serializable {
+public class DescribeAppsResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>App</code> objects that describe the specified apps.
@@ -135,5 +135,19 @@ public class DescribeAppsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAppsResult clone() {
+        try {
+            return (DescribeAppsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

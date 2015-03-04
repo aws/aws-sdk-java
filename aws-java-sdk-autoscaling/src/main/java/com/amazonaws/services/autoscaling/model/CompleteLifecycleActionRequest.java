@@ -45,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#completeLifecycleAction(CompleteLifecycleActionRequest)
  */
-public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest implements Serializable {
+public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the lifecycle hook.
@@ -322,5 +322,11 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public CompleteLifecycleActionRequest clone() {
+        
+            return (CompleteLifecycleActionRequest) super.clone();
+    }
+
 }
     

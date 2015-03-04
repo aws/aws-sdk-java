@@ -21,7 +21,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class DescribeEventCategoriesResult implements Serializable {
+public class DescribeEventCategoriesResult implements Serializable, Cloneable {
 
     /**
      * A list of event categories descriptions.
@@ -135,5 +135,19 @@ public class DescribeEventCategoriesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeEventCategoriesResult clone() {
+        try {
+            return (DescribeEventCategoriesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

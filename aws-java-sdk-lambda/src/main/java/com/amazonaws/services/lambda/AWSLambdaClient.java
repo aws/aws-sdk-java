@@ -272,19 +272,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetEventSourceRequestMarshaller().marshall(getEventSourceRequest);
+                request = new GetEventSourceRequestMarshaller().marshall(super.beforeMarshalling(getEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetEventSourceResult, JsonUnmarshallerContext> unmarshaller =
                 new GetEventSourceResultJsonUnmarshaller();
             JsonResponseHandler<GetEventSourceResult> responseHandler =
                 new JsonResponseHandler<GetEventSourceResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -325,14 +326,16 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFunctionRequestMarshaller().marshall(deleteFunctionRequest);
+                request = new DeleteFunctionRequestMarshaller().marshall(super.beforeMarshalling(deleteFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -376,19 +379,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFunctionsRequestMarshaller().marshall(listFunctionsRequest);
+                request = new ListFunctionsRequestMarshaller().marshall(super.beforeMarshalling(listFunctionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListFunctionsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListFunctionsResultJsonUnmarshaller();
             JsonResponseHandler<ListFunctionsResult> responseHandler =
                 new JsonResponseHandler<ListFunctionsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -456,19 +460,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddEventSourceRequestMarshaller().marshall(addEventSourceRequest);
+                request = new AddEventSourceRequestMarshaller().marshall(super.beforeMarshalling(addEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<AddEventSourceResult, JsonUnmarshallerContext> unmarshaller =
                 new AddEventSourceResultJsonUnmarshaller();
             JsonResponseHandler<AddEventSourceResult> responseHandler =
                 new JsonResponseHandler<AddEventSourceResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -519,19 +524,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadFunctionRequestMarshaller().marshall(uploadFunctionRequest);
+                request = new UploadFunctionRequestMarshaller().marshall(super.beforeMarshalling(uploadFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UploadFunctionResult, JsonUnmarshallerContext> unmarshaller =
                 new UploadFunctionResultJsonUnmarshaller();
             JsonResponseHandler<UploadFunctionResult> responseHandler =
                 new JsonResponseHandler<UploadFunctionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -582,19 +588,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFunctionConfigurationRequestMarshaller().marshall(getFunctionConfigurationRequest);
+                request = new GetFunctionConfigurationRequestMarshaller().marshall(super.beforeMarshalling(getFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetFunctionConfigurationResult, JsonUnmarshallerContext> unmarshaller =
                 new GetFunctionConfigurationResultJsonUnmarshaller();
             JsonResponseHandler<GetFunctionConfigurationResult> responseHandler =
                 new JsonResponseHandler<GetFunctionConfigurationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -644,19 +651,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InvokeAsyncRequestMarshaller().marshall(invokeAsyncRequest);
+                request = new InvokeAsyncRequestMarshaller().marshall(super.beforeMarshalling(invokeAsyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<InvokeAsyncResult, JsonUnmarshallerContext> unmarshaller =
                 new InvokeAsyncResultJsonUnmarshaller();
             JsonResponseHandler<InvokeAsyncResult> responseHandler =
                 new JsonResponseHandler<InvokeAsyncResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -712,19 +720,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListEventSourcesRequestMarshaller().marshall(listEventSourcesRequest);
+                request = new ListEventSourcesRequestMarshaller().marshall(super.beforeMarshalling(listEventSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListEventSourcesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListEventSourcesResultJsonUnmarshaller();
             JsonResponseHandler<ListEventSourcesResult> responseHandler =
                 new JsonResponseHandler<ListEventSourcesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -772,19 +781,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFunctionRequestMarshaller().marshall(getFunctionRequest);
+                request = new GetFunctionRequestMarshaller().marshall(super.beforeMarshalling(getFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetFunctionResult, JsonUnmarshallerContext> unmarshaller =
                 new GetFunctionResultJsonUnmarshaller();
             JsonResponseHandler<GetFunctionResult> responseHandler =
                 new JsonResponseHandler<GetFunctionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -834,19 +844,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFunctionConfigurationRequestMarshaller().marshall(updateFunctionConfigurationRequest);
+                request = new UpdateFunctionConfigurationRequestMarshaller().marshall(super.beforeMarshalling(updateFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateFunctionConfigurationResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateFunctionConfigurationResultJsonUnmarshaller();
             JsonResponseHandler<UpdateFunctionConfigurationResult> responseHandler =
                 new JsonResponseHandler<UpdateFunctionConfigurationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -889,14 +900,16 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveEventSourceRequestMarshaller().marshall(removeEventSourceRequest);
+                request = new RemoveEventSourceRequestMarshaller().marshall(super.beforeMarshalling(removeEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);

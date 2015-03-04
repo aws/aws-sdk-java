@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#deleteAnalysisScheme(DeleteAnalysisSchemeRequest)
  */
-public class DeleteAnalysisSchemeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAnalysisSchemeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -202,5 +202,11 @@ public class DeleteAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DeleteAnalysisSchemeRequest clone() {
+        
+            return (DeleteAnalysisSchemeRequest) super.clone();
+    }
+
 }
     

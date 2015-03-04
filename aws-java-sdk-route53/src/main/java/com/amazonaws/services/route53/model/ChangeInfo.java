@@ -26,7 +26,7 @@ import java.io.Serializable;
  * action to get detailed information about the change.
  * </p>
  */
-public class ChangeInfo implements Serializable {
+public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * The ID of the request. Use this ID to track when the change has
@@ -446,5 +446,19 @@ public class ChangeInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public ChangeInfo clone() {
+        try {
+            return (ChangeInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

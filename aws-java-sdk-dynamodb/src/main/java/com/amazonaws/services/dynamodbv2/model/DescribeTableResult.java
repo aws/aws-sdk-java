@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeTable</i> operation.
  * </p>
  */
-public class DescribeTableResult implements Serializable {
+public class DescribeTableResult implements Serializable, Cloneable {
 
     /**
      * Represents the properties of a table.
@@ -100,5 +100,19 @@ public class DescribeTableResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTableResult clone() {
+        try {
+            return (DescribeTableResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

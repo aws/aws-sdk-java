@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#copyDBSnapshot(CopyDBSnapshotRequest)
  */
-public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier for the source DB snapshot. <p>Constraints: <ul>
@@ -316,5 +316,11 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CopyDBSnapshotRequest clone() {
+        
+            return (CopyDBSnapshotRequest) super.clone();
+    }
+
 }
     

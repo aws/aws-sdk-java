@@ -22,7 +22,7 @@ import java.io.Serializable;
  * sequence number, a partition key, and a data blob.
  * </p>
  */
-public class Record implements Serializable {
+public class Record implements Serializable, Cloneable {
 
     /**
      * The unique identifier for the record in the Amazon Kinesis stream.
@@ -242,5 +242,19 @@ public class Record implements Serializable {
         return true;
     }
     
+    @Override
+    public Record clone() {
+        try {
+            return (Record) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

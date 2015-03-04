@@ -26,7 +26,7 @@ import java.io.Serializable;
  * UploadServerCertificate and ListServerCertificates actions.
  * </p>
  */
-public class ServerCertificateMetadata implements Serializable {
+public class ServerCertificateMetadata implements Serializable, Cloneable {
 
     /**
      * The path to the server certificate. For more information about paths,
@@ -472,5 +472,19 @@ public class ServerCertificateMetadata implements Serializable {
         return true;
     }
     
+    @Override
+    public ServerCertificateMetadata clone() {
+        try {
+            return (ServerCertificateMetadata) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

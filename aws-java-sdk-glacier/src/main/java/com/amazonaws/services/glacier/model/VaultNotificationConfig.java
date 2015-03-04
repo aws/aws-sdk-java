@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a vault's notification configuration.
  * </p>
  */
-public class VaultNotificationConfig implements Serializable {
+public class VaultNotificationConfig implements Serializable, Cloneable {
 
     /**
      * The Amazon Simple Notification Service (Amazon SNS) topic Amazon
@@ -214,5 +214,19 @@ public class VaultNotificationConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public VaultNotificationConfig clone() {
+        try {
+            return (VaultNotificationConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

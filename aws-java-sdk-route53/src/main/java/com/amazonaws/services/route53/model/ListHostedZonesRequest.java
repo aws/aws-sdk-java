@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listHostedZones(ListHostedZonesRequest)
  */
-public class ListHostedZonesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListHostedZonesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * If the request returned more than one page of results, submit another
@@ -253,5 +253,11 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public ListHostedZonesRequest clone() {
+        
+            return (ListHostedZonesRequest) super.clone();
+    }
+
 }
     

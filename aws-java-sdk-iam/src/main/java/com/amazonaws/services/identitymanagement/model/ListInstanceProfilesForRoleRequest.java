@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest)
  */
-public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the role to list instance profiles for.
@@ -290,5 +290,11 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public ListInstanceProfilesForRoleRequest clone() {
+        
+            return (ListInstanceProfilesForRoleRequest) super.clone();
+    }
+
 }
     

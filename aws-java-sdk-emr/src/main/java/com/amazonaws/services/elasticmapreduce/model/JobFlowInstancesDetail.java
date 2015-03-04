@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Specify the type of Amazon EC2 instances to run the job flow on.
  * </p>
  */
-public class JobFlowInstancesDetail implements Serializable {
+public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * The Amazon EC2 master node instance type.
@@ -897,5 +897,19 @@ public class JobFlowInstancesDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public JobFlowInstancesDetail clone() {
+        try {
+            return (JobFlowInstancesDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

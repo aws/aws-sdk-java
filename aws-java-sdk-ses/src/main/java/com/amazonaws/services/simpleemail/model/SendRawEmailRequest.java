@@ -60,7 +60,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendRawEmail(SendRawEmailRequest)
  */
-public class SendRawEmailRequest extends AmazonWebServiceRequest implements Serializable {
+public class SendRawEmailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identity's email address. <p> By default, the string must be 7-bit
@@ -419,5 +419,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public SendRawEmailRequest clone() {
+        
+            return (SendRawEmailRequest) super.clone();
+    }
+
 }
     

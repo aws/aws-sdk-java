@@ -22,7 +22,7 @@ import java.io.Serializable;
  * format.
  * </p>
  */
-public class DescribeConfigurationRecorderStatusResult implements Serializable {
+public class DescribeConfigurationRecorderStatusResult implements Serializable, Cloneable {
 
     /**
      * A list that contains status of the specified recorders.
@@ -136,5 +136,19 @@ public class DescribeConfigurationRecorderStatusResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeConfigurationRecorderStatusResult clone() {
+        try {
+            return (DescribeConfigurationRecorderStatusResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

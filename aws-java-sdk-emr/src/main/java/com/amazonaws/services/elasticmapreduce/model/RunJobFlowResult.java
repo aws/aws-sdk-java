@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The result of the RunJobFlow operation.
  * </p>
  */
-public class RunJobFlowResult implements Serializable {
+public class RunJobFlowResult implements Serializable, Cloneable {
 
     /**
      * An unique identifier for the job flow.
@@ -116,5 +116,19 @@ public class RunJobFlowResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RunJobFlowResult clone() {
+        try {
+            return (RunJobFlowResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEventCategories(DescribeEventCategoriesRequest)
  */
-public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The type of source that will be generating the events. <p>Valid
@@ -200,5 +200,11 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeEventCategoriesRequest clone() {
+        
+            return (DescribeEventCategoriesRequest) super.clone();
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#retrieveDomainAuthCode(RetrieveDomainAuthCodeRequest)
  */
-public class RetrieveDomainAuthCodeRequest extends AmazonWebServiceRequest implements Serializable {
+public class RetrieveDomainAuthCodeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String <p>Default: None <p>Constraints:
@@ -144,5 +144,11 @@ public class RetrieveDomainAuthCodeRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public RetrieveDomainAuthCodeRequest clone() {
+        
+            return (RetrieveDomainAuthCodeRequest) super.clone();
+    }
+
 }
     

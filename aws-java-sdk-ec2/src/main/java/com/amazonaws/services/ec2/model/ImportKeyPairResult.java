@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ImportKeyPairResult implements Serializable {
+public class ImportKeyPairResult implements Serializable, Cloneable {
 
     /**
      * The key pair name you provided.
@@ -140,5 +140,19 @@ public class ImportKeyPairResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ImportKeyPairResult clone() {
+        try {
+            return (ImportKeyPairResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#addTags(AddTagsRequest)
  */
-public class AddTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the pipeline to which you want to add the tags.
@@ -213,5 +213,11 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public AddTagsRequest clone() {
+        
+            return (AddTagsRequest) super.clone();
+    }
+
 }
     

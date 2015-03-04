@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Options for a search suggester.
  * </p>
  */
-public class DocumentSuggesterOptions implements Serializable {
+public class DocumentSuggesterOptions implements Serializable, Cloneable {
 
     /**
      * The name of the index field you want to use for suggestions.
@@ -356,5 +356,19 @@ public class DocumentSuggesterOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public DocumentSuggesterOptions clone() {
+        try {
+            return (DocumentSuggesterOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

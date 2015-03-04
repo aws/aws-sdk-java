@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#resolveCase(ResolveCaseRequest)
  */
-public class ResolveCaseRequest extends AmazonWebServiceRequest implements Serializable {
+public class ResolveCaseRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The AWS Support case ID requested or returned in the call. The case ID
@@ -121,5 +121,11 @@ public class ResolveCaseRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ResolveCaseRequest clone() {
+        
+            return (ResolveCaseRequest) super.clone();
+    }
+
 }
     

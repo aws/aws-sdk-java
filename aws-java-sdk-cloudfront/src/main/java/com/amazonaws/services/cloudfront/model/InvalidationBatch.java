@@ -21,7 +21,7 @@ import java.io.Serializable;
  * An invalidation batch.
  * </p>
  */
-public class InvalidationBatch implements Serializable {
+public class InvalidationBatch implements Serializable, Cloneable {
 
     /**
      * The path of the object to invalidate. The path is relative to the
@@ -301,5 +301,19 @@ public class InvalidationBatch implements Serializable {
         return true;
     }
     
+    @Override
+    public InvalidationBatch clone() {
+        try {
+            return (InvalidationBatch) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type containing information about the specified hosted zone.
  * </p>
  */
-public class GetHostedZoneResult implements Serializable {
+public class GetHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains the information about the specified
@@ -257,5 +257,19 @@ public class GetHostedZoneResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetHostedZoneResult clone() {
+        try {
+            return (GetHostedZoneResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

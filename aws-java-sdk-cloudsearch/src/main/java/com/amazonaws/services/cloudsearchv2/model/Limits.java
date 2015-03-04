@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Limits
  */
-public class Limits implements Serializable {
+public class Limits implements Serializable, Cloneable {
 
     private Integer maximumReplicationCount;
 
@@ -158,5 +158,19 @@ public class Limits implements Serializable {
         return true;
     }
     
+    @Override
+    public Limits clone() {
+        try {
+            return (Limits) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

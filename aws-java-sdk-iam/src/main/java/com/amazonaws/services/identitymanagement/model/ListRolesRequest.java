@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRoles(ListRolesRequest)
  */
-public class ListRolesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListRolesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path prefix for filtering the results. For example, the prefix
@@ -324,5 +324,11 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public ListRolesRequest clone() {
+        
+            return (ListRolesRequest) super.clone();
+    }
+
 }
     

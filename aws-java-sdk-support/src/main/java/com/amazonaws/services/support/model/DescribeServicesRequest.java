@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeServices(DescribeServicesRequest)
  */
-public class DescribeServicesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeServicesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A JSON-formatted list of service codes available for AWS services.
@@ -232,5 +232,11 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribeServicesRequest clone() {
+        
+            return (DescribeServicesRequest) super.clone();
+    }
+
 }
     

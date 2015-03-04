@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Gateway Protocol (BGP) over a public virtual interface.
  * </p>
  */
-public class RouteFilterPrefix implements Serializable {
+public class RouteFilterPrefix implements Serializable, Cloneable {
 
     /**
      * CIDR notation for the advertised route. Multiple routes are separated
@@ -108,5 +108,19 @@ public class RouteFilterPrefix implements Serializable {
         return true;
     }
     
+    @Override
+    public RouteFilterPrefix clone() {
+        try {
+            return (RouteFilterPrefix) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

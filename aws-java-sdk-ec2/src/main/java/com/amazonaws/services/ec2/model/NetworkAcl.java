@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a network ACL.
  * </p>
  */
-public class NetworkAcl implements Serializable {
+public class NetworkAcl implements Serializable, Cloneable {
 
     /**
      * The ID of the network ACL.
@@ -424,5 +424,19 @@ public class NetworkAcl implements Serializable {
         return true;
     }
     
+    @Override
+    public NetworkAcl clone() {
+        try {
+            return (NetworkAcl) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

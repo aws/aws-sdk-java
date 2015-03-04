@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readJob(ReadJobRequest)
  */
-public class ReadJobRequest extends AmazonWebServiceRequest implements Serializable {
+public class ReadJobRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the job for which you want to get detailed
@@ -124,5 +124,11 @@ public class ReadJobRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public ReadJobRequest clone() {
+        
+            return (ReadJobRequest) super.clone();
+    }
+
 }
     

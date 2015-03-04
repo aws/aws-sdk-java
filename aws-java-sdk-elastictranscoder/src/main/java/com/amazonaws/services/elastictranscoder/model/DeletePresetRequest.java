@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#deletePreset(DeletePresetRequest)
  */
-public class DeletePresetRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeletePresetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the preset for which you want to get detailed
@@ -129,5 +129,11 @@ public class DeletePresetRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeletePresetRequest clone() {
+        
+            return (DeletePresetRequest) super.clone();
+    }
+
 }
     

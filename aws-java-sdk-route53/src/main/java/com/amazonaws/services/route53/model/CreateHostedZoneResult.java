@@ -22,7 +22,7 @@ import java.io.Serializable;
  * zone.
  * </p>
  */
-public class CreateHostedZoneResult implements Serializable {
+public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains identifying information about the hosted
@@ -306,5 +306,19 @@ public class CreateHostedZoneResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateHostedZoneResult clone() {
+        try {
+            return (CreateHostedZoneResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -23,7 +23,7 @@ import java.io.Serializable;
  * completely deleted.
  * </p>
  */
-public class DeleteDomainResult implements Serializable {
+public class DeleteDomainResult implements Serializable, Cloneable {
 
     /**
      * The current status of the search domain.
@@ -102,5 +102,19 @@ public class DeleteDomainResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteDomainResult clone() {
+        try {
+            return (DeleteDomainResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

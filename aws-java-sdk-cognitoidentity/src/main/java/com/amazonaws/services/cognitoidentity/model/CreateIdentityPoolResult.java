@@ -21,7 +21,7 @@ import java.io.Serializable;
  * An object representing a Cognito identity pool.
  * </p>
  */
-public class CreateIdentityPoolResult implements Serializable {
+public class CreateIdentityPoolResult implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -444,5 +444,19 @@ public class CreateIdentityPoolResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateIdentityPoolResult clone() {
+        try {
+            return (CreateIdentityPoolResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

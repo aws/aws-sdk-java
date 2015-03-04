@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details about the <code>DecisionTaskScheduled</code> event.
  * </p>
  */
-public class DecisionTaskScheduledEventAttributes implements Serializable {
+public class DecisionTaskScheduledEventAttributes implements Serializable, Cloneable {
 
     /**
      * The name of the task list in which the decision task was scheduled.
@@ -285,5 +285,19 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public DecisionTaskScheduledEventAttributes clone() {
+        try {
+            return (DecisionTaskScheduledEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

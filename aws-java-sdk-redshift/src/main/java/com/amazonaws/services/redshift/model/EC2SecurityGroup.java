@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Amazon EC2 security group.
  * </p>
  */
-public class EC2SecurityGroup implements Serializable {
+public class EC2SecurityGroup implements Serializable, Cloneable {
 
     /**
      * The status of the EC2 security group.
@@ -268,5 +268,19 @@ public class EC2SecurityGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public EC2SecurityGroup clone() {
+        try {
+            return (EC2SecurityGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

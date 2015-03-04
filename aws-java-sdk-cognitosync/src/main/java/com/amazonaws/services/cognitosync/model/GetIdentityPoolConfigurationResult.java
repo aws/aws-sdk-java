@@ -18,10 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The response from <code>GetIdentityPoolConfigurationResponse</code> .
+ * The output for the <code>GetIdentityPoolConfiguration</code>
+ * operation.
  * </p>
  */
-public class GetIdentityPoolConfigurationResult implements Serializable {
+public class GetIdentityPoolConfigurationResult implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -35,9 +36,14 @@ public class GetIdentityPoolConfigurationResult implements Serializable {
     private String identityPoolId;
 
     /**
-     * Configuration options applied to the identity pool.
+     * Options to apply to this identity pool for push synchronization.
      */
     private PushSync pushSync;
+
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     */
+    private CognitoStreams cognitoStreams;
 
     /**
      * A name-spaced GUID (for example,
@@ -97,35 +103,68 @@ public class GetIdentityPoolConfigurationResult implements Serializable {
     }
 
     /**
-     * Configuration options applied to the identity pool.
+     * Options to apply to this identity pool for push synchronization.
      *
-     * @return Configuration options applied to the identity pool.
+     * @return Options to apply to this identity pool for push synchronization.
      */
     public PushSync getPushSync() {
         return pushSync;
     }
     
     /**
-     * Configuration options applied to the identity pool.
+     * Options to apply to this identity pool for push synchronization.
      *
-     * @param pushSync Configuration options applied to the identity pool.
+     * @param pushSync Options to apply to this identity pool for push synchronization.
      */
     public void setPushSync(PushSync pushSync) {
         this.pushSync = pushSync;
     }
     
     /**
-     * Configuration options applied to the identity pool.
+     * Options to apply to this identity pool for push synchronization.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pushSync Configuration options applied to the identity pool.
+     * @param pushSync Options to apply to this identity pool for push synchronization.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityPoolConfigurationResult withPushSync(PushSync pushSync) {
         this.pushSync = pushSync;
+        return this;
+    }
+
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     *
+     * @return Options to apply to this identity pool for Amazon Cognito streams.
+     */
+    public CognitoStreams getCognitoStreams() {
+        return cognitoStreams;
+    }
+    
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     *
+     * @param cognitoStreams Options to apply to this identity pool for Amazon Cognito streams.
+     */
+    public void setCognitoStreams(CognitoStreams cognitoStreams) {
+        this.cognitoStreams = cognitoStreams;
+    }
+    
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cognitoStreams Options to apply to this identity pool for Amazon Cognito streams.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetIdentityPoolConfigurationResult withCognitoStreams(CognitoStreams cognitoStreams) {
+        this.cognitoStreams = cognitoStreams;
         return this;
     }
 
@@ -142,7 +181,8 @@ public class GetIdentityPoolConfigurationResult implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null) sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
-        if (getPushSync() != null) sb.append("PushSync: " + getPushSync() );
+        if (getPushSync() != null) sb.append("PushSync: " + getPushSync() + ",");
+        if (getCognitoStreams() != null) sb.append("CognitoStreams: " + getCognitoStreams() );
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +194,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable {
         
         hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode()); 
         hashCode = prime * hashCode + ((getPushSync() == null) ? 0 : getPushSync().hashCode()); 
+        hashCode = prime * hashCode + ((getCognitoStreams() == null) ? 0 : getCognitoStreams().hashCode()); 
         return hashCode;
     }
     
@@ -169,8 +210,24 @@ public class GetIdentityPoolConfigurationResult implements Serializable {
         if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false) return false; 
         if (other.getPushSync() == null ^ this.getPushSync() == null) return false;
         if (other.getPushSync() != null && other.getPushSync().equals(this.getPushSync()) == false) return false; 
+        if (other.getCognitoStreams() == null ^ this.getCognitoStreams() == null) return false;
+        if (other.getCognitoStreams() != null && other.getCognitoStreams().equals(this.getCognitoStreams()) == false) return false; 
         return true;
     }
     
+    @Override
+    public GetIdentityPoolConfigurationResult clone() {
+        try {
+            return (GetIdentityPoolConfigurationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

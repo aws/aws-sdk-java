@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteReplicationGroup(DeleteReplicationGroupRequest)
  */
-public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier for the cluster to be deleted. This parameter is not
@@ -244,5 +244,11 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteReplicationGroupRequest clone() {
+        
+            return (DeleteReplicationGroupRequest) super.clone();
+    }
+
 }
     

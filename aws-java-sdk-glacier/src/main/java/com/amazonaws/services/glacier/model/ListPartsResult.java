@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListPartsResult implements Serializable {
+public class ListPartsResult implements Serializable, Cloneable {
 
     /**
      * The ID of the upload to which the parts are associated.
@@ -422,5 +422,19 @@ public class ListPartsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListPartsResult clone() {
+        try {
+            return (ListPartsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

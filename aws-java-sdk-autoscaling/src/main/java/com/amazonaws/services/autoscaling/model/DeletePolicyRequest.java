@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deletePolicy(DeletePolicyRequest)
  */
-public class DeletePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeletePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the Auto Scaling group.
@@ -179,5 +179,11 @@ public class DeletePolicyRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeletePolicyRequest clone() {
+        
+            return (DeletePolicyRequest) super.clone();
+    }
+
 }
     

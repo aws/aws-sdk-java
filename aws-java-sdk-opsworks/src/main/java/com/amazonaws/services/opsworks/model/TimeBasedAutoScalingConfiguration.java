@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an instance's time-based auto scaling configuration.
  * </p>
  */
-public class TimeBasedAutoScalingConfiguration implements Serializable {
+public class TimeBasedAutoScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -149,5 +149,19 @@ public class TimeBasedAutoScalingConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public TimeBasedAutoScalingConfiguration clone() {
+        try {
+            return (TimeBasedAutoScalingConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

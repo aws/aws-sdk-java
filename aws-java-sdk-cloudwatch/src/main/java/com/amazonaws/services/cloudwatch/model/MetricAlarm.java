@@ -22,7 +22,7 @@ import java.io.Serializable;
  * PutMetricAlarm to create or update an alarm.
  * </p>
  */
-public class MetricAlarm implements Serializable {
+public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * The name of the alarm.
@@ -1616,5 +1616,19 @@ public class MetricAlarm implements Serializable {
         return true;
     }
     
+    @Override
+    public MetricAlarm clone() {
+        try {
+            return (MetricAlarm) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

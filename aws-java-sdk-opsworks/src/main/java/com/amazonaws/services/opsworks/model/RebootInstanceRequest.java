@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#rebootInstance(RebootInstanceRequest)
  */
-public class RebootInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class RebootInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -115,5 +115,11 @@ public class RebootInstanceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public RebootInstanceRequest clone() {
+        
+            return (RebootInstanceRequest) super.clone();
+    }
+
 }
     

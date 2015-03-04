@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#modifyInstanceGroups(ModifyInstanceGroupsRequest)
  */
-public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Instance groups to change.
@@ -160,5 +160,11 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public ModifyInstanceGroupsRequest clone() {
+        
+            return (ModifyInstanceGroupsRequest) super.clone();
+    }
+
 }
     

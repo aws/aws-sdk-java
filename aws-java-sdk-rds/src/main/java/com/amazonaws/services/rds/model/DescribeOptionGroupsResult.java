@@ -21,7 +21,7 @@ import java.io.Serializable;
  * List of option groups.
  * </p>
  */
-public class DescribeOptionGroupsResult implements Serializable {
+public class DescribeOptionGroupsResult implements Serializable, Cloneable {
 
     /**
      * List of option groups.
@@ -191,5 +191,19 @@ public class DescribeOptionGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeOptionGroupsResult clone() {
+        try {
+            return (DescribeOptionGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

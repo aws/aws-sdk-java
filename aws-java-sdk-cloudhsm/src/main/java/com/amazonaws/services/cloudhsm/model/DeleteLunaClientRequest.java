@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#deleteLunaClient(DeleteLunaClientRequest)
  */
-public class DeleteLunaClientRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteLunaClientRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the client to delete.
@@ -117,5 +117,11 @@ public class DeleteLunaClientRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteLunaClientRequest clone() {
+        
+            return (DeleteLunaClientRequest) super.clone();
+    }
+
 }
     

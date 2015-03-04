@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type that describes function metadata.
  * </p>
  */
-public class GetFunctionConfigurationResult implements Serializable {
+public class GetFunctionConfigurationResult implements Serializable, Cloneable {
 
     /**
      * The name of the function.
@@ -803,5 +803,19 @@ public class GetFunctionConfigurationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetFunctionConfigurationResult clone() {
+        try {
+            return (GetFunctionConfigurationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

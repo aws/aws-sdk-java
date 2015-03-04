@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an event.
  * </p>
  */
-public class EventDescription implements Serializable {
+public class EventDescription implements Serializable, Cloneable {
 
     /**
      * The date when the event occurred.
@@ -507,5 +507,19 @@ public class EventDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public EventDescription clone() {
+        try {
+            return (EventDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class UploadArchiveResult implements Serializable {
+public class UploadArchiveResult implements Serializable, Cloneable {
 
     /**
      * The relative URI path of the newly added archive resource.
@@ -196,5 +196,19 @@ public class UploadArchiveResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UploadArchiveResult clone() {
+        try {
+            return (UploadArchiveResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

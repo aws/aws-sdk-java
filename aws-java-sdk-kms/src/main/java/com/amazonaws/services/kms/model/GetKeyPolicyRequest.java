@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#getKeyPolicy(GetKeyPolicyRequest)
  */
-public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the key. This can be an ARN, an alias, or a
@@ -196,5 +196,11 @@ public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public GetKeyPolicyRequest clone() {
+        
+            return (GetKeyPolicyRequest) super.clone();
+    }
+
 }
     

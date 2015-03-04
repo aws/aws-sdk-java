@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeStackProvisioningParameters(DescribeStackProvisioningParametersRequest)
  */
-public class DescribeStackProvisioningParametersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeStackProvisioningParametersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID
@@ -113,5 +113,11 @@ public class DescribeStackProvisioningParametersRequest extends AmazonWebService
         return true;
     }
     
+    @Override
+    public DescribeStackProvisioningParametersRequest clone() {
+        
+            return (DescribeStackProvisioningParametersRequest) super.clone();
+    }
+
 }
     

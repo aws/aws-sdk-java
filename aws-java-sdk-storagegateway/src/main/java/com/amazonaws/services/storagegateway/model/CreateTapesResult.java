@@ -21,7 +21,7 @@ import java.io.Serializable;
  * CreateTapeOutput
  * </p>
  */
-public class CreateTapesResult implements Serializable {
+public class CreateTapesResult implements Serializable, Cloneable {
 
     /**
      * A list of unique Amazon Resource Named (ARN) the represents the
@@ -144,5 +144,19 @@ public class CreateTapesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateTapesResult clone() {
+        try {
+            return (CreateTapesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

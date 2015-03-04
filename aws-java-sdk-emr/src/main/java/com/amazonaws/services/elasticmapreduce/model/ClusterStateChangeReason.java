@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The reason that the cluster changed to its current state.
  * </p>
  */
-public class ClusterStateChangeReason implements Serializable {
+public class ClusterStateChangeReason implements Serializable, Cloneable {
 
     /**
      * The programmatic code for the state change reason.
@@ -194,5 +194,19 @@ public class ClusterStateChangeReason implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterStateChangeReason clone() {
+        try {
+            return (ClusterStateChangeReason) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

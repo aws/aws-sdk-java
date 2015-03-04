@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStacks(DescribeStacksRequest)
  */
-public class DescribeStacksRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeStacksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or the unique identifier associated with the stack, which are
@@ -195,5 +195,11 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeStacksRequest clone() {
+        
+            return (DescribeStacksRequest) super.clone();
+    }
+
 }
     

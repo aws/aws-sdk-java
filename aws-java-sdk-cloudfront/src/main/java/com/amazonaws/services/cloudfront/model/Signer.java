@@ -23,7 +23,7 @@ import java.io.Serializable;
  * pair IDs, if any.
  * </p>
  */
-public class Signer implements Serializable {
+public class Signer implements Serializable, Cloneable {
 
     /**
      * Specifies an AWS account that can create signed URLs. Values: self,
@@ -178,5 +178,19 @@ public class Signer implements Serializable {
         return true;
     }
     
+    @Override
+    public Signer clone() {
+        try {
+            return (Signer) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeSnapshotAttributeResult implements Serializable {
+public class DescribeSnapshotAttributeResult implements Serializable, Cloneable {
 
     /**
      * The ID of the Amazon EBS snapshot.
@@ -252,5 +252,19 @@ public class DescribeSnapshotAttributeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSnapshotAttributeResult clone() {
+        try {
+            return (DescribeSnapshotAttributeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

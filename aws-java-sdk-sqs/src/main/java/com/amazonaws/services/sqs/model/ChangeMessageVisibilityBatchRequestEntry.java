@@ -38,7 +38,7 @@ import java.io.Serializable;
  * ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
  * </p>
  */
-public class ChangeMessageVisibilityBatchRequestEntry implements Serializable {
+public class ChangeMessageVisibilityBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * An identifier for this particular receipt handle. This is used to
@@ -236,5 +236,19 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public ChangeMessageVisibilityBatchRequestEntry clone() {
+        try {
+            return (ChangeMessageVisibilityBatchRequestEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

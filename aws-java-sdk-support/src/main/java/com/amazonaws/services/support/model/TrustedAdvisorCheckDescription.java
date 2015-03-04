@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The description and metadata for a Trusted Advisor check.
  * </p>
  */
-public class TrustedAdvisorCheckDescription implements Serializable {
+public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
 
     /**
      * The unique identifier for the Trusted Advisor check.
@@ -355,5 +355,19 @@ public class TrustedAdvisorCheckDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public TrustedAdvisorCheckDescription clone() {
+        try {
+            return (TrustedAdvisorCheckDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

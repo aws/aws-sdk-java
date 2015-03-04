@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the AddJobFlowSteps operation.
  * </p>
  */
-public class AddJobFlowStepsResult implements Serializable {
+public class AddJobFlowStepsResult implements Serializable, Cloneable {
 
     /**
      * The identifiers of the list of steps added to the job flow.
@@ -135,5 +135,19 @@ public class AddJobFlowStepsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AddJobFlowStepsResult clone() {
+        try {
+            return (AddJobFlowStepsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

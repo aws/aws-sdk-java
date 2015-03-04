@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteConfigurationTemplate(DeleteConfigurationTemplateRequest)
  */
-public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application to delete the configuration template from.
@@ -197,5 +197,11 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DeleteConfigurationTemplateRequest clone() {
+        
+            return (DeleteConfigurationTemplateRequest) super.clone();
+    }
+
 }
     

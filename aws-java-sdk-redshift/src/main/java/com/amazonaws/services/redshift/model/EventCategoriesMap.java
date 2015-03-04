@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class EventCategoriesMap implements Serializable {
+public class EventCategoriesMap implements Serializable, Cloneable {
 
     /**
      * The Amazon Redshift source type, such as cluster or cluster-snapshot,
@@ -182,5 +182,19 @@ public class EventCategoriesMap implements Serializable {
         return true;
     }
     
+    @Override
+    public EventCategoriesMap clone() {
+        try {
+            return (EventCategoriesMap) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

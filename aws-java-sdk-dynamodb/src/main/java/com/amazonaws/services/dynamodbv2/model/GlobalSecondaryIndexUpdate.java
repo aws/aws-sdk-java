@@ -39,7 +39,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class GlobalSecondaryIndexUpdate implements Serializable {
+public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
 
     /**
      * The name of an existing global secondary index, along with new
@@ -237,5 +237,19 @@ public class GlobalSecondaryIndexUpdate implements Serializable {
         return true;
     }
     
+    @Override
+    public GlobalSecondaryIndexUpdate clone() {
+        try {
+            return (GlobalSecondaryIndexUpdate) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

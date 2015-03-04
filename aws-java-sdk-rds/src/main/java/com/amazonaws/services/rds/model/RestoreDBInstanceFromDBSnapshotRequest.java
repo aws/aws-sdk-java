@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest)
  */
-public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Name of the DB instance to create from the DB snapshot. This parameter
@@ -1387,5 +1387,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public RestoreDBInstanceFromDBSnapshotRequest clone() {
+        
+            return (RestoreDBInstanceFromDBSnapshotRequest) super.clone();
+    }
+
 }
     

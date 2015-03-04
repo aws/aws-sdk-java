@@ -21,7 +21,7 @@ import java.io.Serializable;
  * An error or warning for a desired configuration option value.
  * </p>
  */
-public class ValidationMessage implements Serializable {
+public class ValidationMessage implements Serializable, Cloneable {
 
     /**
      * A message describing the error or warning.
@@ -361,5 +361,19 @@ public class ValidationMessage implements Serializable {
         return true;
     }
     
+    @Override
+    public ValidationMessage clone() {
+        try {
+            return (ValidationMessage) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

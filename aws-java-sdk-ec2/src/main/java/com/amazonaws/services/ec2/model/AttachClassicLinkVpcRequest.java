@@ -42,7 +42,7 @@ import com.amazonaws.services.ec2.model.transform.AttachClassicLinkVpcRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachClassicLinkVpc(AttachClassicLinkVpcRequest)
  */
-public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AttachClassicLinkVpcRequest> {
+public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AttachClassicLinkVpcRequest> {
 
     /**
      * The ID of an EC2-Classic instance to link to the ClassicLink-enabled
@@ -268,5 +268,11 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public AttachClassicLinkVpcRequest clone() {
+        
+            return (AttachClassicLinkVpcRequest) super.clone();
+    }
+
 }
     

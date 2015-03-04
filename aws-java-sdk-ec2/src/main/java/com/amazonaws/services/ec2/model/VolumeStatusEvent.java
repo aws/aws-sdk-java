@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a volume status event.
  * </p>
  */
-public class VolumeStatusEvent implements Serializable {
+public class VolumeStatusEvent implements Serializable, Cloneable {
 
     /**
      * The type of this event.
@@ -268,5 +268,19 @@ public class VolumeStatusEvent implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeStatusEvent clone() {
+        try {
+            return (VolumeStatusEvent) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

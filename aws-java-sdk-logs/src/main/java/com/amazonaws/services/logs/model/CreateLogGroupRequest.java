@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#createLogGroup(CreateLogGroupRequest)
  */
-public class CreateLogGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLogGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -143,5 +143,11 @@ public class CreateLogGroupRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CreateLogGroupRequest clone() {
+        
+            return (CreateLogGroupRequest) super.clone();
+    }
+
 }
     

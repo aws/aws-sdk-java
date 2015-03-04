@@ -57,7 +57,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#describeStream(DescribeStreamRequest)
  */
-public class DescribeStreamRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream to describe.
@@ -264,5 +264,11 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeStreamRequest clone() {
+        
+            return (DescribeStreamRequest) super.clone();
+    }
+
 }
     

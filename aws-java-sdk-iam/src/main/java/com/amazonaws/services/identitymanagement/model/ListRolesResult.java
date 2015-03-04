@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListRoles request.
  * </p>
  */
-public class ListRolesResult implements Serializable {
+public class ListRolesResult implements Serializable, Cloneable {
 
     /**
      * A list of roles.
@@ -285,5 +285,19 @@ public class ListRolesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListRolesResult clone() {
+        try {
+            return (ListRolesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

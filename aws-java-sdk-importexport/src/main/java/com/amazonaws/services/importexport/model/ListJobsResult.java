@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Output structure for the ListJobs operation.
  * </p>
  */
-public class ListJobsResult implements Serializable {
+public class ListJobsResult implements Serializable, Cloneable {
 
     /**
      * A list container for Jobs returned by the ListJobs operation.
@@ -195,5 +195,19 @@ public class ListJobsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListJobsResult clone() {
+        try {
+            return (ListJobsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

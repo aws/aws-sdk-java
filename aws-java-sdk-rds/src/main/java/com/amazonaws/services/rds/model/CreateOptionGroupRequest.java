@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createOptionGroup(CreateOptionGroupRequest)
  */
-public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the option group to be created. <p> Constraints:
@@ -350,5 +350,11 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CreateOptionGroupRequest clone() {
+        
+            return (CreateOptionGroupRequest) super.clone();
+    }
+
 }
     

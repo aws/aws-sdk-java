@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Metric Filter Match Record
  */
-public class MetricFilterMatchRecord implements Serializable {
+public class MetricFilterMatchRecord implements Serializable, Cloneable {
 
     private Long eventNumber;
 
@@ -216,5 +216,19 @@ public class MetricFilterMatchRecord implements Serializable {
         return true;
     }
     
+    @Override
+    public MetricFilterMatchRecord clone() {
+        try {
+            return (MetricFilterMatchRecord) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

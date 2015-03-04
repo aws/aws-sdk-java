@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Storedi S C S I Volume
  */
-public class StorediSCSIVolume implements Serializable {
+public class StorediSCSIVolume implements Serializable, Cloneable {
 
     private String volumeARN;
 
@@ -514,5 +514,19 @@ public class StorediSCSIVolume implements Serializable {
         return true;
     }
     
+    @Override
+    public StorediSCSIVolume clone() {
+        try {
+            return (StorediSCSIVolume) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

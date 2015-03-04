@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListGroups request.
  * </p>
  */
-public class ListGroupsResult implements Serializable {
+public class ListGroupsResult implements Serializable, Cloneable {
 
     /**
      * A list of groups.
@@ -285,5 +285,19 @@ public class ListGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListGroupsResult clone() {
+        try {
+            return (ListGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

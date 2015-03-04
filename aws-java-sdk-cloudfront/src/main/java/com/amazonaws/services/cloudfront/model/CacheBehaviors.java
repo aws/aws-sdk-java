@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type that contains zero or more CacheBehavior elements.
  * </p>
  */
-public class CacheBehaviors implements Serializable {
+public class CacheBehaviors implements Serializable, Cloneable {
 
     /**
      * The number of cache behaviors for this distribution.
@@ -186,5 +186,19 @@ public class CacheBehaviors implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheBehaviors clone() {
+        try {
+            return (CacheBehaviors) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

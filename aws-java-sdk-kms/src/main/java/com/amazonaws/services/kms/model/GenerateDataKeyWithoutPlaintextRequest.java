@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest)
  */
-public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequest implements Serializable {
+public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the key. This can be an ARN, an alias, or a
@@ -476,5 +476,11 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public GenerateDataKeyWithoutPlaintextRequest clone() {
+        
+            return (GenerateDataKeyWithoutPlaintextRequest) super.clone();
+    }
+
 }
     

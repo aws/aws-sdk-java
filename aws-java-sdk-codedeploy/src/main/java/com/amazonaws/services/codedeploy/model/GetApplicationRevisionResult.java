@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a get application revision operation.
  * </p>
  */
-public class GetApplicationRevisionResult implements Serializable {
+public class GetApplicationRevisionResult implements Serializable, Cloneable {
 
     /**
      * The name of the application that corresponds to the revision.
@@ -203,5 +203,19 @@ public class GetApplicationRevisionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetApplicationRevisionResult clone() {
+        try {
+            return (GetApplicationRevisionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

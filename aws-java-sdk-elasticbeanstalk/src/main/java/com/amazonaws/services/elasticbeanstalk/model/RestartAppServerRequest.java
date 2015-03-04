@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#restartAppServer(RestartAppServerRequest)
  */
-public class RestartAppServerRequest extends AmazonWebServiceRequest implements Serializable {
+public class RestartAppServerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the environment to restart the server for. <p> Condition:
@@ -208,5 +208,11 @@ public class RestartAppServerRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public RestartAppServerRequest clone() {
+        
+            return (RestartAppServerRequest) super.clone();
+    }
+
 }
     

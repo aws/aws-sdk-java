@@ -62,7 +62,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#listMultipartUploads(ListMultipartUploadsRequest)
  */
-public class ListMultipartUploadsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListMultipartUploadsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -371,5 +371,11 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public ListMultipartUploadsRequest clone() {
+        
+            return (ListMultipartUploadsRequest) super.clone();
+    }
+
 }
     

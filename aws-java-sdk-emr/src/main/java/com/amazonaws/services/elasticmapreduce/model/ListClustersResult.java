@@ -22,7 +22,7 @@ import java.io.Serializable;
  * example, the cluster IDs, names, and status.
  * </p>
  */
-public class ListClustersResult implements Serializable {
+public class ListClustersResult implements Serializable, Cloneable {
 
     /**
      * The list of clusters for the account based on the given filters.
@@ -185,5 +185,19 @@ public class ListClustersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListClustersResult clone() {
+        try {
+            return (ListClustersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

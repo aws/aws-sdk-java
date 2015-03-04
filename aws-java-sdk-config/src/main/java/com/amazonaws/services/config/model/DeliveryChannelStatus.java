@@ -25,7 +25,7 @@ import java.io.Serializable;
  * <code>Failure</code>
  * </p>
  */
-public class DeliveryChannelStatus implements Serializable {
+public class DeliveryChannelStatus implements Serializable, Cloneable {
 
     /**
      * The name of the delivery channel.
@@ -251,5 +251,19 @@ public class DeliveryChannelStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public DeliveryChannelStatus clone() {
+        try {
+            return (DeliveryChannelStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

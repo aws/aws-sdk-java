@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The settings for a trail.
  * </p>
  */
-public class Trail implements Serializable {
+public class Trail implements Serializable, Cloneable {
 
     /**
      * Name of the trail set by calling <a>CreateTrail</a>.
@@ -384,5 +384,19 @@ public class Trail implements Serializable {
         return true;
     }
     
+    @Override
+    public Trail clone() {
+        try {
+            return (Trail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

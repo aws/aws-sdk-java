@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBSubnetGroup(ModifyDBSubnetGroupRequest)
  */
-public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name for the DB subnet group. This value is stored as a lowercase
@@ -246,5 +246,11 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public ModifyDBSubnetGroupRequest clone() {
+        
+            return (ModifyDBSubnetGroupRequest) super.clone();
+    }
+
 }
     

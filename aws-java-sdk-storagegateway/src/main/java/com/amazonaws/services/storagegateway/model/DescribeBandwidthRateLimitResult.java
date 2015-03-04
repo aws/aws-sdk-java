@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the following fields:
  * </p>
  */
-public class DescribeBandwidthRateLimitResult implements Serializable {
+public class DescribeBandwidthRateLimitResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -255,5 +255,19 @@ public class DescribeBandwidthRateLimitResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeBandwidthRateLimitResult clone() {
+        try {
+            return (DescribeBandwidthRateLimitResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

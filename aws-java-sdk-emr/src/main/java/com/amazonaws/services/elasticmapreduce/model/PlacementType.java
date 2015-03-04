@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The Amazon EC2 location for the job flow.
  * </p>
  */
-public class PlacementType implements Serializable {
+public class PlacementType implements Serializable, Cloneable {
 
     /**
      * The Amazon EC2 Availability Zone for the job flow.
@@ -134,5 +134,19 @@ public class PlacementType implements Serializable {
         return true;
     }
     
+    @Override
+    public PlacementType clone() {
+        try {
+            return (PlacementType) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

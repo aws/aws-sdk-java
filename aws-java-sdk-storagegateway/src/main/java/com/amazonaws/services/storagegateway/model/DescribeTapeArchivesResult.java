@@ -21,7 +21,7 @@ import java.io.Serializable;
  * DescribeTapeArchivesOutput
  * </p>
  */
-public class DescribeTapeArchivesResult implements Serializable {
+public class DescribeTapeArchivesResult implements Serializable, Cloneable {
 
     /**
      * An array of virtual tape objects in the virtual tape shelf (VTS). The
@@ -253,5 +253,19 @@ public class DescribeTapeArchivesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTapeArchivesResult clone() {
+        try {
+            return (DescribeTapeArchivesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

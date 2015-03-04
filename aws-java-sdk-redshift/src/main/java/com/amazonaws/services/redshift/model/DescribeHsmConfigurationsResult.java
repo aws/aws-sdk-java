@@ -20,7 +20,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class DescribeHsmConfigurationsResult implements Serializable {
+public class DescribeHsmConfigurationsResult implements Serializable, Cloneable {
 
     /**
      * A value that indicates the starting point for the next set of response
@@ -211,5 +211,19 @@ public class DescribeHsmConfigurationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeHsmConfigurationsResult clone() {
+        try {
+            return (DescribeHsmConfigurationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

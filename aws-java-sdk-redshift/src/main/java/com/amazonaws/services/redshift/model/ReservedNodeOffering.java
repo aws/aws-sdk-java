@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a reserved node offering.
  * </p>
  */
-public class ReservedNodeOffering implements Serializable {
+public class ReservedNodeOffering implements Serializable, Cloneable {
 
     /**
      * The offering identifier.
@@ -475,5 +475,19 @@ public class ReservedNodeOffering implements Serializable {
         return true;
     }
     
+    @Override
+    public ReservedNodeOffering clone() {
+        try {
+            return (ReservedNodeOffering) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

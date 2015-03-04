@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeBundleTasksResult implements Serializable {
+public class DescribeBundleTasksResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more bundle tasks.
@@ -133,5 +133,19 @@ public class DescribeBundleTasksResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeBundleTasksResult clone() {
+        try {
+            return (DescribeBundleTasksResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

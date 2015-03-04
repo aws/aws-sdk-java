@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest)
  */
-public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The mnemonic name associated with the load balancer.
@@ -212,5 +212,11 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DeleteLoadBalancerListenersRequest clone() {
+        
+            return (DeleteLoadBalancerListenersRequest) super.clone();
+    }
+
 }
     

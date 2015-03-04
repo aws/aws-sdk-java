@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an association of a configuration document and an instance.
  * </p>
  */
-public class Association implements Serializable {
+public class Association implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -174,5 +174,19 @@ public class Association implements Serializable {
         return true;
     }
     
+    @Override
+    public Association clone() {
+        try {
+            return (Association) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

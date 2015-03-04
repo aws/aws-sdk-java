@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a network interface.
  * </p>
  */
-public class NetworkInterface implements Serializable {
+public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * The ID of the network interface.
@@ -1003,5 +1003,19 @@ public class NetworkInterface implements Serializable {
         return true;
     }
     
+    @Override
+    public NetworkInterface clone() {
+        try {
+            return (NetworkInterface) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

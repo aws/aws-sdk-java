@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeLoadBalancerPolicies action.
  * </p>
  */
-public class DescribeLoadBalancerPoliciesResult implements Serializable {
+public class DescribeLoadBalancerPoliciesResult implements Serializable, Cloneable {
 
     /**
      * A list of policy description structures.
@@ -135,5 +135,19 @@ public class DescribeLoadBalancerPoliciesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLoadBalancerPoliciesResult clone() {
+        try {
+            return (DescribeLoadBalancerPoliciesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

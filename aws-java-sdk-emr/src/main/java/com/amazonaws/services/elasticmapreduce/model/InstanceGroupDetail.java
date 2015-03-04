@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Detailed information about an instance group.
  * </p>
  */
-public class InstanceGroupDetail implements Serializable {
+public class InstanceGroupDetail implements Serializable, Cloneable {
 
     /**
      * Unique identifier for the instance group.
@@ -952,5 +952,19 @@ public class InstanceGroupDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceGroupDetail clone() {
+        try {
+            return (InstanceGroupDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

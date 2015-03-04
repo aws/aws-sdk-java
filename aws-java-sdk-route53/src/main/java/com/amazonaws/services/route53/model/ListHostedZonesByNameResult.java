@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type that contains the response for the request.
  * </p>
  */
-public class ListHostedZonesByNameResult implements Serializable {
+public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains information about the hosted zones
@@ -636,5 +636,19 @@ public class ListHostedZonesByNameResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListHostedZonesByNameResult clone() {
+        try {
+            return (ListHostedZonesByNameResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

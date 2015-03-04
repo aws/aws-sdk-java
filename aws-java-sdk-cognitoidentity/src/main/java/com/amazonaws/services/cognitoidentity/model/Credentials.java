@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Credentials for the the provided identity ID.
  * </p>
  */
-public class Credentials implements Serializable {
+public class Credentials implements Serializable, Cloneable {
 
     /**
      * The Access Key portion of the credentials.
@@ -226,5 +226,19 @@ public class Credentials implements Serializable {
         return true;
     }
     
+    @Override
+    public Credentials clone() {
+        try {
+            return (Credentials) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

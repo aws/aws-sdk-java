@@ -97,7 +97,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest)
  */
-public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Serializable {
+public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -774,5 +774,11 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ReceiveMessageRequest clone() {
+        
+            return (ReceiveMessageRequest) super.clone();
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest)
  */
-public class GetTopicAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetTopicAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the topic whose properties you want to get.
@@ -123,5 +123,11 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public GetTopicAttributesRequest clone() {
+        
+            return (GetTopicAttributesRequest) super.clone();
+    }
+
 }
     

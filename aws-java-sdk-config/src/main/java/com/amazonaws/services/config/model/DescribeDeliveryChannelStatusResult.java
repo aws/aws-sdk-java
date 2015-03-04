@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeDeliveryChannelStatus action.
  * </p>
  */
-public class DescribeDeliveryChannelStatusResult implements Serializable {
+public class DescribeDeliveryChannelStatusResult implements Serializable, Cloneable {
 
     /**
      * A list that contains the status of a specified delivery channel.
@@ -135,5 +135,19 @@ public class DescribeDeliveryChannelStatusResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDeliveryChannelStatusResult clone() {
+        try {
+            return (DescribeDeliveryChannelStatusResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

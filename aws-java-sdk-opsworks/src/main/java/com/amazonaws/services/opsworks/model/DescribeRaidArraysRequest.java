@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeRaidArrays(DescribeRaidArraysRequest)
  */
-public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID. If you use this parameter,
@@ -267,5 +267,11 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DescribeRaidArraysRequest clone() {
+        
+            return (DescribeRaidArraysRequest) super.clone();
+    }
+
 }
     

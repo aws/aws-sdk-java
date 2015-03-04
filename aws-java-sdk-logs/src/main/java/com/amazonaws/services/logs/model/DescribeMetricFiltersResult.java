@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Describe Metric Filters Result
  */
-public class DescribeMetricFiltersResult implements Serializable {
+public class DescribeMetricFiltersResult implements Serializable, Cloneable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<MetricFilter> metricFilters;
 
@@ -186,5 +186,19 @@ public class DescribeMetricFiltersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeMetricFiltersResult clone() {
+        try {
+            return (DescribeMetricFiltersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#putLogEvents(PutLogEventsRequest)
  */
-public class PutLogEventsRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutLogEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -363,5 +363,11 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public PutLogEventsRequest clone() {
+        
+            return (PutLogEventsRequest) super.clone();
+    }
+
 }
     

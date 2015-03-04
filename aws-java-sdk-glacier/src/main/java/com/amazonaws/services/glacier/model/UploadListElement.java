@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of in-progress multipart uploads for a vault.
  * </p>
  */
-public class UploadListElement implements Serializable {
+public class UploadListElement implements Serializable, Cloneable {
 
     /**
      * The ID of a multipart upload.
@@ -295,5 +295,19 @@ public class UploadListElement implements Serializable {
         return true;
     }
     
+    @Override
+    public UploadListElement clone() {
+        try {
+            return (UploadListElement) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

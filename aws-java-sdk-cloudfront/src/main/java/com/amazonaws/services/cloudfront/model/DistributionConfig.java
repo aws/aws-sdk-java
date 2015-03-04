@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A distribution Configuration.
  * </p>
  */
-public class DistributionConfig implements Serializable {
+public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * A unique number that ensures the request can't be replayed. If the
@@ -918,5 +918,19 @@ public class DistributionConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public DistributionConfig clone() {
+        try {
+            return (DistributionConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

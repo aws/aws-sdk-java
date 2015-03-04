@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the instance status.
  * </p>
  */
-public class InstanceStatusDetails implements Serializable {
+public class InstanceStatusDetails implements Serializable, Cloneable {
 
     /**
      * The type of instance status.
@@ -295,5 +295,19 @@ public class InstanceStatusDetails implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceStatusDetails clone() {
+        try {
+            return (InstanceStatusDetails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

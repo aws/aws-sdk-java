@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeClusterSecurityGroups action.
  * </p>
  */
-public class DescribeClusterSecurityGroupsResult implements Serializable {
+public class DescribeClusterSecurityGroupsResult implements Serializable, Cloneable {
 
     /**
      * A value that indicates the starting point for the next set of response
@@ -212,5 +212,19 @@ public class DescribeClusterSecurityGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeClusterSecurityGroupsResult clone() {
+        try {
+            return (DescribeClusterSecurityGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

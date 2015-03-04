@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createClusterSubnetGroup(CreateClusterSubnetGroupRequest)
  */
-public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name for the subnet group. Amazon Redshift stores the value as a
@@ -353,5 +353,11 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public CreateClusterSubnetGroupRequest clone() {
+        
+            return (CreateClusterSubnetGroupRequest) super.clone();
+    }
+
 }
     

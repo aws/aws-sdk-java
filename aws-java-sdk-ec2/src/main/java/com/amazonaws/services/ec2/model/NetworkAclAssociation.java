@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an association between a network ACL and a subnet.
  * </p>
  */
-public class NetworkAclAssociation implements Serializable {
+public class NetworkAclAssociation implements Serializable, Cloneable {
 
     /**
      * The ID of the association between a network ACL and a subnet.
@@ -184,5 +184,19 @@ public class NetworkAclAssociation implements Serializable {
         return true;
     }
     
+    @Override
+    public NetworkAclAssociation clone() {
+        try {
+            return (NetworkAclAssociation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

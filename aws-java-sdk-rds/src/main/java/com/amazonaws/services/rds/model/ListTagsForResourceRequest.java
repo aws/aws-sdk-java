@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#listTagsForResource(ListTagsForResourceRequest)
  */
-public class ListTagsForResourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListTagsForResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon RDS resource with tags to be listed. This value is an
@@ -215,5 +215,11 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public ListTagsForResourceRequest clone() {
+        
+            return (ListTagsForResourceRequest) super.clone();
+    }
+
 }
     

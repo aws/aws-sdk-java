@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.DetachClassicLinkVpcRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachClassicLinkVpc(DetachClassicLinkVpcRequest)
  */
-public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachClassicLinkVpcRequest> {
+public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DetachClassicLinkVpcRequest> {
 
     /**
      * The ID of the instance to unlink from the VPC.
@@ -164,5 +164,11 @@ public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DetachClassicLinkVpcRequest clone() {
+        
+            return (DetachClassicLinkVpcRequest) super.clone();
+    }
+
 }
     

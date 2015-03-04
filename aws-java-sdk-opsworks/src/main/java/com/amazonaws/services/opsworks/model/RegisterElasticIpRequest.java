@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#registerElasticIp(RegisterElasticIpRequest)
  */
-public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Elastic IP address.
@@ -160,5 +160,11 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public RegisterElasticIpRequest clone() {
+        
+            return (RegisterElasticIpRequest) super.clone();
+    }
+
 }
     

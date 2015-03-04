@@ -37,7 +37,7 @@ import java.io.Serializable;
  * distribution.
  * </p>
  */
-public class CacheBehavior implements Serializable {
+public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * The pattern (for example, images/*.jpg) that specifies which requests
@@ -797,5 +797,19 @@ public class CacheBehavior implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheBehavior clone() {
+        try {
+            return (CacheBehavior) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes association information for an Elastic IP address.
  * </p>
  */
-public class NetworkInterfaceAssociation implements Serializable {
+public class NetworkInterfaceAssociation implements Serializable, Cloneable {
 
     /**
      * The address of the Elastic IP address bound to the network interface.
@@ -268,5 +268,19 @@ public class NetworkInterfaceAssociation implements Serializable {
         return true;
     }
     
+    @Override
+    public NetworkInterfaceAssociation clone() {
+        try {
+            return (NetworkInterfaceAssociation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

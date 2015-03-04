@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest)
  */
-public class RemovePermissionRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemovePermissionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the topic whose access control policy you wish to modify.
@@ -167,5 +167,11 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public RemovePermissionRequest clone() {
+        
+            return (RemovePermissionRequest) super.clone();
+    }
+
 }
     

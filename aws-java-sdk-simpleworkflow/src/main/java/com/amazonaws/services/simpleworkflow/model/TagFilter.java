@@ -22,7 +22,7 @@ import java.io.Serializable;
  * tag.
  * </p>
  */
-public class TagFilter implements Serializable {
+public class TagFilter implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> Specifies the tag that must be associated with the
@@ -120,5 +120,19 @@ public class TagFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public TagFilter clone() {
+        try {
+            return (TagFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

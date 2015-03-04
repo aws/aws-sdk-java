@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest)
  */
-public class SetStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Identifies the pipeline that contains the objects.
@@ -298,5 +298,11 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public SetStatusRequest clone() {
+        
+            return (SetStatusRequest) super.clone();
+    }
+
 }
     

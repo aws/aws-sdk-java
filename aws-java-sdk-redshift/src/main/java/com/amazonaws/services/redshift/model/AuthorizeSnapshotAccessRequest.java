@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#authorizeSnapshotAccess(AuthorizeSnapshotAccessRequest)
  */
-public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest implements Serializable {
+public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the snapshot the account is authorized to restore.
@@ -223,5 +223,11 @@ public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public AuthorizeSnapshotAccessRequest clone() {
+        
+            return (AuthorizeSnapshotAccessRequest) super.clone();
+    }
+
 }
     

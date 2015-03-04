@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#applySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest)
  */
-public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
+public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer. The name must be unique
@@ -214,5 +214,11 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public ApplySecurityGroupsToLoadBalancerRequest clone() {
+        
+            return (ApplySecurityGroupsToLoadBalancerRequest) super.clone();
+    }
+
 }
     

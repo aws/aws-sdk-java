@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccessKey(UpdateAccessKeyRequest)
  */
-public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user whose key you want to update.
@@ -383,5 +383,11 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public UpdateAccessKeyRequest clone() {
+        
+            return (UpdateAccessKeyRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * delegation set.
  * </p>
  */
-public class GetReusableDelegationSetResult implements Serializable {
+public class GetReusableDelegationSetResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains the information about the nameservers for
@@ -108,5 +108,19 @@ public class GetReusableDelegationSetResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetReusableDelegationSetResult clone() {
+        try {
+            return (GetReusableDelegationSetResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

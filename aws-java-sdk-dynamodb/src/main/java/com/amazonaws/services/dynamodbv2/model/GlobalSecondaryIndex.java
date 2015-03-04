@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the properties of a global secondary index.
  * </p>
  */
-public class GlobalSecondaryIndex implements Serializable {
+public class GlobalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * The name of the global secondary index. The name must be unique among
@@ -362,5 +362,19 @@ public class GlobalSecondaryIndex implements Serializable {
         return true;
     }
     
+    @Override
+    public GlobalSecondaryIndex clone() {
+        try {
+            return (GlobalSecondaryIndex) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

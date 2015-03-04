@@ -22,7 +22,7 @@ import java.io.Serializable;
  * <code>LookupDeveloperIdentity</code> action.
  * </p>
  */
-public class LookupDeveloperIdentityResult implements Serializable {
+public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -308,5 +308,19 @@ public class LookupDeveloperIdentityResult implements Serializable {
         return true;
     }
     
+    @Override
+    public LookupDeveloperIdentityResult clone() {
+        try {
+            return (LookupDeveloperIdentityResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

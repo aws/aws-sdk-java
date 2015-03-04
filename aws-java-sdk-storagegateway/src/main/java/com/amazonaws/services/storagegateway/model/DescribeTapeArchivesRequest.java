@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeTapeArchives(DescribeTapeArchivesRequest)
  */
-public class DescribeTapeArchivesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTapeArchivesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specifies one or more unique Amazon Resource Names (ARNs) that
@@ -277,5 +277,11 @@ public class DescribeTapeArchivesRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeTapeArchivesRequest clone() {
+        
+            return (DescribeTapeArchivesRequest) super.clone();
+    }
+
 }
     

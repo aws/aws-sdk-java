@@ -41,7 +41,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class User implements Serializable {
+public class User implements Serializable, Cloneable {
 
     /**
      * The path to the user. For more information about paths, see <a
@@ -567,5 +567,19 @@ public class User implements Serializable {
         return true;
     }
     
+    @Override
+    public User clone() {
+        try {
+            return (User) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -25,7 +25,7 @@ import java.io.Serializable;
  * content.
  * </p>
  */
-public class ActiveTrustedSigners implements Serializable {
+public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * Each active trusted signer.
@@ -293,5 +293,19 @@ public class ActiveTrustedSigners implements Serializable {
         return true;
     }
     
+    @Override
+    public ActiveTrustedSigners clone() {
+        try {
+            return (ActiveTrustedSigners) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createEnvironment(CreateEnvironmentRequest)
  */
-public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application that contains the version to be deployed.
@@ -998,5 +998,11 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CreateEnvironmentRequest clone() {
+        
+            return (CreateEnvironmentRequest) super.clone();
+    }
+
 }
     

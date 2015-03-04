@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeStacks(DescribeStacksRequest)
  */
-public class DescribeStacksRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeStacksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An array of stack IDs that specify the stacks to be described. If you
@@ -166,5 +166,11 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeStacksRequest clone() {
+        
+            return (DescribeStacksRequest) super.clone();
+    }
+
 }
     

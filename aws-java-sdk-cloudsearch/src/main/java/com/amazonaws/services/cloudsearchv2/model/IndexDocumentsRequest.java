@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#indexDocuments(IndexDocumentsRequest)
  */
-public class IndexDocumentsRequest extends AmazonWebServiceRequest implements Serializable {
+public class IndexDocumentsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -144,5 +144,11 @@ public class IndexDocumentsRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public IndexDocumentsRequest clone() {
+        
+            return (IndexDocumentsRequest) super.clone();
+    }
+
 }
     

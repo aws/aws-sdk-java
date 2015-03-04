@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpcPeeringConnectionRequ
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest)
  */
-public class DeleteVpcPeeringConnectionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVpcPeeringConnectionRequest> {
+public class DeleteVpcPeeringConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteVpcPeeringConnectionRequest> {
 
     /**
      * The ID of the VPC peering connection.
@@ -123,5 +123,11 @@ public class DeleteVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DeleteVpcPeeringConnectionRequest clone() {
+        
+            return (DeleteVpcPeeringConnectionRequest) super.clone();
+    }
+
 }
     

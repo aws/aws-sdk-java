@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#unlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest)
  */
-public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -306,5 +306,11 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public UnlinkDeveloperIdentityRequest clone() {
+        
+            return (UnlinkDeveloperIdentityRequest) super.clone();
+    }
+
 }
     

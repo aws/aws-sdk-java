@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeInstanceHealth action.
  * </p>
  */
-public class DescribeInstanceHealthResult implements Serializable {
+public class DescribeInstanceHealthResult implements Serializable, Cloneable {
 
     /**
      * A list containing health information for the specified instances.
@@ -135,5 +135,19 @@ public class DescribeInstanceHealthResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeInstanceHealthResult clone() {
+        try {
+            return (DescribeInstanceHealthResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

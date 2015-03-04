@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeDeliveryChannels action.
  * </p>
  */
-public class DescribeDeliveryChannelsResult implements Serializable {
+public class DescribeDeliveryChannelsResult implements Serializable, Cloneable {
 
     /**
      * A list that contains the descriptions of the specified delivery
@@ -144,5 +144,19 @@ public class DescribeDeliveryChannelsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDeliveryChannelsResult clone() {
+        try {
+            return (DescribeDeliveryChannelsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

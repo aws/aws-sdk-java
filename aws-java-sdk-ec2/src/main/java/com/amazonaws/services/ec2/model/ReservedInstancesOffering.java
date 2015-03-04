@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a Reserved Instance offering.
  * </p>
  */
-public class ReservedInstancesOffering implements Serializable {
+public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * The ID of the Reserved Instance offering.
@@ -983,5 +983,19 @@ public class ReservedInstancesOffering implements Serializable {
         return true;
     }
     
+    @Override
+    public ReservedInstancesOffering clone() {
+        try {
+            return (ReservedInstancesOffering) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

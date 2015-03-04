@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#getApplication(GetApplicationRequest)
  */
-public class GetApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing AWS CodeDeploy application within the AWS user
@@ -124,5 +124,11 @@ public class GetApplicationRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GetApplicationRequest clone() {
+        
+            return (GetApplicationRequest) super.clone();
+    }
+
 }
     

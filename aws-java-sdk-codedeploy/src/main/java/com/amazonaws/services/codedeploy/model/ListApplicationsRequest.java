@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listApplications(ListApplicationsRequest)
  */
-public class ListApplicationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListApplicationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An identifier that was returned from the previous list applications
@@ -119,5 +119,11 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ListApplicationsRequest clone() {
+        
+            return (ListApplicationsRequest) super.clone();
+    }
+
 }
     

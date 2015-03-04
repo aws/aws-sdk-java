@@ -22,7 +22,7 @@ import java.io.Serializable;
  * expression being deleted.
  * </p>
  */
-public class DeleteExpressionResult implements Serializable {
+public class DeleteExpressionResult implements Serializable, Cloneable {
 
     /**
      * The status of the expression being deleted.
@@ -101,5 +101,19 @@ public class DeleteExpressionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteExpressionResult clone() {
+        try {
+            return (DeleteExpressionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

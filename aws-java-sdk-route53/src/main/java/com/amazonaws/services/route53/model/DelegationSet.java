@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type that contains name server information.
  * </p>
  */
-public class DelegationSet implements Serializable {
+public class DelegationSet implements Serializable, Cloneable {
 
     private String id;
 
@@ -293,5 +293,19 @@ public class DelegationSet implements Serializable {
         return true;
     }
     
+    @Override
+    public DelegationSet clone() {
+        try {
+            return (DelegationSet) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

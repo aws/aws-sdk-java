@@ -29,7 +29,7 @@ import java.io.Serializable;
  * clusters.
  * </p>
  */
-public class Cluster implements Serializable {
+public class Cluster implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN
@@ -248,5 +248,19 @@ public class Cluster implements Serializable {
         return true;
     }
     
+    @Override
+    public Cluster clone() {
+        try {
+            return (Cluster) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

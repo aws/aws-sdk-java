@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Output structure for the UpateJob operation.
  * </p>
  */
-public class UpdateJobResult implements Serializable {
+public class UpdateJobResult implements Serializable, Cloneable {
 
     /**
      * Specifies whether (true) or not (false) AWS Import/Export updated your
@@ -244,5 +244,19 @@ public class UpdateJobResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateJobResult clone() {
+        try {
+            return (UpdateJobResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

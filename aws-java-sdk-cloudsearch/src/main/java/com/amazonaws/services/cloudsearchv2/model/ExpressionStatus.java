@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The value of an <code>Expression</code> and its current status.
  * </p>
  */
-public class ExpressionStatus implements Serializable {
+public class ExpressionStatus implements Serializable, Cloneable {
 
     /**
      * The expression that is evaluated for sorting while processing a search
@@ -149,5 +149,19 @@ public class ExpressionStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public ExpressionStatus clone() {
+        try {
+            return (ExpressionStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

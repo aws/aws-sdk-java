@@ -22,7 +22,7 @@ import java.io.Serializable;
  * ListMetrics results.
  * </p>
  */
-public class DimensionFilter implements Serializable {
+public class DimensionFilter implements Serializable, Cloneable {
 
     /**
      * The dimension name to be matched.
@@ -181,5 +181,19 @@ public class DimensionFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public DimensionFilter clone() {
+        try {
+            return (DimensionFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

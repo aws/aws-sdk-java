@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DomainSummary implements Serializable {
+public class DomainSummary implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String
@@ -301,5 +301,19 @@ public class DomainSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public DomainSummary clone() {
+        try {
+            return (DomainSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#getDocument(GetDocumentRequest)
  */
-public class GetDocumentRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetDocumentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -121,5 +121,11 @@ public class GetDocumentRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public GetDocumentRequest clone() {
+        
+            return (GetDocumentRequest) super.clone();
+    }
+
 }
     

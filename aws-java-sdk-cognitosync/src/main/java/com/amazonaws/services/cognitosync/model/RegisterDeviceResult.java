@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response to a <code>RegisterDevice</code> request.
  * </p>
  */
-public class RegisterDeviceResult implements Serializable {
+public class RegisterDeviceResult implements Serializable, Cloneable {
 
     /**
      * The unique ID generated for this device by Cognito.
@@ -112,5 +112,19 @@ public class RegisterDeviceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RegisterDeviceResult clone() {
+        try {
+            return (RegisterDeviceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

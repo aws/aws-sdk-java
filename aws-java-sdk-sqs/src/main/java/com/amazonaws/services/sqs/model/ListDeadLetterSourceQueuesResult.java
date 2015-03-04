@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of your dead letter source queues.
  * </p>
  */
-public class ListDeadLetterSourceQueuesResult implements Serializable {
+public class ListDeadLetterSourceQueuesResult implements Serializable, Cloneable {
 
     /**
      * A list of source queue URLs that have the RedrivePolicy queue
@@ -144,5 +144,19 @@ public class ListDeadLetterSourceQueuesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListDeadLetterSourceQueuesResult clone() {
+        try {
+            return (ListDeadLetterSourceQueuesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

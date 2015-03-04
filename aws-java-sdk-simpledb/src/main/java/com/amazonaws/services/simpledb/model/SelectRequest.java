@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#select(SelectRequest)
  */
-public class SelectRequest extends AmazonWebServiceRequest implements Serializable {
+public class SelectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The expression used to query the domain.
@@ -289,5 +289,11 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
         return true;
     }
     
+    @Override
+    public SelectRequest clone() {
+        
+            return (SelectRequest) super.clone();
+    }
+
 }
     

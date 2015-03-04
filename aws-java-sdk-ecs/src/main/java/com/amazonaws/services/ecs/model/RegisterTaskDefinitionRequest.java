@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#registerTaskDefinition(RegisterTaskDefinitionRequest)
  */
-public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * You must specify a <code>family</code> for a task definition, which
@@ -303,5 +303,11 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public RegisterTaskDefinitionRequest clone() {
+        
+            return (RegisterTaskDefinitionRequest) super.clone();
+    }
+
 }
     

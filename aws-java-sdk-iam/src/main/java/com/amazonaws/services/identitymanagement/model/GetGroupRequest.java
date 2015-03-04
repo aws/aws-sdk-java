@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroup(GetGroupRequest)
  */
-public class GetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group.
@@ -301,5 +301,11 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements Serializ
         return true;
     }
     
+    @Override
+    public GetGroupRequest clone() {
+        
+            return (GetGroupRequest) super.clone();
+    }
+
 }
     

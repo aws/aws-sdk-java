@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#createLogStream(CreateLogStreamRequest)
  */
-public class CreateLogStreamRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLogStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -195,5 +195,11 @@ public class CreateLogStreamRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public CreateLogStreamRequest clone() {
+        
+            return (CreateLogStreamRequest) super.clone();
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteHsmConfiguration(DeleteHsmConfigurationRequest)
  */
-public class DeleteHsmConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteHsmConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the Amazon Redshift HSM configuration to be deleted.
@@ -105,5 +105,11 @@ public class DeleteHsmConfigurationRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteHsmConfigurationRequest clone() {
+        
+            return (DeleteHsmConfigurationRequest) super.clone();
+    }
+
 }
     

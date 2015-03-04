@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createTapes(CreateTapesRequest)
  */
-public class CreateTapesRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateTapesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique Amazon Resource Name(ARN) that represents the gateway to
@@ -387,5 +387,11 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public CreateTapesRequest clone() {
+        
+            return (CreateTapesRequest) super.clone();
+    }
+
 }
     

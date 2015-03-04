@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about an application.
  * </p>
  */
-public class ApplicationInfo implements Serializable {
+public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * The application ID.
@@ -256,5 +256,19 @@ public class ApplicationInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public ApplicationInfo clone() {
+        try {
+            return (ApplicationInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

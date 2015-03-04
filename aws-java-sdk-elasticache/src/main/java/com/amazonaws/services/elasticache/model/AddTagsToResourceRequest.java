@@ -40,11 +40,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#addTagsToResource(AddTagsToResourceRequest)
  */
-public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the resource to which the tags are to be added, for
-     * example <code>myCluster01</code>.
+     * example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      */
     private String resourceName;
 
@@ -56,10 +57,12 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * The name of the resource to which the tags are to be added, for
-     * example <code>myCluster01</code>.
+     * example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      *
      * @return The name of the resource to which the tags are to be added, for
-     *         example <code>myCluster01</code>.
+     *         example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      */
     public String getResourceName() {
         return resourceName;
@@ -67,10 +70,12 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
     
     /**
      * The name of the resource to which the tags are to be added, for
-     * example <code>myCluster01</code>.
+     * example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      *
      * @param resourceName The name of the resource to which the tags are to be added, for
-     *         example <code>myCluster01</code>.
+     *         example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      */
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -78,12 +83,14 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
     
     /**
      * The name of the resource to which the tags are to be added, for
-     * example <code>myCluster01</code>.
+     * example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceName The name of the resource to which the tags are to be added, for
-     *         example <code>myCluster01</code>.
+     *         example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -212,5 +219,11 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public AddTagsToResourceRequest clone() {
+        
+            return (AddTagsToResourceRequest) super.clone();
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#getOperationDetail(GetOperationDetailRequest)
  */
-public class GetOperationDetailRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetOperationDetailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier for the operation for which you want to get the status.
@@ -132,5 +132,11 @@ public class GetOperationDetailRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public GetOperationDetailRequest clone() {
+        
+            return (GetOperationDetailRequest) super.clone();
+    }
+
 }
     

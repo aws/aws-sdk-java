@@ -51,7 +51,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#abortMultipartUpload(AbortMultipartUploadRequest)
  */
-public class AbortMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable {
+public class AbortMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -280,5 +280,11 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public AbortMultipartUploadRequest clone() {
+        
+            return (AbortMultipartUploadRequest) super.clone();
+    }
+
 }
     

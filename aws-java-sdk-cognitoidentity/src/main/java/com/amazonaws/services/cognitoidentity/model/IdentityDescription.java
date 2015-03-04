@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A description of the identity.
  * </p>
  */
-public class IdentityDescription implements Serializable {
+public class IdentityDescription implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -282,5 +282,19 @@ public class IdentityDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public IdentityDescription clone() {
+        try {
+            return (IdentityDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

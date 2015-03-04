@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DownloadDBLogFilePortion.
  * </p>
  */
-public class DownloadDBLogFilePortionResult implements Serializable {
+public class DownloadDBLogFilePortionResult implements Serializable, Cloneable {
 
     /**
      * Entries from the specified log file.
@@ -210,5 +210,19 @@ public class DownloadDBLogFilePortionResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DownloadDBLogFilePortionResult clone() {
+        try {
+            return (DownloadDBLogFilePortionResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

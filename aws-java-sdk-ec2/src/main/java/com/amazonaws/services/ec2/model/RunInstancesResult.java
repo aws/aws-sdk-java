@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The result of the RunInstances call.
  * </p>
  */
-public class RunInstancesResult implements Serializable {
+public class RunInstancesResult implements Serializable, Cloneable {
 
     /**
      * One or more reservations.
@@ -100,5 +100,19 @@ public class RunInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RunInstancesResult clone() {
+        try {
+            return (RunInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

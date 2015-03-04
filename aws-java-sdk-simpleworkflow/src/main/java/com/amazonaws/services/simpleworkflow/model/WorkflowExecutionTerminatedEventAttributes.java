@@ -22,7 +22,7 @@ import java.io.Serializable;
  * event.
  * </p>
  */
-public class WorkflowExecutionTerminatedEventAttributes implements Serializable {
+public class WorkflowExecutionTerminatedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The reason provided for the termination (if any).
@@ -476,5 +476,19 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable 
         return true;
     }
     
+    @Override
+    public WorkflowExecutionTerminatedEventAttributes clone() {
+        try {
+            return (WorkflowExecutionTerminatedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -257,19 +257,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetConfigRequestMarshaller().marshall(getConfigRequest);
+                request = new GetConfigRequestMarshaller().marshall(super.beforeMarshalling(getConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetConfigResult, JsonUnmarshallerContext> unmarshaller =
                 new GetConfigResultJsonUnmarshaller();
             JsonResponseHandler<GetConfigResult> responseHandler =
                 new JsonResponseHandler<GetConfigResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -312,19 +313,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHapgRequestMarshaller().marshall(createHapgRequest);
+                request = new CreateHapgRequestMarshaller().marshall(super.beforeMarshalling(createHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateHapgResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateHapgResultJsonUnmarshaller();
             JsonResponseHandler<CreateHapgResult> responseHandler =
                 new JsonResponseHandler<CreateHapgResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -365,19 +367,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHapgRequestMarshaller().marshall(describeHapgRequest);
+                request = new DescribeHapgRequestMarshaller().marshall(super.beforeMarshalling(describeHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeHapgResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeHapgResultJsonUnmarshaller();
             JsonResponseHandler<DescribeHapgResult> responseHandler =
                 new JsonResponseHandler<DescribeHapgResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -420,19 +423,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAvailableZonesRequestMarshaller().marshall(listAvailableZonesRequest);
+                request = new ListAvailableZonesRequestMarshaller().marshall(super.beforeMarshalling(listAvailableZonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListAvailableZonesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListAvailableZonesResultJsonUnmarshaller();
             JsonResponseHandler<ListAvailableZonesResult> responseHandler =
                 new JsonResponseHandler<ListAvailableZonesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -473,19 +477,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyHsmRequestMarshaller().marshall(modifyHsmRequest);
+                request = new ModifyHsmRequestMarshaller().marshall(super.beforeMarshalling(modifyHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ModifyHsmResult, JsonUnmarshallerContext> unmarshaller =
                 new ModifyHsmResultJsonUnmarshaller();
             JsonResponseHandler<ModifyHsmResult> responseHandler =
                 new JsonResponseHandler<ModifyHsmResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -532,19 +537,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLunaClientsRequestMarshaller().marshall(listLunaClientsRequest);
+                request = new ListLunaClientsRequestMarshaller().marshall(super.beforeMarshalling(listLunaClientsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListLunaClientsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListLunaClientsResultJsonUnmarshaller();
             JsonResponseHandler<ListLunaClientsResult> responseHandler =
                 new JsonResponseHandler<ListLunaClientsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -591,19 +597,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListHapgsRequestMarshaller().marshall(listHapgsRequest);
+                request = new ListHapgsRequestMarshaller().marshall(super.beforeMarshalling(listHapgsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListHapgsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListHapgsResultJsonUnmarshaller();
             JsonResponseHandler<ListHapgsResult> responseHandler =
                 new JsonResponseHandler<ListHapgsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -645,19 +652,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteHsmRequestMarshaller().marshall(deleteHsmRequest);
+                request = new DeleteHsmRequestMarshaller().marshall(super.beforeMarshalling(deleteHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteHsmResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteHsmResultJsonUnmarshaller();
             JsonResponseHandler<DeleteHsmResult> responseHandler =
                 new JsonResponseHandler<DeleteHsmResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -700,19 +708,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHsmRequestMarshaller().marshall(createHsmRequest);
+                request = new CreateHsmRequestMarshaller().marshall(super.beforeMarshalling(createHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateHsmResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateHsmResultJsonUnmarshaller();
             JsonResponseHandler<CreateHsmResult> responseHandler =
                 new JsonResponseHandler<CreateHsmResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -760,19 +769,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListHsmsRequestMarshaller().marshall(listHsmsRequest);
+                request = new ListHsmsRequestMarshaller().marshall(super.beforeMarshalling(listHsmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListHsmsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListHsmsResultJsonUnmarshaller();
             JsonResponseHandler<ListHsmsResult> responseHandler =
                 new JsonResponseHandler<ListHsmsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -814,19 +824,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHsmRequestMarshaller().marshall(describeHsmRequest);
+                request = new DescribeHsmRequestMarshaller().marshall(super.beforeMarshalling(describeHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeHsmResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeHsmResultJsonUnmarshaller();
             JsonResponseHandler<DescribeHsmResult> responseHandler =
                 new JsonResponseHandler<DescribeHsmResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -867,19 +878,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteHapgRequestMarshaller().marshall(deleteHapgRequest);
+                request = new DeleteHapgRequestMarshaller().marshall(super.beforeMarshalling(deleteHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteHapgResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteHapgResultJsonUnmarshaller();
             JsonResponseHandler<DeleteHapgResult> responseHandler =
                 new JsonResponseHandler<DeleteHapgResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -920,19 +932,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyHapgRequestMarshaller().marshall(modifyHapgRequest);
+                request = new ModifyHapgRequestMarshaller().marshall(super.beforeMarshalling(modifyHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ModifyHapgResult, JsonUnmarshallerContext> unmarshaller =
                 new ModifyHapgResultJsonUnmarshaller();
             JsonResponseHandler<ModifyHapgResult> responseHandler =
                 new JsonResponseHandler<ModifyHapgResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -973,19 +986,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLunaClientRequestMarshaller().marshall(createLunaClientRequest);
+                request = new CreateLunaClientRequestMarshaller().marshall(super.beforeMarshalling(createLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateLunaClientResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateLunaClientResultJsonUnmarshaller();
             JsonResponseHandler<CreateLunaClientResult> responseHandler =
                 new JsonResponseHandler<CreateLunaClientResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1026,19 +1040,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLunaClientRequestMarshaller().marshall(deleteLunaClientRequest);
+                request = new DeleteLunaClientRequestMarshaller().marshall(super.beforeMarshalling(deleteLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteLunaClientResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteLunaClientResultJsonUnmarshaller();
             JsonResponseHandler<DeleteLunaClientResult> responseHandler =
                 new JsonResponseHandler<DeleteLunaClientResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1081,19 +1096,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyLunaClientRequestMarshaller().marshall(modifyLunaClientRequest);
+                request = new ModifyLunaClientRequestMarshaller().marshall(super.beforeMarshalling(modifyLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ModifyLunaClientResult, JsonUnmarshallerContext> unmarshaller =
                 new ModifyLunaClientResultJsonUnmarshaller();
             JsonResponseHandler<ModifyLunaClientResult> responseHandler =
                 new JsonResponseHandler<ModifyLunaClientResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1135,19 +1151,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLunaClientRequestMarshaller().marshall(describeLunaClientRequest);
+                request = new DescribeLunaClientRequestMarshaller().marshall(super.beforeMarshalling(describeLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeLunaClientResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeLunaClientResultJsonUnmarshaller();
             JsonResponseHandler<DescribeLunaClientResult> responseHandler =
                 new JsonResponseHandler<DescribeLunaClientResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

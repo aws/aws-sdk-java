@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#setIdentityPoolRoles(SetIdentityPoolRolesRequest)
  */
-public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -218,5 +218,11 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public SetIdentityPoolRolesRequest clone() {
+        
+            return (SetIdentityPoolRolesRequest) super.clone();
+    }
+
 }
     

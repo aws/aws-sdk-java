@@ -23,7 +23,7 @@ import java.io.Serializable;
  * instead.
  * </p>
  */
-public class S3OriginConfig implements Serializable {
+public class S3OriginConfig implements Serializable, Cloneable {
 
     /**
      * The CloudFront origin access identity to associate with the origin.
@@ -186,5 +186,19 @@ public class S3OriginConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public S3OriginConfig clone() {
+        try {
+            return (S3OriginConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

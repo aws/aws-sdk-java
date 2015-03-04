@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#listTagsForStream(ListTagsForStreamRequest)
  */
-public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream.
@@ -264,5 +264,11 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListTagsForStreamRequest clone() {
+        
+            return (ListTagsForStreamRequest) super.clone();
+    }
+
 }
     

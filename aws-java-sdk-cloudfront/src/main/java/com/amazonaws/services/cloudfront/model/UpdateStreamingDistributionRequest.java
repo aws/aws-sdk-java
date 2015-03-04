@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#updateStreamingDistribution(UpdateStreamingDistributionRequest)
  */
-public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The streaming distribution's configuration information.
@@ -220,5 +220,11 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public UpdateStreamingDistributionRequest clone() {
+        
+            return (UpdateStreamingDistributionRequest) super.clone();
+    }
+
 }
     

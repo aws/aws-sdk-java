@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createPolicy(CreatePolicyRequest)
  */
-public class CreatePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreatePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the policy document.
@@ -355,5 +355,11 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CreatePolicyRequest clone() {
+        
+            return (CreatePolicyRequest) super.clone();
+    }
+
 }
     

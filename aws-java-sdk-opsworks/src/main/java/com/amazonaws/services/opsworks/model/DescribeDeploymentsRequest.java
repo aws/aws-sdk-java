@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeDeployments(DescribeDeploymentsRequest)
  */
-public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID. If you include this parameter,
@@ -290,5 +290,11 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeDeploymentsRequest clone() {
+        
+            return (DescribeDeploymentsRequest) super.clone();
+    }
+
 }
     

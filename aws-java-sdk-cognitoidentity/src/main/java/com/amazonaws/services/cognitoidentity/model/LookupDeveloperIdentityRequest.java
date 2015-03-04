@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#lookupDeveloperIdentity(LookupDeveloperIdentityRequest)
  */
-public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -416,5 +416,11 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public LookupDeveloperIdentityRequest clone() {
+        
+            return (LookupDeveloperIdentityRequest) super.clone();
+    }
+
 }
     

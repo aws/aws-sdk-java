@@ -22,7 +22,7 @@ import java.io.Serializable;
  * this cache behavior.
  * </p>
  */
-public class CookiePreference implements Serializable {
+public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * Use this element to specify whether you want CloudFront to forward
@@ -242,5 +242,19 @@ public class CookiePreference implements Serializable {
         return true;
     }
     
+    @Override
+    public CookiePreference clone() {
+        try {
+            return (CookiePreference) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeJobFlows operation.
  * </p>
  */
-public class DescribeJobFlowsResult implements Serializable {
+public class DescribeJobFlowsResult implements Serializable, Cloneable {
 
     /**
      * A list of job flows matching the parameters supplied.
@@ -135,5 +135,19 @@ public class DescribeJobFlowsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeJobFlowsResult clone() {
+        try {
+            return (DescribeJobFlowsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

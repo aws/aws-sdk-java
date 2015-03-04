@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSAMLProviders(ListSAMLProvidersRequest)
  */
-public class ListSAMLProvidersRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListSAMLProvidersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -66,5 +66,11 @@ public class ListSAMLProvidersRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListSAMLProvidersRequest clone() {
+        
+            return (ListSAMLProvidersRequest) super.clone();
+    }
+
 }
     

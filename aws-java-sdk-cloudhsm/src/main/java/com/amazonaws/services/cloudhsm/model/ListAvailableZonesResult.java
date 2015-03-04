@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListAvailableZonesResult implements Serializable {
+public class ListAvailableZonesResult implements Serializable, Cloneable {
 
     /**
      * The list of Availability Zones that have available AWS CloudHSM
@@ -142,5 +142,19 @@ public class ListAvailableZonesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListAvailableZonesResult clone() {
+        try {
+            return (ListAvailableZonesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

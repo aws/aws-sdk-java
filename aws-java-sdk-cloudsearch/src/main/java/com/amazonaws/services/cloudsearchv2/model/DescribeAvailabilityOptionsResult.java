@@ -23,7 +23,7 @@ import java.io.Serializable;
  * specified in the request.
  * </p>
  */
-public class DescribeAvailabilityOptionsResult implements Serializable {
+public class DescribeAvailabilityOptionsResult implements Serializable, Cloneable {
 
     /**
      * The availability options configured for the domain. Indicates whether
@@ -109,5 +109,19 @@ public class DescribeAvailabilityOptionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAvailabilityOptionsResult clone() {
+        try {
+            return (DescribeAvailabilityOptionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

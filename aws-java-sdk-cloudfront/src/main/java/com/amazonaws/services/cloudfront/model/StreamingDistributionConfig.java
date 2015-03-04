@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The configuration for the streaming distribution.
  * </p>
  */
-public class StreamingDistributionConfig implements Serializable {
+public class StreamingDistributionConfig implements Serializable, Cloneable {
 
     /**
      * A unique number that ensures the request can't be replayed. If the
@@ -699,5 +699,19 @@ public class StreamingDistributionConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public StreamingDistributionConfig clone() {
+        try {
+            return (StreamingDistributionConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DescribeConfigurationRecorders action.
  * </p>
  */
-public class DescribeConfigurationRecordersResult implements Serializable {
+public class DescribeConfigurationRecordersResult implements Serializable, Cloneable {
 
     /**
      * A list that contains the descriptions of the specified configuration
@@ -144,5 +144,19 @@ public class DescribeConfigurationRecordersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeConfigurationRecordersResult clone() {
+        try {
+            return (DescribeConfigurationRecordersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

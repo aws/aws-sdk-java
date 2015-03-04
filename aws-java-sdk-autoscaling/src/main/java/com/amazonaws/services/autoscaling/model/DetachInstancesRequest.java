@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#detachInstances(DetachInstancesRequest)
  */
-public class DetachInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DetachInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more instance IDs.
@@ -265,5 +265,11 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DetachInstancesRequest clone() {
+        
+            return (DetachInstancesRequest) super.clone();
+    }
+
 }
     

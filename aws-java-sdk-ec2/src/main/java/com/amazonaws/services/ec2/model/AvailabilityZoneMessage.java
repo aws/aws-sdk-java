@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a message about an Availability Zone.
  * </p>
  */
-public class AvailabilityZoneMessage implements Serializable {
+public class AvailabilityZoneMessage implements Serializable, Cloneable {
 
     /**
      * The message about the Availability Zone.
@@ -100,5 +100,19 @@ public class AvailabilityZoneMessage implements Serializable {
         return true;
     }
     
+    @Override
+    public AvailabilityZoneMessage clone() {
+        try {
+            return (AvailabilityZoneMessage) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

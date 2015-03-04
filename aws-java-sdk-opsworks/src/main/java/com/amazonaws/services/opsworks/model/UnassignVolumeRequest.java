@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#unassignVolume(UnassignVolumeRequest)
  */
-public class UnassignVolumeRequest extends AmazonWebServiceRequest implements Serializable {
+public class UnassignVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The volume ID.
@@ -116,5 +116,11 @@ public class UnassignVolumeRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public UnassignVolumeRequest clone() {
+        
+            return (UnassignVolumeRequest) super.clone();
+    }
+
 }
     

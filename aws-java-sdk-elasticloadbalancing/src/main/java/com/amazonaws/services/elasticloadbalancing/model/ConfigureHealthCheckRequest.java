@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#configureHealthCheck(ConfigureHealthCheckRequest)
  */
-public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest implements Serializable {
+public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The mnemonic name associated with the load balancer. The name must be
@@ -196,5 +196,11 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public ConfigureHealthCheckRequest clone() {
+        
+            return (ConfigureHealthCheckRequest) super.clone();
+    }
+
 }
     

@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)
  */
-public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
@@ -151,5 +151,11 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteDBParameterGroupRequest clone() {
+        
+            return (DeleteDBParameterGroupRequest) super.clone();
+    }
+
 }
     

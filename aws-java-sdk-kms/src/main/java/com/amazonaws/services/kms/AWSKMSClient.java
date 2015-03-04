@@ -348,19 +348,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateKeyRequestMarshaller().marshall(createKeyRequest);
+                request = new CreateKeyRequestMarshaller().marshall(super.beforeMarshalling(createKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateKeyResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateKeyResultJsonUnmarshaller();
             JsonResponseHandler<CreateKeyResult> responseHandler =
                 new JsonResponseHandler<CreateKeyResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -405,19 +406,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EncryptRequestMarshaller().marshall(encryptRequest);
+                request = new EncryptRequestMarshaller().marshall(super.beforeMarshalling(encryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<EncryptResult, JsonUnmarshallerContext> unmarshaller =
                 new EncryptResultJsonUnmarshaller();
             JsonResponseHandler<EncryptResult> responseHandler =
                 new JsonResponseHandler<EncryptResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -459,19 +461,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyPolicyRequestMarshaller().marshall(getKeyPolicyRequest);
+                request = new GetKeyPolicyRequestMarshaller().marshall(super.beforeMarshalling(getKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetKeyPolicyResult, JsonUnmarshallerContext> unmarshaller =
                 new GetKeyPolicyResultJsonUnmarshaller();
             JsonResponseHandler<GetKeyPolicyResult> responseHandler =
                 new JsonResponseHandler<GetKeyPolicyResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -511,14 +514,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateKeyDescriptionRequestMarshaller().marshall(updateKeyDescriptionRequest);
+                request = new UpdateKeyDescriptionRequestMarshaller().marshall(super.beforeMarshalling(updateKeyDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -557,19 +562,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeysRequestMarshaller().marshall(listKeysRequest);
+                request = new ListKeysRequestMarshaller().marshall(super.beforeMarshalling(listKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListKeysResult, JsonUnmarshallerContext> unmarshaller =
                 new ListKeysResultJsonUnmarshaller();
             JsonResponseHandler<ListKeysResult> responseHandler =
                 new JsonResponseHandler<ListKeysResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -615,19 +621,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyRequestMarshaller().marshall(generateDataKeyRequest);
+                request = new GenerateDataKeyRequestMarshaller().marshall(super.beforeMarshalling(generateDataKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GenerateDataKeyResult, JsonUnmarshallerContext> unmarshaller =
                 new GenerateDataKeyResultJsonUnmarshaller();
             JsonResponseHandler<GenerateDataKeyResult> responseHandler =
                 new JsonResponseHandler<GenerateDataKeyResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -684,19 +691,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGrantRequestMarshaller().marshall(createGrantRequest);
+                request = new CreateGrantRequestMarshaller().marshall(super.beforeMarshalling(createGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateGrantResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateGrantResultJsonUnmarshaller();
             JsonResponseHandler<CreateGrantResult> responseHandler =
                 new JsonResponseHandler<CreateGrantResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -736,19 +744,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller().marshall(listAliasesRequest);
+                request = new ListAliasesRequestMarshaller().marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListAliasesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListAliasesResultJsonUnmarshaller();
             JsonResponseHandler<ListAliasesResult> responseHandler =
                 new JsonResponseHandler<ListAliasesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -795,19 +804,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyWithoutPlaintextRequestMarshaller().marshall(generateDataKeyWithoutPlaintextRequest);
+                request = new GenerateDataKeyWithoutPlaintextRequestMarshaller().marshall(super.beforeMarshalling(generateDataKeyWithoutPlaintextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GenerateDataKeyWithoutPlaintextResult, JsonUnmarshallerContext> unmarshaller =
                 new GenerateDataKeyWithoutPlaintextResultJsonUnmarshaller();
             JsonResponseHandler<GenerateDataKeyWithoutPlaintextResult> responseHandler =
                 new JsonResponseHandler<GenerateDataKeyWithoutPlaintextResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -845,14 +855,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller().marshall(deleteAliasRequest);
+                request = new DeleteAliasRequestMarshaller().marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -890,14 +902,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRotationRequestMarshaller().marshall(enableKeyRotationRequest);
+                request = new EnableKeyRotationRequestMarshaller().marshall(super.beforeMarshalling(enableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -936,14 +950,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetireGrantRequestMarshaller().marshall(retireGrantRequest);
+                request = new RetireGrantRequestMarshaller().marshall(super.beforeMarshalling(retireGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -985,19 +1001,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeKeyRequestMarshaller().marshall(describeKeyRequest);
+                request = new DescribeKeyRequestMarshaller().marshall(super.beforeMarshalling(describeKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeKeyResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeKeyResultJsonUnmarshaller();
             JsonResponseHandler<DescribeKeyResult> responseHandler =
                 new JsonResponseHandler<DescribeKeyResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1038,19 +1055,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGrantsRequestMarshaller().marshall(listGrantsRequest);
+                request = new ListGrantsRequestMarshaller().marshall(super.beforeMarshalling(listGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListGrantsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListGrantsResultJsonUnmarshaller();
             JsonResponseHandler<ListGrantsResult> responseHandler =
                 new JsonResponseHandler<ListGrantsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1096,19 +1114,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DecryptRequestMarshaller().marshall(decryptRequest);
+                request = new DecryptRequestMarshaller().marshall(super.beforeMarshalling(decryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DecryptResult, JsonUnmarshallerContext> unmarshaller =
                 new DecryptResultJsonUnmarshaller();
             JsonResponseHandler<DecryptResult> responseHandler =
                 new JsonResponseHandler<DecryptResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1148,19 +1167,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateRandomRequestMarshaller().marshall(generateRandomRequest);
+                request = new GenerateRandomRequestMarshaller().marshall(super.beforeMarshalling(generateRandomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GenerateRandomResult, JsonUnmarshallerContext> unmarshaller =
                 new GenerateRandomResultJsonUnmarshaller();
             JsonResponseHandler<GenerateRandomResult> responseHandler =
                 new JsonResponseHandler<GenerateRandomResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1204,19 +1224,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyRotationStatusRequestMarshaller().marshall(getKeyRotationStatusRequest);
+                request = new GetKeyRotationStatusRequestMarshaller().marshall(super.beforeMarshalling(getKeyRotationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetKeyRotationStatusResult, JsonUnmarshallerContext> unmarshaller =
                 new GetKeyRotationStatusResultJsonUnmarshaller();
             JsonResponseHandler<GetKeyRotationStatusResult> responseHandler =
                 new JsonResponseHandler<GetKeyRotationStatusResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1255,14 +1276,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRotationRequestMarshaller().marshall(disableKeyRotationRequest);
+                request = new DisableKeyRotationRequestMarshaller().marshall(super.beforeMarshalling(disableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1303,19 +1326,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeyPoliciesRequestMarshaller().marshall(listKeyPoliciesRequest);
+                request = new ListKeyPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listKeyPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListKeyPoliciesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListKeyPoliciesResultJsonUnmarshaller();
             JsonResponseHandler<ListKeyPoliciesResult> responseHandler =
                 new JsonResponseHandler<ListKeyPoliciesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1363,14 +1387,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller().marshall(createAliasRequest);
+                request = new CreateAliasRequestMarshaller().marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1411,14 +1437,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutKeyPolicyRequestMarshaller().marshall(putKeyPolicyRequest);
+                request = new PutKeyPolicyRequestMarshaller().marshall(super.beforeMarshalling(putKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1466,19 +1494,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReEncryptRequestMarshaller().marshall(reEncryptRequest);
+                request = new ReEncryptRequestMarshaller().marshall(super.beforeMarshalling(reEncryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ReEncryptResult, JsonUnmarshallerContext> unmarshaller =
                 new ReEncryptResultJsonUnmarshaller();
             JsonResponseHandler<ReEncryptResult> responseHandler =
                 new JsonResponseHandler<ReEncryptResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1517,14 +1546,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RevokeGrantRequestMarshaller().marshall(revokeGrantRequest);
+                request = new RevokeGrantRequestMarshaller().marshall(super.beforeMarshalling(revokeGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1564,14 +1595,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRequestMarshaller().marshall(enableKeyRequest);
+                request = new EnableKeyRequestMarshaller().marshall(super.beforeMarshalling(enableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1609,14 +1642,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRequestMarshaller().marshall(disableKeyRequest);
+                request = new DisableKeyRequestMarshaller().marshall(super.beforeMarshalling(disableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The response received when DeleteInterconnect is called.
  * </p>
  */
-public class DeleteInterconnectResult implements Serializable {
+public class DeleteInterconnectResult implements Serializable, Cloneable {
 
     /**
      * State of the interconnect. <ul> <li><b>Requested</b>: The initial
@@ -229,5 +229,19 @@ public class DeleteInterconnectResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteInterconnectResult clone() {
+        try {
+            return (DeleteInterconnectResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest)
  */
-public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the launch configuration. This name must be unique within
@@ -1922,5 +1922,11 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public CreateLaunchConfigurationRequest clone() {
+        
+            return (CreateLaunchConfigurationRequest) super.clone();
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listMFADevices(ListMFADevicesRequest)
  */
-public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user whose MFA devices you want to list.
@@ -307,5 +307,11 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ListMFADevicesRequest clone() {
+        
+            return (ListMFADevicesRequest) super.clone();
+    }
+
 }
     

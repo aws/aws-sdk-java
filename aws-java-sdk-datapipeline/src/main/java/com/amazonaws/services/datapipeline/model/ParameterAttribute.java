@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The attributes allowed or specified with a parameter object.
  * </p>
  */
-public class ParameterAttribute implements Serializable {
+public class ParameterAttribute implements Serializable, Cloneable {
 
     /**
      * The field identifier.
@@ -174,5 +174,19 @@ public class ParameterAttribute implements Serializable {
         return true;
     }
     
+    @Override
+    public ParameterAttribute clone() {
+        try {
+            return (ParameterAttribute) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

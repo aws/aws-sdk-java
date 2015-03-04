@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest)
  */
-public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The IDs of the Trusted Advisor checks.
@@ -145,5 +145,11 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
         return true;
     }
     
+    @Override
+    public DescribeTrustedAdvisorCheckSummariesRequest clone() {
+        
+            return (DescribeTrustedAdvisorCheckSummariesRequest) super.clone();
+    }
+
 }
     

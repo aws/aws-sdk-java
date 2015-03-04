@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest)
  */
-public class RemoveClientIDFromOpenIDConnectProviderRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveClientIDFromOpenIDConnectProviderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
@@ -205,5 +205,11 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends AmazonWebSer
         return true;
     }
     
+    @Override
+    public RemoveClientIDFromOpenIDConnectProviderRequest clone() {
+        
+            return (RemoveClientIDFromOpenIDConnectProviderRequest) super.clone();
+    }
+
 }
     

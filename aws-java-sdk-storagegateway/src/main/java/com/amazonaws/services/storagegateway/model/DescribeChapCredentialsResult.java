@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing a .
  * </p>
  */
-public class DescribeChapCredentialsResult implements Serializable {
+public class DescribeChapCredentialsResult implements Serializable, Cloneable {
 
     /**
      * An array of <a>ChapInfo</a> objects that represent CHAP credentials.
@@ -243,5 +243,19 @@ public class DescribeChapCredentialsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeChapCredentialsResult clone() {
+        try {
+            return (DescribeChapCredentialsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

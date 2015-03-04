@@ -24,7 +24,7 @@ import java.io.Serializable;
  * indexes, this information is not returned in the response.
  * </p>
  */
-public class ItemCollectionMetrics implements Serializable {
+public class ItemCollectionMetrics implements Serializable, Cloneable {
 
     /**
      * The hash key value of the item collection. This value is the same as
@@ -278,5 +278,19 @@ public class ItemCollectionMetrics implements Serializable {
         return true;
     }
     
+    @Override
+    public ItemCollectionMetrics clone() {
+        try {
+            return (ItemCollectionMetrics) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

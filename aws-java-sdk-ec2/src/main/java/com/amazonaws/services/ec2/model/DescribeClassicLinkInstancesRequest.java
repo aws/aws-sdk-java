@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeClassicLinkInstancesRe
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeClassicLinkInstances(DescribeClassicLinkInstancesRequest)
  */
-public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeClassicLinkInstancesRequest> {
+public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeClassicLinkInstancesRequest> {
 
     /**
      * One or more instance IDs. Must be instances linked to a VPC through
@@ -499,5 +499,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeClassicLinkInstancesRequest clone() {
+        
+            return (DescribeClassicLinkInstancesRequest) super.clone();
+    }
+
 }
     

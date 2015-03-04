@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeEvents</i> action.
  * </p>
  */
-public class DescribeEventsResult implements Serializable {
+public class DescribeEventsResult implements Serializable, Cloneable {
 
     /**
      * Provides an identifier to allow retrieval of paginated results.
@@ -186,5 +186,19 @@ public class DescribeEventsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeEventsResult clone() {
+        try {
+            return (DescribeEventsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

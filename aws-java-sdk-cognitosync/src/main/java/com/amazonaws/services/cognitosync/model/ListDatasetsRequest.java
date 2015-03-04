@@ -21,16 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cognitosync.AmazonCognitoSync#listDatasets(ListDatasetsRequest) ListDatasets operation}.
  * <p>
- * Lists datasets for an identity. The credentials used to make this API
- * call need to have access to the identity data. With Amazon Cognito
- * Sync, each identity has access only to its own data. You should use
- * Amazon Cognito Identity service to retrieve the credentials necessary
- * to make this API call.
+ * Lists datasets for an identity. With Amazon Cognito Sync, each
+ * identity has access only to its own data. Thus, the credentials used
+ * to make this API call need to have access to the identity data.
+ * </p>
+ * <p>
+ * <code>ListDatasets</code> can be called with temporary user
+ * credentials provided by Cognito Identity or with developer
+ * credentials. You should use the Cognito Identity credentials to make
+ * this API call.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#listDatasets(ListDatasetsRequest)
  */
-public class ListDatasetsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDatasetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -311,5 +315,11 @@ public class ListDatasetsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public ListDatasetsRequest clone() {
+        
+            return (ListDatasetsRequest) super.clone();
+    }
+
 }
     

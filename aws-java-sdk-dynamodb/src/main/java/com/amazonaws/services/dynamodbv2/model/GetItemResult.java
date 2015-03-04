@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>GetItem</i> operation.
  * </p>
  */
-public class GetItemResult implements Serializable {
+public class GetItemResult implements Serializable, Cloneable {
 
     /**
      * A map of attribute names to <i>AttributeValue</i> objects, as
@@ -223,5 +223,19 @@ public class GetItemResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetItemResult clone() {
+        try {
+            return (GetItemResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

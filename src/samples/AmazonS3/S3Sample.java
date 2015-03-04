@@ -50,7 +50,7 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
  * template, and be sure to move the file to the default location
  * (~/.aws/credentials) where the sample code will load the credentials from.
  * <p>
- * <b>WANRNING:</b> To avoid accidental leakage of your credentials, DO NOT keep
+ * <b>WARNING:</b> To avoid accidental leakage of your credentials, DO NOT keep
  * the credentials file in your source directory.
  *
  * http://aws.amazon.com/security-credentials

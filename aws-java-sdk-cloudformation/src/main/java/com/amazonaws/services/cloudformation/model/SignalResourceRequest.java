@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#signalResource(SignalResourceRequest)
  */
-public class SignalResourceRequest extends AmazonWebServiceRequest implements Serializable {
+public class SignalResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack name or ID that includes the resource that you want to
@@ -381,5 +381,11 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public SignalResourceRequest clone() {
+        
+            return (SignalResourceRequest) super.clone();
+    }
+
 }
     

@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#cancelUpdateStack(CancelUpdateStackRequest)
  */
-public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or the unique identifier associated with the stack.
@@ -111,5 +111,11 @@ public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public CancelUpdateStackRequest clone() {
+        
+            return (CancelUpdateStackRequest) super.clone();
+    }
+
 }
     

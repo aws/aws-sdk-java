@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GetOpenIDConnectProviderResult implements Serializable {
+public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * The URL that the IAM OpenID Connect provider is associated with. For
@@ -359,5 +359,19 @@ public class GetOpenIDConnectProviderResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetOpenIDConnectProviderResult clone() {
+        try {
+            return (GetOpenIDConnectProviderResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

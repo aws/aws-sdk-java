@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Specifies the lifecycle event configuration
  * </p>
  */
-public class LifecycleEventConfiguration implements Serializable {
+public class LifecycleEventConfiguration implements Serializable, Cloneable {
 
     /**
      * A <code>ShutdownEventConfiguration</code> object that specifies the
@@ -107,5 +107,19 @@ public class LifecycleEventConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public LifecycleEventConfiguration clone() {
+        try {
+            return (LifecycleEventConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

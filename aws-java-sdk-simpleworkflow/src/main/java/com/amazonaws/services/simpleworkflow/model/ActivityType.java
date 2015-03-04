@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents an activity type.
  * </p>
  */
-public class ActivityType implements Serializable {
+public class ActivityType implements Serializable, Cloneable {
 
     /**
      * The name of this activity. <note>The combination of activity type name
@@ -180,5 +180,19 @@ public class ActivityType implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityType clone() {
+        try {
+            return (ActivityType) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

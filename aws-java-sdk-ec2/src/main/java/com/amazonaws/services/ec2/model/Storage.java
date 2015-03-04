@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the storage location for an instance store-backed AMI.
  * </p>
  */
-public class Storage implements Serializable {
+public class Storage implements Serializable, Cloneable {
 
     /**
      * An Amazon S3 storage location.
@@ -100,5 +100,19 @@ public class Storage implements Serializable {
         return true;
     }
     
+    @Override
+    public Storage clone() {
+        try {
+            return (Storage) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

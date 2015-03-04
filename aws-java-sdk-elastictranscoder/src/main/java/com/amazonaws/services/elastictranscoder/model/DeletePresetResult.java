@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>DeletePresetResponse</code> structure.
  * </p>
  */
-public class DeletePresetResult implements Serializable {
+public class DeletePresetResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class DeletePresetResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeletePresetResult clone() {
+        try {
+            return (DeletePresetResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

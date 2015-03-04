@@ -30,7 +30,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteSpotDatafeedSubscription
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest)
  */
-public class DeleteSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteSpotDatafeedSubscriptionRequest> {
+public class DeleteSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteSpotDatafeedSubscriptionRequest> {
 
     /**
      * This method is intended for internal use only.
@@ -79,5 +79,11 @@ public class DeleteSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public DeleteSpotDatafeedSubscriptionRequest clone() {
+        
+            return (DeleteSpotDatafeedSubscriptionRequest) super.clone();
+    }
+
 }
     

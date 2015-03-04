@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type that contains the health check configuration.
  * </p>
  */
-public class HealthCheckConfig implements Serializable {
+public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * IP Address of the instance being checked.
@@ -643,5 +643,19 @@ public class HealthCheckConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public HealthCheckConfig clone() {
+        try {
+            return (HealthCheckConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

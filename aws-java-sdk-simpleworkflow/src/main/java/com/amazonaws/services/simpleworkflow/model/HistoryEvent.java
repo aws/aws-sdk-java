@@ -126,7 +126,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class HistoryEvent implements Serializable {
+public class HistoryEvent implements Serializable, Cloneable {
 
     /**
      * The date and time when the event occurred.
@@ -3029,5 +3029,19 @@ public class HistoryEvent implements Serializable {
         return true;
     }
     
+    @Override
+    public HistoryEvent clone() {
+        try {
+            return (HistoryEvent) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

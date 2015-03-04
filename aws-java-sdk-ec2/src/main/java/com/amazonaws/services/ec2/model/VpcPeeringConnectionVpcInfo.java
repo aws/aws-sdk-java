@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a VPC in a VPC peering connection.
  * </p>
  */
-public class VpcPeeringConnectionVpcInfo implements Serializable {
+public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * The CIDR block for the VPC.
@@ -184,5 +184,19 @@ public class VpcPeeringConnectionVpcInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public VpcPeeringConnectionVpcInfo clone() {
+        try {
+            return (VpcPeeringConnectionVpcInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

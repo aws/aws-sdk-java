@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#disableKey(DisableKeyRequest)
  */
-public class DisableKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the customer master key to be disabled. This can
@@ -124,5 +124,11 @@ public class DisableKeyRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DisableKeyRequest clone() {
+        
+            return (DisableKeyRequest) super.clone();
+    }
+
 }
     

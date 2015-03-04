@@ -22,7 +22,7 @@ import java.io.Serializable;
  * (such as a PDF).
  * </p>
  */
-public class Artifact implements Serializable {
+public class Artifact implements Serializable, Cloneable {
 
     /**
      * The associated description for this object.
@@ -143,5 +143,19 @@ public class Artifact implements Serializable {
         return true;
     }
     
+    @Override
+    public Artifact clone() {
+        try {
+            return (Artifact) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

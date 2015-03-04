@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfiles(ListInstanceProfilesRequest)
  */
-public class ListInstanceProfilesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListInstanceProfilesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The path prefix for filtering the results. For example, the prefix
@@ -325,5 +325,11 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public ListInstanceProfilesRequest clone() {
+        
+            return (ListInstanceProfilesRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * timers for a workflow execution.
  * </p>
  */
-public class WorkflowExecutionOpenCounts implements Serializable {
+public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * The count of activity tasks whose status is OPEN.
@@ -289,5 +289,19 @@ public class WorkflowExecutionOpenCounts implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionOpenCounts clone() {
+        try {
+            return (WorkflowExecutionOpenCounts) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import java.io.Serializable;
  * the new topic in the Amazon SNS console.
  * </p>
  */
-public class Notifications implements Serializable {
+public class Notifications implements Serializable, Cloneable {
 
     /**
      * The Amazon Simple Notification Service (Amazon SNS) topic that you
@@ -307,5 +307,19 @@ public class Notifications implements Serializable {
         return true;
     }
     
+    @Override
+    public Notifications clone() {
+        try {
+            return (Notifications) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

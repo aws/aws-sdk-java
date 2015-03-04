@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#disableSnapshotCopy(DisableSnapshotCopyRequest)
  */
-public class DisableSnapshotCopyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableSnapshotCopyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of the source cluster that you want to disable
@@ -127,5 +127,11 @@ public class DisableSnapshotCopyRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DisableSnapshotCopyRequest clone() {
+        
+            return (DisableSnapshotCopyRequest) super.clone();
+    }
+
 }
     

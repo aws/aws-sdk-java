@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteGroup(DeleteGroupRequest)
  */
-public class DeleteGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group to delete.
@@ -139,5 +139,11 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteGroupRequest clone() {
+        
+            return (DeleteGroupRequest) super.clone();
+    }
+
 }
     

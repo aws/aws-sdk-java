@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeEngineDefaultParameters action.
  * </p>
  */
-public class EngineDefaults implements Serializable {
+public class EngineDefaults implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the DB parameter group family which the engine
@@ -248,5 +248,19 @@ public class EngineDefaults implements Serializable {
         return true;
     }
     
+    @Override
+    public EngineDefaults clone() {
+        try {
+            return (EngineDefaults) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

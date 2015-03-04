@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Representation of a job returned by the ListJobs operation.
  * </p>
  */
-public class Job implements Serializable {
+public class Job implements Serializable, Cloneable {
 
     /**
      * A unique identifier which refers to a particular job.
@@ -294,5 +294,19 @@ public class Job implements Serializable {
         return true;
     }
     
+    @Override
+    public Job clone() {
+        try {
+            return (Job) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

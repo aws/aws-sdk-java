@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteSubnetRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSubnet(DeleteSubnetRequest)
  */
-public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteSubnetRequest> {
+public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteSubnetRequest> {
 
     /**
      * The ID of the subnet.
@@ -137,5 +137,11 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeleteSubnetRequest clone() {
+        
+            return (DeleteSubnetRequest) super.clone();
+    }
+
 }
     

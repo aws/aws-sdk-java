@@ -23,7 +23,7 @@ import java.io.Serializable;
  * components of a pipeline defines the pipeline.
  * </p>
  */
-public class PipelineObject implements Serializable {
+public class PipelineObject implements Serializable, Cloneable {
 
     /**
      * Identifier of the object.
@@ -253,5 +253,19 @@ public class PipelineObject implements Serializable {
         return true;
     }
     
+    @Override
+    public PipelineObject clone() {
+        try {
+            return (PipelineObject) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

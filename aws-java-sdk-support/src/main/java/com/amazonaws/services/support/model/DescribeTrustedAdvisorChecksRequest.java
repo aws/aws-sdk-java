@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest)
  */
-public class DescribeTrustedAdvisorChecksRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTrustedAdvisorChecksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -130,5 +130,11 @@ public class DescribeTrustedAdvisorChecksRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeTrustedAdvisorChecksRequest clone() {
+        
+            return (DescribeTrustedAdvisorChecksRequest) super.clone();
+    }
+
 }
     

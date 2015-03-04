@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteIdentity(DeleteIdentityRequest)
  */
-public class DeleteIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identity to be removed from the list of identities for the AWS
@@ -116,5 +116,11 @@ public class DeleteIdentityRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeleteIdentityRequest clone() {
+        
+            return (DeleteIdentityRequest) super.clone();
+    }
+
 }
     

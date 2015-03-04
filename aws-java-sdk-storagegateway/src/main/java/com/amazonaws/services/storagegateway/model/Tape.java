@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a virtual tape object.
  * </p>
  */
-public class Tape implements Serializable {
+public class Tape implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape.
@@ -371,5 +371,19 @@ public class Tape implements Serializable {
         return true;
     }
     
+    @Override
+    public Tape clone() {
+        try {
+            return (Tape) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a delete deployment group operation.
  * </p>
  */
-public class DeleteDeploymentGroupResult implements Serializable {
+public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
 
     /**
      * If the output contains no data, and the corresponding deployment group
@@ -180,5 +180,19 @@ public class DeleteDeploymentGroupResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteDeploymentGroupResult clone() {
+        try {
+            return (DeleteDeploymentGroupResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

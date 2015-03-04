@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The execution state of a step.
  * </p>
  */
-public class StepExecutionStatusDetail implements Serializable {
+public class StepExecutionStatusDetail implements Serializable, Cloneable {
 
     /**
      * The state of the job flow step.
@@ -368,5 +368,19 @@ public class StepExecutionStatusDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public StepExecutionStatusDetail clone() {
+        try {
+            return (StepExecutionStatusDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

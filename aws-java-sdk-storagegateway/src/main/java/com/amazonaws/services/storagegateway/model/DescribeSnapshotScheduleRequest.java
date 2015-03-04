@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeSnapshotSchedule(DescribeSnapshotScheduleRequest)
  */
-public class DescribeSnapshotScheduleRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeSnapshotScheduleRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. Use the
@@ -126,5 +126,11 @@ public class DescribeSnapshotScheduleRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeSnapshotScheduleRequest clone() {
+        
+            return (DescribeSnapshotScheduleRequest) super.clone();
+    }
+
 }
     

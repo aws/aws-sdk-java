@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#listLocalDisks(ListLocalDisksRequest)
  */
-public class ListLocalDisksRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListLocalDisksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -142,5 +142,11 @@ public class ListLocalDisksRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ListLocalDisksRequest clone() {
+        
+            return (ListLocalDisksRequest) super.clone();
+    }
+
 }
     

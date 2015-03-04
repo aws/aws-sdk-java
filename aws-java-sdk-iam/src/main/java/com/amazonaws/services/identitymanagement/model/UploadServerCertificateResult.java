@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful UploadServerCertificate request.
  * </p>
  */
-public class UploadServerCertificateResult implements Serializable {
+public class UploadServerCertificateResult implements Serializable, Cloneable {
 
     /**
      * The meta information of the uploaded server certificate without its
@@ -107,5 +107,19 @@ public class UploadServerCertificateResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UploadServerCertificateResult clone() {
+        try {
+            return (UploadServerCertificateResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

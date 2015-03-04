@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#resetCacheParameterGroup(ResetCacheParameterGroupRequest)
  */
-public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache parameter group to reset.
@@ -296,5 +296,11 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ResetCacheParameterGroupRequest clone() {
+        
+            return (ResetCacheParameterGroupRequest) super.clone();
+    }
+
 }
     

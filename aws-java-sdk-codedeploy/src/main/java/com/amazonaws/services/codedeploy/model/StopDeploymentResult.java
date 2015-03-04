@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a stop deployment operation.
  * </p>
  */
-public class StopDeploymentResult implements Serializable {
+public class StopDeploymentResult implements Serializable, Cloneable {
 
     /**
      * The status of the stop deployment operation: <ul> <li>Pending: The
@@ -216,5 +216,19 @@ public class StopDeploymentResult implements Serializable {
         return true;
     }
     
+    @Override
+    public StopDeploymentResult clone() {
+        try {
+            return (StopDeploymentResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

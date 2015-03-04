@@ -47,7 +47,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class CancelTimerDecisionAttributes implements Serializable {
+public class CancelTimerDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The unique Id of the timer to cancel.
@@ -138,5 +138,19 @@ public class CancelTimerDecisionAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public CancelTimerDecisionAttributes clone() {
+        try {
+            return (CancelTimerDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

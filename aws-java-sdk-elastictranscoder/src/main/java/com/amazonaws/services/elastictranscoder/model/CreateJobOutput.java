@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>CreateJobOutput</code> structure.
  * </p>
  */
-public class CreateJobOutput implements Serializable {
+public class CreateJobOutput implements Serializable, Cloneable {
 
     /**
      * The name to assign to the transcoded file. Elastic Transcoder saves
@@ -1394,5 +1394,19 @@ public class CreateJobOutput implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateJobOutput clone() {
+        try {
+            return (CreateJobOutput) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#unsubscribe(UnsubscribeRequest)
  */
-public class UnsubscribeRequest extends AmazonWebServiceRequest implements Serializable {
+public class UnsubscribeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the subscription to be deleted.
@@ -129,5 +129,11 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public UnsubscribeRequest clone() {
+        
+            return (UnsubscribeRequest) super.clone();
+    }
+
 }
     

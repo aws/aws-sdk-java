@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Amazon EBS block device.
  * </p>
  */
-public class EbsBlockDevice implements Serializable {
+public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * The ID of the snapshot.
@@ -573,5 +573,19 @@ public class EbsBlockDevice implements Serializable {
         return true;
     }
     
+    @Override
+    public EbsBlockDevice clone() {
+        try {
+            return (EbsBlockDevice) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

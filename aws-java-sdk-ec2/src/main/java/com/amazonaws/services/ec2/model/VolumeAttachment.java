@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes volume attachment details.
  * </p>
  */
-public class VolumeAttachment implements Serializable {
+public class VolumeAttachment implements Serializable, Cloneable {
 
     /**
      * The ID of the volume.
@@ -380,5 +380,19 @@ public class VolumeAttachment implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeAttachment clone() {
+        try {
+            return (VolumeAttachment) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

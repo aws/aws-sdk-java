@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#purgeQueue(PurgeQueueRequest)
  */
-public class PurgeQueueRequest extends AmazonWebServiceRequest implements Serializable {
+public class PurgeQueueRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The queue URL of the queue to delete the messages from when using the
@@ -142,5 +142,11 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public PurgeQueueRequest clone() {
+        
+            return (PurgeQueueRequest) super.clone();
+    }
+
 }
     

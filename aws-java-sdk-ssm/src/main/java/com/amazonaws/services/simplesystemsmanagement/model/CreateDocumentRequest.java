@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#createDocument(CreateDocumentRequest)
  */
-public class CreateDocumentRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDocumentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A valid JSON file. For more information about the contents of this
@@ -200,5 +200,11 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CreateDocumentRequest clone() {
+        
+            return (CreateDocumentRequest) super.clone();
+    }
+
 }
     

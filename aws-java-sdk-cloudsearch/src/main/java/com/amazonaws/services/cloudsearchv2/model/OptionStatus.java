@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The status of domain configuration option.
  * </p>
  */
-public class OptionStatus implements Serializable {
+public class OptionStatus implements Serializable, Cloneable {
 
     /**
      * A timestamp for when this option was created.
@@ -440,5 +440,19 @@ public class OptionStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public OptionStatus clone() {
+        try {
+            return (OptionStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

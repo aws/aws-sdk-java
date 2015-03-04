@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#rebuildEnvironment(RebuildEnvironmentRequest)
  */
-public class RebuildEnvironmentRequest extends AmazonWebServiceRequest implements Serializable {
+public class RebuildEnvironmentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the environment to rebuild. <p> Condition: You must specify
@@ -209,5 +209,11 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public RebuildEnvironmentRequest clone() {
+        
+            return (RebuildEnvironmentRequest) super.clone();
+    }
+
 }
     

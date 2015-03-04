@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPreset(CreatePresetRequest)
  */
-public class CreatePresetRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreatePresetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the preset. We recommend that the name be unique within
@@ -399,5 +399,11 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CreatePresetRequest clone() {
+        
+            return (CreatePresetRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Status information about an activity task.
  * </p>
  */
-public class ActivityTaskStatus implements Serializable {
+public class ActivityTaskStatus implements Serializable, Cloneable {
 
     /**
      * Set to <code>true</code> if cancellation of the task is requested.
@@ -109,5 +109,19 @@ public class ActivityTaskStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTaskStatus clone() {
+        try {
+            return (ActivityTaskStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

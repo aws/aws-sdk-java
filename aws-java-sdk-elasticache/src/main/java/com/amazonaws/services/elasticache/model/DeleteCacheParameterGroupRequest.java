@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheParameterGroup(DeleteCacheParameterGroupRequest)
  */
-public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache parameter group to delete. <note>The specified
@@ -140,5 +140,11 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DeleteCacheParameterGroupRequest clone() {
+        
+            return (DeleteCacheParameterGroupRequest) super.clone();
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listSteps(ListStepsRequest)
  */
-public class ListStepsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListStepsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster for which to list the steps.
@@ -340,5 +340,11 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public ListStepsRequest clone() {
+        
+            return (ListStepsRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Data returned by the <b>DescribeEventSubscriptions</b> action.
  * </p>
  */
-public class DescribeEventSubscriptionsResult implements Serializable {
+public class DescribeEventSubscriptionsResult implements Serializable, Cloneable {
 
     /**
      * An optional pagination token provided by a previous
@@ -198,5 +198,19 @@ public class DescribeEventSubscriptionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeEventSubscriptionsResult clone() {
+        try {
+            return (DescribeEventSubscriptionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

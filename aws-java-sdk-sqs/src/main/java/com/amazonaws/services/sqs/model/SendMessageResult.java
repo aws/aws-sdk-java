@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The MD5OfMessageBody and MessageId elements.
  * </p>
  */
-public class SendMessageResult implements Serializable {
+public class SendMessageResult implements Serializable, Cloneable {
 
     /**
      * An MD5 digest of the non-URL-encoded message body string. This can be
@@ -261,5 +261,19 @@ public class SendMessageResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SendMessageResult clone() {
+        try {
+            return (SendMessageResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

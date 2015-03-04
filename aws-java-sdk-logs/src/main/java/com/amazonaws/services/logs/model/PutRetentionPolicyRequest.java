@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#putRetentionPolicy(PutRetentionPolicyRequest)
  */
-public class PutRetentionPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutRetentionPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -193,5 +193,11 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public PutRetentionPolicyRequest clone() {
+        
+            return (PutRetentionPolicyRequest) super.clone();
+    }
+
 }
     

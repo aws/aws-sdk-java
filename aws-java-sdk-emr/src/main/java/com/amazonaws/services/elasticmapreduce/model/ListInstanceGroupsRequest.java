@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listInstanceGroups(ListInstanceGroupsRequest)
  */
-public class ListInstanceGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListInstanceGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster for which to list the instance groups.
@@ -154,5 +154,11 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public ListInstanceGroupsRequest clone() {
+        
+            return (ListInstanceGroupsRequest) super.clone();
+    }
+
 }
     

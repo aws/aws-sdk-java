@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumeAttributeRequest
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumeAttribute(DescribeVolumeAttributeRequest)
  */
-public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVolumeAttributeRequest> {
+public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVolumeAttributeRequest> {
 
     /**
      * The ID of the volume.
@@ -219,5 +219,11 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeVolumeAttributeRequest clone() {
+        
+            return (DescribeVolumeAttributeRequest) super.clone();
+    }
+
 }
     

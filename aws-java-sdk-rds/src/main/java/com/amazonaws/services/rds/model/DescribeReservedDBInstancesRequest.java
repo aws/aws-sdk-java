@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstances(DescribeReservedDBInstancesRequest)
  */
-public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The reserved DB instance identifier filter value. Specify this
@@ -662,5 +662,11 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public DescribeReservedDBInstancesRequest clone() {
+        
+            return (DescribeReservedDBInstancesRequest) super.clone();
+    }
+
 }
     

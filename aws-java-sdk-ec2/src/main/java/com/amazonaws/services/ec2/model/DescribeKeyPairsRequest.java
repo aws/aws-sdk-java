@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeKeyPairsRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest)
  */
-public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeKeyPairsRequest> {
+public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeKeyPairsRequest> {
 
     /**
      * One or more key pair names. <p>Default: Describes all your key pairs.
@@ -254,5 +254,11 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribeKeyPairsRequest clone() {
+        
+            return (DescribeKeyPairsRequest) super.clone();
+    }
+
 }
     

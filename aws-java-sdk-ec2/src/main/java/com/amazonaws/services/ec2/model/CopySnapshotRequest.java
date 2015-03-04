@@ -46,7 +46,7 @@ import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#copySnapshot(CopySnapshotRequest)
  */
-public class CopySnapshotRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CopySnapshotRequest> {
+public class CopySnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CopySnapshotRequest> {
 
     /**
      * The ID of the region that contains the snapshot to be copied.
@@ -424,5 +424,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CopySnapshotRequest clone() {
+        
+            return (CopySnapshotRequest) super.clone();
+    }
+
 }
     

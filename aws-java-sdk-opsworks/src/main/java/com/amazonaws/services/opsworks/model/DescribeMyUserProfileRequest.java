@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeMyUserProfile(DescribeMyUserProfileRequest)
  */
-public class DescribeMyUserProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeMyUserProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -70,5 +70,11 @@ public class DescribeMyUserProfileRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeMyUserProfileRequest clone() {
+        
+            return (DescribeMyUserProfileRequest) super.clone();
+    }
+
 }
     

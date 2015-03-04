@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkInterfaceRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkInterface(DeleteNetworkInterfaceRequest)
  */
-public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteNetworkInterfaceRequest> {
+public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteNetworkInterfaceRequest> {
 
     /**
      * The ID of the network interface.
@@ -120,5 +120,11 @@ public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteNetworkInterfaceRequest clone() {
+        
+            return (DeleteNetworkInterfaceRequest) super.clone();
+    }
+
 }
     

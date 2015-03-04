@@ -37,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.DetachVpnGatewayRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachVpnGateway(DetachVpnGatewayRequest)
  */
-public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachVpnGatewayRequest> {
+public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DetachVpnGatewayRequest> {
 
     /**
      * The ID of the virtual private gateway.
@@ -189,5 +189,11 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DetachVpnGatewayRequest clone() {
+        
+            return (DetachVpnGatewayRequest) super.clone();
+    }
+
 }
     

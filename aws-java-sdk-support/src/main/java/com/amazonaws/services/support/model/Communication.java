@@ -23,7 +23,7 @@ import java.io.Serializable;
  * account email address, and the date and time of the communication.
  * </p>
  */
-public class Communication implements Serializable {
+public class Communication implements Serializable, Cloneable {
 
     /**
      * The AWS Support case ID requested or returned in the call. The case ID
@@ -319,5 +319,19 @@ public class Communication implements Serializable {
         return true;
     }
     
+    @Override
+    public Communication clone() {
+        try {
+            return (Communication) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

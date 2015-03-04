@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.lambda.AWSLambda#listFunctions(ListFunctionsRequest)
  */
-public class ListFunctionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListFunctionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Optional string. An opaque pagination token returned from a previous
@@ -186,5 +186,11 @@ public class ListFunctionsRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public ListFunctionsRequest clone() {
+        
+            return (ListFunctionsRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class DescribeReservedCacheNodesOfferingsResult implements Serializable {
+public class DescribeReservedCacheNodesOfferingsResult implements Serializable, Cloneable {
 
     /**
      * Provides an identifier to allow retrieval of paginated results.
@@ -187,5 +187,19 @@ public class DescribeReservedCacheNodesOfferingsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeReservedCacheNodesOfferingsResult clone() {
+        try {
+            return (DescribeReservedCacheNodesOfferingsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

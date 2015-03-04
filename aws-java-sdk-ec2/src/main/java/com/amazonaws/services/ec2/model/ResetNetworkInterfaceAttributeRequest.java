@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.ResetNetworkInterfaceAttribute
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest)
  */
-public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetNetworkInterfaceAttributeRequest> {
+public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ResetNetworkInterfaceAttributeRequest> {
 
     /**
      * The ID of the network interface.
@@ -169,5 +169,11 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public ResetNetworkInterfaceAttributeRequest clone() {
+        
+            return (ResetNetworkInterfaceAttributeRequest) super.clone();
+    }
+
 }
     

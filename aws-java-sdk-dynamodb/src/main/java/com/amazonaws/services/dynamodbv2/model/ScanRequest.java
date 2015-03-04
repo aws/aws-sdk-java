@@ -48,7 +48,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#scan(ScanRequest)
  */
-public class ScanRequest extends AmazonWebServiceRequest implements Serializable {
+public class ScanRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the table containing the requested items; or, if you
@@ -2624,5 +2624,11 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
         return true;
     }
     
+    @Override
+    public ScanRequest clone() {
+        
+            return (ScanRequest) super.clone();
+    }
+
 }
     

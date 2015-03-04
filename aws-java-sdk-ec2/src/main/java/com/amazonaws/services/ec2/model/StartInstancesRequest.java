@@ -53,7 +53,7 @@ import com.amazonaws.services.ec2.model.transform.StartInstancesRequestMarshalle
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#startInstances(StartInstancesRequest)
  */
-public class StartInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<StartInstancesRequest> {
+public class StartInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<StartInstancesRequest> {
 
     /**
      * One or more instance IDs.
@@ -238,5 +238,11 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public StartInstancesRequest clone() {
+        
+            return (StartInstancesRequest) super.clone();
+    }
+
 }
     

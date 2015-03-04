@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.UnmonitorInstancesRequestMarsh
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#unmonitorInstances(UnmonitorInstancesRequest)
  */
-public class UnmonitorInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<UnmonitorInstancesRequest> {
+public class UnmonitorInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<UnmonitorInstancesRequest> {
 
     /**
      * One or more instance IDs.
@@ -174,5 +174,11 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public UnmonitorInstancesRequest clone() {
+        
+            return (UnmonitorInstancesRequest) super.clone();
+    }
+
 }
     

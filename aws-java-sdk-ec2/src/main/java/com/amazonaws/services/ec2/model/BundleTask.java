@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a bundle task.
  * </p>
  */
-public class BundleTask implements Serializable {
+public class BundleTask implements Serializable, Cloneable {
 
     /**
      * The ID of the instance associated with this bundle task.
@@ -446,5 +446,19 @@ public class BundleTask implements Serializable {
         return true;
     }
     
+    @Override
+    public BundleTask clone() {
+        try {
+            return (BundleTask) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

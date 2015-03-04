@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeTags(DescribeTagsRequest)
  */
-public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The value of the filter type used to identify the tags to be returned.
@@ -290,5 +290,11 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DescribeTagsRequest clone() {
+        
+            return (DescribeTagsRequest) super.clone();
+    }
+
 }
     

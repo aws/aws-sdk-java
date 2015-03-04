@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest)
  */
-public class ListTopicsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListTopicsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Token returned by the previous <code>ListTopics</code> request.
@@ -127,5 +127,11 @@ public class ListTopicsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ListTopicsRequest clone() {
+        
+            return (ListTopicsRequest) super.clone();
+    }
+
 }
     

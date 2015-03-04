@@ -22,7 +22,7 @@ import java.io.Serializable;
  * item.
  * </p>
  */
-public class DeleteRequest implements Serializable {
+public class DeleteRequest implements Serializable, Cloneable {
 
     /**
      * A map of attribute name to attribute values, representing the primary
@@ -219,5 +219,19 @@ public class DeleteRequest implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteRequest clone() {
+        try {
+            return (DeleteRequest) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

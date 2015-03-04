@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeSpotPriceHistoryResult implements Serializable {
+public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
 
     /**
      * The historical Spot Prices.
@@ -182,5 +182,19 @@ public class DescribeSpotPriceHistoryResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeSpotPriceHistoryResult clone() {
+        try {
+            return (DescribeSpotPriceHistoryResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

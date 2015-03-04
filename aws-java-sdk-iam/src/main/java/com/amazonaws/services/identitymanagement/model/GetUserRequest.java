@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest)
  */
-public class GetUserRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetUserRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user to get information about. <p>This parameter is
@@ -146,5 +146,11 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public GetUserRequest clone() {
+        
+            return (GetUserRequest) super.clone();
+    }
+
 }
     

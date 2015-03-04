@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#createPlatformApplication(CreatePlatformApplicationRequest)
  */
-public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Application names must be made up of only uppercase and lowercase
@@ -275,5 +275,11 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public CreatePlatformApplicationRequest clone() {
+        
+            return (CreatePlatformApplicationRequest) super.clone();
+    }
+
 }
     

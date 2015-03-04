@@ -26,7 +26,7 @@ import java.io.Serializable;
  * How accurate are your GeoIP databases? on the MaxMind website.
  * </p>
  */
-public class GeoRestriction implements Serializable {
+public class GeoRestriction implements Serializable, Cloneable {
 
     /**
      * The method that you want to use to restrict distribution of your
@@ -477,5 +477,19 @@ public class GeoRestriction implements Serializable {
         return true;
     }
     
+    @Override
+    public GeoRestriction clone() {
+        try {
+            return (GeoRestriction) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

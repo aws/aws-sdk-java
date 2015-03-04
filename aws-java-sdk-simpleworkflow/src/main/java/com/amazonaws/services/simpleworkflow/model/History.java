@@ -24,7 +24,7 @@ import java.io.Serializable;
  * workflow execution.
  * </p>
  */
-public class History implements Serializable {
+public class History implements Serializable, Cloneable {
 
     /**
      * The list of history events.
@@ -223,5 +223,19 @@ public class History implements Serializable {
         return true;
     }
     
+    @Override
+    public History clone() {
+        try {
+            return (History) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

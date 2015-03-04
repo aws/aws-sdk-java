@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a Spot Instance state change.
  * </p>
  */
-public class SpotInstanceStateFault implements Serializable {
+public class SpotInstanceStateFault implements Serializable, Cloneable {
 
     /**
      * The reason code for the Spot Instance state change.
@@ -142,5 +142,19 @@ public class SpotInstanceStateFault implements Serializable {
         return true;
     }
     
+    @Override
+    public SpotInstanceStateFault clone() {
+        try {
+            return (SpotInstanceStateFault) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

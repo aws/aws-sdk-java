@@ -20,7 +20,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class HsmStatus implements Serializable {
+public class HsmStatus implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the HSM client certificate the Amazon Redshift
@@ -218,5 +218,19 @@ public class HsmStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public HsmStatus clone() {
+        try {
+            return (HsmStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

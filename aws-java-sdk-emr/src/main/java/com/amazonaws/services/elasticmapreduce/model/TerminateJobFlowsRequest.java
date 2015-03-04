@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest)
  */
-public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements Serializable {
+public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of job flows to be shutdown.
@@ -168,5 +168,11 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public TerminateJobFlowsRequest clone() {
+        
+            return (TerminateJobFlowsRequest) super.clone();
+    }
+
 }
     

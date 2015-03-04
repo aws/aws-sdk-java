@@ -24,7 +24,7 @@ import java.io.Serializable;
  * returned are defined by AWS Data Pipeline.
  * </p>
  */
-public class ValidationWarning implements Serializable {
+public class ValidationWarning implements Serializable, Cloneable {
 
     /**
      * The identifier of the object that contains the validation warning.
@@ -196,5 +196,19 @@ public class ValidationWarning implements Serializable {
         return true;
     }
     
+    @Override
+    public ValidationWarning clone() {
+        try {
+            return (ValidationWarning) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

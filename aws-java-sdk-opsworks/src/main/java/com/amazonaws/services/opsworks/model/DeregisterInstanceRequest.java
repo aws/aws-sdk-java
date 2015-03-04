@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deregisterInstance(DeregisterInstanceRequest)
  */
-public class DeregisterInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeregisterInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -116,5 +116,11 @@ public class DeregisterInstanceRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DeregisterInstanceRequest clone() {
+        
+            return (DeregisterInstanceRequest) super.clone();
+    }
+
 }
     

@@ -30,7 +30,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class DBSecurityGroupMembership implements Serializable {
+public class DBSecurityGroupMembership implements Serializable, Cloneable {
 
     /**
      * The name of the DB security group.
@@ -157,5 +157,19 @@ public class DBSecurityGroupMembership implements Serializable {
         return true;
     }
     
+    @Override
+    public DBSecurityGroupMembership clone() {
+        try {
+            return (DBSecurityGroupMembership) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

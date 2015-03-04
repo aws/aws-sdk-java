@@ -22,7 +22,7 @@ import java.io.Serializable;
  * <code>SendEmail</code> request.
  * </p>
  */
-public class SendEmailResult implements Serializable {
+public class SendEmailResult implements Serializable, Cloneable {
 
     /**
      * The unique message identifier returned from the <code>SendEmail</code>
@@ -108,5 +108,19 @@ public class SendEmailResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SendEmailResult clone() {
+        try {
+            return (SendEmailResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

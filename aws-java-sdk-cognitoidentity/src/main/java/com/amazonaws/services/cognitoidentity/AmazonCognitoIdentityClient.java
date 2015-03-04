@@ -311,14 +311,16 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnlinkDeveloperIdentityRequestMarshaller().marshall(unlinkDeveloperIdentityRequest);
+                request = new UnlinkDeveloperIdentityRequestMarshaller().marshall(super.beforeMarshalling(unlinkDeveloperIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -362,19 +364,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityPoolRequestMarshaller().marshall(describeIdentityPoolRequest);
+                request = new DescribeIdentityPoolRequestMarshaller().marshall(super.beforeMarshalling(describeIdentityPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeIdentityPoolResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeIdentityPoolResultJsonUnmarshaller();
             JsonResponseHandler<DescribeIdentityPoolResult> responseHandler =
                 new JsonResponseHandler<DescribeIdentityPoolResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -420,19 +423,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIdRequestMarshaller().marshall(getIdRequest);
+                request = new GetIdRequestMarshaller().marshall(super.beforeMarshalling(getIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetIdResult, JsonUnmarshallerContext> unmarshaller =
                 new GetIdResultJsonUnmarshaller();
             JsonResponseHandler<GetIdResult> responseHandler =
                 new JsonResponseHandler<GetIdResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -474,14 +478,16 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIdentityPoolRequestMarshaller().marshall(deleteIdentityPoolRequest);
+                request = new DeleteIdentityPoolRequestMarshaller().marshall(super.beforeMarshalling(deleteIdentityPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -525,19 +531,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateIdentityPoolRequestMarshaller().marshall(updateIdentityPoolRequest);
+                request = new UpdateIdentityPoolRequestMarshaller().marshall(super.beforeMarshalling(updateIdentityPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateIdentityPoolResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateIdentityPoolResultJsonUnmarshaller();
             JsonResponseHandler<UpdateIdentityPoolResult> responseHandler =
                 new JsonResponseHandler<UpdateIdentityPoolResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -586,19 +593,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCredentialsForIdentityRequestMarshaller().marshall(getCredentialsForIdentityRequest);
+                request = new GetCredentialsForIdentityRequestMarshaller().marshall(super.beforeMarshalling(getCredentialsForIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetCredentialsForIdentityResult, JsonUnmarshallerContext> unmarshaller =
                 new GetCredentialsForIdentityResultJsonUnmarshaller();
             JsonResponseHandler<GetCredentialsForIdentityResult> responseHandler =
                 new JsonResponseHandler<GetCredentialsForIdentityResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -652,19 +660,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new MergeDeveloperIdentitiesRequestMarshaller().marshall(mergeDeveloperIdentitiesRequest);
+                request = new MergeDeveloperIdentitiesRequestMarshaller().marshall(super.beforeMarshalling(mergeDeveloperIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<MergeDeveloperIdentitiesResult, JsonUnmarshallerContext> unmarshaller =
                 new MergeDeveloperIdentitiesResultJsonUnmarshaller();
             JsonResponseHandler<MergeDeveloperIdentitiesResult> responseHandler =
                 new JsonResponseHandler<MergeDeveloperIdentitiesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -707,19 +716,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIdentityPoolsRequestMarshaller().marshall(listIdentityPoolsRequest);
+                request = new ListIdentityPoolsRequestMarshaller().marshall(super.beforeMarshalling(listIdentityPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListIdentityPoolsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListIdentityPoolsResultJsonUnmarshaller();
             JsonResponseHandler<ListIdentityPoolsResult> responseHandler =
                 new JsonResponseHandler<ListIdentityPoolsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -768,19 +778,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOpenIdTokenRequestMarshaller().marshall(getOpenIdTokenRequest);
+                request = new GetOpenIdTokenRequestMarshaller().marshall(super.beforeMarshalling(getOpenIdTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetOpenIdTokenResult, JsonUnmarshallerContext> unmarshaller =
                 new GetOpenIdTokenResultJsonUnmarshaller();
             JsonResponseHandler<GetOpenIdTokenResult> responseHandler =
                 new JsonResponseHandler<GetOpenIdTokenResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -825,19 +836,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityRequestMarshaller().marshall(describeIdentityRequest);
+                request = new DescribeIdentityRequestMarshaller().marshall(super.beforeMarshalling(describeIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeIdentityResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeIdentityResultJsonUnmarshaller();
             JsonResponseHandler<DescribeIdentityResult> responseHandler =
                 new JsonResponseHandler<DescribeIdentityResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -893,19 +905,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new LookupDeveloperIdentityRequestMarshaller().marshall(lookupDeveloperIdentityRequest);
+                request = new LookupDeveloperIdentityRequestMarshaller().marshall(super.beforeMarshalling(lookupDeveloperIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<LookupDeveloperIdentityResult, JsonUnmarshallerContext> unmarshaller =
                 new LookupDeveloperIdentityResultJsonUnmarshaller();
             JsonResponseHandler<LookupDeveloperIdentityResult> responseHandler =
                 new JsonResponseHandler<LookupDeveloperIdentityResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -948,14 +961,16 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetIdentityPoolRolesRequestMarshaller().marshall(setIdentityPoolRolesRequest);
+                request = new SetIdentityPoolRolesRequestMarshaller().marshall(super.beforeMarshalling(setIdentityPoolRolesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -997,14 +1012,16 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnlinkIdentityRequestMarshaller().marshall(unlinkIdentityRequest);
+                request = new UnlinkIdentityRequestMarshaller().marshall(super.beforeMarshalling(unlinkIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1046,19 +1063,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIdentitiesRequestMarshaller().marshall(listIdentitiesRequest);
+                request = new ListIdentitiesRequestMarshaller().marshall(super.beforeMarshalling(listIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListIdentitiesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListIdentitiesResultJsonUnmarshaller();
             JsonResponseHandler<ListIdentitiesResult> responseHandler =
                 new JsonResponseHandler<ListIdentitiesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1103,19 +1121,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIdentityPoolRolesRequestMarshaller().marshall(getIdentityPoolRolesRequest);
+                request = new GetIdentityPoolRolesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityPoolRolesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetIdentityPoolRolesResult, JsonUnmarshallerContext> unmarshaller =
                 new GetIdentityPoolRolesResultJsonUnmarshaller();
             JsonResponseHandler<GetIdentityPoolRolesResult> responseHandler =
                 new JsonResponseHandler<GetIdentityPoolRolesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1178,19 +1197,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller().marshall(getOpenIdTokenForDeveloperIdentityRequest);
+                request = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller().marshall(super.beforeMarshalling(getOpenIdTokenForDeveloperIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetOpenIdTokenForDeveloperIdentityResult, JsonUnmarshallerContext> unmarshaller =
                 new GetOpenIdTokenForDeveloperIdentityResultJsonUnmarshaller();
             JsonResponseHandler<GetOpenIdTokenForDeveloperIdentityResult> responseHandler =
                 new JsonResponseHandler<GetOpenIdTokenForDeveloperIdentityResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1237,19 +1257,20 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateIdentityPoolRequestMarshaller().marshall(createIdentityPoolRequest);
+                request = new CreateIdentityPoolRequestMarshaller().marshall(super.beforeMarshalling(createIdentityPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateIdentityPoolResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateIdentityPoolResultJsonUnmarshaller();
             JsonResponseHandler<CreateIdentityPoolResult> responseHandler =
                 new JsonResponseHandler<CreateIdentityPoolResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

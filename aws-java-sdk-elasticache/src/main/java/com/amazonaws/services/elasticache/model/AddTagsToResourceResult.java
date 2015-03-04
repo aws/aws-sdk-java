@@ -23,17 +23,17 @@ import java.io.Serializable;
  * <i>RemoveTagsFromResource</i> actions.
  * </p>
  */
-public class AddTagsToResourceResult implements Serializable {
+public class AddTagsToResourceResult implements Serializable, Cloneable {
 
     /**
-     * A list of cost allocation tags as a key-value pair.
+     * A list of cost allocation tags as key-value pairs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagList;
 
     /**
-     * A list of cost allocation tags as a key-value pair.
+     * A list of cost allocation tags as key-value pairs.
      *
-     * @return A list of cost allocation tags as a key-value pair.
+     * @return A list of cost allocation tags as key-value pairs.
      */
     public java.util.List<Tag> getTagList() {
         if (tagList == null) {
@@ -44,9 +44,9 @@ public class AddTagsToResourceResult implements Serializable {
     }
     
     /**
-     * A list of cost allocation tags as a key-value pair.
+     * A list of cost allocation tags as key-value pairs.
      *
-     * @param tagList A list of cost allocation tags as a key-value pair.
+     * @param tagList A list of cost allocation tags as key-value pairs.
      */
     public void setTagList(java.util.Collection<Tag> tagList) {
         if (tagList == null) {
@@ -59,11 +59,11 @@ public class AddTagsToResourceResult implements Serializable {
     }
     
     /**
-     * A list of cost allocation tags as a key-value pair.
+     * A list of cost allocation tags as key-value pairs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tagList A list of cost allocation tags as a key-value pair.
+     * @param tagList A list of cost allocation tags as key-value pairs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -77,11 +77,11 @@ public class AddTagsToResourceResult implements Serializable {
     }
     
     /**
-     * A list of cost allocation tags as a key-value pair.
+     * A list of cost allocation tags as key-value pairs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tagList A list of cost allocation tags as a key-value pair.
+     * @param tagList A list of cost allocation tags as key-value pairs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -137,5 +137,19 @@ public class AddTagsToResourceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public AddTagsToResourceResult clone() {
+        try {
+            return (AddTagsToResourceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

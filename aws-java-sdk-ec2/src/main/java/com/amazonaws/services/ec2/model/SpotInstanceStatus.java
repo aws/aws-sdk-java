@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the status of a Spot Instance request.
  * </p>
  */
-public class SpotInstanceStatus implements Serializable {
+public class SpotInstanceStatus implements Serializable, Cloneable {
 
     /**
      * The status code.
@@ -184,5 +184,19 @@ public class SpotInstanceStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public SpotInstanceStatus clone() {
+        try {
+            return (SpotInstanceStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Configuration of a bootstrap action.
  * </p>
  */
-public class BootstrapActionConfig implements Serializable {
+public class BootstrapActionConfig implements Serializable, Cloneable {
 
     /**
      * The name of the bootstrap action.
@@ -177,5 +177,19 @@ public class BootstrapActionConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public BootstrapActionConfig clone() {
+        try {
+            return (BootstrapActionConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

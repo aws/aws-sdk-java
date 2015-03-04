@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeAddressesRequestMarsha
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAddresses(DescribeAddressesRequest)
  */
-public class DescribeAddressesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeAddressesRequest> {
+public class DescribeAddressesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeAddressesRequest> {
 
     /**
      * [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
@@ -449,5 +449,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DescribeAddressesRequest clone() {
+        
+            return (DescribeAddressesRequest) super.clone();
+    }
+
 }
     

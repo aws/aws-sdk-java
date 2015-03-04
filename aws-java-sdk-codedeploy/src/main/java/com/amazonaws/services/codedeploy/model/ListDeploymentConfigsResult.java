@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a list deployment configurations operation.
  * </p>
  */
-public class ListDeploymentConfigsResult implements Serializable {
+public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * A list of deployment configurations, including the built-in
@@ -207,5 +207,19 @@ public class ListDeploymentConfigsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListDeploymentConfigsResult clone() {
+        try {
+            return (ListDeploymentConfigsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -23,7 +23,7 @@ import java.io.Serializable;
  * and used with ElastiCache.
  * </p>
  */
-public class Subnet implements Serializable {
+public class Subnet implements Serializable, Cloneable {
 
     /**
      * The unique identifier for the subnet.
@@ -144,5 +144,19 @@ public class Subnet implements Serializable {
         return true;
     }
     
+    @Override
+    public Subnet clone() {
+        try {
+            return (Subnet) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

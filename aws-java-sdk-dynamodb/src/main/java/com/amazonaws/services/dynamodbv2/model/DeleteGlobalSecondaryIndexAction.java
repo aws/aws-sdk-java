@@ -22,7 +22,7 @@ import java.io.Serializable;
  * table.
  * </p>
  */
-public class DeleteGlobalSecondaryIndexAction implements Serializable {
+public class DeleteGlobalSecondaryIndexAction implements Serializable, Cloneable {
 
     /**
      * The name of the global secondary index to be deleted.
@@ -117,5 +117,19 @@ public class DeleteGlobalSecondaryIndexAction implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteGlobalSecondaryIndexAction clone() {
+        try {
+            return (DeleteGlobalSecondaryIndexAction) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

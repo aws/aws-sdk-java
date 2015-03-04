@@ -22,7 +22,7 @@ import java.io.Serializable;
  * event.
  * </p>
  */
-public class ChildWorkflowExecutionTerminatedEventAttributes implements Serializable {
+public class ChildWorkflowExecutionTerminatedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The child workflow execution that was terminated.
@@ -276,5 +276,19 @@ public class ChildWorkflowExecutionTerminatedEventAttributes implements Serializ
         return true;
     }
     
+    @Override
+    public ChildWorkflowExecutionTerminatedEventAttributes clone() {
+        try {
+            return (ChildWorkflowExecutionTerminatedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

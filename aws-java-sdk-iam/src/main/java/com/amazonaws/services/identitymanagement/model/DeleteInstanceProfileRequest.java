@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteInstanceProfile(DeleteInstanceProfileRequest)
  */
-public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the instance profile to delete.
@@ -133,5 +133,11 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteInstanceProfileRequest clone() {
+        
+            return (DeleteInstanceProfileRequest) super.clone();
+    }
+
 }
     

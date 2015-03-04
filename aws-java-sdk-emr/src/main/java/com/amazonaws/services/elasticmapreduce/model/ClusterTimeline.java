@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the timeline of the cluster's lifecycle.
  * </p>
  */
-public class ClusterTimeline implements Serializable {
+public class ClusterTimeline implements Serializable, Cloneable {
 
     /**
      * The creation date and time of the cluster.
@@ -184,5 +184,19 @@ public class ClusterTimeline implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterTimeline clone() {
+        try {
+            return (ClusterTimeline) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

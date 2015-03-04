@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A JSON object containing the of the gateway that was updated.
  * </p>
  */
-public class UpdateGatewayInformationResult implements Serializable {
+public class UpdateGatewayInformationResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -126,5 +126,19 @@ public class UpdateGatewayInformationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateGatewayInformationResult clone() {
+        try {
+            return (UpdateGatewayInformationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class DescribeVaultResult implements Serializable {
+public class DescribeVaultResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the vault.
@@ -359,5 +359,19 @@ public class DescribeVaultResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVaultResult clone() {
+        try {
+            return (DescribeVaultResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

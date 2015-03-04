@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#attachGroupPolicy(AttachGroupPolicyRequest)
  */
-public class AttachGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class AttachGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the group to attach the policy
@@ -219,5 +219,11 @@ public class AttachGroupPolicyRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public AttachGroupPolicyRequest clone() {
+        
+            return (AttachGroupPolicyRequest) super.clone();
+    }
+
 }
     

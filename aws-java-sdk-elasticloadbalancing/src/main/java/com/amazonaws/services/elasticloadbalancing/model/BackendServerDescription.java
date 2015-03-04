@@ -23,7 +23,7 @@ import java.io.Serializable;
  * back-end server.
  * </p>
  */
-public class BackendServerDescription implements Serializable {
+public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
      * Provides the port on which the back-end server is listening.
@@ -191,5 +191,19 @@ public class BackendServerDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public BackendServerDescription clone() {
+        try {
+            return (BackendServerDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

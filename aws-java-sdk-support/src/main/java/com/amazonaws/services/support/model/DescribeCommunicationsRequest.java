@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeCommunications(DescribeCommunicationsRequest)
  */
-public class DescribeCommunicationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCommunicationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The AWS Support case ID requested or returned in the call. The case ID
@@ -343,5 +343,11 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeCommunicationsRequest clone() {
+        
+            return (DescribeCommunicationsRequest) super.clone();
+    }
+
 }
     

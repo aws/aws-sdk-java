@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteHostedZone(DeleteHostedZoneRequest)
  */
-public class DeleteHostedZoneRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteHostedZoneRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the hosted zone you want to delete.
@@ -151,5 +151,11 @@ public class DeleteHostedZoneRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteHostedZoneRequest clone() {
+        
+            return (DeleteHostedZoneRequest) super.clone();
+    }
+
 }
     

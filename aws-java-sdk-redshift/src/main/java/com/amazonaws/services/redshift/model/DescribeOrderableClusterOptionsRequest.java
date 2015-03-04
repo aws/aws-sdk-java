@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest)
  */
-public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The version filter value. Specify this parameter to show only the
@@ -345,5 +345,11 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public DescribeOrderableClusterOptionsRequest clone() {
+        
+            return (DescribeOrderableClusterOptionsRequest) super.clone();
+    }
+
 }
     

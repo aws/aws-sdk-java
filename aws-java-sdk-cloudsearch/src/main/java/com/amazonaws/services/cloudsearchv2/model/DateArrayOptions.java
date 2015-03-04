@@ -23,7 +23,7 @@ import java.io.Serializable;
  * <code>date-array</code> . All options are enabled by default.
  * </p>
  */
-public class DateArrayOptions implements Serializable {
+public class DateArrayOptions implements Serializable, Cloneable {
 
     /**
      * A value to use for the field if the field isn't specified for a
@@ -337,5 +337,19 @@ public class DateArrayOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public DateArrayOptions clone() {
+        try {
+            return (DateArrayOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

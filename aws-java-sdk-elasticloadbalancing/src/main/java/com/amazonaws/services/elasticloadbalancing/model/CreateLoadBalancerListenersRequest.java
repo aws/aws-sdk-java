@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerListeners(CreateLoadBalancerListenersRequest)
  */
-public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer.
@@ -230,5 +230,11 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public CreateLoadBalancerListenersRequest clone() {
+        
+            return (CreateLoadBalancerListenersRequest) super.clone();
+    }
+
 }
     

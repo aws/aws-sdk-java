@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest)
  */
-public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier for the offering.
@@ -278,5 +278,11 @@ public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DescribeReservedNodeOfferingsRequest clone() {
+        
+            return (DescribeReservedNodeOfferingsRequest) super.clone();
+    }
+
 }
     

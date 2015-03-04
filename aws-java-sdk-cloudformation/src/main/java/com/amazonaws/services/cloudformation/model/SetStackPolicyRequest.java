@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#setStackPolicy(SetStackPolicyRequest)
  */
-public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or stack ID that you want to associate a policy with.
@@ -269,5 +269,11 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public SetStackPolicyRequest clone() {
+        
+            return (SetStackPolicyRequest) super.clone();
+    }
+
 }
     

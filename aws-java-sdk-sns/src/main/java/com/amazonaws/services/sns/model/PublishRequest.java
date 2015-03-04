@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest)
  */
-public class PublishRequest extends AmazonWebServiceRequest implements Serializable {
+public class PublishRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The topic you want to publish to.
@@ -739,5 +739,11 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public PublishRequest clone() {
+        
+            return (PublishRequest) super.clone();
+    }
+
 }
     

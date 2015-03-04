@@ -44,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createInterconnect(CreateInterconnectRequest)
  */
-public class CreateInterconnectRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateInterconnectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the interconnect. <p>Example: "<i>1G Interconnect to
@@ -221,5 +221,11 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateInterconnectRequest clone() {
+        
+            return (CreateInterconnectRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Available option.
  * </p>
  */
-public class OptionGroupOption implements Serializable {
+public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * The name of the option.
@@ -678,5 +678,19 @@ public class OptionGroupOption implements Serializable {
         return true;
     }
     
+    @Override
+    public OptionGroupOption clone() {
+        try {
+            return (OptionGroupOption) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

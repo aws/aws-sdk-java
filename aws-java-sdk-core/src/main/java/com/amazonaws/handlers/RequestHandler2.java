@@ -14,6 +14,7 @@
  */
 package com.amazonaws.handlers;
 
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
 import com.amazonaws.util.TimingInfo;
@@ -34,9 +35,27 @@ import com.amazonaws.util.TimingInfo;
 public abstract class RequestHandler2 {
 
     /**
+     * Runs any additional processing logic on the specified request object
+     * before it is marshaled into an HTTP request.
+     * <p>
+     * If you're going to modify the request, make sure to clone it first,
+     * modify the clone, and return it from this method. Otherwise your changes
+     * will leak out to the user, who might reuse the request object without
+     * realizing that it was modified as part of sending it the first time.
+     *
+     * @param request the request passed in by the user
+     * @return the (possibly different) request to marshal
+     */
+    public AmazonWebServiceRequest beforeMarshalling(
+            AmazonWebServiceRequest request) {
+
+        return request;
+    }
+
+    /**
      * Runs any additional processing logic on the specified request (before it
      * is executed by the client runtime).
-     * 
+     *
      * @param request
      *            The low level request being processed.
      */
@@ -45,7 +64,7 @@ public abstract class RequestHandler2 {
     /**
      * Runs any additional processing logic on the specified request (after is
      * has been executed by the client runtime).
-     * 
+     *
      * @param request
      *            The low level request being processed.
      * @param response
@@ -55,7 +74,7 @@ public abstract class RequestHandler2 {
 
     /**
      * Runs any additional processing logic on a request after it has failed.
-     * 
+     *
      * @param request
      *            The request that generated an error.
      * @param response

@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#updateDomainNameservers(UpdateDomainNameserversRequest)
  */
-public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String <p>Default: None <p>Constraints:
@@ -279,5 +279,11 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public UpdateDomainNameserversRequest clone() {
+        
+            return (UpdateDomainNameserversRequest) super.clone();
+    }
+
 }
     

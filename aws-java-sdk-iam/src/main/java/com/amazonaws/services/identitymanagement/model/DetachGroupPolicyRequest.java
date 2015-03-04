@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#detachGroupPolicy(DetachGroupPolicyRequest)
  */
-public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the group to detach the policy
@@ -217,5 +217,11 @@ public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DetachGroupPolicyRequest clone() {
+        
+            return (DetachGroupPolicyRequest) super.clone();
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplicationVersion(CreateApplicationVersionRequest)
  */
-public class CreateApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application. If no application is found with this
@@ -549,5 +549,11 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public CreateApplicationVersionRequest clone() {
+        
+            return (CreateApplicationVersionRequest) super.clone();
+    }
+
 }
     

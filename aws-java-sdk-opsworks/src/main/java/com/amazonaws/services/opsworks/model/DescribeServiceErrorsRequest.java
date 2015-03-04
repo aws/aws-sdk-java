@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeServiceErrors(DescribeServiceErrorsRequest)
  */
-public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID. If you use this parameter,
@@ -278,5 +278,11 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DescribeServiceErrorsRequest clone() {
+        
+            return (DescribeServiceErrorsRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * the status of the newly-configured scaling parameters.
  * </p>
  */
-public class UpdateScalingParametersResult implements Serializable {
+public class UpdateScalingParametersResult implements Serializable, Cloneable {
 
     /**
      * The status and configuration of a search domain's scaling parameters.
@@ -101,5 +101,19 @@ public class UpdateScalingParametersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateScalingParametersResult clone() {
+        try {
+            return (UpdateScalingParametersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a volume.
  * </p>
  */
-public class Volume implements Serializable {
+public class Volume implements Serializable, Cloneable {
 
     /**
      * The ID of the volume.
@@ -865,5 +865,19 @@ public class Volume implements Serializable {
         return true;
     }
     
+    @Override
+    public Volume clone() {
+        try {
+            return (Volume) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

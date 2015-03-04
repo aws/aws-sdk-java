@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeploymentGroups(ListDeploymentGroupsRequest)
  */
-public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing AWS CodeDeploy application within the AWS user
@@ -181,5 +181,11 @@ public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public ListDeploymentGroupsRequest clone() {
+        
+            return (ListDeploymentGroupsRequest) super.clone();
+    }
+
 }
     

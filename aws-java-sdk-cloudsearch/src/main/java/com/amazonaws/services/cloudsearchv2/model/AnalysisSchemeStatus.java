@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The status and configuration of an <code>AnalysisScheme</code> .
  * </p>
  */
-public class AnalysisSchemeStatus implements Serializable {
+public class AnalysisSchemeStatus implements Serializable, Cloneable {
 
     /**
      * Configuration information for an analysis scheme. Each analysis scheme
@@ -184,5 +184,19 @@ public class AnalysisSchemeStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public AnalysisSchemeStatus clone() {
+        try {
+            return (AnalysisSchemeStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

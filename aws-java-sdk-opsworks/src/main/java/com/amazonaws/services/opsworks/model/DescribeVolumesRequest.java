@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeVolumes(DescribeVolumesRequest)
  */
-public class DescribeVolumesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeVolumesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID. If you use this parameter,
@@ -330,5 +330,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DescribeVolumesRequest clone() {
+        
+            return (DescribeVolumesRequest) super.clone();
+    }
+
 }
     

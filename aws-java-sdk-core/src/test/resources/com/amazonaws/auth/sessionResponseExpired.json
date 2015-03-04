@@ -1,0 +1,9 @@
+{
+  "Code" : "Success",
+  "LastUpdated" : "2012-05-02T22:55:54Z",
+  "Type" : "AWS-HMAC",
+  "AccessKeyId" : "ACCESS_KEY_ID",
+  "SecretAccessKey" : "SECRET_ACCESS_KEY",
+  "Token" : "TOKEN_TOKEN_TOKEN",
+  "Expiration" : "2012-05-03T04:55:54Z"
+}

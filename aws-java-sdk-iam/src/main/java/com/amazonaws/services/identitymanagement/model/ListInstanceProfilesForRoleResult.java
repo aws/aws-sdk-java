@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class ListInstanceProfilesForRoleResult implements Serializable {
+public class ListInstanceProfilesForRoleResult implements Serializable, Cloneable {
 
     /**
      * A list of instance profiles.
@@ -286,5 +286,19 @@ public class ListInstanceProfilesForRoleResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListInstanceProfilesForRoleResult clone() {
+        try {
+            return (ListInstanceProfilesForRoleResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

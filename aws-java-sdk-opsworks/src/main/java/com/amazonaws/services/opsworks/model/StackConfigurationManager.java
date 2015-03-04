@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the configuration manager.
  * </p>
  */
-public class StackConfigurationManager implements Serializable {
+public class StackConfigurationManager implements Serializable, Cloneable {
 
     /**
      * The name. This parameter must be set to "Chef".
@@ -149,5 +149,19 @@ public class StackConfigurationManager implements Serializable {
         return true;
     }
     
+    @Override
+    public StackConfigurationManager clone() {
+        try {
+            return (StackConfigurationManager) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

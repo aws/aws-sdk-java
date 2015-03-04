@@ -22,7 +22,7 @@ import java.io.Serializable;
  * with the current AWS account.
  * </p>
  */
-public class GetHealthCheckCountResult implements Serializable {
+public class GetHealthCheckCountResult implements Serializable, Cloneable {
 
     /**
      * The number of health checks associated with the current AWS account.
@@ -101,5 +101,19 @@ public class GetHealthCheckCountResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetHealthCheckCountResult clone() {
+        try {
+            return (GetHealthCheckCountResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

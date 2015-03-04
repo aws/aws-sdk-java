@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The key of a tag to be removed.
  * </p>
  */
-public class TagKeyOnly implements Serializable {
+public class TagKeyOnly implements Serializable, Cloneable {
 
     /**
      * The name of the key.
@@ -116,5 +116,19 @@ public class TagKeyOnly implements Serializable {
         return true;
     }
     
+    @Override
+    public TagKeyOnly clone() {
+        try {
+            return (TagKeyOnly) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

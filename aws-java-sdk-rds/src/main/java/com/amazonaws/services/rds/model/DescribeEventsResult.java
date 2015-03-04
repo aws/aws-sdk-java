@@ -22,7 +22,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class DescribeEventsResult implements Serializable {
+public class DescribeEventsResult implements Serializable, Cloneable {
 
     /**
      * An optional pagination token provided by a previous Events request. If
@@ -192,5 +192,19 @@ public class DescribeEventsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeEventsResult clone() {
+        try {
+            return (DescribeEventsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

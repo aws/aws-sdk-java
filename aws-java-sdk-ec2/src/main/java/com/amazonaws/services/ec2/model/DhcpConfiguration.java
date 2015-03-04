@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a DHCP configuration option.
  * </p>
  */
-public class DhcpConfiguration implements Serializable {
+public class DhcpConfiguration implements Serializable, Cloneable {
 
     /**
      * The name of a DHCP option.
@@ -177,5 +177,19 @@ public class DhcpConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public DhcpConfiguration clone() {
+        try {
+            return (DhcpConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

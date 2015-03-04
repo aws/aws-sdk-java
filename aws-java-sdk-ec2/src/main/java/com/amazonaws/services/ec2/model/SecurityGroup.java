@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a security group
  * </p>
  */
-public class SecurityGroup implements Serializable {
+public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * The AWS account ID of the owner of the security group.
@@ -508,5 +508,19 @@ public class SecurityGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public SecurityGroup clone() {
+        try {
+            return (SecurityGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

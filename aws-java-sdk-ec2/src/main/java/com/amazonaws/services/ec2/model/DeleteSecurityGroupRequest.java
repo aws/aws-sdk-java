@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteSecurityGroupRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSecurityGroup(DeleteSecurityGroupRequest)
  */
-public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteSecurityGroupRequest> {
+public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteSecurityGroupRequest> {
 
     /**
      * [EC2-Classic, default VPC] The name of the security group. You can
@@ -193,5 +193,11 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DeleteSecurityGroupRequest clone() {
+        
+            return (DeleteSecurityGroupRequest) super.clone();
+    }
+
 }
     

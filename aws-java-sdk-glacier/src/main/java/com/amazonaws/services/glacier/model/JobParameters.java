@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides options for defining a job.
  * </p>
  */
-public class JobParameters implements Serializable {
+public class JobParameters implements Serializable, Cloneable {
 
     /**
      * When initiating a job to retrieve a vault inventory, you can
@@ -548,5 +548,19 @@ public class JobParameters implements Serializable {
         return true;
     }
     
+    @Override
+    public JobParameters clone() {
+        try {
+            return (JobParameters) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides a list of validation messages.
  * </p>
  */
-public class ValidateConfigurationSettingsResult implements Serializable {
+public class ValidateConfigurationSettingsResult implements Serializable, Cloneable {
 
     /**
      * A list of <a>ValidationMessage</a>.
@@ -135,5 +135,19 @@ public class ValidateConfigurationSettingsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ValidateConfigurationSettingsResult clone() {
+        try {
+            return (ValidateConfigurationSettingsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

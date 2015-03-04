@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#defineAnalysisScheme(DefineAnalysisSchemeRequest)
  */
-public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -230,5 +230,11 @@ public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DefineAnalysisSchemeRequest clone() {
+        
+            return (DefineAnalysisSchemeRequest) super.clone();
+    }
+
 }
     

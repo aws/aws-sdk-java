@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>RegisterVolume</code> request.
  * </p>
  */
-public class RegisterVolumeResult implements Serializable {
+public class RegisterVolumeResult implements Serializable, Cloneable {
 
     /**
      * The volume ID.
@@ -100,5 +100,19 @@ public class RegisterVolumeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RegisterVolumeResult clone() {
+        try {
+            return (RegisterVolumeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

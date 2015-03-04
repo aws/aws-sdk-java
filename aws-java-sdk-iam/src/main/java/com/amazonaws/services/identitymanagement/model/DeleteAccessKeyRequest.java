@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccessKey(DeleteAccessKeyRequest)
  */
-public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user whose key you want to delete.
@@ -213,5 +213,11 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DeleteAccessKeyRequest clone() {
+        
+            return (DeleteAccessKeyRequest) super.clone();
+    }
+
 }
     

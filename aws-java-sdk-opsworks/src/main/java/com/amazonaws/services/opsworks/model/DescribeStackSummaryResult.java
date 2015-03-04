@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeStackSummary</code> request.
  * </p>
  */
-public class DescribeStackSummaryResult implements Serializable {
+public class DescribeStackSummaryResult implements Serializable, Cloneable {
 
     /**
      * A <code>StackSummary</code> object that contains the results.
@@ -100,5 +100,19 @@ public class DescribeStackSummaryResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeStackSummaryResult clone() {
+        try {
+            return (DescribeStackSummaryResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

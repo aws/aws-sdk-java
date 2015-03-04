@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest)
  */
-public class UpdateGatewaySoftwareNowRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateGatewaySoftwareNowRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -146,5 +146,11 @@ public class UpdateGatewaySoftwareNowRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public UpdateGatewaySoftwareNowRequest clone() {
+        
+            return (UpdateGatewaySoftwareNowRequest) super.clone();
+    }
+
 }
     

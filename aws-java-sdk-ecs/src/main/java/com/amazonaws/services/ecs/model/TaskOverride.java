@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class TaskOverride implements Serializable {
+public class TaskOverride implements Serializable, Cloneable {
 
     /**
      * One or more container overrides to send when running a task.
@@ -133,5 +133,19 @@ public class TaskOverride implements Serializable {
         return true;
     }
     
+    @Override
+    public TaskOverride clone() {
+        try {
+            return (TaskOverride) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

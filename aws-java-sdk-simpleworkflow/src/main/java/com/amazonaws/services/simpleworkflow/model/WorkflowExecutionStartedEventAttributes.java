@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of <code>WorkflowExecutionStarted</code> event.
  * </p>
  */
-public class WorkflowExecutionStartedEventAttributes implements Serializable {
+public class WorkflowExecutionStartedEventAttributes implements Serializable, Cloneable {
 
     /**
      * The input provided to the workflow execution (if any).
@@ -896,5 +896,19 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionStartedEventAttributes clone() {
+        try {
+            return (WorkflowExecutionStartedEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

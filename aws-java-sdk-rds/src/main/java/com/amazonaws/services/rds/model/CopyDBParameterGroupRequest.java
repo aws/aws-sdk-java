@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#copyDBParameterGroup(CopyDBParameterGroupRequest)
  */
-public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier or ARN for the source DB parameter group.
@@ -357,5 +357,11 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public CopyDBParameterGroupRequest clone() {
+        
+            return (CopyDBParameterGroupRequest) super.clone();
+    }
+
 }
     

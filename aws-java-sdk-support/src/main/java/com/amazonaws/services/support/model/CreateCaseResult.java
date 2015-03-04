@@ -22,7 +22,7 @@ import java.io.Serializable;
  * CreateCase operation.
  * </p>
  */
-public class CreateCaseResult implements Serializable {
+public class CreateCaseResult implements Serializable, Cloneable {
 
     /**
      * The AWS Support case ID requested or returned in the call. The case ID
@@ -115,5 +115,19 @@ public class CreateCaseResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateCaseResult clone() {
+        try {
+            return (CreateCaseResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

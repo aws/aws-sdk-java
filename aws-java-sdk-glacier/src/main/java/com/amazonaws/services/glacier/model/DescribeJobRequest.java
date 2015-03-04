@@ -54,7 +54,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#describeJob(DescribeJobRequest)
  */
-public class DescribeJobRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeJobRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -283,5 +283,11 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DescribeJobRequest clone() {
+        
+            return (DescribeJobRequest) super.clone();
+    }
+
 }
     

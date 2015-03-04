@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeLocations(DescribeLocationsRequest)
  */
-public class DescribeLocationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLocationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -65,5 +65,11 @@ public class DescribeLocationsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DescribeLocationsRequest clone() {
+        
+            return (DescribeLocationsRequest) super.clone();
+    }
+
 }
     

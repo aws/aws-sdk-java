@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#reEncrypt(ReEncryptRequest)
  */
-public class ReEncryptRequest extends AmazonWebServiceRequest implements Serializable {
+public class ReEncryptRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Ciphertext of the data to re-encrypt.
@@ -435,5 +435,11 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public ReEncryptRequest clone() {
+        
+            return (ReEncryptRequest) super.clone();
+    }
+
 }
     

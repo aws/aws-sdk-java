@@ -41,7 +41,7 @@ import com.amazonaws.services.ec2.model.transform.ModifySnapshotAttributeRequest
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifySnapshotAttribute(ModifySnapshotAttributeRequest)
  */
-public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ModifySnapshotAttributeRequest> {
+public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifySnapshotAttributeRequest> {
 
     /**
      * The ID of the snapshot.
@@ -502,5 +502,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public ModifySnapshotAttributeRequest clone() {
+        
+            return (ModifySnapshotAttributeRequest) super.clone();
+    }
+
 }
     

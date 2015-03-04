@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains details of a domain.
  * </p>
  */
-public class DomainDetail implements Serializable {
+public class DomainDetail implements Serializable, Cloneable {
 
     /**
      * Contains general information about a domain.
@@ -142,5 +142,19 @@ public class DomainDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public DomainDetail clone() {
+        try {
+            return (DomainDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A complex type containing the response information for the request.
  * </p>
  */
-public class DeleteHostedZoneResult implements Serializable {
+public class DeleteHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains the ID, the status, and the date and time
@@ -107,5 +107,19 @@ public class DeleteHostedZoneResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteHostedZoneResult clone() {
+        try {
+            return (DeleteHostedZoneResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

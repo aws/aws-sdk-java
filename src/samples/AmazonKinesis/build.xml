@@ -1,15 +1,61 @@
-<!-- Ant build script for compiling and running the Amazon Kinesis Sample.
+<!-- Ant build script for compiling and running the Amazon Kinesis Sample Applications.
      Don't forget to fill in your AWS access credentials in (~/.aws/credentials)
-     before trying to run it.  -->
-<project name="Amazon Kinesis Sample" default="run" basedir=".">
-    <path id="aws.java.sdk.classpath">
-        <fileset dir="${basedir}/../../third-party" includes="**/*.jar"/>
-        <fileset dir="${basedir}/../../lib" includes="**/*.jar"/>
-        <pathelement location="."/>
-    </path>
+     before trying to run them. -->
+<project name="Amazon Kinesis Sample Applications" default="run-kinesis-record-producer" basedir=".">
+	<!-- The Amazon Kinesis Client Library jar file is downloaded to the tmp directory. -->
+	<property name="tmpDir" value="${basedir}/tmp"/>
+	<property name="amazon.kinesis.client.version" value="1.2.1" />
 
-    <target name="run">
-        <javac srcdir="." destdir="." classpathref="aws.java.sdk.classpath"/>
-        <java classname="AmazonKinesisSample" classpathref="aws.java.sdk.classpath" fork="true"/>
-    </target>
+	<target name="run-kinesis-record-producer"
+			description="Run the Amazon Kinesis sample that sends records to a stream"
+			depends="compile">
+		<echo>This sample will create an Amazon Kinesis stream. Use the target "delete-sample-resources" target to delete it.</echo>
+		<sleep seconds="2"/>
+
+		<java classname="AmazonKinesisRecordProducerSample" classpathref="sample.classpath" fork="true"/>
+	</target>
+
+	<target name="run-kinesis-application"
+			description="Run the Amazon Kinesis Application sample that reads records from a stream"
+			depends="compile">
+		<echo>This sample will create an Amazon Kinesis stream and an Amazon DynamoDB table. Use the target "delete-sample-resources" target to delete them.</echo>
+		<sleep seconds="2"/>
+
+		<java classname="AmazonKinesisApplicationSample" classpathref="sample.classpath" fork="true"/>
+	</target>
+
+	<target name="delete-sample-resources"
+			description="Delete the Amazon Kinesis and Amazon DynamoDB resources created by this sample"
+			depends="compile">
+		<java classname="AmazonKinesisApplicationSample" classpathref="sample.classpath" fork="true">
+			<arg value="delete-resources"/>
+		</java>
+	</target>
+
+	<path id="sample.classpath">
+		<fileset dir="${basedir}/../../third-party" includes="**/*.jar"/>
+		<fileset dir="${basedir}/../../lib" includes="**/*.jar"/>
+		<fileset dir="${tmpDir}" includes="**/*.jar"/>
+		<pathelement location="."/>
+	</path>
+
+	<target name="compile"
+			depends="-fetch-amazon-kinesis-client-library">
+		<javac srcdir="." destdir="." classpathref="sample.classpath"/>
+	</target>
+
+	<target name="clean">
+		<delete failonerror="false" includeemptydirs="true">
+			<fileset dir="${tmpDir}"/>
+			<fileset dir="${basedir}" includes="**/*.class"/>
+		</delete>
+	</target>
+
+	<target name="-fetch-amazon-kinesis-client-library">
+		<mkdir dir="${tmpDir}" />
+		<!-- Conditionally download the Amazon Kinesis Client Library for Java jar from Maven based on timestamp of local copy. -->
+		<get
+			src="http://repo1.maven.org/maven2/com/amazonaws/amazon-kinesis-client/${amazon.kinesis.client.version}/amazon-kinesis-client-${amazon.kinesis.client.version}.jar"
+			dest="${tmpDir}" usetimestamp="true" verbose="true" />
+	</target>
 </project>

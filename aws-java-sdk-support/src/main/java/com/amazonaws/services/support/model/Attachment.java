@@ -22,7 +22,7 @@ import java.io.Serializable;
  * file name and the content of the file.
  * </p>
  */
-public class Attachment implements Serializable {
+public class Attachment implements Serializable, Cloneable {
 
     /**
      * The name of the attachment file.
@@ -143,5 +143,19 @@ public class Attachment implements Serializable {
         return true;
     }
     
+    @Override
+    public Attachment clone() {
+        try {
+            return (Attachment) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

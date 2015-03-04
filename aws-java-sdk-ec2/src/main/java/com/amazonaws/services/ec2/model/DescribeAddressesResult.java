@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAddressesResult implements Serializable {
+public class DescribeAddressesResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more Elastic IP addresses.
@@ -133,5 +133,19 @@ public class DescribeAddressesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAddressesResult clone() {
+        try {
+            return (DescribeAddressesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

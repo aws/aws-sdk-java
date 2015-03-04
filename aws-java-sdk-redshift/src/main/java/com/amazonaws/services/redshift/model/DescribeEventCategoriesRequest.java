@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeEventCategories(DescribeEventCategoriesRequest)
  */
-public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The source type, such as cluster or parameter group, to which the
@@ -123,5 +123,11 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeEventCategoriesRequest clone() {
+        
+            return (DescribeEventCategoriesRequest) super.clone();
+    }
+
 }
     

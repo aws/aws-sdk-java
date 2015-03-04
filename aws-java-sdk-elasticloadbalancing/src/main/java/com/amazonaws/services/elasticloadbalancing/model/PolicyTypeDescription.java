@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The PolicyTypeDescription data type.
  * </p>
  */
-public class PolicyTypeDescription implements Serializable {
+public class PolicyTypeDescription implements Serializable, Cloneable {
 
     /**
      * The name of the policy type.
@@ -228,5 +228,19 @@ public class PolicyTypeDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public PolicyTypeDescription clone() {
+        try {
+            return (PolicyTypeDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

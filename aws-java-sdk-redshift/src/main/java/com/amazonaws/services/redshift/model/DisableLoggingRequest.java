@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#disableLogging(DisableLoggingRequest)
  */
-public class DisableLoggingRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableLoggingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster on which logging is to be stopped.
@@ -113,5 +113,11 @@ public class DisableLoggingRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DisableLoggingRequest clone() {
+        
+            return (DisableLoggingRequest) super.clone();
+    }
+
 }
     

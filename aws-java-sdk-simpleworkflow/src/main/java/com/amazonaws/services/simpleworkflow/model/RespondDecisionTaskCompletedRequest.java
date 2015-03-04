@@ -49,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest)
  */
-public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest implements Serializable {
+public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>taskToken</code> from the <a>DecisionTask</a>.
@@ -313,5 +313,11 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public RespondDecisionTaskCompletedRequest clone() {
+        
+            return (RespondDecisionTaskCompletedRequest) super.clone();
+    }
+
 }
     

@@ -53,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#registerDomain(RegisterDomainRequest)
  */
-public class RegisterDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of a domain. <p>Type: String <p>Default: None <p>Constraints:
@@ -946,5 +946,11 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public RegisterDomainRequest clone() {
+        
+            return (RegisterDomainRequest) super.clone();
+    }
+
 }
     

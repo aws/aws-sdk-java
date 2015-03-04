@@ -22,7 +22,7 @@ import java.io.Serializable;
  * distribution.
  * </p>
  */
-public class Origins implements Serializable {
+public class Origins implements Serializable, Cloneable {
 
     /**
      * The number of origins for this distribution.
@@ -193,5 +193,19 @@ public class Origins implements Serializable {
         return true;
     }
     
+    @Override
+    public Origins clone() {
+        try {
+            return (Origins) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

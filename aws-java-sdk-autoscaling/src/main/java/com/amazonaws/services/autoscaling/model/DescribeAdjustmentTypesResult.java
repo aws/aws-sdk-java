@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAdjustmentTypesResult implements Serializable {
+public class DescribeAdjustmentTypesResult implements Serializable, Cloneable {
 
     /**
      * The policy adjustment types.
@@ -133,5 +133,19 @@ public class DescribeAdjustmentTypesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAdjustmentTypesResult clone() {
+        try {
+            return (DescribeAdjustmentTypesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

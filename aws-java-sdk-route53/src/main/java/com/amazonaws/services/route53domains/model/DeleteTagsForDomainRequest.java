@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#deleteTagsForDomain(DeleteTagsForDomainRequest)
  */
-public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The domain for which you want to delete one or more tags. <p>The name
@@ -269,5 +269,11 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DeleteTagsForDomainRequest clone() {
+        
+            return (DeleteTagsForDomainRequest) super.clone();
+    }
+
 }
     

@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeHsmConfigurations(DescribeHsmConfigurationsRequest)
  */
-public class DescribeHsmConfigurationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeHsmConfigurationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of a specific Amazon Redshift HSM configuration to be
@@ -558,5 +558,11 @@ public class DescribeHsmConfigurationsRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeHsmConfigurationsRequest clone() {
+        
+            return (DescribeHsmConfigurationsRequest) super.clone();
+    }
+
 }
     

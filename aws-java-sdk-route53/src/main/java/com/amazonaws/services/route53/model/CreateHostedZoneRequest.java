@@ -53,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#createHostedZone(CreateHostedZoneRequest)
  */
-public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain. This must be a fully-specified domain, for
@@ -511,5 +511,11 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CreateHostedZoneRequest clone() {
+        
+            return (CreateHostedZoneRequest) super.clone();
+    }
+
 }
     

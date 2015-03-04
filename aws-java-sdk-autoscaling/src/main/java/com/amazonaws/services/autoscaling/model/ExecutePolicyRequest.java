@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#executePolicy(ExecutePolicyRequest)
  */
-public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
@@ -293,5 +293,11 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public ExecutePolicyRequest clone() {
+        
+            return (ExecutePolicyRequest) super.clone();
+    }
+
 }
     

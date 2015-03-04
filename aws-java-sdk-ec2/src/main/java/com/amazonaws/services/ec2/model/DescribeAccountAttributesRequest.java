@@ -63,7 +63,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeAccountAttributesReque
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAccountAttributes(DescribeAccountAttributesRequest)
  */
-public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeAccountAttributesRequest> {
+public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeAccountAttributesRequest> {
 
     /**
      * One or more account attribute names.
@@ -212,5 +212,11 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeAccountAttributesRequest clone() {
+        
+            return (DescribeAccountAttributesRequest) super.clone();
+    }
+
 }
     

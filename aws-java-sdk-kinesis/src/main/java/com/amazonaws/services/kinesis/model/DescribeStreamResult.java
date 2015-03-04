@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output for <code>DescribeStream</code> .
  * </p>
  */
-public class DescribeStreamResult implements Serializable {
+public class DescribeStreamResult implements Serializable, Cloneable {
 
     /**
      * The current status of the stream, the stream ARN, an array of shard
@@ -114,5 +114,19 @@ public class DescribeStreamResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeStreamResult clone() {
+        try {
+            return (DescribeStreamResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

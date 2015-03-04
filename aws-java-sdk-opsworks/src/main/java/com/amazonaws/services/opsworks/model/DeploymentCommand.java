@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Used to specify a stack or deployment command.
  * </p>
  */
-public class DeploymentCommand implements Serializable {
+public class DeploymentCommand implements Serializable, Cloneable {
 
     /**
      * Specifies the operation. You can specify only one command. <p>For
@@ -623,5 +623,19 @@ public class DeploymentCommand implements Serializable {
         return true;
     }
     
+    @Override
+    public DeploymentCommand clone() {
+        try {
+            return (DeploymentCommand) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

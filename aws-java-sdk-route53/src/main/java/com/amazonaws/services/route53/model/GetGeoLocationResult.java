@@ -22,7 +22,7 @@ import java.io.Serializable;
  * location.
  * </p>
  */
-public class GetGeoLocationResult implements Serializable {
+public class GetGeoLocationResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains the information about the specified geo
@@ -108,5 +108,19 @@ public class GetGeoLocationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetGeoLocationResult clone() {
+        try {
+            return (GetGeoLocationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

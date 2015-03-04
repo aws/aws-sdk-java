@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#enableVgwRoutePropagation(EnableVgwRoutePropagationRequest)
  */
-public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the route table.
@@ -148,5 +148,11 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public EnableVgwRoutePropagationRequest clone() {
+        
+            return (EnableVgwRoutePropagationRequest) super.clone();
+    }
+
 }
     

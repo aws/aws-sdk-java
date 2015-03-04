@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListHapgsResult implements Serializable {
+public class ListHapgsResult implements Serializable, Cloneable {
 
     /**
      * The list of high-availability partition groups.
@@ -194,5 +194,19 @@ public class ListHapgsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListHapgsResult clone() {
+        try {
+            return (ListHapgsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

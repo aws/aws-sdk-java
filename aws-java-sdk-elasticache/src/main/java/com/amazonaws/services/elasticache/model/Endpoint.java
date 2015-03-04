@@ -22,7 +22,7 @@ import java.io.Serializable;
  * a cache node.
  * </p>
  */
-public class Endpoint implements Serializable {
+public class Endpoint implements Serializable, Cloneable {
 
     /**
      * The DNS hostname of the cache node.
@@ -149,5 +149,19 @@ public class Endpoint implements Serializable {
         return true;
     }
     
+    @Override
+    public Endpoint clone() {
+        try {
+            return (Endpoint) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

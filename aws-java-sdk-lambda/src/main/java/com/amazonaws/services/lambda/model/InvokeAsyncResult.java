@@ -22,7 +22,7 @@ import java.io.Serializable;
  * exception.
  * </p>
  */
-public class InvokeAsyncResult implements Serializable {
+public class InvokeAsyncResult implements Serializable, Cloneable {
 
     /**
      * It will be 202 upon success.
@@ -101,5 +101,19 @@ public class InvokeAsyncResult implements Serializable {
         return true;
     }
     
+    @Override
+    public InvokeAsyncResult clone() {
+        try {
+            return (InvokeAsyncResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

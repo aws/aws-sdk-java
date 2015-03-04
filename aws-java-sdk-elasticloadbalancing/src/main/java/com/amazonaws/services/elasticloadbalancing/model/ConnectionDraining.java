@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>ConnectionDraining</code> data type.
  * </p>
  */
-public class ConnectionDraining implements Serializable {
+public class ConnectionDraining implements Serializable, Cloneable {
 
     /**
      * Specifies whether connection draining is enabled for the load
@@ -167,5 +167,19 @@ public class ConnectionDraining implements Serializable {
         return true;
     }
     
+    @Override
+    public ConnectionDraining clone() {
+        try {
+            return (ConnectionDraining) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

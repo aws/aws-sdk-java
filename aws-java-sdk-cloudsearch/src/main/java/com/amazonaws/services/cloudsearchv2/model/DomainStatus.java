@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The current status of the search domain.
  * </p>
  */
-public class DomainStatus implements Serializable {
+public class DomainStatus implements Serializable, Cloneable {
 
     /**
      * An internally generated unique identifier for a domain.
@@ -826,5 +826,19 @@ public class DomainStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public DomainStatus clone() {
+        try {
+            return (DomainStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

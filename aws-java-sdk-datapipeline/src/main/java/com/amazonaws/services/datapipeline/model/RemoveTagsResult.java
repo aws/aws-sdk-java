@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The result of the RemoveTags action.
  * </p>
  */
-public class RemoveTagsResult implements Serializable {
+public class RemoveTagsResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class RemoveTagsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RemoveTagsResult clone() {
+        try {
+            return (RemoveTagsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

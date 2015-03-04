@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents an individual cache node in a snapshot of a cache cluster.
  * </p>
  */
-public class NodeSnapshot implements Serializable {
+public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * The cache node identifier for the node in the source cache cluster.
@@ -240,5 +240,19 @@ public class NodeSnapshot implements Serializable {
         return true;
     }
     
+    @Override
+    public NodeSnapshot clone() {
+        try {
+            return (NodeSnapshot) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

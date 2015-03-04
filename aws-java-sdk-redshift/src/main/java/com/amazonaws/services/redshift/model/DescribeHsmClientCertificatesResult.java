@@ -20,7 +20,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class DescribeHsmClientCertificatesResult implements Serializable {
+public class DescribeHsmClientCertificatesResult implements Serializable, Cloneable {
 
     /**
      * A value that indicates the starting point for the next set of response
@@ -229,5 +229,19 @@ public class DescribeHsmClientCertificatesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeHsmClientCertificatesResult clone() {
+        try {
+            return (DescribeHsmClientCertificatesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

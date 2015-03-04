@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addTags(AddTagsRequest)
  */
-public class AddTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon EMR resource identifier to which tags will be added. This
@@ -255,5 +255,11 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public AddTagsRequest clone() {
+        
+            return (AddTagsRequest) super.clone();
+    }
+
 }
     

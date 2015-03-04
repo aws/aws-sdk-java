@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an Amazon EBS volume configuration.
  * </p>
  */
-public class VolumeConfiguration implements Serializable {
+public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * The volume mount point. For example "/dev/sdh".
@@ -338,5 +338,19 @@ public class VolumeConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public VolumeConfiguration clone() {
+        try {
+            return (VolumeConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

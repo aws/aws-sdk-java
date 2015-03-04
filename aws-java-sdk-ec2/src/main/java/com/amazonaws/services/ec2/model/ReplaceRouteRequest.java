@@ -35,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRoute(ReplaceRouteRequest)
  */
-public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceRouteRequest> {
+public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ReplaceRouteRequest> {
 
     /**
      * The ID of the route table.
@@ -343,5 +343,11 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public ReplaceRouteRequest clone() {
+        
+            return (ReplaceRouteRequest) super.clone();
+    }
+
 }
     

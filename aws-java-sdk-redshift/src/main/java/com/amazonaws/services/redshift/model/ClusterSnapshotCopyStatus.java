@@ -22,7 +22,7 @@ import java.io.Serializable;
  * configured for cross-region snapshot copy.
  * </p>
  */
-public class ClusterSnapshotCopyStatus implements Serializable {
+public class ClusterSnapshotCopyStatus implements Serializable, Cloneable {
 
     /**
      * The destination region that snapshots are automatically copied to when
@@ -157,5 +157,19 @@ public class ClusterSnapshotCopyStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterSnapshotCopyStatus clone() {
+        try {
+            return (ClusterSnapshotCopyStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

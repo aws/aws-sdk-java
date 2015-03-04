@@ -277,19 +277,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubmitTaskStateChangeRequestMarshaller().marshall(submitTaskStateChangeRequest);
+                request = new SubmitTaskStateChangeRequestMarshaller().marshall(super.beforeMarshalling(submitTaskStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<SubmitTaskStateChangeResult, JsonUnmarshallerContext> unmarshaller =
                 new SubmitTaskStateChangeResultJsonUnmarshaller();
             JsonResponseHandler<SubmitTaskStateChangeResult> responseHandler =
                 new JsonResponseHandler<SubmitTaskStateChangeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -332,19 +333,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteClusterRequestMarshaller().marshall(deleteClusterRequest);
+                request = new DeleteClusterRequestMarshaller().marshall(super.beforeMarshalling(deleteClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteClusterResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteClusterResultJsonUnmarshaller();
             JsonResponseHandler<DeleteClusterResult> responseHandler =
                 new JsonResponseHandler<DeleteClusterResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -390,19 +392,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterContainerInstanceRequestMarshaller().marshall(registerContainerInstanceRequest);
+                request = new RegisterContainerInstanceRequestMarshaller().marshall(super.beforeMarshalling(registerContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RegisterContainerInstanceResult, JsonUnmarshallerContext> unmarshaller =
                 new RegisterContainerInstanceResultJsonUnmarshaller();
             JsonResponseHandler<RegisterContainerInstanceResult> responseHandler =
                 new JsonResponseHandler<RegisterContainerInstanceResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -445,19 +448,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeContainerInstancesRequestMarshaller().marshall(describeContainerInstancesRequest);
+                request = new DescribeContainerInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeContainerInstancesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeContainerInstancesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeContainerInstancesResult> responseHandler =
                 new JsonResponseHandler<DescribeContainerInstancesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -502,19 +506,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubmitContainerStateChangeRequestMarshaller().marshall(submitContainerStateChangeRequest);
+                request = new SubmitContainerStateChangeRequestMarshaller().marshall(super.beforeMarshalling(submitContainerStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<SubmitContainerStateChangeResult, JsonUnmarshallerContext> unmarshaller =
                 new SubmitContainerStateChangeResultJsonUnmarshaller();
             JsonResponseHandler<SubmitContainerStateChangeResult> responseHandler =
                 new JsonResponseHandler<SubmitContainerStateChangeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -557,19 +562,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTaskDefinitionsRequestMarshaller().marshall(listTaskDefinitionsRequest);
+                request = new ListTaskDefinitionsRequestMarshaller().marshall(super.beforeMarshalling(listTaskDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListTaskDefinitionsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListTaskDefinitionsResultJsonUnmarshaller();
             JsonResponseHandler<ListTaskDefinitionsResult> responseHandler =
                 new JsonResponseHandler<ListTaskDefinitionsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -612,19 +618,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTaskDefinitionFamiliesRequestMarshaller().marshall(listTaskDefinitionFamiliesRequest);
+                request = new ListTaskDefinitionFamiliesRequestMarshaller().marshall(super.beforeMarshalling(listTaskDefinitionFamiliesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListTaskDefinitionFamiliesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListTaskDefinitionFamiliesResultJsonUnmarshaller();
             JsonResponseHandler<ListTaskDefinitionFamiliesResult> responseHandler =
                 new JsonResponseHandler<ListTaskDefinitionFamiliesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -664,19 +671,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTasksRequestMarshaller().marshall(describeTasksRequest);
+                request = new DescribeTasksRequestMarshaller().marshall(super.beforeMarshalling(describeTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTasksResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTasksResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTasksResult> responseHandler =
                 new JsonResponseHandler<DescribeTasksResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -718,19 +726,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RunTaskRequestMarshaller().marshall(runTaskRequest);
+                request = new RunTaskRequestMarshaller().marshall(super.beforeMarshalling(runTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RunTaskResult, JsonUnmarshallerContext> unmarshaller =
                 new RunTaskResultJsonUnmarshaller();
             JsonResponseHandler<RunTaskResult> responseHandler =
                 new JsonResponseHandler<RunTaskResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -770,19 +779,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClustersRequestMarshaller().marshall(listClustersRequest);
+                request = new ListClustersRequestMarshaller().marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListClustersResult, JsonUnmarshallerContext> unmarshaller =
                 new ListClustersResultJsonUnmarshaller();
             JsonResponseHandler<ListClustersResult> responseHandler =
                 new JsonResponseHandler<ListClustersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -828,19 +838,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DiscoverPollEndpointRequestMarshaller().marshall(discoverPollEndpointRequest);
+                request = new DiscoverPollEndpointRequestMarshaller().marshall(super.beforeMarshalling(discoverPollEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DiscoverPollEndpointResult, JsonUnmarshallerContext> unmarshaller =
                 new DiscoverPollEndpointResultJsonUnmarshaller();
             JsonResponseHandler<DiscoverPollEndpointResult> responseHandler =
                 new JsonResponseHandler<DiscoverPollEndpointResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -887,19 +898,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterRequestMarshaller().marshall(createClusterRequest);
+                request = new CreateClusterRequestMarshaller().marshall(super.beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateClusterResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateClusterResultJsonUnmarshaller();
             JsonResponseHandler<CreateClusterResult> responseHandler =
                 new JsonResponseHandler<CreateClusterResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -939,19 +951,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClustersRequestMarshaller().marshall(describeClustersRequest);
+                request = new DescribeClustersRequestMarshaller().marshall(super.beforeMarshalling(describeClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeClustersResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeClustersResultJsonUnmarshaller();
             JsonResponseHandler<DescribeClustersResult> responseHandler =
                 new JsonResponseHandler<DescribeClustersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -996,19 +1009,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterTaskDefinitionRequestMarshaller().marshall(deregisterTaskDefinitionRequest);
+                request = new DeregisterTaskDefinitionRequestMarshaller().marshall(super.beforeMarshalling(deregisterTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeregisterTaskDefinitionResult, JsonUnmarshallerContext> unmarshaller =
                 new DeregisterTaskDefinitionResultJsonUnmarshaller();
             JsonResponseHandler<DeregisterTaskDefinitionResult> responseHandler =
                 new JsonResponseHandler<DeregisterTaskDefinitionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1049,19 +1063,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListContainerInstancesRequestMarshaller().marshall(listContainerInstancesRequest);
+                request = new ListContainerInstancesRequestMarshaller().marshall(super.beforeMarshalling(listContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListContainerInstancesResult, JsonUnmarshallerContext> unmarshaller =
                 new ListContainerInstancesResultJsonUnmarshaller();
             JsonResponseHandler<ListContainerInstancesResult> responseHandler =
                 new JsonResponseHandler<ListContainerInstancesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1103,19 +1118,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterContainerInstanceRequestMarshaller().marshall(deregisterContainerInstanceRequest);
+                request = new DeregisterContainerInstanceRequestMarshaller().marshall(super.beforeMarshalling(deregisterContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeregisterContainerInstanceResult, JsonUnmarshallerContext> unmarshaller =
                 new DeregisterContainerInstanceResultJsonUnmarshaller();
             JsonResponseHandler<DeregisterContainerInstanceResult> responseHandler =
                 new JsonResponseHandler<DeregisterContainerInstanceResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1157,19 +1173,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartTaskRequestMarshaller().marshall(startTaskRequest);
+                request = new StartTaskRequestMarshaller().marshall(super.beforeMarshalling(startTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<StartTaskResult, JsonUnmarshallerContext> unmarshaller =
                 new StartTaskResultJsonUnmarshaller();
             JsonResponseHandler<StartTaskResult> responseHandler =
                 new JsonResponseHandler<StartTaskResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1213,19 +1230,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTaskDefinitionRequestMarshaller().marshall(describeTaskDefinitionRequest);
+                request = new DescribeTaskDefinitionRequestMarshaller().marshall(super.beforeMarshalling(describeTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTaskDefinitionResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTaskDefinitionResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTaskDefinitionResult> responseHandler =
                 new JsonResponseHandler<DescribeTaskDefinitionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1267,19 +1285,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTasksRequestMarshaller().marshall(listTasksRequest);
+                request = new ListTasksRequestMarshaller().marshall(super.beforeMarshalling(listTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListTasksResult, JsonUnmarshallerContext> unmarshaller =
                 new ListTasksResultJsonUnmarshaller();
             JsonResponseHandler<ListTasksResult> responseHandler =
                 new JsonResponseHandler<ListTasksResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1325,19 +1344,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterTaskDefinitionRequestMarshaller().marshall(registerTaskDefinitionRequest);
+                request = new RegisterTaskDefinitionRequestMarshaller().marshall(super.beforeMarshalling(registerTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RegisterTaskDefinitionResult, JsonUnmarshallerContext> unmarshaller =
                 new RegisterTaskDefinitionResultJsonUnmarshaller();
             JsonResponseHandler<RegisterTaskDefinitionResult> responseHandler =
                 new JsonResponseHandler<RegisterTaskDefinitionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1377,19 +1397,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopTaskRequestMarshaller().marshall(stopTaskRequest);
+                request = new StopTaskRequestMarshaller().marshall(super.beforeMarshalling(stopTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<StopTaskResult, JsonUnmarshallerContext> unmarshaller =
                 new StopTaskResultJsonUnmarshaller();
             JsonResponseHandler<StopTaskResult> responseHandler =
                 new JsonResponseHandler<StopTaskResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

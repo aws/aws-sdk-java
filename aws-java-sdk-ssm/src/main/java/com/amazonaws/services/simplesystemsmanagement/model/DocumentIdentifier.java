@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the name of a configuration document.
  * </p>
  */
-public class DocumentIdentifier implements Serializable {
+public class DocumentIdentifier implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -116,5 +116,19 @@ public class DocumentIdentifier implements Serializable {
         return true;
     }
     
+    @Override
+    public DocumentIdentifier clone() {
+        try {
+            return (DocumentIdentifier) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

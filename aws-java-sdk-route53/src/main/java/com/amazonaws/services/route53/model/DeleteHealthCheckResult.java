@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Empty response for the request.
  * </p>
  */
-public class DeleteHealthCheckResult implements Serializable {
+public class DeleteHealthCheckResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class DeleteHealthCheckResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteHealthCheckResult clone() {
+        try {
+            return (DeleteHealthCheckResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

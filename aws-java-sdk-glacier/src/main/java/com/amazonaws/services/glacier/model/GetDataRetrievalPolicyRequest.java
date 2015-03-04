@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#getDataRetrievalPolicy(GetDataRetrievalPolicyRequest)
  */
-public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -137,5 +137,11 @@ public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public GetDataRetrievalPolicyRequest clone() {
+        
+            return (GetDataRetrievalPolicyRequest) super.clone();
+    }
+
 }
     

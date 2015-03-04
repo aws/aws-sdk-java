@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StopInstancesResult implements Serializable {
+public class StopInstancesResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more stopped instances.
@@ -133,5 +133,19 @@ public class StopInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public StopInstancesResult clone() {
+        try {
+            return (StopInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

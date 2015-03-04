@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The descriptions of all the tags associated with load balancer.
  * </p>
  */
-public class TagDescription implements Serializable {
+public class TagDescription implements Serializable, Cloneable {
 
     /**
      * The name of the load balancer.
@@ -192,5 +192,19 @@ public class TagDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public TagDescription clone() {
+        try {
+            return (TagDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

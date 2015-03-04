@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The ListOperations response includes the following elements.
  * </p>
  */
-public class ListOperationsResult implements Serializable {
+public class ListOperationsResult implements Serializable, Cloneable {
 
     /**
      * Lists summaries of the operations. <p>Type: Complex type containing a
@@ -235,5 +235,19 @@ public class ListOperationsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListOperationsResult clone() {
+        try {
+            return (ListOperationsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

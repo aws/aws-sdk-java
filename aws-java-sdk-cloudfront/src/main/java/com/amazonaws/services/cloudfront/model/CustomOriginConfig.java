@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A customer origin.
  * </p>
  */
-public class CustomOriginConfig implements Serializable {
+public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * The HTTP port the custom origin listens on.
@@ -236,5 +236,19 @@ public class CustomOriginConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public CustomOriginConfig clone() {
+        try {
+            return (CustomOriginConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

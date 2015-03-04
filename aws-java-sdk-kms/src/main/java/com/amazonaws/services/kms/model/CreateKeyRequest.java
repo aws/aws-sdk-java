@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#createKey(CreateKeyRequest)
  */
-public class CreateKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Policy to be attached to the key. This is required and delegates back
@@ -316,5 +316,11 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public CreateKeyRequest clone() {
+        
+            return (CreateKeyRequest) super.clone();
+    }
+
 }
     

@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesReque
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstances(DescribeReservedInstancesRequest)
  */
-public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeReservedInstancesRequest> {
+public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeReservedInstancesRequest> {
 
     /**
      * One or more Reserved Instance IDs. <p>Default: Describes all your
@@ -658,5 +658,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeReservedInstancesRequest clone() {
+        
+            return (DescribeReservedInstancesRequest) super.clone();
+    }
+
 }
     

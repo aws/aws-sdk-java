@@ -62,7 +62,7 @@ import com.amazonaws.services.ec2.model.transform.CreateSnapshotRequestMarshalle
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest)
  */
-public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSnapshotRequest> {
+public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateSnapshotRequest> {
 
     /**
      * The ID of the Amazon EBS volume.
@@ -214,5 +214,11 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CreateSnapshotRequest clone() {
+        
+            return (CreateSnapshotRequest) super.clone();
+    }
+
 }
     

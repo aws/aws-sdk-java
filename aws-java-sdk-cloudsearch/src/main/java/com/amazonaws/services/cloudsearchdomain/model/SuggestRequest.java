@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchdomain.AmazonCloudSearchDomain#suggest(SuggestRequest)
  */
-public class SuggestRequest extends AmazonWebServiceRequest implements Serializable {
+public class SuggestRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specifies the string for which you want to get suggestions.
@@ -209,5 +209,11 @@ public class SuggestRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public SuggestRequest clone() {
+        
+            return (SuggestRequest) super.clone();
+    }
+
 }
     

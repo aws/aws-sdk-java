@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DiskImageDescription implements Serializable {
+public class DiskImageDescription implements Serializable, Cloneable {
 
     /**
      * The disk image format.
@@ -318,5 +318,19 @@ public class DiskImageDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public DiskImageDescription clone() {
+        try {
+            return (DiskImageDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

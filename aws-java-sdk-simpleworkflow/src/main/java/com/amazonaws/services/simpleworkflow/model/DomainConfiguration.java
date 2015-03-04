@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the configuration settings of a domain.
  * </p>
  */
-public class DomainConfiguration implements Serializable {
+public class DomainConfiguration implements Serializable, Cloneable {
 
     /**
      * The retention period for workflow executions in this domain.
@@ -112,5 +112,19 @@ public class DomainConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public DomainConfiguration clone() {
+        try {
+            return (DomainConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

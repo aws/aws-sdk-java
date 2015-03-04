@@ -45,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeCases(DescribeCasesRequest)
  */
-public class DescribeCasesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeCasesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of ID numbers of the support cases you want returned. The
@@ -616,5 +616,11 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DescribeCasesRequest clone() {
+        
+            return (DescribeCasesRequest) super.clone();
+    }
+
 }
     

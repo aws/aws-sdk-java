@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSubnetGroup(CreateDBSubnetGroupRequest)
  */
-public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name for the DB subnet group. This value is stored as a lowercase
@@ -323,5 +323,11 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public CreateDBSubnetGroupRequest clone() {
+        
+            return (CreateDBSubnetGroupRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a product code.
  * </p>
  */
-public class ProductCode implements Serializable {
+public class ProductCode implements Serializable, Cloneable {
 
     /**
      * The product code.
@@ -194,5 +194,19 @@ public class ProductCode implements Serializable {
         return true;
     }
     
+    @Override
+    public ProductCode clone() {
+        try {
+            return (ProductCode) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

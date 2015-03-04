@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output for <code>DescribeStream</code> .
  * </p>
  */
-public class StreamDescription implements Serializable {
+public class StreamDescription implements Serializable, Cloneable {
 
     /**
      * The name of the stream being described.
@@ -521,5 +521,19 @@ public class StreamDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public StreamDescription clone() {
+        try {
+            return (StreamDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CancelBundleTaskResult implements Serializable {
+public class CancelBundleTaskResult implements Serializable, Cloneable {
 
     /**
      * The bundle task.
@@ -98,5 +98,19 @@ public class CancelBundleTaskResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CancelBundleTaskResult clone() {
+        try {
+            return (CancelBundleTaskResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

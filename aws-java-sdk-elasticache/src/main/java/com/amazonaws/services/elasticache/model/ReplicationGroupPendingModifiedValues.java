@@ -22,7 +22,7 @@ import java.io.Serializable;
  * immediately or during the next maintenance window.
  * </p>
  */
-public class ReplicationGroupPendingModifiedValues implements Serializable {
+public class ReplicationGroupPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * The primary cluster ID which will be applied immediately (if
@@ -242,5 +242,19 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
         return true;
     }
     
+    @Override
+    public ReplicationGroupPendingModifiedValues clone() {
+        try {
+            return (ReplicationGroupPendingModifiedValues) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

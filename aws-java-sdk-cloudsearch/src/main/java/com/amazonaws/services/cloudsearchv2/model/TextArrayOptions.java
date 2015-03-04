@@ -24,7 +24,7 @@ import java.io.Serializable;
  * searchable. All options are enabled by default.
  * </p>
  */
-public class TextArrayOptions implements Serializable {
+public class TextArrayOptions implements Serializable, Cloneable {
 
     /**
      * A value to use for the field if the field isn't specified for a
@@ -341,5 +341,19 @@ public class TextArrayOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public TextArrayOptions clone() {
+        try {
+            return (TextArrayOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -35,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.DisassociateRouteTableRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disassociateRouteTable(DisassociateRouteTableRequest)
  */
-public class DisassociateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DisassociateRouteTableRequest> {
+public class DisassociateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DisassociateRouteTableRequest> {
 
     /**
      * The association ID representing the current association between the
@@ -133,5 +133,11 @@ public class DisassociateRouteTableRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DisassociateRouteTableRequest clone() {
+        
+            return (DisassociateRouteTableRequest) super.clone();
+    }
+
 }
     

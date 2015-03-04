@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest)
  */
-public class DescribeServiceAccessPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeServiceAccessPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain you want to describe.
@@ -196,5 +196,11 @@ public class DescribeServiceAccessPoliciesRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DescribeServiceAccessPoliciesRequest clone() {
+        
+            return (DescribeServiceAccessPoliciesRequest) super.clone();
+    }
+
 }
     

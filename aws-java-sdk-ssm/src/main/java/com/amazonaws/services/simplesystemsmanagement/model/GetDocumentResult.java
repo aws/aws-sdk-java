@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetDocumentResult implements Serializable {
+public class GetDocumentResult implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -168,5 +168,19 @@ public class GetDocumentResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetDocumentResult clone() {
+        try {
+            return (GetDocumentResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

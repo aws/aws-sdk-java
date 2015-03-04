@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#removeTags(RemoveTagsRequest)
  */
-public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The pipeline from which you want to remove tags.
@@ -198,5 +198,11 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public RemoveTagsRequest clone() {
+        
+            return (RemoveTagsRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a block device mapping.
  * </p>
  */
-public class BlockDeviceMapping implements Serializable {
+public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * The virtual device name (<code>ephemeral</code>N). Instance store
@@ -310,5 +310,19 @@ public class BlockDeviceMapping implements Serializable {
         return true;
     }
     
+    @Override
+    public BlockDeviceMapping clone() {
+        try {
+            return (BlockDeviceMapping) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

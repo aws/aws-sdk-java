@@ -30,7 +30,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class AliasTarget implements Serializable {
+public class AliasTarget implements Serializable, Cloneable {
 
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
@@ -379,5 +379,19 @@ public class AliasTarget implements Serializable {
         return true;
     }
     
+    @Override
+    public AliasTarget clone() {
+        try {
+            return (AliasTarget) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

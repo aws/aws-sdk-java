@@ -34,7 +34,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class MessageAttributeValue implements Serializable {
+public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * Amazon SNS supports the following logical data types: String, Number,
@@ -239,5 +239,19 @@ public class MessageAttributeValue implements Serializable {
         return true;
     }
     
+    @Override
+    public MessageAttributeValue clone() {
+        try {
+            return (MessageAttributeValue) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

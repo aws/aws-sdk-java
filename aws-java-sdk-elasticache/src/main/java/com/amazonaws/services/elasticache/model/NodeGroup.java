@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a collection of cache nodes in a replication group.
  * </p>
  */
-public class NodeGroup implements Serializable {
+public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * The identifier for the node group. A replication group contains only
@@ -291,5 +291,19 @@ public class NodeGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public NodeGroup clone() {
+        try {
+            return (NodeGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

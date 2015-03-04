@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#registerApplicationRevision(RegisterApplicationRevisionRequest)
  */
-public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest implements Serializable {
+public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing AWS CodeDeploy application within the AWS user
@@ -216,5 +216,11 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public RegisterApplicationRevisionRequest clone() {
+        
+            return (RegisterApplicationRevisionRequest) super.clone();
+    }
+
 }
     

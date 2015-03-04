@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeConfigurationOptions(DescribeConfigurationOptionsRequest)
  */
-public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application associated with the configuration template
@@ -417,5 +417,11 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeConfigurationOptionsRequest clone() {
+        
+            return (DescribeConfigurationOptionsRequest) super.clone();
+    }
+
 }
     

@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest)
  */
-public class GetOpenIdTokenForDeveloperIdentityRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetOpenIdTokenForDeveloperIdentityRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -466,5 +466,11 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends AmazonWebServiceR
         return true;
     }
     
+    @Override
+    public GetOpenIdTokenForDeveloperIdentityRequest clone() {
+        
+            return (GetOpenIdTokenForDeveloperIdentityRequest) super.clone();
+    }
+
 }
     

@@ -30,7 +30,7 @@ import com.amazonaws.services.ec2.model.transform.AttachVpnGatewayRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest)
  */
-public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AttachVpnGatewayRequest> {
+public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AttachVpnGatewayRequest> {
 
     /**
      * The ID of the virtual private gateway.
@@ -182,5 +182,11 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public AttachVpnGatewayRequest clone() {
+        
+            return (AttachVpnGatewayRequest) super.clone();
+    }
+
 }
     

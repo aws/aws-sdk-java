@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>ListJobsByPipelineResponse</code> structure.
  * </p>
  */
-public class ListJobsByPipelineResult implements Serializable {
+public class ListJobsByPipelineResult implements Serializable, Cloneable {
 
     /**
      * An array of <code>Job</code> objects that are in the specified
@@ -219,5 +219,19 @@ public class ListJobsByPipelineResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListJobsByPipelineResult clone() {
+        try {
+            return (ListJobsByPipelineResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

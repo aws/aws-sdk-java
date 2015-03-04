@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Encloses a receipt handle and an identifier for it.
  * </p>
  */
-public class DeleteMessageBatchRequestEntry implements Serializable {
+public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * An identifier for this particular receipt handle. This is used to
@@ -177,5 +177,19 @@ public class DeleteMessageBatchRequestEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteMessageBatchRequestEntry clone() {
+        try {
+            return (DeleteMessageBatchRequestEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

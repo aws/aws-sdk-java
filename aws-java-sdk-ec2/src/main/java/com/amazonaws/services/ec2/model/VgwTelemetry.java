@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes telemetry for a VPN tunnel.
  * </p>
  */
-public class VgwTelemetry implements Serializable {
+public class VgwTelemetry implements Serializable, Cloneable {
 
     /**
      * The Internet-routable IP address of the virtual private gateway's
@@ -327,5 +327,19 @@ public class VgwTelemetry implements Serializable {
         return true;
     }
     
+    @Override
+    public VgwTelemetry clone() {
+        try {
+            return (VgwTelemetry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

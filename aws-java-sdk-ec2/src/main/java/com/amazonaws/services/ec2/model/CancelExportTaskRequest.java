@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelExportTask(CancelExportTaskRequest)
  */
-public class CancelExportTaskRequest extends AmazonWebServiceRequest implements Serializable {
+public class CancelExportTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the export task. This is the ID returned by
@@ -115,5 +115,11 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CancelExportTaskRequest clone() {
+        
+            return (CancelExportTaskRequest) super.clone();
+    }
+
 }
     

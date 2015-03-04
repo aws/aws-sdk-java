@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskCanceled</code> event.
  * </p>
  */
-public class ActivityTaskCanceledEventAttributes implements Serializable {
+public class ActivityTaskCanceledEventAttributes implements Serializable, Cloneable {
 
     /**
      * Details of the cancellation (if any).
@@ -301,5 +301,19 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public ActivityTaskCanceledEventAttributes clone() {
+        try {
+            return (ActivityTaskCanceledEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

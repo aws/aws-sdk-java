@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#listVolumes(ListVolumesRequest)
  */
-public class ListVolumesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListVolumesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -272,5 +272,11 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListVolumesRequest clone() {
+        
+            return (ListVolumesRequest) super.clone();
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyOptionGroup(ModifyOptionGroupRequest)
  */
-public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the option group to be modified. <p> Permanent options,
@@ -367,5 +367,11 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ModifyOptionGroupRequest clone() {
+        
+            return (ModifyOptionGroupRequest) super.clone();
+    }
+
 }
     

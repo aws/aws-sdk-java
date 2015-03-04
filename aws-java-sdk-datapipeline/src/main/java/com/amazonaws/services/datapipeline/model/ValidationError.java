@@ -24,7 +24,7 @@ import java.io.Serializable;
  * defined by AWS Data Pipeline.
  * </p>
  */
-public class ValidationError implements Serializable {
+public class ValidationError implements Serializable, Cloneable {
 
     /**
      * The identifier of the object that contains the validation error.
@@ -196,5 +196,19 @@ public class ValidationError implements Serializable {
         return true;
     }
     
+    @Override
+    public ValidationError clone() {
+        try {
+            return (ValidationError) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

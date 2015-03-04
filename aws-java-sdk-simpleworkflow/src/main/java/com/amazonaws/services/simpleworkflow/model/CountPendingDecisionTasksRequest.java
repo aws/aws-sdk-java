@@ -56,7 +56,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countPendingDecisionTasks(CountPendingDecisionTasksRequest)
  */
-public class CountPendingDecisionTasksRequest extends AmazonWebServiceRequest implements Serializable {
+public class CountPendingDecisionTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain that contains the task list.
@@ -189,5 +189,11 @@ public class CountPendingDecisionTasksRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public CountPendingDecisionTasksRequest clone() {
+        
+            return (CountPendingDecisionTasksRequest) super.clone();
+    }
+
 }
     

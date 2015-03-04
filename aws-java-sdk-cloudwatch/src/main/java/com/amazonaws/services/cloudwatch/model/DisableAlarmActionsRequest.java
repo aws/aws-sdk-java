@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#disableAlarmActions(DisableAlarmActionsRequest)
  */
-public class DisableAlarmActionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableAlarmActionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The names of the alarms to disable actions for.
@@ -157,5 +157,11 @@ public class DisableAlarmActionsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DisableAlarmActionsRequest clone() {
+        
+            return (DisableAlarmActionsRequest) super.clone();
+    }
+
 }
     

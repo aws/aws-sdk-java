@@ -188,7 +188,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#initiateJob(InitiateJobRequest)
  */
-public class InitiateJobRequest extends AmazonWebServiceRequest implements Serializable {
+public class InitiateJobRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -417,5 +417,11 @@ public class InitiateJobRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public InitiateJobRequest clone() {
+        
+            return (InitiateJobRequest) super.clone();
+    }
+
 }
     

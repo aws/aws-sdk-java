@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a granularity of a metric.
  * </p>
  */
-public class MetricGranularityType implements Serializable {
+public class MetricGranularityType implements Serializable, Cloneable {
 
     /**
      * The granularity.
@@ -116,5 +116,19 @@ public class MetricGranularityType implements Serializable {
         return true;
     }
     
+    @Override
+    public MetricGranularityType clone() {
+        try {
+            return (MetricGranularityType) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

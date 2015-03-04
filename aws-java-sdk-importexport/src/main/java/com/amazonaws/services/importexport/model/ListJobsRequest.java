@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#listJobs(ListJobsRequest)
  */
-public class ListJobsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListJobsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Sets the maximum number of jobs returned in the response. If there are
@@ -228,5 +228,11 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         return true;
     }
     
+    @Override
+    public ListJobsRequest clone() {
+        
+            return (ListJobsRequest) super.clone();
+    }
+
 }
     

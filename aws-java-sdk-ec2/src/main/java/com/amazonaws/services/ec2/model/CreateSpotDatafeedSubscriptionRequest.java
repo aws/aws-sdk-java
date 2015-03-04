@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.CreateSpotDatafeedSubscription
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest)
  */
-public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSpotDatafeedSubscriptionRequest> {
+public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateSpotDatafeedSubscriptionRequest> {
 
     /**
      * The Amazon S3 bucket in which to store the Spot Instance data feed.
@@ -183,5 +183,11 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public CreateSpotDatafeedSubscriptionRequest clone() {
+        
+            return (CreateSpotDatafeedSubscriptionRequest) super.clone();
+    }
+
 }
     

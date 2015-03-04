@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest)
  */
-public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
@@ -620,5 +620,11 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public PutScheduledUpdateGroupActionRequest clone() {
+        
+            return (PutScheduledUpdateGroupActionRequest) super.clone();
+    }
+
 }
     

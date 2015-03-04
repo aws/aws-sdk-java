@@ -51,7 +51,7 @@ import com.amazonaws.services.ec2.model.transform.GetConsoleOutputRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#getConsoleOutput(GetConsoleOutputRequest)
  */
-public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<GetConsoleOutputRequest> {
+public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<GetConsoleOutputRequest> {
 
     /**
      * The ID of the instance.
@@ -159,5 +159,11 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public GetConsoleOutputRequest clone() {
+        
+            return (GetConsoleOutputRequest) super.clone();
+    }
+
 }
     

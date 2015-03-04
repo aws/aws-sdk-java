@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#deleteAssociation(DeleteAssociationRequest)
  */
-public class DeleteAssociationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAssociationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the configuration document.
@@ -187,5 +187,11 @@ public class DeleteAssociationRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteAssociationRequest clone() {
+        
+            return (DeleteAssociationRequest) super.clone();
+    }
+
 }
     

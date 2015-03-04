@@ -22,7 +22,7 @@ import java.io.Serializable;
  * a topic's attributes, use <code>GetTopicAttributes</code> .
  * </p>
  */
-public class Topic implements Serializable {
+public class Topic implements Serializable, Cloneable {
 
     /**
      * The topic's ARN.
@@ -107,5 +107,19 @@ public class Topic implements Serializable {
         return true;
     }
     
+    @Override
+    public Topic clone() {
+        try {
+            return (Topic) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

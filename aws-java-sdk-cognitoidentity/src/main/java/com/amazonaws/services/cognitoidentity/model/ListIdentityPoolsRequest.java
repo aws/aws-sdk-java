@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#listIdentityPools(ListIdentityPoolsRequest)
  */
-public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The maximum number of identities to return.
@@ -175,5 +175,11 @@ public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListIdentityPoolsRequest clone() {
+        
+            return (ListIdentityPoolsRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains metadata associated with a specific key.
  * </p>
  */
-public class KeyMetadata implements Serializable {
+public class KeyMetadata implements Serializable, Cloneable {
 
     /**
      * Account ID number.
@@ -449,5 +449,19 @@ public class KeyMetadata implements Serializable {
         return true;
     }
     
+    @Override
+    public KeyMetadata clone() {
+        try {
+            return (KeyMetadata) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

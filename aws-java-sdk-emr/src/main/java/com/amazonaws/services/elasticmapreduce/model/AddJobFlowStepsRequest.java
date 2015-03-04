@@ -54,7 +54,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest)
  */
-public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that uniquely identifies the job flow. This identifier is
@@ -275,5 +275,11 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public AddJobFlowStepsRequest clone() {
+        
+            return (AddJobFlowStepsRequest) super.clone();
+    }
+
 }
     

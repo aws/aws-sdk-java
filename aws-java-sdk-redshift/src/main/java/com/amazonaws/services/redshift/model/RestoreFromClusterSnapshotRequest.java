@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest)
  */
-public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster that will be created from restoring the
@@ -1295,5 +1295,11 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public RestoreFromClusterSnapshotRequest clone() {
+        
+            return (RestoreFromClusterSnapshotRequest) super.clone();
+    }
+
 }
     

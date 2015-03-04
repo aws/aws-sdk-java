@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListTaskDefinitionFamiliesResult implements Serializable {
+public class ListTaskDefinitionFamiliesResult implements Serializable, Cloneable {
 
     /**
      * The list of task definition family names that match the
@@ -219,5 +219,19 @@ public class ListTaskDefinitionFamiliesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListTaskDefinitionFamiliesResult clone() {
+        try {
+            return (ListTaskDefinitionFamiliesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

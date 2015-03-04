@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The pipeline (queue) that is used to manage jobs.
  * </p>
  */
-public class Pipeline implements Serializable {
+public class Pipeline implements Serializable, Cloneable {
 
     /**
      * The identifier for the pipeline. You use this value to identify the
@@ -1276,5 +1276,19 @@ public class Pipeline implements Serializable {
         return true;
     }
     
+    @Override
+    public Pipeline clone() {
+        try {
+            return (Pipeline) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

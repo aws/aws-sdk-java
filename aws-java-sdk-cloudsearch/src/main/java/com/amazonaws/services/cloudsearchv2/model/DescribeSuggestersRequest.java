@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeSuggesters(DescribeSuggestersRequest)
  */
-public class DescribeSuggestersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeSuggestersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain you want to describe.
@@ -275,5 +275,11 @@ public class DescribeSuggestersRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DescribeSuggestersRequest clone() {
+        
+            return (DescribeSuggestersRequest) super.clone();
+    }
+
 }
     

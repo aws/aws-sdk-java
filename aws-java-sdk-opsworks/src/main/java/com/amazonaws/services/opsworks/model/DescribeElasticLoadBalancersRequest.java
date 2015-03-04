@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest)
  */
-public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A stack ID. The action describes the stack's Elastic Load Balancing
@@ -209,5 +209,11 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeElasticLoadBalancersRequest clone() {
+        
+            return (DescribeElasticLoadBalancersRequest) super.clone();
+    }
+
 }
     

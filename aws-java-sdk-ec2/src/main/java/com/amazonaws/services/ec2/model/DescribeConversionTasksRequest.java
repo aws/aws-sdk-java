@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeConversionTasksRequest
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeConversionTasks(DescribeConversionTasksRequest)
  */
-public class DescribeConversionTasksRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeConversionTasksRequest> {
+public class DescribeConversionTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeConversionTasksRequest> {
 
     /**
      * 
@@ -234,5 +234,11 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeConversionTasksRequest clone() {
+        
+            return (DescribeConversionTasksRequest) super.clone();
+    }
+
 }
     

@@ -23,7 +23,7 @@ import java.io.Serializable;
  * corresponding installation script as bootstrap action arguments.
  * </p>
  */
-public class SupportedProductConfig implements Serializable {
+public class SupportedProductConfig implements Serializable, Cloneable {
 
     /**
      * The name of the product configuration.
@@ -195,5 +195,19 @@ public class SupportedProductConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public SupportedProductConfig clone() {
+        try {
+            return (SupportedProductConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

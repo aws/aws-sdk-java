@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#listTables(ListTablesRequest)
  */
-public class ListTablesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListTablesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The first table name that this operation will evaluate. Use the value
@@ -235,5 +235,11 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public ListTablesRequest clone() {
+        
+            return (ListTablesRequest) super.clone();
+    }
+
 }
     

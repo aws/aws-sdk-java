@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#rebootCluster(RebootClusterRequest)
  */
-public class RebootClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class RebootClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The cluster identifier.
@@ -112,5 +112,11 @@ public class RebootClusterRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public RebootClusterRequest clone() {
+        
+            return (RebootClusterRequest) super.clone();
+    }
+
 }
     

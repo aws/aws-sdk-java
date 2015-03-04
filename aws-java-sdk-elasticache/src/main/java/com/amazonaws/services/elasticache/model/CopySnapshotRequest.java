@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#copySnapshot(CopySnapshotRequest)
  */
-public class CopySnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class CopySnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing snapshot from which to copy.
@@ -147,5 +147,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CopySnapshotRequest clone() {
+        
+            return (CopySnapshotRequest) super.clone();
+    }
+
 }
     

@@ -305,19 +305,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDocumentRequestMarshaller().marshall(deleteDocumentRequest);
+                request = new DeleteDocumentRequestMarshaller().marshall(super.beforeMarshalling(deleteDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteDocumentResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteDocumentResultJsonUnmarshaller();
             JsonResponseHandler<DeleteDocumentResult> responseHandler =
                 new JsonResponseHandler<DeleteDocumentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -361,19 +362,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssociationRequestMarshaller().marshall(describeAssociationRequest);
+                request = new DescribeAssociationRequestMarshaller().marshall(super.beforeMarshalling(describeAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeAssociationResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeAssociationResultJsonUnmarshaller();
             JsonResponseHandler<DescribeAssociationResult> responseHandler =
                 new JsonResponseHandler<DescribeAssociationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -428,19 +430,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssociationRequestMarshaller().marshall(createAssociationRequest);
+                request = new CreateAssociationRequestMarshaller().marshall(super.beforeMarshalling(createAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateAssociationResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateAssociationResultJsonUnmarshaller();
             JsonResponseHandler<CreateAssociationResult> responseHandler =
                 new JsonResponseHandler<CreateAssociationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -495,19 +498,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssociationBatchRequestMarshaller().marshall(createAssociationBatchRequest);
+                request = new CreateAssociationBatchRequestMarshaller().marshall(super.beforeMarshalling(createAssociationBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateAssociationBatchResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateAssociationBatchResultJsonUnmarshaller();
             JsonResponseHandler<CreateAssociationBatchResult> responseHandler =
                 new JsonResponseHandler<CreateAssociationBatchResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -548,19 +552,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDocumentRequestMarshaller().marshall(describeDocumentRequest);
+                request = new DescribeDocumentRequestMarshaller().marshall(super.beforeMarshalling(describeDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeDocumentResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeDocumentResultJsonUnmarshaller();
             JsonResponseHandler<DescribeDocumentResult> responseHandler =
                 new JsonResponseHandler<DescribeDocumentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -606,19 +611,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAssociationStatusRequestMarshaller().marshall(updateAssociationStatusRequest);
+                request = new UpdateAssociationStatusRequestMarshaller().marshall(super.beforeMarshalling(updateAssociationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UpdateAssociationStatusResult, JsonUnmarshallerContext> unmarshaller =
                 new UpdateAssociationStatusResultJsonUnmarshaller();
             JsonResponseHandler<UpdateAssociationStatusResult> responseHandler =
                 new JsonResponseHandler<UpdateAssociationStatusResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -660,19 +666,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssociationsRequestMarshaller().marshall(listAssociationsRequest);
+                request = new ListAssociationsRequestMarshaller().marshall(super.beforeMarshalling(listAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListAssociationsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListAssociationsResultJsonUnmarshaller();
             JsonResponseHandler<ListAssociationsResult> responseHandler =
                 new JsonResponseHandler<ListAssociationsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -713,19 +720,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDocumentsRequestMarshaller().marshall(listDocumentsRequest);
+                request = new ListDocumentsRequestMarshaller().marshall(super.beforeMarshalling(listDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<ListDocumentsResult, JsonUnmarshallerContext> unmarshaller =
                 new ListDocumentsResultJsonUnmarshaller();
             JsonResponseHandler<ListDocumentsResult> responseHandler =
                 new JsonResponseHandler<ListDocumentsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -777,19 +785,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssociationRequestMarshaller().marshall(deleteAssociationRequest);
+                request = new DeleteAssociationRequestMarshaller().marshall(super.beforeMarshalling(deleteAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DeleteAssociationResult, JsonUnmarshallerContext> unmarshaller =
                 new DeleteAssociationResultJsonUnmarshaller();
             JsonResponseHandler<DeleteAssociationResult> responseHandler =
                 new JsonResponseHandler<DeleteAssociationResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -837,19 +846,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDocumentRequestMarshaller().marshall(createDocumentRequest);
+                request = new CreateDocumentRequestMarshaller().marshall(super.beforeMarshalling(createDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateDocumentResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateDocumentResultJsonUnmarshaller();
             JsonResponseHandler<CreateDocumentResult> responseHandler =
                 new JsonResponseHandler<CreateDocumentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -889,19 +899,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDocumentRequestMarshaller().marshall(getDocumentRequest);
+                request = new GetDocumentRequestMarshaller().marshall(super.beforeMarshalling(getDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetDocumentResult, JsonUnmarshallerContext> unmarshaller =
                 new GetDocumentResultJsonUnmarshaller();
             JsonResponseHandler<GetDocumentResult> responseHandler =
                 new JsonResponseHandler<GetDocumentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

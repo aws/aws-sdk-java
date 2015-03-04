@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Deletable Item
  */
-public class DeletableItem implements Serializable {
+public class DeletableItem implements Serializable, Cloneable {
 
     private String name;
 
@@ -188,5 +188,19 @@ public class DeletableItem implements Serializable {
         return true;
     }
     
+    @Override
+    public DeletableItem clone() {
+        try {
+            return (DeletableItem) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

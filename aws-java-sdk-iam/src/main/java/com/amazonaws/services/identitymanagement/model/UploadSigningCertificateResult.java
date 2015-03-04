@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class UploadSigningCertificateResult implements Serializable {
+public class UploadSigningCertificateResult implements Serializable, Cloneable {
 
     /**
      * Information about the certificate.
@@ -101,5 +101,19 @@ public class UploadSigningCertificateResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UploadSigningCertificateResult clone() {
+        try {
+            return (UploadSigningCertificateResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

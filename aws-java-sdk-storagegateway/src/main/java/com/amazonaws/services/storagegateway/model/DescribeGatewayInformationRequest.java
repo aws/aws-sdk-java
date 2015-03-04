@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeGatewayInformation(DescribeGatewayInformationRequest)
  */
-public class DescribeGatewayInformationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeGatewayInformationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -134,5 +134,11 @@ public class DescribeGatewayInformationRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DescribeGatewayInformationRequest clone() {
+        
+            return (DescribeGatewayInformationRequest) super.clone();
+    }
+
 }
     

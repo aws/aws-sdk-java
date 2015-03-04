@@ -35,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeImagesRequestMarshalle
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeImages(DescribeImagesRequest)
  */
-public class DescribeImagesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeImagesRequest> {
+public class DescribeImagesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeImagesRequest> {
 
     /**
      * One or more image IDs. <p>Default: Describes all images available to
@@ -950,5 +950,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeImagesRequest clone() {
+        
+            return (DescribeImagesRequest) super.clone();
+    }
+
 }
     

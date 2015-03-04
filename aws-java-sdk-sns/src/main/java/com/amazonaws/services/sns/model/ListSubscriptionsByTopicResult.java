@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for ListSubscriptionsByTopic action.
  * </p>
  */
-public class ListSubscriptionsByTopicResult implements Serializable {
+public class ListSubscriptionsByTopicResult implements Serializable, Cloneable {
 
     /**
      * A list of subscriptions.
@@ -191,5 +191,19 @@ public class ListSubscriptionsByTopicResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListSubscriptionsByTopicResult clone() {
+        try {
+            return (ListSubscriptionsByTopicResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

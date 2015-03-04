@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an instance event.
  * </p>
  */
-public class InstanceStatusEvent implements Serializable {
+public class InstanceStatusEvent implements Serializable, Cloneable {
 
     /**
      * The associated code of the event.
@@ -278,5 +278,19 @@ public class InstanceStatusEvent implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceStatusEvent clone() {
+        try {
+            return (InstanceStatusEvent) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

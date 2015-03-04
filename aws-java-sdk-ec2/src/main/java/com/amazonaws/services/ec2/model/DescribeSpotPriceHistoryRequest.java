@@ -39,7 +39,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotPriceHistoryReques
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotPriceHistory(DescribeSpotPriceHistoryRequest)
  */
-public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSpotPriceHistoryRequest> {
+public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSpotPriceHistoryRequest> {
 
     /**
      * The date and time, up to the past 90 days, from which to start
@@ -704,5 +704,11 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeSpotPriceHistoryRequest clone() {
+        
+            return (DescribeSpotPriceHistoryRequest) super.clone();
+    }
+
 }
     

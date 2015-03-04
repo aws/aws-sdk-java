@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#disassociateElasticIp(DisassociateElasticIpRequest)
  */
-public class DisassociateElasticIpRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisassociateElasticIpRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Elastic IP address.
@@ -116,5 +116,11 @@ public class DisassociateElasticIpRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DisassociateElasticIpRequest clone() {
+        
+            return (DisassociateElasticIpRequest) super.clone();
+    }
+
 }
     

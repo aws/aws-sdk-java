@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#enableKey(EnableKeyRequest)
  */
-public class EnableKeyRequest extends AmazonWebServiceRequest implements Serializable {
+public class EnableKeyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the customer master key to be enabled. This can
@@ -125,5 +125,11 @@ public class EnableKeyRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public EnableKeyRequest clone() {
+        
+            return (EnableKeyRequest) super.clone();
+    }
+
 }
     

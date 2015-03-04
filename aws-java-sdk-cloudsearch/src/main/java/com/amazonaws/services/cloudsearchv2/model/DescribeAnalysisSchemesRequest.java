@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeAnalysisSchemes(DescribeAnalysisSchemesRequest)
  */
-public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain you want to describe.
@@ -275,5 +275,11 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribeAnalysisSchemesRequest clone() {
+        
+            return (DescribeAnalysisSchemesRequest) super.clone();
+    }
+
 }
     

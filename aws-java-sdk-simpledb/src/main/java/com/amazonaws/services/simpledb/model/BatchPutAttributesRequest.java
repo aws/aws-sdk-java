@@ -96,7 +96,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#batchPutAttributes(BatchPutAttributesRequest)
  */
-public class BatchPutAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class BatchPutAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which the attributes are being stored.
@@ -272,5 +272,11 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public BatchPutAttributesRequest clone() {
+        
+            return (BatchPutAttributesRequest) super.clone();
+    }
+
 }
     

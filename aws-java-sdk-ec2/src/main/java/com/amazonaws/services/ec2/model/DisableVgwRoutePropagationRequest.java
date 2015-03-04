@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disableVgwRoutePropagation(DisableVgwRoutePropagationRequest)
  */
-public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the route table.
@@ -148,5 +148,11 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DisableVgwRoutePropagationRequest clone() {
+        
+            return (DisableVgwRoutePropagationRequest) super.clone();
+    }
+
 }
     

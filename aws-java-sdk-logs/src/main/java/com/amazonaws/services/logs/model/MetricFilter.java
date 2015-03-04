@@ -23,7 +23,7 @@ import java.io.Serializable;
  * transform them to metric data in a CloudWatch metric.
  * </p>
  */
-public class MetricFilter implements Serializable {
+public class MetricFilter implements Serializable, Cloneable {
 
     /**
      * The name of the metric filter.
@@ -341,5 +341,19 @@ public class MetricFilter implements Serializable {
         return true;
     }
     
+    @Override
+    public MetricFilter clone() {
+        try {
+            return (MetricFilter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

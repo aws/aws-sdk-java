@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a linked EC2-Classic instance.
  * </p>
  */
-public class ClassicLinkInstance implements Serializable {
+public class ClassicLinkInstance implements Serializable, Cloneable {
 
     /**
      * The ID of the instance.
@@ -296,5 +296,19 @@ public class ClassicLinkInstance implements Serializable {
         return true;
     }
     
+    @Override
+    public ClassicLinkInstance clone() {
+        try {
+            return (ClassicLinkInstance) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

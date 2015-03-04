@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The response received when DeleteVirtualInterface is called.
  * </p>
  */
-public class DeleteVirtualInterfaceResult implements Serializable {
+public class DeleteVirtualInterfaceResult implements Serializable, Cloneable {
 
     /**
      * State of the virtual interface. <ul> <li><b>Confirming</b>: The
@@ -350,5 +350,19 @@ public class DeleteVirtualInterfaceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteVirtualInterfaceResult clone() {
+        try {
+            return (DeleteVirtualInterfaceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

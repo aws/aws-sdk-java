@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest)
  */
-public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -183,5 +183,11 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DeleteBandwidthRateLimitRequest clone() {
+        
+            return (DeleteBandwidthRateLimitRequest) super.clone();
+    }
+
 }
     

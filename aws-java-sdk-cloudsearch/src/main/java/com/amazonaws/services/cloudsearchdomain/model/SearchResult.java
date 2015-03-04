@@ -23,7 +23,7 @@ import java.io.Serializable;
  * highlights, and facet information.
  * </p>
  */
-public class SearchResult implements Serializable {
+public class SearchResult implements Serializable, Cloneable {
 
     /**
      * The status information returned for the search request.
@@ -220,5 +220,19 @@ public class SearchResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SearchResult clone() {
+        try {
+            return (SearchResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

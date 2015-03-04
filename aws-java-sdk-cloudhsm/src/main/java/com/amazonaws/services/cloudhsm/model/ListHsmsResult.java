@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output of the ListHsms action.
  * </p>
  */
-public class ListHsmsResult implements Serializable {
+public class ListHsmsResult implements Serializable, Cloneable {
 
     /**
      * The list of ARNs that identify the HSMs.
@@ -196,5 +196,19 @@ public class ListHsmsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListHsmsResult clone() {
+        try {
+            return (ListHsmsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

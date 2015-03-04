@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deactivateMFADevice(DeactivateMFADeviceRequest)
  */
-public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user whose MFA device you want to deactivate.
@@ -214,5 +214,11 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DeactivateMFADeviceRequest clone() {
+        
+            return (DeactivateMFADeviceRequest) super.clone();
+    }
+
 }
     

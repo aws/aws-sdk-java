@@ -25,7 +25,7 @@ import java.io.Serializable;
  * must be present).
  * </p>
  */
-public class JobFlowInstancesConfig implements Serializable {
+public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * The EC2 instance type of the master node.
@@ -1034,5 +1034,19 @@ public class JobFlowInstancesConfig implements Serializable {
         return true;
     }
     
+    @Override
+    public JobFlowInstancesConfig clone() {
+        try {
+            return (JobFlowInstancesConfig) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

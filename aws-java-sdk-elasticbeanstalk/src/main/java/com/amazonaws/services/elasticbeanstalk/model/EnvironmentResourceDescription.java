@@ -22,7 +22,7 @@ import java.io.Serializable;
  * live.
  * </p>
  */
-public class EnvironmentResourceDescription implements Serializable {
+public class EnvironmentResourceDescription implements Serializable, Cloneable {
 
     /**
      * The name of the environment.
@@ -581,5 +581,19 @@ public class EnvironmentResourceDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public EnvironmentResourceDescription clone() {
+        try {
+            return (EnvironmentResourceDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

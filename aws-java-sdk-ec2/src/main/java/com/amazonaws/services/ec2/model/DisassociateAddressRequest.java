@@ -39,7 +39,7 @@ import com.amazonaws.services.ec2.model.transform.DisassociateAddressRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest)
  */
-public class DisassociateAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DisassociateAddressRequest> {
+public class DisassociateAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DisassociateAddressRequest> {
 
     /**
      * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
@@ -190,5 +190,11 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DisassociateAddressRequest clone() {
+        
+            return (DisassociateAddressRequest) super.clone();
+    }
+
 }
     

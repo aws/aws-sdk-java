@@ -22,7 +22,7 @@ import java.io.Serializable;
  * info.
  * </p>
  */
-public class RetrieveEnvironmentInfoResult implements Serializable {
+public class RetrieveEnvironmentInfoResult implements Serializable, Cloneable {
 
     /**
      * The <a>EnvironmentInfoDescription</a> of the environment.
@@ -136,5 +136,19 @@ public class RetrieveEnvironmentInfoResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RetrieveEnvironmentInfoResult clone() {
+        try {
+            return (RetrieveEnvironmentInfoResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

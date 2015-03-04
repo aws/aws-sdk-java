@@ -80,7 +80,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#mergeShards(MergeShardsRequest)
  */
-public class MergeShardsRequest extends AmazonWebServiceRequest implements Serializable {
+public class MergeShardsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream for the merge.
@@ -298,5 +298,11 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public MergeShardsRequest clone() {
+        
+            return (MergeShardsRequest) super.clone();
+    }
+
 }
     

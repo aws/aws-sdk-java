@@ -22,7 +22,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class ListAttachedGroupPoliciesResult implements Serializable {
+public class ListAttachedGroupPoliciesResult implements Serializable, Cloneable {
 
     /**
      * A list of the attached policies.
@@ -286,5 +286,19 @@ public class ListAttachedGroupPoliciesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListAttachedGroupPoliciesResult clone() {
+        try {
+            return (ListAttachedGroupPoliciesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

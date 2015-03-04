@@ -39,6 +39,13 @@ import com.amazonaws.services.cognitosync.model.*;
  * <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html"> Amazon Cognito Identity service </a>
  * .
  * </p>
+ * <p>
+ * If you want to use Cognito Sync in an Android or iOS application, you
+ * will probably want to make API calls via the AWS Mobile SDK. To learn
+ * more, see the
+ * <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html"> Developer Guide for Android </a> and the <a href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html"> Developer Guide for iOS </a>
+ * .
+ * </p>
  */
 public interface AmazonCognitoSync {
 
@@ -101,11 +108,13 @@ public interface AmazonCognitoSync {
     
     /**
      * <p>
-     * Posts updates to records and add and delete records for a dataset and
-     * user. The credentials used to make this API call need to have access
-     * to the identity data. With Amazon Cognito Sync, each identity has
-     * access only to its own data. You should use Amazon Cognito Identity
-     * service to retrieve the credentials necessary to make this API call.
+     * Posts updates to records and adds and deletes records for a dataset
+     * and user.
+     * </p>
+     * <p>
+     * <code>UpdateRecords</code> can only be called with temporary user
+     * credentials provided by Cognito Identity. You cannot make this API
+     * call with developer credentials.
      * </p>
      *
      * @param updateRecordsRequest Container for the necessary parameters to
@@ -138,6 +147,11 @@ public interface AmazonCognitoSync {
      * Gets usage information for an identity, including number of datasets
      * and data usage.
      * </p>
+     * <p>
+     * <code>DescribeIdentityUsage</code> can be called with temporary user
+     * credentials provided by Cognito Identity or with developer
+     * credentials.
+     * </p>
      *
      * @param describeIdentityUsageRequest Container for the necessary
      *           parameters to execute the DescribeIdentityUsage service method on
@@ -146,6 +160,7 @@ public interface AmazonCognitoSync {
      * @return The response from the DescribeIdentityUsage service method, as
      *         returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
@@ -164,7 +179,7 @@ public interface AmazonCognitoSync {
 
     /**
      * <p>
-     * Unsubscribe from receiving notifications when a dataset is modified
+     * Unsubscribes from receiving notifications when a dataset is modified
      * by another device.
      * </p>
      *
@@ -175,6 +190,7 @@ public interface AmazonCognitoSync {
      * @return The response from the UnsubscribeFromDataset service method,
      *         as returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidConfigurationException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
@@ -204,6 +220,7 @@ public interface AmazonCognitoSync {
      * @return The response from the SetIdentityPoolConfiguration service
      *         method, as returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
@@ -232,6 +249,7 @@ public interface AmazonCognitoSync {
      * @return The response from the GetIdentityPoolConfiguration service
      *         method, as returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
@@ -261,6 +279,7 @@ public interface AmazonCognitoSync {
      * @return The response from the SubscribeToDataset service method, as
      *         returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidConfigurationException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
@@ -283,6 +302,11 @@ public interface AmazonCognitoSync {
      * Gets usage details (for example, data storage) about a particular
      * identity pool.
      * </p>
+     * <p>
+     * <code>DescribeIdentityPoolUsage</code> can only be called with
+     * developer credentials. You cannot make this API call with the
+     * temporary user credentials provided by Cognito Identity.
+     * </p>
      *
      * @param describeIdentityPoolUsageRequest Container for the necessary
      *           parameters to execute the DescribeIdentityPoolUsage service method on
@@ -291,6 +315,7 @@ public interface AmazonCognitoSync {
      * @return The response from the DescribeIdentityPoolUsage service
      *         method, as returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
@@ -309,11 +334,15 @@ public interface AmazonCognitoSync {
 
     /**
      * <p>
-     * Lists datasets for an identity. The credentials used to make this API
-     * call need to have access to the identity data. With Amazon Cognito
-     * Sync, each identity has access only to its own data. You should use
-     * Amazon Cognito Identity service to retrieve the credentials necessary
-     * to make this API call.
+     * Lists datasets for an identity. With Amazon Cognito Sync, each
+     * identity has access only to its own data. Thus, the credentials used
+     * to make this API call need to have access to the identity data.
+     * </p>
+     * <p>
+     * <code>ListDatasets</code> can be called with temporary user
+     * credentials provided by Cognito Identity or with developer
+     * credentials. You should use the Cognito Identity credentials to make
+     * this API call.
      * </p>
      *
      * @param listDatasetsRequest Container for the necessary parameters to
@@ -322,6 +351,7 @@ public interface AmazonCognitoSync {
      * @return The response from the ListDatasets service method, as returned
      *         by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidParameterException
      * @throws NotAuthorizedException
      * @throws InternalErrorException
@@ -341,6 +371,11 @@ public interface AmazonCognitoSync {
      * <p>
      * Gets a list of identity pools registered with Cognito.
      * </p>
+     * <p>
+     * <code>ListIdentityPoolUsage</code> can only be called with developer
+     * credentials. You cannot make this API call with the temporary user
+     * credentials provided by Cognito Identity.
+     * </p>
      *
      * @param listIdentityPoolUsageRequest Container for the necessary
      *           parameters to execute the ListIdentityPoolUsage service method on
@@ -349,6 +384,7 @@ public interface AmazonCognitoSync {
      * @return The response from the ListIdentityPoolUsage service method, as
      *         returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidParameterException
      * @throws NotAuthorizedException
      * @throws InternalErrorException
@@ -367,11 +403,15 @@ public interface AmazonCognitoSync {
     /**
      * <p>
      * Gets paginated records, optionally changed after a particular sync
-     * count for a dataset and identity. The credentials used to make this
-     * API call need to have access to the identity data. With Amazon Cognito
-     * Sync, each identity has access only to its own data. You should use
-     * Amazon Cognito Identity service to retrieve the credentials necessary
-     * to make this API call.
+     * count for a dataset and identity. With Amazon Cognito Sync, each
+     * identity has access only to its own data. Thus, the credentials used
+     * to make this API call need to have access to the identity data.
+     * </p>
+     * <p>
+     * <code>ListRecords</code> can be called with temporary user
+     * credentials provided by Cognito Identity or with developer
+     * credentials. You should use Cognito Identity credentials to make this
+     * API call.
      * </p>
      *
      * @param listRecordsRequest Container for the necessary parameters to
@@ -398,11 +438,78 @@ public interface AmazonCognitoSync {
 
     /**
      * <p>
-     * Gets metadata about a dataset by identity and dataset name. The
-     * credentials used to make this API call need to have access to the
-     * identity data. With Amazon Cognito Sync, each identity has access only
-     * to its own data. You should use Amazon Cognito Identity service to
-     * retrieve the credentials necessary to make this API call.
+     * Get the status of the last BulkPublish operation for an identity
+     * pool.
+     * </p>
+     *
+     * @param getBulkPublishDetailsRequest Container for the necessary
+     *           parameters to execute the GetBulkPublishDetails service method on
+     *           AmazonCognitoSync.
+     * 
+     * @return The response from the GetBulkPublishDetails service method, as
+     *         returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetBulkPublishDetailsResult getBulkPublishDetails(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Initiates a bulk publish of all existing datasets for an Identity
+     * Pool to the configured stream. Customers are limited to one successful
+     * bulk publish per 24 hours. Bulk publish is an asynchronous request,
+     * customers can see the status of the request via the
+     * GetBulkPublishDetails operation.
+     * </p>
+     *
+     * @param bulkPublishRequest Container for the necessary parameters to
+     *           execute the BulkPublish service method on AmazonCognitoSync.
+     * 
+     * @return The response from the BulkPublish service method, as returned
+     *         by AmazonCognitoSync.
+     * 
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     * @throws DuplicateRequestException
+     * @throws AlreadyStreamedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public BulkPublishResult bulkPublish(BulkPublishRequest bulkPublishRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Gets meta data about a dataset by identity and dataset name. With
+     * Amazon Cognito Sync, each identity has access only to its own data.
+     * Thus, the credentials used to make this API call need to have access
+     * to the identity data.
+     * </p>
+     * <p>
+     * <code>DescribeDataset</code> can be called with temporary user
+     * credentials provided by Cognito Identity or with developer
+     * credentials. You should use Cognito Identity credentials to make this
+     * API call.
      * </p>
      *
      * @param describeDatasetRequest Container for the necessary parameters
@@ -411,6 +518,7 @@ public interface AmazonCognitoSync {
      * @return The response from the DescribeDataset service method, as
      *         returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
@@ -432,8 +540,13 @@ public interface AmazonCognitoSync {
      * Deletes the specific dataset. The dataset will be deleted
      * permanently, and the action can't be undone. Datasets that this
      * dataset was merged with will no longer report the merge. Any
-     * consequent operation on this dataset will result in a
-     * ResourceNotFoundException.
+     * subsequent operation on this dataset will result in a
+     * <code>ResourceNotFoundException</code> .
+     * </p>
+     * <p>
+     * <code>DeleteDataset</code> can be called with temporary user
+     * credentials provided by Cognito Identity or with developer
+     * credentials.
      * </p>
      *
      * @param deleteDatasetRequest Container for the necessary parameters to
@@ -442,6 +555,7 @@ public interface AmazonCognitoSync {
      * @return The response from the DeleteDataset service method, as
      *         returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
@@ -469,6 +583,7 @@ public interface AmazonCognitoSync {
      * @return The response from the RegisterDevice service method, as
      *         returned by AmazonCognitoSync.
      * 
+     * @throws TooManyRequestsException
      * @throws InvalidConfigurationException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException

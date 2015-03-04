@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#getTrailStatus(GetTrailStatusRequest)
  */
-public class GetTrailStatusRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetTrailStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the trail for which you are requesting the current status.
@@ -107,5 +107,11 @@ public class GetTrailStatusRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GetTrailStatusRequest clone() {
+        
+            return (GetTrailStatusRequest) super.clone();
+    }
+
 }
     

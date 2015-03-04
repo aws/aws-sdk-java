@@ -23,7 +23,7 @@ import java.io.Serializable;
  * information contained by this data type.
  * </p>
  */
-public class Metric implements Serializable {
+public class Metric implements Serializable, Cloneable {
 
     /**
      * The namespace of the metric.
@@ -264,5 +264,19 @@ public class Metric implements Serializable {
         return true;
     }
     
+    @Override
+    public Metric clone() {
+        try {
+            return (Metric) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

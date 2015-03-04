@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest)
  */
-public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specifies the name of the policy types. If no names are specified,
@@ -162,5 +162,11 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public DescribeLoadBalancerPolicyTypesRequest clone() {
+        
+            return (DescribeLoadBalancerPolicyTypesRequest) super.clone();
+    }
+
 }
     

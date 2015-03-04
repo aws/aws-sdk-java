@@ -40,7 +40,7 @@ import com.amazonaws.services.ec2.model.transform.ResetInstanceAttributeRequestM
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest)
  */
-public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetInstanceAttributeRequest> {
+public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ResetInstanceAttributeRequest> {
 
     /**
      * The ID of the instance.
@@ -257,5 +257,11 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public ResetInstanceAttributeRequest clone() {
+        
+            return (ResetInstanceAttributeRequest) super.clone();
+    }
+
 }
     

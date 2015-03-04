@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an attachment between a virtual private gateway and a VPC.
  * </p>
  */
-public class VpcAttachment implements Serializable {
+public class VpcAttachment implements Serializable, Cloneable {
 
     /**
      * The ID of the VPC.
@@ -194,5 +194,19 @@ public class VpcAttachment implements Serializable {
         return true;
     }
     
+    @Override
+    public VpcAttachment clone() {
+        try {
+            return (VpcAttachment) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

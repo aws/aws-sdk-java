@@ -25,7 +25,7 @@ import java.io.Serializable;
  * GetServerCertificate action.
  * </p>
  */
-public class ServerCertificate implements Serializable {
+public class ServerCertificate implements Serializable, Cloneable {
 
     /**
      * The meta information of the server certificate, such as its name,
@@ -247,5 +247,19 @@ public class ServerCertificate implements Serializable {
         return true;
     }
     
+    @Override
+    public ServerCertificate clone() {
+        try {
+            return (ServerCertificate) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

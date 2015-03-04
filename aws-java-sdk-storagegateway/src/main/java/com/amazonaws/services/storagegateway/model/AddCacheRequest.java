@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#addCache(AddCacheRequest)
  */
-public class AddCacheRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddCacheRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -214,5 +214,11 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements Serializ
         return true;
     }
     
+    @Override
+    public AddCacheRequest clone() {
+        
+            return (AddCacheRequest) super.clone();
+    }
+
 }
     

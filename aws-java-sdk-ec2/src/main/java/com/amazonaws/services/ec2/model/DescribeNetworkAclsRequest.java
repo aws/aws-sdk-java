@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeNetworkAclsRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeNetworkAcls(DescribeNetworkAclsRequest)
  */
-public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeNetworkAclsRequest> {
+public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeNetworkAclsRequest> {
 
     /**
      * One or more network ACL IDs. <p>Default: Describes all your network
@@ -569,5 +569,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeNetworkAclsRequest clone() {
+        
+            return (DescribeNetworkAclsRequest) super.clone();
+    }
+
 }
     

@@ -22,14 +22,14 @@ import java.io.Serializable;
  * partition.
  * </p>
  */
-public class ScalingParameters implements Serializable {
+public class ScalingParameters implements Serializable, Cloneable {
 
     /**
      * The instance type that you want to preconfigure for your domain. For
      * example, <code>search.m1.small</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge
+     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge, search.m3.medium, search.m3.large, search.m3.xlarge, search.m3.2xlarge
      */
     private String desiredInstanceType;
 
@@ -57,7 +57,7 @@ public class ScalingParameters implements Serializable {
      * example, <code>search.m1.small</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge
+     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge, search.m3.medium, search.m3.large, search.m3.xlarge, search.m3.2xlarge
      *
      * @return The instance type that you want to preconfigure for your domain. For
      *         example, <code>search.m1.small</code>.
@@ -73,7 +73,7 @@ public class ScalingParameters implements Serializable {
      * example, <code>search.m1.small</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge
+     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge, search.m3.medium, search.m3.large, search.m3.xlarge, search.m3.2xlarge
      *
      * @param desiredInstanceType The instance type that you want to preconfigure for your domain. For
      *         example, <code>search.m1.small</code>.
@@ -91,7 +91,7 @@ public class ScalingParameters implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge
+     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge, search.m3.medium, search.m3.large, search.m3.xlarge, search.m3.2xlarge
      *
      * @param desiredInstanceType The instance type that you want to preconfigure for your domain. For
      *         example, <code>search.m1.small</code>.
@@ -111,7 +111,7 @@ public class ScalingParameters implements Serializable {
      * example, <code>search.m1.small</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge
+     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge, search.m3.medium, search.m3.large, search.m3.xlarge, search.m3.2xlarge
      *
      * @param desiredInstanceType The instance type that you want to preconfigure for your domain. For
      *         example, <code>search.m1.small</code>.
@@ -129,7 +129,7 @@ public class ScalingParameters implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge
+     * <b>Allowed Values: </b>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge, search.m3.medium, search.m3.large, search.m3.xlarge, search.m3.2xlarge
      *
      * @param desiredInstanceType The instance type that you want to preconfigure for your domain. For
      *         example, <code>search.m1.small</code>.
@@ -293,5 +293,19 @@ public class ScalingParameters implements Serializable {
         return true;
     }
     
+    @Override
+    public ScalingParameters clone() {
+        try {
+            return (ScalingParameters) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

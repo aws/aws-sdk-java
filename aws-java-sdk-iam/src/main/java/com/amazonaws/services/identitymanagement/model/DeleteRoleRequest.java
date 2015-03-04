@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRole(DeleteRoleRequest)
  */
-public class DeleteRoleRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteRoleRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the role to delete.
@@ -130,5 +130,11 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DeleteRoleRequest clone() {
+        
+            return (DeleteRoleRequest) super.clone();
+    }
+
 }
     

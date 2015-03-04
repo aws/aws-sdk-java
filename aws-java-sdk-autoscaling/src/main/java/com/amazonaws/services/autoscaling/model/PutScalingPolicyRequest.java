@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putScalingPolicy(PutScalingPolicyRequest)
  */
-public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name or ARN of the group.
@@ -499,5 +499,11 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public PutScalingPolicyRequest clone() {
+        
+            return (PutScalingPolicyRequest) super.clone();
+    }
+
 }
     

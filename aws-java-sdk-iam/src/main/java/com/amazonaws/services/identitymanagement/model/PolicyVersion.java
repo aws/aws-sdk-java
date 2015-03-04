@@ -30,7 +30,7 @@ import java.io.Serializable;
  * in the <i>Using IAM</i> guide.
  * </p>
  */
-public class PolicyVersion implements Serializable {
+public class PolicyVersion implements Serializable, Cloneable {
 
     /**
      * The policy document. <p>The policy document is returned in the
@@ -316,5 +316,19 @@ public class PolicyVersion implements Serializable {
         return true;
     }
     
+    @Override
+    public PolicyVersion clone() {
+        try {
+            return (PolicyVersion) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

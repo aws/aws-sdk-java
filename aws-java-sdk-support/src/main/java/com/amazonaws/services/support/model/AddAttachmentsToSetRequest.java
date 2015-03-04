@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#addAttachmentsToSet(AddAttachmentsToSetRequest)
  */
-public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the attachment set. If an <code>AttachmentSetId</code> is
@@ -231,5 +231,11 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public AddAttachmentsToSetRequest clone() {
+        
+            return (AddAttachmentsToSetRequest) super.clone();
+    }
+
 }
     

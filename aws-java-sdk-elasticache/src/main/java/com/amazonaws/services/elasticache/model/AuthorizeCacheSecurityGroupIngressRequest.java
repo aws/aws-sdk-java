@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest)
  */
-public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
+public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The cache security group which will allow network ingress.
@@ -243,5 +243,11 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
         return true;
     }
     
+    @Override
+    public AuthorizeCacheSecurityGroupIngressRequest clone() {
+        
+            return (AuthorizeCacheSecurityGroupIngressRequest) super.clone();
+    }
+
 }
     

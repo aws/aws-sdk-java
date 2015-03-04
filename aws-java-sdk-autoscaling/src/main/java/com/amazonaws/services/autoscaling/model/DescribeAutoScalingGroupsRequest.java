@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest)
  */
-public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The group names.
@@ -250,5 +250,11 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeAutoScalingGroupsRequest clone() {
+        
+            return (DescribeAutoScalingGroupsRequest) super.clone();
+    }
+
 }
     

@@ -53,6 +53,10 @@ public class GetIdentityPoolConfigurationResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     getIdentityPoolConfigurationResult.setPushSync(PushSyncJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CognitoStreams", targetDepth)) {
+                    context.nextToken();
+                    getIdentityPoolConfigurationResult.setCognitoStreams(CognitoStreamsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

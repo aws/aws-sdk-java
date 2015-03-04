@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest)
  */
-public class DescribeTerminationPolicyTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTerminationPolicyTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -63,5 +63,11 @@ public class DescribeTerminationPolicyTypesRequest extends AmazonWebServiceReque
         return true;
     }
     
+    @Override
+    public DescribeTerminationPolicyTypesRequest clone() {
+        
+            return (DescribeTerminationPolicyTypesRequest) super.clone();
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.AllocateAddressRequestMarshall
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#allocateAddress(AllocateAddressRequest)
  */
-public class AllocateAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AllocateAddressRequest> {
+public class AllocateAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AllocateAddressRequest> {
 
     /**
      * Set to <code>vpc</code> to allocate the address for use with instances
@@ -199,5 +199,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public AllocateAddressRequest clone() {
+        
+            return (AllocateAddressRequest) super.clone();
+    }
+
 }
     

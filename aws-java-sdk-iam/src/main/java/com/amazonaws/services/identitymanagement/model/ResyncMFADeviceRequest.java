@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#resyncMFADevice(ResyncMFADeviceRequest)
  */
-public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
+public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user whose MFA device you want to resynchronize.
@@ -328,5 +328,11 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public ResyncMFADeviceRequest clone() {
+        
+            return (ResyncMFADeviceRequest) super.clone();
+    }
+
 }
     

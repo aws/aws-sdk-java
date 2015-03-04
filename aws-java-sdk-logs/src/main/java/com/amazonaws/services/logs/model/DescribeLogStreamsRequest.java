@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.logs.AWSLogs#describeLogStreams(DescribeLogStreamsRequest)
  */
-public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String logGroupName;
 
@@ -308,5 +308,11 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DescribeLogStreamsRequest clone() {
+        
+            return (DescribeLogStreamsRequest) super.clone();
+    }
+
 }
     

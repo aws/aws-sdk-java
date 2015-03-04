@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Lists iSCSI information about a VTL device.
  * </p>
  */
-public class DeviceiSCSIAttributes implements Serializable {
+public class DeviceiSCSIAttributes implements Serializable, Cloneable {
 
     /**
      * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
@@ -266,5 +266,19 @@ public class DeviceiSCSIAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public DeviceiSCSIAttributes clone() {
+        try {
+            return (DeviceiSCSIAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

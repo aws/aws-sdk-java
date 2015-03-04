@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The RetrieveDomainAuthCode response includes the following element.
  * </p>
  */
-public class RetrieveDomainAuthCodeResult implements Serializable {
+public class RetrieveDomainAuthCodeResult implements Serializable, Cloneable {
 
     /**
      * The authorization code for the domain. <p>Type: String
@@ -112,5 +112,19 @@ public class RetrieveDomainAuthCodeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public RetrieveDomainAuthCodeResult clone() {
+        try {
+            return (RetrieveDomainAuthCodeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

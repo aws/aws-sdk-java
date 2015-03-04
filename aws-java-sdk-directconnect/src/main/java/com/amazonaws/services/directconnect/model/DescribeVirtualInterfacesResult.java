@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A structure containing a list of virtual interfaces.
  * </p>
  */
-public class DescribeVirtualInterfacesResult implements Serializable {
+public class DescribeVirtualInterfacesResult implements Serializable, Cloneable {
 
     /**
      * A list of virtual interfaces.
@@ -135,5 +135,19 @@ public class DescribeVirtualInterfacesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVirtualInterfacesResult clone() {
+        try {
+            return (DescribeVirtualInterfacesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

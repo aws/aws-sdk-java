@@ -22,7 +22,7 @@ import java.io.Serializable;
  * DescribeDBEngineVersions.
  * </p>
  */
-public class CharacterSet implements Serializable {
+public class CharacterSet implements Serializable, Cloneable {
 
     /**
      * The name of the character set.
@@ -143,5 +143,19 @@ public class CharacterSet implements Serializable {
         return true;
     }
     
+    @Override
+    public CharacterSet clone() {
+        try {
+            return (CharacterSet) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

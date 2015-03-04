@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplication(DeleteApplicationRequest)
  */
-public class DeleteApplicationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the application to delete.
@@ -200,5 +200,11 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteApplicationRequest clone() {
+        
+            return (DeleteApplicationRequest) super.clone();
+    }
+
 }
     

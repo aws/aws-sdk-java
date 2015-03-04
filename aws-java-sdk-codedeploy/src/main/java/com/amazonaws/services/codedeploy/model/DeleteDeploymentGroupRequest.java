@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#deleteDeploymentGroup(DeleteDeploymentGroupRequest)
  */
-public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of an existing AWS CodeDeploy application within the AWS user
@@ -185,5 +185,11 @@ public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteDeploymentGroupRequest clone() {
+        
+            return (DeleteDeploymentGroupRequest) super.clone();
+    }
+
 }
     

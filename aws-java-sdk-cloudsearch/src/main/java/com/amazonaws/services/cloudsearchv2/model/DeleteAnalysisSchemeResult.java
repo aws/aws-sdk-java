@@ -22,7 +22,7 @@ import java.io.Serializable;
  * the status of the deleted analysis scheme.
  * </p>
  */
-public class DeleteAnalysisSchemeResult implements Serializable {
+public class DeleteAnalysisSchemeResult implements Serializable, Cloneable {
 
     /**
      * The status of the analysis scheme being deleted.
@@ -101,5 +101,19 @@ public class DeleteAnalysisSchemeResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteAnalysisSchemeResult clone() {
+        try {
+            return (DeleteAnalysisSchemeResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

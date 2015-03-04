@@ -21,7 +21,7 @@ import java.io.Serializable;
  * This output contains the boostrap actions detail .
  * </p>
  */
-public class ListBootstrapActionsResult implements Serializable {
+public class ListBootstrapActionsResult implements Serializable, Cloneable {
 
     /**
      * The bootstrap actions associated with the cluster .
@@ -184,5 +184,19 @@ public class ListBootstrapActionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListBootstrapActionsResult clone() {
+        try {
+            return (ListBootstrapActionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

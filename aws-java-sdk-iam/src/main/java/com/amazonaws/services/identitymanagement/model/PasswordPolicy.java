@@ -25,7 +25,7 @@ import java.io.Serializable;
  * GetAccountPasswordPolicy action.
  * </p>
  */
-public class PasswordPolicy implements Serializable {
+public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * Minimum length to require for IAM user passwords.
@@ -624,5 +624,19 @@ public class PasswordPolicy implements Serializable {
         return true;
     }
     
+    @Override
+    public PasswordPolicy clone() {
+        try {
+            return (PasswordPolicy) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

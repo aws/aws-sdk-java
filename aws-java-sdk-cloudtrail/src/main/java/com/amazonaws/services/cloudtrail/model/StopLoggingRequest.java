@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#stopLogging(StopLoggingRequest)
  */
-public class StopLoggingRequest extends AmazonWebServiceRequest implements Serializable {
+public class StopLoggingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Communicates to CloudTrail the name of the trail for which to stop
@@ -115,5 +115,11 @@ public class StopLoggingRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public StopLoggingRequest clone() {
+        
+            return (StopLoggingRequest) super.clone();
+    }
+
 }
     

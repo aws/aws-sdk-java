@@ -31,7 +31,7 @@ import java.io.Serializable;
  * If you lose a secret access key, you must create a new access key.
  * </p>
  */
-public class AccessKey implements Serializable {
+public class AccessKey implements Serializable, Cloneable {
 
     /**
      * The name of the IAM user that the access key is associated with.
@@ -419,5 +419,19 @@ public class AccessKey implements Serializable {
         return true;
     }
     
+    @Override
+    public AccessKey clone() {
+        try {
+            return (AccessKey) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

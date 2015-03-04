@@ -22,7 +22,7 @@ import java.io.Serializable;
  * with the current AWS account.
  * </p>
  */
-public class GetHostedZoneCountResult implements Serializable {
+public class GetHostedZoneCountResult implements Serializable, Cloneable {
 
     /**
      * The number of hosted zones associated with the current AWS account.
@@ -101,5 +101,19 @@ public class GetHostedZoneCountResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetHostedZoneCountResult clone() {
+        try {
+            return (GetHostedZoneCountResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeTags(DescribeTagsRequest)
  */
-public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The names of the load balancers.
@@ -155,5 +155,11 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DescribeTagsRequest clone() {
+        
+            return (DescribeTagsRequest) super.clone();
+    }
+
 }
     

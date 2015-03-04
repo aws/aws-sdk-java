@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the price for a Reserved Instance.
  * </p>
  */
-public class PriceSchedule implements Serializable {
+public class PriceSchedule implements Serializable, Cloneable {
 
     /**
      * The number of months remaining in the reservation. For example, 2 is
@@ -377,5 +377,19 @@ public class PriceSchedule implements Serializable {
         return true;
     }
     
+    @Override
+    public PriceSchedule clone() {
+        try {
+            return (PriceSchedule) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

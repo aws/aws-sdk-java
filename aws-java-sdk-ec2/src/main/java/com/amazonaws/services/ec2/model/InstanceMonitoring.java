@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the monitoring information of the instance.
  * </p>
  */
-public class InstanceMonitoring implements Serializable {
+public class InstanceMonitoring implements Serializable, Cloneable {
 
     /**
      * The ID of the instance.
@@ -142,5 +142,19 @@ public class InstanceMonitoring implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceMonitoring clone() {
+        try {
+            return (InstanceMonitoring) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSecurityGroups(DescribeDBSecurityGroupsRequest)
  */
-public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB security group to return details for.
@@ -323,5 +323,11 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeDBSecurityGroupsRequest clone() {
+        
+            return (DescribeDBSecurityGroupsRequest) super.clone();
+    }
+
 }
     

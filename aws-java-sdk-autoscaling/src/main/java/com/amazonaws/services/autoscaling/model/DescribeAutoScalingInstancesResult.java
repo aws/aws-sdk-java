@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAutoScalingInstancesResult implements Serializable {
+public class DescribeAutoScalingInstancesResult implements Serializable, Cloneable {
 
     /**
      * The instances.
@@ -194,5 +194,19 @@ public class DescribeAutoScalingInstancesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeAutoScalingInstancesResult clone() {
+        try {
+            return (DescribeAutoScalingInstancesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

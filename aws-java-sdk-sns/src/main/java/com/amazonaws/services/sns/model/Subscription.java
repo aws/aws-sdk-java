@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A wrapper type for the attributes of an Amazon SNS subscription.
  * </p>
  */
-public class Subscription implements Serializable {
+public class Subscription implements Serializable, Cloneable {
 
     /**
      * The subscription's ARN.
@@ -274,5 +274,19 @@ public class Subscription implements Serializable {
         return true;
     }
     
+    @Override
+    public Subscription clone() {
+        try {
+            return (Subscription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

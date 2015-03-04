@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest)
  */
-public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * PlatformApplicationArn for SetPlatformApplicationAttributes action.
@@ -329,5 +329,11 @@ public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceReq
         return true;
     }
     
+    @Override
+    public SetPlatformApplicationAttributesRequest clone() {
+        
+            return (SetPlatformApplicationAttributesRequest) super.clone();
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#runTask(RunTaskRequest)
  */
-public class RunTaskRequest extends AmazonWebServiceRequest implements Serializable {
+public class RunTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -268,5 +268,11 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
         return true;
     }
     
+    @Override
+    public RunTaskRequest clone() {
+        
+            return (RunTaskRequest) super.clone();
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#stopConfigurationRecorder(StopConfigurationRecorderRequest)
  */
-public class StopConfigurationRecorderRequest extends AmazonWebServiceRequest implements Serializable {
+public class StopConfigurationRecorderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the recorder object that records each configuration change
@@ -125,5 +125,11 @@ public class StopConfigurationRecorderRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public StopConfigurationRecorderRequest clone() {
+        
+            return (StopConfigurationRecorderRequest) super.clone();
+    }
+
 }
     

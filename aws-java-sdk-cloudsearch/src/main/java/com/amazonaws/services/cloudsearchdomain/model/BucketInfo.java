@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A container for the calculated facet values and counts.
  * </p>
  */
-public class BucketInfo implements Serializable {
+public class BucketInfo implements Serializable, Cloneable {
 
     /**
      * A list of the calculated facet values and counts.
@@ -135,5 +135,19 @@ public class BucketInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public BucketInfo clone() {
+        try {
+            return (BucketInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

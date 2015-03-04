@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DeleteItem</i> operation.
  * </p>
  */
-public class DeleteItemResult implements Serializable {
+public class DeleteItemResult implements Serializable, Cloneable {
 
     /**
      * A map of attribute names to <i>AttributeValue</i> objects,
@@ -394,5 +394,19 @@ public class DeleteItemResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteItemResult clone() {
+        try {
+            return (DeleteItemResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

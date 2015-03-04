@@ -22,7 +22,7 @@ import java.io.Serializable;
  * completed successfully.
  * </p>
  */
-public class DeleteIdentityResult implements Serializable {
+public class DeleteIdentityResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -59,5 +59,19 @@ public class DeleteIdentityResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteIdentityResult clone() {
+        try {
+            return (DeleteIdentityResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

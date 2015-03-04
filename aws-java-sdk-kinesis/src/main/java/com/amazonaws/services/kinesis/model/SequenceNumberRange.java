@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The range of possible sequence numbers for the shard.
  * </p>
  */
-public class SequenceNumberRange implements Serializable {
+public class SequenceNumberRange implements Serializable, Cloneable {
 
     /**
      * The starting sequence number for the range.
@@ -173,5 +173,19 @@ public class SequenceNumberRange implements Serializable {
         return true;
     }
     
+    @Override
+    public SequenceNumberRange clone() {
+        try {
+            return (SequenceNumberRange) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

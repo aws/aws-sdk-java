@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAttachedUserPolicies(ListAttachedUserPoliciesRequest)
  */
-public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) of the user to list attached
@@ -372,5 +372,11 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public ListAttachedUserPoliciesRequest clone() {
+        
+            return (ListAttachedUserPoliciesRequest) super.clone();
+    }
+
 }
     

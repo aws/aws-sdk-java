@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeScalingProcessTypesResult implements Serializable {
+public class DescribeScalingProcessTypesResult implements Serializable, Cloneable {
 
     /**
      * The names of the process types.
@@ -133,5 +133,19 @@ public class DescribeScalingProcessTypesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeScalingProcessTypesResult clone() {
+        try {
+            return (DescribeScalingProcessTypesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

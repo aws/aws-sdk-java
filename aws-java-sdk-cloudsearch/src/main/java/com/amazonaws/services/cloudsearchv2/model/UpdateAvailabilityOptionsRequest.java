@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#updateAvailabilityOptions(UpdateAvailabilityOptionsRequest)
  */
-public class UpdateAvailabilityOptionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateAvailabilityOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -226,5 +226,11 @@ public class UpdateAvailabilityOptionsRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public UpdateAvailabilityOptionsRequest clone() {
+        
+            return (UpdateAvailabilityOptionsRequest) super.clone();
+    }
+
 }
     

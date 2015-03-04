@@ -22,7 +22,7 @@ import java.io.Serializable;
  * the Trusted Advisor check.
  * </p>
  */
-public class TrustedAdvisorCategorySpecificSummary implements Serializable {
+public class TrustedAdvisorCategorySpecificSummary implements Serializable, Cloneable {
 
     /**
      * The summary information about cost savings for a Trusted Advisor check
@@ -108,5 +108,19 @@ public class TrustedAdvisorCategorySpecificSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public TrustedAdvisorCategorySpecificSummary clone() {
+        try {
+            return (TrustedAdvisorCategorySpecificSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

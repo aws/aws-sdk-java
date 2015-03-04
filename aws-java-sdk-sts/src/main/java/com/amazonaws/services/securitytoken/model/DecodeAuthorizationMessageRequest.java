@@ -66,7 +66,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#decodeAuthorizationMessage(DecodeAuthorizationMessageRequest)
  */
-public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest implements Serializable {
+public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The encoded message that was returned with the response.
@@ -157,5 +157,11 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DecodeAuthorizationMessageRequest clone() {
+        
+            return (DecodeAuthorizationMessageRequest) super.clone();
+    }
+
 }
     

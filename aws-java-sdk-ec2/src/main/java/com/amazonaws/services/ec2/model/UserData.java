@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * User Data
  */
-public class UserData implements Serializable {
+public class UserData implements Serializable, Cloneable {
 
     private String data;
 
@@ -95,5 +95,19 @@ public class UserData implements Serializable {
         return true;
     }
     
+    @Override
+    public UserData clone() {
+        try {
+            return (UserData) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

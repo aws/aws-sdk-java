@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>ReadJobResponse</code> structure.
  * </p>
  */
-public class ReadJobResult implements Serializable {
+public class ReadJobResult implements Serializable, Cloneable {
 
     /**
      * A section of the response body that provides information about the
@@ -107,5 +107,19 @@ public class ReadJobResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ReadJobResult clone() {
+        try {
+            return (ReadJobResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

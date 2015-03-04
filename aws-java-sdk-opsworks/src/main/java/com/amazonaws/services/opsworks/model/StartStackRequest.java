@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#startStack(StartStackRequest)
  */
-public class StartStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class StartStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -113,5 +113,11 @@ public class StartStackRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public StartStackRequest clone() {
+        
+            return (StartStackRequest) super.clone();
+    }
+
 }
     

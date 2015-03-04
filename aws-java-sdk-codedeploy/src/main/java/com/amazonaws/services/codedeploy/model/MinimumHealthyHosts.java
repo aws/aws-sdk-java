@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Information about minimum healthy instances.
  * </p>
  */
-public class MinimumHealthyHosts implements Serializable {
+public class MinimumHealthyHosts implements Serializable, Cloneable {
 
     /**
      * The minimum healthy instances value.
@@ -359,5 +359,19 @@ public class MinimumHealthyHosts implements Serializable {
         return true;
     }
     
+    @Override
+    public MinimumHealthyHosts clone() {
+        try {
+            return (MinimumHealthyHosts) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

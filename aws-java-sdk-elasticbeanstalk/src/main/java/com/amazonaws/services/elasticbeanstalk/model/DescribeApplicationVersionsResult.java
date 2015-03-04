@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Result message wrapping a list of application version descriptions.
  * </p>
  */
-public class DescribeApplicationVersionsResult implements Serializable {
+public class DescribeApplicationVersionsResult implements Serializable, Cloneable {
 
     /**
      * A list of <a>ApplicationVersionDescription</a> .
@@ -135,5 +135,19 @@ public class DescribeApplicationVersionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeApplicationVersionsResult clone() {
+        try {
+            return (DescribeApplicationVersionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

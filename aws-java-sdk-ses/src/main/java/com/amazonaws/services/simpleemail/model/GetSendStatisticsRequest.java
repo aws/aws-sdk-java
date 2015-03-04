@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getSendStatistics(GetSendStatisticsRequest)
  */
-public class GetSendStatisticsRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetSendStatisticsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -71,5 +71,11 @@ public class GetSendStatisticsRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public GetSendStatisticsRequest clone() {
+        
+            return (GetSendStatisticsRequest) super.clone();
+    }
+
 }
     

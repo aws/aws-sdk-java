@@ -31,7 +31,7 @@ import java.io.Serializable;
  * in the <i>Using IAM</i> guide.
  * </p>
  */
-public class PolicyGroup implements Serializable {
+public class PolicyGroup implements Serializable, Cloneable {
 
     /**
      * The name (friendly name, not ARN) identifying the group.
@@ -126,5 +126,19 @@ public class PolicyGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public PolicyGroup clone() {
+        try {
+            return (PolicyGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

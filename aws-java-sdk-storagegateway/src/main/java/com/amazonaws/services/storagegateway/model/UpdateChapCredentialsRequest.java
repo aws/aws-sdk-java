@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateChapCredentials(UpdateChapCredentialsRequest)
  */
-public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
@@ -319,5 +319,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public UpdateChapCredentialsRequest clone() {
+        
+            return (UpdateChapCredentialsRequest) super.clone();
+    }
+
 }
     

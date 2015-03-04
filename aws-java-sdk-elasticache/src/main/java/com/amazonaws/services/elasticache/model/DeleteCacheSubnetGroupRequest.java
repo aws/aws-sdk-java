@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest)
  */
-public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cache subnet group to delete. <p>Constraints: Must
@@ -116,5 +116,11 @@ public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DeleteCacheSubnetGroupRequest clone() {
+        
+            return (DeleteCacheSubnetGroupRequest) super.clone();
+    }
+
 }
     

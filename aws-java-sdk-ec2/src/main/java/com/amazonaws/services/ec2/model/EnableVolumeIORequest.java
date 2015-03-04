@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.EnableVolumeIORequestMarshalle
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#enableVolumeIO(EnableVolumeIORequest)
  */
-public class EnableVolumeIORequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<EnableVolumeIORequest> {
+public class EnableVolumeIORequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<EnableVolumeIORequest> {
 
     /**
      * The ID of the volume.
@@ -120,5 +120,11 @@ public class EnableVolumeIORequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public EnableVolumeIORequest clone() {
+        
+            return (EnableVolumeIORequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful CreateLoginProfile request.
  * </p>
  */
-public class CreateLoginProfileResult implements Serializable {
+public class CreateLoginProfileResult implements Serializable, Cloneable {
 
     /**
      * The user name and password create date.
@@ -100,5 +100,19 @@ public class CreateLoginProfileResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateLoginProfileResult clone() {
+        try {
+            return (CreateLoginProfileResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

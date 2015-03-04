@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DiskImageVolumeDescription implements Serializable {
+public class DiskImageVolumeDescription implements Serializable, Cloneable {
 
     /**
      * The size of the volume.
@@ -140,5 +140,19 @@ public class DiskImageVolumeDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public DiskImageVolumeDescription clone() {
+        try {
+            return (DiskImageVolumeDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

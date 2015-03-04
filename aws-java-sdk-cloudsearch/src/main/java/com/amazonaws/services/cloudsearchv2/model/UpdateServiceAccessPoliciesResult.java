@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Contains the new access policies.
  * </p>
  */
-public class UpdateServiceAccessPoliciesResult implements Serializable {
+public class UpdateServiceAccessPoliciesResult implements Serializable, Cloneable {
 
     /**
      * The access rules configured for the domain.
@@ -101,5 +101,19 @@ public class UpdateServiceAccessPoliciesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateServiceAccessPoliciesResult clone() {
+        try {
+            return (UpdateServiceAccessPoliciesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

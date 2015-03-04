@@ -47,7 +47,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
-public class StartTimerDecisionAttributes implements Serializable {
+public class StartTimerDecisionAttributes implements Serializable, Cloneable {
 
     /**
      * <b>Required.</b> The unique Id of the timer. <p>The specified string
@@ -295,5 +295,19 @@ public class StartTimerDecisionAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public StartTimerDecisionAttributes clone() {
+        try {
+            return (StartTimerDecisionAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

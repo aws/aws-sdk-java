@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListUsers request.
  * </p>
  */
-public class ListUsersResult implements Serializable {
+public class ListUsersResult implements Serializable, Cloneable {
 
     /**
      * A list of users.
@@ -285,5 +285,19 @@ public class ListUsersResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListUsersResult clone() {
+        try {
+            return (ListUsersResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

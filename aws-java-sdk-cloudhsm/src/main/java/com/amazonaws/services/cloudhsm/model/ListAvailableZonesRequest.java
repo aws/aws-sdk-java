@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#listAvailableZones(ListAvailableZonesRequest)
  */
-public class ListAvailableZonesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAvailableZonesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -64,5 +64,11 @@ public class ListAvailableZonesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public ListAvailableZonesRequest clone() {
+        
+            return (ListAvailableZonesRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeReplicationGroups</i> action.
  * </p>
  */
-public class DescribeReplicationGroupsResult implements Serializable {
+public class DescribeReplicationGroupsResult implements Serializable, Cloneable {
 
     /**
      * Provides an identifier to allow retrieval of paginated results.
@@ -186,5 +186,19 @@ public class DescribeReplicationGroupsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeReplicationGroupsResult clone() {
+        try {
+            return (DescribeReplicationGroupsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

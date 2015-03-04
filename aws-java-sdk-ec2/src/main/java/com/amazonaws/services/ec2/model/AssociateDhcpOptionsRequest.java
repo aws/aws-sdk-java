@@ -42,7 +42,7 @@ import com.amazonaws.services.ec2.model.transform.AssociateDhcpOptionsRequestMar
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest)
  */
-public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AssociateDhcpOptionsRequest> {
+public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AssociateDhcpOptionsRequest> {
 
     /**
      * The ID of the DHCP options set, or <code>default</code> to associate
@@ -199,5 +199,11 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public AssociateDhcpOptionsRequest clone() {
+        
+            return (AssociateDhcpOptionsRequest) super.clone();
+    }
+
 }
     

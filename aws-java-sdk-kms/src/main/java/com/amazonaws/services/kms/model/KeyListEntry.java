@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains information about each entry in the key list.
  * </p>
  */
-public class KeyListEntry implements Serializable {
+public class KeyListEntry implements Serializable, Cloneable {
 
     /**
      * Unique identifier of the key.
@@ -166,5 +166,19 @@ public class KeyListEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public KeyListEntry clone() {
+        try {
+            return (KeyListEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

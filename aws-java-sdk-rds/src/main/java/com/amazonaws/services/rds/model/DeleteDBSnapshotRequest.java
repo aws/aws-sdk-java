@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest)
  */
-public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The DBSnapshot identifier. <p>Constraints: Must be the name of an
@@ -136,5 +136,11 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DeleteDBSnapshotRequest clone() {
+        
+            return (DeleteDBSnapshotRequest) super.clone();
+    }
+
 }
     

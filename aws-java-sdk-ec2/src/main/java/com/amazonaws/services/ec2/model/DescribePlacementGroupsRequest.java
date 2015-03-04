@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.DescribePlacementGroupsRequest
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describePlacementGroups(DescribePlacementGroupsRequest)
  */
-public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribePlacementGroupsRequest> {
+public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribePlacementGroupsRequest> {
 
     /**
      * One or more placement group names. <p>Default: Describes all your
@@ -288,5 +288,11 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public DescribePlacementGroupsRequest clone() {
+        
+            return (DescribePlacementGroupsRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The response received when ConfirmPublicVirtualInterface is called.
  * </p>
  */
-public class ConfirmPublicVirtualInterfaceResult implements Serializable {
+public class ConfirmPublicVirtualInterfaceResult implements Serializable, Cloneable {
 
     /**
      * State of the virtual interface. <ul> <li><b>Confirming</b>: The
@@ -350,5 +350,19 @@ public class ConfirmPublicVirtualInterfaceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfirmPublicVirtualInterfaceResult clone() {
+        try {
+            return (ConfirmPublicVirtualInterfaceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

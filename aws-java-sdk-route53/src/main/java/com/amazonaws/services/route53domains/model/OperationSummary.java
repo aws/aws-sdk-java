@@ -21,7 +21,7 @@ import java.io.Serializable;
  * OperationSummary includes the following elements.
  * </p>
  */
-public class OperationSummary implements Serializable {
+public class OperationSummary implements Serializable, Cloneable {
 
     /**
      * Identifier returned to track the requested action. <p>Type: String
@@ -397,5 +397,19 @@ public class OperationSummary implements Serializable {
         return true;
     }
     
+    @Override
+    public OperationSummary clone() {
+        try {
+            return (OperationSummary) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

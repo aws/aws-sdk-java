@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful CreateVirtualMFADevice request.
  * </p>
  */
-public class CreateVirtualMFADeviceResult implements Serializable {
+public class CreateVirtualMFADeviceResult implements Serializable, Cloneable {
 
     /**
      * A newly created virtual MFA device.
@@ -100,5 +100,19 @@ public class CreateVirtualMFADeviceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateVirtualMFADeviceResult clone() {
+        try {
+            return (CreateVirtualMFADeviceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement#createAssociationBatch(CreateAssociationBatchRequest)
  */
-public class CreateAssociationBatchRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateAssociationBatchRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * One or more associations.
@@ -151,5 +151,11 @@ public class CreateAssociationBatchRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateAssociationBatchRequest clone() {
+        
+            return (CreateAssociationBatchRequest) super.clone();
+    }
+
 }
     

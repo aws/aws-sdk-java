@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describePolicies(DescribePoliciesRequest)
  */
-public class DescribePoliciesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribePoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group.
@@ -343,5 +343,11 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public DescribePoliciesRequest clone() {
+        
+            return (DescribePoliciesRequest) super.clone();
+    }
+
 }
     

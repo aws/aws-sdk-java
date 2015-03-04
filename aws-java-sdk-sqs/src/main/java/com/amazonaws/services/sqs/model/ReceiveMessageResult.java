@@ -21,7 +21,7 @@ import java.io.Serializable;
  * A list of received messages.
  * </p>
  */
-public class ReceiveMessageResult implements Serializable {
+public class ReceiveMessageResult implements Serializable, Cloneable {
 
     /**
      * A list of messages.
@@ -135,5 +135,19 @@ public class ReceiveMessageResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ReceiveMessageResult clone() {
+        try {
+            return (ReceiveMessageResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

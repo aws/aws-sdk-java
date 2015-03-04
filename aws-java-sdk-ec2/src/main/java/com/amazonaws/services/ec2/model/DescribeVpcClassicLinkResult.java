@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeVpcClassicLinkResult implements Serializable {
+public class DescribeVpcClassicLinkResult implements Serializable, Cloneable {
 
     /**
      * The ClassicLink status of one or more VPCs.
@@ -133,5 +133,19 @@ public class DescribeVpcClassicLinkResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVpcClassicLinkResult clone() {
+        try {
+            return (DescribeVpcClassicLinkResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

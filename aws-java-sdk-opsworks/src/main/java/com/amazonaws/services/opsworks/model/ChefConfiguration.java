@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes the Chef configuration.
  * </p>
  */
-public class ChefConfiguration implements Serializable {
+public class ChefConfiguration implements Serializable, Cloneable {
 
     /**
      * Whether to enable Berkshelf.
@@ -151,5 +151,19 @@ public class ChefConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public ChefConfiguration clone() {
+        try {
+            return (ChefConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

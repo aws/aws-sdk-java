@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteNotificationConfiguration(DeleteNotificationConfigurationRequest)
  */
-public class DeleteNotificationConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteNotificationConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the Auto Scaling group.
@@ -186,5 +186,11 @@ public class DeleteNotificationConfigurationRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public DeleteNotificationConfigurationRequest clone() {
+        
+            return (DeleteNotificationConfigurationRequest) super.clone();
+    }
+
 }
     

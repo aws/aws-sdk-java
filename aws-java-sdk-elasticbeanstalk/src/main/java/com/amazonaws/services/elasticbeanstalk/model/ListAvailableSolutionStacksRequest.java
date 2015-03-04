@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#listAvailableSolutionStacks(ListAvailableSolutionStacksRequest)
  */
-public class ListAvailableSolutionStacksRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAvailableSolutionStacksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -63,5 +63,11 @@ public class ListAvailableSolutionStacksRequest extends AmazonWebServiceRequest 
         return true;
     }
     
+    @Override
+    public ListAvailableSolutionStacksRequest clone() {
+        
+            return (ListAvailableSolutionStacksRequest) super.clone();
+    }
+
 }
     

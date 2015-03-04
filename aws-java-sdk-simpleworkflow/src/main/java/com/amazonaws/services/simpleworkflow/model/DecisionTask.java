@@ -22,7 +22,7 @@ import java.io.Serializable;
  * to deciders in order for them to make decisions.
  * </p>
  */
-public class DecisionTask implements Serializable {
+public class DecisionTask implements Serializable, Cloneable {
 
     /**
      * The opaque string used as a handle on the task. This token is used by
@@ -501,5 +501,19 @@ public class DecisionTask implements Serializable {
         return true;
     }
     
+    @Override
+    public DecisionTask clone() {
+        try {
+            return (DecisionTask) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

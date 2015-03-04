@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#removeTagsFromStream(RemoveTagsFromStreamRequest)
  */
-public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest implements Serializable {
+public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the stream.
@@ -216,5 +216,11 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public RemoveTagsFromStreamRequest clone() {
+        
+            return (RemoveTagsFromStreamRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Results of a CreateStorageLocationResult call.
  * </p>
  */
-public class CreateStorageLocationResult implements Serializable {
+public class CreateStorageLocationResult implements Serializable, Cloneable {
 
     /**
      * The name of the Amazon S3 bucket created.
@@ -112,5 +112,19 @@ public class CreateStorageLocationResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateStorageLocationResult clone() {
+        try {
+            return (CreateStorageLocationResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

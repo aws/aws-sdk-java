@@ -21,16 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cognitosync.AmazonCognitoSync#updateRecords(UpdateRecordsRequest) UpdateRecords operation}.
  * <p>
- * Posts updates to records and add and delete records for a dataset and
- * user. The credentials used to make this API call need to have access
- * to the identity data. With Amazon Cognito Sync, each identity has
- * access only to its own data. You should use Amazon Cognito Identity
- * service to retrieve the credentials necessary to make this API call.
+ * Posts updates to records and adds and deletes records for a dataset
+ * and user.
+ * </p>
+ * <p>
+ * <code>UpdateRecords</code> can only be called with temporary user
+ * credentials provided by Cognito Identity. You cannot make this API
+ * call with developer credentials.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#updateRecords(UpdateRecordsRequest)
  */
-public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -512,5 +514,11 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public UpdateRecordsRequest clone() {
+        
+            return (UpdateRecordsRequest) super.clone();
+    }
+
 }
     

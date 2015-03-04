@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The ListenerDescription data type.
  * </p>
  */
-public class ListenerDescription implements Serializable {
+public class ListenerDescription implements Serializable, Cloneable {
 
     /**
      * The Listener data type. <p>For information about the protocols and the
@@ -213,5 +213,19 @@ public class ListenerDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public ListenerDescription clone() {
+        try {
+            return (ListenerDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

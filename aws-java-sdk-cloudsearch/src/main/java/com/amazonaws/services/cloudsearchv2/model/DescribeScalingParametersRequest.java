@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeScalingParameters(DescribeScalingParametersRequest)
  */
-public class DescribeScalingParametersRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeScalingParametersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A string that represents the name of a domain. Domain names are unique
@@ -146,5 +146,11 @@ public class DescribeScalingParametersRequest extends AmazonWebServiceRequest im
         return true;
     }
     
+    @Override
+    public DescribeScalingParametersRequest clone() {
+        
+            return (DescribeScalingParametersRequest) super.clone();
+    }
+
 }
     

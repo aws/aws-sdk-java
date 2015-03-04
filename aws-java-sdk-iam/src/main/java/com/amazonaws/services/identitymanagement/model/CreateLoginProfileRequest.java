@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createLoginProfile(CreateLoginProfileRequest)
  */
-public class CreateLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateLoginProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the user to create a password for.
@@ -262,5 +262,11 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateLoginProfileRequest clone() {
+        
+            return (CreateLoginProfileRequest) super.clone();
+    }
+
 }
     

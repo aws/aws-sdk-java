@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ContainerOverride implements Serializable {
+public class ContainerOverride implements Serializable, Cloneable {
 
     /**
      * The name of the container that receives the override.
@@ -175,5 +175,19 @@ public class ContainerOverride implements Serializable {
         return true;
     }
     
+    @Override
+    public ContainerOverride clone() {
+        try {
+            return (ContainerOverride) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

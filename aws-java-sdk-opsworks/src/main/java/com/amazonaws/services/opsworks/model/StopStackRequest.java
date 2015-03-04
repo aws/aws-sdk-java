@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#stopStack(StopStackRequest)
  */
-public class StopStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class StopStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -113,5 +113,11 @@ public class StopStackRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public StopStackRequest clone() {
+        
+            return (StopStackRequest) super.clone();
+    }
+
 }
     

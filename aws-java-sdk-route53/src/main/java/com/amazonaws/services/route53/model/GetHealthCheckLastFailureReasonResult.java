@@ -22,7 +22,7 @@ import java.io.Serializable;
  * for the specified health check.
  * </p>
  */
-public class GetHealthCheckLastFailureReasonResult implements Serializable {
+public class GetHealthCheckLastFailureReasonResult implements Serializable, Cloneable {
 
     /**
      * A list that contains one <code>HealthCheckObservation</code> element
@@ -145,5 +145,19 @@ public class GetHealthCheckLastFailureReasonResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetHealthCheckLastFailureReasonResult clone() {
+        try {
+            return (GetHealthCheckLastFailureReasonResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

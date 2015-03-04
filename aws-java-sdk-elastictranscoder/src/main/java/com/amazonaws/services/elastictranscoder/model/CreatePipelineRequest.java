@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPipeline(CreatePipelineRequest)
  */
-public class CreatePipelineRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreatePipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the pipeline. We recommend that the name be unique within
@@ -1489,5 +1489,11 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CreatePipelineRequest clone() {
+        
+            return (CreatePipelineRequest) super.clone();
+    }
+
 }
     

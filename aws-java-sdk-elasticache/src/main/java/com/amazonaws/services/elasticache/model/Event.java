@@ -23,7 +23,7 @@ import java.io.Serializable;
  * or removing a cache node, or rebooting a node.
  * </p>
  */
-public class Event implements Serializable {
+public class Event implements Serializable, Cloneable {
 
     /**
      * The identifier for the source of the event. For example, if the event
@@ -311,5 +311,19 @@ public class Event implements Serializable {
         return true;
     }
     
+    @Override
+    public Event clone() {
+        try {
+            return (Event) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

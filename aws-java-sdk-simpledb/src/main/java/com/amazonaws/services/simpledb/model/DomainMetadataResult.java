@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Domain Metadata Result
  */
-public class DomainMetadataResult implements Serializable {
+public class DomainMetadataResult implements Serializable, Cloneable {
 
     /**
      * The number of all items in the domain.
@@ -357,5 +357,19 @@ public class DomainMetadataResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DomainMetadataResult clone() {
+        try {
+            return (DomainMetadataResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

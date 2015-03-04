@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#listStreams(ListStreamsRequest)
  */
-public class ListStreamsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListStreamsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The maximum number of streams to list.
@@ -199,5 +199,11 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListStreamsRequest clone() {
+        
+            return (ListStreamsRequest) super.clone();
+    }
+
 }
     

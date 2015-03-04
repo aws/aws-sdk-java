@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a virtual private gateway propagating route.
  * </p>
  */
-public class PropagatingVgw implements Serializable {
+public class PropagatingVgw implements Serializable, Cloneable {
 
     /**
      * The ID of the virtual private gateway (VGW).
@@ -100,5 +100,19 @@ public class PropagatingVgw implements Serializable {
         return true;
     }
     
+    @Override
+    public PropagatingVgw clone() {
+        try {
+            return (PropagatingVgw) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -102,7 +102,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#assumeRoleWithSAML(AssumeRoleWithSAMLRequest)
  */
-public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implements Serializable {
+public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the role that the caller is
@@ -574,5 +574,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public AssumeRoleWithSAMLRequest clone() {
+        
+            return (AssumeRoleWithSAMLRequest) super.clone();
+    }
+
 }
     

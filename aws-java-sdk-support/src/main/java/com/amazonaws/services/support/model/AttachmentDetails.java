@@ -23,7 +23,7 @@ import java.io.Serializable;
  * operation.
  * </p>
  */
-public class AttachmentDetails implements Serializable {
+public class AttachmentDetails implements Serializable, Cloneable {
 
     /**
      * The ID of the attachment.
@@ -144,5 +144,19 @@ public class AttachmentDetails implements Serializable {
         return true;
     }
     
+    @Override
+    public AttachmentDetails clone() {
+        try {
+            return (AttachmentDetails) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

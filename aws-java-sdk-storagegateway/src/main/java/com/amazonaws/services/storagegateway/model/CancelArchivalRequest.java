@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#cancelArchival(CancelArchivalRequest)
  */
-public class CancelArchivalRequest extends AmazonWebServiceRequest implements Serializable {
+public class CancelArchivalRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -193,5 +193,11 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public CancelArchivalRequest clone() {
+        
+            return (CancelArchivalRequest) super.clone();
+    }
+
 }
     

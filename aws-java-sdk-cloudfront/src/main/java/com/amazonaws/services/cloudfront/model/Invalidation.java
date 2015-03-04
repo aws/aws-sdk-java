@@ -21,7 +21,7 @@ import java.io.Serializable;
  * An invalidation.
  * </p>
  */
-public class Invalidation implements Serializable {
+public class Invalidation implements Serializable, Cloneable {
 
     /**
      * The identifier for the invalidation request. For example:
@@ -246,5 +246,19 @@ public class Invalidation implements Serializable {
         return true;
     }
     
+    @Override
+    public Invalidation clone() {
+        try {
+            return (Invalidation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

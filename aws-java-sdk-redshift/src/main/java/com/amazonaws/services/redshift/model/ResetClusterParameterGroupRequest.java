@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#resetClusterParameterGroup(ResetClusterParameterGroupRequest)
  */
-public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cluster parameter group to be reset.
@@ -273,5 +273,11 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public ResetClusterParameterGroupRequest clone() {
+        
+            return (ResetClusterParameterGroupRequest) super.clone();
+    }
+
 }
     

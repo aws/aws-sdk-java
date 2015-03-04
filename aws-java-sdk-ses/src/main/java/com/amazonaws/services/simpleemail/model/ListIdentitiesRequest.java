@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#listIdentities(ListIdentitiesRequest)
  */
-public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The type of the identities to list. Possible values are "EmailAddress"
@@ -275,5 +275,11 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public ListIdentitiesRequest clone() {
+        
+            return (ListIdentitiesRequest) super.clone();
+    }
+
 }
     

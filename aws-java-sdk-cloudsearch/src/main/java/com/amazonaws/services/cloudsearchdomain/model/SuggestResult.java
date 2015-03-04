@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a <code>Suggest</code> request.
  * </p>
  */
-public class SuggestResult implements Serializable {
+public class SuggestResult implements Serializable, Cloneable {
 
     /**
      * The status of a <code>SuggestRequest</code>. Contains the resource ID
@@ -156,5 +156,19 @@ public class SuggestResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SuggestResult clone() {
+        try {
+            return (SuggestResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

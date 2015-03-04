@@ -44,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest)
  */
-public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
+public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the DB security group to add authorization to.
@@ -386,5 +386,11 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         return true;
     }
     
+    @Override
+    public AuthorizeDBSecurityGroupIngressRequest clone() {
+        
+            return (AuthorizeDBSecurityGroupIngressRequest) super.clone();
+    }
+
 }
     

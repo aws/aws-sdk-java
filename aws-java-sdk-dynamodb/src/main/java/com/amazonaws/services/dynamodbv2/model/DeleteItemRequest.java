@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#deleteItem(DeleteItemRequest)
  */
-public class DeleteItemRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteItemRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the table from which to delete the item.
@@ -3007,5 +3007,11 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DeleteItemRequest clone() {
+        
+            return (DeleteItemRequest) super.clone();
+    }
+
 }
     

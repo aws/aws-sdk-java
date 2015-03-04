@@ -38,7 +38,7 @@ import com.amazonaws.services.ec2.model.transform.CancelSpotInstanceRequestsRequ
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest)
  */
-public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CancelSpotInstanceRequestsRequest> {
+public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CancelSpotInstanceRequestsRequest> {
 
     /**
      * One or more Spot Instance request IDs.
@@ -181,5 +181,11 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public CancelSpotInstanceRequestsRequest clone() {
+        
+            return (CancelSpotInstanceRequestsRequest) super.clone();
+    }
+
 }
     

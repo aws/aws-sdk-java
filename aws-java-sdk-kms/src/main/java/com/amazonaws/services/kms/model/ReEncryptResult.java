@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ReEncryptResult implements Serializable {
+public class ReEncryptResult implements Serializable, Cloneable {
 
     /**
      * The re-encrypted data.
@@ -218,5 +218,19 @@ public class ReEncryptResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ReEncryptResult clone() {
+        try {
+            return (ReEncryptResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

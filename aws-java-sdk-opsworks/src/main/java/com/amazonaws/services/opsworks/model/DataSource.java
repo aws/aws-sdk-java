@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes an app's data source.
  * </p>
  */
-public class DataSource implements Serializable {
+public class DataSource implements Serializable, Cloneable {
 
     /**
      * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
@@ -191,5 +191,19 @@ public class DataSource implements Serializable {
         return true;
     }
     
+    @Override
+    public DataSource clone() {
+        try {
+            return (DataSource) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeVpnConnectionsResult implements Serializable {
+public class DescribeVpnConnectionsResult implements Serializable, Cloneable {
 
     /**
      * Information about one or more VPN connections.
@@ -133,5 +133,19 @@ public class DescribeVpnConnectionsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeVpnConnectionsResult clone() {
+        try {
+            return (DescribeVpnConnectionsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

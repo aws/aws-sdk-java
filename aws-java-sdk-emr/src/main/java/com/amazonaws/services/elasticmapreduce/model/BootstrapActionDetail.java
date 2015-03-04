@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Reports the configuration of a bootstrap action in a job flow.
  * </p>
  */
-public class BootstrapActionDetail implements Serializable {
+public class BootstrapActionDetail implements Serializable, Cloneable {
 
     /**
      * A description of the bootstrap action.
@@ -117,5 +117,19 @@ public class BootstrapActionDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public BootstrapActionDetail clone() {
+        try {
+            return (BootstrapActionDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

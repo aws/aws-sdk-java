@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudhsm.AWSCloudHSM#listHapgs(ListHapgsRequest)
  */
-public class ListHapgsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListHapgsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <i>NextToken</i> value from a previous call to <a>ListHapgs</a>.
@@ -130,5 +130,11 @@ public class ListHapgsRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public ListHapgsRequest clone() {
+        
+            return (ListHapgsRequest) super.clone();
+    }
+
 }
     

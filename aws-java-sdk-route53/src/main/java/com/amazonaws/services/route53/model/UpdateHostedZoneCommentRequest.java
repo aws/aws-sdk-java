@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#updateHostedZoneComment(UpdateHostedZoneCommentRequest)
  */
-public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the hosted zone you want to update.
@@ -178,5 +178,11 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public UpdateHostedZoneCommentRequest clone() {
+        
+            return (UpdateHostedZoneCommentRequest) super.clone();
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#deleteAlarms(DeleteAlarmsRequest)
  */
-public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A list of alarms to be deleted.
@@ -156,5 +156,11 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DeleteAlarmsRequest clone() {
+        
+            return (DeleteAlarmsRequest) super.clone();
+    }
+
 }
     

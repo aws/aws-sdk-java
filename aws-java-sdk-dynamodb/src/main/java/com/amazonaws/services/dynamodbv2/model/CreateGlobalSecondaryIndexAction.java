@@ -22,7 +22,7 @@ import java.io.Serializable;
  * table.
  * </p>
  */
-public class CreateGlobalSecondaryIndexAction implements Serializable {
+public class CreateGlobalSecondaryIndexAction implements Serializable, Cloneable {
 
     /**
      * The name of the global secondary index to be created.
@@ -338,5 +338,19 @@ public class CreateGlobalSecondaryIndexAction implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateGlobalSecondaryIndexAction clone() {
+        try {
+            return (CreateGlobalSecondaryIndexAction) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

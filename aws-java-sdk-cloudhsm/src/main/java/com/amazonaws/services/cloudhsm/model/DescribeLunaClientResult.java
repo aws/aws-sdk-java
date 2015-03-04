@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeLunaClientResult implements Serializable {
+public class DescribeLunaClientResult implements Serializable, Cloneable {
 
     /**
      * The ARN of the client.
@@ -330,5 +330,19 @@ public class DescribeLunaClientResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeLunaClientResult clone() {
+        try {
+            return (DescribeLunaClientResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

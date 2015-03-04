@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Select Result
  */
-public class SelectResult implements Serializable {
+public class SelectResult implements Serializable, Cloneable {
 
     /**
      * A list of items that match the select expression.
@@ -189,5 +189,19 @@ public class SelectResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SelectResult clone() {
+        try {
+            return (SelectResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -25,7 +25,7 @@ import java.io.Serializable;
  * stream includes ErrorCode and ErrorMessage in the result.
  * </p>
  */
-public class PutRecordsResultEntry implements Serializable {
+public class PutRecordsResultEntry implements Serializable, Cloneable {
 
     /**
      * The sequence number for an individual record result.
@@ -314,5 +314,19 @@ public class PutRecordsResultEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public PutRecordsResultEntry clone() {
+        try {
+            return (PutRecordsResultEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

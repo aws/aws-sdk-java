@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpcsRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest)
  */
-public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpcsRequest> {
+public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVpcsRequest> {
 
     /**
      * One or more VPC IDs. <p>Default: Describes all your VPCs.
@@ -429,5 +429,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DescribeVpcsRequest clone() {
+        
+            return (DescribeVpcsRequest) super.clone();
+    }
+
 }
     

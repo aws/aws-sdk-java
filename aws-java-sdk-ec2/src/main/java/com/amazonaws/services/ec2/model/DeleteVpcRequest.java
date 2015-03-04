@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpcRequestMarshaller;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest)
  */
-public class DeleteVpcRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVpcRequest> {
+public class DeleteVpcRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteVpcRequest> {
 
     /**
      * The ID of the VPC.
@@ -141,5 +141,11 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public DeleteVpcRequest clone() {
+        
+            return (DeleteVpcRequest) super.clone();
+    }
+
 }
     

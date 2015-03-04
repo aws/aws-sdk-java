@@ -67,7 +67,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest)
  */
-public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain containing the workflow executions to count.
@@ -571,5 +571,11 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public CountClosedWorkflowExecutionsRequest clone() {
+        
+            return (CountClosedWorkflowExecutionsRequest) super.clone();
+    }
+
 }
     

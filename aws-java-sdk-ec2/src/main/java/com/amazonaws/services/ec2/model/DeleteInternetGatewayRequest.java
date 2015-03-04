@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteInternetGatewayRequestMa
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteInternetGateway(DeleteInternetGatewayRequest)
  */
-public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteInternetGatewayRequest> {
+public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteInternetGatewayRequest> {
 
     /**
      * The ID of the Internet gateway.
@@ -120,5 +120,11 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public DeleteInternetGatewayRequest clone() {
+        
+            return (DeleteInternetGatewayRequest) super.clone();
+    }
+
 }
     

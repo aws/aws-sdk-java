@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest)
  */
-public class DisassociateVPCFromHostedZoneRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisassociateVPCFromHostedZoneRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the hosted zone you want to disassociate your VPC from.
@@ -227,5 +227,11 @@ public class DisassociateVPCFromHostedZoneRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DisassociateVPCFromHostedZoneRequest clone() {
+        
+            return (DisassociateVPCFromHostedZoneRequest) super.clone();
+    }
+
 }
     

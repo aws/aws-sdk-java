@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.kms.AWSKMS#listAliases(ListAliasesRequest)
  */
-public class ListAliasesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListAliasesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Specify this parameter when paginating results to indicate the maximum
@@ -217,5 +217,11 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListAliasesRequest clone() {
+        
+            return (ListAliasesRequest) super.clone();
+    }
+
 }
     

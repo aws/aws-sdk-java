@@ -21,16 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cognitosync.AmazonCognitoSync#describeDataset(DescribeDatasetRequest) DescribeDataset operation}.
  * <p>
- * Gets metadata about a dataset by identity and dataset name. The
- * credentials used to make this API call need to have access to the
- * identity data. With Amazon Cognito Sync, each identity has access only
- * to its own data. You should use Amazon Cognito Identity service to
- * retrieve the credentials necessary to make this API call.
+ * Gets meta data about a dataset by identity and dataset name. With
+ * Amazon Cognito Sync, each identity has access only to its own data.
+ * Thus, the credentials used to make this API call need to have access
+ * to the identity data.
+ * </p>
+ * <p>
+ * <code>DescribeDataset</code> can be called with temporary user
+ * credentials provided by Cognito Identity or with developer
+ * credentials. You should use Cognito Identity credentials to make this
+ * API call.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#describeDataset(DescribeDatasetRequest)
  */
-public class DescribeDatasetRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeDatasetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,
@@ -276,5 +281,11 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements S
         return true;
     }
     
+    @Override
+    public DescribeDatasetRequest clone() {
+        
+            return (DescribeDatasetRequest) super.clone();
+    }
+
 }
     

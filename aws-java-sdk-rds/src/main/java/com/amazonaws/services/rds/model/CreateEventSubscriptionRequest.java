@@ -48,7 +48,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createEventSubscription(CreateEventSubscriptionRequest)
  */
-public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the subscription. <p>Constraints: The name must be less
@@ -704,5 +704,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
         return true;
     }
     
+    @Override
+    public CreateEventSubscriptionRequest clone() {
+        
+            return (CreateEventSubscriptionRequest) super.clone();
+    }
+
 }
     

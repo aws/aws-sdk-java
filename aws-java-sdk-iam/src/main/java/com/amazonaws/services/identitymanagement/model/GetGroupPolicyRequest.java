@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroupPolicy(GetGroupPolicyRequest)
  */
-public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group the policy is associated with.
@@ -210,5 +210,11 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public GetGroupPolicyRequest clone() {
+        
+            return (GetGroupPolicyRequest) super.clone();
+    }
+
 }
     

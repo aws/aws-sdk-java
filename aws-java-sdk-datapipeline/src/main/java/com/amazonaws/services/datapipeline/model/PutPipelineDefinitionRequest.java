@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#putPipelineDefinition(PutPipelineDefinitionRequest)
  */
-public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the pipeline to be configured.
@@ -378,5 +378,11 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public PutPipelineDefinitionRequest clone() {
+        
+            return (PutPipelineDefinitionRequest) super.clone();
+    }
+
 }
     

@@ -47,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteQueue(DeleteQueueRequest)
  */
-public class DeleteQueueRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteQueueRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -143,5 +143,11 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public DeleteQueueRequest clone() {
+        
+            return (DeleteQueueRequest) super.clone();
+    }
+
 }
     

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * applied to a support case.
  * </p>
  */
-public class SeverityLevel implements Serializable {
+public class SeverityLevel implements Serializable, Cloneable {
 
     /**
      * One of four values: "low," "medium," "high," and "urgent". These
@@ -164,5 +164,19 @@ public class SeverityLevel implements Serializable {
         return true;
     }
     
+    @Override
+    public SeverityLevel clone() {
+        try {
+            return (SeverityLevel) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

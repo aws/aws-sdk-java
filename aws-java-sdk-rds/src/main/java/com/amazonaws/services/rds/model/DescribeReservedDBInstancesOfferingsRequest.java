@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest)
  */
-public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The offering identifier filter value. Specify this parameter to show
@@ -612,5 +612,11 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
         return true;
     }
     
+    @Override
+    public DescribeReservedDBInstancesOfferingsRequest clone() {
+        
+            return (DescribeReservedDBInstancesOfferingsRequest) super.clone();
+    }
+
 }
     

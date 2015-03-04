@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Response for GetTopicAttributes action.
  * </p>
  */
-public class GetTopicAttributesResult implements Serializable {
+public class GetTopicAttributesResult implements Serializable, Cloneable {
 
     /**
      * A map of the topic's attributes. Attributes in this map include the
@@ -254,5 +254,19 @@ public class GetTopicAttributesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetTopicAttributesResult clone() {
+        try {
+            return (GetTopicAttributesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

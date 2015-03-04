@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53domains.AmazonRoute53Domains#listDomains(ListDomainsRequest)
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListDomainsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * For an initial request for a list of domains, omit this element. If
@@ -242,5 +242,11 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public ListDomainsRequest clone() {
+        
+            return (ListDomainsRequest) super.clone();
+    }
+
 }
     

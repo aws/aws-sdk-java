@@ -22,7 +22,7 @@ import java.io.Serializable;
  * <code>Id</code> .
  * </p>
  */
-public class SendMessageBatchRequestEntry implements Serializable {
+public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * An identifier for the message in this batch. This is used to
@@ -320,5 +320,19 @@ public class SendMessageBatchRequestEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public SendMessageBatchRequestEntry clone() {
+        try {
+            return (SendMessageBatchRequestEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

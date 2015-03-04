@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpnGatewaysRequestMars
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest)
  */
-public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpnGatewaysRequest> {
+public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVpnGatewaysRequest> {
 
     /**
      * One or more virtual private gateway IDs. <p>Default: Describes all
@@ -470,5 +470,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
         return true;
     }
     
+    @Override
+    public DescribeVpnGatewaysRequest clone() {
+        
+            return (DescribeVpnGatewaysRequest) super.clone();
+    }
+
 }
     

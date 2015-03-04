@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The object for the Lambda function location.
  * </p>
  */
-public class FunctionCodeLocation implements Serializable {
+public class FunctionCodeLocation implements Serializable, Cloneable {
 
     /**
      * The repository from which you can download the function.
@@ -149,5 +149,19 @@ public class FunctionCodeLocation implements Serializable {
         return true;
     }
     
+    @Override
+    public FunctionCodeLocation clone() {
+        try {
+            return (FunctionCodeLocation) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

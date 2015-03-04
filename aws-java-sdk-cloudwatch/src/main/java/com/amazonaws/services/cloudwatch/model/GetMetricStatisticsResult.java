@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the GetMetricStatistics action.
  * </p>
  */
-public class GetMetricStatisticsResult implements Serializable {
+public class GetMetricStatisticsResult implements Serializable, Cloneable {
 
     /**
      * A label describing the specified metric.
@@ -177,5 +177,19 @@ public class GetMetricStatisticsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetMetricStatisticsResult clone() {
+        try {
+            return (GetMetricStatisticsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

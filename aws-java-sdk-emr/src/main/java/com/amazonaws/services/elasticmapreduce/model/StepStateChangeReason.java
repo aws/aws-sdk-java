@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The details of the step state change reason.
  * </p>
  */
-public class StepStateChangeReason implements Serializable {
+public class StepStateChangeReason implements Serializable, Cloneable {
 
     /**
      * The programmable code for the state change reason.
@@ -194,5 +194,19 @@ public class StepStateChangeReason implements Serializable {
         return true;
     }
     
+    @Override
+    public StepStateChangeReason clone() {
+        try {
+            return (StepStateChangeReason) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

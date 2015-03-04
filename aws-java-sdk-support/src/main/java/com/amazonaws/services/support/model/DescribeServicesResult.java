@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The list of AWS services returned by the DescribeServices operation.
  * </p>
  */
-public class DescribeServicesResult implements Serializable {
+public class DescribeServicesResult implements Serializable, Cloneable {
 
     /**
      * A JSON-formatted list of AWS services.
@@ -135,5 +135,19 @@ public class DescribeServicesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeServicesResult clone() {
+        try {
+            return (DescribeServicesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

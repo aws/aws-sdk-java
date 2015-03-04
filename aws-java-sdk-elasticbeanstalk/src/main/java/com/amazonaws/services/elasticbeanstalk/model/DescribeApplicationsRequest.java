@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeApplications(DescribeApplicationsRequest)
  */
-public class DescribeApplicationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeApplicationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
@@ -155,5 +155,11 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest impleme
         return true;
     }
     
+    @Override
+    public DescribeApplicationsRequest clone() {
+        
+            return (DescribeApplicationsRequest) super.clone();
+    }
+
 }
     

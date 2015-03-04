@@ -22,7 +22,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class PendingModifiedValues implements Serializable {
+public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * Contains the new <code>DBInstanceClass</code> for the DB instance that
@@ -545,5 +545,19 @@ public class PendingModifiedValues implements Serializable {
         return true;
     }
     
+    @Override
+    public PendingModifiedValues clone() {
+        try {
+            return (PendingModifiedValues) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest)
  */
-public class AddPermissionRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddPermissionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ARN of the topic whose access control policy you wish to modify.
@@ -356,5 +356,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public AddPermissionRequest clone() {
+        
+            return (AddPermissionRequest) super.clone();
+    }
+
 }
     

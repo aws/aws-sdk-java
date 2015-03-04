@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The status of the cache parameter group.
  * </p>
  */
-public class CacheParameterGroupStatus implements Serializable {
+public class CacheParameterGroupStatus implements Serializable, Cloneable {
 
     /**
      * The name of the cache parameter group.
@@ -243,5 +243,19 @@ public class CacheParameterGroupStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public CacheParameterGroupStatus clone() {
+        try {
+            return (CacheParameterGroupStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

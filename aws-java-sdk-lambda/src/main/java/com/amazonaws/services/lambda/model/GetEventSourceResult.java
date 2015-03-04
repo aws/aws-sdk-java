@@ -22,7 +22,7 @@ import java.io.Serializable;
  * function.
  * </p>
  */
-public class GetEventSourceResult implements Serializable {
+public class GetEventSourceResult implements Serializable, Cloneable {
 
     /**
      * The AWS Lambda assigned opaque identifier for the mapping.
@@ -581,5 +581,19 @@ public class GetEventSourceResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetEventSourceResult clone() {
+        try {
+            return (GetEventSourceResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

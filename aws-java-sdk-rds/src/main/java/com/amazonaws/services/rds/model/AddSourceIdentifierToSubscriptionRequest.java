@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest)
  */
-public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the RDS event notification subscription you want to add a
@@ -225,5 +225,11 @@ public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRe
         return true;
     }
     
+    @Override
+    public AddSourceIdentifierToSubscriptionRequest clone() {
+        
+            return (AddSourceIdentifierToSubscriptionRequest) super.clone();
+    }
+
 }
     

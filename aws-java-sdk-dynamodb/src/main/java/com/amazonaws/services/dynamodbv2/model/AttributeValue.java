@@ -29,7 +29,7 @@ import java.io.Serializable;
  * are not allowed.
  * </p>
  */
-public class AttributeValue implements Serializable {
+public class AttributeValue implements Serializable, Cloneable {
 
     /**
      * A String data type.
@@ -686,5 +686,19 @@ public class AttributeValue implements Serializable {
         return true;
     }
     
+    @Override
+    public AttributeValue clone() {
+        try {
+            return (AttributeValue) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

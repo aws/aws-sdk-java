@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteUserProfile(DeleteUserProfileRequest)
  */
-public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The user's IAM ARN.
@@ -112,5 +112,11 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteUserProfileRequest clone() {
+        
+            return (DeleteUserProfileRequest) super.clone();
+    }
+
 }
     

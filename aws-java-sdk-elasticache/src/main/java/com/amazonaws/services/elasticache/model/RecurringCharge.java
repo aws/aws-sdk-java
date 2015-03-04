@@ -22,7 +22,7 @@ import java.io.Serializable;
  * reserved cache node, or for a reserved cache node offering.
  * </p>
  */
-public class RecurringCharge implements Serializable {
+public class RecurringCharge implements Serializable, Cloneable {
 
     /**
      * The monetary amount of the recurring charge.
@@ -143,5 +143,19 @@ public class RecurringCharge implements Serializable {
         return true;
     }
     
+    @Override
+    public RecurringCharge clone() {
+        try {
+            return (RecurringCharge) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Returned in response to a GetId request.
  * </p>
  */
-public class GetIdResult implements Serializable {
+public class GetIdResult implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -116,5 +116,19 @@ public class GetIdResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetIdResult clone() {
+        try {
+            return (GetIdResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

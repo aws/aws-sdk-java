@@ -22,7 +22,7 @@ import java.io.Serializable;
  * returns an error.
  * </p>
  */
-public class DescribeTrailsResult implements Serializable {
+public class DescribeTrailsResult implements Serializable, Cloneable {
 
     /**
      * The list of trails.
@@ -136,5 +136,19 @@ public class DescribeTrailsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeTrailsResult clone() {
+        try {
+            return (DescribeTrailsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

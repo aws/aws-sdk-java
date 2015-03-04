@@ -24,7 +24,7 @@ import java.io.Serializable;
  * operations.
  * </p>
  */
-public class Activity implements Serializable {
+public class Activity implements Serializable, Cloneable {
 
     /**
      * The ID of the activity.
@@ -617,5 +617,19 @@ public class Activity implements Serializable {
         return true;
     }
     
+    @Override
+    public Activity clone() {
+        try {
+            return (Activity) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

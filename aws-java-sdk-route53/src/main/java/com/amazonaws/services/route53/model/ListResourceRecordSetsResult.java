@@ -23,7 +23,7 @@ import java.io.Serializable;
  * response.
  * </p>
  */
-public class ListResourceRecordSetsResult implements Serializable {
+public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * A complex type that contains information about the resource record
@@ -541,5 +541,19 @@ public class ListResourceRecordSetsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListResourceRecordSetsResult clone() {
+        try {
+            return (ListResourceRecordSetsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

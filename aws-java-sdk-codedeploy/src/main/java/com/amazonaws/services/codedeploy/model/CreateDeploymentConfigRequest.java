@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#createDeploymentConfig(CreateDeploymentConfigRequest)
  */
-public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the deployment configuration to create.
@@ -243,5 +243,11 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateDeploymentConfigRequest clone() {
+        
+            return (CreateDeploymentConfigRequest) super.clone();
+    }
+
 }
     

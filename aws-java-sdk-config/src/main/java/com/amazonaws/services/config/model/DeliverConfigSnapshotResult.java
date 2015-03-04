@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the DeliverConfigSnapshot action in JSON format.
  * </p>
  */
-public class DeliverConfigSnapshotResult implements Serializable {
+public class DeliverConfigSnapshotResult implements Serializable, Cloneable {
 
     /**
      * The ID of the snapshot that is being created.
@@ -100,5 +100,19 @@ public class DeliverConfigSnapshotResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeliverConfigSnapshotResult clone() {
+        try {
+            return (DeliverConfigSnapshotResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

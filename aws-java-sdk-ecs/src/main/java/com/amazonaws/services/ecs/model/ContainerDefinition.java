@@ -22,7 +22,7 @@ import java.io.Serializable;
  * different containers that are launched as part of a task.
  * </p>
  */
-public class ContainerDefinition implements Serializable {
+public class ContainerDefinition implements Serializable, Cloneable {
 
     /**
      * The name of a container. If you are linking multiple containers
@@ -1033,5 +1033,19 @@ public class ContainerDefinition implements Serializable {
         return true;
     }
     
+    @Override
+    public ContainerDefinition clone() {
+        try {
+            return (ContainerDefinition) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

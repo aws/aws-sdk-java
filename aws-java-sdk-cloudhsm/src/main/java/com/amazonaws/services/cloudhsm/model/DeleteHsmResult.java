@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the output of the DeleteHsm action.
  * </p>
  */
-public class DeleteHsmResult implements Serializable {
+public class DeleteHsmResult implements Serializable, Cloneable {
 
     /**
      * The status of the action.
@@ -112,5 +112,19 @@ public class DeleteHsmResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteHsmResult clone() {
+        try {
+            return (DeleteHsmResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

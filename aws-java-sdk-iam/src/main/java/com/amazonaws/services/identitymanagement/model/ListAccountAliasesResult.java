@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful ListAccountAliases request.
  * </p>
  */
-public class ListAccountAliasesResult implements Serializable {
+public class ListAccountAliasesResult implements Serializable, Cloneable {
 
     /**
      * A list of aliases associated with the account.
@@ -292,5 +292,19 @@ public class ListAccountAliasesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListAccountAliasesResult clone() {
+        try {
+            return (ListAccountAliasesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

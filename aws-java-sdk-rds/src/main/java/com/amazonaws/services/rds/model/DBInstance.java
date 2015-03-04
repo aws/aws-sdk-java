@@ -33,7 +33,7 @@ import java.io.Serializable;
  * DescribeDBInstances action.
  * </p>
  */
-public class DBInstance implements Serializable {
+public class DBInstance implements Serializable, Cloneable {
 
     /**
      * Contains a user-supplied database identifier. This is the unique key
@@ -2198,5 +2198,19 @@ public class DBInstance implements Serializable {
         return true;
     }
     
+    @Override
+    public DBInstance clone() {
+        try {
+            return (DBInstance) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

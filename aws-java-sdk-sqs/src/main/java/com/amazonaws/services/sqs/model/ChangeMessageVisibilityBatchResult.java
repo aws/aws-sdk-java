@@ -23,7 +23,7 @@ import java.io.Serializable;
  * a BatchResultErrorEntry tag if the message fails.
  * </p>
  */
-public class ChangeMessageVisibilityBatchResult implements Serializable {
+public class ChangeMessageVisibilityBatchResult implements Serializable, Cloneable {
 
     /**
      * A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
@@ -214,5 +214,19 @@ public class ChangeMessageVisibilityBatchResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ChangeMessageVisibilityBatchResult clone() {
+        try {
+            return (ChangeMessageVisibilityBatchResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

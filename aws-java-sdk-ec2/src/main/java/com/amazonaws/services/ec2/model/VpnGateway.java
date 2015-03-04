@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a virtual private gateway.
  * </p>
  */
-public class VpnGateway implements Serializable {
+public class VpnGateway implements Serializable, Cloneable {
 
     /**
      * The ID of the virtual private gateway.
@@ -484,5 +484,19 @@ public class VpnGateway implements Serializable {
         return true;
     }
     
+    @Override
+    public VpnGateway clone() {
+        try {
+            return (VpnGateway) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

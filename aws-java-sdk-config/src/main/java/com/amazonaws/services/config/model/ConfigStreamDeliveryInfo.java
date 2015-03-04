@@ -22,7 +22,7 @@ import java.io.Serializable;
  * stream notification to the Amazon SNS topic.
  * </p>
  */
-public class ConfigStreamDeliveryInfo implements Serializable {
+public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
 
     /**
      * Status of the last attempted delivery.
@@ -279,5 +279,19 @@ public class ConfigStreamDeliveryInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfigStreamDeliveryInfo clone() {
+        try {
+            return (ConfigStreamDeliveryInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

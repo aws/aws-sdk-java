@@ -24,7 +24,7 @@ import java.io.Serializable;
  * specified when starting the workflow execution.
  * </p>
  */
-public class WorkflowExecutionConfiguration implements Serializable {
+public class WorkflowExecutionConfiguration implements Serializable, Cloneable {
 
     /**
      * The maximum duration allowed for decision tasks for this workflow
@@ -567,5 +567,19 @@ public class WorkflowExecutionConfiguration implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionConfiguration clone() {
+        try {
+            return (WorkflowExecutionConfiguration) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

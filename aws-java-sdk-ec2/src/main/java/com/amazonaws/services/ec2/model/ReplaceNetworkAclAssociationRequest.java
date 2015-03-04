@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclAssociationRe
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest)
  */
-public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceNetworkAclAssociationRequest> {
+public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ReplaceNetworkAclAssociationRequest> {
 
     /**
      * The ID of the current association between the original network ACL and
@@ -172,5 +172,11 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public ReplaceNetworkAclAssociationRequest clone() {
+        
+            return (ReplaceNetworkAclAssociationRequest) super.clone();
+    }
+
 }
     

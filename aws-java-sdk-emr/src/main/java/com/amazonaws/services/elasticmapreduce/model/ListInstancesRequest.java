@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listInstances(ListInstancesRequest)
  */
-public class ListInstancesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster for which to list the instances.
@@ -300,5 +300,11 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public ListInstancesRequest clone() {
+        
+            return (ListInstancesRequest) super.clone();
+    }
+
 }
     

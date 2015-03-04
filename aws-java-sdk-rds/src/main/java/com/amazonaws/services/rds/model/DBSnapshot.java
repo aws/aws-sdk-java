@@ -32,7 +32,7 @@ import java.io.Serializable;
  * DescribeDBSnapshots action.
  * </p>
  */
-public class DBSnapshot implements Serializable {
+public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * Specifies the identifier for the DB snapshot.
@@ -1044,5 +1044,19 @@ public class DBSnapshot implements Serializable {
         return true;
     }
     
+    @Override
+    public DBSnapshot clone() {
+        try {
+            return (DBSnapshot) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

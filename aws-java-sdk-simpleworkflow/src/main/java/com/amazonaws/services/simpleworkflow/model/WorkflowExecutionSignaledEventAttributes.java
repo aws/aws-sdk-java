@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionSignaled</code> event.
  * </p>
  */
-public class WorkflowExecutionSignaledEventAttributes implements Serializable {
+public class WorkflowExecutionSignaledEventAttributes implements Serializable, Cloneable {
 
     /**
      * The name of the signal received. The decider can use the signal name
@@ -313,5 +313,19 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecutionSignaledEventAttributes clone() {
+        try {
+            return (WorkflowExecutionSignaledEventAttributes) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

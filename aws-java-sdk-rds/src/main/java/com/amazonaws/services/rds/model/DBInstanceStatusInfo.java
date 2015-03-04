@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Provides a list of status information for a DB instance.
  * </p>
  */
-public class DBInstanceStatusInfo implements Serializable {
+public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * This value is currently "read replication."
@@ -258,5 +258,19 @@ public class DBInstanceStatusInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public DBInstanceStatusInfo clone() {
+        try {
+            return (DBInstanceStatusInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

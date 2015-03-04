@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class TerminateInstanceInAutoScalingGroupResult implements Serializable {
+public class TerminateInstanceInAutoScalingGroupResult implements Serializable, Cloneable {
 
     /**
      * A scaling activity.
@@ -98,5 +98,19 @@ public class TerminateInstanceInAutoScalingGroupResult implements Serializable {
         return true;
     }
     
+    @Override
+    public TerminateInstanceInAutoScalingGroupResult clone() {
+        try {
+            return (TerminateInstanceInAutoScalingGroupResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

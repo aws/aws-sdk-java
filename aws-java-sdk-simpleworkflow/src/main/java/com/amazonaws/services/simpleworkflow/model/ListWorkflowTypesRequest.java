@@ -54,7 +54,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listWorkflowTypes(ListWorkflowTypesRequest)
  */
-public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the domain in which the workflow types have been
@@ -547,5 +547,11 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public ListWorkflowTypesRequest clone() {
+        
+            return (ListWorkflowTypesRequest) super.clone();
+    }
+
 }
     

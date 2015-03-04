@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createClusterSnapshot(CreateClusterSnapshotRequest)
  */
-public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A unique identifier for the snapshot that you are requesting. This
@@ -272,5 +272,11 @@ public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest implem
         return true;
     }
     
+    @Override
+    public CreateClusterSnapshotRequest clone() {
+        
+            return (CreateClusterSnapshotRequest) super.clone();
+    }
+
 }
     

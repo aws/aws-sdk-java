@@ -55,7 +55,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeTags(DescribeTagsRequest)
  */
-public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) for which you want to describe the tag
@@ -662,5 +662,11 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DescribeTagsRequest clone() {
+        
+            return (DescribeTagsRequest) super.clone();
+    }
+
 }
     

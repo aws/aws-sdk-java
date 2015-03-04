@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest)
  */
-public class DescribeMaintenanceStartTimeRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeMaintenanceStartTimeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -133,5 +133,11 @@ public class DescribeMaintenanceStartTimeRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public DescribeMaintenanceStartTimeRequest clone() {
+        
+            return (DescribeMaintenanceStartTimeRequest) super.clone();
+    }
+
 }
     

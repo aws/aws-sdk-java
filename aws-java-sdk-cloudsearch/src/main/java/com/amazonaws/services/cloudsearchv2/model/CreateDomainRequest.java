@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#createDomain(CreateDomainRequest)
  */
-public class CreateDomainRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateDomainRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * A name for the domain you are creating. Allowed characters are a-z
@@ -144,5 +144,11 @@ public class CreateDomainRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public CreateDomainRequest clone() {
+        
+            return (CreateDomainRequest) super.clone();
+    }
+
 }
     

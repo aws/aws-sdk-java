@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PutScalingPolicyResult implements Serializable {
+public class PutScalingPolicyResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the policy.
@@ -114,5 +114,19 @@ public class PutScalingPolicyResult implements Serializable {
         return true;
     }
     
+    @Override
+    public PutScalingPolicyResult clone() {
+        try {
+            return (PutScalingPolicyResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

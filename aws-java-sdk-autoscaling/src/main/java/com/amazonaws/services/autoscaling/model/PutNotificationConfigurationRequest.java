@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putNotificationConfiguration(PutNotificationConfigurationRequest)
  */
-public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the Auto Scaling group.
@@ -291,5 +291,11 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
         return true;
     }
     
+    @Override
+    public PutNotificationConfigurationRequest clone() {
+        
+            return (PutNotificationConfigurationRequest) super.clone();
+    }
+
 }
     

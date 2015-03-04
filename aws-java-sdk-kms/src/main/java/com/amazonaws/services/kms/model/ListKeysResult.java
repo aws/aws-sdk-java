@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListKeysResult implements Serializable {
+public class ListKeysResult implements Serializable, Cloneable {
 
     /**
      * A list of keys.
@@ -283,5 +283,19 @@ public class ListKeysResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListKeysResult clone() {
+        try {
+            return (ListKeysResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

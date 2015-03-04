@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#stopDeployment(StopDeploymentRequest)
  */
-public class StopDeploymentRequest extends AmazonWebServiceRequest implements Serializable {
+public class StopDeploymentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique ID of a deployment.
@@ -105,5 +105,11 @@ public class StopDeploymentRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public StopDeploymentRequest clone() {
+        
+            return (StopDeploymentRequest) super.clone();
+    }
+
 }
     

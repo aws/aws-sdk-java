@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a placement group.
  * </p>
  */
-public class PlacementGroup implements Serializable {
+public class PlacementGroup implements Serializable, Cloneable {
 
     /**
      * The name of the placement group.
@@ -305,5 +305,19 @@ public class PlacementGroup implements Serializable {
         return true;
     }
     
+    @Override
+    public PlacementGroup clone() {
+        try {
+            return (PlacementGroup) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

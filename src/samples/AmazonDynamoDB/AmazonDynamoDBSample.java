@@ -53,7 +53,7 @@ public class AmazonDynamoDBSample {
      *      credentials from.
      *      https://console.aws.amazon.com/iam/home?#security_credential
      *
-     * WANRNING:
+     * WARNING:
      *      To avoid accidental leakage of your credentials, DO NOT keep
      *      the credentials file in your source directory.
      */
@@ -112,7 +112,7 @@ public class AmazonDynamoDBSample {
 
                 // Wait for it to become active
                 System.out.println("Waiting for " + tableName + " to become ACTIVE...");
-                Tables.waitForTableToBecomeActive(dynamoDB, tableName);
+                Tables.awaitTableToBecomeActive(dynamoDB, tableName);
             }
 
             // Describe our new table

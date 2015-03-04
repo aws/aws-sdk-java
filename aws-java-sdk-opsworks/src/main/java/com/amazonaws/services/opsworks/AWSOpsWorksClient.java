@@ -332,14 +332,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterRdsDbInstanceRequestMarshaller().marshall(deregisterRdsDbInstanceRequest);
+                request = new DeregisterRdsDbInstanceRequestMarshaller().marshall(super.beforeMarshalling(deregisterRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -384,14 +386,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterRdsDbInstanceRequestMarshaller().marshall(registerRdsDbInstanceRequest);
+                request = new RegisterRdsDbInstanceRequestMarshaller().marshall(super.beforeMarshalling(registerRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -434,14 +438,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMyUserProfileRequestMarshaller().marshall(updateMyUserProfileRequest);
+                request = new UpdateMyUserProfileRequestMarshaller().marshall(super.beforeMarshalling(updateMyUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -488,14 +494,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterVolumeRequestMarshaller().marshall(deregisterVolumeRequest);
+                request = new DeregisterVolumeRequestMarshaller().marshall(super.beforeMarshalling(deregisterVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -541,14 +549,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetPermissionRequestMarshaller().marshall(setPermissionRequest);
+                request = new SetPermissionRequestMarshaller().marshall(super.beforeMarshalling(setPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -598,19 +608,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstancesRequestMarshaller().marshall(describeInstancesRequest);
+                request = new DescribeInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeInstancesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeInstancesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeInstancesResult> responseHandler =
                 new JsonResponseHandler<DescribeInstancesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -659,19 +670,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePermissionsRequestMarshaller().marshall(describePermissionsRequest);
+                request = new DescribePermissionsRequestMarshaller().marshall(super.beforeMarshalling(describePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribePermissionsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribePermissionsResultJsonUnmarshaller();
             JsonResponseHandler<DescribePermissionsResult> responseHandler =
                 new JsonResponseHandler<DescribePermissionsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -722,14 +734,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteInstanceRequestMarshaller().marshall(deleteInstanceRequest);
+                request = new DeleteInstanceRequestMarshaller().marshall(super.beforeMarshalling(deleteInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -777,19 +791,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CloneStackRequestMarshaller().marshall(cloneStackRequest);
+                request = new CloneStackRequestMarshaller().marshall(super.beforeMarshalling(cloneStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CloneStackResult, JsonUnmarshallerContext> unmarshaller =
                 new CloneStackResultJsonUnmarshaller();
             JsonResponseHandler<CloneStackResult> responseHandler =
                 new JsonResponseHandler<CloneStackResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -834,14 +849,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachElasticLoadBalancerRequestMarshaller().marshall(detachElasticLoadBalancerRequest);
+                request = new DetachElasticLoadBalancerRequestMarshaller().marshall(super.beforeMarshalling(detachElasticLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -890,14 +907,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopInstanceRequestMarshaller().marshall(stopInstanceRequest);
+                request = new StopInstanceRequestMarshaller().marshall(super.beforeMarshalling(stopInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -941,14 +960,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAppRequestMarshaller().marshall(updateAppRequest);
+                request = new UpdateAppRequestMarshaller().marshall(super.beforeMarshalling(updateAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -996,19 +1017,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRdsDbInstancesRequestMarshaller().marshall(describeRdsDbInstancesRequest);
+                request = new DescribeRdsDbInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeRdsDbInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeRdsDbInstancesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeRdsDbInstancesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeRdsDbInstancesResult> responseHandler =
                 new JsonResponseHandler<DescribeRdsDbInstancesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1059,19 +1081,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCommandsRequestMarshaller().marshall(describeCommandsRequest);
+                request = new DescribeCommandsRequestMarshaller().marshall(super.beforeMarshalling(describeCommandsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeCommandsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeCommandsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeCommandsResult> responseHandler =
                 new JsonResponseHandler<DescribeCommandsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1121,14 +1144,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateElasticIpRequestMarshaller().marshall(associateElasticIpRequest);
+                request = new AssociateElasticIpRequestMarshaller().marshall(super.beforeMarshalling(associateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1175,14 +1200,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnassignVolumeRequestMarshaller().marshall(unassignVolumeRequest);
+                request = new UnassignVolumeRequestMarshaller().marshall(super.beforeMarshalling(unassignVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1233,19 +1260,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRaidArraysRequestMarshaller().marshall(describeRaidArraysRequest);
+                request = new DescribeRaidArraysRequestMarshaller().marshall(super.beforeMarshalling(describeRaidArraysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeRaidArraysResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeRaidArraysResultJsonUnmarshaller();
             JsonResponseHandler<DescribeRaidArraysResult> responseHandler =
                 new JsonResponseHandler<DescribeRaidArraysResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1295,19 +1323,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetHostnameSuggestionRequestMarshaller().marshall(getHostnameSuggestionRequest);
+                request = new GetHostnameSuggestionRequestMarshaller().marshall(super.beforeMarshalling(getHostnameSuggestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext> unmarshaller =
                 new GetHostnameSuggestionResultJsonUnmarshaller();
             JsonResponseHandler<GetHostnameSuggestionResult> responseHandler =
                 new JsonResponseHandler<GetHostnameSuggestionResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1362,14 +1391,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetLoadBasedAutoScalingRequestMarshaller().marshall(setLoadBasedAutoScalingRequest);
+                request = new SetLoadBasedAutoScalingRequestMarshaller().marshall(super.beforeMarshalling(setLoadBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1419,19 +1450,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVolumesRequestMarshaller().marshall(describeVolumesRequest);
+                request = new DescribeVolumesRequestMarshaller().marshall(super.beforeMarshalling(describeVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeVolumesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeVolumesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeVolumesResult> responseHandler =
                 new JsonResponseHandler<DescribeVolumesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1480,14 +1512,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssignVolumeRequestMarshaller().marshall(assignVolumeRequest);
+                request = new AssignVolumeRequestMarshaller().marshall(super.beforeMarshalling(assignVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1534,14 +1568,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnassignInstanceRequestMarshaller().marshall(unassignInstanceRequest);
+                request = new UnassignInstanceRequestMarshaller().marshall(super.beforeMarshalling(unassignInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1589,19 +1625,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServiceErrorsRequestMarshaller().marshall(describeServiceErrorsRequest);
+                request = new DescribeServiceErrorsRequestMarshaller().marshall(super.beforeMarshalling(describeServiceErrorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeServiceErrorsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeServiceErrorsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeServiceErrorsResult> responseHandler =
                 new JsonResponseHandler<DescribeServiceErrorsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1646,14 +1683,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateLayerRequestMarshaller().marshall(updateLayerRequest);
+                request = new UpdateLayerRequestMarshaller().marshall(super.beforeMarshalling(updateLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1700,14 +1739,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateElasticIpRequestMarshaller().marshall(updateElasticIpRequest);
+                request = new UpdateElasticIpRequestMarshaller().marshall(super.beforeMarshalling(updateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1753,14 +1794,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartInstanceRequestMarshaller().marshall(startInstanceRequest);
+                request = new StartInstanceRequestMarshaller().marshall(super.beforeMarshalling(startInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1818,19 +1861,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLayerRequestMarshaller().marshall(createLayerRequest);
+                request = new CreateLayerRequestMarshaller().marshall(super.beforeMarshalling(createLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateLayerResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateLayerResultJsonUnmarshaller();
             JsonResponseHandler<CreateLayerResult> responseHandler =
                 new JsonResponseHandler<CreateLayerResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -1879,14 +1923,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateElasticIpRequestMarshaller().marshall(disassociateElasticIpRequest);
+                request = new DisassociateElasticIpRequestMarshaller().marshall(super.beforeMarshalling(disassociateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1934,14 +1980,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
+                request = new DeleteStackRequestMarshaller().marshall(super.beforeMarshalling(deleteStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -1985,14 +2033,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartStackRequestMarshaller().marshall(startStackRequest);
+                request = new StartStackRequestMarshaller().marshall(super.beforeMarshalling(startStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -2044,19 +2094,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterVolumeRequestMarshaller().marshall(registerVolumeRequest);
+                request = new RegisterVolumeRequestMarshaller().marshall(super.beforeMarshalling(registerVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RegisterVolumeResult, JsonUnmarshallerContext> unmarshaller =
                 new RegisterVolumeResultJsonUnmarshaller();
             JsonResponseHandler<RegisterVolumeResult> responseHandler =
                 new JsonResponseHandler<RegisterVolumeResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2102,14 +2153,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRdsDbInstanceRequestMarshaller().marshall(updateRdsDbInstanceRequest);
+                request = new UpdateRdsDbInstanceRequestMarshaller().marshall(super.beforeMarshalling(updateRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -2165,19 +2218,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterInstanceRequestMarshaller().marshall(registerInstanceRequest);
+                request = new RegisterInstanceRequestMarshaller().marshall(super.beforeMarshalling(registerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RegisterInstanceResult, JsonUnmarshallerContext> unmarshaller =
                 new RegisterInstanceResultJsonUnmarshaller();
             JsonResponseHandler<RegisterInstanceResult> responseHandler =
                 new JsonResponseHandler<RegisterInstanceResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2221,14 +2275,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserProfileRequestMarshaller().marshall(updateUserProfileRequest);
+                request = new UpdateUserProfileRequestMarshaller().marshall(super.beforeMarshalling(updateUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -2274,14 +2330,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebootInstanceRequestMarshaller().marshall(rebootInstanceRequest);
+                request = new RebootInstanceRequestMarshaller().marshall(super.beforeMarshalling(rebootInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -2328,19 +2386,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStackRequestMarshaller().marshall(createStackRequest);
+                request = new CreateStackRequestMarshaller().marshall(super.beforeMarshalling(createStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateStackResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateStackResultJsonUnmarshaller();
             JsonResponseHandler<CreateStackResult> responseHandler =
                 new JsonResponseHandler<CreateStackResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2390,19 +2449,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstanceRequestMarshaller().marshall(createInstanceRequest);
+                request = new CreateInstanceRequestMarshaller().marshall(super.beforeMarshalling(createInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateInstanceResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateInstanceResultJsonUnmarshaller();
             JsonResponseHandler<CreateInstanceResult> responseHandler =
                 new JsonResponseHandler<CreateInstanceResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2447,14 +2507,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAppRequestMarshaller().marshall(deleteAppRequest);
+                request = new DeleteAppRequestMarshaller().marshall(super.beforeMarshalling(deleteAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -2502,19 +2564,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackProvisioningParametersRequestMarshaller().marshall(describeStackProvisioningParametersRequest);
+                request = new DescribeStackProvisioningParametersRequestMarshaller().marshall(super.beforeMarshalling(describeStackProvisioningParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeStackProvisioningParametersResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeStackProvisioningParametersResultJsonUnmarshaller();
             JsonResponseHandler<DescribeStackProvisioningParametersResult> responseHandler =
                 new JsonResponseHandler<DescribeStackProvisioningParametersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2563,14 +2626,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterElasticIpRequestMarshaller().marshall(deregisterElasticIpRequest);
+                request = new DeregisterElasticIpRequestMarshaller().marshall(super.beforeMarshalling(deregisterElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -2623,14 +2688,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachElasticLoadBalancerRequestMarshaller().marshall(attachElasticLoadBalancerRequest);
+                request = new AttachElasticLoadBalancerRequestMarshaller().marshall(super.beforeMarshalling(attachElasticLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -2674,14 +2741,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStackRequestMarshaller().marshall(updateStackRequest);
+                request = new UpdateStackRequestMarshaller().marshall(super.beforeMarshalling(updateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -2726,19 +2795,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserProfileRequestMarshaller().marshall(createUserProfileRequest);
+                request = new CreateUserProfileRequestMarshaller().marshall(super.beforeMarshalling(createUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateUserProfileResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateUserProfileResultJsonUnmarshaller();
             JsonResponseHandler<CreateUserProfileResult> responseHandler =
                 new JsonResponseHandler<CreateUserProfileResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2789,19 +2859,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLayersRequestMarshaller().marshall(describeLayersRequest);
+                request = new DescribeLayersRequestMarshaller().marshall(super.beforeMarshalling(describeLayersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeLayersResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeLayersResultJsonUnmarshaller();
             JsonResponseHandler<DescribeLayersResult> responseHandler =
                 new JsonResponseHandler<DescribeLayersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2854,19 +2925,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLoadBasedAutoScalingRequestMarshaller().marshall(describeLoadBasedAutoScalingRequest);
+                request = new DescribeLoadBasedAutoScalingRequestMarshaller().marshall(super.beforeMarshalling(describeLoadBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeLoadBasedAutoScalingResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeLoadBasedAutoScalingResultJsonUnmarshaller();
             JsonResponseHandler<DescribeLoadBasedAutoScalingResult> responseHandler =
                 new JsonResponseHandler<DescribeLoadBasedAutoScalingResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2918,19 +2990,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticLoadBalancersRequestMarshaller().marshall(describeElasticLoadBalancersRequest);
+                request = new DescribeElasticLoadBalancersRequestMarshaller().marshall(super.beforeMarshalling(describeElasticLoadBalancersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeElasticLoadBalancersResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeElasticLoadBalancersResultJsonUnmarshaller();
             JsonResponseHandler<DescribeElasticLoadBalancersResult> responseHandler =
                 new JsonResponseHandler<DescribeElasticLoadBalancersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -2976,14 +3049,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssignInstanceRequestMarshaller().marshall(assignInstanceRequest);
+                request = new AssignInstanceRequestMarshaller().marshall(super.beforeMarshalling(assignInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -3031,14 +3106,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterInstanceRequestMarshaller().marshall(deregisterInstanceRequest);
+                request = new DeregisterInstanceRequestMarshaller().marshall(super.beforeMarshalling(deregisterInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -3086,14 +3163,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLayerRequestMarshaller().marshall(deleteLayerRequest);
+                request = new DeleteLayerRequestMarshaller().marshall(super.beforeMarshalling(deleteLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -3141,14 +3220,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTimeBasedAutoScalingRequestMarshaller().marshall(setTimeBasedAutoScalingRequest);
+                request = new SetTimeBasedAutoScalingRequestMarshaller().marshall(super.beforeMarshalling(setTimeBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -3193,19 +3274,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMyUserProfileRequestMarshaller().marshall(describeMyUserProfileRequest);
+                request = new DescribeMyUserProfileRequestMarshaller().marshall(super.beforeMarshalling(describeMyUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeMyUserProfileResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeMyUserProfileResultJsonUnmarshaller();
             JsonResponseHandler<DescribeMyUserProfileResult> responseHandler =
                 new JsonResponseHandler<DescribeMyUserProfileResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3255,19 +3337,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAppRequestMarshaller().marshall(createAppRequest);
+                request = new CreateAppRequestMarshaller().marshall(super.beforeMarshalling(createAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateAppResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateAppResultJsonUnmarshaller();
             JsonResponseHandler<CreateAppResult> responseHandler =
                 new JsonResponseHandler<CreateAppResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3315,14 +3398,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateVolumeRequestMarshaller().marshall(updateVolumeRequest);
+                request = new UpdateVolumeRequestMarshaller().marshall(super.beforeMarshalling(updateVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -3374,19 +3459,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTimeBasedAutoScalingRequestMarshaller().marshall(describeTimeBasedAutoScalingRequest);
+                request = new DescribeTimeBasedAutoScalingRequestMarshaller().marshall(super.beforeMarshalling(describeTimeBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeTimeBasedAutoScalingResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeTimeBasedAutoScalingResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTimeBasedAutoScalingResult> responseHandler =
                 new JsonResponseHandler<DescribeTimeBasedAutoScalingResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3430,14 +3516,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserProfileRequestMarshaller().marshall(deleteUserProfileRequest);
+                request = new DeleteUserProfileRequestMarshaller().marshall(super.beforeMarshalling(deleteUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -3484,19 +3572,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserProfilesRequestMarshaller().marshall(describeUserProfilesRequest);
+                request = new DescribeUserProfilesRequestMarshaller().marshall(super.beforeMarshalling(describeUserProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeUserProfilesResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeUserProfilesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeUserProfilesResult> responseHandler =
                 new JsonResponseHandler<DescribeUserProfilesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3541,14 +3630,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateInstanceRequestMarshaller().marshall(updateInstanceRequest);
+                request = new UpdateInstanceRequestMarshaller().marshall(super.beforeMarshalling(updateInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -3599,19 +3690,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeploymentsRequestMarshaller().marshall(describeDeploymentsRequest);
+                request = new DescribeDeploymentsRequestMarshaller().marshall(super.beforeMarshalling(describeDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeDeploymentsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeDeploymentsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeDeploymentsResult> responseHandler =
                 new JsonResponseHandler<DescribeDeploymentsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3664,19 +3756,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterElasticIpRequestMarshaller().marshall(registerElasticIpRequest);
+                request = new RegisterElasticIpRequestMarshaller().marshall(super.beforeMarshalling(registerElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<RegisterElasticIpResult, JsonUnmarshallerContext> unmarshaller =
                 new RegisterElasticIpResultJsonUnmarshaller();
             JsonResponseHandler<RegisterElasticIpResult> responseHandler =
                 new JsonResponseHandler<RegisterElasticIpResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3730,19 +3823,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticIpsRequestMarshaller().marshall(describeElasticIpsRequest);
+                request = new DescribeElasticIpsRequestMarshaller().marshall(super.beforeMarshalling(describeElasticIpsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeElasticIpsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeElasticIpsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeElasticIpsResult> responseHandler =
                 new JsonResponseHandler<DescribeElasticIpsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3790,19 +3884,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStacksRequestMarshaller().marshall(describeStacksRequest);
+                request = new DescribeStacksRequestMarshaller().marshall(super.beforeMarshalling(describeStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeStacksResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeStacksResultJsonUnmarshaller();
             JsonResponseHandler<DescribeStacksResult> responseHandler =
                 new JsonResponseHandler<DescribeStacksResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3853,19 +3948,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAppsRequestMarshaller().marshall(describeAppsRequest);
+                request = new DescribeAppsRequestMarshaller().marshall(super.beforeMarshalling(describeAppsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeAppsResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeAppsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeAppsResult> responseHandler =
                 new JsonResponseHandler<DescribeAppsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3916,19 +4012,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackSummaryRequestMarshaller().marshall(describeStackSummaryRequest);
+                request = new DescribeStackSummaryRequestMarshaller().marshall(super.beforeMarshalling(describeStackSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<DescribeStackSummaryResult, JsonUnmarshallerContext> unmarshaller =
                 new DescribeStackSummaryResultJsonUnmarshaller();
             JsonResponseHandler<DescribeStackSummaryResult> responseHandler =
                 new JsonResponseHandler<DescribeStackSummaryResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -3973,14 +4070,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopStackRequestMarshaller().marshall(stopStackRequest);
+                request = new StopStackRequestMarshaller().marshall(super.beforeMarshalling(stopStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
             invoke(request, responseHandler, executionContext);
+
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
@@ -4029,19 +4128,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentRequestMarshaller().marshall(createDeploymentRequest);
+                request = new CreateDeploymentRequestMarshaller().marshall(super.beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<CreateDeploymentResult, JsonUnmarshallerContext> unmarshaller =
                 new CreateDeploymentResultJsonUnmarshaller();
             JsonResponseHandler<CreateDeploymentResult> responseHandler =
                 new JsonResponseHandler<CreateDeploymentResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

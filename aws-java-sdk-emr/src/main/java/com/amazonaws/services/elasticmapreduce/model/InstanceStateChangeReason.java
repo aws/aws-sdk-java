@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The details of the status change reason for the instance.
  * </p>
  */
-public class InstanceStateChangeReason implements Serializable {
+public class InstanceStateChangeReason implements Serializable, Cloneable {
 
     /**
      * The programmable code for the state change reason.
@@ -194,5 +194,19 @@ public class InstanceStateChangeReason implements Serializable {
         return true;
     }
     
+    @Override
+    public InstanceStateChangeReason clone() {
+        try {
+            return (InstanceStateChangeReason) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

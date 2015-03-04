@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeStep(DescribeStepRequest)
  */
-public class DescribeStepRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeStepRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster with steps to describe.
@@ -147,5 +147,11 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
         return true;
     }
     
+    @Override
+    public DescribeStepRequest clone() {
+        
+            return (DescribeStepRequest) super.clone();
+    }
+
 }
     

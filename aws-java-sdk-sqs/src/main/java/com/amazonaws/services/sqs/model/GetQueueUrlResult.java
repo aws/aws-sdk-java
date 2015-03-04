@@ -23,7 +23,7 @@ import java.io.Serializable;
  * in the <i>Amazon SQS Developer Guide</i> .
  * </p>
  */
-public class GetQueueUrlResult implements Serializable {
+public class GetQueueUrlResult implements Serializable, Cloneable {
 
     /**
      * The URL for the queue.
@@ -102,5 +102,19 @@ public class GetQueueUrlResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetQueueUrlResult clone() {
+        try {
+            return (GetQueueUrlResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

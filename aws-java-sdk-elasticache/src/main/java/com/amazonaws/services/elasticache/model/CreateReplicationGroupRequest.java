@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createReplicationGroup(CreateReplicationGroupRequest)
  */
-public class CreateReplicationGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateReplicationGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The replication group identifier. This parameter is stored as a
@@ -80,7 +80,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * parameter must be at least 2. <p>The maximum permitted value for
      * <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
      * exceed this limit, please fill out the ElastiCache Limit Increase
-     * Request forrm at <a
+     * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      */
     private Integer numCacheClusters;
@@ -139,7 +139,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     private String engine;
 
     /**
-     * The version number of the cach engine to be used for the cache
+     * The version number of the cache engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
      * versions, use the <i>DescribeCacheEngineVersions</i> action.
      */
@@ -197,8 +197,15 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     private String snapshotName;
 
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      */
     private String preferredMaintenanceWindow;
 
@@ -479,7 +486,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * parameter must be at least 2. <p>The maximum permitted value for
      * <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
      * exceed this limit, please fill out the ElastiCache Limit Increase
-     * Request forrm at <a
+     * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      *
      * @return The number of cache clusters this replication group will initially
@@ -487,7 +494,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         parameter must be at least 2. <p>The maximum permitted value for
      *         <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
      *         exceed this limit, please fill out the ElastiCache Limit Increase
-     *         Request forrm at <a
+     *         Request form at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      */
     public Integer getNumCacheClusters() {
@@ -500,7 +507,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * parameter must be at least 2. <p>The maximum permitted value for
      * <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
      * exceed this limit, please fill out the ElastiCache Limit Increase
-     * Request forrm at <a
+     * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      *
      * @param numCacheClusters The number of cache clusters this replication group will initially
@@ -508,7 +515,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         parameter must be at least 2. <p>The maximum permitted value for
      *         <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
      *         exceed this limit, please fill out the ElastiCache Limit Increase
-     *         Request forrm at <a
+     *         Request form at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      */
     public void setNumCacheClusters(Integer numCacheClusters) {
@@ -521,7 +528,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * parameter must be at least 2. <p>The maximum permitted value for
      * <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
      * exceed this limit, please fill out the ElastiCache Limit Increase
-     * Request forrm at <a
+     * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -531,7 +538,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         parameter must be at least 2. <p>The maximum permitted value for
      *         <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
      *         exceed this limit, please fill out the ElastiCache Limit Increase
-     *         Request forrm at <a
+     *         Request form at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -927,11 +934,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The version number of the cach engine to be used for the cache
+     * The version number of the cache engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
      * versions, use the <i>DescribeCacheEngineVersions</i> action.
      *
-     * @return The version number of the cach engine to be used for the cache
+     * @return The version number of the cache engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
      *         versions, use the <i>DescribeCacheEngineVersions</i> action.
      */
@@ -940,11 +947,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The version number of the cach engine to be used for the cache
+     * The version number of the cache engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
      * versions, use the <i>DescribeCacheEngineVersions</i> action.
      *
-     * @param engineVersion The version number of the cach engine to be used for the cache
+     * @param engineVersion The version number of the cache engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
      *         versions, use the <i>DescribeCacheEngineVersions</i> action.
      */
@@ -953,13 +960,13 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The version number of the cach engine to be used for the cache
+     * The version number of the cache engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
      * versions, use the <i>DescribeCacheEngineVersions</i> action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The version number of the cach engine to be used for the cache
+     * @param engineVersion The version number of the cache engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
      *         versions, use the <i>DescribeCacheEngineVersions</i> action.
      *
@@ -1459,35 +1466,77 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @return The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * @return Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
     }
     
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      *
-     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
     }
     
     /**
-     * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     * window is a 60 minute period. Valid values for <code>ddd</code> are:
+     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     * <li><code>tue</code></li> <li><code>wed</code></li>
+     * <li><code>thu</code></li> <li><code>fri</code></li>
+     * <li><code>sat</code></li> </ul> <p>Example:
+     * <code>sun:05:00-sun:09:00</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p>Example: <code>sun:05:00-sun:09:00</code>
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
+     *         cluster is performed. It is specified as a range in the format
+     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
+     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
+     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
+     *         <li><code>tue</code></li> <li><code>wed</code></li>
+     *         <li><code>thu</code></li> <li><code>fri</code></li>
+     *         <li><code>sat</code></li> </ul> <p>Example:
+     *         <code>sun:05:00-sun:09:00</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1884,5 +1933,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateReplicationGroupRequest clone() {
+        
+            return (CreateReplicationGroupRequest) super.clone();
+    }
+
 }
     

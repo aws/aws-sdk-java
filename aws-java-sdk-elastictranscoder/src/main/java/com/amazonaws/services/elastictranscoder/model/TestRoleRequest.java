@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#testRole(TestRoleRequest)
  */
-public class TestRoleRequest extends AmazonWebServiceRequest implements Serializable {
+public class TestRoleRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The IAM Amazon Resource Name (ARN) for the role that you want Elastic
@@ -355,5 +355,11 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements Serializ
         return true;
     }
     
+    @Override
+    public TestRoleRequest clone() {
+        
+            return (TestRoleRequest) super.clone();
+    }
+
 }
     

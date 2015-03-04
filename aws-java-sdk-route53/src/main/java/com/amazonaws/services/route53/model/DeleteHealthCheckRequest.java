@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteHealthCheck(DeleteHealthCheckRequest)
  */
-public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the health check to delete.
@@ -129,5 +129,11 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public DeleteHealthCheckRequest clone() {
+        
+            return (DeleteHealthCheckRequest) super.clone();
+    }
+
 }
     

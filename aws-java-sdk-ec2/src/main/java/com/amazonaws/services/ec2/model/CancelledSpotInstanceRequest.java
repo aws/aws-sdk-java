@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a request to cancel a Spot Instance.
  * </p>
  */
-public class CancelledSpotInstanceRequest implements Serializable {
+public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the Spot Instance request.
@@ -194,5 +194,19 @@ public class CancelledSpotInstanceRequest implements Serializable {
         return true;
     }
     
+    @Override
+    public CancelledSpotInstanceRequest clone() {
+        try {
+            return (CancelledSpotInstanceRequest) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

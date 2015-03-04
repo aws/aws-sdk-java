@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The status and configuration of the domain's availability options.
  * </p>
  */
-public class AvailabilityOptionsStatus implements Serializable {
+public class AvailabilityOptionsStatus implements Serializable, Cloneable {
 
     /**
      * The availability options configured for the domain.
@@ -151,5 +151,19 @@ public class AvailabilityOptionsStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public AvailabilityOptionsStatus clone() {
+        try {
+            return (AvailabilityOptionsStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.config.AmazonConfig#putConfigurationRecorder(PutConfigurationRecorderRequest)
  */
-public class PutConfigurationRecorderRequest extends AmazonWebServiceRequest implements Serializable {
+public class PutConfigurationRecorderRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The configuration recorder object that records each configuration
@@ -122,5 +122,11 @@ public class PutConfigurationRecorderRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public PutConfigurationRecorderRequest clone() {
+        
+            return (PutConfigurationRecorderRequest) super.clone();
+    }
+
 }
     

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeSeverityLevels(DescribeSeverityLevelsRequest)
  */
-public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -128,5 +128,11 @@ public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public DescribeSeverityLevelsRequest clone() {
+        
+            return (DescribeSeverityLevelsRequest) super.clone();
+    }
+
 }
     

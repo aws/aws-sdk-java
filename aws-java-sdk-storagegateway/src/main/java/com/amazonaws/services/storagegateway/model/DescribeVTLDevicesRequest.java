@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeVTLDevices(DescribeVTLDevicesRequest)
  */
-public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -362,5 +362,11 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public DescribeVTLDevicesRequest clone() {
+        
+            return (DescribeVTLDevicesRequest) super.clone();
+    }
+
 }
     

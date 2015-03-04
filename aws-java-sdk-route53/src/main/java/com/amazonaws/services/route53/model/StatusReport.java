@@ -22,7 +22,7 @@ import java.io.Serializable;
  * for the current observation.
  * </p>
  */
-public class StatusReport implements Serializable {
+public class StatusReport implements Serializable, Cloneable {
 
     /**
      * The observed health check status.
@@ -178,5 +178,19 @@ public class StatusReport implements Serializable {
         return true;
     }
     
+    @Override
+    public StatusReport clone() {
+        try {
+            return (StatusReport) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

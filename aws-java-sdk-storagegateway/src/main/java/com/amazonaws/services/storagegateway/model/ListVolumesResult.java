@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * List Volumes Result
  */
-public class ListVolumesResult implements Serializable {
+public class ListVolumesResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -246,5 +246,19 @@ public class ListVolumesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListVolumesResult clone() {
+        try {
+            return (ListVolumesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

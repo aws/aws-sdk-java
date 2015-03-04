@@ -21,7 +21,7 @@ import java.io.Serializable;
  * This represents a step in a cluster.
  * </p>
  */
-public class Step implements Serializable {
+public class Step implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster step.
@@ -331,5 +331,19 @@ public class Step implements Serializable {
         return true;
     }
     
+    @Override
+    public Step clone() {
+        try {
+            return (Step) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

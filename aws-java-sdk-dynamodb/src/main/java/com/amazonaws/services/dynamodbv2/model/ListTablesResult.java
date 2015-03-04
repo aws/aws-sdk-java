@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>ListTables</i> operation.
  * </p>
  */
-public class ListTablesResult implements Serializable {
+public class ListTablesResult implements Serializable, Cloneable {
 
     /**
      * The names of the tables associated with the current account at the
@@ -269,5 +269,19 @@ public class ListTablesResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListTablesResult clone() {
+        try {
+            return (ListTablesResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

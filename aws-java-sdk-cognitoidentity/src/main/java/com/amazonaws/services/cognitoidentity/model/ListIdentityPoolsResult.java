@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The result of a successful ListIdentityPools action.
  * </p>
  */
-public class ListIdentityPoolsResult implements Serializable {
+public class ListIdentityPoolsResult implements Serializable, Cloneable {
 
     /**
      * The identity pools returned by the ListIdentityPools action.
@@ -189,5 +189,19 @@ public class ListIdentityPoolsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListIdentityPoolsResult clone() {
+        try {
+            return (ListIdentityPoolsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

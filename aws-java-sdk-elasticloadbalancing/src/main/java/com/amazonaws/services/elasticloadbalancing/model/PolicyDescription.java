@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The <code>PolicyDescription</code> data type.
  * </p>
  */
-public class PolicyDescription implements Serializable {
+public class PolicyDescription implements Serializable, Cloneable {
 
     /**
      * The name of the policy associated with the load balancer.
@@ -219,5 +219,19 @@ public class PolicyDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public PolicyDescription clone() {
+        try {
+            return (PolicyDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

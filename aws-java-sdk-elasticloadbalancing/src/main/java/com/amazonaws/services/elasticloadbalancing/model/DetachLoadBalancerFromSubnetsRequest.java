@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#detachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest)
  */
-public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name associated with the load balancer to be detached.
@@ -199,5 +199,11 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
         return true;
     }
     
+    @Override
+    public DetachLoadBalancerFromSubnetsRequest clone() {
+        
+            return (DetachLoadBalancerFromSubnetsRequest) super.clone();
+    }
+
 }
     

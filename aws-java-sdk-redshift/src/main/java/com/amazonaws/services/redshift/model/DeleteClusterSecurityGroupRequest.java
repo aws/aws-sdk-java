@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest)
  */
-public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the cluster security group to be deleted.
@@ -114,5 +114,11 @@ public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest i
         return true;
     }
     
+    @Override
+    public DeleteClusterSecurityGroupRequest clone() {
+        
+            return (DeleteClusterSecurityGroupRequest) super.clone();
+    }
+
 }
     

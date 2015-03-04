@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#disableGateway(DisableGatewayRequest)
  */
-public class DisableGatewayRequest extends AmazonWebServiceRequest implements Serializable {
+public class DisableGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -140,5 +140,11 @@ public class DisableGatewayRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DisableGatewayRequest clone() {
+        
+            return (DisableGatewayRequest) super.clone();
+    }
+
 }
     

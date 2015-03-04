@@ -22,7 +22,7 @@ import java.io.Serializable;
  * global secondary index.
  * </p>
  */
-public class UpdateGlobalSecondaryIndexAction implements Serializable {
+public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable {
 
     /**
      * The name of the global secondary index to be updated.
@@ -194,5 +194,19 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable {
         return true;
     }
     
+    @Override
+    public UpdateGlobalSecondaryIndexAction clone() {
+        try {
+            return (UpdateGlobalSecondaryIndexAction) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

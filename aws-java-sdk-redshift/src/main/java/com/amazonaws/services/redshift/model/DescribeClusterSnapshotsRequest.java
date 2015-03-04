@@ -45,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSnapshots(DescribeClusterSnapshotsRequest)
  */
-public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the cluster for which information about snapshots is
@@ -862,5 +862,11 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
         return true;
     }
     
+    @Override
+    public DescribeClusterSnapshotsRequest clone() {
+        
+            return (DescribeClusterSnapshotsRequest) super.clone();
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a user's SSH information.
  * </p>
  */
-public class SelfUserProfile implements Serializable {
+public class SelfUserProfile implements Serializable, Cloneable {
 
     /**
      * The user's IAM ARN.
@@ -226,5 +226,19 @@ public class SelfUserProfile implements Serializable {
         return true;
     }
     
+    @Override
+    public SelfUserProfile clone() {
+        try {
+            return (SelfUserProfile) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

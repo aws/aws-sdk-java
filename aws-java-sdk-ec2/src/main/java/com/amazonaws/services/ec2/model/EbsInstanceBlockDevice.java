@@ -22,7 +22,7 @@ import java.io.Serializable;
  * device mapping.
  * </p>
  */
-public class EbsInstanceBlockDevice implements Serializable {
+public class EbsInstanceBlockDevice implements Serializable, Cloneable {
 
     /**
      * The ID of the Amazon EBS volume.
@@ -288,5 +288,19 @@ public class EbsInstanceBlockDevice implements Serializable {
         return true;
     }
     
+    @Override
+    public EbsInstanceBlockDevice clone() {
+        try {
+            return (EbsInstanceBlockDevice) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

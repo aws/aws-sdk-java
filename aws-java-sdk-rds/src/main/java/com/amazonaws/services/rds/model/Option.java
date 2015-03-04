@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Option details.
  * </p>
  */
-public class Option implements Serializable {
+public class Option implements Serializable, Cloneable {
 
     /**
      * The name of the option.
@@ -535,5 +535,19 @@ public class Option implements Serializable {
         return true;
     }
     
+    @Override
+    public Option clone() {
+        try {
+            return (Option) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

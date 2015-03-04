@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output of a <i>PutItem</i> operation.
  * </p>
  */
-public class PutItemResult implements Serializable {
+public class PutItemResult implements Serializable, Cloneable {
 
     /**
      * The attribute values as they appeared before the <i>PutItem</i>
@@ -386,5 +386,19 @@ public class PutItemResult implements Serializable {
         return true;
     }
     
+    @Override
+    public PutItemResult clone() {
+        try {
+            return (PutItemResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#updateHealthCheck(UpdateHealthCheckRequest)
  */
-public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The ID of the health check to update.
@@ -647,5 +647,11 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
         return true;
     }
     
+    @Override
+    public UpdateHealthCheckRequest clone() {
+        
+            return (UpdateHealthCheckRequest) super.clone();
+    }
+
 }
     

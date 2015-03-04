@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains the response to a successful GetSAMLProvider request.
  * </p>
  */
-public class GetSAMLProviderResult implements Serializable {
+public class GetSAMLProviderResult implements Serializable, Cloneable {
 
     /**
      * The XML metadata document that includes information about an identity
@@ -203,5 +203,19 @@ public class GetSAMLProviderResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetSAMLProviderResult clone() {
+        try {
+            return (GetSAMLProviderResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

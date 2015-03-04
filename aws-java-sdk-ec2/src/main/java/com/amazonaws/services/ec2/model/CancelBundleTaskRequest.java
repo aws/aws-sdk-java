@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.CancelBundleTaskRequestMarshal
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest)
  */
-public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CancelBundleTaskRequest> {
+public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CancelBundleTaskRequest> {
 
     /**
      * The ID of the bundle task.
@@ -137,5 +137,11 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public CancelBundleTaskRequest clone() {
+        
+            return (CancelBundleTaskRequest) super.clone();
+    }
+
 }
     

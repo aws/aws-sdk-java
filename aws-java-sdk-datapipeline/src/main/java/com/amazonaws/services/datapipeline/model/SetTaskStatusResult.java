@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output from the SetTaskStatus action.
  * </p>
  */
-public class SetTaskStatusResult implements Serializable {
+public class SetTaskStatusResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -58,5 +58,19 @@ public class SetTaskStatusResult implements Serializable {
         return true;
     }
     
+    @Override
+    public SetTaskStatusResult clone() {
+        try {
+            return (SetTaskStatusResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

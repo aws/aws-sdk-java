@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#deletePipeline(DeletePipelineRequest)
  */
-public class DeletePipelineRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeletePipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the pipeline that you want to delete.
@@ -123,5 +123,11 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeletePipelineRequest clone() {
+        
+            return (DeletePipelineRequest) super.clone();
+    }
+
 }
     

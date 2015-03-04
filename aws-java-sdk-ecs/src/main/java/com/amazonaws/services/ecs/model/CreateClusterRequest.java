@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ecs.AmazonECS#createCluster(CreateClusterRequest)
  */
-public class CreateClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of your cluster. If you do not specify a name for your
@@ -119,5 +119,11 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public CreateClusterRequest clone() {
+        
+            return (CreateClusterRequest) super.clone();
+    }
+
 }
     

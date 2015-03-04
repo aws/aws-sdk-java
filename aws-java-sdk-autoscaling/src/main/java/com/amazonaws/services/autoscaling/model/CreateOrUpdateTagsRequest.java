@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest)
  */
-public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The tag to be created or updated. Each tag should be defined by its
@@ -286,5 +286,11 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public CreateOrUpdateTagsRequest clone() {
+        
+            return (CreateOrUpdateTagsRequest) super.clone();
+    }
+
 }
     

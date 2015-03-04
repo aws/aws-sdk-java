@@ -22,7 +22,7 @@ import java.io.Serializable;
  * ElastiCache behavior.
  * </p>
  */
-public class Parameter implements Serializable {
+public class Parameter implements Serializable, Cloneable {
 
     /**
      * The name of the parameter.
@@ -428,5 +428,19 @@ public class Parameter implements Serializable {
         return true;
     }
     
+    @Override
+    public Parameter clone() {
+        try {
+            return (Parameter) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateStack(UpdateStackRequest)
  */
-public class UpdateStackRequest extends AmazonWebServiceRequest implements Serializable {
+public class UpdateStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The stack ID.
@@ -1577,5 +1577,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         return true;
     }
     
+    @Override
+    public UpdateStackRequest clone() {
+        
+            return (UpdateStackRequest) super.clone();
+    }
+
 }
     

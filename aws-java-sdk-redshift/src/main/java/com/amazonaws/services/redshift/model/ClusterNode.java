@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The identifier of a node in a cluster.
  * </p>
  */
-public class ClusterNode implements Serializable {
+public class ClusterNode implements Serializable, Cloneable {
 
     /**
      * Whether the node is a leader node or a compute node.
@@ -184,5 +184,19 @@ public class ClusterNode implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterNode clone() {
+        try {
+            return (ClusterNode) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

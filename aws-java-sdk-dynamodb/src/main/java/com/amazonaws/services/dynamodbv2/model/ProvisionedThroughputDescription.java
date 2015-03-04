@@ -23,7 +23,7 @@ import java.io.Serializable;
  * increases and decreases.
  * </p>
  */
-public class ProvisionedThroughputDescription implements Serializable {
+public class ProvisionedThroughputDescription implements Serializable, Cloneable {
 
     /**
      * The date and time of the last provisioned throughput increase for this
@@ -383,5 +383,19 @@ public class ProvisionedThroughputDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public ProvisionedThroughputDescription clone() {
+        try {
+            return (ProvisionedThroughputDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

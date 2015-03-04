@@ -22,7 +22,11 @@ public enum PartitionInstanceType {
     SearchM1Small("search.m1.small"),
     SearchM1Large("search.m1.large"),
     SearchM2Xlarge("search.m2.xlarge"),
-    SearchM22xlarge("search.m2.2xlarge");
+    SearchM22xlarge("search.m2.2xlarge"),
+    SearchM3Medium("search.m3.medium"),
+    SearchM3Large("search.m3.large"),
+    SearchM3Xlarge("search.m3.xlarge"),
+    SearchM32xlarge("search.m3.2xlarge");
 
     private String value;
 
@@ -54,6 +58,14 @@ public enum PartitionInstanceType {
             return PartitionInstanceType.SearchM2Xlarge;
         } else if ("search.m2.2xlarge".equals(value)) {
             return PartitionInstanceType.SearchM22xlarge;
+        } else if ("search.m3.medium".equals(value)) {
+            return PartitionInstanceType.SearchM3Medium;
+        } else if ("search.m3.large".equals(value)) {
+            return PartitionInstanceType.SearchM3Large;
+        } else if ("search.m3.xlarge".equals(value)) {
+            return PartitionInstanceType.SearchM3Xlarge;
+        } else if ("search.m3.2xlarge".equals(value)) {
+            return PartitionInstanceType.SearchM32xlarge;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

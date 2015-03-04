@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ExportToS3TaskSpecification implements Serializable {
+public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * 
@@ -335,5 +335,19 @@ public class ExportToS3TaskSpecification implements Serializable {
         return true;
     }
     
+    @Override
+    public ExportToS3TaskSpecification clone() {
+        try {
+            return (ExportToS3TaskSpecification) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

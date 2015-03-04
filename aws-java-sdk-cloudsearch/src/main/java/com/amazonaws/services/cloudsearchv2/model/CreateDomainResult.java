@@ -22,7 +22,7 @@ import java.io.Serializable;
  * of a newly created domain.
  * </p>
  */
-public class CreateDomainResult implements Serializable {
+public class CreateDomainResult implements Serializable, Cloneable {
 
     /**
      * The current status of the search domain.
@@ -101,5 +101,19 @@ public class CreateDomainResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CreateDomainResult clone() {
+        try {
+            return (CreateDomainResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

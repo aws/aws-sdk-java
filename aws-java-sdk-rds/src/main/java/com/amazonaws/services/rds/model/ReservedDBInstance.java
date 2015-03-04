@@ -23,7 +23,7 @@ import java.io.Serializable;
  * actions.
  * </p>
  */
-public class ReservedDBInstance implements Serializable {
+public class ReservedDBInstance implements Serializable, Cloneable {
 
     /**
      * The unique identifier for the reservation.
@@ -692,5 +692,19 @@ public class ReservedDBInstance implements Serializable {
         return true;
     }
     
+    @Override
+    public ReservedDBInstance clone() {
+        try {
+            return (ReservedDBInstance) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Describes a recovery point.
  * </p>
  */
-public class TapeRecoveryPointInfo implements Serializable {
+public class TapeRecoveryPointInfo implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape.
@@ -256,5 +256,19 @@ public class TapeRecoveryPointInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public TapeRecoveryPointInfo clone() {
+        try {
+            return (TapeRecoveryPointInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

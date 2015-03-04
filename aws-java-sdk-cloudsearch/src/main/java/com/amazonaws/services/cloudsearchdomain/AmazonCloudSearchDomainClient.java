@@ -296,19 +296,20 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadDocumentsRequestMarshaller().marshall(uploadDocumentsRequest);
+                request = new UploadDocumentsRequestMarshaller().marshall(super.beforeMarshalling(uploadDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<UploadDocumentsResult, JsonUnmarshallerContext> unmarshaller =
                 new UploadDocumentsResultJsonUnmarshaller();
             JsonResponseHandler<UploadDocumentsResult> responseHandler =
                 new JsonResponseHandler<UploadDocumentsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -371,19 +372,20 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SuggestRequestMarshaller().marshall(suggestRequest);
+                request = new SuggestRequestMarshaller().marshall(super.beforeMarshalling(suggestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<SuggestResult, JsonUnmarshallerContext> unmarshaller =
                 new SuggestResultJsonUnmarshaller();
             JsonResponseHandler<SuggestResult> responseHandler =
                 new JsonResponseHandler<SuggestResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             
@@ -452,19 +454,20 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchRequestMarshaller().marshall(searchRequest);
+                request = new SearchRequestMarshaller().marshall(super.beforeMarshalling(searchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
             Unmarshaller<SearchResult, JsonUnmarshallerContext> unmarshaller =
                 new SearchResultJsonUnmarshaller();
             JsonResponseHandler<SearchResult> responseHandler =
                 new JsonResponseHandler<SearchResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
-            
+
             return response.getAwsResponse();
         } finally {
             

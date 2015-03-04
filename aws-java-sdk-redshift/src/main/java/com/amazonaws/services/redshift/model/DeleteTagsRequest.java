@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteTags(DeleteTagsRequest)
  */
-public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) from which you want to remove the tag
@@ -197,5 +197,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
         return true;
     }
     
+    @Override
+    public DeleteTagsRequest clone() {
+        
+            return (DeleteTagsRequest) super.clone();
+    }
+
 }
     

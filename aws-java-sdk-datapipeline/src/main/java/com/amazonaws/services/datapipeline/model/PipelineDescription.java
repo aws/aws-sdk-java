@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains pipeline metadata.
  * </p>
  */
-public class PipelineDescription implements Serializable {
+public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * The pipeline identifier that was assigned by AWS Data Pipeline. This
@@ -453,5 +453,19 @@ public class PipelineDescription implements Serializable {
         return true;
     }
     
+    @Override
+    public PipelineDescription clone() {
+        try {
+            return (PipelineDescription) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

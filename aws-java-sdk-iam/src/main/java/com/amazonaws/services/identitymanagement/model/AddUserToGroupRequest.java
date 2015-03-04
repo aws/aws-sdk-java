@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addUserToGroup(AddUserToGroupRequest)
  */
-public class AddUserToGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class AddUserToGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group to update.
@@ -198,5 +198,11 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public AddUserToGroupRequest clone() {
+        
+            return (AddUserToGroupRequest) super.clone();
+    }
+
 }
     

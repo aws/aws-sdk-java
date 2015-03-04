@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteInstance(DeleteInstanceRequest)
  */
-public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The instance ID.
@@ -221,5 +221,11 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DeleteInstanceRequest clone() {
+        
+            return (DeleteInstanceRequest) super.clone();
+    }
+
 }
     

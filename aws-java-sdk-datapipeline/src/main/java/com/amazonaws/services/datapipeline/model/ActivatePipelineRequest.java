@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#activatePipeline(ActivatePipelineRequest)
  */
-public class ActivatePipelineRequest extends AmazonWebServiceRequest implements Serializable {
+public class ActivatePipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the pipeline to activate.
@@ -216,5 +216,11 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
         return true;
     }
     
+    @Override
+    public ActivatePipelineRequest clone() {
+        
+            return (ActivatePipelineRequest) super.clone();
+    }
+
 }
     

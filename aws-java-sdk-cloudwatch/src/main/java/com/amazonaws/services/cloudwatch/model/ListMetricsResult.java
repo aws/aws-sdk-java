@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The output for the ListMetrics action.
  * </p>
  */
-public class ListMetricsResult implements Serializable {
+public class ListMetricsResult implements Serializable, Cloneable {
 
     /**
      * A list of metrics used to generate statistics for an AWS account.
@@ -177,5 +177,19 @@ public class ListMetricsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public ListMetricsResult clone() {
+        try {
+            return (ListMetricsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

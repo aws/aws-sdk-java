@@ -33,7 +33,7 @@ import java.io.Serializable;
  * <i>ValidationException</i> exception.
  * </p>
  */
-public class AttributeValueUpdate implements Serializable {
+public class AttributeValueUpdate implements Serializable, Cloneable {
 
     /**
      * Represents the data for an attribute. You can set one, and only one,
@@ -985,5 +985,19 @@ public class AttributeValueUpdate implements Serializable {
         return true;
     }
     
+    @Override
+    public AttributeValueUpdate clone() {
+        try {
+            return (AttributeValueUpdate) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

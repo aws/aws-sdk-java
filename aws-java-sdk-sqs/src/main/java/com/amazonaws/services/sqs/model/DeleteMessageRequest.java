@@ -49,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest)
  */
-public class DeleteMessageRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteMessageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The URL of the Amazon SQS queue to take action on.
@@ -190,5 +190,11 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public DeleteMessageRequest clone() {
+        
+            return (DeleteMessageRequest) super.clone();
+    }
+
 }
     

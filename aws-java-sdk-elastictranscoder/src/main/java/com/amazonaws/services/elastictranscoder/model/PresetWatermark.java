@@ -37,7 +37,7 @@ import java.io.Serializable;
  * same preset for up to four watermarks that have different dimensions.
  * </p>
  */
-public class PresetWatermark implements Serializable {
+public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * A unique identifier for the settings for one watermark. The value of
@@ -1300,5 +1300,19 @@ public class PresetWatermark implements Serializable {
         return true;
     }
     
+    @Override
+    public PresetWatermark clone() {
+        try {
+            return (PresetWatermark) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyCluster(ModifyClusterRequest)
  */
-public class ModifyClusterRequest extends AmazonWebServiceRequest implements Serializable {
+public class ModifyClusterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The unique identifier of the cluster to be modified. <p>Example:
@@ -1413,5 +1413,11 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         return true;
     }
     
+    @Override
+    public ModifyClusterRequest clone() {
+        
+            return (ModifyClusterRequest) super.clone();
+    }
+
 }
     

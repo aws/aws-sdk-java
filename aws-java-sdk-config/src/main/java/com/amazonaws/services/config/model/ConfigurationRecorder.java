@@ -22,7 +22,7 @@ import java.io.Serializable;
  * AWS resource.
  * </p>
  */
-public class ConfigurationRecorder implements Serializable {
+public class ConfigurationRecorder implements Serializable, Cloneable {
 
     /**
      * The name of the recorder. By default, AWS Config automatically assigns
@@ -176,5 +176,19 @@ public class ConfigurationRecorder implements Serializable {
         return true;
     }
     
+    @Override
+    public ConfigurationRecorder clone() {
+        try {
+            return (ConfigurationRecorder) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

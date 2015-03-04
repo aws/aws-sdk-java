@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains detailed information about the specified stack resource.
  * </p>
  */
-public class StackResourceDetail implements Serializable {
+public class StackResourceDetail implements Serializable, Cloneable {
 
     /**
      * The name associated with the stack.
@@ -579,5 +579,19 @@ public class StackResourceDetail implements Serializable {
         return true;
     }
     
+    @Override
+    public StackResourceDetail clone() {
+        try {
+            return (StackResourceDetail) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

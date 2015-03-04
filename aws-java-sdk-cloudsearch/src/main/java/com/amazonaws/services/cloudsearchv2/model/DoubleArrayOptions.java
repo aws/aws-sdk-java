@@ -24,7 +24,7 @@ import java.io.Serializable;
  * options are enabled by default.
  * </p>
  */
-public class DoubleArrayOptions implements Serializable {
+public class DoubleArrayOptions implements Serializable, Cloneable {
 
     /**
      * A value to use for the field if the field isn't specified for a
@@ -326,5 +326,19 @@ public class DoubleArrayOptions implements Serializable {
         return true;
     }
     
+    @Override
+    public DoubleArrayOptions clone() {
+        try {
+            return (DoubleArrayOptions) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

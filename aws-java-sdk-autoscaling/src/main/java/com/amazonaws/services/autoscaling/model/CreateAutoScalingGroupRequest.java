@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest)
  */
-public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The name of the group. This name must be unique within the scope of
@@ -1403,5 +1403,11 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         return true;
     }
     
+    @Override
+    public CreateAutoScalingGroupRequest clone() {
+        
+            return (CreateAutoScalingGroupRequest) super.clone();
+    }
+
 }
     

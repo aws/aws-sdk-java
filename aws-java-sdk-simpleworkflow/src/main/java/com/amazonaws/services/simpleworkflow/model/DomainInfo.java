@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Contains general information about a domain.
  * </p>
  */
-public class DomainInfo implements Serializable {
+public class DomainInfo implements Serializable, Cloneable {
 
     /**
      * The name of the domain. This name is unique within the account.
@@ -315,5 +315,19 @@ public class DomainInfo implements Serializable {
         return true;
     }
     
+    @Override
+    public DomainInfo clone() {
+        try {
+            return (DomainInfo) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

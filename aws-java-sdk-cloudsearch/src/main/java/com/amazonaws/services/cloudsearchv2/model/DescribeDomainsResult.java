@@ -23,7 +23,7 @@ import java.io.Serializable;
  * the account.
  * </p>
  */
-public class DescribeDomainsResult implements Serializable {
+public class DescribeDomainsResult implements Serializable, Cloneable {
 
     /**
      * A list that contains the status of each requested domain.
@@ -137,5 +137,19 @@ public class DescribeDomainsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public DescribeDomainsResult clone() {
+        try {
+            return (DescribeDomainsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

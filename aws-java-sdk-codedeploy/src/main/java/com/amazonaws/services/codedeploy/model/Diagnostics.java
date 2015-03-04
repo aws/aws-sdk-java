@@ -22,7 +22,7 @@ import java.io.Serializable;
  * deployment.
  * </p>
  */
-public class Diagnostics implements Serializable {
+public class Diagnostics implements Serializable, Cloneable {
 
     /**
      * The associated error code: <ul> <li>Success: The specified script
@@ -356,5 +356,19 @@ public class Diagnostics implements Serializable {
         return true;
     }
     
+    @Override
+    public Diagnostics clone() {
+        try {
+            return (Diagnostics) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

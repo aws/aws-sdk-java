@@ -23,7 +23,7 @@ import java.io.Serializable;
  * this cache behavior.
  * </p>
  */
-public class CookieNames implements Serializable {
+public class CookieNames implements Serializable, Cloneable {
 
     /**
      * The number of whitelisted cookies for this cache behavior.
@@ -188,5 +188,19 @@ public class CookieNames implements Serializable {
         return true;
     }
     
+    @Override
+    public CookieNames clone() {
+        try {
+            return (CookieNames) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Encloses the id an entry in DeleteMessageBatch.
  * </p>
  */
-public class DeleteMessageBatchResultEntry implements Serializable {
+public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
 
     /**
      * Represents a successfully deleted message.
@@ -100,5 +100,19 @@ public class DeleteMessageBatchResultEntry implements Serializable {
         return true;
     }
     
+    @Override
+    public DeleteMessageBatchResultEntry clone() {
+        try {
+            return (DeleteMessageBatchResultEntry) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

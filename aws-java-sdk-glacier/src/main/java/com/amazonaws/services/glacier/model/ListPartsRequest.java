@@ -56,7 +56,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#listParts(ListPartsRequest)
  */
-public class ListPartsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListPartsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -411,5 +411,11 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
         return true;
     }
     
+    @Override
+    public ListPartsRequest clone() {
+        
+            return (ListPartsRequest) super.clone();
+    }
+
 }
     

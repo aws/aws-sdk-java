@@ -21,7 +21,7 @@ import java.io.Serializable;
  * The detailed status of the cluster.
  * </p>
  */
-public class ClusterStatus implements Serializable {
+public class ClusterStatus implements Serializable, Cloneable {
 
     /**
      * The current state of the cluster.
@@ -243,5 +243,19 @@ public class ClusterStatus implements Serializable {
         return true;
     }
     
+    @Override
+    public ClusterStatus clone() {
+        try {
+            return (ClusterStatus) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

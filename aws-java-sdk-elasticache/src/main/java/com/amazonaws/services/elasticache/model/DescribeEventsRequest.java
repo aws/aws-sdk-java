@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEvents(DescribeEventsRequest)
  */
-public class DescribeEventsRequest extends AmazonWebServiceRequest implements Serializable {
+public class DescribeEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * The identifier of the event source for which events will be returned.
@@ -519,5 +519,11 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         return true;
     }
     
+    @Override
+    public DescribeEventsRequest clone() {
+        
+            return (DescribeEventsRequest) super.clone();
+    }
+
 }
     

@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getCheckerIpRanges(GetCheckerIpRangesRequest)
  */
-public class GetCheckerIpRangesRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetCheckerIpRangesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -68,5 +68,11 @@ public class GetCheckerIpRangesRequest extends AmazonWebServiceRequest implement
         return true;
     }
     
+    @Override
+    public GetCheckerIpRangesRequest clone() {
+        
+            return (GetCheckerIpRangesRequest) super.clone();
+    }
+
 }
     

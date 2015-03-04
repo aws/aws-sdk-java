@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents the output for <code>GetRecords</code> .
  * </p>
  */
-public class GetRecordsResult implements Serializable {
+public class GetRecordsResult implements Serializable, Cloneable {
 
     /**
      * <P>The data records retrieved from the shard.</P>
@@ -203,5 +203,19 @@ public class GetRecordsResult implements Serializable {
         return true;
     }
     
+    @Override
+    public GetRecordsResult clone() {
+        try {
+            return (GetRecordsResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

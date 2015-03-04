@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Represents a workflow execution.
  * </p>
  */
-public class WorkflowExecution implements Serializable {
+public class WorkflowExecution implements Serializable, Cloneable {
 
     /**
      * The user defined identifier associated with the workflow execution.
@@ -166,5 +166,19 @@ public class WorkflowExecution implements Serializable {
         return true;
     }
     
+    @Override
+    public WorkflowExecution clone() {
+        try {
+            return (WorkflowExecution) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     

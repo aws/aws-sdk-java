@@ -21,7 +21,7 @@ import java.io.Serializable;
  * CancelRetrievalOutput
  * </p>
  */
-public class CancelRetrievalResult implements Serializable {
+public class CancelRetrievalResult implements Serializable, Cloneable {
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape for which retrieval
@@ -119,5 +119,19 @@ public class CancelRetrievalResult implements Serializable {
         return true;
     }
     
+    @Override
+    public CancelRetrievalResult clone() {
+        try {
+            return (CancelRetrievalResult) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
 }
     
