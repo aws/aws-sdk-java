@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import org.apache.http.annotation.GuardedBy;
+
 import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.HashMap;
@@ -23,8 +25,6 @@ import java.util.Map;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
-
-import org.apache.http.annotation.GuardedBy;
 
 /**
  * Reflection assistant for {@link DynamoDBMapper}
@@ -88,6 +88,7 @@ class DynamoDBReflector {
     private static boolean isRelevantGetter(Method m) {
         return (m.getName().startsWith("get") || m.getName().startsWith("is"))
                 && m.getParameterTypes().length == 0
+                && !m.isBridge()
                 && isDocumentType(m.getDeclaringClass())
                 && !ReflectionUtils.getterOrFieldHasAnnotation(m, DynamoDBIgnore.class);
     }
