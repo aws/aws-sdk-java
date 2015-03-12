@@ -88,6 +88,7 @@ class DynamoDBReflector {
     private static boolean isRelevantGetter(Method m) {
         return (m.getName().startsWith("get") || m.getName().startsWith("is"))
                 && m.getParameterTypes().length == 0
+                && ! (m.isBridge() || m.isSynthetic())
                 && isDocumentType(m.getDeclaringClass())
                 && !ReflectionUtils.getterOrFieldHasAnnotation(m, DynamoDBIgnore.class);
     }

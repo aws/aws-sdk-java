@@ -69,8 +69,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
     /**
      * The maximum number of items to return for this request. The request
      * returns a token that you can specify in a subsequent call to get the
-     * next set of results. <p>Constraint: If the value is greater than 1000,
-     * we return only 1000 items.
+     * next set of results. You cannot specify this parameter and the
+     * instance IDs parameter in the same request. <p>Constraint: If the
+     * value is greater than 1000, we return only 1000 items.
      */
     private Integer maxResults;
 
@@ -388,13 +389,15 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
     /**
      * The maximum number of items to return for this request. The request
      * returns a token that you can specify in a subsequent call to get the
-     * next set of results. <p>Constraint: If the value is greater than 1000,
-     * we return only 1000 items.
+     * next set of results. You cannot specify this parameter and the
+     * instance IDs parameter in the same request. <p>Constraint: If the
+     * value is greater than 1000, we return only 1000 items.
      *
      * @return The maximum number of items to return for this request. The request
      *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. <p>Constraint: If the value is greater than 1000,
-     *         we return only 1000 items.
+     *         next set of results. You cannot specify this parameter and the
+     *         instance IDs parameter in the same request. <p>Constraint: If the
+     *         value is greater than 1000, we return only 1000 items.
      */
     public Integer getMaxResults() {
         return maxResults;
@@ -403,13 +406,15 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
     /**
      * The maximum number of items to return for this request. The request
      * returns a token that you can specify in a subsequent call to get the
-     * next set of results. <p>Constraint: If the value is greater than 1000,
-     * we return only 1000 items.
+     * next set of results. You cannot specify this parameter and the
+     * instance IDs parameter in the same request. <p>Constraint: If the
+     * value is greater than 1000, we return only 1000 items.
      *
      * @param maxResults The maximum number of items to return for this request. The request
      *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. <p>Constraint: If the value is greater than 1000,
-     *         we return only 1000 items.
+     *         next set of results. You cannot specify this parameter and the
+     *         instance IDs parameter in the same request. <p>Constraint: If the
+     *         value is greater than 1000, we return only 1000 items.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -418,15 +423,17 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
     /**
      * The maximum number of items to return for this request. The request
      * returns a token that you can specify in a subsequent call to get the
-     * next set of results. <p>Constraint: If the value is greater than 1000,
-     * we return only 1000 items.
+     * next set of results. You cannot specify this parameter and the
+     * instance IDs parameter in the same request. <p>Constraint: If the
+     * value is greater than 1000, we return only 1000 items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxResults The maximum number of items to return for this request. The request
      *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. <p>Constraint: If the value is greater than 1000,
-     *         we return only 1000 items.
+     *         next set of results. You cannot specify this parameter and the
+     *         instance IDs parameter in the same request. <p>Constraint: If the
+     *         value is greater than 1000, we return only 1000 items.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

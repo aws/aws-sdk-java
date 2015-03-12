@@ -36,8 +36,8 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
     }
 
     public RenewableCipherLiteInputStream(InputStream is, CipherLite c,
-            int buffsize, boolean multipart) {
-        super(is, c, buffsize, multipart);
+            int buffsize, boolean multipart, boolean lastMultiPart) {
+        super(is, c, buffsize, multipart, lastMultiPart);
     }
 
     protected RenewableCipherLiteInputStream(InputStream is) {

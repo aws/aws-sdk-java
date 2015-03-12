@@ -443,6 +443,118 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     
     /**
      * <p>
+     * Looks up API activity events captured by CloudTrail that create,
+     * update, or delete resources in your account. Events for a region can
+     * be looked up for the times in which you had CloudTrail turned on in
+     * that region during the last seven days. Lookup supports five different
+     * attributes: time range (defined by a start time and end time), user
+     * name, event name, resource type, and resource name. All attributes are
+     * optional. The maximum number of attributes that can be specified in
+     * any one lookup request are time range and one other attribute. The
+     * default number of results returned is 10, with a maximum of 50
+     * possible. The response includes a token that you can use to get the
+     * next page of results.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The rate of lookup requests is limited to one per
+     * second per account. If this limit is exceeded, a throttling error
+     * occurs.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Events that occurred during the selected time range
+     * will not be available for lookup if CloudTrail logging was not enabled
+     * when the events occurred.
+     * </p>
+     *
+     * @param lookupEventsRequest Container for the necessary parameters to
+     *           execute the LookupEvents operation on AWSCloudTrail.
+     * 
+     * @return A Java Future object containing the response from the
+     *         LookupEvents service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<LookupEventsResult> lookupEventsAsync(final LookupEventsRequest lookupEventsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<LookupEventsResult>() {
+            public LookupEventsResult call() throws Exception {
+                return lookupEvents(lookupEventsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Looks up API activity events captured by CloudTrail that create,
+     * update, or delete resources in your account. Events for a region can
+     * be looked up for the times in which you had CloudTrail turned on in
+     * that region during the last seven days. Lookup supports five different
+     * attributes: time range (defined by a start time and end time), user
+     * name, event name, resource type, and resource name. All attributes are
+     * optional. The maximum number of attributes that can be specified in
+     * any one lookup request are time range and one other attribute. The
+     * default number of results returned is 10, with a maximum of 50
+     * possible. The response includes a token that you can use to get the
+     * next page of results.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The rate of lookup requests is limited to one per
+     * second per account. If this limit is exceeded, a throttling error
+     * occurs.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Events that occurred during the selected time range
+     * will not be available for lookup if CloudTrail logging was not enabled
+     * when the events occurred.
+     * </p>
+     *
+     * @param lookupEventsRequest Container for the necessary parameters to
+     *           execute the LookupEvents operation on AWSCloudTrail.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         LookupEvents service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<LookupEventsResult> lookupEventsAsync(
+            final LookupEventsRequest lookupEventsRequest,
+            final AsyncHandler<LookupEventsRequest, LookupEventsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<LookupEventsResult>() {
+            public LookupEventsResult call() throws Exception {
+              LookupEventsResult result;
+                try {
+                result = lookupEvents(lookupEventsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(lookupEventsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * From the command line, use <code>create-subscription</code> .
      * </p>
      * <p>

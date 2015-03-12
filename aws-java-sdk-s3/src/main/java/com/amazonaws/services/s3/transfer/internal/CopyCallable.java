@@ -39,7 +39,6 @@ import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PartETag;
-import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
@@ -222,49 +221,34 @@ public class CopyCallable implements Callable<CopyResult> {
     /**
      * Initiates a multipart upload and returns the upload id
      */
-    private String initiateMultipartUpload(CopyObjectRequest copyObjectRequest) {
+    private String initiateMultipartUpload(CopyObjectRequest origReq) {
 
-        InitiateMultipartUploadRequest initiateMultipartUploadRequest = new InitiateMultipartUploadRequest(
-                copyObjectRequest.getDestinationBucketName(),
-                copyObjectRequest.getDestinationKey()).withCannedACL(
-                copyObjectRequest.getCannedAccessControlList());
+        InitiateMultipartUploadRequest req = new InitiateMultipartUploadRequest(
+                origReq.getDestinationBucketName(),
+                origReq.getDestinationKey()).withCannedACL(
+                origReq.getCannedAccessControlList());
 
-        if (copyObjectRequest.getAccessControlList() != null) {
-            initiateMultipartUploadRequest
-                    .setAccessControlList(copyObjectRequest
-                            .getAccessControlList());
-        }
+        req.withAccessControlList(origReq.getAccessControlList())
+           .withStorageClass(origReq.getStorageClass())
+           .withSSECustomerKey(origReq.getDestinationSSECustomerKey())
+           .withSSEAwsKeyManagementParams(origReq.getSSEAwsKeyManagementParams())
+           .withGeneralProgressListener(origReq.getGeneralProgressListener())
+           .withRequestMetricCollector(origReq.getRequestMetricCollector())
+           ;
 
-        if (copyObjectRequest.getStorageClass() != null) {
-            initiateMultipartUploadRequest.setStorageClass(StorageClass
-                    .fromValue(copyObjectRequest.getStorageClass()));
-        }
-
-        if (copyObjectRequest.getDestinationSSECustomerKey() != null) {
-            initiateMultipartUploadRequest.setSSECustomerKey(
-                    copyObjectRequest.getDestinationSSECustomerKey());
-        }
-
-        if (copyObjectRequest.getSSEAwsKeyManagementParams() != null) {
-            initiateMultipartUploadRequest
-                    .setSSEAwsKeyManagementParams(copyObjectRequest
-                            .getSSEAwsKeyManagementParams());
-        }
-
-        ObjectMetadata newObjectMetadata = copyObjectRequest.getNewObjectMetadata();
-        if(newObjectMetadata == null){
+        ObjectMetadata newObjectMetadata = origReq.getNewObjectMetadata();
+        if (newObjectMetadata == null){
             newObjectMetadata = new ObjectMetadata();
         }
-        if(newObjectMetadata.getContentType() == null){
+        if (newObjectMetadata.getContentType() == null){
             newObjectMetadata.setContentType(metadata.getContentType());
         }
 
-        initiateMultipartUploadRequest.setObjectMetadata(newObjectMetadata);
+        req.setObjectMetadata(newObjectMetadata);
 
         populateMetadataWithEncryptionParams(metadata,newObjectMetadata);
 
-        String uploadId = s3.initiateMultipartUpload(
-                initiateMultipartUploadRequest).getUploadId();
+        String uploadId = s3.initiateMultipartUpload(req).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);
 
         return uploadId;

@@ -6856,15 +6856,15 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * recent post.
      * </p>
      * <p>
-     * For Linux/Unix instances, the instance console output displays the
-     * exact console output that would normally be displayed on a physical
-     * monitor attached to a machine. This output is buffered because the
-     * instance produces it and then posts it to a store where the instance's
-     * owner can retrieve it.
+     * For Linux instances, the instance console output displays the exact
+     * console output that would normally be displayed on a physical monitor
+     * attached to a computer. This output is buffered because the instance
+     * produces it and then posts it to a store where the instance's owner
+     * can retrieve it.
      * </p>
      * <p>
-     * For Windows instances, the instance console output displays the last
-     * three system event log errors.
+     * For Windows instances, the instance console output includes output
+     * from the EC2Config service.
      * </p>
      *
      * @param getConsoleOutputRequest Container for the necessary parameters
@@ -6908,15 +6908,15 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * recent post.
      * </p>
      * <p>
-     * For Linux/Unix instances, the instance console output displays the
-     * exact console output that would normally be displayed on a physical
-     * monitor attached to a machine. This output is buffered because the
-     * instance produces it and then posts it to a store where the instance's
-     * owner can retrieve it.
+     * For Linux instances, the instance console output displays the exact
+     * console output that would normally be displayed on a physical monitor
+     * attached to a computer. This output is buffered because the instance
+     * produces it and then posts it to a store where the instance's owner
+     * can retrieve it.
      * </p>
      * <p>
-     * For Windows instances, the instance console output displays the last
-     * three system event log errors.
+     * For Windows instances, the instance console output includes output
+     * from the EC2Config service.
      * </p>
      *
      * @param getConsoleOutputRequest Container for the necessary parameters
@@ -14612,6 +14612,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <code>all</code> for public snapshots.
      * </p>
      * <p>
+     * If you are describing a long list of snapshots, you can paginate the
+     * output to make the list more manageable. The <code>MaxResults</code>
+     * parameter sets the maximum number of results returned in a single
+     * page. If the list of results exceeds your <code>MaxResults</code>
+     * value, then that number of results is returned along with a
+     * <code>NextToken</code> value that can be passed to a subsequent
+     * <code>DescribeSnapshots</code> request to retrieve the remaining
+     * results.
+     * </p>
+     * <p>
      * For more information about Amazon EBS snapshots, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
@@ -14688,6 +14698,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * account IDs (if you own the snapshots), <code>self</code> for
      * snapshots for which you own or have explicit permissions, or
      * <code>all</code> for public snapshots.
+     * </p>
+     * <p>
+     * If you are describing a long list of snapshots, you can paginate the
+     * output to make the list more manageable. The <code>MaxResults</code>
+     * parameter sets the maximum number of results returned in a single
+     * page. If the list of results exceeds your <code>MaxResults</code>
+     * value, then that number of results is returned along with a
+     * <code>NextToken</code> value that can be passed to a subsequent
+     * <code>DescribeSnapshots</code> request to retrieve the remaining
+     * results.
      * </p>
      * <p>
      * For more information about Amazon EBS snapshots, see

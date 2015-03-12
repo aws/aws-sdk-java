@@ -64,7 +64,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
      * Returns the value of the EventMessage property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32768<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @return The value of the EventMessage property for this object.
      */
@@ -76,7 +76,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
      * Sets the value of the EventMessage property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32768<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param eventMessage The new value for the EventMessage property for this object.
      */
@@ -90,7 +90,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32768<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param eventMessage The new value for the EventMessage property for this object.
      *

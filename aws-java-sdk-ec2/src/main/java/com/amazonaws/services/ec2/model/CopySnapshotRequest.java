@@ -64,8 +64,15 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private String description;
 
     /**
-     * The destination region of the snapshot copy operation. This parameter
-     * is required in the <code>PresignedUrl</code>.
+     * The destination region to use in the <code>PresignedUrl</code>
+     * parameter of a snapshot copy operation. This parameter is only valid
+     * for specifying the destination region in a <code>PresignedUrl</code>
+     * parameter, where it is required. <note> <p><code>CopySnapshot</code>
+     * sends the snapshot copy to the regional endpoint that you send the
+     * HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in
+     * the AWS CLI, this is specified with the <code>--region</code>
+     * parameter or the default region in your AWS configuration file).
+     * </note>
      */
     private String destinationRegion;
 
@@ -190,35 +197,77 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The destination region of the snapshot copy operation. This parameter
-     * is required in the <code>PresignedUrl</code>.
+     * The destination region to use in the <code>PresignedUrl</code>
+     * parameter of a snapshot copy operation. This parameter is only valid
+     * for specifying the destination region in a <code>PresignedUrl</code>
+     * parameter, where it is required. <note> <p><code>CopySnapshot</code>
+     * sends the snapshot copy to the regional endpoint that you send the
+     * HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in
+     * the AWS CLI, this is specified with the <code>--region</code>
+     * parameter or the default region in your AWS configuration file).
+     * </note>
      *
-     * @return The destination region of the snapshot copy operation. This parameter
-     *         is required in the <code>PresignedUrl</code>.
+     * @return The destination region to use in the <code>PresignedUrl</code>
+     *         parameter of a snapshot copy operation. This parameter is only valid
+     *         for specifying the destination region in a <code>PresignedUrl</code>
+     *         parameter, where it is required. <note> <p><code>CopySnapshot</code>
+     *         sends the snapshot copy to the regional endpoint that you send the
+     *         HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in
+     *         the AWS CLI, this is specified with the <code>--region</code>
+     *         parameter or the default region in your AWS configuration file).
+     *         </note>
      */
     public String getDestinationRegion() {
         return destinationRegion;
     }
     
     /**
-     * The destination region of the snapshot copy operation. This parameter
-     * is required in the <code>PresignedUrl</code>.
+     * The destination region to use in the <code>PresignedUrl</code>
+     * parameter of a snapshot copy operation. This parameter is only valid
+     * for specifying the destination region in a <code>PresignedUrl</code>
+     * parameter, where it is required. <note> <p><code>CopySnapshot</code>
+     * sends the snapshot copy to the regional endpoint that you send the
+     * HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in
+     * the AWS CLI, this is specified with the <code>--region</code>
+     * parameter or the default region in your AWS configuration file).
+     * </note>
      *
-     * @param destinationRegion The destination region of the snapshot copy operation. This parameter
-     *         is required in the <code>PresignedUrl</code>.
+     * @param destinationRegion The destination region to use in the <code>PresignedUrl</code>
+     *         parameter of a snapshot copy operation. This parameter is only valid
+     *         for specifying the destination region in a <code>PresignedUrl</code>
+     *         parameter, where it is required. <note> <p><code>CopySnapshot</code>
+     *         sends the snapshot copy to the regional endpoint that you send the
+     *         HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in
+     *         the AWS CLI, this is specified with the <code>--region</code>
+     *         parameter or the default region in your AWS configuration file).
+     *         </note>
      */
     public void setDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
     }
     
     /**
-     * The destination region of the snapshot copy operation. This parameter
-     * is required in the <code>PresignedUrl</code>.
+     * The destination region to use in the <code>PresignedUrl</code>
+     * parameter of a snapshot copy operation. This parameter is only valid
+     * for specifying the destination region in a <code>PresignedUrl</code>
+     * parameter, where it is required. <note> <p><code>CopySnapshot</code>
+     * sends the snapshot copy to the regional endpoint that you send the
+     * HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in
+     * the AWS CLI, this is specified with the <code>--region</code>
+     * parameter or the default region in your AWS configuration file).
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destinationRegion The destination region of the snapshot copy operation. This parameter
-     *         is required in the <code>PresignedUrl</code>.
+     * @param destinationRegion The destination region to use in the <code>PresignedUrl</code>
+     *         parameter of a snapshot copy operation. This parameter is only valid
+     *         for specifying the destination region in a <code>PresignedUrl</code>
+     *         parameter, where it is required. <note> <p><code>CopySnapshot</code>
+     *         sends the snapshot copy to the regional endpoint that you send the
+     *         HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in
+     *         the AWS CLI, this is specified with the <code>--region</code>
+     *         parameter or the default region in your AWS configuration file).
+     *         </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

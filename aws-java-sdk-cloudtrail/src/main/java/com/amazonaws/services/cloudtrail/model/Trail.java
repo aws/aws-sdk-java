@@ -51,8 +51,16 @@ public class Trail implements Serializable, Cloneable {
      */
     private Boolean includeGlobalServiceEvents;
 
+    /**
+     * Specifies an Amazon Resource Name (ARN), a unique identifier that
+     * represents the log group to which CloudTrail logs will be delivered.
+     */
     private String cloudWatchLogsLogGroupArn;
 
+    /**
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write
+     * to a user???s log group.
+     */
     private String cloudWatchLogsRoleArn;
 
     /**
@@ -250,34 +258,35 @@ public class Trail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the CloudWatchLogsLogGroupArn property for this
-     * object.
+     * Specifies an Amazon Resource Name (ARN), a unique identifier that
+     * represents the log group to which CloudTrail logs will be delivered.
      *
-     * @return The value of the CloudWatchLogsLogGroupArn property for this object.
+     * @return Specifies an Amazon Resource Name (ARN), a unique identifier that
+     *         represents the log group to which CloudTrail logs will be delivered.
      */
     public String getCloudWatchLogsLogGroupArn() {
         return cloudWatchLogsLogGroupArn;
     }
     
     /**
-     * Sets the value of the CloudWatchLogsLogGroupArn property for this
-     * object.
+     * Specifies an Amazon Resource Name (ARN), a unique identifier that
+     * represents the log group to which CloudTrail logs will be delivered.
      *
-     * @param cloudWatchLogsLogGroupArn The new value for the CloudWatchLogsLogGroupArn property for this
-     *         object.
+     * @param cloudWatchLogsLogGroupArn Specifies an Amazon Resource Name (ARN), a unique identifier that
+     *         represents the log group to which CloudTrail logs will be delivered.
      */
     public void setCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
         this.cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArn;
     }
     
     /**
-     * Sets the value of the CloudWatchLogsLogGroupArn property for this
-     * object.
+     * Specifies an Amazon Resource Name (ARN), a unique identifier that
+     * represents the log group to which CloudTrail logs will be delivered.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cloudWatchLogsLogGroupArn The new value for the CloudWatchLogsLogGroupArn property for this
-     *         object.
+     * @param cloudWatchLogsLogGroupArn Specifies an Amazon Resource Name (ARN), a unique identifier that
+     *         represents the log group to which CloudTrail logs will be delivered.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -288,30 +297,35 @@ public class Trail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the CloudWatchLogsRoleArn property for this
-     * object.
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write
+     * to a user???s log group.
      *
-     * @return The value of the CloudWatchLogsRoleArn property for this object.
+     * @return Specifies the role for the CloudWatch Logs endpoint to assume to write
+     *         to a user???s log group.
      */
     public String getCloudWatchLogsRoleArn() {
         return cloudWatchLogsRoleArn;
     }
     
     /**
-     * Sets the value of the CloudWatchLogsRoleArn property for this object.
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write
+     * to a user???s log group.
      *
-     * @param cloudWatchLogsRoleArn The new value for the CloudWatchLogsRoleArn property for this object.
+     * @param cloudWatchLogsRoleArn Specifies the role for the CloudWatch Logs endpoint to assume to write
+     *         to a user???s log group.
      */
     public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
         this.cloudWatchLogsRoleArn = cloudWatchLogsRoleArn;
     }
     
     /**
-     * Sets the value of the CloudWatchLogsRoleArn property for this object.
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write
+     * to a user???s log group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cloudWatchLogsRoleArn The new value for the CloudWatchLogsRoleArn property for this object.
+     * @param cloudWatchLogsRoleArn Specifies the role for the CloudWatch Logs endpoint to assume to write
+     *         to a user???s log group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

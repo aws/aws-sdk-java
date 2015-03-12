@@ -33,6 +33,8 @@ public class PutLogEventsResult implements Serializable, Cloneable {
      */
     private String nextSequenceToken;
 
+    private RejectedLogEventsInfo rejectedLogEventsInfo;
+
     /**
      * A string token used for making PutLogEvents requests. A <code
      * class="code">sequenceToken</code> can only be used once, and
@@ -100,6 +102,40 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     }
 
     /**
+     * Returns the value of the RejectedLogEventsInfo property for this
+     * object.
+     *
+     * @return The value of the RejectedLogEventsInfo property for this object.
+     */
+    public RejectedLogEventsInfo getRejectedLogEventsInfo() {
+        return rejectedLogEventsInfo;
+    }
+    
+    /**
+     * Sets the value of the RejectedLogEventsInfo property for this object.
+     *
+     * @param rejectedLogEventsInfo The new value for the RejectedLogEventsInfo property for this object.
+     */
+    public void setRejectedLogEventsInfo(RejectedLogEventsInfo rejectedLogEventsInfo) {
+        this.rejectedLogEventsInfo = rejectedLogEventsInfo;
+    }
+    
+    /**
+     * Sets the value of the RejectedLogEventsInfo property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param rejectedLogEventsInfo The new value for the RejectedLogEventsInfo property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PutLogEventsResult withRejectedLogEventsInfo(RejectedLogEventsInfo rejectedLogEventsInfo) {
+        this.rejectedLogEventsInfo = rejectedLogEventsInfo;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -111,7 +147,8 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextSequenceToken() != null) sb.append("NextSequenceToken: " + getNextSequenceToken() );
+        if (getNextSequenceToken() != null) sb.append("NextSequenceToken: " + getNextSequenceToken() + ",");
+        if (getRejectedLogEventsInfo() != null) sb.append("RejectedLogEventsInfo: " + getRejectedLogEventsInfo() );
         sb.append("}");
         return sb.toString();
     }
@@ -122,6 +159,7 @@ public class PutLogEventsResult implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getNextSequenceToken() == null) ? 0 : getNextSequenceToken().hashCode()); 
+        hashCode = prime * hashCode + ((getRejectedLogEventsInfo() == null) ? 0 : getRejectedLogEventsInfo().hashCode()); 
         return hashCode;
     }
     
@@ -135,6 +173,8 @@ public class PutLogEventsResult implements Serializable, Cloneable {
         
         if (other.getNextSequenceToken() == null ^ this.getNextSequenceToken() == null) return false;
         if (other.getNextSequenceToken() != null && other.getNextSequenceToken().equals(this.getNextSequenceToken()) == false) return false; 
+        if (other.getRejectedLogEventsInfo() == null ^ this.getRejectedLogEventsInfo() == null) return false;
+        if (other.getRejectedLogEventsInfo() != null && other.getRejectedLogEventsInfo().equals(this.getRejectedLogEventsInfo()) == false) return false; 
         return true;
     }
     

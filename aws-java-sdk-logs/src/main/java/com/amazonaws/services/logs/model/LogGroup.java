@@ -35,7 +35,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * Specifies the number of days you want to retain log events in the
      * specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90,
-     * 120, 150, 180, 365, 400, 547, 730.
+     * 120, 150, 180, 365, 400, 545, 731, 1827, 3653.
      */
     private Integer retentionInDays;
 
@@ -144,11 +144,11 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * Specifies the number of days you want to retain log events in the
      * specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90,
-     * 120, 150, 180, 365, 400, 547, 730.
+     * 120, 150, 180, 365, 400, 545, 731, 1827, 3653.
      *
      * @return Specifies the number of days you want to retain log events in the
      *         specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90,
-     *         120, 150, 180, 365, 400, 547, 730.
+     *         120, 150, 180, 365, 400, 545, 731, 1827, 3653.
      */
     public Integer getRetentionInDays() {
         return retentionInDays;
@@ -157,11 +157,11 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * Specifies the number of days you want to retain log events in the
      * specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90,
-     * 120, 150, 180, 365, 400, 547, 730.
+     * 120, 150, 180, 365, 400, 545, 731, 1827, 3653.
      *
      * @param retentionInDays Specifies the number of days you want to retain log events in the
      *         specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90,
-     *         120, 150, 180, 365, 400, 547, 730.
+     *         120, 150, 180, 365, 400, 545, 731, 1827, 3653.
      */
     public void setRetentionInDays(Integer retentionInDays) {
         this.retentionInDays = retentionInDays;
@@ -170,13 +170,13 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * Specifies the number of days you want to retain log events in the
      * specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90,
-     * 120, 150, 180, 365, 400, 547, 730.
+     * 120, 150, 180, 365, 400, 545, 731, 1827, 3653.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param retentionInDays Specifies the number of days you want to retain log events in the
      *         specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90,
-     *         120, 150, 180, 365, 400, 547, 730.
+     *         120, 150, 180, 365, 400, 545, 731, 1827, 3653.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

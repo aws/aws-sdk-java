@@ -395,13 +395,23 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
+     * @deprecated to be removed from this class
+     */
+    @Deprecated
+    public final void setRegion(Regions region) {
+        if (region == null)
+            throw new IllegalArgumentException("No region provided");
+        this.setRegion(Region.getRegion(region));
+    }
+
+    /**
      * Convenient method for setting region.
      *
      * @param region region to set to; must not be null.
      *
      * @see #setRegion(Region)
      */
-    public final void setRegion(Regions region) {
+    public final void configureRegion(Regions region) {
         if (region == null)
             throw new IllegalArgumentException("No region provided");
         this.setRegion(Region.getRegion(region));
@@ -815,7 +825,7 @@ public abstract class AmazonWebServiceClient {
      * @see #withRegion(Region)
      */
     public <T extends AmazonWebServiceClient> T withRegion(Regions region) {
-        setRegion(region);
+        configureRegion(region);
         @SuppressWarnings("unchecked") T t= (T)this;
         return t;
     }

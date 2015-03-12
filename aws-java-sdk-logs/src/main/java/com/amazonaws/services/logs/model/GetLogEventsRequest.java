@@ -69,6 +69,9 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * class="code">nextForwardToken</code> or <code
      * class="code">nextBackwardToken</code> fields in the response of the
      * previous <code class="code">GetLogEvents</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      */
     private String nextToken;
 
@@ -299,6 +302,9 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * class="code">nextForwardToken</code> or <code
      * class="code">nextBackwardToken</code> fields in the response of the
      * previous <code class="code">GetLogEvents</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @return A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the <code
@@ -316,6 +322,9 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * class="code">nextForwardToken</code> or <code
      * class="code">nextBackwardToken</code> fields in the response of the
      * previous <code class="code">GetLogEvents</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param nextToken A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the <code
@@ -335,6 +344,9 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * previous <code class="code">GetLogEvents</code> request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param nextToken A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the <code

@@ -54,7 +54,7 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
     /** Thread pool used during multi-part copy is performed. */
     private final ExecutorService threadPool;
     /** A reference to the original copy request received. */
-    private final CopyObjectRequest copyObjectRequest;
+    private final CopyObjectRequest origReq;
     /**
      * Thread pool used for scheduling the monitor to check if the copy
      * operation is completed.
@@ -120,7 +120,7 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
         this.s3 = manager.getAmazonS3Client();
         this.multipartCopyCallable = multipartCopyCallable;
         this.threadPool = threadPool;
-        this.copyObjectRequest = copyObjectRequest;
+        this.origReq = copyObjectRequest;
         this.transfer = transfer;
         this.progressListenerChain = progressListenerChain;
 
@@ -213,22 +213,24 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
      * Completes the multipart upload and returns the result.
      */
     private CopyResult completeMultipartUpload() {
-        CompleteMultipartUploadResult completeMultipartUploadResult = s3
-                .completeMultipartUpload(new CompleteMultipartUploadRequest(
-                        copyObjectRequest.getDestinationBucketName(),
-                        copyObjectRequest.getDestinationKey(), uploadId,
-                        collectPartETags()));
-
+        CompleteMultipartUploadRequest req = new CompleteMultipartUploadRequest(
+                origReq.getDestinationBucketName(),
+                origReq.getDestinationKey(), uploadId,
+                collectPartETags())
+            .withGeneralProgressListener(origReq.getGeneralProgressListener())
+            .withRequestMetricCollector(origReq.getRequestMetricCollector())
+            ;
+        CompleteMultipartUploadResult result = s3.completeMultipartUpload(req);
         copyComplete();
 
         CopyResult copyResult = new CopyResult();
-        copyResult.setSourceBucketName(copyObjectRequest.getSourceBucketName());
-        copyResult.setSourceKey(copyObjectRequest.getSourceKey());
-        copyResult.setDestinationBucketName(completeMultipartUploadResult
+        copyResult.setSourceBucketName(origReq.getSourceBucketName());
+        copyResult.setSourceKey(origReq.getSourceKey());
+        copyResult.setDestinationBucketName(result
                 .getBucketName());
-        copyResult.setDestinationKey(completeMultipartUploadResult.getKey());
-        copyResult.setETag(completeMultipartUploadResult.getETag());
-        copyResult.setVersionId(completeMultipartUploadResult.getVersionId());
+        copyResult.setDestinationKey(result.getKey());
+        copyResult.setETag(result.getETag());
+        copyResult.setVersionId(result.getVersionId());
         return copyResult;
     }
 

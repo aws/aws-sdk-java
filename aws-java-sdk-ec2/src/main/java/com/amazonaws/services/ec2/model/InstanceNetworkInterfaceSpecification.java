@@ -84,7 +84,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request. If luanching into a default subnet,
+     * network interface in the request. If launching into a default subnet,
      * the default value is <code>true</code>.
      */
     private Boolean associatePublicIpAddress;
@@ -544,14 +544,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request. If luanching into a default subnet,
+     * network interface in the request. If launching into a default subnet,
      * the default value is <code>true</code>.
      *
      * @return Indicates whether to assign a public IP address to an instance you
      *         launch in a VPC. The public IP address can only be assigned to a
      *         network interface for eth0, and can only be assigned to a new network
      *         interface, not an existing one. You cannot specify more than one
-     *         network interface in the request. If luanching into a default subnet,
+     *         network interface in the request. If launching into a default subnet,
      *         the default value is <code>true</code>.
      */
     public Boolean isAssociatePublicIpAddress() {
@@ -563,14 +563,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request. If luanching into a default subnet,
+     * network interface in the request. If launching into a default subnet,
      * the default value is <code>true</code>.
      *
      * @param associatePublicIpAddress Indicates whether to assign a public IP address to an instance you
      *         launch in a VPC. The public IP address can only be assigned to a
      *         network interface for eth0, and can only be assigned to a new network
      *         interface, not an existing one. You cannot specify more than one
-     *         network interface in the request. If luanching into a default subnet,
+     *         network interface in the request. If launching into a default subnet,
      *         the default value is <code>true</code>.
      */
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
@@ -582,7 +582,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request. If luanching into a default subnet,
+     * network interface in the request. If launching into a default subnet,
      * the default value is <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -591,7 +591,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      *         launch in a VPC. The public IP address can only be assigned to a
      *         network interface for eth0, and can only be assigned to a new network
      *         interface, not an existing one. You cannot specify more than one
-     *         network interface in the request. If luanching into a default subnet,
+     *         network interface in the request. If launching into a default subnet,
      *         the default value is <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -607,14 +607,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request. If luanching into a default subnet,
+     * network interface in the request. If launching into a default subnet,
      * the default value is <code>true</code>.
      *
      * @return Indicates whether to assign a public IP address to an instance you
      *         launch in a VPC. The public IP address can only be assigned to a
      *         network interface for eth0, and can only be assigned to a new network
      *         interface, not an existing one. You cannot specify more than one
-     *         network interface in the request. If luanching into a default subnet,
+     *         network interface in the request. If launching into a default subnet,
      *         the default value is <code>true</code>.
      */
     public Boolean getAssociatePublicIpAddress() {

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the maximum number of trails is
- * reached.
+ * This exception is thrown when the maximum number of trails is reached.
  * </p>
  */        
 public class MaximumNumberOfTrailsExceededException extends AmazonServiceException {

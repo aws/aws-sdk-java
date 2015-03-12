@@ -59,7 +59,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     private String groupName;
 
     /**
-     * The ID of the security group.
+     * The ID of the security group. Required for a nondefault VPC.
      */
     private String groupId;
 
@@ -104,8 +104,8 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     private String cidrIp;
 
     /**
-     * A set of IP permissions. You can't specify a source security group and
-     * a CIDR IP address range.
+     * A set of IP permissions. Can be used to specify multiple rules in a
+     * single command.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
@@ -122,8 +122,8 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * 
      * @param groupName [EC2-Classic, default VPC] The name of the security
      * group.
-     * @param ipPermissions A set of IP permissions. You can't specify a
-     * source security group and a CIDR IP address range.
+     * @param ipPermissions A set of IP permissions. Can be used to specify
+     * multiple rules in a single command.
      */
     public AuthorizeSecurityGroupIngressRequest(String groupName, java.util.List<IpPermission> ipPermissions) {
         setGroupName(groupName);
@@ -164,29 +164,29 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     }
 
     /**
-     * The ID of the security group.
+     * The ID of the security group. Required for a nondefault VPC.
      *
-     * @return The ID of the security group.
+     * @return The ID of the security group. Required for a nondefault VPC.
      */
     public String getGroupId() {
         return groupId;
     }
     
     /**
-     * The ID of the security group.
+     * The ID of the security group. Required for a nondefault VPC.
      *
-     * @param groupId The ID of the security group.
+     * @param groupId The ID of the security group. Required for a nondefault VPC.
      */
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
     
     /**
-     * The ID of the security group.
+     * The ID of the security group. Required for a nondefault VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupId The ID of the security group.
+     * @param groupId The ID of the security group. Required for a nondefault VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -455,11 +455,11 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     }
 
     /**
-     * A set of IP permissions. You can't specify a source security group and
-     * a CIDR IP address range.
+     * A set of IP permissions. Can be used to specify multiple rules in a
+     * single command.
      *
-     * @return A set of IP permissions. You can't specify a source security group and
-     *         a CIDR IP address range.
+     * @return A set of IP permissions. Can be used to specify multiple rules in a
+     *         single command.
      */
     public java.util.List<IpPermission> getIpPermissions() {
         if (ipPermissions == null) {
@@ -470,11 +470,11 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     }
     
     /**
-     * A set of IP permissions. You can't specify a source security group and
-     * a CIDR IP address range.
+     * A set of IP permissions. Can be used to specify multiple rules in a
+     * single command.
      *
-     * @param ipPermissions A set of IP permissions. You can't specify a source security group and
-     *         a CIDR IP address range.
+     * @param ipPermissions A set of IP permissions. Can be used to specify multiple rules in a
+     *         single command.
      */
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -487,13 +487,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     }
     
     /**
-     * A set of IP permissions. You can't specify a source security group and
-     * a CIDR IP address range.
+     * A set of IP permissions. Can be used to specify multiple rules in a
+     * single command.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipPermissions A set of IP permissions. You can't specify a source security group and
-     *         a CIDR IP address range.
+     * @param ipPermissions A set of IP permissions. Can be used to specify multiple rules in a
+     *         single command.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -507,13 +507,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     }
     
     /**
-     * A set of IP permissions. You can't specify a source security group and
-     * a CIDR IP address range.
+     * A set of IP permissions. Can be used to specify multiple rules in a
+     * single command.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipPermissions A set of IP permissions. You can't specify a source security group and
-     *         a CIDR IP address range.
+     * @param ipPermissions A set of IP permissions. Can be used to specify multiple rules in a
+     *         single command.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

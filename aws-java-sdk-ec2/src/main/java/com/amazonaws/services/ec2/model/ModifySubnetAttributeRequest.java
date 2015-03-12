@@ -34,7 +34,8 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     private String subnetId;
 
     /**
-     * The value to use when a resource attribute accepts a Boolean value.
+     * Specify <code>true</code> to indicate that instances launched into the
+     * specified subnet should be assigned public IP address.
      */
     private Boolean mapPublicIpOnLaunch;
 
@@ -72,29 +73,35 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The value to use when a resource attribute accepts a Boolean value.
+     * Specify <code>true</code> to indicate that instances launched into the
+     * specified subnet should be assigned public IP address.
      *
-     * @return The value to use when a resource attribute accepts a Boolean value.
+     * @return Specify <code>true</code> to indicate that instances launched into the
+     *         specified subnet should be assigned public IP address.
      */
     public Boolean isMapPublicIpOnLaunch() {
         return mapPublicIpOnLaunch;
     }
     
     /**
-     * The value to use when a resource attribute accepts a Boolean value.
+     * Specify <code>true</code> to indicate that instances launched into the
+     * specified subnet should be assigned public IP address.
      *
-     * @param mapPublicIpOnLaunch The value to use when a resource attribute accepts a Boolean value.
+     * @param mapPublicIpOnLaunch Specify <code>true</code> to indicate that instances launched into the
+     *         specified subnet should be assigned public IP address.
      */
     public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
         this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
     }
     
     /**
-     * The value to use when a resource attribute accepts a Boolean value.
+     * Specify <code>true</code> to indicate that instances launched into the
+     * specified subnet should be assigned public IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mapPublicIpOnLaunch The value to use when a resource attribute accepts a Boolean value.
+     * @param mapPublicIpOnLaunch Specify <code>true</code> to indicate that instances launched into the
+     *         specified subnet should be assigned public IP address.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -105,9 +112,11 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The value to use when a resource attribute accepts a Boolean value.
+     * Specify <code>true</code> to indicate that instances launched into the
+     * specified subnet should be assigned public IP address.
      *
-     * @return The value to use when a resource attribute accepts a Boolean value.
+     * @return Specify <code>true</code> to indicate that instances launched into the
+     *         specified subnet should be assigned public IP address.
      */
     public Boolean getMapPublicIpOnLaunch() {
         return mapPublicIpOnLaunch;

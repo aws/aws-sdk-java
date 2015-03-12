@@ -362,10 +362,10 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             return cipherLite.markSupported()
                  ? new CipherLiteInputStream(isCurr, cipherLite,
                        DEFAULT_BUFFER_SIZE,
-                       IS_MULTI_PART)
+                       IS_MULTI_PART, req.isLastPart())
                  : new RenewableCipherLiteInputStream(isCurr, cipherLite,
                         DEFAULT_BUFFER_SIZE,
-                        IS_MULTI_PART);
+                        IS_MULTI_PART, req.isLastPart());
         } catch (Exception e) {
             cleanupDataSource(req, fileOrig, isOrig, isCurr, log);
             throw failure(e,"Unable to create cipher input stream");

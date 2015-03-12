@@ -67,6 +67,12 @@ public class DescribeLogStreamsRequestMarshaller implements Marshaller<Request<D
             if (describeLogStreamsRequest.getLogStreamNamePrefix() != null) {
                 jsonWriter.key("logStreamNamePrefix").value(describeLogStreamsRequest.getLogStreamNamePrefix());
             }
+            if (describeLogStreamsRequest.getOrderBy() != null) {
+                jsonWriter.key("orderBy").value(describeLogStreamsRequest.getOrderBy());
+            }
+            if (describeLogStreamsRequest.isDescending() != null) {
+                jsonWriter.key("descending").value(describeLogStreamsRequest.isDescending());
+            }
             if (describeLogStreamsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(describeLogStreamsRequest.getNextToken());
             }

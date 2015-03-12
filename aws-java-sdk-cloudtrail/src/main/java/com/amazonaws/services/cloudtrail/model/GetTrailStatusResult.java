@@ -72,8 +72,16 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      */
     private java.util.Date stopLoggingTime;
 
+    /**
+     * Displays any CloudWatch Logs error that CloudTrail encountered when
+     * attempting to deliver logs to CloudWatch Logs.
+     */
     private String latestCloudWatchLogsDeliveryError;
 
+    /**
+     * Displays the most recent date and time when CloudTrail delivered logs
+     * to CloudWatch Logs.
+     */
     private java.util.Date latestCloudWatchLogsDeliveryTime;
 
     /**
@@ -395,35 +403,35 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the LatestCloudWatchLogsDeliveryError property
-     * for this object.
+     * Displays any CloudWatch Logs error that CloudTrail encountered when
+     * attempting to deliver logs to CloudWatch Logs.
      *
-     * @return The value of the LatestCloudWatchLogsDeliveryError property for this
-     *         object.
+     * @return Displays any CloudWatch Logs error that CloudTrail encountered when
+     *         attempting to deliver logs to CloudWatch Logs.
      */
     public String getLatestCloudWatchLogsDeliveryError() {
         return latestCloudWatchLogsDeliveryError;
     }
     
     /**
-     * Sets the value of the LatestCloudWatchLogsDeliveryError property for
-     * this object.
+     * Displays any CloudWatch Logs error that CloudTrail encountered when
+     * attempting to deliver logs to CloudWatch Logs.
      *
-     * @param latestCloudWatchLogsDeliveryError The new value for the LatestCloudWatchLogsDeliveryError property for
-     *         this object.
+     * @param latestCloudWatchLogsDeliveryError Displays any CloudWatch Logs error that CloudTrail encountered when
+     *         attempting to deliver logs to CloudWatch Logs.
      */
     public void setLatestCloudWatchLogsDeliveryError(String latestCloudWatchLogsDeliveryError) {
         this.latestCloudWatchLogsDeliveryError = latestCloudWatchLogsDeliveryError;
     }
     
     /**
-     * Sets the value of the LatestCloudWatchLogsDeliveryError property for
-     * this object.
+     * Displays any CloudWatch Logs error that CloudTrail encountered when
+     * attempting to deliver logs to CloudWatch Logs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestCloudWatchLogsDeliveryError The new value for the LatestCloudWatchLogsDeliveryError property for
-     *         this object.
+     * @param latestCloudWatchLogsDeliveryError Displays any CloudWatch Logs error that CloudTrail encountered when
+     *         attempting to deliver logs to CloudWatch Logs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -434,35 +442,35 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the LatestCloudWatchLogsDeliveryTime property for
-     * this object.
+     * Displays the most recent date and time when CloudTrail delivered logs
+     * to CloudWatch Logs.
      *
-     * @return The value of the LatestCloudWatchLogsDeliveryTime property for this
-     *         object.
+     * @return Displays the most recent date and time when CloudTrail delivered logs
+     *         to CloudWatch Logs.
      */
     public java.util.Date getLatestCloudWatchLogsDeliveryTime() {
         return latestCloudWatchLogsDeliveryTime;
     }
     
     /**
-     * Sets the value of the LatestCloudWatchLogsDeliveryTime property for
-     * this object.
+     * Displays the most recent date and time when CloudTrail delivered logs
+     * to CloudWatch Logs.
      *
-     * @param latestCloudWatchLogsDeliveryTime The new value for the LatestCloudWatchLogsDeliveryTime property for
-     *         this object.
+     * @param latestCloudWatchLogsDeliveryTime Displays the most recent date and time when CloudTrail delivered logs
+     *         to CloudWatch Logs.
      */
     public void setLatestCloudWatchLogsDeliveryTime(java.util.Date latestCloudWatchLogsDeliveryTime) {
         this.latestCloudWatchLogsDeliveryTime = latestCloudWatchLogsDeliveryTime;
     }
     
     /**
-     * Sets the value of the LatestCloudWatchLogsDeliveryTime property for
-     * this object.
+     * Displays the most recent date and time when CloudTrail delivered logs
+     * to CloudWatch Logs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestCloudWatchLogsDeliveryTime The new value for the LatestCloudWatchLogsDeliveryTime property for
-     *         this object.
+     * @param latestCloudWatchLogsDeliveryTime Displays the most recent date and time when CloudTrail delivered logs
+     *         to CloudWatch Logs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

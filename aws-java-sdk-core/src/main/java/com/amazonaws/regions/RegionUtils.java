@@ -33,6 +33,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.VersionInfoUtils;
 
 /**
@@ -310,9 +311,13 @@ public class RegionUtils {
         InputStream override = RegionUtils.class
                 .getResourceAsStream(OVERRIDE_ENDPOINTS_RESOURCE_PATH);
         if (override != null) {
-            doInitializeFromInputStream(override);
-            source = OVERRIDE_ENDPOINTS_RESOURCE_PATH;
-            return;
+            try {
+                doInitializeFromInputStream(override);
+                source = OVERRIDE_ENDPOINTS_RESOURCE_PATH;
+                return;
+            } finally {
+                IOUtils.closeQuietly(override, log);
+            }
         }
 
         doInitializeFromResource(RegionUtils.class,

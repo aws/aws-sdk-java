@@ -98,6 +98,12 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
 
             filtersListIndex++;
         }
+        if (describeSnapshotsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSnapshotsRequest.getNextToken()));
+        }
+        if (describeSnapshotsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSnapshotsRequest.getMaxResults()));
+        }
 
         return request;
     }

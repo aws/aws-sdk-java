@@ -34,14 +34,14 @@ import com.amazonaws.services.logs.model.*;
  * All asynchronous calls made using this client are non-blocking. Callers could either
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
- * Amazon CloudWatch Logs Service API Reference <p>
+ * Amazon CloudWatch Logs API Reference <p>
  * This is the <i>Amazon CloudWatch Logs API Reference</i> . Amazon
- * CloudWatch Logs is a managed service for real time monitoring and
- * archival of application logs. This guide provides detailed information
- * about Amazon CloudWatch Logs actions, data types, parameters, and
- * errors. For detailed information about Amazon CloudWatch Logs features
- * and their associated API calls, go to the
- * <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/DeveloperGuide"> Amazon CloudWatch Logs Developer Guide </a>
+ * CloudWatch Logs enables you to monitor, store, and access your system,
+ * application, and custom log files. This guide provides detailed
+ * information about Amazon CloudWatch Logs actions, data types,
+ * parameters, and errors. For detailed information about Amazon
+ * CloudWatch Logs features and their associated API calls, go to the
+ * <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide"> Amazon CloudWatch Developer Guide </a>
  * .
  * </p>
  * <p>
@@ -521,7 +521,9 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * more log streams to list, the response would contain a
      * <code>nextToken</code> value in the response body. You can also limit
      * the number of log streams returned in the response by specifying the
-     * <code>limit</code> parameter in the request.
+     * <code>limit</code> parameter in the request. This operation has a
+     * limit of five transactions per second, after which transactions are
+     * throttled.
      * </p>
      *
      * @param describeLogStreamsRequest Container for the necessary
@@ -559,7 +561,9 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * more log streams to list, the response would contain a
      * <code>nextToken</code> value in the response body. You can also limit
      * the number of log streams returned in the response by specifying the
-     * <code>limit</code> parameter in the request.
+     * <code>limit</code> parameter in the request. This operation has a
+     * limit of five transactions per second, after which transactions are
+     * throttled.
      * </p>
      *
      * @param describeLogStreamsRequest Container for the necessary
@@ -1009,7 +1013,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * <p>
      * The batch of events must satisfy the following constraints:
      * <ul>
-     * <li>The maximum batch size is 32,768 bytes, and this size is
+     * <li>The maximum batch size is 1,048,576 bytes, and this size is
      * calculated as the sum of all event messages in UTF-8, plus 26 bytes
      * for each log event.</li>
      * <li>None of the log events in the batch can be more than 2 hours in
@@ -1018,7 +1022,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * the retention period of the log group.</li>
      * <li>The log events in the batch must be in chronological ordered by
      * their <code>timestamp</code> .</li>
-     * <li>The maximum number of log events in a batch is 1,000.</li>
+     * <li>The maximum number of log events in a batch is 10,000.</li>
      * 
      * </ul>
      * 
@@ -1061,7 +1065,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * <p>
      * The batch of events must satisfy the following constraints:
      * <ul>
-     * <li>The maximum batch size is 32,768 bytes, and this size is
+     * <li>The maximum batch size is 1,048,576 bytes, and this size is
      * calculated as the sum of all event messages in UTF-8, plus 26 bytes
      * for each log event.</li>
      * <li>None of the log events in the batch can be more than 2 hours in
@@ -1070,7 +1074,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * the retention period of the log group.</li>
      * <li>The log events in the batch must be in chronological ordered by
      * their <code>timestamp</code> .</li>
-     * <li>The maximum number of log events in a batch is 1,000.</li>
+     * <li>The maximum number of log events in a batch is 10,000.</li>
      * 
      * </ul>
      * 
