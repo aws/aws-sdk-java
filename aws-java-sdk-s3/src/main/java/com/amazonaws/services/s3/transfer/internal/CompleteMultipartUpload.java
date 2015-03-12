@@ -43,7 +43,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
     private final AmazonS3 s3;
 
     /** The reference to the request initiated by the user. */
-    private final PutObjectRequest putObjectRequest;
+    private final PutObjectRequest origReq;
 
     /** The futures of threads that upload individual parts. */
     private final List<Future<PartETag>> futures;
@@ -62,7 +62,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
             List<PartETag> eTagsBeforeResume, UploadMonitor monitor) {
         this.uploadId = uploadId;
         this.s3 = s3;
-        this.putObjectRequest = putObjectRequest;
+        this.origReq = putObjectRequest;
         this.futures = futures;
         this.eTagsBeforeResume = eTagsBeforeResume;
         this.monitor = monitor;
@@ -70,16 +70,19 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
 
     @Override
     public UploadResult call() throws Exception {
-        CompleteMultipartUploadResult completeMultipartUploadResult = s3
-                .completeMultipartUpload(new CompleteMultipartUploadRequest(
-                        putObjectRequest.getBucketName(), putObjectRequest
-                                .getKey(), uploadId, collectPartETags()));
+        CompleteMultipartUploadRequest req = new CompleteMultipartUploadRequest(
+                origReq.getBucketName(), origReq.getKey(), uploadId,
+                collectPartETags())
+            .withGeneralProgressListener(origReq.getGeneralProgressListener())
+            .withRequestMetricCollector(origReq.getRequestMetricCollector())
+            ;
+        CompleteMultipartUploadResult res = s3.completeMultipartUpload(req);
         UploadResult uploadResult = new UploadResult();
-        uploadResult.setBucketName(putObjectRequest
+        uploadResult.setBucketName(origReq
                 .getBucketName());
-        uploadResult.setKey(putObjectRequest.getKey());
-        uploadResult.setETag(completeMultipartUploadResult.getETag());
-        uploadResult.setVersionId(completeMultipartUploadResult.getVersionId());
+        uploadResult.setKey(origReq.getKey());
+        uploadResult.setETag(res.getETag());
+        uploadResult.setVersionId(res.getVersionId());
 
         monitor.uploadComplete();
 

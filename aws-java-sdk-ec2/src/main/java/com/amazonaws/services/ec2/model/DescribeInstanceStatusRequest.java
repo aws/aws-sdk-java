@@ -174,7 +174,8 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * The maximum number of paginated instance items per response. The call
      * also returns a token that you can specify in a subsequent call to get
      * the next set of results. If the value is greater than 1000, we return
-     * only 1000 items. <p>Default: 1000
+     * only 1000 items. You cannot specify this parameter and the instance
+     * IDs parameter in the same request. <p>Default: 1000
      */
     private Integer maxResults;
 
@@ -652,12 +653,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * The maximum number of paginated instance items per response. The call
      * also returns a token that you can specify in a subsequent call to get
      * the next set of results. If the value is greater than 1000, we return
-     * only 1000 items. <p>Default: 1000
+     * only 1000 items. You cannot specify this parameter and the instance
+     * IDs parameter in the same request. <p>Default: 1000
      *
      * @return The maximum number of paginated instance items per response. The call
      *         also returns a token that you can specify in a subsequent call to get
      *         the next set of results. If the value is greater than 1000, we return
-     *         only 1000 items. <p>Default: 1000
+     *         only 1000 items. You cannot specify this parameter and the instance
+     *         IDs parameter in the same request. <p>Default: 1000
      */
     public Integer getMaxResults() {
         return maxResults;
@@ -667,12 +670,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * The maximum number of paginated instance items per response. The call
      * also returns a token that you can specify in a subsequent call to get
      * the next set of results. If the value is greater than 1000, we return
-     * only 1000 items. <p>Default: 1000
+     * only 1000 items. You cannot specify this parameter and the instance
+     * IDs parameter in the same request. <p>Default: 1000
      *
      * @param maxResults The maximum number of paginated instance items per response. The call
      *         also returns a token that you can specify in a subsequent call to get
      *         the next set of results. If the value is greater than 1000, we return
-     *         only 1000 items. <p>Default: 1000
+     *         only 1000 items. You cannot specify this parameter and the instance
+     *         IDs parameter in the same request. <p>Default: 1000
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -682,14 +687,16 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * The maximum number of paginated instance items per response. The call
      * also returns a token that you can specify in a subsequent call to get
      * the next set of results. If the value is greater than 1000, we return
-     * only 1000 items. <p>Default: 1000
+     * only 1000 items. You cannot specify this parameter and the instance
+     * IDs parameter in the same request. <p>Default: 1000
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxResults The maximum number of paginated instance items per response. The call
      *         also returns a token that you can specify in a subsequent call to get
      *         the next set of results. If the value is greater than 1000, we return
-     *         only 1000 items. <p>Default: 1000
+     *         only 1000 items. You cannot specify this parameter and the instance
+     *         IDs parameter in the same request. <p>Default: 1000
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

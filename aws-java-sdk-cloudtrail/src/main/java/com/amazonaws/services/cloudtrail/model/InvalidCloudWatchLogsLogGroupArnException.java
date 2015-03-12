@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the provided CloudWatch log group is
- * not valid.
+ * This exception is thrown when the provided CloudWatch log group is not
+ * valid.
  * </p>
  */        
 public class InvalidCloudWatchLogsLogGroupArnException extends AmazonServiceException {

@@ -30,7 +30,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * more log streams to list, the response would contain a
  * <code>nextToken</code> value in the response body. You can also limit
  * the number of log streams returned in the response by specifying the
- * <code>limit</code> parameter in the request.
+ * <code>limit</code> parameter in the request. This operation has a
+ * limit of five transactions per second, after which transactions are
+ * throttled.
  * </p>
  *
  * @see com.amazonaws.services.logs.AWSLogs#describeLogStreams(DescribeLogStreamsRequest)
@@ -39,12 +41,42 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
 
     private String logGroupName;
 
+    /**
+     * Will only return log streams that match the provided
+     * logStreamNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[^:*]*<br/>
+     */
     private String logStreamNamePrefix;
+
+    /**
+     * Specifies what to order the returned log streams by. Valid arguments
+     * are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     * results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     * the request cannot also contain a logStreamNamePrefix.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>LogStreamName, LastEventTime
+     */
+    private String orderBy;
+
+    /**
+     * If set to true, results are returned in descending order. If you don't
+     * specify a value or set it to false, results are returned in ascending
+     * order.
+     */
+    private Boolean descending;
 
     /**
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * <code class="code">DescribeLogStreams</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      */
     private String nextToken;
 
@@ -120,33 +152,43 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * Returns the value of the LogStreamNamePrefix property for this object.
+     * Will only return log streams that match the provided
+     * logStreamNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @return The value of the LogStreamNamePrefix property for this object.
+     * @return Will only return log streams that match the provided
+     *         logStreamNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      */
     public String getLogStreamNamePrefix() {
         return logStreamNamePrefix;
     }
     
     /**
-     * Sets the value of the LogStreamNamePrefix property for this object.
+     * Will only return log streams that match the provided
+     * logStreamNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param logStreamNamePrefix The new value for the LogStreamNamePrefix property for this object.
+     * @param logStreamNamePrefix Will only return log streams that match the provided
+     *         logStreamNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      */
     public void setLogStreamNamePrefix(String logStreamNamePrefix) {
         this.logStreamNamePrefix = logStreamNamePrefix;
     }
     
     /**
-     * Sets the value of the LogStreamNamePrefix property for this object.
+     * Will only return log streams that match the provided
+     * logStreamNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -154,7 +196,9 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param logStreamNamePrefix The new value for the LogStreamNamePrefix property for this object.
+     * @param logStreamNamePrefix Will only return log streams that match the provided
+     *         logStreamNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -165,9 +209,182 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * Specifies what to order the returned log streams by. Valid arguments
+     * are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     * results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     * the request cannot also contain a logStreamNamePrefix.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>LogStreamName, LastEventTime
+     *
+     * @return Specifies what to order the returned log streams by. Valid arguments
+     *         are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     *         results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     *         the request cannot also contain a logStreamNamePrefix.
+     *
+     * @see OrderBy
+     */
+    public String getOrderBy() {
+        return orderBy;
+    }
+    
+    /**
+     * Specifies what to order the returned log streams by. Valid arguments
+     * are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     * results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     * the request cannot also contain a logStreamNamePrefix.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>LogStreamName, LastEventTime
+     *
+     * @param orderBy Specifies what to order the returned log streams by. Valid arguments
+     *         are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     *         results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     *         the request cannot also contain a logStreamNamePrefix.
+     *
+     * @see OrderBy
+     */
+    public void setOrderBy(String orderBy) {
+        this.orderBy = orderBy;
+    }
+    
+    /**
+     * Specifies what to order the returned log streams by. Valid arguments
+     * are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     * results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     * the request cannot also contain a logStreamNamePrefix.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>LogStreamName, LastEventTime
+     *
+     * @param orderBy Specifies what to order the returned log streams by. Valid arguments
+     *         are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     *         results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     *         the request cannot also contain a logStreamNamePrefix.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see OrderBy
+     */
+    public DescribeLogStreamsRequest withOrderBy(String orderBy) {
+        this.orderBy = orderBy;
+        return this;
+    }
+
+    /**
+     * Specifies what to order the returned log streams by. Valid arguments
+     * are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     * results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     * the request cannot also contain a logStreamNamePrefix.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>LogStreamName, LastEventTime
+     *
+     * @param orderBy Specifies what to order the returned log streams by. Valid arguments
+     *         are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     *         results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     *         the request cannot also contain a logStreamNamePrefix.
+     *
+     * @see OrderBy
+     */
+    public void setOrderBy(OrderBy orderBy) {
+        this.orderBy = orderBy.toString();
+    }
+    
+    /**
+     * Specifies what to order the returned log streams by. Valid arguments
+     * are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     * results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     * the request cannot also contain a logStreamNamePrefix.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>LogStreamName, LastEventTime
+     *
+     * @param orderBy Specifies what to order the returned log streams by. Valid arguments
+     *         are 'LogStreamName' or 'LastEventTime'. If you don't specify a value,
+     *         results are ordered by LogStreamName. If 'LastEventTime' is chosen,
+     *         the request cannot also contain a logStreamNamePrefix.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see OrderBy
+     */
+    public DescribeLogStreamsRequest withOrderBy(OrderBy orderBy) {
+        this.orderBy = orderBy.toString();
+        return this;
+    }
+
+    /**
+     * If set to true, results are returned in descending order. If you don't
+     * specify a value or set it to false, results are returned in ascending
+     * order.
+     *
+     * @return If set to true, results are returned in descending order. If you don't
+     *         specify a value or set it to false, results are returned in ascending
+     *         order.
+     */
+    public Boolean isDescending() {
+        return descending;
+    }
+    
+    /**
+     * If set to true, results are returned in descending order. If you don't
+     * specify a value or set it to false, results are returned in ascending
+     * order.
+     *
+     * @param descending If set to true, results are returned in descending order. If you don't
+     *         specify a value or set it to false, results are returned in ascending
+     *         order.
+     */
+    public void setDescending(Boolean descending) {
+        this.descending = descending;
+    }
+    
+    /**
+     * If set to true, results are returned in descending order. If you don't
+     * specify a value or set it to false, results are returned in ascending
+     * order.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param descending If set to true, results are returned in descending order. If you don't
+     *         specify a value or set it to false, results are returned in ascending
+     *         order.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeLogStreamsRequest withDescending(Boolean descending) {
+        this.descending = descending;
+        return this;
+    }
+
+    /**
+     * If set to true, results are returned in descending order. If you don't
+     * specify a value or set it to false, results are returned in ascending
+     * order.
+     *
+     * @return If set to true, results are returned in descending order. If you don't
+     *         specify a value or set it to false, results are returned in ascending
+     *         order.
+     */
+    public Boolean getDescending() {
+        return descending;
+    }
+
+    /**
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * <code class="code">DescribeLogStreams</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @return A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous
@@ -181,6 +398,9 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * <code class="code">DescribeLogStreams</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param nextToken A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous
@@ -196,6 +416,9 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
      * <code class="code">DescribeLogStreams</code> request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param nextToken A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous
@@ -271,6 +494,8 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
         sb.append("{");
         if (getLogGroupName() != null) sb.append("LogGroupName: " + getLogGroupName() + ",");
         if (getLogStreamNamePrefix() != null) sb.append("LogStreamNamePrefix: " + getLogStreamNamePrefix() + ",");
+        if (getOrderBy() != null) sb.append("OrderBy: " + getOrderBy() + ",");
+        if (isDescending() != null) sb.append("Descending: " + isDescending() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getLimit() != null) sb.append("Limit: " + getLimit() );
         sb.append("}");
@@ -284,6 +509,8 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
         
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getLogStreamNamePrefix() == null) ? 0 : getLogStreamNamePrefix().hashCode()); 
+        hashCode = prime * hashCode + ((getOrderBy() == null) ? 0 : getOrderBy().hashCode()); 
+        hashCode = prime * hashCode + ((isDescending() == null) ? 0 : isDescending().hashCode()); 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
         return hashCode;
@@ -301,6 +528,10 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
         if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false) return false; 
         if (other.getLogStreamNamePrefix() == null ^ this.getLogStreamNamePrefix() == null) return false;
         if (other.getLogStreamNamePrefix() != null && other.getLogStreamNamePrefix().equals(this.getLogStreamNamePrefix()) == false) return false; 
+        if (other.getOrderBy() == null ^ this.getOrderBy() == null) return false;
+        if (other.getOrderBy() != null && other.getOrderBy().equals(this.getOrderBy()) == false) return false; 
+        if (other.isDescending() == null ^ this.isDescending() == null) return false;
+        if (other.isDescending() != null && other.isDescending().equals(this.isDescending()) == false) return false; 
         if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         if (other.getLimit() == null ^ this.getLimit() == null) return false;

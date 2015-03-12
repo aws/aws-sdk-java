@@ -576,6 +576,14 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     }
 
     /**
+     * Fluent API for {@link #setMatchingETagConstraints(List)}.
+     */
+    public CopyPartRequest withMatchingETagConstraints(List<String> eTagList) {
+        setMatchingETagConstraints(eTagList);
+        return this;
+    }
+
+    /**
      * <p>
      * Adds a single ETag constraint to this request and returns this object,
      * enabling additional method calls to be chained together. Multiple ETag
@@ -641,6 +649,14 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     public void setNonmatchingETagConstraints(List<String> eTagList) {
         this.nonmatchingEtagConstraints.clear();
         this.nonmatchingEtagConstraints.addAll(eTagList);
+    }
+
+    /**
+     * Fluent API for {@link #setNonmatchingETagConstraints(List)}.
+     */
+    public CopyPartRequest withNonmatchingETagConstraints(List<String> eTagList) {
+        setNonmatchingETagConstraints(eTagList);
+        return this;
     }
 
     /**

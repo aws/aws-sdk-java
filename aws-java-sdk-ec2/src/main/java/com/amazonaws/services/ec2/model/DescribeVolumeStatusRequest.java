@@ -122,7 +122,9 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     private String nextToken;
 
     /**
-     * The maximum number of paginated volume items per response.
+     * The maximum number of paginated volume items per response. You cannot
+     * specify this parameter and the volume IDs parameter in the same
+     * request.
      */
     private Integer maxResults;
 
@@ -510,29 +512,41 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The maximum number of paginated volume items per response.
+     * The maximum number of paginated volume items per response. You cannot
+     * specify this parameter and the volume IDs parameter in the same
+     * request.
      *
-     * @return The maximum number of paginated volume items per response.
+     * @return The maximum number of paginated volume items per response. You cannot
+     *         specify this parameter and the volume IDs parameter in the same
+     *         request.
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * The maximum number of paginated volume items per response.
+     * The maximum number of paginated volume items per response. You cannot
+     * specify this parameter and the volume IDs parameter in the same
+     * request.
      *
-     * @param maxResults The maximum number of paginated volume items per response.
+     * @param maxResults The maximum number of paginated volume items per response. You cannot
+     *         specify this parameter and the volume IDs parameter in the same
+     *         request.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * The maximum number of paginated volume items per response.
+     * The maximum number of paginated volume items per response. You cannot
+     * specify this parameter and the volume IDs parameter in the same
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The maximum number of paginated volume items per response.
+     * @param maxResults The maximum number of paginated volume items per response. You cannot
+     *         specify this parameter and the volume IDs parameter in the same
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

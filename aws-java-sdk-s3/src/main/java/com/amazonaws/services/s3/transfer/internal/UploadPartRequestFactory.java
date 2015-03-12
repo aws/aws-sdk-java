@@ -37,23 +37,22 @@ public class UploadPartRequestFactory {
     private final String uploadId;
     private final long optimalPartSize;
     private final File file;
-    private final PutObjectRequest putObjectRequest;
+    private final PutObjectRequest origReq;
     private int partNumber = 1;
     private long offset = 0;
     private long remainingBytes;
     private SSECustomerKey sseCustomerKey;
     private final int totalNumberOfParts;
 
-    public UploadPartRequestFactory(PutObjectRequest putObjectRequest, String uploadId, long optimalPartSize) {
-        this.putObjectRequest = putObjectRequest;
+    public UploadPartRequestFactory(PutObjectRequest origReq, String uploadId, long optimalPartSize) {
+        this.origReq = origReq;
         this.uploadId = uploadId;
         this.optimalPartSize = optimalPartSize;
-        this.bucketName = putObjectRequest.getBucketName();
-        this.key = putObjectRequest.getKey();
-        this.file = TransferManagerUtils.getRequestFile(putObjectRequest);
-        this.remainingBytes = TransferManagerUtils
-                .getContentLength(putObjectRequest);
-        this.sseCustomerKey = putObjectRequest.getSSECustomerKey();
+        this.bucketName = origReq.getBucketName();
+        this.key = origReq.getKey();
+        this.file = TransferManagerUtils.getRequestFile(origReq);
+        this.remainingBytes = TransferManagerUtils.getContentLength(origReq);
+        this.sseCustomerKey = origReq.getSSECustomerKey();
         this.totalNumberOfParts = (int) Math.ceil((double) this.remainingBytes
                 / this.optimalPartSize);
     }
@@ -66,17 +65,17 @@ public class UploadPartRequestFactory {
         long partSize = Math.min(optimalPartSize, remainingBytes);
         boolean isLastPart = (remainingBytes - partSize <= 0);
 
-        UploadPartRequest request = null;
-        if (putObjectRequest.getInputStream() != null) {
-            request = new UploadPartRequest()
+        UploadPartRequest req = null;
+        if (origReq.getInputStream() != null) {
+            req = new UploadPartRequest()
                 .withBucketName(bucketName)
                 .withKey(key)
                 .withUploadId(uploadId)
-                .withInputStream(new InputSubstream(putObjectRequest.getInputStream(), 0, partSize, isLastPart))
+                .withInputStream(new InputSubstream(origReq.getInputStream(), 0, partSize, isLastPart))
                 .withPartNumber(partNumber++)
                 .withPartSize(partSize);
         } else {
-            request = new UploadPartRequest()
+            req = new UploadPartRequest()
                 .withBucketName(bucketName)
                 .withKey(key)
                 .withUploadId(uploadId)
@@ -85,17 +84,19 @@ public class UploadPartRequestFactory {
                 .withPartNumber(partNumber++)
                 .withPartSize(partSize);
         }
-        TransferManager.appendMultipartUserAgent(request);
+        TransferManager.appendMultipartUserAgent(req);
 
-        if (sseCustomerKey != null) request.setSSECustomerKey(sseCustomerKey);
+        if (sseCustomerKey != null) req.setSSECustomerKey(sseCustomerKey);
 
         offset += partSize;
         remainingBytes -= partSize;
 
-        request.setLastPart(isLastPart);
-        request.setGeneralProgressListener(putObjectRequest.getGeneralProgressListener());
+        req.setLastPart(isLastPart);
 
-        return request;
+        req.withGeneralProgressListener(origReq.getGeneralProgressListener())
+           .withRequestMetricCollector(origReq.getRequestMetricCollector())
+           ;
+        return req;
     }
 
     public int getTotalNumberOfParts() {

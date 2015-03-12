@@ -47,6 +47,10 @@ public class DescribeSnapshotsResultStaxUnmarshaller implements Unmarshaller<Des
                     describeSnapshotsResult.getSnapshots().add(SnapshotStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeSnapshotsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeSnapshotsResult;

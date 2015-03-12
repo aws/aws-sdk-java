@@ -52,6 +52,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest {
     private List<PartETag> partETags = new ArrayList<PartETag>();
 
 
+    public CompleteMultipartUploadRequest() {}
     /**
      * Constructs a new request to complete a multipart upload.
      *

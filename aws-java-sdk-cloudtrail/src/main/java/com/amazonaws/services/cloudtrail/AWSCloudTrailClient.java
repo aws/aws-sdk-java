@@ -229,15 +229,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         jsonErrorUnmarshallers.add(new TrailAlreadyExistsExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidSnsTopicNameExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidMaxResultsExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidS3PrefixExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new MaximumNumberOfTrailsExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InsufficientSnsTopicPolicyExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new CloudWatchLogsDeliveryUnavailableExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InsufficientSnsTopicPolicyExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new TrailNotFoundExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidTimeRangeExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidTrailNameExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidCloudWatchLogsLogGroupArnExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new S3BucketDoesNotExistExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidCloudWatchLogsRoleArnExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidLookupAttributesExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
@@ -356,6 +360,81 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 new DeleteTrailResultJsonUnmarshaller();
             JsonResponseHandler<DeleteTrailResult> responseHandler =
                 new JsonResponseHandler<DeleteTrailResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Looks up API activity events captured by CloudTrail that create,
+     * update, or delete resources in your account. Events for a region can
+     * be looked up for the times in which you had CloudTrail turned on in
+     * that region during the last seven days. Lookup supports five different
+     * attributes: time range (defined by a start time and end time), user
+     * name, event name, resource type, and resource name. All attributes are
+     * optional. The maximum number of attributes that can be specified in
+     * any one lookup request are time range and one other attribute. The
+     * default number of results returned is 10, with a maximum of 50
+     * possible. The response includes a token that you can use to get the
+     * next page of results.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The rate of lookup requests is limited to one per
+     * second per account. If this limit is exceeded, a throttling error
+     * occurs.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Events that occurred during the selected time range
+     * will not be available for lookup if CloudTrail logging was not enabled
+     * when the events occurred.
+     * </p>
+     *
+     * @param lookupEventsRequest Container for the necessary parameters to
+     *           execute the LookupEvents service method on AWSCloudTrail.
+     * 
+     * @return The response from the LookupEvents service method, as returned
+     *         by AWSCloudTrail.
+     * 
+     * @throws InvalidMaxResultsException
+     * @throws InvalidNextTokenException
+     * @throws InvalidLookupAttributesException
+     * @throws InvalidTimeRangeException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public LookupEventsResult lookupEvents(LookupEventsRequest lookupEventsRequest) {
+        ExecutionContext executionContext = createExecutionContext(lookupEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<LookupEventsRequest> request = null;
+        Response<LookupEventsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new LookupEventsRequestMarshaller().marshall(super.beforeMarshalling(lookupEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<LookupEventsResult, JsonUnmarshallerContext> unmarshaller =
+                new LookupEventsResultJsonUnmarshaller();
+            JsonResponseHandler<LookupEventsResult> responseHandler =
+                new JsonResponseHandler<LookupEventsResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -664,6 +743,51 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
     }
 
+    /**
+     * <p>
+     * Looks up API activity events captured by CloudTrail that create,
+     * update, or delete resources in your account. Events for a region can
+     * be looked up for the times in which you had CloudTrail turned on in
+     * that region during the last seven days. Lookup supports five different
+     * attributes: time range (defined by a start time and end time), user
+     * name, event name, resource type, and resource name. All attributes are
+     * optional. The maximum number of attributes that can be specified in
+     * any one lookup request are time range and one other attribute. The
+     * default number of results returned is 10, with a maximum of 50
+     * possible. The response includes a token that you can use to get the
+     * next page of results.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The rate of lookup requests is limited to one per
+     * second per account. If this limit is exceeded, a throttling error
+     * occurs.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Events that occurred during the selected time range
+     * will not be available for lookup if CloudTrail logging was not enabled
+     * when the events occurred.
+     * </p>
+     * 
+     * @return The response from the LookupEvents service method, as returned
+     *         by AWSCloudTrail.
+     * 
+     * @throws InvalidMaxResultsException
+     * @throws InvalidNextTokenException
+     * @throws InvalidLookupAttributesException
+     * @throws InvalidTimeRangeException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public LookupEventsResult lookupEvents() throws AmazonServiceException, AmazonClientException {
+        return lookupEvents(new LookupEventsRequest());
+    }
+    
     /**
      * <p>
      * Retrieves settings for the trail associated with the current region

@@ -49,6 +49,10 @@ public class PutLogEventsResultJsonUnmarshaller implements Unmarshaller<PutLogEv
                     context.nextToken();
                     putLogEventsResult.setNextSequenceToken(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("rejectedLogEventsInfo", targetDepth)) {
+                    context.nextToken();
+                    putLogEventsResult.setRejectedLogEventsInfo(RejectedLogEventsInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

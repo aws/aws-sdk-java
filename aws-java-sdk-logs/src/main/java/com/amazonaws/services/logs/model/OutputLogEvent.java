@@ -93,7 +93,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
      * Returns the value of the Message property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32768<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @return The value of the Message property for this object.
      */
@@ -105,7 +105,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
      * Sets the value of the Message property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32768<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param message The new value for the Message property for this object.
      */
@@ -119,7 +119,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32768<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param message The new value for the Message property for this object.
      *

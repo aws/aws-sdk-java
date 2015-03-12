@@ -18,50 +18,52 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a security group and AWS account ID pair for EC2-Classic.
+ * Describes a security group and AWS account ID pair.
  * </p>
  */
 public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
-     * The ID of an AWS account.
+     * The ID of an AWS account. EC2-Classic only.
      */
     private String userId;
 
     /**
-     * The ID of the security group owned by the specified AWS account.
+     * The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security
+     * group in a nondefault VPC, use <code>GroupId</code>.
      */
     private String groupName;
 
     /**
-     * The name of the security group in the specified AWS account.
+     * The ID of the security group.
      */
     private String groupId;
 
     /**
-     * The ID of an AWS account.
+     * The ID of an AWS account. EC2-Classic only.
      *
-     * @return The ID of an AWS account.
+     * @return The ID of an AWS account. EC2-Classic only.
      */
     public String getUserId() {
         return userId;
     }
     
     /**
-     * The ID of an AWS account.
+     * The ID of an AWS account. EC2-Classic only.
      *
-     * @param userId The ID of an AWS account.
+     * @param userId The ID of an AWS account. EC2-Classic only.
      */
     public void setUserId(String userId) {
         this.userId = userId;
     }
     
     /**
-     * The ID of an AWS account.
+     * The ID of an AWS account. EC2-Classic only.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userId The ID of an AWS account.
+     * @param userId The ID of an AWS account. EC2-Classic only.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -72,29 +74,41 @@ public class UserIdGroupPair implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the security group owned by the specified AWS account.
+     * The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security
+     * group in a nondefault VPC, use <code>GroupId</code>.
      *
-     * @return The ID of the security group owned by the specified AWS account.
+     * @return The name of the security group. In a request, use this parameter for a
+     *         security group in EC2-Classic or a default VPC only. For a security
+     *         group in a nondefault VPC, use <code>GroupId</code>.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The ID of the security group owned by the specified AWS account.
+     * The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security
+     * group in a nondefault VPC, use <code>GroupId</code>.
      *
-     * @param groupName The ID of the security group owned by the specified AWS account.
+     * @param groupName The name of the security group. In a request, use this parameter for a
+     *         security group in EC2-Classic or a default VPC only. For a security
+     *         group in a nondefault VPC, use <code>GroupId</code>.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The ID of the security group owned by the specified AWS account.
+     * The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security
+     * group in a nondefault VPC, use <code>GroupId</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName The ID of the security group owned by the specified AWS account.
+     * @param groupName The name of the security group. In a request, use this parameter for a
+     *         security group in EC2-Classic or a default VPC only. For a security
+     *         group in a nondefault VPC, use <code>GroupId</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -105,29 +119,29 @@ public class UserIdGroupPair implements Serializable, Cloneable {
     }
 
     /**
-     * The name of the security group in the specified AWS account.
+     * The ID of the security group.
      *
-     * @return The name of the security group in the specified AWS account.
+     * @return The ID of the security group.
      */
     public String getGroupId() {
         return groupId;
     }
     
     /**
-     * The name of the security group in the specified AWS account.
+     * The ID of the security group.
      *
-     * @param groupId The name of the security group in the specified AWS account.
+     * @param groupId The ID of the security group.
      */
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
     
     /**
-     * The name of the security group in the specified AWS account.
+     * The ID of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupId The name of the security group in the specified AWS account.
+     * @param groupId The ID of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

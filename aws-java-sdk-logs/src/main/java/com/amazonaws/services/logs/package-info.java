@@ -2,14 +2,14 @@
 /**
  * Synchronous and asynchronous client classes for accessing AWSLogs.
  *
- * Amazon CloudWatch Logs Service API Reference <p>
+ * Amazon CloudWatch Logs API Reference <p>
  * This is the <i>Amazon CloudWatch Logs API Reference</i> . Amazon
- * CloudWatch Logs is a managed service for real time monitoring and
- * archival of application logs. This guide provides detailed information
- * about Amazon CloudWatch Logs actions, data types, parameters, and
- * errors. For detailed information about Amazon CloudWatch Logs features
- * and their associated API calls, go to the
- * <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/DeveloperGuide"> Amazon CloudWatch Logs Developer Guide </a>
+ * CloudWatch Logs enables you to monitor, store, and access your system,
+ * application, and custom log files. This guide provides detailed
+ * information about Amazon CloudWatch Logs actions, data types,
+ * parameters, and errors. For detailed information about Amazon
+ * CloudWatch Logs features and their associated API calls, go to the
+ * <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide"> Amazon CloudWatch Developer Guide </a>
  * .
  * </p>
  * <p>

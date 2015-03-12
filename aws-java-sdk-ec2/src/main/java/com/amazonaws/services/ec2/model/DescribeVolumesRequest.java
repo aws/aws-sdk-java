@@ -111,7 +111,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>NextToken</code> value. This value can be between 5 and 1000; if
      * <code>MaxResults</code> is given a value larger than 1000, only 1000
      * results are returned. If this parameter is not used, then
-     * <code>DescribeVolumes</code> returns all results.
+     * <code>DescribeVolumes</code> returns all results. You cannot specify
+     * this parameter and the volume IDs parameter in the same request.
      */
     private Integer maxResults;
 
@@ -622,7 +623,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>NextToken</code> value. This value can be between 5 and 1000; if
      * <code>MaxResults</code> is given a value larger than 1000, only 1000
      * results are returned. If this parameter is not used, then
-     * <code>DescribeVolumes</code> returns all results.
+     * <code>DescribeVolumes</code> returns all results. You cannot specify
+     * this parameter and the volume IDs parameter in the same request.
      *
      * @return The maximum number of volume results returned by
      *         <code>DescribeVolumes</code> in paginated output. When this parameter
@@ -634,7 +636,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <code>NextToken</code> value. This value can be between 5 and 1000; if
      *         <code>MaxResults</code> is given a value larger than 1000, only 1000
      *         results are returned. If this parameter is not used, then
-     *         <code>DescribeVolumes</code> returns all results.
+     *         <code>DescribeVolumes</code> returns all results. You cannot specify
+     *         this parameter and the volume IDs parameter in the same request.
      */
     public Integer getMaxResults() {
         return maxResults;
@@ -651,7 +654,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>NextToken</code> value. This value can be between 5 and 1000; if
      * <code>MaxResults</code> is given a value larger than 1000, only 1000
      * results are returned. If this parameter is not used, then
-     * <code>DescribeVolumes</code> returns all results.
+     * <code>DescribeVolumes</code> returns all results. You cannot specify
+     * this parameter and the volume IDs parameter in the same request.
      *
      * @param maxResults The maximum number of volume results returned by
      *         <code>DescribeVolumes</code> in paginated output. When this parameter
@@ -663,7 +667,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <code>NextToken</code> value. This value can be between 5 and 1000; if
      *         <code>MaxResults</code> is given a value larger than 1000, only 1000
      *         results are returned. If this parameter is not used, then
-     *         <code>DescribeVolumes</code> returns all results.
+     *         <code>DescribeVolumes</code> returns all results. You cannot specify
+     *         this parameter and the volume IDs parameter in the same request.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -680,7 +685,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>NextToken</code> value. This value can be between 5 and 1000; if
      * <code>MaxResults</code> is given a value larger than 1000, only 1000
      * results are returned. If this parameter is not used, then
-     * <code>DescribeVolumes</code> returns all results.
+     * <code>DescribeVolumes</code> returns all results. You cannot specify
+     * this parameter and the volume IDs parameter in the same request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -694,7 +700,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <code>NextToken</code> value. This value can be between 5 and 1000; if
      *         <code>MaxResults</code> is given a value larger than 1000, only 1000
      *         results are returned. If this parameter is not used, then
-     *         <code>DescribeVolumes</code> returns all results.
+     *         <code>DescribeVolumes</code> returns all results. You cannot specify
+     *         this parameter and the volume IDs parameter in the same request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

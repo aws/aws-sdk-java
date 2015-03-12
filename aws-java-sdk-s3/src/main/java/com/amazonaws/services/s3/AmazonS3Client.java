@@ -14,14 +14,14 @@
  */
 package com.amazonaws.services.s3;
 
+import static com.amazonaws.SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.ENFORCE_S3_SIGV4_SYSTEM_PROPERTY;
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 import static com.amazonaws.internal.ResettableInputStream.newResettableInputStream;
 import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSource;
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.Throwables.failure;
-import static com.amazonaws.SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY;
-import static com.amazonaws.SDKGlobalConfiguration.ENFORCE_S3_SIGV4_SYSTEM_PROPERTY;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -67,7 +67,6 @@ import com.amazonaws.Protocol;
 import com.amazonaws.Request;
 import com.amazonaws.ResetException;
 import com.amazonaws.Response;
-import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSCredentialsProviderChain;
@@ -180,7 +179,6 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
-import com.amazonaws.services.s3.model.SetObjectAclRequest;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
@@ -199,6 +197,7 @@ import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.SetObjectAclRequest;
 import com.amazonaws.services.s3.model.SetRequestPaymentConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.UploadObjectRequest;

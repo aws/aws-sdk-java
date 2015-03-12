@@ -48,7 +48,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
 
 
     private final AmazonS3 s3;
-    private final PutObjectRequest putObjectRequest;
+    private final PutObjectRequest origReq;
     private final ProgressListenerChain listener;
     private final UploadCallable multipartUploadCallable;
     private final UploadImpl transfer;
@@ -111,7 +111,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
 
         this.s3 = manager.getAmazonS3Client();
         this.multipartUploadCallable = multipartUploadCallable;
-        this.putObjectRequest = putObjectRequest;
+        this.origReq = putObjectRequest;
         this.listener = progressListenerChain;
         this.transfer = transfer;
         this.threadPool = threadPool;
@@ -133,7 +133,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
                 futures.addAll(multipartUploadCallable.getFutures());
                 setFuture(threadPool.submit(new CompleteMultipartUpload(
                         multipartUploadCallable.getMultipartUploadId(), s3,
-                        putObjectRequest, futures, multipartUploadCallable
+                        origReq, futures, multipartUploadCallable
                                 .getETags(), this)));
             } else {
                 uploadComplete();

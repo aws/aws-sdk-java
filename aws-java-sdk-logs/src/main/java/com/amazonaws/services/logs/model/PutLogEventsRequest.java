@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The batch of events must satisfy the following constraints:
  * <ul>
- * <li>The maximum batch size is 32,768 bytes, and this size is
+ * <li>The maximum batch size is 1,048,576 bytes, and this size is
  * calculated as the sum of all event messages in UTF-8, plus 26 bytes
  * for each log event.</li>
  * <li>None of the log events in the batch can be more than 2 hours in
@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the retention period of the log group.</li>
  * <li>The log events in the batch must be in chronological ordered by
  * their <code>timestamp</code> .</li>
- * <li>The maximum number of log events in a batch is 1,000.</li>
+ * <li>The maximum number of log events in a batch is 10,000.</li>
  * 
  * </ul>
  * 
@@ -60,7 +60,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * A list of events belonging to a log stream.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1000<br/>
+     * <b>Length: </b>1 - 10000<br/>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InputLogEvent> logEvents;
 
@@ -188,7 +188,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * A list of events belonging to a log stream.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1000<br/>
+     * <b>Length: </b>1 - 10000<br/>
      *
      * @return A list of events belonging to a log stream.
      */
@@ -204,7 +204,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * A list of events belonging to a log stream.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1000<br/>
+     * <b>Length: </b>1 - 10000<br/>
      *
      * @param logEvents A list of events belonging to a log stream.
      */
@@ -224,7 +224,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1000<br/>
+     * <b>Length: </b>1 - 10000<br/>
      *
      * @param logEvents A list of events belonging to a log stream.
      *
@@ -245,7 +245,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1000<br/>
+     * <b>Length: </b>1 - 10000<br/>
      *
      * @param logEvents A list of events belonging to a log stream.
      *

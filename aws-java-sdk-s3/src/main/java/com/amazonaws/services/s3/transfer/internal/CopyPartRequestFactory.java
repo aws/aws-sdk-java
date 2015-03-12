@@ -33,7 +33,7 @@ public class CopyPartRequestFactory {
     /** Optimal size of each part in the copy request. */
     private final long optimalPartSize;
     /** The original copy object request. */
-    private final CopyObjectRequest copyObjectRequest;
+    private final CopyObjectRequest origReq;
     /** Part Number to be specified in each copy part request. */
     private int partNumber = 1;
     /** Starting byte for each part. */
@@ -41,9 +41,9 @@ public class CopyPartRequestFactory {
     /** The number of remaining bytes to be copied. */
     private long remainingBytes;
 
-    public CopyPartRequestFactory(CopyObjectRequest copyObjectRequest,
+    public CopyPartRequestFactory(CopyObjectRequest origReq,
             String uploadId, long optimalPartSize, long contentLength) {
-        this.copyObjectRequest = copyObjectRequest;
+        this.origReq = origReq;
         this.uploadId = uploadId;
         this.optimalPartSize = optimalPartSize;
         this.remainingBytes = contentLength;
@@ -59,44 +59,32 @@ public class CopyPartRequestFactory {
      * @return Returns a new copy part request
      */
     public synchronized CopyPartRequest getNextCopyPartRequest() {
-        long partSize = Math.min(optimalPartSize, remainingBytes);
+        final long partSize = Math.min(optimalPartSize, remainingBytes);
 
-        CopyPartRequest request = new CopyPartRequest()
-                .withSourceBucketName(copyObjectRequest.getSourceBucketName())
-                .withSourceKey(copyObjectRequest.getSourceKey())
-                .withUploadId(uploadId)
-                .withPartNumber(partNumber++)
-                .withDestinationBucketName(
-                        copyObjectRequest.getDestinationBucketName())
-                .withDestinationKey(copyObjectRequest.getDestinationKey())
-                .withSourceVersionId(copyObjectRequest.getSourceVersionId())
-                .withFirstByte(Long.valueOf(offset))
-                .withLastByte(Long.valueOf(offset + partSize - 1))
-                .withSourceSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey())
-                .withDestinationSSECustomerKey(copyObjectRequest.getDestinationSSECustomerKey());
-
-        setOtherMetadataInRequest(request);
+        CopyPartRequest req = new CopyPartRequest()
+            .withSourceBucketName(origReq.getSourceBucketName())
+            .withSourceKey(origReq.getSourceKey())
+            .withUploadId(uploadId)
+            .withPartNumber(partNumber++)
+            .withDestinationBucketName(origReq.getDestinationBucketName())
+            .withDestinationKey(origReq.getDestinationKey())
+            .withSourceVersionId(origReq.getSourceVersionId())
+            .withFirstByte(Long.valueOf(offset))
+            .withLastByte(Long.valueOf(offset + partSize - 1))
+            .withSourceSSECustomerKey(origReq.getSourceSSECustomerKey())
+            .withDestinationSSECustomerKey(origReq.getDestinationSSECustomerKey())
+            // other meta data
+            .withMatchingETagConstraints(origReq.getMatchingETagConstraints())
+            .withModifiedSinceConstraint(origReq.getModifiedSinceConstraint())
+            .withNonmatchingETagConstraints(origReq.getNonmatchingETagConstraints())
+            .withSourceVersionId(origReq.getSourceVersionId())
+            .withUnmodifiedSinceConstraint(origReq.getUnmodifiedSinceConstraint())
+            // general meta data
+            .withGeneralProgressListener(origReq.getGeneralProgressListener())
+            .withRequestMetricCollector(origReq.getRequestMetricCollector())
+            ;
         offset += partSize;
         remainingBytes -= partSize;
-
-        return request;
+        return req;
     }
-
-    private void setOtherMetadataInRequest(CopyPartRequest request) {
-        if (copyObjectRequest.getMatchingETagConstraints() != null)
-            request.setMatchingETagConstraints(copyObjectRequest
-                    .getMatchingETagConstraints());
-        if (copyObjectRequest.getModifiedSinceConstraint() != null)
-            request.setModifiedSinceConstraint(copyObjectRequest
-                    .getModifiedSinceConstraint());
-        if (copyObjectRequest.getNonmatchingETagConstraints() != null)
-            request.setNonmatchingETagConstraints(copyObjectRequest
-                    .getNonmatchingETagConstraints());
-        if (copyObjectRequest.getSourceVersionId() != null)
-            request.setSourceVersionId(copyObjectRequest.getSourceVersionId());
-        if (copyObjectRequest.getUnmodifiedSinceConstraint() != null)
-            request.setUnmodifiedSinceConstraint(copyObjectRequest
-                    .getUnmodifiedSinceConstraint());
-    }
-
 }

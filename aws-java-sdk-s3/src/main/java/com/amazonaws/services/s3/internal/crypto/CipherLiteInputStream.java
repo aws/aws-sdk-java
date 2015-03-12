@@ -42,24 +42,31 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
      * would need to be called if it was not a multipart upload).
      */
     private final boolean multipart;
-    private boolean eof = false;
+    /**
+     * True if this is the last part of a multipart upload; false otherwise.
+     */
+    private final boolean lastMultiPart;
+    private boolean eof;
     private byte[] bufin;
     private byte[] bufout;
-    private int curr_pos = 0;
-    private int max_pos = 0;
+    private int curr_pos;
+    private int max_pos;
 
     public CipherLiteInputStream(InputStream is, CipherLite cipherLite) {
-        this(is, cipherLite, DEFAULT_IN_BUFFER_SIZE, false);
+        this(is, cipherLite, DEFAULT_IN_BUFFER_SIZE, false, false);
     }
 
     public CipherLiteInputStream(InputStream is, CipherLite c, int buffsize) {
-        this(is, c, buffsize, false);
+        this(is, c, buffsize, false, false);
     }
 
     public CipherLiteInputStream(InputStream is, CipherLite c, int buffsize,
-            boolean multipart) {
+            boolean multipart, boolean lastMultiPart) {
         super(is);
+        if (lastMultiPart && !multipart)
+            throw new IllegalArgumentException("lastMultiPart can only be true if multipart is true");
         this.multipart = multipart;
+        this.lastMultiPart = lastMultiPart;
         this.cipherLite = c;
         if (buffsize <= 0 || (buffsize % DEFAULT_IN_BUFFER_SIZE) != 0) {
             throw new IllegalArgumentException("buffsize (" + buffsize
@@ -70,7 +77,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
     }
 
     protected CipherLiteInputStream(InputStream is) {
-        this(is, CipherLite.Null, DEFAULT_IN_BUFFER_SIZE, false);
+        this(is, CipherLite.Null, DEFAULT_IN_BUFFER_SIZE, false, false);
     }
 
     @Override public int read() throws IOException {
@@ -208,28 +215,31 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         abortIfNeeded();
         if (eof)
             return -1;
+        bufout = null;
         int len = in.read(bufin);
         if (len == -1) {
             eof = true;
-            try {
-                bufout = cipherLite.doFinal();
-            } catch (IllegalBlockSizeException ignore) {
-                // like the RI
-            } catch (BadPaddingException e) {
-                if (S3CryptoScheme.isAesGcm(cipherLite.getCipherAlgorithm()))
-                    throw new SecurityException(e);
+            // Skip doFinal if it's a multi-part upload but not the last part 
+            if (!multipart || lastMultiPart) {
+                try {
+                    bufout = cipherLite.doFinal();
+                    if (bufout == null) {
+                        // bufout can be null, for example, when it was the
+                        // javax.crypto.NullCipher 
+                        return -1;
+                    }
+                    curr_pos = 0;
+                    return max_pos = bufout.length;
+                } catch (IllegalBlockSizeException ignore) {
+                    // like the RI
+                } catch (BadPaddingException e) {
+                    if (S3CryptoScheme.isAesGcm(cipherLite.getCipherAlgorithm()))
+                        throw new SecurityException(e);
+                }
             }
-            if (bufout == null) {
-                return -1;
-            }
-            curr_pos = 0;
-            return max_pos = bufout.length;
+            return -1;
         }
-        try {
-            bufout = cipherLite.update(bufin, 0, len);
-        } catch (IllegalStateException ignore) {
-            // like the RI
-        }
+        bufout = cipherLite.update(bufin, 0, len);
         curr_pos = 0;
         return max_pos = (bufout == null ? 0 : bufout.length);
     }

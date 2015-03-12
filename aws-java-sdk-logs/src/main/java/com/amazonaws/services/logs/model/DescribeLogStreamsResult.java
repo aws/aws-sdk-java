@@ -30,6 +30,9 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * request. The token expires after 24 hours.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      */
     private String nextToken;
 
@@ -105,6 +108,9 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * request. The token expires after 24 hours.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @return A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous
@@ -118,6 +124,9 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * request. The token expires after 24 hours.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param nextToken A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous
@@ -133,6 +142,9 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
      * request. The token expires after 24 hours.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param nextToken A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous

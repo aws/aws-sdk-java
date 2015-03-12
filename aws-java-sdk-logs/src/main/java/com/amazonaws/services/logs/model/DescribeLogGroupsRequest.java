@@ -43,6 +43,9 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * <code class="code">DescribeLogGroups</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      */
     private String nextToken;
 
@@ -104,6 +107,9 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * <code class="code">DescribeLogGroups</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @return A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous
@@ -117,6 +123,9 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
      * <code class="code">DescribeLogGroups</code> request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param nextToken A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous
@@ -132,6 +141,9 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * <code class="code">DescribeLogGroups</code> request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param nextToken A string token used for pagination that points to the next page of
      *         results. It must be a value obtained from the response of the previous

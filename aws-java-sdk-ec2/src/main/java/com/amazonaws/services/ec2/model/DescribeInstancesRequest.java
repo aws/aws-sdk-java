@@ -181,8 +181,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * network interface. </li> <li>
      * <p><code>network-interface-private-dns-name</code> - The private DNS
      * name of the network interface. </li> <li>
-     * <p><code>network-interface.source-destination-check</code> - Whether
-     * the network interface performs source/destination checking. A value of
+     * <p><code>network-interface.source-dest-check</code> - Whether the
+     * network interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
      * the network interface to perform network address translation (NAT) in
@@ -239,7 +239,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the
      * next set of results. If the value is greater than 1000, we return only
-     * 1000 items.
+     * 1000 items. You cannot specify this parameter and the instance IDs
+     * parameter in the same request.
      */
     private Integer maxResults;
 
@@ -445,8 +446,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * network interface. </li> <li>
      * <p><code>network-interface-private-dns-name</code> - The private DNS
      * name of the network interface. </li> <li>
-     * <p><code>network-interface.source-destination-check</code> - Whether
-     * the network interface performs source/destination checking. A value of
+     * <p><code>network-interface.source-dest-check</code> - Whether the
+     * network interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
      * the network interface to perform network address translation (NAT) in
@@ -624,8 +625,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         network interface. </li> <li>
      *         <p><code>network-interface-private-dns-name</code> - The private DNS
      *         name of the network interface. </li> <li>
-     *         <p><code>network-interface.source-destination-check</code> - Whether
-     *         the network interface performs source/destination checking. A value of
+     *         <p><code>network-interface.source-dest-check</code> - Whether the
+     *         network interface performs source/destination checking. A value of
      *         <code>true</code> means checking is enabled, and <code>false</code>
      *         means checking is disabled. The value must be <code>false</code> for
      *         the network interface to perform network address translation (NAT) in
@@ -812,8 +813,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * network interface. </li> <li>
      * <p><code>network-interface-private-dns-name</code> - The private DNS
      * name of the network interface. </li> <li>
-     * <p><code>network-interface.source-destination-check</code> - Whether
-     * the network interface performs source/destination checking. A value of
+     * <p><code>network-interface.source-dest-check</code> - Whether the
+     * network interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
      * the network interface to perform network address translation (NAT) in
@@ -991,8 +992,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         network interface. </li> <li>
      *         <p><code>network-interface-private-dns-name</code> - The private DNS
      *         name of the network interface. </li> <li>
-     *         <p><code>network-interface.source-destination-check</code> - Whether
-     *         the network interface performs source/destination checking. A value of
+     *         <p><code>network-interface.source-dest-check</code> - Whether the
+     *         network interface performs source/destination checking. A value of
      *         <code>true</code> means checking is enabled, and <code>false</code>
      *         means checking is disabled. The value must be <code>false</code> for
      *         the network interface to perform network address translation (NAT) in
@@ -1181,8 +1182,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * network interface. </li> <li>
      * <p><code>network-interface-private-dns-name</code> - The private DNS
      * name of the network interface. </li> <li>
-     * <p><code>network-interface.source-destination-check</code> - Whether
-     * the network interface performs source/destination checking. A value of
+     * <p><code>network-interface.source-dest-check</code> - Whether the
+     * network interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
      * the network interface to perform network address translation (NAT) in
@@ -1362,8 +1363,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         network interface. </li> <li>
      *         <p><code>network-interface-private-dns-name</code> - The private DNS
      *         name of the network interface. </li> <li>
-     *         <p><code>network-interface.source-destination-check</code> - Whether
-     *         the network interface performs source/destination checking. A value of
+     *         <p><code>network-interface.source-dest-check</code> - Whether the
+     *         network interface performs source/destination checking. A value of
      *         <code>true</code> means checking is enabled, and <code>false</code>
      *         means checking is disabled. The value must be <code>false</code> for
      *         the network interface to perform network address translation (NAT) in
@@ -1553,8 +1554,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * network interface. </li> <li>
      * <p><code>network-interface-private-dns-name</code> - The private DNS
      * name of the network interface. </li> <li>
-     * <p><code>network-interface.source-destination-check</code> - Whether
-     * the network interface performs source/destination checking. A value of
+     * <p><code>network-interface.source-dest-check</code> - Whether the
+     * network interface performs source/destination checking. A value of
      * <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for
      * the network interface to perform network address translation (NAT) in
@@ -1734,8 +1735,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         network interface. </li> <li>
      *         <p><code>network-interface-private-dns-name</code> - The private DNS
      *         name of the network interface. </li> <li>
-     *         <p><code>network-interface.source-destination-check</code> - Whether
-     *         the network interface performs source/destination checking. A value of
+     *         <p><code>network-interface.source-dest-check</code> - Whether the
+     *         network interface performs source/destination checking. A value of
      *         <code>true</code> means checking is enabled, and <code>false</code>
      *         means checking is disabled. The value must be <code>false</code> for
      *         the network interface to perform network address translation (NAT) in
@@ -1838,12 +1839,14 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the
      * next set of results. If the value is greater than 1000, we return only
-     * 1000 items.
+     * 1000 items. You cannot specify this parameter and the instance IDs
+     * parameter in the same request.
      *
      * @return The maximum number of items to return for this call. The call also
      *         returns a token that you can specify in a subsequent call to get the
      *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items.
+     *         1000 items. You cannot specify this parameter and the instance IDs
+     *         parameter in the same request.
      */
     public Integer getMaxResults() {
         return maxResults;
@@ -1853,12 +1856,14 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the
      * next set of results. If the value is greater than 1000, we return only
-     * 1000 items.
+     * 1000 items. You cannot specify this parameter and the instance IDs
+     * parameter in the same request.
      *
      * @param maxResults The maximum number of items to return for this call. The call also
      *         returns a token that you can specify in a subsequent call to get the
      *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items.
+     *         1000 items. You cannot specify this parameter and the instance IDs
+     *         parameter in the same request.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -1868,14 +1873,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the
      * next set of results. If the value is greater than 1000, we return only
-     * 1000 items.
+     * 1000 items. You cannot specify this parameter and the instance IDs
+     * parameter in the same request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxResults The maximum number of items to return for this call. The call also
      *         returns a token that you can specify in a subsequent call to get the
      *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items.
+     *         1000 items. You cannot specify this parameter and the instance IDs
+     *         parameter in the same request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

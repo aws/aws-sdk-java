@@ -1046,9 +1046,10 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      *            use to encrypt the destination object being copied.
      */
     public void setDestinationSSECustomerKey(SSECustomerKey sseKey) {
-        if (this.sseAwsKeyManagementParams != null)
+        if (sseKey != null && this.sseAwsKeyManagementParams != null) {
             throw new IllegalArgumentException(
-                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
+                "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
+        }
         this.destinationSSECustomerKey = sseKey;
     }
 
@@ -1082,12 +1083,12 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      * Sets the AWS Key Management System parameters used to encrypt the object
      * on server side.
      */
-    public void setSSEAwsKeyManagementParams(
-            SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
-        if (this.destinationSSECustomerKey != null)
+    public void setSSEAwsKeyManagementParams(SSEAwsKeyManagementParams params) {
+        if (params != null && this.destinationSSECustomerKey != null) {
             throw new IllegalArgumentException(
-                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
-        this.sseAwsKeyManagementParams = sseAwsKeyManagementParams;
+                "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
+        }
+        this.sseAwsKeyManagementParams = params;
     }
 
     /**
