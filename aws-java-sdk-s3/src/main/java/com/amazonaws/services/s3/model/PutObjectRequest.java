@@ -103,15 +103,22 @@ public class PutObjectRequest extends AbstractPutObjectRequest {
 
     /**
      * Constructs a new
-     * {@link PutObjectRequest} object to upload a file to the
+     * {@link PutObjectRequest} object to perform a redirect for the
      * specified bucket and key. After constructing the request,
      * users may optionally specify object metadata or a canned ACL as well.
+     * <p>
+     * The redirect is performed using the
+     * {@link com.amazonaws.services.s3.Headers#REDIRECT_LOCATION} header.
+     * </p>
      *
      * @param bucketName
      *            The name of an existing bucket to which the new object will be
      *            uploaded.
      * @param key
      *            The key under which to store the new object.
+     * @param redirectLocation
+     *            Sets the {@link com.amazonaws.services.s3.Headers#REDIRECT_LOCATION}
+     *            header for the new object.
      */
     public PutObjectRequest(String bucketName, String key, String redirectLocation) {
         super(bucketName, key, redirectLocation);
