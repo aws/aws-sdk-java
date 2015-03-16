@@ -24,7 +24,11 @@
  * In general, the meta information is just a map of key/value pairs. Physically
  * they are persisted either as metadata of the encrypted S3 object, or as a
  * separate S3 object called an "instruction file" (which is just a JSON file in
- * plaintext.)
+ * plaintext.)  For all references to the Cipher Algorithm Names, Modes, and Padding,
+ * such as <code>"AES/CBC/PKCS5Padding"</code>, please refer to Oracle's <a 
+ * href="http://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html"
+ * >Java&trade; Cryptography Architecture Standard Algorithm Name Documentation</a>
+ * for more details.
  * 
  * <h2>S3 metadata vs instruction file</h2>
  * <p>
@@ -145,7 +149,7 @@
  * <p>
  * <h3>KMS Integration for client-side encryption</h3>
  * <ol>
- * <li>All client-side KMS protected S3 objects are stored in v2 meta-data
+ * <li>All client-side KMS protected S3 objects are stored in v2 crypto meta information
  * format. However, the key wrapping algorithm, <b>x-amz-wrap-alg</b> is always
  * be set to <b>"kms"</b>.</li>
  * <li>The KMS Customer Master Key ID is currently stored as part of the
@@ -153,7 +157,7 @@
  * <b>"kms_cmk_id"</b>.</li>
  * </ol>
  * <p>
- * <h4>Sample S3 meta information for KMS client-side encryption</h4>
+ * <h4>Sample S3 crypto meta information for KMS client-side encryption</h4>
  * <p>
  * <h5>CryptoMode: Encryption Only</h5>
  * 
