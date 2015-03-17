@@ -602,8 +602,7 @@ public class EC2MetadataUtils {
         }
 
         /**
-         * The CIDR block of the Amazon EC2-VPC subnet in which the interface
-         * resides.<br>
+         * ID of the Amazon EC2-VPC in which the interface resides.<br>
          * Returned only for Amazon EC2 instances launched into a VPC.
          */
         public String getVpcId() {
