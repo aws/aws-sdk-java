@@ -134,17 +134,22 @@
  * <tr>
  * <td><b>x-amz-cek-alg</b></td>
  * <td>Content encryption algorithm used.
+ * <ul>
  * <li>Supported values:
  * <code>"AES/GCM/NoPadding", "AES/CBC/PKCS5Padding"</code></li>
  * <li>Default to <code>"AES/CBC/PKCS5Padding"</code> if this key is absent.</li>
+ * </ul>
  * </td>
  * </tr>
  * <tr>
  * <td><b>x-amz-tag-len</b></td>
  * <td>Tag length (in bits) when AEAD is in use.
+ * <ul>
  * <li>Only applicable if AEAD is in use. This meta information is absent
  * otherwise, or if KMS is in use.</li>
- * <li>Supported value: <code>"128"</code></li></td>
+ * <li>Supported value: <code>"128"</code></li>
+ * </ul>
+ * </td>
  * </tr>
  * </table>
  * <p>
