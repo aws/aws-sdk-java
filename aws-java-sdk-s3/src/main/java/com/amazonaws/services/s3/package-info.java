@@ -43,7 +43,7 @@
  * in S3 metadata. In contrast, <b>x-amz-key</b> would simply be stored as is
  * (ie without the prefix) in an instruction file.
  * 
- * All the keys described below are considered "user metadata" by the SDK's.
+ * All the keys described below are considered "user metadata" by the SDK.
  * 
  * <h2>S3 v1 crypto meta information (supported by all SDK's)</h2>
  * <p>
@@ -157,7 +157,7 @@
  * <ol>
  * <li>All client-side KMS protected S3 objects are stored in v2 crypto meta information
  * format. However, the key wrapping algorithm, <b>x-amz-wrap-alg</b> is always
- * be set to <b>"kms"</b>.</li>
+ * set to <b>"kms"</b>.</li>
  * <li>The KMS Customer Master Key ID is currently stored as part of the
  * material description, <b>x-amz-matdesc</b>, under the key-name
  * <b>"kms_cmk_id"</b>.</li>
