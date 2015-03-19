@@ -20,18 +20,17 @@ import com.amazonaws.services.sqs.AmazonSQS;
 /**
  * AWS access control policy resource that identifies an Amazon SQS queue.
  * <p>
- * This is an older style of referencing an Amazon SQS queue. You can also use
- * the queue's Amazon Resource Name (ARN), which you can obtain by calling
+ * This is an older style of referencing an Amazon SQS queue. You can also use the queue's Amazon
+ * Resource Name (ARN), which you can obtain by calling
  * {@link AmazonSQS#getQueueAttributes(com.amazonaws.services.sqs.model.GetQueueAttributesRequest)}
  * and requesting the "QueueArn" attribute.
  */
 public class SQSQueueResource extends Resource {
 
     /**
-     * Constructs a new SQS queue resource for an access control policy. A
-     * policy statement using this resource will allow or deny actions on the
-     * specified queue.
-     *
+     * Constructs a new SQS queue resource for an access control policy. A policy statement using
+     * this resource will allow or deny actions on the specified queue.
+     * 
      * @param accountId
      *            The AWS account ID of the queue owner.
      * @param queueName

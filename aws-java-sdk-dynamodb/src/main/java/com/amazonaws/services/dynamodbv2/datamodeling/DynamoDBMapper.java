@@ -204,6 +204,43 @@ public class DynamoDBMapper {
     private static final Log log = LogFactory.getLog(DynamoDBMapper.class);
 
     /**
+     * Fail fast when trying to create a subclass of the DynamoDBMapper that
+     * attempts to override one of the old {@code transformAttributes} methods.
+     */
+    private static void failFastOnIncompatibleSubclass(Class<?> clazz) {
+        while (clazz != DynamoDBMapper.class) {
+            Class<?>[] classOverride = new Class<?>[] {
+                    Class.class,
+                    Map.class
+            };
+            Class<?>[] nameOverride = new Class<?>[] {
+                    String.class,
+                    String.class,
+                    Map.class
+            };
+
+            for (Method method : clazz.getDeclaredMethods()) {
+                if (method.getName().equals("transformAttributes")) {
+                    Class<?>[] params = method.getParameterTypes();
+                    if (Arrays.equals(params, classOverride)
+                            || Arrays.equals(params, nameOverride)) {
+
+                        throw new IllegalStateException(
+                                "The deprecated transformAttributes method is "
+                                + "no longer supported as of 1.9.0. Use an "
+                                + "AttributeTransformer to inject custom "
+                                + "attribute transformation logic.");
+                    }
+                }
+            }
+
+            clazz = clazz.getSuperclass();
+        }
+    }
+
+
+
+    /**
      * Constructs a new mapper with the service object given, using the default
      * configuration.
      *
@@ -323,6 +360,8 @@ public class DynamoDBMapper {
             final DynamoDBMapperConfig config,
             final AttributeTransformer transformer,
             final AWSCredentialsProvider s3CredentialsProvider) {
+
+        failFastOnIncompatibleSubclass(getClass());
 
         this.db = dynamoDB;
         this.config = config;

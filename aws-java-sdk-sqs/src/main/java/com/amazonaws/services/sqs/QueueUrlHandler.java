@@ -22,19 +22,18 @@ import com.amazonaws.Request;
 import com.amazonaws.handlers.AbstractRequestHandler;
 
 /**
- * Custom request handler for SQS that processes the request before it gets
- * routed to the client runtime layer.
+ * Custom request handler for SQS that processes the request before it gets routed to the client
+ * runtime layer.
  * <p>
- * SQS MessageQueue operations take a QueueUrl parameter that needs special
- * handling to update the endpoint and resource path on the request before it's
- * executed.
+ * SQS MessageQueue operations take a QueueUrl parameter that needs special handling to update the
+ * endpoint and resource path on the request before it's executed.
  */
 public class QueueUrlHandler extends AbstractRequestHandler {
     private static final String QUEUE_URL_PARAMETER = "QueueUrl";
 
     public void beforeRequest(Request<?> request) {
         if (request.getParameters().get(QUEUE_URL_PARAMETER) != null) {
-            String queueUrl = (String)request.getParameters().remove(QUEUE_URL_PARAMETER);
+            String queueUrl = (String) request.getParameters().remove(QUEUE_URL_PARAMETER);
 
             try {
                 URI uri = new URI(queueUrl);

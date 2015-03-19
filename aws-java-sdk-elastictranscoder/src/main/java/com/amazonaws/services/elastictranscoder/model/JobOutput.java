@@ -270,6 +270,16 @@ public class JobOutput implements Serializable, Cloneable {
     private Encryption encryption;
 
     /**
+     * If Elastic Transcoder used a preset with a
+     * <code>ColorSpaceConversionMode</code> to transcode the output file,
+     * the <code>AppliedColorSpaceConversion</code> parameter shows the
+     * conversion used. If no <code>ColorSpaceConversionMode</code> was
+     * defined in the preset, this parameter will not be included in the job
+     * response.
+     */
+    private String appliedColorSpaceConversion;
+
+    /**
      * A sequential counter, starting with 1, that identifies an output among
      * the outputs from the current job. In the Output syntax, this value is
      * always 1.
@@ -1794,6 +1804,69 @@ public class JobOutput implements Serializable, Cloneable {
     }
 
     /**
+     * If Elastic Transcoder used a preset with a
+     * <code>ColorSpaceConversionMode</code> to transcode the output file,
+     * the <code>AppliedColorSpaceConversion</code> parameter shows the
+     * conversion used. If no <code>ColorSpaceConversionMode</code> was
+     * defined in the preset, this parameter will not be included in the job
+     * response.
+     *
+     * @return If Elastic Transcoder used a preset with a
+     *         <code>ColorSpaceConversionMode</code> to transcode the output file,
+     *         the <code>AppliedColorSpaceConversion</code> parameter shows the
+     *         conversion used. If no <code>ColorSpaceConversionMode</code> was
+     *         defined in the preset, this parameter will not be included in the job
+     *         response.
+     */
+    public String getAppliedColorSpaceConversion() {
+        return appliedColorSpaceConversion;
+    }
+    
+    /**
+     * If Elastic Transcoder used a preset with a
+     * <code>ColorSpaceConversionMode</code> to transcode the output file,
+     * the <code>AppliedColorSpaceConversion</code> parameter shows the
+     * conversion used. If no <code>ColorSpaceConversionMode</code> was
+     * defined in the preset, this parameter will not be included in the job
+     * response.
+     *
+     * @param appliedColorSpaceConversion If Elastic Transcoder used a preset with a
+     *         <code>ColorSpaceConversionMode</code> to transcode the output file,
+     *         the <code>AppliedColorSpaceConversion</code> parameter shows the
+     *         conversion used. If no <code>ColorSpaceConversionMode</code> was
+     *         defined in the preset, this parameter will not be included in the job
+     *         response.
+     */
+    public void setAppliedColorSpaceConversion(String appliedColorSpaceConversion) {
+        this.appliedColorSpaceConversion = appliedColorSpaceConversion;
+    }
+    
+    /**
+     * If Elastic Transcoder used a preset with a
+     * <code>ColorSpaceConversionMode</code> to transcode the output file,
+     * the <code>AppliedColorSpaceConversion</code> parameter shows the
+     * conversion used. If no <code>ColorSpaceConversionMode</code> was
+     * defined in the preset, this parameter will not be included in the job
+     * response.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param appliedColorSpaceConversion If Elastic Transcoder used a preset with a
+     *         <code>ColorSpaceConversionMode</code> to transcode the output file,
+     *         the <code>AppliedColorSpaceConversion</code> parameter shows the
+     *         conversion used. If no <code>ColorSpaceConversionMode</code> was
+     *         defined in the preset, this parameter will not be included in the job
+     *         response.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobOutput withAppliedColorSpaceConversion(String appliedColorSpaceConversion) {
+        this.appliedColorSpaceConversion = appliedColorSpaceConversion;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1821,7 +1894,8 @@ public class JobOutput implements Serializable, Cloneable {
         if (getAlbumArt() != null) sb.append("AlbumArt: " + getAlbumArt() + ",");
         if (getComposition() != null) sb.append("Composition: " + getComposition() + ",");
         if (getCaptions() != null) sb.append("Captions: " + getCaptions() + ",");
-        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
+        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() + ",");
+        if (getAppliedColorSpaceConversion() != null) sb.append("AppliedColorSpaceConversion: " + getAppliedColorSpaceConversion() );
         sb.append("}");
         return sb.toString();
     }
@@ -1848,6 +1922,7 @@ public class JobOutput implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getComposition() == null) ? 0 : getComposition().hashCode()); 
         hashCode = prime * hashCode + ((getCaptions() == null) ? 0 : getCaptions().hashCode()); 
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
+        hashCode = prime * hashCode + ((getAppliedColorSpaceConversion() == null) ? 0 : getAppliedColorSpaceConversion().hashCode()); 
         return hashCode;
     }
     
@@ -1893,6 +1968,8 @@ public class JobOutput implements Serializable, Cloneable {
         if (other.getCaptions() != null && other.getCaptions().equals(this.getCaptions()) == false) return false; 
         if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
         if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
+        if (other.getAppliedColorSpaceConversion() == null ^ this.getAppliedColorSpaceConversion() == null) return false;
+        if (other.getAppliedColorSpaceConversion() != null && other.getAppliedColorSpaceConversion().equals(this.getAppliedColorSpaceConversion()) == false) return false; 
         return true;
     }
     

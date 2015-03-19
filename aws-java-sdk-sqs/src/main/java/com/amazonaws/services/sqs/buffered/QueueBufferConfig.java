@@ -13,8 +13,6 @@
  * permissions and limitations under the License.
  */
 
-
-
 package com.amazonaws.services.sqs.buffered;
 
 import com.amazonaws.AmazonClientException;
@@ -26,34 +24,32 @@ public class QueueBufferConfig {
     /** the maximum number of entries in a batch command */
     private int maxBatchSize;
 
-    /** Updated as the service now supports messages of size max 256 KiB.*/
+    /** Updated as the service now supports messages of size max 256 KiB. */
     public static final long SERVICE_MAX_BATCH_SIZE_BYTES = 256 * 1024 - 1;
 
     /**
-     * The maximum time (milliseconds) a send batch is held open for additional
-     * outbound requests. The longer this timeout, the longer messages wait for
-     * other messages to be added to the batch. Increasing this timeout reduces
-     * the number of calls made and increases throughput, but also increases
-     * average message latency.
+     * The maximum time (milliseconds) a send batch is held open for additional outbound requests.
+     * The longer this timeout, the longer messages wait for other messages to be added to the
+     * batch. Increasing this timeout reduces the number of calls made and increases throughput, but
+     * also increases average message latency.
      */
-    private  long maxBatchOpenMs;
+    private long maxBatchOpenMs;
 
     /** 200 milliseconds */
     public static final long MAX_BATCH_OPEN_MS_DEFAULT = 200;
 
     /**
      * Should we use long polling or not?
-     * */
+     */
     private boolean longPoll;
 
     /** true */
     private static final boolean LONG_POLL_DEFAULT = true;
 
-
     /**
-     * The maximum number of concurrent batches for each type of outbound
-     * request.  The greater the number, the greater the throughput that can be
-     * achieved (at the expense of consuming more threads).
+     * The maximum number of concurrent batches for each type of outbound request. The greater the
+     * number, the greater the throughput that can be achieved (at the expense of consuming more
+     * threads).
      */
     private int maxInflightOutboundBatches;
 
@@ -61,9 +57,9 @@ public class QueueBufferConfig {
     public static final int MAX_INFLIGHT_OUTBOUND_BATCHES_DEFAULT = 5;
 
     /**
-     * The maximum number of concurrent receive message batches.  The greater
-     * this number, the faster the queue will be pulling messages from the SQS
-     * servers (at the expense of consuming more threads).
+     * The maximum number of concurrent receive message batches. The greater this number, the faster
+     * the queue will be pulling messages from the SQS servers (at the expense of consuming more
+     * threads).
      */
     private int maxInflightReceiveBatches;
 
@@ -71,70 +67,52 @@ public class QueueBufferConfig {
     public static final int MAX_INFLIGHT_RECEIVE_BATCHES_DEFAULT = 10;
 
     /**
-     * If more than that number of completed receive batches are waiting in the
-     * buffer, the querying for new messages will stop.
-     *
-     * The larger this number, the more messages the buffer queue will pre-fetch
-     * and keep in the buffer on the client side, and the faster receive
-     * requests will be satisfied.
-     *
-     * The visibility timeout of a pre-fetched message starts at the point of
-     * pre-fetch, which means that while the message is in the local buffer it
-     * is unavailable for other clients to process, and when this client retrieves it,
-     * part of the visibility timeout may have already expired.
-     *
-     * The number of messages prefetched will not exceed 10 * maxDoneReceiveBatches,
-     * as there can be a maximum of 10 messages per batch.
-     *
-     * */
+     * If more than that number of completed receive batches are waiting in the buffer, the querying
+     * for new messages will stop. The larger this number, the more messages the buffer queue will
+     * pre-fetch and keep in the buffer on the client side, and the faster receive requests will be
+     * satisfied. The visibility timeout of a pre-fetched message starts at the point of pre-fetch,
+     * which means that while the message is in the local buffer it is unavailable for other clients
+     * to process, and when this client retrieves it, part of the visibility timeout may have
+     * already expired. The number of messages prefetched will not exceed 10 *
+     * maxDoneReceiveBatches, as there can be a maximum of 10 messages per batch.
+     */
     private int maxDoneReceiveBatches;
 
     /** 10 batches */
     public static final int MAX_DONE_RECEIVE_BATCHES_DEFAULT = 10;
 
     /**
-     * Maximum permitted size of a SendMessage or SendMessageBatch message, in
-     * bytes
+     * Maximum permitted size of a SendMessage or SendMessageBatch message, in bytes
      */
     private long maxBatchSizeBytes;
 
-    /** 256 kilobytes*/
+    /** 256 kilobytes */
     public static final long MAX_BATCH_SIZE_BYTES_DEFAULT = SERVICE_MAX_BATCH_SIZE_BYTES;
 
     /**
-     * Custom visibility timeout to use when retrieving messages from SQS. If
-     * set to a value greater than zero, this timeout will override the default
-     * visibility timeout set on the SQS queue.  Set it to -1 to use the
-     * default visiblity timeout of the queue.  Visibility timeout of 0 seconds
-     * is not supported.
-     * */
+     * Custom visibility timeout to use when retrieving messages from SQS. If set to a value greater
+     * than zero, this timeout will override the default visibility timeout set on the SQS queue.
+     * Set it to -1 to use the default visiblity timeout of the queue. Visibility timeout of 0
+     * seconds is not supported.
+     */
     private int visibilityTimeoutSeconds;
 
     /** -1, which means use the visibility timeout of the queue */
     public static final int VISIBILITY_TIMEOUT_SECONDS_DEFAULT = -1;
 
     /**
-     * Specifies the amount of time, in seconds, the receive call will block
-     * on the server waiting for messages to arrive if the queue is empty when
-     * the receive call is first made.
-     *
-     * This setting has no effect if long polling is disabled.
-     * */
+     * Specifies the amount of time, in seconds, the receive call will block on the server waiting
+     * for messages to arrive if the queue is empty when the receive call is first made. This
+     * setting has no effect if long polling is disabled.
+     */
 
     private int longPollWaitTimeoutSeconds;
 
     public static final int LONGPOLL_WAIT_TIMEOUT_SECONDS_DEFAULT = 20;
 
-    public QueueBufferConfig( long maxBatchOpenMs,
-            int maxInflightOutboundBatches,
-            int maxInflightReceiveBatches,
-            int maxDoneReceiveBatches,
-            boolean paramLongPoll,
-            long maxBatchSizeBytes,
-            int visibilityTimeout,
-            int longPollTimeout,
-            int maxBatch
-            ) {
+    public QueueBufferConfig(long maxBatchOpenMs, int maxInflightOutboundBatches, int maxInflightReceiveBatches,
+            int maxDoneReceiveBatches, boolean paramLongPoll, long maxBatchSizeBytes, int visibilityTimeout,
+            int longPollTimeout, int maxBatch) {
         super();
         this.maxBatchOpenMs = maxBatchOpenMs;
         this.maxInflightOutboundBatches = maxInflightOutboundBatches;
@@ -148,20 +126,13 @@ public class QueueBufferConfig {
     }
 
     public QueueBufferConfig() {
-        this( MAX_BATCH_OPEN_MS_DEFAULT,
-                MAX_INFLIGHT_OUTBOUND_BATCHES_DEFAULT,
-                MAX_INFLIGHT_RECEIVE_BATCHES_DEFAULT,
-                 MAX_DONE_RECEIVE_BATCHES_DEFAULT,
-                LONG_POLL_DEFAULT,
-                MAX_BATCH_SIZE_BYTES_DEFAULT,
-                VISIBILITY_TIMEOUT_SECONDS_DEFAULT,
-                LONGPOLL_WAIT_TIMEOUT_SECONDS_DEFAULT,
-                MAX_BATCH_SIZE_DEFAULT
-                );
+        this(MAX_BATCH_OPEN_MS_DEFAULT, MAX_INFLIGHT_OUTBOUND_BATCHES_DEFAULT, MAX_INFLIGHT_RECEIVE_BATCHES_DEFAULT,
+                MAX_DONE_RECEIVE_BATCHES_DEFAULT, LONG_POLL_DEFAULT, MAX_BATCH_SIZE_BYTES_DEFAULT,
+                VISIBILITY_TIMEOUT_SECONDS_DEFAULT, LONGPOLL_WAIT_TIMEOUT_SECONDS_DEFAULT, MAX_BATCH_SIZE_DEFAULT);
     }
 
     /** copy constructor */
-    public QueueBufferConfig( QueueBufferConfig other ) {
+    public QueueBufferConfig(QueueBufferConfig other) {
         longPoll = other.longPoll;
         longPollWaitTimeoutSeconds = other.longPollWaitTimeoutSeconds;
         maxBatchOpenMs = other.maxBatchOpenMs;
@@ -173,27 +144,20 @@ public class QueueBufferConfig {
         visibilityTimeoutSeconds = other.visibilityTimeoutSeconds;
     }
 
-
-
     @Override
     public String toString() {
-        return "QueueBufferConfig [maxBatchSize=" + maxBatchSize
-                + ", maxBatchOpenMs=" + maxBatchOpenMs + ", longPoll="
-                + longPoll + ", maxInflightOutboundBatches="
-                + maxInflightOutboundBatches + ", maxInflightReceiveBatches="
-                + maxInflightReceiveBatches + ", maxDoneReceiveBatches="
-                + maxDoneReceiveBatches + ", maxBatchSizeBytes="
-                + maxBatchSizeBytes + ", visibilityTimeoutSeconds="
-                + visibilityTimeoutSeconds + ", longPollWaitTimeoutSeconds="
-                + longPollWaitTimeoutSeconds + "]";
+        return "QueueBufferConfig [maxBatchSize=" + maxBatchSize + ", maxBatchOpenMs=" + maxBatchOpenMs + ", longPoll="
+                + longPoll + ", maxInflightOutboundBatches=" + maxInflightOutboundBatches
+                + ", maxInflightReceiveBatches=" + maxInflightReceiveBatches + ", maxDoneReceiveBatches="
+                + maxDoneReceiveBatches + ", maxBatchSizeBytes=" + maxBatchSizeBytes + ", visibilityTimeoutSeconds="
+                + visibilityTimeoutSeconds + ", longPollWaitTimeoutSeconds=" + longPollWaitTimeoutSeconds + "]";
     }
 
     /**
-     * The maximum time (milliseconds) a send batch is held open for additional
-     * outbound requests. The longer this timeout, the longer messages wait for
-     * other messages to be added to the batch. Increasing this timeout reduces
-     * the number of calls made and increases throughput, but also increases
-     * average message latency.
+     * The maximum time (milliseconds) a send batch is held open for additional outbound requests.
+     * The longer this timeout, the longer messages wait for other messages to be added to the
+     * batch. Increasing this timeout reduces the number of calls made and increases throughput, but
+     * also increases average message latency.
      */
 
     public long getMaxBatchOpenMs() {
@@ -201,11 +165,10 @@ public class QueueBufferConfig {
     }
 
     /**
-     * The maximum time (milliseconds) a send batch is held open for additional
-     * outbound requests. The longer this timeout, the longer messages wait for
-     * other messages to be added to the batch. Increasing this timeout reduces
-     * the number of calls made and increases throughput, but also increases
-     * average message latency.
+     * The maximum time (milliseconds) a send batch is held open for additional outbound requests.
+     * The longer this timeout, the longer messages wait for other messages to be added to the
+     * batch. Increasing this timeout reduces the number of calls made and increases throughput, but
+     * also increases average message latency.
      */
 
     public void setMaxBatchOpenMs(long maxBatchOpenMs) {
@@ -218,9 +181,9 @@ public class QueueBufferConfig {
     }
 
     /**
-     * @return true if the queue buffer will use long polling while retrieveing
-     * messages from the SQS server, false otherwise.
-     * */
+     * @return true if the queue buffer will use long polling while retrieveing messages from the
+     *         SQS server, false otherwise.
+     */
 
     public boolean isLongPoll() {
         return longPoll;
@@ -228,7 +191,7 @@ public class QueueBufferConfig {
 
     /**
      * Specify "true" for receive requests to use long polling.
-     * */
+     */
 
     public void setLongPoll(boolean longPoll) {
         this.longPoll = longPoll;
@@ -240,9 +203,9 @@ public class QueueBufferConfig {
     }
 
     /**
-     * The maximum number of concurrent batches for each type of outbound
-     * request.  The greater the number, the greater the throughput that can be
-     * achieved (at the expense of consuming more threads).
+     * The maximum number of concurrent batches for each type of outbound request. The greater the
+     * number, the greater the throughput that can be achieved (at the expense of consuming more
+     * threads).
      */
 
     public int getMaxInflightOutboundBatches() {
@@ -250,9 +213,9 @@ public class QueueBufferConfig {
     }
 
     /**
-     * The maximum number of concurrent batches for each type of outbound
-     * request.  The greater the number, the greater the throughput that can be
-     * achieved (at the expense of consuming more threads).
+     * The maximum number of concurrent batches for each type of outbound request. The greater the
+     * number, the greater the throughput that can be achieved (at the expense of consuming more
+     * threads).
      */
 
     public void setMaxInflightOutboundBatches(int maxInflightOutboundBatches) {
@@ -265,9 +228,9 @@ public class QueueBufferConfig {
     }
 
     /**
-     * The maximum number of concurrent receive message batches.  The greater
-     * this number, the faster the queue will be pulling messages from the SQS
-     * servers (at the expense of consuming more threads).
+     * The maximum number of concurrent receive message batches. The greater this number, the faster
+     * the queue will be pulling messages from the SQS servers (at the expense of consuming more
+     * threads).
      */
 
     public int getMaxInflightReceiveBatches() {
@@ -275,9 +238,9 @@ public class QueueBufferConfig {
     }
 
     /**
-     * The maximum number of concurrent receive message batches.  The greater
-     * this number, the faster the queue will be pulling messages from the SQS
-     * servers (at the expense of consuming more threads).
+     * The maximum number of concurrent receive message batches. The greater this number, the faster
+     * the queue will be pulling messages from the SQS servers (at the expense of consuming more
+     * threads).
      */
     public void setMaxInflightReceiveBatches(int maxInflightReceiveBatches) {
         this.maxInflightReceiveBatches = maxInflightReceiveBatches;
@@ -289,43 +252,31 @@ public class QueueBufferConfig {
     }
 
     /**
-     * If more than that number of completed receive batches are waiting in the
-     * buffer, the querying for new messages will stop.<br>
-     *
-     * The larger this number, the more messages the queue buffer will pre-fetch
-     * and keep in the buffer on the client side, and the faster receive
-     * requests will be satisfied. <br>
-     *
-     * The visibility timeout of a pre-fetched message starts at the point of
-     * pre-fetch, which means that while the message is in the local buffer it
-     * is unavailable for other clients to process, and when this client retrieves it,
-     * part of the visibility timeout may have already expired.<br>
-     *
-     * The number of messages prefetched will not exceed 10 * maxDoneReceiveBatches,
-     * as there can be a maximum of 10 messages per batch.<br>
-     *
-     * */
+     * If more than that number of completed receive batches are waiting in the buffer, the querying
+     * for new messages will stop.<br>
+     * The larger this number, the more messages the queue buffer will pre-fetch and keep in the
+     * buffer on the client side, and the faster receive requests will be satisfied. <br>
+     * The visibility timeout of a pre-fetched message starts at the point of pre-fetch, which means
+     * that while the message is in the local buffer it is unavailable for other clients to process,
+     * and when this client retrieves it, part of the visibility timeout may have already expired.<br>
+     * The number of messages prefetched will not exceed 10 * maxDoneReceiveBatches, as there can be
+     * a maximum of 10 messages per batch.<br>
+     */
     public int getMaxDoneReceiveBatches() {
         return maxDoneReceiveBatches;
     }
 
     /**
-     * If more than that number of completed receive batches are waiting in the
-     * buffer, the querying for new messages will stop.<br>
-     *
-     * The larger this number, the more messages the queue buffer will pre-fetch
-     * and keep in the buffer on the client side, and the faster receive
-     * requests will be satisfied. <br>
-     *
-     * The visibility timeout of a pre-fetched message starts at the point of
-     * pre-fetch, which means that while the message is in the local buffer it
-     * is unavailable for other clients to process, and when this client retrieves it,
-     * part of the visibility timeout may have already expired.<br>
-     *
-     * The number of messages prefetched will not exceed 10 * maxDoneReceiveBatches,
-     * as there can be a maximum of 10 messages per batch.<br>
-     *
-     * */
+     * If more than that number of completed receive batches are waiting in the buffer, the querying
+     * for new messages will stop.<br>
+     * The larger this number, the more messages the queue buffer will pre-fetch and keep in the
+     * buffer on the client side, and the faster receive requests will be satisfied. <br>
+     * The visibility timeout of a pre-fetched message starts at the point of pre-fetch, which means
+     * that while the message is in the local buffer it is unavailable for other clients to process,
+     * and when this client retrieves it, part of the visibility timeout may have already expired.<br>
+     * The number of messages prefetched will not exceed 10 * maxDoneReceiveBatches, as there can be
+     * a maximum of 10 messages per batch.<br>
+     */
     public void setMaxDoneReceiveBatches(int maxDoneReceiveBatches) {
         this.maxDoneReceiveBatches = maxDoneReceiveBatches;
     }
@@ -336,24 +287,21 @@ public class QueueBufferConfig {
     }
 
     /**
-     * Maximum permitted size of a SendMessage or SendMessageBatch message, in
-     * bytes.  This setting is also enforced on the server, and if this client
-     * submits a request of a size larger than the server can support, the server
-     * will reject the request.
+     * Maximum permitted size of a SendMessage or SendMessageBatch message, in bytes. This setting
+     * is also enforced on the server, and if this client submits a request of a size larger than
+     * the server can support, the server will reject the request.
      */
     public long getMaxBatchSizeBytes() {
         return maxBatchSizeBytes;
     }
 
     /**
-     * Maximum permitted size of a SendMessage or SendMessageBatch message, in
-     * bytes. This setting is also enforced on the server, and if this client
-     * submits a request of a size larger than the server can support, the
-     * server will reject the request.
-     *
+     * Maximum permitted size of a SendMessage or SendMessageBatch message, in bytes. This setting
+     * is also enforced on the server, and if this client submits a request of a size larger than
+     * the server can support, the server will reject the request.
+     * 
      * @throws IllegalArgumentException
-     *             if the size being set is greater than the service allowed
-     *             size for message body.
+     *             if the size being set is greater than the service allowed size for message body.
      */
     public void setMaxBatchSizeBytes(long maxBatchSizeBytes) {
         if (maxBatchSizeBytes > SERVICE_MAX_BATCH_SIZE_BYTES) {
@@ -370,23 +318,21 @@ public class QueueBufferConfig {
     }
 
     /**
-     * Custom visibility timeout to use when retrieving messages from SQS. If
-     * set to a value greater than zero, this timeout will override the default
-     * visibility timeout set on the SQS queue.  Set it to -1 to use the
-     * default visiblity timeout of the queue.  Visibility timeout of 0 seconds
-     * is not supported.
-     * */
+     * Custom visibility timeout to use when retrieving messages from SQS. If set to a value greater
+     * than zero, this timeout will override the default visibility timeout set on the SQS queue.
+     * Set it to -1 to use the default visiblity timeout of the queue. Visibility timeout of 0
+     * seconds is not supported.
+     */
     public int getVisibilityTimeoutSeconds() {
         return visibilityTimeoutSeconds;
     }
 
     /**
-     * Custom visibility timeout to use when retrieving messages from SQS. If
-     * set to a value greater than zero, this timeout will override the default
-     * visibility timeout set on the SQS queue.  Set it to -1 to use the
-     * default visiblity timeout of the queue.  Visibility timeout of 0 seconds
-     * is not supported.
-     * */
+     * Custom visibility timeout to use when retrieving messages from SQS. If set to a value greater
+     * than zero, this timeout will override the default visibility timeout set on the SQS queue.
+     * Set it to -1 to use the default visiblity timeout of the queue. Visibility timeout of 0
+     * seconds is not supported.
+     */
     public void setVisibilityTimeoutSeconds(int visibilityTimeoutSeconds) {
         this.visibilityTimeoutSeconds = visibilityTimeoutSeconds;
     }
@@ -397,23 +343,19 @@ public class QueueBufferConfig {
     }
 
     /**
-     * Specifies the amount of time, in seconds, the receive call will block
-     * on the server waiting for messages to arrive if the queue is empty when
-     * the receive call is first made.
-     *
-     * This setting has no effect if long polling is disabled.
-     * */
+     * Specifies the amount of time, in seconds, the receive call will block on the server waiting
+     * for messages to arrive if the queue is empty when the receive call is first made. This
+     * setting has no effect if long polling is disabled.
+     */
     public void setLongPollWaitTimeoutSeconds(int longPollWaitTimeoutSeconds) {
         this.longPollWaitTimeoutSeconds = longPollWaitTimeoutSeconds;
     }
 
     /**
-     * Specifies the amount of time, in seconds, the receive call will block
-     * on the server waiting for messages to arrive if the queue is empty when
-     * the receive call is first made.
-     *
-     * This setting has no effect if long polling is disabled.
-     * */
+     * Specifies the amount of time, in seconds, the receive call will block on the server waiting
+     * for messages to arrive if the queue is empty when the receive call is first made. This
+     * setting has no effect if long polling is disabled.
+     */
     public int getLongPollWaitTimeoutSeconds() {
         return longPollWaitTimeoutSeconds;
     }
@@ -423,42 +365,40 @@ public class QueueBufferConfig {
         return this;
     }
 
-
-
     /**
-     * Specifies the maximum number of entries the bufferinc client will
-     * put in a single batch request.
-     * */
+     * Specifies the maximum number of entries the bufferinc client will put in a single batch
+     * request.
+     */
     public int getMaxBatchSize() {
         return maxBatchSize;
     }
 
     /**
-     * Specifies the maximum number of entries the bufferinc client will
-     * put in a single batch request.
-     * */
+     * Specifies the maximum number of entries the bufferinc client will put in a single batch
+     * request.
+     */
     public void setMaxBatchSize(int maxBatchSize) {
         this.maxBatchSize = maxBatchSize;
     }
 
     /**
-     * Specifies the maximum number of entries the bufferinc client will
-     * put in a single batch request.
-     * */
+     * Specifies the maximum number of entries the bufferinc client will put in a single batch
+     * request.
+     */
     public QueueBufferConfig withMaxBatchSize(int maxBatchSize) {
         this.maxBatchSize = maxBatchSize;
         return this;
     }
 
     /**
-     * this method checks the config for validity. If the config is deemed to be
-     * invalid, an informative exception is thrown.
-     *
+     * this method checks the config for validity. If the config is deemed to be invalid, an
+     * informative exception is thrown.
+     * 
      * @throws AmazonClientException
      *             with a message explaining why the config was invalid
      */
     void validate() {
-        if (visibilityTimeoutSeconds == 0 ) {
+        if (visibilityTimeoutSeconds == 0) {
             throw new AmazonClientException("Visibility timeout value may not be equal to zero ");
         }
     }
