@@ -13,41 +13,36 @@
  * permissions and limitations under the License.
  */
 
-
 package com.amazonaws.services.sqs.buffered;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.handlers.AsyncHandler;
 
 /**
- * This class combines the handler we are supposed to call after the request is
- * completed and the original request object. The reason to hold on to the
- * original request is that we have to provide it to the async handler on
- * successful completion. Storing the request object here means we don't have to
- * store it in the classes that do actual work. Those classes tend to forget
- * about the request objects as soon as the required data was extracted from
- * them.
- * */
+ * This class combines the handler we are supposed to call after the request is completed and the
+ * original request object. The reason to hold on to the original request is that we have to provide
+ * it to the async handler on successful completion. Storing the request object here means we don't
+ * have to store it in the classes that do actual work. Those classes tend to forget about the
+ * request objects as soon as the required data was extracted from them.
+ */
 class QueueBufferCallback<RequestType extends AmazonWebServiceRequest, ResultType> {
-    
-    private final AsyncHandler<RequestType , ResultType > handler;
+
+    private final AsyncHandler<RequestType, ResultType> handler;
     private final RequestType request;
-    public QueueBufferCallback(
-            AsyncHandler<RequestType , ResultType> paramHandler,
-            RequestType request) {
+
+    public QueueBufferCallback(AsyncHandler<RequestType, ResultType> paramHandler, RequestType request) {
         this.handler = paramHandler;
         this.request = request;
     }
-    
+
     public void onError(Exception e) {
-        if ( null != handler )
+        if (null != handler)
             handler.onError(e);
     }
-    
-    public void onSuccess( ResultType result) {
-        if ( null != handler )
+
+    public void onSuccess(ResultType result) {
+        if (null != handler)
             handler.onSuccess(request, result);
     }
 
 }
-

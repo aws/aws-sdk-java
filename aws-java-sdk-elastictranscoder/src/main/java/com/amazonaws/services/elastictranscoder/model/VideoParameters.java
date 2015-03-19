@@ -25,19 +25,22 @@ public class VideoParameters implements Serializable, Cloneable {
 
     /**
      * The video codec for the output file. Valid values include
-     * <code>H.264</code> and <code>vp8</code>. You can only specify
-     * <code>vp8</code> when the container type is <code>webm</code>.
+     * <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, and
+     * <code>vp8</code>. You can only specify <code>vp8</code> when the
+     * container type is <code>webm</code>, <code>gif</code> when the
+     * container type is <code>gif</code>, and <code>mpeg2</code> when the
+     * container type is <code>mpg</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^H\.264$)|(^vp8$)<br/>
+     * <b>Pattern: </b>(^H\.264$)|(^vp8$)|(^mpeg2$)|(^gif$)<br/>
      */
     private String codec;
 
     /**
-     * <b>Profile</b> <p>The H.264 profile that you want to use for the
-     * output file. Elastic Transcoder supports the following profiles: <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li>
+     * <b>Profile (H.264/VP8 Only)</b> <p>The H.264 profile that you want to
+     * use for the output file. Elastic Transcoder supports the following
+     * profiles: <ul> <li><code>baseline</code>: The profile most commonly
+     * used for videoconferencing and for mobile applications.</li>
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
@@ -61,19 +64,74 @@ public class VideoParameters implements Serializable, Cloneable {
      * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
      * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
      * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
-     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
-     * of bits per second in a video buffer; the size of the buffer is
-     * specified by <code>BufferSize</code>. Specify a value between 16 and
-     * 62,500. You can reduce the bandwidth required to stream a video by
-     * reducing the maximum bit rate, but this also reduces the quality of
-     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
-     * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using FMP4 or MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate (Optional,
+     * H.264/MPEG2/VP8 only)</b> <p>The maximum number of bits per second in
+     * a video buffer; the size of the buffer is specified by
+     * <code>BufferSize</code>. Specify a value between 16 and 62,500. You
+     * can reduce the bandwidth required to stream a video by reducing the
+     * maximum bit rate, but this also reduces the quality of the video. <p>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> <p>The maximum
+     * number of bits in any x seconds of the output video. This window is
+     * commonly 10 seconds, the standard segment duration when you're using
+     * FMP4 or MPEG-TS for the container type of the output video. Specify an
+     * integer greater than 0. If you specify <code>MaxBitRate</code> and
+     * omit <code>BufferSize</code>, Elastic Transcoder sets
      * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * <code>MaxBitRate</code>. <p> <b>InterlacedMode (Optional, H.264/MPEG2
+     * Only)</b> <p>The interlace mode for the output video. <p>Interlaced
+     * video is used to double the perceived frame rate for a video by
+     * interlacing two fields (one field on every other line, the other field
+     * on the other lines) so that the human eye registers multiple pictures
+     * per frame. Interlacing reduces the bandwidth required for transmitting
+     * a video, but can result in blurred images and flickering. <p>Valid
+     * values include <code>Progressive</code> (no interlacing, top to
+     * bottom), <code>TopFirst</code> (top field first),
+     * <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+     * <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder
+     * uses <code>Progressive</code> for the output. If <code>Auto</code> is
+     * specified, Elastic Transcoder interlaces the output. <p>
+     * <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> <p>The
+     * color space conversion Elastic Transcoder applies to the output video.
+     * Color spaces are the algorithms used by the computer to store
+     * information about how to render color. <code>Bt.601</code> is the
+     * standard for standard definition video, while <code>Bt.709</code> is
+     * the standard for high definition video. <p>Valid values include
+     * <code>None</code>, <code>Bt709toBt601</code>,
+     * <code>Bt601toBt709</code>, and <code>Auto</code>. <p>If you chose
+     * <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+     * output is interlaced, your frame rate is one of <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>,
+     * or <code>60</code>, your <code>SegmentDuration</code> is null, and you
+     * are using one of the resolution changes from the list below, Elastic
+     * Transcoder applies the following color space conversions: <ul>
+     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder
+     * applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD, 720x576
+     * to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x480</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may
+     * change the behavior of the <code>ColorspaceConversionMode</code>
+     * <code>Auto</code> mode in the future. All outputs in a playlist must
+     * use the same <code>ColorSpaceConversionMode</code>.</note> <p>If you
+     * do not specify a <code>ColorSpaceConversionMode</code>, Elastic
+     * Transcoder does not change the color space of a file. If you are
+     * unsure what <code>ColorSpaceConversionMode</code> was applied to your
+     * output file, you can check the
+     * <code>AppliedColorSpaceConversion</code> parameter included in your
+     * job response. If your job does not have an
+     * <code>AppliedColorSpaceConversion</code> in its response, no
+     * <code>ColorSpaceConversionMode</code> was applied. <p>
+     * <b>ChromaSubsampling</b> <p>The sampling pattern for the chroma
+     * (color) channels of the output video. Valid values include
+     * <code>yuv420p</code> and <code>yuv422p</code>. <p><code>yuv420p</code>
+     * samples the chroma information of every other horizontal and every
+     * other vertical line, <code>yuv422p</code> samples the color
+     * information of every horizontal line and every other vertical line.
+     * <p> <b>LoopCount (Gif Only)</b> <p>The number of times you want the
+     * output gif to loop. Valid values include <code>Infinite</code> and
+     * integers between <code>0</code> and <code>100</code>, inclusive.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -81,7 +139,9 @@ public class VideoParameters implements Serializable, Cloneable {
     private java.util.Map<String,String> codecOptions;
 
     /**
-     * The maximum number of frames between key frames. Key frames are fully
+     * Applicable only when the value of Video:Codec is one of
+     * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>. <p>The
+     * maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in
      * part, on the content of the key frames. The value is an integer
      * formatted as a string; valid values are between 1 (every frame is a
@@ -105,8 +165,10 @@ public class VideoParameters implements Serializable, Cloneable {
     private String keyframesMaxDist;
 
     /**
-     * Whether to use a fixed value for <code>FixedGOP</code>. Valid values
-     * are <code>true</code> and <code>false</code>: <ul>
+     * Applicable only when the value of Video:Codec is one of
+     * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.
+     * <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid
+     * values are <code>true</code> and <code>false</code>: <ul>
      * <li><code>true</code>: Elastic Transcoder uses the value of
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
@@ -337,15 +399,21 @@ public class VideoParameters implements Serializable, Cloneable {
 
     /**
      * The video codec for the output file. Valid values include
-     * <code>H.264</code> and <code>vp8</code>. You can only specify
-     * <code>vp8</code> when the container type is <code>webm</code>.
+     * <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, and
+     * <code>vp8</code>. You can only specify <code>vp8</code> when the
+     * container type is <code>webm</code>, <code>gif</code> when the
+     * container type is <code>gif</code>, and <code>mpeg2</code> when the
+     * container type is <code>mpg</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^H\.264$)|(^vp8$)<br/>
+     * <b>Pattern: </b>(^H\.264$)|(^vp8$)|(^mpeg2$)|(^gif$)<br/>
      *
      * @return The video codec for the output file. Valid values include
-     *         <code>H.264</code> and <code>vp8</code>. You can only specify
-     *         <code>vp8</code> when the container type is <code>webm</code>.
+     *         <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, and
+     *         <code>vp8</code>. You can only specify <code>vp8</code> when the
+     *         container type is <code>webm</code>, <code>gif</code> when the
+     *         container type is <code>gif</code>, and <code>mpeg2</code> when the
+     *         container type is <code>mpg</code>.
      */
     public String getCodec() {
         return codec;
@@ -353,15 +421,21 @@ public class VideoParameters implements Serializable, Cloneable {
     
     /**
      * The video codec for the output file. Valid values include
-     * <code>H.264</code> and <code>vp8</code>. You can only specify
-     * <code>vp8</code> when the container type is <code>webm</code>.
+     * <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, and
+     * <code>vp8</code>. You can only specify <code>vp8</code> when the
+     * container type is <code>webm</code>, <code>gif</code> when the
+     * container type is <code>gif</code>, and <code>mpeg2</code> when the
+     * container type is <code>mpg</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^H\.264$)|(^vp8$)<br/>
+     * <b>Pattern: </b>(^H\.264$)|(^vp8$)|(^mpeg2$)|(^gif$)<br/>
      *
      * @param codec The video codec for the output file. Valid values include
-     *         <code>H.264</code> and <code>vp8</code>. You can only specify
-     *         <code>vp8</code> when the container type is <code>webm</code>.
+     *         <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, and
+     *         <code>vp8</code>. You can only specify <code>vp8</code> when the
+     *         container type is <code>webm</code>, <code>gif</code> when the
+     *         container type is <code>gif</code>, and <code>mpeg2</code> when the
+     *         container type is <code>mpg</code>.
      */
     public void setCodec(String codec) {
         this.codec = codec;
@@ -369,17 +443,23 @@ public class VideoParameters implements Serializable, Cloneable {
     
     /**
      * The video codec for the output file. Valid values include
-     * <code>H.264</code> and <code>vp8</code>. You can only specify
-     * <code>vp8</code> when the container type is <code>webm</code>.
+     * <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, and
+     * <code>vp8</code>. You can only specify <code>vp8</code> when the
+     * container type is <code>webm</code>, <code>gif</code> when the
+     * container type is <code>gif</code>, and <code>mpeg2</code> when the
+     * container type is <code>mpg</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^H\.264$)|(^vp8$)<br/>
+     * <b>Pattern: </b>(^H\.264$)|(^vp8$)|(^mpeg2$)|(^gif$)<br/>
      *
      * @param codec The video codec for the output file. Valid values include
-     *         <code>H.264</code> and <code>vp8</code>. You can only specify
-     *         <code>vp8</code> when the container type is <code>webm</code>.
+     *         <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, and
+     *         <code>vp8</code>. You can only specify <code>vp8</code> when the
+     *         container type is <code>webm</code>, <code>gif</code> when the
+     *         container type is <code>gif</code>, and <code>mpeg2</code> when the
+     *         container type is <code>mpg</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -390,10 +470,10 @@ public class VideoParameters implements Serializable, Cloneable {
     }
 
     /**
-     * <b>Profile</b> <p>The H.264 profile that you want to use for the
-     * output file. Elastic Transcoder supports the following profiles: <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li>
+     * <b>Profile (H.264/VP8 Only)</b> <p>The H.264 profile that you want to
+     * use for the output file. Elastic Transcoder supports the following
+     * profiles: <ul> <li><code>baseline</code>: The profile most commonly
+     * used for videoconferencing and for mobile applications.</li>
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
@@ -417,27 +497,82 @@ public class VideoParameters implements Serializable, Cloneable {
      * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
      * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
      * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
-     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
-     * of bits per second in a video buffer; the size of the buffer is
-     * specified by <code>BufferSize</code>. Specify a value between 16 and
-     * 62,500. You can reduce the bandwidth required to stream a video by
-     * reducing the maximum bit rate, but this also reduces the quality of
-     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
-     * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using FMP4 or MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate (Optional,
+     * H.264/MPEG2/VP8 only)</b> <p>The maximum number of bits per second in
+     * a video buffer; the size of the buffer is specified by
+     * <code>BufferSize</code>. Specify a value between 16 and 62,500. You
+     * can reduce the bandwidth required to stream a video by reducing the
+     * maximum bit rate, but this also reduces the quality of the video. <p>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> <p>The maximum
+     * number of bits in any x seconds of the output video. This window is
+     * commonly 10 seconds, the standard segment duration when you're using
+     * FMP4 or MPEG-TS for the container type of the output video. Specify an
+     * integer greater than 0. If you specify <code>MaxBitRate</code> and
+     * omit <code>BufferSize</code>, Elastic Transcoder sets
      * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * <code>MaxBitRate</code>. <p> <b>InterlacedMode (Optional, H.264/MPEG2
+     * Only)</b> <p>The interlace mode for the output video. <p>Interlaced
+     * video is used to double the perceived frame rate for a video by
+     * interlacing two fields (one field on every other line, the other field
+     * on the other lines) so that the human eye registers multiple pictures
+     * per frame. Interlacing reduces the bandwidth required for transmitting
+     * a video, but can result in blurred images and flickering. <p>Valid
+     * values include <code>Progressive</code> (no interlacing, top to
+     * bottom), <code>TopFirst</code> (top field first),
+     * <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+     * <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder
+     * uses <code>Progressive</code> for the output. If <code>Auto</code> is
+     * specified, Elastic Transcoder interlaces the output. <p>
+     * <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> <p>The
+     * color space conversion Elastic Transcoder applies to the output video.
+     * Color spaces are the algorithms used by the computer to store
+     * information about how to render color. <code>Bt.601</code> is the
+     * standard for standard definition video, while <code>Bt.709</code> is
+     * the standard for high definition video. <p>Valid values include
+     * <code>None</code>, <code>Bt709toBt601</code>,
+     * <code>Bt601toBt709</code>, and <code>Auto</code>. <p>If you chose
+     * <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+     * output is interlaced, your frame rate is one of <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>,
+     * or <code>60</code>, your <code>SegmentDuration</code> is null, and you
+     * are using one of the resolution changes from the list below, Elastic
+     * Transcoder applies the following color space conversions: <ul>
+     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder
+     * applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD, 720x576
+     * to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x480</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may
+     * change the behavior of the <code>ColorspaceConversionMode</code>
+     * <code>Auto</code> mode in the future. All outputs in a playlist must
+     * use the same <code>ColorSpaceConversionMode</code>.</note> <p>If you
+     * do not specify a <code>ColorSpaceConversionMode</code>, Elastic
+     * Transcoder does not change the color space of a file. If you are
+     * unsure what <code>ColorSpaceConversionMode</code> was applied to your
+     * output file, you can check the
+     * <code>AppliedColorSpaceConversion</code> parameter included in your
+     * job response. If your job does not have an
+     * <code>AppliedColorSpaceConversion</code> in its response, no
+     * <code>ColorSpaceConversionMode</code> was applied. <p>
+     * <b>ChromaSubsampling</b> <p>The sampling pattern for the chroma
+     * (color) channels of the output video. Valid values include
+     * <code>yuv420p</code> and <code>yuv422p</code>. <p><code>yuv420p</code>
+     * samples the chroma information of every other horizontal and every
+     * other vertical line, <code>yuv422p</code> samples the color
+     * information of every horizontal line and every other vertical line.
+     * <p> <b>LoopCount (Gif Only)</b> <p>The number of times you want the
+     * output gif to loop. Valid values include <code>Infinite</code> and
+     * integers between <code>0</code> and <code>100</code>, inclusive.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
-     * @return <b>Profile</b> <p>The H.264 profile that you want to use for the
-     *         output file. Elastic Transcoder supports the following profiles: <ul>
-     *         <li><code>baseline</code>: The profile most commonly used for
-     *         videoconferencing and for mobile applications.</li>
+     * @return <b>Profile (H.264/VP8 Only)</b> <p>The H.264 profile that you want to
+     *         use for the output file. Elastic Transcoder supports the following
+     *         profiles: <ul> <li><code>baseline</code>: The profile most commonly
+     *         used for videoconferencing and for mobile applications.</li>
      *         <li><code>main</code>: The profile used for standard-definition
      *         digital TV broadcasts.</li> <li><code>high</code>: The profile used
      *         for high-definition digital TV broadcasts and for Blu-ray discs.</li>
@@ -461,19 +596,74 @@ public class VideoParameters implements Serializable, Cloneable {
      *         396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
      *         <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
      *         8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
-     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
-     *         of bits per second in a video buffer; the size of the buffer is
-     *         specified by <code>BufferSize</code>. Specify a value between 16 and
-     *         62,500. You can reduce the bandwidth required to stream a video by
-     *         reducing the maximum bit rate, but this also reduces the quality of
-     *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
-     *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you're using FMP4 or MPEG-TS for the
-     *         container type of the output video. Specify an integer greater than 0.
-     *         If you specify <code>MaxBitRate</code> and omit
-     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate (Optional,
+     *         H.264/MPEG2/VP8 only)</b> <p>The maximum number of bits per second in
+     *         a video buffer; the size of the buffer is specified by
+     *         <code>BufferSize</code>. Specify a value between 16 and 62,500. You
+     *         can reduce the bandwidth required to stream a video by reducing the
+     *         maximum bit rate, but this also reduces the quality of the video. <p>
+     *         <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> <p>The maximum
+     *         number of bits in any x seconds of the output video. This window is
+     *         commonly 10 seconds, the standard segment duration when you're using
+     *         FMP4 or MPEG-TS for the container type of the output video. Specify an
+     *         integer greater than 0. If you specify <code>MaxBitRate</code> and
+     *         omit <code>BufferSize</code>, Elastic Transcoder sets
      *         <code>BufferSize</code> to 10 times the value of
-     *         <code>MaxBitRate</code>.
+     *         <code>MaxBitRate</code>. <p> <b>InterlacedMode (Optional, H.264/MPEG2
+     *         Only)</b> <p>The interlace mode for the output video. <p>Interlaced
+     *         video is used to double the perceived frame rate for a video by
+     *         interlacing two fields (one field on every other line, the other field
+     *         on the other lines) so that the human eye registers multiple pictures
+     *         per frame. Interlacing reduces the bandwidth required for transmitting
+     *         a video, but can result in blurred images and flickering. <p>Valid
+     *         values include <code>Progressive</code> (no interlacing, top to
+     *         bottom), <code>TopFirst</code> (top field first),
+     *         <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+     *         <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder
+     *         uses <code>Progressive</code> for the output. If <code>Auto</code> is
+     *         specified, Elastic Transcoder interlaces the output. <p>
+     *         <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> <p>The
+     *         color space conversion Elastic Transcoder applies to the output video.
+     *         Color spaces are the algorithms used by the computer to store
+     *         information about how to render color. <code>Bt.601</code> is the
+     *         standard for standard definition video, while <code>Bt.709</code> is
+     *         the standard for high definition video. <p>Valid values include
+     *         <code>None</code>, <code>Bt709toBt601</code>,
+     *         <code>Bt601toBt709</code>, and <code>Auto</code>. <p>If you chose
+     *         <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+     *         output is interlaced, your frame rate is one of <code>23.97</code>,
+     *         <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>,
+     *         or <code>60</code>, your <code>SegmentDuration</code> is null, and you
+     *         are using one of the resolution changes from the list below, Elastic
+     *         Transcoder applies the following color space conversions: <ul>
+     *         <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder
+     *         applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD, 720x576
+     *         to 1920x1080</i> - Elastic Transcoder applies
+     *         <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to
+     *         720x480</i> - Elastic Transcoder applies
+     *         <code>Bt709ToBt601</code></li> <li><i>HD to Standard, 1920x1080 to
+     *         720x576</i> - Elastic Transcoder applies
+     *         <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may
+     *         change the behavior of the <code>ColorspaceConversionMode</code>
+     *         <code>Auto</code> mode in the future. All outputs in a playlist must
+     *         use the same <code>ColorSpaceConversionMode</code>.</note> <p>If you
+     *         do not specify a <code>ColorSpaceConversionMode</code>, Elastic
+     *         Transcoder does not change the color space of a file. If you are
+     *         unsure what <code>ColorSpaceConversionMode</code> was applied to your
+     *         output file, you can check the
+     *         <code>AppliedColorSpaceConversion</code> parameter included in your
+     *         job response. If your job does not have an
+     *         <code>AppliedColorSpaceConversion</code> in its response, no
+     *         <code>ColorSpaceConversionMode</code> was applied. <p>
+     *         <b>ChromaSubsampling</b> <p>The sampling pattern for the chroma
+     *         (color) channels of the output video. Valid values include
+     *         <code>yuv420p</code> and <code>yuv422p</code>. <p><code>yuv420p</code>
+     *         samples the chroma information of every other horizontal and every
+     *         other vertical line, <code>yuv422p</code> samples the color
+     *         information of every horizontal line and every other vertical line.
+     *         <p> <b>LoopCount (Gif Only)</b> <p>The number of times you want the
+     *         output gif to loop. Valid values include <code>Infinite</code> and
+     *         integers between <code>0</code> and <code>100</code>, inclusive.
      */
     public java.util.Map<String,String> getCodecOptions() {
         
@@ -484,10 +674,10 @@ public class VideoParameters implements Serializable, Cloneable {
     }
     
     /**
-     * <b>Profile</b> <p>The H.264 profile that you want to use for the
-     * output file. Elastic Transcoder supports the following profiles: <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li>
+     * <b>Profile (H.264/VP8 Only)</b> <p>The H.264 profile that you want to
+     * use for the output file. Elastic Transcoder supports the following
+     * profiles: <ul> <li><code>baseline</code>: The profile most commonly
+     * used for videoconferencing and for mobile applications.</li>
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
@@ -511,27 +701,82 @@ public class VideoParameters implements Serializable, Cloneable {
      * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
      * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
      * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
-     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
-     * of bits per second in a video buffer; the size of the buffer is
-     * specified by <code>BufferSize</code>. Specify a value between 16 and
-     * 62,500. You can reduce the bandwidth required to stream a video by
-     * reducing the maximum bit rate, but this also reduces the quality of
-     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
-     * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using FMP4 or MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate (Optional,
+     * H.264/MPEG2/VP8 only)</b> <p>The maximum number of bits per second in
+     * a video buffer; the size of the buffer is specified by
+     * <code>BufferSize</code>. Specify a value between 16 and 62,500. You
+     * can reduce the bandwidth required to stream a video by reducing the
+     * maximum bit rate, but this also reduces the quality of the video. <p>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> <p>The maximum
+     * number of bits in any x seconds of the output video. This window is
+     * commonly 10 seconds, the standard segment duration when you're using
+     * FMP4 or MPEG-TS for the container type of the output video. Specify an
+     * integer greater than 0. If you specify <code>MaxBitRate</code> and
+     * omit <code>BufferSize</code>, Elastic Transcoder sets
      * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * <code>MaxBitRate</code>. <p> <b>InterlacedMode (Optional, H.264/MPEG2
+     * Only)</b> <p>The interlace mode for the output video. <p>Interlaced
+     * video is used to double the perceived frame rate for a video by
+     * interlacing two fields (one field on every other line, the other field
+     * on the other lines) so that the human eye registers multiple pictures
+     * per frame. Interlacing reduces the bandwidth required for transmitting
+     * a video, but can result in blurred images and flickering. <p>Valid
+     * values include <code>Progressive</code> (no interlacing, top to
+     * bottom), <code>TopFirst</code> (top field first),
+     * <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+     * <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder
+     * uses <code>Progressive</code> for the output. If <code>Auto</code> is
+     * specified, Elastic Transcoder interlaces the output. <p>
+     * <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> <p>The
+     * color space conversion Elastic Transcoder applies to the output video.
+     * Color spaces are the algorithms used by the computer to store
+     * information about how to render color. <code>Bt.601</code> is the
+     * standard for standard definition video, while <code>Bt.709</code> is
+     * the standard for high definition video. <p>Valid values include
+     * <code>None</code>, <code>Bt709toBt601</code>,
+     * <code>Bt601toBt709</code>, and <code>Auto</code>. <p>If you chose
+     * <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+     * output is interlaced, your frame rate is one of <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>,
+     * or <code>60</code>, your <code>SegmentDuration</code> is null, and you
+     * are using one of the resolution changes from the list below, Elastic
+     * Transcoder applies the following color space conversions: <ul>
+     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder
+     * applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD, 720x576
+     * to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x480</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may
+     * change the behavior of the <code>ColorspaceConversionMode</code>
+     * <code>Auto</code> mode in the future. All outputs in a playlist must
+     * use the same <code>ColorSpaceConversionMode</code>.</note> <p>If you
+     * do not specify a <code>ColorSpaceConversionMode</code>, Elastic
+     * Transcoder does not change the color space of a file. If you are
+     * unsure what <code>ColorSpaceConversionMode</code> was applied to your
+     * output file, you can check the
+     * <code>AppliedColorSpaceConversion</code> parameter included in your
+     * job response. If your job does not have an
+     * <code>AppliedColorSpaceConversion</code> in its response, no
+     * <code>ColorSpaceConversionMode</code> was applied. <p>
+     * <b>ChromaSubsampling</b> <p>The sampling pattern for the chroma
+     * (color) channels of the output video. Valid values include
+     * <code>yuv420p</code> and <code>yuv422p</code>. <p><code>yuv420p</code>
+     * samples the chroma information of every other horizontal and every
+     * other vertical line, <code>yuv422p</code> samples the color
+     * information of every horizontal line and every other vertical line.
+     * <p> <b>LoopCount (Gif Only)</b> <p>The number of times you want the
+     * output gif to loop. Valid values include <code>Infinite</code> and
+     * integers between <code>0</code> and <code>100</code>, inclusive.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
-     * @param codecOptions <b>Profile</b> <p>The H.264 profile that you want to use for the
-     *         output file. Elastic Transcoder supports the following profiles: <ul>
-     *         <li><code>baseline</code>: The profile most commonly used for
-     *         videoconferencing and for mobile applications.</li>
+     * @param codecOptions <b>Profile (H.264/VP8 Only)</b> <p>The H.264 profile that you want to
+     *         use for the output file. Elastic Transcoder supports the following
+     *         profiles: <ul> <li><code>baseline</code>: The profile most commonly
+     *         used for videoconferencing and for mobile applications.</li>
      *         <li><code>main</code>: The profile used for standard-definition
      *         digital TV broadcasts.</li> <li><code>high</code>: The profile used
      *         for high-definition digital TV broadcasts and for Blu-ray discs.</li>
@@ -555,29 +800,84 @@ public class VideoParameters implements Serializable, Cloneable {
      *         396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
      *         <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
      *         8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
-     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
-     *         of bits per second in a video buffer; the size of the buffer is
-     *         specified by <code>BufferSize</code>. Specify a value between 16 and
-     *         62,500. You can reduce the bandwidth required to stream a video by
-     *         reducing the maximum bit rate, but this also reduces the quality of
-     *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
-     *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you're using FMP4 or MPEG-TS for the
-     *         container type of the output video. Specify an integer greater than 0.
-     *         If you specify <code>MaxBitRate</code> and omit
-     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate (Optional,
+     *         H.264/MPEG2/VP8 only)</b> <p>The maximum number of bits per second in
+     *         a video buffer; the size of the buffer is specified by
+     *         <code>BufferSize</code>. Specify a value between 16 and 62,500. You
+     *         can reduce the bandwidth required to stream a video by reducing the
+     *         maximum bit rate, but this also reduces the quality of the video. <p>
+     *         <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> <p>The maximum
+     *         number of bits in any x seconds of the output video. This window is
+     *         commonly 10 seconds, the standard segment duration when you're using
+     *         FMP4 or MPEG-TS for the container type of the output video. Specify an
+     *         integer greater than 0. If you specify <code>MaxBitRate</code> and
+     *         omit <code>BufferSize</code>, Elastic Transcoder sets
      *         <code>BufferSize</code> to 10 times the value of
-     *         <code>MaxBitRate</code>.
+     *         <code>MaxBitRate</code>. <p> <b>InterlacedMode (Optional, H.264/MPEG2
+     *         Only)</b> <p>The interlace mode for the output video. <p>Interlaced
+     *         video is used to double the perceived frame rate for a video by
+     *         interlacing two fields (one field on every other line, the other field
+     *         on the other lines) so that the human eye registers multiple pictures
+     *         per frame. Interlacing reduces the bandwidth required for transmitting
+     *         a video, but can result in blurred images and flickering. <p>Valid
+     *         values include <code>Progressive</code> (no interlacing, top to
+     *         bottom), <code>TopFirst</code> (top field first),
+     *         <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+     *         <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder
+     *         uses <code>Progressive</code> for the output. If <code>Auto</code> is
+     *         specified, Elastic Transcoder interlaces the output. <p>
+     *         <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> <p>The
+     *         color space conversion Elastic Transcoder applies to the output video.
+     *         Color spaces are the algorithms used by the computer to store
+     *         information about how to render color. <code>Bt.601</code> is the
+     *         standard for standard definition video, while <code>Bt.709</code> is
+     *         the standard for high definition video. <p>Valid values include
+     *         <code>None</code>, <code>Bt709toBt601</code>,
+     *         <code>Bt601toBt709</code>, and <code>Auto</code>. <p>If you chose
+     *         <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+     *         output is interlaced, your frame rate is one of <code>23.97</code>,
+     *         <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>,
+     *         or <code>60</code>, your <code>SegmentDuration</code> is null, and you
+     *         are using one of the resolution changes from the list below, Elastic
+     *         Transcoder applies the following color space conversions: <ul>
+     *         <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder
+     *         applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD, 720x576
+     *         to 1920x1080</i> - Elastic Transcoder applies
+     *         <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to
+     *         720x480</i> - Elastic Transcoder applies
+     *         <code>Bt709ToBt601</code></li> <li><i>HD to Standard, 1920x1080 to
+     *         720x576</i> - Elastic Transcoder applies
+     *         <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may
+     *         change the behavior of the <code>ColorspaceConversionMode</code>
+     *         <code>Auto</code> mode in the future. All outputs in a playlist must
+     *         use the same <code>ColorSpaceConversionMode</code>.</note> <p>If you
+     *         do not specify a <code>ColorSpaceConversionMode</code>, Elastic
+     *         Transcoder does not change the color space of a file. If you are
+     *         unsure what <code>ColorSpaceConversionMode</code> was applied to your
+     *         output file, you can check the
+     *         <code>AppliedColorSpaceConversion</code> parameter included in your
+     *         job response. If your job does not have an
+     *         <code>AppliedColorSpaceConversion</code> in its response, no
+     *         <code>ColorSpaceConversionMode</code> was applied. <p>
+     *         <b>ChromaSubsampling</b> <p>The sampling pattern for the chroma
+     *         (color) channels of the output video. Valid values include
+     *         <code>yuv420p</code> and <code>yuv422p</code>. <p><code>yuv420p</code>
+     *         samples the chroma information of every other horizontal and every
+     *         other vertical line, <code>yuv422p</code> samples the color
+     *         information of every horizontal line and every other vertical line.
+     *         <p> <b>LoopCount (Gif Only)</b> <p>The number of times you want the
+     *         output gif to loop. Valid values include <code>Infinite</code> and
+     *         integers between <code>0</code> and <code>100</code>, inclusive.
      */
     public void setCodecOptions(java.util.Map<String,String> codecOptions) {
         this.codecOptions = codecOptions;
     }
     
     /**
-     * <b>Profile</b> <p>The H.264 profile that you want to use for the
-     * output file. Elastic Transcoder supports the following profiles: <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li>
+     * <b>Profile (H.264/VP8 Only)</b> <p>The H.264 profile that you want to
+     * use for the output file. Elastic Transcoder supports the following
+     * profiles: <ul> <li><code>baseline</code>: The profile most commonly
+     * used for videoconferencing and for mobile applications.</li>
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
@@ -601,29 +901,84 @@ public class VideoParameters implements Serializable, Cloneable {
      * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
      * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
      * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
-     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
-     * of bits per second in a video buffer; the size of the buffer is
-     * specified by <code>BufferSize</code>. Specify a value between 16 and
-     * 62,500. You can reduce the bandwidth required to stream a video by
-     * reducing the maximum bit rate, but this also reduces the quality of
-     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
-     * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using FMP4 or MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate (Optional,
+     * H.264/MPEG2/VP8 only)</b> <p>The maximum number of bits per second in
+     * a video buffer; the size of the buffer is specified by
+     * <code>BufferSize</code>. Specify a value between 16 and 62,500. You
+     * can reduce the bandwidth required to stream a video by reducing the
+     * maximum bit rate, but this also reduces the quality of the video. <p>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> <p>The maximum
+     * number of bits in any x seconds of the output video. This window is
+     * commonly 10 seconds, the standard segment duration when you're using
+     * FMP4 or MPEG-TS for the container type of the output video. Specify an
+     * integer greater than 0. If you specify <code>MaxBitRate</code> and
+     * omit <code>BufferSize</code>, Elastic Transcoder sets
      * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * <code>MaxBitRate</code>. <p> <b>InterlacedMode (Optional, H.264/MPEG2
+     * Only)</b> <p>The interlace mode for the output video. <p>Interlaced
+     * video is used to double the perceived frame rate for a video by
+     * interlacing two fields (one field on every other line, the other field
+     * on the other lines) so that the human eye registers multiple pictures
+     * per frame. Interlacing reduces the bandwidth required for transmitting
+     * a video, but can result in blurred images and flickering. <p>Valid
+     * values include <code>Progressive</code> (no interlacing, top to
+     * bottom), <code>TopFirst</code> (top field first),
+     * <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+     * <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder
+     * uses <code>Progressive</code> for the output. If <code>Auto</code> is
+     * specified, Elastic Transcoder interlaces the output. <p>
+     * <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> <p>The
+     * color space conversion Elastic Transcoder applies to the output video.
+     * Color spaces are the algorithms used by the computer to store
+     * information about how to render color. <code>Bt.601</code> is the
+     * standard for standard definition video, while <code>Bt.709</code> is
+     * the standard for high definition video. <p>Valid values include
+     * <code>None</code>, <code>Bt709toBt601</code>,
+     * <code>Bt601toBt709</code>, and <code>Auto</code>. <p>If you chose
+     * <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+     * output is interlaced, your frame rate is one of <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>,
+     * or <code>60</code>, your <code>SegmentDuration</code> is null, and you
+     * are using one of the resolution changes from the list below, Elastic
+     * Transcoder applies the following color space conversions: <ul>
+     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder
+     * applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD, 720x576
+     * to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x480</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may
+     * change the behavior of the <code>ColorspaceConversionMode</code>
+     * <code>Auto</code> mode in the future. All outputs in a playlist must
+     * use the same <code>ColorSpaceConversionMode</code>.</note> <p>If you
+     * do not specify a <code>ColorSpaceConversionMode</code>, Elastic
+     * Transcoder does not change the color space of a file. If you are
+     * unsure what <code>ColorSpaceConversionMode</code> was applied to your
+     * output file, you can check the
+     * <code>AppliedColorSpaceConversion</code> parameter included in your
+     * job response. If your job does not have an
+     * <code>AppliedColorSpaceConversion</code> in its response, no
+     * <code>ColorSpaceConversionMode</code> was applied. <p>
+     * <b>ChromaSubsampling</b> <p>The sampling pattern for the chroma
+     * (color) channels of the output video. Valid values include
+     * <code>yuv420p</code> and <code>yuv422p</code>. <p><code>yuv420p</code>
+     * samples the chroma information of every other horizontal and every
+     * other vertical line, <code>yuv422p</code> samples the color
+     * information of every horizontal line and every other vertical line.
+     * <p> <b>LoopCount (Gif Only)</b> <p>The number of times you want the
+     * output gif to loop. Valid values include <code>Infinite</code> and
+     * integers between <code>0</code> and <code>100</code>, inclusive.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
-     * @param codecOptions <b>Profile</b> <p>The H.264 profile that you want to use for the
-     *         output file. Elastic Transcoder supports the following profiles: <ul>
-     *         <li><code>baseline</code>: The profile most commonly used for
-     *         videoconferencing and for mobile applications.</li>
+     * @param codecOptions <b>Profile (H.264/VP8 Only)</b> <p>The H.264 profile that you want to
+     *         use for the output file. Elastic Transcoder supports the following
+     *         profiles: <ul> <li><code>baseline</code>: The profile most commonly
+     *         used for videoconferencing and for mobile applications.</li>
      *         <li><code>main</code>: The profile used for standard-definition
      *         digital TV broadcasts.</li> <li><code>high</code>: The profile used
      *         for high-definition digital TV broadcasts and for Blu-ray discs.</li>
@@ -647,19 +1002,74 @@ public class VideoParameters implements Serializable, Cloneable {
      *         396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
      *         <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
      *         8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
-     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
-     *         of bits per second in a video buffer; the size of the buffer is
-     *         specified by <code>BufferSize</code>. Specify a value between 16 and
-     *         62,500. You can reduce the bandwidth required to stream a video by
-     *         reducing the maximum bit rate, but this also reduces the quality of
-     *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
-     *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you're using FMP4 or MPEG-TS for the
-     *         container type of the output video. Specify an integer greater than 0.
-     *         If you specify <code>MaxBitRate</code> and omit
-     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate (Optional,
+     *         H.264/MPEG2/VP8 only)</b> <p>The maximum number of bits per second in
+     *         a video buffer; the size of the buffer is specified by
+     *         <code>BufferSize</code>. Specify a value between 16 and 62,500. You
+     *         can reduce the bandwidth required to stream a video by reducing the
+     *         maximum bit rate, but this also reduces the quality of the video. <p>
+     *         <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> <p>The maximum
+     *         number of bits in any x seconds of the output video. This window is
+     *         commonly 10 seconds, the standard segment duration when you're using
+     *         FMP4 or MPEG-TS for the container type of the output video. Specify an
+     *         integer greater than 0. If you specify <code>MaxBitRate</code> and
+     *         omit <code>BufferSize</code>, Elastic Transcoder sets
      *         <code>BufferSize</code> to 10 times the value of
-     *         <code>MaxBitRate</code>.
+     *         <code>MaxBitRate</code>. <p> <b>InterlacedMode (Optional, H.264/MPEG2
+     *         Only)</b> <p>The interlace mode for the output video. <p>Interlaced
+     *         video is used to double the perceived frame rate for a video by
+     *         interlacing two fields (one field on every other line, the other field
+     *         on the other lines) so that the human eye registers multiple pictures
+     *         per frame. Interlacing reduces the bandwidth required for transmitting
+     *         a video, but can result in blurred images and flickering. <p>Valid
+     *         values include <code>Progressive</code> (no interlacing, top to
+     *         bottom), <code>TopFirst</code> (top field first),
+     *         <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+     *         <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder
+     *         uses <code>Progressive</code> for the output. If <code>Auto</code> is
+     *         specified, Elastic Transcoder interlaces the output. <p>
+     *         <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> <p>The
+     *         color space conversion Elastic Transcoder applies to the output video.
+     *         Color spaces are the algorithms used by the computer to store
+     *         information about how to render color. <code>Bt.601</code> is the
+     *         standard for standard definition video, while <code>Bt.709</code> is
+     *         the standard for high definition video. <p>Valid values include
+     *         <code>None</code>, <code>Bt709toBt601</code>,
+     *         <code>Bt601toBt709</code>, and <code>Auto</code>. <p>If you chose
+     *         <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+     *         output is interlaced, your frame rate is one of <code>23.97</code>,
+     *         <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>,
+     *         or <code>60</code>, your <code>SegmentDuration</code> is null, and you
+     *         are using one of the resolution changes from the list below, Elastic
+     *         Transcoder applies the following color space conversions: <ul>
+     *         <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder
+     *         applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD, 720x576
+     *         to 1920x1080</i> - Elastic Transcoder applies
+     *         <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to
+     *         720x480</i> - Elastic Transcoder applies
+     *         <code>Bt709ToBt601</code></li> <li><i>HD to Standard, 1920x1080 to
+     *         720x576</i> - Elastic Transcoder applies
+     *         <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may
+     *         change the behavior of the <code>ColorspaceConversionMode</code>
+     *         <code>Auto</code> mode in the future. All outputs in a playlist must
+     *         use the same <code>ColorSpaceConversionMode</code>.</note> <p>If you
+     *         do not specify a <code>ColorSpaceConversionMode</code>, Elastic
+     *         Transcoder does not change the color space of a file. If you are
+     *         unsure what <code>ColorSpaceConversionMode</code> was applied to your
+     *         output file, you can check the
+     *         <code>AppliedColorSpaceConversion</code> parameter included in your
+     *         job response. If your job does not have an
+     *         <code>AppliedColorSpaceConversion</code> in its response, no
+     *         <code>ColorSpaceConversionMode</code> was applied. <p>
+     *         <b>ChromaSubsampling</b> <p>The sampling pattern for the chroma
+     *         (color) channels of the output video. Valid values include
+     *         <code>yuv420p</code> and <code>yuv422p</code>. <p><code>yuv420p</code>
+     *         samples the chroma information of every other horizontal and every
+     *         other vertical line, <code>yuv422p</code> samples the color
+     *         information of every horizontal line and every other vertical line.
+     *         <p> <b>LoopCount (Gif Only)</b> <p>The number of times you want the
+     *         output gif to loop. Valid values include <code>Infinite</code> and
+     *         integers between <code>0</code> and <code>100</code>, inclusive.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -670,10 +1080,10 @@ public class VideoParameters implements Serializable, Cloneable {
     }
 
     /**
-     * <b>Profile</b> <p>The H.264 profile that you want to use for the
-     * output file. Elastic Transcoder supports the following profiles: <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li>
+     * <b>Profile (H.264/VP8 Only)</b> <p>The H.264 profile that you want to
+     * use for the output file. Elastic Transcoder supports the following
+     * profiles: <ul> <li><code>baseline</code>: The profile most commonly
+     * used for videoconferencing and for mobile applications.</li>
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
@@ -697,19 +1107,74 @@ public class VideoParameters implements Serializable, Cloneable {
      * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
      * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
      * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
-     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
-     * of bits per second in a video buffer; the size of the buffer is
-     * specified by <code>BufferSize</code>. Specify a value between 16 and
-     * 62,500. You can reduce the bandwidth required to stream a video by
-     * reducing the maximum bit rate, but this also reduces the quality of
-     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
-     * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using FMP4 or MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate (Optional,
+     * H.264/MPEG2/VP8 only)</b> <p>The maximum number of bits per second in
+     * a video buffer; the size of the buffer is specified by
+     * <code>BufferSize</code>. Specify a value between 16 and 62,500. You
+     * can reduce the bandwidth required to stream a video by reducing the
+     * maximum bit rate, but this also reduces the quality of the video. <p>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> <p>The maximum
+     * number of bits in any x seconds of the output video. This window is
+     * commonly 10 seconds, the standard segment duration when you're using
+     * FMP4 or MPEG-TS for the container type of the output video. Specify an
+     * integer greater than 0. If you specify <code>MaxBitRate</code> and
+     * omit <code>BufferSize</code>, Elastic Transcoder sets
      * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * <code>MaxBitRate</code>. <p> <b>InterlacedMode (Optional, H.264/MPEG2
+     * Only)</b> <p>The interlace mode for the output video. <p>Interlaced
+     * video is used to double the perceived frame rate for a video by
+     * interlacing two fields (one field on every other line, the other field
+     * on the other lines) so that the human eye registers multiple pictures
+     * per frame. Interlacing reduces the bandwidth required for transmitting
+     * a video, but can result in blurred images and flickering. <p>Valid
+     * values include <code>Progressive</code> (no interlacing, top to
+     * bottom), <code>TopFirst</code> (top field first),
+     * <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+     * <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder
+     * uses <code>Progressive</code> for the output. If <code>Auto</code> is
+     * specified, Elastic Transcoder interlaces the output. <p>
+     * <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> <p>The
+     * color space conversion Elastic Transcoder applies to the output video.
+     * Color spaces are the algorithms used by the computer to store
+     * information about how to render color. <code>Bt.601</code> is the
+     * standard for standard definition video, while <code>Bt.709</code> is
+     * the standard for high definition video. <p>Valid values include
+     * <code>None</code>, <code>Bt709toBt601</code>,
+     * <code>Bt601toBt709</code>, and <code>Auto</code>. <p>If you chose
+     * <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+     * output is interlaced, your frame rate is one of <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>,
+     * or <code>60</code>, your <code>SegmentDuration</code> is null, and you
+     * are using one of the resolution changes from the list below, Elastic
+     * Transcoder applies the following color space conversions: <ul>
+     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder
+     * applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD, 720x576
+     * to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x480</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> <li><i>HD to Standard, 1920x1080 to
+     * 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may
+     * change the behavior of the <code>ColorspaceConversionMode</code>
+     * <code>Auto</code> mode in the future. All outputs in a playlist must
+     * use the same <code>ColorSpaceConversionMode</code>.</note> <p>If you
+     * do not specify a <code>ColorSpaceConversionMode</code>, Elastic
+     * Transcoder does not change the color space of a file. If you are
+     * unsure what <code>ColorSpaceConversionMode</code> was applied to your
+     * output file, you can check the
+     * <code>AppliedColorSpaceConversion</code> parameter included in your
+     * job response. If your job does not have an
+     * <code>AppliedColorSpaceConversion</code> in its response, no
+     * <code>ColorSpaceConversionMode</code> was applied. <p>
+     * <b>ChromaSubsampling</b> <p>The sampling pattern for the chroma
+     * (color) channels of the output video. Valid values include
+     * <code>yuv420p</code> and <code>yuv422p</code>. <p><code>yuv420p</code>
+     * samples the chroma information of every other horizontal and every
+     * other vertical line, <code>yuv422p</code> samples the color
+     * information of every horizontal line and every other vertical line.
+     * <p> <b>LoopCount (Gif Only)</b> <p>The number of times you want the
+     * output gif to loop. Valid values include <code>Infinite</code> and
+     * integers between <code>0</code> and <code>100</code>, inclusive.
      * <p>
      * The method adds a new key-value pair into CodecOptions parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -742,7 +1207,9 @@ public class VideoParameters implements Serializable, Cloneable {
     }
     
     /**
-     * The maximum number of frames between key frames. Key frames are fully
+     * Applicable only when the value of Video:Codec is one of
+     * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>. <p>The
+     * maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in
      * part, on the content of the key frames. The value is an integer
      * formatted as a string; valid values are between 1 (every frame is a
@@ -763,7 +1230,9 @@ public class VideoParameters implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
      *
-     * @return The maximum number of frames between key frames. Key frames are fully
+     * @return Applicable only when the value of Video:Codec is one of
+     *         <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>. <p>The
+     *         maximum number of frames between key frames. Key frames are fully
      *         encoded frames; the frames between key frames are encoded based, in
      *         part, on the content of the key frames. The value is an integer
      *         formatted as a string; valid values are between 1 (every frame is a
@@ -786,7 +1255,9 @@ public class VideoParameters implements Serializable, Cloneable {
     }
     
     /**
-     * The maximum number of frames between key frames. Key frames are fully
+     * Applicable only when the value of Video:Codec is one of
+     * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>. <p>The
+     * maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in
      * part, on the content of the key frames. The value is an integer
      * formatted as a string; valid values are between 1 (every frame is a
@@ -807,7 +1278,9 @@ public class VideoParameters implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
      *
-     * @param keyframesMaxDist The maximum number of frames between key frames. Key frames are fully
+     * @param keyframesMaxDist Applicable only when the value of Video:Codec is one of
+     *         <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>. <p>The
+     *         maximum number of frames between key frames. Key frames are fully
      *         encoded frames; the frames between key frames are encoded based, in
      *         part, on the content of the key frames. The value is an integer
      *         formatted as a string; valid values are between 1 (every frame is a
@@ -830,7 +1303,9 @@ public class VideoParameters implements Serializable, Cloneable {
     }
     
     /**
-     * The maximum number of frames between key frames. Key frames are fully
+     * Applicable only when the value of Video:Codec is one of
+     * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>. <p>The
+     * maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in
      * part, on the content of the key frames. The value is an integer
      * formatted as a string; valid values are between 1 (every frame is a
@@ -853,7 +1328,9 @@ public class VideoParameters implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
      *
-     * @param keyframesMaxDist The maximum number of frames between key frames. Key frames are fully
+     * @param keyframesMaxDist Applicable only when the value of Video:Codec is one of
+     *         <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>. <p>The
+     *         maximum number of frames between key frames. Key frames are fully
      *         encoded frames; the frames between key frames are encoded based, in
      *         part, on the content of the key frames. The value is an integer
      *         formatted as a string; valid values are between 1 (every frame is a
@@ -880,8 +1357,10 @@ public class VideoParameters implements Serializable, Cloneable {
     }
 
     /**
-     * Whether to use a fixed value for <code>FixedGOP</code>. Valid values
-     * are <code>true</code> and <code>false</code>: <ul>
+     * Applicable only when the value of Video:Codec is one of
+     * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.
+     * <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid
+     * values are <code>true</code> and <code>false</code>: <ul>
      * <li><code>true</code>: Elastic Transcoder uses the value of
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
@@ -892,8 +1371,10 @@ public class VideoParameters implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^true$)|(^false$)<br/>
      *
-     * @return Whether to use a fixed value for <code>FixedGOP</code>. Valid values
-     *         are <code>true</code> and <code>false</code>: <ul>
+     * @return Applicable only when the value of Video:Codec is one of
+     *         <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.
+     *         <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid
+     *         values are <code>true</code> and <code>false</code>: <ul>
      *         <li><code>true</code>: Elastic Transcoder uses the value of
      *         <code>KeyframesMaxDist</code> for the distance between key frames (the
      *         number of frames in a group of pictures, or GOP).</li>
@@ -906,8 +1387,10 @@ public class VideoParameters implements Serializable, Cloneable {
     }
     
     /**
-     * Whether to use a fixed value for <code>FixedGOP</code>. Valid values
-     * are <code>true</code> and <code>false</code>: <ul>
+     * Applicable only when the value of Video:Codec is one of
+     * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.
+     * <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid
+     * values are <code>true</code> and <code>false</code>: <ul>
      * <li><code>true</code>: Elastic Transcoder uses the value of
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
@@ -918,8 +1401,10 @@ public class VideoParameters implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^true$)|(^false$)<br/>
      *
-     * @param fixedGOP Whether to use a fixed value for <code>FixedGOP</code>. Valid values
-     *         are <code>true</code> and <code>false</code>: <ul>
+     * @param fixedGOP Applicable only when the value of Video:Codec is one of
+     *         <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.
+     *         <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid
+     *         values are <code>true</code> and <code>false</code>: <ul>
      *         <li><code>true</code>: Elastic Transcoder uses the value of
      *         <code>KeyframesMaxDist</code> for the distance between key frames (the
      *         number of frames in a group of pictures, or GOP).</li>
@@ -932,8 +1417,10 @@ public class VideoParameters implements Serializable, Cloneable {
     }
     
     /**
-     * Whether to use a fixed value for <code>FixedGOP</code>. Valid values
-     * are <code>true</code> and <code>false</code>: <ul>
+     * Applicable only when the value of Video:Codec is one of
+     * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.
+     * <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid
+     * values are <code>true</code> and <code>false</code>: <ul>
      * <li><code>true</code>: Elastic Transcoder uses the value of
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
@@ -946,8 +1433,10 @@ public class VideoParameters implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^true$)|(^false$)<br/>
      *
-     * @param fixedGOP Whether to use a fixed value for <code>FixedGOP</code>. Valid values
-     *         are <code>true</code> and <code>false</code>: <ul>
+     * @param fixedGOP Applicable only when the value of Video:Codec is one of
+     *         <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.
+     *         <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid
+     *         values are <code>true</code> and <code>false</code>: <ul>
      *         <li><code>true</code>: Elastic Transcoder uses the value of
      *         <code>KeyframesMaxDist</code> for the distance between key frames (the
      *         number of frames in a group of pictures, or GOP).</li>

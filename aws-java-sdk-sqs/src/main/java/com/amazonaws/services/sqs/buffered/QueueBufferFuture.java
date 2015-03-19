@@ -13,8 +13,6 @@
  * permissions and limitations under the License.
  */
 
-
-
 package com.amazonaws.services.sqs.buffered;
 
 import java.util.concurrent.Callable;
@@ -24,54 +22,51 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.handlers.AsyncHandler;
 
 /**
- * QueueBufferFuture class is used to deliver asynchronous results of various
- * QueueBuffer operations.
- * 
- * QueueBufferFutures are not cancellable
- * */
+ * QueueBufferFuture class is used to deliver asynchronous results of various QueueBuffer
+ * operations. QueueBufferFutures are not cancellable
+ */
 class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Future<Res> {
     private Res result = null;
     private Exception e = null;
     private boolean done = false;
-    
-    /** 
-     * callback we should call after the future is done.  may be null 
-     * */
-    
-    private final QueueBufferCallback<Req, Res> callback;
-    
+
     /**
-     * every future should hold a reference to the buffer that issued it. that
-     * way, even if all other references to the buffer are lost, it will not be
-     * garbage collected while at least one future it issued is still
-     * outstanding.
+     * callback we should call after the future is done. may be null
+     */
+
+    private final QueueBufferCallback<Req, Res> callback;
+
+    /**
+     * every future should hold a reference to the buffer that issued it. that way, even if all
+     * other references to the buffer are lost, it will not be garbage collected while at least one
+     * future it issued is still outstanding.
      */
     private QueueBuffer issuingBuffer = null;
-    
+
     public QueueBufferFuture() {
         this(null);
     }
-    
-    public QueueBufferFuture( QueueBufferCallback<Req, Res > cb  ) {
+
+    public QueueBufferFuture(QueueBufferCallback<Req, Res> cb) {
         callback = cb;
     }
 
     /**
      * Report that the task this future represents has succeeded.
-     * */
+     */
     public synchronized void setSuccess(Res paramResult) {
-        if (done) return;  //can't mark done twice
+        if (done)
+            return; // can't mark done twice
         result = paramResult;
         done = true;
         notifyAll();
-        
-        //if we have a callback to call, schedule
-        //it on a different thread. Who knows what this
-        //thread is doing.
-        if ( callback != null && issuingBuffer != null ) {
+
+        // if we have a callback to call, schedule
+        // it on a different thread. Who knows what this
+        // thread is doing.
+        if (callback != null && issuingBuffer != null) {
             QueueBuffer.executor.submit(new Callable<Void>() {
                 public Void call() throws Exception {
                     callback.onSuccess(result);
@@ -84,17 +79,18 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
 
     /**
      * Report that the task this future represents has failed.
-     * */
+     */
     public synchronized void setFailure(Exception paramE) {
-        if (done) return;  //can't mark done twice
+        if (done)
+            return; // can't mark done twice
         e = paramE;
         done = true;
         notifyAll();
-        
-        //if we have a callback to call, schedule
-        //it on a different thread. Who knows what this
-        //thread is doing.
-        if ( callback != null && issuingBuffer != null ) {
+
+        // if we have a callback to call, schedule
+        // it on a different thread. Who knows what this
+        // thread is doing.
+        if (callback != null && issuingBuffer != null) {
             QueueBuffer.executor.submit(new Callable<Void>() {
                 public Void call() throws Exception {
                     callback.onError(e);
@@ -111,11 +107,10 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
         // not cancellable
         return false;
     }
-    
-    public void setBuffer ( QueueBuffer paramBuffer ) {
+
+    public void setBuffer(QueueBuffer paramBuffer) {
         issuingBuffer = paramBuffer;
     }
-    
 
     @Override
     public Res get() throws InterruptedException, ExecutionException {
@@ -131,8 +126,7 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
     }
 
     @Override
-    public synchronized Res get(long timeout, TimeUnit tu)
-            throws InterruptedException, ExecutionException,
+    public synchronized Res get(long timeout, TimeUnit tu) throws InterruptedException, ExecutionException,
             TimeoutException {
 
         long waitStartMs = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS);
@@ -140,27 +134,27 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
         long timeToWaitMs = timeoutMs;
 
         while (!done) {
-            //if timeToWaitMs is zero, we don't call wait() at all, because wait(0) means 
-            //"wait forever", which is the opposite of what we want.
-            if ( timeToWaitMs <= 0 ) {
+            // if timeToWaitMs is zero, we don't call wait() at all, because wait(0) means
+            // "wait forever", which is the opposite of what we want.
+            if (timeToWaitMs <= 0) {
                 throw new TimeoutException("Timed out waiting for results after " + timeout + " " + tu);
             }
-            
+
             wait(timeToWaitMs);
-            
-            //compute how long to wait in the next loop
+
+            // compute how long to wait in the next loop
             long nowMs = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS);
-            timeToWaitMs = timeoutMs - ( nowMs - waitStartMs  );
+            timeToWaitMs = timeoutMs - (nowMs - waitStartMs);
 
         }
 
-        //if we got here, we are done.  Throw if there's anything to throw, 
-        //otherwise return the result 
+        // if we got here, we are done. Throw if there's anything to throw,
+        // otherwise return the result
         if (e != null) {
             throw new ExecutionException(e);
         }
 
-        // may be null, e.g. for Void futures 
+        // may be null, e.g. for Void futures
         return result;
     }
 

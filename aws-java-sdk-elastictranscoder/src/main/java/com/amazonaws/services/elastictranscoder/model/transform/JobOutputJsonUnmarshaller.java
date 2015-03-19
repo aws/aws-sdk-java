@@ -113,6 +113,10 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                     context.nextToken();
                     jobOutput.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AppliedColorSpaceConversion", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setAppliedColorSpaceConversion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

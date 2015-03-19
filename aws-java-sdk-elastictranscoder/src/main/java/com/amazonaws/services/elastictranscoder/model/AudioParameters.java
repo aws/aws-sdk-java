@@ -25,10 +25,11 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * The audio codec for the output file. Valid values include
-     * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
+     * <code>aac</code>, <code>mp2</code>, <code>mp3</code>, and
+     * <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)|(^mp2$)<br/>
      */
     private String codec;
 
@@ -76,13 +77,15 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * The audio codec for the output file. Valid values include
-     * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
+     * <code>aac</code>, <code>mp2</code>, <code>mp3</code>, and
+     * <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)|(^mp2$)<br/>
      *
      * @return The audio codec for the output file. Valid values include
-     *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
+     *         <code>aac</code>, <code>mp2</code>, <code>mp3</code>, and
+     *         <code>vorbis</code>.
      */
     public String getCodec() {
         return codec;
@@ -90,13 +93,15 @@ public class AudioParameters implements Serializable, Cloneable {
     
     /**
      * The audio codec for the output file. Valid values include
-     * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
+     * <code>aac</code>, <code>mp2</code>, <code>mp3</code>, and
+     * <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)|(^mp2$)<br/>
      *
      * @param codec The audio codec for the output file. Valid values include
-     *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
+     *         <code>aac</code>, <code>mp2</code>, <code>mp3</code>, and
+     *         <code>vorbis</code>.
      */
     public void setCodec(String codec) {
         this.codec = codec;
@@ -104,15 +109,17 @@ public class AudioParameters implements Serializable, Cloneable {
     
     /**
      * The audio codec for the output file. Valid values include
-     * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
+     * <code>aac</code>, <code>mp2</code>, <code>mp3</code>, and
+     * <code>vorbis</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)|(^mp2$)<br/>
      *
      * @param codec The audio codec for the output file. Valid values include
-     *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
+     *         <code>aac</code>, <code>mp2</code>, <code>mp3</code>, and
+     *         <code>vorbis</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

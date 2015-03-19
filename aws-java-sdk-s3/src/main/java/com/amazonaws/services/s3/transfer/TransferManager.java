@@ -781,10 +781,11 @@ public class TransferManager {
         long startingByte = 0;
         long lastByte;
 
-        if (getObjectRequest.getRange() != null
-                && getObjectRequest.getRange().length == 2) {
-            startingByte = getObjectRequest.getRange()[0];
-            lastByte = getObjectRequest.getRange()[1];
+        long[] range = getObjectRequest.getRange();
+		if (range != null
+                && range.length == 2) {
+            startingByte = range[0];
+            lastByte = range[1];
         } else {
             GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
                     getObjectRequest.getBucketName(), getObjectRequest.getKey());

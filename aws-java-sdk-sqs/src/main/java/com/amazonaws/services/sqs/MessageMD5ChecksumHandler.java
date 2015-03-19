@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs;
+
 import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.UnsupportedEncodingException;
@@ -45,10 +46,9 @@ import com.amazonaws.util.Md5Utils;
 import com.amazonaws.util.TimingInfo;
 
 /**
- * SQS operations on sending and receiving messages will return the MD5 digest
- * of the message body. This custom request handler will verify that the message
- * is correctly received by SQS, by comparing the returned MD5 with the
- * calculation according to the original request.
+ * SQS operations on sending and receiving messages will return the MD5 digest of the message body.
+ * This custom request handler will verify that the message is correctly received by SQS, by
+ * comparing the returned MD5 with the calculation according to the original request.
  */
 public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
 
@@ -61,12 +61,10 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
     /*
      * Constant strings for composing error message.
      */
-    private static final String MD5_MISMATCH_ERROR_MESSAGE =
-            "MD5 returned by SQS does not match the calculation on the original request. " +
-            "(MD5 calculated by the %s: \"%s\", MD5 checksum returned: \"%s\")";
-    private static final String MD5_MISMATCH_ERROR_MESSAGE_WITH_ID =
-            "MD5 returned by SQS does not match the calculation on the original request. " +
-            "(Message ID: %s, MD5 calculated by the %s: \"%s\", MD5 checksum returned: \"%s\")";
+    private static final String MD5_MISMATCH_ERROR_MESSAGE = "MD5 returned by SQS does not match the calculation on the original request. "
+            + "(MD5 calculated by the %s: \"%s\", MD5 checksum returned: \"%s\")";
+    private static final String MD5_MISMATCH_ERROR_MESSAGE_WITH_ID = "MD5 returned by SQS does not match the calculation on the original request. "
+            + "(Message ID: %s, MD5 calculated by the %s: \"%s\", MD5 checksum returned: \"%s\")";
     private static final String MESSAGE_BODY = "message body";
     private static final String MESSAGE_ATTRIBUTES = "message attributes";
 
@@ -74,63 +72,60 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
 
     @Override
     public void afterResponse(Request<?> request, Object response, TimingInfo timingInfo) {
-        if ( request  != null && response != null ) {
+        if (request != null && response != null) {
             // SendMessage
-            if (request.getOriginalRequest() instanceof SendMessageRequest
-                    && response instanceof SendMessageResult) {
-                SendMessageRequest sendMessageRequest = (SendMessageRequest)request.getOriginalRequest();
-                SendMessageResult sendMessageResult = (SendMessageResult)response;
+            if (request.getOriginalRequest() instanceof SendMessageRequest && response instanceof SendMessageResult) {
+                SendMessageRequest sendMessageRequest = (SendMessageRequest) request.getOriginalRequest();
+                SendMessageResult sendMessageResult = (SendMessageResult) response;
                 sendMessageOperationMd5Check(sendMessageRequest, sendMessageResult);
             }
 
             // ReceiveMessage
             else if (request.getOriginalRequest() instanceof ReceiveMessageRequest
                     && response instanceof ReceiveMessageResult) {
-                ReceiveMessageResult receiveMessageResult = (ReceiveMessageResult)response;
+                ReceiveMessageResult receiveMessageResult = (ReceiveMessageResult) response;
                 receiveMessageResultMd5Check(receiveMessageResult);
             }
 
             // SendMessageBatch
             else if (request.getOriginalRequest() instanceof SendMessageBatchRequest
                     && response instanceof SendMessageBatchResult) {
-                SendMessageBatchRequest sendMessageBatchRequest = (SendMessageBatchRequest)request.getOriginalRequest();
-                SendMessageBatchResult sendMessageBatchResult = (SendMessageBatchResult)response;
+                SendMessageBatchRequest sendMessageBatchRequest = (SendMessageBatchRequest) request
+                        .getOriginalRequest();
+                SendMessageBatchResult sendMessageBatchResult = (SendMessageBatchResult) response;
                 sendMessageBatchOperationMd5Check(sendMessageBatchRequest, sendMessageBatchResult);
             }
         }
     }
 
     /**
-     * Throw an exception if the MD5 checksums returned in the SendMessageResult
-     * do not match the client-side calculation based on the original message in
-     * the SendMessageRequest.
+     * Throw an exception if the MD5 checksums returned in the SendMessageResult do not match the
+     * client-side calculation based on the original message in the SendMessageRequest.
      */
-    private static void sendMessageOperationMd5Check(SendMessageRequest sendMessageRequest, SendMessageResult sendMessageResult) {
+    private static void sendMessageOperationMd5Check(SendMessageRequest sendMessageRequest,
+                                                     SendMessageResult sendMessageResult) {
         String messageBodySent = sendMessageRequest.getMessageBody();
         String bodyMd5Returned = sendMessageResult.getMD5OfMessageBody();
         String clientSideBodyMd5 = calculateMessageBodyMd5(messageBodySent);
-        if ( !clientSideBodyMd5.equals(bodyMd5Returned) ) {
-            throw new AmazonClientException(String.format(
-                    MD5_MISMATCH_ERROR_MESSAGE, MESSAGE_BODY,
-                    clientSideBodyMd5, bodyMd5Returned));
+        if (!clientSideBodyMd5.equals(bodyMd5Returned)) {
+            throw new AmazonClientException(String.format(MD5_MISMATCH_ERROR_MESSAGE, MESSAGE_BODY, clientSideBodyMd5,
+                    bodyMd5Returned));
         }
 
         Map<String, MessageAttributeValue> messageAttrSent = sendMessageRequest.getMessageAttributes();
-        if ( messageAttrSent != null && !messageAttrSent.isEmpty() ) {
+        if (messageAttrSent != null && !messageAttrSent.isEmpty()) {
             String clientSideAttrMd5 = calculateMessageAttributesMd5(messageAttrSent);
             String attrMd5Returned = sendMessageResult.getMD5OfMessageAttributes();
-            if ( !clientSideAttrMd5.equals(attrMd5Returned) ) {
-                throw new AmazonClientException(String.format(
-                        MD5_MISMATCH_ERROR_MESSAGE, MESSAGE_ATTRIBUTES,
+            if (!clientSideAttrMd5.equals(attrMd5Returned)) {
+                throw new AmazonClientException(String.format(MD5_MISMATCH_ERROR_MESSAGE, MESSAGE_ATTRIBUTES,
                         clientSideAttrMd5, attrMd5Returned));
             }
         }
     }
 
     /**
-     * Throw an exception if the MD5 checksums included in the
-     * ReceiveMessageResult do not match the client-side calculation on the
-     * received messages.
+     * Throw an exception if the MD5 checksums included in the ReceiveMessageResult do not match the
+     * client-side calculation on the received messages.
      */
     private static void receiveMessageResultMd5Check(ReceiveMessageResult receiveMessageResult) {
         if (receiveMessageResult.getMessages() != null) {
@@ -138,19 +133,17 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
                 String messageBody = messageReceived.getBody();
                 String bodyMd5Returned = messageReceived.getMD5OfBody();
                 String clientSideBodyMd5 = calculateMessageBodyMd5(messageBody);
-                if ( !clientSideBodyMd5.equals(bodyMd5Returned) ) {
-                    throw new AmazonClientException(String.format(
-                            MD5_MISMATCH_ERROR_MESSAGE, MESSAGE_BODY,
+                if (!clientSideBodyMd5.equals(bodyMd5Returned)) {
+                    throw new AmazonClientException(String.format(MD5_MISMATCH_ERROR_MESSAGE, MESSAGE_BODY,
                             clientSideBodyMd5, bodyMd5Returned));
                 }
 
                 Map<String, MessageAttributeValue> messageAttr = messageReceived.getMessageAttributes();
-                if ( messageAttr != null && !messageAttr.isEmpty() ) {
+                if (messageAttr != null && !messageAttr.isEmpty()) {
                     String attrMd5Returned = messageReceived.getMD5OfMessageAttributes();
                     String clientSideAttrMd5 = calculateMessageAttributesMd5(messageAttr);
-                    if ( !clientSideAttrMd5.equals(attrMd5Returned) ) {
-                        throw new AmazonClientException(String.format(
-                                MD5_MISMATCH_ERROR_MESSAGE, MESSAGE_ATTRIBUTES,
+                    if (!clientSideAttrMd5.equals(attrMd5Returned)) {
+                        throw new AmazonClientException(String.format(MD5_MISMATCH_ERROR_MESSAGE, MESSAGE_ATTRIBUTES,
                                 clientSideAttrMd5, attrMd5Returned));
                     }
                 }
@@ -159,11 +152,11 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
     }
 
     /**
-     * Throw an exception if the MD5 checksums returned in the
-     * SendMessageBatchResult do not match the client-side calculation based on
-     * the original messages in the SendMessageBatchRequest.
+     * Throw an exception if the MD5 checksums returned in the SendMessageBatchResult do not match
+     * the client-side calculation based on the original messages in the SendMessageBatchRequest.
      */
-    private static void sendMessageBatchOperationMd5Check(SendMessageBatchRequest sendMessageBatchRequest, SendMessageBatchResult sendMessageBatchResult) {
+    private static void sendMessageBatchOperationMd5Check(SendMessageBatchRequest sendMessageBatchRequest,
+                                                          SendMessageBatchResult sendMessageBatchResult) {
         Map<String, SendMessageBatchRequestEntry> idToRequestEntryMap = new HashMap<String, SendMessageBatchRequestEntry>();
         if (sendMessageBatchRequest.getEntries() != null) {
             for (SendMessageBatchRequestEntry entry : sendMessageBatchRequest.getEntries()) {
@@ -176,20 +169,19 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
                 String messageBody = idToRequestEntryMap.get(entry.getId()).getMessageBody();
                 String bodyMd5Returned = entry.getMD5OfMessageBody();
                 String clientSideBodyMd5 = calculateMessageBodyMd5(messageBody);
-                if ( !clientSideBodyMd5.equals(bodyMd5Returned) ) {
-                    throw new AmazonClientException(String.format(
-                            MD5_MISMATCH_ERROR_MESSAGE_WITH_ID, MESSAGE_BODY,
+                if (!clientSideBodyMd5.equals(bodyMd5Returned)) {
+                    throw new AmazonClientException(String.format(MD5_MISMATCH_ERROR_MESSAGE_WITH_ID, MESSAGE_BODY,
                             entry.getId(), clientSideBodyMd5, bodyMd5Returned));
                 }
 
-                Map<String, MessageAttributeValue> messageAttr = idToRequestEntryMap.get(entry.getId()).getMessageAttributes();
-                if ( messageAttr != null && !messageAttr.isEmpty() ) {
+                Map<String, MessageAttributeValue> messageAttr = idToRequestEntryMap.get(entry.getId())
+                        .getMessageAttributes();
+                if (messageAttr != null && !messageAttr.isEmpty()) {
                     String attrMd5Returned = entry.getMD5OfMessageAttributes();
                     String clientSideAttrMd5 = calculateMessageAttributesMd5(messageAttr);
-                    if ( !clientSideAttrMd5.equals(attrMd5Returned) ) {
-                        throw new AmazonClientException(String.format(
-                                MD5_MISMATCH_ERROR_MESSAGE_WITH_ID, MESSAGE_ATTRIBUTES,
-                                entry.getId(), clientSideAttrMd5, attrMd5Returned));
+                    if (!clientSideAttrMd5.equals(attrMd5Returned)) {
+                        throw new AmazonClientException(String.format(MD5_MISMATCH_ERROR_MESSAGE_WITH_ID,
+                                MESSAGE_ATTRIBUTES, entry.getId(), clientSideAttrMd5, attrMd5Returned));
                     }
                 }
             }
@@ -207,8 +199,8 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
         try {
             expectedMd5 = Md5Utils.computeMD5Hash(messageBody.getBytes(UTF8));
         } catch (Exception e) {
-            throw new AmazonClientException(
-                    "Unable to calculate the MD5 hash of the message body. " + e.getMessage(), e);
+            throw new AmazonClientException("Unable to calculate the MD5 hash of the message body. " + e.getMessage(),
+                    e);
         }
         String expectedMd5Hex = BinaryUtils.toHex(expectedMd5);
         if (log.isDebugEnabled()) {
@@ -259,9 +251,8 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
                 }
             }
         } catch (Exception e) {
-            throw new AmazonClientException(
-                    "Unable to calculate the MD5 hash of the message attributes. "
-                            + e.getMessage(), e);
+            throw new AmazonClientException("Unable to calculate the MD5 hash of the message attributes. "
+                    + e.getMessage(), e);
         }
 
         String expectedMd5Hex = BinaryUtils.toHex(md5Digest.digest());
@@ -272,8 +263,8 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
     }
 
     /**
-     * Update the digest using a sequence of bytes that consists of the length
-     * (in 4 bytes) of the input String and the actual utf8-encoded byte values.
+     * Update the digest using a sequence of bytes that consists of the length (in 4 bytes) of the
+     * input String and the actual utf8-encoded byte values.
      */
     private static void updateLengthAndBytes(MessageDigest digest, String str) throws UnsupportedEncodingException {
         byte[] utf8Encoded = str.getBytes(UTF8);
@@ -283,8 +274,8 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
     }
 
     /**
-     * Update the digest using a sequence of bytes that consists of the length
-     * (in 4 bytes) of the input ByteBuffer and all the bytes it contains.
+     * Update the digest using a sequence of bytes that consists of the length (in 4 bytes) of the
+     * input ByteBuffer and all the bytes it contains.
      */
     private static void updateLengthAndBytes(MessageDigest digest, ByteBuffer binaryValue) {
         // Rewind the ByteBuffer, in case that get/put operations were applied to

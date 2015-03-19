@@ -13,21 +13,19 @@
  * permissions and limitations under the License.
  */
 
-
-
 package com.amazonaws.services.sqs.buffered;
 
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.AmazonServiceException.ErrorType;
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.sqs.model.BatchResultErrorEntry;
 import com.amazonaws.services.sqs.model.SendMessageBatchResultEntry;
 import com.amazonaws.services.sqs.model.SendMessageResult;
 
-/** this class converts sqs batch entry results to individual results*/
+/** this class converts sqs batch entry results to individual results */
 class ResultConverter {
 
-    static SendMessageResult convert( SendMessageBatchResultEntry br) {
+    static SendMessageResult convert(SendMessageBatchResultEntry br) {
         SendMessageResult toReturn = new SendMessageResult();
         toReturn.setMD5OfMessageBody(br.getMD5OfMessageBody());
         toReturn.setMessageId(br.getMessageId());
@@ -35,9 +33,8 @@ class ResultConverter {
         return toReturn;
     }
 
-    static Exception convert ( BatchResultErrorEntry be)
-    {
-        AmazonServiceException toReturn = new AmazonServiceException( be.getMessage());
+    static Exception convert(BatchResultErrorEntry be) {
+        AmazonServiceException toReturn = new AmazonServiceException(be.getMessage());
 
         toReturn.setErrorCode(be.getCode());
         toReturn.setErrorType(be.isSenderFault() ? ErrorType.Client : ErrorType.Service);
@@ -47,10 +44,9 @@ class ResultConverter {
 
     }
 
-    public static <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent ) {
-        request.getRequestClientOptions().appendUserAgent( userAgent );
+    public static <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent) {
+        request.getRequestClientOptions().appendUserAgent(userAgent);
         return request;
     }
-
 
 }
