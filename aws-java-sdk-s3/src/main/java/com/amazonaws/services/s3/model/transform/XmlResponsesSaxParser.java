@@ -58,6 +58,7 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Transition;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketReplicationConfiguration;
 import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
@@ -83,6 +84,8 @@ import com.amazonaws.services.s3.model.PartSummary;
 import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.QueueConfiguration;
 import com.amazonaws.services.s3.model.RedirectRule;
+import com.amazonaws.services.s3.model.ReplicationDestinationConfig;
+import com.amazonaws.services.s3.model.ReplicationRule;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
 import com.amazonaws.services.s3.model.RoutingRule;
@@ -402,6 +405,13 @@ public class XmlResponsesSaxParser {
     public BucketNotificationConfigurationHandler parseNotificationConfigurationResponse(InputStream inputStream)
             throws IOException {
         BucketNotificationConfigurationHandler handler = new BucketNotificationConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public BucketReplicationConfigurationHandler parseReplicationConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        BucketReplicationConfigurationHandler handler = new BucketReplicationConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -1851,13 +1861,13 @@ public class XmlResponsesSaxParser {
                             events.toArray(new String[events.size()]));
                     configuration.withObjectPrefixes(prefixes
                             .toArray(new String[prefixes.size()]));
-				} else if (name.equals("CloudFunctionConfiguration")) {
-					configuration = new CloudFunctionConfiguration(
-							invocationRole, destinationArn,
-							events.toArray(new String[events.size()]));
-					configuration.withObjectPrefixes(prefixes
-							.toArray(new String[prefixes.size()]));
-				}
+                } else if (name.equals("CloudFunctionConfiguration")) {
+                    configuration = new CloudFunctionConfiguration(
+                            invocationRole, destinationArn,
+                            events.toArray(new String[events.size()]));
+                    configuration.withObjectPrefixes(prefixes
+                            .toArray(new String[prefixes.size()]));
+                }
 
                 if (configuration != null) {
                     // TODO : The below condition needs to be removed when the
@@ -1878,6 +1888,99 @@ public class XmlResponsesSaxParser {
                 events.add(getText());
             } else if (name.equals("Prefix")) {
                 prefixes.add(getText());
+            }
+        }
+    }
+
+    /**
+     * Handler for parsing the get replication configuration response from
+     * Amazon S3. Sample HTTP response is given below.
+     *
+     * <pre>
+     * <ReplicationConfiguration>
+     * 	<Rule>
+     *   	<ID>replication-rule-1-1421862858808</ID>
+     *   	<Prefix>testPrefix1</Prefix>
+     *   	<Status>Enabled</Status>
+     *   	<Destination>
+     *       	<Bucket>bucketARN</Bucket>
+     *   	</Destination>
+     *	</Rule>
+     *	<Rule>
+     *   	<ID>replication-rule-2-1421862858808</ID>
+     *   	<Prefix>testPrefix2</Prefix>
+     *   	<Status>Disabled</Status>
+     *   	<Destination>
+     *       	<Bucket>arn:aws:s3:::bucket-dest-replication-integ-test-1421862858808</Bucket>
+     *   	</Destination>
+     *	</Rule>
+     * </ReplicationConfiguration>
+     * </pre>
+     */
+    public static class BucketReplicationConfigurationHandler extends
+            AbstractHandler {
+
+        private final BucketReplicationConfiguration bucketReplicationConfiguration = new BucketReplicationConfiguration();
+        private String currentRuleId;
+        private ReplicationRule currentRule;
+        private ReplicationDestinationConfig destinationConfig;
+        private static final String REPLICATION_CONFIG = "ReplicationConfiguration";
+        private static final String ROLE = "Role";
+        private static final String RULE = "Rule";
+        private static final String DESTINATION = "Destination";
+        private static final String ID = "ID";
+        private static final String PREFIX = "Prefix";
+        private static final String STATUS = "Status";
+        private static final String BUCKET = "Bucket";
+
+        public BucketReplicationConfiguration getConfiguration() {
+            return bucketReplicationConfiguration;
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName,
+                Attributes attrs) {
+
+            if (in(REPLICATION_CONFIG)) {
+                if (name.equals(RULE)) {
+                    currentRule = new ReplicationRule();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE)) {
+                if (name.equals(DESTINATION)) {
+                    destinationConfig = new ReplicationDestinationConfig();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in(REPLICATION_CONFIG)) {
+                if (name.equals(RULE)) {
+                    bucketReplicationConfiguration.addRule(currentRuleId,
+                            currentRule);
+                    currentRule = null;
+                    currentRuleId = null;
+                    destinationConfig = null;
+                } else if (name.equals(ROLE)) {
+                    bucketReplicationConfiguration.setRoleARN(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE)) {
+                if (name.equals(ID)) {
+                    currentRuleId = getText();
+                } else if (name.equals(PREFIX)) {
+                    currentRule.setPrefix(getText());
+                } else {
+                    if (name.equals(STATUS)) {
+                        currentRule.setStatus(getText());
+
+                    } else if (name.equals(DESTINATION)) {
+                        currentRule.setDestinationConfig(destinationConfig);
+                    }
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION)) {
+                if (name.equals(BUCKET)) {
+                    destinationConfig.setBucketARN(getText());
+                }
             }
         }
     }

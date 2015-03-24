@@ -27,7 +27,8 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesModification> reservedInstancesModifications;
 
     /**
-     * The token for the next page of data.
+     * The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      */
     private String nextToken;
 
@@ -100,29 +101,35 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
     }
 
     /**
-     * The token for the next page of data.
+     * The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      *
-     * @return The token for the next page of data.
+     * @return The token to use to retrieve the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token for the next page of data.
+     * The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      *
-     * @param nextToken The token for the next page of data.
+     * @param nextToken The token to use to retrieve the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token for the next page of data.
+     * The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The token for the next page of data.
+     * @param nextToken The token to use to retrieve the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

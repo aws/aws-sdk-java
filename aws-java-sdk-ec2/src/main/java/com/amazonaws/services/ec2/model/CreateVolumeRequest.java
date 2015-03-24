@@ -53,13 +53,13 @@ import com.amazonaws.services.ec2.model.transform.CreateVolumeRequestMarshaller;
 public class CreateVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateVolumeRequest> {
 
     /**
-     * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     * specify a snapshot, the volume size must be equal to or larger than
-     * the snapshot size. <p>Default: If you're creating the volume from a
-     * snapshot and don't specify a volume size, the default is the snapshot
-     * size.
+     * The size of the volume, in GiBs. <p>Constraints: <code>1-1024</code>
+     * for <code>standard</code> volumes, <code>1-16384</code> for
+     * <code>gp2</code> volumes, and <code>4-16384</code> for
+     * <code>io1</code> volumes. If you specify a snapshot, the volume size
+     * must be equal to or larger than the snapshot size. <p>Default: If
+     * you're creating the volume from a snapshot and don't specify a volume
+     * size, the default is the snapshot size.
      */
     private Integer size;
 
@@ -88,7 +88,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Only valid for Provisioned IOPS (SSD) volumes. The number of I/O
-     * operations per second (IOPS) to provision for the volume.
+     * operations per second (IOPS) to provision for the volume, with a
+     * maximum ratio of 30 IOPS/GiB. <p>Constraint: Range is 100 to 20000 for
+     * Provisioned IOPS (SSD) volumes
      */
     private Integer iops;
 
@@ -129,13 +131,13 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param size The size of the volume, in GiBs. <p>Constraints: If the
-     * volume type is <code>io1</code>, the minimum size of the volume is 4
-     * GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is
-     * 1024 GiB. If you specify a snapshot, the volume size must be equal to
-     * or larger than the snapshot size. <p>Default: If you're creating the
-     * volume from a snapshot and don't specify a volume size, the default is
-     * the snapshot size.
+     * @param size The size of the volume, in GiBs. <p>Constraints:
+     * <code>1-1024</code> for <code>standard</code> volumes,
+     * <code>1-16384</code> for <code>gp2</code> volumes, and
+     * <code>4-16384</code> for <code>io1</code> volumes. If you specify a
+     * snapshot, the volume size must be equal to or larger than the snapshot
+     * size. <p>Default: If you're creating the volume from a snapshot and
+     * don't specify a volume size, the default is the snapshot size.
      * @param availabilityZone The Availability Zone in which to create the
      * volume. Use <a>DescribeAvailabilityZones</a> to list the Availability
      * Zones that are currently available to you.
@@ -161,65 +163,65 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     * specify a snapshot, the volume size must be equal to or larger than
-     * the snapshot size. <p>Default: If you're creating the volume from a
-     * snapshot and don't specify a volume size, the default is the snapshot
-     * size.
+     * The size of the volume, in GiBs. <p>Constraints: <code>1-1024</code>
+     * for <code>standard</code> volumes, <code>1-16384</code> for
+     * <code>gp2</code> volumes, and <code>4-16384</code> for
+     * <code>io1</code> volumes. If you specify a snapshot, the volume size
+     * must be equal to or larger than the snapshot size. <p>Default: If
+     * you're creating the volume from a snapshot and don't specify a volume
+     * size, the default is the snapshot size.
      *
-     * @return The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     *         specify a snapshot, the volume size must be equal to or larger than
-     *         the snapshot size. <p>Default: If you're creating the volume from a
-     *         snapshot and don't specify a volume size, the default is the snapshot
-     *         size.
+     * @return The size of the volume, in GiBs. <p>Constraints: <code>1-1024</code>
+     *         for <code>standard</code> volumes, <code>1-16384</code> for
+     *         <code>gp2</code> volumes, and <code>4-16384</code> for
+     *         <code>io1</code> volumes. If you specify a snapshot, the volume size
+     *         must be equal to or larger than the snapshot size. <p>Default: If
+     *         you're creating the volume from a snapshot and don't specify a volume
+     *         size, the default is the snapshot size.
      */
     public Integer getSize() {
         return size;
     }
     
     /**
-     * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     * specify a snapshot, the volume size must be equal to or larger than
-     * the snapshot size. <p>Default: If you're creating the volume from a
-     * snapshot and don't specify a volume size, the default is the snapshot
-     * size.
+     * The size of the volume, in GiBs. <p>Constraints: <code>1-1024</code>
+     * for <code>standard</code> volumes, <code>1-16384</code> for
+     * <code>gp2</code> volumes, and <code>4-16384</code> for
+     * <code>io1</code> volumes. If you specify a snapshot, the volume size
+     * must be equal to or larger than the snapshot size. <p>Default: If
+     * you're creating the volume from a snapshot and don't specify a volume
+     * size, the default is the snapshot size.
      *
-     * @param size The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     *         specify a snapshot, the volume size must be equal to or larger than
-     *         the snapshot size. <p>Default: If you're creating the volume from a
-     *         snapshot and don't specify a volume size, the default is the snapshot
-     *         size.
+     * @param size The size of the volume, in GiBs. <p>Constraints: <code>1-1024</code>
+     *         for <code>standard</code> volumes, <code>1-16384</code> for
+     *         <code>gp2</code> volumes, and <code>4-16384</code> for
+     *         <code>io1</code> volumes. If you specify a snapshot, the volume size
+     *         must be equal to or larger than the snapshot size. <p>Default: If
+     *         you're creating the volume from a snapshot and don't specify a volume
+     *         size, the default is the snapshot size.
      */
     public void setSize(Integer size) {
         this.size = size;
     }
     
     /**
-     * The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     * specify a snapshot, the volume size must be equal to or larger than
-     * the snapshot size. <p>Default: If you're creating the volume from a
-     * snapshot and don't specify a volume size, the default is the snapshot
-     * size.
+     * The size of the volume, in GiBs. <p>Constraints: <code>1-1024</code>
+     * for <code>standard</code> volumes, <code>1-16384</code> for
+     * <code>gp2</code> volumes, and <code>4-16384</code> for
+     * <code>io1</code> volumes. If you specify a snapshot, the volume size
+     * must be equal to or larger than the snapshot size. <p>Default: If
+     * you're creating the volume from a snapshot and don't specify a volume
+     * size, the default is the snapshot size.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param size The size of the volume, in GiBs. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     *         specify a snapshot, the volume size must be equal to or larger than
-     *         the snapshot size. <p>Default: If you're creating the volume from a
-     *         snapshot and don't specify a volume size, the default is the snapshot
-     *         size.
+     * @param size The size of the volume, in GiBs. <p>Constraints: <code>1-1024</code>
+     *         for <code>standard</code> volumes, <code>1-16384</code> for
+     *         <code>gp2</code> volumes, and <code>4-16384</code> for
+     *         <code>io1</code> volumes. If you specify a snapshot, the volume size
+     *         must be equal to or larger than the snapshot size. <p>Default: If
+     *         you're creating the volume from a snapshot and don't specify a volume
+     *         size, the default is the snapshot size.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -421,10 +423,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Only valid for Provisioned IOPS (SSD) volumes. The number of I/O
-     * operations per second (IOPS) to provision for the volume.
+     * operations per second (IOPS) to provision for the volume, with a
+     * maximum ratio of 30 IOPS/GiB. <p>Constraint: Range is 100 to 20000 for
+     * Provisioned IOPS (SSD) volumes
      *
      * @return Only valid for Provisioned IOPS (SSD) volumes. The number of I/O
-     *         operations per second (IOPS) to provision for the volume.
+     *         operations per second (IOPS) to provision for the volume, with a
+     *         maximum ratio of 30 IOPS/GiB. <p>Constraint: Range is 100 to 20000 for
+     *         Provisioned IOPS (SSD) volumes
      */
     public Integer getIops() {
         return iops;
@@ -432,10 +438,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * Only valid for Provisioned IOPS (SSD) volumes. The number of I/O
-     * operations per second (IOPS) to provision for the volume.
+     * operations per second (IOPS) to provision for the volume, with a
+     * maximum ratio of 30 IOPS/GiB. <p>Constraint: Range is 100 to 20000 for
+     * Provisioned IOPS (SSD) volumes
      *
      * @param iops Only valid for Provisioned IOPS (SSD) volumes. The number of I/O
-     *         operations per second (IOPS) to provision for the volume.
+     *         operations per second (IOPS) to provision for the volume, with a
+     *         maximum ratio of 30 IOPS/GiB. <p>Constraint: Range is 100 to 20000 for
+     *         Provisioned IOPS (SSD) volumes
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -443,12 +453,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * Only valid for Provisioned IOPS (SSD) volumes. The number of I/O
-     * operations per second (IOPS) to provision for the volume.
+     * operations per second (IOPS) to provision for the volume, with a
+     * maximum ratio of 30 IOPS/GiB. <p>Constraint: Range is 100 to 20000 for
+     * Provisioned IOPS (SSD) volumes
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops Only valid for Provisioned IOPS (SSD) volumes. The number of I/O
-     *         operations per second (IOPS) to provision for the volume.
+     *         operations per second (IOPS) to provision for the volume, with a
+     *         maximum ratio of 30 IOPS/GiB. <p>Constraint: Range is 100 to 20000 for
+     *         Provisioned IOPS (SSD) volumes
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

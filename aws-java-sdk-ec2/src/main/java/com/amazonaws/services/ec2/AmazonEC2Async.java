@@ -1999,8 +1999,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates an import volume task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
-     * ec2-import-volume command in the Amazon EC2 command-line interface
-     * (CLI) tools. For more information, see
+     * <code>ec2-import-volume</code> command in the Amazon EC2 command-line
+     * interface (CLI) tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -2027,8 +2027,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates an import volume task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
-     * ec2-import-volume command in the Amazon EC2 command-line interface
-     * (CLI) tools. For more information, see
+     * <code>ec2-import-volume</code> command in the Amazon EC2 command-line
+     * interface (CLI) tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -4934,10 +4934,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates an import instance task using metadata from the specified
      * disk image. After importing the image, you then upload it using the
-     * ec2-import-volume command in the EC2 command line tools. For more
-     * information, see Using the Command Line Tools to Import Your Virtual
-     * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide
-     * for Linux.
+     * <code>ec2-import-volume</code> command in the EC2 command line tools.
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param importInstanceRequest Container for the necessary parameters to
@@ -4962,10 +4962,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates an import instance task using metadata from the specified
      * disk image. After importing the image, you then upload it using the
-     * ec2-import-volume command in the EC2 command line tools. For more
-     * information, see Using the Command Line Tools to Import Your Virtual
-     * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide
-     * for Linux.
+     * <code>ec2-import-volume</code> command in the EC2 command line tools.
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param importInstanceRequest Container for the necessary parameters to

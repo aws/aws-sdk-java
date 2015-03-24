@@ -27,8 +27,8 @@ public class DescribeClassicLinkInstancesResult implements Serializable, Cloneab
     private com.amazonaws.internal.ListWithAutoConstructFlag<ClassicLinkInstance> instances;
 
     /**
-     * The token to use when requesting the next set of items. If there are
-     * no additional items to return, the string is empty.
+     * The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      */
     private String nextToken;
 
@@ -101,35 +101,35 @@ public class DescribeClassicLinkInstancesResult implements Serializable, Cloneab
     }
 
     /**
-     * The token to use when requesting the next set of items. If there are
-     * no additional items to return, the string is empty.
+     * The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      *
-     * @return The token to use when requesting the next set of items. If there are
-     *         no additional items to return, the string is empty.
+     * @return The token to use to retrieve the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token to use when requesting the next set of items. If there are
-     * no additional items to return, the string is empty.
+     * The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      *
-     * @param nextToken The token to use when requesting the next set of items. If there are
-     *         no additional items to return, the string is empty.
+     * @param nextToken The token to use to retrieve the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token to use when requesting the next set of items. If there are
-     * no additional items to return, the string is empty.
+     * The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The token to use when requesting the next set of items. If there are
-     *         no additional items to return, the string is empty.
+     * @param nextToken The token to use to retrieve the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

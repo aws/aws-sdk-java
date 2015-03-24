@@ -29,14 +29,17 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Transition;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketReplicationConfiguration;
 import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.CloudFunctionConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
+import com.amazonaws.services.s3.model.ReplicationDestinationConfig;
 import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
 import com.amazonaws.services.s3.model.NotificationConfiguration;
+import com.amazonaws.services.s3.model.ReplicationRule;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
@@ -166,6 +169,36 @@ public class BucketConfigurationXmlFactory {
         for (String prefix : objectPrefixes) {
             xml.start("Prefix").value(prefix).end();
         }
+    }
+
+    public byte[] convertToXmlByteArray(
+            BucketReplicationConfiguration replicationConfiguration) {
+        XmlWriter xml = new XmlWriter();
+        xml.start("ReplicationConfiguration");
+        Map<String, ReplicationRule> rules = replicationConfiguration
+                .getRules();
+
+        final String role = replicationConfiguration.getRoleARN();
+        xml.start("Role").value(role).end();
+        for (Map.Entry<String, ReplicationRule> entry : rules
+                .entrySet()) {
+            final String ruleId = entry.getKey();
+            final ReplicationRule rule = entry.getValue();
+
+            xml.start("Rule");
+            xml.start("ID").value(ruleId).end();
+            xml.start("Prefix").value(rule.getPrefix()).end();
+            xml.start("Status").value(rule.getStatus()).end();
+
+            final ReplicationDestinationConfig config = rule.getDestinationConfig();
+            xml.start("Destination");
+            xml.start("Bucket").value(config.getBucketARN()).end();
+            xml.end();
+
+            xml.end();
+        }
+        xml.end();
+        return xml.getBytes();
     }
 
     /**

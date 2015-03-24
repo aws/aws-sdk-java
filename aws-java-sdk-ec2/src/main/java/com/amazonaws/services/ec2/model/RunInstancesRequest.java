@@ -217,9 +217,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Unique, case-sensitive identifier you provide to ensure the
      * idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraints: Maximum 64 ASCII characters
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>. <p>Constraints: Maximum 64 ASCII characters
      */
     private String clientToken;
 
@@ -1430,15 +1429,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Unique, case-sensitive identifier you provide to ensure the
      * idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraints: Maximum 64 ASCII characters
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>. <p>Constraints: Maximum 64 ASCII characters
      *
      * @return Unique, case-sensitive identifier you provide to ensure the
      *         idempotency of the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraints: Maximum 64 ASCII characters
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>. <p>Constraints: Maximum 64 ASCII characters
      */
     public String getClientToken() {
         return clientToken;
@@ -1447,15 +1444,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Unique, case-sensitive identifier you provide to ensure the
      * idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraints: Maximum 64 ASCII characters
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>. <p>Constraints: Maximum 64 ASCII characters
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure the
      *         idempotency of the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraints: Maximum 64 ASCII characters
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>. <p>Constraints: Maximum 64 ASCII characters
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
@@ -1464,17 +1459,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Unique, case-sensitive identifier you provide to ensure the
      * idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraints: Maximum 64 ASCII characters
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>. <p>Constraints: Maximum 64 ASCII characters
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure the
      *         idempotency of the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraints: Maximum 64 ASCII characters
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>. <p>Constraints: Maximum 64 ASCII characters
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -73,7 +73,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The idempotency token you provided when you created the listing.
+     * A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      */
     private String clientToken;
 
@@ -535,29 +538,47 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
 
     /**
-     * The idempotency token you provided when you created the listing.
+     * A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      *
-     * @return The idempotency token you provided when you created the listing.
+     * @return A unique, case-sensitive key supplied by the client to ensure that the
+     *         request is idempotent. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
     public String getClientToken() {
         return clientToken;
     }
     
     /**
-     * The idempotency token you provided when you created the listing.
+     * A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      *
-     * @param clientToken The idempotency token you provided when you created the listing.
+     * @param clientToken A unique, case-sensitive key supplied by the client to ensure that the
+     *         request is idempotent. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
     
     /**
-     * The idempotency token you provided when you created the listing.
+     * A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientToken The idempotency token you provided when you created the listing.
+     * @param clientToken A unique, case-sensitive key supplied by the client to ensure that the
+     *         request is idempotent. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

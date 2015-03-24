@@ -116,13 +116,25 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The next paginated set of results to return using the pagination token
-     * returned by a previous call.
+     * The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumeStatus</code> request. When the results of the
+     * request exceed <code>MaxResults</code>, this value can be used to
+     * retrieve the next page of results. This value is <code>null</code>
+     * when there are no more results to return.
      */
     private String nextToken;
 
     /**
-     * The maximum number of paginated volume items per response. You cannot
+     * The maximum number of volume results returned by
+     * <code>DescribeVolumeStatus</code> in paginated output. When this
+     * parameter is used, the request only returns <code>MaxResults</code>
+     * results in a single page along with a <code>NextToken</code> response
+     * element. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. If this parameter is not used, then
+     * <code>DescribeVolumeStatus</code> returns all results. You cannot
      * specify this parameter and the volume IDs parameter in the same
      * request.
      */
@@ -473,35 +485,53 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The next paginated set of results to return using the pagination token
-     * returned by a previous call.
+     * The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumeStatus</code> request. When the results of the
+     * request exceed <code>MaxResults</code>, this value can be used to
+     * retrieve the next page of results. This value is <code>null</code>
+     * when there are no more results to return.
      *
-     * @return The next paginated set of results to return using the pagination token
-     *         returned by a previous call.
+     * @return The <code>NextToken</code> value to include in a future
+     *         <code>DescribeVolumeStatus</code> request. When the results of the
+     *         request exceed <code>MaxResults</code>, this value can be used to
+     *         retrieve the next page of results. This value is <code>null</code>
+     *         when there are no more results to return.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The next paginated set of results to return using the pagination token
-     * returned by a previous call.
+     * The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumeStatus</code> request. When the results of the
+     * request exceed <code>MaxResults</code>, this value can be used to
+     * retrieve the next page of results. This value is <code>null</code>
+     * when there are no more results to return.
      *
-     * @param nextToken The next paginated set of results to return using the pagination token
-     *         returned by a previous call.
+     * @param nextToken The <code>NextToken</code> value to include in a future
+     *         <code>DescribeVolumeStatus</code> request. When the results of the
+     *         request exceed <code>MaxResults</code>, this value can be used to
+     *         retrieve the next page of results. This value is <code>null</code>
+     *         when there are no more results to return.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The next paginated set of results to return using the pagination token
-     * returned by a previous call.
+     * The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumeStatus</code> request. When the results of the
+     * request exceed <code>MaxResults</code>, this value can be used to
+     * retrieve the next page of results. This value is <code>null</code>
+     * when there are no more results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The next paginated set of results to return using the pagination token
-     *         returned by a previous call.
+     * @param nextToken The <code>NextToken</code> value to include in a future
+     *         <code>DescribeVolumeStatus</code> request. When the results of the
+     *         request exceed <code>MaxResults</code>, this value can be used to
+     *         retrieve the next page of results. This value is <code>null</code>
+     *         when there are no more results to return.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -512,11 +542,29 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The maximum number of paginated volume items per response. You cannot
+     * The maximum number of volume results returned by
+     * <code>DescribeVolumeStatus</code> in paginated output. When this
+     * parameter is used, the request only returns <code>MaxResults</code>
+     * results in a single page along with a <code>NextToken</code> response
+     * element. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. If this parameter is not used, then
+     * <code>DescribeVolumeStatus</code> returns all results. You cannot
      * specify this parameter and the volume IDs parameter in the same
      * request.
      *
-     * @return The maximum number of paginated volume items per response. You cannot
+     * @return The maximum number of volume results returned by
+     *         <code>DescribeVolumeStatus</code> in paginated output. When this
+     *         parameter is used, the request only returns <code>MaxResults</code>
+     *         results in a single page along with a <code>NextToken</code> response
+     *         element. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. If this parameter is not used, then
+     *         <code>DescribeVolumeStatus</code> returns all results. You cannot
      *         specify this parameter and the volume IDs parameter in the same
      *         request.
      */
@@ -525,11 +573,29 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The maximum number of paginated volume items per response. You cannot
+     * The maximum number of volume results returned by
+     * <code>DescribeVolumeStatus</code> in paginated output. When this
+     * parameter is used, the request only returns <code>MaxResults</code>
+     * results in a single page along with a <code>NextToken</code> response
+     * element. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. If this parameter is not used, then
+     * <code>DescribeVolumeStatus</code> returns all results. You cannot
      * specify this parameter and the volume IDs parameter in the same
      * request.
      *
-     * @param maxResults The maximum number of paginated volume items per response. You cannot
+     * @param maxResults The maximum number of volume results returned by
+     *         <code>DescribeVolumeStatus</code> in paginated output. When this
+     *         parameter is used, the request only returns <code>MaxResults</code>
+     *         results in a single page along with a <code>NextToken</code> response
+     *         element. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. If this parameter is not used, then
+     *         <code>DescribeVolumeStatus</code> returns all results. You cannot
      *         specify this parameter and the volume IDs parameter in the same
      *         request.
      */
@@ -538,13 +604,31 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The maximum number of paginated volume items per response. You cannot
+     * The maximum number of volume results returned by
+     * <code>DescribeVolumeStatus</code> in paginated output. When this
+     * parameter is used, the request only returns <code>MaxResults</code>
+     * results in a single page along with a <code>NextToken</code> response
+     * element. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. If this parameter is not used, then
+     * <code>DescribeVolumeStatus</code> returns all results. You cannot
      * specify this parameter and the volume IDs parameter in the same
      * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The maximum number of paginated volume items per response. You cannot
+     * @param maxResults The maximum number of volume results returned by
+     *         <code>DescribeVolumeStatus</code> in paginated output. When this
+     *         parameter is used, the request only returns <code>MaxResults</code>
+     *         results in a single page along with a <code>NextToken</code> response
+     *         element. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. If this parameter is not used, then
+     *         <code>DescribeVolumeStatus</code> returns all results. You cannot
      *         specify this parameter and the volume IDs parameter in the same
      *         request.
      *

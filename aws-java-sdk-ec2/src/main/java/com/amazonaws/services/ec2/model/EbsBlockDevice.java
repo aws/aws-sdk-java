@@ -29,13 +29,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private String snapshotId;
 
     /**
-     * The size of the volume, in GiB. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     * specify a snapshot, the volume size must be equal to or larger than
-     * the snapshot size. <p>Default: If you're creating the volume from a
-     * snapshot and don't specify a volume size, the default is the snapshot
-     * size.
+     * The size of the volume, in GiB. <p>Constraints: <code>1-1024</code>
+     * for <code>standard</code> volumes, <code>1-16384</code> for
+     * <code>gp2</code> volumes, and <code>4-16384</code> for
+     * <code>io1</code> volumes. If you specify a snapshot, the volume size
+     * must be equal to or larger than the snapshot size. <p>Default: If
+     * you're creating the volume from a snapshot and don't specify a volume
+     * size, the default is the snapshot size.
      */
     private Integer volumeSize;
 
@@ -66,8 +66,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     * (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * Guide</i>. <p>Constraint: Range is 100 to 20000 for Provisioned IOPS
+     * (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -115,65 +115,65 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * The size of the volume, in GiB. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     * specify a snapshot, the volume size must be equal to or larger than
-     * the snapshot size. <p>Default: If you're creating the volume from a
-     * snapshot and don't specify a volume size, the default is the snapshot
-     * size.
+     * The size of the volume, in GiB. <p>Constraints: <code>1-1024</code>
+     * for <code>standard</code> volumes, <code>1-16384</code> for
+     * <code>gp2</code> volumes, and <code>4-16384</code> for
+     * <code>io1</code> volumes. If you specify a snapshot, the volume size
+     * must be equal to or larger than the snapshot size. <p>Default: If
+     * you're creating the volume from a snapshot and don't specify a volume
+     * size, the default is the snapshot size.
      *
-     * @return The size of the volume, in GiB. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     *         specify a snapshot, the volume size must be equal to or larger than
-     *         the snapshot size. <p>Default: If you're creating the volume from a
-     *         snapshot and don't specify a volume size, the default is the snapshot
-     *         size.
+     * @return The size of the volume, in GiB. <p>Constraints: <code>1-1024</code>
+     *         for <code>standard</code> volumes, <code>1-16384</code> for
+     *         <code>gp2</code> volumes, and <code>4-16384</code> for
+     *         <code>io1</code> volumes. If you specify a snapshot, the volume size
+     *         must be equal to or larger than the snapshot size. <p>Default: If
+     *         you're creating the volume from a snapshot and don't specify a volume
+     *         size, the default is the snapshot size.
      */
     public Integer getVolumeSize() {
         return volumeSize;
     }
     
     /**
-     * The size of the volume, in GiB. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     * specify a snapshot, the volume size must be equal to or larger than
-     * the snapshot size. <p>Default: If you're creating the volume from a
-     * snapshot and don't specify a volume size, the default is the snapshot
-     * size.
+     * The size of the volume, in GiB. <p>Constraints: <code>1-1024</code>
+     * for <code>standard</code> volumes, <code>1-16384</code> for
+     * <code>gp2</code> volumes, and <code>4-16384</code> for
+     * <code>io1</code> volumes. If you specify a snapshot, the volume size
+     * must be equal to or larger than the snapshot size. <p>Default: If
+     * you're creating the volume from a snapshot and don't specify a volume
+     * size, the default is the snapshot size.
      *
-     * @param volumeSize The size of the volume, in GiB. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     *         specify a snapshot, the volume size must be equal to or larger than
-     *         the snapshot size. <p>Default: If you're creating the volume from a
-     *         snapshot and don't specify a volume size, the default is the snapshot
-     *         size.
+     * @param volumeSize The size of the volume, in GiB. <p>Constraints: <code>1-1024</code>
+     *         for <code>standard</code> volumes, <code>1-16384</code> for
+     *         <code>gp2</code> volumes, and <code>4-16384</code> for
+     *         <code>io1</code> volumes. If you specify a snapshot, the volume size
+     *         must be equal to or larger than the snapshot size. <p>Default: If
+     *         you're creating the volume from a snapshot and don't specify a volume
+     *         size, the default is the snapshot size.
      */
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
     }
     
     /**
-     * The size of the volume, in GiB. <p>Constraints: If the volume type is
-     * <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     * specify a snapshot, the volume size must be equal to or larger than
-     * the snapshot size. <p>Default: If you're creating the volume from a
-     * snapshot and don't specify a volume size, the default is the snapshot
-     * size.
+     * The size of the volume, in GiB. <p>Constraints: <code>1-1024</code>
+     * for <code>standard</code> volumes, <code>1-16384</code> for
+     * <code>gp2</code> volumes, and <code>4-16384</code> for
+     * <code>io1</code> volumes. If you specify a snapshot, the volume size
+     * must be equal to or larger than the snapshot size. <p>Default: If
+     * you're creating the volume from a snapshot and don't specify a volume
+     * size, the default is the snapshot size.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeSize The size of the volume, in GiB. <p>Constraints: If the volume type is
-     *         <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
-     *         specify a snapshot, the volume size must be equal to or larger than
-     *         the snapshot size. <p>Default: If you're creating the volume from a
-     *         snapshot and don't specify a volume size, the default is the snapshot
-     *         size.
+     * @param volumeSize The size of the volume, in GiB. <p>Constraints: <code>1-1024</code>
+     *         for <code>standard</code> volumes, <code>1-16384</code> for
+     *         <code>gp2</code> volumes, and <code>4-16384</code> for
+     *         <code>io1</code> volumes. If you specify a snapshot, the volume size
+     *         must be equal to or larger than the snapshot size. <p>Default: If
+     *         you're creating the volume from a snapshot and don't specify a volume
+     *         size, the default is the snapshot size.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -355,8 +355,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     * (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * Guide</i>. <p>Constraint: Range is 100 to 20000 for Provisioned IOPS
+     * (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -370,8 +370,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     *         (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         Guide</i>. <p>Constraint: Range is 100 to 20000 for Provisioned IOPS
+     *         (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
@@ -390,8 +390,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     * (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * Guide</i>. <p>Constraint: Range is 100 to 20000 for Provisioned IOPS
+     * (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -405,8 +405,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     *         (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         Guide</i>. <p>Constraint: Range is 100 to 20000 for Provisioned IOPS
+     *         (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
@@ -425,8 +425,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     * (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * Guide</i>. <p>Constraint: Range is 100 to 20000 for Provisioned IOPS
+     * (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -442,8 +442,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. <p>Constraint: Range is 100 to 4000 for Provisioned IOPS
-     *         (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         Guide</i>. <p>Constraint: Range is 100 to 20000 for Provisioned IOPS
+     *         (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
