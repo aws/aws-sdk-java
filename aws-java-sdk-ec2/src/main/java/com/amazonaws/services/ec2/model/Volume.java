@@ -86,8 +86,8 @@ public class Volume implements Serializable, Cloneable {
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
-     * IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * for Linux</i>. <p>Constraint: Range is 100 to 20000 for Provisioned
+     * IOPS (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -600,8 +600,8 @@ public class Volume implements Serializable, Cloneable {
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
-     * IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * for Linux</i>. <p>Constraint: Range is 100 to 20000 for Provisioned
+     * IOPS (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -615,8 +615,8 @@ public class Volume implements Serializable, Cloneable {
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     *         for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
-     *         IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         for Linux</i>. <p>Constraint: Range is 100 to 20000 for Provisioned
+     *         IOPS (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
@@ -635,8 +635,8 @@ public class Volume implements Serializable, Cloneable {
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
-     * IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * for Linux</i>. <p>Constraint: Range is 100 to 20000 for Provisioned
+     * IOPS (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -650,8 +650,8 @@ public class Volume implements Serializable, Cloneable {
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     *         for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
-     *         IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         for Linux</i>. <p>Constraint: Range is 100 to 20000 for Provisioned
+     *         IOPS (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
@@ -670,8 +670,8 @@ public class Volume implements Serializable, Cloneable {
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
-     * IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     * for Linux</i>. <p>Constraint: Range is 100 to 20000 for Provisioned
+     * IOPS (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      * <p>Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
      * <code>standard</code> or <code>gp2</code> volumes.
@@ -687,8 +687,8 @@ public class Volume implements Serializable, Cloneable {
      *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     *         for Linux</i>. <p>Constraint: Range is 100 to 4000 for Provisioned
-     *         IOPS (SSD) volumes and 3 to 3072 for General Purpose (SSD) volumes.
+     *         for Linux</i>. <p>Constraint: Range is 100 to 20000 for Provisioned
+     *         IOPS (SSD) volumes and 3 to 10000 for General Purpose (SSD) volumes.
      *         <p>Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.

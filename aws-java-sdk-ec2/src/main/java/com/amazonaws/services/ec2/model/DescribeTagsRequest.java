@@ -52,16 +52,17 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the
-     * next set of results. If the value is greater than 1000, we return only
-     * 1000 items.
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned.
      */
     private Integer maxResults;
 
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a prior call.)
+     * The token to retrieve the next page of results.
      */
     private String nextToken;
 
@@ -250,47 +251,59 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the
-     * next set of results. If the value is greater than 1000, we return only
-     * 1000 items.
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned.
      *
-     * @return The maximum number of items to return for this call. The call also
-     *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items.
+     * @return The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned.
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the
-     * next set of results. If the value is greater than 1000, we return only
-     * 1000 items.
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned.
      *
-     * @param maxResults The maximum number of items to return for this call. The call also
-     *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items.
+     * @param maxResults The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the
-     * next set of results. If the value is greater than 1000, we return only
-     * 1000 items.
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The maximum number of items to return for this call. The call also
-     *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items.
+     * @param maxResults The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -301,35 +314,29 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a prior call.)
+     * The token to retrieve the next page of results.
      *
-     * @return The token for the next set of items to return. (You received this
-     *         token from a prior call.)
+     * @return The token to retrieve the next page of results.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a prior call.)
+     * The token to retrieve the next page of results.
      *
-     * @param nextToken The token for the next set of items to return. (You received this
-     *         token from a prior call.)
+     * @param nextToken The token to retrieve the next page of results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a prior call.)
+     * The token to retrieve the next page of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The token for the next set of items to return. (You received this
-     *         token from a prior call.)
+     * @param nextToken The token to retrieve the next page of results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

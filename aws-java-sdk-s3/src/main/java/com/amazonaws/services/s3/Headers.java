@@ -195,4 +195,7 @@ public interface Headers {
      * System key id used for Server Side Encryption.
      */
     public static final String SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID = "x-amz-server-side-encryption-aws-kms-key-id";
+
+    /** Header for the replication status of an Amazon S3 Object.*/
+    public static final String OBJECT_REPLICATION_STATUS = "x-amz-replication-status";
 }

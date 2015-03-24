@@ -35,6 +35,7 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketPolicy;
+import com.amazonaws.services.s3.model.BucketReplicationConfiguration;
 import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
@@ -89,6 +90,7 @@ import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
+import com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
@@ -4012,4 +4014,91 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     public boolean isRequesterPaysEnabled(String bucketName)
             throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Sets a replication configuration for the Amazon S3 bucket.
+     *
+     * @param bucketName
+     *            The Amazon S3 bucket for which the replication configuration
+     *            is set.
+     * @param configuration
+     *            The replication configuration.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     *
+     * @see AmazonS3#setBucketReplicationConfiguration(SetBucketReplicationConfigurationRequest)
+     * @see AmazonS3#getBucketReplicationConfiguration(String)
+     * @see AmazonS3#deleteBucketReplicationConfiguration(String)
+     */
+    public void setBucketReplicationConfiguration(String bucketName,
+            BucketReplicationConfiguration configuration)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Sets a replication configuration for the Amazon S3 bucket.
+     *
+     * @param setBucketReplicationConfigurationRequest
+     *            The request object containing all the options for setting a
+     *            replication configuration for an Amazon S3 bucket.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     *
+     * @see AmazonS3#setBucketReplicationConfiguration(String, BucketReplicationConfiguration)
+     * @see AmazonS3#getBucketReplicationConfiguration(String)
+     * @see AmazonS3#deleteBucketReplicationConfiguration(String)
+     */
+    public void setBucketReplicationConfiguration(
+            SetBucketReplicationConfigurationRequest setBucketReplicationConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Retrieves the replication configuration for the given Amazon S3 bucket.
+     *
+     * @param bucketName
+     *            The bucket name for which the replication configuration is to
+     *            be retrieved.
+     * @return the replication configuration of the bucket.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     *
+     * @see AmazonS3#setBucketReplicationConfiguration(String,
+     *      BucketReplicationConfiguration)
+     * @see AmazonS3#deleteBucketReplicationConfiguration(String)
+     */
+    public BucketReplicationConfiguration getBucketReplicationConfiguration(
+            String bucketName) throws AmazonServiceException,
+            AmazonClientException;
+
+    /**
+     * Deletes the replication configuration for the given Amazon S3 bucket.
+     *
+     * @param bucketName
+     *            The bucket name for which the replication configuration is to
+     *            be deleted.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     *
+     * @see AmazonS3#setBucketReplicationConfiguration(String,
+     *      BucketReplicationConfiguration)
+     * @see AmazonS3#getBucketReplicationConfiguration(String)
+     */
+    public void deleteBucketReplicationConfiguration(String bucketName)
+            throws AmazonServiceException, AmazonClientException;
+
 }

@@ -40,7 +40,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
 
     /**
      * The Amazon S3 bucket for the destination image. The destination bucket
-     * must exist and grant WRITE and READ_ACL permissions to the AWS account
+     * must exist and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.
      */
     private String s3Bucket;
@@ -226,11 +226,11 @@ public class ExportToS3Task implements Serializable, Cloneable {
 
     /**
      * The Amazon S3 bucket for the destination image. The destination bucket
-     * must exist and grant WRITE and READ_ACL permissions to the AWS account
+     * must exist and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.
      *
      * @return The Amazon S3 bucket for the destination image. The destination bucket
-     *         must exist and grant WRITE and READ_ACL permissions to the AWS account
+     *         must exist and grant WRITE and READ_ACP permissions to the AWS account
      *         <code>vm-import-export@amazon.com</code>.
      */
     public String getS3Bucket() {
@@ -239,11 +239,11 @@ public class ExportToS3Task implements Serializable, Cloneable {
     
     /**
      * The Amazon S3 bucket for the destination image. The destination bucket
-     * must exist and grant WRITE and READ_ACL permissions to the AWS account
+     * must exist and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.
      *
      * @param s3Bucket The Amazon S3 bucket for the destination image. The destination bucket
-     *         must exist and grant WRITE and READ_ACL permissions to the AWS account
+     *         must exist and grant WRITE and READ_ACP permissions to the AWS account
      *         <code>vm-import-export@amazon.com</code>.
      */
     public void setS3Bucket(String s3Bucket) {
@@ -252,13 +252,13 @@ public class ExportToS3Task implements Serializable, Cloneable {
     
     /**
      * The Amazon S3 bucket for the destination image. The destination bucket
-     * must exist and grant WRITE and READ_ACL permissions to the AWS account
+     * must exist and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param s3Bucket The Amazon S3 bucket for the destination image. The destination bucket
-     *         must exist and grant WRITE and READ_ACL permissions to the AWS account
+     *         must exist and grant WRITE and READ_ACP permissions to the AWS account
      *         <code>vm-import-export@amazon.com</code>.
      *
      * @return A reference to this updated object so that method calls can be chained

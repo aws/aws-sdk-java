@@ -76,7 +76,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
     private String value;
 
     /**
-     * <p/>
+     * A launch permission modification.
      */
     private LaunchPermissionModifications launchPermission;
 
@@ -479,29 +479,29 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * <p/>
+     * A launch permission modification.
      *
-     * @return <p/>
+     * @return A launch permission modification.
      */
     public LaunchPermissionModifications getLaunchPermission() {
         return launchPermission;
     }
     
     /**
-     * <p/>
+     * A launch permission modification.
      *
-     * @param launchPermission <p/>
+     * @param launchPermission A launch permission modification.
      */
     public void setLaunchPermission(LaunchPermissionModifications launchPermission) {
         this.launchPermission = launchPermission;
     }
     
     /**
-     * <p/>
+     * A launch permission modification.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchPermission <p/>
+     * @param launchPermission A launch permission modification.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -115,13 +115,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     private String offeringType;
 
     /**
-     * The token to use when requesting the next paginated set of offerings.
+     * The token to retrieve the next page of results.
      */
     private String nextToken;
 
     /**
-     * The maximum number of offerings to return. The maximum is 100.
-     * <p>Default: 100
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. The maximum is 100. <p>Default: 100
      */
     private Integer maxResults;
 
@@ -890,29 +892,29 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The token to use when requesting the next paginated set of offerings.
+     * The token to retrieve the next page of results.
      *
-     * @return The token to use when requesting the next paginated set of offerings.
+     * @return The token to retrieve the next page of results.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token to use when requesting the next paginated set of offerings.
+     * The token to retrieve the next page of results.
      *
-     * @param nextToken The token to use when requesting the next paginated set of offerings.
+     * @param nextToken The token to retrieve the next page of results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token to use when requesting the next paginated set of offerings.
+     * The token to retrieve the next page of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The token to use when requesting the next paginated set of offerings.
+     * @param nextToken The token to retrieve the next page of results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -923,35 +925,47 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The maximum number of offerings to return. The maximum is 100.
-     * <p>Default: 100
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. The maximum is 100. <p>Default: 100
      *
-     * @return The maximum number of offerings to return. The maximum is 100.
-     *         <p>Default: 100
+     * @return The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. The maximum is 100. <p>Default: 100
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * The maximum number of offerings to return. The maximum is 100.
-     * <p>Default: 100
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. The maximum is 100. <p>Default: 100
      *
-     * @param maxResults The maximum number of offerings to return. The maximum is 100.
-     *         <p>Default: 100
+     * @param maxResults The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. The maximum is 100. <p>Default: 100
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * The maximum number of offerings to return. The maximum is 100.
-     * <p>Default: 100
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. The maximum is 100. <p>Default: 100
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The maximum number of offerings to return. The maximum is 100.
-     *         <p>Default: 100
+     * @param maxResults The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. The maximum is 100. <p>Default: 100
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

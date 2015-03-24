@@ -76,9 +76,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Unique, case-sensitive identifier you provide to ensure idempotency of
      * your listings. This helps avoid duplicate listings. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      */
     private String clientToken;
 
@@ -246,16 +245,14 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Unique, case-sensitive identifier you provide to ensure idempotency of
      * your listings. This helps avoid duplicate listings. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      *
      * @return Unique, case-sensitive identifier you provide to ensure idempotency of
      *         your listings. This helps avoid duplicate listings. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     *         Linux</i>.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
     public String getClientToken() {
         return clientToken;
@@ -265,16 +262,14 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Unique, case-sensitive identifier you provide to ensure idempotency of
      * your listings. This helps avoid duplicate listings. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
      *         your listings. This helps avoid duplicate listings. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     *         Linux</i>.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
@@ -284,18 +279,16 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Unique, case-sensitive identifier you provide to ensure idempotency of
      * your listings. This helps avoid duplicate listings. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
      *         your listings. This helps avoid duplicate listings. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     *         Linux</i>.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

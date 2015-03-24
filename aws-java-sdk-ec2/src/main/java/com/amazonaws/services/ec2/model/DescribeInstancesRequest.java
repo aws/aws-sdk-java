@@ -230,17 +230,18 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a prior call.)
+     * The token to request the next page of results.
      */
     private String nextToken;
 
     /**
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the
-     * next set of results. If the value is greater than 1000, we return only
-     * 1000 items. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. You cannot specify this parameter and the
+     * instance IDs parameter in the same request.
      */
     private Integer maxResults;
 
@@ -1797,35 +1798,29 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a prior call.)
+     * The token to request the next page of results.
      *
-     * @return The token for the next set of items to return. (You received this
-     *         token from a prior call.)
+     * @return The token to request the next page of results.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a prior call.)
+     * The token to request the next page of results.
      *
-     * @param nextToken The token for the next set of items to return. (You received this
-     *         token from a prior call.)
+     * @param nextToken The token to request the next page of results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token for the next set of items to return. (You received this
-     * token from a prior call.)
+     * The token to request the next page of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The token for the next set of items to return. (You received this
-     *         token from a prior call.)
+     * @param nextToken The token to request the next page of results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1836,53 +1831,65 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the
-     * next set of results. If the value is greater than 1000, we return only
-     * 1000 items. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. You cannot specify this parameter and the
+     * instance IDs parameter in the same request.
      *
-     * @return The maximum number of items to return for this call. The call also
-     *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items. You cannot specify this parameter and the instance IDs
-     *         parameter in the same request.
+     * @return The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. You cannot specify this parameter and the
+     *         instance IDs parameter in the same request.
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the
-     * next set of results. If the value is greater than 1000, we return only
-     * 1000 items. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. You cannot specify this parameter and the
+     * instance IDs parameter in the same request.
      *
-     * @param maxResults The maximum number of items to return for this call. The call also
-     *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items. You cannot specify this parameter and the instance IDs
-     *         parameter in the same request.
+     * @param maxResults The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. You cannot specify this parameter and the
+     *         instance IDs parameter in the same request.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the
-     * next set of results. If the value is greater than 1000, we return only
-     * 1000 items. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.
+     * The maximum number of results to return for the request in a single
+     * page. The remaining results of the initial request can be seen by
+     * sending another request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. You cannot specify this parameter and the
+     * instance IDs parameter in the same request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The maximum number of items to return for this call. The call also
-     *         returns a token that you can specify in a subsequent call to get the
-     *         next set of results. If the value is greater than 1000, we return only
-     *         1000 items. You cannot specify this parameter and the instance IDs
-     *         parameter in the same request.
+     * @param maxResults The maximum number of results to return for the request in a single
+     *         page. The remaining results of the initial request can be seen by
+     *         sending another request with the returned <code>NextToken</code>
+     *         value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. You cannot specify this parameter and the
+     *         instance IDs parameter in the same request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

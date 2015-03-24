@@ -42,7 +42,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesModificationIds;
 
     /**
-     * The token for the next page of data.
+     * The token to retrieve the next page of results.
      */
     private String nextToken;
 
@@ -146,29 +146,29 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
 
     /**
-     * The token for the next page of data.
+     * The token to retrieve the next page of results.
      *
-     * @return The token for the next page of data.
+     * @return The token to retrieve the next page of results.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token for the next page of data.
+     * The token to retrieve the next page of results.
      *
-     * @param nextToken The token for the next page of data.
+     * @param nextToken The token to retrieve the next page of results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token for the next page of data.
+     * The token to retrieve the next page of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The token for the next page of data.
+     * @param nextToken The token to retrieve the next page of results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
