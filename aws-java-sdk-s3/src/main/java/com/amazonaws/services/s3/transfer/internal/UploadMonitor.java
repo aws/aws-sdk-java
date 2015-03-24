@@ -105,6 +105,15 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      *            A chain of listeners that wish to be notified of upload
      *            progress
      */
+    public static UploadMonitor create(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
+            UploadCallable multipartUploadCallable, PutObjectRequest putObjectRequest,
+            ProgressListenerChain progressListenerChain) {
+        UploadMonitor uploadMonitor = new UploadMonitor(manager, transfer, threadPool,
+                multipartUploadCallable, putObjectRequest, progressListenerChain);
+        uploadMonitor.setFuture(threadPool.submit(uploadMonitor));
+        return uploadMonitor;
+    }
+
     public UploadMonitor(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
             UploadCallable multipartUploadCallable, PutObjectRequest putObjectRequest,
             ProgressListenerChain progressListenerChain) {
@@ -115,8 +124,6 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         this.listener = progressListenerChain;
         this.transfer = transfer;
         this.threadPool = threadPool;
-
-        setFuture(threadPool.submit(this));
     }
 
     @Override
