@@ -95,9 +95,16 @@ public class RoleDetail implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile> instanceProfileList;
 
     /**
-     * A list of the role's access (permissions) policies.
+     * A list of inline policies embedded in the role. These policies are the
+     * role's access (permissions) policies.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PolicyDetail> rolePolicyList;
+
+    /**
+     * A list of managed policies attached to the role. These policies are
+     * the role's access (permissions) policies.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPolicies;
 
     /**
      * The path to the role. For more information about paths, see <a
@@ -495,9 +502,11 @@ public class RoleDetail implements Serializable, Cloneable {
     }
 
     /**
-     * A list of the role's access (permissions) policies.
+     * A list of inline policies embedded in the role. These policies are the
+     * role's access (permissions) policies.
      *
-     * @return A list of the role's access (permissions) policies.
+     * @return A list of inline policies embedded in the role. These policies are the
+     *         role's access (permissions) policies.
      */
     public java.util.List<PolicyDetail> getRolePolicyList() {
         if (rolePolicyList == null) {
@@ -508,9 +517,11 @@ public class RoleDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the role's access (permissions) policies.
+     * A list of inline policies embedded in the role. These policies are the
+     * role's access (permissions) policies.
      *
-     * @param rolePolicyList A list of the role's access (permissions) policies.
+     * @param rolePolicyList A list of inline policies embedded in the role. These policies are the
+     *         role's access (permissions) policies.
      */
     public void setRolePolicyList(java.util.Collection<PolicyDetail> rolePolicyList) {
         if (rolePolicyList == null) {
@@ -523,11 +534,13 @@ public class RoleDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the role's access (permissions) policies.
+     * A list of inline policies embedded in the role. These policies are the
+     * role's access (permissions) policies.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param rolePolicyList A list of the role's access (permissions) policies.
+     * @param rolePolicyList A list of inline policies embedded in the role. These policies are the
+     *         role's access (permissions) policies.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -541,11 +554,13 @@ public class RoleDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the role's access (permissions) policies.
+     * A list of inline policies embedded in the role. These policies are the
+     * role's access (permissions) policies.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param rolePolicyList A list of the role's access (permissions) policies.
+     * @param rolePolicyList A list of inline policies embedded in the role. These policies are the
+     *         role's access (permissions) policies.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -557,6 +572,82 @@ public class RoleDetail implements Serializable, Cloneable {
             com.amazonaws.internal.ListWithAutoConstructFlag<PolicyDetail> rolePolicyListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyDetail>(rolePolicyList.size());
             rolePolicyListCopy.addAll(rolePolicyList);
             this.rolePolicyList = rolePolicyListCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * A list of managed policies attached to the role. These policies are
+     * the role's access (permissions) policies.
+     *
+     * @return A list of managed policies attached to the role. These policies are
+     *         the role's access (permissions) policies.
+     */
+    public java.util.List<AttachedPolicy> getAttachedManagedPolicies() {
+        if (attachedManagedPolicies == null) {
+              attachedManagedPolicies = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>();
+              attachedManagedPolicies.setAutoConstruct(true);
+        }
+        return attachedManagedPolicies;
+    }
+    
+    /**
+     * A list of managed policies attached to the role. These policies are
+     * the role's access (permissions) policies.
+     *
+     * @param attachedManagedPolicies A list of managed policies attached to the role. These policies are
+     *         the role's access (permissions) policies.
+     */
+    public void setAttachedManagedPolicies(java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
+        if (attachedManagedPolicies == null) {
+            this.attachedManagedPolicies = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>(attachedManagedPolicies.size());
+        attachedManagedPoliciesCopy.addAll(attachedManagedPolicies);
+        this.attachedManagedPolicies = attachedManagedPoliciesCopy;
+    }
+    
+    /**
+     * A list of managed policies attached to the role. These policies are
+     * the role's access (permissions) policies.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachedManagedPolicies A list of managed policies attached to the role. These policies are
+     *         the role's access (permissions) policies.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RoleDetail withAttachedManagedPolicies(AttachedPolicy... attachedManagedPolicies) {
+        if (getAttachedManagedPolicies() == null) setAttachedManagedPolicies(new java.util.ArrayList<AttachedPolicy>(attachedManagedPolicies.length));
+        for (AttachedPolicy value : attachedManagedPolicies) {
+            getAttachedManagedPolicies().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of managed policies attached to the role. These policies are
+     * the role's access (permissions) policies.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachedManagedPolicies A list of managed policies attached to the role. These policies are
+     *         the role's access (permissions) policies.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RoleDetail withAttachedManagedPolicies(java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
+        if (attachedManagedPolicies == null) {
+            this.attachedManagedPolicies = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>(attachedManagedPolicies.size());
+            attachedManagedPoliciesCopy.addAll(attachedManagedPolicies);
+            this.attachedManagedPolicies = attachedManagedPoliciesCopy;
         }
 
         return this;
@@ -581,7 +672,8 @@ public class RoleDetail implements Serializable, Cloneable {
         if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
         if (getAssumeRolePolicyDocument() != null) sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument() + ",");
         if (getInstanceProfileList() != null) sb.append("InstanceProfileList: " + getInstanceProfileList() + ",");
-        if (getRolePolicyList() != null) sb.append("RolePolicyList: " + getRolePolicyList() );
+        if (getRolePolicyList() != null) sb.append("RolePolicyList: " + getRolePolicyList() + ",");
+        if (getAttachedManagedPolicies() != null) sb.append("AttachedManagedPolicies: " + getAttachedManagedPolicies() );
         sb.append("}");
         return sb.toString();
     }
@@ -599,6 +691,7 @@ public class RoleDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceProfileList() == null) ? 0 : getInstanceProfileList().hashCode()); 
         hashCode = prime * hashCode + ((getRolePolicyList() == null) ? 0 : getRolePolicyList().hashCode()); 
+        hashCode = prime * hashCode + ((getAttachedManagedPolicies() == null) ? 0 : getAttachedManagedPolicies().hashCode()); 
         return hashCode;
     }
     
@@ -626,6 +719,8 @@ public class RoleDetail implements Serializable, Cloneable {
         if (other.getInstanceProfileList() != null && other.getInstanceProfileList().equals(this.getInstanceProfileList()) == false) return false; 
         if (other.getRolePolicyList() == null ^ this.getRolePolicyList() == null) return false;
         if (other.getRolePolicyList() != null && other.getRolePolicyList().equals(this.getRolePolicyList()) == false) return false; 
+        if (other.getAttachedManagedPolicies() == null ^ this.getAttachedManagedPolicies() == null) return false;
+        if (other.getAttachedManagedPolicies() != null && other.getAttachedManagedPolicies().equals(this.getAttachedManagedPolicies()) == false) return false; 
         return true;
     }
     

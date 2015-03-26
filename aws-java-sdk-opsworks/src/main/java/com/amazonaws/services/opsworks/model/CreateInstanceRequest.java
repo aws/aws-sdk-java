@@ -149,6 +149,14 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     private String rootDeviceType;
 
     /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block devices. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * Device Mapping</a>.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
+
+    /**
      * Whether to install operating system and package updates when the
      * instance boots. The default value is <code>true</code>. To control
      * when updates are installed, set this value to <code>false</code>. You
@@ -1022,6 +1030,98 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block devices. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * Device Mapping</a>.
+     *
+     * @return An array of <code>BlockDeviceMapping</code> objects that specify the
+     *         instance's block devices. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *         Device Mapping</a>.
+     */
+    public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        if (blockDeviceMappings == null) {
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
+              blockDeviceMappings.setAutoConstruct(true);
+        }
+        return blockDeviceMappings;
+    }
+    
+    /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block devices. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * Device Mapping</a>.
+     *
+     * @param blockDeviceMappings An array of <code>BlockDeviceMapping</code> objects that specify the
+     *         instance's block devices. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *         Device Mapping</a>.
+     */
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
+        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+        this.blockDeviceMappings = blockDeviceMappingsCopy;
+    }
+    
+    /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block devices. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * Device Mapping</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param blockDeviceMappings An array of <code>BlockDeviceMapping</code> objects that specify the
+     *         instance's block devices. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *         Device Mapping</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateInstanceRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
+        for (BlockDeviceMapping value : blockDeviceMappings) {
+            getBlockDeviceMappings().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block devices. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * Device Mapping</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param blockDeviceMappings An array of <code>BlockDeviceMapping</code> objects that specify the
+     *         instance's block devices. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *         Device Mapping</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateInstanceRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
+            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+            this.blockDeviceMappings = blockDeviceMappingsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Whether to install operating system and package updates when the
      * instance boots. The default value is <code>true</code>. To control
      * when updates are installed, set this value to <code>false</code>. You
@@ -1194,6 +1294,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
         if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
@@ -1218,6 +1319,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
@@ -1257,6 +1359,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
         if (other.getRootDeviceType() == null ^ this.getRootDeviceType() == null) return false;
         if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false) return false; 
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
         if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;

@@ -26,12 +26,12 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Job Input JSON Unmarshaller
+ * Detected Properties JSON Unmarshaller
  */
-public class JobInputJsonUnmarshaller implements Unmarshaller<JobInput, JsonUnmarshallerContext> {
+public class DetectedPropertiesJsonUnmarshaller implements Unmarshaller<DetectedProperties, JsonUnmarshallerContext> {
 
-    public JobInput unmarshall(JsonUnmarshallerContext context) throws Exception {
-        JobInput jobInput = new JobInput();
+    public DetectedProperties unmarshall(JsonUnmarshallerContext context) throws Exception {
+        DetectedProperties detectedProperties = new DetectedProperties();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -45,37 +45,25 @@ public class JobInputJsonUnmarshaller implements Unmarshaller<JobInput, JsonUnma
             if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Key", targetDepth)) {
+                if (context.testExpression("Width", targetDepth)) {
                     context.nextToken();
-                    jobInput.setKey(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    detectedProperties.setWidth(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Height", targetDepth)) {
+                    context.nextToken();
+                    detectedProperties.setHeight(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FrameRate", targetDepth)) {
                     context.nextToken();
-                    jobInput.setFrameRate(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    detectedProperties.setFrameRate(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Resolution", targetDepth)) {
+                if (context.testExpression("FileSize", targetDepth)) {
                     context.nextToken();
-                    jobInput.setResolution(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    detectedProperties.setFileSize(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("AspectRatio", targetDepth)) {
+                if (context.testExpression("DurationMillis", targetDepth)) {
                     context.nextToken();
-                    jobInput.setAspectRatio(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("Interlaced", targetDepth)) {
-                    context.nextToken();
-                    jobInput.setInterlaced(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("Container", targetDepth)) {
-                    context.nextToken();
-                    jobInput.setContainer(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("Encryption", targetDepth)) {
-                    context.nextToken();
-                    jobInput.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("DetectedProperties", targetDepth)) {
-                    context.nextToken();
-                    jobInput.setDetectedProperties(DetectedPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                    detectedProperties.setDurationMillis(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -86,12 +74,12 @@ public class JobInputJsonUnmarshaller implements Unmarshaller<JobInput, JsonUnma
             token = context.nextToken();
         }
         
-        return jobInput;
+        return detectedProperties;
     }
 
-    private static JobInputJsonUnmarshaller instance;
-    public static JobInputJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new JobInputJsonUnmarshaller();
+    private static DetectedPropertiesJsonUnmarshaller instance;
+    public static DetectedPropertiesJsonUnmarshaller getInstance() {
+        if (instance == null) instance = new DetectedPropertiesJsonUnmarshaller();
         return instance;
     }
 }

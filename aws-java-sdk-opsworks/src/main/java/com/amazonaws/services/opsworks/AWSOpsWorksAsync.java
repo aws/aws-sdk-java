@@ -1550,7 +1550,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * <p>
      * Assigns one of the stack's registered Amazon EBS volumes to a
      * specified instance. The volume must first be registered with the stack
-     * by calling RegisterVolume. For more information, see
+     * by calling RegisterVolume. After you register the volume, you must
+     * call UpdateVolume to specify a mount point before calling
+     * <code>AssignVolume</code> . For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
      * .
      * </p>
@@ -1585,7 +1587,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * <p>
      * Assigns one of the stack's registered Amazon EBS volumes to a
      * specified instance. The volume must first be registered with the stack
-     * by calling RegisterVolume. For more information, see
+     * by calling RegisterVolume. After you register the volume, you must
+     * call UpdateVolume to specify a mount point before calling
+     * <code>AssignVolume</code> . For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
      * .
      * </p>
@@ -3448,9 +3452,18 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Assign a registered instance to a custom layer. You cannot use this
-     * action with instances that were created with AWS OpsWorks.
+     * Assign a registered instance to a layer.
      * </p>
+     * 
+     * <ul>
+     * <li>You can assign registered on-premises instances to any layer
+     * type.</li>
+     * <li>You can assign registered Amazon EC2 instances only to custom
+     * layers.</li>
+     * <li>You cannot use this action with instances that were created with
+     * AWS OpsWorks.</li>
+     * 
+     * </ul>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
      * have a Manage permissions level for the stack or an attached policy
@@ -3480,9 +3493,18 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Assign a registered instance to a custom layer. You cannot use this
-     * action with instances that were created with AWS OpsWorks.
+     * Assign a registered instance to a layer.
      * </p>
+     * 
+     * <ul>
+     * <li>You can assign registered on-premises instances to any layer
+     * type.</li>
+     * <li>You can assign registered Amazon EC2 instances only to custom
+     * layers.</li>
+     * <li>You cannot use this action with instances that were created with
+     * AWS OpsWorks.</li>
+     * 
+     * </ul>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
      * have a Manage permissions level for the stack or an attached policy

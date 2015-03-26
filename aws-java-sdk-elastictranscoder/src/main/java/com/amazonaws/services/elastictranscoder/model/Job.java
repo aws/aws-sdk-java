@@ -125,6 +125,11 @@ public class Job implements Serializable, Cloneable {
     private java.util.Map<String,String> userMetadata;
 
     /**
+     * Details about the timing of a job.
+     */
+    private Timing timing;
+
+    /**
      * The identifier that Elastic Transcoder assigned to the job. You use
      * this value to get settings for the job or to delete the job.
      * <p>
@@ -856,6 +861,39 @@ public class Job implements Serializable, Cloneable {
     }
     
     /**
+     * Details about the timing of a job.
+     *
+     * @return Details about the timing of a job.
+     */
+    public Timing getTiming() {
+        return timing;
+    }
+    
+    /**
+     * Details about the timing of a job.
+     *
+     * @param timing Details about the timing of a job.
+     */
+    public void setTiming(Timing timing) {
+        this.timing = timing;
+    }
+    
+    /**
+     * Details about the timing of a job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param timing Details about the timing of a job.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Job withTiming(Timing timing) {
+        this.timing = timing;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -876,7 +914,8 @@ public class Job implements Serializable, Cloneable {
         if (getOutputKeyPrefix() != null) sb.append("OutputKeyPrefix: " + getOutputKeyPrefix() + ",");
         if (getPlaylists() != null) sb.append("Playlists: " + getPlaylists() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getUserMetadata() != null) sb.append("UserMetadata: " + getUserMetadata() );
+        if (getUserMetadata() != null) sb.append("UserMetadata: " + getUserMetadata() + ",");
+        if (getTiming() != null) sb.append("Timing: " + getTiming() );
         sb.append("}");
         return sb.toString();
     }
@@ -896,6 +935,7 @@ public class Job implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPlaylists() == null) ? 0 : getPlaylists().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode()); 
+        hashCode = prime * hashCode + ((getTiming() == null) ? 0 : getTiming().hashCode()); 
         return hashCode;
     }
     
@@ -927,6 +967,8 @@ public class Job implements Serializable, Cloneable {
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getUserMetadata() == null ^ this.getUserMetadata() == null) return false;
         if (other.getUserMetadata() != null && other.getUserMetadata().equals(this.getUserMetadata()) == false) return false; 
+        if (other.getTiming() == null ^ this.getTiming() == null) return false;
+        if (other.getTiming() != null && other.getTiming().equals(this.getTiming()) == false) return false; 
         return true;
     }
     

@@ -67,6 +67,10 @@ public class GroupDetailStaxUnmarshaller implements Unmarshaller<GroupDetail, St
                     groupDetail.getGroupPolicyList().add(PolicyDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AttachedManagedPolicies/member", targetDepth)) {
+                    groupDetail.getAttachedManagedPolicies().add(AttachedPolicyStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return groupDetail;

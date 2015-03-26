@@ -157,6 +157,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setRootDeviceVolumeId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BlockDeviceMappings", targetDepth)) {
+                    context.nextToken();
+                    instance.setBlockDeviceMappings(new ListUnmarshaller<BlockDeviceMapping>(BlockDeviceMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("InstallUpdatesOnBoot", targetDepth)) {
                     context.nextToken();
                     instance.setInstallUpdatesOnBoot(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
@@ -164,6 +168,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 if (context.testExpression("EbsOptimized", targetDepth)) {
                     context.nextToken();
                     instance.setEbsOptimized(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ReportedAgentVersion", targetDepth)) {
+                    context.nextToken();
+                    instance.setReportedAgentVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReportedOs", targetDepth)) {
                     context.nextToken();

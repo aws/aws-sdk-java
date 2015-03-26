@@ -114,6 +114,11 @@ public class JobInput implements Serializable, Cloneable {
     private Encryption encryption;
 
     /**
+     * The detected properties of the input file.
+     */
+    private DetectedProperties detectedProperties;
+
+    /**
      * The name of the file to transcode. Elsewhere in the body of the JSON
      * block is the the ID of the pipeline to use for processing the job. The
      * <code>InputBucket</code> object in that pipeline tells Elastic
@@ -621,6 +626,39 @@ public class JobInput implements Serializable, Cloneable {
     }
 
     /**
+     * The detected properties of the input file.
+     *
+     * @return The detected properties of the input file.
+     */
+    public DetectedProperties getDetectedProperties() {
+        return detectedProperties;
+    }
+    
+    /**
+     * The detected properties of the input file.
+     *
+     * @param detectedProperties The detected properties of the input file.
+     */
+    public void setDetectedProperties(DetectedProperties detectedProperties) {
+        this.detectedProperties = detectedProperties;
+    }
+    
+    /**
+     * The detected properties of the input file.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param detectedProperties The detected properties of the input file.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobInput withDetectedProperties(DetectedProperties detectedProperties) {
+        this.detectedProperties = detectedProperties;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -638,7 +676,8 @@ public class JobInput implements Serializable, Cloneable {
         if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");
         if (getInterlaced() != null) sb.append("Interlaced: " + getInterlaced() + ",");
         if (getContainer() != null) sb.append("Container: " + getContainer() + ",");
-        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
+        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() + ",");
+        if (getDetectedProperties() != null) sb.append("DetectedProperties: " + getDetectedProperties() );
         sb.append("}");
         return sb.toString();
     }
@@ -655,6 +694,7 @@ public class JobInput implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInterlaced() == null) ? 0 : getInterlaced().hashCode()); 
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode()); 
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
+        hashCode = prime * hashCode + ((getDetectedProperties() == null) ? 0 : getDetectedProperties().hashCode()); 
         return hashCode;
     }
     
@@ -680,6 +720,8 @@ public class JobInput implements Serializable, Cloneable {
         if (other.getContainer() != null && other.getContainer().equals(this.getContainer()) == false) return false; 
         if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
         if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
+        if (other.getDetectedProperties() == null ^ this.getDetectedProperties() == null) return false;
+        if (other.getDetectedProperties() != null && other.getDetectedProperties().equals(this.getDetectedProperties()) == false) return false; 
         return true;
     }
     

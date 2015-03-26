@@ -188,7 +188,7 @@ public class Instance implements Serializable, Cloneable {
     private String architecture;
 
     /**
-     * The instance root device type. For more information, see <a
+     * The instance's root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -201,6 +201,12 @@ public class Instance implements Serializable, Cloneable {
      * The root device volume ID.
      */
     private String rootDeviceVolumeId;
+
+    /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block device mappings.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
      * Whether to install operating system and package updates when the
@@ -219,6 +225,11 @@ public class Instance implements Serializable, Cloneable {
      * Whether this is an Amazon EBS-optimized instance.
      */
     private Boolean ebsOptimized;
+
+    /**
+     * The instance's reported AWS OpsWorks agent version.
+     */
+    private String reportedAgentVersion;
 
     /**
      * For registered instances, the reported operating system.
@@ -1466,14 +1477,14 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The instance root device type. For more information, see <a
+     * The instance's root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @return The instance root device type. For more information, see <a
+     * @return The instance's root device type. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1484,14 +1495,14 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The instance root device type. For more information, see <a
+     * The instance's root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The instance root device type. For more information, see <a
+     * @param rootDeviceType The instance's root device type. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1502,7 +1513,7 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The instance root device type. For more information, see <a
+     * The instance's root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -1511,7 +1522,7 @@ public class Instance implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The instance root device type. For more information, see <a
+     * @param rootDeviceType The instance's root device type. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1526,14 +1537,14 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The instance root device type. For more information, see <a
+     * The instance's root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The instance root device type. For more information, see <a
+     * @param rootDeviceType The instance's root device type. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1544,7 +1555,7 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The instance root device type. For more information, see <a
+     * The instance's root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -1553,7 +1564,7 @@ public class Instance implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The instance root device type. For more information, see <a
+     * @param rootDeviceType The instance's root device type. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1597,6 +1608,82 @@ public class Instance implements Serializable, Cloneable {
      */
     public Instance withRootDeviceVolumeId(String rootDeviceVolumeId) {
         this.rootDeviceVolumeId = rootDeviceVolumeId;
+        return this;
+    }
+
+    /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block device mappings.
+     *
+     * @return An array of <code>BlockDeviceMapping</code> objects that specify the
+     *         instance's block device mappings.
+     */
+    public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        if (blockDeviceMappings == null) {
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
+              blockDeviceMappings.setAutoConstruct(true);
+        }
+        return blockDeviceMappings;
+    }
+    
+    /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block device mappings.
+     *
+     * @param blockDeviceMappings An array of <code>BlockDeviceMapping</code> objects that specify the
+     *         instance's block device mappings.
+     */
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
+        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+        this.blockDeviceMappings = blockDeviceMappingsCopy;
+    }
+    
+    /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block device mappings.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param blockDeviceMappings An array of <code>BlockDeviceMapping</code> objects that specify the
+     *         instance's block device mappings.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Instance withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
+        for (BlockDeviceMapping value : blockDeviceMappings) {
+            getBlockDeviceMappings().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block device mappings.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param blockDeviceMappings An array of <code>BlockDeviceMapping</code> objects that specify the
+     *         instance's block device mappings.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Instance withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
+            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+            this.blockDeviceMappings = blockDeviceMappingsCopy;
+        }
+
         return this;
     }
 
@@ -1749,6 +1836,39 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
+     * The instance's reported AWS OpsWorks agent version.
+     *
+     * @return The instance's reported AWS OpsWorks agent version.
+     */
+    public String getReportedAgentVersion() {
+        return reportedAgentVersion;
+    }
+    
+    /**
+     * The instance's reported AWS OpsWorks agent version.
+     *
+     * @param reportedAgentVersion The instance's reported AWS OpsWorks agent version.
+     */
+    public void setReportedAgentVersion(String reportedAgentVersion) {
+        this.reportedAgentVersion = reportedAgentVersion;
+    }
+    
+    /**
+     * The instance's reported AWS OpsWorks agent version.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param reportedAgentVersion The instance's reported AWS OpsWorks agent version.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Instance withReportedAgentVersion(String reportedAgentVersion) {
+        this.reportedAgentVersion = reportedAgentVersion;
+        return this;
+    }
+
+    /**
      * For registered instances, the reported operating system.
      *
      * @return For registered instances, the reported operating system.
@@ -1893,8 +2013,10 @@ public class Instance implements Serializable, Cloneable {
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
         if (getRootDeviceVolumeId() != null) sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() + ",");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
         if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ",");
+        if (getReportedAgentVersion() != null) sb.append("ReportedAgentVersion: " + getReportedAgentVersion() + ",");
         if (getReportedOs() != null) sb.append("ReportedOs: " + getReportedOs() + ",");
         if (getInfrastructureClass() != null) sb.append("InfrastructureClass: " + getInfrastructureClass() + ",");
         if (getRegisteredBy() != null) sb.append("RegisteredBy: " + getRegisteredBy() );
@@ -1935,8 +2057,10 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceVolumeId() == null) ? 0 : getRootDeviceVolumeId().hashCode()); 
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
+        hashCode = prime * hashCode + ((getReportedAgentVersion() == null) ? 0 : getReportedAgentVersion().hashCode()); 
         hashCode = prime * hashCode + ((getReportedOs() == null) ? 0 : getReportedOs().hashCode()); 
         hashCode = prime * hashCode + ((getInfrastructureClass() == null) ? 0 : getInfrastructureClass().hashCode()); 
         hashCode = prime * hashCode + ((getRegisteredBy() == null) ? 0 : getRegisteredBy().hashCode()); 
@@ -2007,10 +2131,14 @@ public class Instance implements Serializable, Cloneable {
         if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false) return false; 
         if (other.getRootDeviceVolumeId() == null ^ this.getRootDeviceVolumeId() == null) return false;
         if (other.getRootDeviceVolumeId() != null && other.getRootDeviceVolumeId().equals(this.getRootDeviceVolumeId()) == false) return false; 
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
         if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
         if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
+        if (other.getReportedAgentVersion() == null ^ this.getReportedAgentVersion() == null) return false;
+        if (other.getReportedAgentVersion() != null && other.getReportedAgentVersion().equals(this.getReportedAgentVersion()) == false) return false; 
         if (other.getReportedOs() == null ^ this.getReportedOs() == null) return false;
         if (other.getReportedOs() != null && other.getReportedOs().equals(this.getReportedOs()) == false) return false; 
         if (other.getInfrastructureClass() == null ^ this.getInfrastructureClass() == null) return false;

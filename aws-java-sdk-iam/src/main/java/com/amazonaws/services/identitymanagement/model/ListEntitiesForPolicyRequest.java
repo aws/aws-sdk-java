@@ -59,7 +59,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest implem
      * and roles) are returned.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>User, Role, Group
+     * <b>Allowed Values: </b>User, Role, Group, LocalManagedPolicy, AWSManagedPolicy
      */
     private String entityFilter;
 
@@ -172,7 +172,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest implem
      * and roles) are returned.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>User, Role, Group
+     * <b>Allowed Values: </b>User, Role, Group, LocalManagedPolicy, AWSManagedPolicy
      *
      * @return The entity type to use for filtering the results. <p>For example, when
      *         <code>EntityFilter</code> is <code>Role</code>, only the roles that
@@ -194,7 +194,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest implem
      * and roles) are returned.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>User, Role, Group
+     * <b>Allowed Values: </b>User, Role, Group, LocalManagedPolicy, AWSManagedPolicy
      *
      * @param entityFilter The entity type to use for filtering the results. <p>For example, when
      *         <code>EntityFilter</code> is <code>Role</code>, only the roles that
@@ -218,7 +218,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest implem
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>User, Role, Group
+     * <b>Allowed Values: </b>User, Role, Group, LocalManagedPolicy, AWSManagedPolicy
      *
      * @param entityFilter The entity type to use for filtering the results. <p>For example, when
      *         <code>EntityFilter</code> is <code>Role</code>, only the roles that
@@ -244,7 +244,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest implem
      * and roles) are returned.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>User, Role, Group
+     * <b>Allowed Values: </b>User, Role, Group, LocalManagedPolicy, AWSManagedPolicy
      *
      * @param entityFilter The entity type to use for filtering the results. <p>For example, when
      *         <code>EntityFilter</code> is <code>Role</code>, only the roles that
@@ -268,7 +268,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest implem
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>User, Role, Group
+     * <b>Allowed Values: </b>User, Role, Group, LocalManagedPolicy, AWSManagedPolicy
      *
      * @param entityFilter The entity type to use for filtering the results. <p>For example, when
      *         <code>EntityFilter</code> is <code>Role</code>, only the roles that

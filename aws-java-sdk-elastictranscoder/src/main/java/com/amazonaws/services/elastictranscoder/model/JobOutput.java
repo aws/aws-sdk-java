@@ -192,6 +192,24 @@ public class JobOutput implements Serializable, Cloneable {
     private Integer height;
 
     /**
+     * Frame rate of the output file, in frames per second.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
+     */
+    private String frameRate;
+
+    /**
+     * File size of the output file, in bytes.
+     */
+    private Long fileSize;
+
+    /**
+     * Duration of the output file, in milliseconds.
+     */
+    private Long durationMillis;
+
+    /**
      * Information about the watermarks that you want Elastic Transcoder to
      * add to the video during transcoding. You can specify up to four
      * watermarks for each output. Settings for each watermark must be
@@ -1219,6 +1237,114 @@ public class JobOutput implements Serializable, Cloneable {
     }
 
     /**
+     * Frame rate of the output file, in frames per second.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
+     *
+     * @return Frame rate of the output file, in frames per second.
+     */
+    public String getFrameRate() {
+        return frameRate;
+    }
+    
+    /**
+     * Frame rate of the output file, in frames per second.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
+     *
+     * @param frameRate Frame rate of the output file, in frames per second.
+     */
+    public void setFrameRate(String frameRate) {
+        this.frameRate = frameRate;
+    }
+    
+    /**
+     * Frame rate of the output file, in frames per second.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
+     *
+     * @param frameRate Frame rate of the output file, in frames per second.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobOutput withFrameRate(String frameRate) {
+        this.frameRate = frameRate;
+        return this;
+    }
+
+    /**
+     * File size of the output file, in bytes.
+     *
+     * @return File size of the output file, in bytes.
+     */
+    public Long getFileSize() {
+        return fileSize;
+    }
+    
+    /**
+     * File size of the output file, in bytes.
+     *
+     * @param fileSize File size of the output file, in bytes.
+     */
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+    }
+    
+    /**
+     * File size of the output file, in bytes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param fileSize File size of the output file, in bytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobOutput withFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+        return this;
+    }
+
+    /**
+     * Duration of the output file, in milliseconds.
+     *
+     * @return Duration of the output file, in milliseconds.
+     */
+    public Long getDurationMillis() {
+        return durationMillis;
+    }
+    
+    /**
+     * Duration of the output file, in milliseconds.
+     *
+     * @param durationMillis Duration of the output file, in milliseconds.
+     */
+    public void setDurationMillis(Long durationMillis) {
+        this.durationMillis = durationMillis;
+    }
+    
+    /**
+     * Duration of the output file, in milliseconds.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param durationMillis Duration of the output file, in milliseconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobOutput withDurationMillis(Long durationMillis) {
+        this.durationMillis = durationMillis;
+        return this;
+    }
+
+    /**
      * Information about the watermarks that you want Elastic Transcoder to
      * add to the video during transcoding. You can specify up to four
      * watermarks for each output. Settings for each watermark must be
@@ -1890,6 +2016,9 @@ public class JobOutput implements Serializable, Cloneable {
         if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");
         if (getWidth() != null) sb.append("Width: " + getWidth() + ",");
         if (getHeight() != null) sb.append("Height: " + getHeight() + ",");
+        if (getFrameRate() != null) sb.append("FrameRate: " + getFrameRate() + ",");
+        if (getFileSize() != null) sb.append("FileSize: " + getFileSize() + ",");
+        if (getDurationMillis() != null) sb.append("DurationMillis: " + getDurationMillis() + ",");
         if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() + ",");
         if (getAlbumArt() != null) sb.append("AlbumArt: " + getAlbumArt() + ",");
         if (getComposition() != null) sb.append("Composition: " + getComposition() + ",");
@@ -1917,6 +2046,9 @@ public class JobOutput implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
         hashCode = prime * hashCode + ((getWidth() == null) ? 0 : getWidth().hashCode()); 
         hashCode = prime * hashCode + ((getHeight() == null) ? 0 : getHeight().hashCode()); 
+        hashCode = prime * hashCode + ((getFrameRate() == null) ? 0 : getFrameRate().hashCode()); 
+        hashCode = prime * hashCode + ((getFileSize() == null) ? 0 : getFileSize().hashCode()); 
+        hashCode = prime * hashCode + ((getDurationMillis() == null) ? 0 : getDurationMillis().hashCode()); 
         hashCode = prime * hashCode + ((getWatermarks() == null) ? 0 : getWatermarks().hashCode()); 
         hashCode = prime * hashCode + ((getAlbumArt() == null) ? 0 : getAlbumArt().hashCode()); 
         hashCode = prime * hashCode + ((getComposition() == null) ? 0 : getComposition().hashCode()); 
@@ -1958,6 +2090,12 @@ public class JobOutput implements Serializable, Cloneable {
         if (other.getWidth() != null && other.getWidth().equals(this.getWidth()) == false) return false; 
         if (other.getHeight() == null ^ this.getHeight() == null) return false;
         if (other.getHeight() != null && other.getHeight().equals(this.getHeight()) == false) return false; 
+        if (other.getFrameRate() == null ^ this.getFrameRate() == null) return false;
+        if (other.getFrameRate() != null && other.getFrameRate().equals(this.getFrameRate()) == false) return false; 
+        if (other.getFileSize() == null ^ this.getFileSize() == null) return false;
+        if (other.getFileSize() != null && other.getFileSize().equals(this.getFileSize()) == false) return false; 
+        if (other.getDurationMillis() == null ^ this.getDurationMillis() == null) return false;
+        if (other.getDurationMillis() != null && other.getDurationMillis().equals(this.getDurationMillis()) == false) return false; 
         if (other.getWatermarks() == null ^ this.getWatermarks() == null) return false;
         if (other.getWatermarks() != null && other.getWatermarks().equals(this.getWatermarks()) == false) return false; 
         if (other.getAlbumArt() == null ^ this.getAlbumArt() == null) return false;

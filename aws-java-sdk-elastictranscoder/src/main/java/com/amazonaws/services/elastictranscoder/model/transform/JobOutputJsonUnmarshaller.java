@@ -93,6 +93,18 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                     context.nextToken();
                     jobOutput.setHeight(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FrameRate", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setFrameRate(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("FileSize", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setFileSize(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DurationMillis", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setDurationMillis(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Watermarks", targetDepth)) {
                     context.nextToken();
                     jobOutput.setWatermarks(new ListUnmarshaller<JobWatermark>(JobWatermarkJsonUnmarshaller.getInstance()).unmarshall(context));

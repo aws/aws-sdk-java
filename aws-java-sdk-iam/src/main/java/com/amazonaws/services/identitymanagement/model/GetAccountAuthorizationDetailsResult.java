@@ -40,6 +40,11 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     private com.amazonaws.internal.ListWithAutoConstructFlag<RoleDetail> roleDetailList;
 
     /**
+     * A list containing information about managed policies.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ManagedPolicyDetail> policies;
+
+    /**
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
@@ -263,6 +268,74 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     }
 
     /**
+     * A list containing information about managed policies.
+     *
+     * @return A list containing information about managed policies.
+     */
+    public java.util.List<ManagedPolicyDetail> getPolicies() {
+        if (policies == null) {
+              policies = new com.amazonaws.internal.ListWithAutoConstructFlag<ManagedPolicyDetail>();
+              policies.setAutoConstruct(true);
+        }
+        return policies;
+    }
+    
+    /**
+     * A list containing information about managed policies.
+     *
+     * @param policies A list containing information about managed policies.
+     */
+    public void setPolicies(java.util.Collection<ManagedPolicyDetail> policies) {
+        if (policies == null) {
+            this.policies = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<ManagedPolicyDetail> policiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ManagedPolicyDetail>(policies.size());
+        policiesCopy.addAll(policies);
+        this.policies = policiesCopy;
+    }
+    
+    /**
+     * A list containing information about managed policies.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param policies A list containing information about managed policies.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetAccountAuthorizationDetailsResult withPolicies(ManagedPolicyDetail... policies) {
+        if (getPolicies() == null) setPolicies(new java.util.ArrayList<ManagedPolicyDetail>(policies.length));
+        for (ManagedPolicyDetail value : policies) {
+            getPolicies().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list containing information about managed policies.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param policies A list containing information about managed policies.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetAccountAuthorizationDetailsResult withPolicies(java.util.Collection<ManagedPolicyDetail> policies) {
+        if (policies == null) {
+            this.policies = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<ManagedPolicyDetail> policiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ManagedPolicyDetail>(policies.size());
+            policiesCopy.addAll(policies);
+            this.policies = policiesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
@@ -400,6 +473,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
         if (getUserDetailList() != null) sb.append("UserDetailList: " + getUserDetailList() + ",");
         if (getGroupDetailList() != null) sb.append("GroupDetailList: " + getGroupDetailList() + ",");
         if (getRoleDetailList() != null) sb.append("RoleDetailList: " + getRoleDetailList() + ",");
+        if (getPolicies() != null) sb.append("Policies: " + getPolicies() + ",");
         if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
@@ -414,6 +488,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
         hashCode = prime * hashCode + ((getUserDetailList() == null) ? 0 : getUserDetailList().hashCode()); 
         hashCode = prime * hashCode + ((getGroupDetailList() == null) ? 0 : getGroupDetailList().hashCode()); 
         hashCode = prime * hashCode + ((getRoleDetailList() == null) ? 0 : getRoleDetailList().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode()); 
         hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
         return hashCode;
@@ -433,6 +508,8 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
         if (other.getGroupDetailList() != null && other.getGroupDetailList().equals(this.getGroupDetailList()) == false) return false; 
         if (other.getRoleDetailList() == null ^ this.getRoleDetailList() == null) return false;
         if (other.getRoleDetailList() != null && other.getRoleDetailList().equals(this.getRoleDetailList()) == false) return false; 
+        if (other.getPolicies() == null ^ this.getPolicies() == null) return false;
+        if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false) return false; 
         if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
         if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;

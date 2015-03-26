@@ -21,9 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#assignInstance(AssignInstanceRequest) AssignInstance operation}.
  * <p>
- * Assign a registered instance to a custom layer. You cannot use this
- * action with instances that were created with AWS OpsWorks.
+ * Assign a registered instance to a layer.
  * </p>
+ * 
+ * <ul>
+ * <li>You can assign registered on-premises instances to any layer
+ * type.</li>
+ * <li>You can assign registered Amazon EC2 instances only to custom
+ * layers.</li>
+ * <li>You cannot use this action with instances that were created with
+ * AWS OpsWorks.</li>
+ * 
+ * </ul>
  * <p>
  * <b>Required Permissions</b> : To use this action, an IAM user must
  * have a Manage permissions level for the stack or an attached policy

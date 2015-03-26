@@ -40,34 +40,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The volume ID.
+     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     * assigned to the instance when you registered the volume with the
+     * stack, not the Amazon EC2 volume ID.
      */
     private String volumeId;
 
     /**
-     * The volume ID.
+     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     * assigned to the instance when you registered the volume with the
+     * stack, not the Amazon EC2 volume ID.
      *
-     * @return The volume ID.
+     * @return The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     *         assigned to the instance when you registered the volume with the
+     *         stack, not the Amazon EC2 volume ID.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The volume ID.
+     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     * assigned to the instance when you registered the volume with the
+     * stack, not the Amazon EC2 volume ID.
      *
-     * @param volumeId The volume ID.
+     * @param volumeId The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     *         assigned to the instance when you registered the volume with the
+     *         stack, not the Amazon EC2 volume ID.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The volume ID.
+     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     * assigned to the instance when you registered the volume with the
+     * stack, not the Amazon EC2 volume ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The volume ID.
+     * @param volumeId The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks
+     *         assigned to the instance when you registered the volume with the
+     *         stack, not the Amazon EC2 volume ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

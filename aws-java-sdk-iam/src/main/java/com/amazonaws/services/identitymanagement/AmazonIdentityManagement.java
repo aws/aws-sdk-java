@@ -1376,8 +1376,7 @@ public interface AmazonIdentityManagement {
      * Retrieves information about all IAM users, groups, and roles in your
      * account, including their relationships to one another and their
      * policies. Use this API to obtain a snapshot of the configuration of
-     * IAM permissions (users, groups, roles, and their policies) in your
-     * account.
+     * IAM permissions (users, groups, roles, and policies) in your account.
      * </p>
      * <p>
      * You can optionally filter the results using the <code>Filter</code>
@@ -4103,8 +4102,7 @@ public interface AmazonIdentityManagement {
      * Retrieves information about all IAM users, groups, and roles in your
      * account, including their relationships to one another and their
      * policies. Use this API to obtain a snapshot of the configuration of
-     * IAM permissions (users, groups, roles, and their policies) in your
-     * account.
+     * IAM permissions (users, groups, roles, and policies) in your account.
      * </p>
      * <p>
      * You can optionally filter the results using the <code>Filter</code>
