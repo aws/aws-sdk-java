@@ -71,6 +71,10 @@ public class UserDetailStaxUnmarshaller implements Unmarshaller<UserDetail, Stax
                     userDetail.getGroupList().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AttachedManagedPolicies/member", targetDepth)) {
+                    userDetail.getAttachedManagedPolicies().add(AttachedPolicyStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return userDetail;

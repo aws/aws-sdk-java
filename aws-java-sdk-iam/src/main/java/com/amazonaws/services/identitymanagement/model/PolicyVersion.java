@@ -22,7 +22,8 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used as a response element in the
- * CreatePolicyVersion, GetPolicyVersion, and ListPolicyVersions actions.
+ * CreatePolicyVersion, GetPolicyVersion, ListPolicyVersions, and
+ * GetAccountAuthorizationDetails actions.
  * </p>
  * <p>
  * For more information about managed policies, refer to
@@ -35,7 +36,8 @@ public class PolicyVersion implements Serializable, Cloneable {
     /**
      * The policy document. <p>The policy document is returned in the
      * response to the <a>GetPolicyVersion</a> operation. It is not included
-     * in the response to the <a>ListPolicyVersions</a> operation.
+     * in the response to the <a>ListPolicyVersions</a> or
+     * <a>GetAccountAuthorizationDetails</a> operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -68,7 +70,8 @@ public class PolicyVersion implements Serializable, Cloneable {
     /**
      * The policy document. <p>The policy document is returned in the
      * response to the <a>GetPolicyVersion</a> operation. It is not included
-     * in the response to the <a>ListPolicyVersions</a> operation.
+     * in the response to the <a>ListPolicyVersions</a> or
+     * <a>GetAccountAuthorizationDetails</a> operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -76,7 +79,8 @@ public class PolicyVersion implements Serializable, Cloneable {
      *
      * @return The policy document. <p>The policy document is returned in the
      *         response to the <a>GetPolicyVersion</a> operation. It is not included
-     *         in the response to the <a>ListPolicyVersions</a> operation.
+     *         in the response to the <a>ListPolicyVersions</a> or
+     *         <a>GetAccountAuthorizationDetails</a> operations.
      */
     public String getDocument() {
         return document;
@@ -85,7 +89,8 @@ public class PolicyVersion implements Serializable, Cloneable {
     /**
      * The policy document. <p>The policy document is returned in the
      * response to the <a>GetPolicyVersion</a> operation. It is not included
-     * in the response to the <a>ListPolicyVersions</a> operation.
+     * in the response to the <a>ListPolicyVersions</a> or
+     * <a>GetAccountAuthorizationDetails</a> operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -93,7 +98,8 @@ public class PolicyVersion implements Serializable, Cloneable {
      *
      * @param document The policy document. <p>The policy document is returned in the
      *         response to the <a>GetPolicyVersion</a> operation. It is not included
-     *         in the response to the <a>ListPolicyVersions</a> operation.
+     *         in the response to the <a>ListPolicyVersions</a> or
+     *         <a>GetAccountAuthorizationDetails</a> operations.
      */
     public void setDocument(String document) {
         this.document = document;
@@ -102,7 +108,8 @@ public class PolicyVersion implements Serializable, Cloneable {
     /**
      * The policy document. <p>The policy document is returned in the
      * response to the <a>GetPolicyVersion</a> operation. It is not included
-     * in the response to the <a>ListPolicyVersions</a> operation.
+     * in the response to the <a>ListPolicyVersions</a> or
+     * <a>GetAccountAuthorizationDetails</a> operations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -112,7 +119,8 @@ public class PolicyVersion implements Serializable, Cloneable {
      *
      * @param document The policy document. <p>The policy document is returned in the
      *         response to the <a>GetPolicyVersion</a> operation. It is not included
-     *         in the response to the <a>ListPolicyVersions</a> operation.
+     *         in the response to the <a>ListPolicyVersions</a> or
+     *         <a>GetAccountAuthorizationDetails</a> operations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

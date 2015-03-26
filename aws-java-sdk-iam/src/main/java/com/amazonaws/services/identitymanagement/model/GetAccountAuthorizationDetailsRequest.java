@@ -24,8 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Retrieves information about all IAM users, groups, and roles in your
  * account, including their relationships to one another and their
  * policies. Use this API to obtain a snapshot of the configuration of
- * IAM permissions (users, groups, roles, and their policies) in your
- * account.
+ * IAM permissions (users, groups, roles, and policies) in your account.
  * </p>
  * <p>
  * You can optionally filter the results using the <code>Filter</code>
@@ -38,8 +37,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * A list of entity types (user, group, or role) for filtering the
-     * results.
+     * A list of entity types (user, group, role, local managed policy, or
+     * AWS managed policy) for filtering the results.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> filter;
 
@@ -68,11 +67,11 @@ public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceReque
     private String marker;
 
     /**
-     * A list of entity types (user, group, or role) for filtering the
-     * results.
+     * A list of entity types (user, group, role, local managed policy, or
+     * AWS managed policy) for filtering the results.
      *
-     * @return A list of entity types (user, group, or role) for filtering the
-     *         results.
+     * @return A list of entity types (user, group, role, local managed policy, or
+     *         AWS managed policy) for filtering the results.
      */
     public java.util.List<String> getFilter() {
         if (filter == null) {
@@ -83,11 +82,11 @@ public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceReque
     }
     
     /**
-     * A list of entity types (user, group, or role) for filtering the
-     * results.
+     * A list of entity types (user, group, role, local managed policy, or
+     * AWS managed policy) for filtering the results.
      *
-     * @param filter A list of entity types (user, group, or role) for filtering the
-     *         results.
+     * @param filter A list of entity types (user, group, role, local managed policy, or
+     *         AWS managed policy) for filtering the results.
      */
     public void setFilter(java.util.Collection<String> filter) {
         if (filter == null) {
@@ -100,13 +99,13 @@ public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceReque
     }
     
     /**
-     * A list of entity types (user, group, or role) for filtering the
-     * results.
+     * A list of entity types (user, group, role, local managed policy, or
+     * AWS managed policy) for filtering the results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filter A list of entity types (user, group, or role) for filtering the
-     *         results.
+     * @param filter A list of entity types (user, group, role, local managed policy, or
+     *         AWS managed policy) for filtering the results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -120,13 +119,13 @@ public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceReque
     }
     
     /**
-     * A list of entity types (user, group, or role) for filtering the
-     * results.
+     * A list of entity types (user, group, role, local managed policy, or
+     * AWS managed policy) for filtering the results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filter A list of entity types (user, group, or role) for filtering the
-     *         results.
+     * @param filter A list of entity types (user, group, role, local managed policy, or
+     *         AWS managed policy) for filtering the results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -144,13 +143,13 @@ public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceReque
     }
 
     /**
-     * A list of entity types (user, group, or role) for filtering the
-     * results.
+     * A list of entity types (user, group, role, local managed policy, or
+     * AWS managed policy) for filtering the results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filter A list of entity types (user, group, or role) for filtering the
-     *         results.
+     * @param filter A list of entity types (user, group, role, local managed policy, or
+     *         AWS managed policy) for filtering the results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

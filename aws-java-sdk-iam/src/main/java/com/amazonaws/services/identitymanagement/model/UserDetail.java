@@ -79,7 +79,7 @@ public class UserDetail implements Serializable, Cloneable {
     private java.util.Date createDate;
 
     /**
-     * A list of the user's policies.
+     * A list of the inline policies embedded in the user.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PolicyDetail> userPolicyList;
 
@@ -87,6 +87,11 @@ public class UserDetail implements Serializable, Cloneable {
      * A list of IAM groups that the user is in.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupList;
+
+    /**
+     * A list of the managed policies attached to the user.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPolicies;
 
     /**
      * The path to the user. For more information about paths, see <a
@@ -359,9 +364,9 @@ public class UserDetail implements Serializable, Cloneable {
     }
 
     /**
-     * A list of the user's policies.
+     * A list of the inline policies embedded in the user.
      *
-     * @return A list of the user's policies.
+     * @return A list of the inline policies embedded in the user.
      */
     public java.util.List<PolicyDetail> getUserPolicyList() {
         if (userPolicyList == null) {
@@ -372,9 +377,9 @@ public class UserDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the user's policies.
+     * A list of the inline policies embedded in the user.
      *
-     * @param userPolicyList A list of the user's policies.
+     * @param userPolicyList A list of the inline policies embedded in the user.
      */
     public void setUserPolicyList(java.util.Collection<PolicyDetail> userPolicyList) {
         if (userPolicyList == null) {
@@ -387,11 +392,11 @@ public class UserDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the user's policies.
+     * A list of the inline policies embedded in the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userPolicyList A list of the user's policies.
+     * @param userPolicyList A list of the inline policies embedded in the user.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -405,11 +410,11 @@ public class UserDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the user's policies.
+     * A list of the inline policies embedded in the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userPolicyList A list of the user's policies.
+     * @param userPolicyList A list of the inline policies embedded in the user.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -495,6 +500,74 @@ public class UserDetail implements Serializable, Cloneable {
     }
 
     /**
+     * A list of the managed policies attached to the user.
+     *
+     * @return A list of the managed policies attached to the user.
+     */
+    public java.util.List<AttachedPolicy> getAttachedManagedPolicies() {
+        if (attachedManagedPolicies == null) {
+              attachedManagedPolicies = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>();
+              attachedManagedPolicies.setAutoConstruct(true);
+        }
+        return attachedManagedPolicies;
+    }
+    
+    /**
+     * A list of the managed policies attached to the user.
+     *
+     * @param attachedManagedPolicies A list of the managed policies attached to the user.
+     */
+    public void setAttachedManagedPolicies(java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
+        if (attachedManagedPolicies == null) {
+            this.attachedManagedPolicies = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>(attachedManagedPolicies.size());
+        attachedManagedPoliciesCopy.addAll(attachedManagedPolicies);
+        this.attachedManagedPolicies = attachedManagedPoliciesCopy;
+    }
+    
+    /**
+     * A list of the managed policies attached to the user.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachedManagedPolicies A list of the managed policies attached to the user.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UserDetail withAttachedManagedPolicies(AttachedPolicy... attachedManagedPolicies) {
+        if (getAttachedManagedPolicies() == null) setAttachedManagedPolicies(new java.util.ArrayList<AttachedPolicy>(attachedManagedPolicies.length));
+        for (AttachedPolicy value : attachedManagedPolicies) {
+            getAttachedManagedPolicies().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of the managed policies attached to the user.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachedManagedPolicies A list of the managed policies attached to the user.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UserDetail withAttachedManagedPolicies(java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
+        if (attachedManagedPolicies == null) {
+            this.attachedManagedPolicies = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>(attachedManagedPolicies.size());
+            attachedManagedPoliciesCopy.addAll(attachedManagedPolicies);
+            this.attachedManagedPolicies = attachedManagedPoliciesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -512,7 +585,8 @@ public class UserDetail implements Serializable, Cloneable {
         if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
         if (getUserPolicyList() != null) sb.append("UserPolicyList: " + getUserPolicyList() + ",");
-        if (getGroupList() != null) sb.append("GroupList: " + getGroupList() );
+        if (getGroupList() != null) sb.append("GroupList: " + getGroupList() + ",");
+        if (getAttachedManagedPolicies() != null) sb.append("AttachedManagedPolicies: " + getAttachedManagedPolicies() );
         sb.append("}");
         return sb.toString();
     }
@@ -529,6 +603,7 @@ public class UserDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
         hashCode = prime * hashCode + ((getUserPolicyList() == null) ? 0 : getUserPolicyList().hashCode()); 
         hashCode = prime * hashCode + ((getGroupList() == null) ? 0 : getGroupList().hashCode()); 
+        hashCode = prime * hashCode + ((getAttachedManagedPolicies() == null) ? 0 : getAttachedManagedPolicies().hashCode()); 
         return hashCode;
     }
     
@@ -554,6 +629,8 @@ public class UserDetail implements Serializable, Cloneable {
         if (other.getUserPolicyList() != null && other.getUserPolicyList().equals(this.getUserPolicyList()) == false) return false; 
         if (other.getGroupList() == null ^ this.getGroupList() == null) return false;
         if (other.getGroupList() != null && other.getGroupList().equals(this.getGroupList()) == false) return false; 
+        if (other.getAttachedManagedPolicies() == null ^ this.getAttachedManagedPolicies() == null) return false;
+        if (other.getAttachedManagedPolicies() != null && other.getAttachedManagedPolicies().equals(this.getAttachedManagedPolicies()) == false) return false; 
         return true;
     }
     

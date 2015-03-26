@@ -656,6 +656,12 @@
         <Https>true</Https>
         <Hostname>elastictranscoder.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>ap-northeast-1</Name>
@@ -1610,6 +1616,12 @@
         <Https>true</Https>
         <Hostname>elastictranscoder.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>eu-central-1</Name>
@@ -2498,6 +2510,8 @@
       <Name>ssm</Name>
       <FullName>Amazon Simple Systems Management</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
     </Service>
   </Services>
 </XML>

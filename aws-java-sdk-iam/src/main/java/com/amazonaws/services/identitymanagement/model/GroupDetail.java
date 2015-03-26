@@ -79,9 +79,14 @@ public class GroupDetail implements Serializable, Cloneable {
     private java.util.Date createDate;
 
     /**
-     * A list of the group's policies.
+     * A list of the inline policies embedded in the group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PolicyDetail> groupPolicyList;
+
+    /**
+     * A list of the managed policies attached to the group.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPolicies;
 
     /**
      * The path to the group. For more information about paths, see <a
@@ -354,9 +359,9 @@ public class GroupDetail implements Serializable, Cloneable {
     }
 
     /**
-     * A list of the group's policies.
+     * A list of the inline policies embedded in the group.
      *
-     * @return A list of the group's policies.
+     * @return A list of the inline policies embedded in the group.
      */
     public java.util.List<PolicyDetail> getGroupPolicyList() {
         if (groupPolicyList == null) {
@@ -367,9 +372,9 @@ public class GroupDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the group's policies.
+     * A list of the inline policies embedded in the group.
      *
-     * @param groupPolicyList A list of the group's policies.
+     * @param groupPolicyList A list of the inline policies embedded in the group.
      */
     public void setGroupPolicyList(java.util.Collection<PolicyDetail> groupPolicyList) {
         if (groupPolicyList == null) {
@@ -382,11 +387,11 @@ public class GroupDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the group's policies.
+     * A list of the inline policies embedded in the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupPolicyList A list of the group's policies.
+     * @param groupPolicyList A list of the inline policies embedded in the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -400,11 +405,11 @@ public class GroupDetail implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the group's policies.
+     * A list of the inline policies embedded in the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupPolicyList A list of the group's policies.
+     * @param groupPolicyList A list of the inline policies embedded in the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -416,6 +421,74 @@ public class GroupDetail implements Serializable, Cloneable {
             com.amazonaws.internal.ListWithAutoConstructFlag<PolicyDetail> groupPolicyListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyDetail>(groupPolicyList.size());
             groupPolicyListCopy.addAll(groupPolicyList);
             this.groupPolicyList = groupPolicyListCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * A list of the managed policies attached to the group.
+     *
+     * @return A list of the managed policies attached to the group.
+     */
+    public java.util.List<AttachedPolicy> getAttachedManagedPolicies() {
+        if (attachedManagedPolicies == null) {
+              attachedManagedPolicies = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>();
+              attachedManagedPolicies.setAutoConstruct(true);
+        }
+        return attachedManagedPolicies;
+    }
+    
+    /**
+     * A list of the managed policies attached to the group.
+     *
+     * @param attachedManagedPolicies A list of the managed policies attached to the group.
+     */
+    public void setAttachedManagedPolicies(java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
+        if (attachedManagedPolicies == null) {
+            this.attachedManagedPolicies = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>(attachedManagedPolicies.size());
+        attachedManagedPoliciesCopy.addAll(attachedManagedPolicies);
+        this.attachedManagedPolicies = attachedManagedPoliciesCopy;
+    }
+    
+    /**
+     * A list of the managed policies attached to the group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachedManagedPolicies A list of the managed policies attached to the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GroupDetail withAttachedManagedPolicies(AttachedPolicy... attachedManagedPolicies) {
+        if (getAttachedManagedPolicies() == null) setAttachedManagedPolicies(new java.util.ArrayList<AttachedPolicy>(attachedManagedPolicies.length));
+        for (AttachedPolicy value : attachedManagedPolicies) {
+            getAttachedManagedPolicies().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of the managed policies attached to the group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachedManagedPolicies A list of the managed policies attached to the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GroupDetail withAttachedManagedPolicies(java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
+        if (attachedManagedPolicies == null) {
+            this.attachedManagedPolicies = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy> attachedManagedPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachedPolicy>(attachedManagedPolicies.size());
+            attachedManagedPoliciesCopy.addAll(attachedManagedPolicies);
+            this.attachedManagedPolicies = attachedManagedPoliciesCopy;
         }
 
         return this;
@@ -438,7 +511,8 @@ public class GroupDetail implements Serializable, Cloneable {
         if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ",");
         if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
-        if (getGroupPolicyList() != null) sb.append("GroupPolicyList: " + getGroupPolicyList() );
+        if (getGroupPolicyList() != null) sb.append("GroupPolicyList: " + getGroupPolicyList() + ",");
+        if (getAttachedManagedPolicies() != null) sb.append("AttachedManagedPolicies: " + getAttachedManagedPolicies() );
         sb.append("}");
         return sb.toString();
     }
@@ -454,6 +528,7 @@ public class GroupDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
         hashCode = prime * hashCode + ((getGroupPolicyList() == null) ? 0 : getGroupPolicyList().hashCode()); 
+        hashCode = prime * hashCode + ((getAttachedManagedPolicies() == null) ? 0 : getAttachedManagedPolicies().hashCode()); 
         return hashCode;
     }
     
@@ -477,6 +552,8 @@ public class GroupDetail implements Serializable, Cloneable {
         if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false) return false; 
         if (other.getGroupPolicyList() == null ^ this.getGroupPolicyList() == null) return false;
         if (other.getGroupPolicyList() != null && other.getGroupPolicyList().equals(this.getGroupPolicyList()) == false) return false; 
+        if (other.getAttachedManagedPolicies() == null ^ this.getAttachedManagedPolicies() == null) return false;
+        if (other.getAttachedManagedPolicies() != null && other.getAttachedManagedPolicies().equals(this.getAttachedManagedPolicies()) == false) return false; 
         return true;
     }
     

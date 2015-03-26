@@ -147,6 +147,29 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                     }
                     jsonWriter.endObject();
                 }
+                DetectedProperties detectedProperties = input.getDetectedProperties();
+                if (detectedProperties != null) {
+
+                    jsonWriter.key("DetectedProperties");
+                    jsonWriter.object();
+
+                    if (detectedProperties.getWidth() != null) {
+                        jsonWriter.key("Width").value(detectedProperties.getWidth());
+                    }
+                    if (detectedProperties.getHeight() != null) {
+                        jsonWriter.key("Height").value(detectedProperties.getHeight());
+                    }
+                    if (detectedProperties.getFrameRate() != null) {
+                        jsonWriter.key("FrameRate").value(detectedProperties.getFrameRate());
+                    }
+                    if (detectedProperties.getFileSize() != null) {
+                        jsonWriter.key("FileSize").value(detectedProperties.getFileSize());
+                    }
+                    if (detectedProperties.getDurationMillis() != null) {
+                        jsonWriter.key("DurationMillis").value(detectedProperties.getDurationMillis());
+                    }
+                    jsonWriter.endObject();
+                }
                 jsonWriter.endObject();
             }
             CreateJobOutput output = createJobRequest.getOutput();

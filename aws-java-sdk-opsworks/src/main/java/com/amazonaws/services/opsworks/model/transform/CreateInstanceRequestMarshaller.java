@@ -111,6 +111,53 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
             if (createInstanceRequest.getRootDeviceType() != null) {
                 jsonWriter.key("RootDeviceType").value(createInstanceRequest.getRootDeviceType());
             }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsList = (com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>)(createInstanceRequest.getBlockDeviceMappings());
+            if (blockDeviceMappingsList != null && !(blockDeviceMappingsList.isAutoConstruct() && blockDeviceMappingsList.isEmpty())) {
+
+                jsonWriter.key("BlockDeviceMappings");
+                jsonWriter.array();
+
+                for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
+                    if (blockDeviceMappingsListValue != null) {
+                        jsonWriter.object();
+                        if (blockDeviceMappingsListValue.getDeviceName() != null) {
+                            jsonWriter.key("DeviceName").value(blockDeviceMappingsListValue.getDeviceName());
+                        }
+                        if (blockDeviceMappingsListValue.getNoDevice() != null) {
+                            jsonWriter.key("NoDevice").value(blockDeviceMappingsListValue.getNoDevice());
+                        }
+                        if (blockDeviceMappingsListValue.getVirtualName() != null) {
+                            jsonWriter.key("VirtualName").value(blockDeviceMappingsListValue.getVirtualName());
+                        }
+                        EbsBlockDevice ebs = blockDeviceMappingsListValue.getEbs();
+                        if (ebs != null) {
+
+                            jsonWriter.key("Ebs");
+                            jsonWriter.object();
+
+                            if (ebs.getSnapshotId() != null) {
+                                jsonWriter.key("SnapshotId").value(ebs.getSnapshotId());
+                            }
+                            if (ebs.getIops() != null) {
+                                jsonWriter.key("Iops").value(ebs.getIops());
+                            }
+                            if (ebs.getVolumeSize() != null) {
+                                jsonWriter.key("VolumeSize").value(ebs.getVolumeSize());
+                            }
+                            if (ebs.getVolumeType() != null) {
+                                jsonWriter.key("VolumeType").value(ebs.getVolumeType());
+                            }
+                            if (ebs.isDeleteOnTermination() != null) {
+                                jsonWriter.key("DeleteOnTermination").value(ebs.isDeleteOnTermination());
+                            }
+                            jsonWriter.endObject();
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
             if (createInstanceRequest.isInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(createInstanceRequest.isInstallUpdatesOnBoot());
             }

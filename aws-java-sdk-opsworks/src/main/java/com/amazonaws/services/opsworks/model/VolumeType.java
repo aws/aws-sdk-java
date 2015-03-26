@@ -12,22 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.identitymanagement.model;
+package com.amazonaws.services.opsworks.model;
 
 /**
- * Entity Type
+ * Volume Type
  */
-public enum EntityType {
+public enum VolumeType {
     
-    User("User"),
-    Role("Role"),
-    Group("Group"),
-    LocalManagedPolicy("LocalManagedPolicy"),
-    AWSManagedPolicy("AWSManagedPolicy");
+    Gp2("gp2"),
+    Io1("io1"),
+    Standard("standard");
 
     private String value;
 
-    private EntityType(String value) {
+    private VolumeType(String value) {
         this.value = value;
     }
 
@@ -41,22 +39,18 @@ public enum EntityType {
      *
      * @param value
      *            real value
-     * @return EntityType corresponding to the value
+     * @return VolumeType corresponding to the value
      */
-    public static EntityType fromValue(String value) {
+    public static VolumeType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("User".equals(value)) {
-            return EntityType.User;
-        } else if ("Role".equals(value)) {
-            return EntityType.Role;
-        } else if ("Group".equals(value)) {
-            return EntityType.Group;
-        } else if ("LocalManagedPolicy".equals(value)) {
-            return EntityType.LocalManagedPolicy;
-        } else if ("AWSManagedPolicy".equals(value)) {
-            return EntityType.AWSManagedPolicy;
+        } else if ("gp2".equals(value)) {
+            return VolumeType.Gp2;
+        } else if ("io1".equals(value)) {
+            return VolumeType.Io1;
+        } else if ("standard".equals(value)) {
+            return VolumeType.Standard;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

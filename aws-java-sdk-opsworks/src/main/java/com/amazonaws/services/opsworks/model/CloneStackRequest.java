@@ -129,9 +129,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * <code>Layer_Dependent</code>, which creates host names by appending
      * integers to the layer's short name. The other themes are: <ul>
      * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     * <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     * <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
      * <li><code>Greek_Deities</code></li>
-     * <li><code>Legendary_Creatures_from_Japan</code></li>
+     * <li><code>Legendary_creatures_from_Japan</code></li>
      * <li><code>Planets_and_Moons</code></li>
      * <li><code>Roman_Deities</code></li>
      * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
@@ -839,9 +839,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * <code>Layer_Dependent</code>, which creates host names by appending
      * integers to the layer's short name. The other themes are: <ul>
      * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     * <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     * <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
      * <li><code>Greek_Deities</code></li>
-     * <li><code>Legendary_Creatures_from_Japan</code></li>
+     * <li><code>Legendary_creatures_from_Japan</code></li>
      * <li><code>Planets_and_Moons</code></li>
      * <li><code>Roman_Deities</code></li>
      * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
@@ -855,9 +855,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         <code>Layer_Dependent</code>, which creates host names by appending
      *         integers to the layer's short name. The other themes are: <ul>
      *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     *         <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     *         <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
      *         <li><code>Greek_Deities</code></li>
-     *         <li><code>Legendary_Creatures_from_Japan</code></li>
+     *         <li><code>Legendary_creatures_from_Japan</code></li>
      *         <li><code>Planets_and_Moons</code></li>
      *         <li><code>Roman_Deities</code></li>
      *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
@@ -876,9 +876,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * <code>Layer_Dependent</code>, which creates host names by appending
      * integers to the layer's short name. The other themes are: <ul>
      * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     * <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     * <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
      * <li><code>Greek_Deities</code></li>
-     * <li><code>Legendary_Creatures_from_Japan</code></li>
+     * <li><code>Legendary_creatures_from_Japan</code></li>
      * <li><code>Planets_and_Moons</code></li>
      * <li><code>Roman_Deities</code></li>
      * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
@@ -892,9 +892,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         <code>Layer_Dependent</code>, which creates host names by appending
      *         integers to the layer's short name. The other themes are: <ul>
      *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     *         <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     *         <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
      *         <li><code>Greek_Deities</code></li>
-     *         <li><code>Legendary_Creatures_from_Japan</code></li>
+     *         <li><code>Legendary_creatures_from_Japan</code></li>
      *         <li><code>Planets_and_Moons</code></li>
      *         <li><code>Roman_Deities</code></li>
      *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
@@ -913,9 +913,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * <code>Layer_Dependent</code>, which creates host names by appending
      * integers to the layer's short name. The other themes are: <ul>
      * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     * <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     * <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
      * <li><code>Greek_Deities</code></li>
-     * <li><code>Legendary_Creatures_from_Japan</code></li>
+     * <li><code>Legendary_creatures_from_Japan</code></li>
      * <li><code>Planets_and_Moons</code></li>
      * <li><code>Roman_Deities</code></li>
      * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
@@ -931,9 +931,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         <code>Layer_Dependent</code>, which creates host names by appending
      *         integers to the layer's short name. The other themes are: <ul>
      *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     *         <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     *         <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
      *         <li><code>Greek_Deities</code></li>
-     *         <li><code>Legendary_Creatures_from_Japan</code></li>
+     *         <li><code>Legendary_creatures_from_Japan</code></li>
      *         <li><code>Planets_and_Moons</code></li>
      *         <li><code>Roman_Deities</code></li>
      *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>

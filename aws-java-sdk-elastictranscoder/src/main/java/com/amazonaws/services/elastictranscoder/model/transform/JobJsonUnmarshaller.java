@@ -85,6 +85,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setUserMetadata(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("Timing", targetDepth)) {
+                    context.nextToken();
+                    job.setTiming(TimingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

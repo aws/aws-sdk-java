@@ -23,7 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Assigns one of the stack's registered Amazon EBS volumes to a
  * specified instance. The volume must first be registered with the stack
- * by calling RegisterVolume. For more information, see
+ * by calling RegisterVolume. After you register the volume, you must
+ * call UpdateVolume to specify a mount point before calling
+ * <code>AssignVolume</code> . For more information, see
  * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
  * .
  * </p>

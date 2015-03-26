@@ -55,6 +55,10 @@ public class GetAccountAuthorizationDetailsResultStaxUnmarshaller implements Unm
                     getAccountAuthorizationDetailsResult.getRoleDetailList().add(RoleDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Policies/member", targetDepth)) {
+                    getAccountAuthorizationDetailsResult.getPolicies().add(ManagedPolicyDetailStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("IsTruncated", targetDepth)) {
                     getAccountAuthorizationDetailsResult.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
