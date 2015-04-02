@@ -58,6 +58,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<EC2TagFilter> ec2TagFilters;
 
     /**
+     * The on-premises instance tags to filter on.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFilters;
+
+    /**
      * A list of associated Auto Scaling groups.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup> autoScalingGroups;
@@ -301,6 +306,74 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     }
 
     /**
+     * The on-premises instance tags to filter on.
+     *
+     * @return The on-premises instance tags to filter on.
+     */
+    public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
+        if (onPremisesInstanceTagFilters == null) {
+              onPremisesInstanceTagFilters = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>();
+              onPremisesInstanceTagFilters.setAutoConstruct(true);
+        }
+        return onPremisesInstanceTagFilters;
+    }
+    
+    /**
+     * The on-premises instance tags to filter on.
+     *
+     * @param onPremisesInstanceTagFilters The on-premises instance tags to filter on.
+     */
+    public void setOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
+        if (onPremisesInstanceTagFilters == null) {
+            this.onPremisesInstanceTagFilters = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>(onPremisesInstanceTagFilters.size());
+        onPremisesInstanceTagFiltersCopy.addAll(onPremisesInstanceTagFilters);
+        this.onPremisesInstanceTagFilters = onPremisesInstanceTagFiltersCopy;
+    }
+    
+    /**
+     * The on-premises instance tags to filter on.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param onPremisesInstanceTagFilters The on-premises instance tags to filter on.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DeploymentGroupInfo withOnPremisesInstanceTagFilters(TagFilter... onPremisesInstanceTagFilters) {
+        if (getOnPremisesInstanceTagFilters() == null) setOnPremisesInstanceTagFilters(new java.util.ArrayList<TagFilter>(onPremisesInstanceTagFilters.length));
+        for (TagFilter value : onPremisesInstanceTagFilters) {
+            getOnPremisesInstanceTagFilters().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The on-premises instance tags to filter on.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param onPremisesInstanceTagFilters The on-premises instance tags to filter on.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DeploymentGroupInfo withOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
+        if (onPremisesInstanceTagFilters == null) {
+            this.onPremisesInstanceTagFilters = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>(onPremisesInstanceTagFilters.size());
+            onPremisesInstanceTagFiltersCopy.addAll(onPremisesInstanceTagFilters);
+            this.onPremisesInstanceTagFilters = onPremisesInstanceTagFiltersCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * A list of associated Auto Scaling groups.
      *
      * @return A list of associated Auto Scaling groups.
@@ -457,6 +530,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         if (getDeploymentGroupName() != null) sb.append("DeploymentGroupName: " + getDeploymentGroupName() + ",");
         if (getDeploymentConfigName() != null) sb.append("DeploymentConfigName: " + getDeploymentConfigName() + ",");
         if (getEc2TagFilters() != null) sb.append("Ec2TagFilters: " + getEc2TagFilters() + ",");
+        if (getOnPremisesInstanceTagFilters() != null) sb.append("OnPremisesInstanceTagFilters: " + getOnPremisesInstanceTagFilters() + ",");
         if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
         if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
         if (getTargetRevision() != null) sb.append("TargetRevision: " + getTargetRevision() );
@@ -474,6 +548,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeploymentGroupName() == null) ? 0 : getDeploymentGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode()); 
         hashCode = prime * hashCode + ((getEc2TagFilters() == null) ? 0 : getEc2TagFilters().hashCode()); 
+        hashCode = prime * hashCode + ((getOnPremisesInstanceTagFilters() == null) ? 0 : getOnPremisesInstanceTagFilters().hashCode()); 
         hashCode = prime * hashCode + ((getAutoScalingGroups() == null) ? 0 : getAutoScalingGroups().hashCode()); 
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode()); 
         hashCode = prime * hashCode + ((getTargetRevision() == null) ? 0 : getTargetRevision().hashCode()); 
@@ -498,6 +573,8 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         if (other.getDeploymentConfigName() != null && other.getDeploymentConfigName().equals(this.getDeploymentConfigName()) == false) return false; 
         if (other.getEc2TagFilters() == null ^ this.getEc2TagFilters() == null) return false;
         if (other.getEc2TagFilters() != null && other.getEc2TagFilters().equals(this.getEc2TagFilters()) == false) return false; 
+        if (other.getOnPremisesInstanceTagFilters() == null ^ this.getOnPremisesInstanceTagFilters() == null) return false;
+        if (other.getOnPremisesInstanceTagFilters() != null && other.getOnPremisesInstanceTagFilters().equals(this.getOnPremisesInstanceTagFilters()) == false) return false; 
         if (other.getAutoScalingGroups() == null ^ this.getAutoScalingGroups() == null) return false;
         if (other.getAutoScalingGroups() != null && other.getAutoScalingGroups().equals(this.getAutoScalingGroups()) == false) return false; 
         if (other.getServiceRoleArn() == null ^ this.getServiceRoleArn() == null) return false;

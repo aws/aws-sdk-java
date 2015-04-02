@@ -30,15 +30,15 @@ import com.amazonaws.services.rds.model.*;
  * </p>
  * <p>
  * Amazon RDS gives you access to the capabilities of a MySQL,
- * PostgreSQL, Microsoft SQL Server, or Oracle database server. This
- * means the code, applications, and tools you already use today with
- * your existing databases work with Amazon RDS without modification.
- * Amazon RDS automatically backs up your database and maintains the
- * database software that powers your DB instance. Amazon RDS is
- * flexible: you can scale your database instance's compute resources and
- * storage capacity to meet your application's demand. As with all Amazon
- * Web Services, there are no up-front investments, and you pay only for
- * the resources you use.
+ * PostgreSQL, Microsoft SQL Server, Oracle, or Aurora database server.
+ * This means the code, applications, and tools you already use today
+ * with your existing databases work with Amazon RDS without
+ * modification. Amazon RDS automatically backs up your database and
+ * maintains the database software that powers your DB instance. Amazon
+ * RDS is flexible: you can scale your database instance's compute
+ * resources and storage capacity to meet your application's demand. As
+ * with all Amazon Web Services, there are no up-front investments, and
+ * you pay only for the resources you use.
  * </p>
  * <p>
  * This is an interface reference for Amazon RDS. It contains
@@ -243,7 +243,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of resources (for example, DB Instances) that have at
+     * Returns a list of resources (for example, DB instances) that have at
      * least one pending maintenance action.
      * </p>
      *
@@ -487,7 +487,8 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Applies a pending maintenance action to a resource.
+     * Applies a pending maintenance action to a resource (for example, a DB
+     * instance).
      * </p>
      *
      * @param applyPendingMaintenanceActionRequest Container for the
@@ -524,6 +525,7 @@ public interface AmazonRDS {
      *         returned by AmazonRDS.
      * 
      * @throws DBParameterGroupNotFoundException
+     * @throws CertificateNotFoundException
      * @throws DBInstanceAlreadyExistsException
      * @throws DBInstanceNotFoundException
      * @throws InvalidVPCNetworkStateException
@@ -1310,6 +1312,36 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Lists all of the attributes for a customer account. The attributes
+     * include Amazon RDS quotas for the account, such as the number of DB
+     * instances allowed. The description for a quota includes the quota
+     * name, current usage toward that quota, and the quota's maximum value.
+     * </p>
+     * <p>
+     * This command does not take any parameters.
+     * </p>
+     *
+     * @param describeAccountAttributesRequest Container for the necessary
+     *           parameters to execute the DescribeAccountAttributes service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeAccountAttributes service
+     *         method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a list of the available DB engines.
      * </p>
      *
@@ -1499,10 +1531,6 @@ public interface AmazonRDS {
      * <p>
      * Deletes a specified DBParameterGroup. The DBParameterGroup to be
      * deleted cannot be associated with any DB instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> The specified DB parameter group cannot be associated
-     * with any DB instances.
      * </p>
      *
      * @param deleteDBParameterGroupRequest Container for the necessary
@@ -1825,6 +1853,32 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Lists the set of CA certificates provided by Amazon RDS for this AWS
+     * account.
+     * </p>
+     *
+     * @param describeCertificatesRequest Container for the necessary
+     *           parameters to execute the DescribeCertificates service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeCertificates service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws CertificateNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest describeCertificatesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Lists available reserved DB instance offerings.
      * </p>
      *
@@ -1873,7 +1927,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of resources (for example, DB Instances) that have at
+     * Returns a list of resources (for example, DB instances) that have at
      * least one pending maintenance action.
      * </p>
      * 
@@ -2098,6 +2152,31 @@ public interface AmazonRDS {
     
     /**
      * <p>
+     * Lists all of the attributes for a customer account. The attributes
+     * include Amazon RDS quotas for the account, such as the number of DB
+     * instances allowed. The description for a quota includes the quota
+     * name, current usage toward that quota, and the quota's maximum value.
+     * </p>
+     * <p>
+     * This command does not take any parameters.
+     * </p>
+     * 
+     * @return The response from the DescribeAccountAttributes service
+     *         method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountAttributesResult describeAccountAttributes() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
      * Returns a list of the available DB engines.
      * </p>
      * 
@@ -2135,6 +2214,27 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeReservedDBInstancesResult describeReservedDBInstances() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Lists the set of CA certificates provided by Amazon RDS for this AWS
+     * account.
+     * </p>
+     * 
+     * @return The response from the DescribeCertificates service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws CertificateNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCertificatesResult describeCertificates() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

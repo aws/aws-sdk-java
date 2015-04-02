@@ -28,7 +28,7 @@ import com.amazonaws.metrics.RequestMetricCollector;
  * Base class for all user facing web service requests.
  */
 @NotThreadSafe
-public abstract class AmazonWebServiceRequest implements Cloneable {
+public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInfo {
 
     public static final AmazonWebServiceRequest NOOP = new AmazonWebServiceRequest() {};
 
@@ -203,10 +203,7 @@ public abstract class AmazonWebServiceRequest implements Cloneable {
         return customRequestHeaders.put(name, value);
     }
 
-    /**
-     * Convenient method to return the optional read limit for mark-and-reset
-     * during retries.
-     */
+    @Override
     public final int getReadLimit() {
         return requestClientOptions.getReadLimit();
     }

@@ -61,6 +61,10 @@ public class PlaylistJsonUnmarshaller implements Unmarshaller<Playlist, JsonUnma
                     context.nextToken();
                     playlist.setHlsContentProtection(HlsContentProtectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("PlayReadyDrm", targetDepth)) {
+                    context.nextToken();
+                    playlist.setPlayReadyDrm(PlayReadyDrmJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     playlist.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));

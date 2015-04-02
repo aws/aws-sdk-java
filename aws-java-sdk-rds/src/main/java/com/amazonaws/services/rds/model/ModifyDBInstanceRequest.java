@@ -44,21 +44,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * The new storage capacity of the RDS instance. Changing this setting
      * does not result in an outage and the change is applied during the next
      * maintenance window unless <code>ApplyImmediately</code> is set to
-     * <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     * <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
      * existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p><b>PostgreSQL</b> <p>Default: Uses existing setting
+     * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
      * <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
      * least 10% greater than the current value. Values that are not at least
      * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. <p>Type: Integer <p><b>Oracle</b>
+     * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
      * <p>Default: Uses existing setting <p>Valid Values: 10-3072
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
-     * current value. <p><b>SQL Server</b> <p>Cannot be modified. <p> If you
+     * current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
      * choose to migrate your DB instance from using standard storage to
      * using Provisioned IOPS, or from using Provisioned IOPS to using
      * standard storage, the process can take time. The duration of the
@@ -140,7 +140,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a master instance user if
+     * action provides a way to regain access to a primary instance user if
      * the password is lost. This includes restoring privileges that may have
      * been accidentally revoked. </note>
      */
@@ -260,7 +260,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * rounded up so that they are 10% greater than the current value. If you
      * are migrating from Provisioned IOPS to standard storage, set this
      * value to 0. The DB instance will require a reboot for the change in
-     * storage type to take effect. <p><b>SQL Server</b> <p>Setting the IOPS
+     * storage type to take effect. <p> <b>SQL Server</b> <p>Setting the IOPS
      * value for the SQL Server database engine is not supported. <p>Type:
      * Integer <p> If you choose to migrate your DB instance from using
      * standard storage to using Provisioned IOPS, or from using Provisioned
@@ -329,6 +329,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * the device.
      */
     private String tdeCredentialPassword;
+
+    /**
+     * Indicates the certificate which needs to be associated with the
+     * instance.
+     */
+    private String cACertificateIdentifier;
 
     /**
      * Default constructor for a new ModifyDBInstanceRequest object.  Callers should use the
@@ -419,21 +425,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * The new storage capacity of the RDS instance. Changing this setting
      * does not result in an outage and the change is applied during the next
      * maintenance window unless <code>ApplyImmediately</code> is set to
-     * <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     * <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
      * existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p><b>PostgreSQL</b> <p>Default: Uses existing setting
+     * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
      * <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
      * least 10% greater than the current value. Values that are not at least
      * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. <p>Type: Integer <p><b>Oracle</b>
+     * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
      * <p>Default: Uses existing setting <p>Valid Values: 10-3072
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
-     * current value. <p><b>SQL Server</b> <p>Cannot be modified. <p> If you
+     * current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
      * choose to migrate your DB instance from using standard storage to
      * using Provisioned IOPS, or from using Provisioned IOPS to using
      * standard storage, the process can take time. The duration of the
@@ -453,21 +459,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @return The new storage capacity of the RDS instance. Changing this setting
      *         does not result in an outage and the change is applied during the next
      *         maintenance window unless <code>ApplyImmediately</code> is set to
-     *         <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     *         <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
      *         existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p><b>PostgreSQL</b> <p>Default: Uses existing setting
+     *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
      *         <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
      *         least 10% greater than the current value. Values that are not at least
      *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value. <p>Type: Integer <p><b>Oracle</b>
+     *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
      *         <p>Default: Uses existing setting <p>Valid Values: 10-3072
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
-     *         current value. <p><b>SQL Server</b> <p>Cannot be modified. <p> If you
+     *         current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
      *         choose to migrate your DB instance from using standard storage to
      *         using Provisioned IOPS, or from using Provisioned IOPS to using
      *         standard storage, the process can take time. The duration of the
@@ -492,21 +498,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * The new storage capacity of the RDS instance. Changing this setting
      * does not result in an outage and the change is applied during the next
      * maintenance window unless <code>ApplyImmediately</code> is set to
-     * <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     * <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
      * existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p><b>PostgreSQL</b> <p>Default: Uses existing setting
+     * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
      * <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
      * least 10% greater than the current value. Values that are not at least
      * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. <p>Type: Integer <p><b>Oracle</b>
+     * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
      * <p>Default: Uses existing setting <p>Valid Values: 10-3072
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
-     * current value. <p><b>SQL Server</b> <p>Cannot be modified. <p> If you
+     * current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
      * choose to migrate your DB instance from using standard storage to
      * using Provisioned IOPS, or from using Provisioned IOPS to using
      * standard storage, the process can take time. The duration of the
@@ -526,21 +532,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param allocatedStorage The new storage capacity of the RDS instance. Changing this setting
      *         does not result in an outage and the change is applied during the next
      *         maintenance window unless <code>ApplyImmediately</code> is set to
-     *         <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     *         <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
      *         existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p><b>PostgreSQL</b> <p>Default: Uses existing setting
+     *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
      *         <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
      *         least 10% greater than the current value. Values that are not at least
      *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value. <p>Type: Integer <p><b>Oracle</b>
+     *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
      *         <p>Default: Uses existing setting <p>Valid Values: 10-3072
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
-     *         current value. <p><b>SQL Server</b> <p>Cannot be modified. <p> If you
+     *         current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
      *         choose to migrate your DB instance from using standard storage to
      *         using Provisioned IOPS, or from using Provisioned IOPS to using
      *         standard storage, the process can take time. The duration of the
@@ -565,21 +571,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * The new storage capacity of the RDS instance. Changing this setting
      * does not result in an outage and the change is applied during the next
      * maintenance window unless <code>ApplyImmediately</code> is set to
-     * <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     * <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
      * existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p><b>PostgreSQL</b> <p>Default: Uses existing setting
+     * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
      * <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
      * least 10% greater than the current value. Values that are not at least
      * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. <p>Type: Integer <p><b>Oracle</b>
+     * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
      * <p>Default: Uses existing setting <p>Valid Values: 10-3072
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
-     * current value. <p><b>SQL Server</b> <p>Cannot be modified. <p> If you
+     * current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
      * choose to migrate your DB instance from using standard storage to
      * using Provisioned IOPS, or from using Provisioned IOPS to using
      * standard storage, the process can take time. The duration of the
@@ -601,21 +607,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param allocatedStorage The new storage capacity of the RDS instance. Changing this setting
      *         does not result in an outage and the change is applied during the next
      *         maintenance window unless <code>ApplyImmediately</code> is set to
-     *         <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     *         <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
      *         existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p><b>PostgreSQL</b> <p>Default: Uses existing setting
+     *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
      *         <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
      *         least 10% greater than the current value. Values that are not at least
      *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value. <p>Type: Integer <p><b>Oracle</b>
+     *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
      *         <p>Default: Uses existing setting <p>Valid Values: 10-3072
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
-     *         current value. <p><b>SQL Server</b> <p>Cannot be modified. <p> If you
+     *         current value. <p> <b>SQL Server</b> <p>Cannot be modified. <p> If you
      *         choose to migrate your DB instance from using standard storage to
      *         using Provisioned IOPS, or from using Provisioned IOPS to using
      *         standard storage, the process can take time. The duration of the
@@ -1096,7 +1102,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a master instance user if
+     * action provides a way to regain access to a primary instance user if
      * the password is lost. This includes restoring privileges that may have
      * been accidentally revoked. </note>
      *
@@ -1110,7 +1116,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
-     *         action provides a way to regain access to a master instance user if
+     *         action provides a way to regain access to a primary instance user if
      *         the password is lost. This includes restoring privileges that may have
      *         been accidentally revoked. </note>
      */
@@ -1129,7 +1135,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a master instance user if
+     * action provides a way to regain access to a primary instance user if
      * the password is lost. This includes restoring privileges that may have
      * been accidentally revoked. </note>
      *
@@ -1143,7 +1149,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
-     *         action provides a way to regain access to a master instance user if
+     *         action provides a way to regain access to a primary instance user if
      *         the password is lost. This includes restoring privileges that may have
      *         been accidentally revoked. </note>
      */
@@ -1162,7 +1168,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a master instance user if
+     * action provides a way to regain access to a primary instance user if
      * the password is lost. This includes restoring privileges that may have
      * been accidentally revoked. </note>
      * <p>
@@ -1178,7 +1184,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
-     *         action provides a way to regain access to a master instance user if
+     *         action provides a way to regain access to a primary instance user if
      *         the password is lost. This includes restoring privileges that may have
      *         been accidentally revoked. </note>
      *
@@ -1902,7 +1908,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * rounded up so that they are 10% greater than the current value. If you
      * are migrating from Provisioned IOPS to standard storage, set this
      * value to 0. The DB instance will require a reboot for the change in
-     * storage type to take effect. <p><b>SQL Server</b> <p>Setting the IOPS
+     * storage type to take effect. <p> <b>SQL Server</b> <p>Setting the IOPS
      * value for the SQL Server database engine is not supported. <p>Type:
      * Integer <p> If you choose to migrate your DB instance from using
      * standard storage to using Provisioned IOPS, or from using Provisioned
@@ -1930,7 +1936,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         rounded up so that they are 10% greater than the current value. If you
      *         are migrating from Provisioned IOPS to standard storage, set this
      *         value to 0. The DB instance will require a reboot for the change in
-     *         storage type to take effect. <p><b>SQL Server</b> <p>Setting the IOPS
+     *         storage type to take effect. <p> <b>SQL Server</b> <p>Setting the IOPS
      *         value for the SQL Server database engine is not supported. <p>Type:
      *         Integer <p> If you choose to migrate your DB instance from using
      *         standard storage to using Provisioned IOPS, or from using Provisioned
@@ -1963,7 +1969,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * rounded up so that they are 10% greater than the current value. If you
      * are migrating from Provisioned IOPS to standard storage, set this
      * value to 0. The DB instance will require a reboot for the change in
-     * storage type to take effect. <p><b>SQL Server</b> <p>Setting the IOPS
+     * storage type to take effect. <p> <b>SQL Server</b> <p>Setting the IOPS
      * value for the SQL Server database engine is not supported. <p>Type:
      * Integer <p> If you choose to migrate your DB instance from using
      * standard storage to using Provisioned IOPS, or from using Provisioned
@@ -1991,7 +1997,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         rounded up so that they are 10% greater than the current value. If you
      *         are migrating from Provisioned IOPS to standard storage, set this
      *         value to 0. The DB instance will require a reboot for the change in
-     *         storage type to take effect. <p><b>SQL Server</b> <p>Setting the IOPS
+     *         storage type to take effect. <p> <b>SQL Server</b> <p>Setting the IOPS
      *         value for the SQL Server database engine is not supported. <p>Type:
      *         Integer <p> If you choose to migrate your DB instance from using
      *         standard storage to using Provisioned IOPS, or from using Provisioned
@@ -2024,7 +2030,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * rounded up so that they are 10% greater than the current value. If you
      * are migrating from Provisioned IOPS to standard storage, set this
      * value to 0. The DB instance will require a reboot for the change in
-     * storage type to take effect. <p><b>SQL Server</b> <p>Setting the IOPS
+     * storage type to take effect. <p> <b>SQL Server</b> <p>Setting the IOPS
      * value for the SQL Server database engine is not supported. <p>Type:
      * Integer <p> If you choose to migrate your DB instance from using
      * standard storage to using Provisioned IOPS, or from using Provisioned
@@ -2054,7 +2060,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         rounded up so that they are 10% greater than the current value. If you
      *         are migrating from Provisioned IOPS to standard storage, set this
      *         value to 0. The DB instance will require a reboot for the change in
-     *         storage type to take effect. <p><b>SQL Server</b> <p>Setting the IOPS
+     *         storage type to take effect. <p> <b>SQL Server</b> <p>Setting the IOPS
      *         value for the SQL Server database engine is not supported. <p>Type:
      *         Integer <p> If you choose to migrate your DB instance from using
      *         standard storage to using Provisioned IOPS, or from using Provisioned
@@ -2396,6 +2402,45 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * Indicates the certificate which needs to be associated with the
+     * instance.
+     *
+     * @return Indicates the certificate which needs to be associated with the
+     *         instance.
+     */
+    public String getCACertificateIdentifier() {
+        return cACertificateIdentifier;
+    }
+    
+    /**
+     * Indicates the certificate which needs to be associated with the
+     * instance.
+     *
+     * @param cACertificateIdentifier Indicates the certificate which needs to be associated with the
+     *         instance.
+     */
+    public void setCACertificateIdentifier(String cACertificateIdentifier) {
+        this.cACertificateIdentifier = cACertificateIdentifier;
+    }
+    
+    /**
+     * Indicates the certificate which needs to be associated with the
+     * instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cACertificateIdentifier Indicates the certificate which needs to be associated with the
+     *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyDBInstanceRequest withCACertificateIdentifier(String cACertificateIdentifier) {
+        this.cACertificateIdentifier = cACertificateIdentifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2427,7 +2472,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getNewDBInstanceIdentifier() != null) sb.append("NewDBInstanceIdentifier: " + getNewDBInstanceIdentifier() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
-        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() );
+        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
+        if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -2458,6 +2504,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
+        hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -2511,6 +2558,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
         if (other.getTdeCredentialPassword() == null ^ this.getTdeCredentialPassword() == null) return false;
         if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false) return false; 
+        if (other.getCACertificateIdentifier() == null ^ this.getCACertificateIdentifier() == null) return false;
+        if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false) return false; 
         return true;
     }
     

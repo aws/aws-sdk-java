@@ -24,40 +24,40 @@ import java.io.Serializable;
 public class ResourcePendingMaintenanceActions implements Serializable, Cloneable {
 
     /**
-     * The ARN of this resource that has pending maintenance actions.
+     * The ARN of the resource that has pending maintenance actions.
      */
     private String resourceIdentifier;
 
     /**
-     * Provides details about the pending maintenance actions for the
-     * resource.
+     * A list that provides details about the pending maintenance actions for
+     * the resource.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PendingMaintenanceAction> pendingMaintenanceActionDetails;
 
     /**
-     * The ARN of this resource that has pending maintenance actions.
+     * The ARN of the resource that has pending maintenance actions.
      *
-     * @return The ARN of this resource that has pending maintenance actions.
+     * @return The ARN of the resource that has pending maintenance actions.
      */
     public String getResourceIdentifier() {
         return resourceIdentifier;
     }
     
     /**
-     * The ARN of this resource that has pending maintenance actions.
+     * The ARN of the resource that has pending maintenance actions.
      *
-     * @param resourceIdentifier The ARN of this resource that has pending maintenance actions.
+     * @param resourceIdentifier The ARN of the resource that has pending maintenance actions.
      */
     public void setResourceIdentifier(String resourceIdentifier) {
         this.resourceIdentifier = resourceIdentifier;
     }
     
     /**
-     * The ARN of this resource that has pending maintenance actions.
+     * The ARN of the resource that has pending maintenance actions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceIdentifier The ARN of this resource that has pending maintenance actions.
+     * @param resourceIdentifier The ARN of the resource that has pending maintenance actions.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -68,11 +68,11 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
     }
 
     /**
-     * Provides details about the pending maintenance actions for the
-     * resource.
+     * A list that provides details about the pending maintenance actions for
+     * the resource.
      *
-     * @return Provides details about the pending maintenance actions for the
-     *         resource.
+     * @return A list that provides details about the pending maintenance actions for
+     *         the resource.
      */
     public java.util.List<PendingMaintenanceAction> getPendingMaintenanceActionDetails() {
         if (pendingMaintenanceActionDetails == null) {
@@ -83,11 +83,11 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
     }
     
     /**
-     * Provides details about the pending maintenance actions for the
-     * resource.
+     * A list that provides details about the pending maintenance actions for
+     * the resource.
      *
-     * @param pendingMaintenanceActionDetails Provides details about the pending maintenance actions for the
-     *         resource.
+     * @param pendingMaintenanceActionDetails A list that provides details about the pending maintenance actions for
+     *         the resource.
      */
     public void setPendingMaintenanceActionDetails(java.util.Collection<PendingMaintenanceAction> pendingMaintenanceActionDetails) {
         if (pendingMaintenanceActionDetails == null) {
@@ -100,13 +100,13 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
     }
     
     /**
-     * Provides details about the pending maintenance actions for the
-     * resource.
+     * A list that provides details about the pending maintenance actions for
+     * the resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pendingMaintenanceActionDetails Provides details about the pending maintenance actions for the
-     *         resource.
+     * @param pendingMaintenanceActionDetails A list that provides details about the pending maintenance actions for
+     *         the resource.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -120,13 +120,13 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
     }
     
     /**
-     * Provides details about the pending maintenance actions for the
-     * resource.
+     * A list that provides details about the pending maintenance actions for
+     * the resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pendingMaintenanceActionDetails Provides details about the pending maintenance actions for the
-     *         resource.
+     * @param pendingMaintenanceActionDetails A list that provides details about the pending maintenance actions for
+     *         the resource.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

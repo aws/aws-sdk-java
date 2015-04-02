@@ -29,8 +29,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
@@ -53,8 +53,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
 
     /**
      * The order to sort the list results by: <ul> <li>ascending: Sort the
-     * list results in ascending order.</li> <li>descending: Sort the list
-     * results in descending order.</li> </ul> <p>If not specified, the
+     * list of results in ascending order.</li> <li>descending: Sort the list
+     * of results in descending order.</li> </ul> <p>If not specified, the
      * results will be sorted in ascending order. <p>If set to null, the
      * results will be sorted in an arbitrary order.
      * <p>
@@ -96,44 +96,44 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
     private String nextToken;
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @return The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @return The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public String getApplicationName() {
         return applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -287,8 +287,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
 
     /**
      * The order to sort the list results by: <ul> <li>ascending: Sort the
-     * list results in ascending order.</li> <li>descending: Sort the list
-     * results in descending order.</li> </ul> <p>If not specified, the
+     * list of results in ascending order.</li> <li>descending: Sort the list
+     * of results in descending order.</li> </ul> <p>If not specified, the
      * results will be sorted in ascending order. <p>If set to null, the
      * results will be sorted in an arbitrary order.
      * <p>
@@ -296,8 +296,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
      * <b>Allowed Values: </b>ascending, descending
      *
      * @return The order to sort the list results by: <ul> <li>ascending: Sort the
-     *         list results in ascending order.</li> <li>descending: Sort the list
-     *         results in descending order.</li> </ul> <p>If not specified, the
+     *         list of results in ascending order.</li> <li>descending: Sort the list
+     *         of results in descending order.</li> </ul> <p>If not specified, the
      *         results will be sorted in ascending order. <p>If set to null, the
      *         results will be sorted in an arbitrary order.
      *
@@ -309,8 +309,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
     
     /**
      * The order to sort the list results by: <ul> <li>ascending: Sort the
-     * list results in ascending order.</li> <li>descending: Sort the list
-     * results in descending order.</li> </ul> <p>If not specified, the
+     * list of results in ascending order.</li> <li>descending: Sort the list
+     * of results in descending order.</li> </ul> <p>If not specified, the
      * results will be sorted in ascending order. <p>If set to null, the
      * results will be sorted in an arbitrary order.
      * <p>
@@ -318,8 +318,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
      * <b>Allowed Values: </b>ascending, descending
      *
      * @param sortOrder The order to sort the list results by: <ul> <li>ascending: Sort the
-     *         list results in ascending order.</li> <li>descending: Sort the list
-     *         results in descending order.</li> </ul> <p>If not specified, the
+     *         list of results in ascending order.</li> <li>descending: Sort the list
+     *         of results in descending order.</li> </ul> <p>If not specified, the
      *         results will be sorted in ascending order. <p>If set to null, the
      *         results will be sorted in an arbitrary order.
      *
@@ -331,8 +331,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
     
     /**
      * The order to sort the list results by: <ul> <li>ascending: Sort the
-     * list results in ascending order.</li> <li>descending: Sort the list
-     * results in descending order.</li> </ul> <p>If not specified, the
+     * list of results in ascending order.</li> <li>descending: Sort the list
+     * of results in descending order.</li> </ul> <p>If not specified, the
      * results will be sorted in ascending order. <p>If set to null, the
      * results will be sorted in an arbitrary order.
      * <p>
@@ -342,8 +342,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
      * <b>Allowed Values: </b>ascending, descending
      *
      * @param sortOrder The order to sort the list results by: <ul> <li>ascending: Sort the
-     *         list results in ascending order.</li> <li>descending: Sort the list
-     *         results in descending order.</li> </ul> <p>If not specified, the
+     *         list of results in ascending order.</li> <li>descending: Sort the list
+     *         of results in descending order.</li> </ul> <p>If not specified, the
      *         results will be sorted in ascending order. <p>If set to null, the
      *         results will be sorted in an arbitrary order.
      *
@@ -359,8 +359,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
 
     /**
      * The order to sort the list results by: <ul> <li>ascending: Sort the
-     * list results in ascending order.</li> <li>descending: Sort the list
-     * results in descending order.</li> </ul> <p>If not specified, the
+     * list of results in ascending order.</li> <li>descending: Sort the list
+     * of results in descending order.</li> </ul> <p>If not specified, the
      * results will be sorted in ascending order. <p>If set to null, the
      * results will be sorted in an arbitrary order.
      * <p>
@@ -368,8 +368,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
      * <b>Allowed Values: </b>ascending, descending
      *
      * @param sortOrder The order to sort the list results by: <ul> <li>ascending: Sort the
-     *         list results in ascending order.</li> <li>descending: Sort the list
-     *         results in descending order.</li> </ul> <p>If not specified, the
+     *         list of results in ascending order.</li> <li>descending: Sort the list
+     *         of results in descending order.</li> </ul> <p>If not specified, the
      *         results will be sorted in ascending order. <p>If set to null, the
      *         results will be sorted in an arbitrary order.
      *
@@ -381,8 +381,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
     
     /**
      * The order to sort the list results by: <ul> <li>ascending: Sort the
-     * list results in ascending order.</li> <li>descending: Sort the list
-     * results in descending order.</li> </ul> <p>If not specified, the
+     * list of results in ascending order.</li> <li>descending: Sort the list
+     * of results in descending order.</li> </ul> <p>If not specified, the
      * results will be sorted in ascending order. <p>If set to null, the
      * results will be sorted in an arbitrary order.
      * <p>
@@ -392,8 +392,8 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest imp
      * <b>Allowed Values: </b>ascending, descending
      *
      * @param sortOrder The order to sort the list results by: <ul> <li>ascending: Sort the
-     *         list results in ascending order.</li> <li>descending: Sort the list
-     *         results in descending order.</li> </ul> <p>If not specified, the
+     *         list of results in ascending order.</li> <li>descending: Sort the list
+     *         of results in descending order.</li> </ul> <p>If not specified, the
      *         results will be sorted in ascending order. <p>If set to null, the
      *         results will be sorted in an arbitrary order.
      *

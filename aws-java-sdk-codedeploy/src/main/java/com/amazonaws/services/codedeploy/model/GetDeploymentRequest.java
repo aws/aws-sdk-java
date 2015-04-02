@@ -29,34 +29,41 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetDeploymentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * An existing deployment ID within the AWS user account.
+     * An existing deployment ID associated with the applicable IAM user or
+     * AWS account.
      */
     private String deploymentId;
 
     /**
-     * An existing deployment ID within the AWS user account.
+     * An existing deployment ID associated with the applicable IAM user or
+     * AWS account.
      *
-     * @return An existing deployment ID within the AWS user account.
+     * @return An existing deployment ID associated with the applicable IAM user or
+     *         AWS account.
      */
     public String getDeploymentId() {
         return deploymentId;
     }
     
     /**
-     * An existing deployment ID within the AWS user account.
+     * An existing deployment ID associated with the applicable IAM user or
+     * AWS account.
      *
-     * @param deploymentId An existing deployment ID within the AWS user account.
+     * @param deploymentId An existing deployment ID associated with the applicable IAM user or
+     *         AWS account.
      */
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
     
     /**
-     * An existing deployment ID within the AWS user account.
+     * An existing deployment ID associated with the applicable IAM user or
+     * AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deploymentId An existing deployment ID within the AWS user account.
+     * @param deploymentId An existing deployment ID associated with the applicable IAM user or
+     *         AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

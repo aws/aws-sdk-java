@@ -14,9 +14,6 @@
  */
 package com.amazonaws;
 
-import com.amazonaws.http.AmazonHttpClient;
-
-
 /**
  * SDKGlobalConfiguration is to configure any global settings
  */
@@ -157,34 +154,18 @@ public class SDKGlobalConfiguration {
     public static final String AWS_SESSION_TOKEN_ENV_VAR = "AWS_SESSION_TOKEN";
 
     /**
-     * globalTimeOffset is a time difference in seconds between the running JVM
-     * and AWS. Used to globally adjust the client clock skew. Java SDK already
-     * provides timeOffset and accessor methods in {@link Request} class but
-     * those are used per request, whereas this variable will adjust clock skew
-     * globally. Java SDK detects clock skew errors and adjusts global clock
-     * skew automatically.
+     * @deprecated by {@link SDKGlobalTime#setGlobalTimeOffset(int)}
      */
-    private static volatile int globalTimeOffset;
-
-    /**
-     * Sets the global time difference in seconds between the running JVM and
-     * AWS. If this value is set then all the subsequent instantiation of an
-     * {@link AmazonHttpClient} will start using this
-     * value to generate timestamps.
-     *
-     * @param timeOffset
-     *            the time difference in seconds between the running JVM and AWS
-     */
+    @Deprecated
     public  static void setGlobalTimeOffset(int timeOffset) {
-        globalTimeOffset = timeOffset;
+        SDKGlobalTime.setGlobalTimeOffset(timeOffset);
     }
 
     /**
-     * Gets the global time difference in seconds between the running JVM and
-     * AWS. See {@link Request#getTimeOffset()} if global time offset is
-     * not set.
+     * @deprecated by {@link SDKGlobalTime#getGlobalTimeOffset()}
      */
+    @Deprecated
     public static int getGlobalTimeOffset() {
-        return globalTimeOffset;
+        return SDKGlobalTime.getGlobalTimeOffset();
     }
 }

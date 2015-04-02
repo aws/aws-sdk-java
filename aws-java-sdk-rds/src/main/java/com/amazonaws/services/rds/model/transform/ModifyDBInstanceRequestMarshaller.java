@@ -120,6 +120,9 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest.getTdeCredentialPassword() != null) {
             request.addParameter("TdeCredentialPassword", StringUtils.fromString(modifyDBInstanceRequest.getTdeCredentialPassword()));
         }
+        if (modifyDBInstanceRequest.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getCACertificateIdentifier()));
+        }
 
         return request;
     }

@@ -26,13 +26,12 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.UUID;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
+import com.amazonaws.log.InternalLogApi;
+import com.amazonaws.log.InternalLogFactory;
 import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * Signer implementation that signs requests with the AWS3 signing protocol.
@@ -48,7 +47,7 @@ public class AWS3Signer extends AbstractAWSSigner {
 
     @Deprecated
     protected static final DateUtils dateUtils = new DateUtils();
-    private static final Log log = LogFactory.getLog(AWS3Signer.class);
+    private static final InternalLogApi log = InternalLogFactory.getLog(AWS3Signer.class);
 
 
     /**
@@ -59,7 +58,8 @@ public class AWS3Signer extends AbstractAWSSigner {
      * @param request
      *            The request to sign.
      */
-    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
+    @Override
+    public void sign(SignableRequest<?> request, AWSCredentials credentials) throws AmazonClientException {
         // annonymous credentials, don't sign
         if ( credentials instanceof AnonymousAWSCredentials ) {
             return;
@@ -82,7 +82,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         // AWS3 HTTP requires that we sign the Host header
         // so we have to have it in the request by the time we sign.
         String hostHeader = request.getEndpoint().getHost();
-        if (HttpUtils.isUsingNonDefaultPort(request.getEndpoint())) {
+        if (SdkHttpUtils.isUsingNonDefaultPort(request.getEndpoint())) {
             hostHeader += ":" + request.getEndpoint().getPort();
         }
         request.addHeader("Host", hostHeader);
@@ -97,7 +97,7 @@ public class AWS3Signer extends AbstractAWSSigner {
             stringToSign = date + nonce;
             bytesToSign = stringToSign.getBytes(UTF8);
         } else {
-            String path = HttpUtils.appendUri(request.getEndpoint().getPath(), request.getResourcePath());
+            String path = SdkHttpUtils.appendUri(request.getEndpoint().getPath(), request.getResourcePath());
 
             /*
              * AWS3 requires all query params to be listed on the third line of
@@ -112,7 +112,8 @@ public class AWS3Signer extends AbstractAWSSigner {
                     + getRequestPayloadWithoutQueryParams(request);
             bytesToSign = hash(stringToSign);
         }
-        log.debug("Calculated StringToSign: " + stringToSign);
+        if (log.isDebugEnabled())
+            log.debug("Calculated StringToSign: " + stringToSign);
 
         String signature = signAndBase64Encode(bytesToSign,
                 sanitizedCredentials.getAWSSecretKey(), algorithm);
@@ -130,7 +131,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         request.addHeader(AUTHORIZATION_HEADER, builder.toString());
     }
 
-    private String getSignedHeadersComponent(Request<?> request) {
+    private String getSignedHeadersComponent(SignableRequest<?> request) {
         StringBuilder builder = new StringBuilder();
         builder.append("SignedHeaders=");
         boolean first = true;
@@ -142,7 +143,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         return builder.toString();
     }
 
-    protected List<String> getHeadersForStringToSign(Request<?> request) {
+    protected List<String> getHeadersForStringToSign(SignableRequest<?> request) {
         List<String> headersToSign = new ArrayList<String>();
         for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {
             String key = entry.getKey();
@@ -168,7 +169,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         this.overriddenDate = date;
     }
 
-    protected String getCanonicalizedHeadersForStringToSign(Request<?> request) {
+    protected String getCanonicalizedHeadersForStringToSign(SignableRequest<?> request) {
         List<String> headersToSign = getHeadersForStringToSign(request);
 
         for (int i = 0; i < headersToSign.size(); i++) {
@@ -191,7 +192,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         return builder.toString();
     }
 
-    protected boolean shouldUseHttpsScheme(Request<?> request) throws AmazonClientException {
+    protected boolean shouldUseHttpsScheme(SignableRequest<?> request) throws AmazonClientException {
         try {
             String protocol = request.getEndpoint().toURL().getProtocol().toLowerCase();
             if (protocol.equals("http")) {
@@ -208,7 +209,7 @@ public class AWS3Signer extends AbstractAWSSigner {
     }
 
     @Override
-    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+    protected void addSessionCredentials(SignableRequest<?> request, AWSSessionCredentials credentials) {
         request.addHeader("x-amz-security-token", credentials.getSessionToken());
     }
 

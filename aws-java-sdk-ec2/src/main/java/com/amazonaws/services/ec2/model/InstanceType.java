@@ -61,7 +61,11 @@ public enum InstanceType {
     R3Xlarge("r3.xlarge"),
     R32xlarge("r3.2xlarge"),
     R34xlarge("r3.4xlarge"),
-    R38xlarge("r3.8xlarge");
+    R38xlarge("r3.8xlarge"),
+    D2Xlarge("d2.xlarge"),
+    D22xlarge("d2.2xlarge"),
+    D24xlarge("d2.4xlarge"),
+    D28xlarge("d2.8xlarge");
 
     private String value;
 
@@ -171,6 +175,14 @@ public enum InstanceType {
             return InstanceType.R34xlarge;
         } else if ("r3.8xlarge".equals(value)) {
             return InstanceType.R38xlarge;
+        } else if ("d2.xlarge".equals(value)) {
+            return InstanceType.D2Xlarge;
+        } else if ("d2.2xlarge".equals(value)) {
+            return InstanceType.D22xlarge;
+        } else if ("d2.4xlarge".equals(value)) {
+            return InstanceType.D24xlarge;
+        } else if ("d2.8xlarge".equals(value)) {
+            return InstanceType.D28xlarge;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

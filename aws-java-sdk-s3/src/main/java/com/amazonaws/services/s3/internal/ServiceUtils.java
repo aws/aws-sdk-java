@@ -16,8 +16,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.internal;
-import static com.amazonaws.util.StringUtils.UTF8;
 import static com.amazonaws.util.IOUtils.closeQuietly;
+import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -43,6 +43,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
@@ -241,14 +242,29 @@ public class ServiceUtils {
      *            Boolean valuable to indicate whether to perform integrity check
      * @param appendData
      *            appends the data to end of the file.
-     *
      */
     public static void downloadObjectToFile(S3Object s3Object,
-            File destinationFile, boolean performIntegrityCheck,
+            final File destinationFile, boolean performIntegrityCheck,
             boolean appendData) {
+        downloadToFile(s3Object, destinationFile, performIntegrityCheck, appendData, -1);
+    }
 
+    /**
+     * Same as {@link #downloadObjectToFile(S3Object, File, boolean, boolean)}
+     * but has an additional expected file length parameter for integrity
+     * checking purposes.
+     * 
+     * @param expectedFileLength
+     *            applicable only when appendData is true; the expected length
+     *            of the file to append to.
+     */
+    public static void downloadToFile(S3Object s3Object,
+        final File dstfile, boolean performIntegrityCheck,
+        final boolean appendData,
+        final long expectedFileLength) 
+    {
         // attempt to create the parent if it doesn't exist
-        File parentDirectory = destinationFile.getParentFile();
+        File parentDirectory = dstfile.getParentFile();
         if ( parentDirectory != null && !parentDirectory.exists() ) {
             if (!(parentDirectory.mkdirs())) {
                 throw new AmazonClientException(
@@ -257,10 +273,22 @@ public class ServiceUtils {
             }
         }
 
+        if (!FileLocks.lock(dstfile)) {
+            throw new FileLockException("Fail to lock " + dstfile
+                    + " for appendData=" + appendData);
+        }
         OutputStream outputStream = null;
         try {
+            final long actualLen = dstfile.length();
+            if (appendData && actualLen != expectedFileLength) {
+                // Fail fast to prevent data corruption
+                throw new IllegalStateException(
+                        "Expected file length to append is "
+                            + expectedFileLength + " but actual length is "
+                            + actualLen + " for file " + dstfile);
+            }
             outputStream = new BufferedOutputStream(new FileOutputStream(
-                    destinationFile, appendData));
+                    dstfile, appendData));
             byte[] buffer = new byte[1024*10];
             int bytesRead;
             while ((bytesRead = s3Object.getObjectContent().read(buffer)) > -1) {
@@ -272,6 +300,7 @@ public class ServiceUtils {
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
             closeQuietly(outputStream, log);
+            FileLocks.unlock(dstfile);
             closeQuietly(s3Object.getObjectContent(), log);
         }
 
@@ -286,7 +315,7 @@ public class ServiceUtils {
                     .getObjectMetadata().getETag()))
                     && !skipContentMd5IntegrityCheck(s3Object
                             .getObjectMetadata())) {
-                clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(destinationFile));
+                clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(dstfile));
                 serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
             }
         } catch (Exception e) {
@@ -296,7 +325,7 @@ public class ServiceUtils {
         if (performIntegrityCheck && clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
             throw new AmazonClientException("Unable to verify integrity of data download.  " +
                     "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
-                    "The data stored in '" + destinationFile.getAbsolutePath() + "' may be corrupt.");
+                    "The data stored in '" + dstfile.getAbsolutePath() + "' may be corrupt.");
         }
     }
 

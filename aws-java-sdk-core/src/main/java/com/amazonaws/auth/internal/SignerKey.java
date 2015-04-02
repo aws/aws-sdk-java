@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth.internal;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 /**
  * Holds the signing key and the number of days since epoch for the date for

@@ -17,7 +17,7 @@ package com.amazonaws.internal.config;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 @Immutable
 public class HostRegexToRegionMapping {

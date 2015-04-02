@@ -15,11 +15,11 @@
 package com.amazonaws.auth;
 
 import static com.amazonaws.auth.internal.SignerConstants.AUTHORIZATION;
-import static com.amazonaws.auth.internal.SignerConstants.PRESIGN_URL_MAX_EXPIRATION_SECONDS;
 import static com.amazonaws.auth.internal.SignerConstants.AWS4_SIGNING_ALGORITHM;
 import static com.amazonaws.auth.internal.SignerConstants.AWS4_TERMINATOR;
 import static com.amazonaws.auth.internal.SignerConstants.HOST;
 import static com.amazonaws.auth.internal.SignerConstants.LINE_SEPARATOR;
+import static com.amazonaws.auth.internal.SignerConstants.PRESIGN_URL_MAX_EXPIRATION_SECONDS;
 import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_ALGORITHM;
 import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CONTENT_SHA256;
 import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CREDENTIAL;
@@ -28,11 +28,11 @@ import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_EXPIRES;
 import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SECURITY_TOKEN;
 import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNATURE;
 import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNED_HEADER;
-import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -40,25 +40,28 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.Request;
+import com.amazonaws.ReadLimitInfo;
+import com.amazonaws.SignableRequest;
 import com.amazonaws.auth.internal.AWS4SignerRequestParams;
 import com.amazonaws.auth.internal.AWS4SignerUtils;
 import com.amazonaws.auth.internal.SignerKey;
 import com.amazonaws.internal.FIFOCache;
+import com.amazonaws.log.InternalLogApi;
+import com.amazonaws.log.InternalLogFactory;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * Signer implementation that signs requests with the AWS4 signing protocol.
  */
 public class AWS4Signer extends AbstractAWSSigner implements
         ServiceAwareSigner, RegionAwareSigner, Presigner {
+
+    protected static final InternalLogApi log = InternalLogFactory.getLog(AWS4Signer.class);
+    private static final int SIGNER_CACHE_MAX_SIZE = 300;
+    private static final FIFOCache<SignerKey> signerCache = new FIFOCache<SignerKey>(SIGNER_CACHE_MAX_SIZE);
 
     /**
      * Service name override for use when the endpoint can't be used to
@@ -84,12 +87,6 @@ public class AWS4Signer extends AbstractAWSSigner implements
      * AWS4Signer(false).
      */
     protected boolean doubleUrlEncode;
-
-    protected static final Log log = LogFactory.getLog(AWS4Signer.class);
-
-    private static final int SIGNER_CACHE_MAX_SIZE = 300;
-
-    private static final FIFOCache<SignerKey> signerCache = new FIFOCache<SignerKey>(SIGNER_CACHE_MAX_SIZE);
 
     /**
      * Construct a new AWS4 signer instance. By default, enable double
@@ -172,7 +169,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
     }
 
     @Override
-    public void sign(Request<?> request, AWSCredentials credentials) {
+    public void sign(SignableRequest<?> request, AWSCredentials credentials) {
         // anonymous credentials, don't sign
         if (isAnonymous(credentials)) {
             return;
@@ -220,7 +217,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
     }
 
     @Override
-    public void presignRequest(Request<?> request, AWSCredentials credentials,
+    public void presignRequest(SignableRequest<?> request, AWSCredentials credentials,
             Date userSpecifiedExpirationDate) {
 
         // anonymous credentials, don't sign
@@ -276,10 +273,10 @@ public class AWS4Signer extends AbstractAWSSigner implements
      * .amazon.com/general/latest/gr/sigv4-create-canonical-request.html to
      * generate the canonical request.
      */
-    protected String createCanonicalRequest(Request<?> request,
+    protected String createCanonicalRequest(SignableRequest<?> request,
             String contentSha256) {
         /* This would url-encode the resource path for the first time. */
-        final String path = HttpUtils.appendUri(
+        final String path = SdkHttpUtils.appendUri(
                 request.getEndpoint().getPath(), request.getResourcePath());
 
         final StringBuilder canonicalRequestBuilder = new StringBuilder(request
@@ -298,9 +295,9 @@ public class AWS4Signer extends AbstractAWSSigner implements
 
         final String canonicalRequest = canonicalRequestBuilder.toString();
 
-        if (log.isDebugEnabled()) {
+        if (log.isDebugEnabled())
             log.debug("AWS4 Canonical Request: '\"" + canonicalRequest + "\"");
-        }
+
         return canonicalRequest;
     }
 
@@ -322,9 +319,10 @@ public class AWS4Signer extends AbstractAWSSigner implements
                 .append(BinaryUtils.toHex(hash(canonicalRequest)));
 
         final String stringToSign = stringToSignBuilder.toString();
-        if (log.isDebugEnabled()) {
+
+        if (log.isDebugEnabled())
             log.debug("AWS4 String to Sign: '\"" + stringToSign + "\"");
-        }
+
         return stringToSign;
     }
 
@@ -386,14 +384,14 @@ public class AWS4Signer extends AbstractAWSSigner implements
      */
     protected final byte[] computeSignature(String stringToSign,
             byte[] signingKey, AWS4SignerRequestParams signerRequestParams) {
-        return sign(stringToSign.getBytes(UTF8), signingKey,
+        return sign(stringToSign.getBytes(Charset.forName("UTF-8")), signingKey,
                 SigningAlgorithm.HmacSHA256);
     }
 
     /**
      * Creates the authorization header to be included in the request.
      */
-    private String buildAuthorizationHeader(Request<?> request,
+    private String buildAuthorizationHeader(SignableRequest<?> request,
             byte[] signature, AWSCredentials credentials,
             AWS4SignerRequestParams signerParams) {
         final String signingCredentials = credentials.getAWSAccessKeyId() + "/"
@@ -422,7 +420,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
     /**
      * Includes all the signing headers as request parameters for pre-signing.
      */
-    private void addPreSignInformationToRequest(Request<?> request,
+    private void addPreSignInformationToRequest(SignableRequest<?> request,
             AWSCredentials credentials, AWS4SignerRequestParams signerParams,
             String timeStamp, long expirationInSeconds) {
 
@@ -439,12 +437,12 @@ public class AWS4Signer extends AbstractAWSSigner implements
     }
 
     @Override
-    protected void addSessionCredentials(Request<?> request,
+    protected void addSessionCredentials(SignableRequest<?> request,
             AWSSessionCredentials credentials) {
         request.addHeader(X_AMZ_SECURITY_TOKEN, credentials.getSessionToken());
     }
 
-    protected String getCanonicalizedHeaderString(Request<?> request) {
+    protected String getCanonicalizedHeaderString(SignableRequest<?> request) {
         final List<String> sortedHeaders = new ArrayList<String>(request.getHeaders()
                 .keySet());
         Collections.sort(sortedHeaders, String.CASE_INSENSITIVE_ORDER);
@@ -466,7 +464,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         return buffer.toString();
     }
 
-    protected String getSignedHeadersString(Request<?> request) {
+    protected String getSignedHeadersString(SignableRequest<?> request) {
         final List<String> sortedHeaders = new ArrayList<String>(request
                 .getHeaders().keySet());
         Collections.sort(sortedHeaders, String.CASE_INSENSITIVE_ORDER);
@@ -481,14 +479,14 @@ public class AWS4Signer extends AbstractAWSSigner implements
         return buffer.toString();
     }
 
-    protected void addHostHeader(Request<?> request) {
+    protected void addHostHeader(SignableRequest<?> request) {
         // AWS4 requires that we sign the Host header so we
         // have to have it in the request by the time we sign.
 
         final URI endpoint = request.getEndpoint();
         final StringBuilder hostHeaderBuilder = new StringBuilder(
                 endpoint.getHost());
-        if (HttpUtils.isUsingNonDefaultPort(endpoint)) {
+        if (SdkHttpUtils.isUsingNonDefaultPort(endpoint)) {
             hostHeaderBuilder.append(":").append(endpoint.getPort());
         }
 
@@ -502,10 +500,10 @@ public class AWS4Signer extends AbstractAWSSigner implements
      * uses a pre-defined header value, and needs to change some headers
      * relating to content-encoding and content-length.)
      */
-    protected String calculateContentHash(Request<?> request) {
+    protected String calculateContentHash(SignableRequest<?> request) {
         InputStream payloadStream = getBinaryRequestPayloadStream(request);
-        AmazonWebServiceRequest req = request.getOriginalRequest();
-        payloadStream.mark(req == null ? -1 : req.getReadLimit());
+        ReadLimitInfo info = request.getReadLimitInfo();
+        payloadStream.mark(info == null ? -1 : info.getReadLimit());
         String contentSha256 = BinaryUtils.toHex(hash(payloadStream));
         try {
             payloadStream.reset();
@@ -523,7 +521,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
      * header. (e.g. Signing the payload by chunk-encoding). The default
      * implementation doesn't need to do anything.
      */
-    protected void processRequestPayload(Request<?> request, byte[] signature,
+    protected void processRequestPayload(SignableRequest<?> request, byte[] signature,
             byte[] signingKey, AWS4SignerRequestParams signerRequestParams) {
         return;
     }
@@ -536,7 +534,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
      * different from the general implementation.
      *
      */
-    protected String calculateContentHashPresign(Request<?> request) {
+    protected String calculateContentHashPresign(SignableRequest<?> request) {
         return calculateContentHash(request);
     }
 
@@ -574,7 +572,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
     private byte[] newSigningKey(AWSCredentials credentials,
             String dateStamp, String regionName, String serviceName) {
         byte[] kSecret = ("AWS4" + credentials.getAWSSecretKey())
-                .getBytes(UTF8);
+                .getBytes(Charset.forName("UTF-8"));
         byte[] kDate = sign(dateStamp, kSecret, SigningAlgorithm.HmacSHA256);
         byte[] kRegion = sign(regionName, kDate, SigningAlgorithm.HmacSHA256);
         byte[] kService = sign(serviceName, kRegion,

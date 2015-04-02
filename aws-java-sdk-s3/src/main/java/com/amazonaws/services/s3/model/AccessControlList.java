@@ -21,6 +21,8 @@ import java.io.Serializable;
 import java.security.Permissions;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -64,12 +66,15 @@ import java.util.Set;
 public class AccessControlList implements Serializable {
     private static final long serialVersionUID = 8095040648034788376L;
 
-    private HashSet<Grant> grants = new HashSet<Grant>();
+    // grant set is maintained for backwards compatibility. Both grantSet and
+    // grantList cannot be non null at the same time.
+    private Set<Grant> grantSet;
+    private List<Grant> grantList;
     private Owner owner = null;
 
     /**
      * Gets the owner of the {@link AccessControlList}.
-     * 
+     *
      * <p>
      * Every bucket and object in Amazon S3 has an owner, the user that created
      * the bucket or object. The owner of a bucket or object cannot be changed.
@@ -104,7 +109,7 @@ public class AccessControlList implements Serializable {
     }
 
     /**
-     * Adds a grantee to the access control list (ACL) with the given permission. 
+     * Adds a grantee to the access control list (ACL) with the given permission.
      * If this access control list already
      * contains the grantee (i.e. the same grantee object) the permission for the
      * grantee will be updated.
@@ -115,7 +120,7 @@ public class AccessControlList implements Serializable {
      *            The permission to apply to the grantee.
      */
     public void grantPermission(Grantee grantee, Permission permission) {
-        grants.add(new Grant(grantee, permission));
+        getGrantsAsList().add(new Grant(grantee, permission));
     }
 
     /**
@@ -139,25 +144,69 @@ public class AccessControlList implements Serializable {
      */
     public void revokeAllPermissions(Grantee grantee) {
         ArrayList<Grant> grantsToRemove = new ArrayList<Grant>();
-        for (Grant gap : grants) {
+        List<Grant> existingGrants = getGrantsAsList();
+        for (Grant gap : existingGrants) {
             if (gap.getGrantee().equals(grantee)) {
                 grantsToRemove.add(gap);
             }
         }
-        grants.removeAll(grantsToRemove);
+        grantList.removeAll(grantsToRemove);
     }
 
     /**
      * Gets the set of {@link Grant} objects in this access control list (ACL).
-     * 
+     *
      * @return The set of {@link Grant} objects in this ACL.
+     *
+     * @deprecated This will remove the duplicate grants if received from Amazon
+     *             S3. Use {@link AccessControlList#getGrantsAsList} instead.
      */
+    @Deprecated
     public Set<Grant> getGrants() {
-        return grants;
+        checkState();
+        if (grantSet == null) {
+            if (grantList == null) {
+                grantSet = new HashSet<Grant>();
+            } else {
+                grantSet = new HashSet<Grant>(grantList);
+                grantList = null;
+            }
+        }
+        return grantSet;
+    }
+
+    /**
+     * Both grant set and grant list cannot be null at the same time.
+     */
+    private void checkState() {
+        if (grantSet != null && grantList != null) {
+            throw new IllegalStateException(
+                    "Both grant set and grant list cannot be null");
+        }
+    }
+
+
+    /**
+     * Gets the list of {@link Grant} objects in this access control list (ACL).
+     *
+     * @return The list of {@link Grant} objects in this ACL.
+     */
+    public List<Grant> getGrantsAsList() {
+        checkState();
+        if (grantList == null) {
+            if (grantSet == null) {
+                grantList = new LinkedList<Grant>();
+            } else {
+                grantList = new LinkedList<Grant>(grantSet);
+                grantSet = null;
+            }
+        }
+
+        return grantList;
     }
 
     public String toString() {
-        return "AccessControlList [owner=" + owner + ", grants=" + getGrants() + "]";
+        return "AccessControlList [owner=" + owner + ", grants=" + getGrantsAsList() + "]";
     }
 
 }

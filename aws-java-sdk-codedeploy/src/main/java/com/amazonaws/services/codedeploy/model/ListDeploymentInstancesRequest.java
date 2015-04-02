@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeploymentInstances(ListDeploymentInstancesRequest) ListDeploymentInstances operation}.
  * <p>
- * Lists the Amazon EC2 instances for a deployment within the AWS user
- * account.
+ * Lists the instances for a deployment associated with the applicable
+ * IAM user or AWS account.
  * </p>
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeploymentInstances(ListDeploymentInstancesRequest)

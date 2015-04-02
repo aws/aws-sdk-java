@@ -34,6 +34,7 @@ import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
+import com.amazonaws.log.CommonsLogFactory;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
@@ -56,6 +57,16 @@ public abstract class AmazonWebServiceClient {
 
     private static final Log log =
         LogFactory.getLog(AmazonWebServiceClient.class);
+    static {
+        // Configures the internal logging of the signers and core
+        // classes to use Jakarta Commons Logging to stay consistent with the
+        // rest of the library.
+        boolean success = com.amazonaws.log.InternalLogFactory.configureFactory(
+                            new CommonsLogFactory());
+        if (log.isDebugEnabled())
+            log.debug("Internal logging succesfully configured to commons logger: "
+                    + success);
+    }
 
     /**
      * The service endpoint to which this client will send requests.

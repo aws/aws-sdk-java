@@ -19,10 +19,9 @@ import java.net.URI;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.internal.config.HostRegexToRegionMapping;
 import com.amazonaws.internal.config.InternalConfig;
+import com.amazonaws.log.InternalLogFactory;
 
 public class AwsHostNameUtils {
 
@@ -163,11 +162,7 @@ public class AwsHostNameUtils {
     /**
      * Parses the service name from an endpoint. Can only handle endpoints of
      * the form 'service.[region.]amazonaws.com'.
-     *
-     * @deprecated because it's no longer needed by the SDK, and therefore not
-     *             maintained.
      */
-    @Deprecated
     public static String parseServiceName(URI endpoint) {
         String host = endpoint.getHost();
 
@@ -215,10 +210,10 @@ public class AwsHostNameUtils {
             InetAddress localhost = InetAddress.getLocalHost();
             return localhost.getHostName();
         } catch (Exception e) {
-            LogFactory
-                .getLog(AwsHostNameUtils.class)
-                .debug("Failed to determine the local hostname; fall back to "
-                       + "use \"localhost\".", e);
+            InternalLogFactory.getLog(AwsHostNameUtils.class)
+                .debug(
+                    "Failed to determine the local hostname; fall back to "
+                            + "use \"localhost\".", e);
             return "localhost";
         }
     }

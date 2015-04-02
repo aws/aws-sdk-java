@@ -23,7 +23,6 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
-import com.amazonaws.retry.RetryUtils;
 
 /**
  * This class includes a set of pre-defined retry policies, including default
@@ -31,12 +30,22 @@ import com.amazonaws.retry.RetryUtils;
  */
 public class PredefinedRetryPolicies {
 
+    /** No retry policy **/
+    public static final RetryPolicy NO_RETRY_POLICY = new RetryPolicy(
+            RetryPolicy.RetryCondition.NO_RETRY_CONDITION,
+            RetryPolicy.BackoffStrategy.NO_DELAY,
+            0,      // maxErrorRetry
+            false); // honorMaxErrorRetryInClientConfig
+
     /* SDK default */
 
     /** SDK default max retry count **/
     public static final int DEFAULT_MAX_ERROR_RETRY = 3;
 
-    /** SDK default retry policy **/
+    /** 
+     * SDK default retry policy (except for AmazonDynamoDBClient,
+     * whose constructor will replace the DEFAULT with DYNAMODB_DEFAULT.)
+     */
     public static final RetryPolicy DEFAULT;
 
     /* Default for DynamoDB client */

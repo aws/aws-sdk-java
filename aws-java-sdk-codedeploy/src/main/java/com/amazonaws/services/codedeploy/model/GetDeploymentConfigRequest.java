@@ -29,8 +29,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetDeploymentConfigRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of an existing deployment configuration within the AWS user
-     * account.
+     * The name of an existing deployment configuration associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
@@ -38,44 +38,44 @@ public class GetDeploymentConfigRequest extends AmazonWebServiceRequest implemen
     private String deploymentConfigName;
 
     /**
-     * The name of an existing deployment configuration within the AWS user
-     * account.
+     * The name of an existing deployment configuration associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @return The name of an existing deployment configuration within the AWS user
-     *         account.
+     * @return The name of an existing deployment configuration associated with the
+     *         applicable IAM user or AWS account.
      */
     public String getDeploymentConfigName() {
         return deploymentConfigName;
     }
     
     /**
-     * The name of an existing deployment configuration within the AWS user
-     * account.
+     * The name of an existing deployment configuration associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param deploymentConfigName The name of an existing deployment configuration within the AWS user
-     *         account.
+     * @param deploymentConfigName The name of an existing deployment configuration associated with the
+     *         applicable IAM user or AWS account.
      */
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
     
     /**
-     * The name of an existing deployment configuration within the AWS user
-     * account.
+     * The name of an existing deployment configuration associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param deploymentConfigName The name of an existing deployment configuration within the AWS user
-     *         account.
+     * @param deploymentConfigName The name of an existing deployment configuration associated with the
+     *         applicable IAM user or AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

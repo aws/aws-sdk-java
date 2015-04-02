@@ -31,8 +31,8 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * Contains Availability Zone information. <p> This data type is used as
-     * an element in the following data type: <ul>
-     * <li><a>OrderableDBInstanceOption</a></li> </ul>
+     * an element in the following data type:
+     * <ul><li><a>OrderableDBInstanceOption</a></li></ul>
      */
     private AvailabilityZone subnetAvailabilityZone;
 
@@ -76,12 +76,12 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * Contains Availability Zone information. <p> This data type is used as
-     * an element in the following data type: <ul>
-     * <li><a>OrderableDBInstanceOption</a></li> </ul>
+     * an element in the following data type:
+     * <ul><li><a>OrderableDBInstanceOption</a></li></ul>
      *
      * @return Contains Availability Zone information. <p> This data type is used as
-     *         an element in the following data type: <ul>
-     *         <li><a>OrderableDBInstanceOption</a></li> </ul>
+     *         an element in the following data type:
+     *         <ul><li><a>OrderableDBInstanceOption</a></li></ul>
      */
     public AvailabilityZone getSubnetAvailabilityZone() {
         return subnetAvailabilityZone;
@@ -89,12 +89,12 @@ public class Subnet implements Serializable, Cloneable {
     
     /**
      * Contains Availability Zone information. <p> This data type is used as
-     * an element in the following data type: <ul>
-     * <li><a>OrderableDBInstanceOption</a></li> </ul>
+     * an element in the following data type:
+     * <ul><li><a>OrderableDBInstanceOption</a></li></ul>
      *
      * @param subnetAvailabilityZone Contains Availability Zone information. <p> This data type is used as
-     *         an element in the following data type: <ul>
-     *         <li><a>OrderableDBInstanceOption</a></li> </ul>
+     *         an element in the following data type:
+     *         <ul><li><a>OrderableDBInstanceOption</a></li></ul>
      */
     public void setSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
         this.subnetAvailabilityZone = subnetAvailabilityZone;
@@ -102,14 +102,14 @@ public class Subnet implements Serializable, Cloneable {
     
     /**
      * Contains Availability Zone information. <p> This data type is used as
-     * an element in the following data type: <ul>
-     * <li><a>OrderableDBInstanceOption</a></li> </ul>
+     * an element in the following data type:
+     * <ul><li><a>OrderableDBInstanceOption</a></li></ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetAvailabilityZone Contains Availability Zone information. <p> This data type is used as
-     *         an element in the following data type: <ul>
-     *         <li><a>OrderableDBInstanceOption</a></li> </ul>
+     *         an element in the following data type:
+     *         <ul><li><a>OrderableDBInstanceOption</a></li></ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

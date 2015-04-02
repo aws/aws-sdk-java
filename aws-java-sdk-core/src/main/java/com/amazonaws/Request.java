@@ -14,7 +14,6 @@
  */
 package com.amazonaws;
 
-import java.io.InputStream;
 import java.net.URI;
 import java.util.Map;
 
@@ -33,25 +32,7 @@ import com.amazonaws.util.AWSRequestMetrics;
  *            The type of original, user facing request represented by this
  *            request.
  */
-public interface Request<T> {
-
-    /**
-     * Sets the specified header for this request.
-     *
-     * @param name
-     *            The name of the header to set.
-     * @param value
-     *            The header's value.
-     */
-    public void addHeader(String name, String value);
-
-    /**
-     * Returns a map of all the headers included in this request.
-     *
-     * @return A map of all the headers included in this request.
-     */
-    public Map<String, String> getHeaders();
-    
+public interface Request<T> extends SignableRequest<T> {
     /**
      * Sets all headers, clearing any existing ones.
      */
@@ -64,23 +45,6 @@ public interface Request<T> {
      *            The path to the resource being requested.
      */
     public void setResourcePath(String path);
-
-    /**
-     * Returns the path to the resource being requested.
-     *
-     * @return The path to the resource being requested.
-     */
-    public String getResourcePath();
-
-    /**
-     * Adds the specified request parameter to this request.
-     *
-     * @param name
-     *            The name of the request parameter.
-     * @param value
-     *            The value of the request parameter.
-     */
-    public void addParameter(String name, String value);
 
     /**
      * Adds the specified request parameter to this request, and returns the
@@ -96,24 +60,9 @@ public interface Request<T> {
     public Request<T> withParameter(String name, String value);
 
     /**
-     * Returns a map of all parameters in this request.
-     *
-     * @return A map of all parameters in this request.
-     */
-    public Map<String, String> getParameters();
-    
-    /**
      * Sets all parameters, clearing any existing values.
      */
     public void setParameters(Map<String, String> parameters);
-
-    /**
-     * Returns the service endpoint (ex: "https://ec2.amazonaws.com") to which
-     * this request should be sent.
-     *
-     * @return The service endpoint to which this request should be sent.
-     */
-    public URI getEndpoint();
 
     /**
      * Sets the service endpoint (ex: "https://ec2.amazonaws.com") to which this
@@ -124,40 +73,13 @@ public interface Request<T> {
      */
     public void setEndpoint(URI endpoint);
 
-	/**
-	 * Returns the HTTP method (GET, POST, etc) to use when sending this
-	 * request.
-	 * 
-	 * @return The HTTP method to use when sending this request.
-	 */
-    public HttpMethodName getHttpMethod();
-
-	/**
-	 * Sets the HTTP method (GET, POST, etc) to use when sending this request.
-	 * 
-	 * @param httpMethod
-	 *            The HTTP method to use when sending this request.
-	 */
+    /**
+     * Sets the HTTP method (GET, POST, etc) to use when sending this request.
+     * 
+     * @param httpMethod
+     *            The HTTP method to use when sending this request.
+     */
     public void setHttpMethod(HttpMethodName httpMethod);
-
-	/**
-	 * Returns the optional stream containing the payload data to include for
-	 * this request.  Not all requests will contain payload data.
-	 * 
-	 * @return The optional stream containing the payload data to include for
-	 *         this request.
-	 */
-    public InputStream getContent();
-
-	/**
-	 * Sets the optional stream containing the payload data to include for this
-	 * request. Not all requests will contain payload data.
-	 * 
-	 * @param content
-	 *            The optional stream containing the payload data to include for
-	 *            this request.
-	 */
-    public void setContent(InputStream content);
 
     /**
      * Returns the name of the Amazon service this request is for.
@@ -169,22 +91,9 @@ public interface Request<T> {
     /**
      * Returns the original, user facing request object which this internal
      * request object is representing.
-     *
-     * @return The original, user facing request object which this request
-     *         object is representing.
      */
     public AmazonWebServiceRequest getOriginalRequest();
-    
-    /**
-     * Returns the optional value for time offset for this request.  This
-     * will be used by the signer to adjust for potential clock skew.  
-     * Value is in seconds, positive values imply the current clock is "fast",
-     * negative values imply clock is slow.
-     * 
-     * @return The optional value for time offset (in seconds) for this request.
-     */
-    public int getTimeOffset();
-    
+
     /**
      * Sets the optional value for time offset for this request.  This
      * will be used by the signer to adjust for potential clock skew.  
@@ -195,8 +104,7 @@ public interface Request<T> {
      *            The optional value for time offset (in seconds) for this request.
      */
     public void setTimeOffset(int timeOffset);
-    
-    
+
     /**
      * Sets the optional value for time offset for this request.  This
      * will be used by the signer to adjust for potential clock skew.  

@@ -30,8 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
@@ -51,15 +51,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * If specified, the deployment configuration name must be one of the
      * predefined values, or it can be a custom deployment configuration:
      * <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision
-     * to up to all of the Amazon EC2 instances at once. The overall
-     * deployment succeeds if the application revision deploys to at least
-     * one of the instances. The overall deployment fails after the
-     * application revision fails to deploy to all of the instances. For
-     * example, for 9 instances, deploy to up to all 9 instances at once. The
-     * overall deployment succeeds if any of the 9 instances is successfully
-     * deployed to, and it fails if all 9 instances fail to be deployed
-     * to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of
-     * the instances at a time (with fractions rounded down). The overall
+     * to up to all of the instances at once. The overall deployment succeeds
+     * if the application revision deploys to at least one of the instances.
+     * The overall deployment fails after the application revision fails to
+     * deploy to all of the instances. For example, for 9 instances, deploy
+     * to up to all 9 instances at once. The overall deployment succeeds if
+     * any of the 9 instances is successfully deployed to, and it fails if
+     * all 9 instances fail to be deployed to.</li>
+     * <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     * instances at a time (with fractions rounded down). The overall
      * deployment succeeds if the application revision deploys to at least
      * half of the instances (with fractions rounded up); otherwise, the
      * deployment fails. For example, for 9 instances, deploy to up to 4
@@ -71,7 +71,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * only one of the instances at a time. The overall deployment succeeds
      * if the application revision deploys to all of the instances. The
      * overall deployment fails after the application revision first fails to
-     * deploy to any one instance. For example, for 9 instances, deploy to
+     * deploy to any one instances. For example, for 9 instances, deploy to
      * one instance at a time. The overall deployment succeeds if all 9
      * instances are successfully deployed to, and it fails if any of one of
      * the 9 instances fail to be deployed to. Note that the deployment may
@@ -92,6 +92,11 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
     private com.amazonaws.internal.ListWithAutoConstructFlag<EC2TagFilter> ec2TagFilters;
 
     /**
+     * The on-premises instance tags to filter on.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFilters;
+
+    /**
      * A list of associated Auto Scaling groups.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroups;
@@ -103,44 +108,44 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
     private String serviceRoleArn;
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @return The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @return The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public String getApplicationName() {
         return applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -202,15 +207,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * If specified, the deployment configuration name must be one of the
      * predefined values, or it can be a custom deployment configuration:
      * <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision
-     * to up to all of the Amazon EC2 instances at once. The overall
-     * deployment succeeds if the application revision deploys to at least
-     * one of the instances. The overall deployment fails after the
-     * application revision fails to deploy to all of the instances. For
-     * example, for 9 instances, deploy to up to all 9 instances at once. The
-     * overall deployment succeeds if any of the 9 instances is successfully
-     * deployed to, and it fails if all 9 instances fail to be deployed
-     * to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of
-     * the instances at a time (with fractions rounded down). The overall
+     * to up to all of the instances at once. The overall deployment succeeds
+     * if the application revision deploys to at least one of the instances.
+     * The overall deployment fails after the application revision fails to
+     * deploy to all of the instances. For example, for 9 instances, deploy
+     * to up to all 9 instances at once. The overall deployment succeeds if
+     * any of the 9 instances is successfully deployed to, and it fails if
+     * all 9 instances fail to be deployed to.</li>
+     * <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     * instances at a time (with fractions rounded down). The overall
      * deployment succeeds if the application revision deploys to at least
      * half of the instances (with fractions rounded up); otherwise, the
      * deployment fails. For example, for 9 instances, deploy to up to 4
@@ -222,7 +227,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * only one of the instances at a time. The overall deployment succeeds
      * if the application revision deploys to all of the instances. The
      * overall deployment fails after the application revision first fails to
-     * deploy to any one instance. For example, for 9 instances, deploy to
+     * deploy to any one instances. For example, for 9 instances, deploy to
      * one instance at a time. The overall deployment succeeds if all 9
      * instances are successfully deployed to, and it fails if any of one of
      * the 9 instances fail to be deployed to. Note that the deployment may
@@ -238,15 +243,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * @return If specified, the deployment configuration name must be one of the
      *         predefined values, or it can be a custom deployment configuration:
      *         <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision
-     *         to up to all of the Amazon EC2 instances at once. The overall
-     *         deployment succeeds if the application revision deploys to at least
-     *         one of the instances. The overall deployment fails after the
-     *         application revision fails to deploy to all of the instances. For
-     *         example, for 9 instances, deploy to up to all 9 instances at once. The
-     *         overall deployment succeeds if any of the 9 instances is successfully
-     *         deployed to, and it fails if all 9 instances fail to be deployed
-     *         to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of
-     *         the instances at a time (with fractions rounded down). The overall
+     *         to up to all of the instances at once. The overall deployment succeeds
+     *         if the application revision deploys to at least one of the instances.
+     *         The overall deployment fails after the application revision fails to
+     *         deploy to all of the instances. For example, for 9 instances, deploy
+     *         to up to all 9 instances at once. The overall deployment succeeds if
+     *         any of the 9 instances is successfully deployed to, and it fails if
+     *         all 9 instances fail to be deployed to.</li>
+     *         <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     *         instances at a time (with fractions rounded down). The overall
      *         deployment succeeds if the application revision deploys to at least
      *         half of the instances (with fractions rounded up); otherwise, the
      *         deployment fails. For example, for 9 instances, deploy to up to 4
@@ -258,7 +263,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      *         only one of the instances at a time. The overall deployment succeeds
      *         if the application revision deploys to all of the instances. The
      *         overall deployment fails after the application revision first fails to
-     *         deploy to any one instance. For example, for 9 instances, deploy to
+     *         deploy to any one instances. For example, for 9 instances, deploy to
      *         one instance at a time. The overall deployment succeeds if all 9
      *         instances are successfully deployed to, and it fails if any of one of
      *         the 9 instances fail to be deployed to. Note that the deployment may
@@ -276,15 +281,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * If specified, the deployment configuration name must be one of the
      * predefined values, or it can be a custom deployment configuration:
      * <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision
-     * to up to all of the Amazon EC2 instances at once. The overall
-     * deployment succeeds if the application revision deploys to at least
-     * one of the instances. The overall deployment fails after the
-     * application revision fails to deploy to all of the instances. For
-     * example, for 9 instances, deploy to up to all 9 instances at once. The
-     * overall deployment succeeds if any of the 9 instances is successfully
-     * deployed to, and it fails if all 9 instances fail to be deployed
-     * to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of
-     * the instances at a time (with fractions rounded down). The overall
+     * to up to all of the instances at once. The overall deployment succeeds
+     * if the application revision deploys to at least one of the instances.
+     * The overall deployment fails after the application revision fails to
+     * deploy to all of the instances. For example, for 9 instances, deploy
+     * to up to all 9 instances at once. The overall deployment succeeds if
+     * any of the 9 instances is successfully deployed to, and it fails if
+     * all 9 instances fail to be deployed to.</li>
+     * <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     * instances at a time (with fractions rounded down). The overall
      * deployment succeeds if the application revision deploys to at least
      * half of the instances (with fractions rounded up); otherwise, the
      * deployment fails. For example, for 9 instances, deploy to up to 4
@@ -296,7 +301,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * only one of the instances at a time. The overall deployment succeeds
      * if the application revision deploys to all of the instances. The
      * overall deployment fails after the application revision first fails to
-     * deploy to any one instance. For example, for 9 instances, deploy to
+     * deploy to any one instances. For example, for 9 instances, deploy to
      * one instance at a time. The overall deployment succeeds if all 9
      * instances are successfully deployed to, and it fails if any of one of
      * the 9 instances fail to be deployed to. Note that the deployment may
@@ -312,15 +317,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * @param deploymentConfigName If specified, the deployment configuration name must be one of the
      *         predefined values, or it can be a custom deployment configuration:
      *         <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision
-     *         to up to all of the Amazon EC2 instances at once. The overall
-     *         deployment succeeds if the application revision deploys to at least
-     *         one of the instances. The overall deployment fails after the
-     *         application revision fails to deploy to all of the instances. For
-     *         example, for 9 instances, deploy to up to all 9 instances at once. The
-     *         overall deployment succeeds if any of the 9 instances is successfully
-     *         deployed to, and it fails if all 9 instances fail to be deployed
-     *         to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of
-     *         the instances at a time (with fractions rounded down). The overall
+     *         to up to all of the instances at once. The overall deployment succeeds
+     *         if the application revision deploys to at least one of the instances.
+     *         The overall deployment fails after the application revision fails to
+     *         deploy to all of the instances. For example, for 9 instances, deploy
+     *         to up to all 9 instances at once. The overall deployment succeeds if
+     *         any of the 9 instances is successfully deployed to, and it fails if
+     *         all 9 instances fail to be deployed to.</li>
+     *         <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     *         instances at a time (with fractions rounded down). The overall
      *         deployment succeeds if the application revision deploys to at least
      *         half of the instances (with fractions rounded up); otherwise, the
      *         deployment fails. For example, for 9 instances, deploy to up to 4
@@ -332,7 +337,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      *         only one of the instances at a time. The overall deployment succeeds
      *         if the application revision deploys to all of the instances. The
      *         overall deployment fails after the application revision first fails to
-     *         deploy to any one instance. For example, for 9 instances, deploy to
+     *         deploy to any one instances. For example, for 9 instances, deploy to
      *         one instance at a time. The overall deployment succeeds if all 9
      *         instances are successfully deployed to, and it fails if any of one of
      *         the 9 instances fail to be deployed to. Note that the deployment may
@@ -350,15 +355,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * If specified, the deployment configuration name must be one of the
      * predefined values, or it can be a custom deployment configuration:
      * <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision
-     * to up to all of the Amazon EC2 instances at once. The overall
-     * deployment succeeds if the application revision deploys to at least
-     * one of the instances. The overall deployment fails after the
-     * application revision fails to deploy to all of the instances. For
-     * example, for 9 instances, deploy to up to all 9 instances at once. The
-     * overall deployment succeeds if any of the 9 instances is successfully
-     * deployed to, and it fails if all 9 instances fail to be deployed
-     * to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of
-     * the instances at a time (with fractions rounded down). The overall
+     * to up to all of the instances at once. The overall deployment succeeds
+     * if the application revision deploys to at least one of the instances.
+     * The overall deployment fails after the application revision fails to
+     * deploy to all of the instances. For example, for 9 instances, deploy
+     * to up to all 9 instances at once. The overall deployment succeeds if
+     * any of the 9 instances is successfully deployed to, and it fails if
+     * all 9 instances fail to be deployed to.</li>
+     * <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     * instances at a time (with fractions rounded down). The overall
      * deployment succeeds if the application revision deploys to at least
      * half of the instances (with fractions rounded up); otherwise, the
      * deployment fails. For example, for 9 instances, deploy to up to 4
@@ -370,7 +375,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * only one of the instances at a time. The overall deployment succeeds
      * if the application revision deploys to all of the instances. The
      * overall deployment fails after the application revision first fails to
-     * deploy to any one instance. For example, for 9 instances, deploy to
+     * deploy to any one instances. For example, for 9 instances, deploy to
      * one instance at a time. The overall deployment succeeds if all 9
      * instances are successfully deployed to, and it fails if any of one of
      * the 9 instances fail to be deployed to. Note that the deployment may
@@ -388,15 +393,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      * @param deploymentConfigName If specified, the deployment configuration name must be one of the
      *         predefined values, or it can be a custom deployment configuration:
      *         <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision
-     *         to up to all of the Amazon EC2 instances at once. The overall
-     *         deployment succeeds if the application revision deploys to at least
-     *         one of the instances. The overall deployment fails after the
-     *         application revision fails to deploy to all of the instances. For
-     *         example, for 9 instances, deploy to up to all 9 instances at once. The
-     *         overall deployment succeeds if any of the 9 instances is successfully
-     *         deployed to, and it fails if all 9 instances fail to be deployed
-     *         to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of
-     *         the instances at a time (with fractions rounded down). The overall
+     *         to up to all of the instances at once. The overall deployment succeeds
+     *         if the application revision deploys to at least one of the instances.
+     *         The overall deployment fails after the application revision fails to
+     *         deploy to all of the instances. For example, for 9 instances, deploy
+     *         to up to all 9 instances at once. The overall deployment succeeds if
+     *         any of the 9 instances is successfully deployed to, and it fails if
+     *         all 9 instances fail to be deployed to.</li>
+     *         <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     *         instances at a time (with fractions rounded down). The overall
      *         deployment succeeds if the application revision deploys to at least
      *         half of the instances (with fractions rounded up); otherwise, the
      *         deployment fails. For example, for 9 instances, deploy to up to 4
@@ -408,7 +413,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
      *         only one of the instances at a time. The overall deployment succeeds
      *         if the application revision deploys to all of the instances. The
      *         overall deployment fails after the application revision first fails to
-     *         deploy to any one instance. For example, for 9 instances, deploy to
+     *         deploy to any one instances. For example, for 9 instances, deploy to
      *         one instance at a time. The overall deployment succeeds if all 9
      *         instances are successfully deployed to, and it fails if any of one of
      *         the 9 instances fail to be deployed to. Note that the deployment may
@@ -489,6 +494,74 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
             com.amazonaws.internal.ListWithAutoConstructFlag<EC2TagFilter> ec2TagFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2TagFilter>(ec2TagFilters.size());
             ec2TagFiltersCopy.addAll(ec2TagFilters);
             this.ec2TagFilters = ec2TagFiltersCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * The on-premises instance tags to filter on.
+     *
+     * @return The on-premises instance tags to filter on.
+     */
+    public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
+        if (onPremisesInstanceTagFilters == null) {
+              onPremisesInstanceTagFilters = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>();
+              onPremisesInstanceTagFilters.setAutoConstruct(true);
+        }
+        return onPremisesInstanceTagFilters;
+    }
+    
+    /**
+     * The on-premises instance tags to filter on.
+     *
+     * @param onPremisesInstanceTagFilters The on-premises instance tags to filter on.
+     */
+    public void setOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
+        if (onPremisesInstanceTagFilters == null) {
+            this.onPremisesInstanceTagFilters = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>(onPremisesInstanceTagFilters.size());
+        onPremisesInstanceTagFiltersCopy.addAll(onPremisesInstanceTagFilters);
+        this.onPremisesInstanceTagFilters = onPremisesInstanceTagFiltersCopy;
+    }
+    
+    /**
+     * The on-premises instance tags to filter on.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param onPremisesInstanceTagFilters The on-premises instance tags to filter on.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDeploymentGroupRequest withOnPremisesInstanceTagFilters(TagFilter... onPremisesInstanceTagFilters) {
+        if (getOnPremisesInstanceTagFilters() == null) setOnPremisesInstanceTagFilters(new java.util.ArrayList<TagFilter>(onPremisesInstanceTagFilters.length));
+        for (TagFilter value : onPremisesInstanceTagFilters) {
+            getOnPremisesInstanceTagFilters().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The on-premises instance tags to filter on.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param onPremisesInstanceTagFilters The on-premises instance tags to filter on.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDeploymentGroupRequest withOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
+        if (onPremisesInstanceTagFilters == null) {
+            this.onPremisesInstanceTagFilters = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>(onPremisesInstanceTagFilters.size());
+            onPremisesInstanceTagFiltersCopy.addAll(onPremisesInstanceTagFilters);
+            this.onPremisesInstanceTagFilters = onPremisesInstanceTagFiltersCopy;
         }
 
         return this;
@@ -617,6 +690,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
         if (getDeploymentGroupName() != null) sb.append("DeploymentGroupName: " + getDeploymentGroupName() + ",");
         if (getDeploymentConfigName() != null) sb.append("DeploymentConfigName: " + getDeploymentConfigName() + ",");
         if (getEc2TagFilters() != null) sb.append("Ec2TagFilters: " + getEc2TagFilters() + ",");
+        if (getOnPremisesInstanceTagFilters() != null) sb.append("OnPremisesInstanceTagFilters: " + getOnPremisesInstanceTagFilters() + ",");
         if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
         if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() );
         sb.append("}");
@@ -632,6 +706,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getDeploymentGroupName() == null) ? 0 : getDeploymentGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode()); 
         hashCode = prime * hashCode + ((getEc2TagFilters() == null) ? 0 : getEc2TagFilters().hashCode()); 
+        hashCode = prime * hashCode + ((getOnPremisesInstanceTagFilters() == null) ? 0 : getOnPremisesInstanceTagFilters().hashCode()); 
         hashCode = prime * hashCode + ((getAutoScalingGroups() == null) ? 0 : getAutoScalingGroups().hashCode()); 
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode()); 
         return hashCode;
@@ -653,6 +728,8 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest implem
         if (other.getDeploymentConfigName() != null && other.getDeploymentConfigName().equals(this.getDeploymentConfigName()) == false) return false; 
         if (other.getEc2TagFilters() == null ^ this.getEc2TagFilters() == null) return false;
         if (other.getEc2TagFilters() != null && other.getEc2TagFilters().equals(this.getEc2TagFilters()) == false) return false; 
+        if (other.getOnPremisesInstanceTagFilters() == null ^ this.getOnPremisesInstanceTagFilters() == null) return false;
+        if (other.getOnPremisesInstanceTagFilters() != null && other.getOnPremisesInstanceTagFilters().equals(this.getOnPremisesInstanceTagFilters()) == false) return false; 
         if (other.getAutoScalingGroups() == null ^ this.getAutoScalingGroups() == null) return false;
         if (other.getAutoScalingGroups() != null && other.getAutoScalingGroups().equals(this.getAutoScalingGroups()) == false) return false; 
         if (other.getServiceRoleArn() == null ^ this.getServiceRoleArn() == null) return false;

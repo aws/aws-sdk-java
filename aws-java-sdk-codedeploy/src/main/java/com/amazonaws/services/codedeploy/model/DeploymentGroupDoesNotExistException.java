@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The named deployment group does not exist within the AWS user account.
+ * The named deployment group does not exist with the applicable IAM user
+ * or AWS account.
  * </p>
  */        
 public class DeploymentGroupDoesNotExistException extends AmazonServiceException {

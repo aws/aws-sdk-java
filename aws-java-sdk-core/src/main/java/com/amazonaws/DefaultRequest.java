@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.util.AWSRequestMetrics;
 
@@ -300,5 +301,30 @@ public class DefaultRequest<T> implements Request<T> {
         } else {
             throw new IllegalStateException("AWSRequestMetrics has already been set on this request");
         }
+    }
+
+    @SuppressWarnings("resource")
+    @Override
+    public InputStream getContentUnwrapped() {
+        InputStream is = getContent();
+        if (is == null)
+            return null;
+        // We want to disable the progress reporting when the stream is
+        // consumed for signing purpose.
+        while (is instanceof ProgressInputStream) {
+            ProgressInputStream pris = (ProgressInputStream)is;
+            is = pris.getWrappedInputStream();
+        }
+        return is;
+    }
+
+    @Override
+    public ReadLimitInfo getReadLimitInfo() {
+        return originalRequest;
+    }
+
+    @Override
+    public Object getOriginalRequestObject() {
+        return originalRequest;
     }
 }

@@ -20,6 +20,7 @@ import org.apache.http.conn.ssl.SSLSocketFactory;
 /**
  * Used for Apache HTTP client specific custom configurations.
  */
+@SuppressWarnings("deprecation")
 @NotThreadSafe
 public final class ApacheHttpClientConfig {
     private SSLSocketFactory sslSocketFactory;

@@ -33,8 +33,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * number of healthy instances, as an absolute value.</li>
      * <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      * percentage of the total number of instances in the deployment.</li>
-     * </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     * is specified, deploy to up to 3 instances at a time. The deployment
+     * </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     * specified, deploy to up to 3 instances at a time. The deployment
      * succeeds if 6 or more instances are successfully deployed to;
      * otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      * specified, deploy to up to 5 instances at a time. The deployment
@@ -42,8 +42,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * otherwise, the deployment fails. <note>In a call to the get deployment
      * configuration operation, CodeDeployDefault.OneAtATime will return a
      * minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     * This means a deployment to only one Amazon EC2 instance at a time.
-     * (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     * This means a deployment to only one instances at a time. (You cannot
+     * set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      * FLEET_PERCENT.)</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -89,8 +89,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * number of healthy instances, as an absolute value.</li>
      * <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      * percentage of the total number of instances in the deployment.</li>
-     * </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     * is specified, deploy to up to 3 instances at a time. The deployment
+     * </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     * specified, deploy to up to 3 instances at a time. The deployment
      * succeeds if 6 or more instances are successfully deployed to;
      * otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      * specified, deploy to up to 5 instances at a time. The deployment
@@ -98,8 +98,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * otherwise, the deployment fails. <note>In a call to the get deployment
      * configuration operation, CodeDeployDefault.OneAtATime will return a
      * minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     * This means a deployment to only one Amazon EC2 instance at a time.
-     * (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     * This means a deployment to only one instances at a time. (You cannot
+     * set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      * FLEET_PERCENT.)</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -109,8 +109,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         number of healthy instances, as an absolute value.</li>
      *         <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      *         percentage of the total number of instances in the deployment.</li>
-     *         </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     *         is specified, deploy to up to 3 instances at a time. The deployment
+     *         </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     *         specified, deploy to up to 3 instances at a time. The deployment
      *         succeeds if 6 or more instances are successfully deployed to;
      *         otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      *         specified, deploy to up to 5 instances at a time. The deployment
@@ -118,8 +118,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         otherwise, the deployment fails. <note>In a call to the get deployment
      *         configuration operation, CodeDeployDefault.OneAtATime will return a
      *         minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     *         This means a deployment to only one Amazon EC2 instance at a time.
-     *         (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     *         This means a deployment to only one instances at a time. (You cannot
+     *         set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      *         FLEET_PERCENT.)</note>
      *
      * @see MinimumHealthyHostsType
@@ -133,8 +133,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * number of healthy instances, as an absolute value.</li>
      * <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      * percentage of the total number of instances in the deployment.</li>
-     * </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     * is specified, deploy to up to 3 instances at a time. The deployment
+     * </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     * specified, deploy to up to 3 instances at a time. The deployment
      * succeeds if 6 or more instances are successfully deployed to;
      * otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      * specified, deploy to up to 5 instances at a time. The deployment
@@ -142,8 +142,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * otherwise, the deployment fails. <note>In a call to the get deployment
      * configuration operation, CodeDeployDefault.OneAtATime will return a
      * minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     * This means a deployment to only one Amazon EC2 instance at a time.
-     * (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     * This means a deployment to only one instances at a time. (You cannot
+     * set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      * FLEET_PERCENT.)</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -153,8 +153,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         number of healthy instances, as an absolute value.</li>
      *         <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      *         percentage of the total number of instances in the deployment.</li>
-     *         </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     *         is specified, deploy to up to 3 instances at a time. The deployment
+     *         </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     *         specified, deploy to up to 3 instances at a time. The deployment
      *         succeeds if 6 or more instances are successfully deployed to;
      *         otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      *         specified, deploy to up to 5 instances at a time. The deployment
@@ -162,8 +162,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         otherwise, the deployment fails. <note>In a call to the get deployment
      *         configuration operation, CodeDeployDefault.OneAtATime will return a
      *         minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     *         This means a deployment to only one Amazon EC2 instance at a time.
-     *         (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     *         This means a deployment to only one instances at a time. (You cannot
+     *         set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      *         FLEET_PERCENT.)</note>
      *
      * @see MinimumHealthyHostsType
@@ -177,8 +177,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * number of healthy instances, as an absolute value.</li>
      * <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      * percentage of the total number of instances in the deployment.</li>
-     * </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     * is specified, deploy to up to 3 instances at a time. The deployment
+     * </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     * specified, deploy to up to 3 instances at a time. The deployment
      * succeeds if 6 or more instances are successfully deployed to;
      * otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      * specified, deploy to up to 5 instances at a time. The deployment
@@ -186,8 +186,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * otherwise, the deployment fails. <note>In a call to the get deployment
      * configuration operation, CodeDeployDefault.OneAtATime will return a
      * minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     * This means a deployment to only one Amazon EC2 instance at a time.
-     * (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     * This means a deployment to only one instances at a time. (You cannot
+     * set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      * FLEET_PERCENT.)</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -199,8 +199,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         number of healthy instances, as an absolute value.</li>
      *         <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      *         percentage of the total number of instances in the deployment.</li>
-     *         </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     *         is specified, deploy to up to 3 instances at a time. The deployment
+     *         </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     *         specified, deploy to up to 3 instances at a time. The deployment
      *         succeeds if 6 or more instances are successfully deployed to;
      *         otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      *         specified, deploy to up to 5 instances at a time. The deployment
@@ -208,8 +208,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         otherwise, the deployment fails. <note>In a call to the get deployment
      *         configuration operation, CodeDeployDefault.OneAtATime will return a
      *         minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     *         This means a deployment to only one Amazon EC2 instance at a time.
-     *         (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     *         This means a deployment to only one instances at a time. (You cannot
+     *         set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      *         FLEET_PERCENT.)</note>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -227,8 +227,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * number of healthy instances, as an absolute value.</li>
      * <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      * percentage of the total number of instances in the deployment.</li>
-     * </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     * is specified, deploy to up to 3 instances at a time. The deployment
+     * </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     * specified, deploy to up to 3 instances at a time. The deployment
      * succeeds if 6 or more instances are successfully deployed to;
      * otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      * specified, deploy to up to 5 instances at a time. The deployment
@@ -236,8 +236,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * otherwise, the deployment fails. <note>In a call to the get deployment
      * configuration operation, CodeDeployDefault.OneAtATime will return a
      * minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     * This means a deployment to only one Amazon EC2 instance at a time.
-     * (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     * This means a deployment to only one instances at a time. (You cannot
+     * set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      * FLEET_PERCENT.)</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -247,8 +247,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         number of healthy instances, as an absolute value.</li>
      *         <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      *         percentage of the total number of instances in the deployment.</li>
-     *         </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     *         is specified, deploy to up to 3 instances at a time. The deployment
+     *         </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     *         specified, deploy to up to 3 instances at a time. The deployment
      *         succeeds if 6 or more instances are successfully deployed to;
      *         otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      *         specified, deploy to up to 5 instances at a time. The deployment
@@ -256,8 +256,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         otherwise, the deployment fails. <note>In a call to the get deployment
      *         configuration operation, CodeDeployDefault.OneAtATime will return a
      *         minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     *         This means a deployment to only one Amazon EC2 instance at a time.
-     *         (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     *         This means a deployment to only one instances at a time. (You cannot
+     *         set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      *         FLEET_PERCENT.)</note>
      *
      * @see MinimumHealthyHostsType
@@ -271,8 +271,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * number of healthy instances, as an absolute value.</li>
      * <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      * percentage of the total number of instances in the deployment.</li>
-     * </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     * is specified, deploy to up to 3 instances at a time. The deployment
+     * </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     * specified, deploy to up to 3 instances at a time. The deployment
      * succeeds if 6 or more instances are successfully deployed to;
      * otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      * specified, deploy to up to 5 instances at a time. The deployment
@@ -280,8 +280,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * otherwise, the deployment fails. <note>In a call to the get deployment
      * configuration operation, CodeDeployDefault.OneAtATime will return a
      * minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     * This means a deployment to only one Amazon EC2 instance at a time.
-     * (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     * This means a deployment to only one instances at a time. (You cannot
+     * set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      * FLEET_PERCENT.)</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -293,8 +293,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         number of healthy instances, as an absolute value.</li>
      *         <li>FLEET_PERCENT: The minimum number of healthy instances, as a
      *         percentage of the total number of instances in the deployment.</li>
-     *         </ul> <p>For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6
-     *         is specified, deploy to up to 3 instances at a time. The deployment
+     *         </ul> <p>For example, for 9 instances, if a HOST_COUNT of 6 is
+     *         specified, deploy to up to 3 instances at a time. The deployment
      *         succeeds if 6 or more instances are successfully deployed to;
      *         otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
      *         specified, deploy to up to 5 instances at a time. The deployment
@@ -302,8 +302,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         otherwise, the deployment fails. <note>In a call to the get deployment
      *         configuration operation, CodeDeployDefault.OneAtATime will return a
      *         minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-     *         This means a deployment to only one Amazon EC2 instance at a time.
-     *         (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or
+     *         This means a deployment to only one instances at a time. (You cannot
+     *         set the type to MOST_CONCURRENCY, only to HOST_COUNT or
      *         FLEET_PERCENT.)</note>
      *
      * @return A reference to this updated object so that method calls can be chained

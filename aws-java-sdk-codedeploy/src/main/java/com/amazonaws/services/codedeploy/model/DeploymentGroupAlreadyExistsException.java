@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A deployment group group with the specified name already exists within
- * the AWS user account.
+ * A deployment group with the specified name already exists with the
+ * applicable IAM user or AWS account.
  * </p>
  */        
 public class DeploymentGroupAlreadyExistsException extends AmazonServiceException {

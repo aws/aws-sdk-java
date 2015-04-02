@@ -23,7 +23,7 @@ import java.util.TimeZone;
 import java.util.TreeMap;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 
 /**
  * Signer implementation responsible for signing an AWS query string request
@@ -44,7 +44,8 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      * @param credentials
      *            The credentials used to use to sign the request.
      */
-    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
+    public void sign(SignableRequest<?> request, AWSCredentials credentials)
+            throws AmazonClientException {
         sign(request, SignatureVersion.V2, SigningAlgorithm.HmacSHA256, credentials);
     }
 
@@ -62,7 +63,9 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      * @param algorithm
      *            signature algorithm. "HmacSHA256" is recommended.
      */
-    public void sign(Request<?> request, SignatureVersion version, SigningAlgorithm algorithm, AWSCredentials credentials) throws AmazonClientException {
+    public void sign(SignableRequest<?> request, SignatureVersion version,
+            SigningAlgorithm algorithm, AWSCredentials credentials)
+            throws AmazonClientException {
         // annonymous credentials, don't sign
         if ( credentials instanceof AnonymousAWSCredentials ) {
             return;
@@ -127,7 +130,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      * @throws AmazonClientException
      *             If the string to sign cannot be calculated.
      */
-    private String calculateStringToSignV2(Request<?> request) throws AmazonClientException {
+    private String calculateStringToSignV2(SignableRequest<?> request) throws AmazonClientException {
         URI endpoint = request.getEndpoint();
         Map<String, String> parameters = request.getParameters();
 
@@ -139,7 +142,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         return data.toString();
     }
 
-    private String getCanonicalizedResourcePath(Request<?> request) {
+    private String getCanonicalizedResourcePath(SignableRequest<?> request) {
         String resourcePath = "";
 
         if (request.getEndpoint().getPath() != null) {
@@ -190,7 +193,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
     }
 
     @Override
-    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+    protected void addSessionCredentials(SignableRequest<?> request, AWSSessionCredentials credentials) {
         request.addParameter("SecurityToken", credentials.getSessionToken());
     }
 }

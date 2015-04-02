@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified Resource ID was not found.
+ * The specified resource ID was not found.
  * </p>
  */        
 public class ResourceNotFoundException extends AmazonServiceException {

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.codedeploy.AmazonCodeDeploy#getDeploymentInstance(GetDeploymentInstanceRequest) GetDeploymentInstance operation}.
  * <p>
- * Gets information about an Amazon EC2 instance as part of a deployment.
+ * Gets information about an instance as part of a deployment.
  * </p>
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#getDeploymentInstance(GetDeploymentInstanceRequest)
@@ -34,8 +34,7 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest implem
     private String deploymentId;
 
     /**
-     * The unique ID of an Amazon EC2 instance in the deployment's deployment
-     * group.
+     * The unique ID of an instance in the deployment's deployment group.
      */
     private String instanceId;
 
@@ -73,35 +72,29 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The unique ID of an Amazon EC2 instance in the deployment's deployment
-     * group.
+     * The unique ID of an instance in the deployment's deployment group.
      *
-     * @return The unique ID of an Amazon EC2 instance in the deployment's deployment
-     *         group.
+     * @return The unique ID of an instance in the deployment's deployment group.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The unique ID of an Amazon EC2 instance in the deployment's deployment
-     * group.
+     * The unique ID of an instance in the deployment's deployment group.
      *
-     * @param instanceId The unique ID of an Amazon EC2 instance in the deployment's deployment
-     *         group.
+     * @param instanceId The unique ID of an instance in the deployment's deployment group.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The unique ID of an Amazon EC2 instance in the deployment's deployment
-     * group.
+     * The unique ID of an instance in the deployment's deployment group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The unique ID of an Amazon EC2 instance in the deployment's deployment
-     *         group.
+     * @param instanceId The unique ID of an instance in the deployment's deployment group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

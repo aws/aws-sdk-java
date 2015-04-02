@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The deployment configuration does not exist within the AWS user
- * account.
+ * The deployment configuration does not exist with the applicable IAM
+ * user or AWS account.
  * </p>
  */        
 public class DeploymentConfigDoesNotExistException extends AmazonServiceException {

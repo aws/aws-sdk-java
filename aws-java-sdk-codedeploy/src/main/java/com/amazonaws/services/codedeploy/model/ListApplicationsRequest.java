@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.codedeploy.AmazonCodeDeploy#listApplications(ListApplicationsRequest) ListApplications operation}.
  * <p>
- * Lists the applications registered within the AWS user account.
+ * Lists the applications registered with the applicable IAM user or AWS
+ * account.
  * </p>
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listApplications(ListApplicationsRequest)

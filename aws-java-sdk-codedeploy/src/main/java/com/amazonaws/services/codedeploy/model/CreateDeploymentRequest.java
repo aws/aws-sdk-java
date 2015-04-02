@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.codedeploy.AmazonCodeDeploy#createDeployment(CreateDeploymentRequest) CreateDeployment operation}.
  * <p>
- * Deploys an application revision to the specified deployment group.
+ * Deploys an application revision through the specified deployment
+ * group.
  * </p>
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#createDeployment(CreateDeploymentRequest)
@@ -29,8 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateDeploymentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
@@ -52,11 +53,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
     private RevisionLocation revision;
 
     /**
-     * The name of an existing deployment configuration within the AWS user
-     * account. <p>If not specified, the value configured in the deployment
-     * group will be used as the default. If the deployment group does not
-     * have a deployment configuration associated with it, then
-     * CodeDeployDefault.OneAtATime will be used by default.
+     * The name of an existing deployment configuration associated with the
+     * applicable IAM user or AWS account. <p>If not specified, the value
+     * configured in the deployment group will be used as the default. If the
+     * deployment group does not have a deployment configuration associated
+     * with it, then CodeDeployDefault.OneAtATime will be used by default.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
@@ -82,44 +83,44 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
     private Boolean ignoreApplicationStopFailures;
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @return The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @return The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public String getApplicationName() {
         return applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -211,62 +212,62 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The name of an existing deployment configuration within the AWS user
-     * account. <p>If not specified, the value configured in the deployment
-     * group will be used as the default. If the deployment group does not
-     * have a deployment configuration associated with it, then
-     * CodeDeployDefault.OneAtATime will be used by default.
+     * The name of an existing deployment configuration associated with the
+     * applicable IAM user or AWS account. <p>If not specified, the value
+     * configured in the deployment group will be used as the default. If the
+     * deployment group does not have a deployment configuration associated
+     * with it, then CodeDeployDefault.OneAtATime will be used by default.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @return The name of an existing deployment configuration within the AWS user
-     *         account. <p>If not specified, the value configured in the deployment
-     *         group will be used as the default. If the deployment group does not
-     *         have a deployment configuration associated with it, then
-     *         CodeDeployDefault.OneAtATime will be used by default.
+     * @return The name of an existing deployment configuration associated with the
+     *         applicable IAM user or AWS account. <p>If not specified, the value
+     *         configured in the deployment group will be used as the default. If the
+     *         deployment group does not have a deployment configuration associated
+     *         with it, then CodeDeployDefault.OneAtATime will be used by default.
      */
     public String getDeploymentConfigName() {
         return deploymentConfigName;
     }
     
     /**
-     * The name of an existing deployment configuration within the AWS user
-     * account. <p>If not specified, the value configured in the deployment
-     * group will be used as the default. If the deployment group does not
-     * have a deployment configuration associated with it, then
-     * CodeDeployDefault.OneAtATime will be used by default.
+     * The name of an existing deployment configuration associated with the
+     * applicable IAM user or AWS account. <p>If not specified, the value
+     * configured in the deployment group will be used as the default. If the
+     * deployment group does not have a deployment configuration associated
+     * with it, then CodeDeployDefault.OneAtATime will be used by default.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param deploymentConfigName The name of an existing deployment configuration within the AWS user
-     *         account. <p>If not specified, the value configured in the deployment
-     *         group will be used as the default. If the deployment group does not
-     *         have a deployment configuration associated with it, then
-     *         CodeDeployDefault.OneAtATime will be used by default.
+     * @param deploymentConfigName The name of an existing deployment configuration associated with the
+     *         applicable IAM user or AWS account. <p>If not specified, the value
+     *         configured in the deployment group will be used as the default. If the
+     *         deployment group does not have a deployment configuration associated
+     *         with it, then CodeDeployDefault.OneAtATime will be used by default.
      */
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
     
     /**
-     * The name of an existing deployment configuration within the AWS user
-     * account. <p>If not specified, the value configured in the deployment
-     * group will be used as the default. If the deployment group does not
-     * have a deployment configuration associated with it, then
-     * CodeDeployDefault.OneAtATime will be used by default.
+     * The name of an existing deployment configuration associated with the
+     * applicable IAM user or AWS account. <p>If not specified, the value
+     * configured in the deployment group will be used as the default. If the
+     * deployment group does not have a deployment configuration associated
+     * with it, then CodeDeployDefault.OneAtATime will be used by default.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param deploymentConfigName The name of an existing deployment configuration within the AWS user
-     *         account. <p>If not specified, the value configured in the deployment
-     *         group will be used as the default. If the deployment group does not
-     *         have a deployment configuration associated with it, then
-     *         CodeDeployDefault.OneAtATime will be used by default.
+     * @param deploymentConfigName The name of an existing deployment configuration associated with the
+     *         applicable IAM user or AWS account. <p>If not specified, the value
+     *         configured in the deployment group will be used as the default. If the
+     *         deployment group does not have a deployment configuration associated
+     *         with it, then CodeDeployDefault.OneAtATime will be used by default.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

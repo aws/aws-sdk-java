@@ -104,8 +104,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     * true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      * has been specified as part of the request and the PubliclyAccessible
      * value has not been set, the DB instance will be publicly accessible.
      * If a specific DB subnet group has been specified as part of the
@@ -152,8 +152,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * parameter is set to 0, the new instance will be converted to a
      * non-PIOPS instance, which will take additional time, though your DB
      * instance will be available for connections before the conversion
-     * starts. <p> Constraints: Must be an integer greater than 1000.
-     * <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     * starts. <p> Constraints: Must be an integer greater than 1000. <p>
+     * <b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
      * database engine is not supported.
      */
     private Integer iops;
@@ -593,8 +593,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     * true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      * has been specified as part of the request and the PubliclyAccessible
      * value has not been set, the DB instance will be publicly accessible.
      * If a specific DB subnet group has been specified as part of the
@@ -607,8 +607,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     *         true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      *         has been specified as part of the request and the PubliclyAccessible
      *         value has not been set, the DB instance will be publicly accessible.
      *         If a specific DB subnet group has been specified as part of the
@@ -626,8 +626,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     * true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      * has been specified as part of the request and the PubliclyAccessible
      * value has not been set, the DB instance will be publicly accessible.
      * If a specific DB subnet group has been specified as part of the
@@ -640,8 +640,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     *         true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      *         has been specified as part of the request and the PubliclyAccessible
      *         value has not been set, the DB instance will be publicly accessible.
      *         If a specific DB subnet group has been specified as part of the
@@ -659,8 +659,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     * true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      * has been specified as part of the request and the PubliclyAccessible
      * value has not been set, the DB instance will be publicly accessible.
      * If a specific DB subnet group has been specified as part of the
@@ -675,8 +675,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     *         true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      *         has been specified as part of the request and the PubliclyAccessible
      *         value has not been set, the DB instance will be publicly accessible.
      *         If a specific DB subnet group has been specified as part of the
@@ -698,8 +698,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     * true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     * the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     * true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      * has been specified as part of the request and the PubliclyAccessible
      * value has not been set, the DB instance will be publicly accessible.
      * If a specific DB subnet group has been specified as part of the
@@ -712,8 +712,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default VPC:</b>
-     *         true</li> <li><b>VPC:</b> false</li> </ul> <p> If no DB subnet group
+     *         the default behavior in each case. <ul> <li> <b>Default VPC:</b>
+     *         true</li> <li> <b>VPC:</b> false</li> </ul> <p> If no DB subnet group
      *         has been specified as part of the request and the PubliclyAccessible
      *         value has not been set, the DB instance will be publicly accessible.
      *         If a specific DB subnet group has been specified as part of the
@@ -940,8 +940,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * parameter is set to 0, the new instance will be converted to a
      * non-PIOPS instance, which will take additional time, though your DB
      * instance will be available for connections before the conversion
-     * starts. <p> Constraints: Must be an integer greater than 1000.
-     * <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     * starts. <p> Constraints: Must be an integer greater than 1000. <p>
+     * <b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
      * database engine is not supported.
      *
      * @return Specifies the amount of provisioned IOPS for the DB instance,
@@ -950,8 +950,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         parameter is set to 0, the new instance will be converted to a
      *         non-PIOPS instance, which will take additional time, though your DB
      *         instance will be available for connections before the conversion
-     *         starts. <p> Constraints: Must be an integer greater than 1000.
-     *         <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     *         starts. <p> Constraints: Must be an integer greater than 1000. <p>
+     *         <b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
      *         database engine is not supported.
      */
     public Integer getIops() {
@@ -965,8 +965,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * parameter is set to 0, the new instance will be converted to a
      * non-PIOPS instance, which will take additional time, though your DB
      * instance will be available for connections before the conversion
-     * starts. <p> Constraints: Must be an integer greater than 1000.
-     * <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     * starts. <p> Constraints: Must be an integer greater than 1000. <p>
+     * <b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
      * database engine is not supported.
      *
      * @param iops Specifies the amount of provisioned IOPS for the DB instance,
@@ -975,8 +975,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         parameter is set to 0, the new instance will be converted to a
      *         non-PIOPS instance, which will take additional time, though your DB
      *         instance will be available for connections before the conversion
-     *         starts. <p> Constraints: Must be an integer greater than 1000.
-     *         <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     *         starts. <p> Constraints: Must be an integer greater than 1000. <p>
+     *         <b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
      *         database engine is not supported.
      */
     public void setIops(Integer iops) {
@@ -990,8 +990,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * parameter is set to 0, the new instance will be converted to a
      * non-PIOPS instance, which will take additional time, though your DB
      * instance will be available for connections before the conversion
-     * starts. <p> Constraints: Must be an integer greater than 1000.
-     * <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     * starts. <p> Constraints: Must be an integer greater than 1000. <p>
+     * <b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
      * database engine is not supported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -1002,8 +1002,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         parameter is set to 0, the new instance will be converted to a
      *         non-PIOPS instance, which will take additional time, though your DB
      *         instance will be available for connections before the conversion
-     *         starts. <p> Constraints: Must be an integer greater than 1000.
-     *         <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     *         starts. <p> Constraints: Must be an integer greater than 1000. <p>
+     *         <b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
      *         database engine is not supported.
      *
      * @return A reference to this updated object so that method calls can be chained

@@ -81,7 +81,7 @@ import com.amazonaws.RequestClientOptions.Marker;
 import com.amazonaws.ResetException;
 import com.amazonaws.Response;
 import com.amazonaws.ResponseMetadata;
-import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.SDKGlobalTime;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.event.ProgressEventType;
@@ -162,7 +162,7 @@ public class AmazonHttpClient {
     private final RequestMetricCollector requestMetricCollector;
 
     /** The time difference in seconds between this client and AWS. */
-    private volatile int timeOffset = SDKGlobalConfiguration.getGlobalTimeOffset();
+    private volatile int timeOffset = SDKGlobalTime.getGlobalTimeOffset();
 
     /**
      * Constructs a new AWS client using the specified client configuration
@@ -759,7 +759,7 @@ public class AmazonHttpClient {
          */
         if (RetryUtils.isClockSkewError(ase)) {
             int clockSkew = parseClockSkewOffset(p.apacheResponse, ase);
-            SDKGlobalConfiguration.setGlobalTimeOffset(timeOffset = clockSkew);
+            SDKGlobalTime.setGlobalTimeOffset(timeOffset = clockSkew);
         }
         return null; // => retry
     }

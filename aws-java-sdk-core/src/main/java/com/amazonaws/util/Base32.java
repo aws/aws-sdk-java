@@ -36,14 +36,12 @@ public enum Base32 {
     
     /**
      * Returns a 32 encoded byte array of the given bytes.
-     * hchar: compared to Base32.encode(byte[]) of JakartaCommons-1.5, this routine is > 20x faster on my MacAir.   
      */
     public static byte[] encode(byte[] bytes) { return bytes == null || bytes.length == 0 ? bytes : codec.encode(bytes); }
     
     /** 
      * Decodes the given base 32 encoded string,
      * skipping carriage returns, line feeds and spaces as needed.
-     * hchar: compared to Base32.decode(String) of JakartaCommons-1.5, this routine is > 11x faster on my MacAir.   
      */
     public static byte[] decode(String b32) {
         if (b32 == null)
