@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about an Amazon EC2 instance in a deployment.
+ * Information about an instance in a deployment.
  * </p>
  */
 public class InstanceSummary implements Serializable, Cloneable {

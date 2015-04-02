@@ -94,6 +94,12 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
     private HlsContentProtection hlsContentProtection;
 
     /**
+     * The DRM settings, if any, that you want Elastic Transcoder to apply to
+     * the output files associated with this playlist.
+     */
+    private PlayReadyDrm playReadyDrm;
+
+    /**
      * The name that you want Elastic Transcoder to assign to the master
      * playlist, for example, nyc-vacation.m3u8. If the name includes a
      * <code>/</code> character, the section of the name before the last
@@ -593,6 +599,45 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
     }
 
     /**
+     * The DRM settings, if any, that you want Elastic Transcoder to apply to
+     * the output files associated with this playlist.
+     *
+     * @return The DRM settings, if any, that you want Elastic Transcoder to apply to
+     *         the output files associated with this playlist.
+     */
+    public PlayReadyDrm getPlayReadyDrm() {
+        return playReadyDrm;
+    }
+    
+    /**
+     * The DRM settings, if any, that you want Elastic Transcoder to apply to
+     * the output files associated with this playlist.
+     *
+     * @param playReadyDrm The DRM settings, if any, that you want Elastic Transcoder to apply to
+     *         the output files associated with this playlist.
+     */
+    public void setPlayReadyDrm(PlayReadyDrm playReadyDrm) {
+        this.playReadyDrm = playReadyDrm;
+    }
+    
+    /**
+     * The DRM settings, if any, that you want Elastic Transcoder to apply to
+     * the output files associated with this playlist.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param playReadyDrm The DRM settings, if any, that you want Elastic Transcoder to apply to
+     *         the output files associated with this playlist.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateJobPlaylist withPlayReadyDrm(PlayReadyDrm playReadyDrm) {
+        this.playReadyDrm = playReadyDrm;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -607,7 +652,8 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getFormat() != null) sb.append("Format: " + getFormat() + ",");
         if (getOutputKeys() != null) sb.append("OutputKeys: " + getOutputKeys() + ",");
-        if (getHlsContentProtection() != null) sb.append("HlsContentProtection: " + getHlsContentProtection() );
+        if (getHlsContentProtection() != null) sb.append("HlsContentProtection: " + getHlsContentProtection() + ",");
+        if (getPlayReadyDrm() != null) sb.append("PlayReadyDrm: " + getPlayReadyDrm() );
         sb.append("}");
         return sb.toString();
     }
@@ -621,6 +667,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode()); 
         hashCode = prime * hashCode + ((getOutputKeys() == null) ? 0 : getOutputKeys().hashCode()); 
         hashCode = prime * hashCode + ((getHlsContentProtection() == null) ? 0 : getHlsContentProtection().hashCode()); 
+        hashCode = prime * hashCode + ((getPlayReadyDrm() == null) ? 0 : getPlayReadyDrm().hashCode()); 
         return hashCode;
     }
     
@@ -640,6 +687,8 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
         if (other.getOutputKeys() != null && other.getOutputKeys().equals(this.getOutputKeys()) == false) return false; 
         if (other.getHlsContentProtection() == null ^ this.getHlsContentProtection() == null) return false;
         if (other.getHlsContentProtection() != null && other.getHlsContentProtection().equals(this.getHlsContentProtection()) == false) return false; 
+        if (other.getPlayReadyDrm() == null ^ this.getPlayReadyDrm() == null) return false;
+        if (other.getPlayReadyDrm() != null && other.getPlayReadyDrm().equals(this.getPlayReadyDrm()) == false) return false; 
         return true;
     }
     

@@ -67,6 +67,8 @@ abstract class AbstractBase32Codec implements Codec {
             case 4:
                 encode4bytes(src, s, dest, d);
                 break;
+            default:
+                throw new IllegalStateException();
         }
         return dest;
     }

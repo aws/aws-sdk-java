@@ -115,8 +115,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -138,11 +138,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * DB instance identifier specifies a DB instance in another region.</li>
      * <li>The specified DB subnet group must be in the same region in which
      * the operation is running.</li> <li> All Read Replicas in one region
-     * that are created from the same source DB instance must either: <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these Read
-     * Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * that are created from the same source DB instance must either:
+     * <ul><li>Specify DB subnet groups from the same VPC. All these Read
+     * Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li> </ul> </li> </ul>
+     * VPC.</li></ul></li> </ul>
      */
     private String dBSubnetGroupName;
 
@@ -649,8 +649,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -663,8 +663,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -682,8 +682,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -696,8 +696,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -715,8 +715,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -731,8 +731,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -754,8 +754,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -768,8 +768,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -856,11 +856,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * DB instance identifier specifies a DB instance in another region.</li>
      * <li>The specified DB subnet group must be in the same region in which
      * the operation is running.</li> <li> All Read Replicas in one region
-     * that are created from the same source DB instance must either: <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these Read
-     * Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * that are created from the same source DB instance must either:
+     * <ul><li>Specify DB subnet groups from the same VPC. All these Read
+     * Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li> </ul> </li> </ul>
+     * VPC.</li></ul></li> </ul>
      *
      * @return Specifies a DB subnet group for the DB instance. The new DB instance
      *         will be created in the VPC associated with the DB subnet group. If no
@@ -869,11 +869,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         DB instance identifier specifies a DB instance in another region.</li>
      *         <li>The specified DB subnet group must be in the same region in which
      *         the operation is running.</li> <li> All Read Replicas in one region
-     *         that are created from the same source DB instance must either: <ul>
-     *         <li>Specify DB subnet groups from the same VPC. All these Read
-     *         Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         that are created from the same source DB instance must either:
+     *         <ul><li>Specify DB subnet groups from the same VPC. All these Read
+     *         Replicas will be created in the same VPC.</li><li>Not specify a DB
      *         subnet group. All these Read Replicas will be created outside of any
-     *         VPC.</li> </ul> </li> </ul>
+     *         VPC.</li></ul></li> </ul>
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
@@ -887,11 +887,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * DB instance identifier specifies a DB instance in another region.</li>
      * <li>The specified DB subnet group must be in the same region in which
      * the operation is running.</li> <li> All Read Replicas in one region
-     * that are created from the same source DB instance must either: <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these Read
-     * Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * that are created from the same source DB instance must either:
+     * <ul><li>Specify DB subnet groups from the same VPC. All these Read
+     * Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li> </ul> </li> </ul>
+     * VPC.</li></ul></li> </ul>
      *
      * @param dBSubnetGroupName Specifies a DB subnet group for the DB instance. The new DB instance
      *         will be created in the VPC associated with the DB subnet group. If no
@@ -900,11 +900,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         DB instance identifier specifies a DB instance in another region.</li>
      *         <li>The specified DB subnet group must be in the same region in which
      *         the operation is running.</li> <li> All Read Replicas in one region
-     *         that are created from the same source DB instance must either: <ul>
-     *         <li>Specify DB subnet groups from the same VPC. All these Read
-     *         Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         that are created from the same source DB instance must either:
+     *         <ul><li>Specify DB subnet groups from the same VPC. All these Read
+     *         Replicas will be created in the same VPC.</li><li>Not specify a DB
      *         subnet group. All these Read Replicas will be created outside of any
-     *         VPC.</li> </ul> </li> </ul>
+     *         VPC.</li></ul></li> </ul>
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -918,11 +918,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * DB instance identifier specifies a DB instance in another region.</li>
      * <li>The specified DB subnet group must be in the same region in which
      * the operation is running.</li> <li> All Read Replicas in one region
-     * that are created from the same source DB instance must either: <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these Read
-     * Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * that are created from the same source DB instance must either:
+     * <ul><li>Specify DB subnet groups from the same VPC. All these Read
+     * Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li> </ul> </li> </ul>
+     * VPC.</li></ul></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -933,11 +933,11 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         DB instance identifier specifies a DB instance in another region.</li>
      *         <li>The specified DB subnet group must be in the same region in which
      *         the operation is running.</li> <li> All Read Replicas in one region
-     *         that are created from the same source DB instance must either: <ul>
-     *         <li>Specify DB subnet groups from the same VPC. All these Read
-     *         Replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         that are created from the same source DB instance must either:
+     *         <ul><li>Specify DB subnet groups from the same VPC. All these Read
+     *         Replicas will be created in the same VPC.</li><li>Not specify a DB
      *         subnet group. All these Read Replicas will be created outside of any
-     *         VPC.</li> </ul> </li> </ul>
+     *         VPC.</li></ul></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -24,10 +24,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a specified DBParameterGroup. The DBParameterGroup to be
  * deleted cannot be associated with any DB instances.
  * </p>
- * <p>
- * <b>NOTE:</b> The specified DB parameter group cannot be associated
- * with any DB instances.
- * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)
  */

@@ -24,13 +24,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSSessionCredentials;
 import com.amazonaws.auth.AbstractAWSSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SigningAlgorithm;
 import com.amazonaws.services.s3.Headers;
-import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * Implementation of the {@linkplain Signer} interface specific to S3's signing
@@ -133,7 +134,7 @@ public class S3Signer extends AbstractAWSSigner {
     }
 
     @Override
-    public void sign(Request<?> request, AWSCredentials credentials) {
+    public void sign(SignableRequest<?> request, AWSCredentials credentials) {
 
         if (resourcePath == null) {
             throw new UnsupportedOperationException(
@@ -159,8 +160,8 @@ public class S3Signer extends AbstractAWSSigner {
          * httpclient works, we need to do the same encoding here for the
          * resource path.
          */
-        String encodedResourcePath = HttpUtils.appendUri(request.getEndpoint()
-                .getPath(), resourcePath, true);
+        String encodedResourcePath = SdkHttpUtils.appendUri(
+                request.getEndpoint().getPath(), resourcePath, true);
 
         int timeOffset = request.getTimeOffset();
         Date date = getSignatureDate(timeOffset);
@@ -178,7 +179,7 @@ public class S3Signer extends AbstractAWSSigner {
     }
 
     @Override
-    protected void addSessionCredentials(Request<?> request,
+    protected void addSessionCredentials(SignableRequest<?> request,
             AWSSessionCredentials credentials) {
         request.addHeader("x-amz-security-token", credentials.getSessionToken());
     }

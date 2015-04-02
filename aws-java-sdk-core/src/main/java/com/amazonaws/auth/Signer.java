@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth;
 
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 
 /**
  * A strategy for applying cryptographic signatures to a request, proving
@@ -29,5 +29,5 @@ public interface Signer {
      * @param request      The request to sign.
      * @param credentials  The credentials to sign the request with.
      */
-    public void sign(Request<?> request, AWSCredentials credentials);
+    public void sign(SignableRequest<?> request, AWSCredentials credentials);
 }

@@ -18,25 +18,24 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about an Amazon EC2 tag filter.
+ * Information about a tag filter.
  * </p>
  */
 public class EC2TagFilter implements Serializable, Cloneable {
 
     /**
-     * The Amazon EC2 tag filter key.
+     * The tag filter key.
      */
     private String key;
 
     /**
-     * The Amazon EC2 tag filter value.
+     * The tag filter value.
      */
     private String value;
 
     /**
-     * The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE
@@ -44,29 +43,29 @@ public class EC2TagFilter implements Serializable, Cloneable {
     private String type;
 
     /**
-     * The Amazon EC2 tag filter key.
+     * The tag filter key.
      *
-     * @return The Amazon EC2 tag filter key.
+     * @return The tag filter key.
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * The Amazon EC2 tag filter key.
+     * The tag filter key.
      *
-     * @param key The Amazon EC2 tag filter key.
+     * @param key The tag filter key.
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * The Amazon EC2 tag filter key.
+     * The tag filter key.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param key The Amazon EC2 tag filter key.
+     * @param key The tag filter key.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -77,29 +76,29 @@ public class EC2TagFilter implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon EC2 tag filter value.
+     * The tag filter value.
      *
-     * @return The Amazon EC2 tag filter value.
+     * @return The tag filter value.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * The Amazon EC2 tag filter value.
+     * The tag filter value.
      *
-     * @param value The Amazon EC2 tag filter value.
+     * @param value The tag filter value.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * The Amazon EC2 tag filter value.
+     * The tag filter value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value The Amazon EC2 tag filter value.
+     * @param value The tag filter value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -110,16 +109,14 @@ public class EC2TagFilter implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE
      *
-     * @return The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     *         <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     *         value.</li> </ul>
+     * @return The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     *         Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      *
      * @see EC2TagFilterType
      */
@@ -128,16 +125,14 @@ public class EC2TagFilter implements Serializable, Cloneable {
     }
     
     /**
-     * The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE
      *
-     * @param type The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     *         <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     *         value.</li> </ul>
+     * @param type The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     *         Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      *
      * @see EC2TagFilterType
      */
@@ -146,18 +141,16 @@ public class EC2TagFilter implements Serializable, Cloneable {
     }
     
     /**
-     * The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE
      *
-     * @param type The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     *         <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     *         value.</li> </ul>
+     * @param type The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     *         Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -170,16 +163,14 @@ public class EC2TagFilter implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE
      *
-     * @param type The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     *         <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     *         value.</li> </ul>
+     * @param type The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     *         Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      *
      * @see EC2TagFilterType
      */
@@ -188,18 +179,16 @@ public class EC2TagFilter implements Serializable, Cloneable {
     }
     
     /**
-     * The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE
      *
-     * @param type The Amazon EC2 tag filter type: <ul> <li>KEY_ONLY: Key only.</li>
-     *         <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     *         value.</li> </ul>
+     * @param type The tag filter type: <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
+     *         Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

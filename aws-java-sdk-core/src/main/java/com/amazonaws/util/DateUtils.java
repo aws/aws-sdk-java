@@ -22,7 +22,6 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.http.annotation.ThreadSafe;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -30,6 +29,7 @@ import org.joda.time.format.ISODateTimeFormat;
 import org.joda.time.tz.FixedDateTimeZone;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Utilities for parsing and formatting dates.

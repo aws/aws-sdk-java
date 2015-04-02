@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class ListDeploymentInstancesResult implements Serializable, Cloneable {
 
     /**
-     * A list of instance IDs.
+     * A list of instances IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instancesList;
 
@@ -37,9 +37,9 @@ public class ListDeploymentInstancesResult implements Serializable, Cloneable {
     private String nextToken;
 
     /**
-     * A list of instance IDs.
+     * A list of instances IDs.
      *
-     * @return A list of instance IDs.
+     * @return A list of instances IDs.
      */
     public java.util.List<String> getInstancesList() {
         if (instancesList == null) {
@@ -50,9 +50,9 @@ public class ListDeploymentInstancesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of instance IDs.
+     * A list of instances IDs.
      *
-     * @param instancesList A list of instance IDs.
+     * @param instancesList A list of instances IDs.
      */
     public void setInstancesList(java.util.Collection<String> instancesList) {
         if (instancesList == null) {
@@ -65,11 +65,11 @@ public class ListDeploymentInstancesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of instance IDs.
+     * A list of instances IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instancesList A list of instance IDs.
+     * @param instancesList A list of instances IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -83,11 +83,11 @@ public class ListDeploymentInstancesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of instance IDs.
+     * A list of instances IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instancesList A list of instance IDs.
+     * @param instancesList A list of instances IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

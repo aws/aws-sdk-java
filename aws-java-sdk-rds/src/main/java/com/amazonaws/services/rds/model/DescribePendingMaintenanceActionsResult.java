@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class DescribePendingMaintenanceActionsResult implements Serializable, Cloneable {
 
     /**
-     * Provides a list of the pending maintenance actions for the resource.
+     * A list of the pending maintenance actions for the resource.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ResourcePendingMaintenanceActions> pendingMaintenanceActions;
 
@@ -33,15 +33,15 @@ public class DescribePendingMaintenanceActionsResult implements Serializable, Cl
      * An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this
      * parameter is specified, the response includes only records beyond the
-     * marker, up to a number of records specified by <code>MaxRecords</code>
-     * .
+     * marker, up to a number of records specified by
+     * <code>MaxRecords</code>.
      */
     private String marker;
 
     /**
-     * Provides a list of the pending maintenance actions for the resource.
+     * A list of the pending maintenance actions for the resource.
      *
-     * @return Provides a list of the pending maintenance actions for the resource.
+     * @return A list of the pending maintenance actions for the resource.
      */
     public java.util.List<ResourcePendingMaintenanceActions> getPendingMaintenanceActions() {
         if (pendingMaintenanceActions == null) {
@@ -52,9 +52,9 @@ public class DescribePendingMaintenanceActionsResult implements Serializable, Cl
     }
     
     /**
-     * Provides a list of the pending maintenance actions for the resource.
+     * A list of the pending maintenance actions for the resource.
      *
-     * @param pendingMaintenanceActions Provides a list of the pending maintenance actions for the resource.
+     * @param pendingMaintenanceActions A list of the pending maintenance actions for the resource.
      */
     public void setPendingMaintenanceActions(java.util.Collection<ResourcePendingMaintenanceActions> pendingMaintenanceActions) {
         if (pendingMaintenanceActions == null) {
@@ -67,11 +67,11 @@ public class DescribePendingMaintenanceActionsResult implements Serializable, Cl
     }
     
     /**
-     * Provides a list of the pending maintenance actions for the resource.
+     * A list of the pending maintenance actions for the resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pendingMaintenanceActions Provides a list of the pending maintenance actions for the resource.
+     * @param pendingMaintenanceActions A list of the pending maintenance actions for the resource.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -85,11 +85,11 @@ public class DescribePendingMaintenanceActionsResult implements Serializable, Cl
     }
     
     /**
-     * Provides a list of the pending maintenance actions for the resource.
+     * A list of the pending maintenance actions for the resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pendingMaintenanceActions Provides a list of the pending maintenance actions for the resource.
+     * @param pendingMaintenanceActions A list of the pending maintenance actions for the resource.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -110,14 +110,14 @@ public class DescribePendingMaintenanceActionsResult implements Serializable, Cl
      * An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this
      * parameter is specified, the response includes only records beyond the
-     * marker, up to a number of records specified by <code>MaxRecords</code>
-     * .
+     * marker, up to a number of records specified by
+     * <code>MaxRecords</code>.
      *
      * @return An optional pagination token provided by a previous
      *         <code>DescribePendingMaintenanceActions</code> request. If this
      *         parameter is specified, the response includes only records beyond the
-     *         marker, up to a number of records specified by <code>MaxRecords</code>
-     *         .
+     *         marker, up to a number of records specified by
+     *         <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
@@ -127,14 +127,14 @@ public class DescribePendingMaintenanceActionsResult implements Serializable, Cl
      * An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this
      * parameter is specified, the response includes only records beyond the
-     * marker, up to a number of records specified by <code>MaxRecords</code>
-     * .
+     * marker, up to a number of records specified by
+     * <code>MaxRecords</code>.
      *
      * @param marker An optional pagination token provided by a previous
      *         <code>DescribePendingMaintenanceActions</code> request. If this
      *         parameter is specified, the response includes only records beyond the
-     *         marker, up to a number of records specified by <code>MaxRecords</code>
-     *         .
+     *         marker, up to a number of records specified by
+     *         <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -144,16 +144,16 @@ public class DescribePendingMaintenanceActionsResult implements Serializable, Cl
      * An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this
      * parameter is specified, the response includes only records beyond the
-     * marker, up to a number of records specified by <code>MaxRecords</code>
-     * .
+     * marker, up to a number of records specified by
+     * <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional pagination token provided by a previous
      *         <code>DescribePendingMaintenanceActions</code> request. If this
      *         parameter is specified, the response includes only records beyond the
-     *         marker, up to a number of records specified by <code>MaxRecords</code>
-     *         .
+     *         marker, up to a number of records specified by
+     *         <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -139,6 +139,14 @@ public final class RetryPolicy {
      * should be retried.
      */
     public static interface RetryCondition {
+        public static final RetryCondition NO_RETRY_CONDITION = new RetryCondition() {
+            @Override
+            public boolean shouldRetry(AmazonWebServiceRequest originalRequest,
+                    AmazonClientException exception, int retriesAttempted) {
+                return false;
+            }
+            
+        };
 
         /**
          * Returns whether a failed request should be retried according to the
@@ -185,6 +193,13 @@ public final class RetryPolicy {
      * between retries.
      */
     public static interface BackoffStrategy {
+        public static final BackoffStrategy NO_DELAY = new BackoffStrategy() {
+            @Override
+            public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
+                    AmazonClientException exception, int retriesAttempted) {
+                return 0;
+            }
+        };
         
         /**
          * Returns the delay (in milliseconds) before next retry attempt.

@@ -58,7 +58,7 @@ public class AclXmlFactory {
         }
         xml.end();
         xml.start("AccessControlList");
-        for (Grant grant : acl.getGrants()) {
+        for (Grant grant : acl.getGrantsAsList()) {
             xml.start("Grant");
             convertToXml(grant.getGrantee(), xml);
             xml.start("Permission").value(grant.getPermission().toString()).end();

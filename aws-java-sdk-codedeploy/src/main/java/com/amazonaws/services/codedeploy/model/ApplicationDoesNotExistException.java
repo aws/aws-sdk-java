@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The application does not exist within the AWS user account.
+ * The application does not exist with the applicable IAM user or AWS
+ * account.
  * </p>
  */        
 public class ApplicationDoesNotExistException extends AmazonServiceException {

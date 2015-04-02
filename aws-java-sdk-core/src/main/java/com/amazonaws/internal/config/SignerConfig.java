@@ -14,7 +14,7 @@
  */
 package com.amazonaws.internal.config;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 /**
  * Signer configuration.

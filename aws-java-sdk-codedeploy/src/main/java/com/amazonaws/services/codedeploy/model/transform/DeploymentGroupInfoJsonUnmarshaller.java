@@ -65,6 +65,10 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                     context.nextToken();
                     deploymentGroupInfo.setEc2TagFilters(new ListUnmarshaller<EC2TagFilter>(EC2TagFilterJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("onPremisesInstanceTagFilters", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setOnPremisesInstanceTagFilters(new ListUnmarshaller<TagFilter>(TagFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
                     context.nextToken();
                     deploymentGroupInfo.setAutoScalingGroups(new ListUnmarshaller<AutoScalingGroup>(AutoScalingGroupJsonUnmarshaller.getInstance()).unmarshall(context));

@@ -16,9 +16,8 @@ package com.amazonaws.auth.internal;
 
 import java.util.Date;
 
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 import com.amazonaws.util.AwsHostNameUtils;
-import com.amazonaws.auth.internal.SignerConstants;
 
 /**
  * Parameters that are used for computing a AWS 4 signature for a request.
@@ -28,7 +27,7 @@ public final class AWS4SignerRequestParams {
     /**
      * The request for which the signature needs to be computed.
      */
-    private final Request<?> request;
+    private final SignableRequest<?> request;
 
     /**
      * The datetime in milliseconds for which the signature needs to be
@@ -70,7 +69,7 @@ public final class AWS4SignerRequestParams {
      * Generates an instance of AWS4signerRequestParams that holds the
      * parameters used for computing a AWS 4 signature for a request
      */
-    public AWS4SignerRequestParams(Request<?> request,
+    public AWS4SignerRequestParams(SignableRequest<?> request,
             Date signingDateOverride, String regionNameOverride,
             String serviceNameOverride, String signingAlgorithm) {
         if (request == null) {
@@ -100,14 +99,14 @@ public final class AWS4SignerRequestParams {
     /**
      * Returns the signing date from the request.
      */
-    private final long getSigningDate(Request<?> request) {
+    private final long getSigningDate(SignableRequest<?> request) {
         return System.currentTimeMillis() - request.getTimeOffset() * 1000;
     }
 
     /**
      * Returns the scope to be used for the signing.
      */
-    private String generateScope(Request<?> request, String dateStamp,
+    private String generateScope(SignableRequest<?> request, String dateStamp,
             String serviceName, String regionName) {
         final StringBuilder scopeBuilder = new StringBuilder();
         return scopeBuilder.append(dateStamp).append("/").append(regionName)
@@ -118,7 +117,7 @@ public final class AWS4SignerRequestParams {
     /**
      * Returns the request for which the signing needs to be done.
      */
-    public Request<?> getRequest() {
+    public SignableRequest<?> getRequest() {
         return request;
     }
 

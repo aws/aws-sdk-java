@@ -18,7 +18,6 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
  * </p>
  */
 public class OptionGroup implements Serializable, Cloneable {

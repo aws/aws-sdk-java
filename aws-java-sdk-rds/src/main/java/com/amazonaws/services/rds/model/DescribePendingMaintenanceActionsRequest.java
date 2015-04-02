@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest) DescribePendingMaintenanceActions operation}.
  * <p>
- * Returns a list of resources (for example, DB Instances) that have at
+ * Returns a list of resources (for example, DB instances) that have at
  * least one pending maintenance action.
  * </p>
  *
@@ -30,14 +30,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The ARN of the resource to return pending maintenance actions for.
+     * The ARN of a resource to return pending maintenance actions for.
      */
     private String resourceIdentifier;
 
     /**
-     * Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     * instance identifiers and DB instance ARNs. The result list will only
-     * include maintenance actions for the specified DB Instances.</li></ul>
+     * A filter that specifies one or more resources to return pending
+     * maintenance actions for. <p>Supported filters: <ul> <li>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * instance Amazon Resource Names (ARNs). The results list will only
+     * include pending maintenance actions for the DB instances identified by
+     * these ARNs.</li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
@@ -45,8 +48,8 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
      * An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this
      * parameter is specified, the response includes only records beyond the
-     * marker, up to a number of records specified by <code>MaxRecords</code>
-     * .
+     * marker, up to a number of records specified by
+     * <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -60,29 +63,29 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
     private Integer maxRecords;
 
     /**
-     * The ARN of the resource to return pending maintenance actions for.
+     * The ARN of a resource to return pending maintenance actions for.
      *
-     * @return The ARN of the resource to return pending maintenance actions for.
+     * @return The ARN of a resource to return pending maintenance actions for.
      */
     public String getResourceIdentifier() {
         return resourceIdentifier;
     }
     
     /**
-     * The ARN of the resource to return pending maintenance actions for.
+     * The ARN of a resource to return pending maintenance actions for.
      *
-     * @param resourceIdentifier The ARN of the resource to return pending maintenance actions for.
+     * @param resourceIdentifier The ARN of a resource to return pending maintenance actions for.
      */
     public void setResourceIdentifier(String resourceIdentifier) {
         this.resourceIdentifier = resourceIdentifier;
     }
     
     /**
-     * The ARN of the resource to return pending maintenance actions for.
+     * The ARN of a resource to return pending maintenance actions for.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceIdentifier The ARN of the resource to return pending maintenance actions for.
+     * @param resourceIdentifier The ARN of a resource to return pending maintenance actions for.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -93,13 +96,19 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
     }
 
     /**
-     * Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     * instance identifiers and DB instance ARNs. The result list will only
-     * include maintenance actions for the specified DB Instances.</li></ul>
+     * A filter that specifies one or more resources to return pending
+     * maintenance actions for. <p>Supported filters: <ul> <li>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * instance Amazon Resource Names (ARNs). The results list will only
+     * include pending maintenance actions for the DB instances identified by
+     * these ARNs.</li> </ul>
      *
-     * @return Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     *         instance identifiers and DB instance ARNs. The result list will only
-     *         include maintenance actions for the specified DB Instances.</li></ul>
+     * @return A filter that specifies one or more resources to return pending
+     *         maintenance actions for. <p>Supported filters: <ul> <li>
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     *         instance Amazon Resource Names (ARNs). The results list will only
+     *         include pending maintenance actions for the DB instances identified by
+     *         these ARNs.</li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -110,13 +119,19 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
     }
     
     /**
-     * Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     * instance identifiers and DB instance ARNs. The result list will only
-     * include maintenance actions for the specified DB Instances.</li></ul>
+     * A filter that specifies one or more resources to return pending
+     * maintenance actions for. <p>Supported filters: <ul> <li>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * instance Amazon Resource Names (ARNs). The results list will only
+     * include pending maintenance actions for the DB instances identified by
+     * these ARNs.</li> </ul>
      *
-     * @param filters Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     *         instance identifiers and DB instance ARNs. The result list will only
-     *         include maintenance actions for the specified DB Instances.</li></ul>
+     * @param filters A filter that specifies one or more resources to return pending
+     *         maintenance actions for. <p>Supported filters: <ul> <li>
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     *         instance Amazon Resource Names (ARNs). The results list will only
+     *         include pending maintenance actions for the DB instances identified by
+     *         these ARNs.</li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -129,15 +144,21 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
     }
     
     /**
-     * Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     * instance identifiers and DB instance ARNs. The result list will only
-     * include maintenance actions for the specified DB Instances.</li></ul>
+     * A filter that specifies one or more resources to return pending
+     * maintenance actions for. <p>Supported filters: <ul> <li>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * instance Amazon Resource Names (ARNs). The results list will only
+     * include pending maintenance actions for the DB instances identified by
+     * these ARNs.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     *         instance identifiers and DB instance ARNs. The result list will only
-     *         include maintenance actions for the specified DB Instances.</li></ul>
+     * @param filters A filter that specifies one or more resources to return pending
+     *         maintenance actions for. <p>Supported filters: <ul> <li>
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     *         instance Amazon Resource Names (ARNs). The results list will only
+     *         include pending maintenance actions for the DB instances identified by
+     *         these ARNs.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -151,15 +172,21 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
     }
     
     /**
-     * Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     * instance identifiers and DB instance ARNs. The result list will only
-     * include maintenance actions for the specified DB Instances.</li></ul>
+     * A filter that specifies one or more resources to return pending
+     * maintenance actions for. <p>Supported filters: <ul> <li>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * instance Amazon Resource Names (ARNs). The results list will only
+     * include pending maintenance actions for the DB instances identified by
+     * these ARNs.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters Supported filters: <ul><li><code>db-instance-id</code> - Accepts DB
-     *         instance identifiers and DB instance ARNs. The result list will only
-     *         include maintenance actions for the specified DB Instances.</li></ul>
+     * @param filters A filter that specifies one or more resources to return pending
+     *         maintenance actions for. <p>Supported filters: <ul> <li>
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     *         instance Amazon Resource Names (ARNs). The results list will only
+     *         include pending maintenance actions for the DB instances identified by
+     *         these ARNs.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -180,14 +207,14 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
      * An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this
      * parameter is specified, the response includes only records beyond the
-     * marker, up to a number of records specified by <code>MaxRecords</code>
-     * .
+     * marker, up to a number of records specified by
+     * <code>MaxRecords</code>.
      *
      * @return An optional pagination token provided by a previous
      *         <code>DescribePendingMaintenanceActions</code> request. If this
      *         parameter is specified, the response includes only records beyond the
-     *         marker, up to a number of records specified by <code>MaxRecords</code>
-     *         .
+     *         marker, up to a number of records specified by
+     *         <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
@@ -197,14 +224,14 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
      * An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this
      * parameter is specified, the response includes only records beyond the
-     * marker, up to a number of records specified by <code>MaxRecords</code>
-     * .
+     * marker, up to a number of records specified by
+     * <code>MaxRecords</code>.
      *
      * @param marker An optional pagination token provided by a previous
      *         <code>DescribePendingMaintenanceActions</code> request. If this
      *         parameter is specified, the response includes only records beyond the
-     *         marker, up to a number of records specified by <code>MaxRecords</code>
-     *         .
+     *         marker, up to a number of records specified by
+     *         <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -214,16 +241,16 @@ public class DescribePendingMaintenanceActionsRequest extends AmazonWebServiceRe
      * An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this
      * parameter is specified, the response includes only records beyond the
-     * marker, up to a number of records specified by <code>MaxRecords</code>
-     * .
+     * marker, up to a number of records specified by
+     * <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional pagination token provided by a previous
      *         <code>DescribePendingMaintenanceActions</code> request. If this
      *         parameter is specified, the response includes only records beyond the
-     *         marker, up to a number of records specified by <code>MaxRecords</code>
-     *         .
+     *         marker, up to a number of records specified by
+     *         <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

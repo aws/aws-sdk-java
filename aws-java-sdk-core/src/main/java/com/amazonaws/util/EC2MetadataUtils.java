@@ -48,7 +48,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Amazon
- *      EC2 User Guide >> Instance Metadata</a>
+ *      EC2 User Guide: Instance Metadata</a>
  */
 public class EC2MetadataUtils {
 

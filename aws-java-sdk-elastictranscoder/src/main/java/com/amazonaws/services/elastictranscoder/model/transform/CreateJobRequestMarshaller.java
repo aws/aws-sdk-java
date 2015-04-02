@@ -830,6 +830,32 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                             }
                             jsonWriter.endObject();
                         }
+                        PlayReadyDrm playReadyDrm = playlistsListValue.getPlayReadyDrm();
+                        if (playReadyDrm != null) {
+
+                            jsonWriter.key("PlayReadyDrm");
+                            jsonWriter.object();
+
+                            if (playReadyDrm.getFormat() != null) {
+                                jsonWriter.key("Format").value(playReadyDrm.getFormat());
+                            }
+                            if (playReadyDrm.getKey() != null) {
+                                jsonWriter.key("Key").value(playReadyDrm.getKey());
+                            }
+                            if (playReadyDrm.getKeyMd5() != null) {
+                                jsonWriter.key("KeyMd5").value(playReadyDrm.getKeyMd5());
+                            }
+                            if (playReadyDrm.getKeyId() != null) {
+                                jsonWriter.key("KeyId").value(playReadyDrm.getKeyId());
+                            }
+                            if (playReadyDrm.getInitializationVector() != null) {
+                                jsonWriter.key("InitializationVector").value(playReadyDrm.getInitializationVector());
+                            }
+                            if (playReadyDrm.getLicenseAcquisitionUrl() != null) {
+                                jsonWriter.key("LicenseAcquisitionUrl").value(playReadyDrm.getLicenseAcquisitionUrl());
+                            }
+                            jsonWriter.endObject();
+                        }
                         jsonWriter.endObject();
                     }
                 }

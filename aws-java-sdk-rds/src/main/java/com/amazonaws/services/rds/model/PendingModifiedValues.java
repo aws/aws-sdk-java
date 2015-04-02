@@ -82,6 +82,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String storageType;
 
     /**
+     * Specifies the identifier of the CA certificate for the DB instance.
+     */
+    private String cACertificateIdentifier;
+
+    /**
      * Default constructor for a new PendingModifiedValues object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -471,6 +476,39 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * Specifies the identifier of the CA certificate for the DB instance.
+     *
+     * @return Specifies the identifier of the CA certificate for the DB instance.
+     */
+    public String getCACertificateIdentifier() {
+        return cACertificateIdentifier;
+    }
+    
+    /**
+     * Specifies the identifier of the CA certificate for the DB instance.
+     *
+     * @param cACertificateIdentifier Specifies the identifier of the CA certificate for the DB instance.
+     */
+    public void setCACertificateIdentifier(String cACertificateIdentifier) {
+        this.cACertificateIdentifier = cACertificateIdentifier;
+    }
+    
+    /**
+     * Specifies the identifier of the CA certificate for the DB instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cACertificateIdentifier Specifies the identifier of the CA certificate for the DB instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PendingModifiedValues withCACertificateIdentifier(String cACertificateIdentifier) {
+        this.cACertificateIdentifier = cACertificateIdentifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -491,7 +529,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (getIops() != null) sb.append("Iops: " + getIops() + ",");
         if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
-        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() );
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
+        if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +550,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
+        hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -542,6 +582,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false) return false; 
         if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
+        if (other.getCACertificateIdentifier() == null ^ this.getCACertificateIdentifier() == null) return false;
+        if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false) return false; 
         return true;
     }
     

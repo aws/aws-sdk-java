@@ -19,7 +19,7 @@ import java.io.Closeable;
 /**
  * Used for releasing a resource.
  * <p>
- * For example, the creation of a {@link ResettableInputStream} would entail
+ * For example, the creation of a <code>ResettableInputStream</code> would entail
  * physically opening a file. If the opened file is meant to be closed only (in
  * a finally block) by the very same code block that created it, then it is
  * necessary that the release method must not be called while the execution is
@@ -28,7 +28,7 @@ import java.io.Closeable;
  * In such case, as other stack frames may inadvertently or indirectly call the
  * close method of the stream, the creator of the stream would need to
  * explicitly disable the accidental closing via
- * {@link ResettableInputStream#disableClose()}, so that the release method
+ * <code>ResettableInputStream#disableClose()</code>, so that the release method
  * becomes the only way to truly close the opened file.
  */
 public interface Releasable {
@@ -40,7 +40,7 @@ public interface Releasable {
      * {@link Closeable#close()} methods by implementation deep down in the call
      * stack.
      * <p>
-     * For example, the creation of a {@link ResettableInputStream} would entail
+     * For example, the creation of a <code>ResettableInputStream</code> would entail
      * physically opening a file. If the opened file is meant to be closed only
      * (in a finally block) by the very same code block that created it, then it
      * is necessary that the release method must not be called while the
@@ -49,7 +49,7 @@ public interface Releasable {
      * In such case, as other stack frames may inadvertently or indirectly call
      * the close method of the stream, the creator of the stream would need to
      * explicitly disable the accidental closing via
-     * {@link ResettableInputStream#disableClose()}, so that the release method
+     * <code>ResettableInputStream#disableClose()</code>, so that the release method
      * becomes the only way to truly close the opened file.
      */
     public void release();

@@ -24,7 +24,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.internal.Releasable;
-import com.amazonaws.internal.ResettableInputStream;
 
 
 /**
@@ -82,7 +81,7 @@ public enum IOUtils {
      * Releases the given {@link Closeable} especially if it was an instance of
      * {@link Releasable}.
      * <p>
-     * For example, the creation of a {@link ResettableInputStream} would entail
+     * For example, the creation of a <code>ResettableInputStream</code> would entail
      * physically opening a file. If the opened file is meant to be closed only
      * (in a finally block) by the very same code block that created it, then it
      * is necessary that the release method must not be called while the
@@ -91,7 +90,7 @@ public enum IOUtils {
      * In such case, as other stack frames may inadvertently or indirectly call
      * the close method of the stream, the creator of the stream would need to
      * explicitly disable the accidental closing via
-     * {@link ResettableInputStream#disableClose()}, so that the release method
+     * <code>ResettableInputStream#disableClose()</code>, so that the release method
      * becomes the only way to truly close the opened file.
      */
     public static void release(Closeable is, Log log) {

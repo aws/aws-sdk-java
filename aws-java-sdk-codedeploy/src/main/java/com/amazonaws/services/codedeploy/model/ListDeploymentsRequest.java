@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeployments(ListDeploymentsRequest) ListDeployments operation}.
  * <p>
- * Lists the deployments under a deployment group for an application
- * registered within the AWS user account.
+ * Lists the deployments within a deployment group for an application
+ * registered with the applicable IAM user or AWS account.
  * </p>
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeployments(ListDeploymentsRequest)
@@ -30,8 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListDeploymentsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
@@ -48,14 +48,13 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements S
     private String deploymentGroupName;
 
     /**
-     * <para>A subset of deployments to list, by status:</para> <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress
-     * deployments.</li> <li>Succeeded: Include in the resulting list
-     * succeeded deployments.</li> <li>Failed: Include in the resulting list
-     * failed deployments.</li> <li>Aborted: Include in the resulting list
-     * aborted deployments.</li> </ul>
+     * A subset of deployments to list, by status: <ul> <li>Created: Include
+     * in the resulting list created deployments.</li> <li>Queued: Include in
+     * the resulting list queued deployments.</li> <li>In Progress: Include
+     * in the resulting list in-progress deployments.</li> <li>Succeeded:
+     * Include in the resulting list succeeded deployments.</li> <li>Failed:
+     * Include in the resulting list failed deployments.</li> <li>Aborted:
+     * Include in the resulting list aborted deployments.</li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> includeOnlyStatuses;
 
@@ -73,44 +72,44 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements S
     private String nextToken;
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @return The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @return The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public String getApplicationName() {
         return applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -169,23 +168,21 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * <para>A subset of deployments to list, by status:</para> <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress
-     * deployments.</li> <li>Succeeded: Include in the resulting list
-     * succeeded deployments.</li> <li>Failed: Include in the resulting list
-     * failed deployments.</li> <li>Aborted: Include in the resulting list
-     * aborted deployments.</li> </ul>
+     * A subset of deployments to list, by status: <ul> <li>Created: Include
+     * in the resulting list created deployments.</li> <li>Queued: Include in
+     * the resulting list queued deployments.</li> <li>In Progress: Include
+     * in the resulting list in-progress deployments.</li> <li>Succeeded:
+     * Include in the resulting list succeeded deployments.</li> <li>Failed:
+     * Include in the resulting list failed deployments.</li> <li>Aborted:
+     * Include in the resulting list aborted deployments.</li> </ul>
      *
-     * @return <para>A subset of deployments to list, by status:</para> <ul>
-     *         <li>Created: Include in the resulting list created deployments.</li>
-     *         <li>Queued: Include in the resulting list queued deployments.</li>
-     *         <li>In Progress: Include in the resulting list in-progress
-     *         deployments.</li> <li>Succeeded: Include in the resulting list
-     *         succeeded deployments.</li> <li>Failed: Include in the resulting list
-     *         failed deployments.</li> <li>Aborted: Include in the resulting list
-     *         aborted deployments.</li> </ul>
+     * @return A subset of deployments to list, by status: <ul> <li>Created: Include
+     *         in the resulting list created deployments.</li> <li>Queued: Include in
+     *         the resulting list queued deployments.</li> <li>In Progress: Include
+     *         in the resulting list in-progress deployments.</li> <li>Succeeded:
+     *         Include in the resulting list succeeded deployments.</li> <li>Failed:
+     *         Include in the resulting list failed deployments.</li> <li>Aborted:
+     *         Include in the resulting list aborted deployments.</li> </ul>
      */
     public java.util.List<String> getIncludeOnlyStatuses() {
         if (includeOnlyStatuses == null) {
@@ -196,23 +193,21 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * <para>A subset of deployments to list, by status:</para> <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress
-     * deployments.</li> <li>Succeeded: Include in the resulting list
-     * succeeded deployments.</li> <li>Failed: Include in the resulting list
-     * failed deployments.</li> <li>Aborted: Include in the resulting list
-     * aborted deployments.</li> </ul>
+     * A subset of deployments to list, by status: <ul> <li>Created: Include
+     * in the resulting list created deployments.</li> <li>Queued: Include in
+     * the resulting list queued deployments.</li> <li>In Progress: Include
+     * in the resulting list in-progress deployments.</li> <li>Succeeded:
+     * Include in the resulting list succeeded deployments.</li> <li>Failed:
+     * Include in the resulting list failed deployments.</li> <li>Aborted:
+     * Include in the resulting list aborted deployments.</li> </ul>
      *
-     * @param includeOnlyStatuses <para>A subset of deployments to list, by status:</para> <ul>
-     *         <li>Created: Include in the resulting list created deployments.</li>
-     *         <li>Queued: Include in the resulting list queued deployments.</li>
-     *         <li>In Progress: Include in the resulting list in-progress
-     *         deployments.</li> <li>Succeeded: Include in the resulting list
-     *         succeeded deployments.</li> <li>Failed: Include in the resulting list
-     *         failed deployments.</li> <li>Aborted: Include in the resulting list
-     *         aborted deployments.</li> </ul>
+     * @param includeOnlyStatuses A subset of deployments to list, by status: <ul> <li>Created: Include
+     *         in the resulting list created deployments.</li> <li>Queued: Include in
+     *         the resulting list queued deployments.</li> <li>In Progress: Include
+     *         in the resulting list in-progress deployments.</li> <li>Succeeded:
+     *         Include in the resulting list succeeded deployments.</li> <li>Failed:
+     *         Include in the resulting list failed deployments.</li> <li>Aborted:
+     *         Include in the resulting list aborted deployments.</li> </ul>
      */
     public void setIncludeOnlyStatuses(java.util.Collection<String> includeOnlyStatuses) {
         if (includeOnlyStatuses == null) {
@@ -225,25 +220,23 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * <para>A subset of deployments to list, by status:</para> <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress
-     * deployments.</li> <li>Succeeded: Include in the resulting list
-     * succeeded deployments.</li> <li>Failed: Include in the resulting list
-     * failed deployments.</li> <li>Aborted: Include in the resulting list
-     * aborted deployments.</li> </ul>
+     * A subset of deployments to list, by status: <ul> <li>Created: Include
+     * in the resulting list created deployments.</li> <li>Queued: Include in
+     * the resulting list queued deployments.</li> <li>In Progress: Include
+     * in the resulting list in-progress deployments.</li> <li>Succeeded:
+     * Include in the resulting list succeeded deployments.</li> <li>Failed:
+     * Include in the resulting list failed deployments.</li> <li>Aborted:
+     * Include in the resulting list aborted deployments.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param includeOnlyStatuses <para>A subset of deployments to list, by status:</para> <ul>
-     *         <li>Created: Include in the resulting list created deployments.</li>
-     *         <li>Queued: Include in the resulting list queued deployments.</li>
-     *         <li>In Progress: Include in the resulting list in-progress
-     *         deployments.</li> <li>Succeeded: Include in the resulting list
-     *         succeeded deployments.</li> <li>Failed: Include in the resulting list
-     *         failed deployments.</li> <li>Aborted: Include in the resulting list
-     *         aborted deployments.</li> </ul>
+     * @param includeOnlyStatuses A subset of deployments to list, by status: <ul> <li>Created: Include
+     *         in the resulting list created deployments.</li> <li>Queued: Include in
+     *         the resulting list queued deployments.</li> <li>In Progress: Include
+     *         in the resulting list in-progress deployments.</li> <li>Succeeded:
+     *         Include in the resulting list succeeded deployments.</li> <li>Failed:
+     *         Include in the resulting list failed deployments.</li> <li>Aborted:
+     *         Include in the resulting list aborted deployments.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -257,25 +250,23 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * <para>A subset of deployments to list, by status:</para> <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress
-     * deployments.</li> <li>Succeeded: Include in the resulting list
-     * succeeded deployments.</li> <li>Failed: Include in the resulting list
-     * failed deployments.</li> <li>Aborted: Include in the resulting list
-     * aborted deployments.</li> </ul>
+     * A subset of deployments to list, by status: <ul> <li>Created: Include
+     * in the resulting list created deployments.</li> <li>Queued: Include in
+     * the resulting list queued deployments.</li> <li>In Progress: Include
+     * in the resulting list in-progress deployments.</li> <li>Succeeded:
+     * Include in the resulting list succeeded deployments.</li> <li>Failed:
+     * Include in the resulting list failed deployments.</li> <li>Aborted:
+     * Include in the resulting list aborted deployments.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param includeOnlyStatuses <para>A subset of deployments to list, by status:</para> <ul>
-     *         <li>Created: Include in the resulting list created deployments.</li>
-     *         <li>Queued: Include in the resulting list queued deployments.</li>
-     *         <li>In Progress: Include in the resulting list in-progress
-     *         deployments.</li> <li>Succeeded: Include in the resulting list
-     *         succeeded deployments.</li> <li>Failed: Include in the resulting list
-     *         failed deployments.</li> <li>Aborted: Include in the resulting list
-     *         aborted deployments.</li> </ul>
+     * @param includeOnlyStatuses A subset of deployments to list, by status: <ul> <li>Created: Include
+     *         in the resulting list created deployments.</li> <li>Queued: Include in
+     *         the resulting list queued deployments.</li> <li>In Progress: Include
+     *         in the resulting list in-progress deployments.</li> <li>Succeeded:
+     *         Include in the resulting list succeeded deployments.</li> <li>Failed:
+     *         Include in the resulting list failed deployments.</li> <li>Aborted:
+     *         Include in the resulting list aborted deployments.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -293,25 +284,23 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * <para>A subset of deployments to list, by status:</para> <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress
-     * deployments.</li> <li>Succeeded: Include in the resulting list
-     * succeeded deployments.</li> <li>Failed: Include in the resulting list
-     * failed deployments.</li> <li>Aborted: Include in the resulting list
-     * aborted deployments.</li> </ul>
+     * A subset of deployments to list, by status: <ul> <li>Created: Include
+     * in the resulting list created deployments.</li> <li>Queued: Include in
+     * the resulting list queued deployments.</li> <li>In Progress: Include
+     * in the resulting list in-progress deployments.</li> <li>Succeeded:
+     * Include in the resulting list succeeded deployments.</li> <li>Failed:
+     * Include in the resulting list failed deployments.</li> <li>Aborted:
+     * Include in the resulting list aborted deployments.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param includeOnlyStatuses <para>A subset of deployments to list, by status:</para> <ul>
-     *         <li>Created: Include in the resulting list created deployments.</li>
-     *         <li>Queued: Include in the resulting list queued deployments.</li>
-     *         <li>In Progress: Include in the resulting list in-progress
-     *         deployments.</li> <li>Succeeded: Include in the resulting list
-     *         succeeded deployments.</li> <li>Failed: Include in the resulting list
-     *         failed deployments.</li> <li>Aborted: Include in the resulting list
-     *         aborted deployments.</li> </ul>
+     * @param includeOnlyStatuses A subset of deployments to list, by status: <ul> <li>Created: Include
+     *         in the resulting list created deployments.</li> <li>Queued: Include in
+     *         the resulting list queued deployments.</li> <li>In Progress: Include
+     *         in the resulting list in-progress deployments.</li> <li>Succeeded:
+     *         Include in the resulting list succeeded deployments.</li> <li>Failed:
+     *         Include in the resulting list failed deployments.</li> <li>Aborted:
+     *         Include in the resulting list aborted deployments.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

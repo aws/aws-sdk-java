@@ -17,7 +17,7 @@ package com.amazonaws.services.s3.internal;
 import java.util.Date;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSSessionCredentials;
 import com.amazonaws.auth.AbstractAWSSigner;
@@ -60,7 +60,7 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
             throw new IllegalArgumentException("Parameter resourcePath is empty");
     }
 
-    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
+    public void sign(SignableRequest<?> request, AWSCredentials credentials) throws AmazonClientException {
         AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
 
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
@@ -80,7 +80,7 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
     }
 
     @Override
-    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+    protected void addSessionCredentials(SignableRequest<?> request, AWSSessionCredentials credentials) {
         request.addParameter("x-amz-security-token", credentials.getSessionToken());
     }
 }

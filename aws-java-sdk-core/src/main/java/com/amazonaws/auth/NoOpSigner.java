@@ -14,14 +14,13 @@
  */
 package com.amazonaws.auth;
 
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 
 /**
  * A No-Op Signer Implementation.
- *
  */
 public class NoOpSigner implements Signer {
 
     @Override
-    public void sign(Request<?> request, AWSCredentials credentials) { }
+    public void sign(SignableRequest<?> request, AWSCredentials credentials) { }
 }

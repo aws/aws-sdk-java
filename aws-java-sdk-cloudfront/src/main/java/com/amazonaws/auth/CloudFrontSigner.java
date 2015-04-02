@@ -20,7 +20,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 import com.amazonaws.util.DateUtils;
 
 /**
@@ -33,7 +33,7 @@ public class CloudFrontSigner extends AbstractAWSSigner {
     private static final Log log = LogFactory.getLog(CloudFrontSigner.class);
 
     @Override
-    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
+    public void sign(SignableRequest<?> request, AWSCredentials credentials) throws AmazonClientException {
         AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
@@ -49,7 +49,7 @@ public class CloudFrontSigner extends AbstractAWSSigner {
     }
 
     @Override
-    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+    protected void addSessionCredentials(SignableRequest<?> request, AWSSessionCredentials credentials) {
         request.addHeader("x-amz-security-token", credentials.getSessionToken());
     }
 

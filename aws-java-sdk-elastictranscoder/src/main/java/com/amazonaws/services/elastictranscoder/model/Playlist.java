@@ -100,6 +100,12 @@ public class Playlist implements Serializable, Cloneable {
     private HlsContentProtection hlsContentProtection;
 
     /**
+     * The DRM settings, if any, that you want Elastic Transcoder to apply to
+     * the output files associated with this playlist.
+     */
+    private PlayReadyDrm playReadyDrm;
+
+    /**
      * The status of the job with which the playlist is associated.
      * <p>
      * <b>Constraints:</b><br/>
@@ -615,6 +621,45 @@ public class Playlist implements Serializable, Cloneable {
     }
 
     /**
+     * The DRM settings, if any, that you want Elastic Transcoder to apply to
+     * the output files associated with this playlist.
+     *
+     * @return The DRM settings, if any, that you want Elastic Transcoder to apply to
+     *         the output files associated with this playlist.
+     */
+    public PlayReadyDrm getPlayReadyDrm() {
+        return playReadyDrm;
+    }
+    
+    /**
+     * The DRM settings, if any, that you want Elastic Transcoder to apply to
+     * the output files associated with this playlist.
+     *
+     * @param playReadyDrm The DRM settings, if any, that you want Elastic Transcoder to apply to
+     *         the output files associated with this playlist.
+     */
+    public void setPlayReadyDrm(PlayReadyDrm playReadyDrm) {
+        this.playReadyDrm = playReadyDrm;
+    }
+    
+    /**
+     * The DRM settings, if any, that you want Elastic Transcoder to apply to
+     * the output files associated with this playlist.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param playReadyDrm The DRM settings, if any, that you want Elastic Transcoder to apply to
+     *         the output files associated with this playlist.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Playlist withPlayReadyDrm(PlayReadyDrm playReadyDrm) {
+        this.playReadyDrm = playReadyDrm;
+        return this;
+    }
+
+    /**
      * The status of the job with which the playlist is associated.
      * <p>
      * <b>Constraints:</b><br/>
@@ -714,6 +759,7 @@ public class Playlist implements Serializable, Cloneable {
         if (getFormat() != null) sb.append("Format: " + getFormat() + ",");
         if (getOutputKeys() != null) sb.append("OutputKeys: " + getOutputKeys() + ",");
         if (getHlsContentProtection() != null) sb.append("HlsContentProtection: " + getHlsContentProtection() + ",");
+        if (getPlayReadyDrm() != null) sb.append("PlayReadyDrm: " + getPlayReadyDrm() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getStatusDetail() != null) sb.append("StatusDetail: " + getStatusDetail() );
         sb.append("}");
@@ -729,6 +775,7 @@ public class Playlist implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode()); 
         hashCode = prime * hashCode + ((getOutputKeys() == null) ? 0 : getOutputKeys().hashCode()); 
         hashCode = prime * hashCode + ((getHlsContentProtection() == null) ? 0 : getHlsContentProtection().hashCode()); 
+        hashCode = prime * hashCode + ((getPlayReadyDrm() == null) ? 0 : getPlayReadyDrm().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getStatusDetail() == null) ? 0 : getStatusDetail().hashCode()); 
         return hashCode;
@@ -750,6 +797,8 @@ public class Playlist implements Serializable, Cloneable {
         if (other.getOutputKeys() != null && other.getOutputKeys().equals(this.getOutputKeys()) == false) return false; 
         if (other.getHlsContentProtection() == null ^ this.getHlsContentProtection() == null) return false;
         if (other.getHlsContentProtection() != null && other.getHlsContentProtection().equals(this.getHlsContentProtection()) == false) return false; 
+        if (other.getPlayReadyDrm() == null ^ this.getPlayReadyDrm() == null) return false;
+        if (other.getPlayReadyDrm() != null && other.getPlayReadyDrm().equals(this.getPlayReadyDrm()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getStatusDetail() == null ^ this.getStatusDetail() == null) return false;

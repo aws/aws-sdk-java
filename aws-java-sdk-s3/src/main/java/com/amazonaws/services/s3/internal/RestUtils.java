@@ -27,6 +27,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 
@@ -58,7 +59,7 @@ public class RestUtils {
      * @see RestUtils#makeS3CanonicalString(String, String, Request, String, boolean)
      */
     public static <T> String makeS3CanonicalString(String method,
-            String resource, Request<T> request, String expires) {
+            String resource, SignableRequest<T> request, String expires) {
         return makeS3CanonicalString(method, resource, request, expires, null);
     }
 
@@ -81,7 +82,7 @@ public class RestUtils {
      * @return The canonical string representation for the given S3 request.
      */
     public static <T> String makeS3CanonicalString(String method,
-            String resource, Request<T> request, String expires,
+            String resource, SignableRequest<T> request, String expires,
             Collection<String> additionalQueryParamsToSign) {
 
         StringBuilder buf = new StringBuilder();

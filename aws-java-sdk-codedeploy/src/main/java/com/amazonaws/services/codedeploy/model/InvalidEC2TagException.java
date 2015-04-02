@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The Amazon EC2 tag was specified in an invalid format.
+ * The tag was specified in an invalid format.
  * </p>
  */        
 public class InvalidEC2TagException extends AmazonServiceException {

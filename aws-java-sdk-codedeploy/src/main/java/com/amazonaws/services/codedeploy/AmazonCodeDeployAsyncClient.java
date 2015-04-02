@@ -47,85 +47,69 @@ import com.amazonaws.services.codedeploy.model.*;
  * 
  * <ul>
  * <li> <p>
- * <i>Applications</i> , which are unique identifiers that AWS
- * CodeDeploy uses to ensure that the correct combinations of revisions,
- * deployment configurations, and deployment groups are being referenced
- * during deployments.
+ * Applications are unique identifiers that AWS CodeDeploy uses to ensure
+ * that the correct combinations of revisions, deployment configurations,
+ * and deployment groups are being referenced during deployments.
  * </p>
  * <p>
- * You can work with applications by calling CreateApplication,
- * DeleteApplication, GetApplication, ListApplications,
- * BatchGetApplications, and UpdateApplication to create, delete, and get
- * information about applications, and to change information about an
- * application, respectively.
+ * You can use the AWS CodeDeploy APIs to create, delete, get, list, and
+ * update applications.
  * </p>
  * </li>
  * <li> <p>
- * <i>Deployment configurations</i> , which are sets of deployment rules
- * and deployment success and failure conditions that AWS CodeDeploy uses
- * during deployments.
+ * Deployment configurations are sets of deployment rules and deployment
+ * success and failure conditions that AWS CodeDeploy uses during
+ * deployments.
  * </p>
  * <p>
- * You can work with deployment configurations by calling
- * CreateDeploymentConfig, DeleteDeploymentConfig, GetDeploymentConfig,
- * and ListDeploymentConfigs to create, delete, and get information about
- * deployment configurations, respectively.
+ * You can use the AWS CodeDeploy APIs to create, delete, get, and list
+ * deployment configurations.
  * </p>
  * </li>
  * <li> <p>
- * <i>Deployment groups</i> , which represent groups of Amazon EC2
- * instances to which application revisions can be deployed.
+ * Deployment groups are groups of instances to which application
+ * revisions can be deployed.
  * </p>
  * <p>
- * You can work with deployment groups by calling CreateDeploymentGroup,
- * DeleteDeploymentGroup, GetDeploymentGroup, ListDeploymentGroups, and
- * UpdateDeploymentGroup to create, delete, and get information about
- * single and multiple deployment groups, and to change information about
- * a deployment group, respectively.
+ * You can use the AWS CodeDeploy APIs to create, delete, get, list, and
+ * update deployment groups.
  * </p>
  * </li>
  * <li> <p>
- * <i>Deployment instances</i> (also known simply as <i>instances</i> ),
- * which represent Amazon EC2 instances to which application revisions
- * are deployed. Deployment instances are identified by their Amazon EC2
- * tags or Auto Scaling group names. Deployment instances belong to
+ * Instances represent Amazon EC2 instances to which application
+ * revisions are deployed. Instances are identified by their Amazon EC2
+ * tags or Auto Scaling group names. Instances belong to deployment
+ * groups.
+ * </p>
+ * <p>
+ * You can use the AWS CodeDeploy APIs to get and list instances.
+ * </p>
+ * </li>
+ * <li> <p>
+ * Deployments represent the process of deploying revisions to instances.
+ * </p>
+ * <p>
+ * You can use the AWS CodeDeploy APIs to create, get, list, and stop
+ * deployments.
+ * </p>
+ * </li>
+ * <li> <p>
+ * Application revisions are archive files that are stored in Amazon S3
+ * buckets or GitHub repositories. These revisions contain source content
+ * (such as source code, web pages, executable files, any deployment
+ * scripts, and similar) along with an Application Specification file
+ * (AppSpec file). (The AppSpec file is unique to AWS CodeDeploy; it
+ * defines a series of deployment actions that you want AWS CodeDeploy to
+ * execute.) An application revision is uniquely identified by its Amazon
+ * S3 object key and its ETag, version, or both (for application
+ * revisions that are stored in Amazon S3 buckets) or by its repository
+ * name and commit ID (for applications revisions that are stored in
+ * GitHub repositories). Application revisions are deployed through
  * deployment groups.
  * </p>
  * <p>
- * You can work with deployment instances by calling
- * GetDeploymentInstance and ListDeploymentInstances to get information
- * about single and multiple deployment instances, respectively.
- * </p>
- * </li>
- * <li> <p>
- * <i>Deployments</i> , which represent the process of deploying
- * revisions to deployment groups.
- * </p>
- * <p>
- * You can work with deployments by calling CreateDeployment,
- * GetDeployment, ListDeployments, BatchGetDeployments, and
- * StopDeployment to create and get information about deployments, and to
- * stop a deployment, respectively.
- * </p>
- * </li>
- * <li> <p>
- * <i>Application revisions</i> (also known simply as <i>revisions</i>
- * ), which are archive files that are stored in Amazon S3 buckets or
- * GitHub repositories. These revisions contain source content (such as
- * source code, web pages, executable files, any deployment scripts, and
- * similar) along with an Application Specification file (AppSpec file).
- * (The AppSpec file is unique to AWS CodeDeploy; it defines a series of
- * deployment actions that you want AWS CodeDeploy to execute.) An
- * application revision is uniquely identified by its Amazon S3 object
- * key and its ETag, version, or both. Application revisions are deployed
- * to deployment groups.
- * </p>
- * <p>
- * You can work with application revisions by calling
- * GetApplicationRevision, ListApplicationRevisions, and
- * RegisterApplicationRevision to get information about application
- * revisions and to inform AWS CodeDeploy about an application revision,
- * respectively.
+ * You can use the AWS CodeDeploy APIs to get, list, and register
+ * application revisions.
  * </p>
  * </li>
  * 
@@ -365,15 +349,16 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
             
     /**
      * <p>
-     * Gets information about a deployment group.
+     * Deregisters an on-premises instance.
      * </p>
      *
-     * @param getDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the GetDeploymentGroup operation on
+     * @param deregisterOnPremisesInstanceRequest Container for the necessary
+     *           parameters to execute the DeregisterOnPremisesInstance operation on
      *           AmazonCodeDeploy.
      * 
      * @return A Java Future object containing the response from the
-     *         GetDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     *         DeregisterOnPremisesInstance service method, as returned by
+     *         AmazonCodeDeploy.
      * 
      *
      * @throws AmazonClientException
@@ -384,22 +369,23 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *             If an error response is returned by AmazonCodeDeploy indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetDeploymentGroupResult> getDeploymentGroupAsync(final GetDeploymentGroupRequest getDeploymentGroupRequest) 
+    public Future<Void> deregisterOnPremisesInstanceAsync(final DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetDeploymentGroupResult>() {
-            public GetDeploymentGroupResult call() throws Exception {
-                return getDeploymentGroup(getDeploymentGroupRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deregisterOnPremisesInstance(deregisterOnPremisesInstanceRequest);
+                return null;
         }
     });
     }
 
     /**
      * <p>
-     * Gets information about a deployment group.
+     * Deregisters an on-premises instance.
      * </p>
      *
-     * @param getDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the GetDeploymentGroup operation on
+     * @param deregisterOnPremisesInstanceRequest Container for the necessary
+     *           parameters to execute the DeregisterOnPremisesInstance operation on
      *           AmazonCodeDeploy.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -407,7 +393,8 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         GetDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     *         DeregisterOnPremisesInstance service method, as returned by
+     *         AmazonCodeDeploy.
      * 
      *
      * @throws AmazonClientException
@@ -418,21 +405,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *             If an error response is returned by AmazonCodeDeploy indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetDeploymentGroupResult> getDeploymentGroupAsync(
-            final GetDeploymentGroupRequest getDeploymentGroupRequest,
-            final AsyncHandler<GetDeploymentGroupRequest, GetDeploymentGroupResult> asyncHandler)
+    public Future<Void> deregisterOnPremisesInstanceAsync(
+            final DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest,
+            final AsyncHandler<DeregisterOnPremisesInstanceRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetDeploymentGroupResult>() {
-            public GetDeploymentGroupResult call() throws Exception {
-              GetDeploymentGroupResult result;
-                try {
-                result = getDeploymentGroup(getDeploymentGroupRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deregisterOnPremisesInstance(deregisterOnPremisesInstanceRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(getDeploymentGroupRequest, result);
-                 return result;
+              asyncHandler.onSuccess(deregisterOnPremisesInstanceRequest, null);
+                 return null;
         }
     });
     }
@@ -505,6 +491,1046 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
               }
               asyncHandler.onSuccess(updateApplicationRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Lists the applications registered with the applicable IAM user or AWS
+     * account.
+     * </p>
+     *
+     * @param listApplicationsRequest Container for the necessary parameters
+     *           to execute the ListApplications operation on AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListApplications service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListApplicationsResult> listApplicationsAsync(final ListApplicationsRequest listApplicationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListApplicationsResult>() {
+            public ListApplicationsResult call() throws Exception {
+                return listApplications(listApplicationsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Lists the applications registered with the applicable IAM user or AWS
+     * account.
+     * </p>
+     *
+     * @param listApplicationsRequest Container for the necessary parameters
+     *           to execute the ListApplications operation on AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListApplications service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListApplicationsResult> listApplicationsAsync(
+            final ListApplicationsRequest listApplicationsRequest,
+            final AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListApplicationsResult>() {
+            public ListApplicationsResult call() throws Exception {
+              ListApplicationsResult result;
+                try {
+                result = listApplications(listApplicationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listApplicationsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a deployment group.
+     * </p>
+     *
+     * @param deleteDeploymentGroupRequest Container for the necessary
+     *           parameters to execute the DeleteDeploymentGroup operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(final DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteDeploymentGroupResult>() {
+            public DeleteDeploymentGroupResult call() throws Exception {
+                return deleteDeploymentGroup(deleteDeploymentGroupRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a deployment group.
+     * </p>
+     *
+     * @param deleteDeploymentGroupRequest Container for the necessary
+     *           parameters to execute the DeleteDeploymentGroup operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(
+            final DeleteDeploymentGroupRequest deleteDeploymentGroupRequest,
+            final AsyncHandler<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteDeploymentGroupResult>() {
+            public DeleteDeploymentGroupResult call() throws Exception {
+              DeleteDeploymentGroupResult result;
+                try {
+                result = deleteDeploymentGroup(deleteDeploymentGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDeploymentGroupRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Adds a tag to an on-premises instance.
+     * </p>
+     *
+     * @param addTagsToOnPremisesInstancesRequest Container for the necessary
+     *           parameters to execute the AddTagsToOnPremisesInstances operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddTagsToOnPremisesInstances service method, as returned by
+     *         AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> addTagsToOnPremisesInstancesAsync(final AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                addTagsToOnPremisesInstances(addTagsToOnPremisesInstancesRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Adds a tag to an on-premises instance.
+     * </p>
+     *
+     * @param addTagsToOnPremisesInstancesRequest Container for the necessary
+     *           parameters to execute the AddTagsToOnPremisesInstances operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddTagsToOnPremisesInstances service method, as returned by
+     *         AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> addTagsToOnPremisesInstancesAsync(
+            final AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest,
+            final AsyncHandler<AddTagsToOnPremisesInstancesRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                addTagsToOnPremisesInstances(addTagsToOnPremisesInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addTagsToOnPremisesInstancesRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Lists the deployments within a deployment group for an application
+     * registered with the applicable IAM user or AWS account.
+     * </p>
+     *
+     * @param listDeploymentsRequest Container for the necessary parameters
+     *           to execute the ListDeployments operation on AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListDeployments service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListDeploymentsResult> listDeploymentsAsync(final ListDeploymentsRequest listDeploymentsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListDeploymentsResult>() {
+            public ListDeploymentsResult call() throws Exception {
+                return listDeployments(listDeploymentsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Lists the deployments within a deployment group for an application
+     * registered with the applicable IAM user or AWS account.
+     * </p>
+     *
+     * @param listDeploymentsRequest Container for the necessary parameters
+     *           to execute the ListDeployments operation on AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListDeployments service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListDeploymentsResult> listDeploymentsAsync(
+            final ListDeploymentsRequest listDeploymentsRequest,
+            final AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListDeploymentsResult>() {
+            public ListDeploymentsResult call() throws Exception {
+              ListDeploymentsResult result;
+                try {
+                result = listDeployments(listDeploymentsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listDeploymentsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Attempts to stop an ongoing deployment.
+     * </p>
+     *
+     * @param stopDeploymentRequest Container for the necessary parameters to
+     *           execute the StopDeployment operation on AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         StopDeployment service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<StopDeploymentResult> stopDeploymentAsync(final StopDeploymentRequest stopDeploymentRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<StopDeploymentResult>() {
+            public StopDeploymentResult call() throws Exception {
+                return stopDeployment(stopDeploymentRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Attempts to stop an ongoing deployment.
+     * </p>
+     *
+     * @param stopDeploymentRequest Container for the necessary parameters to
+     *           execute the StopDeployment operation on AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         StopDeployment service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<StopDeploymentResult> stopDeploymentAsync(
+            final StopDeploymentRequest stopDeploymentRequest,
+            final AsyncHandler<StopDeploymentRequest, StopDeploymentResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<StopDeploymentResult>() {
+            public StopDeploymentResult call() throws Exception {
+              StopDeploymentResult result;
+                try {
+                result = stopDeployment(stopDeploymentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(stopDeploymentRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a new application.
+     * </p>
+     *
+     * @param createApplicationRequest Container for the necessary parameters
+     *           to execute the CreateApplication operation on AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateApplication service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateApplicationResult> createApplicationAsync(final CreateApplicationRequest createApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateApplicationResult>() {
+            public CreateApplicationResult call() throws Exception {
+                return createApplication(createApplicationRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new application.
+     * </p>
+     *
+     * @param createApplicationRequest Container for the necessary parameters
+     *           to execute the CreateApplication operation on AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateApplication service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateApplicationResult> createApplicationAsync(
+            final CreateApplicationRequest createApplicationRequest,
+            final AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateApplicationResult>() {
+            public CreateApplicationResult call() throws Exception {
+              CreateApplicationResult result;
+                try {
+                result = createApplication(createApplicationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createApplicationRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about an application.
+     * </p>
+     *
+     * @param getApplicationRequest Container for the necessary parameters to
+     *           execute the GetApplication operation on AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetApplication service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetApplicationResult> getApplicationAsync(final GetApplicationRequest getApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetApplicationResult>() {
+            public GetApplicationResult call() throws Exception {
+                return getApplication(getApplicationRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about an application.
+     * </p>
+     *
+     * @param getApplicationRequest Container for the necessary parameters to
+     *           execute the GetApplication operation on AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetApplication service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetApplicationResult> getApplicationAsync(
+            final GetApplicationRequest getApplicationRequest,
+            final AsyncHandler<GetApplicationRequest, GetApplicationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetApplicationResult>() {
+            public GetApplicationResult call() throws Exception {
+              GetApplicationResult result;
+                try {
+                result = getApplication(getApplicationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getApplicationRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a new deployment group for application revisions to be
+     * deployed to.
+     * </p>
+     *
+     * @param createDeploymentGroupRequest Container for the necessary
+     *           parameters to execute the CreateDeploymentGroup operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(final CreateDeploymentGroupRequest createDeploymentGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateDeploymentGroupResult>() {
+            public CreateDeploymentGroupResult call() throws Exception {
+                return createDeploymentGroup(createDeploymentGroupRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new deployment group for application revisions to be
+     * deployed to.
+     * </p>
+     *
+     * @param createDeploymentGroupRequest Container for the necessary
+     *           parameters to execute the CreateDeploymentGroup operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(
+            final CreateDeploymentGroupRequest createDeploymentGroupRequest,
+            final AsyncHandler<CreateDeploymentGroupRequest, CreateDeploymentGroupResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateDeploymentGroupResult>() {
+            public CreateDeploymentGroupResult call() throws Exception {
+              CreateDeploymentGroupResult result;
+                try {
+                result = createDeploymentGroup(createDeploymentGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDeploymentGroupRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about one or more on-premises instances.
+     * </p>
+     *
+     * @param batchGetOnPremisesInstancesRequest Container for the necessary
+     *           parameters to execute the BatchGetOnPremisesInstances operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         BatchGetOnPremisesInstances service method, as returned by
+     *         AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(final BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<BatchGetOnPremisesInstancesResult>() {
+            public BatchGetOnPremisesInstancesResult call() throws Exception {
+                return batchGetOnPremisesInstances(batchGetOnPremisesInstancesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about one or more on-premises instances.
+     * </p>
+     *
+     * @param batchGetOnPremisesInstancesRequest Container for the necessary
+     *           parameters to execute the BatchGetOnPremisesInstances operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         BatchGetOnPremisesInstances service method, as returned by
+     *         AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
+            final BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest,
+            final AsyncHandler<BatchGetOnPremisesInstancesRequest, BatchGetOnPremisesInstancesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<BatchGetOnPremisesInstancesResult>() {
+            public BatchGetOnPremisesInstancesResult call() throws Exception {
+              BatchGetOnPremisesInstancesResult result;
+                try {
+                result = batchGetOnPremisesInstances(batchGetOnPremisesInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(batchGetOnPremisesInstancesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about one or more deployments.
+     * </p>
+     *
+     * @param batchGetDeploymentsRequest Container for the necessary
+     *           parameters to execute the BatchGetDeployments operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         BatchGetDeployments service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(final BatchGetDeploymentsRequest batchGetDeploymentsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<BatchGetDeploymentsResult>() {
+            public BatchGetDeploymentsResult call() throws Exception {
+                return batchGetDeployments(batchGetDeploymentsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about one or more deployments.
+     * </p>
+     *
+     * @param batchGetDeploymentsRequest Container for the necessary
+     *           parameters to execute the BatchGetDeployments operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         BatchGetDeployments service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(
+            final BatchGetDeploymentsRequest batchGetDeploymentsRequest,
+            final AsyncHandler<BatchGetDeploymentsRequest, BatchGetDeploymentsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<BatchGetDeploymentsResult>() {
+            public BatchGetDeploymentsResult call() throws Exception {
+              BatchGetDeploymentsResult result;
+                try {
+                result = batchGetDeployments(batchGetDeploymentsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(batchGetDeploymentsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about an instance as part of a deployment.
+     * </p>
+     *
+     * @param getDeploymentInstanceRequest Container for the necessary
+     *           parameters to execute the GetDeploymentInstance operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetDeploymentInstance service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(final GetDeploymentInstanceRequest getDeploymentInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetDeploymentInstanceResult>() {
+            public GetDeploymentInstanceResult call() throws Exception {
+                return getDeploymentInstance(getDeploymentInstanceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about an instance as part of a deployment.
+     * </p>
+     *
+     * @param getDeploymentInstanceRequest Container for the necessary
+     *           parameters to execute the GetDeploymentInstance operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetDeploymentInstance service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(
+            final GetDeploymentInstanceRequest getDeploymentInstanceRequest,
+            final AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetDeploymentInstanceResult>() {
+            public GetDeploymentInstanceResult call() throws Exception {
+              GetDeploymentInstanceResult result;
+                try {
+                result = getDeploymentInstance(getDeploymentInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getDeploymentInstanceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about an application revision.
+     * </p>
+     *
+     * @param getApplicationRevisionRequest Container for the necessary
+     *           parameters to execute the GetApplicationRevision operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetApplicationRevision service method, as returned by
+     *         AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetApplicationRevisionResult> getApplicationRevisionAsync(final GetApplicationRevisionRequest getApplicationRevisionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetApplicationRevisionResult>() {
+            public GetApplicationRevisionResult call() throws Exception {
+                return getApplicationRevision(getApplicationRevisionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about an application revision.
+     * </p>
+     *
+     * @param getApplicationRevisionRequest Container for the necessary
+     *           parameters to execute the GetApplicationRevision operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetApplicationRevision service method, as returned by
+     *         AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetApplicationRevisionResult> getApplicationRevisionAsync(
+            final GetApplicationRevisionRequest getApplicationRevisionRequest,
+            final AsyncHandler<GetApplicationRevisionRequest, GetApplicationRevisionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetApplicationRevisionResult>() {
+            public GetApplicationRevisionResult call() throws Exception {
+              GetApplicationRevisionResult result;
+                try {
+                result = getApplicationRevision(getApplicationRevisionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getApplicationRevisionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Registers an on-premises instance.
+     * </p>
+     *
+     * @param registerOnPremisesInstanceRequest Container for the necessary
+     *           parameters to execute the RegisterOnPremisesInstance operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RegisterOnPremisesInstance service method, as returned by
+     *         AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> registerOnPremisesInstanceAsync(final RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                registerOnPremisesInstance(registerOnPremisesInstanceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Registers an on-premises instance.
+     * </p>
+     *
+     * @param registerOnPremisesInstanceRequest Container for the necessary
+     *           parameters to execute the RegisterOnPremisesInstance operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RegisterOnPremisesInstance service method, as returned by
+     *         AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> registerOnPremisesInstanceAsync(
+            final RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest,
+            final AsyncHandler<RegisterOnPremisesInstanceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                registerOnPremisesInstance(registerOnPremisesInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(registerOnPremisesInstanceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about a deployment group.
+     * </p>
+     *
+     * @param getDeploymentGroupRequest Container for the necessary
+     *           parameters to execute the GetDeploymentGroup operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetDeploymentGroupResult> getDeploymentGroupAsync(final GetDeploymentGroupRequest getDeploymentGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetDeploymentGroupResult>() {
+            public GetDeploymentGroupResult call() throws Exception {
+                return getDeploymentGroup(getDeploymentGroupRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about a deployment group.
+     * </p>
+     *
+     * @param getDeploymentGroupRequest Container for the necessary
+     *           parameters to execute the GetDeploymentGroup operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetDeploymentGroupResult> getDeploymentGroupAsync(
+            final GetDeploymentGroupRequest getDeploymentGroupRequest,
+            final AsyncHandler<GetDeploymentGroupRequest, GetDeploymentGroupResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetDeploymentGroupResult>() {
+            public GetDeploymentGroupResult call() throws Exception {
+              GetDeploymentGroupResult result;
+                try {
+                result = getDeploymentGroup(getDeploymentGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getDeploymentGroupRequest, result);
+                 return result;
         }
     });
     }
@@ -587,8 +1613,8 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     
     /**
      * <p>
-     * Lists the Amazon EC2 instances for a deployment within the AWS user
-     * account.
+     * Lists the instances for a deployment associated with the applicable
+     * IAM user or AWS account.
      * </p>
      *
      * @param listDeploymentInstancesRequest Container for the necessary
@@ -619,8 +1645,8 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     /**
      * <p>
-     * Lists the Amazon EC2 instances for a deployment within the AWS user
-     * account.
+     * Lists the instances for a deployment associated with the applicable
+     * IAM user or AWS account.
      * </p>
      *
      * @param listDeploymentInstancesRequest Container for the necessary
@@ -665,14 +1691,22 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     
     /**
      * <p>
-     * Lists the applications registered within the AWS user account.
+     * Gets a list of one or more on-premises instance names.
+     * </p>
+     * <p>
+     * Unless otherwise specified, both registered and deregistered
+     * on-premises instance names will be listed. To list only registered or
+     * deregistered on-premises instance names, use the registration status
+     * parameter.
      * </p>
      *
-     * @param listApplicationsRequest Container for the necessary parameters
-     *           to execute the ListApplications operation on AmazonCodeDeploy.
+     * @param listOnPremisesInstancesRequest Container for the necessary
+     *           parameters to execute the ListOnPremisesInstances operation on
+     *           AmazonCodeDeploy.
      * 
      * @return A Java Future object containing the response from the
-     *         ListApplications service method, as returned by AmazonCodeDeploy.
+     *         ListOnPremisesInstances service method, as returned by
+     *         AmazonCodeDeploy.
      * 
      *
      * @throws AmazonClientException
@@ -683,29 +1717,37 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *             If an error response is returned by AmazonCodeDeploy indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ListApplicationsResult> listApplicationsAsync(final ListApplicationsRequest listApplicationsRequest) 
+    public Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(final ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListApplicationsResult>() {
-            public ListApplicationsResult call() throws Exception {
-                return listApplications(listApplicationsRequest);
+        return executorService.submit(new Callable<ListOnPremisesInstancesResult>() {
+            public ListOnPremisesInstancesResult call() throws Exception {
+                return listOnPremisesInstances(listOnPremisesInstancesRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Lists the applications registered within the AWS user account.
+     * Gets a list of one or more on-premises instance names.
+     * </p>
+     * <p>
+     * Unless otherwise specified, both registered and deregistered
+     * on-premises instance names will be listed. To list only registered or
+     * deregistered on-premises instance names, use the registration status
+     * parameter.
      * </p>
      *
-     * @param listApplicationsRequest Container for the necessary parameters
-     *           to execute the ListApplications operation on AmazonCodeDeploy.
+     * @param listOnPremisesInstancesRequest Container for the necessary
+     *           parameters to execute the ListOnPremisesInstances operation on
+     *           AmazonCodeDeploy.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         ListApplications service method, as returned by AmazonCodeDeploy.
+     *         ListOnPremisesInstances service method, as returned by
+     *         AmazonCodeDeploy.
      * 
      *
      * @throws AmazonClientException
@@ -716,20 +1758,170 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *             If an error response is returned by AmazonCodeDeploy indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ListApplicationsResult> listApplicationsAsync(
-            final ListApplicationsRequest listApplicationsRequest,
-            final AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler)
+    public Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(
+            final ListOnPremisesInstancesRequest listOnPremisesInstancesRequest,
+            final AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListApplicationsResult>() {
-            public ListApplicationsResult call() throws Exception {
-              ListApplicationsResult result;
+        return executorService.submit(new Callable<ListOnPremisesInstancesResult>() {
+            public ListOnPremisesInstancesResult call() throws Exception {
+              ListOnPremisesInstancesResult result;
                 try {
-                result = listApplications(listApplicationsRequest);
+                result = listOnPremisesInstances(listOnPremisesInstancesRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(listApplicationsRequest, result);
+              asyncHandler.onSuccess(listOnPremisesInstancesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Lists the deployment groups for an application registered with the
+     * applicable IAM user or AWS account.
+     * </p>
+     *
+     * @param listDeploymentGroupsRequest Container for the necessary
+     *           parameters to execute the ListDeploymentGroups operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListDeploymentGroups service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(final ListDeploymentGroupsRequest listDeploymentGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListDeploymentGroupsResult>() {
+            public ListDeploymentGroupsResult call() throws Exception {
+                return listDeploymentGroups(listDeploymentGroupsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Lists the deployment groups for an application registered with the
+     * applicable IAM user or AWS account.
+     * </p>
+     *
+     * @param listDeploymentGroupsRequest Container for the necessary
+     *           parameters to execute the ListDeploymentGroups operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListDeploymentGroups service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(
+            final ListDeploymentGroupsRequest listDeploymentGroupsRequest,
+            final AsyncHandler<ListDeploymentGroupsRequest, ListDeploymentGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListDeploymentGroupsResult>() {
+            public ListDeploymentGroupsResult call() throws Exception {
+              ListDeploymentGroupsResult result;
+                try {
+                result = listDeploymentGroups(listDeploymentGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listDeploymentGroupsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Gets information about a deployment configuration.
+     * </p>
+     *
+     * @param getDeploymentConfigRequest Container for the necessary
+     *           parameters to execute the GetDeploymentConfig operation on
+     *           AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetDeploymentConfig service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetDeploymentConfigResult> getDeploymentConfigAsync(final GetDeploymentConfigRequest getDeploymentConfigRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetDeploymentConfigResult>() {
+            public GetDeploymentConfigResult call() throws Exception {
+                return getDeploymentConfig(getDeploymentConfigRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Gets information about a deployment configuration.
+     * </p>
+     *
+     * @param getDeploymentConfigRequest Container for the necessary
+     *           parameters to execute the GetDeploymentConfig operation on
+     *           AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetDeploymentConfig service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetDeploymentConfigResult> getDeploymentConfigAsync(
+            final GetDeploymentConfigRequest getDeploymentConfigRequest,
+            final AsyncHandler<GetDeploymentConfigRequest, GetDeploymentConfigResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetDeploymentConfigResult>() {
+            public GetDeploymentConfigResult call() throws Exception {
+              GetDeploymentConfigResult result;
+                try {
+                result = getDeploymentConfig(getDeploymentConfigRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getDeploymentConfigRequest, result);
                  return result;
         }
     });
@@ -815,156 +2007,6 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     
     /**
      * <p>
-     * Gets information about a deployment configuration.
-     * </p>
-     *
-     * @param getDeploymentConfigRequest Container for the necessary
-     *           parameters to execute the GetDeploymentConfig operation on
-     *           AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetDeploymentConfig service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetDeploymentConfigResult> getDeploymentConfigAsync(final GetDeploymentConfigRequest getDeploymentConfigRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetDeploymentConfigResult>() {
-            public GetDeploymentConfigResult call() throws Exception {
-                return getDeploymentConfig(getDeploymentConfigRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Gets information about a deployment configuration.
-     * </p>
-     *
-     * @param getDeploymentConfigRequest Container for the necessary
-     *           parameters to execute the GetDeploymentConfig operation on
-     *           AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetDeploymentConfig service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetDeploymentConfigResult> getDeploymentConfigAsync(
-            final GetDeploymentConfigRequest getDeploymentConfigRequest,
-            final AsyncHandler<GetDeploymentConfigRequest, GetDeploymentConfigResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetDeploymentConfigResult>() {
-            public GetDeploymentConfigResult call() throws Exception {
-              GetDeploymentConfigResult result;
-                try {
-                result = getDeploymentConfig(getDeploymentConfigRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getDeploymentConfigRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Lists the deployment groups for an application registered within the
-     * AWS user account.
-     * </p>
-     *
-     * @param listDeploymentGroupsRequest Container for the necessary
-     *           parameters to execute the ListDeploymentGroups operation on
-     *           AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListDeploymentGroups service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(final ListDeploymentGroupsRequest listDeploymentGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListDeploymentGroupsResult>() {
-            public ListDeploymentGroupsResult call() throws Exception {
-                return listDeploymentGroups(listDeploymentGroupsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Lists the deployment groups for an application registered within the
-     * AWS user account.
-     * </p>
-     *
-     * @param listDeploymentGroupsRequest Container for the necessary
-     *           parameters to execute the ListDeploymentGroups operation on
-     *           AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListDeploymentGroups service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(
-            final ListDeploymentGroupsRequest listDeploymentGroupsRequest,
-            final AsyncHandler<ListDeploymentGroupsRequest, ListDeploymentGroupsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListDeploymentGroupsResult>() {
-            public ListDeploymentGroupsResult call() throws Exception {
-              ListDeploymentGroupsResult result;
-                try {
-                result = listDeploymentGroups(listDeploymentGroupsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listDeploymentGroupsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Gets information about one or more applications.
      * </p>
      *
@@ -1039,15 +2081,15 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     
     /**
      * <p>
-     * Deletes a deployment group.
+     * Gets information about an on-premises instance.
      * </p>
      *
-     * @param deleteDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDeploymentGroup operation on
+     * @param getOnPremisesInstanceRequest Container for the necessary
+     *           parameters to execute the GetOnPremisesInstance operation on
      *           AmazonCodeDeploy.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     *         GetOnPremisesInstance service method, as returned by AmazonCodeDeploy.
      * 
      *
      * @throws AmazonClientException
@@ -1058,22 +2100,22 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *             If an error response is returned by AmazonCodeDeploy indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(final DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) 
+    public Future<GetOnPremisesInstanceResult> getOnPremisesInstanceAsync(final GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteDeploymentGroupResult>() {
-            public DeleteDeploymentGroupResult call() throws Exception {
-                return deleteDeploymentGroup(deleteDeploymentGroupRequest);
+        return executorService.submit(new Callable<GetOnPremisesInstanceResult>() {
+            public GetOnPremisesInstanceResult call() throws Exception {
+                return getOnPremisesInstance(getOnPremisesInstanceRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Deletes a deployment group.
+     * Gets information about an on-premises instance.
      * </p>
      *
-     * @param deleteDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDeploymentGroup operation on
+     * @param getOnPremisesInstanceRequest Container for the necessary
+     *           parameters to execute the GetOnPremisesInstance operation on
      *           AmazonCodeDeploy.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -1081,7 +2123,7 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteDeploymentGroup service method, as returned by AmazonCodeDeploy.
+     *         GetOnPremisesInstance service method, as returned by AmazonCodeDeploy.
      * 
      *
      * @throws AmazonClientException
@@ -1092,20 +2134,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *             If an error response is returned by AmazonCodeDeploy indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(
-            final DeleteDeploymentGroupRequest deleteDeploymentGroupRequest,
-            final AsyncHandler<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResult> asyncHandler)
+    public Future<GetOnPremisesInstanceResult> getOnPremisesInstanceAsync(
+            final GetOnPremisesInstanceRequest getOnPremisesInstanceRequest,
+            final AsyncHandler<GetOnPremisesInstanceRequest, GetOnPremisesInstanceResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteDeploymentGroupResult>() {
-            public DeleteDeploymentGroupResult call() throws Exception {
-              DeleteDeploymentGroupResult result;
+        return executorService.submit(new Callable<GetOnPremisesInstanceResult>() {
+            public GetOnPremisesInstanceResult call() throws Exception {
+              GetOnPremisesInstanceResult result;
                 try {
-                result = deleteDeploymentGroup(deleteDeploymentGroupRequest);
+                result = getOnPremisesInstance(getOnPremisesInstanceRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(deleteDeploymentGroupRequest, result);
+              asyncHandler.onSuccess(getOnPremisesInstanceRequest, result);
                  return result;
         }
     });
@@ -1263,518 +2305,6 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     
     /**
      * <p>
-     * Lists the deployments under a deployment group for an application
-     * registered within the AWS user account.
-     * </p>
-     *
-     * @param listDeploymentsRequest Container for the necessary parameters
-     *           to execute the ListDeployments operation on AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListDeployments service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListDeploymentsResult> listDeploymentsAsync(final ListDeploymentsRequest listDeploymentsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListDeploymentsResult>() {
-            public ListDeploymentsResult call() throws Exception {
-                return listDeployments(listDeploymentsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Lists the deployments under a deployment group for an application
-     * registered within the AWS user account.
-     * </p>
-     *
-     * @param listDeploymentsRequest Container for the necessary parameters
-     *           to execute the ListDeployments operation on AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListDeployments service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListDeploymentsResult> listDeploymentsAsync(
-            final ListDeploymentsRequest listDeploymentsRequest,
-            final AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListDeploymentsResult>() {
-            public ListDeploymentsResult call() throws Exception {
-              ListDeploymentsResult result;
-                try {
-                result = listDeployments(listDeploymentsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listDeploymentsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Gets information about an application.
-     * </p>
-     *
-     * @param getApplicationRequest Container for the necessary parameters to
-     *           execute the GetApplication operation on AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetApplication service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetApplicationResult> getApplicationAsync(final GetApplicationRequest getApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetApplicationResult>() {
-            public GetApplicationResult call() throws Exception {
-                return getApplication(getApplicationRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Gets information about an application.
-     * </p>
-     *
-     * @param getApplicationRequest Container for the necessary parameters to
-     *           execute the GetApplication operation on AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetApplication service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetApplicationResult> getApplicationAsync(
-            final GetApplicationRequest getApplicationRequest,
-            final AsyncHandler<GetApplicationRequest, GetApplicationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetApplicationResult>() {
-            public GetApplicationResult call() throws Exception {
-              GetApplicationResult result;
-                try {
-                result = getApplication(getApplicationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getApplicationRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a new application.
-     * </p>
-     *
-     * @param createApplicationRequest Container for the necessary parameters
-     *           to execute the CreateApplication operation on AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateApplication service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateApplicationResult> createApplicationAsync(final CreateApplicationRequest createApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateApplicationResult>() {
-            public CreateApplicationResult call() throws Exception {
-                return createApplication(createApplicationRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a new application.
-     * </p>
-     *
-     * @param createApplicationRequest Container for the necessary parameters
-     *           to execute the CreateApplication operation on AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateApplication service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateApplicationResult> createApplicationAsync(
-            final CreateApplicationRequest createApplicationRequest,
-            final AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateApplicationResult>() {
-            public CreateApplicationResult call() throws Exception {
-              CreateApplicationResult result;
-                try {
-                result = createApplication(createApplicationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createApplicationRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Attempts to stop an ongoing deployment.
-     * </p>
-     *
-     * @param stopDeploymentRequest Container for the necessary parameters to
-     *           execute the StopDeployment operation on AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         StopDeployment service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<StopDeploymentResult> stopDeploymentAsync(final StopDeploymentRequest stopDeploymentRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<StopDeploymentResult>() {
-            public StopDeploymentResult call() throws Exception {
-                return stopDeployment(stopDeploymentRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Attempts to stop an ongoing deployment.
-     * </p>
-     *
-     * @param stopDeploymentRequest Container for the necessary parameters to
-     *           execute the StopDeployment operation on AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         StopDeployment service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<StopDeploymentResult> stopDeploymentAsync(
-            final StopDeploymentRequest stopDeploymentRequest,
-            final AsyncHandler<StopDeploymentRequest, StopDeploymentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<StopDeploymentResult>() {
-            public StopDeploymentResult call() throws Exception {
-              StopDeploymentResult result;
-                try {
-                result = stopDeployment(stopDeploymentRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(stopDeploymentRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a new deployment group for application revisions to be
-     * deployed to.
-     * </p>
-     *
-     * @param createDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the CreateDeploymentGroup operation on
-     *           AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDeploymentGroup service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(final CreateDeploymentGroupRequest createDeploymentGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateDeploymentGroupResult>() {
-            public CreateDeploymentGroupResult call() throws Exception {
-                return createDeploymentGroup(createDeploymentGroupRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a new deployment group for application revisions to be
-     * deployed to.
-     * </p>
-     *
-     * @param createDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the CreateDeploymentGroup operation on
-     *           AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDeploymentGroup service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(
-            final CreateDeploymentGroupRequest createDeploymentGroupRequest,
-            final AsyncHandler<CreateDeploymentGroupRequest, CreateDeploymentGroupResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateDeploymentGroupResult>() {
-            public CreateDeploymentGroupResult call() throws Exception {
-              CreateDeploymentGroupResult result;
-                try {
-                result = createDeploymentGroup(createDeploymentGroupRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createDeploymentGroupRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes an application.
-     * </p>
-     *
-     * @param deleteApplicationRequest Container for the necessary parameters
-     *           to execute the DeleteApplication operation on AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteApplication service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteApplicationAsync(final DeleteApplicationRequest deleteApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteApplication(deleteApplicationRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes an application.
-     * </p>
-     *
-     * @param deleteApplicationRequest Container for the necessary parameters
-     *           to execute the DeleteApplication operation on AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteApplication service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteApplicationAsync(
-            final DeleteApplicationRequest deleteApplicationRequest,
-            final AsyncHandler<DeleteApplicationRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteApplication(deleteApplicationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteApplicationRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Gets information about one or more deployments.
-     * </p>
-     *
-     * @param batchGetDeploymentsRequest Container for the necessary
-     *           parameters to execute the BatchGetDeployments operation on
-     *           AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         BatchGetDeployments service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(final BatchGetDeploymentsRequest batchGetDeploymentsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<BatchGetDeploymentsResult>() {
-            public BatchGetDeploymentsResult call() throws Exception {
-                return batchGetDeployments(batchGetDeploymentsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Gets information about one or more deployments.
-     * </p>
-     *
-     * @param batchGetDeploymentsRequest Container for the necessary
-     *           parameters to execute the BatchGetDeployments operation on
-     *           AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         BatchGetDeployments service method, as returned by AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(
-            final BatchGetDeploymentsRequest batchGetDeploymentsRequest,
-            final AsyncHandler<BatchGetDeploymentsRequest, BatchGetDeploymentsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<BatchGetDeploymentsResult>() {
-            public BatchGetDeploymentsResult call() throws Exception {
-              BatchGetDeploymentsResult result;
-                try {
-                result = batchGetDeployments(batchGetDeploymentsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(batchGetDeploymentsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Deletes a deployment configuration.
      * </p>
      * <p>
@@ -1859,6 +2389,78 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     
     /**
      * <p>
+     * Deletes an application.
+     * </p>
+     *
+     * @param deleteApplicationRequest Container for the necessary parameters
+     *           to execute the DeleteApplication operation on AmazonCodeDeploy.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteApplication service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteApplicationAsync(final DeleteApplicationRequest deleteApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteApplication(deleteApplicationRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes an application.
+     * </p>
+     *
+     * @param deleteApplicationRequest Container for the necessary parameters
+     *           to execute the DeleteApplication operation on AmazonCodeDeploy.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteApplication service method, as returned by AmazonCodeDeploy.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCodeDeploy indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteApplicationAsync(
+            final DeleteApplicationRequest deleteApplicationRequest,
+            final AsyncHandler<DeleteApplicationRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteApplication(deleteApplicationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteApplicationRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Gets information about a deployment.
      * </p>
      *
@@ -1931,7 +2533,8 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     
     /**
      * <p>
-     * Deploys an application revision to the specified deployment group.
+     * Deploys an application revision through the specified deployment
+     * group.
      * </p>
      *
      * @param createDeploymentRequest Container for the necessary parameters
@@ -1960,7 +2563,8 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     /**
      * <p>
-     * Deploys an application revision to the specified deployment group.
+     * Deploys an application revision through the specified deployment
+     * group.
      * </p>
      *
      * @param createDeploymentRequest Container for the necessary parameters
@@ -2003,16 +2607,16 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     
     /**
      * <p>
-     * Gets information about an Amazon EC2 instance as part of a
-     * deployment.
+     * Removes one or more tags from one or more on-premises instances.
      * </p>
      *
-     * @param getDeploymentInstanceRequest Container for the necessary
-     *           parameters to execute the GetDeploymentInstance operation on
-     *           AmazonCodeDeploy.
+     * @param removeTagsFromOnPremisesInstancesRequest Container for the
+     *           necessary parameters to execute the RemoveTagsFromOnPremisesInstances
+     *           operation on AmazonCodeDeploy.
      * 
      * @return A Java Future object containing the response from the
-     *         GetDeploymentInstance service method, as returned by AmazonCodeDeploy.
+     *         RemoveTagsFromOnPremisesInstances service method, as returned by
+     *         AmazonCodeDeploy.
      * 
      *
      * @throws AmazonClientException
@@ -2023,31 +2627,32 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *             If an error response is returned by AmazonCodeDeploy indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(final GetDeploymentInstanceRequest getDeploymentInstanceRequest) 
+    public Future<Void> removeTagsFromOnPremisesInstancesAsync(final RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetDeploymentInstanceResult>() {
-            public GetDeploymentInstanceResult call() throws Exception {
-                return getDeploymentInstance(getDeploymentInstanceRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                removeTagsFromOnPremisesInstances(removeTagsFromOnPremisesInstancesRequest);
+                return null;
         }
     });
     }
 
     /**
      * <p>
-     * Gets information about an Amazon EC2 instance as part of a
-     * deployment.
+     * Removes one or more tags from one or more on-premises instances.
      * </p>
      *
-     * @param getDeploymentInstanceRequest Container for the necessary
-     *           parameters to execute the GetDeploymentInstance operation on
-     *           AmazonCodeDeploy.
+     * @param removeTagsFromOnPremisesInstancesRequest Container for the
+     *           necessary parameters to execute the RemoveTagsFromOnPremisesInstances
+     *           operation on AmazonCodeDeploy.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         GetDeploymentInstance service method, as returned by AmazonCodeDeploy.
+     *         RemoveTagsFromOnPremisesInstances service method, as returned by
+     *         AmazonCodeDeploy.
      * 
      *
      * @throws AmazonClientException
@@ -2058,28 +2663,28 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      *             If an error response is returned by AmazonCodeDeploy indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(
-            final GetDeploymentInstanceRequest getDeploymentInstanceRequest,
-            final AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler)
+    public Future<Void> removeTagsFromOnPremisesInstancesAsync(
+            final RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest,
+            final AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetDeploymentInstanceResult>() {
-            public GetDeploymentInstanceResult call() throws Exception {
-              GetDeploymentInstanceResult result;
-                try {
-                result = getDeploymentInstance(getDeploymentInstanceRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                removeTagsFromOnPremisesInstances(removeTagsFromOnPremisesInstancesRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(getDeploymentInstanceRequest, result);
-                 return result;
+              asyncHandler.onSuccess(removeTagsFromOnPremisesInstancesRequest, null);
+                 return null;
         }
     });
     }
     
     /**
      * <p>
-     * Lists the deployment configurations within the AWS user account.
+     * Lists the deployment configurations with the applicable IAM user or
+     * AWS account.
      * </p>
      *
      * @param listDeploymentConfigsRequest Container for the necessary
@@ -2109,7 +2714,8 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     /**
      * <p>
-     * Lists the deployment configurations within the AWS user account.
+     * Lists the deployment configurations with the applicable IAM user or
+     * AWS account.
      * </p>
      *
      * @param listDeploymentConfigsRequest Container for the necessary
@@ -2146,82 +2752,6 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
             throw ex;
               }
               asyncHandler.onSuccess(listDeploymentConfigsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Gets information about an application revision.
-     * </p>
-     *
-     * @param getApplicationRevisionRequest Container for the necessary
-     *           parameters to execute the GetApplicationRevision operation on
-     *           AmazonCodeDeploy.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetApplicationRevision service method, as returned by
-     *         AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetApplicationRevisionResult> getApplicationRevisionAsync(final GetApplicationRevisionRequest getApplicationRevisionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetApplicationRevisionResult>() {
-            public GetApplicationRevisionResult call() throws Exception {
-                return getApplicationRevision(getApplicationRevisionRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Gets information about an application revision.
-     * </p>
-     *
-     * @param getApplicationRevisionRequest Container for the necessary
-     *           parameters to execute the GetApplicationRevision operation on
-     *           AmazonCodeDeploy.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetApplicationRevision service method, as returned by
-     *         AmazonCodeDeploy.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetApplicationRevisionResult> getApplicationRevisionAsync(
-            final GetApplicationRevisionRequest getApplicationRevisionRequest,
-            final AsyncHandler<GetApplicationRevisionRequest, GetApplicationRevisionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetApplicationRevisionResult>() {
-            public GetApplicationRevisionResult call() throws Exception {
-              GetApplicationRevisionResult result;
-                try {
-                result = getApplicationRevision(getApplicationRevisionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getApplicationRevisionRequest, result);
                  return result;
         }
     });

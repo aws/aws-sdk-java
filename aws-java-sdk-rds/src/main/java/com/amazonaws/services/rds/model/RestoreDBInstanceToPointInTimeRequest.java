@@ -114,8 +114,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -158,8 +158,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
-     * value for the SQL Server database engine is not supported.
+     * an integer greater than 1000. <p> <b>SQL Server</b> <p>Setting the
+     * IOPS value for the SQL Server database engine is not supported.
      */
     private Integer iops;
 
@@ -733,8 +733,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -747,8 +747,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -766,8 +766,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -780,8 +780,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -799,8 +799,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -815,8 +815,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -838,8 +838,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -852,8 +852,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -1076,13 +1076,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
-     * value for the SQL Server database engine is not supported.
+     * an integer greater than 1000. <p> <b>SQL Server</b> <p>Setting the
+     * IOPS value for the SQL Server database engine is not supported.
      *
      * @return The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
-     *         value for the SQL Server database engine is not supported.
+     *         an integer greater than 1000. <p> <b>SQL Server</b> <p>Setting the
+     *         IOPS value for the SQL Server database engine is not supported.
      */
     public Integer getIops() {
         return iops;
@@ -1091,13 +1091,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
-     * value for the SQL Server database engine is not supported.
+     * an integer greater than 1000. <p> <b>SQL Server</b> <p>Setting the
+     * IOPS value for the SQL Server database engine is not supported.
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
-     *         value for the SQL Server database engine is not supported.
+     *         an integer greater than 1000. <p> <b>SQL Server</b> <p>Setting the
+     *         IOPS value for the SQL Server database engine is not supported.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -1106,15 +1106,15 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
-     * value for the SQL Server database engine is not supported.
+     * an integer greater than 1000. <p> <b>SQL Server</b> <p>Setting the
+     * IOPS value for the SQL Server database engine is not supported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
-     *         value for the SQL Server database engine is not supported.
+     *         an integer greater than 1000. <p> <b>SQL Server</b> <p>Setting the
+     *         IOPS value for the SQL Server database engine is not supported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

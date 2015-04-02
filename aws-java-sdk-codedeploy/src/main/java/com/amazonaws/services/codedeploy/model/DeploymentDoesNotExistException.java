@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The deployment does not exist within the AWS user account.
+ * The deployment does not exist with the applicable IAM user or AWS
+ * account.
  * </p>
  */        
 public class DeploymentDoesNotExistException extends AmazonServiceException {

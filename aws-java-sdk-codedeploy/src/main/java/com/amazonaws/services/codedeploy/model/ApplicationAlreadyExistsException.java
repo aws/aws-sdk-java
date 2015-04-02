@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An application with the specified name already exists within the AWS
- * user account.
+ * An application with the specified name already exists with the
+ * applicable IAM user or AWS account.
  * </p>
  */        
 public class ApplicationAlreadyExistsException extends AmazonServiceException {

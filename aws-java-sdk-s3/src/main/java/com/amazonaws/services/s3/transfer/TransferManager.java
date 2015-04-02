@@ -24,7 +24,6 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
-import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
@@ -43,16 +42,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
-import com.amazonaws.event.ProgressEvent;
-import com.amazonaws.event.ProgressEventFilter;
-import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.AmazonS3Encryption;
+import com.amazonaws.services.s3.internal.FileLocks;
 import com.amazonaws.services.s3.internal.Mimetypes;
-import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -64,9 +59,9 @@ import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
+import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.services.s3.transfer.internal.CopyCallable;
 import com.amazonaws.services.s3.transfer.internal.CopyImpl;
 import com.amazonaws.services.s3.transfer.internal.CopyMonitor;
@@ -747,10 +742,9 @@ public class TransferManager {
     private Download doDownload(final GetObjectRequest getObjectRequest,
             final File file, final TransferStateChangeListener stateListener,
             final S3ProgressListener s3progressListener,
-            final boolean resumeExistingDownload) {
-
+            final boolean resumeExistingDownload)
+    {
         appendSingleObjectUserAgent(getObjectRequest);
-
         String description = "Downloading from " + getObjectRequest.getBucketName() + "/" + getObjectRequest.getKey();
 
         TransferProgress transferProgress = new TransferProgress();
@@ -760,23 +754,12 @@ public class TransferManager {
             new TransferProgressUpdatingListener(transferProgress),
             getObjectRequest.getGeneralProgressListener(),
             s3progressListener);           // Listeners included in the original request
-
         // The listener chain used by the low-level GetObject request.
         // This listener chain ignores any COMPLETE event, so that we could
         // delay firing the signal until the high-level download fully finishes.
-        ProgressListenerChain listeners = new ProgressListenerChain(
-                new ProgressEventFilter() {
-                    @Override
-                    public ProgressEvent filter(ProgressEvent progressEvent) {
-                        // Block COMPLETE events from the low-level GetObject operation,
-                        // but we still want to keep the BytesTransferred
-                        return progressEvent.getEventType() == ProgressEventType.TRANSFER_COMPLETED_EVENT
-                             ? null // discard this event
-                             : progressEvent
-                             ;
-                    }
-                }, listenerChain);
-        getObjectRequest.setGeneralProgressListener(listeners);
+        getObjectRequest.setGeneralProgressListener(
+            new ProgressListenerChain(
+                new TransferCompletionFilter(), listenerChain));
 
         long startingByte = 0;
         long lastByte;
@@ -789,17 +772,15 @@ public class TransferManager {
         } else {
             GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
                     getObjectRequest.getBucketName(), getObjectRequest.getKey());
-            if (getObjectRequest.getSSECustomerKey() != null) {
+            if (getObjectRequest.getSSECustomerKey() != null)
                 getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
-            }
-            if (getObjectRequest.getVersionId() != null) {
+            if (getObjectRequest.getVersionId() != null)
                 getObjectMetadataRequest.setVersionId(getObjectRequest.getVersionId());
-            }
             final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
 
             lastByte = objectMetadata.getContentLength() - 1;
         }
-
+        final long origStartingByte = startingByte;
         // We still pass the unfiltered listener chain into DownloadImpl
         final DownloadImpl download = new DownloadImpl(description,
                 transferProgress, listenerChain, null, stateListener,
@@ -808,14 +789,30 @@ public class TransferManager {
         long totalBytesToDownload = lastByte - startingByte + 1;
         transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
 
+        long fileLength = -1;
         if (resumeExistingDownload) {
-            if (file.exists()) {
-                long numberOfBytesRead = file.length();
-                startingByte = startingByte + numberOfBytesRead;
-                getObjectRequest.setRange(startingByte, lastByte);
-                transferProgress.updateProgress(Math.min(numberOfBytesRead,
-                        totalBytesToDownload));
-                totalBytesToDownload = lastByte - startingByte + 1;
+            if (!FileLocks.lock(file)) {
+                throw new FileLockException("Fail to lock " + file
+                        + " for resume download");
+            }
+            try {
+                if (file.exists()) {
+                    fileLength = file.length();
+                    startingByte = startingByte + fileLength;
+                    getObjectRequest.setRange(startingByte, lastByte);
+                    transferProgress.updateProgress(Math.min(fileLength,
+                            totalBytesToDownload));
+                    totalBytesToDownload = lastByte - startingByte + 1;
+                    if (log.isDebugEnabled()) {
+                        log.debug("Resume download: totalBytesToDownload=" + totalBytesToDownload
+                            + ", origStartingByte=" + origStartingByte
+                            + ", startingByte=" + startingByte + ", lastByte="
+                            + lastByte + ", numberOfBytesRead=" + fileLength
+                            + ", file: " + file);
+                    }
+                }
+            } finally {
+                FileLocks.unlock(file);
             }
         }
 
@@ -825,71 +822,13 @@ public class TransferManager {
         }
 
         final CountDownLatch latch = new CountDownLatch(1);
-        Future<?> future = submitDownloadTask(getObjectRequest, file,
-                resumeExistingDownload, latch, download);
+        Future<?> future = threadPool.submit(
+            new DownloadCallable(s3, latch,
+                getObjectRequest, resumeExistingDownload, download, file,
+                origStartingByte, fileLength));
         download.setMonitor(new DownloadMonitor(download, future));
         latch.countDown();
         return download;
-    }
-
-    private Future<?> submitDownloadTask(
-            final GetObjectRequest getObjectRequest, final File file,
-            final boolean resumeExistingDownload,
-            final CountDownLatch latch,
-            final DownloadImpl download) {
-        Future<?> future = threadPool.submit(new Callable<Object>() {
-            @Override
-            public Object call() throws Exception {
-                try {
-                    latch.await();
-                    download.setState(TransferState.InProgress);
-                    S3Object s3Object = ServiceUtils.retryableDownloadS3ObjectToFile(file,
-                        new ServiceUtils.RetryableS3DownloadTask() {
-                            @Override
-                            public S3Object getS3ObjectStream() {
-                                S3Object s3Object = s3.getObject(getObjectRequest);
-                                download.setS3Object(s3Object);
-                                return s3Object;
-                            }
-
-                            @Override
-                            public boolean needIntegrityCheck() {
-                                // Don't perform the integrity check
-                                // if the stream data is wrapped
-                                // in a decryption stream, or if
-                                // we're only looking at a range of
-                                // the data, since otherwise the
-                                // checksum won't match up.
-                                boolean performIntegrityCheck = true;
-                                if (getObjectRequest.getRange() != null)
-                                    performIntegrityCheck = false;
-                                if (s3 instanceof AmazonS3Encryption)
-                                    performIntegrityCheck = false;
-                                return performIntegrityCheck;
-                            }
-                        }, resumeExistingDownload);
-
-                    if (s3Object == null) {
-                        download.setState(TransferState.Canceled);
-                        download.setMonitor(new DownloadMonitor(download, null));
-                        return download;
-                    }
-
-                    download.setState(TransferState.Completed);
-                    return true;
-                } catch (Throwable t) {
-                    // Downloads aren't allowed to move from canceled to failed
-                    if (download.getState() != TransferState.Canceled) {
-                        download.setState(TransferState.Failed);
-                    }
-                    if (t instanceof Exception)
-                        throw (Exception) t;
-                    else
-                        throw (Error) t;
-                }
-            }
-        });
-        return future;
     }
 
     /**

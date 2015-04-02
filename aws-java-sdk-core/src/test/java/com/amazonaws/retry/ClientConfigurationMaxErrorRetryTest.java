@@ -86,6 +86,16 @@ public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
         clientConfiguration.setRetryPolicy(new RetryPolicy(null, null, 5, true));
         testActualRetries(CLIENT_CONFIG_LEVEL_MAX_RETRY);
     }
+
+    @Test
+    public void testNoRetry() {
+        final int CLIENT_CONFIG_LEVEL_MAX_RETRY = 3;
+        clientConfiguration.setRetryPolicy(PredefinedRetryPolicies.NO_RETRY_POLICY);
+        clientConfiguration.setMaxErrorRetry(CLIENT_CONFIG_LEVEL_MAX_RETRY);
+        
+        // Ignore the ClientConfig level maxErrorRetry
+        testActualRetries(0);
+    }
     
     /**
      * -- Explicitly set maxErrorRetry in ClientConfiguration level;

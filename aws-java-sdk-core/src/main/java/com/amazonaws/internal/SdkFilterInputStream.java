@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.amazonaws.AbortedException;
-import com.amazonaws.util.IOUtils;
 
 /**
  * Base class for AWS Java SDK specific {@link FilterInputStream}.
@@ -112,7 +111,7 @@ public class SdkFilterInputStream extends FilterInputStream implements
     @Override
     public void release() {
         // Don't call IOUtils.release(in, null) or else could lead to infinite loop
-        IOUtils.closeQuietly(this, null);
+        SdkIOUtils.closeQuietly(this);
         if (in instanceof Releasable) {
             // This allows any underlying stream that has the close operation
             // disabled to be truly released

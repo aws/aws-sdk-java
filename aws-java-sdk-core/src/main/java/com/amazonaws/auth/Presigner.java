@@ -16,7 +16,7 @@ package com.amazonaws.auth;
 
 import java.util.Date;
 
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 
 /**
  * A request signer that has special-case logic to presign requests, generating
@@ -32,7 +32,7 @@ public interface Presigner {
      * @param credentials  The credentials to sign it with.
      * @param expiration   The time when this presigned URL will expire.
      */
-    public void presignRequest(Request<?> request,
+    public void presignRequest(SignableRequest<?> request,
                                AWSCredentials credentials,
                                Date expiration);
 }

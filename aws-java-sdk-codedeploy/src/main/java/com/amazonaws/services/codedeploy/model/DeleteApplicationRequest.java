@@ -29,8 +29,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteApplicationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
@@ -38,44 +38,44 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
     private String applicationName;
 
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @return The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @return The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public String getApplicationName() {
         return applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
     
     /**
-     * The name of an existing AWS CodeDeploy application within the AWS user
-     * account.
+     * The name of an existing AWS CodeDeploy application associated with the
+     * applicable IAM user or AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param applicationName The name of an existing AWS CodeDeploy application within the AWS user
-     *         account.
+     * @param applicationName The name of an existing AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

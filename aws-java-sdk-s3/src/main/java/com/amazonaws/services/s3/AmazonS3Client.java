@@ -1510,7 +1510,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * Sets the access control headers for the request given.
      */
     private static void addAclHeaders(Request<? extends AmazonWebServiceRequest> request, AccessControlList acl) {
-        Set<Grant> grants = acl.getGrants();
+        List<Grant> grants = acl.getGrantsAsList();
         Map<Permission, Collection<Grantee>> grantsByPermission = new HashMap<Permission, Collection<Grantee>>();
         for ( Grant grant : grants ) {
             if ( !grantsByPermission.containsKey(grant.getPermission()) ) {
@@ -3032,8 +3032,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                   final String bucketName,
                                   final String key) {
         final Signer signer = getSigner();
-        final boolean isSignerOverridden = 
-                clientConfiguration != null 
+        final boolean isSignerOverridden =
+                clientConfiguration != null
              && clientConfiguration.getSignerOverride() != null;
 
         if (!isSignerOverridden) {

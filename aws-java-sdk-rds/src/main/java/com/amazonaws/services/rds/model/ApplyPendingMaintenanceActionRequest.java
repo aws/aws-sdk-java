@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#applyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest) ApplyPendingMaintenanceAction operation}.
  * <p>
- * Applies a pending maintenance action to a resource.
+ * Applies a pending maintenance action to a resource (for example, a DB
+ * instance).
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#applyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest)
@@ -29,8 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The ARN of the resource (for example, a DB Instance) that the pending
-     * maintenance action applies to.
+     * The ARN of the resource that the pending maintenance action applies
+     * to.
      */
     private String resourceIdentifier;
 
@@ -40,46 +41,47 @@ public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceReques
     private String applyAction;
 
     /**
-     * Specify an opt-in request, or undo an opt-in request. An opt-in
-     * request of type <code>immediate</code> cannot be undone. <p>Valid
-     * values: <ul> <li><code>immediate</code> - Apply the maintenance action
-     * immediately.</li> <li><code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the
-     * resource.</li> <li><code>undo-opt-in</code> - Cancel any existing
+     * A value that specifies the type of opt-in request, or undoes an opt-in
+     * request. An opt-in request of type <code>immediate</code> cannot be
+     * undone. <p>Valid values: <ul> <li> <code>immediate</code> - Apply the
+     * maintenance action immediately.</li> <li>
+     * <code>next-maintenance</code> - Apply the maintenance action during
+     * the next maintenance window for the resource.</li> <li>
+     * <code>undo-opt-in</code> - Cancel any existing
      * <code>next-maintenance</code> opt-in requests.</li> </ul>
      */
     private String optInType;
 
     /**
-     * The ARN of the resource (for example, a DB Instance) that the pending
-     * maintenance action applies to.
+     * The ARN of the resource that the pending maintenance action applies
+     * to.
      *
-     * @return The ARN of the resource (for example, a DB Instance) that the pending
-     *         maintenance action applies to.
+     * @return The ARN of the resource that the pending maintenance action applies
+     *         to.
      */
     public String getResourceIdentifier() {
         return resourceIdentifier;
     }
     
     /**
-     * The ARN of the resource (for example, a DB Instance) that the pending
-     * maintenance action applies to.
+     * The ARN of the resource that the pending maintenance action applies
+     * to.
      *
-     * @param resourceIdentifier The ARN of the resource (for example, a DB Instance) that the pending
-     *         maintenance action applies to.
+     * @param resourceIdentifier The ARN of the resource that the pending maintenance action applies
+     *         to.
      */
     public void setResourceIdentifier(String resourceIdentifier) {
         this.resourceIdentifier = resourceIdentifier;
     }
     
     /**
-     * The ARN of the resource (for example, a DB Instance) that the pending
-     * maintenance action applies to.
+     * The ARN of the resource that the pending maintenance action applies
+     * to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceIdentifier The ARN of the resource (for example, a DB Instance) that the pending
-     *         maintenance action applies to.
+     * @param resourceIdentifier The ARN of the resource that the pending maintenance action applies
+     *         to.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -123,20 +125,22 @@ public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceReques
     }
 
     /**
-     * Specify an opt-in request, or undo an opt-in request. An opt-in
-     * request of type <code>immediate</code> cannot be undone. <p>Valid
-     * values: <ul> <li><code>immediate</code> - Apply the maintenance action
-     * immediately.</li> <li><code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the
-     * resource.</li> <li><code>undo-opt-in</code> - Cancel any existing
+     * A value that specifies the type of opt-in request, or undoes an opt-in
+     * request. An opt-in request of type <code>immediate</code> cannot be
+     * undone. <p>Valid values: <ul> <li> <code>immediate</code> - Apply the
+     * maintenance action immediately.</li> <li>
+     * <code>next-maintenance</code> - Apply the maintenance action during
+     * the next maintenance window for the resource.</li> <li>
+     * <code>undo-opt-in</code> - Cancel any existing
      * <code>next-maintenance</code> opt-in requests.</li> </ul>
      *
-     * @return Specify an opt-in request, or undo an opt-in request. An opt-in
-     *         request of type <code>immediate</code> cannot be undone. <p>Valid
-     *         values: <ul> <li><code>immediate</code> - Apply the maintenance action
-     *         immediately.</li> <li><code>next-maintenance</code> - Apply the
-     *         maintenance action during the next maintenance window for the
-     *         resource.</li> <li><code>undo-opt-in</code> - Cancel any existing
+     * @return A value that specifies the type of opt-in request, or undoes an opt-in
+     *         request. An opt-in request of type <code>immediate</code> cannot be
+     *         undone. <p>Valid values: <ul> <li> <code>immediate</code> - Apply the
+     *         maintenance action immediately.</li> <li>
+     *         <code>next-maintenance</code> - Apply the maintenance action during
+     *         the next maintenance window for the resource.</li> <li>
+     *         <code>undo-opt-in</code> - Cancel any existing
      *         <code>next-maintenance</code> opt-in requests.</li> </ul>
      */
     public String getOptInType() {
@@ -144,20 +148,22 @@ public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceReques
     }
     
     /**
-     * Specify an opt-in request, or undo an opt-in request. An opt-in
-     * request of type <code>immediate</code> cannot be undone. <p>Valid
-     * values: <ul> <li><code>immediate</code> - Apply the maintenance action
-     * immediately.</li> <li><code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the
-     * resource.</li> <li><code>undo-opt-in</code> - Cancel any existing
+     * A value that specifies the type of opt-in request, or undoes an opt-in
+     * request. An opt-in request of type <code>immediate</code> cannot be
+     * undone. <p>Valid values: <ul> <li> <code>immediate</code> - Apply the
+     * maintenance action immediately.</li> <li>
+     * <code>next-maintenance</code> - Apply the maintenance action during
+     * the next maintenance window for the resource.</li> <li>
+     * <code>undo-opt-in</code> - Cancel any existing
      * <code>next-maintenance</code> opt-in requests.</li> </ul>
      *
-     * @param optInType Specify an opt-in request, or undo an opt-in request. An opt-in
-     *         request of type <code>immediate</code> cannot be undone. <p>Valid
-     *         values: <ul> <li><code>immediate</code> - Apply the maintenance action
-     *         immediately.</li> <li><code>next-maintenance</code> - Apply the
-     *         maintenance action during the next maintenance window for the
-     *         resource.</li> <li><code>undo-opt-in</code> - Cancel any existing
+     * @param optInType A value that specifies the type of opt-in request, or undoes an opt-in
+     *         request. An opt-in request of type <code>immediate</code> cannot be
+     *         undone. <p>Valid values: <ul> <li> <code>immediate</code> - Apply the
+     *         maintenance action immediately.</li> <li>
+     *         <code>next-maintenance</code> - Apply the maintenance action during
+     *         the next maintenance window for the resource.</li> <li>
+     *         <code>undo-opt-in</code> - Cancel any existing
      *         <code>next-maintenance</code> opt-in requests.</li> </ul>
      */
     public void setOptInType(String optInType) {
@@ -165,22 +171,24 @@ public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceReques
     }
     
     /**
-     * Specify an opt-in request, or undo an opt-in request. An opt-in
-     * request of type <code>immediate</code> cannot be undone. <p>Valid
-     * values: <ul> <li><code>immediate</code> - Apply the maintenance action
-     * immediately.</li> <li><code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the
-     * resource.</li> <li><code>undo-opt-in</code> - Cancel any existing
+     * A value that specifies the type of opt-in request, or undoes an opt-in
+     * request. An opt-in request of type <code>immediate</code> cannot be
+     * undone. <p>Valid values: <ul> <li> <code>immediate</code> - Apply the
+     * maintenance action immediately.</li> <li>
+     * <code>next-maintenance</code> - Apply the maintenance action during
+     * the next maintenance window for the resource.</li> <li>
+     * <code>undo-opt-in</code> - Cancel any existing
      * <code>next-maintenance</code> opt-in requests.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optInType Specify an opt-in request, or undo an opt-in request. An opt-in
-     *         request of type <code>immediate</code> cannot be undone. <p>Valid
-     *         values: <ul> <li><code>immediate</code> - Apply the maintenance action
-     *         immediately.</li> <li><code>next-maintenance</code> - Apply the
-     *         maintenance action during the next maintenance window for the
-     *         resource.</li> <li><code>undo-opt-in</code> - Cancel any existing
+     * @param optInType A value that specifies the type of opt-in request, or undoes an opt-in
+     *         request. An opt-in request of type <code>immediate</code> cannot be
+     *         undone. <p>Valid values: <ul> <li> <code>immediate</code> - Apply the
+     *         maintenance action immediately.</li> <li>
+     *         <code>next-maintenance</code> - Apply the maintenance action during
+     *         the next maintenance window for the resource.</li> <li>
+     *         <code>undo-opt-in</code> - Cancel any existing
      *         <code>next-maintenance</code> opt-in requests.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained

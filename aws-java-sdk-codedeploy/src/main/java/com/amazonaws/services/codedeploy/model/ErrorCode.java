@@ -24,12 +24,14 @@ public enum ErrorCode {
     REVISION_MISSING("REVISION_MISSING"),
     IAM_ROLE_MISSING("IAM_ROLE_MISSING"),
     IAM_ROLE_PERMISSIONS("IAM_ROLE_PERMISSIONS"),
+    NO_EC2_SUBSCRIPTION("NO_EC2_SUBSCRIPTION"),
     OVER_MAX_INSTANCES("OVER_MAX_INSTANCES"),
     NO_INSTANCES("NO_INSTANCES"),
     TIMEOUT("TIMEOUT"),
     HEALTH_CONSTRAINTS_INVALID("HEALTH_CONSTRAINTS_INVALID"),
     HEALTH_CONSTRAINTS("HEALTH_CONSTRAINTS"),
-    INTERNAL_ERROR("INTERNAL_ERROR");
+    INTERNAL_ERROR("INTERNAL_ERROR"),
+    THROTTLED("THROTTLED");
 
     private String value;
 
@@ -63,6 +65,8 @@ public enum ErrorCode {
             return ErrorCode.IAM_ROLE_MISSING;
         } else if ("IAM_ROLE_PERMISSIONS".equals(value)) {
             return ErrorCode.IAM_ROLE_PERMISSIONS;
+        } else if ("NO_EC2_SUBSCRIPTION".equals(value)) {
+            return ErrorCode.NO_EC2_SUBSCRIPTION;
         } else if ("OVER_MAX_INSTANCES".equals(value)) {
             return ErrorCode.OVER_MAX_INSTANCES;
         } else if ("NO_INSTANCES".equals(value)) {
@@ -75,6 +79,8 @@ public enum ErrorCode {
             return ErrorCode.HEALTH_CONSTRAINTS;
         } else if ("INTERNAL_ERROR".equals(value)) {
             return ErrorCode.INTERNAL_ERROR;
+        } else if ("THROTTLED".equals(value)) {
+            return ErrorCode.THROTTLED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

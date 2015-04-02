@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeploymentConfigs(ListDeploymentConfigsRequest) ListDeploymentConfigs operation}.
  * <p>
- * Lists the deployment configurations within the AWS user account.
+ * Lists the deployment configurations with the applicable IAM user or
+ * AWS account.
  * </p>
  *
  * @see com.amazonaws.services.codedeploy.AmazonCodeDeploy#listDeploymentConfigs(ListDeploymentConfigsRequest)

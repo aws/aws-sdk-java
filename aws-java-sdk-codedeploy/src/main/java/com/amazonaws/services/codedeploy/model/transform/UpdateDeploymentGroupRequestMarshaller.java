@@ -98,6 +98,30 @@ public class UpdateDeploymentGroupRequestMarshaller implements Marshaller<Reques
                 jsonWriter.endArray();
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFiltersList = (com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>)(updateDeploymentGroupRequest.getOnPremisesInstanceTagFilters());
+            if (onPremisesInstanceTagFiltersList != null && !(onPremisesInstanceTagFiltersList.isAutoConstruct() && onPremisesInstanceTagFiltersList.isEmpty())) {
+
+                jsonWriter.key("onPremisesInstanceTagFilters");
+                jsonWriter.array();
+
+                for (TagFilter onPremisesInstanceTagFiltersListValue : onPremisesInstanceTagFiltersList) {
+                    if (onPremisesInstanceTagFiltersListValue != null) {
+                        jsonWriter.object();
+                        if (onPremisesInstanceTagFiltersListValue.getKey() != null) {
+                            jsonWriter.key("Key").value(onPremisesInstanceTagFiltersListValue.getKey());
+                        }
+                        if (onPremisesInstanceTagFiltersListValue.getValue() != null) {
+                            jsonWriter.key("Value").value(onPremisesInstanceTagFiltersListValue.getValue());
+                        }
+                        if (onPremisesInstanceTagFiltersListValue.getType() != null) {
+                            jsonWriter.key("Type").value(onPremisesInstanceTagFiltersListValue.getType());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
             com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(updateDeploymentGroupRequest.getAutoScalingGroups());
             if (autoScalingGroupsList != null && !(autoScalingGroupsList.isAutoConstruct() && autoScalingGroupsList.isEmpty())) {
 

@@ -67,14 +67,14 @@ public class DBInstance implements Serializable, Cloneable {
      * The meaning of this parameter differs according to the database engine
      * you use. For example, this value returns either MySQL or PostgreSQL
      * information when returning values from CreateDBInstanceReadReplica
-     * since Read Replicas are only supported for MySQL and PostgreSQL.
-     * <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     * since Read Replicas are only supported for MySQL and PostgreSQL. <p>
+     * <b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
      * initial database of this instance that was provided at create time, if
      * one was specified when the DB instance was created. This same name is
-     * returned for the life of the DB instance. <p>Type: String
-     * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
-     * created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * returned for the life of the DB instance. <p>Type: String <p>
+     * <b>Oracle</b> <p> Contains the Oracle System ID (SID) of the created
+     * DB instance. Not shown when the returned parameters do not apply to an
+     * Oracle DB instance.
      */
     private String dBName;
 
@@ -217,8 +217,8 @@ public class DBInstance implements Serializable, Cloneable {
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -262,6 +262,11 @@ public class DBInstance implements Serializable, Cloneable {
      * accessed.
      */
     private String dbiResourceId;
+
+    /**
+     * The identifier of the CA certificate for this DB instance.
+     */
+    private String cACertificateIdentifier;
 
     /**
      * Contains a user-supplied database identifier. This is the unique key
@@ -450,26 +455,26 @@ public class DBInstance implements Serializable, Cloneable {
      * The meaning of this parameter differs according to the database engine
      * you use. For example, this value returns either MySQL or PostgreSQL
      * information when returning values from CreateDBInstanceReadReplica
-     * since Read Replicas are only supported for MySQL and PostgreSQL.
-     * <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     * since Read Replicas are only supported for MySQL and PostgreSQL. <p>
+     * <b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
      * initial database of this instance that was provided at create time, if
      * one was specified when the DB instance was created. This same name is
-     * returned for the life of the DB instance. <p>Type: String
-     * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
-     * created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * returned for the life of the DB instance. <p>Type: String <p>
+     * <b>Oracle</b> <p> Contains the Oracle System ID (SID) of the created
+     * DB instance. Not shown when the returned parameters do not apply to an
+     * Oracle DB instance.
      *
      * @return The meaning of this parameter differs according to the database engine
      *         you use. For example, this value returns either MySQL or PostgreSQL
      *         information when returning values from CreateDBInstanceReadReplica
-     *         since Read Replicas are only supported for MySQL and PostgreSQL.
-     *         <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     *         since Read Replicas are only supported for MySQL and PostgreSQL. <p>
+     *         <b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
      *         initial database of this instance that was provided at create time, if
      *         one was specified when the DB instance was created. This same name is
-     *         returned for the life of the DB instance. <p>Type: String
-     *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
-     *         created DB instance. Not shown when the returned parameters do not
-     *         apply to an Oracle DB instance.
+     *         returned for the life of the DB instance. <p>Type: String <p>
+     *         <b>Oracle</b> <p> Contains the Oracle System ID (SID) of the created
+     *         DB instance. Not shown when the returned parameters do not apply to an
+     *         Oracle DB instance.
      */
     public String getDBName() {
         return dBName;
@@ -479,26 +484,26 @@ public class DBInstance implements Serializable, Cloneable {
      * The meaning of this parameter differs according to the database engine
      * you use. For example, this value returns either MySQL or PostgreSQL
      * information when returning values from CreateDBInstanceReadReplica
-     * since Read Replicas are only supported for MySQL and PostgreSQL.
-     * <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     * since Read Replicas are only supported for MySQL and PostgreSQL. <p>
+     * <b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
      * initial database of this instance that was provided at create time, if
      * one was specified when the DB instance was created. This same name is
-     * returned for the life of the DB instance. <p>Type: String
-     * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
-     * created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * returned for the life of the DB instance. <p>Type: String <p>
+     * <b>Oracle</b> <p> Contains the Oracle System ID (SID) of the created
+     * DB instance. Not shown when the returned parameters do not apply to an
+     * Oracle DB instance.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
      *         you use. For example, this value returns either MySQL or PostgreSQL
      *         information when returning values from CreateDBInstanceReadReplica
-     *         since Read Replicas are only supported for MySQL and PostgreSQL.
-     *         <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     *         since Read Replicas are only supported for MySQL and PostgreSQL. <p>
+     *         <b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
      *         initial database of this instance that was provided at create time, if
      *         one was specified when the DB instance was created. This same name is
-     *         returned for the life of the DB instance. <p>Type: String
-     *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
-     *         created DB instance. Not shown when the returned parameters do not
-     *         apply to an Oracle DB instance.
+     *         returned for the life of the DB instance. <p>Type: String <p>
+     *         <b>Oracle</b> <p> Contains the Oracle System ID (SID) of the created
+     *         DB instance. Not shown when the returned parameters do not apply to an
+     *         Oracle DB instance.
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
@@ -508,28 +513,28 @@ public class DBInstance implements Serializable, Cloneable {
      * The meaning of this parameter differs according to the database engine
      * you use. For example, this value returns either MySQL or PostgreSQL
      * information when returning values from CreateDBInstanceReadReplica
-     * since Read Replicas are only supported for MySQL and PostgreSQL.
-     * <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     * since Read Replicas are only supported for MySQL and PostgreSQL. <p>
+     * <b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
      * initial database of this instance that was provided at create time, if
      * one was specified when the DB instance was created. This same name is
-     * returned for the life of the DB instance. <p>Type: String
-     * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
-     * created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * returned for the life of the DB instance. <p>Type: String <p>
+     * <b>Oracle</b> <p> Contains the Oracle System ID (SID) of the created
+     * DB instance. Not shown when the returned parameters do not apply to an
+     * Oracle DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
      *         you use. For example, this value returns either MySQL or PostgreSQL
      *         information when returning values from CreateDBInstanceReadReplica
-     *         since Read Replicas are only supported for MySQL and PostgreSQL.
-     *         <p><b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
+     *         since Read Replicas are only supported for MySQL and PostgreSQL. <p>
+     *         <b>MySQL, SQL Server, PostgreSQL</b> <p> Contains the name of the
      *         initial database of this instance that was provided at create time, if
      *         one was specified when the DB instance was created. This same name is
-     *         returned for the life of the DB instance. <p>Type: String
-     *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
-     *         created DB instance. Not shown when the returned parameters do not
-     *         apply to an Oracle DB instance.
+     *         returned for the life of the DB instance. <p>Type: String <p>
+     *         <b>Oracle</b> <p> Contains the Oracle System ID (SID) of the created
+     *         DB instance. Not shown when the returned parameters do not apply to an
+     *         Oracle DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1608,8 +1613,8 @@ public class DBInstance implements Serializable, Cloneable {
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -1622,8 +1627,8 @@ public class DBInstance implements Serializable, Cloneable {
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -1641,8 +1646,8 @@ public class DBInstance implements Serializable, Cloneable {
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -1655,8 +1660,8 @@ public class DBInstance implements Serializable, Cloneable {
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -1674,8 +1679,8 @@ public class DBInstance implements Serializable, Cloneable {
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -1690,8 +1695,8 @@ public class DBInstance implements Serializable, Cloneable {
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -1713,8 +1718,8 @@ public class DBInstance implements Serializable, Cloneable {
      * specifies an internal instance with a DNS name that resolves to a
      * private IP address. <p> Default: The default behavior varies depending
      * on whether a VPC has been requested or not. The following list shows
-     * the default behavior in each case. <ul> <li><b>Default
-     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * the default behavior in each case. <ul> <li> <b>Default
+     * VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      * group has been specified as part of the request and the
      * PubliclyAccessible value has not been set, the DB instance will be
      * publicly accessible. If a specific DB subnet group has been specified
@@ -1727,8 +1732,8 @@ public class DBInstance implements Serializable, Cloneable {
      *         specifies an internal instance with a DNS name that resolves to a
      *         private IP address. <p> Default: The default behavior varies depending
      *         on whether a VPC has been requested or not. The following list shows
-     *         the default behavior in each case. <ul> <li><b>Default
-     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         the default behavior in each case. <ul> <li> <b>Default
+     *         VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> <p> If no DB subnet
      *         group has been specified as part of the request and the
      *         PubliclyAccessible value has not been set, the DB instance will be
      *         publicly accessible. If a specific DB subnet group has been specified
@@ -2020,6 +2025,39 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * The identifier of the CA certificate for this DB instance.
+     *
+     * @return The identifier of the CA certificate for this DB instance.
+     */
+    public String getCACertificateIdentifier() {
+        return cACertificateIdentifier;
+    }
+    
+    /**
+     * The identifier of the CA certificate for this DB instance.
+     *
+     * @param cACertificateIdentifier The identifier of the CA certificate for this DB instance.
+     */
+    public void setCACertificateIdentifier(String cACertificateIdentifier) {
+        this.cACertificateIdentifier = cACertificateIdentifier;
+    }
+    
+    /**
+     * The identifier of the CA certificate for this DB instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cACertificateIdentifier The identifier of the CA certificate for this DB instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withCACertificateIdentifier(String cACertificateIdentifier) {
+        this.cACertificateIdentifier = cACertificateIdentifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2066,7 +2104,8 @@ public class DBInstance implements Serializable, Cloneable {
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
         if (isStorageEncrypted() != null) sb.append("StorageEncrypted: " + isStorageEncrypted() + ",");
         if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
-        if (getDbiResourceId() != null) sb.append("DbiResourceId: " + getDbiResourceId() );
+        if (getDbiResourceId() != null) sb.append("DbiResourceId: " + getDbiResourceId() + ",");
+        if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -2112,6 +2151,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((isStorageEncrypted() == null) ? 0 : isStorageEncrypted().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode()); 
+        hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -2195,6 +2235,8 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         if (other.getDbiResourceId() == null ^ this.getDbiResourceId() == null) return false;
         if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false) return false; 
+        if (other.getCACertificateIdentifier() == null ^ this.getCACertificateIdentifier() == null) return false;
+        if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false) return false; 
         return true;
     }
     

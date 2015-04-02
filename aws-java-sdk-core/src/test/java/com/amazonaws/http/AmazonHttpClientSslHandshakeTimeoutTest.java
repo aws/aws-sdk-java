@@ -38,6 +38,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.ReadLimitInfo;
 import com.amazonaws.Request;
 import com.amazonaws.util.AWSRequestMetrics;
 
@@ -273,8 +274,7 @@ public class AmazonHttpClientSslHandshakeTimeoutTest {
 
         @Override
         public AmazonWebServiceRequest getOriginalRequest() {
-            return new AmazonWebServiceRequest() {
-            };
+            return new AmazonWebServiceRequest() {};
         }
 
         @Override
@@ -298,6 +298,21 @@ public class AmazonHttpClientSslHandshakeTimeoutTest {
 
         @Override
         public void setAWSRequestMetrics(AWSRequestMetrics metrics) {
+        }
+
+        @Override
+        public ReadLimitInfo getReadLimitInfo() {
+            return new AmazonWebServiceRequest() {};
+        }
+
+        @Override
+        public InputStream getContentUnwrapped() {
+            return null;
+        }
+
+        @Override
+        public Object getOriginalRequestObject() {
+            return new AmazonWebServiceRequest() {};
         }
     }
 }

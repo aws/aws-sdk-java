@@ -94,6 +94,8 @@ class Base64Codec implements Codec {
             case 2:
                 encode2bytes(src, s, dest, d);
                 break;
+            default:
+                throw new IllegalStateException();
         }
         return dest;
     }

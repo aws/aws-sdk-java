@@ -68,6 +68,12 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest implem
     private com.amazonaws.internal.ListWithAutoConstructFlag<EC2TagFilter> ec2TagFilters;
 
     /**
+     * The replacement set of on-premises instance tags for filter on, if you
+     * want to change them.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFilters;
+
+    /**
      * The replacement list of Auto Scaling groups to be included in the
      * deployment group, if you want to change them.
      */
@@ -329,6 +335,82 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * The replacement set of on-premises instance tags for filter on, if you
+     * want to change them.
+     *
+     * @return The replacement set of on-premises instance tags for filter on, if you
+     *         want to change them.
+     */
+    public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
+        if (onPremisesInstanceTagFilters == null) {
+              onPremisesInstanceTagFilters = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>();
+              onPremisesInstanceTagFilters.setAutoConstruct(true);
+        }
+        return onPremisesInstanceTagFilters;
+    }
+    
+    /**
+     * The replacement set of on-premises instance tags for filter on, if you
+     * want to change them.
+     *
+     * @param onPremisesInstanceTagFilters The replacement set of on-premises instance tags for filter on, if you
+     *         want to change them.
+     */
+    public void setOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
+        if (onPremisesInstanceTagFilters == null) {
+            this.onPremisesInstanceTagFilters = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>(onPremisesInstanceTagFilters.size());
+        onPremisesInstanceTagFiltersCopy.addAll(onPremisesInstanceTagFilters);
+        this.onPremisesInstanceTagFilters = onPremisesInstanceTagFiltersCopy;
+    }
+    
+    /**
+     * The replacement set of on-premises instance tags for filter on, if you
+     * want to change them.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param onPremisesInstanceTagFilters The replacement set of on-premises instance tags for filter on, if you
+     *         want to change them.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateDeploymentGroupRequest withOnPremisesInstanceTagFilters(TagFilter... onPremisesInstanceTagFilters) {
+        if (getOnPremisesInstanceTagFilters() == null) setOnPremisesInstanceTagFilters(new java.util.ArrayList<TagFilter>(onPremisesInstanceTagFilters.length));
+        for (TagFilter value : onPremisesInstanceTagFilters) {
+            getOnPremisesInstanceTagFilters().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The replacement set of on-premises instance tags for filter on, if you
+     * want to change them.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param onPremisesInstanceTagFilters The replacement set of on-premises instance tags for filter on, if you
+     *         want to change them.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateDeploymentGroupRequest withOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
+        if (onPremisesInstanceTagFilters == null) {
+            this.onPremisesInstanceTagFilters = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>(onPremisesInstanceTagFilters.size());
+            onPremisesInstanceTagFiltersCopy.addAll(onPremisesInstanceTagFilters);
+            this.onPremisesInstanceTagFilters = onPremisesInstanceTagFiltersCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * The replacement list of Auto Scaling groups to be included in the
      * deployment group, if you want to change them.
      *
@@ -454,6 +536,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest implem
         if (getNewDeploymentGroupName() != null) sb.append("NewDeploymentGroupName: " + getNewDeploymentGroupName() + ",");
         if (getDeploymentConfigName() != null) sb.append("DeploymentConfigName: " + getDeploymentConfigName() + ",");
         if (getEc2TagFilters() != null) sb.append("Ec2TagFilters: " + getEc2TagFilters() + ",");
+        if (getOnPremisesInstanceTagFilters() != null) sb.append("OnPremisesInstanceTagFilters: " + getOnPremisesInstanceTagFilters() + ",");
         if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
         if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() );
         sb.append("}");
@@ -470,6 +553,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getNewDeploymentGroupName() == null) ? 0 : getNewDeploymentGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode()); 
         hashCode = prime * hashCode + ((getEc2TagFilters() == null) ? 0 : getEc2TagFilters().hashCode()); 
+        hashCode = prime * hashCode + ((getOnPremisesInstanceTagFilters() == null) ? 0 : getOnPremisesInstanceTagFilters().hashCode()); 
         hashCode = prime * hashCode + ((getAutoScalingGroups() == null) ? 0 : getAutoScalingGroups().hashCode()); 
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode()); 
         return hashCode;
@@ -493,6 +577,8 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest implem
         if (other.getDeploymentConfigName() != null && other.getDeploymentConfigName().equals(this.getDeploymentConfigName()) == false) return false; 
         if (other.getEc2TagFilters() == null ^ this.getEc2TagFilters() == null) return false;
         if (other.getEc2TagFilters() != null && other.getEc2TagFilters().equals(this.getEc2TagFilters()) == false) return false; 
+        if (other.getOnPremisesInstanceTagFilters() == null ^ this.getOnPremisesInstanceTagFilters() == null) return false;
+        if (other.getOnPremisesInstanceTagFilters() != null && other.getOnPremisesInstanceTagFilters().equals(this.getOnPremisesInstanceTagFilters()) == false) return false; 
         if (other.getAutoScalingGroups() == null ^ this.getAutoScalingGroups() == null) return false;
         if (other.getAutoScalingGroups() != null && other.getAutoScalingGroups().equals(this.getAutoScalingGroups()) == false) return false; 
         if (other.getServiceRoleArn() == null ^ this.getServiceRoleArn() == null) return false;
