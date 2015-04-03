@@ -42,6 +42,9 @@ import com.amazonaws.util.IOUtils;
 @ThreadSafe
 public enum FileLocks {
     ;
+    // External file lock doesn't seem to work correctly on Windows, 
+    // so disabling for now (Ref: TT0047889941)
+    private static final boolean EXTERNAL_LOCK = false;
     private static final Log log = LogFactory.getLog(FileLocks.class);
     private static final Map<File, RandomAccessFile> lockedFiles = new TreeMap<File, RandomAccessFile>();
 
@@ -66,7 +69,8 @@ public enum FileLocks {
             // made to create it because of the use of "rw".
             raf = new RandomAccessFile(file, "rw");
             FileChannel channel = raf.getChannel();
-            lock = channel.lock();
+            if (EXTERNAL_LOCK)
+                lock = channel.lock();
         } catch (Exception e) {
             IOUtils.closeQuietly(raf, log);
             throw new FileLockException(e);
