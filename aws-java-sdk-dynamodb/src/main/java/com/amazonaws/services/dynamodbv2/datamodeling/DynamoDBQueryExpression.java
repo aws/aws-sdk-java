@@ -21,6 +21,8 @@ import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.QueryRequest;
+import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
+import com.amazonaws.services.dynamodbv2.model.Select;
 
 /**
  * A query expression.
@@ -52,6 +54,72 @@ public class DynamoDBQueryExpression <T> {
      * One or more values that can be substituted in an expression.
      */
     private java.util.Map<String, AttributeValue> expressionAttributeValues;
+
+    /**
+     * The attributes to be returned in the result. You can retrieve all item
+     * attributes, specific item attributes, the count of matching items, or
+     * in the case of an index, some or all of the attributes projected into
+     * the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of
+     * the item attributes from the specified table or index. If you query a
+     * local secondary index, then for each matching item in the index
+     * DynamoDB will fetch the entire item from the parent table. If the
+     * index is configured to project all item attributes, then all of the
+     * data can be obtained from the local secondary index, and no fetching
+     * is required. </li> <li> <p><code>ALL_PROJECTED_ATTRIBUTES</code> -
+     * Allowed only when querying an index. Retrieves all attributes that
+     * have been projected into the index. If the index is configured to
+     * project all attributes, this return value is equivalent to specifying
+     * <code>ALL_ATTRIBUTES</code>. </li> <li> <p><code>COUNT</code> -
+     * Returns the number of matching items, rather than the matching items
+     * themselves. </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns
+     * only the attributes listed in <i>AttributesToGet</i>. This return
+     * value is equivalent to specifying <i>AttributesToGet</i> without
+     * specifying any value for <i>Select</i>. <p>If you query a local
+     * secondary index and request only attributes that are projected into
+     * that index, the operation will read only the index and not the table.
+     * If any of the requested attributes are not projected into the local
+     * secondary index, DynamoDB will fetch each of these attributes from the
+     * parent table. This extra fetching incurs additional throughput cost
+     * and latency. <p>If you query a global secondary index, you can only
+     * request attributes that are projected into the index. Global secondary
+     * index queries cannot fetch attributes from the parent table. </li>
+     * </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when
+     * accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when
+     * accessing an index. You cannot use both <i>Select</i> and
+     * <i>AttributesToGet</i> together in a single request, unless the value
+     * for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
+     * equivalent to specifying <i>AttributesToGet</i> without any value for
+     * <i>Select</i>.)
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
+     */
+    private String select;
+
+    /**
+     * A string that identifies one or more attributes to retrieve from the
+     * table. These attributes can include scalars, sets, or elements of a
+     * JSON document. The attributes in the expression must be separated by
+     * commas. <p>If no attribute names are specified, then all attributes
+     * will be returned. If any of the requested attributes are not found,
+     * they will not appear in the result. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     */
+    private String projectionExpression;
+
+    /**
+     * A value that if set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     */
+    private String returnConsumedCapacity;
 
     /**
      * Returns whether this query uses consistent reads.
@@ -209,7 +277,7 @@ public class DynamoDBQueryExpression <T> {
     /**
      * Sets the range key condition for this query. All range key attributes for
      * the table must be specified by attribute name in the map.
-     * 
+     *
      * @param rangeKeyConditions a map from key name to condition
      * 	        NOTE: The current DynamoDB service only allows up to one
      *          range key condition per query. Providing more than one
@@ -222,7 +290,7 @@ public class DynamoDBQueryExpression <T> {
     /**
      * Sets the range key condition for this query. All range key attributes for
      * the table must be specified by attribute name in the map.
-     * 
+     *
      * @param rangeKeyConditions a map from key name to condition
      *         NOTE: The current DynamoDB service only allows up to one range
      *         key condition per query. Providing more than one range key
@@ -594,6 +662,315 @@ public class DynamoDBQueryExpression <T> {
      */
     public DynamoDBQueryExpression<T> clearExpressionAttributeValuesEntries() {
         this.expressionAttributeValues = null;
+        return this;
+    }
+
+    /**
+     * The attributes to be returned in the result. You can retrieve all item
+     * attributes, specific item attributes, the count of matching items, or
+     * in the case of an index, some or all of the attributes projected into
+     * the index.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
+     *
+     * @return The attributes to be returned in the result. You can retrieve all item
+     *         attributes, specific item attributes, the count of matching items, or
+     *         in the case of an index, some or all of the attributes projected into
+     *         the index.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.Select
+     */
+    public String getSelect() {
+        return select;
+    }
+
+    /**
+     * The attributes to be returned in the result. You can retrieve all item
+     * attributes, specific item attributes, the count of matching items, or
+     * in the case of an index, some or all of the attributes projected into
+     * the index.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
+     *
+     * @param select The attributes to be returned in the result. You can retrieve all item
+     *         attributes, specific item attributes, the count of matching items, or
+     *         in the case of an index, some or all of the attributes projected into
+     *         the index.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.Select
+     */
+    public void setSelect(String select) {
+        this.select = select;
+    }
+
+    /**
+     * The attributes to be returned in the result. You can retrieve all item
+     * attributes, specific item attributes, the count of matching items, or
+     * in the case of an index, some or all of the attributes projected into
+     * the index.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
+     *
+     * @param select The attributes to be returned in the result. You can retrieve all item
+     *         attributes, specific item attributes, the count of matching items, or
+     *         in the case of an index, some or all of the attributes projected into
+     *         the index.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.Select
+     */
+    public DynamoDBQueryExpression<T> withSelect(String select) {
+        this.select = select;
+        return this;
+    }
+
+    /**
+     * The attributes to be returned in the result. You can retrieve all item
+     * attributes, specific item attributes, the count of matching items, or
+     * in the case of an index, some or all of the attributes projected into
+     * the index.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
+     *
+     * @param select The attributes to be returned in the result. You can retrieve all item
+     *         attributes, specific item attributes, the count of matching items, or
+     *         in the case of an index, some or all of the attributes projected into
+     *         the index.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.Select
+     */
+    public void setSelect(Select select) {
+        this.select = select.toString();
+    }
+
+    /**
+     * The attributes to be returned in the result. You can retrieve all item
+     * attributes, specific item attributes, the count of matching items, or
+     * in the case of an index, some or all of the attributes projected into
+     * the index.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
+     *
+     * @param select The attributes to be returned in the result. You can retrieve all item
+     *         attributes, specific item attributes, the count of matching items, or
+     *         in the case of an index, some or all of the attributes projected into
+     *         the index.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.Select
+     */
+    public DynamoDBQueryExpression<T> withSelect(Select select) {
+        this.select = select.toString();
+        return this;
+    }
+
+    /**
+     * A string that identifies one or more attributes to retrieve from the
+     * table. These attributes can include scalars, sets, or elements of a
+     * JSON document. The attributes in the expression must be separated by
+     * commas. <p>If no attribute names are specified, then all attributes
+     * will be returned. If any of the requested attributes are not found,
+     * they will not appear in the result. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *
+     * @return A string that identifies one or more attributes to retrieve from the
+     *         table. These attributes can include scalars, sets, or elements of a
+     *         JSON document. The attributes in the expression must be separated by
+     *         commas. <p>If no attribute names are specified, then all attributes
+     *         will be returned. If any of the requested attributes are not found,
+     *         they will not appear in the result. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     */
+    public String getProjectionExpression() {
+        return projectionExpression;
+    }
+
+    /**
+     * A string that identifies one or more attributes to retrieve from the
+     * table. These attributes can include scalars, sets, or elements of a
+     * JSON document. The attributes in the expression must be separated by
+     * commas. <p>If no attribute names are specified, then all attributes
+     * will be returned. If any of the requested attributes are not found,
+     * they will not appear in the result. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *
+     * @param projectionExpression A string that identifies one or more attributes to retrieve from the
+     *         table. These attributes can include scalars, sets, or elements of a
+     *         JSON document. The attributes in the expression must be separated by
+     *         commas. <p>If no attribute names are specified, then all attributes
+     *         will be returned. If any of the requested attributes are not found,
+     *         they will not appear in the result. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     */
+    public void setProjectionExpression(String projectionExpression) {
+        this.projectionExpression = projectionExpression;
+    }
+
+    /**
+     * A string that identifies one or more attributes to retrieve from the
+     * table. These attributes can include scalars, sets, or elements of a
+     * JSON document. The attributes in the expression must be separated by
+     * commas. <p>If no attribute names are specified, then all attributes
+     * will be returned. If any of the requested attributes are not found,
+     * they will not appear in the result. <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param projectionExpression A string that identifies one or more attributes to retrieve from the
+     *         table. These attributes can include scalars, sets, or elements of a
+     *         JSON document. The attributes in the expression must be separated by
+     *         commas. <p>If no attribute names are specified, then all attributes
+     *         will be returned. If any of the requested attributes are not found,
+     *         they will not appear in the result. <p>For more information, go to <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DynamoDBQueryExpression<T> withProjectionExpression(String projectionExpression) {
+        this.projectionExpression = projectionExpression;
+        return this;
+    }
+
+    /**
+     * A value that if set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     *
+     * @return A value that if set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity
+     */
+    public String getReturnConsumedCapacity() {
+        return returnConsumedCapacity;
+    }
+
+    /**
+     * A value that if set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     *
+     * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity
+     */
+    public void setReturnConsumedCapacity(String returnConsumedCapacity) {
+        this.returnConsumedCapacity = returnConsumedCapacity;
+    }
+
+    /**
+     * A value that if set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     *
+     * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity
+     */
+    public DynamoDBQueryExpression<T> withReturnConsumedCapacity(String returnConsumedCapacity) {
+        this.returnConsumedCapacity = returnConsumedCapacity;
+        return this;
+    }
+
+    /**
+     * A value that if set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     *
+     * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity
+     */
+    public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+    }
+
+    /**
+     * A value that if set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     *
+     * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity
+     */
+    public DynamoDBQueryExpression<T> withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 }
