@@ -104,7 +104,9 @@ public class EC2MetadataUtilsTest {
         Assert.assertEquals("m1.small", info.getInstanceType());
         Assert.assertEquals("ami-a49665cc", info.getImageId());
         Assert.assertEquals("i-6b2de041", info.getInstanceId());
-        Assert.assertEquals("foo", info.getBillingProducts());
+        Assert.assertEquals("foo", info.getBillingProducts().get(0));
+        Assert.assertEquals("bar", info.getBillingProducts().get(1));
+        Assert.assertEquals(2, info.getBillingProducts().size());
         Assert.assertEquals("x86_64", info.getArchitecture());
         Assert.assertEquals("599169622985", info.getAccountId());
         Assert.assertEquals("aki-919dcaf8", info.getKernelId());
@@ -245,7 +247,7 @@ public class EC2MetadataUtilsTest {
                 + "\"instanceType\":\"m1.small\","
                 + "\"imageId\":\"ami-a49665cc\","
                 + "\"instanceId\":\"i-6b2de041\","
-                + "\"billingProducts\":\"foo\","
+                + "\"billingProducts\":[\"foo\",\"bar\"],"
                 + "\"architecture\":\"x86_64\","
                 + "\"accountId\":\"599169622985\","
                 + "\"kernelId\":\"aki-919dcaf8\"," 
