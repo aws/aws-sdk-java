@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#createPipeline(CreatePipelineRequest) CreatePipeline operation}.
  * <p>
- * Creates a new empty pipeline. When this action succeeds, you can then
- * use the PutPipelineDefinition action to populate the pipeline.
+ * Creates a new, empty pipeline. Use PutPipelineDefinition to populate
+ * the pipeline.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#createPipeline(CreatePipelineRequest)
@@ -30,9 +30,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreatePipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the new pipeline. You can use the same name for multiple
+     * The name for the pipeline. You can use the same name for multiple
      * pipelines associated with your AWS account, because AWS Data Pipeline
-     * assigns each new pipeline a unique pipeline identifier.
+     * assigns each pipeline a unique pipeline identifier.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -41,19 +41,19 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     private String name;
 
     /**
-     * A unique identifier that you specify. This identifier is not the same
-     * as the pipeline identifier assigned by AWS Data Pipeline. You are
-     * responsible for defining the format and ensuring the uniqueness of
-     * this identifier. You use this parameter to ensure idempotency during
-     * repeated calls to <a>CreatePipeline</a>. For example, if the first
-     * call to <a>CreatePipeline</a> does not return a clear success, you can
-     * pass in the same unique identifier and pipeline name combination on a
-     * subsequent call to <a>CreatePipeline</a>. <a>CreatePipeline</a>
-     * ensures that if a pipeline already exists with the same name and
-     * unique identifier, a new pipeline will not be created. Instead, you'll
-     * receive the pipeline identifier from the previous attempt. The
-     * uniqueness of the name and unique identifier combination is scoped to
-     * the AWS account or IAM user credentials.
+     * A unique identifier. This identifier is not the same as the pipeline
+     * identifier assigned by AWS Data Pipeline. You are responsible for
+     * defining the format and ensuring the uniqueness of this identifier.
+     * You use this parameter to ensure idempotency during repeated calls to
+     * <code>CreatePipeline</code>. For example, if the first call to
+     * <code>CreatePipeline</code> does not succeed, you can pass in the same
+     * unique identifier and pipeline name combination on a subsequent call
+     * to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures
+     * that if a pipeline already exists with the same name and unique
+     * identifier, a new pipeline is not created. Instead, you'll receive the
+     * pipeline identifier from the previous attempt. The uniqueness of the
+     * name and unique identifier combination is scoped to the AWS account or
+     * IAM user credentials.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -62,7 +62,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     private String uniqueId;
 
     /**
-     * The description of the new pipeline.
+     * The description for the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -71,7 +71,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     private String description;
 
     /**
-     * A list of tags to associate with a pipeline at creation time. Tags let
+     * A list of tags to associate with the pipeline at creation. Tags let
      * you control access to pipelines. For more information, see <a
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
@@ -83,43 +83,43 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The name of the new pipeline. You can use the same name for multiple
+     * The name for the pipeline. You can use the same name for multiple
      * pipelines associated with your AWS account, because AWS Data Pipeline
-     * assigns each new pipeline a unique pipeline identifier.
+     * assigns each pipeline a unique pipeline identifier.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the new pipeline. You can use the same name for multiple
+     * @return The name for the pipeline. You can use the same name for multiple
      *         pipelines associated with your AWS account, because AWS Data Pipeline
-     *         assigns each new pipeline a unique pipeline identifier.
+     *         assigns each pipeline a unique pipeline identifier.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name of the new pipeline. You can use the same name for multiple
+     * The name for the pipeline. You can use the same name for multiple
      * pipelines associated with your AWS account, because AWS Data Pipeline
-     * assigns each new pipeline a unique pipeline identifier.
+     * assigns each pipeline a unique pipeline identifier.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param name The name of the new pipeline. You can use the same name for multiple
+     * @param name The name for the pipeline. You can use the same name for multiple
      *         pipelines associated with your AWS account, because AWS Data Pipeline
-     *         assigns each new pipeline a unique pipeline identifier.
+     *         assigns each pipeline a unique pipeline identifier.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name of the new pipeline. You can use the same name for multiple
+     * The name for the pipeline. You can use the same name for multiple
      * pipelines associated with your AWS account, because AWS Data Pipeline
-     * assigns each new pipeline a unique pipeline identifier.
+     * assigns each pipeline a unique pipeline identifier.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -127,9 +127,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param name The name of the new pipeline. You can use the same name for multiple
+     * @param name The name for the pipeline. You can use the same name for multiple
      *         pipelines associated with your AWS account, because AWS Data Pipeline
-     *         assigns each new pipeline a unique pipeline identifier.
+     *         assigns each pipeline a unique pipeline identifier.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -140,93 +140,93 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * A unique identifier that you specify. This identifier is not the same
-     * as the pipeline identifier assigned by AWS Data Pipeline. You are
-     * responsible for defining the format and ensuring the uniqueness of
-     * this identifier. You use this parameter to ensure idempotency during
-     * repeated calls to <a>CreatePipeline</a>. For example, if the first
-     * call to <a>CreatePipeline</a> does not return a clear success, you can
-     * pass in the same unique identifier and pipeline name combination on a
-     * subsequent call to <a>CreatePipeline</a>. <a>CreatePipeline</a>
-     * ensures that if a pipeline already exists with the same name and
-     * unique identifier, a new pipeline will not be created. Instead, you'll
-     * receive the pipeline identifier from the previous attempt. The
-     * uniqueness of the name and unique identifier combination is scoped to
-     * the AWS account or IAM user credentials.
+     * A unique identifier. This identifier is not the same as the pipeline
+     * identifier assigned by AWS Data Pipeline. You are responsible for
+     * defining the format and ensuring the uniqueness of this identifier.
+     * You use this parameter to ensure idempotency during repeated calls to
+     * <code>CreatePipeline</code>. For example, if the first call to
+     * <code>CreatePipeline</code> does not succeed, you can pass in the same
+     * unique identifier and pipeline name combination on a subsequent call
+     * to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures
+     * that if a pipeline already exists with the same name and unique
+     * identifier, a new pipeline is not created. Instead, you'll receive the
+     * pipeline identifier from the previous attempt. The uniqueness of the
+     * name and unique identifier combination is scoped to the AWS account or
+     * IAM user credentials.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A unique identifier that you specify. This identifier is not the same
-     *         as the pipeline identifier assigned by AWS Data Pipeline. You are
-     *         responsible for defining the format and ensuring the uniqueness of
-     *         this identifier. You use this parameter to ensure idempotency during
-     *         repeated calls to <a>CreatePipeline</a>. For example, if the first
-     *         call to <a>CreatePipeline</a> does not return a clear success, you can
-     *         pass in the same unique identifier and pipeline name combination on a
-     *         subsequent call to <a>CreatePipeline</a>. <a>CreatePipeline</a>
-     *         ensures that if a pipeline already exists with the same name and
-     *         unique identifier, a new pipeline will not be created. Instead, you'll
-     *         receive the pipeline identifier from the previous attempt. The
-     *         uniqueness of the name and unique identifier combination is scoped to
-     *         the AWS account or IAM user credentials.
+     * @return A unique identifier. This identifier is not the same as the pipeline
+     *         identifier assigned by AWS Data Pipeline. You are responsible for
+     *         defining the format and ensuring the uniqueness of this identifier.
+     *         You use this parameter to ensure idempotency during repeated calls to
+     *         <code>CreatePipeline</code>. For example, if the first call to
+     *         <code>CreatePipeline</code> does not succeed, you can pass in the same
+     *         unique identifier and pipeline name combination on a subsequent call
+     *         to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures
+     *         that if a pipeline already exists with the same name and unique
+     *         identifier, a new pipeline is not created. Instead, you'll receive the
+     *         pipeline identifier from the previous attempt. The uniqueness of the
+     *         name and unique identifier combination is scoped to the AWS account or
+     *         IAM user credentials.
      */
     public String getUniqueId() {
         return uniqueId;
     }
     
     /**
-     * A unique identifier that you specify. This identifier is not the same
-     * as the pipeline identifier assigned by AWS Data Pipeline. You are
-     * responsible for defining the format and ensuring the uniqueness of
-     * this identifier. You use this parameter to ensure idempotency during
-     * repeated calls to <a>CreatePipeline</a>. For example, if the first
-     * call to <a>CreatePipeline</a> does not return a clear success, you can
-     * pass in the same unique identifier and pipeline name combination on a
-     * subsequent call to <a>CreatePipeline</a>. <a>CreatePipeline</a>
-     * ensures that if a pipeline already exists with the same name and
-     * unique identifier, a new pipeline will not be created. Instead, you'll
-     * receive the pipeline identifier from the previous attempt. The
-     * uniqueness of the name and unique identifier combination is scoped to
-     * the AWS account or IAM user credentials.
+     * A unique identifier. This identifier is not the same as the pipeline
+     * identifier assigned by AWS Data Pipeline. You are responsible for
+     * defining the format and ensuring the uniqueness of this identifier.
+     * You use this parameter to ensure idempotency during repeated calls to
+     * <code>CreatePipeline</code>. For example, if the first call to
+     * <code>CreatePipeline</code> does not succeed, you can pass in the same
+     * unique identifier and pipeline name combination on a subsequent call
+     * to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures
+     * that if a pipeline already exists with the same name and unique
+     * identifier, a new pipeline is not created. Instead, you'll receive the
+     * pipeline identifier from the previous attempt. The uniqueness of the
+     * name and unique identifier combination is scoped to the AWS account or
+     * IAM user credentials.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param uniqueId A unique identifier that you specify. This identifier is not the same
-     *         as the pipeline identifier assigned by AWS Data Pipeline. You are
-     *         responsible for defining the format and ensuring the uniqueness of
-     *         this identifier. You use this parameter to ensure idempotency during
-     *         repeated calls to <a>CreatePipeline</a>. For example, if the first
-     *         call to <a>CreatePipeline</a> does not return a clear success, you can
-     *         pass in the same unique identifier and pipeline name combination on a
-     *         subsequent call to <a>CreatePipeline</a>. <a>CreatePipeline</a>
-     *         ensures that if a pipeline already exists with the same name and
-     *         unique identifier, a new pipeline will not be created. Instead, you'll
-     *         receive the pipeline identifier from the previous attempt. The
-     *         uniqueness of the name and unique identifier combination is scoped to
-     *         the AWS account or IAM user credentials.
+     * @param uniqueId A unique identifier. This identifier is not the same as the pipeline
+     *         identifier assigned by AWS Data Pipeline. You are responsible for
+     *         defining the format and ensuring the uniqueness of this identifier.
+     *         You use this parameter to ensure idempotency during repeated calls to
+     *         <code>CreatePipeline</code>. For example, if the first call to
+     *         <code>CreatePipeline</code> does not succeed, you can pass in the same
+     *         unique identifier and pipeline name combination on a subsequent call
+     *         to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures
+     *         that if a pipeline already exists with the same name and unique
+     *         identifier, a new pipeline is not created. Instead, you'll receive the
+     *         pipeline identifier from the previous attempt. The uniqueness of the
+     *         name and unique identifier combination is scoped to the AWS account or
+     *         IAM user credentials.
      */
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
     }
     
     /**
-     * A unique identifier that you specify. This identifier is not the same
-     * as the pipeline identifier assigned by AWS Data Pipeline. You are
-     * responsible for defining the format and ensuring the uniqueness of
-     * this identifier. You use this parameter to ensure idempotency during
-     * repeated calls to <a>CreatePipeline</a>. For example, if the first
-     * call to <a>CreatePipeline</a> does not return a clear success, you can
-     * pass in the same unique identifier and pipeline name combination on a
-     * subsequent call to <a>CreatePipeline</a>. <a>CreatePipeline</a>
-     * ensures that if a pipeline already exists with the same name and
-     * unique identifier, a new pipeline will not be created. Instead, you'll
-     * receive the pipeline identifier from the previous attempt. The
-     * uniqueness of the name and unique identifier combination is scoped to
-     * the AWS account or IAM user credentials.
+     * A unique identifier. This identifier is not the same as the pipeline
+     * identifier assigned by AWS Data Pipeline. You are responsible for
+     * defining the format and ensuring the uniqueness of this identifier.
+     * You use this parameter to ensure idempotency during repeated calls to
+     * <code>CreatePipeline</code>. For example, if the first call to
+     * <code>CreatePipeline</code> does not succeed, you can pass in the same
+     * unique identifier and pipeline name combination on a subsequent call
+     * to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures
+     * that if a pipeline already exists with the same name and unique
+     * identifier, a new pipeline is not created. Instead, you'll receive the
+     * pipeline identifier from the previous attempt. The uniqueness of the
+     * name and unique identifier combination is scoped to the AWS account or
+     * IAM user credentials.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -234,19 +234,19 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param uniqueId A unique identifier that you specify. This identifier is not the same
-     *         as the pipeline identifier assigned by AWS Data Pipeline. You are
-     *         responsible for defining the format and ensuring the uniqueness of
-     *         this identifier. You use this parameter to ensure idempotency during
-     *         repeated calls to <a>CreatePipeline</a>. For example, if the first
-     *         call to <a>CreatePipeline</a> does not return a clear success, you can
-     *         pass in the same unique identifier and pipeline name combination on a
-     *         subsequent call to <a>CreatePipeline</a>. <a>CreatePipeline</a>
-     *         ensures that if a pipeline already exists with the same name and
-     *         unique identifier, a new pipeline will not be created. Instead, you'll
-     *         receive the pipeline identifier from the previous attempt. The
-     *         uniqueness of the name and unique identifier combination is scoped to
-     *         the AWS account or IAM user credentials.
+     * @param uniqueId A unique identifier. This identifier is not the same as the pipeline
+     *         identifier assigned by AWS Data Pipeline. You are responsible for
+     *         defining the format and ensuring the uniqueness of this identifier.
+     *         You use this parameter to ensure idempotency during repeated calls to
+     *         <code>CreatePipeline</code>. For example, if the first call to
+     *         <code>CreatePipeline</code> does not succeed, you can pass in the same
+     *         unique identifier and pipeline name combination on a subsequent call
+     *         to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures
+     *         that if a pipeline already exists with the same name and unique
+     *         identifier, a new pipeline is not created. Instead, you'll receive the
+     *         pipeline identifier from the previous attempt. The uniqueness of the
+     *         name and unique identifier combination is scoped to the AWS account or
+     *         IAM user credentials.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -257,33 +257,33 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The description of the new pipeline.
+     * The description for the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The description of the new pipeline.
+     * @return The description for the pipeline.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * The description of the new pipeline.
+     * The description for the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param description The description of the new pipeline.
+     * @param description The description for the pipeline.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * The description of the new pipeline.
+     * The description for the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -291,7 +291,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param description The description of the new pipeline.
+     * @param description The description for the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -302,7 +302,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * A list of tags to associate with a pipeline at creation time. Tags let
+     * A list of tags to associate with the pipeline at creation. Tags let
      * you control access to pipelines. For more information, see <a
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
@@ -311,7 +311,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @return A list of tags to associate with a pipeline at creation time. Tags let
+     * @return A list of tags to associate with the pipeline at creation. Tags let
      *         you control access to pipelines. For more information, see <a
      *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      *         User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
@@ -326,7 +326,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * A list of tags to associate with a pipeline at creation time. Tags let
+     * A list of tags to associate with the pipeline at creation. Tags let
      * you control access to pipelines. For more information, see <a
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
@@ -335,7 +335,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param tags A list of tags to associate with a pipeline at creation time. Tags let
+     * @param tags A list of tags to associate with the pipeline at creation. Tags let
      *         you control access to pipelines. For more information, see <a
      *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      *         User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
@@ -352,7 +352,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * A list of tags to associate with a pipeline at creation time. Tags let
+     * A list of tags to associate with the pipeline at creation. Tags let
      * you control access to pipelines. For more information, see <a
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
@@ -363,7 +363,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param tags A list of tags to associate with a pipeline at creation time. Tags let
+     * @param tags A list of tags to associate with the pipeline at creation. Tags let
      *         you control access to pipelines. For more information, see <a
      *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      *         User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
@@ -381,7 +381,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * A list of tags to associate with a pipeline at creation time. Tags let
+     * A list of tags to associate with the pipeline at creation. Tags let
      * you control access to pipelines. For more information, see <a
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
@@ -392,7 +392,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param tags A list of tags to associate with a pipeline at creation time. Tags let
+     * @param tags A list of tags to associate with the pipeline at creation. Tags let
      *         you control access to pipelines. For more information, see <a
      *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      *         User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer

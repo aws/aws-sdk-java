@@ -21,12 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest) SetStatus operation}.
  * <p>
- * Requests that the status of an array of physical or logical pipeline
- * objects be updated in the pipeline. This update may not occur
- * immediately, but is eventually consistent. The status that can be set
- * depends on the type of object, e.g. DataNode or Activity. You cannot
- * perform this operation on FINISHED pipelines and attempting to do so
- * will return an InvalidRequestException.
+ * Requests that the status of the specified physical or logical pipeline
+ * objects be updated in the specified pipeline. This update might not
+ * occur immediately, but is eventually consistent. The status that can
+ * be set depends on the type of object (for example, DataNode or
+ * Activity). You cannot perform this operation on <code>FINISHED</code>
+ * pipelines and attempting to do so returns
+ * <code>InvalidRequestException</code> .
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest)
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SetStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Identifies the pipeline that contains the objects.
+     * The ID of the pipeline that contains the objects.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -43,17 +44,16 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
     private String pipelineId;
 
     /**
-     * Identifies an array of objects. The corresponding objects can be
-     * either physical or components, but not a mix of both types.
+     * The IDs of the objects. The corresponding objects can be either
+     * physical or components, but not a mix of both types.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> objectIds;
 
     /**
-     * Specifies the status to be set on all the objects in
-     * <code>objectIds</code>. For components, this can be either
-     * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     * either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
-     * <code>MARK_FINISHED</code>.
+     * The status to be set on all the objects specified in
+     * <code>objectIds</code>. For components, use <code>PAUSE</code> or
+     * <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+     * <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -62,33 +62,33 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
     private String status;
 
     /**
-     * Identifies the pipeline that contains the objects.
+     * The ID of the pipeline that contains the objects.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Identifies the pipeline that contains the objects.
+     * @return The ID of the pipeline that contains the objects.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * Identifies the pipeline that contains the objects.
+     * The ID of the pipeline that contains the objects.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId Identifies the pipeline that contains the objects.
+     * @param pipelineId The ID of the pipeline that contains the objects.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * Identifies the pipeline that contains the objects.
+     * The ID of the pipeline that contains the objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -96,7 +96,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId Identifies the pipeline that contains the objects.
+     * @param pipelineId The ID of the pipeline that contains the objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -107,11 +107,11 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * Identifies an array of objects. The corresponding objects can be
-     * either physical or components, but not a mix of both types.
+     * The IDs of the objects. The corresponding objects can be either
+     * physical or components, but not a mix of both types.
      *
-     * @return Identifies an array of objects. The corresponding objects can be
-     *         either physical or components, but not a mix of both types.
+     * @return The IDs of the objects. The corresponding objects can be either
+     *         physical or components, but not a mix of both types.
      */
     public java.util.List<String> getObjectIds() {
         if (objectIds == null) {
@@ -122,11 +122,11 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * Identifies an array of objects. The corresponding objects can be
-     * either physical or components, but not a mix of both types.
+     * The IDs of the objects. The corresponding objects can be either
+     * physical or components, but not a mix of both types.
      *
-     * @param objectIds Identifies an array of objects. The corresponding objects can be
-     *         either physical or components, but not a mix of both types.
+     * @param objectIds The IDs of the objects. The corresponding objects can be either
+     *         physical or components, but not a mix of both types.
      */
     public void setObjectIds(java.util.Collection<String> objectIds) {
         if (objectIds == null) {
@@ -139,13 +139,13 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * Identifies an array of objects. The corresponding objects can be
-     * either physical or components, but not a mix of both types.
+     * The IDs of the objects. The corresponding objects can be either
+     * physical or components, but not a mix of both types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param objectIds Identifies an array of objects. The corresponding objects can be
-     *         either physical or components, but not a mix of both types.
+     * @param objectIds The IDs of the objects. The corresponding objects can be either
+     *         physical or components, but not a mix of both types.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -159,13 +159,13 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * Identifies an array of objects. The corresponding objects can be
-     * either physical or components, but not a mix of both types.
+     * The IDs of the objects. The corresponding objects can be either
+     * physical or components, but not a mix of both types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param objectIds Identifies an array of objects. The corresponding objects can be
-     *         either physical or components, but not a mix of both types.
+     * @param objectIds The IDs of the objects. The corresponding objects can be either
+     *         physical or components, but not a mix of both types.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -183,53 +183,48 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * Specifies the status to be set on all the objects in
-     * <code>objectIds</code>. For components, this can be either
-     * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     * either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
-     * <code>MARK_FINISHED</code>.
+     * The status to be set on all the objects specified in
+     * <code>objectIds</code>. For components, use <code>PAUSE</code> or
+     * <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+     * <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the status to be set on all the objects in
-     *         <code>objectIds</code>. For components, this can be either
-     *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     *         either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
-     *         <code>MARK_FINISHED</code>.
+     * @return The status to be set on all the objects specified in
+     *         <code>objectIds</code>. For components, use <code>PAUSE</code> or
+     *         <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+     *         <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Specifies the status to be set on all the objects in
-     * <code>objectIds</code>. For components, this can be either
-     * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     * either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
-     * <code>MARK_FINISHED</code>.
+     * The status to be set on all the objects specified in
+     * <code>objectIds</code>. For components, use <code>PAUSE</code> or
+     * <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+     * <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param status Specifies the status to be set on all the objects in
-     *         <code>objectIds</code>. For components, this can be either
-     *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     *         either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
-     *         <code>MARK_FINISHED</code>.
+     * @param status The status to be set on all the objects specified in
+     *         <code>objectIds</code>. For components, use <code>PAUSE</code> or
+     *         <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+     *         <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Specifies the status to be set on all the objects in
-     * <code>objectIds</code>. For components, this can be either
-     * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     * either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
-     * <code>MARK_FINISHED</code>.
+     * The status to be set on all the objects specified in
+     * <code>objectIds</code>. For components, use <code>PAUSE</code> or
+     * <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+     * <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -237,11 +232,10 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param status Specifies the status to be set on all the objects in
-     *         <code>objectIds</code>. For components, this can be either
-     *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
-     *         either <code>TRY_CANCEL</code>, <code>RERUN</code>, or
-     *         <code>MARK_FINISHED</code>.
+     * @param status The status to be set on all the objects specified in
+     *         <code>objectIds</code>. For components, use <code>PAUSE</code> or
+     *         <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+     *         <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

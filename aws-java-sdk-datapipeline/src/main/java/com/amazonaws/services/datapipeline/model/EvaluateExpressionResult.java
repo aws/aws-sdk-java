@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the EvaluateExpression action.
+ * Contains the output of EvaluateExpression.
  * </p>
  */
 public class EvaluateExpressionResult implements Serializable, Cloneable {

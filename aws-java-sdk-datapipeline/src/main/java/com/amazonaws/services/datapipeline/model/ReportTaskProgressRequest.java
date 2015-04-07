@@ -21,20 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#reportTaskProgress(ReportTaskProgressRequest) ReportTaskProgress operation}.
  * <p>
- * Updates the AWS Data Pipeline service on the progress of the calling
- * task runner. When the task runner is assigned a task, it should call
- * ReportTaskProgress to acknowledge that it has the task within 2
- * minutes. If the web service does not recieve this acknowledgement
- * within the 2 minute window, it will assign the task in a subsequent
- * PollForTask call. After this initial acknowledgement, the task runner
- * only needs to report progress every 15 minutes to maintain its
- * ownership of the task. You can change this reporting time from 15
+ * Task runners call <code>ReportTaskProgress</code> when assigned a task
+ * to acknowledge that it has the task. If the web service does not
+ * receive this acknowledgement within 2 minutes, it assigns the task in
+ * a subsequent PollForTask call. After this initial acknowledgement, the
+ * task runner only needs to report progress every 15 minutes to maintain
+ * its ownership of the task. You can change this reporting time from 15
  * minutes by specifying a <code>reportProgressTimeout</code> field in
- * your pipeline. If a task runner does not report its status after 5
- * minutes, AWS Data Pipeline will assume that the task runner is unable
- * to process the task and will reassign the task in a subsequent
- * response to PollForTask. task runners should call ReportTaskProgress
- * every 60 seconds.
+ * your pipeline.
+ * </p>
+ * <p>
+ * If a task runner does not report its status after 5 minutes, AWS Data
+ * Pipeline assumes that the task runner is unable to process the task
+ * and reassigns the task in a subsequent response to PollForTask. Task
+ * runners should call <code>ReportTaskProgress</code> every 60 seconds.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskProgress(ReportTaskProgressRequest)
@@ -42,9 +42,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ReportTaskProgressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Identifier of the task assigned to the task runner. This value is
-     * provided in the <a>TaskObject</a> that the service returns with the
-     * response for the <a>PollForTask</a> action.
+     * The ID of the task assigned to the task runner. This value is provided
+     * in the response for <a>PollForTask</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -59,43 +58,38 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest implement
     private com.amazonaws.internal.ListWithAutoConstructFlag<Field> fields;
 
     /**
-     * Identifier of the task assigned to the task runner. This value is
-     * provided in the <a>TaskObject</a> that the service returns with the
-     * response for the <a>PollForTask</a> action.
+     * The ID of the task assigned to the task runner. This value is provided
+     * in the response for <a>PollForTask</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Identifier of the task assigned to the task runner. This value is
-     *         provided in the <a>TaskObject</a> that the service returns with the
-     *         response for the <a>PollForTask</a> action.
+     * @return The ID of the task assigned to the task runner. This value is provided
+     *         in the response for <a>PollForTask</a>.
      */
     public String getTaskId() {
         return taskId;
     }
     
     /**
-     * Identifier of the task assigned to the task runner. This value is
-     * provided in the <a>TaskObject</a> that the service returns with the
-     * response for the <a>PollForTask</a> action.
+     * The ID of the task assigned to the task runner. This value is provided
+     * in the response for <a>PollForTask</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param taskId Identifier of the task assigned to the task runner. This value is
-     *         provided in the <a>TaskObject</a> that the service returns with the
-     *         response for the <a>PollForTask</a> action.
+     * @param taskId The ID of the task assigned to the task runner. This value is provided
+     *         in the response for <a>PollForTask</a>.
      */
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
     
     /**
-     * Identifier of the task assigned to the task runner. This value is
-     * provided in the <a>TaskObject</a> that the service returns with the
-     * response for the <a>PollForTask</a> action.
+     * The ID of the task assigned to the task runner. This value is provided
+     * in the response for <a>PollForTask</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -103,9 +97,8 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param taskId Identifier of the task assigned to the task runner. This value is
-     *         provided in the <a>TaskObject</a> that the service returns with the
-     *         response for the <a>PollForTask</a> action.
+     * @param taskId The ID of the task assigned to the task runner. This value is provided
+     *         in the response for <a>PollForTask</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

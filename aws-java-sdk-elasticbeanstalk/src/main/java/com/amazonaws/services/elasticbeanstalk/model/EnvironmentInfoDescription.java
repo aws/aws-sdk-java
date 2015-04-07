@@ -27,7 +27,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * The type of information retrieved.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      */
     private String infoType;
 
@@ -56,7 +56,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * The type of information retrieved.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @return The type of information retrieved.
      *
@@ -70,7 +70,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * The type of information retrieved.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information retrieved.
      *
@@ -86,7 +86,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information retrieved.
      *
@@ -104,7 +104,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * The type of information retrieved.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information retrieved.
      *
@@ -120,7 +120,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information retrieved.
      *

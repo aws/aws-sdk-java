@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#addTags(AddTagsRequest) AddTags operation}.
  * <p>
- * Add or modify tags in an existing pipeline.
+ * Adds or modifies tags for the specified pipeline.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#addTags(AddTagsRequest)
@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AddTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identifier of the pipeline to which you want to add the tags.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -38,7 +38,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
     private String pipelineId;
 
     /**
-     * The tags as key/value pairs to add to the pipeline.
+     * The tags to add, as key/value pairs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -46,33 +46,33 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The identifier of the pipeline to which you want to add the tags.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier of the pipeline to which you want to add the tags.
+     * @return The ID of the pipeline.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * The identifier of the pipeline to which you want to add the tags.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The identifier of the pipeline to which you want to add the tags.
+     * @param pipelineId The ID of the pipeline.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * The identifier of the pipeline to which you want to add the tags.
+     * The ID of the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -80,7 +80,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The identifier of the pipeline to which you want to add the tags.
+     * @param pipelineId The ID of the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -91,12 +91,12 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * The tags as key/value pairs to add to the pipeline.
+     * The tags to add, as key/value pairs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @return The tags as key/value pairs to add to the pipeline.
+     * @return The tags to add, as key/value pairs.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -107,12 +107,12 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * The tags as key/value pairs to add to the pipeline.
+     * The tags to add, as key/value pairs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param tags The tags as key/value pairs to add to the pipeline.
+     * @param tags The tags to add, as key/value pairs.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -125,14 +125,14 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * The tags as key/value pairs to add to the pipeline.
+     * The tags to add, as key/value pairs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param tags The tags as key/value pairs to add to the pipeline.
+     * @param tags The tags to add, as key/value pairs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -146,14 +146,14 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * The tags as key/value pairs to add to the pipeline.
+     * The tags to add, as key/value pairs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param tags The tags as key/value pairs to add to the pipeline.
+     * @param tags The tags to add, as key/value pairs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

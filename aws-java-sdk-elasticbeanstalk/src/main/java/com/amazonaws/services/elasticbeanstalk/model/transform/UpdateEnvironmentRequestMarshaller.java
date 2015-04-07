@@ -68,6 +68,9 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
         if (updateEnvironmentRequest.getTemplateName() != null) {
             request.addParameter("TemplateName", StringUtils.fromString(updateEnvironmentRequest.getTemplateName()));
         }
+        if (updateEnvironmentRequest.getSolutionStackName() != null) {
+            request.addParameter("SolutionStackName", StringUtils.fromString(updateEnvironmentRequest.getSolutionStackName()));
+        }
 
         java.util.List<ConfigurationOptionSetting> optionSettingsList = updateEnvironmentRequest.getOptionSettings();
         int optionSettingsListIndex = 1;

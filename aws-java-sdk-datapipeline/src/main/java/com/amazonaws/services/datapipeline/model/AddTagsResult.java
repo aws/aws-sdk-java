@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The response from the AddTags action.
+ * Contains the output of AddTags.
  * </p>
  */
 public class AddTagsResult implements Serializable, Cloneable {

@@ -91,6 +91,10 @@ public class CreateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Cre
                     createEnvironmentResult.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AbortableOperationInProgress", targetDepth)) {
+                    createEnvironmentResult.setAbortableOperationInProgress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Health", targetDepth)) {
                     createEnvironmentResult.setHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

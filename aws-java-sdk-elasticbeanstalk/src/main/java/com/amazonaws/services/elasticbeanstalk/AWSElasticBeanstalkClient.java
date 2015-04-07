@@ -499,8 +499,16 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Setting the <code>InfoType</code> to <code>tail</code> compiles the
      * last lines from the application server log files of every Amazon EC2
-     * instance in your environment. Use RetrieveEnvironmentInfo to access
-     * the compiled information.
+     * instance in your environment.
+     * </p>
+     * <p>
+     * Setting the <code>InfoType</code> to <code>bundle</code> compresses
+     * the application server log files for every Amazon EC2 instance into a
+     * <code>.zip</code> file. Legacy and .NET containers do not support
+     * bundle logs.
+     * </p>
+     * <p>
+     * Use RetrieveEnvironmentInfo to obtain the set of logs.
      * </p>
      * <p>
      * Related Topics
@@ -1316,6 +1324,51 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
+     * Cancels in-progress environment configuration update or application
+     * version deployment.
+     * </p>
+     *
+     * @param abortEnvironmentUpdateRequest Container for the necessary
+     *           parameters to execute the AbortEnvironmentUpdate service method on
+     *           AWSElasticBeanstalk.
+     * 
+     * 
+     * @throws InsufficientPrivilegesException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void abortEnvironmentUpdate(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) {
+        ExecutionContext executionContext = createExecutionContext(abortEnvironmentUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AbortEnvironmentUpdateRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AbortEnvironmentUpdateRequestMarshaller().marshall(super.beforeMarshalling(abortEnvironmentUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Causes the environment to restart the application container server
      * running on each Amazon EC2 instance.
      * </p>
@@ -1848,6 +1901,27 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     public DescribeEnvironmentsResult describeEnvironments() throws AmazonServiceException, AmazonClientException {
         return describeEnvironments(new DescribeEnvironmentsRequest());
+    }
+    
+    /**
+     * <p>
+     * Cancels in-progress environment configuration update or application
+     * version deployment.
+     * </p>
+     * 
+     * 
+     * @throws InsufficientPrivilegesException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void abortEnvironmentUpdate() throws AmazonServiceException, AmazonClientException {
+        abortEnvironmentUpdate(new AbortEnvironmentUpdateRequest());
     }
     
     /**

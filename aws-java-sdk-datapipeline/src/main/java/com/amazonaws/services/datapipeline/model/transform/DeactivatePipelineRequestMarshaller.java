@@ -39,17 +39,17 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Activate Pipeline Request Marshaller
+ * Deactivate Pipeline Request Marshaller
  */
-public class ActivatePipelineRequestMarshaller implements Marshaller<Request<ActivatePipelineRequest>, ActivatePipelineRequest> {
+public class DeactivatePipelineRequestMarshaller implements Marshaller<Request<DeactivatePipelineRequest>, DeactivatePipelineRequest> {
 
-    public Request<ActivatePipelineRequest> marshall(ActivatePipelineRequest activatePipelineRequest) {
-        if (activatePipelineRequest == null) {
+    public Request<DeactivatePipelineRequest> marshall(DeactivatePipelineRequest deactivatePipelineRequest) {
+        if (deactivatePipelineRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ActivatePipelineRequest> request = new DefaultRequest<ActivatePipelineRequest>(activatePipelineRequest, "DataPipeline");
-        String target = "DataPipeline.ActivatePipeline";
+        Request<DeactivatePipelineRequest> request = new DefaultRequest<DeactivatePipelineRequest>(deactivatePipelineRequest, "DataPipeline");
+        String target = "DataPipeline.DeactivatePipeline";
         request.addHeader("X-Amz-Target", target);
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,32 +61,11 @@ public class ActivatePipelineRequestMarshaller implements Marshaller<Request<Act
 
           jsonWriter.object();
           
-            if (activatePipelineRequest.getPipelineId() != null) {
-                jsonWriter.key("pipelineId").value(activatePipelineRequest.getPipelineId());
+            if (deactivatePipelineRequest.getPipelineId() != null) {
+                jsonWriter.key("pipelineId").value(deactivatePipelineRequest.getPipelineId());
             }
-
-            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValuesList = (com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue>)(activatePipelineRequest.getParameterValues());
-            if (parameterValuesList != null && !(parameterValuesList.isAutoConstruct() && parameterValuesList.isEmpty())) {
-
-                jsonWriter.key("parameterValues");
-                jsonWriter.array();
-
-                for (ParameterValue parameterValuesListValue : parameterValuesList) {
-                    if (parameterValuesListValue != null) {
-                        jsonWriter.object();
-                        if (parameterValuesListValue.getId() != null) {
-                            jsonWriter.key("id").value(parameterValuesListValue.getId());
-                        }
-                        if (parameterValuesListValue.getStringValue() != null) {
-                            jsonWriter.key("stringValue").value(parameterValuesListValue.getStringValue());
-                        }
-                        jsonWriter.endObject();
-                    }
-                }
-                jsonWriter.endArray();
-            }
-            if (activatePipelineRequest.getStartTimestamp() != null) {
-                jsonWriter.key("startTimestamp").value(activatePipelineRequest.getStartTimestamp());
+            if (deactivatePipelineRequest.isCancelActive() != null) {
+                jsonWriter.key("cancelActive").value(deactivatePipelineRequest.isCancelActive());
             }
 
           jsonWriter.endObject();

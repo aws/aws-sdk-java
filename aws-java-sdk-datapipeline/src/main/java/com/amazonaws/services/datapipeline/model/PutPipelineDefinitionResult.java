@@ -18,37 +18,37 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output of the PutPipelineDefinition action.
+ * Contains the output of PutPipelineDefinition.
  * </p>
  */
 public class PutPipelineDefinitionResult implements Serializable, Cloneable {
 
     /**
-     * A list of the validation errors that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation errors that are associated with the objects defined in
+     * <code>pipelineObjects</code>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ValidationError> validationErrors;
 
     /**
-     * A list of the validation warnings that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation warnings that are associated with the objects defined
+     * in <code>pipelineObjects</code>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ValidationWarning> validationWarnings;
 
     /**
-     * If <code>True</code>, there were validation errors. If errored is
-     * <code>True</code>, the pipeline definition is stored but cannot be
-     * activated until you correct the pipeline and call
-     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * Indicates whether there were validation errors, and the pipeline
+     * definition is stored but cannot be activated until you correct the
+     * pipeline and call <code>PutPipelineDefinition</code> to commit the
+     * corrected pipeline.
      */
     private Boolean errored;
 
     /**
-     * A list of the validation errors that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation errors that are associated with the objects defined in
+     * <code>pipelineObjects</code>.
      *
-     * @return A list of the validation errors that are associated with the objects
-     *         defined in <code>pipelineObjects</code>.
+     * @return The validation errors that are associated with the objects defined in
+     *         <code>pipelineObjects</code>.
      */
     public java.util.List<ValidationError> getValidationErrors() {
         if (validationErrors == null) {
@@ -59,11 +59,11 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the validation errors that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation errors that are associated with the objects defined in
+     * <code>pipelineObjects</code>.
      *
-     * @param validationErrors A list of the validation errors that are associated with the objects
-     *         defined in <code>pipelineObjects</code>.
+     * @param validationErrors The validation errors that are associated with the objects defined in
+     *         <code>pipelineObjects</code>.
      */
     public void setValidationErrors(java.util.Collection<ValidationError> validationErrors) {
         if (validationErrors == null) {
@@ -76,13 +76,13 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the validation errors that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation errors that are associated with the objects defined in
+     * <code>pipelineObjects</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validationErrors A list of the validation errors that are associated with the objects
-     *         defined in <code>pipelineObjects</code>.
+     * @param validationErrors The validation errors that are associated with the objects defined in
+     *         <code>pipelineObjects</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -96,13 +96,13 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the validation errors that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation errors that are associated with the objects defined in
+     * <code>pipelineObjects</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validationErrors A list of the validation errors that are associated with the objects
-     *         defined in <code>pipelineObjects</code>.
+     * @param validationErrors The validation errors that are associated with the objects defined in
+     *         <code>pipelineObjects</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -120,11 +120,11 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
 
     /**
-     * A list of the validation warnings that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation warnings that are associated with the objects defined
+     * in <code>pipelineObjects</code>.
      *
-     * @return A list of the validation warnings that are associated with the objects
-     *         defined in <code>pipelineObjects</code>.
+     * @return The validation warnings that are associated with the objects defined
+     *         in <code>pipelineObjects</code>.
      */
     public java.util.List<ValidationWarning> getValidationWarnings() {
         if (validationWarnings == null) {
@@ -135,11 +135,11 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the validation warnings that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation warnings that are associated with the objects defined
+     * in <code>pipelineObjects</code>.
      *
-     * @param validationWarnings A list of the validation warnings that are associated with the objects
-     *         defined in <code>pipelineObjects</code>.
+     * @param validationWarnings The validation warnings that are associated with the objects defined
+     *         in <code>pipelineObjects</code>.
      */
     public void setValidationWarnings(java.util.Collection<ValidationWarning> validationWarnings) {
         if (validationWarnings == null) {
@@ -152,13 +152,13 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the validation warnings that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation warnings that are associated with the objects defined
+     * in <code>pipelineObjects</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validationWarnings A list of the validation warnings that are associated with the objects
-     *         defined in <code>pipelineObjects</code>.
+     * @param validationWarnings The validation warnings that are associated with the objects defined
+     *         in <code>pipelineObjects</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -172,13 +172,13 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the validation warnings that are associated with the objects
-     * defined in <code>pipelineObjects</code>.
+     * The validation warnings that are associated with the objects defined
+     * in <code>pipelineObjects</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validationWarnings A list of the validation warnings that are associated with the objects
-     *         defined in <code>pipelineObjects</code>.
+     * @param validationWarnings The validation warnings that are associated with the objects defined
+     *         in <code>pipelineObjects</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -196,47 +196,47 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, there were validation errors. If errored is
-     * <code>True</code>, the pipeline definition is stored but cannot be
-     * activated until you correct the pipeline and call
-     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * Indicates whether there were validation errors, and the pipeline
+     * definition is stored but cannot be activated until you correct the
+     * pipeline and call <code>PutPipelineDefinition</code> to commit the
+     * corrected pipeline.
      *
-     * @return If <code>True</code>, there were validation errors. If errored is
-     *         <code>True</code>, the pipeline definition is stored but cannot be
-     *         activated until you correct the pipeline and call
-     *         <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * @return Indicates whether there were validation errors, and the pipeline
+     *         definition is stored but cannot be activated until you correct the
+     *         pipeline and call <code>PutPipelineDefinition</code> to commit the
+     *         corrected pipeline.
      */
     public Boolean isErrored() {
         return errored;
     }
     
     /**
-     * If <code>True</code>, there were validation errors. If errored is
-     * <code>True</code>, the pipeline definition is stored but cannot be
-     * activated until you correct the pipeline and call
-     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * Indicates whether there were validation errors, and the pipeline
+     * definition is stored but cannot be activated until you correct the
+     * pipeline and call <code>PutPipelineDefinition</code> to commit the
+     * corrected pipeline.
      *
-     * @param errored If <code>True</code>, there were validation errors. If errored is
-     *         <code>True</code>, the pipeline definition is stored but cannot be
-     *         activated until you correct the pipeline and call
-     *         <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * @param errored Indicates whether there were validation errors, and the pipeline
+     *         definition is stored but cannot be activated until you correct the
+     *         pipeline and call <code>PutPipelineDefinition</code> to commit the
+     *         corrected pipeline.
      */
     public void setErrored(Boolean errored) {
         this.errored = errored;
     }
     
     /**
-     * If <code>True</code>, there were validation errors. If errored is
-     * <code>True</code>, the pipeline definition is stored but cannot be
-     * activated until you correct the pipeline and call
-     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * Indicates whether there were validation errors, and the pipeline
+     * definition is stored but cannot be activated until you correct the
+     * pipeline and call <code>PutPipelineDefinition</code> to commit the
+     * corrected pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param errored If <code>True</code>, there were validation errors. If errored is
-     *         <code>True</code>, the pipeline definition is stored but cannot be
-     *         activated until you correct the pipeline and call
-     *         <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * @param errored Indicates whether there were validation errors, and the pipeline
+     *         definition is stored but cannot be activated until you correct the
+     *         pipeline and call <code>PutPipelineDefinition</code> to commit the
+     *         corrected pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -247,15 +247,15 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, there were validation errors. If errored is
-     * <code>True</code>, the pipeline definition is stored but cannot be
-     * activated until you correct the pipeline and call
-     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * Indicates whether there were validation errors, and the pipeline
+     * definition is stored but cannot be activated until you correct the
+     * pipeline and call <code>PutPipelineDefinition</code> to commit the
+     * corrected pipeline.
      *
-     * @return If <code>True</code>, there were validation errors. If errored is
-     *         <code>True</code>, the pipeline definition is stored but cannot be
-     *         activated until you correct the pipeline and call
-     *         <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+     * @return Indicates whether there were validation errors, and the pipeline
+     *         definition is stored but cannot be activated until you correct the
+     *         pipeline and call <code>PutPipelineDefinition</code> to commit the
+     *         corrected pipeline.
      */
     public Boolean getErrored() {
         return errored;

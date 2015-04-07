@@ -648,8 +648,17 @@ public class AmazonHttpClient {
         if (p.signer != null && credentials != null) {
             awsRequestMetrics.startEvent(RequestSigningTime);
             try {
-                if (timeOffset != 0)
+                if (timeOffset != 0) {
+                    // Always use the client level timeOffset if it was
+                    // non-zero; Otherwise, we respect the timeOffset in the
+                    // request, which could have been externally configured (at
+                    // least for the 1st non-retry request).
+                    //
+                    // For retry due to clock skew, the timeOffset in the
+                    // request used for the retry is assumed to have been
+                    // adjusted when execution reaches here.
                     request.setTimeOffset(timeOffset);
+                }
                 p.signer.sign(request, credentials);
             } finally {
                 awsRequestMetrics.endEvent(RequestSigningTime);
@@ -760,6 +769,7 @@ public class AmazonHttpClient {
         if (RetryUtils.isClockSkewError(ase)) {
             int clockSkew = parseClockSkewOffset(p.apacheResponse, ase);
             SDKGlobalTime.setGlobalTimeOffset(timeOffset = clockSkew);
+            request.setTimeOffset(timeOffset);  // adjust time offset for the retry
         }
         return null; // => retry
     }

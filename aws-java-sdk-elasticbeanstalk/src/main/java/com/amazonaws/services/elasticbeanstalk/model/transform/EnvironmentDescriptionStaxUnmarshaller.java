@@ -91,6 +91,10 @@ public class EnvironmentDescriptionStaxUnmarshaller implements Unmarshaller<Envi
                     environmentDescription.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AbortableOperationInProgress", targetDepth)) {
+                    environmentDescription.setAbortableOperationInProgress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Health", targetDepth)) {
                     environmentDescription.setHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

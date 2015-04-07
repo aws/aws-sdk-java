@@ -21,23 +21,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#pollForTask(PollForTaskRequest) PollForTask operation}.
  * <p>
- * Task runners call this action to receive a task to perform from AWS
- * Data Pipeline. The task runner specifies which tasks it can perform by
- * setting a value for the workerGroup parameter of the PollForTask call.
- * The task returned by PollForTask may come from any of the pipelines
- * that match the workerGroup value passed in by the task runner and that
- * was launched using the IAM user credentials specified by the task
- * runner.
+ * Task runners call <code>PollForTask</code> to receive a task to
+ * perform from AWS Data Pipeline. The task runner specifies which tasks
+ * it can perform by setting a value for the <code>workerGroup</code>
+ * parameter. The task returned can come from any of the pipelines that
+ * match the <code>workerGroup</code> value passed in by the task runner
+ * and that was launched using the IAM user credentials specified by the
+ * task runner.
  * </p>
  * <p>
- * If tasks are ready in the work queue, PollForTask returns a response
- * immediately. If no tasks are available in the queue, PollForTask uses
- * long-polling and holds on to a poll connection for up to a 90 seconds
- * during which time the first newly scheduled task is handed to the task
- * runner. To accomodate this, set the socket timeout in your task runner
- * to 90 seconds. The task runner should not call PollForTask again on
- * the same <code>workerGroup</code> until it receives a response, and
- * this may take up to 90 seconds.
+ * If tasks are ready in the work queue, <code>PollForTask</code> returns
+ * a response immediately. If no tasks are available in the queue,
+ * <code>PollForTask</code> uses long-polling and holds on to a poll
+ * connection for up to a 90 seconds, during which time the first newly
+ * scheduled task is handed to the task runner. To accomodate this, set
+ * the socket timeout in your task runner to 90 seconds. The task runner
+ * should not call <code>PollForTask</code> again on the same
+ * <code>workerGroup</code> until it receives a response, and this can
+ * take up to 90 seconds.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#pollForTask(PollForTaskRequest)
@@ -45,12 +46,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PollForTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Indicates the type of task the task runner is configured to accept and
-     * process. The worker group is set as a field on objects in the pipeline
-     * when they are created. You can only specify a single value for
-     * <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
-     * no wildcard values permitted in <code>workerGroup</code>, the string
-     * must be an exact, case-sensitive, match.
+     * The type of task the task runner is configured to accept and process.
+     * The worker group is set as a field on objects in the pipeline when
+     * they are created. You can only specify a single value for
+     * <code>workerGroup</code> in the call to <code>PollForTask</code>.
+     * There are no wildcard values permitted in <code>workerGroup</code>;
+     * the string must be an exact, case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -68,10 +69,10 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
     private String hostname;
 
     /**
-     * Identity information for the Amazon EC2 instance that is hosting the
-     * task runner. You can get this value by calling the URI,
-     * <code>http://169.254.169.254/latest/meta-data/instance-id</code>, from
-     * the EC2 instance. For more information, go to <a
+     * Identity information for the EC2 instance that is hosting the task
+     * runner. You can get this value from the instance using
+     * <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
      * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * Passing in this value proves that your task runner is running on an
@@ -81,58 +82,58 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
     private InstanceIdentity instanceIdentity;
 
     /**
-     * Indicates the type of task the task runner is configured to accept and
-     * process. The worker group is set as a field on objects in the pipeline
-     * when they are created. You can only specify a single value for
-     * <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
-     * no wildcard values permitted in <code>workerGroup</code>, the string
-     * must be an exact, case-sensitive, match.
+     * The type of task the task runner is configured to accept and process.
+     * The worker group is set as a field on objects in the pipeline when
+     * they are created. You can only specify a single value for
+     * <code>workerGroup</code> in the call to <code>PollForTask</code>.
+     * There are no wildcard values permitted in <code>workerGroup</code>;
+     * the string must be an exact, case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Indicates the type of task the task runner is configured to accept and
-     *         process. The worker group is set as a field on objects in the pipeline
-     *         when they are created. You can only specify a single value for
-     *         <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
-     *         no wildcard values permitted in <code>workerGroup</code>, the string
-     *         must be an exact, case-sensitive, match.
+     * @return The type of task the task runner is configured to accept and process.
+     *         The worker group is set as a field on objects in the pipeline when
+     *         they are created. You can only specify a single value for
+     *         <code>workerGroup</code> in the call to <code>PollForTask</code>.
+     *         There are no wildcard values permitted in <code>workerGroup</code>;
+     *         the string must be an exact, case-sensitive, match.
      */
     public String getWorkerGroup() {
         return workerGroup;
     }
     
     /**
-     * Indicates the type of task the task runner is configured to accept and
-     * process. The worker group is set as a field on objects in the pipeline
-     * when they are created. You can only specify a single value for
-     * <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
-     * no wildcard values permitted in <code>workerGroup</code>, the string
-     * must be an exact, case-sensitive, match.
+     * The type of task the task runner is configured to accept and process.
+     * The worker group is set as a field on objects in the pipeline when
+     * they are created. You can only specify a single value for
+     * <code>workerGroup</code> in the call to <code>PollForTask</code>.
+     * There are no wildcard values permitted in <code>workerGroup</code>;
+     * the string must be an exact, case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param workerGroup Indicates the type of task the task runner is configured to accept and
-     *         process. The worker group is set as a field on objects in the pipeline
-     *         when they are created. You can only specify a single value for
-     *         <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
-     *         no wildcard values permitted in <code>workerGroup</code>, the string
-     *         must be an exact, case-sensitive, match.
+     * @param workerGroup The type of task the task runner is configured to accept and process.
+     *         The worker group is set as a field on objects in the pipeline when
+     *         they are created. You can only specify a single value for
+     *         <code>workerGroup</code> in the call to <code>PollForTask</code>.
+     *         There are no wildcard values permitted in <code>workerGroup</code>;
+     *         the string must be an exact, case-sensitive, match.
      */
     public void setWorkerGroup(String workerGroup) {
         this.workerGroup = workerGroup;
     }
     
     /**
-     * Indicates the type of task the task runner is configured to accept and
-     * process. The worker group is set as a field on objects in the pipeline
-     * when they are created. You can only specify a single value for
-     * <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
-     * no wildcard values permitted in <code>workerGroup</code>, the string
-     * must be an exact, case-sensitive, match.
+     * The type of task the task runner is configured to accept and process.
+     * The worker group is set as a field on objects in the pipeline when
+     * they are created. You can only specify a single value for
+     * <code>workerGroup</code> in the call to <code>PollForTask</code>.
+     * There are no wildcard values permitted in <code>workerGroup</code>;
+     * the string must be an exact, case-sensitive, match.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -140,12 +141,12 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param workerGroup Indicates the type of task the task runner is configured to accept and
-     *         process. The worker group is set as a field on objects in the pipeline
-     *         when they are created. You can only specify a single value for
-     *         <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
-     *         no wildcard values permitted in <code>workerGroup</code>, the string
-     *         must be an exact, case-sensitive, match.
+     * @param workerGroup The type of task the task runner is configured to accept and process.
+     *         The worker group is set as a field on objects in the pipeline when
+     *         they are created. You can only specify a single value for
+     *         <code>workerGroup</code> in the call to <code>PollForTask</code>.
+     *         There are no wildcard values permitted in <code>workerGroup</code>;
+     *         the string must be an exact, case-sensitive, match.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -201,20 +202,20 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Identity information for the Amazon EC2 instance that is hosting the
-     * task runner. You can get this value by calling the URI,
-     * <code>http://169.254.169.254/latest/meta-data/instance-id</code>, from
-     * the EC2 instance. For more information, go to <a
+     * Identity information for the EC2 instance that is hosting the task
+     * runner. You can get this value from the instance using
+     * <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
      * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * Passing in this value proves that your task runner is running on an
      * EC2 instance, and ensures the proper AWS Data Pipeline service charges
      * are applied to your pipeline.
      *
-     * @return Identity information for the Amazon EC2 instance that is hosting the
-     *         task runner. You can get this value by calling the URI,
-     *         <code>http://169.254.169.254/latest/meta-data/instance-id</code>, from
-     *         the EC2 instance. For more information, go to <a
+     * @return Identity information for the EC2 instance that is hosting the task
+     *         runner. You can get this value from the instance using
+     *         <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
      *         Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      *         Passing in this value proves that your task runner is running on an
@@ -226,20 +227,20 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * Identity information for the Amazon EC2 instance that is hosting the
-     * task runner. You can get this value by calling the URI,
-     * <code>http://169.254.169.254/latest/meta-data/instance-id</code>, from
-     * the EC2 instance. For more information, go to <a
+     * Identity information for the EC2 instance that is hosting the task
+     * runner. You can get this value from the instance using
+     * <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
      * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * Passing in this value proves that your task runner is running on an
      * EC2 instance, and ensures the proper AWS Data Pipeline service charges
      * are applied to your pipeline.
      *
-     * @param instanceIdentity Identity information for the Amazon EC2 instance that is hosting the
-     *         task runner. You can get this value by calling the URI,
-     *         <code>http://169.254.169.254/latest/meta-data/instance-id</code>, from
-     *         the EC2 instance. For more information, go to <a
+     * @param instanceIdentity Identity information for the EC2 instance that is hosting the task
+     *         runner. You can get this value from the instance using
+     *         <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
      *         Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      *         Passing in this value proves that your task runner is running on an
@@ -251,10 +252,10 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * Identity information for the Amazon EC2 instance that is hosting the
-     * task runner. You can get this value by calling the URI,
-     * <code>http://169.254.169.254/latest/meta-data/instance-id</code>, from
-     * the EC2 instance. For more information, go to <a
+     * Identity information for the EC2 instance that is hosting the task
+     * runner. You can get this value from the instance using
+     * <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
      * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * Passing in this value proves that your task runner is running on an
@@ -263,10 +264,10 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIdentity Identity information for the Amazon EC2 instance that is hosting the
-     *         task runner. You can get this value by calling the URI,
-     *         <code>http://169.254.169.254/latest/meta-data/instance-id</code>, from
-     *         the EC2 instance. For more information, go to <a
+     * @param instanceIdentity Identity information for the EC2 instance that is hosting the task
+     *         runner. You can get this value from the instance using
+     *         <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
      *         Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      *         Passing in this value proves that your task runner is running on an

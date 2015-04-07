@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#listPipelines(ListPipelinesRequest) ListPipelines operation}.
  * <p>
- * Returns a list of pipeline identifiers for all active pipelines.
- * Identifiers are returned only for pipelines you have permission to
- * access.
+ * Lists the pipeline identifiers for all active pipelines that you have
+ * permission to access.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#listPipelines(ListPipelinesRequest)
@@ -31,11 +30,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListPipelinesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The starting point for the results to be returned. The first time you
-     * call <a>ListPipelines</a>, this value should be empty. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call <a>ListPipelines</a> again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * The starting point for the results to be returned. For the first call,
+     * this value should be empty. As long as there are more results,
+     * continue to call <code>ListPipelines</code> with the marker value from
+     * the previous call to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -44,53 +42,48 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements Ser
     private String marker;
 
     /**
-     * The starting point for the results to be returned. The first time you
-     * call <a>ListPipelines</a>, this value should be empty. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call <a>ListPipelines</a> again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * The starting point for the results to be returned. For the first call,
+     * this value should be empty. As long as there are more results,
+     * continue to call <code>ListPipelines</code> with the marker value from
+     * the previous call to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The starting point for the results to be returned. The first time you
-     *         call <a>ListPipelines</a>, this value should be empty. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call <a>ListPipelines</a> again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     * @return The starting point for the results to be returned. For the first call,
+     *         this value should be empty. As long as there are more results,
+     *         continue to call <code>ListPipelines</code> with the marker value from
+     *         the previous call to retrieve the next set of results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The starting point for the results to be returned. The first time you
-     * call <a>ListPipelines</a>, this value should be empty. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call <a>ListPipelines</a> again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * The starting point for the results to be returned. For the first call,
+     * this value should be empty. As long as there are more results,
+     * continue to call <code>ListPipelines</code> with the marker value from
+     * the previous call to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param marker The starting point for the results to be returned. The first time you
-     *         call <a>ListPipelines</a>, this value should be empty. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call <a>ListPipelines</a> again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     * @param marker The starting point for the results to be returned. For the first call,
+     *         this value should be empty. As long as there are more results,
+     *         continue to call <code>ListPipelines</code> with the marker value from
+     *         the previous call to retrieve the next set of results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The starting point for the results to be returned. The first time you
-     * call <a>ListPipelines</a>, this value should be empty. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call <a>ListPipelines</a> again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * The starting point for the results to be returned. For the first call,
+     * this value should be empty. As long as there are more results,
+     * continue to call <code>ListPipelines</code> with the marker value from
+     * the previous call to retrieve the next set of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -98,11 +91,10 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements Ser
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param marker The starting point for the results to be returned. The first time you
-     *         call <a>ListPipelines</a>, this value should be empty. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call <a>ListPipelines</a> again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     * @param marker The starting point for the results to be returned. For the first call,
+     *         this value should be empty. As long as there are more results,
+     *         continue to call <code>ListPipelines</code> with the marker value from
+     *         the previous call to retrieve the next set of results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

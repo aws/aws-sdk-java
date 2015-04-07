@@ -21,17 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#describePipelines(DescribePipelinesRequest) DescribePipelines operation}.
  * <p>
- * Retrieve metadata about one or more pipelines. The information
+ * Retrieves metadata about one or more pipelines. The information
  * retrieved includes the name of the pipeline, the pipeline identifier,
  * its current state, and the user account that owns the pipeline. Using
  * account credentials, you can retrieve metadata about pipelines that
  * you or your IAM users have created. If you are using an IAM user
- * account, you can retrieve metadata about only those pipelines you have
- * read permission for.
+ * account, you can retrieve metadata about only those pipelines for
+ * which you have read permissions.
  * </p>
  * <p>
- * To retrieve the full pipeline definition instead of metadata about
- * the pipeline, call the GetPipelineDefinition action.
+ * To retrieve the full pipeline definition instead of metadata about the
+ * pipeline, call GetPipelineDefinition.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#describePipelines(DescribePipelinesRequest)
@@ -39,20 +39,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribePipelinesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Identifiers of the pipelines to describe. You can pass as many as 25
-     * identifiers in a single call to <a>DescribePipelines</a>. You can
-     * obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * The IDs of the pipelines to describe. You can pass as many as 25
+     * identifiers in a single call. To obtain pipeline IDs, call
+     * <a>ListPipelines</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> pipelineIds;
 
     /**
-     * Identifiers of the pipelines to describe. You can pass as many as 25
-     * identifiers in a single call to <a>DescribePipelines</a>. You can
-     * obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * The IDs of the pipelines to describe. You can pass as many as 25
+     * identifiers in a single call. To obtain pipeline IDs, call
+     * <a>ListPipelines</a>.
      *
-     * @return Identifiers of the pipelines to describe. You can pass as many as 25
-     *         identifiers in a single call to <a>DescribePipelines</a>. You can
-     *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * @return The IDs of the pipelines to describe. You can pass as many as 25
+     *         identifiers in a single call. To obtain pipeline IDs, call
+     *         <a>ListPipelines</a>.
      */
     public java.util.List<String> getPipelineIds() {
         if (pipelineIds == null) {
@@ -63,13 +63,13 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * Identifiers of the pipelines to describe. You can pass as many as 25
-     * identifiers in a single call to <a>DescribePipelines</a>. You can
-     * obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * The IDs of the pipelines to describe. You can pass as many as 25
+     * identifiers in a single call. To obtain pipeline IDs, call
+     * <a>ListPipelines</a>.
      *
-     * @param pipelineIds Identifiers of the pipelines to describe. You can pass as many as 25
-     *         identifiers in a single call to <a>DescribePipelines</a>. You can
-     *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * @param pipelineIds The IDs of the pipelines to describe. You can pass as many as 25
+     *         identifiers in a single call. To obtain pipeline IDs, call
+     *         <a>ListPipelines</a>.
      */
     public void setPipelineIds(java.util.Collection<String> pipelineIds) {
         if (pipelineIds == null) {
@@ -82,15 +82,15 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * Identifiers of the pipelines to describe. You can pass as many as 25
-     * identifiers in a single call to <a>DescribePipelines</a>. You can
-     * obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * The IDs of the pipelines to describe. You can pass as many as 25
+     * identifiers in a single call. To obtain pipeline IDs, call
+     * <a>ListPipelines</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pipelineIds Identifiers of the pipelines to describe. You can pass as many as 25
-     *         identifiers in a single call to <a>DescribePipelines</a>. You can
-     *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * @param pipelineIds The IDs of the pipelines to describe. You can pass as many as 25
+     *         identifiers in a single call. To obtain pipeline IDs, call
+     *         <a>ListPipelines</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -104,15 +104,15 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * Identifiers of the pipelines to describe. You can pass as many as 25
-     * identifiers in a single call to <a>DescribePipelines</a>. You can
-     * obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * The IDs of the pipelines to describe. You can pass as many as 25
+     * identifiers in a single call. To obtain pipeline IDs, call
+     * <a>ListPipelines</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pipelineIds Identifiers of the pipelines to describe. You can pass as many as 25
-     *         identifiers in a single call to <a>DescribePipelines</a>. You can
-     *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     * @param pipelineIds The IDs of the pipelines to describe. You can pass as many as 25
+     *         identifiers in a single call. To obtain pipeline IDs, call
+     *         <a>ListPipelines</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

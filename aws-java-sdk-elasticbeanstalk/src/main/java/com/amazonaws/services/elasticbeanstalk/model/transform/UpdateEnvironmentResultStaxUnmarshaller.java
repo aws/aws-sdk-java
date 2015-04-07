@@ -91,6 +91,10 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                     updateEnvironmentResult.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AbortableOperationInProgress", targetDepth)) {
+                    updateEnvironmentResult.setAbortableOperationInProgress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Health", targetDepth)) {
                     updateEnvironmentResult.setHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

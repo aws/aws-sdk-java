@@ -703,8 +703,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * <p>
      * Setting the <code>InfoType</code> to <code>tail</code> compiles the
      * last lines from the application server log files of every Amazon EC2
-     * instance in your environment. Use RetrieveEnvironmentInfo to access
-     * the compiled information.
+     * instance in your environment.
+     * </p>
+     * <p>
+     * Setting the <code>InfoType</code> to <code>bundle</code> compresses
+     * the application server log files for every Amazon EC2 instance into a
+     * <code>.zip</code> file. Legacy and .NET containers do not support
+     * bundle logs.
+     * </p>
+     * <p>
+     * Use RetrieveEnvironmentInfo to obtain the set of logs.
      * </p>
      * <p>
      * Related Topics
@@ -750,8 +758,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * <p>
      * Setting the <code>InfoType</code> to <code>tail</code> compiles the
      * last lines from the application server log files of every Amazon EC2
-     * instance in your environment. Use RetrieveEnvironmentInfo to access
-     * the compiled information.
+     * instance in your environment.
+     * </p>
+     * <p>
+     * Setting the <code>InfoType</code> to <code>bundle</code> compresses
+     * the application server log files for every Amazon EC2 instance into a
+     * <code>.zip</code> file. Legacy and .NET containers do not support
+     * bundle logs.
+     * </p>
+     * <p>
+     * Use RetrieveEnvironmentInfo to obtain the set of logs.
      * </p>
      * <p>
      * Related Topics
@@ -2041,6 +2057,84 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
               }
               asyncHandler.onSuccess(validateConfigurationSettingsRequest, result);
                  return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Cancels in-progress environment configuration update or application
+     * version deployment.
+     * </p>
+     *
+     * @param abortEnvironmentUpdateRequest Container for the necessary
+     *           parameters to execute the AbortEnvironmentUpdate operation on
+     *           AWSElasticBeanstalk.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AbortEnvironmentUpdate service method, as returned by
+     *         AWSElasticBeanstalk.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> abortEnvironmentUpdateAsync(final AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                abortEnvironmentUpdate(abortEnvironmentUpdateRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Cancels in-progress environment configuration update or application
+     * version deployment.
+     * </p>
+     *
+     * @param abortEnvironmentUpdateRequest Container for the necessary
+     *           parameters to execute the AbortEnvironmentUpdate operation on
+     *           AWSElasticBeanstalk.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AbortEnvironmentUpdate service method, as returned by
+     *         AWSElasticBeanstalk.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> abortEnvironmentUpdateAsync(
+            final AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest,
+            final AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                abortEnvironmentUpdate(abortEnvironmentUpdateRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(abortEnvironmentUpdateRequest, null);
+                 return null;
         }
     });
     }

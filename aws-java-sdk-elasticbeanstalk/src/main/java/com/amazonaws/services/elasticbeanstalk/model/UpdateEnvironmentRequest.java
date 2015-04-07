@@ -104,6 +104,15 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
     private String templateName;
 
     /**
+     * This specifies the platform version that the environment will run
+     * after the environment is updated.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 100<br/>
+     */
+    private String solutionStackName;
+
+    /**
      * If specified, AWS Elastic Beanstalk updates the configuration set
      * associated with the running environment and sets the specified
      * configuration options to the requested value.
@@ -471,6 +480,54 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * This specifies the platform version that the environment will run
+     * after the environment is updated.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 100<br/>
+     *
+     * @return This specifies the platform version that the environment will run
+     *         after the environment is updated.
+     */
+    public String getSolutionStackName() {
+        return solutionStackName;
+    }
+    
+    /**
+     * This specifies the platform version that the environment will run
+     * after the environment is updated.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 100<br/>
+     *
+     * @param solutionStackName This specifies the platform version that the environment will run
+     *         after the environment is updated.
+     */
+    public void setSolutionStackName(String solutionStackName) {
+        this.solutionStackName = solutionStackName;
+    }
+    
+    /**
+     * This specifies the platform version that the environment will run
+     * after the environment is updated.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 100<br/>
+     *
+     * @param solutionStackName This specifies the platform version that the environment will run
+     *         after the environment is updated.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateEnvironmentRequest withSolutionStackName(String solutionStackName) {
+        this.solutionStackName = solutionStackName;
+        return this;
+    }
+
+    /**
      * If specified, AWS Elastic Beanstalk updates the configuration set
      * associated with the running environment and sets the specified
      * configuration options to the requested value.
@@ -648,6 +705,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         if (getTier() != null) sb.append("Tier: " + getTier() + ",");
         if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
         if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
         if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");
         if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() );
         sb.append("}");
@@ -665,6 +723,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode()); 
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
+        hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode()); 
         hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
         hashCode = prime * hashCode + ((getOptionsToRemove() == null) ? 0 : getOptionsToRemove().hashCode()); 
         return hashCode;
@@ -690,6 +749,8 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
         if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;
         if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false) return false; 
+        if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null) return false;
+        if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false) return false; 
         if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;
         if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false) return false; 
         if (other.getOptionsToRemove() == null ^ this.getOptionsToRemove() == null) return false;

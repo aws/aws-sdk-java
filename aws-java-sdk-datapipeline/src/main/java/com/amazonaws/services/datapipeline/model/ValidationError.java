@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Defines a validation error returned by PutPipelineDefinition or
- * ValidatePipelineDefinition. Validation errors prevent pipeline
+ * Defines a validation error. Validation errors prevent pipeline
  * activation. The set of validation errors that can be returned are
  * defined by AWS Data Pipeline.
  * </p>

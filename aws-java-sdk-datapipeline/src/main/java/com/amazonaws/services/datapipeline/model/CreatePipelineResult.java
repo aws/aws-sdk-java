@@ -18,14 +18,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the CreatePipeline action.
+ * Contains the output of CreatePipeline.
  * </p>
  */
 public class CreatePipelineResult implements Serializable, Cloneable {
 
     /**
-     * The ID that AWS Data Pipeline assigns the newly created pipeline. The
-     * ID is a string of the form: df-06372391ZG65EXAMPLE.
+     * The ID that AWS Data Pipeline assigns the newly created pipeline. For
+     * example, <code>df-06372391ZG65EXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -34,38 +34,38 @@ public class CreatePipelineResult implements Serializable, Cloneable {
     private String pipelineId;
 
     /**
-     * The ID that AWS Data Pipeline assigns the newly created pipeline. The
-     * ID is a string of the form: df-06372391ZG65EXAMPLE.
+     * The ID that AWS Data Pipeline assigns the newly created pipeline. For
+     * example, <code>df-06372391ZG65EXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The ID that AWS Data Pipeline assigns the newly created pipeline. The
-     *         ID is a string of the form: df-06372391ZG65EXAMPLE.
+     * @return The ID that AWS Data Pipeline assigns the newly created pipeline. For
+     *         example, <code>df-06372391ZG65EXAMPLE</code>.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * The ID that AWS Data Pipeline assigns the newly created pipeline. The
-     * ID is a string of the form: df-06372391ZG65EXAMPLE.
+     * The ID that AWS Data Pipeline assigns the newly created pipeline. For
+     * example, <code>df-06372391ZG65EXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The ID that AWS Data Pipeline assigns the newly created pipeline. The
-     *         ID is a string of the form: df-06372391ZG65EXAMPLE.
+     * @param pipelineId The ID that AWS Data Pipeline assigns the newly created pipeline. For
+     *         example, <code>df-06372391ZG65EXAMPLE</code>.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * The ID that AWS Data Pipeline assigns the newly created pipeline. The
-     * ID is a string of the form: df-06372391ZG65EXAMPLE.
+     * The ID that AWS Data Pipeline assigns the newly created pipeline. For
+     * example, <code>df-06372391ZG65EXAMPLE</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -73,8 +73,8 @@ public class CreatePipelineResult implements Serializable, Cloneable {
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The ID that AWS Data Pipeline assigns the newly created pipeline. The
-     *         ID is a string of the form: df-06372391ZG65EXAMPLE.
+     * @param pipelineId The ID that AWS Data Pipeline assigns the newly created pipeline. For
+     *         example, <code>df-06372391ZG65EXAMPLE</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

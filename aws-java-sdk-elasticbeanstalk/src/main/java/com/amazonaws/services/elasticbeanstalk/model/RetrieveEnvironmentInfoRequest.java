@@ -62,7 +62,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      * The type of information to retrieve.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      */
     private String infoType;
 
@@ -221,7 +221,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      * The type of information to retrieve.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @return The type of information to retrieve.
      *
@@ -235,7 +235,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      * The type of information to retrieve.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information to retrieve.
      *
@@ -251,7 +251,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information to retrieve.
      *
@@ -269,7 +269,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      * The type of information to retrieve.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information to retrieve.
      *
@@ -285,7 +285,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information to retrieve.
      *
