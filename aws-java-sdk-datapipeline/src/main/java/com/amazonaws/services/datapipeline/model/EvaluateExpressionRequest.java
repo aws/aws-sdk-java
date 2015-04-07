@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#evaluateExpression(EvaluateExpressionRequest) EvaluateExpression operation}.
  * <p>
- * Evaluates a string in the context of a specified object. A task runner
- * can use this action to evaluate SQL queries stored in Amazon S3.
+ * Task runners call <code>EvaluateExpression</code> to evaluate a string
+ * in the context of the specified object. For example, a task runner can
+ * evaluate SQL queries stored in Amazon S3.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#evaluateExpression(EvaluateExpressionRequest)
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class EvaluateExpressionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identifier of the pipeline.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -39,7 +40,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
     private String pipelineId;
 
     /**
-     * The identifier of the object.
+     * The ID of the object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -57,33 +58,33 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
     private String expression;
 
     /**
-     * The identifier of the pipeline.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier of the pipeline.
+     * @return The ID of the pipeline.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * The identifier of the pipeline.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The identifier of the pipeline.
+     * @param pipelineId The ID of the pipeline.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * The identifier of the pipeline.
+     * The ID of the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -91,7 +92,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The identifier of the pipeline.
+     * @param pipelineId The ID of the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -102,33 +103,33 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The identifier of the object.
+     * The ID of the object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier of the object.
+     * @return The ID of the object.
      */
     public String getObjectId() {
         return objectId;
     }
     
     /**
-     * The identifier of the object.
+     * The ID of the object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param objectId The identifier of the object.
+     * @param objectId The ID of the object.
      */
     public void setObjectId(String objectId) {
         this.objectId = objectId;
     }
     
     /**
-     * The identifier of the object.
+     * The ID of the object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -136,7 +137,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param objectId The identifier of the object.
+     * @param objectId The ID of the object.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,21 +18,20 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the QueryObjects action.
+ * Contains the output of QueryObjects.
  * </p>
  */
 public class QueryObjectsResult implements Serializable, Cloneable {
 
     /**
-     * A list of identifiers that match the query selectors.
+     * The identifiers that match the query selectors.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> ids;
 
     /**
-     * The starting point for the results to be returned. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call <a>QueryObjects</a> again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * The starting point for the next page of results. To view the next page
+     * of results, call <code>QueryObjects</code> again with this marker
+     * value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -41,15 +40,15 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     private String marker;
 
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>QueryObjects</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      */
     private Boolean hasMoreResults;
 
     /**
-     * A list of identifiers that match the query selectors.
+     * The identifiers that match the query selectors.
      *
-     * @return A list of identifiers that match the query selectors.
+     * @return The identifiers that match the query selectors.
      */
     public java.util.List<String> getIds() {
         if (ids == null) {
@@ -60,9 +59,9 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of identifiers that match the query selectors.
+     * The identifiers that match the query selectors.
      *
-     * @param ids A list of identifiers that match the query selectors.
+     * @param ids The identifiers that match the query selectors.
      */
     public void setIds(java.util.Collection<String> ids) {
         if (ids == null) {
@@ -75,11 +74,11 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of identifiers that match the query selectors.
+     * The identifiers that match the query selectors.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ids A list of identifiers that match the query selectors.
+     * @param ids The identifiers that match the query selectors.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -93,11 +92,11 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of identifiers that match the query selectors.
+     * The identifiers that match the query selectors.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ids A list of identifiers that match the query selectors.
+     * @param ids The identifiers that match the query selectors.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -115,48 +114,43 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     }
 
     /**
-     * The starting point for the results to be returned. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call <a>QueryObjects</a> again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * The starting point for the next page of results. To view the next page
+     * of results, call <code>QueryObjects</code> again with this marker
+     * value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The starting point for the results to be returned. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call <a>QueryObjects</a> again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     * @return The starting point for the next page of results. To view the next page
+     *         of results, call <code>QueryObjects</code> again with this marker
+     *         value. If the value is null, there are no more results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The starting point for the results to be returned. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call <a>QueryObjects</a> again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * The starting point for the next page of results. To view the next page
+     * of results, call <code>QueryObjects</code> again with this marker
+     * value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param marker The starting point for the results to be returned. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call <a>QueryObjects</a> again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     * @param marker The starting point for the next page of results. To view the next page
+     *         of results, call <code>QueryObjects</code> again with this marker
+     *         value. If the value is null, there are no more results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The starting point for the results to be returned. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call <a>QueryObjects</a> again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * The starting point for the next page of results. To view the next page
+     * of results, call <code>QueryObjects</code> again with this marker
+     * value. If the value is null, there are no more results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -164,10 +158,9 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param marker The starting point for the results to be returned. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call <a>QueryObjects</a> again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     * @param marker The starting point for the next page of results. To view the next page
+     *         of results, call <code>QueryObjects</code> again with this marker
+     *         value. If the value is null, there are no more results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -178,35 +171,35 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>QueryObjects</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      *
-     * @return If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to <a>QueryObjects</a>.
+     * @return Indicates whether there are more results that can be obtained by a
+     *         subsequent call.
      */
     public Boolean isHasMoreResults() {
         return hasMoreResults;
     }
     
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>QueryObjects</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      *
-     * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to <a>QueryObjects</a>.
+     * @param hasMoreResults Indicates whether there are more results that can be obtained by a
+     *         subsequent call.
      */
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
     }
     
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>QueryObjects</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to <a>QueryObjects</a>.
+     * @param hasMoreResults Indicates whether there are more results that can be obtained by a
+     *         subsequent call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -217,11 +210,11 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>QueryObjects</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      *
-     * @return If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to <a>QueryObjects</a>.
+     * @return Indicates whether there are more results that can be obtained by a
+     *         subsequent call.
      */
     public Boolean getHasMoreResults() {
         return hasMoreResults;

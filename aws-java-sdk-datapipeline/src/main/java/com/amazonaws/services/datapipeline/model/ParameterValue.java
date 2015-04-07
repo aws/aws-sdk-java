@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class ParameterValue implements Serializable, Cloneable {
 
     /**
-     * Identifier of the parameter value.
+     * The ID of the parameter value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -42,33 +42,33 @@ public class ParameterValue implements Serializable, Cloneable {
     private String stringValue;
 
     /**
-     * Identifier of the parameter value.
+     * The ID of the parameter value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Identifier of the parameter value.
+     * @return The ID of the parameter value.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Identifier of the parameter value.
+     * The ID of the parameter value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param id Identifier of the parameter value.
+     * @param id The ID of the parameter value.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Identifier of the parameter value.
+     * The ID of the parameter value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -76,7 +76,7 @@ public class ParameterValue implements Serializable, Cloneable {
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param id Identifier of the parameter value.
+     * @param id The ID of the parameter value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

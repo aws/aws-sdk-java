@@ -21,16 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#activatePipeline(ActivatePipelineRequest) ActivatePipeline operation}.
  * <p>
- * Validates a pipeline and initiates processing. If the pipeline does
- * not pass validation, activation fails. You cannot perform this
- * operation on FINISHED pipelines and attempting to do so will return an
- * InvalidRequestException.
+ * Validates the specified pipeline and starts processing pipeline tasks.
+ * If the pipeline does not pass validation, activation fails.
  * </p>
  * <p>
- * Call this action to start processing pipeline tasks of a pipeline
- * you've created using the CreatePipeline and PutPipelineDefinition
- * actions. A pipeline cannot be modified after it has been successfully
- * activated.
+ * If you need to pause the pipeline to investigate an issue with a
+ * component, such as a data source or script, call DeactivatePipeline.
+ * </p>
+ * <p>
+ * To activate a finished pipeline, modify the end date for the pipeline
+ * and then activate it.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#activatePipeline(ActivatePipelineRequest)
@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ActivatePipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identifier of the pipeline to activate.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -47,39 +47,44 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
     private String pipelineId;
 
     /**
-     * Returns a list of parameter values to pass to the pipeline at
-     * activation.
+     * A list of parameter values to pass to the pipeline at activation.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValues;
 
     /**
-     * The identifier of the pipeline to activate.
+     * The date and time to resume the pipeline. By default, the pipeline
+     * resumes from the last completed execution.
+     */
+    private java.util.Date startTimestamp;
+
+    /**
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier of the pipeline to activate.
+     * @return The ID of the pipeline.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * The identifier of the pipeline to activate.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The identifier of the pipeline to activate.
+     * @param pipelineId The ID of the pipeline.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * The identifier of the pipeline to activate.
+     * The ID of the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -87,7 +92,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The identifier of the pipeline to activate.
+     * @param pipelineId The ID of the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -98,11 +103,9 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns a list of parameter values to pass to the pipeline at
-     * activation.
+     * A list of parameter values to pass to the pipeline at activation.
      *
-     * @return Returns a list of parameter values to pass to the pipeline at
-     *         activation.
+     * @return A list of parameter values to pass to the pipeline at activation.
      */
     public java.util.List<ParameterValue> getParameterValues() {
         if (parameterValues == null) {
@@ -113,11 +116,9 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Returns a list of parameter values to pass to the pipeline at
-     * activation.
+     * A list of parameter values to pass to the pipeline at activation.
      *
-     * @param parameterValues Returns a list of parameter values to pass to the pipeline at
-     *         activation.
+     * @param parameterValues A list of parameter values to pass to the pipeline at activation.
      */
     public void setParameterValues(java.util.Collection<ParameterValue> parameterValues) {
         if (parameterValues == null) {
@@ -130,13 +131,11 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Returns a list of parameter values to pass to the pipeline at
-     * activation.
+     * A list of parameter values to pass to the pipeline at activation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterValues Returns a list of parameter values to pass to the pipeline at
-     *         activation.
+     * @param parameterValues A list of parameter values to pass to the pipeline at activation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -150,13 +149,11 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Returns a list of parameter values to pass to the pipeline at
-     * activation.
+     * A list of parameter values to pass to the pipeline at activation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterValues Returns a list of parameter values to pass to the pipeline at
-     *         activation.
+     * @param parameterValues A list of parameter values to pass to the pipeline at activation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -174,6 +171,45 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * The date and time to resume the pipeline. By default, the pipeline
+     * resumes from the last completed execution.
+     *
+     * @return The date and time to resume the pipeline. By default, the pipeline
+     *         resumes from the last completed execution.
+     */
+    public java.util.Date getStartTimestamp() {
+        return startTimestamp;
+    }
+    
+    /**
+     * The date and time to resume the pipeline. By default, the pipeline
+     * resumes from the last completed execution.
+     *
+     * @param startTimestamp The date and time to resume the pipeline. By default, the pipeline
+     *         resumes from the last completed execution.
+     */
+    public void setStartTimestamp(java.util.Date startTimestamp) {
+        this.startTimestamp = startTimestamp;
+    }
+    
+    /**
+     * The date and time to resume the pipeline. By default, the pipeline
+     * resumes from the last completed execution.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param startTimestamp The date and time to resume the pipeline. By default, the pipeline
+     *         resumes from the last completed execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ActivatePipelineRequest withStartTimestamp(java.util.Date startTimestamp) {
+        this.startTimestamp = startTimestamp;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -186,7 +222,8 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
-        if (getParameterValues() != null) sb.append("ParameterValues: " + getParameterValues() );
+        if (getParameterValues() != null) sb.append("ParameterValues: " + getParameterValues() + ",");
+        if (getStartTimestamp() != null) sb.append("StartTimestamp: " + getStartTimestamp() );
         sb.append("}");
         return sb.toString();
     }
@@ -198,6 +235,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
         
         hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode()); 
         hashCode = prime * hashCode + ((getParameterValues() == null) ? 0 : getParameterValues().hashCode()); 
+        hashCode = prime * hashCode + ((getStartTimestamp() == null) ? 0 : getStartTimestamp().hashCode()); 
         return hashCode;
     }
     
@@ -213,6 +251,8 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
         if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false) return false; 
         if (other.getParameterValues() == null ^ this.getParameterValues() == null) return false;
         if (other.getParameterValues() != null && other.getParameterValues().equals(this.getParameterValues()) == false) return false; 
+        if (other.getStartTimestamp() == null ^ this.getStartTimestamp() == null) return false;
+        if (other.getStartTimestamp() != null && other.getStartTimestamp().equals(this.getStartTimestamp()) == false) return false; 
         return true;
     }
     

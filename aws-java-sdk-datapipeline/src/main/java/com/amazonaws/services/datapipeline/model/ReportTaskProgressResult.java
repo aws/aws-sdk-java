@@ -18,54 +18,54 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the ReportTaskProgress action.
+ * Contains the output of ReportTaskProgress.
  * </p>
  */
 public class ReportTaskProgressResult implements Serializable, Cloneable {
 
     /**
-     * If <code>True</code>, the calling task runner should cancel processing
-     * of the task. The task runner does not need to call
-     * <a>SetTaskStatus</a> for canceled tasks.
+     * If true, the calling task runner should cancel processing of the task.
+     * The task runner does not need to call <a>SetTaskStatus</a> for
+     * canceled tasks.
      */
     private Boolean canceled;
 
     /**
-     * If <code>True</code>, the calling task runner should cancel processing
-     * of the task. The task runner does not need to call
-     * <a>SetTaskStatus</a> for canceled tasks.
+     * If true, the calling task runner should cancel processing of the task.
+     * The task runner does not need to call <a>SetTaskStatus</a> for
+     * canceled tasks.
      *
-     * @return If <code>True</code>, the calling task runner should cancel processing
-     *         of the task. The task runner does not need to call
-     *         <a>SetTaskStatus</a> for canceled tasks.
+     * @return If true, the calling task runner should cancel processing of the task.
+     *         The task runner does not need to call <a>SetTaskStatus</a> for
+     *         canceled tasks.
      */
     public Boolean isCanceled() {
         return canceled;
     }
     
     /**
-     * If <code>True</code>, the calling task runner should cancel processing
-     * of the task. The task runner does not need to call
-     * <a>SetTaskStatus</a> for canceled tasks.
+     * If true, the calling task runner should cancel processing of the task.
+     * The task runner does not need to call <a>SetTaskStatus</a> for
+     * canceled tasks.
      *
-     * @param canceled If <code>True</code>, the calling task runner should cancel processing
-     *         of the task. The task runner does not need to call
-     *         <a>SetTaskStatus</a> for canceled tasks.
+     * @param canceled If true, the calling task runner should cancel processing of the task.
+     *         The task runner does not need to call <a>SetTaskStatus</a> for
+     *         canceled tasks.
      */
     public void setCanceled(Boolean canceled) {
         this.canceled = canceled;
     }
     
     /**
-     * If <code>True</code>, the calling task runner should cancel processing
-     * of the task. The task runner does not need to call
-     * <a>SetTaskStatus</a> for canceled tasks.
+     * If true, the calling task runner should cancel processing of the task.
+     * The task runner does not need to call <a>SetTaskStatus</a> for
+     * canceled tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param canceled If <code>True</code>, the calling task runner should cancel processing
-     *         of the task. The task runner does not need to call
-     *         <a>SetTaskStatus</a> for canceled tasks.
+     * @param canceled If true, the calling task runner should cancel processing of the task.
+     *         The task runner does not need to call <a>SetTaskStatus</a> for
+     *         canceled tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -76,13 +76,13 @@ public class ReportTaskProgressResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, the calling task runner should cancel processing
-     * of the task. The task runner does not need to call
-     * <a>SetTaskStatus</a> for canceled tasks.
+     * If true, the calling task runner should cancel processing of the task.
+     * The task runner does not need to call <a>SetTaskStatus</a> for
+     * canceled tasks.
      *
-     * @return If <code>True</code>, the calling task runner should cancel processing
-     *         of the task. The task runner does not need to call
-     *         <a>SetTaskStatus</a> for canceled tasks.
+     * @return If true, the calling task runner should cancel processing of the task.
+     *         The task runner does not need to call <a>SetTaskStatus</a> for
+     *         canceled tasks.
      */
     public Boolean getCanceled() {
         return canceled;

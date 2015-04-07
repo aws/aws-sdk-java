@@ -19,7 +19,8 @@ package com.amazonaws.services.elasticbeanstalk.model;
  */
 public enum EnvironmentInfoType {
     
-    Tail("tail");
+    Tail("tail"),
+    Bundle("bundle");
 
     private String value;
 
@@ -45,6 +46,8 @@ public enum EnvironmentInfoType {
         
         } else if ("tail".equals(value)) {
             return EnvironmentInfoType.Tail;
+        } else if ("bundle".equals(value)) {
+            return EnvironmentInfoType.Bundle;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

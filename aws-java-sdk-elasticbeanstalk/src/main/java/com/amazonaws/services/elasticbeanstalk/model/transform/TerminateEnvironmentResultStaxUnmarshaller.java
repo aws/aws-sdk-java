@@ -91,6 +91,10 @@ public class TerminateEnvironmentResultStaxUnmarshaller implements Unmarshaller<
                     terminateEnvironmentResult.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AbortableOperationInProgress", targetDepth)) {
+                    terminateEnvironmentResult.setAbortableOperationInProgress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Health", targetDepth)) {
                     terminateEnvironmentResult.setHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

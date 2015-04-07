@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output of RemoveTags.
+ * Contains the output of DeactivatePipeline.
  * </p>
  */
-public class RemoveTagsResult implements Serializable, Cloneable {
+public class DeactivatePipelineResult implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -52,16 +52,16 @@ public class RemoveTagsResult implements Serializable, Cloneable {
         if (this == obj) return true;
         if (obj == null) return false;
 
-        if (obj instanceof RemoveTagsResult == false) return false;
-        RemoveTagsResult other = (RemoveTagsResult)obj;
+        if (obj instanceof DeactivatePipelineResult == false) return false;
+        DeactivatePipelineResult other = (DeactivatePipelineResult)obj;
         
         return true;
     }
     
     @Override
-    public RemoveTagsResult clone() {
+    public DeactivatePipelineResult clone() {
         try {
-            return (RemoveTagsResult) super.clone();
+            return (DeactivatePipelineResult) super.clone();
         
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(

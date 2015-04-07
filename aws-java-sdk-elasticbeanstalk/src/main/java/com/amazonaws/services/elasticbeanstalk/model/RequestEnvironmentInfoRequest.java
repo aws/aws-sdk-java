@@ -27,8 +27,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Setting the <code>InfoType</code> to <code>tail</code> compiles the
  * last lines from the application server log files of every Amazon EC2
- * instance in your environment. Use RetrieveEnvironmentInfo to access
- * the compiled information.
+ * instance in your environment.
+ * </p>
+ * <p>
+ * Setting the <code>InfoType</code> to <code>bundle</code> compresses
+ * the application server log files for every Amazon EC2 instance into a
+ * <code>.zip</code> file. Legacy and .NET containers do not support
+ * bundle logs.
+ * </p>
+ * <p>
+ * Use RetrieveEnvironmentInfo to obtain the set of logs.
  * </p>
  * <p>
  * Related Topics
@@ -70,7 +78,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
      * The type of information to request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      */
     private String infoType;
 
@@ -241,7 +249,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
      * The type of information to request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @return The type of information to request.
      *
@@ -255,7 +263,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
      * The type of information to request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information to request.
      *
@@ -271,7 +279,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information to request.
      *
@@ -289,7 +297,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
      * The type of information to request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information to request.
      *
@@ -305,7 +313,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>tail
+     * <b>Allowed Values: </b>tail, bundle
      *
      * @param infoType The type of information to request.
      *

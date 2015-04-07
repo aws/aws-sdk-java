@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class ParameterObject implements Serializable, Cloneable {
 
     /**
-     * Identifier of the parameter object.
+     * The ID of the parameter object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -38,33 +38,33 @@ public class ParameterObject implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterAttribute> attributes;
 
     /**
-     * Identifier of the parameter object.
+     * The ID of the parameter object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Identifier of the parameter object.
+     * @return The ID of the parameter object.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Identifier of the parameter object.
+     * The ID of the parameter object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param id Identifier of the parameter object.
+     * @param id The ID of the parameter object.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Identifier of the parameter object.
+     * The ID of the parameter object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -72,7 +72,7 @@ public class ParameterObject implements Serializable, Cloneable {
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param id Identifier of the parameter object.
+     * @param id The ID of the parameter object.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

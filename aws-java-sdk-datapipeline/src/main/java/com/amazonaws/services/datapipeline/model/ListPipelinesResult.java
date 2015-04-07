@@ -18,23 +18,22 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the ListPipelines action.
+ * Contains the output of ListPipelines.
  * </p>
  */
 public class ListPipelinesResult implements Serializable, Cloneable {
 
     /**
-     * A list of all the pipeline identifiers that your account has
-     * permission to access. If you require additional information about the
-     * pipelines, you can use these identifiers to call
+     * The pipeline identifiers. If you require additional information about
+     * the pipelines, you can use these identifiers to call
      * <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PipelineIdName> pipelineIdList;
 
     /**
-     * If not null, indicates the starting point for the set of pipeline
-     * identifiers that the next call to <a>ListPipelines</a> will retrieve.
-     * If null, there are no more pipeline identifiers.
+     * The starting point for the next page of results. To view the next page
+     * of results, call <code>ListPipelinesOutput</code> again with this
+     * marker value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -43,20 +42,18 @@ public class ListPipelinesResult implements Serializable, Cloneable {
     private String marker;
 
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>ListPipelines</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      */
     private Boolean hasMoreResults;
 
     /**
-     * A list of all the pipeline identifiers that your account has
-     * permission to access. If you require additional information about the
-     * pipelines, you can use these identifiers to call
+     * The pipeline identifiers. If you require additional information about
+     * the pipelines, you can use these identifiers to call
      * <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      *
-     * @return A list of all the pipeline identifiers that your account has
-     *         permission to access. If you require additional information about the
-     *         pipelines, you can use these identifiers to call
+     * @return The pipeline identifiers. If you require additional information about
+     *         the pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      */
     public java.util.List<PipelineIdName> getPipelineIdList() {
@@ -68,14 +65,12 @@ public class ListPipelinesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of all the pipeline identifiers that your account has
-     * permission to access. If you require additional information about the
-     * pipelines, you can use these identifiers to call
+     * The pipeline identifiers. If you require additional information about
+     * the pipelines, you can use these identifiers to call
      * <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      *
-     * @param pipelineIdList A list of all the pipeline identifiers that your account has
-     *         permission to access. If you require additional information about the
-     *         pipelines, you can use these identifiers to call
+     * @param pipelineIdList The pipeline identifiers. If you require additional information about
+     *         the pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      */
     public void setPipelineIdList(java.util.Collection<PipelineIdName> pipelineIdList) {
@@ -89,16 +84,14 @@ public class ListPipelinesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of all the pipeline identifiers that your account has
-     * permission to access. If you require additional information about the
-     * pipelines, you can use these identifiers to call
+     * The pipeline identifiers. If you require additional information about
+     * the pipelines, you can use these identifiers to call
      * <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pipelineIdList A list of all the pipeline identifiers that your account has
-     *         permission to access. If you require additional information about the
-     *         pipelines, you can use these identifiers to call
+     * @param pipelineIdList The pipeline identifiers. If you require additional information about
+     *         the pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -113,16 +106,14 @@ public class ListPipelinesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of all the pipeline identifiers that your account has
-     * permission to access. If you require additional information about the
-     * pipelines, you can use these identifiers to call
+     * The pipeline identifiers. If you require additional information about
+     * the pipelines, you can use these identifiers to call
      * <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pipelineIdList A list of all the pipeline identifiers that your account has
-     *         permission to access. If you require additional information about the
-     *         pipelines, you can use these identifiers to call
+     * @param pipelineIdList The pipeline identifiers. If you require additional information about
+     *         the pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -141,43 +132,43 @@ public class ListPipelinesResult implements Serializable, Cloneable {
     }
 
     /**
-     * If not null, indicates the starting point for the set of pipeline
-     * identifiers that the next call to <a>ListPipelines</a> will retrieve.
-     * If null, there are no more pipeline identifiers.
+     * The starting point for the next page of results. To view the next page
+     * of results, call <code>ListPipelinesOutput</code> again with this
+     * marker value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return If not null, indicates the starting point for the set of pipeline
-     *         identifiers that the next call to <a>ListPipelines</a> will retrieve.
-     *         If null, there are no more pipeline identifiers.
+     * @return The starting point for the next page of results. To view the next page
+     *         of results, call <code>ListPipelinesOutput</code> again with this
+     *         marker value. If the value is null, there are no more results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * If not null, indicates the starting point for the set of pipeline
-     * identifiers that the next call to <a>ListPipelines</a> will retrieve.
-     * If null, there are no more pipeline identifiers.
+     * The starting point for the next page of results. To view the next page
+     * of results, call <code>ListPipelinesOutput</code> again with this
+     * marker value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param marker If not null, indicates the starting point for the set of pipeline
-     *         identifiers that the next call to <a>ListPipelines</a> will retrieve.
-     *         If null, there are no more pipeline identifiers.
+     * @param marker The starting point for the next page of results. To view the next page
+     *         of results, call <code>ListPipelinesOutput</code> again with this
+     *         marker value. If the value is null, there are no more results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * If not null, indicates the starting point for the set of pipeline
-     * identifiers that the next call to <a>ListPipelines</a> will retrieve.
-     * If null, there are no more pipeline identifiers.
+     * The starting point for the next page of results. To view the next page
+     * of results, call <code>ListPipelinesOutput</code> again with this
+     * marker value. If the value is null, there are no more results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -185,9 +176,9 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param marker If not null, indicates the starting point for the set of pipeline
-     *         identifiers that the next call to <a>ListPipelines</a> will retrieve.
-     *         If null, there are no more pipeline identifiers.
+     * @param marker The starting point for the next page of results. To view the next page
+     *         of results, call <code>ListPipelinesOutput</code> again with this
+     *         marker value. If the value is null, there are no more results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -198,35 +189,35 @@ public class ListPipelinesResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>ListPipelines</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      *
-     * @return If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to <a>ListPipelines</a>.
+     * @return Indicates whether there are more results that can be obtained by a
+     *         subsequent call.
      */
     public Boolean isHasMoreResults() {
         return hasMoreResults;
     }
     
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>ListPipelines</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      *
-     * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to <a>ListPipelines</a>.
+     * @param hasMoreResults Indicates whether there are more results that can be obtained by a
+     *         subsequent call.
      */
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
     }
     
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>ListPipelines</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to <a>ListPipelines</a>.
+     * @param hasMoreResults Indicates whether there are more results that can be obtained by a
+     *         subsequent call.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -237,11 +228,11 @@ public class ListPipelinesResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to <a>ListPipelines</a>.
+     * Indicates whether there are more results that can be obtained by a
+     * subsequent call.
      *
-     * @return If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to <a>ListPipelines</a>.
+     * @return Indicates whether there are more results that can be obtained by a
+     *         subsequent call.
      */
     public Boolean getHasMoreResults() {
         return hasMoreResults;

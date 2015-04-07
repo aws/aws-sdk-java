@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the ActivatePipeline action.
+ * Contains the output of ActivatePipeline.
  * </p>
  */
 public class ActivatePipelineResult implements Serializable, Cloneable {

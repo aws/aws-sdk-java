@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class PipelineIdName implements Serializable, Cloneable {
 
     /**
-     * Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     * This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is
+     * a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -34,7 +34,7 @@ public class PipelineIdName implements Serializable, Cloneable {
     private String id;
 
     /**
-     * Name of the pipeline.
+     * The name of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -43,38 +43,38 @@ public class PipelineIdName implements Serializable, Cloneable {
     private String name;
 
     /**
-     * Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     * This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is
+     * a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * @return The ID of the pipeline that was assigned by AWS Data Pipeline. This is
+     *         a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     * This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is
+     * a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param id Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * @param id The ID of the pipeline that was assigned by AWS Data Pipeline. This is
+     *         a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     * This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is
+     * a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -82,8 +82,8 @@ public class PipelineIdName implements Serializable, Cloneable {
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param id Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * @param id The ID of the pipeline that was assigned by AWS Data Pipeline. This is
+     *         a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -94,33 +94,33 @@ public class PipelineIdName implements Serializable, Cloneable {
     }
 
     /**
-     * Name of the pipeline.
+     * The name of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Name of the pipeline.
+     * @return The name of the pipeline.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Name of the pipeline.
+     * The name of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param name Name of the pipeline.
+     * @param name The name of the pipeline.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Name of the pipeline.
+     * The name of the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -128,7 +128,7 @@ public class PipelineIdName implements Serializable, Cloneable {
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param name Name of the pipeline.
+     * @param name The name of the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

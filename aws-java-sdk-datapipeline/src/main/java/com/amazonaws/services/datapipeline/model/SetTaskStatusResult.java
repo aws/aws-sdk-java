@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output from the SetTaskStatus action.
+ * Contains the output of SetTaskStatus.
  * </p>
  */
 public class SetTaskStatusResult implements Serializable, Cloneable {

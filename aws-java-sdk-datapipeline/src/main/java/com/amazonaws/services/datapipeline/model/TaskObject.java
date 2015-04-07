@@ -35,7 +35,7 @@ public class TaskObject implements Serializable, Cloneable {
     private String taskId;
 
     /**
-     * Identifier of the pipeline that provided the task.
+     * The ID of the pipeline that provided the task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -44,7 +44,7 @@ public class TaskObject implements Serializable, Cloneable {
     private String pipelineId;
 
     /**
-     * Identifier of the pipeline task attempt object. AWS Data Pipeline uses
+     * The ID of the pipeline task attempt object. AWS Data Pipeline uses
      * this value to track how many times a task is attempted.
      * <p>
      * <b>Constraints:</b><br/>
@@ -111,33 +111,33 @@ public class TaskObject implements Serializable, Cloneable {
     }
 
     /**
-     * Identifier of the pipeline that provided the task.
+     * The ID of the pipeline that provided the task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Identifier of the pipeline that provided the task.
+     * @return The ID of the pipeline that provided the task.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * Identifier of the pipeline that provided the task.
+     * The ID of the pipeline that provided the task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId Identifier of the pipeline that provided the task.
+     * @param pipelineId The ID of the pipeline that provided the task.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * Identifier of the pipeline that provided the task.
+     * The ID of the pipeline that provided the task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -145,7 +145,7 @@ public class TaskObject implements Serializable, Cloneable {
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId Identifier of the pipeline that provided the task.
+     * @param pipelineId The ID of the pipeline that provided the task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -156,14 +156,14 @@ public class TaskObject implements Serializable, Cloneable {
     }
 
     /**
-     * Identifier of the pipeline task attempt object. AWS Data Pipeline uses
+     * The ID of the pipeline task attempt object. AWS Data Pipeline uses
      * this value to track how many times a task is attempted.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Identifier of the pipeline task attempt object. AWS Data Pipeline uses
+     * @return The ID of the pipeline task attempt object. AWS Data Pipeline uses
      *         this value to track how many times a task is attempted.
      */
     public String getAttemptId() {
@@ -171,14 +171,14 @@ public class TaskObject implements Serializable, Cloneable {
     }
     
     /**
-     * Identifier of the pipeline task attempt object. AWS Data Pipeline uses
+     * The ID of the pipeline task attempt object. AWS Data Pipeline uses
      * this value to track how many times a task is attempted.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param attemptId Identifier of the pipeline task attempt object. AWS Data Pipeline uses
+     * @param attemptId The ID of the pipeline task attempt object. AWS Data Pipeline uses
      *         this value to track how many times a task is attempted.
      */
     public void setAttemptId(String attemptId) {
@@ -186,7 +186,7 @@ public class TaskObject implements Serializable, Cloneable {
     }
     
     /**
-     * Identifier of the pipeline task attempt object. AWS Data Pipeline uses
+     * The ID of the pipeline task attempt object. AWS Data Pipeline uses
      * this value to track how many times a task is attempted.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -195,7 +195,7 @@ public class TaskObject implements Serializable, Cloneable {
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param attemptId Identifier of the pipeline task attempt object. AWS Data Pipeline uses
+     * @param attemptId The ID of the pipeline task attempt object. AWS Data Pipeline uses
      *         this value to track how many times a task is attempted.
      *
      * @return A reference to this updated object so that method calls can be chained

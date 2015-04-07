@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#validatePipelineDefinition(ValidatePipelineDefinitionRequest) ValidatePipelineDefinition operation}.
  * <p>
- * Tests the pipeline definition with a set of validation checks to
- * ensure that it is well formed and can run without error.
+ * Validates the specified pipeline definition to ensure that it is well
+ * formed and can be run without error.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#validatePipelineDefinition(ValidatePipelineDefinitionRequest)
@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Identifies the pipeline whose definition is to be validated.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -39,49 +39,49 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     private String pipelineId;
 
     /**
-     * A list of objects that define the pipeline changes to validate against
-     * the pipeline.
+     * The objects that define the pipeline changes to validate against the
+     * pipeline.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject> pipelineObjects;
 
     /**
-     * A list of parameter objects used with the pipeline.
+     * The parameter objects used with the pipeline.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterObject> parameterObjects;
 
     /**
-     * A list of parameter values used with the pipeline.
+     * The parameter values used with the pipeline.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterValue> parameterValues;
 
     /**
-     * Identifies the pipeline whose definition is to be validated.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Identifies the pipeline whose definition is to be validated.
+     * @return The ID of the pipeline.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * Identifies the pipeline whose definition is to be validated.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId Identifies the pipeline whose definition is to be validated.
+     * @param pipelineId The ID of the pipeline.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * Identifies the pipeline whose definition is to be validated.
+     * The ID of the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -89,7 +89,7 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId Identifies the pipeline whose definition is to be validated.
+     * @param pipelineId The ID of the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -100,11 +100,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * A list of objects that define the pipeline changes to validate against
-     * the pipeline.
+     * The objects that define the pipeline changes to validate against the
+     * pipeline.
      *
-     * @return A list of objects that define the pipeline changes to validate against
-     *         the pipeline.
+     * @return The objects that define the pipeline changes to validate against the
+     *         pipeline.
      */
     public java.util.List<PipelineObject> getPipelineObjects() {
         if (pipelineObjects == null) {
@@ -115,11 +115,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of objects that define the pipeline changes to validate against
-     * the pipeline.
+     * The objects that define the pipeline changes to validate against the
+     * pipeline.
      *
-     * @param pipelineObjects A list of objects that define the pipeline changes to validate against
-     *         the pipeline.
+     * @param pipelineObjects The objects that define the pipeline changes to validate against the
+     *         pipeline.
      */
     public void setPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
@@ -132,13 +132,13 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of objects that define the pipeline changes to validate against
-     * the pipeline.
+     * The objects that define the pipeline changes to validate against the
+     * pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pipelineObjects A list of objects that define the pipeline changes to validate against
-     *         the pipeline.
+     * @param pipelineObjects The objects that define the pipeline changes to validate against the
+     *         pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -152,13 +152,13 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of objects that define the pipeline changes to validate against
-     * the pipeline.
+     * The objects that define the pipeline changes to validate against the
+     * pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pipelineObjects A list of objects that define the pipeline changes to validate against
-     *         the pipeline.
+     * @param pipelineObjects The objects that define the pipeline changes to validate against the
+     *         pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -176,9 +176,9 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * A list of parameter objects used with the pipeline.
+     * The parameter objects used with the pipeline.
      *
-     * @return A list of parameter objects used with the pipeline.
+     * @return The parameter objects used with the pipeline.
      */
     public java.util.List<ParameterObject> getParameterObjects() {
         if (parameterObjects == null) {
@@ -189,9 +189,9 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of parameter objects used with the pipeline.
+     * The parameter objects used with the pipeline.
      *
-     * @param parameterObjects A list of parameter objects used with the pipeline.
+     * @param parameterObjects The parameter objects used with the pipeline.
      */
     public void setParameterObjects(java.util.Collection<ParameterObject> parameterObjects) {
         if (parameterObjects == null) {
@@ -204,11 +204,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of parameter objects used with the pipeline.
+     * The parameter objects used with the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterObjects A list of parameter objects used with the pipeline.
+     * @param parameterObjects The parameter objects used with the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -222,11 +222,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of parameter objects used with the pipeline.
+     * The parameter objects used with the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterObjects A list of parameter objects used with the pipeline.
+     * @param parameterObjects The parameter objects used with the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -244,9 +244,9 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * A list of parameter values used with the pipeline.
+     * The parameter values used with the pipeline.
      *
-     * @return A list of parameter values used with the pipeline.
+     * @return The parameter values used with the pipeline.
      */
     public java.util.List<ParameterValue> getParameterValues() {
         if (parameterValues == null) {
@@ -257,9 +257,9 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of parameter values used with the pipeline.
+     * The parameter values used with the pipeline.
      *
-     * @param parameterValues A list of parameter values used with the pipeline.
+     * @param parameterValues The parameter values used with the pipeline.
      */
     public void setParameterValues(java.util.Collection<ParameterValue> parameterValues) {
         if (parameterValues == null) {
@@ -272,11 +272,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of parameter values used with the pipeline.
+     * The parameter values used with the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterValues A list of parameter values used with the pipeline.
+     * @param parameterValues The parameter values used with the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -290,11 +290,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A list of parameter values used with the pipeline.
+     * The parameter values used with the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterValues A list of parameter values used with the pipeline.
+     * @param parameterValues The parameter values used with the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

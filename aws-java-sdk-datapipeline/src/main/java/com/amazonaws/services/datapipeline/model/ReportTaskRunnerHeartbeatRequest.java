@@ -21,11 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest) ReportTaskRunnerHeartbeat operation}.
  * <p>
- * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to
- * indicate that they are operational. In the case of AWS Data Pipeline
- * Task Runner launched on a resource managed by AWS Data Pipeline, the
- * web service can use this call to detect when the task runner
- * application has failed and restart a new instance.
+ * Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15
+ * minutes to indicate that they are operational. If the AWS Data
+ * Pipeline Task Runner is launched on a resource managed by AWS Data
+ * Pipeline, the web service can use this call to detect when the task
+ * runner application has failed and restart a new instance.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest)
@@ -33,12 +33,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identifier of the task runner. This value should be unique across
-     * your AWS account. In the case of AWS Data Pipeline Task Runner
-     * launched on a resource managed by AWS Data Pipeline, the web service
-     * provides a unique identifier when it launches the application. If you
-     * have written a custom task runner, you should assign a unique
-     * identifier for the task runner.
+     * The ID of the task runner. This value should be unique across your AWS
+     * account. In the case of AWS Data Pipeline Task Runner launched on a
+     * resource managed by AWS Data Pipeline, the web service provides a
+     * unique identifier when it launches the application. If you have
+     * written a custom task runner, you should assign a unique identifier
+     * for the task runner.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -47,13 +47,12 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
     private String taskrunnerId;
 
     /**
-     * Indicates the type of task the task runner is configured to accept and
-     * process. The worker group is set as a field on objects in the pipeline
-     * when they are created. You can only specify a single value for
-     * <code>workerGroup</code> in the call to
-     * <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
-     * permitted in <code>workerGroup</code>, the string must be an exact,
-     * case-sensitive, match.
+     * The type of task the task runner is configured to accept and process.
+     * The worker group is set as a field on objects in the pipeline when
+     * they are created. You can only specify a single value for
+     * <code>workerGroup</code>. There are no wildcard values permitted in
+     * <code>workerGroup</code>; the string must be an exact, case-sensitive,
+     * match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -62,7 +61,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
     private String workerGroup;
 
     /**
-     * The public DNS name of the calling task runner.
+     * The public DNS name of the task runner.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -71,58 +70,58 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
     private String hostname;
 
     /**
-     * The identifier of the task runner. This value should be unique across
-     * your AWS account. In the case of AWS Data Pipeline Task Runner
-     * launched on a resource managed by AWS Data Pipeline, the web service
-     * provides a unique identifier when it launches the application. If you
-     * have written a custom task runner, you should assign a unique
-     * identifier for the task runner.
+     * The ID of the task runner. This value should be unique across your AWS
+     * account. In the case of AWS Data Pipeline Task Runner launched on a
+     * resource managed by AWS Data Pipeline, the web service provides a
+     * unique identifier when it launches the application. If you have
+     * written a custom task runner, you should assign a unique identifier
+     * for the task runner.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier of the task runner. This value should be unique across
-     *         your AWS account. In the case of AWS Data Pipeline Task Runner
-     *         launched on a resource managed by AWS Data Pipeline, the web service
-     *         provides a unique identifier when it launches the application. If you
-     *         have written a custom task runner, you should assign a unique
-     *         identifier for the task runner.
+     * @return The ID of the task runner. This value should be unique across your AWS
+     *         account. In the case of AWS Data Pipeline Task Runner launched on a
+     *         resource managed by AWS Data Pipeline, the web service provides a
+     *         unique identifier when it launches the application. If you have
+     *         written a custom task runner, you should assign a unique identifier
+     *         for the task runner.
      */
     public String getTaskrunnerId() {
         return taskrunnerId;
     }
     
     /**
-     * The identifier of the task runner. This value should be unique across
-     * your AWS account. In the case of AWS Data Pipeline Task Runner
-     * launched on a resource managed by AWS Data Pipeline, the web service
-     * provides a unique identifier when it launches the application. If you
-     * have written a custom task runner, you should assign a unique
-     * identifier for the task runner.
+     * The ID of the task runner. This value should be unique across your AWS
+     * account. In the case of AWS Data Pipeline Task Runner launched on a
+     * resource managed by AWS Data Pipeline, the web service provides a
+     * unique identifier when it launches the application. If you have
+     * written a custom task runner, you should assign a unique identifier
+     * for the task runner.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param taskrunnerId The identifier of the task runner. This value should be unique across
-     *         your AWS account. In the case of AWS Data Pipeline Task Runner
-     *         launched on a resource managed by AWS Data Pipeline, the web service
-     *         provides a unique identifier when it launches the application. If you
-     *         have written a custom task runner, you should assign a unique
-     *         identifier for the task runner.
+     * @param taskrunnerId The ID of the task runner. This value should be unique across your AWS
+     *         account. In the case of AWS Data Pipeline Task Runner launched on a
+     *         resource managed by AWS Data Pipeline, the web service provides a
+     *         unique identifier when it launches the application. If you have
+     *         written a custom task runner, you should assign a unique identifier
+     *         for the task runner.
      */
     public void setTaskrunnerId(String taskrunnerId) {
         this.taskrunnerId = taskrunnerId;
     }
     
     /**
-     * The identifier of the task runner. This value should be unique across
-     * your AWS account. In the case of AWS Data Pipeline Task Runner
-     * launched on a resource managed by AWS Data Pipeline, the web service
-     * provides a unique identifier when it launches the application. If you
-     * have written a custom task runner, you should assign a unique
-     * identifier for the task runner.
+     * The ID of the task runner. This value should be unique across your AWS
+     * account. In the case of AWS Data Pipeline Task Runner launched on a
+     * resource managed by AWS Data Pipeline, the web service provides a
+     * unique identifier when it launches the application. If you have
+     * written a custom task runner, you should assign a unique identifier
+     * for the task runner.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -130,12 +129,12 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param taskrunnerId The identifier of the task runner. This value should be unique across
-     *         your AWS account. In the case of AWS Data Pipeline Task Runner
-     *         launched on a resource managed by AWS Data Pipeline, the web service
-     *         provides a unique identifier when it launches the application. If you
-     *         have written a custom task runner, you should assign a unique
-     *         identifier for the task runner.
+     * @param taskrunnerId The ID of the task runner. This value should be unique across your AWS
+     *         account. In the case of AWS Data Pipeline Task Runner launched on a
+     *         resource managed by AWS Data Pipeline, the web service provides a
+     *         unique identifier when it launches the application. If you have
+     *         written a custom task runner, you should assign a unique identifier
+     *         for the task runner.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -146,63 +145,58 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * Indicates the type of task the task runner is configured to accept and
-     * process. The worker group is set as a field on objects in the pipeline
-     * when they are created. You can only specify a single value for
-     * <code>workerGroup</code> in the call to
-     * <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
-     * permitted in <code>workerGroup</code>, the string must be an exact,
-     * case-sensitive, match.
+     * The type of task the task runner is configured to accept and process.
+     * The worker group is set as a field on objects in the pipeline when
+     * they are created. You can only specify a single value for
+     * <code>workerGroup</code>. There are no wildcard values permitted in
+     * <code>workerGroup</code>; the string must be an exact, case-sensitive,
+     * match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Indicates the type of task the task runner is configured to accept and
-     *         process. The worker group is set as a field on objects in the pipeline
-     *         when they are created. You can only specify a single value for
-     *         <code>workerGroup</code> in the call to
-     *         <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
-     *         permitted in <code>workerGroup</code>, the string must be an exact,
-     *         case-sensitive, match.
+     * @return The type of task the task runner is configured to accept and process.
+     *         The worker group is set as a field on objects in the pipeline when
+     *         they are created. You can only specify a single value for
+     *         <code>workerGroup</code>. There are no wildcard values permitted in
+     *         <code>workerGroup</code>; the string must be an exact, case-sensitive,
+     *         match.
      */
     public String getWorkerGroup() {
         return workerGroup;
     }
     
     /**
-     * Indicates the type of task the task runner is configured to accept and
-     * process. The worker group is set as a field on objects in the pipeline
-     * when they are created. You can only specify a single value for
-     * <code>workerGroup</code> in the call to
-     * <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
-     * permitted in <code>workerGroup</code>, the string must be an exact,
-     * case-sensitive, match.
+     * The type of task the task runner is configured to accept and process.
+     * The worker group is set as a field on objects in the pipeline when
+     * they are created. You can only specify a single value for
+     * <code>workerGroup</code>. There are no wildcard values permitted in
+     * <code>workerGroup</code>; the string must be an exact, case-sensitive,
+     * match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param workerGroup Indicates the type of task the task runner is configured to accept and
-     *         process. The worker group is set as a field on objects in the pipeline
-     *         when they are created. You can only specify a single value for
-     *         <code>workerGroup</code> in the call to
-     *         <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
-     *         permitted in <code>workerGroup</code>, the string must be an exact,
-     *         case-sensitive, match.
+     * @param workerGroup The type of task the task runner is configured to accept and process.
+     *         The worker group is set as a field on objects in the pipeline when
+     *         they are created. You can only specify a single value for
+     *         <code>workerGroup</code>. There are no wildcard values permitted in
+     *         <code>workerGroup</code>; the string must be an exact, case-sensitive,
+     *         match.
      */
     public void setWorkerGroup(String workerGroup) {
         this.workerGroup = workerGroup;
     }
     
     /**
-     * Indicates the type of task the task runner is configured to accept and
-     * process. The worker group is set as a field on objects in the pipeline
-     * when they are created. You can only specify a single value for
-     * <code>workerGroup</code> in the call to
-     * <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
-     * permitted in <code>workerGroup</code>, the string must be an exact,
-     * case-sensitive, match.
+     * The type of task the task runner is configured to accept and process.
+     * The worker group is set as a field on objects in the pipeline when
+     * they are created. You can only specify a single value for
+     * <code>workerGroup</code>. There are no wildcard values permitted in
+     * <code>workerGroup</code>; the string must be an exact, case-sensitive,
+     * match.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -210,13 +204,12 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param workerGroup Indicates the type of task the task runner is configured to accept and
-     *         process. The worker group is set as a field on objects in the pipeline
-     *         when they are created. You can only specify a single value for
-     *         <code>workerGroup</code> in the call to
-     *         <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
-     *         permitted in <code>workerGroup</code>, the string must be an exact,
-     *         case-sensitive, match.
+     * @param workerGroup The type of task the task runner is configured to accept and process.
+     *         The worker group is set as a field on objects in the pipeline when
+     *         they are created. You can only specify a single value for
+     *         <code>workerGroup</code>. There are no wildcard values permitted in
+     *         <code>workerGroup</code>; the string must be an exact, case-sensitive,
+     *         match.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -227,33 +220,33 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The public DNS name of the calling task runner.
+     * The public DNS name of the task runner.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The public DNS name of the calling task runner.
+     * @return The public DNS name of the task runner.
      */
     public String getHostname() {
         return hostname;
     }
     
     /**
-     * The public DNS name of the calling task runner.
+     * The public DNS name of the task runner.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param hostname The public DNS name of the calling task runner.
+     * @param hostname The public DNS name of the task runner.
      */
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
     
     /**
-     * The public DNS name of the calling task runner.
+     * The public DNS name of the task runner.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -261,7 +254,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param hostname The public DNS name of the calling task runner.
+     * @param hostname The public DNS name of the task runner.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,21 +18,20 @@ import java.io.Serializable;
 
 /**
  * <p>
- * If <code>True</code> , there are more results that can be returned in
- * another call to DescribeObjects.
+ * Contains the output of DescribeObjects.
  * </p>
  */
 public class DescribeObjectsResult implements Serializable, Cloneable {
 
     /**
-     * An array of object definitions that are returned by the call to
-     * <a>DescribeObjects</a>.
+     * An array of object definitions.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject> pipelineObjects;
 
     /**
      * The starting point for the next page of results. To view the next page
-     * of results, call <a>DescribeObjects</a> again with this marker value.
+     * of results, call <code>DescribeObjects</code> again with this marker
+     * value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -41,16 +40,14 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     private String marker;
 
     /**
-     * If <code>True</code>, there are more pages of results to return.
+     * Indicates whether there are more results to return.
      */
     private Boolean hasMoreResults;
 
     /**
-     * An array of object definitions that are returned by the call to
-     * <a>DescribeObjects</a>.
+     * An array of object definitions.
      *
-     * @return An array of object definitions that are returned by the call to
-     *         <a>DescribeObjects</a>.
+     * @return An array of object definitions.
      */
     public java.util.List<PipelineObject> getPipelineObjects() {
         if (pipelineObjects == null) {
@@ -61,11 +58,9 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     }
     
     /**
-     * An array of object definitions that are returned by the call to
-     * <a>DescribeObjects</a>.
+     * An array of object definitions.
      *
-     * @param pipelineObjects An array of object definitions that are returned by the call to
-     *         <a>DescribeObjects</a>.
+     * @param pipelineObjects An array of object definitions.
      */
     public void setPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
@@ -78,13 +73,11 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     }
     
     /**
-     * An array of object definitions that are returned by the call to
-     * <a>DescribeObjects</a>.
+     * An array of object definitions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pipelineObjects An array of object definitions that are returned by the call to
-     *         <a>DescribeObjects</a>.
+     * @param pipelineObjects An array of object definitions.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -98,13 +91,11 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     }
     
     /**
-     * An array of object definitions that are returned by the call to
-     * <a>DescribeObjects</a>.
+     * An array of object definitions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pipelineObjects An array of object definitions that are returned by the call to
-     *         <a>DescribeObjects</a>.
+     * @param pipelineObjects An array of object definitions.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -123,14 +114,16 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
 
     /**
      * The starting point for the next page of results. To view the next page
-     * of results, call <a>DescribeObjects</a> again with this marker value.
+     * of results, call <code>DescribeObjects</code> again with this marker
+     * value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The starting point for the next page of results. To view the next page
-     *         of results, call <a>DescribeObjects</a> again with this marker value.
+     *         of results, call <code>DescribeObjects</code> again with this marker
+     *         value. If the value is null, there are no more results.
      */
     public String getMarker() {
         return marker;
@@ -138,14 +131,16 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     
     /**
      * The starting point for the next page of results. To view the next page
-     * of results, call <a>DescribeObjects</a> again with this marker value.
+     * of results, call <code>DescribeObjects</code> again with this marker
+     * value. If the value is null, there are no more results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param marker The starting point for the next page of results. To view the next page
-     *         of results, call <a>DescribeObjects</a> again with this marker value.
+     *         of results, call <code>DescribeObjects</code> again with this marker
+     *         value. If the value is null, there are no more results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -153,7 +148,8 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     
     /**
      * The starting point for the next page of results. To view the next page
-     * of results, call <a>DescribeObjects</a> again with this marker value.
+     * of results, call <code>DescribeObjects</code> again with this marker
+     * value. If the value is null, there are no more results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -162,7 +158,8 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param marker The starting point for the next page of results. To view the next page
-     *         of results, call <a>DescribeObjects</a> again with this marker value.
+     *         of results, call <code>DescribeObjects</code> again with this marker
+     *         value. If the value is null, there are no more results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -173,29 +170,29 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, there are more pages of results to return.
+     * Indicates whether there are more results to return.
      *
-     * @return If <code>True</code>, there are more pages of results to return.
+     * @return Indicates whether there are more results to return.
      */
     public Boolean isHasMoreResults() {
         return hasMoreResults;
     }
     
     /**
-     * If <code>True</code>, there are more pages of results to return.
+     * Indicates whether there are more results to return.
      *
-     * @param hasMoreResults If <code>True</code>, there are more pages of results to return.
+     * @param hasMoreResults Indicates whether there are more results to return.
      */
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
     }
     
     /**
-     * If <code>True</code>, there are more pages of results to return.
+     * Indicates whether there are more results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hasMoreResults If <code>True</code>, there are more pages of results to return.
+     * @param hasMoreResults Indicates whether there are more results to return.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -206,9 +203,9 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>True</code>, there are more pages of results to return.
+     * Indicates whether there are more results to return.
      *
-     * @return If <code>True</code>, there are more pages of results to return.
+     * @return Indicates whether there are more results to return.
      */
     public Boolean getHasMoreResults() {
         return hasMoreResults;

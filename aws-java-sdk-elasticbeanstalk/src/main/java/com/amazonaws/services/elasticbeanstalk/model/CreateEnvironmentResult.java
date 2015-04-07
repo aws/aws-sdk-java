@@ -120,6 +120,12 @@ public class CreateEnvironmentResult implements Serializable, Cloneable {
     private String status;
 
     /**
+     * Lists in-progress environment updates and application version
+     * deployments that you can cancel.
+     */
+    private Boolean abortableOperationInProgress;
+
+    /**
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment: <enumValues>
      * <value name="Red"> <p> <code>Red</code> : Indicates the environment is
@@ -767,6 +773,56 @@ public class CreateEnvironmentResult implements Serializable, Cloneable {
     }
 
     /**
+     * Lists in-progress environment updates and application version
+     * deployments that you can cancel.
+     *
+     * @return Lists in-progress environment updates and application version
+     *         deployments that you can cancel.
+     */
+    public Boolean isAbortableOperationInProgress() {
+        return abortableOperationInProgress;
+    }
+    
+    /**
+     * Lists in-progress environment updates and application version
+     * deployments that you can cancel.
+     *
+     * @param abortableOperationInProgress Lists in-progress environment updates and application version
+     *         deployments that you can cancel.
+     */
+    public void setAbortableOperationInProgress(Boolean abortableOperationInProgress) {
+        this.abortableOperationInProgress = abortableOperationInProgress;
+    }
+    
+    /**
+     * Lists in-progress environment updates and application version
+     * deployments that you can cancel.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param abortableOperationInProgress Lists in-progress environment updates and application version
+     *         deployments that you can cancel.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateEnvironmentResult withAbortableOperationInProgress(Boolean abortableOperationInProgress) {
+        this.abortableOperationInProgress = abortableOperationInProgress;
+        return this;
+    }
+
+    /**
+     * Lists in-progress environment updates and application version
+     * deployments that you can cancel.
+     *
+     * @return Lists in-progress environment updates and application version
+     *         deployments that you can cancel.
+     */
+    public Boolean getAbortableOperationInProgress() {
+        return abortableOperationInProgress;
+    }
+
+    /**
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment: <enumValues>
      * <value name="Red"> <p> <code>Red</code> : Indicates the environment is
@@ -1108,6 +1164,7 @@ public class CreateEnvironmentResult implements Serializable, Cloneable {
         if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");
         if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (isAbortableOperationInProgress() != null) sb.append("AbortableOperationInProgress: " + isAbortableOperationInProgress() + ",");
         if (getHealth() != null) sb.append("Health: " + getHealth() + ",");
         if (getResources() != null) sb.append("Resources: " + getResources() + ",");
         if (getTier() != null) sb.append("Tier: " + getTier() );
@@ -1132,6 +1189,7 @@ public class CreateEnvironmentResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode()); 
         hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((isAbortableOperationInProgress() == null) ? 0 : isAbortableOperationInProgress().hashCode()); 
         hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode()); 
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode()); 
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode()); 
@@ -1170,6 +1228,8 @@ public class CreateEnvironmentResult implements Serializable, Cloneable {
         if (other.getDateUpdated() != null && other.getDateUpdated().equals(this.getDateUpdated()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.isAbortableOperationInProgress() == null ^ this.isAbortableOperationInProgress() == null) return false;
+        if (other.isAbortableOperationInProgress() != null && other.isAbortableOperationInProgress().equals(this.isAbortableOperationInProgress()) == false) return false; 
         if (other.getHealth() == null ^ this.getHealth() == null) return false;
         if (other.getHealth() != null && other.getHealth().equals(this.getHealth()) == false) return false; 
         if (other.getResources() == null ^ this.getResources() == null) return false;

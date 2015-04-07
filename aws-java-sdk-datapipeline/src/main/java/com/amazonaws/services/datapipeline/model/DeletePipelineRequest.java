@@ -21,16 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#deletePipeline(DeletePipelineRequest) DeletePipeline operation}.
  * <p>
- * Permanently deletes a pipeline, its pipeline definition and its run
- * history. You cannot query or restore a deleted pipeline. AWS Data
- * Pipeline will attempt to cancel instances associated with the pipeline
- * that are currently being processed by task runners. Deleting a
- * pipeline cannot be undone.
+ * Deletes a pipeline, its pipeline definition, and its run history. AWS
+ * Data Pipeline attempts to cancel instances associated with the
+ * pipeline that are currently being processed by task runners.
  * </p>
  * <p>
- * To temporarily pause a pipeline instead of deleting it, call
- * SetStatus with the status set to Pause on individual components.
- * Components that are paused by SetStatus can be resumed.
+ * Deleting a pipeline cannot be undone. You cannot query or restore a
+ * deleted pipeline. To temporarily pause a pipeline instead of deleting
+ * it, call SetStatus with the status set to <code>PAUSE</code> on
+ * individual components. Components that are paused by SetStatus can be
+ * resumed.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#deletePipeline(DeletePipelineRequest)
@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeletePipelineRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identifier of the pipeline to be deleted.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -47,33 +47,33 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest implements Se
     private String pipelineId;
 
     /**
-     * The identifier of the pipeline to be deleted.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier of the pipeline to be deleted.
+     * @return The ID of the pipeline.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * The identifier of the pipeline to be deleted.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The identifier of the pipeline to be deleted.
+     * @param pipelineId The ID of the pipeline.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * The identifier of the pipeline to be deleted.
+     * The ID of the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -81,7 +81,7 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The identifier of the pipeline to be deleted.
+     * @param pipelineId The ID of the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

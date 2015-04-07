@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#removeTags(RemoveTagsRequest) RemoveTags operation}.
  * <p>
- * Remove existing tags from a pipeline.
+ * Removes existing tags from the specified pipeline.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#removeTags(RemoveTagsRequest)
@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The pipeline from which you want to remove tags.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -38,38 +38,38 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     private String pipelineId;
 
     /**
-     * The keys of the tags you wish to remove.
+     * The keys of the tags to remove.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagKeys;
 
     /**
-     * The pipeline from which you want to remove tags.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The pipeline from which you want to remove tags.
+     * @return The ID of the pipeline.
      */
     public String getPipelineId() {
         return pipelineId;
     }
     
     /**
-     * The pipeline from which you want to remove tags.
+     * The ID of the pipeline.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The pipeline from which you want to remove tags.
+     * @param pipelineId The ID of the pipeline.
      */
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
     
     /**
-     * The pipeline from which you want to remove tags.
+     * The ID of the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -77,7 +77,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param pipelineId The pipeline from which you want to remove tags.
+     * @param pipelineId The ID of the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -88,9 +88,9 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * The keys of the tags you wish to remove.
+     * The keys of the tags to remove.
      *
-     * @return The keys of the tags you wish to remove.
+     * @return The keys of the tags to remove.
      */
     public java.util.List<String> getTagKeys() {
         if (tagKeys == null) {
@@ -101,9 +101,9 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The keys of the tags you wish to remove.
+     * The keys of the tags to remove.
      *
-     * @param tagKeys The keys of the tags you wish to remove.
+     * @param tagKeys The keys of the tags to remove.
      */
     public void setTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {
@@ -116,11 +116,11 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The keys of the tags you wish to remove.
+     * The keys of the tags to remove.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tagKeys The keys of the tags you wish to remove.
+     * @param tagKeys The keys of the tags to remove.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -134,11 +134,11 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The keys of the tags you wish to remove.
+     * The keys of the tags to remove.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tagKeys The keys of the tags you wish to remove.
+     * @param tagKeys The keys of the tags to remove.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
