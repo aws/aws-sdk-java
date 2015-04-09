@@ -76,6 +76,12 @@ public class ListTasksRequestMarshaller implements Marshaller<Request<ListTasksR
             if (listTasksRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(listTasksRequest.getMaxResults());
             }
+            if (listTasksRequest.getStartedBy() != null) {
+                jsonWriter.key("startedBy").value(listTasksRequest.getStartedBy());
+            }
+            if (listTasksRequest.getServiceName() != null) {
+                jsonWriter.key("serviceName").value(listTasksRequest.getServiceName());
+            }
 
           jsonWriter.endObject();
 

@@ -23,7 +23,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns the configuration information of the Lambda function. This the
  * same information you provided as parameters when uploading the
- * function by using UploadFunction.
+ * function by using CreateFunction.
  * </p>
  * <p>
  * This operation requires permission for the
@@ -36,24 +36,45 @@ public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest imp
 
     /**
      * The name of the Lambda function for which you want to retrieve the
-     * configuration information.
+     * configuration information. <p> You can specify an unqualified function
+     * name (for example, "Thumbnail") or you can specify Amazon Resource
+     * Name (ARN) of the function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     * also allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      */
     private String functionName;
 
     /**
      * The name of the Lambda function for which you want to retrieve the
-     * configuration information.
+     * configuration information. <p> You can specify an unqualified function
+     * name (for example, "Thumbnail") or you can specify Amazon Resource
+     * Name (ARN) of the function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     * also allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
      * @return The name of the Lambda function for which you want to retrieve the
-     *         configuration information.
+     *         configuration information. <p> You can specify an unqualified function
+     *         name (for example, "Thumbnail") or you can specify Amazon Resource
+     *         Name (ARN) of the function (for example,
+     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     *         also allows you to specify only the account ID qualifier (for example,
+     *         "account-id:Thumbnail"). Note that the length constraint applies only
+     *         to the ARN. If you specify only the function name, it is limited to 64
+     *         character in length.
      */
     public String getFunctionName() {
         return functionName;
@@ -61,14 +82,28 @@ public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest imp
     
     /**
      * The name of the Lambda function for which you want to retrieve the
-     * configuration information.
+     * configuration information. <p> You can specify an unqualified function
+     * name (for example, "Thumbnail") or you can specify Amazon Resource
+     * Name (ARN) of the function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     * also allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
      * @param functionName The name of the Lambda function for which you want to retrieve the
-     *         configuration information.
+     *         configuration information. <p> You can specify an unqualified function
+     *         name (for example, "Thumbnail") or you can specify Amazon Resource
+     *         Name (ARN) of the function (for example,
+     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     *         also allows you to specify only the account ID qualifier (for example,
+     *         "account-id:Thumbnail"). Note that the length constraint applies only
+     *         to the ARN. If you specify only the function name, it is limited to 64
+     *         character in length.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
@@ -76,16 +111,30 @@ public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest imp
     
     /**
      * The name of the Lambda function for which you want to retrieve the
-     * configuration information.
+     * configuration information. <p> You can specify an unqualified function
+     * name (for example, "Thumbnail") or you can specify Amazon Resource
+     * Name (ARN) of the function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     * also allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * character in length.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
      * @param functionName The name of the Lambda function for which you want to retrieve the
-     *         configuration information.
+     *         configuration information. <p> You can specify an unqualified function
+     *         name (for example, "Thumbnail") or you can specify Amazon Resource
+     *         Name (ARN) of the function (for example,
+     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     *         also allows you to specify only the account ID qualifier (for example,
+     *         "account-id:Thumbnail"). Note that the length constraint applies only
+     *         to the ARN. If you specify only the function name, it is limited to 64
+     *         character in length.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

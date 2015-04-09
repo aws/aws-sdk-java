@@ -94,16 +94,17 @@ public class BinaryUtils {
     }
 
     /**
-     * @deprecated not used; to be removed in future releases.
-     * 
-     * Wraps a ByteBuffer in an InputStream.
+     * Wraps a ByteBuffer in an InputStream. If the input {@code byteBuffer}
+     * is null, returns an empty stream.
      *
      * @param byteBuffer The ByteBuffer to wrap.
      *
      * @return An InputStream wrapping the ByteBuffer content.
      */
-    @Deprecated
     public static ByteArrayInputStream toStream(ByteBuffer byteBuffer) {
+        if (byteBuffer == null) {
+            return new ByteArrayInputStream(new byte[0]);
+        }
         return new ByteArrayInputStream(copyBytesFrom(byteBuffer));
     }
 
@@ -122,28 +123,30 @@ public class BinaryUtils {
      * unmarshallers of the low-level clients.
      */
     public static byte[] copyAllBytesFrom(ByteBuffer bb) {
-        if (bb == null)
+        if (bb == null) {
             return null;
-        if (bb.hasArray())
-            return Arrays.copyOf(bb.array(), bb.limit());
-        bb.mark();
-        // the default ByteBuffer#mark() and reset() won't work, as the
-        // rewind would discard the mark position
-        final int marked = bb.position();
-        try {
-            byte[] dst = new byte[bb.rewind().remaining()];
-            bb.get(dst);
-            return dst;
-        } finally {
-            bb.position(marked);
         }
+
+        if (bb.hasArray()) {
+            return Arrays.copyOfRange(
+                    bb.array(),
+                    bb.arrayOffset(),
+                    bb.arrayOffset() + bb.limit());
+        }
+
+        ByteBuffer copy = bb.asReadOnlyBuffer();
+        copy.rewind();
+
+        byte[] dst = new byte[copy.remaining()];
+        copy.get(dst);
+        return dst;
     }
 
     /**
      * Returns a copy of the bytes from the given <code>ByteBuffer</code>,
      * ranging from the the buffer's current position to the buffer's limit; or
      * null if the input is null.
-     * <p> 
+     * <p>
      * The internal states of the given byte buffer will be restored when this
      * method completes execution.
      * <p>
@@ -155,17 +158,19 @@ public class BinaryUtils {
      * unmarshallers of the low-level clients.
      */
     public static byte[] copyBytesFrom(ByteBuffer bb) {
-        if (bb == null)
+        if (bb == null) {
             return null;
-        if (bb.hasArray())
-            return Arrays.copyOfRange(bb.array(), bb.position(), bb.limit());
-        bb.mark();
-        try {
-            byte[] dst = new byte[bb.remaining()];
-            bb.get(dst);
-            return dst;
-        } finally {
-            bb.reset();
         }
+
+        if (bb.hasArray()) {
+            return Arrays.copyOfRange(
+                    bb.array(),
+                    bb.arrayOffset() + bb.position(),
+                    bb.arrayOffset() + bb.limit());
+        }
+
+        byte[] dst = new byte[bb.remaining()];
+        bb.asReadOnlyBuffer().get(dst);
+        return dst;
     }
 }

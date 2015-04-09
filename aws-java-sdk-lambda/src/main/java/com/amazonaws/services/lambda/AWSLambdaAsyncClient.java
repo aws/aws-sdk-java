@@ -35,13 +35,17 @@ import com.amazonaws.services.lambda.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * AWS Lambda <p>
+ * S
+ * </p>
+ * <p>
  * <b>Overview</b>
  * </p>
  * <p>
- * This is the AWS Lambda API Reference. The AWS Lambda Developer Guide
- * provides additional information. For the service overview, go to
+ * This is the <i>AWS Lambda API Reference</i> .
+ * The AWS Lambda Developer Guide provides additional information.
+ * For the service overview, go to
  * <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html"> What is AWS Lambda </a> , and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS LambdaL How it Works </a>
- * in the AWS Lambda Developer Guide.
+ * in the <i>AWS Lambda Developer Guide</i> .
  * </p>
  */
 public class AWSLambdaAsyncClient extends AWSLambdaClient
@@ -278,89 +282,11 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
             
     /**
      * <p>
-     * Returns configuration information for the specified event source
-     * mapping (see AddEventSource).
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetEventSource</code> action.
-     * </p>
-     *
-     * @param getEventSourceRequest Container for the necessary parameters to
-     *           execute the GetEventSource operation on AWSLambda.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetEventSource service method, as returned by AWSLambda.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetEventSourceResult> getEventSourceAsync(final GetEventSourceRequest getEventSourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetEventSourceResult>() {
-            public GetEventSourceResult call() throws Exception {
-                return getEventSource(getEventSourceRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns configuration information for the specified event source
-     * mapping (see AddEventSource).
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetEventSource</code> action.
-     * </p>
-     *
-     * @param getEventSourceRequest Container for the necessary parameters to
-     *           execute the GetEventSource operation on AWSLambda.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetEventSource service method, as returned by AWSLambda.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetEventSourceResult> getEventSourceAsync(
-            final GetEventSourceRequest getEventSourceRequest,
-            final AsyncHandler<GetEventSourceRequest, GetEventSourceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetEventSourceResult>() {
-            public GetEventSourceResult call() throws Exception {
-              GetEventSourceResult result;
-                try {
-                result = getEventSource(getEventSourceRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getEventSourceRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Deletes the specified Lambda function code and configuration.
+     * </p>
+     * <p>
+     * When you delete a function the associated access policy is also
+     * deleted. You will need to delete the event source mappings explicitly.
      * </p>
      * <p>
      * This operation requires permission for the
@@ -395,6 +321,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     /**
      * <p>
      * Deletes the specified Lambda function code and configuration.
+     * </p>
+     * <p>
+     * When you delete a function the associated access policy is also
+     * deleted. You will need to delete the event source mappings explicitly.
      * </p>
      * <p>
      * This operation requires permission for the
@@ -434,6 +364,104 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
               }
               asyncHandler.onSuccess(deleteFunctionRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Adds a permission to the access policy associated with the specified
+     * AWS Lambda function. In a "push event" model, the access policy
+     * attached to the Lambda function grants Amazon S3 or a user application
+     * permission for the Lambda <code>lambda:Invoke</code> action. For
+     * information about the push model, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
+     * . Each Lambda function has one access policy associated with it. You
+     * can use the <code>AddPermission</code> API to add a permission to the
+     * policy. You have one access policy but it can have multiple permission
+     * statements.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:AddPermission</code> action.
+     * </p>
+     *
+     * @param addPermissionRequest Container for the necessary parameters to
+     *           execute the AddPermission operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddPermission service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddPermissionResult> addPermissionAsync(final AddPermissionRequest addPermissionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AddPermissionResult>() {
+            public AddPermissionResult call() throws Exception {
+                return addPermission(addPermissionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Adds a permission to the access policy associated with the specified
+     * AWS Lambda function. In a "push event" model, the access policy
+     * attached to the Lambda function grants Amazon S3 or a user application
+     * permission for the Lambda <code>lambda:Invoke</code> action. For
+     * information about the push model, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
+     * . Each Lambda function has one access policy associated with it. You
+     * can use the <code>AddPermission</code> API to add a permission to the
+     * policy. You have one access policy but it can have multiple permission
+     * statements.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:AddPermission</code> action.
+     * </p>
+     *
+     * @param addPermissionRequest Container for the necessary parameters to
+     *           execute the AddPermission operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddPermission service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddPermissionResult> addPermissionAsync(
+            final AddPermissionRequest addPermissionRequest,
+            final AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AddPermissionResult>() {
+            public AddPermissionResult call() throws Exception {
+              AddPermissionResult result;
+                try {
+                result = addPermission(addPermissionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addPermissionRequest, result);
+                 return result;
         }
     });
     }
@@ -524,42 +552,23 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Identifies a stream as an event source for an AWS Lambda function. It
-     * can be either an Amazon Kinesis stream or a Amazon DynamoDB stream.
-     * AWS Lambda invokes the specified function when records are posted to
-     * the stream.
+     * You can remove individual permissions from an access policy
+     * associated with a Lambda function by providing a Statement ID.
      * </p>
      * <p>
-     * This is the pull model, where AWS Lambda invokes the function. For
-     * more information, go to
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
-     * in the AWS Lambda Developer Guide.
+     * Note that removal of a permission will cause an active event source
+     * to lose permission to the function.
      * </p>
      * <p>
-     * This association between an Amazon Kinesis stream and an AWS Lambda
-     * function is called the event source mapping. You provide the
-     * configuration information (for example, which stream to read from and
-     * which AWS Lambda function to invoke) for the event source mapping in
-     * the request body.
-     * </p>
-     * <p>
-     * Each event source, such as a Kinesis stream, can only be associated
-     * with one AWS Lambda function. If you call AddEventSource for an event
-     * source that is already mapped to another AWS Lambda function, the
-     * existing mapping is updated to call the new function instead of the
-     * old one.
-     * </p>
-     * <p>
-     * This operation requires permission for the <code>iam:PassRole</code>
-     * action for the IAM role. It also requires permission for the
-     * <code>lambda:AddEventSource</code> action.
+     * You need permission for the <code>lambda:RemovePermission</code>
+     * action.
      * </p>
      *
-     * @param addEventSourceRequest Container for the necessary parameters to
-     *           execute the AddEventSource operation on AWSLambda.
+     * @param removePermissionRequest Container for the necessary parameters
+     *           to execute the RemovePermission operation on AWSLambda.
      * 
      * @return A Java Future object containing the response from the
-     *         AddEventSource service method, as returned by AWSLambda.
+     *         RemovePermission service method, as returned by AWSLambda.
      * 
      *
      * @throws AmazonClientException
@@ -570,57 +579,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<AddEventSourceResult> addEventSourceAsync(final AddEventSourceRequest addEventSourceRequest) 
+    public Future<Void> removePermissionAsync(final RemovePermissionRequest removePermissionRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<AddEventSourceResult>() {
-            public AddEventSourceResult call() throws Exception {
-                return addEventSource(addEventSourceRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                removePermission(removePermissionRequest);
+                return null;
         }
     });
     }
 
     /**
      * <p>
-     * Identifies a stream as an event source for an AWS Lambda function. It
-     * can be either an Amazon Kinesis stream or a Amazon DynamoDB stream.
-     * AWS Lambda invokes the specified function when records are posted to
-     * the stream.
+     * You can remove individual permissions from an access policy
+     * associated with a Lambda function by providing a Statement ID.
      * </p>
      * <p>
-     * This is the pull model, where AWS Lambda invokes the function. For
-     * more information, go to
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
-     * in the AWS Lambda Developer Guide.
+     * Note that removal of a permission will cause an active event source
+     * to lose permission to the function.
      * </p>
      * <p>
-     * This association between an Amazon Kinesis stream and an AWS Lambda
-     * function is called the event source mapping. You provide the
-     * configuration information (for example, which stream to read from and
-     * which AWS Lambda function to invoke) for the event source mapping in
-     * the request body.
-     * </p>
-     * <p>
-     * Each event source, such as a Kinesis stream, can only be associated
-     * with one AWS Lambda function. If you call AddEventSource for an event
-     * source that is already mapped to another AWS Lambda function, the
-     * existing mapping is updated to call the new function instead of the
-     * old one.
-     * </p>
-     * <p>
-     * This operation requires permission for the <code>iam:PassRole</code>
-     * action for the IAM role. It also requires permission for the
-     * <code>lambda:AddEventSource</code> action.
+     * You need permission for the <code>lambda:RemovePermission</code>
+     * action.
      * </p>
      *
-     * @param addEventSourceRequest Container for the necessary parameters to
-     *           execute the AddEventSource operation on AWSLambda.
+     * @param removePermissionRequest Container for the necessary parameters
+     *           to execute the RemovePermission operation on AWSLambda.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         AddEventSource service method, as returned by AWSLambda.
+     *         RemovePermission service method, as returned by AWSLambda.
      * 
      *
      * @throws AmazonClientException
@@ -631,20 +622,107 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<AddEventSourceResult> addEventSourceAsync(
-            final AddEventSourceRequest addEventSourceRequest,
-            final AsyncHandler<AddEventSourceRequest, AddEventSourceResult> asyncHandler)
+    public Future<Void> removePermissionAsync(
+            final RemovePermissionRequest removePermissionRequest,
+            final AsyncHandler<RemovePermissionRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<AddEventSourceResult>() {
-            public AddEventSourceResult call() throws Exception {
-              AddEventSourceResult result;
-                try {
-                result = addEventSource(addEventSourceRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                removePermission(removePermissionRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(addEventSourceRequest, result);
+              asyncHandler.onSuccess(removePermissionRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a new Lambda function. The function metadata is created from
+     * the request parameters, and the code for the function is provided by a
+     * .zip file in the request body. If the function name already exists,
+     * the operation will fail. Note that the function name is
+     * case-sensitive.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:CreateFunction</code> action.
+     * </p>
+     *
+     * @param createFunctionRequest Container for the necessary parameters to
+     *           execute the CreateFunction operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateFunction service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateFunctionResult> createFunctionAsync(final CreateFunctionRequest createFunctionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateFunctionResult>() {
+            public CreateFunctionResult call() throws Exception {
+                return createFunction(createFunctionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new Lambda function. The function metadata is created from
+     * the request parameters, and the code for the function is provided by a
+     * .zip file in the request body. If the function name already exists,
+     * the operation will fail. Note that the function name is
+     * case-sensitive.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:CreateFunction</code> action.
+     * </p>
+     *
+     * @param createFunctionRequest Container for the necessary parameters to
+     *           execute the CreateFunction operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateFunction service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateFunctionResult> createFunctionAsync(
+            final CreateFunctionRequest createFunctionRequest,
+            final AsyncHandler<CreateFunctionRequest, CreateFunctionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateFunctionResult>() {
+            public CreateFunctionResult call() throws Exception {
+              CreateFunctionResult result;
+                try {
+                result = createFunction(createFunctionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createFunctionRequest, result);
                  return result;
         }
     });
@@ -652,109 +730,23 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Creates a new Lambda function or updates an existing function. The
-     * function metadata is created from the request parameters, and the code
-     * for the function is provided by a .zip file in the request body. If
-     * the function name already exists, the existing Lambda function is
-     * updated with the new code and metadata.
+     * You can update an event source mapping. This is useful if you want to
+     * change the parameters of the existing mapping without losing your
+     * position in the stream. You can change which function will receive the
+     * stream records, but to change the stream itself, you must create a new
+     * mapping.
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:UploadFunction</code> action.
+     * <code>lambda:UpdateEventSourceMapping</code> action.
      * </p>
      *
-     * @param uploadFunctionRequest Container for the necessary parameters to
-     *           execute the UploadFunction operation on AWSLambda.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UploadFunction service method, as returned by AWSLambda.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UploadFunctionResult> uploadFunctionAsync(final UploadFunctionRequest uploadFunctionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UploadFunctionResult>() {
-            public UploadFunctionResult call() throws Exception {
-                return uploadFunction(uploadFunctionRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a new Lambda function or updates an existing function. The
-     * function metadata is created from the request parameters, and the code
-     * for the function is provided by a .zip file in the request body. If
-     * the function name already exists, the existing Lambda function is
-     * updated with the new code and metadata.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:UploadFunction</code> action.
-     * </p>
-     *
-     * @param uploadFunctionRequest Container for the necessary parameters to
-     *           execute the UploadFunction operation on AWSLambda.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UploadFunction service method, as returned by AWSLambda.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UploadFunctionResult> uploadFunctionAsync(
-            final UploadFunctionRequest uploadFunctionRequest,
-            final AsyncHandler<UploadFunctionRequest, UploadFunctionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UploadFunctionResult>() {
-            public UploadFunctionResult call() throws Exception {
-              UploadFunctionResult result;
-                try {
-                result = uploadFunction(uploadFunctionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(uploadFunctionRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns the configuration information of the Lambda function. This
-     * the same information you provided as parameters when uploading the
-     * function by using UploadFunction.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetFunctionConfiguration</code> operation.
-     * </p>
-     *
-     * @param getFunctionConfigurationRequest Container for the necessary
-     *           parameters to execute the GetFunctionConfiguration operation on
+     * @param updateEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the UpdateEventSourceMapping operation on
      *           AWSLambda.
      * 
      * @return A Java Future object containing the response from the
-     *         GetFunctionConfiguration service method, as returned by AWSLambda.
+     *         UpdateEventSourceMapping service method, as returned by AWSLambda.
      * 
      *
      * @throws AmazonClientException
@@ -765,28 +757,30 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(final GetFunctionConfigurationRequest getFunctionConfigurationRequest) 
+    public Future<UpdateEventSourceMappingResult> updateEventSourceMappingAsync(final UpdateEventSourceMappingRequest updateEventSourceMappingRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetFunctionConfigurationResult>() {
-            public GetFunctionConfigurationResult call() throws Exception {
-                return getFunctionConfiguration(getFunctionConfigurationRequest);
+        return executorService.submit(new Callable<UpdateEventSourceMappingResult>() {
+            public UpdateEventSourceMappingResult call() throws Exception {
+                return updateEventSourceMapping(updateEventSourceMappingRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Returns the configuration information of the Lambda function. This
-     * the same information you provided as parameters when uploading the
-     * function by using UploadFunction.
+     * You can update an event source mapping. This is useful if you want to
+     * change the parameters of the existing mapping without losing your
+     * position in the stream. You can change which function will receive the
+     * stream records, but to change the stream itself, you must create a new
+     * mapping.
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:GetFunctionConfiguration</code> operation.
+     * <code>lambda:UpdateEventSourceMapping</code> action.
      * </p>
      *
-     * @param getFunctionConfigurationRequest Container for the necessary
-     *           parameters to execute the GetFunctionConfiguration operation on
+     * @param updateEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the UpdateEventSourceMapping operation on
      *           AWSLambda.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -794,7 +788,7 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         GetFunctionConfiguration service method, as returned by AWSLambda.
+     *         UpdateEventSourceMapping service method, as returned by AWSLambda.
      * 
      *
      * @throws AmazonClientException
@@ -805,26 +799,30 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(
-            final GetFunctionConfigurationRequest getFunctionConfigurationRequest,
-            final AsyncHandler<GetFunctionConfigurationRequest, GetFunctionConfigurationResult> asyncHandler)
+    public Future<UpdateEventSourceMappingResult> updateEventSourceMappingAsync(
+            final UpdateEventSourceMappingRequest updateEventSourceMappingRequest,
+            final AsyncHandler<UpdateEventSourceMappingRequest, UpdateEventSourceMappingResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetFunctionConfigurationResult>() {
-            public GetFunctionConfigurationResult call() throws Exception {
-              GetFunctionConfigurationResult result;
+        return executorService.submit(new Callable<UpdateEventSourceMappingResult>() {
+            public UpdateEventSourceMappingResult call() throws Exception {
+              UpdateEventSourceMappingResult result;
                 try {
-                result = getFunctionConfiguration(getFunctionConfigurationRequest);
+                result = updateEventSourceMapping(updateEventSourceMappingRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(getFunctionConfigurationRequest, result);
+              asyncHandler.onSuccess(updateEventSourceMappingRequest, result);
                  return result;
         }
     });
     }
     
     /**
+     * <p>
+     * <b>IMPORTANT:</b>This API is deprecated. We recommend you use Invoke
+     * API (see Invoke).
+     * </p>
      * <p>
      * Submits an invocation request to AWS Lambda. Upon receiving the
      * request, Lambda executes the specified function asynchronously. To see
@@ -833,7 +831,7 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:InvokeAsync</code> action.
+     * <code>lambda:InvokeFunction</code> action.
      * </p>
      *
      * @param invokeAsyncRequest Container for the necessary parameters to
@@ -851,6 +849,7 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
+    @Deprecated
     public Future<InvokeAsyncResult> invokeAsyncAsync(final InvokeAsyncRequest invokeAsyncRequest) 
             throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<InvokeAsyncResult>() {
@@ -862,6 +861,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
+     * <b>IMPORTANT:</b>This API is deprecated. We recommend you use Invoke
+     * API (see Invoke).
+     * </p>
+     * <p>
      * Submits an invocation request to AWS Lambda. Upon receiving the
      * request, Lambda executes the specified function asynchronously. To see
      * the logs generated by the Lambda function execution, see the
@@ -869,7 +872,7 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:InvokeAsync</code> action.
+     * <code>lambda:InvokeFunction</code> action.
      * </p>
      *
      * @param invokeAsyncRequest Container for the necessary parameters to
@@ -905,188 +908,6 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
             throw ex;
               }
               asyncHandler.onSuccess(invokeAsyncRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns a list of event source mappings you created using the
-     * <code>AddEventSource</code> (see AddEventSource), where you identify a
-     * stream as event source. This list does not include Amazon S3 event
-     * sources.
-     * </p>
-     * <p>
-     * For each mapping, the API returns configuration information. You can
-     * optionally specify filters to retrieve specific event source mappings.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:ListEventSources</code> action.
-     * </p>
-     *
-     * @param listEventSourcesRequest Container for the necessary parameters
-     *           to execute the ListEventSources operation on AWSLambda.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListEventSources service method, as returned by AWSLambda.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListEventSourcesResult> listEventSourcesAsync(final ListEventSourcesRequest listEventSourcesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListEventSourcesResult>() {
-            public ListEventSourcesResult call() throws Exception {
-                return listEventSources(listEventSourcesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns a list of event source mappings you created using the
-     * <code>AddEventSource</code> (see AddEventSource), where you identify a
-     * stream as event source. This list does not include Amazon S3 event
-     * sources.
-     * </p>
-     * <p>
-     * For each mapping, the API returns configuration information. You can
-     * optionally specify filters to retrieve specific event source mappings.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:ListEventSources</code> action.
-     * </p>
-     *
-     * @param listEventSourcesRequest Container for the necessary parameters
-     *           to execute the ListEventSources operation on AWSLambda.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListEventSources service method, as returned by AWSLambda.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListEventSourcesResult> listEventSourcesAsync(
-            final ListEventSourcesRequest listEventSourcesRequest,
-            final AsyncHandler<ListEventSourcesRequest, ListEventSourcesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListEventSourcesResult>() {
-            public ListEventSourcesResult call() throws Exception {
-              ListEventSourcesResult result;
-                try {
-                result = listEventSources(listEventSourcesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listEventSourcesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns the configuration information of the Lambda function and a
-     * presigned URL link to the .zip file you uploaded with UploadFunction
-     * so you can download the .zip file. Note that the URL is valid for up
-     * to 10 minutes. The configuration information is the same information
-     * you provided as parameters when uploading the function.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetFunction</code> action.
-     * </p>
-     *
-     * @param getFunctionRequest Container for the necessary parameters to
-     *           execute the GetFunction operation on AWSLambda.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetFunction service method, as returned by AWSLambda.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetFunctionResult> getFunctionAsync(final GetFunctionRequest getFunctionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetFunctionResult>() {
-            public GetFunctionResult call() throws Exception {
-                return getFunction(getFunctionRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns the configuration information of the Lambda function and a
-     * presigned URL link to the .zip file you uploaded with UploadFunction
-     * so you can download the .zip file. Note that the URL is valid for up
-     * to 10 minutes. The configuration information is the same information
-     * you provided as parameters when uploading the function.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetFunction</code> action.
-     * </p>
-     *
-     * @param getFunctionRequest Container for the necessary parameters to
-     *           execute the GetFunction operation on AWSLambda.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetFunction service method, as returned by AWSLambda.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetFunctionResult> getFunctionAsync(
-            final GetFunctionRequest getFunctionRequest,
-            final AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetFunctionResult>() {
-            public GetFunctionResult call() throws Exception {
-              GetFunctionResult result;
-                try {
-                result = getFunction(getFunctionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getFunctionRequest, result);
                  return result;
         }
     });
@@ -1184,19 +1005,18 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Removes an event source mapping. This means AWS Lambda will no longer
-     * invoke the function for events in the associated source.
+     * Invokes a specified Lambda function.
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:RemoveEventSource</code> action.
+     * <code>lambda:InvokeFunction</code> action.
      * </p>
      *
-     * @param removeEventSourceRequest Container for the necessary parameters
-     *           to execute the RemoveEventSource operation on AWSLambda.
+     * @param invokeRequest Container for the necessary parameters to execute
+     *           the Invoke operation on AWSLambda.
      * 
-     * @return A Java Future object containing the response from the
-     *         RemoveEventSource service method, as returned by AWSLambda.
+     * @return A Java Future object containing the response from the Invoke
+     *         service method, as returned by AWSLambda.
      * 
      *
      * @throws AmazonClientException
@@ -1207,12 +1027,441 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> removeEventSourceAsync(final RemoveEventSourceRequest removeEventSourceRequest) 
+    public Future<InvokeResult> invokeAsync(final InvokeRequest invokeRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                removeEventSource(removeEventSourceRequest);
-                return null;
+        return executorService.submit(new Callable<InvokeResult>() {
+            public InvokeResult call() throws Exception {
+                return invoke(invokeRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Invokes a specified Lambda function.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:InvokeFunction</code> action.
+     * </p>
+     *
+     * @param invokeRequest Container for the necessary parameters to execute
+     *           the Invoke operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the Invoke
+     *         service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<InvokeResult> invokeAsync(
+            final InvokeRequest invokeRequest,
+            final AsyncHandler<InvokeRequest, InvokeResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<InvokeResult>() {
+            public InvokeResult call() throws Exception {
+              InvokeResult result;
+                try {
+                result = invoke(invokeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(invokeRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the access policy, containing a list of permissions granted
+     * via the <code>AddPermission</code> API, associated with the specified
+     * bucket.
+     * </p>
+     * <p>
+     * You need permission for the <code>lambda:GetPolicy action.</code>
+     * </p>
+     *
+     * @param getPolicyRequest Container for the necessary parameters to
+     *           execute the GetPolicy operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetPolicy service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetPolicyResult> getPolicyAsync(final GetPolicyRequest getPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetPolicyResult>() {
+            public GetPolicyResult call() throws Exception {
+                return getPolicy(getPolicyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the access policy, containing a list of permissions granted
+     * via the <code>AddPermission</code> API, associated with the specified
+     * bucket.
+     * </p>
+     * <p>
+     * You need permission for the <code>lambda:GetPolicy action.</code>
+     * </p>
+     *
+     * @param getPolicyRequest Container for the necessary parameters to
+     *           execute the GetPolicy operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetPolicy service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetPolicyResult> getPolicyAsync(
+            final GetPolicyRequest getPolicyRequest,
+            final AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetPolicyResult>() {
+            public GetPolicyResult call() throws Exception {
+              GetPolicyResult result;
+                try {
+                result = getPolicy(getPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getPolicyRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns a list of event source mappings you created using the
+     * <code>CreateEventSourceMapping</code> (see CreateEventSourceMapping),
+     * where you identify a stream as an event source. This list does not
+     * include Amazon S3 event sources.
+     * </p>
+     * <p>
+     * For each mapping, the API returns configuration information. You can
+     * optionally specify filters to retrieve specific event source mappings.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:ListEventSourceMappings</code> action.
+     * </p>
+     *
+     * @param listEventSourceMappingsRequest Container for the necessary
+     *           parameters to execute the ListEventSourceMappings operation on
+     *           AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListEventSourceMappings service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(final ListEventSourceMappingsRequest listEventSourceMappingsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListEventSourceMappingsResult>() {
+            public ListEventSourceMappingsResult call() throws Exception {
+                return listEventSourceMappings(listEventSourceMappingsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns a list of event source mappings you created using the
+     * <code>CreateEventSourceMapping</code> (see CreateEventSourceMapping),
+     * where you identify a stream as an event source. This list does not
+     * include Amazon S3 event sources.
+     * </p>
+     * <p>
+     * For each mapping, the API returns configuration information. You can
+     * optionally specify filters to retrieve specific event source mappings.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:ListEventSourceMappings</code> action.
+     * </p>
+     *
+     * @param listEventSourceMappingsRequest Container for the necessary
+     *           parameters to execute the ListEventSourceMappings operation on
+     *           AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListEventSourceMappings service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(
+            final ListEventSourceMappingsRequest listEventSourceMappingsRequest,
+            final AsyncHandler<ListEventSourceMappingsRequest, ListEventSourceMappingsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListEventSourceMappingsResult>() {
+            public ListEventSourceMappingsResult call() throws Exception {
+              ListEventSourceMappingsResult result;
+                try {
+                result = listEventSourceMappings(listEventSourceMappingsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listEventSourceMappingsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns configuration information for the specified event source
+     * mapping (see CreateEventSourceMapping).
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:GetEventSourceMapping</code> action.
+     * </p>
+     *
+     * @param getEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the GetEventSourceMapping operation on
+     *           AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetEventSourceMapping service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetEventSourceMappingResult> getEventSourceMappingAsync(final GetEventSourceMappingRequest getEventSourceMappingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetEventSourceMappingResult>() {
+            public GetEventSourceMappingResult call() throws Exception {
+                return getEventSourceMapping(getEventSourceMappingRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns configuration information for the specified event source
+     * mapping (see CreateEventSourceMapping).
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:GetEventSourceMapping</code> action.
+     * </p>
+     *
+     * @param getEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the GetEventSourceMapping operation on
+     *           AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetEventSourceMapping service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetEventSourceMappingResult> getEventSourceMappingAsync(
+            final GetEventSourceMappingRequest getEventSourceMappingRequest,
+            final AsyncHandler<GetEventSourceMappingRequest, GetEventSourceMappingResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetEventSourceMappingResult>() {
+            public GetEventSourceMappingResult call() throws Exception {
+              GetEventSourceMappingResult result;
+                try {
+                result = getEventSourceMapping(getEventSourceMappingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getEventSourceMappingRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the configuration information of the Lambda function. This
+     * the same information you provided as parameters when uploading the
+     * function by using CreateFunction.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:GetFunctionConfiguration</code> operation.
+     * </p>
+     *
+     * @param getFunctionConfigurationRequest Container for the necessary
+     *           parameters to execute the GetFunctionConfiguration operation on
+     *           AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetFunctionConfiguration service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(final GetFunctionConfigurationRequest getFunctionConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetFunctionConfigurationResult>() {
+            public GetFunctionConfigurationResult call() throws Exception {
+                return getFunctionConfiguration(getFunctionConfigurationRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the configuration information of the Lambda function. This
+     * the same information you provided as parameters when uploading the
+     * function by using CreateFunction.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:GetFunctionConfiguration</code> operation.
+     * </p>
+     *
+     * @param getFunctionConfigurationRequest Container for the necessary
+     *           parameters to execute the GetFunctionConfiguration operation on
+     *           AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetFunctionConfiguration service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(
+            final GetFunctionConfigurationRequest getFunctionConfigurationRequest,
+            final AsyncHandler<GetFunctionConfigurationRequest, GetFunctionConfigurationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetFunctionConfigurationResult>() {
+            public GetFunctionConfigurationResult call() throws Exception {
+              GetFunctionConfigurationResult result;
+                try {
+                result = getFunctionConfiguration(getFunctionConfigurationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getFunctionConfigurationRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Removes an event source mapping. This means AWS Lambda will no longer
+     * invoke the function for events in the associated source.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:DeleteEventSourceMapping</code> action.
+     * </p>
+     *
+     * @param deleteEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the DeleteEventSourceMapping operation on
+     *           AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteEventSourceMapping service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(final DeleteEventSourceMappingRequest deleteEventSourceMappingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteEventSourceMappingResult>() {
+            public DeleteEventSourceMappingResult call() throws Exception {
+                return deleteEventSourceMapping(deleteEventSourceMappingRequest);
         }
     });
     }
@@ -1224,18 +1473,19 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:RemoveEventSource</code> action.
+     * <code>lambda:DeleteEventSourceMapping</code> action.
      * </p>
      *
-     * @param removeEventSourceRequest Container for the necessary parameters
-     *           to execute the RemoveEventSource operation on AWSLambda.
+     * @param deleteEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the DeleteEventSourceMapping operation on
+     *           AWSLambda.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         RemoveEventSource service method, as returned by AWSLambda.
+     *         DeleteEventSourceMapping service method, as returned by AWSLambda.
      * 
      *
      * @throws AmazonClientException
@@ -1246,20 +1496,317 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      *             If an error response is returned by AWSLambda indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> removeEventSourceAsync(
-            final RemoveEventSourceRequest removeEventSourceRequest,
-            final AsyncHandler<RemoveEventSourceRequest, Void> asyncHandler)
+    public Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(
+            final DeleteEventSourceMappingRequest deleteEventSourceMappingRequest,
+            final AsyncHandler<DeleteEventSourceMappingRequest, DeleteEventSourceMappingResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                removeEventSource(removeEventSourceRequest);
+        return executorService.submit(new Callable<DeleteEventSourceMappingResult>() {
+            public DeleteEventSourceMappingResult call() throws Exception {
+              DeleteEventSourceMappingResult result;
+                try {
+                result = deleteEventSourceMapping(deleteEventSourceMappingRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(removeEventSourceRequest, null);
-                 return null;
+              asyncHandler.onSuccess(deleteEventSourceMappingRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Identifies a stream as an event source for a Lambda function. It can
+     * be either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS
+     * Lambda invokes the specified function when records are posted to the
+     * stream.
+     * </p>
+     * <p>
+     * This is the pull model, where AWS Lambda invokes the function. For
+     * more information, go to
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
+     * in the <i>AWS Lambda Developer Guide</i> .
+     * </p>
+     * <p>
+     * This association between an Amazon Kinesis stream and a Lambda
+     * function is called the event source mapping. You provide the
+     * configuration information (for example, which stream to read from and
+     * which Lambda function to invoke) for the event source mapping in the
+     * request body.
+     * </p>
+     * <p>
+     * Each event source, such as an Amazon Kinesis or a DynamoDB stream,
+     * can be associated with multiple AWS Lambda function. A given Lambda
+     * function can be associated with multiple AWS event sources.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:CreateEventSourceMapping</code> action.
+     * </p>
+     *
+     * @param createEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the CreateEventSourceMapping operation on
+     *           AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateEventSourceMapping service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(final CreateEventSourceMappingRequest createEventSourceMappingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateEventSourceMappingResult>() {
+            public CreateEventSourceMappingResult call() throws Exception {
+                return createEventSourceMapping(createEventSourceMappingRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Identifies a stream as an event source for a Lambda function. It can
+     * be either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS
+     * Lambda invokes the specified function when records are posted to the
+     * stream.
+     * </p>
+     * <p>
+     * This is the pull model, where AWS Lambda invokes the function. For
+     * more information, go to
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
+     * in the <i>AWS Lambda Developer Guide</i> .
+     * </p>
+     * <p>
+     * This association between an Amazon Kinesis stream and a Lambda
+     * function is called the event source mapping. You provide the
+     * configuration information (for example, which stream to read from and
+     * which Lambda function to invoke) for the event source mapping in the
+     * request body.
+     * </p>
+     * <p>
+     * Each event source, such as an Amazon Kinesis or a DynamoDB stream,
+     * can be associated with multiple AWS Lambda function. A given Lambda
+     * function can be associated with multiple AWS event sources.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:CreateEventSourceMapping</code> action.
+     * </p>
+     *
+     * @param createEventSourceMappingRequest Container for the necessary
+     *           parameters to execute the CreateEventSourceMapping operation on
+     *           AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateEventSourceMapping service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(
+            final CreateEventSourceMappingRequest createEventSourceMappingRequest,
+            final AsyncHandler<CreateEventSourceMappingRequest, CreateEventSourceMappingResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateEventSourceMappingResult>() {
+            public CreateEventSourceMappingResult call() throws Exception {
+              CreateEventSourceMappingResult result;
+                try {
+                result = createEventSourceMapping(createEventSourceMappingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createEventSourceMappingRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Updates the code for the specified Lambda function. This operation
+     * must only be used on an existing Lambda function and cannot be used to
+     * update the function configuration.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:UpdateFunctionCode</code> action.
+     * </p>
+     *
+     * @param updateFunctionCodeRequest Container for the necessary
+     *           parameters to execute the UpdateFunctionCode operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateFunctionCode service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateFunctionCodeResult> updateFunctionCodeAsync(final UpdateFunctionCodeRequest updateFunctionCodeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateFunctionCodeResult>() {
+            public UpdateFunctionCodeResult call() throws Exception {
+                return updateFunctionCode(updateFunctionCodeRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates the code for the specified Lambda function. This operation
+     * must only be used on an existing Lambda function and cannot be used to
+     * update the function configuration.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:UpdateFunctionCode</code> action.
+     * </p>
+     *
+     * @param updateFunctionCodeRequest Container for the necessary
+     *           parameters to execute the UpdateFunctionCode operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateFunctionCode service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateFunctionCodeResult> updateFunctionCodeAsync(
+            final UpdateFunctionCodeRequest updateFunctionCodeRequest,
+            final AsyncHandler<UpdateFunctionCodeRequest, UpdateFunctionCodeResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateFunctionCodeResult>() {
+            public UpdateFunctionCodeResult call() throws Exception {
+              UpdateFunctionCodeResult result;
+                try {
+                result = updateFunctionCode(updateFunctionCodeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateFunctionCodeRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the configuration information of the Lambda function and a
+     * presigned URL link to the .zip file you uploaded with CreateFunction
+     * so you can download the .zip file. Note that the URL is valid for up
+     * to 10 minutes. The configuration information is the same information
+     * you provided as parameters when uploading the function.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:GetFunction</code> action.
+     * </p>
+     *
+     * @param getFunctionRequest Container for the necessary parameters to
+     *           execute the GetFunction operation on AWSLambda.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetFunction service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetFunctionResult> getFunctionAsync(final GetFunctionRequest getFunctionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetFunctionResult>() {
+            public GetFunctionResult call() throws Exception {
+                return getFunction(getFunctionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the configuration information of the Lambda function and a
+     * presigned URL link to the .zip file you uploaded with CreateFunction
+     * so you can download the .zip file. Note that the URL is valid for up
+     * to 10 minutes. The configuration information is the same information
+     * you provided as parameters when uploading the function.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:GetFunction</code> action.
+     * </p>
+     *
+     * @param getFunctionRequest Container for the necessary parameters to
+     *           execute the GetFunction operation on AWSLambda.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetFunction service method, as returned by AWSLambda.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLambda indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetFunctionResult> getFunctionAsync(
+            final GetFunctionRequest getFunctionRequest,
+            final AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetFunctionResult>() {
+            public GetFunctionResult call() throws Exception {
+              GetFunctionResult result;
+                try {
+                result = getFunction(getFunctionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getFunctionRequest, result);
+                 return result;
         }
     });
     }

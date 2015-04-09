@@ -37,11 +37,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the Lambda function.
+     * The name of the Lambda function. <p> You can specify an unqualified
+     * function name (for example, "Thumbnail") or you can specify Amazon
+     * Resource Name (ARN) of the function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     * also allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      */
     private String functionName;
 
@@ -59,13 +66,14 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * Node.js, it is the <i>module-name.export</i> value in your function.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
      */
     private String handler;
 
     /**
-     * A short user-defined function description. Lambda does not use this
-     * value. Assign a meaningful description as you see fit.
+     * A short user-defined function description. AWS Lambda does not use
+     * this value. Assign a meaningful description as you see fit.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -73,7 +81,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     private String description;
 
     /**
-     * The function execution time at which Lambda should terminate the
+     * The function execution time at which AWS Lambda should terminate the
      * function. Because the execution time has cost implications, we
      * recommend you set this value based on your expected execution time.
      * The default is 3 seconds.
@@ -84,7 +92,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     private Integer timeout;
 
     /**
-     * The amount of memory, in MB, your Lambda function is given. Lambda
+     * The amount of memory, in MB, your Lambda function is given. AWS Lambda
      * uses this memory size to infer the amount of CPU allocated to your
      * function. Your function use-case determines your CPU and memory
      * requirements. For example, a database operation might need less memory
@@ -97,41 +105,83 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     private Integer memorySize;
 
     /**
-     * The name of the Lambda function.
+     * The name of the Lambda function. <p> You can specify an unqualified
+     * function name (for example, "Thumbnail") or you can specify Amazon
+     * Resource Name (ARN) of the function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     * also allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
-     * @return The name of the Lambda function.
+     * @return The name of the Lambda function. <p> You can specify an unqualified
+     *         function name (for example, "Thumbnail") or you can specify Amazon
+     *         Resource Name (ARN) of the function (for example,
+     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     *         also allows you to specify only the account ID qualifier (for example,
+     *         "account-id:Thumbnail"). Note that the length constraint applies only
+     *         to the ARN. If you specify only the function name, it is limited to 64
+     *         character in length.
      */
     public String getFunctionName() {
         return functionName;
     }
     
     /**
-     * The name of the Lambda function.
+     * The name of the Lambda function. <p> You can specify an unqualified
+     * function name (for example, "Thumbnail") or you can specify Amazon
+     * Resource Name (ARN) of the function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     * also allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * character in length.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
-     * @param functionName The name of the Lambda function.
+     * @param functionName The name of the Lambda function. <p> You can specify an unqualified
+     *         function name (for example, "Thumbnail") or you can specify Amazon
+     *         Resource Name (ARN) of the function (for example,
+     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     *         also allows you to specify only the account ID qualifier (for example,
+     *         "account-id:Thumbnail"). Note that the length constraint applies only
+     *         to the ARN. If you specify only the function name, it is limited to 64
+     *         character in length.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
     }
     
     /**
-     * The name of the Lambda function.
+     * The name of the Lambda function. <p> You can specify an unqualified
+     * function name (for example, "Thumbnail") or you can specify Amazon
+     * Resource Name (ARN) of the function (for example,
+     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     * also allows you to specify only the account ID qualifier (for example,
+     * "account-id:Thumbnail"). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * character in length.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
-     * @param functionName The name of the Lambda function.
+     * @param functionName The name of the Lambda function. <p> You can specify an unqualified
+     *         function name (for example, "Thumbnail") or you can specify Amazon
+     *         Resource Name (ARN) of the function (for example,
+     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
+     *         also allows you to specify only the account ID qualifier (for example,
+     *         "account-id:Thumbnail"). Note that the length constraint applies only
+     *         to the ARN. If you specify only the function name, it is limited to 64
+     *         character in length.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -194,6 +244,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * Node.js, it is the <i>module-name.export</i> value in your function.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
      *
      * @return The function that Lambda calls to begin executing your function. For
@@ -208,6 +259,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * Node.js, it is the <i>module-name.export</i> value in your function.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
      *
      * @param handler The function that Lambda calls to begin executing your function. For
@@ -224,6 +276,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
      *
      * @param handler The function that Lambda calls to begin executing your function. For
@@ -238,44 +291,44 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * A short user-defined function description. Lambda does not use this
-     * value. Assign a meaningful description as you see fit.
+     * A short user-defined function description. AWS Lambda does not use
+     * this value. Assign a meaningful description as you see fit.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @return A short user-defined function description. Lambda does not use this
-     *         value. Assign a meaningful description as you see fit.
+     * @return A short user-defined function description. AWS Lambda does not use
+     *         this value. Assign a meaningful description as you see fit.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * A short user-defined function description. Lambda does not use this
-     * value. Assign a meaningful description as you see fit.
+     * A short user-defined function description. AWS Lambda does not use
+     * this value. Assign a meaningful description as you see fit.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @param description A short user-defined function description. Lambda does not use this
-     *         value. Assign a meaningful description as you see fit.
+     * @param description A short user-defined function description. AWS Lambda does not use
+     *         this value. Assign a meaningful description as you see fit.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * A short user-defined function description. Lambda does not use this
-     * value. Assign a meaningful description as you see fit.
+     * A short user-defined function description. AWS Lambda does not use
+     * this value. Assign a meaningful description as you see fit.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @param description A short user-defined function description. Lambda does not use this
-     *         value. Assign a meaningful description as you see fit.
+     * @param description A short user-defined function description. AWS Lambda does not use
+     *         this value. Assign a meaningful description as you see fit.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -286,7 +339,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * The function execution time at which Lambda should terminate the
+     * The function execution time at which AWS Lambda should terminate the
      * function. Because the execution time has cost implications, we
      * recommend you set this value based on your expected execution time.
      * The default is 3 seconds.
@@ -294,7 +347,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 60<br/>
      *
-     * @return The function execution time at which Lambda should terminate the
+     * @return The function execution time at which AWS Lambda should terminate the
      *         function. Because the execution time has cost implications, we
      *         recommend you set this value based on your expected execution time.
      *         The default is 3 seconds.
@@ -304,7 +357,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The function execution time at which Lambda should terminate the
+     * The function execution time at which AWS Lambda should terminate the
      * function. Because the execution time has cost implications, we
      * recommend you set this value based on your expected execution time.
      * The default is 3 seconds.
@@ -312,7 +365,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 60<br/>
      *
-     * @param timeout The function execution time at which Lambda should terminate the
+     * @param timeout The function execution time at which AWS Lambda should terminate the
      *         function. Because the execution time has cost implications, we
      *         recommend you set this value based on your expected execution time.
      *         The default is 3 seconds.
@@ -322,7 +375,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The function execution time at which Lambda should terminate the
+     * The function execution time at which AWS Lambda should terminate the
      * function. Because the execution time has cost implications, we
      * recommend you set this value based on your expected execution time.
      * The default is 3 seconds.
@@ -332,7 +385,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 60<br/>
      *
-     * @param timeout The function execution time at which Lambda should terminate the
+     * @param timeout The function execution time at which AWS Lambda should terminate the
      *         function. Because the execution time has cost implications, we
      *         recommend you set this value based on your expected execution time.
      *         The default is 3 seconds.
@@ -346,7 +399,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * The amount of memory, in MB, your Lambda function is given. Lambda
+     * The amount of memory, in MB, your Lambda function is given. AWS Lambda
      * uses this memory size to infer the amount of CPU allocated to your
      * function. Your function use-case determines your CPU and memory
      * requirements. For example, a database operation might need less memory
@@ -356,7 +409,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <b>Constraints:</b><br/>
      * <b>Range: </b>128 - 1024<br/>
      *
-     * @return The amount of memory, in MB, your Lambda function is given. Lambda
+     * @return The amount of memory, in MB, your Lambda function is given. AWS Lambda
      *         uses this memory size to infer the amount of CPU allocated to your
      *         function. Your function use-case determines your CPU and memory
      *         requirements. For example, a database operation might need less memory
@@ -368,7 +421,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The amount of memory, in MB, your Lambda function is given. Lambda
+     * The amount of memory, in MB, your Lambda function is given. AWS Lambda
      * uses this memory size to infer the amount of CPU allocated to your
      * function. Your function use-case determines your CPU and memory
      * requirements. For example, a database operation might need less memory
@@ -378,7 +431,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <b>Constraints:</b><br/>
      * <b>Range: </b>128 - 1024<br/>
      *
-     * @param memorySize The amount of memory, in MB, your Lambda function is given. Lambda
+     * @param memorySize The amount of memory, in MB, your Lambda function is given. AWS Lambda
      *         uses this memory size to infer the amount of CPU allocated to your
      *         function. Your function use-case determines your CPU and memory
      *         requirements. For example, a database operation might need less memory
@@ -390,7 +443,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The amount of memory, in MB, your Lambda function is given. Lambda
+     * The amount of memory, in MB, your Lambda function is given. AWS Lambda
      * uses this memory size to infer the amount of CPU allocated to your
      * function. Your function use-case determines your CPU and memory
      * requirements. For example, a database operation might need less memory
@@ -402,7 +455,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <b>Constraints:</b><br/>
      * <b>Range: </b>128 - 1024<br/>
      *
-     * @param memorySize The amount of memory, in MB, your Lambda function is given. Lambda
+     * @param memorySize The amount of memory, in MB, your Lambda function is given. AWS Lambda
      *         uses this memory size to infer the amount of CPU allocated to your
      *         function. Your function use-case determines your CPU and memory
      *         requirements. For example, a database operation might need less memory

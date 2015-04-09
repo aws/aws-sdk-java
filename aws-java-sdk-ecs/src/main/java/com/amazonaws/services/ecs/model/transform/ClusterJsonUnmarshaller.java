@@ -57,6 +57,18 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("registeredContainerInstancesCount", targetDepth)) {
+                    context.nextToken();
+                    cluster.setRegisteredContainerInstancesCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("runningTasksCount", targetDepth)) {
+                    context.nextToken();
+                    cluster.setRunningTasksCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("pendingTasksCount", targetDepth)) {
+                    context.nextToken();
+                    cluster.setPendingTasksCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

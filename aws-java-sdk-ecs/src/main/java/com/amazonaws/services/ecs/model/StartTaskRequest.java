@@ -25,6 +25,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * container instance or instances. If you want to use the default Amazon
  * ECS scheduler to place your task, use <code>RunTask</code> instead.
  * </p>
+ * <p>
+ * <b>IMPORTANT:</b> The list of container instances to start tasks on is
+ * limited to 10.
+ * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#startTask(StartTaskRequest)
  */
@@ -45,16 +49,26 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     private String taskDefinition;
 
     /**
-     * 
+     * A list of container overrides in JSON format that specify the name of
+     * a container in the specified task definition and the command it should
+     * run instead of its default. A total of 8192 characters are allowed for
+     * overrides. This limit includes the JSON formatting characters of the
+     * override structure.
      */
     private TaskOverride overrides;
 
     /**
      * The container instance UUIDs or full Amazon Resource Name (ARN)
      * entries for the container instances on which you would like to place
-     * your task.
+     * your task. <important> <p>The list of container instances to start
+     * tasks on is limited to 10. </important>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> containerInstances;
+
+    /**
+     * 
+     */
+    private String startedBy;
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -147,29 +161,53 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * 
+     * A list of container overrides in JSON format that specify the name of
+     * a container in the specified task definition and the command it should
+     * run instead of its default. A total of 8192 characters are allowed for
+     * overrides. This limit includes the JSON formatting characters of the
+     * override structure.
      *
-     * @return 
+     * @return A list of container overrides in JSON format that specify the name of
+     *         a container in the specified task definition and the command it should
+     *         run instead of its default. A total of 8192 characters are allowed for
+     *         overrides. This limit includes the JSON formatting characters of the
+     *         override structure.
      */
     public TaskOverride getOverrides() {
         return overrides;
     }
     
     /**
-     * 
+     * A list of container overrides in JSON format that specify the name of
+     * a container in the specified task definition and the command it should
+     * run instead of its default. A total of 8192 characters are allowed for
+     * overrides. This limit includes the JSON formatting characters of the
+     * override structure.
      *
-     * @param overrides 
+     * @param overrides A list of container overrides in JSON format that specify the name of
+     *         a container in the specified task definition and the command it should
+     *         run instead of its default. A total of 8192 characters are allowed for
+     *         overrides. This limit includes the JSON formatting characters of the
+     *         override structure.
      */
     public void setOverrides(TaskOverride overrides) {
         this.overrides = overrides;
     }
     
     /**
-     * 
+     * A list of container overrides in JSON format that specify the name of
+     * a container in the specified task definition and the command it should
+     * run instead of its default. A total of 8192 characters are allowed for
+     * overrides. This limit includes the JSON formatting characters of the
+     * override structure.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param overrides 
+     * @param overrides A list of container overrides in JSON format that specify the name of
+     *         a container in the specified task definition and the command it should
+     *         run instead of its default. A total of 8192 characters are allowed for
+     *         overrides. This limit includes the JSON formatting characters of the
+     *         override structure.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -182,11 +220,13 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The container instance UUIDs or full Amazon Resource Name (ARN)
      * entries for the container instances on which you would like to place
-     * your task.
+     * your task. <important> <p>The list of container instances to start
+     * tasks on is limited to 10. </important>
      *
      * @return The container instance UUIDs or full Amazon Resource Name (ARN)
      *         entries for the container instances on which you would like to place
-     *         your task.
+     *         your task. <important> <p>The list of container instances to start
+     *         tasks on is limited to 10. </important>
      */
     public java.util.List<String> getContainerInstances() {
         if (containerInstances == null) {
@@ -199,11 +239,13 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The container instance UUIDs or full Amazon Resource Name (ARN)
      * entries for the container instances on which you would like to place
-     * your task.
+     * your task. <important> <p>The list of container instances to start
+     * tasks on is limited to 10. </important>
      *
      * @param containerInstances The container instance UUIDs or full Amazon Resource Name (ARN)
      *         entries for the container instances on which you would like to place
-     *         your task.
+     *         your task. <important> <p>The list of container instances to start
+     *         tasks on is limited to 10. </important>
      */
     public void setContainerInstances(java.util.Collection<String> containerInstances) {
         if (containerInstances == null) {
@@ -218,13 +260,15 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The container instance UUIDs or full Amazon Resource Name (ARN)
      * entries for the container instances on which you would like to place
-     * your task.
+     * your task. <important> <p>The list of container instances to start
+     * tasks on is limited to 10. </important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containerInstances The container instance UUIDs or full Amazon Resource Name (ARN)
      *         entries for the container instances on which you would like to place
-     *         your task.
+     *         your task. <important> <p>The list of container instances to start
+     *         tasks on is limited to 10. </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -240,13 +284,15 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The container instance UUIDs or full Amazon Resource Name (ARN)
      * entries for the container instances on which you would like to place
-     * your task.
+     * your task. <important> <p>The list of container instances to start
+     * tasks on is limited to 10. </important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containerInstances The container instance UUIDs or full Amazon Resource Name (ARN)
      *         entries for the container instances on which you would like to place
-     *         your task.
+     *         your task. <important> <p>The list of container instances to start
+     *         tasks on is limited to 10. </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -260,6 +306,39 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
             this.containerInstances = containerInstancesCopy;
         }
 
+        return this;
+    }
+
+    /**
+     * 
+     *
+     * @return 
+     */
+    public String getStartedBy() {
+        return startedBy;
+    }
+    
+    /**
+     * 
+     *
+     * @param startedBy 
+     */
+    public void setStartedBy(String startedBy) {
+        this.startedBy = startedBy;
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param startedBy 
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public StartTaskRequest withStartedBy(String startedBy) {
+        this.startedBy = startedBy;
         return this;
     }
 
@@ -278,7 +357,8 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
         if (getCluster() != null) sb.append("Cluster: " + getCluster() + ",");
         if (getTaskDefinition() != null) sb.append("TaskDefinition: " + getTaskDefinition() + ",");
         if (getOverrides() != null) sb.append("Overrides: " + getOverrides() + ",");
-        if (getContainerInstances() != null) sb.append("ContainerInstances: " + getContainerInstances() );
+        if (getContainerInstances() != null) sb.append("ContainerInstances: " + getContainerInstances() + ",");
+        if (getStartedBy() != null) sb.append("StartedBy: " + getStartedBy() );
         sb.append("}");
         return sb.toString();
     }
@@ -292,6 +372,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode()); 
         hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode()); 
         hashCode = prime * hashCode + ((getContainerInstances() == null) ? 0 : getContainerInstances().hashCode()); 
+        hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode()); 
         return hashCode;
     }
     
@@ -311,6 +392,8 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
         if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false) return false; 
         if (other.getContainerInstances() == null ^ this.getContainerInstances() == null) return false;
         if (other.getContainerInstances() != null && other.getContainerInstances().equals(this.getContainerInstances()) == false) return false; 
+        if (other.getStartedBy() == null ^ this.getStartedBy() == null) return false;
+        if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false) return false; 
         return true;
     }
     

@@ -27,8 +27,8 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The name of the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      */
     private String functionName;
 
@@ -38,19 +38,13 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
      */
-    private String functionARN;
-
-    /**
-     * A Lambda-assigned unique identifier for the current function code and
-     * related configuration.
-     */
-    private String configurationId;
+    private String functionArn;
 
     /**
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, jvm, python
      */
     private String runtime;
 
@@ -68,17 +62,10 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The function Lambda calls to begin executing your function.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
      */
     private String handler;
-
-    /**
-     * The type of the Lambda function you uploaded.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>event
-     */
-    private String mode;
 
     /**
      * The size, in bytes, of the function .zip file you uploaded.
@@ -122,8 +109,8 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The name of the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
      * @return The name of the function.
      */
@@ -135,8 +122,8 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The name of the function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
      * @param functionName The name of the function.
      */
@@ -150,8 +137,8 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9-_]+<br/>
+     * <b>Length: </b>1 - 111<br/>
+     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)<br/>
      *
      * @param functionName The name of the function.
      *
@@ -171,8 +158,8 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      *
      * @return The Amazon Resource Name (ARN) assigned to the function.
      */
-    public String getFunctionARN() {
-        return functionARN;
+    public String getFunctionArn() {
+        return functionArn;
     }
     
     /**
@@ -181,10 +168,10 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
      *
-     * @param functionARN The Amazon Resource Name (ARN) assigned to the function.
+     * @param functionArn The Amazon Resource Name (ARN) assigned to the function.
      */
-    public void setFunctionARN(String functionARN) {
-        this.functionARN = functionARN;
+    public void setFunctionArn(String functionArn) {
+        this.functionArn = functionArn;
     }
     
     /**
@@ -195,52 +182,13 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?<br/>
      *
-     * @param functionARN The Amazon Resource Name (ARN) assigned to the function.
+     * @param functionArn The Amazon Resource Name (ARN) assigned to the function.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public GetFunctionConfigurationResult withFunctionARN(String functionARN) {
-        this.functionARN = functionARN;
-        return this;
-    }
-
-    /**
-     * A Lambda-assigned unique identifier for the current function code and
-     * related configuration.
-     *
-     * @return A Lambda-assigned unique identifier for the current function code and
-     *         related configuration.
-     */
-    public String getConfigurationId() {
-        return configurationId;
-    }
-    
-    /**
-     * A Lambda-assigned unique identifier for the current function code and
-     * related configuration.
-     *
-     * @param configurationId A Lambda-assigned unique identifier for the current function code and
-     *         related configuration.
-     */
-    public void setConfigurationId(String configurationId) {
-        this.configurationId = configurationId;
-    }
-    
-    /**
-     * A Lambda-assigned unique identifier for the current function code and
-     * related configuration.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param configurationId A Lambda-assigned unique identifier for the current function code and
-     *         related configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetFunctionConfigurationResult withConfigurationId(String configurationId) {
-        this.configurationId = configurationId;
+    public GetFunctionConfigurationResult withFunctionArn(String functionArn) {
+        this.functionArn = functionArn;
         return this;
     }
 
@@ -248,7 +196,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, jvm, python
      *
      * @return The runtime environment for the Lambda function.
      *
@@ -262,7 +210,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, jvm, python
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -278,7 +226,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, jvm, python
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -296,7 +244,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, jvm, python
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -312,7 +260,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, jvm, python
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -384,6 +332,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The function Lambda calls to begin executing your function.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
      *
      * @return The function Lambda calls to begin executing your function.
@@ -396,6 +345,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The function Lambda calls to begin executing your function.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
      *
      * @param handler The function Lambda calls to begin executing your function.
@@ -410,6 +360,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
      *
      * @param handler The function Lambda calls to begin executing your function.
@@ -419,88 +370,6 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      */
     public GetFunctionConfigurationResult withHandler(String handler) {
         this.handler = handler;
-        return this;
-    }
-
-    /**
-     * The type of the Lambda function you uploaded.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>event
-     *
-     * @return The type of the Lambda function you uploaded.
-     *
-     * @see Mode
-     */
-    public String getMode() {
-        return mode;
-    }
-    
-    /**
-     * The type of the Lambda function you uploaded.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>event
-     *
-     * @param mode The type of the Lambda function you uploaded.
-     *
-     * @see Mode
-     */
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-    
-    /**
-     * The type of the Lambda function you uploaded.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>event
-     *
-     * @param mode The type of the Lambda function you uploaded.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
-     * @see Mode
-     */
-    public GetFunctionConfigurationResult withMode(String mode) {
-        this.mode = mode;
-        return this;
-    }
-
-    /**
-     * The type of the Lambda function you uploaded.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>event
-     *
-     * @param mode The type of the Lambda function you uploaded.
-     *
-     * @see Mode
-     */
-    public void setMode(Mode mode) {
-        this.mode = mode.toString();
-    }
-    
-    /**
-     * The type of the Lambda function you uploaded.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>event
-     *
-     * @param mode The type of the Lambda function you uploaded.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
-     * @see Mode
-     */
-    public GetFunctionConfigurationResult withMode(Mode mode) {
-        this.mode = mode.toString();
         return this;
     }
 
@@ -733,12 +602,10 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() + ",");
-        if (getFunctionARN() != null) sb.append("FunctionARN: " + getFunctionARN() + ",");
-        if (getConfigurationId() != null) sb.append("ConfigurationId: " + getConfigurationId() + ",");
+        if (getFunctionArn() != null) sb.append("FunctionArn: " + getFunctionArn() + ",");
         if (getRuntime() != null) sb.append("Runtime: " + getRuntime() + ",");
         if (getRole() != null) sb.append("Role: " + getRole() + ",");
         if (getHandler() != null) sb.append("Handler: " + getHandler() + ",");
-        if (getMode() != null) sb.append("Mode: " + getMode() + ",");
         if (getCodeSize() != null) sb.append("CodeSize: " + getCodeSize() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");
@@ -754,12 +621,10 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode()); 
-        hashCode = prime * hashCode + ((getFunctionARN() == null) ? 0 : getFunctionARN().hashCode()); 
-        hashCode = prime * hashCode + ((getConfigurationId() == null) ? 0 : getConfigurationId().hashCode()); 
+        hashCode = prime * hashCode + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode()); 
         hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode()); 
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode()); 
         hashCode = prime * hashCode + ((getHandler() == null) ? 0 : getHandler().hashCode()); 
-        hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode()); 
         hashCode = prime * hashCode + ((getCodeSize() == null) ? 0 : getCodeSize().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode()); 
@@ -778,18 +643,14 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
         
         if (other.getFunctionName() == null ^ this.getFunctionName() == null) return false;
         if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false) return false; 
-        if (other.getFunctionARN() == null ^ this.getFunctionARN() == null) return false;
-        if (other.getFunctionARN() != null && other.getFunctionARN().equals(this.getFunctionARN()) == false) return false; 
-        if (other.getConfigurationId() == null ^ this.getConfigurationId() == null) return false;
-        if (other.getConfigurationId() != null && other.getConfigurationId().equals(this.getConfigurationId()) == false) return false; 
+        if (other.getFunctionArn() == null ^ this.getFunctionArn() == null) return false;
+        if (other.getFunctionArn() != null && other.getFunctionArn().equals(this.getFunctionArn()) == false) return false; 
         if (other.getRuntime() == null ^ this.getRuntime() == null) return false;
         if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false) return false; 
         if (other.getRole() == null ^ this.getRole() == null) return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false) return false; 
         if (other.getHandler() == null ^ this.getHandler() == null) return false;
         if (other.getHandler() != null && other.getHandler().equals(this.getHandler()) == false) return false; 
-        if (other.getMode() == null ^ this.getMode() == null) return false;
-        if (other.getMode() != null && other.getMode().equals(this.getMode()) == false) return false; 
         if (other.getCodeSize() == null ^ this.getCodeSize() == null) return false;
         if (other.getCodeSize() != null && other.getCodeSize().equals(this.getCodeSize()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;

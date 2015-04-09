@@ -47,7 +47,7 @@ public class ListFunctionsRequestMarshaller implements Marshaller<Request<ListFu
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2014-11-13/functions/?Marker={Marker}&MaxItems={MaxItems}";
+        String path = "/2015-03-31/functions/?Marker={Marker}&MaxItems={MaxItems}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 

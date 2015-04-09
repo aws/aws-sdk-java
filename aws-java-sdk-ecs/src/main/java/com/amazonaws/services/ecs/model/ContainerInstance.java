@@ -67,6 +67,18 @@ public class ContainerInstance implements Serializable, Cloneable {
     private Boolean agentConnected;
 
     /**
+     * The number of tasks on the container instance that are in the
+     * <code>RUNNING</code> status.
+     */
+    private Integer runningTasksCount;
+
+    /**
+     * The number of tasks on the container instance that are in the
+     * <code>PENDING</code> status.
+     */
+    private Integer pendingTasksCount;
+
+    /**
      * The Amazon Resource Name (ARN) of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the
      * region of the container instance, the AWS account ID of the container
@@ -426,6 +438,84 @@ public class ContainerInstance implements Serializable, Cloneable {
     }
 
     /**
+     * The number of tasks on the container instance that are in the
+     * <code>RUNNING</code> status.
+     *
+     * @return The number of tasks on the container instance that are in the
+     *         <code>RUNNING</code> status.
+     */
+    public Integer getRunningTasksCount() {
+        return runningTasksCount;
+    }
+    
+    /**
+     * The number of tasks on the container instance that are in the
+     * <code>RUNNING</code> status.
+     *
+     * @param runningTasksCount The number of tasks on the container instance that are in the
+     *         <code>RUNNING</code> status.
+     */
+    public void setRunningTasksCount(Integer runningTasksCount) {
+        this.runningTasksCount = runningTasksCount;
+    }
+    
+    /**
+     * The number of tasks on the container instance that are in the
+     * <code>RUNNING</code> status.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param runningTasksCount The number of tasks on the container instance that are in the
+     *         <code>RUNNING</code> status.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerInstance withRunningTasksCount(Integer runningTasksCount) {
+        this.runningTasksCount = runningTasksCount;
+        return this;
+    }
+
+    /**
+     * The number of tasks on the container instance that are in the
+     * <code>PENDING</code> status.
+     *
+     * @return The number of tasks on the container instance that are in the
+     *         <code>PENDING</code> status.
+     */
+    public Integer getPendingTasksCount() {
+        return pendingTasksCount;
+    }
+    
+    /**
+     * The number of tasks on the container instance that are in the
+     * <code>PENDING</code> status.
+     *
+     * @param pendingTasksCount The number of tasks on the container instance that are in the
+     *         <code>PENDING</code> status.
+     */
+    public void setPendingTasksCount(Integer pendingTasksCount) {
+        this.pendingTasksCount = pendingTasksCount;
+    }
+    
+    /**
+     * The number of tasks on the container instance that are in the
+     * <code>PENDING</code> status.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param pendingTasksCount The number of tasks on the container instance that are in the
+     *         <code>PENDING</code> status.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerInstance withPendingTasksCount(Integer pendingTasksCount) {
+        this.pendingTasksCount = pendingTasksCount;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -442,7 +532,9 @@ public class ContainerInstance implements Serializable, Cloneable {
         if (getRemainingResources() != null) sb.append("RemainingResources: " + getRemainingResources() + ",");
         if (getRegisteredResources() != null) sb.append("RegisteredResources: " + getRegisteredResources() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (isAgentConnected() != null) sb.append("AgentConnected: " + isAgentConnected() );
+        if (isAgentConnected() != null) sb.append("AgentConnected: " + isAgentConnected() + ",");
+        if (getRunningTasksCount() != null) sb.append("RunningTasksCount: " + getRunningTasksCount() + ",");
+        if (getPendingTasksCount() != null) sb.append("PendingTasksCount: " + getPendingTasksCount() );
         sb.append("}");
         return sb.toString();
     }
@@ -458,6 +550,8 @@ public class ContainerInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRegisteredResources() == null) ? 0 : getRegisteredResources().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((isAgentConnected() == null) ? 0 : isAgentConnected().hashCode()); 
+        hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode()); 
+        hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode()); 
         return hashCode;
     }
     
@@ -481,6 +575,10 @@ public class ContainerInstance implements Serializable, Cloneable {
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.isAgentConnected() == null ^ this.isAgentConnected() == null) return false;
         if (other.isAgentConnected() != null && other.isAgentConnected().equals(this.isAgentConnected()) == false) return false; 
+        if (other.getRunningTasksCount() == null ^ this.getRunningTasksCount() == null) return false;
+        if (other.getRunningTasksCount() != null && other.getRunningTasksCount().equals(this.getRunningTasksCount()) == false) return false; 
+        if (other.getPendingTasksCount() == null ^ this.getPendingTasksCount() == null) return false;
+        if (other.getPendingTasksCount() != null && other.getPendingTasksCount().equals(this.getPendingTasksCount()) == false) return false; 
         return true;
     }
     

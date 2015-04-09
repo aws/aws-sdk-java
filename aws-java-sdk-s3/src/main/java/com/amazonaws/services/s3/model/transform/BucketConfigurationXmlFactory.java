@@ -35,6 +35,7 @@ import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.CloudFunctionConfiguration;
+import com.amazonaws.services.s3.model.LambdaConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
 import com.amazonaws.services.s3.model.ReplicationDestinationConfig;
 import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
@@ -148,6 +149,14 @@ public class BucketConfigurationXmlFactory {
                                 .getInvocationRoleARN()).end();
                 xml.start("CloudFunction")
                         .value(((CloudFunctionConfiguration) config).getCloudFunctionARN())
+                        .end();
+                addPrefixesAndEvents(xml, config);
+                xml.end();
+            } else if (config instanceof LambdaConfiguration) {
+                xml.start("CloudFunctionConfiguration");
+                xml.start("Id").value(configName).end();
+                xml.start("CloudFunction")
+                        .value(((LambdaConfiguration) config).getFunctionARN())
                         .end();
                 addPrefixesAndEvents(xml, config);
                 xml.end();

@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The function or the event source specified in the request does not
- * exist.
+ * The resource (for example, a Lambda function or access policy
+ * statement) specified in the request does not exist.
  * </p>
  */        
 public class ResourceNotFoundException extends AmazonServiceException {

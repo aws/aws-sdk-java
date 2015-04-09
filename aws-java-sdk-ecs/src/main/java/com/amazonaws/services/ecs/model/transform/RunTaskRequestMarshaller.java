@@ -109,6 +109,9 @@ public class RunTaskRequestMarshaller implements Marshaller<Request<RunTaskReque
             if (runTaskRequest.getCount() != null) {
                 jsonWriter.key("count").value(runTaskRequest.getCount());
             }
+            if (runTaskRequest.getStartedBy() != null) {
+                jsonWriter.key("startedBy").value(runTaskRequest.getStartedBy());
+            }
 
           jsonWriter.endObject();
 

@@ -17,7 +17,10 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The name of a container in a task definition and the command it should
+ * run instead of its default.
+ * </p>
  */
 public class ContainerOverride implements Serializable, Cloneable {
 
@@ -27,7 +30,8 @@ public class ContainerOverride implements Serializable, Cloneable {
     private String name;
 
     /**
-     * The command to send to the container that receives the override.
+     * The command to send to the container that overrides the default
+     * command from the Docker image or the task definition.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> command;
 
@@ -65,9 +69,11 @@ public class ContainerOverride implements Serializable, Cloneable {
     }
 
     /**
-     * The command to send to the container that receives the override.
+     * The command to send to the container that overrides the default
+     * command from the Docker image or the task definition.
      *
-     * @return The command to send to the container that receives the override.
+     * @return The command to send to the container that overrides the default
+     *         command from the Docker image or the task definition.
      */
     public java.util.List<String> getCommand() {
         if (command == null) {
@@ -78,9 +84,11 @@ public class ContainerOverride implements Serializable, Cloneable {
     }
     
     /**
-     * The command to send to the container that receives the override.
+     * The command to send to the container that overrides the default
+     * command from the Docker image or the task definition.
      *
-     * @param command The command to send to the container that receives the override.
+     * @param command The command to send to the container that overrides the default
+     *         command from the Docker image or the task definition.
      */
     public void setCommand(java.util.Collection<String> command) {
         if (command == null) {
@@ -93,11 +101,13 @@ public class ContainerOverride implements Serializable, Cloneable {
     }
     
     /**
-     * The command to send to the container that receives the override.
+     * The command to send to the container that overrides the default
+     * command from the Docker image or the task definition.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param command The command to send to the container that receives the override.
+     * @param command The command to send to the container that overrides the default
+     *         command from the Docker image or the task definition.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -111,11 +121,13 @@ public class ContainerOverride implements Serializable, Cloneable {
     }
     
     /**
-     * The command to send to the container that receives the override.
+     * The command to send to the container that overrides the default
+     * command from the Docker image or the task definition.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param command The command to send to the container that receives the override.
+     * @param command The command to send to the container that overrides the default
+     *         command from the Docker image or the task definition.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

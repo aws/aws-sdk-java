@@ -55,6 +55,23 @@ public class Cluster implements Serializable, Cloneable {
     private String status;
 
     /**
+     * The number of container instances registered into the cluster.
+     */
+    private Integer registeredContainerInstancesCount;
+
+    /**
+     * The number of tasks in the cluster that are in the
+     * <code>RUNNING</code> state.
+     */
+    private Integer runningTasksCount;
+
+    /**
+     * The number of tasks in the cluster that are in the
+     * <code>PENDING</code> state.
+     */
+    private Integer pendingTasksCount;
+
+    /**
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the
      * region of the cluster, the AWS account ID of the cluster owner, the
@@ -202,6 +219,117 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * The number of container instances registered into the cluster.
+     *
+     * @return The number of container instances registered into the cluster.
+     */
+    public Integer getRegisteredContainerInstancesCount() {
+        return registeredContainerInstancesCount;
+    }
+    
+    /**
+     * The number of container instances registered into the cluster.
+     *
+     * @param registeredContainerInstancesCount The number of container instances registered into the cluster.
+     */
+    public void setRegisteredContainerInstancesCount(Integer registeredContainerInstancesCount) {
+        this.registeredContainerInstancesCount = registeredContainerInstancesCount;
+    }
+    
+    /**
+     * The number of container instances registered into the cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param registeredContainerInstancesCount The number of container instances registered into the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withRegisteredContainerInstancesCount(Integer registeredContainerInstancesCount) {
+        this.registeredContainerInstancesCount = registeredContainerInstancesCount;
+        return this;
+    }
+
+    /**
+     * The number of tasks in the cluster that are in the
+     * <code>RUNNING</code> state.
+     *
+     * @return The number of tasks in the cluster that are in the
+     *         <code>RUNNING</code> state.
+     */
+    public Integer getRunningTasksCount() {
+        return runningTasksCount;
+    }
+    
+    /**
+     * The number of tasks in the cluster that are in the
+     * <code>RUNNING</code> state.
+     *
+     * @param runningTasksCount The number of tasks in the cluster that are in the
+     *         <code>RUNNING</code> state.
+     */
+    public void setRunningTasksCount(Integer runningTasksCount) {
+        this.runningTasksCount = runningTasksCount;
+    }
+    
+    /**
+     * The number of tasks in the cluster that are in the
+     * <code>RUNNING</code> state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param runningTasksCount The number of tasks in the cluster that are in the
+     *         <code>RUNNING</code> state.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withRunningTasksCount(Integer runningTasksCount) {
+        this.runningTasksCount = runningTasksCount;
+        return this;
+    }
+
+    /**
+     * The number of tasks in the cluster that are in the
+     * <code>PENDING</code> state.
+     *
+     * @return The number of tasks in the cluster that are in the
+     *         <code>PENDING</code> state.
+     */
+    public Integer getPendingTasksCount() {
+        return pendingTasksCount;
+    }
+    
+    /**
+     * The number of tasks in the cluster that are in the
+     * <code>PENDING</code> state.
+     *
+     * @param pendingTasksCount The number of tasks in the cluster that are in the
+     *         <code>PENDING</code> state.
+     */
+    public void setPendingTasksCount(Integer pendingTasksCount) {
+        this.pendingTasksCount = pendingTasksCount;
+    }
+    
+    /**
+     * The number of tasks in the cluster that are in the
+     * <code>PENDING</code> state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param pendingTasksCount The number of tasks in the cluster that are in the
+     *         <code>PENDING</code> state.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withPendingTasksCount(Integer pendingTasksCount) {
+        this.pendingTasksCount = pendingTasksCount;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -215,7 +343,10 @@ public class Cluster implements Serializable, Cloneable {
         sb.append("{");
         if (getClusterArn() != null) sb.append("ClusterArn: " + getClusterArn() + ",");
         if (getClusterName() != null) sb.append("ClusterName: " + getClusterName() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() );
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getRegisteredContainerInstancesCount() != null) sb.append("RegisteredContainerInstancesCount: " + getRegisteredContainerInstancesCount() + ",");
+        if (getRunningTasksCount() != null) sb.append("RunningTasksCount: " + getRunningTasksCount() + ",");
+        if (getPendingTasksCount() != null) sb.append("PendingTasksCount: " + getPendingTasksCount() );
         sb.append("}");
         return sb.toString();
     }
@@ -228,6 +359,9 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode()); 
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getRegisteredContainerInstancesCount() == null) ? 0 : getRegisteredContainerInstancesCount().hashCode()); 
+        hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode()); 
+        hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode()); 
         return hashCode;
     }
     
@@ -245,6 +379,12 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getClusterName() != null && other.getClusterName().equals(this.getClusterName()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getRegisteredContainerInstancesCount() == null ^ this.getRegisteredContainerInstancesCount() == null) return false;
+        if (other.getRegisteredContainerInstancesCount() != null && other.getRegisteredContainerInstancesCount().equals(this.getRegisteredContainerInstancesCount()) == false) return false; 
+        if (other.getRunningTasksCount() == null ^ this.getRunningTasksCount() == null) return false;
+        if (other.getRunningTasksCount() != null && other.getRunningTasksCount().equals(this.getRunningTasksCount()) == false) return false; 
+        if (other.getPendingTasksCount() == null ^ this.getPendingTasksCount() == null) return false;
+        if (other.getPendingTasksCount() != null && other.getPendingTasksCount().equals(this.getPendingTasksCount()) == false) return false; 
         return true;
     }
     

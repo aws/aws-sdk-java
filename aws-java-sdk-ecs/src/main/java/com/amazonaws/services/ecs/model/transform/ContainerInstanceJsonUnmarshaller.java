@@ -69,6 +69,14 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                     context.nextToken();
                     containerInstance.setAgentConnected(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("runningTasksCount", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setRunningTasksCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("pendingTasksCount", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setPendingTasksCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;
