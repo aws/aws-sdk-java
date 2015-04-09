@@ -42,7 +42,7 @@ public class PredefinedRetryPolicies {
     /** SDK default max retry count **/
     public static final int DEFAULT_MAX_ERROR_RETRY = 3;
 
-    /** 
+    /**
      * SDK default retry policy (except for AmazonDynamoDBClient,
      * whose constructor will replace the DEFAULT with DYNAMODB_DEFAULT.)
      */
@@ -208,6 +208,12 @@ public class PredefinedRetryPolicies {
         /** Maximum exponential back-off time before retrying a request */
         private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
 
+        /** Maximum number of retries before the max backoff will be hit.  This
+         *  is calculated via log_2(MAX_BACKOFF_IN_MILLISECONDS / SCALE_FACTOR)
+         *  based on the code below.
+         */
+        private static final int MAX_RETRIES_BEFORE_MAX_BACKOFF = 6;
+
         /** For generating a random scale factor **/
         private final Random random = new Random();
 
@@ -217,6 +223,7 @@ public class PredefinedRetryPolicies {
                                                AmazonClientException exception,
                                                int retriesAttempted) {
             if (retriesAttempted < 0) return 0;
+            if (retriesAttempted > MAX_RETRIES_BEFORE_MAX_BACKOFF) return MAX_BACKOFF_IN_MILLISECONDS;
 
             int scaleFactor;
             if (exception instanceof AmazonServiceException
@@ -226,7 +233,7 @@ public class PredefinedRetryPolicies {
                 scaleFactor = SCALE_FACTOR;
             }
 
-            long delay = (1 << retriesAttempted) * scaleFactor;
+            long delay = (1L << retriesAttempted) * scaleFactor;
             delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
 
             return delay;
@@ -242,13 +249,20 @@ public class PredefinedRetryPolicies {
         /** Maximum exponential back-off time before retrying a request */
         private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
 
+        /** Maximum number of retries before the max backoff will be hit.  This
+         *  is calculated via log_2(MAX_BACKOFF_IN_MILLISECONDS / SCALE_FACTOR)
+         *  based on the code below.
+         */
+        private static final int MAX_RETRIES_BEFORE_MAX_BACKOFF = 9;
+
         @Override
         public final long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                                AmazonClientException exception,
                                                int retriesAttempted) {
             if (retriesAttempted < 0) return 0;
+            if (retriesAttempted > MAX_RETRIES_BEFORE_MAX_BACKOFF) return MAX_BACKOFF_IN_MILLISECONDS;
 
-            long delay = (1 << retriesAttempted) * SCALE_FACTOR;
+            long delay = (1L << retriesAttempted) * SCALE_FACTOR;
             delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
 
             return delay;
