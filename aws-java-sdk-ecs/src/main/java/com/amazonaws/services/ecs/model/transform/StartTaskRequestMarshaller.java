@@ -120,6 +120,9 @@ public class StartTaskRequestMarshaller implements Marshaller<Request<StartTaskR
                 }
                 jsonWriter.endArray();
             }
+            if (startTaskRequest.getStartedBy() != null) {
+                jsonWriter.key("startedBy").value(startTaskRequest.getStartedBy());
+            }
 
           jsonWriter.endObject();
 

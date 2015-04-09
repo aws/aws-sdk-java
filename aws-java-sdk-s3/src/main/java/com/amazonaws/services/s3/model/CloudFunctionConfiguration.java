@@ -18,8 +18,9 @@ import java.util.EnumSet;
 
 /**
  * Represents the lambda configuration for an Amazon S3 bucket notification.
- *
+ * @deprecated use {@link LambdaConfiguration} instead
  */
+@Deprecated
 public class CloudFunctionConfiguration extends NotificationConfiguration {
 
     /**

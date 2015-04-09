@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * <p>
  * Contains a list of AWS Lambda function configurations (see
- * API_FunctionConfiguration.
+ * FunctionConfiguration.
  * </p>
  */
 public class ListFunctionsResult implements Serializable, Cloneable {

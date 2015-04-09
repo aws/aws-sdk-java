@@ -56,6 +56,11 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     private com.amazonaws.internal.ListWithAutoConstructFlag<Resource> totalResources;
 
     /**
+     * 
+     */
+    private VersionInfo versionInfo;
+
+    /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
      * you want to register your container instance with. If you do not
      * specify a cluster, the default cluster is assumed..
@@ -235,6 +240,39 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * 
+     *
+     * @return 
+     */
+    public VersionInfo getVersionInfo() {
+        return versionInfo;
+    }
+    
+    /**
+     * 
+     *
+     * @param versionInfo 
+     */
+    public void setVersionInfo(VersionInfo versionInfo) {
+        this.versionInfo = versionInfo;
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param versionInfo 
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RegisterContainerInstanceRequest withVersionInfo(VersionInfo versionInfo) {
+        this.versionInfo = versionInfo;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -249,7 +287,8 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         if (getCluster() != null) sb.append("Cluster: " + getCluster() + ",");
         if (getInstanceIdentityDocument() != null) sb.append("InstanceIdentityDocument: " + getInstanceIdentityDocument() + ",");
         if (getInstanceIdentityDocumentSignature() != null) sb.append("InstanceIdentityDocumentSignature: " + getInstanceIdentityDocumentSignature() + ",");
-        if (getTotalResources() != null) sb.append("TotalResources: " + getTotalResources() );
+        if (getTotalResources() != null) sb.append("TotalResources: " + getTotalResources() + ",");
+        if (getVersionInfo() != null) sb.append("VersionInfo: " + getVersionInfo() );
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +302,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getInstanceIdentityDocument() == null) ? 0 : getInstanceIdentityDocument().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceIdentityDocumentSignature() == null) ? 0 : getInstanceIdentityDocumentSignature().hashCode()); 
         hashCode = prime * hashCode + ((getTotalResources() == null) ? 0 : getTotalResources().hashCode()); 
+        hashCode = prime * hashCode + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode()); 
         return hashCode;
     }
     
@@ -282,6 +322,8 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         if (other.getInstanceIdentityDocumentSignature() != null && other.getInstanceIdentityDocumentSignature().equals(this.getInstanceIdentityDocumentSignature()) == false) return false; 
         if (other.getTotalResources() == null ^ this.getTotalResources() == null) return false;
         if (other.getTotalResources() != null && other.getTotalResources().equals(this.getTotalResources()) == false) return false; 
+        if (other.getVersionInfo() == null ^ this.getVersionInfo() == null) return false;
+        if (other.getVersionInfo() != null && other.getVersionInfo().equals(this.getVersionInfo()) == false) return false; 
         return true;
     }
     

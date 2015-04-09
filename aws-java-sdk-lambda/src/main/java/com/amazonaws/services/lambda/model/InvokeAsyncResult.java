@@ -22,6 +22,7 @@ import java.io.Serializable;
  * exception.
  * </p>
  */
+@Deprecated
 public class InvokeAsyncResult implements Serializable, Cloneable {
 
     /**

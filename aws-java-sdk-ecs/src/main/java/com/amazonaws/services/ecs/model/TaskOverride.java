@@ -17,19 +17,23 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A list of container overrides in JSON format that specify the name of
+ * a container in a task definition and the command it should run instead
+ * of its default.
+ * </p>
  */
 public class TaskOverride implements Serializable, Cloneable {
 
     /**
-     * One or more container overrides to send when running a task.
+     * One or more container overrides sent to a task.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ContainerOverride> containerOverrides;
 
     /**
-     * One or more container overrides to send when running a task.
+     * One or more container overrides sent to a task.
      *
-     * @return One or more container overrides to send when running a task.
+     * @return One or more container overrides sent to a task.
      */
     public java.util.List<ContainerOverride> getContainerOverrides() {
         if (containerOverrides == null) {
@@ -40,9 +44,9 @@ public class TaskOverride implements Serializable, Cloneable {
     }
     
     /**
-     * One or more container overrides to send when running a task.
+     * One or more container overrides sent to a task.
      *
-     * @param containerOverrides One or more container overrides to send when running a task.
+     * @param containerOverrides One or more container overrides sent to a task.
      */
     public void setContainerOverrides(java.util.Collection<ContainerOverride> containerOverrides) {
         if (containerOverrides == null) {
@@ -55,11 +59,11 @@ public class TaskOverride implements Serializable, Cloneable {
     }
     
     /**
-     * One or more container overrides to send when running a task.
+     * One or more container overrides sent to a task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerOverrides One or more container overrides to send when running a task.
+     * @param containerOverrides One or more container overrides sent to a task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -73,11 +77,11 @@ public class TaskOverride implements Serializable, Cloneable {
     }
     
     /**
-     * One or more container overrides to send when running a task.
+     * One or more container overrides sent to a task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerOverrides One or more container overrides to send when running a task.
+     * @param containerOverrides One or more container overrides sent to a task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

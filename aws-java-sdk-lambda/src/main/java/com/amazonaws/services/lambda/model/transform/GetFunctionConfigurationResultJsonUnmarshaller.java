@@ -49,13 +49,9 @@ public class GetFunctionConfigurationResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     getFunctionConfigurationResult.setFunctionName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("FunctionARN", targetDepth)) {
+                if (context.testExpression("FunctionArn", targetDepth)) {
                     context.nextToken();
-                    getFunctionConfigurationResult.setFunctionARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("ConfigurationId", targetDepth)) {
-                    context.nextToken();
-                    getFunctionConfigurationResult.setConfigurationId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    getFunctionConfigurationResult.setFunctionArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Runtime", targetDepth)) {
                     context.nextToken();
@@ -68,10 +64,6 @@ public class GetFunctionConfigurationResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("Handler", targetDepth)) {
                     context.nextToken();
                     getFunctionConfigurationResult.setHandler(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("Mode", targetDepth)) {
-                    context.nextToken();
-                    getFunctionConfigurationResult.setMode(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CodeSize", targetDepth)) {
                     context.nextToken();

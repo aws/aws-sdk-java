@@ -47,7 +47,7 @@ public class GetFunctionConfigurationRequestMarshaller implements Marshaller<Req
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2014-11-13/functions/{FunctionName}/configuration";
+        String path = "/2015-03-31/functions/{FunctionName}/versions/HEAD/configuration";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 

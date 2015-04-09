@@ -73,6 +73,7 @@ import com.amazonaws.services.s3.model.EmailAddressGrantee;
 import com.amazonaws.services.s3.model.Grantee;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.s3.model.LambdaConfiguration;
 import com.amazonaws.services.s3.model.MultiObjectDeleteException.DeleteError;
 import com.amazonaws.services.s3.model.MultipartUpload;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
@@ -1862,9 +1863,14 @@ public class XmlResponsesSaxParser {
                     configuration.withObjectPrefixes(prefixes
                             .toArray(new String[prefixes.size()]));
                 } else if (name.equals("CloudFunctionConfiguration")) {
-                    configuration = new CloudFunctionConfiguration(
-                            invocationRole, destinationArn,
-                            events.toArray(new String[events.size()]));
+                    if (invocationRole == null) {
+                        configuration = new LambdaConfiguration(destinationArn,
+                                events.toArray(new String[events.size()]));
+                    } else {
+                        configuration = new CloudFunctionConfiguration(
+                                invocationRole, destinationArn,
+                                events.toArray(new String[events.size()]));
+                    }
                     configuration.withObjectPrefixes(prefixes
                             .toArray(new String[prefixes.size()]));
                 }

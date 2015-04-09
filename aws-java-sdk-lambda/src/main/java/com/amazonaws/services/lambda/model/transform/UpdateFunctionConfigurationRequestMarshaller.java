@@ -47,7 +47,7 @@ public class UpdateFunctionConfigurationRequestMarshaller implements Marshaller<
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "/2014-11-13/functions/{FunctionName}/configuration?Description={Description}&Handler={Handler}&MemorySize={MemorySize}&Role={Role}&Timeout={Timeout}";
+        String path = "/2015-03-31/functions/{FunctionName}/versions/HEAD/configuration";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -98,61 +98,6 @@ public class UpdateFunctionConfigurationRequestMarshaller implements Marshaller<
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (updateFunctionConfigurationRequest.getFunctionName() == null) ? "" : StringUtils.fromString(updateFunctionConfigurationRequest.getFunctionName())); 
         }
-        
-        if (DYNAMIC_QUERY_PARAMS.containsKey("Role")) {
-            String name = DYNAMIC_QUERY_PARAMS.get("Role");
-            String value = (updateFunctionConfigurationRequest.getRole() == null) ? null : StringUtils.fromString(updateFunctionConfigurationRequest.getRole());
-
-            if (!(value == null || value.isEmpty())) {
-                request.addParameter(name, value);
-            }
-        } else {
-            uriResourcePath = uriResourcePath.replace("{Role}", (updateFunctionConfigurationRequest.getRole() == null) ? "" : StringUtils.fromString(updateFunctionConfigurationRequest.getRole())); 
-        }
-        
-        if (DYNAMIC_QUERY_PARAMS.containsKey("Handler")) {
-            String name = DYNAMIC_QUERY_PARAMS.get("Handler");
-            String value = (updateFunctionConfigurationRequest.getHandler() == null) ? null : StringUtils.fromString(updateFunctionConfigurationRequest.getHandler());
-
-            if (!(value == null || value.isEmpty())) {
-                request.addParameter(name, value);
-            }
-        } else {
-            uriResourcePath = uriResourcePath.replace("{Handler}", (updateFunctionConfigurationRequest.getHandler() == null) ? "" : StringUtils.fromString(updateFunctionConfigurationRequest.getHandler())); 
-        }
-        
-        if (DYNAMIC_QUERY_PARAMS.containsKey("Description")) {
-            String name = DYNAMIC_QUERY_PARAMS.get("Description");
-            String value = (updateFunctionConfigurationRequest.getDescription() == null) ? null : StringUtils.fromString(updateFunctionConfigurationRequest.getDescription());
-
-            if (!(value == null || value.isEmpty())) {
-                request.addParameter(name, value);
-            }
-        } else {
-            uriResourcePath = uriResourcePath.replace("{Description}", (updateFunctionConfigurationRequest.getDescription() == null) ? "" : StringUtils.fromString(updateFunctionConfigurationRequest.getDescription())); 
-        }
-        
-        if (DYNAMIC_QUERY_PARAMS.containsKey("Timeout")) {
-            String name = DYNAMIC_QUERY_PARAMS.get("Timeout");
-            String value = (updateFunctionConfigurationRequest.getTimeout() == null) ? null : StringUtils.fromInteger(updateFunctionConfigurationRequest.getTimeout());
-
-            if (!(value == null || value.isEmpty())) {
-                request.addParameter(name, value);
-            }
-        } else {
-            uriResourcePath = uriResourcePath.replace("{Timeout}", (updateFunctionConfigurationRequest.getTimeout() == null) ? "" : StringUtils.fromInteger(updateFunctionConfigurationRequest.getTimeout())); 
-        }
-        
-        if (DYNAMIC_QUERY_PARAMS.containsKey("MemorySize")) {
-            String name = DYNAMIC_QUERY_PARAMS.get("MemorySize");
-            String value = (updateFunctionConfigurationRequest.getMemorySize() == null) ? null : StringUtils.fromInteger(updateFunctionConfigurationRequest.getMemorySize());
-
-            if (!(value == null || value.isEmpty())) {
-                request.addParameter(name, value);
-            }
-        } else {
-            uriResourcePath = uriResourcePath.replace("{MemorySize}", (updateFunctionConfigurationRequest.getMemorySize() == null) ? "" : StringUtils.fromInteger(updateFunctionConfigurationRequest.getMemorySize())); 
-        }
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 
@@ -160,9 +105,37 @@ public class UpdateFunctionConfigurationRequestMarshaller implements Marshaller<
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        try {
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+          jsonWriter.object();
+          
+            if (updateFunctionConfigurationRequest.getRole() != null) {
+                jsonWriter.key("Role").value(updateFunctionConfigurationRequest.getRole());
+            }
+            if (updateFunctionConfigurationRequest.getHandler() != null) {
+                jsonWriter.key("Handler").value(updateFunctionConfigurationRequest.getHandler());
+            }
+            if (updateFunctionConfigurationRequest.getDescription() != null) {
+                jsonWriter.key("Description").value(updateFunctionConfigurationRequest.getDescription());
+            }
+            if (updateFunctionConfigurationRequest.getTimeout() != null) {
+                jsonWriter.key("Timeout").value(updateFunctionConfigurationRequest.getTimeout());
+            }
+            if (updateFunctionConfigurationRequest.getMemorySize() != null) {
+                jsonWriter.key("MemorySize").value(updateFunctionConfigurationRequest.getMemorySize());
+            }
+
+          jsonWriter.endObject();
+
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes(UTF8);
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
+          request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch(Throwable t) {
+          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

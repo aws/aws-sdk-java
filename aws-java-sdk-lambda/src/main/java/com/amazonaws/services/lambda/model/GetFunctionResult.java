@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This response contains the object for AWS Lambda function location
+ * This response contains the object for the Lambda function location
  * (see API_FunctionCodeLocation
  * </p>
  */
