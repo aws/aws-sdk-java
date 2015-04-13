@@ -608,7 +608,7 @@ public class TransferManager {
         UploadCallable uploadCallable = new UploadCallable(this, threadPool,
                 upload, putObjectRequest, listenerChain, multipartUploadId,
                 transferProgress);
-        UploadMonitor watcher = new UploadMonitor(this, upload, threadPool,
+        UploadMonitor watcher = UploadMonitor.create(this, upload, threadPool,
                 uploadCallable, putObjectRequest, listenerChain);
         upload.setMonitor(watcher);
 
@@ -1476,7 +1476,7 @@ public class TransferManager {
                 listenerChain, stateChangeListener);
         CopyCallable copyCallable = new CopyCallable(this, threadPool, copy,
                 copyObjectRequest, metadata, listenerChain);
-        CopyMonitor watcher = new CopyMonitor(this, copy, threadPool,
+        CopyMonitor watcher = CopyMonitor.create(this, copy, threadPool,
                 copyCallable, copyObjectRequest, listenerChain);
         watcher.setTimedThreadPool(timedThreadPool);
         copy.setMonitor(watcher);
