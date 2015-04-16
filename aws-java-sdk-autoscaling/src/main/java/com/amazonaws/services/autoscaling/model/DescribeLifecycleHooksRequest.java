@@ -118,6 +118,11 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest imple
     /**
      * The names of one or more lifecycle hooks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLifecycleHookNames(java.util.Collection)} or
+     * {@link #withLifecycleHookNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lifecycleHookNames The names of one or more lifecycle hooks.

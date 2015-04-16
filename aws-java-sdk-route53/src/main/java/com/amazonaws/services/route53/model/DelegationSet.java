@@ -194,6 +194,11 @@ public class DelegationSet implements Serializable, Cloneable {
      * an NS record to your domain for each <code>NameServer</code> that is
      * assigned to your hosted zone.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNameServers(java.util.Collection)} or {@link
+     * #withNameServers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

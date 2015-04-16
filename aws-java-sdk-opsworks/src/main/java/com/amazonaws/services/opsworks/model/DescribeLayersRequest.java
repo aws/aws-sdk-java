@@ -125,6 +125,11 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements Se
      * omit this parameter, <code>DescribeLayers</code> returns a description
      * of every layer in the specified stack.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLayerIds(java.util.Collection)} or {@link
+     * #withLayerIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array of layer IDs that specify the layers to be described. If you

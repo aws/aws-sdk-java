@@ -107,6 +107,11 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest imp
      * This identifier is returned by <a>RunJobFlow</a> and can also be
      * obtained from <a>DescribeJobFlows</a> .
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setJobFlowIds(java.util.Collection)} or {@link
+     * #withJobFlowIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlowIds A list of strings that uniquely identify the job flows to protect.

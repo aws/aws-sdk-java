@@ -133,6 +133,11 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements 
     /**
      * A list of parameter values to pass to the pipeline at activation.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameterValues(java.util.Collection)} or {@link
+     * #withParameterValues(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterValues A list of parameter values to pass to the pipeline at activation.

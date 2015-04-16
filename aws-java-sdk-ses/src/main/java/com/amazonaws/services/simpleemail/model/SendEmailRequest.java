@@ -281,6 +281,11 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * The reply-to email address(es) for the message. If the recipient
      * replies to the message, each reply-to address will receive the reply.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setReplyToAddresses(java.util.Collection)} or {@link
+     * #withReplyToAddresses(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param replyToAddresses The reply-to email address(es) for the message. If the recipient

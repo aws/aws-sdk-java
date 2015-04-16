@@ -801,6 +801,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * must be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDBSecurityGroups(java.util.Collection)} or {@link
+     * #withDBSecurityGroups(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroups A list of DB security groups to authorize on this DB instance.
@@ -903,6 +908,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcSecurityGroupIds(java.util.Collection)} or
+     * {@link #withVpcSecurityGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

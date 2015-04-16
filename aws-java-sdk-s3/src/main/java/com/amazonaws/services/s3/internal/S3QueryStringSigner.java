@@ -23,7 +23,7 @@ import com.amazonaws.auth.AWSSessionCredentials;
 import com.amazonaws.auth.AbstractAWSSigner;
 import com.amazonaws.auth.SigningAlgorithm;
 
-public class S3QueryStringSigner<T> extends AbstractAWSSigner {
+public class S3QueryStringSigner extends AbstractAWSSigner {
 
     /**
      * The HTTP verb (GET, PUT, HEAD, DELETE) the request to sign

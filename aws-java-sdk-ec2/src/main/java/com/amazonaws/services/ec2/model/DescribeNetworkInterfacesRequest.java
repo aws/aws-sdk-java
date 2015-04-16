@@ -153,6 +153,11 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * One or more network interface IDs. <p>Default: Describes all your
      * network interfaces.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNetworkInterfaceIds(java.util.Collection)} or
+     * {@link #withNetworkInterfaceIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceIds One or more network interface IDs. <p>Default: Describes all your
@@ -603,6 +608,11 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      * network interface. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

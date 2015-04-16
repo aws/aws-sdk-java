@@ -98,6 +98,11 @@ public class ListEventSourceMappingsResult implements Serializable, Cloneable {
     /**
      * An array of <code>EventSourceMappingConfiguration</code> objects.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEventSourceMappings(java.util.Collection)} or
+     * {@link #withEventSourceMappings(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventSourceMappings An array of <code>EventSourceMappingConfiguration</code> objects.

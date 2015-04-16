@@ -71,6 +71,11 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest impleme
     /**
      * An array of IAM user ARNs that identify the users to be described.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIamUserArns(java.util.Collection)} or {@link
+     * #withIamUserArns(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArns An array of IAM user ARNs that identify the users to be described.

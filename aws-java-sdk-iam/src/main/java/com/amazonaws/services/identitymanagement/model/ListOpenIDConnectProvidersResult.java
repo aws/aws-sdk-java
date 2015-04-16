@@ -60,6 +60,11 @@ public class ListOpenIDConnectProvidersResult implements Serializable, Cloneable
     /**
      * The list of IAM OpenID Connect providers in the AWS account.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOpenIDConnectProviderList(java.util.Collection)}
+     * or {@link #withOpenIDConnectProviderList(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param openIDConnectProviderList The list of IAM OpenID Connect providers in the AWS account.

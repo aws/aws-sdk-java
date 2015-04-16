@@ -565,6 +565,11 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClusterSecurityGroups(java.util.Collection)} or
+     * {@link #withClusterSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSecurityGroups A list of cluster security groups to be authorized on this cluster.
@@ -655,6 +660,11 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * A list of virtual private cloud (VPC) security groups to be associated
      * with the cluster.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcSecurityGroupIds(java.util.Collection)} or
+     * {@link #withVpcSecurityGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -65,6 +65,11 @@ public class DescribeConfigurationRecordersResult implements Serializable, Clone
      * A list that contains the descriptions of the specified configuration
      * recorders.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigurationRecorders(java.util.Collection)} or
+     * {@link #withConfigurationRecorders(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param configurationRecorders A list that contains the descriptions of the specified configuration

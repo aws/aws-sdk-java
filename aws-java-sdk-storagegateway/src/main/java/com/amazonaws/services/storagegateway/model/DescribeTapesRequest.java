@@ -170,6 +170,11 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements Ser
      * not specified, AWS Storage Gateway returns a description of all
      * virtual tapes associated with the specified gateway.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTapeARNs(java.util.Collection)} or {@link
+     * #withTapeARNs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tapeARNs Specifies one or more unique Amazon Resource Names (ARNs) that

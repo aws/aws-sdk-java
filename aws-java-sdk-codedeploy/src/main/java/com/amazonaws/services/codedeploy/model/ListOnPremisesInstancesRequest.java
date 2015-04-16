@@ -206,6 +206,11 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest impl
      * The on-premises instance tags that will be used to restrict the
      * corresponding on-premises instance names that are returned.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagFilters(java.util.Collection)} or {@link
+     * #withTagFilters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagFilters The on-premises instance tags that will be used to restrict the

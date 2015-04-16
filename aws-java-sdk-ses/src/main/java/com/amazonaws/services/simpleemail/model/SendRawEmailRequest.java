@@ -251,6 +251,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * A list of destinations for the message, consisting of To:, CC:, and
      * BCC: addresses.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDestinations(java.util.Collection)} or {@link
+     * #withDestinations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param destinations A list of destinations for the message, consisting of To:, CC:, and

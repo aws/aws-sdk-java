@@ -220,26 +220,26 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into EncryptionContext.
      * @param value The corresponding value of the entry to be added into EncryptionContext.
      */
-    public EncryptRequest addEncryptionContextEntry(String key, String value) {
-        if (null == this.encryptionContext) {
-            this.encryptionContext = new java.util.HashMap<String,String>();
-        }
-        if (this.encryptionContext.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.encryptionContext.put(key, value);
-        return this;
+  public EncryptRequest addEncryptionContextEntry(String key, String value) {
+    if (null == this.encryptionContext) {
+      this.encryptionContext = new java.util.HashMap<String,String>();
     }
+    if (this.encryptionContext.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.encryptionContext.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into EncryptionContext.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public EncryptRequest clearEncryptionContextEntries() {
-        this.encryptionContext = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into EncryptionContext.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public EncryptRequest clearEncryptionContextEntries() {
+    this.encryptionContext = null;
+    return this;
+  }
+  
     /**
      * A list of grant tokens that represent grants which can be used to
      * provide long term permissions to perform encryption.
@@ -281,6 +281,11 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * A list of grant tokens that represent grants which can be used to
      * provide long term permissions to perform encryption.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
+     * #withGrantTokens(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

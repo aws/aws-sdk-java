@@ -78,6 +78,11 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
     /**
      * A list of policy names.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyNames(java.util.Collection)} or {@link
+     * #withPolicyNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyNames A list of policy names.

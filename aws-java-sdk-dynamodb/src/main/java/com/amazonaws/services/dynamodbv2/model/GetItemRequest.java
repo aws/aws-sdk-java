@@ -307,14 +307,14 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      */
     public void setKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
         java.util.HashMap<String,AttributeValue> key = new java.util.HashMap<String,AttributeValue>();
-        
-        if (hashKey != null) {
-            key.put(hashKey.getKey(), hashKey.getValue());
-        } else
+      
+      if (hashKey != null) {
+          key.put(hashKey.getKey(), hashKey.getValue());
+      } else
             throw new IllegalArgumentException("hashKey must be non-null object.");
-        if (rangeKey != null) {
-            key.put(rangeKey.getKey(), rangeKey.getValue());
-        } 
+      if (rangeKey != null) {
+          key.put(rangeKey.getKey(), rangeKey.getValue());
+      } 
         setKey(key);
     }
     
@@ -335,8 +335,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param rangeKey Primary range key. (null if it a hash-only table)
      */
     public GetItemRequest withKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-        setKey(hashKey, rangeKey);
-        return this;
+      setKey(hashKey, rangeKey);
+      return this;
     }
 
     /**
@@ -353,26 +353,26 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into Key.
      * @param value The corresponding value of the entry to be added into Key.
      */
-    public GetItemRequest addKeyEntry(String key, AttributeValue value) {
-        if (null == this.key) {
-            this.key = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.key.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.key.put(key, value);
-        return this;
+  public GetItemRequest addKeyEntry(String key, AttributeValue value) {
+    if (null == this.key) {
+      this.key = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.key.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.key.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Key.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public GetItemRequest clearKeyEntries() {
-        this.key = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Key.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public GetItemRequest clearKeyEntries() {
+    this.key = null;
+    return this;
+  }
+  
     /**
      * <important><p>There is a newer parameter available. Use
      * <i>ProjectionExpression</i> instead. Note that if you use
@@ -465,6 +465,11 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributesToGet(java.util.Collection)} or {@link
+     * #withAttributesToGet(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1012,26 +1017,26 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into ExpressionAttributeNames.
      * @param value The corresponding value of the entry to be added into ExpressionAttributeNames.
      */
-    public GetItemRequest addExpressionAttributeNamesEntry(String key, String value) {
-        if (null == this.expressionAttributeNames) {
-            this.expressionAttributeNames = new java.util.HashMap<String,String>();
-        }
-        if (this.expressionAttributeNames.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expressionAttributeNames.put(key, value);
-        return this;
+  public GetItemRequest addExpressionAttributeNamesEntry(String key, String value) {
+    if (null == this.expressionAttributeNames) {
+      this.expressionAttributeNames = new java.util.HashMap<String,String>();
     }
+    if (this.expressionAttributeNames.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expressionAttributeNames.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExpressionAttributeNames.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public GetItemRequest clearExpressionAttributeNamesEntries() {
-        this.expressionAttributeNames = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExpressionAttributeNames.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public GetItemRequest clearExpressionAttributeNamesEntries() {
+    this.expressionAttributeNames = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -904,6 +904,11 @@ public class Snapshot implements Serializable, Cloneable {
      * snapshot. Returns <code>null</code> if no accounts are authorized.
      * Visible only to the snapshot owner.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAccountsWithRestoreAccess(java.util.Collection)}
+     * or {@link #withAccountsWithRestoreAccess(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accountsWithRestoreAccess A list of the AWS customer accounts authorized to restore the
@@ -1289,6 +1294,11 @@ public class Snapshot implements Serializable, Cloneable {
     
     /**
      * The list of tags for the cluster snapshot.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -20,6 +20,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.RequestClientOptions;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.SSEAlgorithm;
 
 /**
  * Constants used by the AWS S3 Java client.
@@ -123,5 +124,6 @@ public class Constants {
     // Constant indicating the requester pays for data transfer cost for a bucket.
     public static final String REQUESTER_PAYS = "requester";
 
-    public static final String SSE_AWS_KMS_ENCRYPTION_SCHEME = "aws:kms";
+    public static final String SSE_AWS_KMS_ENCRYPTION_SCHEME =
+            SSEAlgorithm.KMS.getAlgorithm();
 }

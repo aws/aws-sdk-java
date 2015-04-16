@@ -364,6 +364,11 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     /**
      * The number of instances in this state.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceCounts(java.util.Collection)} or {@link
+     * #withInstanceCounts(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCounts The number of instances in this state.
@@ -432,6 +437,11 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     /**
      * The price of the Reserved Instance listing.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPriceSchedules(java.util.Collection)} or {@link
+     * #withPriceSchedules(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param priceSchedules The price of the Reserved Instance listing.
@@ -499,6 +509,11 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     
     /**
      * Any tags assigned to the resource.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

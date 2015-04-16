@@ -320,6 +320,11 @@ public class VpnGateway implements Serializable, Cloneable {
     /**
      * Any VPCs attached to the virtual private gateway.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcAttachments(java.util.Collection)} or {@link
+     * #withVpcAttachments(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcAttachments Any VPCs attached to the virtual private gateway.
@@ -387,6 +392,11 @@ public class VpnGateway implements Serializable, Cloneable {
     
     /**
      * Any tags assigned to the virtual private gateway.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

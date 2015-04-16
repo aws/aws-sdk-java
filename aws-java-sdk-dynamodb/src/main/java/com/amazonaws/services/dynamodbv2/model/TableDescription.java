@@ -234,6 +234,11 @@ public class TableDescription implements Serializable, Cloneable {
      * <li> <p><i>AttributeName</i> - The name of the attribute. </li> <li>
      * <p><i>AttributeType</i> - The data type for the attribute. </li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeDefinitions(java.util.Collection)} or
+     * {@link #withAttributeDefinitions(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeDefinitions An array of <i>AttributeDefinition</i> objects. Each of these objects
@@ -390,6 +395,11 @@ public class TableDescription implements Serializable, Cloneable {
      * </li> </ul> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeySchema(java.util.Collection)} or {@link
+     * #withKeySchema(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -940,6 +950,11 @@ public class TableDescription implements Serializable, Cloneable {
      * <code>DELETING</code> state, no information about indexes will be
      * returned.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLocalSecondaryIndexes(java.util.Collection)} or
+     * {@link #withLocalSecondaryIndexes(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param localSecondaryIndexes Represents one or more local secondary indexes on the table. Each
@@ -1322,6 +1337,11 @@ public class TableDescription implements Serializable, Cloneable {
      * units, along with data about increases and decreases. </li> </ul>
      * <p>If the table is in the <code>DELETING</code> state, no information
      * about indexes will be returned.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGlobalSecondaryIndexes(java.util.Collection)} or
+     * {@link #withGlobalSecondaryIndexes(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

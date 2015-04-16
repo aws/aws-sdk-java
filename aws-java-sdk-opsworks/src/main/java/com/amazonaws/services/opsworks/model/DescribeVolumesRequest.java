@@ -236,6 +236,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>DescribeVolumes</code> returns descriptions of the specified
      * volumes. Otherwise, it returns a description of every volume.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVolumeIds(java.util.Collection)} or {@link
+     * #withVolumeIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeIds Am array of volume IDs. If you use this parameter,

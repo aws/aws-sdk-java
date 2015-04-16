@@ -66,6 +66,11 @@ public class DescribeElasticLoadBalancersResult implements Serializable, Cloneab
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setElasticLoadBalancers(java.util.Collection)} or
+     * {@link #withElasticLoadBalancers(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param elasticLoadBalancers A list of <code>ElasticLoadBalancer</code> objects that describe the

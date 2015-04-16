@@ -768,6 +768,11 @@ public class DBInstance implements Serializable, Cloneable {
      * <code>DBSecurityGroup.Name</code> and
      * <code>DBSecurityGroup.Status</code> subelements.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDBSecurityGroups(java.util.Collection)} or {@link
+     * #withDBSecurityGroups(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroups Provides List of DB security group elements containing only
@@ -847,6 +852,11 @@ public class DBInstance implements Serializable, Cloneable {
      * Provides List of VPC security group elements that the DB instance
      * belongs to.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcSecurityGroups(java.util.Collection)} or
+     * {@link #withVpcSecurityGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcSecurityGroups Provides List of VPC security group elements that the DB instance
@@ -917,6 +927,11 @@ public class DBInstance implements Serializable, Cloneable {
     
     /**
      * Provides the list of DB parameter groups applied to this DB instance.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDBParameterGroups(java.util.Collection)} or
+     * {@link #withDBParameterGroups(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1354,6 +1369,12 @@ public class DBInstance implements Serializable, Cloneable {
      * Contains one or more identifiers of the Read Replicas associated with
      * this DB instance.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setReadReplicaDBInstanceIdentifiers(java.util.Collection)} or {@link
+     * #withReadReplicaDBInstanceIdentifiers(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
@@ -1490,6 +1511,11 @@ public class DBInstance implements Serializable, Cloneable {
     
     /**
      * Provides the list of option group memberships for this DB instance.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionGroupMemberships(java.util.Collection)} or
+     * {@link #withOptionGroupMemberships(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1779,6 +1805,11 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * The status of a Read Replica. If the instance is not a Read Replica,
      * this will be blank.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStatusInfos(java.util.Collection)} or {@link
+     * #withStatusInfos(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

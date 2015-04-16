@@ -290,6 +290,11 @@ public class Resource implements Serializable, Cloneable {
      * When the <code>stringSetValue</code> type is set, the value of the
      * resource must be a string type.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStringSetValue(java.util.Collection)} or {@link
+     * #withStringSetValue(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stringSetValue When the <code>stringSetValue</code> type is set, the value of the

@@ -69,6 +69,11 @@ public class DescribeTagsResult implements Serializable, Cloneable {
     /**
      * A list of tags with their associated resources.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTaggedResources(java.util.Collection)} or {@link
+     * #withTaggedResources(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taggedResources A list of tags with their associated resources.

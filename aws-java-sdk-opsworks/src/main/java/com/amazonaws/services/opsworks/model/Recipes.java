@@ -105,6 +105,11 @@ public class Recipes implements Serializable, Cloneable {
      * An array of custom recipe names to be run following a
      * <code>setup</code> event.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSetup(java.util.Collection)} or {@link
+     * #withSetup(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param setup An array of custom recipe names to be run following a
@@ -180,6 +185,11 @@ public class Recipes implements Serializable, Cloneable {
     /**
      * An array of custom recipe names to be run following a
      * <code>configure</code> event.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigure(java.util.Collection)} or {@link
+     * #withConfigure(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -257,6 +267,11 @@ public class Recipes implements Serializable, Cloneable {
      * An array of custom recipe names to be run following a
      * <code>deploy</code> event.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeploy(java.util.Collection)} or {@link
+     * #withDeploy(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deploy An array of custom recipe names to be run following a
@@ -333,6 +348,11 @@ public class Recipes implements Serializable, Cloneable {
      * An array of custom recipe names to be run following a
      * <code>undeploy</code> event.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUndeploy(java.util.Collection)} or {@link
+     * #withUndeploy(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param undeploy An array of custom recipe names to be run following a
@@ -408,6 +428,11 @@ public class Recipes implements Serializable, Cloneable {
     /**
      * An array of custom recipe names to be run following a
      * <code>shutdown</code> event.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setShutdown(java.util.Collection)} or {@link
+     * #withShutdown(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

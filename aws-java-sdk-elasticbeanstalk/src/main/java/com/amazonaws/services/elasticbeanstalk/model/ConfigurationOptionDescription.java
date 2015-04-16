@@ -790,6 +790,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * If specified, values for the configuration option are selected from
      * this list.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setValueOptions(java.util.Collection)} or {@link
+     * #withValueOptions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param valueOptions If specified, values for the configuration option are selected from

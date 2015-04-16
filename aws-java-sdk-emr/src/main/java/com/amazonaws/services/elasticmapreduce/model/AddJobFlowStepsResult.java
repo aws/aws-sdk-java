@@ -59,6 +59,11 @@ public class AddJobFlowStepsResult implements Serializable, Cloneable {
     /**
      * The identifiers of the list of steps added to the job flow.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStepIds(java.util.Collection)} or {@link
+     * #withStepIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stepIds The identifiers of the list of steps added to the job flow.

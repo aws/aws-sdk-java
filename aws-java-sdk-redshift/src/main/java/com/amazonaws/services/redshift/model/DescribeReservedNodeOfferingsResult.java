@@ -132,6 +132,11 @@ public class DescribeReservedNodeOfferingsResult implements Serializable, Clonea
     /**
      * A list of reserved node offerings.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setReservedNodeOfferings(java.util.Collection)} or
+     * {@link #withReservedNodeOfferings(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedNodeOfferings A list of reserved node offerings.

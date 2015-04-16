@@ -180,6 +180,11 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * Not implemented. Reserved for future use.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStringListValues(java.util.Collection)} or {@link
+     * #withStringListValues(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stringListValues Not implemented. Reserved for future use.
@@ -247,6 +252,11 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     
     /**
      * Not implemented. Reserved for future use.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBinaryListValues(java.util.Collection)} or {@link
+     * #withBinaryListValues(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

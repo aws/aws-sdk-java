@@ -66,6 +66,11 @@ public class DescribeDataSourcesResult implements Serializable, Cloneable {
     /**
      * A list of <code>DataSource</code> that meet the search criteria.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResults(java.util.Collection)} or {@link
+     * #withResults(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param results A list of <code>DataSource</code> that meet the search criteria.

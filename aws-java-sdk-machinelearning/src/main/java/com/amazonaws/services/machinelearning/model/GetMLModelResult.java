@@ -928,26 +928,26 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @param key The key of the entry to be added into TrainingParameters.
      * @param value The corresponding value of the entry to be added into TrainingParameters.
      */
-    public GetMLModelResult addTrainingParametersEntry(String key, String value) {
-        if (null == this.trainingParameters) {
-            this.trainingParameters = new java.util.HashMap<String,String>();
-        }
-        if (this.trainingParameters.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.trainingParameters.put(key, value);
-        return this;
+  public GetMLModelResult addTrainingParametersEntry(String key, String value) {
+    if (null == this.trainingParameters) {
+      this.trainingParameters = new java.util.HashMap<String,String>();
     }
+    if (this.trainingParameters.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.trainingParameters.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into TrainingParameters.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public GetMLModelResult clearTrainingParametersEntries() {
-        this.trainingParameters = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into TrainingParameters.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public GetMLModelResult clearTrainingParametersEntries() {
+    this.trainingParameters = null;
+    return this;
+  }
+  
     /**
      * The location of the data file or directory in Amazon Simple Storage
      * Service (Amazon S3).

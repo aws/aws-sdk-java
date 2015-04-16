@@ -154,6 +154,11 @@ public class InstanceStatus implements Serializable, Cloneable {
     /**
      * Extra information regarding events associated with the instance.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEvents(java.util.Collection)} or {@link
+     * #withEvents(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events Extra information regarding events associated with the instance.

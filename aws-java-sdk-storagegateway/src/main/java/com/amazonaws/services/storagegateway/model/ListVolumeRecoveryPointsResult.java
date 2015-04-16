@@ -122,6 +122,11 @@ public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
      * Sets the value of the VolumeRecoveryPointInfos property for this
      * object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVolumeRecoveryPointInfos(java.util.Collection)}
+     * or {@link #withVolumeRecoveryPointInfos(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeRecoveryPointInfos The new value for the VolumeRecoveryPointInfos property for this

@@ -57,6 +57,11 @@ public class DescribeRouteTablesResult implements Serializable, Cloneable {
     /**
      * Information about one or more route tables.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRouteTables(java.util.Collection)} or {@link
+     * #withRouteTables(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTables Information about one or more route tables.

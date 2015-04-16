@@ -182,6 +182,11 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
      * default. You must explicitly request it when calling
      * <a>EnableMetricsCollection</a>. </note>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMetrics(java.util.Collection)} or {@link
+     * #withMetrics(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metrics One or more of the following metrics: <ul> <li><p>GroupMinSize</li>

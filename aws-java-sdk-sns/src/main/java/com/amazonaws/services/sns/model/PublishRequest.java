@@ -660,26 +660,26 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into MessageAttributes.
      * @param value The corresponding value of the entry to be added into MessageAttributes.
      */
-    public PublishRequest addMessageAttributesEntry(String key, MessageAttributeValue value) {
-        if (null == this.messageAttributes) {
-            this.messageAttributes = new java.util.HashMap<String,MessageAttributeValue>();
-        }
-        if (this.messageAttributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.messageAttributes.put(key, value);
-        return this;
+  public PublishRequest addMessageAttributesEntry(String key, MessageAttributeValue value) {
+    if (null == this.messageAttributes) {
+      this.messageAttributes = new java.util.HashMap<String,MessageAttributeValue>();
     }
+    if (this.messageAttributes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.messageAttributes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into MessageAttributes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public PublishRequest clearMessageAttributesEntries() {
-        this.messageAttributes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into MessageAttributes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public PublishRequest clearMessageAttributesEntries() {
+    this.messageAttributes = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

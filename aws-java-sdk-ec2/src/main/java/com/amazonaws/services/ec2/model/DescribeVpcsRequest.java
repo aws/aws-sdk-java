@@ -93,6 +93,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     /**
      * One or more VPC IDs. <p>Default: Describes all your VPCs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcIds(java.util.Collection)} or {@link
+     * #withVpcIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcIds One or more VPC IDs. <p>Default: Describes all your VPCs.
@@ -270,6 +275,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
      * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -349,6 +349,11 @@ public class Task implements Serializable, Cloneable {
     /**
      * The containers associated with the task.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setContainers(java.util.Collection)} or {@link
+     * #withContainers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containers The containers associated with the task.

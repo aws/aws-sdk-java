@@ -441,6 +441,11 @@ public class VpnConnection implements Serializable, Cloneable {
     /**
      * Any tags assigned to the VPN connection.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags Any tags assigned to the VPN connection.
@@ -508,6 +513,11 @@ public class VpnConnection implements Serializable, Cloneable {
     
     /**
      * Information about the VPN tunnel.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVgwTelemetry(java.util.Collection)} or {@link
+     * #withVgwTelemetry(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -609,6 +619,11 @@ public class VpnConnection implements Serializable, Cloneable {
     
     /**
      * The static routes associated with the VPN connection.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRoutes(java.util.Collection)} or {@link
+     * #withRoutes(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

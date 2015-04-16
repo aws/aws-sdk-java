@@ -136,6 +136,11 @@ public class SuggestModel implements Serializable, Cloneable {
     /**
      * The documents that match the query string.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSuggestions(java.util.Collection)} or {@link
+     * #withSuggestions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param suggestions The documents that match the query string.

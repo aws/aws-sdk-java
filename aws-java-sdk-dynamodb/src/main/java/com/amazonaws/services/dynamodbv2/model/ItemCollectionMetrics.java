@@ -95,26 +95,26 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      * @param key The key of the entry to be added into ItemCollectionKey.
      * @param value The corresponding value of the entry to be added into ItemCollectionKey.
      */
-    public ItemCollectionMetrics addItemCollectionKeyEntry(String key, AttributeValue value) {
-        if (null == this.itemCollectionKey) {
-            this.itemCollectionKey = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.itemCollectionKey.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.itemCollectionKey.put(key, value);
-        return this;
+  public ItemCollectionMetrics addItemCollectionKeyEntry(String key, AttributeValue value) {
+    if (null == this.itemCollectionKey) {
+      this.itemCollectionKey = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.itemCollectionKey.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.itemCollectionKey.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ItemCollectionKey.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public ItemCollectionMetrics clearItemCollectionKeyEntries() {
-        this.itemCollectionKey = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ItemCollectionKey.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public ItemCollectionMetrics clearItemCollectionKeyEntries() {
+    this.itemCollectionKey = null;
+    return this;
+  }
+  
     /**
      * An estimate of item collection size, in gigabytes. This value is a
      * two-element array containing a lower bound and an upper bound for the
@@ -176,6 +176,11 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      * a local secondary index is approaching its size limit. <p>The estimate
      * is subject to change over time; therefore, do not rely on the
      * precision or accuracy of the estimate.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSizeEstimateRangeGB(java.util.Collection)} or
+     * {@link #withSizeEstimateRangeGB(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

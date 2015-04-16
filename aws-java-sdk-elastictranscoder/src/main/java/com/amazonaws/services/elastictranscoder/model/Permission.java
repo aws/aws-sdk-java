@@ -312,6 +312,11 @@ public class Permission implements Serializable, Cloneable {
      * WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds
      * to the Amazon S3 bucket.</li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAccess(java.util.Collection)} or {@link
+     * #withAccess(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

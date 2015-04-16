@@ -138,6 +138,11 @@ public class DescribeClusterParameterGroupsResult implements Serializable, Clone
      * A list of <a>ClusterParameterGroup</a> instances. Each instance
      * describes one cluster parameter group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameterGroups(java.util.Collection)} or {@link
+     * #withParameterGroups(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterGroups A list of <a>ClusterParameterGroup</a> instances. Each instance

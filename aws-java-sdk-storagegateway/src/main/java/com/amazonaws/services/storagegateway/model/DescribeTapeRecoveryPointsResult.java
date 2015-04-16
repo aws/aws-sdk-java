@@ -141,6 +141,11 @@ public class DescribeTapeRecoveryPointsResult implements Serializable, Cloneable
      * An array of TapeRecoveryPointInfos that are available for the
      * specified gateway.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTapeRecoveryPointInfos(java.util.Collection)} or
+     * {@link #withTapeRecoveryPointInfos(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tapeRecoveryPointInfos An array of TapeRecoveryPointInfos that are available for the

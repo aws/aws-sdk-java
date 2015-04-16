@@ -69,6 +69,11 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
     /**
      * The IDs of the Trusted Advisor checks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCheckIds(java.util.Collection)} or {@link
+     * #withCheckIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checkIds The IDs of the Trusted Advisor checks.

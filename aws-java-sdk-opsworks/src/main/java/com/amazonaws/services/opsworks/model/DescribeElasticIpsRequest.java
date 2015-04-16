@@ -199,6 +199,11 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
      * the specified Elastic IP addresses. Otherwise, it returns a
      * description of every Elastic IP address.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIps(java.util.Collection)} or {@link
+     * #withIps(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ips An array of Elastic IP addresses to be described. If you include this

@@ -169,6 +169,11 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implement
      * must be from the same gateway. If no VTL devices are specified, the
      * result will contain all devices on the specified gateway.</note>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVTLDeviceARNs(java.util.Collection)} or {@link
+     * #withVTLDeviceARNs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vTLDeviceARNs An array of strings, where each string represents the Amazon Resource

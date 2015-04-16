@@ -253,6 +253,11 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest implements 
      * A list of Attributes. Similar to columns on a spreadsheet, attributes
      * represent categories of data that can be assigned to items.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributes(java.util.Collection)} or {@link
+     * #withAttributes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes

@@ -229,6 +229,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     /**
      * Contains a list of <a>EC2SecurityGroup</a> elements.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEC2SecurityGroups(java.util.Collection)} or
+     * {@link #withEC2SecurityGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
@@ -296,6 +301,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     
     /**
      * Contains a list of <a>IPRange</a> elements.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIPRanges(java.util.Collection)} or {@link
+     * #withIPRanges(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

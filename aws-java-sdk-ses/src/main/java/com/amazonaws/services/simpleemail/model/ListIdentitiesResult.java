@@ -64,6 +64,11 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
     /**
      * A list of identities.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIdentities(java.util.Collection)} or {@link
+     * #withIdentities(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param identities A list of identities.

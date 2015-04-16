@@ -1186,26 +1186,26 @@ public class VideoParameters implements Serializable, Cloneable {
      * @param key The key of the entry to be added into CodecOptions.
      * @param value The corresponding value of the entry to be added into CodecOptions.
      */
-    public VideoParameters addCodecOptionsEntry(String key, String value) {
-        if (null == this.codecOptions) {
-            this.codecOptions = new java.util.HashMap<String,String>();
-        }
-        if (this.codecOptions.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.codecOptions.put(key, value);
-        return this;
+  public VideoParameters addCodecOptionsEntry(String key, String value) {
+    if (null == this.codecOptions) {
+      this.codecOptions = new java.util.HashMap<String,String>();
     }
+    if (this.codecOptions.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.codecOptions.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into CodecOptions.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public VideoParameters clearCodecOptionsEntries() {
-        this.codecOptions = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into CodecOptions.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public VideoParameters clearCodecOptionsEntries() {
+    this.codecOptions = null;
+    return this;
+  }
+  
     /**
      * Applicable only when the value of Video:Codec is one of
      * <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>. <p>The
@@ -2676,6 +2676,11 @@ public class VideoParameters implements Serializable, Cloneable {
      * the job than you specify watermark settings in the preset, which
      * allows you to use the same preset for up to four watermarks that have
      * different dimensions.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWatermarks(java.util.Collection)} or {@link
+     * #withWatermarks(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

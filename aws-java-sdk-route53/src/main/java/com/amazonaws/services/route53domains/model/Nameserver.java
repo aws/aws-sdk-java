@@ -163,6 +163,11 @@ public class Nameserver implements Serializable, Cloneable {
      * list can contain only one IPv4 and one IPv6 address. <p>Parent:
      * <code>Nameservers</code>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGlueIps(java.util.Collection)} or {@link
+     * #withGlueIps(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param glueIps Glue IP address of a name server entry. Glue IP addresses are required

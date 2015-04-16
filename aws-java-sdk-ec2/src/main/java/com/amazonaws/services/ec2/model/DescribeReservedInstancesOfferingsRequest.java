@@ -181,6 +181,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * One or more Reserved Instances offering IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setReservedInstancesOfferingIds(java.util.Collection)} or {@link
+     * #withReservedInstancesOfferingIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesOfferingIds One or more Reserved Instances offering IDs.
@@ -595,6 +601,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Instances offering ID. </li> <li> <p><code>usage-price</code> - The
      * usage price of the Reserved Instance, per hour (for example, 0.84).
      * </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

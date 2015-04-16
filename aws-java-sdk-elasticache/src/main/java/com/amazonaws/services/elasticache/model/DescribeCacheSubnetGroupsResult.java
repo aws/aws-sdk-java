@@ -103,6 +103,11 @@ public class DescribeCacheSubnetGroupsResult implements Serializable, Cloneable 
      * A list of cache subnet groups. Each element in the list contains
      * detailed information about one group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheSubnetGroups(java.util.Collection)} or
+     * {@link #withCacheSubnetGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSubnetGroups A list of cache subnet groups. Each element in the list contains

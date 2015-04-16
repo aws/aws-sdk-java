@@ -115,6 +115,11 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
      * interface. You can specify this option multiple times to unassign more
      * than one IP address.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPrivateIpAddresses(java.util.Collection)} or
+     * {@link #withPrivateIpAddresses(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The secondary private IP addresses to unassign from the network

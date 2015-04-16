@@ -155,6 +155,11 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * record that fails to be added to your Amazon Kinesis stream includes
      * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRecords(java.util.Collection)} or {@link
+     * #withRecords(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

@@ -128,6 +128,11 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * Sets the value of the DiskIds property for this object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDiskIds(java.util.Collection)} or {@link
+     * #withDiskIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param diskIds The new value for the DiskIds property for this object.

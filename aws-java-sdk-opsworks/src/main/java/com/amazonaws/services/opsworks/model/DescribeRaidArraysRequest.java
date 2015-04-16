@@ -177,6 +177,11 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implement
      * <code>DescribeRaidArrays</code> returns descriptions of the specified
      * arrays. Otherwise, it returns a description of every array.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRaidArrayIds(java.util.Collection)} or {@link
+     * #withRaidArrayIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param raidArrayIds An array of RAID array IDs. If you use this parameter,

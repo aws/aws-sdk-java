@@ -616,6 +616,11 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      * response with the snapshots that have either or both of these tag keys
      * associated with them.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagKeys(java.util.Collection)} or {@link
+     * #withTagKeys(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagKeys A tag key or keys for which you want to return all matching cluster
@@ -731,6 +736,11 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      * specify both of these tag values in the request, Amazon Redshift
      * returns a response with the snapshots that have either or both of
      * these tag values associated with them.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagValues(java.util.Collection)} or {@link
+     * #withTagValues(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

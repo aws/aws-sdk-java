@@ -146,6 +146,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
     /**
      * A list of DBSecurityGroupMemebrship name strings used for this option.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDBSecurityGroupMemberships(java.util.Collection)}
+     * or {@link #withDBSecurityGroupMemberships(java.util.Collection)} if
+     * you want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupMemberships A list of DBSecurityGroupMemebrship name strings used for this option.
@@ -219,6 +224,12 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * A list of VpcSecurityGroupMemebrship name strings used for this
      * option.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setVpcSecurityGroupMemberships(java.util.Collection)} or {@link
+     * #withVpcSecurityGroupMemberships(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcSecurityGroupMemberships A list of VpcSecurityGroupMemebrship name strings used for this
@@ -289,6 +300,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
     
     /**
      * The option settings to include in an option group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionSettings(java.util.Collection)} or {@link
+     * #withOptionSettings(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

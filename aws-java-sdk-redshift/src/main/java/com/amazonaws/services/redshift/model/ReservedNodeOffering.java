@@ -365,6 +365,11 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
      * clusters using the node offering. Recurring charges are only in effect
      * for heavy-utilization reserved nodes.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRecurringCharges(java.util.Collection)} or {@link
+     * #withRecurringCharges(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param recurringCharges The charge to your account regardless of whether you are creating any

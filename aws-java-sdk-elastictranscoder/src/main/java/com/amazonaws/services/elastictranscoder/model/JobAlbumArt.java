@@ -191,6 +191,11 @@ public class JobAlbumArt implements Serializable, Cloneable {
      * associated with an audio file, to a maximum of 20. Valid formats are
      * <code>.jpg</code> and <code>.png</code>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setArtwork(java.util.Collection)} or {@link
+     * #withArtwork(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param artwork The file to be used as album art. There can be multiple artworks

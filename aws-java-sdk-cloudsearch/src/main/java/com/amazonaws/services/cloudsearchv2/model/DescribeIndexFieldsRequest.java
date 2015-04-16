@@ -138,6 +138,11 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
      * A list of the index fields you want to describe. If not specified,
      * information is returned for all configured index fields.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFieldNames(java.util.Collection)} or {@link
+     * #withFieldNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fieldNames A list of the index fields you want to describe. If not specified,

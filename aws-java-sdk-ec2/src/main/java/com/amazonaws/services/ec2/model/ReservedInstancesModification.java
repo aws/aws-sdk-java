@@ -136,6 +136,11 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     /**
      * The IDs of one or more Reserved Instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setReservedInstancesIds(java.util.Collection)} or
+     * {@link #withReservedInstancesIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesIds The IDs of one or more Reserved Instances.
@@ -208,6 +213,11 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     /**
      * Contains target configurations along with their corresponding new
      * Reserved Instance IDs.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setModificationResults(java.util.Collection)} or
+     * {@link #withModificationResults(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

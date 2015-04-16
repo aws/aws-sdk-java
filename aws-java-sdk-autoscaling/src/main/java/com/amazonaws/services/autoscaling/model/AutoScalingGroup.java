@@ -476,6 +476,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     /**
      * One or more Availability Zones for the group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
+     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -549,6 +554,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     
     /**
      * One or more load balancers associated with the group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLoadBalancerNames(java.util.Collection)} or
+     * {@link #withLoadBalancerNames(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -720,6 +730,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     /**
      * The EC2 instances associated with the group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstances(java.util.Collection)} or {@link
+     * #withInstances(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances The EC2 instances associated with the group.
@@ -820,6 +835,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     
     /**
      * The suspended processes associated with the group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSuspendedProcesses(java.util.Collection)} or
+     * {@link #withSuspendedProcesses(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1015,6 +1035,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     /**
      * The metrics enabled for this Auto Scaling group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnabledMetrics(java.util.Collection)} or {@link
+     * #withEnabledMetrics(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enabledMetrics The metrics enabled for this Auto Scaling group.
@@ -1134,6 +1159,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     /**
      * The tags for the Auto Scaling group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The tags for the Auto Scaling group.
@@ -1201,6 +1231,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     
     /**
      * The termination policies for this Auto Scaling group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTerminationPolicies(java.util.Collection)} or
+     * {@link #withTerminationPolicies(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

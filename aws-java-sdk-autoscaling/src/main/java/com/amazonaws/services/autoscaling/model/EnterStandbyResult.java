@@ -63,6 +63,11 @@ public class EnterStandbyResult implements Serializable, Cloneable {
      * The activities related to moving instances into <code>Standby</code>
      * mode.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setActivities(java.util.Collection)} or {@link
+     * #withActivities(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activities The activities related to moving instances into <code>Standby</code>

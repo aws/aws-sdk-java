@@ -60,6 +60,11 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements Serializable,
     /**
      * The summary information for the requested Trusted Advisor checks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSummaries(java.util.Collection)} or {@link
+     * #withSummaries(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param summaries The summary information for the requested Trusted Advisor checks.

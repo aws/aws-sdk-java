@@ -606,6 +606,11 @@ public class Cluster implements Serializable, Cloneable {
      * Clusters that are created in a VPC use VPC security groups, which are
      * listed by the <b>VpcSecurityGroups</b> parameter.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClusterSecurityGroups(java.util.Collection)} or
+     * {@link #withClusterSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSecurityGroups A list of cluster security group that are associated with the cluster.
@@ -702,6 +707,11 @@ public class Cluster implements Serializable, Cloneable {
      * associated with the cluster. This parameter is returned only if the
      * cluster is in a VPC.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcSecurityGroups(java.util.Collection)} or
+     * {@link #withVpcSecurityGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcSecurityGroups A list of Virtual Private Cloud (VPC) security groups that are
@@ -780,6 +790,11 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * The list of cluster parameter groups that are associated with this
      * cluster.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClusterParameterGroups(java.util.Collection)} or
+     * {@link #withClusterParameterGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1411,6 +1426,11 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * The nodes in a cluster.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClusterNodes(java.util.Collection)} or {@link
+     * #withClusterNodes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterNodes The nodes in a cluster.
@@ -1544,6 +1564,11 @@ public class Cluster implements Serializable, Cloneable {
     
     /**
      * The list of tags for the cluster.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

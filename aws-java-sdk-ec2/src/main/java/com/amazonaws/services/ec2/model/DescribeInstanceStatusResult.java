@@ -63,6 +63,11 @@ public class DescribeInstanceStatusResult implements Serializable, Cloneable {
     /**
      * One or more instance status descriptions.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceStatuses(java.util.Collection)} or {@link
+     * #withInstanceStatuses(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceStatuses One or more instance status descriptions.

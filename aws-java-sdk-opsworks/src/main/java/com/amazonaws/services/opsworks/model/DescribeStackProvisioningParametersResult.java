@@ -114,26 +114,26 @@ public class DescribeStackProvisioningParametersResult implements Serializable, 
      * @param key The key of the entry to be added into Parameters.
      * @param value The corresponding value of the entry to be added into Parameters.
      */
-    public DescribeStackProvisioningParametersResult addParametersEntry(String key, String value) {
-        if (null == this.parameters) {
-            this.parameters = new java.util.HashMap<String,String>();
-        }
-        if (this.parameters.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.parameters.put(key, value);
-        return this;
+  public DescribeStackProvisioningParametersResult addParametersEntry(String key, String value) {
+    if (null == this.parameters) {
+      this.parameters = new java.util.HashMap<String,String>();
     }
+    if (this.parameters.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.parameters.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Parameters.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public DescribeStackProvisioningParametersResult clearParametersEntries() {
-        this.parameters = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Parameters.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public DescribeStackProvisioningParametersResult clearParametersEntries() {
+    this.parameters = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

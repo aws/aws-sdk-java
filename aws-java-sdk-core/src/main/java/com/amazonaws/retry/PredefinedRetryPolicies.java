@@ -208,9 +208,10 @@ public class PredefinedRetryPolicies {
         /** Maximum exponential back-off time before retrying a request */
         private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
 
-        /** Maximum number of retries before the max backoff will be hit.  This
-         *  is calculated via log_2(MAX_BACKOFF_IN_MILLISECONDS / SCALE_FACTOR)
-         *  based on the code below.
+        /**
+         * Maximum number of retries before the max backoff will be hit. This is
+         * calculated via log_2(MAX_BACKOFF_IN_MILLISECONDS / SCALE_FACTOR)
+         * based on the code below.
          */
         private static final int MAX_RETRIES_BEFORE_MAX_BACKOFF = 6;
 
@@ -249,9 +250,10 @@ public class PredefinedRetryPolicies {
         /** Maximum exponential back-off time before retrying a request */
         private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
 
-        /** Maximum number of retries before the max backoff will be hit.  This
-         *  is calculated via log_2(MAX_BACKOFF_IN_MILLISECONDS / SCALE_FACTOR)
-         *  based on the code below.
+        /**
+         * Maximum number of retries before the max backoff will be hit. This is
+         * calculated via log_2(MAX_BACKOFF_IN_MILLISECONDS / SCALE_FACTOR)
+         * based on the code below.
          */
         private static final int MAX_RETRIES_BEFORE_MAX_BACKOFF = 9;
 

@@ -464,6 +464,11 @@ public class RoleDetail implements Serializable, Cloneable {
     /**
      * Contains a list of instance profiles.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceProfileList(java.util.Collection)} or
+     * {@link #withInstanceProfileList(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceProfileList Contains a list of instance profiles.
@@ -536,6 +541,11 @@ public class RoleDetail implements Serializable, Cloneable {
     /**
      * A list of inline policies embedded in the role. These policies are the
      * role's access (permissions) policies.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRolePolicyList(java.util.Collection)} or {@link
+     * #withRolePolicyList(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -612,6 +622,11 @@ public class RoleDetail implements Serializable, Cloneable {
     /**
      * A list of managed policies attached to the role. These policies are
      * the role's access (permissions) policies.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttachedManagedPolicies(java.util.Collection)} or
+     * {@link #withAttachedManagedPolicies(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

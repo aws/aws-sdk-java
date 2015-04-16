@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Response to a <code>RegisterDevice</code> request.
+ * Response to a RegisterDevice request.
  * </p>
  */
 public class RegisterDeviceResult implements Serializable, Cloneable {

@@ -94,6 +94,11 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     /**
      * A list containing information about IAM users.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUserDetailList(java.util.Collection)} or {@link
+     * #withUserDetailList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userDetailList A list containing information about IAM users.
@@ -161,6 +166,11 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     
     /**
      * A list containing information about IAM groups.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupDetailList(java.util.Collection)} or {@link
+     * #withGroupDetailList(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -230,6 +240,11 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     /**
      * A list containing information about IAM roles.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRoleDetailList(java.util.Collection)} or {@link
+     * #withRoleDetailList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param roleDetailList A list containing information about IAM roles.
@@ -297,6 +312,11 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     
     /**
      * A list containing information about managed policies.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicies(java.util.Collection)} or {@link
+     * #withPolicies(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

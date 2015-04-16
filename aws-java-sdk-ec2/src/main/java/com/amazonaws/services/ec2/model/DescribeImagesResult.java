@@ -57,6 +57,11 @@ public class DescribeImagesResult implements Serializable, Cloneable {
     /**
      * Information about one or more images.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setImages(java.util.Collection)} or {@link
+     * #withImages(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param images Information about one or more images.

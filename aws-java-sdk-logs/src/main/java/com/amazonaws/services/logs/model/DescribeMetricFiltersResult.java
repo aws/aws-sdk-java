@@ -64,6 +64,11 @@ public class DescribeMetricFiltersResult implements Serializable, Cloneable {
     /**
      * Sets the value of the MetricFilters property for this object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMetricFilters(java.util.Collection)} or {@link
+     * #withMetricFilters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricFilters The new value for the MetricFilters property for this object.

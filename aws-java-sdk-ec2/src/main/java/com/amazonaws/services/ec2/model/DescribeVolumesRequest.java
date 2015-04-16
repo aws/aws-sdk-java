@@ -164,6 +164,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     /**
      * One or more volume IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVolumeIds(java.util.Collection)} or {@link
+     * #withVolumeIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeIds One or more volume IDs.
@@ -406,6 +411,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * can be <code>gp2</code> for General Purpose (SSD) volumes,
      * <code>io1</code> for Provisioned IOPS (SSD) volumes, or
      * <code>standard</code> for Magnetic volumes. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -42,8 +42,12 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
 
         if (originalRequest instanceof CopySnapshotRequest) {
 
-            String serviceName = "ec2";
             CopySnapshotRequest originalCopySnapshotRequest = (CopySnapshotRequest) originalRequest;
+           
+            // Return if presigned url is already specified by the user. 
+            if (originalCopySnapshotRequest.getPresignedUrl() != null) return;
+
+            String serviceName = "ec2";
 
             // The source regions where the snapshot currently resides.
             String sourceRegion = originalCopySnapshotRequest.getSourceRegion();

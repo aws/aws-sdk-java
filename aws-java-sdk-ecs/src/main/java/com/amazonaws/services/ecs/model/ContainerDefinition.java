@@ -347,6 +347,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers, see <a
      * href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLinks(java.util.Collection)} or {@link
+     * #withLinks(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param links The <code>link</code> parameter allows containers to communicate with
@@ -426,6 +431,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
     
     /**
      * The list of port mappings for the container.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPortMappings(java.util.Collection)} or {@link
+     * #withPortMappings(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -604,6 +614,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ENTRYPOINT</code> parameter, see <a
      * href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEntryPoint(java.util.Collection)} or {@link
+     * #withEntryPoint(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entryPoint <important> <p>Early versions of the Amazon ECS container agent do not
@@ -703,6 +718,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * information on the Docker <code>CMD</code> parameter, see <a
      * href="https://docs.docker.com/reference/builder/#cmd">https://docs.docker.com/reference/builder/#cmd</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCommand(java.util.Collection)} or {@link
+     * #withCommand(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param command The <code>CMD</code> that is passed to the container. For more
@@ -777,6 +797,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The environment variables to pass to a container.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnvironment(java.util.Collection)} or {@link
+     * #withEnvironment(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environment The environment variables to pass to a container.
@@ -845,6 +870,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The mount points for data volumes in your container.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMountPoints(java.util.Collection)} or {@link
+     * #withMountPoints(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mountPoints The mount points for data volumes in your container.
@@ -912,6 +942,11 @@ public class ContainerDefinition implements Serializable, Cloneable {
     
     /**
      * Data volumes to mount from another container.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVolumesFrom(java.util.Collection)} or {@link
+     * #withVolumesFrom(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

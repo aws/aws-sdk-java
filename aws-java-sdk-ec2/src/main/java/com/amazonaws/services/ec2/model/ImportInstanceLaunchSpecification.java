@@ -212,6 +212,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * One or more security group names.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupNames(java.util.Collection)} or {@link
+     * #withGroupNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupNames One or more security group names.
@@ -279,6 +284,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     
     /**
      * One or more security group IDs.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupIds(java.util.Collection)} or {@link
+     * #withGroupIds(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

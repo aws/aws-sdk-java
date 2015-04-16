@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output for the <code>SetIdentityPoolConfiguration</code> operation
+ * The output for the SetIdentityPoolConfiguration operation
  * </p>
  */
 public class SetIdentityPoolConfigurationResult implements Serializable, Cloneable {

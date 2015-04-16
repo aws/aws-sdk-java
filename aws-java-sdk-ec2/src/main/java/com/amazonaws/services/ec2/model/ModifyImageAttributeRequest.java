@@ -239,6 +239,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * One or more AWS account IDs. This is only valid when modifying the
      * <code>launchPermission</code> attribute.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUserIds(java.util.Collection)} or {@link
+     * #withUserIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userIds One or more AWS account IDs. This is only valid when modifying the
@@ -314,6 +319,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
     /**
      * One or more user groups. This is only valid when modifying the
      * <code>launchPermission</code> attribute.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUserGroups(java.util.Collection)} or {@link
+     * #withUserGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -395,6 +405,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * One or more product codes. After you add a product code to an AMI, it
      * can't be removed. This is only valid when modifying the
      * <code>productCodes</code> attribute.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProductCodes(java.util.Collection)} or {@link
+     * #withProductCodes(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

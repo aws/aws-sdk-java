@@ -85,6 +85,11 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest i
      * must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs
      * for a gateway.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVolumeARNs(java.util.Collection)} or {@link
+     * #withVolumeARNs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeARNs An array of strings where each string represents the Amazon Resource

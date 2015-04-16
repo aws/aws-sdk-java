@@ -66,6 +66,12 @@ public class DescribeLoadBasedAutoScalingResult implements Serializable, Cloneab
      * An array of <code>LoadBasedAutoScalingConfiguration</code> objects
      * that describe each layer's configuration.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setLoadBasedAutoScalingConfigurations(java.util.Collection)} or
+     * {@link #withLoadBasedAutoScalingConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBasedAutoScalingConfigurations An array of <code>LoadBasedAutoScalingConfiguration</code> objects

@@ -142,6 +142,11 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * with the specified IAM OpenID Connect provider. For more information,
      * see <a>CreateOpenIDConnectProvider</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClientIDList(java.util.Collection)} or {@link
+     * #withClientIDList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientIDList A list of client IDs (also known as audiences) that are associated
@@ -225,6 +230,11 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * A list of certificate thumbprints that are associated with the
      * specified IAM OpenID Connect provider. For more information, see
      * <a>CreateOpenIDConnectProvider</a>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setThumbprintList(java.util.Collection)} or {@link
+     * #withThumbprintList(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

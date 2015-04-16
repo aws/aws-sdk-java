@@ -201,6 +201,11 @@ public class PipelineDescription implements Serializable, Cloneable {
      * A list of read-only fields that contain metadata about the pipeline:
      * @userId, @accountId, and @pipelineState.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFields(java.util.Collection)} or {@link
+     * #withFields(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fields A list of read-only fields that contain metadata about the pipeline:
@@ -342,6 +347,11 @@ public class PipelineDescription implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
      * Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

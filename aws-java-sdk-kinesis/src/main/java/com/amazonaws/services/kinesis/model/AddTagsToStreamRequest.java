@@ -155,26 +155,26 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements S
      * @param key The key of the entry to be added into Tags.
      * @param value The corresponding value of the entry to be added into Tags.
      */
-    public AddTagsToStreamRequest addTagsEntry(String key, String value) {
-        if (null == this.tags) {
-            this.tags = new java.util.HashMap<String,String>();
-        }
-        if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.tags.put(key, value);
-        return this;
+  public AddTagsToStreamRequest addTagsEntry(String key, String value) {
+    if (null == this.tags) {
+      this.tags = new java.util.HashMap<String,String>();
     }
+    if (this.tags.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.tags.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Tags.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public AddTagsToStreamRequest clearTagsEntries() {
-        this.tags = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Tags.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public AddTagsToStreamRequest clearTagsEntries() {
+    this.tags = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

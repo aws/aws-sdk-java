@@ -122,6 +122,11 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements Ser
      * A space-separated list of task UUIDs or full Amazon Resource Name
      * (ARN) entries.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTasks(java.util.Collection)} or {@link
+     * #withTasks(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tasks A space-separated list of task UUIDs or full Amazon Resource Name

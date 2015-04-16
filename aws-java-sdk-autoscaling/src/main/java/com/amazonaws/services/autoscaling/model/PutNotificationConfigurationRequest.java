@@ -201,6 +201,11 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      * details about notification types supported by Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNotificationTypes(java.util.Collection)} or
+     * {@link #withNotificationTypes(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notificationTypes The type of event that will cause the notification to be sent. For

@@ -71,6 +71,11 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable, Clon
      * type. If no policy type names are specified, returns the description
      * of all the policy types defined by Elastic Load Balancing service.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyTypeDescriptions(java.util.Collection)} or
+     * {@link #withPolicyTypeDescriptions(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyTypeDescriptions List of policy type description structures of the specified policy

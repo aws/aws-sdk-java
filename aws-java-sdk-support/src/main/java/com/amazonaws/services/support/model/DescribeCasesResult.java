@@ -65,6 +65,11 @@ public class DescribeCasesResult implements Serializable, Cloneable {
     /**
      * The details for the cases that match the request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCases(java.util.Collection)} or {@link
+     * #withCases(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cases The details for the cases that match the request.

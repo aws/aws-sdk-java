@@ -160,6 +160,11 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      * length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      * API.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDiskIds(java.util.Collection)} or {@link
+     * #withDiskIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param diskIds An array of strings that identify disks that are to be configured as

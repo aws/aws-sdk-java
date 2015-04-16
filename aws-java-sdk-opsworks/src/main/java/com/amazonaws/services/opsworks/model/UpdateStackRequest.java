@@ -335,26 +335,26 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-    public UpdateStackRequest addAttributesEntry(String key, String value) {
-        if (null == this.attributes) {
-            this.attributes = new java.util.HashMap<String,String>();
-        }
-        if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.attributes.put(key, value);
-        return this;
+  public UpdateStackRequest addAttributesEntry(String key, String value) {
+    if (null == this.attributes) {
+      this.attributes = new java.util.HashMap<String,String>();
     }
+    if (this.attributes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.attributes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Attributes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public UpdateStackRequest clearAttributesEntries() {
-        this.attributes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Attributes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public UpdateStackRequest clearAttributesEntries() {
+    this.attributes = null;
+    return this;
+  }
+  
     /**
      * The stack AWS Identity and Access Management (IAM) role, which allows
      * AWS OpsWorks to work with AWS resources on your behalf. You must set

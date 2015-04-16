@@ -62,6 +62,11 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
     /**
      * Information about the associations that succeeded.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSuccessful(java.util.Collection)} or {@link
+     * #withSuccessful(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param successful Information about the associations that succeeded.
@@ -129,6 +134,11 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
     
     /**
      * Information about the associations that failed.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFailed(java.util.Collection)} or {@link
+     * #withFailed(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

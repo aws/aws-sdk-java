@@ -104,6 +104,11 @@ public class ContainerOverride implements Serializable, Cloneable {
      * The command to send to the container that overrides the default
      * command from the Docker image or the task definition.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCommand(java.util.Collection)} or {@link
+     * #withCommand(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param command The command to send to the container that overrides the default

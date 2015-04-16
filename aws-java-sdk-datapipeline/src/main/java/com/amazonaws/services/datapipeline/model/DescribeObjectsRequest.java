@@ -150,6 +150,11 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
      * described. You can pass as many as 25 identifiers in a single call to
      * <code>DescribeObjects</code>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setObjectIds(java.util.Collection)} or {@link
+     * #withObjectIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param objectIds The IDs of the pipeline objects that contain the definitions to be

@@ -103,6 +103,12 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
      * A list that provides details about the pending maintenance actions for
      * the resource.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setPendingMaintenanceActionDetails(java.util.Collection)} or {@link
+     * #withPendingMaintenanceActionDetails(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pendingMaintenanceActionDetails A list that provides details about the pending maintenance actions for

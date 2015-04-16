@@ -88,6 +88,11 @@ public class ListDomainsResult implements Serializable, Cloneable {
      * <code>DomainName</code>, <code>Expiry</code>,
      * <code>TransferLock</code>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDomains(java.util.Collection)} or {@link
+     * #withDomains(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains A summary of domains. <p>Type: Complex type containing a list of

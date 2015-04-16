@@ -579,6 +579,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * nondefault VPC, you must use security group IDs instead. <p>Default:
      * Amazon EC2 uses the default security group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups [EC2-Classic, default VPC] One or more security group names. For a
@@ -662,6 +667,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>. <p>Default: Amazon EC2 uses the default
      * security group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link
+     * #withSecurityGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1028,6 +1038,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The block device mapping.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1540,6 +1555,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * One or more network interfaces.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
+     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

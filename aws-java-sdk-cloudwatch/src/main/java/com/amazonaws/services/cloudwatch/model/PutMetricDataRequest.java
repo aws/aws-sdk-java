@@ -136,6 +136,11 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest implements Ser
     /**
      * A list of data describing the metric.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMetricData(java.util.Collection)} or {@link
+     * #withMetricData(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricData A list of data describing the metric.

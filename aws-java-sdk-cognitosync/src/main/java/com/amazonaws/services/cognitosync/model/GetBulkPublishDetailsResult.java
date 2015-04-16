@@ -18,10 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output for the
- * </p>
- * <code>GetBulkPublishDetails</code> <p>
- * operation.
+ * The output for the GetBulkPublishDetails operation.
  * </p>
  */
 public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
@@ -43,19 +40,18 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     private java.util.Date bulkPublishStartTime;
 
     /**
-     * If <code>BulkPublishStatus</code> is SUCCEEDED, the time the last bulk
-     * publish operation completed.
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
+     * operation completed.
      */
     private java.util.Date bulkPublishCompleteTime;
 
     /**
      * Status of the last bulk publish operation, valid values are:
-     * <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     * this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     * published to the configured stream <p><code>SUCCEEDED</code> - All
-     * data for the identity pool has been published to the configured stream
-     * <p><code>FAILED</code> - Some portion of the data has failed to
-     * publish, check <code>FailureMessage</code> for the cause.
+     * <p>NOT_STARTED - No bulk publish has been requested for this identity
+     * pool <p>IN_PROGRESS - Data is being published to the configured stream
+     * <p>SUCCEEDED - All data for the identity pool has been published to
+     * the configured stream <p>FAILED - Some portion of the data has failed
+     * to publish, check FailureMessage for the cause.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED
@@ -159,35 +155,35 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>BulkPublishStatus</code> is SUCCEEDED, the time the last bulk
-     * publish operation completed.
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
+     * operation completed.
      *
-     * @return If <code>BulkPublishStatus</code> is SUCCEEDED, the time the last bulk
-     *         publish operation completed.
+     * @return If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
+     *         operation completed.
      */
     public java.util.Date getBulkPublishCompleteTime() {
         return bulkPublishCompleteTime;
     }
     
     /**
-     * If <code>BulkPublishStatus</code> is SUCCEEDED, the time the last bulk
-     * publish operation completed.
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
+     * operation completed.
      *
-     * @param bulkPublishCompleteTime If <code>BulkPublishStatus</code> is SUCCEEDED, the time the last bulk
-     *         publish operation completed.
+     * @param bulkPublishCompleteTime If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
+     *         operation completed.
      */
     public void setBulkPublishCompleteTime(java.util.Date bulkPublishCompleteTime) {
         this.bulkPublishCompleteTime = bulkPublishCompleteTime;
     }
     
     /**
-     * If <code>BulkPublishStatus</code> is SUCCEEDED, the time the last bulk
-     * publish operation completed.
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
+     * operation completed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bulkPublishCompleteTime If <code>BulkPublishStatus</code> is SUCCEEDED, the time the last bulk
-     *         publish operation completed.
+     * @param bulkPublishCompleteTime If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
+     *         operation completed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -199,23 +195,21 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
 
     /**
      * Status of the last bulk publish operation, valid values are:
-     * <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     * this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     * published to the configured stream <p><code>SUCCEEDED</code> - All
-     * data for the identity pool has been published to the configured stream
-     * <p><code>FAILED</code> - Some portion of the data has failed to
-     * publish, check <code>FailureMessage</code> for the cause.
+     * <p>NOT_STARTED - No bulk publish has been requested for this identity
+     * pool <p>IN_PROGRESS - Data is being published to the configured stream
+     * <p>SUCCEEDED - All data for the identity pool has been published to
+     * the configured stream <p>FAILED - Some portion of the data has failed
+     * to publish, check FailureMessage for the cause.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED
      *
      * @return Status of the last bulk publish operation, valid values are:
-     *         <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     *         this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     *         published to the configured stream <p><code>SUCCEEDED</code> - All
-     *         data for the identity pool has been published to the configured stream
-     *         <p><code>FAILED</code> - Some portion of the data has failed to
-     *         publish, check <code>FailureMessage</code> for the cause.
+     *         <p>NOT_STARTED - No bulk publish has been requested for this identity
+     *         pool <p>IN_PROGRESS - Data is being published to the configured stream
+     *         <p>SUCCEEDED - All data for the identity pool has been published to
+     *         the configured stream <p>FAILED - Some portion of the data has failed
+     *         to publish, check FailureMessage for the cause.
      *
      * @see BulkPublishStatus
      */
@@ -225,23 +219,21 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     
     /**
      * Status of the last bulk publish operation, valid values are:
-     * <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     * this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     * published to the configured stream <p><code>SUCCEEDED</code> - All
-     * data for the identity pool has been published to the configured stream
-     * <p><code>FAILED</code> - Some portion of the data has failed to
-     * publish, check <code>FailureMessage</code> for the cause.
+     * <p>NOT_STARTED - No bulk publish has been requested for this identity
+     * pool <p>IN_PROGRESS - Data is being published to the configured stream
+     * <p>SUCCEEDED - All data for the identity pool has been published to
+     * the configured stream <p>FAILED - Some portion of the data has failed
+     * to publish, check FailureMessage for the cause.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED
      *
      * @param bulkPublishStatus Status of the last bulk publish operation, valid values are:
-     *         <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     *         this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     *         published to the configured stream <p><code>SUCCEEDED</code> - All
-     *         data for the identity pool has been published to the configured stream
-     *         <p><code>FAILED</code> - Some portion of the data has failed to
-     *         publish, check <code>FailureMessage</code> for the cause.
+     *         <p>NOT_STARTED - No bulk publish has been requested for this identity
+     *         pool <p>IN_PROGRESS - Data is being published to the configured stream
+     *         <p>SUCCEEDED - All data for the identity pool has been published to
+     *         the configured stream <p>FAILED - Some portion of the data has failed
+     *         to publish, check FailureMessage for the cause.
      *
      * @see BulkPublishStatus
      */
@@ -251,12 +243,11 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     
     /**
      * Status of the last bulk publish operation, valid values are:
-     * <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     * this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     * published to the configured stream <p><code>SUCCEEDED</code> - All
-     * data for the identity pool has been published to the configured stream
-     * <p><code>FAILED</code> - Some portion of the data has failed to
-     * publish, check <code>FailureMessage</code> for the cause.
+     * <p>NOT_STARTED - No bulk publish has been requested for this identity
+     * pool <p>IN_PROGRESS - Data is being published to the configured stream
+     * <p>SUCCEEDED - All data for the identity pool has been published to
+     * the configured stream <p>FAILED - Some portion of the data has failed
+     * to publish, check FailureMessage for the cause.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -264,12 +255,11 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * <b>Allowed Values: </b>NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED
      *
      * @param bulkPublishStatus Status of the last bulk publish operation, valid values are:
-     *         <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     *         this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     *         published to the configured stream <p><code>SUCCEEDED</code> - All
-     *         data for the identity pool has been published to the configured stream
-     *         <p><code>FAILED</code> - Some portion of the data has failed to
-     *         publish, check <code>FailureMessage</code> for the cause.
+     *         <p>NOT_STARTED - No bulk publish has been requested for this identity
+     *         pool <p>IN_PROGRESS - Data is being published to the configured stream
+     *         <p>SUCCEEDED - All data for the identity pool has been published to
+     *         the configured stream <p>FAILED - Some portion of the data has failed
+     *         to publish, check FailureMessage for the cause.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -283,23 +273,21 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
 
     /**
      * Status of the last bulk publish operation, valid values are:
-     * <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     * this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     * published to the configured stream <p><code>SUCCEEDED</code> - All
-     * data for the identity pool has been published to the configured stream
-     * <p><code>FAILED</code> - Some portion of the data has failed to
-     * publish, check <code>FailureMessage</code> for the cause.
+     * <p>NOT_STARTED - No bulk publish has been requested for this identity
+     * pool <p>IN_PROGRESS - Data is being published to the configured stream
+     * <p>SUCCEEDED - All data for the identity pool has been published to
+     * the configured stream <p>FAILED - Some portion of the data has failed
+     * to publish, check FailureMessage for the cause.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED
      *
      * @param bulkPublishStatus Status of the last bulk publish operation, valid values are:
-     *         <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     *         this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     *         published to the configured stream <p><code>SUCCEEDED</code> - All
-     *         data for the identity pool has been published to the configured stream
-     *         <p><code>FAILED</code> - Some portion of the data has failed to
-     *         publish, check <code>FailureMessage</code> for the cause.
+     *         <p>NOT_STARTED - No bulk publish has been requested for this identity
+     *         pool <p>IN_PROGRESS - Data is being published to the configured stream
+     *         <p>SUCCEEDED - All data for the identity pool has been published to
+     *         the configured stream <p>FAILED - Some portion of the data has failed
+     *         to publish, check FailureMessage for the cause.
      *
      * @see BulkPublishStatus
      */
@@ -309,12 +297,11 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     
     /**
      * Status of the last bulk publish operation, valid values are:
-     * <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     * this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     * published to the configured stream <p><code>SUCCEEDED</code> - All
-     * data for the identity pool has been published to the configured stream
-     * <p><code>FAILED</code> - Some portion of the data has failed to
-     * publish, check <code>FailureMessage</code> for the cause.
+     * <p>NOT_STARTED - No bulk publish has been requested for this identity
+     * pool <p>IN_PROGRESS - Data is being published to the configured stream
+     * <p>SUCCEEDED - All data for the identity pool has been published to
+     * the configured stream <p>FAILED - Some portion of the data has failed
+     * to publish, check FailureMessage for the cause.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -322,12 +309,11 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * <b>Allowed Values: </b>NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED
      *
      * @param bulkPublishStatus Status of the last bulk publish operation, valid values are:
-     *         <p><code>NOT_STARTED</code> - No bulk publish has been requested for
-     *         this identity pool <p><code>IN_PROGRESS</code> - Data is being
-     *         published to the configured stream <p><code>SUCCEEDED</code> - All
-     *         data for the identity pool has been published to the configured stream
-     *         <p><code>FAILED</code> - Some portion of the data has failed to
-     *         publish, check <code>FailureMessage</code> for the cause.
+     *         <p>NOT_STARTED - No bulk publish has been requested for this identity
+     *         pool <p>IN_PROGRESS - Data is being published to the configured stream
+     *         <p>SUCCEEDED - All data for the identity pool has been published to
+     *         the configured stream <p>FAILED - Some portion of the data has failed
+     *         to publish, check FailureMessage for the cause.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

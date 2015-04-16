@@ -75,6 +75,11 @@ public class DescribeOrderableClusterOptionsResult implements Serializable, Clon
      * An <a>OrderableClusterOption</a> structure containing information
      * about orderable options for the Cluster.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOrderableClusterOptions(java.util.Collection)} or
+     * {@link #withOrderableClusterOptions(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param orderableClusterOptions An <a>OrderableClusterOption</a> structure containing information

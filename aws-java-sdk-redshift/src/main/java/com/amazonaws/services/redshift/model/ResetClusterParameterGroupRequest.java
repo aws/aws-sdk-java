@@ -180,6 +180,11 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
      * parameter name must be supplied. <p>Constraints: A maximum of 20
      * parameters can be reset in a single request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameters(java.util.Collection)} or {@link
+     * #withParameters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters An array of names of parameters to be reset. If

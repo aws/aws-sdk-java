@@ -107,6 +107,11 @@ public class DescribePermissionsResult implements Serializable, Cloneable {
      * single <code>Permission</code> object with permissions for the
      * specified stack and IAM ARN.</li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPermissions(java.util.Collection)} or {@link
+     * #withPermissions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param permissions An array of <code>Permission</code> objects that describe the stack

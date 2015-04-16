@@ -242,6 +242,11 @@ public class PutAttributesRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The list of attributes.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributes(java.util.Collection)} or {@link
+     * #withAttributes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes The list of attributes.

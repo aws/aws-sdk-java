@@ -156,6 +156,11 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * <i>AttributeDefinitions</i> must include the key element(s) of the new
      * index.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeDefinitions(java.util.Collection)} or
+     * {@link #withAttributeDefinitions(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeDefinitions An array of attributes that describe the key schema for the table and
@@ -366,6 +371,12 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * settings of an existing global secondary index.</li>
      * <li><p><i>Delete</i> - remove a global secondary index from the
      * table.</li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setGlobalSecondaryIndexUpdates(java.util.Collection)} or {@link
+     * #withGlobalSecondaryIndexUpdates(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -131,6 +131,11 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
      * volume. </li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setChapCredentials(java.util.Collection)} or {@link
+     * #withChapCredentials(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param chapCredentials An array of <a>ChapInfo</a> objects that represent CHAP credentials.

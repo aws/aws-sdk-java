@@ -378,6 +378,11 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements Se
      * Contains details for the host and glue IP addresses. <p>Type: Complex
      * <p>Children: <code>GlueIps</code>, <code>Name</code> <p>Required: No
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNameservers(java.util.Collection)} or {@link
+     * #withNameservers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nameservers Contains details for the host and glue IP addresses. <p>Type: Complex

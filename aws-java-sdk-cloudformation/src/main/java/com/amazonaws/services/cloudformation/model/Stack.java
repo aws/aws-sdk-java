@@ -236,6 +236,11 @@ public class Stack implements Serializable, Cloneable {
     /**
      * A list of <code>Parameter</code> structures.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameters(java.util.Collection)} or {@link
+     * #withParameters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <code>Parameter</code> structures.
@@ -555,6 +560,11 @@ public class Stack implements Serializable, Cloneable {
     /**
      * SNS topic ARNs to which stack related events are published.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNotificationARNs(java.util.Collection)} or {@link
+     * #withNotificationARNs(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -671,6 +681,11 @@ public class Stack implements Serializable, Cloneable {
     /**
      * The capabilities allowed in the stack.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCapabilities(java.util.Collection)} or {@link
+     * #withCapabilities(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param capabilities The capabilities allowed in the stack.
@@ -762,6 +777,11 @@ public class Stack implements Serializable, Cloneable {
     /**
      * A list of output structures.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOutputs(java.util.Collection)} or {@link
+     * #withOutputs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param outputs A list of output structures.
@@ -834,6 +854,11 @@ public class Stack implements Serializable, Cloneable {
     /**
      * A list of <code>Tag</code>s that specify cost allocation information
      * for the stack.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -60,6 +60,11 @@ public class DescribeExpressionsResult implements Serializable, Cloneable {
     /**
      * The expressions configured for the domain.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setExpressions(java.util.Collection)} or {@link
+     * #withExpressions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param expressions The expressions configured for the domain.

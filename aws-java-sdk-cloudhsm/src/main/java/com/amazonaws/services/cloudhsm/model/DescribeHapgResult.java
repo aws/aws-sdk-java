@@ -200,6 +200,11 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * Contains a list of ARNs that identify the HSMs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or
+     * {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hsmsLastActionFailed Contains a list of ARNs that identify the HSMs.
@@ -268,6 +273,11 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * Contains a list of ARNs that identify the HSMs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or
+     * {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hsmsPendingDeletion Contains a list of ARNs that identify the HSMs.
@@ -335,6 +345,11 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     
     /**
      * Contains a list of ARNs that identify the HSMs.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or
+     * {@link #withHsmsPendingRegistration(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -498,6 +513,11 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * The list of partition serial numbers that belong to the
      * high-availability partition group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPartitionSerialList(java.util.Collection)} or
+     * {@link #withPartitionSerialList(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

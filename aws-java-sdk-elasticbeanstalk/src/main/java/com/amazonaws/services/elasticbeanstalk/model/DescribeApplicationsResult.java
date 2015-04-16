@@ -59,6 +59,11 @@ public class DescribeApplicationsResult implements Serializable, Cloneable {
     /**
      * This parameter contains a list of <a>ApplicationDescription</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApplications(java.util.Collection)} or {@link
+     * #withApplications(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applications This parameter contains a list of <a>ApplicationDescription</a>.

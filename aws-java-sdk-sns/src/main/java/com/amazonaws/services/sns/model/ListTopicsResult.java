@@ -65,6 +65,11 @@ public class ListTopicsResult implements Serializable, Cloneable {
     /**
      * A list of topic ARNs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTopics(java.util.Collection)} or {@link
+     * #withTopics(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topics A list of topic ARNs.

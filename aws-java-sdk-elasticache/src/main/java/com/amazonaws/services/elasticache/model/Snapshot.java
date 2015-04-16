@@ -1183,6 +1183,11 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * A list of the cache nodes in the source cache cluster.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNodeSnapshots(java.util.Collection)} or {@link
+     * #withNodeSnapshots(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nodeSnapshots A list of the cache nodes in the source cache cluster.

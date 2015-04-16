@@ -27,10 +27,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to make this API call need to have access to the identity data.
  * </p>
  * <p>
- * <code>ListRecords</code> can be called with temporary user
- * credentials provided by Cognito Identity or with developer
- * credentials. You should use Cognito Identity credentials to make this
- * API call.
+ * ListRecords can be called with temporary user credentials provided by
+ * Cognito Identity or with developer credentials. You should use Cognito
+ * Identity credentials to make this API call.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#listRecords(ListRecordsRequest)

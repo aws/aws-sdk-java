@@ -150,6 +150,11 @@ public class RouteTable implements Serializable, Cloneable {
     /**
      * The routes in the route table.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRoutes(java.util.Collection)} or {@link
+     * #withRoutes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routes The routes in the route table.
@@ -217,6 +222,11 @@ public class RouteTable implements Serializable, Cloneable {
     
     /**
      * The associations between the route table and one or more subnets.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAssociations(java.util.Collection)} or {@link
+     * #withAssociations(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -286,6 +296,11 @@ public class RouteTable implements Serializable, Cloneable {
     /**
      * Any tags assigned to the route table.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags Any tags assigned to the route table.
@@ -353,6 +368,11 @@ public class RouteTable implements Serializable, Cloneable {
     
     /**
      * Any virtual private gateway (VGW) propagating routes.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPropagatingVgws(java.util.Collection)} or {@link
+     * #withPropagatingVgws(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

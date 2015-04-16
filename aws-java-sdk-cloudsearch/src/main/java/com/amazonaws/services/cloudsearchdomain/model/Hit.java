@@ -119,26 +119,26 @@ public class Hit implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Fields.
      * @param value The corresponding value of the entry to be added into Fields.
      */
-    public Hit addFieldsEntry(String key, java.util.List<String> value) {
-        if (null == this.fields) {
-            this.fields = new java.util.HashMap<String,java.util.List<String>>();
-        }
-        if (this.fields.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.fields.put(key, value);
-        return this;
+  public Hit addFieldsEntry(String key, java.util.List<String> value) {
+    if (null == this.fields) {
+      this.fields = new java.util.HashMap<String,java.util.List<String>>();
     }
+    if (this.fields.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.fields.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Fields.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public Hit clearFieldsEntries() {
-        this.fields = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Fields.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Hit clearFieldsEntries() {
+    this.fields = null;
+    return this;
+  }
+  
     /**
      * The highlights returned from a document that matches the search
      * request.
@@ -193,26 +193,26 @@ public class Hit implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Highlights.
      * @param value The corresponding value of the entry to be added into Highlights.
      */
-    public Hit addHighlightsEntry(String key, String value) {
-        if (null == this.highlights) {
-            this.highlights = new java.util.HashMap<String,String>();
-        }
-        if (this.highlights.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.highlights.put(key, value);
-        return this;
+  public Hit addHighlightsEntry(String key, String value) {
+    if (null == this.highlights) {
+      this.highlights = new java.util.HashMap<String,String>();
     }
+    if (this.highlights.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.highlights.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Highlights.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public Hit clearHighlightsEntries() {
-        this.highlights = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Highlights.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Hit clearHighlightsEntries() {
+    this.highlights = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

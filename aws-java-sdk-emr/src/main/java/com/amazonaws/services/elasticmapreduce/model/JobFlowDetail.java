@@ -453,6 +453,11 @@ public class JobFlowDetail implements Serializable, Cloneable {
     /**
      * A list of steps run by the job flow.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSteps(java.util.Collection)} or {@link
+     * #withSteps(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of steps run by the job flow.
@@ -520,6 +525,11 @@ public class JobFlowDetail implements Serializable, Cloneable {
     
     /**
      * A list of the bootstrap actions run by the job flow.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBootstrapActions(java.util.Collection)} or {@link
+     * #withBootstrapActions(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -598,6 +608,11 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * A list of strings set by third party software when the job flow is
      * launched. If you are not using third party software to manage the job
      * flow this value is empty.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSupportedProducts(java.util.Collection)} or
+     * {@link #withSupportedProducts(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

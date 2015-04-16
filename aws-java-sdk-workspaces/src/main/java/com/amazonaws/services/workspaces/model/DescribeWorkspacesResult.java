@@ -88,6 +88,11 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
      * asynchronous, some of this information may be incomplete for a
      * newly-created WorkSpace.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWorkspaces(java.util.Collection)} or {@link
+     * #withWorkspaces(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workspaces An array of structures that contain the information about the

@@ -112,6 +112,11 @@ public class QueryResult implements Serializable, Cloneable {
      * element in this array consists of an attribute name and the value for
      * that attribute.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setItems(java.util.Collection)} or {@link
+     * #withItems(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items An array of item attributes that match the query criteria. Each
@@ -386,26 +391,26 @@ public class QueryResult implements Serializable, Cloneable {
      * @param key The key of the entry to be added into LastEvaluatedKey.
      * @param value The corresponding value of the entry to be added into LastEvaluatedKey.
      */
-    public QueryResult addLastEvaluatedKeyEntry(String key, AttributeValue value) {
-        if (null == this.lastEvaluatedKey) {
-            this.lastEvaluatedKey = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.lastEvaluatedKey.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.lastEvaluatedKey.put(key, value);
-        return this;
+  public QueryResult addLastEvaluatedKeyEntry(String key, AttributeValue value) {
+    if (null == this.lastEvaluatedKey) {
+      this.lastEvaluatedKey = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.lastEvaluatedKey.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.lastEvaluatedKey.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into LastEvaluatedKey.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public QueryResult clearLastEvaluatedKeyEntries() {
-        this.lastEvaluatedKey = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into LastEvaluatedKey.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public QueryResult clearLastEvaluatedKeyEntries() {
+    this.lastEvaluatedKey = null;
+    return this;
+  }
+  
     /**
      * The capacity units consumed by an operation. The data returned
      * includes the total provisioned throughput consumed, along with

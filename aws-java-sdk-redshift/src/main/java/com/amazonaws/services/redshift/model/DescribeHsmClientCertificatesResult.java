@@ -143,6 +143,11 @@ public class DescribeHsmClientCertificatesResult implements Serializable, Clonea
      * by Amazon Redshift clusters to store and retrieve database encryption
      * keys in an HSM.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHsmClientCertificates(java.util.Collection)} or
+     * {@link #withHsmClientCertificates(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hsmClientCertificates A list of the identifiers for one or more HSM client certificates used

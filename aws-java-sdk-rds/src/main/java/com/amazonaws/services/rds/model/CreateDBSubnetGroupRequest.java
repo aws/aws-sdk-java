@@ -167,6 +167,11 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
     /**
      * The EC2 Subnet IDs for the DB subnet group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSubnetIds(java.util.Collection)} or {@link
+     * #withSubnetIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds The EC2 Subnet IDs for the DB subnet group.
@@ -234,6 +239,11 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
     
     /**
      * A list of tags.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

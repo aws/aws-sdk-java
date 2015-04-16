@@ -159,6 +159,11 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     /**
      * A list of VPC subnet IDs for the cache subnet group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSubnetIds(java.util.Collection)} or {@link
+     * #withSubnetIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds A list of VPC subnet IDs for the cache subnet group.

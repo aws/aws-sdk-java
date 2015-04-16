@@ -133,6 +133,11 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest impl
     /**
      * The analysis schemes you want to describe.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAnalysisSchemeNames(java.util.Collection)} or
+     * {@link #withAnalysisSchemeNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param analysisSchemeNames The analysis schemes you want to describe.

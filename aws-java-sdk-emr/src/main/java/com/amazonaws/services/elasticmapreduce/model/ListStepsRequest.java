@@ -114,6 +114,11 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The filter to limit the step list based on certain states.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStepStates(java.util.Collection)} or {@link
+     * #withStepStates(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stepStates The filter to limit the step list based on certain states.
@@ -209,6 +214,11 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The filter to limit the step list based on the identifier of the
      * steps.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStepIds(java.util.Collection)} or {@link
+     * #withStepIds(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

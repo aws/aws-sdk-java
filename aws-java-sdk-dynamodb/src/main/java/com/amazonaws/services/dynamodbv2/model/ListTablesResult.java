@@ -99,6 +99,11 @@ public class ListTablesResult implements Serializable, Cloneable {
      * subsequent <i>ListTables</i> request and obtain the next page of
      * results.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTableNames(java.util.Collection)} or {@link
+     * #withTableNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tableNames The names of the tables associated with the current account at the

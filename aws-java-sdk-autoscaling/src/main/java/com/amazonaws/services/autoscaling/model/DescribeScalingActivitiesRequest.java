@@ -127,6 +127,11 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
      * than 50 items. If unknown activities are requested, they are ignored
      * with no error.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setActivityIds(java.util.Collection)} or {@link
+     * #withActivityIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activityIds A list containing the activity IDs of the desired scaling activities.

@@ -688,6 +688,11 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
     /**
      * A list containing information about the versions of the policy.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyVersionList(java.util.Collection)} or
+     * {@link #withPolicyVersionList(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyVersionList A list containing information about the versions of the policy.

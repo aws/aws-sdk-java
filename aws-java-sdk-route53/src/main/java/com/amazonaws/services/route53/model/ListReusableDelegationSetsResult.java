@@ -110,6 +110,11 @@ public class ListReusableDelegationSetsResult implements Serializable, Cloneable
      * A complex type that contains information about the reusable delegation
      * sets associated with the current AWS account.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDelegationSets(java.util.Collection)} or {@link
+     * #withDelegationSets(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param delegationSets A complex type that contains information about the reusable delegation

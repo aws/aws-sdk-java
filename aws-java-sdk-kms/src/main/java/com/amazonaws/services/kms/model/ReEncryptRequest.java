@@ -163,26 +163,26 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
      * @param key The key of the entry to be added into SourceEncryptionContext.
      * @param value The corresponding value of the entry to be added into SourceEncryptionContext.
      */
-    public ReEncryptRequest addSourceEncryptionContextEntry(String key, String value) {
-        if (null == this.sourceEncryptionContext) {
-            this.sourceEncryptionContext = new java.util.HashMap<String,String>();
-        }
-        if (this.sourceEncryptionContext.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.sourceEncryptionContext.put(key, value);
-        return this;
+  public ReEncryptRequest addSourceEncryptionContextEntry(String key, String value) {
+    if (null == this.sourceEncryptionContext) {
+      this.sourceEncryptionContext = new java.util.HashMap<String,String>();
     }
+    if (this.sourceEncryptionContext.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.sourceEncryptionContext.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into SourceEncryptionContext.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public ReEncryptRequest clearSourceEncryptionContextEntries() {
-        this.sourceEncryptionContext = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into SourceEncryptionContext.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public ReEncryptRequest clearSourceEncryptionContextEntries() {
+    this.sourceEncryptionContext = null;
+    return this;
+  }
+  
     /**
      * Key identifier of the key used to re-encrypt the data.
      * <p>
@@ -272,26 +272,26 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
      * @param key The key of the entry to be added into DestinationEncryptionContext.
      * @param value The corresponding value of the entry to be added into DestinationEncryptionContext.
      */
-    public ReEncryptRequest addDestinationEncryptionContextEntry(String key, String value) {
-        if (null == this.destinationEncryptionContext) {
-            this.destinationEncryptionContext = new java.util.HashMap<String,String>();
-        }
-        if (this.destinationEncryptionContext.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.destinationEncryptionContext.put(key, value);
-        return this;
+  public ReEncryptRequest addDestinationEncryptionContextEntry(String key, String value) {
+    if (null == this.destinationEncryptionContext) {
+      this.destinationEncryptionContext = new java.util.HashMap<String,String>();
     }
+    if (this.destinationEncryptionContext.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.destinationEncryptionContext.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into DestinationEncryptionContext.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public ReEncryptRequest clearDestinationEncryptionContextEntries() {
-        this.destinationEncryptionContext = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into DestinationEncryptionContext.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public ReEncryptRequest clearDestinationEncryptionContextEntries() {
+    this.destinationEncryptionContext = null;
+    return this;
+  }
+  
     /**
      * Grant tokens that identify the grants that have permissions for the
      * encryption and decryption process.
@@ -333,6 +333,11 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * Grant tokens that identify the grants that have permissions for the
      * encryption and decryption process.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
+     * #withGrantTokens(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

@@ -201,6 +201,11 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * A list specifying the price of the Reserved Instance for each month
      * remaining in the Reserved Instance term.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPriceSchedules(java.util.Collection)} or {@link
+     * #withPriceSchedules(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param priceSchedules A list specifying the price of the Reserved Instance for each month

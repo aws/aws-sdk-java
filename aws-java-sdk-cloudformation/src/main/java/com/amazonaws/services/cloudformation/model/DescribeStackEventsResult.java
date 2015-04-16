@@ -68,6 +68,11 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
     /**
      * A list of <code>StackEvents</code> structures.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStackEvents(java.util.Collection)} or {@link
+     * #withStackEvents(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackEvents A list of <code>StackEvents</code> structures.

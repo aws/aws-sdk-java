@@ -592,6 +592,11 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list
      * 2 (7 - 5) cache node IDs to remove.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheNodeIdsToRemove(java.util.Collection)} or
+     * {@link #withCacheNodeIdsToRemove(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeIdsToRemove A list of cache node IDs to be removed. A node ID is a numeric
@@ -1104,6 +1109,11 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * <p>Example:
      * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNewAvailabilityZones(java.util.Collection)} or
+     * {@link #withNewAvailabilityZones(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
@@ -1320,6 +1330,11 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * contain no more than 255 alphanumeric characters. Must not be
      * "Default".
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheSecurityGroupNames(java.util.Collection)} or
+     * {@link #withCacheSecurityGroupNames(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupNames A list of cache security group names to authorize on this cache
@@ -1412,6 +1427,11 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * Specifies the VPC Security Groups associated with the cache cluster.
      * <p>This parameter can be used only with clusters that are created in
      * an Amazon Virtual Private Cloud (VPC).
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link
+     * #withSecurityGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -12,7 +12,7 @@
   <parent>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
-        <version>1.9.30</version>
+        <version>1.9.31</version>
   </parent>
 
   <properties>
@@ -23,7 +23,7 @@
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-simpleworkflow</artifactId>
-        <version>1.9.30</version>
+        <version>1.9.31</version>
       </dependency>
       <dependency>
         <groupId>org.freemarker</groupId>
@@ -58,7 +58,7 @@
       <dependency>
         <groupId>org.aspectj</groupId>
         <artifactId>aspectjrt</artifactId>
-        <version>1.6.0</version>
+        <version>1.8.2</version>
         <optional>true</optional>
       </dependency>
    <!-- JUnit is needed to compile the support classes for the workflow service -->
@@ -75,8 +75,9 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>aspectj-maven-plugin</artifactId>
-          <version>1.4</version>
+          <version>1.7</version>
           <configuration>
+            <complianceLevel>1.6</complianceLevel>
             <source>1.6</source>
             <target>1.6</target>
             <encoding>UTF-8</encoding>

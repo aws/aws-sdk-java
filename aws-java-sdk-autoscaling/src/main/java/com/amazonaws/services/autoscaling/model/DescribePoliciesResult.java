@@ -66,6 +66,11 @@ public class DescribePoliciesResult implements Serializable, Cloneable {
     /**
      * The scaling policies.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setScalingPolicies(java.util.Collection)} or {@link
+     * #withScalingPolicies(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scalingPolicies The scaling policies.

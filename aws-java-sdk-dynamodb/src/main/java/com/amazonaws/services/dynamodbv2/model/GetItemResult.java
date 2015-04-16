@@ -91,26 +91,26 @@ public class GetItemResult implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Item.
      * @param value The corresponding value of the entry to be added into Item.
      */
-    public GetItemResult addItemEntry(String key, AttributeValue value) {
-        if (null == this.item) {
-            this.item = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.item.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.item.put(key, value);
-        return this;
+  public GetItemResult addItemEntry(String key, AttributeValue value) {
+    if (null == this.item) {
+      this.item = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.item.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.item.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Item.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public GetItemResult clearItemEntries() {
-        this.item = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Item.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public GetItemResult clearItemEntries() {
+    this.item = null;
+    return this;
+  }
+  
     /**
      * The capacity units consumed by an operation. The data returned
      * includes the total provisioned throughput consumed, along with

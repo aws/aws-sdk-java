@@ -307,6 +307,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEventCategories(java.util.Collection)} or {@link
+     * #withEventCategories(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventCategories A list of event categories for a SourceType that you want to subscribe
@@ -449,6 +454,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
      * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      * be supplied.</li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSourceIds(java.util.Collection)} or {@link
+     * #withSourceIds(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -603,6 +613,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
     
     /**
      * A list of tags.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

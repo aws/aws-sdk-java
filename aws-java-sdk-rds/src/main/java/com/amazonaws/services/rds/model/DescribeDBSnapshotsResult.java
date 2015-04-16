@@ -112,6 +112,11 @@ public class DescribeDBSnapshotsResult implements Serializable, Cloneable {
     /**
      * A list of <a>DBSnapshot</a> instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDBSnapshots(java.util.Collection)} or {@link
+     * #withDBSnapshots(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSnapshots A list of <a>DBSnapshot</a> instances.

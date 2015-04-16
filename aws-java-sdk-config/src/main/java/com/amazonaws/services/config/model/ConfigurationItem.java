@@ -643,26 +643,26 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Tags.
      * @param value The corresponding value of the entry to be added into Tags.
      */
-    public ConfigurationItem addTagsEntry(String key, String value) {
-        if (null == this.tags) {
-            this.tags = new java.util.HashMap<String,String>();
-        }
-        if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.tags.put(key, value);
-        return this;
+  public ConfigurationItem addTagsEntry(String key, String value) {
+    if (null == this.tags) {
+      this.tags = new java.util.HashMap<String,String>();
     }
+    if (this.tags.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.tags.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Tags.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public ConfigurationItem clearTagsEntries() {
-        this.tags = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Tags.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public ConfigurationItem clearTagsEntries() {
+    this.tags = null;
+    return this;
+  }
+  
     /**
      * A list of CloudTrail event IDs. <p>A populated field indicates that
      * the current configuration was initiated by the events recorded in the
@@ -718,6 +718,11 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * is AWS CloudTrail?</a>. <p>An empty field indicates that the current
      * configuration was not initiated by any event.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRelatedEvents(java.util.Collection)} or {@link
+     * #withRelatedEvents(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -801,6 +806,11 @@ public class ConfigurationItem implements Serializable, Cloneable {
     
     /**
      * A list of related AWS resources.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRelationships(java.util.Collection)} or {@link
+     * #withRelationships(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

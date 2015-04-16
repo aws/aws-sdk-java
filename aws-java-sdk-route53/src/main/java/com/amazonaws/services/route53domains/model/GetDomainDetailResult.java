@@ -271,6 +271,11 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
     /**
      * The name of the domain. <p>Type: String
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNameservers(java.util.Collection)} or {@link
+     * #withNameservers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nameservers The name of the domain. <p>Type: String
@@ -1342,6 +1347,11 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <code>epp status codes</code>. (Search on the ICANN website; web
      * searches sometimes return an old version of the document.) <p>Type:
      * Array of String
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStatusList(java.util.Collection)} or {@link
+     * #withStatusList(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

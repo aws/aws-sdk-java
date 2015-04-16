@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.s3.model;
 
-import com.amazonaws.services.s3.internal.Constants;
-
 public class SSEAwsKeyManagementParams {
 
     /**
@@ -25,24 +23,16 @@ public class SSEAwsKeyManagementParams {
     private final String awsKmsKeyId;
 
     /**
-     * The encryption scheme to be used.
-     */
-    private final String encryption;
-
-    /**
      * Constructs a new instance of SSEAwsKeyManagementParams. The default AWS
-     * KMS Key id is used for encryption. By default the the encryption is
-     * always set to aws:kms
+     * KMS Key id is used for encryption.
      */
     public SSEAwsKeyManagementParams() {
         this.awsKmsKeyId = null;
-        this.encryption = Constants.SSE_AWS_KMS_ENCRYPTION_SCHEME;
     }
 
     /**
      * Constructs a new instance of SSEAwsKeyManagementParams with the user
-     * specified AWS Key Management System Key Id. By default the the encryption
-     * is always set to aws:kms
+     * specified AWS Key Management System Key Id.
      */
     public SSEAwsKeyManagementParams(String awsKmsKeyId) {
         if (awsKmsKeyId == null || awsKmsKeyId.trim().isEmpty()) {
@@ -50,7 +40,6 @@ public class SSEAwsKeyManagementParams {
                     "AWS Key Management System Key id cannot be null");
         }
         this.awsKmsKeyId = awsKmsKeyId;
-        this.encryption = Constants.SSE_AWS_KMS_ENCRYPTION_SCHEME;
     }
 
     /**
@@ -62,10 +51,10 @@ public class SSEAwsKeyManagementParams {
     }
 
     /**
-     * Returns the scheme used for encrypting the Amazon S3 object. By default
-     * the the encryption is always set to aws:kms
+     * Returns the scheme used for encrypting the Amazon S3 object. Currently
+     * the encryption is always "aws:kms".
      */
     public String getEncryption() {
-        return encryption;
+        return SSEAlgorithm.KMS.getAlgorithm();
     }
 }

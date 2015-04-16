@@ -57,6 +57,11 @@ public class DescribeVpcsResult implements Serializable, Cloneable {
     /**
      * Information about one or more VPCs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcs(java.util.Collection)} or {@link
+     * #withVpcs(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcs Information about one or more VPCs.

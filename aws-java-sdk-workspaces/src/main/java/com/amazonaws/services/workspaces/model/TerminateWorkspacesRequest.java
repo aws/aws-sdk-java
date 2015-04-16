@@ -87,6 +87,11 @@ public class TerminateWorkspacesRequest extends AmazonWebServiceRequest implemen
     /**
      * An array of structures that specify the WorkSpaces to terminate.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTerminateWorkspaceRequests(java.util.Collection)}
+     * or {@link #withTerminateWorkspaceRequests(java.util.Collection)} if
+     * you want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

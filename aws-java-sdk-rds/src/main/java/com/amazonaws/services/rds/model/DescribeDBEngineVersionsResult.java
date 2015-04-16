@@ -112,6 +112,11 @@ public class DescribeDBEngineVersionsResult implements Serializable, Cloneable {
     /**
      * A list of <code>DBEngineVersion</code> elements.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDBEngineVersions(java.util.Collection)} or {@link
+     * #withDBEngineVersions(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.

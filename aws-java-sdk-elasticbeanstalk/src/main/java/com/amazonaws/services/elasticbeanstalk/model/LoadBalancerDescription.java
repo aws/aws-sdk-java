@@ -135,6 +135,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     /**
      * A list of Listeners used by the LoadBalancer.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setListeners(java.util.Collection)} or {@link
+     * #withListeners(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listeners A list of Listeners used by the LoadBalancer.

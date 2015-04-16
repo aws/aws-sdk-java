@@ -67,6 +67,11 @@ public class ListMultipartUploadsResult implements Serializable, Cloneable {
     /**
      * A list of in-progress multipart uploads.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUploadsList(java.util.Collection)} or {@link
+     * #withUploadsList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param uploadsList A list of in-progress multipart uploads.

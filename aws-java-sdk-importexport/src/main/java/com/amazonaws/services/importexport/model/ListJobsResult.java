@@ -65,6 +65,11 @@ public class ListJobsResult implements Serializable, Cloneable {
     /**
      * A list container for Jobs returned by the ListJobs operation.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setJobs(java.util.Collection)} or {@link
+     * #withJobs(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobs A list container for Jobs returned by the ListJobs operation.

@@ -66,6 +66,12 @@ public class DescribeScheduledActionsResult implements Serializable, Cloneable {
     /**
      * The scheduled actions.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setScheduledUpdateGroupActions(java.util.Collection)} or {@link
+     * #withScheduledUpdateGroupActions(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scheduledUpdateGroupActions The scheduled actions.

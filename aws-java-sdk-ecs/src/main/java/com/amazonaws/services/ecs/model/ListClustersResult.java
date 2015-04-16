@@ -72,6 +72,11 @@ public class ListClustersResult implements Serializable, Cloneable {
      * The list of full Amazon Resource Name (ARN) entries for each cluster
      * associated with your account.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClusterArns(java.util.Collection)} or {@link
+     * #withClusterArns(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterArns The list of full Amazon Resource Name (ARN) entries for each cluster

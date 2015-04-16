@@ -70,6 +70,11 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * The names of the streams that are associated with the AWS account
      * making the <code>ListStreams</code> request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStreamNames(java.util.Collection)} or {@link
+     * #withStreamNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param streamNames The names of the streams that are associated with the AWS account

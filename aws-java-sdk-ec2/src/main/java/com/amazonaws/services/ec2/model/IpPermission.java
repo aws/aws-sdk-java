@@ -255,6 +255,11 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * One or more security group and AWS account ID pairs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUserIdGroupPairs(java.util.Collection)} or {@link
+     * #withUserIdGroupPairs(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userIdGroupPairs One or more security group and AWS account ID pairs.
@@ -322,6 +327,11 @@ public class IpPermission implements Serializable, Cloneable {
     
     /**
      * One or more IP ranges.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIpRanges(java.util.Collection)} or {@link
+     * #withIpRanges(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -65,6 +65,11 @@ public class Query implements Serializable, Cloneable {
      * List of selectors that define the query. An object must satisfy all of
      * the selectors to match the query.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSelectors(java.util.Collection)} or {@link
+     * #withSelectors(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param selectors List of selectors that define the query. An object must satisfy all of

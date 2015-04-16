@@ -67,6 +67,11 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
     /**
      * A list of <a>SendMessageBatchResultEntry</a> items.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSuccessful(java.util.Collection)} or {@link
+     * #withSuccessful(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param successful A list of <a>SendMessageBatchResultEntry</a> items.
@@ -139,6 +144,11 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
     /**
      * A list of <a>BatchResultErrorEntry</a> items with the error detail
      * about each message that could not be enqueued.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFailed(java.util.Collection)} or {@link
+     * #withFailed(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

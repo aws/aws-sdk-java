@@ -172,6 +172,11 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      * A list of instance IDs that should be registered with the load
      * balancer.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstances(java.util.Collection)} or {@link
+     * #withInstances(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances A list of instance IDs that should be registered with the load

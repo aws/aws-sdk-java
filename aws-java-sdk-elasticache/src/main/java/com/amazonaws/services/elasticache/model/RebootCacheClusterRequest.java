@@ -155,6 +155,11 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
      * (0001, 0002, etc.). To reboot an entire cache cluster, specify all of
      * the cache node IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheNodeIdsToReboot(java.util.Collection)} or
+     * {@link #withCacheNodeIdsToReboot(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeIdsToReboot A list of cache node IDs to reboot. A node ID is a numeric identifier

@@ -97,6 +97,11 @@ public class AccountAttribute implements Serializable, Cloneable {
     /**
      * One or more values for the account attribute.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeValues(java.util.Collection)} or {@link
+     * #withAttributeValues(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValues One or more values for the account attribute.

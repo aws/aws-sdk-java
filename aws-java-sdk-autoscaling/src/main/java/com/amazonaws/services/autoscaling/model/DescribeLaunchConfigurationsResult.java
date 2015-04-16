@@ -66,6 +66,11 @@ public class DescribeLaunchConfigurationsResult implements Serializable, Cloneab
     /**
      * The launch configurations.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLaunchConfigurations(java.util.Collection)} or
+     * {@link #withLaunchConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchConfigurations The launch configurations.

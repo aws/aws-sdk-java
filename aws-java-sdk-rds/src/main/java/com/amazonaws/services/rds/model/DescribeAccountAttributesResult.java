@@ -71,6 +71,11 @@ public class DescribeAccountAttributesResult implements Serializable, Cloneable 
      * has a name, a count of usage toward the quota maximum, and a maximum
      * value for the quota.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAccountQuotas(java.util.Collection)} or {@link
+     * #withAccountQuotas(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accountQuotas A list of <a>AccountQuota</a> objects. Within this list, each quota

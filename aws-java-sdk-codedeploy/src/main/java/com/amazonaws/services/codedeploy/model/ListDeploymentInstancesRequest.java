@@ -209,6 +209,11 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest impl
      * resulting list those instances with deployments in an unknown
      * state.</li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceStatusFilter(java.util.Collection)} or
+     * {@link #withInstanceStatusFilter(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceStatusFilter A subset of instances to list, by status: <ul> <li>Pending: Include in

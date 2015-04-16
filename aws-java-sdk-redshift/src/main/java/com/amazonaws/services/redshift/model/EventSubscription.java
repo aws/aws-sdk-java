@@ -378,6 +378,11 @@ public class EventSubscription implements Serializable, Cloneable {
      * A list of the sources that publish events to the Amazon Redshift event
      * notification subscription.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSourceIdsList(java.util.Collection)} or {@link
+     * #withSourceIdsList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIdsList A list of the sources that publish events to the Amazon Redshift event
@@ -458,6 +463,11 @@ public class EventSubscription implements Serializable, Cloneable {
      * The list of Amazon Redshift event categories specified in the event
      * notification subscription. <p>Values: Configuration, Management,
      * Monitoring, Security
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEventCategoriesList(java.util.Collection)} or
+     * {@link #withEventCategoriesList(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -621,6 +631,11 @@ public class EventSubscription implements Serializable, Cloneable {
     
     /**
      * The list of tags for the event subscription.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

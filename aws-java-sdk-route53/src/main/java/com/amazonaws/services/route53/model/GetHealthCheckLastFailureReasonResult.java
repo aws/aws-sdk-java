@@ -66,6 +66,11 @@ public class GetHealthCheckLastFailureReasonResult implements Serializable, Clon
      * A list that contains one <code>HealthCheckObservation</code> element
      * for each Route 53 health checker.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHealthCheckObservations(java.util.Collection)} or
+     * {@link #withHealthCheckObservations(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param healthCheckObservations A list that contains one <code>HealthCheckObservation</code> element

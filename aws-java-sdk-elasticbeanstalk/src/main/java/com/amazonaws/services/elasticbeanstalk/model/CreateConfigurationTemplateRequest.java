@@ -564,6 +564,11 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * option to the requested value. The new value overrides the value
      * obtained from the solution stack or the source configuration template.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionSettings(java.util.Collection)} or {@link
+     * #withOptionSettings(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings If specified, AWS Elastic Beanstalk sets the specified configuration

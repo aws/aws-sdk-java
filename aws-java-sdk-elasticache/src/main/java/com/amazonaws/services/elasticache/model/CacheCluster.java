@@ -951,6 +951,11 @@ public class CacheCluster implements Serializable, Cloneable {
      * A list of cache security group elements, composed of name and status
      * sub-elements.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheSecurityGroups(java.util.Collection)} or
+     * {@link #withCacheSecurityGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroups A list of cache security group elements, composed of name and status
@@ -1088,6 +1093,11 @@ public class CacheCluster implements Serializable, Cloneable {
     /**
      * A list of cache nodes that are members of the cache cluster.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheNodes(java.util.Collection)} or {@link
+     * #withCacheNodes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodes A list of cache nodes that are members of the cache cluster.
@@ -1197,6 +1207,11 @@ public class CacheCluster implements Serializable, Cloneable {
     
     /**
      * A list of VPC Security Groups associated with the cache cluster.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

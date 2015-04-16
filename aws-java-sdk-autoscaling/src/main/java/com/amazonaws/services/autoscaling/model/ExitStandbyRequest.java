@@ -78,6 +78,11 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements Seria
     /**
      * One or more instance IDs. You must specify at least one instance ID.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
+     * #withInstanceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds One or more instance IDs. You must specify at least one instance ID.

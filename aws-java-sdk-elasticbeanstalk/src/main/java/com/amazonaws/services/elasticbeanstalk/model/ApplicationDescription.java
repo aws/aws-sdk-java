@@ -247,6 +247,11 @@ public class ApplicationDescription implements Serializable, Cloneable {
     /**
      * The names of the versions for this application.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVersions(java.util.Collection)} or {@link
+     * #withVersions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param versions The names of the versions for this application.
@@ -319,6 +324,11 @@ public class ApplicationDescription implements Serializable, Cloneable {
     /**
      * The names of the configuration templates associated with this
      * application.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigurationTemplates(java.util.Collection)} or
+     * {@link #withConfigurationTemplates(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -150,6 +150,11 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      * don't specify an IP address, Amazon EC2 automatically selects an IP
      * address within the subnet range.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPrivateIpAddresses(java.util.Collection)} or
+     * {@link #withPrivateIpAddresses(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses One or more IP addresses to be assigned as a secondary private IP

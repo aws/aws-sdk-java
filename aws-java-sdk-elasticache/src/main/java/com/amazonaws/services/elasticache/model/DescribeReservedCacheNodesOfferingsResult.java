@@ -104,6 +104,12 @@ public class DescribeReservedCacheNodesOfferingsResult implements Serializable, 
      * A list of reserved cache node offerings. Each element in the list
      * contains detailed information about one offering.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setReservedCacheNodesOfferings(java.util.Collection)} or {@link
+     * #withReservedCacheNodesOfferings(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedCacheNodesOfferings A list of reserved cache node offerings. Each element in the list

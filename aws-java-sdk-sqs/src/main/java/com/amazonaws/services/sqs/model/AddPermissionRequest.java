@@ -277,6 +277,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
      * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAWSAccountIds(java.util.Collection)} or {@link
+     * #withAWSAccountIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccountIds The AWS account number of the <a
@@ -417,6 +422,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * actions: <code>SendMessageBatch</code>,
      * <code>DeleteMessageBatch</code>, and
      * <code>ChangeMessageVisibilityBatch</code>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setActions(java.util.Collection)} or {@link
+     * #withActions(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

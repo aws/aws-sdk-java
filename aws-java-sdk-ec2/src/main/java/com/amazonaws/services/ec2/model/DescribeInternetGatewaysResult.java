@@ -57,6 +57,11 @@ public class DescribeInternetGatewaysResult implements Serializable, Cloneable {
     /**
      * Information about one or more Internet gateways.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInternetGateways(java.util.Collection)} or {@link
+     * #withInternetGateways(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param internetGateways Information about one or more Internet gateways.

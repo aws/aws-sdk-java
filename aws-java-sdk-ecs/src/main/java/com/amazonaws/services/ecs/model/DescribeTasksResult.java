@@ -62,6 +62,11 @@ public class DescribeTasksResult implements Serializable, Cloneable {
     /**
      * The list of tasks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTasks(java.util.Collection)} or {@link
+     * #withTasks(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tasks The list of tasks.
@@ -129,6 +134,11 @@ public class DescribeTasksResult implements Serializable, Cloneable {
     
     /**
      * 
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFailures(java.util.Collection)} or {@link
+     * #withFailures(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

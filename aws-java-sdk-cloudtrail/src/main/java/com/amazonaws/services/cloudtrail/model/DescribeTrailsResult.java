@@ -60,6 +60,11 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
     /**
      * The list of trails.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTrailList(java.util.Collection)} or {@link
+     * #withTrailList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param trailList The list of trails.

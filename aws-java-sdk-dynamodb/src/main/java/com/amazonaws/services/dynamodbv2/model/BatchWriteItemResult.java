@@ -313,26 +313,26 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * @param key The key of the entry to be added into UnprocessedItems.
      * @param value The corresponding value of the entry to be added into UnprocessedItems.
      */
-    public BatchWriteItemResult addUnprocessedItemsEntry(String key, java.util.List<WriteRequest> value) {
-        if (null == this.unprocessedItems) {
-            this.unprocessedItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
-        }
-        if (this.unprocessedItems.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.unprocessedItems.put(key, value);
-        return this;
+  public BatchWriteItemResult addUnprocessedItemsEntry(String key, java.util.List<WriteRequest> value) {
+    if (null == this.unprocessedItems) {
+      this.unprocessedItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
     }
+    if (this.unprocessedItems.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.unprocessedItems.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into UnprocessedItems.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public BatchWriteItemResult clearUnprocessedItemsEntries() {
-        this.unprocessedItems = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into UnprocessedItems.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public BatchWriteItemResult clearUnprocessedItemsEntries() {
+    this.unprocessedItems = null;
+    return this;
+  }
+  
     /**
      * A list of tables that were processed by <i>BatchWriteItem</i> and, for
      * each table, information about any item collections that were affected
@@ -468,26 +468,26 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * @param key The key of the entry to be added into ItemCollectionMetrics.
      * @param value The corresponding value of the entry to be added into ItemCollectionMetrics.
      */
-    public BatchWriteItemResult addItemCollectionMetricsEntry(String key, java.util.List<ItemCollectionMetrics> value) {
-        if (null == this.itemCollectionMetrics) {
-            this.itemCollectionMetrics = new java.util.HashMap<String,java.util.List<ItemCollectionMetrics>>();
-        }
-        if (this.itemCollectionMetrics.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.itemCollectionMetrics.put(key, value);
-        return this;
+  public BatchWriteItemResult addItemCollectionMetricsEntry(String key, java.util.List<ItemCollectionMetrics> value) {
+    if (null == this.itemCollectionMetrics) {
+      this.itemCollectionMetrics = new java.util.HashMap<String,java.util.List<ItemCollectionMetrics>>();
     }
+    if (this.itemCollectionMetrics.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.itemCollectionMetrics.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ItemCollectionMetrics.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public BatchWriteItemResult clearItemCollectionMetricsEntries() {
-        this.itemCollectionMetrics = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ItemCollectionMetrics.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public BatchWriteItemResult clearItemCollectionMetricsEntries() {
+    this.itemCollectionMetrics = null;
+    return this;
+  }
+  
     /**
      * The capacity units consumed by the operation. <p>Each element consists
      * of: <ul> <li> <p><i>TableName</i> - The table that consumed the
@@ -529,6 +529,11 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * of: <ul> <li> <p><i>TableName</i> - The table that consumed the
      * provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The total
      * number of capacity units consumed. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConsumedCapacity(java.util.Collection)} or {@link
+     * #withConsumedCapacity(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

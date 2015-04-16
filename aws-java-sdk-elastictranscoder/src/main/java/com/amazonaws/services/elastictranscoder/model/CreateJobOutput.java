@@ -822,6 +822,11 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * watermarks for each output. Settings for each watermark must be
      * defined in the preset for the current output.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWatermarks(java.util.Collection)} or {@link
+     * #withWatermarks(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param watermarks Information about the watermarks that you want Elastic Transcoder to
@@ -974,6 +979,11 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * for the clips that make up an output file. For the current release,
      * you can only specify settings for a single clip per output file. The
      * Composition object cannot be null.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setComposition(java.util.Collection)} or {@link
+     * #withComposition(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

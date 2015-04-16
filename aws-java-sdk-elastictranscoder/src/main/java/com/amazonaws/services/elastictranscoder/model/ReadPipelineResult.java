@@ -128,6 +128,11 @@ public class ReadPipelineResult implements Serializable, Cloneable {
      * SNS notification topics, and AWS KMS key, reduces processing time and
      * prevents cross-regional charges.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWarnings(java.util.Collection)} or {@link
+     * #withWarnings(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param warnings Elastic Transcoder returns a warning if the resources used by your

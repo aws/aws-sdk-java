@@ -254,6 +254,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * The names of all the cache clusters that are part of this replication
      * group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMemberClusters(java.util.Collection)} or {@link
+     * #withMemberClusters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param memberClusters The names of all the cache clusters that are part of this replication
@@ -329,6 +334,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
     /**
      * A single element list with information about the nodes in the
      * replication group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNodeGroups(java.util.Collection)} or {@link
+     * #withNodeGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

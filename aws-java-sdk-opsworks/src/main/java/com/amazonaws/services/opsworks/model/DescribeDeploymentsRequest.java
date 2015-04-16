@@ -197,6 +197,11 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implemen
      * the specified deployments. Otherwise, it returns a description of
      * every deployment.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeploymentIds(java.util.Collection)} or {@link
+     * #withDeploymentIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deploymentIds An array of deployment IDs to be described. If you include this

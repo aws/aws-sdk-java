@@ -57,6 +57,11 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
     /**
      * Information about one or more customer gateways.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCustomerGateways(java.util.Collection)} or {@link
+     * #withCustomerGateways(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerGateways Information about one or more customer gateways.

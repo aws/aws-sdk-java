@@ -118,6 +118,11 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
     /**
      * Sets the value of the Disks property for this object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDisks(java.util.Collection)} or {@link
+     * #withDisks(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param disks The new value for the Disks property for this object.

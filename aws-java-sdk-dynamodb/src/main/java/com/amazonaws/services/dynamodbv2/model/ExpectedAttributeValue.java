@@ -1868,6 +1868,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeValueList(java.util.Collection)} or
+     * {@link #withAttributeValueList(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValueList One or more values to evaluate against the supplied attribute. The

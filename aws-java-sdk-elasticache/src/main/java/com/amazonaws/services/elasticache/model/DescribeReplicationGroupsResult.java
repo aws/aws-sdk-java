@@ -103,6 +103,11 @@ public class DescribeReplicationGroupsResult implements Serializable, Cloneable 
      * A list of replication groups. Each item in the list contains detailed
      * information about one replication group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setReplicationGroups(java.util.Collection)} or
+     * {@link #withReplicationGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param replicationGroups A list of replication groups. Each item in the list contains detailed

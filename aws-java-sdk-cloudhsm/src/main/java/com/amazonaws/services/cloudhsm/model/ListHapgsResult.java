@@ -66,6 +66,11 @@ public class ListHapgsResult implements Serializable, Cloneable {
     /**
      * The list of high-availability partition groups.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHapgList(java.util.Collection)} or {@link
+     * #withHapgList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hapgList The list of high-availability partition groups.

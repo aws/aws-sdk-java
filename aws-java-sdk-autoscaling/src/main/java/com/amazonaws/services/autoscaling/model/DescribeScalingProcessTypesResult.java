@@ -57,6 +57,11 @@ public class DescribeScalingProcessTypesResult implements Serializable, Cloneabl
     /**
      * The names of the process types.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProcesses(java.util.Collection)} or {@link
+     * #withProcesses(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param processes The names of the process types.

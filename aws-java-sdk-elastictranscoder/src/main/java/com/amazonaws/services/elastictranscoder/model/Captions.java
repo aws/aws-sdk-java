@@ -237,6 +237,11 @@ public class Captions implements Serializable, Cloneable {
      * transcoding process. To omit all sidecar captions, leave
      * <code>CaptionSources</code> blank.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCaptionSources(java.util.Collection)} or {@link
+     * #withCaptionSources(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -327,6 +332,11 @@ public class Captions implements Serializable, Cloneable {
     /**
      * The array of file formats for the output captions. If you leave this
      * value blank, Elastic Transcoder returns an error.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCaptionFormats(java.util.Collection)} or {@link
+     * #withCaptionFormats(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

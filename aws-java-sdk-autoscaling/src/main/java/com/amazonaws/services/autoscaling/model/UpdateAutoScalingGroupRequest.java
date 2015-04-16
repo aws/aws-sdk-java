@@ -458,6 +458,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     /**
      * One or more Availability Zones for the group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
+     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -820,6 +825,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto
      * Scaling Developer Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTerminationPolicies(java.util.Collection)} or
+     * {@link #withTerminationPolicies(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

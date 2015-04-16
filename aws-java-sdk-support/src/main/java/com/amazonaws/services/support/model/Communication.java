@@ -227,6 +227,11 @@ public class Communication implements Serializable, Cloneable {
     /**
      * Information about the attachments to the case communication.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttachmentSet(java.util.Collection)} or {@link
+     * #withAttachmentSet(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachmentSet Information about the attachments to the case communication.

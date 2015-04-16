@@ -66,6 +66,11 @@ public class DescribeRdsDbInstancesResult implements Serializable, Cloneable {
      * An a array of <code>RdsDbInstance</code> objects that describe the
      * instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRdsDbInstances(java.util.Collection)} or {@link
+     * #withRdsDbInstances(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rdsDbInstances An a array of <code>RdsDbInstance</code> objects that describe the

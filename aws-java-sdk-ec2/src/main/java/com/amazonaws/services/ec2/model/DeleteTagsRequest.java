@@ -104,6 +104,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * The ID of the resource. For example, ami-1a2b3c4d. You can specify
      * more than one resource ID.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResources(java.util.Collection)} or {@link
+     * #withResources(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resources The ID of the resource. For example, ami-1a2b3c4d. You can specify
@@ -189,6 +194,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * parameter, we delete the tag regardless of its value. If you specify
      * this parameter with an empty string as the value, we delete the key
      * only if its value is an empty string.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

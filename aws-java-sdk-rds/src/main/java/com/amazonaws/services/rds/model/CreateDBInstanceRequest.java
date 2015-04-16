@@ -1128,6 +1128,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * A list of DB security groups to associate with this DB instance. <p>
      * Default: The default DB security group for the database engine.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDBSecurityGroups(java.util.Collection)} or {@link
+     * #withDBSecurityGroups(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroups A list of DB security groups to associate with this DB instance. <p>
@@ -1208,6 +1213,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * A list of EC2 VPC security groups to associate with this DB instance.
      * <p> Default: The default EC2 VPC security group for the DB subnet
      * group's VPC.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcSecurityGroupIds(java.util.Collection)} or
+     * {@link #withVpcSecurityGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -3000,6 +3010,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * A list of tags.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

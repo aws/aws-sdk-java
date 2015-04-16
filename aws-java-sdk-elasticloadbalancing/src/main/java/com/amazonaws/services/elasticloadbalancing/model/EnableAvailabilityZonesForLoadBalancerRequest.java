@@ -143,6 +143,11 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      * A list of new Availability Zones for the load balancer. Each
      * Availability Zone must be in the same region as the load balancer.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
+     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of new Availability Zones for the load balancer. Each

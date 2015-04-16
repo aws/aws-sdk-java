@@ -894,6 +894,11 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable, Clon
      * A list of routes to be advertised to the AWS network in this region
      * (public virtual interface) or your VPC (private virtual interface).
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRouteFilterPrefixes(java.util.Collection)} or
+     * {@link #withRouteFilterPrefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeFilterPrefixes A list of routes to be advertised to the AWS network in this region

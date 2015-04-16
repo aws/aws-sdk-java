@@ -60,6 +60,12 @@ public class DescribeConfigurationRecorderStatusResult implements Serializable, 
     /**
      * A list that contains status of the specified recorders.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setConfigurationRecordersStatus(java.util.Collection)} or {@link
+     * #withConfigurationRecordersStatus(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param configurationRecordersStatus A list that contains status of the specified recorders.

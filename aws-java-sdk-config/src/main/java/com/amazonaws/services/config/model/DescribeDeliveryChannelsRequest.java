@@ -70,6 +70,11 @@ public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest imp
     /**
      * A list of delivery channel names.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeliveryChannelNames(java.util.Collection)} or
+     * {@link #withDeliveryChannelNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deliveryChannelNames A list of delivery channel names.

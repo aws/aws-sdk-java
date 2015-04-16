@@ -200,6 +200,11 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * including trusted signers in the default cache behavior and in all of
      * the other cache behaviors.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setItems(java.util.Collection)} or {@link
+     * #withItems(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A complex type that contains one Signer complex type for each unique

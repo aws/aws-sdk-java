@@ -80,6 +80,11 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      * returns the description of all the policy types defined by Elastic
      * Load Balancing service.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyTypeNames(java.util.Collection)} or {@link
+     * #withPolicyTypeNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyTypeNames Specifies the name of the policy types. If no names are specified,

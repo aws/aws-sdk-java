@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Response to a <code>SubscribeToDataset</code> request.
+ * Response to a SubscribeToDataset request.
  * </p>
  */
 public class SubscribeToDatasetResult implements Serializable, Cloneable {

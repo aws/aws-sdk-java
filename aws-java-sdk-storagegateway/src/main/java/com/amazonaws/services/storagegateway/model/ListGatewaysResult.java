@@ -56,6 +56,11 @@ public class ListGatewaysResult implements Serializable, Cloneable {
     /**
      * Sets the value of the Gateways property for this object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGateways(java.util.Collection)} or {@link
+     * #withGateways(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param gateways The new value for the Gateways property for this object.

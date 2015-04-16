@@ -148,6 +148,11 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      * An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      * a single request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSubnetIds(java.util.Collection)} or {@link
+     * #withSubnetIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in

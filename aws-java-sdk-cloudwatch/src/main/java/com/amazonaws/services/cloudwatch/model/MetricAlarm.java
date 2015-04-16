@@ -463,6 +463,11 @@ public class MetricAlarm implements Serializable, Cloneable {
      * supported are publishing to an Amazon SNS topic and triggering an Auto
      * Scaling policy.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOKActions(java.util.Collection)} or {@link
+     * #withOKActions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -575,6 +580,11 @@ public class MetricAlarm implements Serializable, Cloneable {
      * actions supported are publishing to an Amazon SNS topic and triggering
      * an Auto Scaling policy.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAlarmActions(java.util.Collection)} or {@link
+     * #withAlarmActions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -686,6 +696,11 @@ public class MetricAlarm implements Serializable, Cloneable {
      * is specified as an Amazon Resource Number (ARN). Currently the only
      * actions supported are publishing to an Amazon SNS topic or triggering
      * an Auto Scaling policy.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInsufficientDataActions(java.util.Collection)} or
+     * {@link #withInsufficientDataActions(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1146,6 +1161,11 @@ public class MetricAlarm implements Serializable, Cloneable {
     
     /**
      * The list of dimensions associated with the alarm's associated metric.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDimensions(java.util.Collection)} or {@link
+     * #withDimensions(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

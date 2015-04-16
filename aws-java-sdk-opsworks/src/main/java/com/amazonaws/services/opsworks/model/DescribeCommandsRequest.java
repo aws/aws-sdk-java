@@ -191,6 +191,11 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements 
      * <code>DescribeCommands</code> returns a description of the specified
      * commands. Otherwise, it returns a description of every command.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCommandIds(java.util.Collection)} or {@link
+     * #withCommandIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param commandIds An array of command IDs. If you include this parameter,

@@ -406,6 +406,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
     /**
      * The CloudWatch Alarms related to the policy.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAlarms(java.util.Collection)} or {@link
+     * #withAlarms(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alarms The CloudWatch Alarms related to the policy.

@@ -285,6 +285,11 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      * transcoded (target) files. We recommend that you use the
      * <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOutputs(java.util.Collection)} or {@link
+     * #withOutputs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -445,6 +450,11 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      * want Elastic Transcoder to create. <p>The maximum number of master
      * playlists in a job is 30.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPlaylists(java.util.Collection)} or {@link
+     * #withPlaylists(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -575,26 +585,26 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      * @param key The key of the entry to be added into UserMetadata.
      * @param value The corresponding value of the entry to be added into UserMetadata.
      */
-    public CreateJobRequest addUserMetadataEntry(String key, String value) {
-        if (null == this.userMetadata) {
-            this.userMetadata = new java.util.HashMap<String,String>();
-        }
-        if (this.userMetadata.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.userMetadata.put(key, value);
-        return this;
+  public CreateJobRequest addUserMetadataEntry(String key, String value) {
+    if (null == this.userMetadata) {
+      this.userMetadata = new java.util.HashMap<String,String>();
     }
+    if (this.userMetadata.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.userMetadata.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into UserMetadata.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public CreateJobRequest clearUserMetadataEntries() {
-        this.userMetadata = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into UserMetadata.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public CreateJobRequest clearUserMetadataEntries() {
+    this.userMetadata = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

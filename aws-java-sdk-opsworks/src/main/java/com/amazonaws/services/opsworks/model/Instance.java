@@ -502,6 +502,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * An array containing the instance layer IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLayerIds(java.util.Collection)} or {@link
+     * #withLayerIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array containing the instance layer IDs.
@@ -569,6 +574,11 @@ public class Instance implements Serializable, Cloneable {
     
     /**
      * An array containing the instance security group IDs.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link
+     * #withSecurityGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1646,6 +1656,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block device mappings.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

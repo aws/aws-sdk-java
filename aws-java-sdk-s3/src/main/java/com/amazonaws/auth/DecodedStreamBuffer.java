@@ -47,7 +47,7 @@ class DecodedStreamBuffer {
             bufferArray[byteBuffered++] = read;
     }
 
-    public void buffer(byte[] array, int offset, int length) {
+    public void buffer(byte[] src, int srcPos, int length) {
         pos = -1;
         if (byteBuffered + length > maxBufferSize) {
             if (log.isDebugEnabled()) {
@@ -58,7 +58,7 @@ class DecodedStreamBuffer {
             bufferSizeOverflow = true;
         }
         else {
-            System.arraycopy(array, offset, bufferArray, byteBuffered, length);
+            System.arraycopy(src, srcPos, bufferArray, byteBuffered, length);
             byteBuffered += length;
         }
     }

@@ -57,6 +57,11 @@ public class DescribeNetworkInterfacesResult implements Serializable, Cloneable 
     /**
      * Information about one or more network interfaces.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
+     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces Information about one or more network interfaces.

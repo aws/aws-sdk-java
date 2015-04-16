@@ -83,6 +83,11 @@ public class ListTagsForDomainResult implements Serializable, Cloneable {
      * <p>Type: String </li> <li><p>Value <p>The value of a tag. <p>Type:
      * String </li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagList(java.util.Collection)} or {@link
+     * #withTagList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagList A list of the tags that are associated with the specified domain.

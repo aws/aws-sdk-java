@@ -118,6 +118,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * One or more network ACL IDs. <p>Default: Describes all your network
      * ACLs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNetworkAclIds(java.util.Collection)} or {@link
+     * #withNetworkAclIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAclIds One or more network ACL IDs. <p>Default: Describes all your network
@@ -368,6 +373,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      * network ACL. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

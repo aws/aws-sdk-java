@@ -98,6 +98,11 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * One or more bundle task IDs. <p>Default: Describes all your bundle
      * tasks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBundleIds(java.util.Collection)} or {@link
+     * #withBundleIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bundleIds One or more bundle task IDs. <p>Default: Describes all your bundle
@@ -243,6 +248,11 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * <code>storing</code> | <code>cancelling</code> | <code>complete</code>
      * | <code>failed</code>). </li> <li> <p><code>update-time</code> - The
      * time of the most recent update for the task. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

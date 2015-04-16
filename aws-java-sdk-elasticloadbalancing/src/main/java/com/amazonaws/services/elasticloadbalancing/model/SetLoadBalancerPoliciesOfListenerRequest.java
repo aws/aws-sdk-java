@@ -171,6 +171,11 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * List of policies to be associated with the listener. If the list is
      * empty, the current policy is removed from the listener.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyNames(java.util.Collection)} or {@link
+     * #withPolicyNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyNames List of policies to be associated with the listener. If the list is

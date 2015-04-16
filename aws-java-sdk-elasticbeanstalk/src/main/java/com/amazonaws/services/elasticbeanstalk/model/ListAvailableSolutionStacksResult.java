@@ -65,6 +65,11 @@ public class ListAvailableSolutionStacksResult implements Serializable, Cloneabl
     /**
      * A list of available solution stacks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSolutionStacks(java.util.Collection)} or {@link
+     * #withSolutionStacks(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param solutionStacks A list of available solution stacks.
@@ -137,6 +142,11 @@ public class ListAvailableSolutionStacksResult implements Serializable, Cloneabl
     /**
      * A list of available solution stacks and their
      * <a>SolutionStackDescription</a>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSolutionStackDetails(java.util.Collection)} or
+     * {@link #withSolutionStackDetails(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

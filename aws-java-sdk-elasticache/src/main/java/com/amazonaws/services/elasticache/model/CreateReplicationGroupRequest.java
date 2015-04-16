@@ -635,6 +635,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * PreferredAvailabilityZones.member.2=us-west-2c
      * PreferredAvailabilityZones.member.3=us-west-2c
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPreferredCacheClusterAZs(java.util.Collection)}
+     * or {@link #withPreferredCacheClusterAZs(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredCacheClusterAZs A list of EC2 availability zones in which the replication group's
@@ -1098,6 +1103,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * A list of cache security group names to associate with this
      * replication group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheSecurityGroupNames(java.util.Collection)} or
+     * {@link #withCacheSecurityGroupNames(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupNames A list of cache security group names to associate with this
@@ -1179,6 +1189,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * replication group. <p>Use this parameter only when you are creating a
      * replication group in an Amazon Virtual Private Cloud (VPC).
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link
+     * #withSecurityGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupIds One or more Amazon VPC security groups associated with this
@@ -1257,6 +1272,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
     /**
      * A list of cost allocation tags to be added to this resource. A tag is
      * a key-value pair. A tag key must be accompanied by a tag value.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1358,6 +1378,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * <p><b>Note:</b> This parameter is only valid if the
      * <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
      * Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSnapshotArns(java.util.Collection)} or {@link
+     * #withSnapshotArns(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

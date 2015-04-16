@@ -164,6 +164,11 @@ public class EngineDefaults implements Serializable, Cloneable {
     /**
      * Contains a list of engine default parameters.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameters(java.util.Collection)} or {@link
+     * #withParameters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters Contains a list of engine default parameters.

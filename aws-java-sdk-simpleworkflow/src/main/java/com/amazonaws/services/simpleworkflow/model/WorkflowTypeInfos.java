@@ -69,6 +69,11 @@ public class WorkflowTypeInfos implements Serializable, Cloneable {
     /**
      * The list of workflow type information.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTypeInfos(java.util.Collection)} or {@link
+     * #withTypeInfos(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param typeInfos The list of workflow type information.

@@ -138,6 +138,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * The primary key attribute values that define the items and the
      * attributes associated with the items.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeys(java.util.Collection)} or {@link
+     * #withKeys(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -231,6 +236,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * attribute names are specified then all attributes will be returned. If
      * any of the specified attributes are not found, they will not appear in
      * the result.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributesToGet(java.util.Collection)} or {@link
+     * #withAttributesToGet(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -635,26 +645,26 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @param key The key of the entry to be added into ExpressionAttributeNames.
      * @param value The corresponding value of the entry to be added into ExpressionAttributeNames.
      */
-    public KeysAndAttributes addExpressionAttributeNamesEntry(String key, String value) {
-        if (null == this.expressionAttributeNames) {
-            this.expressionAttributeNames = new java.util.HashMap<String,String>();
-        }
-        if (this.expressionAttributeNames.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expressionAttributeNames.put(key, value);
-        return this;
+  public KeysAndAttributes addExpressionAttributeNamesEntry(String key, String value) {
+    if (null == this.expressionAttributeNames) {
+      this.expressionAttributeNames = new java.util.HashMap<String,String>();
     }
+    if (this.expressionAttributeNames.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expressionAttributeNames.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExpressionAttributeNames.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public KeysAndAttributes clearExpressionAttributeNamesEntries() {
-        this.expressionAttributeNames = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExpressionAttributeNames.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public KeysAndAttributes clearExpressionAttributeNamesEntries() {
+    this.expressionAttributeNames = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

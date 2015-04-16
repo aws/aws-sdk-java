@@ -57,6 +57,11 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable, Clonea
     /**
      * Information about the VPC peering connections.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcPeeringConnections(java.util.Collection)} or
+     * {@link #withVpcPeeringConnections(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcPeeringConnections Information about the VPC peering connections.

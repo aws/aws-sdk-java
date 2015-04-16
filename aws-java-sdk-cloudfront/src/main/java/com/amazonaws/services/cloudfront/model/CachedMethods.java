@@ -130,6 +130,11 @@ public class CachedMethods implements Serializable, Cloneable {
      * A complex type that contains the HTTP methods that you want CloudFront
      * to cache responses to.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setItems(java.util.Collection)} or {@link
+     * #withItems(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A complex type that contains the HTTP methods that you want CloudFront

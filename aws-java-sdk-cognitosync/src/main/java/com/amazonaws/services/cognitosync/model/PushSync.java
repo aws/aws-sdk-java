@@ -69,6 +69,11 @@ public class PushSync implements Serializable, Cloneable {
     /**
      * List of SNS platform application ARNs that could be used by clients.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApplicationArns(java.util.Collection)} or {@link
+     * #withApplicationArns(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applicationArns List of SNS platform application ARNs that could be used by clients.

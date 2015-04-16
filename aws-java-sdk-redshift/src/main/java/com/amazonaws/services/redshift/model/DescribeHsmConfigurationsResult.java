@@ -131,6 +131,11 @@ public class DescribeHsmConfigurationsResult implements Serializable, Cloneable 
     /**
      * A list of Amazon Redshift HSM configurations.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHsmConfigurations(java.util.Collection)} or
+     * {@link #withHsmConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hsmConfigurations A list of Amazon Redshift HSM configurations.

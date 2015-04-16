@@ -76,6 +76,11 @@ public class QueryObjectsResult implements Serializable, Cloneable {
     /**
      * The identifiers that match the query selectors.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIds(java.util.Collection)} or {@link
+     * #withIds(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ids The identifiers that match the query selectors.

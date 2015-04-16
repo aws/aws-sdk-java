@@ -76,6 +76,11 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest impleme
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to only include those with the specified names.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApplicationNames(java.util.Collection)} or {@link
+     * #withApplicationNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applicationNames If specified, AWS Elastic Beanstalk restricts the returned

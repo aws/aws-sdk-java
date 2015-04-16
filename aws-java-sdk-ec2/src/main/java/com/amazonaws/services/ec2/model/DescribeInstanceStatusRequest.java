@@ -223,6 +223,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * One or more instance IDs. <p>Default: Describes all your instances.
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
+     * #withInstanceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
@@ -468,6 +473,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * instance (<code>ok</code> | <code>impaired</code> |
      * <code>initializing</code> | <code>insufficient-data</code> |
      * <code>not-applicable</code>). </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

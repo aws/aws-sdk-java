@@ -141,6 +141,11 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      * An array of VTL device objects composed of the Amazon Resource
      * Name(ARN) of the VTL devices.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVTLDevices(java.util.Collection)} or {@link
+     * #withVTLDevices(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vTLDevices An array of VTL device objects composed of the Amazon Resource

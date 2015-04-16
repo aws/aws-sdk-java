@@ -454,6 +454,11 @@ public class Playlist implements Serializable, Cloneable {
      * <code>Video:KeyframesMaxDist</code> ratio must be the same for all
      * outputs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOutputKeys(java.util.Collection)} or {@link
+     * #withOutputKeys(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

@@ -138,6 +138,11 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
     /**
      * The tags to be assigned to the Amazon RDS resource.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The tags to be assigned to the Amazon RDS resource.

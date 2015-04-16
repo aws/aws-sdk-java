@@ -68,6 +68,11 @@ public class WorkflowExecutionInfos implements Serializable, Cloneable {
     /**
      * The list of workflow information structures.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setExecutionInfos(java.util.Collection)} or {@link
+     * #withExecutionInfos(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param executionInfos The list of workflow information structures.

@@ -171,6 +171,11 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     /**
      * One or more volume IDs. <p>Default: Describes all your volumes.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVolumeIds(java.util.Collection)} or {@link
+     * #withVolumeIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeIds One or more volume IDs. <p>Default: Describes all your volumes.
@@ -368,6 +373,11 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
      * - The status of the volume (<code>ok</code> | <code>impaired</code> |
      * <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

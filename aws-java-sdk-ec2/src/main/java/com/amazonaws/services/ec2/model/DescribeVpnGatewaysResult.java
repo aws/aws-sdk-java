@@ -57,6 +57,11 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
     /**
      * Information about one or more virtual private gateways.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpnGateways(java.util.Collection)} or {@link
+     * #withVpnGateways(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnGateways Information about one or more virtual private gateways.

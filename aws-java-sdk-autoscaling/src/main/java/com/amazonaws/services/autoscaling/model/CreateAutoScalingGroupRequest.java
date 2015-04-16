@@ -629,6 +629,11 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * optional if you specify subnets using the
      * <code>VPCZoneIdentifier</code> parameter.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
+     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -723,6 +728,11 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Load
      * Balance Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
      * Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLoadBalancerNames(java.util.Collection)} or
+     * {@link #withLoadBalancerNames(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1132,6 +1142,11 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto
      * Scaling Developer Guide</i>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTerminationPolicies(java.util.Collection)} or
+     * {@link #withTerminationPolicies(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param terminationPolicies One or more termination policies used to select the instance to
@@ -1249,6 +1264,11 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Add,
      * Modify, or Remove Auto Scaling Group Tags</a> in the <i>Auto Scaling
      * Developer Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

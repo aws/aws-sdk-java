@@ -69,6 +69,11 @@ public class ListDatasetsResult implements Serializable, Cloneable {
     /**
      * A set of datasets.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDatasets(java.util.Collection)} or {@link
+     * #withDatasets(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param datasets A set of datasets.

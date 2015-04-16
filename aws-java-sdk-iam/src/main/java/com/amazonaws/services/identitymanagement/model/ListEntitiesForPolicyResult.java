@@ -88,6 +88,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
     /**
      * A list of groups that the policy is attached to.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyGroups(java.util.Collection)} or {@link
+     * #withPolicyGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyGroups A list of groups that the policy is attached to.
@@ -156,6 +161,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
     /**
      * A list of users that the policy is attached to.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyUsers(java.util.Collection)} or {@link
+     * #withPolicyUsers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyUsers A list of users that the policy is attached to.
@@ -223,6 +233,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
     
     /**
      * A list of roles that the policy is attached to.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyRoles(java.util.Collection)} or {@link
+     * #withPolicyRoles(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

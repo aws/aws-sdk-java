@@ -304,6 +304,11 @@ public class App implements Serializable, Cloneable {
     /**
      * The app's data sources.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDataSources(java.util.Collection)} or {@link
+     * #withDataSources(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dataSources The app's data sources.
@@ -492,6 +497,11 @@ public class App implements Serializable, Cloneable {
      * The app vhost settings with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDomains(java.util.Collection)} or {@link
+     * #withDomains(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains The app vhost settings with multiple domains separated by commas. For
@@ -654,26 +664,26 @@ public class App implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-    public App addAttributesEntry(String key, String value) {
-        if (null == this.attributes) {
-            this.attributes = new java.util.HashMap<String,String>();
-        }
-        if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.attributes.put(key, value);
-        return this;
+  public App addAttributesEntry(String key, String value) {
+    if (null == this.attributes) {
+      this.attributes = new java.util.HashMap<String,String>();
     }
+    if (this.attributes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.attributes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Attributes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public App clearAttributesEntries() {
-        this.attributes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Attributes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public App clearAttributesEntries() {
+    this.attributes = null;
+    return this;
+  }
+  
     /**
      * When the app was created.
      *
@@ -792,6 +802,11 @@ public class App implements Serializable, Cloneable {
      * should accommodate most if not all use cases, but if you do exceed it,
      * you will cause an exception (API) with an "Environment: is too large
      * (maximum is 10KB)" message. </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnvironment(java.util.Collection)} or {@link
+     * #withEnvironment(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
