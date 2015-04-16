@@ -103,6 +103,11 @@ public class CacheBehaviors implements Serializable, Cloneable {
      * Optional: A complex type that contains cache behaviors for this
      * distribution. If Quantity is 0, you can omit Items.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setItems(java.util.Collection)} or {@link
+     * #withItems(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items Optional: A complex type that contains cache behaviors for this

@@ -200,26 +200,26 @@ public class Prediction implements Serializable, Cloneable {
      * @param key The key of the entry to be added into PredictedScores.
      * @param value The corresponding value of the entry to be added into PredictedScores.
      */
-    public Prediction addPredictedScoresEntry(String key, Float value) {
-        if (null == this.predictedScores) {
-            this.predictedScores = new java.util.HashMap<String,Float>();
-        }
-        if (this.predictedScores.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.predictedScores.put(key, value);
-        return this;
+  public Prediction addPredictedScoresEntry(String key, Float value) {
+    if (null == this.predictedScores) {
+      this.predictedScores = new java.util.HashMap<String,Float>();
     }
+    if (this.predictedScores.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.predictedScores.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into PredictedScores.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public Prediction clearPredictedScoresEntries() {
-        this.predictedScores = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into PredictedScores.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Prediction clearPredictedScoresEntries() {
+    this.predictedScores = null;
+    return this;
+  }
+  
     /**
      * Provides any additional details regarding the prediction.
      *
@@ -267,26 +267,26 @@ public class Prediction implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Details.
      * @param value The corresponding value of the entry to be added into Details.
      */
-    public Prediction addDetailsEntry(String key, String value) {
-        if (null == this.details) {
-            this.details = new java.util.HashMap<String,String>();
-        }
-        if (this.details.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.details.put(key, value);
-        return this;
+  public Prediction addDetailsEntry(String key, String value) {
+    if (null == this.details) {
+      this.details = new java.util.HashMap<String,String>();
     }
+    if (this.details.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.details.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Details.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public Prediction clearDetailsEntries() {
-        this.details = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Details.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Prediction clearDetailsEntries() {
+    this.details = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

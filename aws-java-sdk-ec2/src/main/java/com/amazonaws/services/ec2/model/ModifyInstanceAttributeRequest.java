@@ -425,6 +425,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * the Block Device Mapping when Launching an Instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param blockDeviceMappings Modifies the <code>DeleteOnTermination</code> attribute for volumes
@@ -902,6 +907,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
      * <code>GroupId.1=sg-1a1a1a1a</code> and
      * <code>GroupId.2=sg-9b9b9b9b</code>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroups(java.util.Collection)} or {@link
+     * #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

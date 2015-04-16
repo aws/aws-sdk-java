@@ -60,6 +60,11 @@ public class IndexDocumentsResult implements Serializable, Cloneable {
     /**
      * The names of the fields that are currently being indexed.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFieldNames(java.util.Collection)} or {@link
+     * #withFieldNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fieldNames The names of the fields that are currently being indexed.

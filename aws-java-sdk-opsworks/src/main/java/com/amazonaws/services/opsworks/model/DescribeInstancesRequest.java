@@ -191,6 +191,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>DescribeInstances</code> returns a description of the specified
      * instances. Otherwise, it returns a description of every instance.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
+     * #withInstanceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds An array of instance IDs to be described. If you use this parameter,

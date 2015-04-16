@@ -71,6 +71,11 @@ public class DataRetrievalPolicy implements Serializable, Cloneable {
      * only one rule, which contains a Strategy field and optionally a
      * BytesPerHour field.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRules(java.util.Collection)} or {@link
+     * #withRules(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rules The policy rule. Although this is a list type, currently there must be

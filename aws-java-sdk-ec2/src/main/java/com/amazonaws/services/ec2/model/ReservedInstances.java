@@ -664,6 +664,11 @@ public class ReservedInstances implements Serializable, Cloneable {
     /**
      * Any tags assigned to the resource.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags Any tags assigned to the resource.
@@ -997,6 +1002,11 @@ public class ReservedInstances implements Serializable, Cloneable {
     
     /**
      * The recurring charge tag assigned to the resource.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRecurringCharges(java.util.Collection)} or {@link
+     * #withRecurringCharges(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

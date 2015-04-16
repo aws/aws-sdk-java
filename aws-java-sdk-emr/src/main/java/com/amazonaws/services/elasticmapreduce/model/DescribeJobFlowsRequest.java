@@ -194,6 +194,11 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
     /**
      * Return only job flows whose job flow ID is contained in this list.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setJobFlowIds(java.util.Collection)} or {@link
+     * #withJobFlowIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlowIds Return only job flows whose job flow ID is contained in this list.
@@ -261,6 +266,11 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Return only job flows whose state is contained in this list.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setJobFlowStates(java.util.Collection)} or {@link
+     * #withJobFlowStates(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

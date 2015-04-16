@@ -190,6 +190,11 @@ public class Reservation implements Serializable, Cloneable {
     /**
      * One or more security groups.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroups(java.util.Collection)} or {@link
+     * #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups One or more security groups.
@@ -258,6 +263,11 @@ public class Reservation implements Serializable, Cloneable {
     /**
      * One or more security groups.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupNames(java.util.Collection)} or {@link
+     * #withGroupNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupNames One or more security groups.
@@ -325,6 +335,11 @@ public class Reservation implements Serializable, Cloneable {
     
     /**
      * One or more instances.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstances(java.util.Collection)} or {@link
+     * #withInstances(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

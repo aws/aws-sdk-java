@@ -221,6 +221,11 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
     /**
      * A list of events belonging to a log stream.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLogEvents(java.util.Collection)} or {@link
+     * #withLogEvents(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

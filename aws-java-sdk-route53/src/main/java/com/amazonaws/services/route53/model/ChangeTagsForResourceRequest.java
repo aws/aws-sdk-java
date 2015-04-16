@@ -261,6 +261,11 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest implem
      * <code>Tag</code> element identifies a tag that you want to add or
      * update for the specified resource.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAddTags(java.util.Collection)} or {@link
+     * #withAddTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -351,6 +356,11 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest implem
     /**
      * A list of <code>Tag</code> keys that you want to remove from the
      * specified resource.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRemoveTagKeys(java.util.Collection)} or {@link
+     * #withRemoveTagKeys(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

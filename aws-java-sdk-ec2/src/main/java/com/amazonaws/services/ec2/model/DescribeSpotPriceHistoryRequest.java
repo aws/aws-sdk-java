@@ -210,6 +210,11 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
     /**
      * Filters the results by the specified instance types.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceTypes(java.util.Collection)} or {@link
+     * #withInstanceTypes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceTypes Filters the results by the specified instance types.
@@ -300,6 +305,11 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
     
     /**
      * Filters the results by the specified basic product descriptions.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProductDescriptions(java.util.Collection)} or
+     * {@link #withProductDescriptions(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -433,6 +443,11 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * the Spot Price history (for example, 2010-08-16T05:06:11.000Z). You
      * can use wildcards (* and ?). Greater than or less than comparison is
      * not supported. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

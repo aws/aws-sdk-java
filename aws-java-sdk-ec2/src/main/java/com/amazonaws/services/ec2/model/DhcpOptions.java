@@ -102,6 +102,11 @@ public class DhcpOptions implements Serializable, Cloneable {
     /**
      * One or more DHCP options in the set.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDhcpConfigurations(java.util.Collection)} or
+     * {@link #withDhcpConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpConfigurations One or more DHCP options in the set.
@@ -169,6 +174,11 @@ public class DhcpOptions implements Serializable, Cloneable {
     
     /**
      * Any tags assigned to the DHCP options set.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

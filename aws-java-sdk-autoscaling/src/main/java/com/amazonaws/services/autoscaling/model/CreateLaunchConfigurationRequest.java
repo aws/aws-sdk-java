@@ -529,6 +529,11 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups One or more security groups with which to associate the instances.
@@ -720,6 +725,12 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setClassicLinkVPCSecurityGroups(java.util.Collection)} or {@link
+     * #withClassicLinkVPCSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1150,6 +1161,11 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

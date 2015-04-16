@@ -165,6 +165,11 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      * exists, the operation overwrites the previous tag definition, but you
      * will not get an error message.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The tag to be created or updated. Each tag should be defined by its

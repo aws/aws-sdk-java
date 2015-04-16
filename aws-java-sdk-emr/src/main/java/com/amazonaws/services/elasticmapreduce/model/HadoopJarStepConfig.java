@@ -110,6 +110,11 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * A list of Java properties that are set when the step runs. You can use
      * these properties to pass key value pairs to your main function.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProperties(java.util.Collection)} or {@link
+     * #withProperties(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param properties A list of Java properties that are set when the step runs. You can use
@@ -287,6 +292,11 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
     /**
      * A list of command line arguments passed to the JAR file's main
      * function when executed.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setArgs(java.util.Collection)} or {@link
+     * #withArgs(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

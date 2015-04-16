@@ -168,6 +168,11 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest implement
      * immediately call <a>DescribeWorkspaces</a> with this identifier, no
      * information will be returned.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWorkspaceIds(java.util.Collection)} or {@link
+     * #withWorkspaceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

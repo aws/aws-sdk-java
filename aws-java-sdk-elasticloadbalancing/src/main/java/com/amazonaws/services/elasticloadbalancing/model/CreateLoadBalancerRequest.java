@@ -285,6 +285,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
      * Configurations for Elastic Load Balancing</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setListeners(java.util.Collection)} or {@link
+     * #withListeners(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listeners A list of the following tuples: Protocol, LoadBalancerPort,
@@ -393,6 +398,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * the creation of the load balancer by calling
      * <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
+     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of Availability Zones. <p> At least one Availability Zone must
@@ -481,6 +491,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * A list of subnet IDs in your VPC to attach to your load balancer.
      * Specify one subnet per Availability Zone.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSubnets(java.util.Collection)} or {@link
+     * #withSubnets(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of subnet IDs in your VPC to attach to your load balancer.
@@ -551,6 +566,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * The security groups to assign to your load balancer within your VPC.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -722,6 +742,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * A list of tags to assign to the load balancer. <p>For more information
      * about setting tags for your load balancer, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

@@ -179,6 +179,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
     /**
      * The instance IDs for the deployment targets.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
+     * #withInstanceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The instance IDs for the deployment targets.

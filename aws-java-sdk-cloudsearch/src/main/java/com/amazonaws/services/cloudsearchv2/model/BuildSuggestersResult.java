@@ -60,6 +60,11 @@ public class BuildSuggestersResult implements Serializable, Cloneable {
     /**
      * A list of field names.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFieldNames(java.util.Collection)} or {@link
+     * #withFieldNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fieldNames A list of field names.

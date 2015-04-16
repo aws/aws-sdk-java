@@ -733,6 +733,11 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     /**
      * The recurring charge tag assigned to the resource.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRecurringCharges(java.util.Collection)} or {@link
+     * #withRecurringCharges(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param recurringCharges The recurring charge tag assigned to the resource.
@@ -858,6 +863,11 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     
     /**
      * The pricing details of the Reserved Instance offering.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPricingDetails(java.util.Collection)} or {@link
+     * #withPricingDetails(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

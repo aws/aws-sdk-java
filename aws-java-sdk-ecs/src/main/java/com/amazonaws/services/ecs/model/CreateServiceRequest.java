@@ -248,6 +248,11 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
      * the container name (as it appears in a container definition), and the
      * container port to access from the load balancer.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLoadBalancers(java.util.Collection)} or {@link
+     * #withLoadBalancers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancers A list of load balancer objects, containing the load balancer name,

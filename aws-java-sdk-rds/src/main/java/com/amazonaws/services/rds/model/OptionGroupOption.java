@@ -362,6 +362,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
     /**
      * List of all options that are prerequisites for this option.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionsDependedOn(java.util.Collection)} or
+     * {@link #withOptionsDependedOn(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionsDependedOn List of all options that are prerequisites for this option.
@@ -558,6 +563,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
     /**
      * Specifies the option settings that are available (and the default
      * value) for each option in an option group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionGroupOptionSettings(java.util.Collection)}
+     * or {@link #withOptionGroupOptionSettings(java.util.Collection)} if you
+     * want to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

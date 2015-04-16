@@ -229,6 +229,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * instance in EC2-Classic or a default VPC, you can specify the name or
      * the ID of the security group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAllSecurityGroups(java.util.Collection)} or
+     * {@link #withAllSecurityGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allSecurityGroups One or more security groups. To request an instance in a nondefault
@@ -320,6 +325,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * VPC, you must specify the ID of the security group. To request an
      * instance in EC2-Classic or a default VPC, you can specify the name or
      * the ID of the security group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -645,6 +655,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
     /**
      * One or more block device mapping entries.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param blockDeviceMappings One or more block device mapping entries.
@@ -787,6 +802,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
     
     /**
      * One or more network interfaces.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
+     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

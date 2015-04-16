@@ -132,6 +132,11 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements Seri
      * parameter, <code>DescribeApps</code> returns a description of the
      * specified apps. Otherwise, it returns a description of every app.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAppIds(java.util.Collection)} or {@link
+     * #withAppIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appIds An array of app IDs for the apps to be described. If you use this

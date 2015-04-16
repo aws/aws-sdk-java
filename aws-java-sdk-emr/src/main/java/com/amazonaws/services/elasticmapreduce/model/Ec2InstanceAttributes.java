@@ -371,6 +371,12 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * A list of additional Amazon EC2 security group IDs for the master
      * node.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setAdditionalMasterSecurityGroups(java.util.Collection)} or {@link
+     * #withAdditionalMasterSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param additionalMasterSecurityGroups A list of additional Amazon EC2 security group IDs for the master
@@ -446,6 +452,12 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
     /**
      * A list of additional Amazon EC2 security group IDs for the slave
      * nodes.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setAdditionalSlaveSecurityGroups(java.util.Collection)} or {@link
+     * #withAdditionalSlaveSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

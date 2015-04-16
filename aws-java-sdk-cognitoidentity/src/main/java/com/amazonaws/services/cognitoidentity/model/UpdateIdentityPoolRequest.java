@@ -261,26 +261,26 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest implement
      * @param key The key of the entry to be added into SupportedLoginProviders.
      * @param value The corresponding value of the entry to be added into SupportedLoginProviders.
      */
-    public UpdateIdentityPoolRequest addSupportedLoginProvidersEntry(String key, String value) {
-        if (null == this.supportedLoginProviders) {
-            this.supportedLoginProviders = new java.util.HashMap<String,String>();
-        }
-        if (this.supportedLoginProviders.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.supportedLoginProviders.put(key, value);
-        return this;
+  public UpdateIdentityPoolRequest addSupportedLoginProvidersEntry(String key, String value) {
+    if (null == this.supportedLoginProviders) {
+      this.supportedLoginProviders = new java.util.HashMap<String,String>();
     }
+    if (this.supportedLoginProviders.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.supportedLoginProviders.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into SupportedLoginProviders.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public UpdateIdentityPoolRequest clearSupportedLoginProvidersEntries() {
-        this.supportedLoginProviders = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into SupportedLoginProviders.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public UpdateIdentityPoolRequest clearSupportedLoginProvidersEntries() {
+    this.supportedLoginProviders = null;
+    return this;
+  }
+  
     /**
      * The "domain" by which Cognito will refer to your users.
      * <p>
@@ -352,6 +352,11 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest implement
     
     /**
      * A list of OpendID Connect provider ARNs.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)}
+     * or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you
+     * want to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

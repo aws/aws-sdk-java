@@ -352,6 +352,11 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      * owner of the role specified by <code>Role</code>, and grants no other
      * permissions to any other user or group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPermissions(java.util.Collection)} or {@link
+     * #withPermissions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

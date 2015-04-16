@@ -63,6 +63,11 @@ public class ListAvailableZonesResult implements Serializable, Cloneable {
      * The list of Availability Zones that have available AWS CloudHSM
      * capacity.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAZList(java.util.Collection)} or {@link
+     * #withAZList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aZList The list of Availability Zones that have available AWS CloudHSM

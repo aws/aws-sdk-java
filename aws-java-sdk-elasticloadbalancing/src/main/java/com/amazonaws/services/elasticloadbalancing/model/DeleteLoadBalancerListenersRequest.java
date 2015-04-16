@@ -129,6 +129,11 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * The client port number(s) of the load balancer listener(s) to be
      * removed.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLoadBalancerPorts(java.util.Collection)} or
+     * {@link #withLoadBalancerPorts(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerPorts The client port number(s) of the load balancer listener(s) to be

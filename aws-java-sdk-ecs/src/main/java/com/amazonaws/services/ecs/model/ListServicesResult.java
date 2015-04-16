@@ -72,6 +72,11 @@ public class ListServicesResult implements Serializable, Cloneable {
      * The list of full Amazon Resource Name (ARN) entries for each service
      * associated with the specified cluster.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setServiceArns(java.util.Collection)} or {@link
+     * #withServiceArns(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serviceArns The list of full Amazon Resource Name (ARN) entries for each service

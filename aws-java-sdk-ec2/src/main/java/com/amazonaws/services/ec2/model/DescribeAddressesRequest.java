@@ -102,6 +102,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
      * all your Elastic IP addresses.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPublicIps(java.util.Collection)} or {@link
+     * #withPublicIps(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIps [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
@@ -238,6 +243,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * private IP address associated with the Elastic IP address. </li> <li>
      * <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters One or more filters. Filter names and values are case-sensitive. <ul>
@@ -349,6 +359,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     /**
      * [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
      * Elastic IP addresses.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAllocationIds(java.util.Collection)} or {@link
+     * #withAllocationIds(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

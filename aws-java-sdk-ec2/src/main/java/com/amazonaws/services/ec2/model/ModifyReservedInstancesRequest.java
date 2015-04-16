@@ -136,6 +136,11 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     /**
      * The IDs of the Reserved Instances to modify.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setReservedInstancesIds(java.util.Collection)} or
+     * {@link #withReservedInstancesIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesIds The IDs of the Reserved Instances to modify.
@@ -203,6 +208,11 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     
     /**
      * The configuration settings for the Reserved Instances to modify.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTargetConfigurations(java.util.Collection)} or
+     * {@link #withTargetConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

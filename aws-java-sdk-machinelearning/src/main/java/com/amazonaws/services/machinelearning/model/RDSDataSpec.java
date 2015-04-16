@@ -696,6 +696,11 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * Pipeline to carry out the copy operation from Amazon RDS to an Amazon
      * S3 task.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link
+     * #withSecurityGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupIds The security group IDs to be used to access a VPC-based RDS DB

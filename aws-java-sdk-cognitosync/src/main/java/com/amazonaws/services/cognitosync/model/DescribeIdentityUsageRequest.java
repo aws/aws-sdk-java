@@ -25,9 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * and data usage.
  * </p>
  * <p>
- * <code>DescribeIdentityUsage</code> can be called with temporary user
- * credentials provided by Cognito Identity or with developer
- * credentials.
+ * DescribeIdentityUsage can be called with temporary user credentials
+ * provided by Cognito Identity or with developer credentials.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#describeIdentityUsage(DescribeIdentityUsageRequest)

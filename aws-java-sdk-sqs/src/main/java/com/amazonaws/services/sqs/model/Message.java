@@ -334,26 +334,26 @@ public class Message implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-    public Message addAttributesEntry(String key, String value) {
-        if (null == this.attributes) {
-            this.attributes = new java.util.HashMap<String,String>();
-        }
-        if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.attributes.put(key, value);
-        return this;
+  public Message addAttributesEntry(String key, String value) {
+    if (null == this.attributes) {
+      this.attributes = new java.util.HashMap<String,String>();
     }
+    if (this.attributes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.attributes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Attributes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public Message clearAttributesEntries() {
-        this.attributes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Attributes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Message clearAttributesEntries() {
+    this.attributes = null;
+    return this;
+  }
+  
     /**
      * An MD5 digest of the non-URL-encoded message attribute string. This
      * can be used to verify that Amazon SQS received the message correctly.
@@ -479,26 +479,26 @@ public class Message implements Serializable, Cloneable {
      * @param key The key of the entry to be added into MessageAttributes.
      * @param value The corresponding value of the entry to be added into MessageAttributes.
      */
-    public Message addMessageAttributesEntry(String key, MessageAttributeValue value) {
-        if (null == this.messageAttributes) {
-            this.messageAttributes = new java.util.HashMap<String,MessageAttributeValue>();
-        }
-        if (this.messageAttributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.messageAttributes.put(key, value);
-        return this;
+  public Message addMessageAttributesEntry(String key, MessageAttributeValue value) {
+    if (null == this.messageAttributes) {
+      this.messageAttributes = new java.util.HashMap<String,MessageAttributeValue>();
     }
+    if (this.messageAttributes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.messageAttributes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into MessageAttributes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public Message clearMessageAttributesEntries() {
-        this.messageAttributes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into MessageAttributes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Message clearMessageAttributesEntries() {
+    this.messageAttributes = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

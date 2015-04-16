@@ -276,6 +276,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
     /**
      * One or more instance IDs. <p>Default: Describes all your instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
+     * #withInstanceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
@@ -1228,6 +1233,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li> <li> <p><code>association.association-id</code> - The
      * association ID returned when the network interface was associated with
      * an IP address. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

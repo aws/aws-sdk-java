@@ -57,6 +57,11 @@ public class DescribeKeyPairsResult implements Serializable, Cloneable {
     /**
      * Information about one or more key pairs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeyPairs(java.util.Collection)} or {@link
+     * #withKeyPairs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyPairs Information about one or more key pairs.

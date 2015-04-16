@@ -271,6 +271,11 @@ public class ListPartsResult implements Serializable, Cloneable {
     /**
      * A list of the part sizes of the multipart upload.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParts(java.util.Collection)} or {@link
+     * #withParts(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parts A list of the part sizes of the multipart upload.

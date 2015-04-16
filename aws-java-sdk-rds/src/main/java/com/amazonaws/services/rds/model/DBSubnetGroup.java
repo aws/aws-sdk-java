@@ -224,6 +224,11 @@ public class DBSubnetGroup implements Serializable, Cloneable {
     /**
      * Contains a list of <a>Subnet</a> elements.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSubnets(java.util.Collection)} or {@link
+     * #withSubnets(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Contains a list of <a>Subnet</a> elements.

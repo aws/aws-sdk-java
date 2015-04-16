@@ -59,6 +59,11 @@ public class DescribeTagsResult implements Serializable, Cloneable {
     /**
      * A list of tag description structures.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagDescriptions(java.util.Collection)} or {@link
+     * #withTagDescriptions(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagDescriptions A list of tag description structures.

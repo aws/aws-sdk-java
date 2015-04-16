@@ -529,6 +529,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     /**
      * A list of steps to be executed by the job flow.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSteps(java.util.Collection)} or {@link
+     * #withSteps(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of steps to be executed by the job flow.
@@ -601,6 +606,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     /**
      * A list of bootstrap actions that will be run before Hadoop is started
      * on the cluster nodes.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBootstrapActions(java.util.Collection)} or {@link
+     * #withBootstrapActions(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -702,6 +712,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
      * Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5
      * Edition.</li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSupportedProducts(java.util.Collection)} or
+     * {@link #withSupportedProducts(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -838,6 +853,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * M5 Edition.</li> <li>"mapr" with the user arguments specifying
      * "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
      * or M5 Edition respectively.</li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNewSupportedProducts(java.util.Collection)} or
+     * {@link #withNewSupportedProducts(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1137,6 +1157,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     /**
      * A list of tags to associate with a cluster and propagate to Amazon EC2
      * instances.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

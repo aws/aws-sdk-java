@@ -394,6 +394,11 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * A list of the inline policies embedded in the user.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUserPolicyList(java.util.Collection)} or {@link
+     * #withUserPolicyList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userPolicyList A list of the inline policies embedded in the user.
@@ -462,6 +467,11 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * A list of IAM groups that the user is in.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupList(java.util.Collection)} or {@link
+     * #withGroupList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupList A list of IAM groups that the user is in.
@@ -529,6 +539,11 @@ public class UserDetail implements Serializable, Cloneable {
     
     /**
      * A list of the managed policies attached to the user.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttachedManagedPolicies(java.util.Collection)} or
+     * {@link #withAttachedManagedPolicies(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

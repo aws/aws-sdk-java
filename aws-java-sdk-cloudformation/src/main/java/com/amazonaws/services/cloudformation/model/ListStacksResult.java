@@ -74,6 +74,11 @@ public class ListStacksResult implements Serializable, Cloneable {
      * A list of <code>StackSummary</code> structures containing information
      * about the specified stacks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStackSummaries(java.util.Collection)} or {@link
+     * #withStackSummaries(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackSummaries A list of <code>StackSummary</code> structures containing information

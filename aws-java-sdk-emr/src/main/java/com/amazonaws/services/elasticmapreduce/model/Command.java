@@ -135,6 +135,11 @@ public class Command implements Serializable, Cloneable {
     /**
      * Arguments for Amazon EMR to pass to the command for execution.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setArgs(java.util.Collection)} or {@link
+     * #withArgs(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param args Arguments for Amazon EMR to pass to the command for execution.

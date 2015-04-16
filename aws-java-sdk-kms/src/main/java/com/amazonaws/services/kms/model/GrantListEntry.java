@@ -289,6 +289,11 @@ public class GrantListEntry implements Serializable, Cloneable {
      * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
      * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOperations(java.util.Collection)} or {@link
+     * #withOperations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param operations List of operations permitted by the grant. This can be any combination

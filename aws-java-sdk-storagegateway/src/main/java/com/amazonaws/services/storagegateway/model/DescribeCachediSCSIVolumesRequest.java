@@ -68,6 +68,11 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest i
     /**
      * Sets the value of the VolumeARNs property for this object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVolumeARNs(java.util.Collection)} or {@link
+     * #withVolumeARNs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeARNs The new value for the VolumeARNs property for this object.

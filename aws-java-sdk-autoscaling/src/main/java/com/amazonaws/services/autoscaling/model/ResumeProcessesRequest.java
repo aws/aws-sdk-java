@@ -141,6 +141,11 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
      * <li>AZRebalance</li> <li>AlarmNotification</li>
      * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setScalingProcesses(java.util.Collection)} or {@link
+     * #withScalingProcesses(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scalingProcesses One or more of the following processes: <ul> <li>Launch</li>

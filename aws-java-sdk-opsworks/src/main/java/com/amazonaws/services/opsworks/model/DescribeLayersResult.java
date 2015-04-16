@@ -59,6 +59,11 @@ public class DescribeLayersResult implements Serializable, Cloneable {
     /**
      * An array of <code>Layer</code> objects that describe the layers.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLayers(java.util.Collection)} or {@link
+     * #withLayers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layers An array of <code>Layer</code> objects that describe the layers.

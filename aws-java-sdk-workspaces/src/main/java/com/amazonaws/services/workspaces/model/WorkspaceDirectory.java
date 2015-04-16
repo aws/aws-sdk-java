@@ -311,6 +311,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * An array of strings that contains the identifiers of the subnets used
      * with the directory.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSubnetIds(java.util.Collection)} or {@link
+     * #withSubnetIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds An array of strings that contains the identifiers of the subnets used
@@ -386,6 +391,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
     /**
      * An array of strings that contains the IP addresses of the DNS servers
      * for the directory.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDnsIpAddresses(java.util.Collection)} or {@link
+     * #withDnsIpAddresses(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

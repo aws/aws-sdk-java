@@ -235,6 +235,11 @@ public class AttributeValue implements Serializable, Cloneable {
     /**
      * A String Set data type.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSS(java.util.Collection)} or {@link
+     * #withSS(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sS A String Set data type.
@@ -299,6 +304,11 @@ public class AttributeValue implements Serializable, Cloneable {
     /**
      * A Number Set data type.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNS(java.util.Collection)} or {@link
+     * #withNS(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nS A Number Set data type.
@@ -362,6 +372,11 @@ public class AttributeValue implements Serializable, Cloneable {
     
     /**
      * A Binary Set data type.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBS(java.util.Collection)} or {@link
+     * #withBS(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -443,26 +458,26 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param key The key of the entry to be added into M.
      * @param value The corresponding value of the entry to be added into M.
      */
-    public AttributeValue addMEntry(String key, AttributeValue value) {
-        if (null == this.m) {
-            this.m = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.m.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.m.put(key, value);
-        return this;
+  public AttributeValue addMEntry(String key, AttributeValue value) {
+    if (null == this.m) {
+      this.m = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.m.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.m.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into M.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public AttributeValue clearMEntries() {
-        this.m = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into M.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public AttributeValue clearMEntries() {
+    this.m = null;
+    return this;
+  }
+  
     /**
      * A List of attribute values.
      *
@@ -489,6 +504,11 @@ public class AttributeValue implements Serializable, Cloneable {
     
     /**
      * A List of attribute values.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setL(java.util.Collection)} or {@link
+     * #withL(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

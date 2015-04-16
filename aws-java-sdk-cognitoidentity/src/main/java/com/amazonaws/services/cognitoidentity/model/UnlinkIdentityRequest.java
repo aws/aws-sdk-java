@@ -161,26 +161,26 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements Se
      * @param key The key of the entry to be added into Logins.
      * @param value The corresponding value of the entry to be added into Logins.
      */
-    public UnlinkIdentityRequest addLoginsEntry(String key, String value) {
-        if (null == this.logins) {
-            this.logins = new java.util.HashMap<String,String>();
-        }
-        if (this.logins.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.logins.put(key, value);
-        return this;
+  public UnlinkIdentityRequest addLoginsEntry(String key, String value) {
+    if (null == this.logins) {
+      this.logins = new java.util.HashMap<String,String>();
     }
+    if (this.logins.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.logins.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Logins.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public UnlinkIdentityRequest clearLoginsEntries() {
-        this.logins = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Logins.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public UnlinkIdentityRequest clearLoginsEntries() {
+    this.logins = null;
+    return this;
+  }
+  
     /**
      * Provider names to unlink from this identity.
      *
@@ -207,6 +207,11 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * Provider names to unlink from this identity.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLoginsToRemove(java.util.Collection)} or {@link
+     * #withLoginsToRemove(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

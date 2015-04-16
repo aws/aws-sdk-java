@@ -140,6 +140,11 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      * If specified, restricts the returned descriptions to only include ones
      * that have the specified version labels.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVersionLabels(java.util.Collection)} or {@link
+     * #withVersionLabels(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param versionLabels If specified, restricts the returned descriptions to only include ones

@@ -57,6 +57,11 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
     /**
      * 
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConversionTasks(java.util.Collection)} or {@link
+     * #withConversionTasks(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTasks 

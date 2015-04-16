@@ -35,8 +35,7 @@ public class CognitoStreams implements Serializable, Cloneable {
     /**
      * The ARN of the role Amazon Cognito can assume in order to publish to
      * the stream. This role must grant access to Amazon Cognito
-     * (cognito-sync) to invoke <code>PutRecord</code> on your Cognito
-     * stream.
+     * (cognito-sync) to invoke PutRecord on your Cognito stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -45,11 +44,10 @@ public class CognitoStreams implements Serializable, Cloneable {
     private String roleArn;
 
     /**
-     * Status of the Cognito streams. Valid values are:
-     * <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     * enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     * is disabled. Bulk publish will also fail if
-     * <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * Status of the Cognito streams. Valid values are: <p>ENABLED -
+     * Streaming of updates to identity pool is enabled. <p>DISABLED -
+     * Streaming of updates to identity pool is disabled. Bulk publish will
+     * also fail if StreamingStatus is DISABLED.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ENABLED, DISABLED
@@ -107,8 +105,7 @@ public class CognitoStreams implements Serializable, Cloneable {
     /**
      * The ARN of the role Amazon Cognito can assume in order to publish to
      * the stream. This role must grant access to Amazon Cognito
-     * (cognito-sync) to invoke <code>PutRecord</code> on your Cognito
-     * stream.
+     * (cognito-sync) to invoke PutRecord on your Cognito stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -116,8 +113,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *
      * @return The ARN of the role Amazon Cognito can assume in order to publish to
      *         the stream. This role must grant access to Amazon Cognito
-     *         (cognito-sync) to invoke <code>PutRecord</code> on your Cognito
-     *         stream.
+     *         (cognito-sync) to invoke PutRecord on your Cognito stream.
      */
     public String getRoleArn() {
         return roleArn;
@@ -126,8 +122,7 @@ public class CognitoStreams implements Serializable, Cloneable {
     /**
      * The ARN of the role Amazon Cognito can assume in order to publish to
      * the stream. This role must grant access to Amazon Cognito
-     * (cognito-sync) to invoke <code>PutRecord</code> on your Cognito
-     * stream.
+     * (cognito-sync) to invoke PutRecord on your Cognito stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -135,8 +130,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *
      * @param roleArn The ARN of the role Amazon Cognito can assume in order to publish to
      *         the stream. This role must grant access to Amazon Cognito
-     *         (cognito-sync) to invoke <code>PutRecord</code> on your Cognito
-     *         stream.
+     *         (cognito-sync) to invoke PutRecord on your Cognito stream.
      */
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
@@ -145,8 +139,7 @@ public class CognitoStreams implements Serializable, Cloneable {
     /**
      * The ARN of the role Amazon Cognito can assume in order to publish to
      * the stream. This role must grant access to Amazon Cognito
-     * (cognito-sync) to invoke <code>PutRecord</code> on your Cognito
-     * stream.
+     * (cognito-sync) to invoke PutRecord on your Cognito stream.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -156,8 +149,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *
      * @param roleArn The ARN of the role Amazon Cognito can assume in order to publish to
      *         the stream. This role must grant access to Amazon Cognito
-     *         (cognito-sync) to invoke <code>PutRecord</code> on your Cognito
-     *         stream.
+     *         (cognito-sync) to invoke PutRecord on your Cognito stream.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -168,20 +160,18 @@ public class CognitoStreams implements Serializable, Cloneable {
     }
 
     /**
-     * Status of the Cognito streams. Valid values are:
-     * <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     * enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     * is disabled. Bulk publish will also fail if
-     * <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * Status of the Cognito streams. Valid values are: <p>ENABLED -
+     * Streaming of updates to identity pool is enabled. <p>DISABLED -
+     * Streaming of updates to identity pool is disabled. Bulk publish will
+     * also fail if StreamingStatus is DISABLED.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ENABLED, DISABLED
      *
-     * @return Status of the Cognito streams. Valid values are:
-     *         <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     *         enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     *         is disabled. Bulk publish will also fail if
-     *         <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * @return Status of the Cognito streams. Valid values are: <p>ENABLED -
+     *         Streaming of updates to identity pool is enabled. <p>DISABLED -
+     *         Streaming of updates to identity pool is disabled. Bulk publish will
+     *         also fail if StreamingStatus is DISABLED.
      *
      * @see StreamingStatus
      */
@@ -190,20 +180,18 @@ public class CognitoStreams implements Serializable, Cloneable {
     }
     
     /**
-     * Status of the Cognito streams. Valid values are:
-     * <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     * enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     * is disabled. Bulk publish will also fail if
-     * <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * Status of the Cognito streams. Valid values are: <p>ENABLED -
+     * Streaming of updates to identity pool is enabled. <p>DISABLED -
+     * Streaming of updates to identity pool is disabled. Bulk publish will
+     * also fail if StreamingStatus is DISABLED.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ENABLED, DISABLED
      *
-     * @param streamingStatus Status of the Cognito streams. Valid values are:
-     *         <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     *         enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     *         is disabled. Bulk publish will also fail if
-     *         <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * @param streamingStatus Status of the Cognito streams. Valid values are: <p>ENABLED -
+     *         Streaming of updates to identity pool is enabled. <p>DISABLED -
+     *         Streaming of updates to identity pool is disabled. Bulk publish will
+     *         also fail if StreamingStatus is DISABLED.
      *
      * @see StreamingStatus
      */
@@ -212,22 +200,20 @@ public class CognitoStreams implements Serializable, Cloneable {
     }
     
     /**
-     * Status of the Cognito streams. Valid values are:
-     * <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     * enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     * is disabled. Bulk publish will also fail if
-     * <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * Status of the Cognito streams. Valid values are: <p>ENABLED -
+     * Streaming of updates to identity pool is enabled. <p>DISABLED -
+     * Streaming of updates to identity pool is disabled. Bulk publish will
+     * also fail if StreamingStatus is DISABLED.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ENABLED, DISABLED
      *
-     * @param streamingStatus Status of the Cognito streams. Valid values are:
-     *         <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     *         enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     *         is disabled. Bulk publish will also fail if
-     *         <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * @param streamingStatus Status of the Cognito streams. Valid values are: <p>ENABLED -
+     *         Streaming of updates to identity pool is enabled. <p>DISABLED -
+     *         Streaming of updates to identity pool is disabled. Bulk publish will
+     *         also fail if StreamingStatus is DISABLED.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -240,20 +226,18 @@ public class CognitoStreams implements Serializable, Cloneable {
     }
 
     /**
-     * Status of the Cognito streams. Valid values are:
-     * <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     * enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     * is disabled. Bulk publish will also fail if
-     * <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * Status of the Cognito streams. Valid values are: <p>ENABLED -
+     * Streaming of updates to identity pool is enabled. <p>DISABLED -
+     * Streaming of updates to identity pool is disabled. Bulk publish will
+     * also fail if StreamingStatus is DISABLED.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ENABLED, DISABLED
      *
-     * @param streamingStatus Status of the Cognito streams. Valid values are:
-     *         <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     *         enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     *         is disabled. Bulk publish will also fail if
-     *         <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * @param streamingStatus Status of the Cognito streams. Valid values are: <p>ENABLED -
+     *         Streaming of updates to identity pool is enabled. <p>DISABLED -
+     *         Streaming of updates to identity pool is disabled. Bulk publish will
+     *         also fail if StreamingStatus is DISABLED.
      *
      * @see StreamingStatus
      */
@@ -262,22 +246,20 @@ public class CognitoStreams implements Serializable, Cloneable {
     }
     
     /**
-     * Status of the Cognito streams. Valid values are:
-     * <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     * enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     * is disabled. Bulk publish will also fail if
-     * <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * Status of the Cognito streams. Valid values are: <p>ENABLED -
+     * Streaming of updates to identity pool is enabled. <p>DISABLED -
+     * Streaming of updates to identity pool is disabled. Bulk publish will
+     * also fail if StreamingStatus is DISABLED.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ENABLED, DISABLED
      *
-     * @param streamingStatus Status of the Cognito streams. Valid values are:
-     *         <p><code>ENABLED</code> - Streaming of updates to identity pool is
-     *         enabled. <p><code>DISABLED</code>Streaming of updates to identity pool
-     *         is disabled. Bulk publish will also fail if
-     *         <code>StreamingStatus</code> is <code>DISABLED</code>.
+     * @param streamingStatus Status of the Cognito streams. Valid values are: <p>ENABLED -
+     *         Streaming of updates to identity pool is enabled. <p>DISABLED -
+     *         Streaming of updates to identity pool is disabled. Bulk publish will
+     *         also fail if StreamingStatus is DISABLED.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

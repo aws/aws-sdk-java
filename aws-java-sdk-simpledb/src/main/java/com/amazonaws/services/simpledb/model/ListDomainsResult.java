@@ -63,6 +63,11 @@ public class ListDomainsResult implements Serializable, Cloneable {
     /**
      * A list of domain names that match the expression.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDomainNames(java.util.Collection)} or {@link
+     * #withDomainNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainNames A list of domain names that match the expression.

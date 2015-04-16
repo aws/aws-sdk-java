@@ -230,6 +230,11 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest implemen
      * <p>Constraints: Each value can be 0-256 characters long. <p>Required:
      * Yes </li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagsToUpdate(java.util.Collection)} or {@link
+     * #withTagsToUpdate(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagsToUpdate A list of the tag keys and values that you want to add or update. If

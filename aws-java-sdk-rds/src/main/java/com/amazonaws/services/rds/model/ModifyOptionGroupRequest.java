@@ -147,6 +147,11 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      * present, the specified configuration is used to update the existing
      * configuration.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionsToInclude(java.util.Collection)} or {@link
+     * #withOptionsToInclude(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionsToInclude Options in this list are added to the option group or, if already
@@ -220,6 +225,11 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
     
     /**
      * Options in this list are removed from the option group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionsToRemove(java.util.Collection)} or {@link
+     * #withOptionsToRemove(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -65,6 +65,11 @@ public class DescribeRaidArraysResult implements Serializable, Cloneable {
      * A <code>RaidArrays</code> object that describes the specified RAID
      * arrays.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRaidArrays(java.util.Collection)} or {@link
+     * #withRaidArrays(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param raidArrays A <code>RaidArrays</code> object that describes the specified RAID

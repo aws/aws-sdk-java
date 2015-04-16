@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CONTENT_SHA256;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -74,7 +76,7 @@ public class AWSS3V4Signer extends AWS4Signer {
         // To be consistent with other service clients using sig-v4,
         // we just set the header as "required", and AWS4Signer.sign() will be
         // notified to pick up the header value returned by this method.
-        request.addHeader("x-amz-content-sha256", "required");
+        request.addHeader(X_AMZ_CONTENT_SHA256, "required");
         if (useChunkEncoding(request)) {
             final String contentLength =
                 request.getHeaders().get(Headers.CONTENT_LENGTH);

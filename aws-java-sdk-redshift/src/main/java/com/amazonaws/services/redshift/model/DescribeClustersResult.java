@@ -138,6 +138,11 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * A list of <a>Cluster</a> objects, where each object describes one
      * cluster.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClusters(java.util.Collection)} or {@link
+     * #withClusters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusters A list of <a>Cluster</a> objects, where each object describes one

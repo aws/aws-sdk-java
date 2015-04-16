@@ -96,6 +96,11 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>Using IAM</i> guide.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVersions(java.util.Collection)} or {@link
+     * #withVersions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param versions A list of policy versions. <p>For more information about managed

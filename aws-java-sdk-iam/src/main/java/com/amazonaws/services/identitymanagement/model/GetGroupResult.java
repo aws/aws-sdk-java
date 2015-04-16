@@ -116,6 +116,11 @@ public class GetGroupResult implements Serializable, Cloneable {
     /**
      * A list of users in the group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUsers(java.util.Collection)} or {@link
+     * #withUsers(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param users A list of users in the group.

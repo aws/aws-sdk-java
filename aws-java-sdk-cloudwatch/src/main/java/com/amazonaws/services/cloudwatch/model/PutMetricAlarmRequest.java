@@ -369,6 +369,11 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      * supported is publishing to an Amazon SNS topic or an Amazon Auto
      * Scaling policy.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOKActions(java.util.Collection)} or {@link
+     * #withOKActions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -481,6 +486,11 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      * action supported is publishing to an Amazon SNS topic or an Amazon
      * Auto Scaling policy.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAlarmActions(java.util.Collection)} or {@link
+     * #withAlarmActions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -592,6 +602,11 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      * is specified as an Amazon Resource Number (ARN). Currently the only
      * action supported is publishing to an Amazon SNS topic or an Amazon
      * Auto Scaling policy.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInsufficientDataActions(java.util.Collection)} or
+     * {@link #withInsufficientDataActions(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -853,6 +868,11 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The dimensions for the alarm's associated metric.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDimensions(java.util.Collection)} or {@link
+     * #withDimensions(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

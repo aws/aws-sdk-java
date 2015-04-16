@@ -53,7 +53,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      */
     private Map<String, Object> metadata = new HashMap<String, Object>();
 
-    public static final String AES_256_SERVER_SIDE_ENCRYPTION = "AES256";
+    public static final String AES_256_SERVER_SIDE_ENCRYPTION =
+            SSEAlgorithm.AES256.getAlgorithm();
 
     /**
      * The date when the object is no longer cacheable.
@@ -91,11 +92,11 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
 
     private ObjectMetadata(ObjectMetadata from) {
         this.userMetadata = from.userMetadata == null
-            ? null 
+            ? null
             : new HashMap<String,String>(from.userMetadata);
-        // shallow clone the meata data 
-        this.metadata = from.metadata == null 
-            ? null 
+        // shallow clone the meata data
+        this.metadata = from.metadata == null
+            ? null
             : new HashMap<String, Object>(from.metadata);
         this.expirationTime = cloneDate(from.expirationTime);
         this.expirationTimeRuleId = from.expirationTimeRuleId;

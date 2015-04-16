@@ -86,6 +86,11 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
      * identifiers in a single call. To obtain pipeline IDs, call
      * <a>ListPipelines</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPipelineIds(java.util.Collection)} or {@link
+     * #withPipelineIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineIds The IDs of the pipelines to describe. You can pass as many as 25

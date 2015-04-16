@@ -65,6 +65,11 @@ public class DescribeOptionGroupOptionsResult implements Serializable, Cloneable
     /**
      * List of available option group options.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionGroupOptions(java.util.Collection)} or
+     * {@link #withOptionGroupOptions(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupOptions List of available option group options.

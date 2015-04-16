@@ -59,6 +59,11 @@ public class ApplySecurityGroupsToLoadBalancerResult implements Serializable, Cl
     /**
      * A list of security group IDs associated with your load balancer.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups A list of security group IDs associated with your load balancer.

@@ -141,6 +141,11 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
     /**
      * The <code>AutoScalingGroups</code> used by this environment.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAutoScalingGroups(java.util.Collection)} or
+     * {@link #withAutoScalingGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroups The <code>AutoScalingGroups</code> used by this environment.
@@ -208,6 +213,11 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
     
     /**
      * The Amazon EC2 instances used by this environment.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstances(java.util.Collection)} or {@link
+     * #withInstances(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -277,6 +287,11 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
     /**
      * The Auto Scaling launch configurations in use by this environment.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLaunchConfigurations(java.util.Collection)} or
+     * {@link #withLaunchConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchConfigurations The Auto Scaling launch configurations in use by this environment.
@@ -344,6 +359,11 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
     
     /**
      * The LoadBalancers in use by this environment.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLoadBalancers(java.util.Collection)} or {@link
+     * #withLoadBalancers(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -413,6 +433,11 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
     /**
      * The <code>AutoScaling</code> triggers in use by this environment.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTriggers(java.util.Collection)} or {@link
+     * #withTriggers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param triggers The <code>AutoScaling</code> triggers in use by this environment.
@@ -480,6 +505,11 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
     
     /**
      * The queues used by this environment.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setQueues(java.util.Collection)} or {@link
+     * #withQueues(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

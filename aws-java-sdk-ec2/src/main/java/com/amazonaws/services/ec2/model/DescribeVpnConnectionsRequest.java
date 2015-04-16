@@ -113,6 +113,11 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
      * One or more VPN connection IDs. <p>Default: Describes your VPN
      * connections.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpnConnectionIds(java.util.Collection)} or {@link
+     * #withVpnConnectionIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnConnectionIds One or more VPN connection IDs. <p>Default: Describes your VPN
@@ -338,6 +343,11 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
      * <p><code>vpn-connection-id</code> - The ID of the VPN connection.
      * </li> <li> <p><code>vpn-gateway-id</code> - The ID of a virtual
      * private gateway associated with the VPN connection. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

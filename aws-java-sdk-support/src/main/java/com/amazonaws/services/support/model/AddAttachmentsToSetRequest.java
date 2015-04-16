@@ -148,6 +148,11 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest implemen
      * One or more attachments to add to the set. The limit is 3 attachments
      * per set, and the size limit is 5 MB per attachment.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttachments(java.util.Collection)} or {@link
+     * #withAttachments(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachments One or more attachments to add to the set. The limit is 3 attachments

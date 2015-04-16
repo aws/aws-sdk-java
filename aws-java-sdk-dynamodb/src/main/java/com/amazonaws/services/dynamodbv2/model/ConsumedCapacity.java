@@ -229,26 +229,26 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @param key The key of the entry to be added into LocalSecondaryIndexes.
      * @param value The corresponding value of the entry to be added into LocalSecondaryIndexes.
      */
-    public ConsumedCapacity addLocalSecondaryIndexesEntry(String key, Capacity value) {
-        if (null == this.localSecondaryIndexes) {
-            this.localSecondaryIndexes = new java.util.HashMap<String,Capacity>();
-        }
-        if (this.localSecondaryIndexes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.localSecondaryIndexes.put(key, value);
-        return this;
+  public ConsumedCapacity addLocalSecondaryIndexesEntry(String key, Capacity value) {
+    if (null == this.localSecondaryIndexes) {
+      this.localSecondaryIndexes = new java.util.HashMap<String,Capacity>();
     }
+    if (this.localSecondaryIndexes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.localSecondaryIndexes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into LocalSecondaryIndexes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public ConsumedCapacity clearLocalSecondaryIndexesEntries() {
-        this.localSecondaryIndexes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into LocalSecondaryIndexes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public ConsumedCapacity clearLocalSecondaryIndexesEntries() {
+    this.localSecondaryIndexes = null;
+    return this;
+  }
+  
     /**
      * The amount of throughput consumed on each global index affected by the
      * operation.
@@ -300,26 +300,26 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @param key The key of the entry to be added into GlobalSecondaryIndexes.
      * @param value The corresponding value of the entry to be added into GlobalSecondaryIndexes.
      */
-    public ConsumedCapacity addGlobalSecondaryIndexesEntry(String key, Capacity value) {
-        if (null == this.globalSecondaryIndexes) {
-            this.globalSecondaryIndexes = new java.util.HashMap<String,Capacity>();
-        }
-        if (this.globalSecondaryIndexes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.globalSecondaryIndexes.put(key, value);
-        return this;
+  public ConsumedCapacity addGlobalSecondaryIndexesEntry(String key, Capacity value) {
+    if (null == this.globalSecondaryIndexes) {
+      this.globalSecondaryIndexes = new java.util.HashMap<String,Capacity>();
     }
+    if (this.globalSecondaryIndexes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.globalSecondaryIndexes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into GlobalSecondaryIndexes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public ConsumedCapacity clearGlobalSecondaryIndexesEntries() {
-        this.globalSecondaryIndexes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into GlobalSecondaryIndexes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public ConsumedCapacity clearGlobalSecondaryIndexesEntries() {
+    this.globalSecondaryIndexes = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -268,6 +268,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     /**
      * The Amazon EC2 tags to filter on.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEc2TagFilters(java.util.Collection)} or {@link
+     * #withEc2TagFilters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ec2TagFilters The Amazon EC2 tags to filter on.
@@ -336,6 +341,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     /**
      * The on-premises instance tags to filter on.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setOnPremisesInstanceTagFilters(java.util.Collection)} or {@link
+     * #withOnPremisesInstanceTagFilters(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param onPremisesInstanceTagFilters The on-premises instance tags to filter on.
@@ -403,6 +414,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     
     /**
      * A list of associated Auto Scaling groups.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAutoScalingGroups(java.util.Collection)} or
+     * {@link #withAutoScalingGroups(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

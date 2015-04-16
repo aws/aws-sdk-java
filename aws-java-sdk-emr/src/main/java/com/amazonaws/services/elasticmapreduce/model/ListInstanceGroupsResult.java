@@ -65,6 +65,11 @@ public class ListInstanceGroupsResult implements Serializable, Cloneable {
     /**
      * The list of instance groups for the cluster and given filters.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceGroups(java.util.Collection)} or {@link
+     * #withInstanceGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroups The list of instance groups for the cluster and given filters.

@@ -210,6 +210,11 @@ public class ContainerInstance implements Serializable, Cloneable {
      * The remaining resources of the container instance that are available
      * for new tasks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRemainingResources(java.util.Collection)} or
+     * {@link #withRemainingResources(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param remainingResources The remaining resources of the container instance that are available
@@ -285,6 +290,11 @@ public class ContainerInstance implements Serializable, Cloneable {
     /**
      * The registered resources on the container instance that are in use by
      * current tasks.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRegisteredResources(java.util.Collection)} or
+     * {@link #withRegisteredResources(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

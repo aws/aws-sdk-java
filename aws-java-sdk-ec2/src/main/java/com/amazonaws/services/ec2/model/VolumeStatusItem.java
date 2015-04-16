@@ -178,6 +178,11 @@ public class VolumeStatusItem implements Serializable, Cloneable {
     /**
      * A list of events associated with the volume.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEvents(java.util.Collection)} or {@link
+     * #withEvents(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events A list of events associated with the volume.
@@ -245,6 +250,11 @@ public class VolumeStatusItem implements Serializable, Cloneable {
     
     /**
      * The details of the operation.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setActions(java.util.Collection)} or {@link
+     * #withActions(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

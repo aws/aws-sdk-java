@@ -59,6 +59,11 @@ public class DescribeUserProfilesResult implements Serializable, Cloneable {
     /**
      * A <code>Users</code> object that describes the specified users.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUserProfiles(java.util.Collection)} or {@link
+     * #withUserProfiles(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userProfiles A <code>Users</code> object that describes the specified users.

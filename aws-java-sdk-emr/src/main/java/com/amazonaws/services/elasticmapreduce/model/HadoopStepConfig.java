@@ -136,26 +136,26 @@ public class HadoopStepConfig implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Properties.
      * @param value The corresponding value of the entry to be added into Properties.
      */
-    public HadoopStepConfig addPropertiesEntry(String key, String value) {
-        if (null == this.properties) {
-            this.properties = new java.util.HashMap<String,String>();
-        }
-        if (this.properties.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.properties.put(key, value);
-        return this;
+  public HadoopStepConfig addPropertiesEntry(String key, String value) {
+    if (null == this.properties) {
+      this.properties = new java.util.HashMap<String,String>();
     }
+    if (this.properties.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.properties.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Properties.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public HadoopStepConfig clearPropertiesEntries() {
-        this.properties = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Properties.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public HadoopStepConfig clearPropertiesEntries() {
+    this.properties = null;
+    return this;
+  }
+  
     /**
      * The name of the main class in the specified Java file. If not
      * specified, the JAR file should specify a main class in its manifest
@@ -236,6 +236,11 @@ public class HadoopStepConfig implements Serializable, Cloneable {
     /**
      * The list of command line arguments to pass to the JAR file's main
      * function for execution.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setArgs(java.util.Collection)} or {@link
+     * #withArgs(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

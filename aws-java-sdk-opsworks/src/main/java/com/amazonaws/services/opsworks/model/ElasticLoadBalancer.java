@@ -298,6 +298,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
     /**
      * A list of Availability Zones.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
+     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of Availability Zones.
@@ -365,6 +370,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
     
     /**
      * A list of subnet IDs, if the stack is running in a VPC.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSubnetIds(java.util.Collection)} or {@link
+     * #withSubnetIds(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -438,6 +448,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
     /**
      * A list of the EC2 instances that the Elastic Load Balancing instance
      * is managing traffic for.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEc2InstanceIds(java.util.Collection)} or {@link
+     * #withEc2InstanceIds(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

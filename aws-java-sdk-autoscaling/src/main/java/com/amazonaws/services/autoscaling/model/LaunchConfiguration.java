@@ -394,6 +394,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * The security groups to associate with the EC2 instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The security groups to associate with the EC2 instances.
@@ -555,6 +560,12 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setClassicLinkVPCSecurityGroups(java.util.Collection)} or {@link
+     * #withClassicLinkVPCSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -828,6 +839,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * A block device mapping that specifies how block devices are exposed to
      * the instance. Each mapping is made up of a <code>virtualName</code>
      * and a <code>deviceName</code>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -608,6 +608,11 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * The applications installed on this cluster.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApplications(java.util.Collection)} or {@link
+     * #withApplications(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applications The applications installed on this cluster.
@@ -675,6 +680,11 @@ public class Cluster implements Serializable, Cloneable {
     
     /**
      * A list of tags associated with a cluster.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

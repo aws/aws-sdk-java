@@ -765,7 +765,7 @@ public class TransferManager {
         long lastByte;
 
         long[] range = getObjectRequest.getRange();
-		if (range != null
+        if (range != null
                 && range.length == 2) {
             startingByte = range[0];
             lastByte = range[1];

@@ -78,6 +78,11 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     /**
      * One or more key pair names. <p>Default: Describes all your key pairs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeyNames(java.util.Collection)} or {@link
+     * #withKeyNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyNames One or more key pair names. <p>Default: Describes all your key pairs.
@@ -155,6 +160,11 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * One or more filters. <ul> <li> <p><code>fingerprint</code> - The
      * fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
      * name of the key pair. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

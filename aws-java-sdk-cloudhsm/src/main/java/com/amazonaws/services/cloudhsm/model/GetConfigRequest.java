@@ -211,6 +211,11 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements Seriali
      * A list of ARNs that identify the high-availability partition groups
      * that are associated with the client.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHapgList(java.util.Collection)} or {@link
+     * #withHapgList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hapgList A list of ARNs that identify the high-availability partition groups

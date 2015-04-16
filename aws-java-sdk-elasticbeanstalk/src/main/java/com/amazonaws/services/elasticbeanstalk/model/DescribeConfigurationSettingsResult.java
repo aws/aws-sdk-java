@@ -60,6 +60,11 @@ public class DescribeConfigurationSettingsResult implements Serializable, Clonea
     /**
      * A list of <a>ConfigurationSettingsDescription</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigurationSettings(java.util.Collection)} or
+     * {@link #withConfigurationSettings(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param configurationSettings A list of <a>ConfigurationSettingsDescription</a>.

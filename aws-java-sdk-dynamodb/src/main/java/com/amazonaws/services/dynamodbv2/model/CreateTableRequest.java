@@ -268,6 +268,11 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * An array of attributes that describe the key schema for the table and
      * indexes.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeDefinitions(java.util.Collection)} or
+     * {@link #withAttributeDefinitions(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeDefinitions An array of attributes that describe the key schema for the table and
@@ -470,6 +475,11 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeySchema(java.util.Collection)} or {@link
+     * #withKeySchema(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -716,6 +726,11 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * must not exceed 20. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLocalSecondaryIndexes(java.util.Collection)} or
+     * {@link #withLocalSecondaryIndexes(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -975,6 +990,11 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
      * for the global secondary index, consisting of read and write capacity
      * units. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGlobalSecondaryIndexes(java.util.Collection)} or
+     * {@link #withGlobalSecondaryIndexes(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -67,6 +67,11 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
     /**
      * A list of revision locations that contain the matching revisions.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRevisions(java.util.Collection)} or {@link
+     * #withRevisions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param revisions A list of revision locations that contain the matching revisions.

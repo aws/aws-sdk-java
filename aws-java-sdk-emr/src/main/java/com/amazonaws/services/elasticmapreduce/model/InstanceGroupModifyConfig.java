@@ -183,6 +183,11 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * terminate the instances, the instance group will not return to its
      * original requested size.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEC2InstanceIdsToTerminate(java.util.Collection)}
+     * or {@link #withEC2InstanceIdsToTerminate(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2InstanceIdsToTerminate The EC2 InstanceIds to terminate. For advanced users only. Once you

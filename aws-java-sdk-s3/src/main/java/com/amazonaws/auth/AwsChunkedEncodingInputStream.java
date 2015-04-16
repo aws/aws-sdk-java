@@ -17,6 +17,7 @@ import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -303,9 +304,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
         }
         else {
             if (chunkSizeInBytes < chunkData.length) {
-                byte[] temp = new byte[chunkSizeInBytes];
-                System.arraycopy(chunkData, 0, temp, 0, chunkSizeInBytes);
-                chunkData = temp;
+                chunkData = Arrays.copyOf(chunkData, chunkSizeInBytes);
             }
             byte[] signedChunkContent = createSignedChunk(chunkData);
             currentChunkIterator = new ChunkContentIterator(signedChunkContent);
@@ -327,7 +326,8 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
                 priorChunkSignature + "\n" +
                 BinaryUtils.toHex(aws4Signer.hash(nonsigExtension)) + "\n" +
                 BinaryUtils.toHex(aws4Signer.hash(chunkData));
-        String chunkSignature = BinaryUtils.toHex(aws4Signer.sign(chunkStringToSign, kSigning, SigningAlgorithm.HmacSHA256));
+        final String chunkSignature = BinaryUtils.toHex(aws4Signer.sign(
+                chunkStringToSign, kSigning, SigningAlgorithm.HmacSHA256));
         priorChunkSignature = chunkSignature;
         chunkHeader.append(nonsigExtension + CHUNK_SIGNATURE_HEADER + chunkSignature);
         chunkHeader.append(CLRF);

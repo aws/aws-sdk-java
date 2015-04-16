@@ -162,6 +162,11 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
      * to 50 items. If you specify an unknown policy name, it is ignored with
      * no error.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyNames(java.util.Collection)} or {@link
+     * #withPolicyNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyNames One or more policy names or policy ARNs to be described. If you omit

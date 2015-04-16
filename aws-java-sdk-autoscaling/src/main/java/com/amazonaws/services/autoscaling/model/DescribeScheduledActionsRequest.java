@@ -182,6 +182,11 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      * items, repeat the call with the returned token in the
      * <code>NextToken</code> parameter.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setScheduledActionNames(java.util.Collection)} or
+     * {@link #withScheduledActionNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scheduledActionNames Describes one or more scheduled actions. If you omit this list, the

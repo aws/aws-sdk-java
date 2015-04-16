@@ -11,11 +11,6 @@
       "signerType" : "QueryStringSignerType"
     }
   }, {
-    "key" : "route53",
-    "config" : {
-      "signerType" : "AWS3SignerType"
-    }
-  }, {
     "key" : "s3",
     "config" : {
       "signerType" : "AWSS3V4SignerType"

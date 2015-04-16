@@ -659,26 +659,26 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into Item.
      * @param value The corresponding value of the entry to be added into Item.
      */
-    public PutItemRequest addItemEntry(String key, AttributeValue value) {
-        if (null == this.item) {
-            this.item = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.item.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.item.put(key, value);
-        return this;
+  public PutItemRequest addItemEntry(String key, AttributeValue value) {
+    if (null == this.item) {
+      this.item = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.item.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.item.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Item.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public PutItemRequest clearItemEntries() {
-        this.item = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Item.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public PutItemRequest clearItemEntries() {
+    this.item = null;
+    return this;
+  }
+  
     /**
      * <important> <p>There is a newer parameter available. Use
      * <i>ConditionExpression</i> instead. Note that if you use
@@ -1920,26 +1920,26 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into Expected.
      * @param value The corresponding value of the entry to be added into Expected.
      */
-    public PutItemRequest addExpectedEntry(String key, ExpectedAttributeValue value) {
-        if (null == this.expected) {
-            this.expected = new java.util.HashMap<String,ExpectedAttributeValue>();
-        }
-        if (this.expected.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expected.put(key, value);
-        return this;
+  public PutItemRequest addExpectedEntry(String key, ExpectedAttributeValue value) {
+    if (null == this.expected) {
+      this.expected = new java.util.HashMap<String,ExpectedAttributeValue>();
     }
+    if (this.expected.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expected.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Expected.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public PutItemRequest clearExpectedEntries() {
-        this.expected = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Expected.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public PutItemRequest clearExpectedEntries() {
+    this.expected = null;
+    return this;
+  }
+  
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
@@ -2833,26 +2833,26 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into ExpressionAttributeNames.
      * @param value The corresponding value of the entry to be added into ExpressionAttributeNames.
      */
-    public PutItemRequest addExpressionAttributeNamesEntry(String key, String value) {
-        if (null == this.expressionAttributeNames) {
-            this.expressionAttributeNames = new java.util.HashMap<String,String>();
-        }
-        if (this.expressionAttributeNames.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expressionAttributeNames.put(key, value);
-        return this;
+  public PutItemRequest addExpressionAttributeNamesEntry(String key, String value) {
+    if (null == this.expressionAttributeNames) {
+      this.expressionAttributeNames = new java.util.HashMap<String,String>();
     }
+    if (this.expressionAttributeNames.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expressionAttributeNames.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExpressionAttributeNames.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public PutItemRequest clearExpressionAttributeNamesEntries() {
-        this.expressionAttributeNames = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExpressionAttributeNames.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public PutItemRequest clearExpressionAttributeNamesEntries() {
+    this.expressionAttributeNames = null;
+    return this;
+  }
+  
     /**
      * One or more values that can be substituted in an expression. <p>Use
      * the <b>:</b> (colon) character in an expression to dereference an
@@ -2981,26 +2981,26 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into ExpressionAttributeValues.
      * @param value The corresponding value of the entry to be added into ExpressionAttributeValues.
      */
-    public PutItemRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
-        if (null == this.expressionAttributeValues) {
-            this.expressionAttributeValues = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.expressionAttributeValues.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expressionAttributeValues.put(key, value);
-        return this;
+  public PutItemRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
+    if (null == this.expressionAttributeValues) {
+      this.expressionAttributeValues = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.expressionAttributeValues.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expressionAttributeValues.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExpressionAttributeValues.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public PutItemRequest clearExpressionAttributeValuesEntries() {
-        this.expressionAttributeValues = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExpressionAttributeValues.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public PutItemRequest clearExpressionAttributeValuesEntries() {
+    this.expressionAttributeValues = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -181,6 +181,11 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      * processing this decision task. See the docs for the <a>Decision</a>
      * structure for details.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDecisions(java.util.Collection)} or {@link
+     * #withDecisions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param decisions The list of decisions (possibly empty) made by the decider while

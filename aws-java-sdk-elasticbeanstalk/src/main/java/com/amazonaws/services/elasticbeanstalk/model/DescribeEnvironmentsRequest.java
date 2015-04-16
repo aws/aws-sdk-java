@@ -225,6 +225,11 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to include only those that have the specified IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnvironmentIds(java.util.Collection)} or {@link
+     * #withEnvironmentIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environmentIds If specified, AWS Elastic Beanstalk restricts the returned
@@ -300,6 +305,11 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to include only those that have the specified names.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnvironmentNames(java.util.Collection)} or {@link
+     * #withEnvironmentNames(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

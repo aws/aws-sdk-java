@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Response to an <code>UnsubscribeFromDataset</code> request.
+ * Response to an UnsubscribeFromDataset request.
  * </p>
  */
 public class UnsubscribeFromDatasetResult implements Serializable, Cloneable {

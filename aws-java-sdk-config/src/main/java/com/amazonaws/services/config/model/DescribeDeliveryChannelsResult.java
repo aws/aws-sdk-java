@@ -65,6 +65,11 @@ public class DescribeDeliveryChannelsResult implements Serializable, Cloneable {
      * A list that contains the descriptions of the specified delivery
      * channel.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeliveryChannels(java.util.Collection)} or {@link
+     * #withDeliveryChannels(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deliveryChannels A list that contains the descriptions of the specified delivery

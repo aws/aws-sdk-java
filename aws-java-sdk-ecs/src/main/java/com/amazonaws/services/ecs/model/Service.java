@@ -276,6 +276,11 @@ public class Service implements Serializable, Cloneable {
      * the container name (as it appears in a container definition), and the
      * container port to access from the load balancer.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLoadBalancers(java.util.Collection)} or {@link
+     * #withLoadBalancers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancers A list of load balancer objects, containing the load balancer name,
@@ -563,6 +568,11 @@ public class Service implements Serializable, Cloneable {
     /**
      * The current state of deployments for the service.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeployments(java.util.Collection)} or {@link
+     * #withDeployments(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deployments The current state of deployments for the service.
@@ -680,6 +690,11 @@ public class Service implements Serializable, Cloneable {
     /**
      * The event stream for your service. A maximum of 100 of the latest
      * events are displayed.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEvents(java.util.Collection)} or {@link
+     * #withEvents(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

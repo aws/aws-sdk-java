@@ -26,10 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to make this API call need to have access to the identity data.
  * </p>
  * <p>
- * <code>ListDatasets</code> can be called with temporary user
- * credentials provided by Cognito Identity or with developer
- * credentials. You should use the Cognito Identity credentials to make
- * this API call.
+ * ListDatasets can be called with temporary user credentials provided by
+ * Cognito Identity or with developer credentials. You should use the
+ * Cognito Identity credentials to make this API call.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#listDatasets(ListDatasetsRequest)

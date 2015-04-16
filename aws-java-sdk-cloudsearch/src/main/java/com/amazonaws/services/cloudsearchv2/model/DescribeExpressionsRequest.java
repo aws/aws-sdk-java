@@ -137,6 +137,11 @@ public class DescribeExpressionsRequest extends AmazonWebServiceRequest implemen
      * Limits the <code><a>DescribeExpressions</a></code> response to the
      * specified expressions. If not specified, all expressions are shown.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setExpressionNames(java.util.Collection)} or {@link
+     * #withExpressionNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param expressionNames Limits the <code><a>DescribeExpressions</a></code> response to the

@@ -268,6 +268,11 @@ public class Condition implements Serializable, Cloneable {
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeValueList(java.util.Collection)} or
+     * {@link #withAttributeValueList(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValueList One or more values to evaluate against the supplied attribute. The

@@ -66,6 +66,11 @@ public class ChangeMessageVisibilityBatchResult implements Serializable, Cloneab
     /**
      * A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSuccessful(java.util.Collection)} or {@link
+     * #withSuccessful(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param successful A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
@@ -133,6 +138,11 @@ public class ChangeMessageVisibilityBatchResult implements Serializable, Cloneab
     
     /**
      * A list of <a>BatchResultErrorEntry</a> items.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFailed(java.util.Collection)} or {@link
+     * #withFailed(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

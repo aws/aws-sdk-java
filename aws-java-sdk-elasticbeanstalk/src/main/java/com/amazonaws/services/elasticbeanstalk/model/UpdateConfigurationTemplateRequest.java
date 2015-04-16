@@ -308,6 +308,11 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * A list of configuration option settings to update with the new
      * specified option value.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionSettings(java.util.Collection)} or {@link
+     * #withOptionSettings(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings A list of configuration option settings to update with the new
@@ -388,6 +393,11 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * A list of configuration options to remove from the configuration set.
      * <p> Constraint: You can remove only <code>UserDefined</code>
      * configuration options.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionsToRemove(java.util.Collection)} or {@link
+     * #withOptionsToRemove(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

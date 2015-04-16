@@ -103,6 +103,11 @@ public class DescribeCacheEngineVersionsResult implements Serializable, Cloneabl
      * A list of cache engine version details. Each element in the list
      * contains detailed information about one cache engine version.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheEngineVersions(java.util.Collection)} or
+     * {@link #withCacheEngineVersions(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheEngineVersions A list of cache engine version details. Each element in the list

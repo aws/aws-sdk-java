@@ -125,6 +125,11 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * A set of optional name-value pairs that map provider names to provider
      * tokens.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLogins(java.util.Collection)} or {@link
+     * #withLogins(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logins A set of optional name-value pairs that map provider names to provider

@@ -192,6 +192,11 @@ public class NetworkAcl implements Serializable, Cloneable {
     /**
      * One or more entries (rules) in the network ACL.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEntries(java.util.Collection)} or {@link
+     * #withEntries(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries One or more entries (rules) in the network ACL.
@@ -260,6 +265,11 @@ public class NetworkAcl implements Serializable, Cloneable {
     /**
      * Any associations between the network ACL and one or more subnets
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAssociations(java.util.Collection)} or {@link
+     * #withAssociations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associations Any associations between the network ACL and one or more subnets
@@ -327,6 +337,11 @@ public class NetworkAcl implements Serializable, Cloneable {
     
     /**
      * Any tags assigned to the network ACL.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

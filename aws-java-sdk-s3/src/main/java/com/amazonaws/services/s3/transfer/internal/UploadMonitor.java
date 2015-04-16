@@ -87,8 +87,8 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
     }
 
     /**
-     * Constructs a new upload watcher, which immediately submits itself to the
-     * thread pool.
+     * Constructs a new upload watcher and then immediately submits it to
+     * the thread pool.
      *
      * @param manager
      *            The {@link TransferManager} that owns this upload.
@@ -98,23 +98,30 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      *            The {@link ExecutorService} to which we should submit new
      *            tasks.
      * @param multipartUploadCallable
-     *            The callable responsible for processing the upload asynchronously
+     *            The callable responsible for processing the upload
+     *            asynchronously
      * @param putObjectRequest
      *            The original putObject request
      * @param progressListenerChain
      *            A chain of listeners that wish to be notified of upload
      *            progress
      */
-    public static UploadMonitor create(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
-            UploadCallable multipartUploadCallable, PutObjectRequest putObjectRequest,
+    public static UploadMonitor create(
+            TransferManager manager,
+            UploadImpl transfer,
+            ExecutorService threadPool,
+            UploadCallable multipartUploadCallable,
+            PutObjectRequest putObjectRequest,
             ProgressListenerChain progressListenerChain) {
-        UploadMonitor uploadMonitor = new UploadMonitor(manager, transfer, threadPool,
-                multipartUploadCallable, putObjectRequest, progressListenerChain);
+
+        UploadMonitor uploadMonitor = new UploadMonitor(manager, transfer,
+                threadPool, multipartUploadCallable, putObjectRequest,
+                progressListenerChain);
         uploadMonitor.setFuture(threadPool.submit(uploadMonitor));
         return uploadMonitor;
     }
 
-    public UploadMonitor(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
+    private UploadMonitor(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
             UploadCallable multipartUploadCallable, PutObjectRequest putObjectRequest,
             ProgressListenerChain progressListenerChain) {
 

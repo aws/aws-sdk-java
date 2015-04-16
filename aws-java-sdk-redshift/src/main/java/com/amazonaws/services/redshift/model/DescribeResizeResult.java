@@ -303,6 +303,11 @@ public class DescribeResizeResult implements Serializable, Cloneable {
      * The names of tables that have been completely imported . <p>Valid
      * Values: List of table names.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setImportTablesCompleted(java.util.Collection)} or
+     * {@link #withImportTablesCompleted(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param importTablesCompleted The names of tables that have been completely imported . <p>Valid
@@ -379,6 +384,11 @@ public class DescribeResizeResult implements Serializable, Cloneable {
      * The names of tables that are being currently imported. <p>Valid
      * Values: List of table names.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setImportTablesInProgress(java.util.Collection)} or
+     * {@link #withImportTablesInProgress(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param importTablesInProgress The names of tables that are being currently imported. <p>Valid
@@ -454,6 +464,11 @@ public class DescribeResizeResult implements Serializable, Cloneable {
     /**
      * The names of tables that have not been yet imported. <p>Valid Values:
      * List of table names
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setImportTablesNotStarted(java.util.Collection)} or
+     * {@link #withImportTablesNotStarted(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

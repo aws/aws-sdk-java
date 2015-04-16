@@ -65,6 +65,11 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
     /**
      * A list of load balancer description structures.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLoadBalancerDescriptions(java.util.Collection)}
+     * or {@link #withLoadBalancerDescriptions(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerDescriptions A list of load balancer description structures.

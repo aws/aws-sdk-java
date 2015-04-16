@@ -59,6 +59,11 @@ public class DescribeVirtualGatewaysResult implements Serializable, Cloneable {
     /**
      * A list of virtual private gateways.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVirtualGateways(java.util.Collection)} or {@link
+     * #withVirtualGateways(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualGateways A list of virtual private gateways.

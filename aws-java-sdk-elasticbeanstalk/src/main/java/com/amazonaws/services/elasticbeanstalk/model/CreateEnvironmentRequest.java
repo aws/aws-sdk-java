@@ -474,6 +474,11 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
     /**
      * This specifies the tags applied to resources in the environment.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags This specifies the tags applied to resources in the environment.
@@ -797,6 +802,11 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * environment. These override the values obtained from the solution
      * stack or the configuration template.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionSettings(java.util.Collection)} or {@link
+     * #withOptionSettings(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings If specified, AWS Elastic Beanstalk sets the specified configuration
@@ -878,6 +888,11 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
     /**
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this new environment.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionsToRemove(java.util.Collection)} or {@link
+     * #withOptionsToRemove(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -65,6 +65,11 @@ public class ListBootstrapActionsResult implements Serializable, Cloneable {
     /**
      * The bootstrap actions associated with the cluster .
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBootstrapActions(java.util.Collection)} or {@link
+     * #withBootstrapActions(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bootstrapActions The bootstrap actions associated with the cluster .

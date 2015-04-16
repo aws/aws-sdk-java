@@ -137,6 +137,12 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      * identity ID. Cognito supports the association of multiple developer
      * user identifiers with an identity ID.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setDeveloperUserIdentifierList(java.util.Collection)} or {@link
+     * #withDeveloperUserIdentifierList(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param developerUserIdentifierList This is the list of developer user identifiers associated with an

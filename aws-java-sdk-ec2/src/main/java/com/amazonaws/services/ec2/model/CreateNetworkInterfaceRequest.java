@@ -232,6 +232,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The IDs of one or more security groups.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroups(java.util.Collection)} or {@link
+     * #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The IDs of one or more security groups.
@@ -299,6 +304,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     
     /**
      * One or more private IP addresses.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPrivateIpAddresses(java.util.Collection)} or
+     * {@link #withPrivateIpAddresses(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

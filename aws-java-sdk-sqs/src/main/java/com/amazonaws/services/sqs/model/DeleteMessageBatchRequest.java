@@ -153,6 +153,11 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
     /**
      * A list of receipt handles for the messages to be deleted.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEntries(java.util.Collection)} or {@link
+     * #withEntries(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries A list of receipt handles for the messages to be deleted.

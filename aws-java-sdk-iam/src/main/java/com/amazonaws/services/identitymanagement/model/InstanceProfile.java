@@ -395,6 +395,11 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * The role associated with the instance profile.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRoles(java.util.Collection)} or {@link
+     * #withRoles(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param roles The role associated with the instance profile.

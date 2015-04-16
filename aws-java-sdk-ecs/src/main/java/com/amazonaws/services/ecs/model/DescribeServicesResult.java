@@ -62,6 +62,11 @@ public class DescribeServicesResult implements Serializable, Cloneable {
     /**
      * The list of services described.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setServices(java.util.Collection)} or {@link
+     * #withServices(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param services The list of services described.
@@ -129,6 +134,11 @@ public class DescribeServicesResult implements Serializable, Cloneable {
     
     /**
      * Any failures associated with the call.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFailures(java.util.Collection)} or {@link
+     * #withFailures(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

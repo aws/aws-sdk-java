@@ -200,6 +200,11 @@ public class NodeGroup implements Serializable, Cloneable {
      * A list containing information about individual nodes within the node
      * group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNodeGroupMembers(java.util.Collection)} or {@link
+     * #withNodeGroupMembers(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nodeGroupMembers A list containing information about individual nodes within the node

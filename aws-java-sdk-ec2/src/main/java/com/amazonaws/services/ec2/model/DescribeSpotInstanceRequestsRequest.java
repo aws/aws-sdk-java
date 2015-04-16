@@ -167,6 +167,11 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     /**
      * One or more Spot Instance request IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSpotInstanceRequestIds(java.util.Collection)} or
+     * {@link #withSpotInstanceRequestIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotInstanceRequestIds One or more Spot Instance request IDs.
@@ -644,6 +649,11 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * which the bid is launched. </li> <li> <p><code>valid-from</code> - The
      * start date of the request. </li> <li> <p><code>valid-until</code> -
      * The end date of the request. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -86,6 +86,11 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     /**
      * The launch configuration names.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLaunchConfigurationNames(java.util.Collection)}
+     * or {@link #withLaunchConfigurationNames(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchConfigurationNames The launch configuration names.

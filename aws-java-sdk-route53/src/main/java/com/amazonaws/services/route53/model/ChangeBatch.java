@@ -151,6 +151,11 @@ public class ChangeBatch implements Serializable, Cloneable {
      * A complex type that contains one <code>Change</code> element for each
      * resource record set that you want to create or delete.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setChanges(java.util.Collection)} or {@link
+     * #withChanges(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

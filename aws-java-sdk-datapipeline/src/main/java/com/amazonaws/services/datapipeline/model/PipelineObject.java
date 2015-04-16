@@ -169,6 +169,11 @@ public class PipelineObject implements Serializable, Cloneable {
     /**
      * Key-value pairs that define the properties of the object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFields(java.util.Collection)} or {@link
+     * #withFields(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fields Key-value pairs that define the properties of the object.

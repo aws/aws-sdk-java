@@ -81,26 +81,26 @@ public class GrantConstraints implements Serializable, Cloneable {
      * @param key The key of the entry to be added into EncryptionContextSubset.
      * @param value The corresponding value of the entry to be added into EncryptionContextSubset.
      */
-    public GrantConstraints addEncryptionContextSubsetEntry(String key, String value) {
-        if (null == this.encryptionContextSubset) {
-            this.encryptionContextSubset = new java.util.HashMap<String,String>();
-        }
-        if (this.encryptionContextSubset.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.encryptionContextSubset.put(key, value);
-        return this;
+  public GrantConstraints addEncryptionContextSubsetEntry(String key, String value) {
+    if (null == this.encryptionContextSubset) {
+      this.encryptionContextSubset = new java.util.HashMap<String,String>();
     }
+    if (this.encryptionContextSubset.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.encryptionContextSubset.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into EncryptionContextSubset.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public GrantConstraints clearEncryptionContextSubsetEntries() {
-        this.encryptionContextSubset = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into EncryptionContextSubset.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public GrantConstraints clearEncryptionContextSubsetEntries() {
+    this.encryptionContextSubset = null;
+    return this;
+  }
+  
     /**
      * The constraint contains additional key/value pairs that serve to
      * further limit the grant.
@@ -155,26 +155,26 @@ public class GrantConstraints implements Serializable, Cloneable {
      * @param key The key of the entry to be added into EncryptionContextEquals.
      * @param value The corresponding value of the entry to be added into EncryptionContextEquals.
      */
-    public GrantConstraints addEncryptionContextEqualsEntry(String key, String value) {
-        if (null == this.encryptionContextEquals) {
-            this.encryptionContextEquals = new java.util.HashMap<String,String>();
-        }
-        if (this.encryptionContextEquals.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.encryptionContextEquals.put(key, value);
-        return this;
+  public GrantConstraints addEncryptionContextEqualsEntry(String key, String value) {
+    if (null == this.encryptionContextEquals) {
+      this.encryptionContextEquals = new java.util.HashMap<String,String>();
     }
+    if (this.encryptionContextEquals.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.encryptionContextEquals.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into EncryptionContextEquals.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public GrantConstraints clearEncryptionContextEqualsEntries() {
-        this.encryptionContextEquals = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into EncryptionContextEquals.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public GrantConstraints clearEncryptionContextEqualsEntries() {
+    this.encryptionContextEquals = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

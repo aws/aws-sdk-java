@@ -78,6 +78,11 @@ public class ListAccessKeysResult implements Serializable, Cloneable {
     /**
      * A list of access key metadata.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAccessKeyMetadata(java.util.Collection)} or
+     * {@link #withAccessKeyMetadata(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accessKeyMetadata A list of access key metadata.

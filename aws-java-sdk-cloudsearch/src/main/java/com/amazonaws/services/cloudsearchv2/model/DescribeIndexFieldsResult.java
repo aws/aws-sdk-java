@@ -60,6 +60,11 @@ public class DescribeIndexFieldsResult implements Serializable, Cloneable {
     /**
      * The index fields configured for the domain.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIndexFields(java.util.Collection)} or {@link
+     * #withIndexFields(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param indexFields The index fields configured for the domain.

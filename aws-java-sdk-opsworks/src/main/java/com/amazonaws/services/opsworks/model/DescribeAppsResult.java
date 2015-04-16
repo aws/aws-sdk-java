@@ -59,6 +59,11 @@ public class DescribeAppsResult implements Serializable, Cloneable {
     /**
      * An array of <code>App</code> objects that describe the specified apps.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApps(java.util.Collection)} or {@link
+     * #withApps(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param apps An array of <code>App</code> objects that describe the specified apps.

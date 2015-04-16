@@ -179,6 +179,11 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * Any warnings returned by the document service about the documents
      * being uploaded.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWarnings(java.util.Collection)} or {@link
+     * #withWarnings(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param warnings Any warnings returned by the document service about the documents

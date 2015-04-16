@@ -108,6 +108,11 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * A complex type that contains information about the health checks
      * associated with the current AWS account.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHealthChecks(java.util.Collection)} or {@link
+     * #withHealthChecks(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param healthChecks A complex type that contains information about the health checks

@@ -367,6 +367,12 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * A list of cache node types and their corresponding values for this
      * parameter.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setCacheNodeTypeSpecificValues(java.util.Collection)} or {@link
+     * #withCacheNodeTypeSpecificValues(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeTypeSpecificValues A list of cache node types and their corresponding values for this

@@ -112,6 +112,11 @@ public class DescribeReservedDBInstancesResult implements Serializable, Cloneabl
     /**
      * A list of reserved DB instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setReservedDBInstances(java.util.Collection)} or
+     * {@link #withReservedDBInstances(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedDBInstances A list of reserved DB instances.

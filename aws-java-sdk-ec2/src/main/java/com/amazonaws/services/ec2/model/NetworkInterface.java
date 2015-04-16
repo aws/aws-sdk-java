@@ -651,6 +651,11 @@ public class NetworkInterface implements Serializable, Cloneable {
     /**
      * Any security groups for the network interface.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroups(java.util.Collection)} or {@link
+     * #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups Any security groups for the network interface.
@@ -791,6 +796,11 @@ public class NetworkInterface implements Serializable, Cloneable {
     /**
      * Any tags assigned to the network interface.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagSet(java.util.Collection)} or {@link
+     * #withTagSet(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagSet Any tags assigned to the network interface.
@@ -858,6 +868,11 @@ public class NetworkInterface implements Serializable, Cloneable {
     
     /**
      * The private IP addresses associated with the network interface.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPrivateIpAddresses(java.util.Collection)} or
+     * {@link #withPrivateIpAddresses(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

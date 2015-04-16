@@ -99,6 +99,11 @@ public class ListRecordsResult implements Serializable, Cloneable {
     /**
      * A list of all records.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRecords(java.util.Collection)} or {@link
+     * #withRecords(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param records A list of all records.
@@ -298,6 +303,11 @@ public class ListRecordsResult implements Serializable, Cloneable {
     
     /**
      * Names of merged datasets.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMergedDatasetNames(java.util.Collection)} or
+     * {@link #withMergedDatasetNames(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -84,6 +84,11 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest impleme
     /**
      * Instance groups to change.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceGroups(java.util.Collection)} or {@link
+     * #withInstanceGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroups Instance groups to change.

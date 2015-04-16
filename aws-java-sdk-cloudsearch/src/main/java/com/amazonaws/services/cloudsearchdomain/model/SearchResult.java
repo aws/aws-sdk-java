@@ -153,26 +153,26 @@ public class SearchResult implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Facets.
      * @param value The corresponding value of the entry to be added into Facets.
      */
-    public SearchResult addFacetsEntry(String key, BucketInfo value) {
-        if (null == this.facets) {
-            this.facets = new java.util.HashMap<String,BucketInfo>();
-        }
-        if (this.facets.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.facets.put(key, value);
-        return this;
+  public SearchResult addFacetsEntry(String key, BucketInfo value) {
+    if (null == this.facets) {
+      this.facets = new java.util.HashMap<String,BucketInfo>();
     }
+    if (this.facets.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.facets.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Facets.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public SearchResult clearFacetsEntries() {
-        this.facets = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Facets.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public SearchResult clearFacetsEntries() {
+    this.facets = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

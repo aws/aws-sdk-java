@@ -77,6 +77,11 @@ public class CreateWorkspacesRequest extends AmazonWebServiceRequest implements 
     /**
      * An array of structures that specify the WorkSpaces to create.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWorkspaces(java.util.Collection)} or {@link
+     * #withWorkspaces(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

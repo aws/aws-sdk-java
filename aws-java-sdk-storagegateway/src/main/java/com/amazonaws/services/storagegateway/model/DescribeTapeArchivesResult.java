@@ -95,6 +95,11 @@ public class DescribeTapeArchivesResult implements Serializable, Cloneable {
      * (ARNs) of the tapes, size of the tapes, status of the tapes, progress
      * of the description and tape barcode.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTapeArchives(java.util.Collection)} or {@link
+     * #withTapeArchives(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tapeArchives An array of virtual tape objects in the virtual tape shelf (VTS). The

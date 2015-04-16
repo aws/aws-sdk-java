@@ -158,6 +158,11 @@ public class Application implements Serializable, Cloneable {
     /**
      * Arguments for Amazon EMR to pass to the application.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setArgs(java.util.Collection)} or {@link
+     * #withArgs(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param args Arguments for Amazon EMR to pass to the application.
@@ -256,26 +261,26 @@ public class Application implements Serializable, Cloneable {
      * @param key The key of the entry to be added into AdditionalInfo.
      * @param value The corresponding value of the entry to be added into AdditionalInfo.
      */
-    public Application addAdditionalInfoEntry(String key, String value) {
-        if (null == this.additionalInfo) {
-            this.additionalInfo = new java.util.HashMap<String,String>();
-        }
-        if (this.additionalInfo.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.additionalInfo.put(key, value);
-        return this;
+  public Application addAdditionalInfoEntry(String key, String value) {
+    if (null == this.additionalInfo) {
+      this.additionalInfo = new java.util.HashMap<String,String>();
     }
+    if (this.additionalInfo.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.additionalInfo.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into AdditionalInfo.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public Application clearAdditionalInfoEntries() {
-        this.additionalInfo = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into AdditionalInfo.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Application clearAdditionalInfoEntries() {
+    this.additionalInfo = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

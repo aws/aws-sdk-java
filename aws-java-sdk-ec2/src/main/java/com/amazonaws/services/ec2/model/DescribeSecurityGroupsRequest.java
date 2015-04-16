@@ -129,6 +129,11 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <code>group-name</code> filter to describe security groups by name.
      * <p>Default: Describes all your security groups.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupNames(java.util.Collection)} or {@link
+     * #withGroupNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupNames [EC2-Classic and default VPC only] One or more security group names.
@@ -213,6 +218,11 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     /**
      * One or more security group IDs. Required for security groups in a
      * nondefault VPC. <p>Default: Describes all your security groups.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupIds(java.util.Collection)} or {@link
+     * #withGroupIds(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -394,6 +404,11 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * The value of a tag assigned to the security group. </li> <li>
      * <p><code>vpc-id</code> - The ID of the VPC specified when the security
      * group was created. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

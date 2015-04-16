@@ -135,6 +135,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * from the cache cluster. A node ID is a numeric identifier (0001, 0002,
      * etc.).
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheNodeIdsToRemove(java.util.Collection)} or
+     * {@link #withCacheNodeIdsToRemove(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeIdsToRemove A list of cache node IDs that are being removed (or will be removed)

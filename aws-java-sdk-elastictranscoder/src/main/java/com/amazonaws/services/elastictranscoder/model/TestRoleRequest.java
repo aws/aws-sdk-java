@@ -258,6 +258,11 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements Serializ
      * The ARNs of one or more Amazon Simple Notification Service (Amazon
      * SNS) topics that you want the action to send a test notification to.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTopics(java.util.Collection)} or {@link
+     * #withTopics(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

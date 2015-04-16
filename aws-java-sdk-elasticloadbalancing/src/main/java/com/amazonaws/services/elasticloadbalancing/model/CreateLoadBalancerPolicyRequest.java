@@ -209,6 +209,11 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     /**
      * A list of attributes associated with the policy being created.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyAttributes(java.util.Collection)} or {@link
+     * #withPolicyAttributes(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyAttributes A list of attributes associated with the policy being created.

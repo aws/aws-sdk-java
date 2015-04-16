@@ -58,6 +58,11 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
     /**
      * List of tags returned by the ListTagsForResource operation.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagList(java.util.Collection)} or {@link
+     * #withTagList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagList List of tags returned by the ListTagsForResource operation.

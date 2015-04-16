@@ -189,6 +189,11 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest impleme
      * A complex type that contains the ResourceId element for each resource
      * for which you want to get a list of tags.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResourceIds(java.util.Collection)} or {@link
+     * #withResourceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

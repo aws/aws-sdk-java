@@ -123,6 +123,11 @@ public class Filter implements Serializable, Cloneable {
     /**
      * The value of the filter.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setValues(java.util.Collection)} or {@link
+     * #withValues(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param values The value of the filter.

@@ -150,6 +150,11 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The type of instance group for which to list the instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceGroupTypes(java.util.Collection)} or
+     * {@link #withInstanceGroupTypes(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroupTypes The type of instance group for which to list the instances.

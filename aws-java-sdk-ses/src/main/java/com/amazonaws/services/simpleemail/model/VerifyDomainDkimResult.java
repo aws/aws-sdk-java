@@ -120,6 +120,11 @@ public class VerifyDomainDkimResult implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
      * SES Developer Guide</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDkimTokens(java.util.Collection)} or {@link
+     * #withDkimTokens(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dkimTokens A set of character strings that represent the domain's identity. If

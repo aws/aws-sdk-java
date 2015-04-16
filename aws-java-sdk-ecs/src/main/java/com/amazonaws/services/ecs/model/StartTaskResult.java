@@ -75,6 +75,11 @@ public class StartTaskResult implements Serializable, Cloneable {
      * successfully placed on your container instances will be described
      * here.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTasks(java.util.Collection)} or {@link
+     * #withTasks(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tasks A full description of the tasks that were started. Each task that was
@@ -153,6 +158,11 @@ public class StartTaskResult implements Serializable, Cloneable {
     /**
      * Any failed tasks from your <code>StartTask</code> action are listed
      * here.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFailures(java.util.Collection)} or {@link
+     * #withFailures(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

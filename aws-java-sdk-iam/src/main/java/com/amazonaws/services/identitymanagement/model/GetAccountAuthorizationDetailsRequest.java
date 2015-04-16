@@ -102,6 +102,11 @@ public class GetAccountAuthorizationDetailsRequest extends AmazonWebServiceReque
      * A list of entity types (user, group, role, local managed policy, or
      * AWS managed policy) for filtering the results.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilter(java.util.Collection)} or {@link
+     * #withFilter(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filter A list of entity types (user, group, role, local managed policy, or

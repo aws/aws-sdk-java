@@ -79,6 +79,11 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      * The validation errors that are associated with the objects defined in
      * <code>pipelineObjects</code>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setValidationErrors(java.util.Collection)} or {@link
+     * #withValidationErrors(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validationErrors The validation errors that are associated with the objects defined in
@@ -154,6 +159,11 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
     /**
      * The validation warnings that are associated with the objects defined
      * in <code>pipelineObjects</code>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setValidationWarnings(java.util.Collection)} or
+     * {@link #withValidationWarnings(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

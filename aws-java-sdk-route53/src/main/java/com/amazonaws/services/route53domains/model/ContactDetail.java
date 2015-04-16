@@ -1207,6 +1207,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * <code>TechContact</code> <p>Children: <code>Name</code>,
      * <code>Value</code> <p>Required: No
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setExtraParams(java.util.Collection)} or {@link
+     * #withExtraParams(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param extraParams A list of name-value pairs for parameters required by certain

@@ -560,26 +560,26 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Args.
      * @param value The corresponding value of the entry to be added into Args.
      */
-    public DeploymentCommand addArgsEntry(String key, java.util.List<String> value) {
-        if (null == this.args) {
-            this.args = new java.util.HashMap<String,java.util.List<String>>();
-        }
-        if (this.args.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.args.put(key, value);
-        return this;
+  public DeploymentCommand addArgsEntry(String key, java.util.List<String> value) {
+    if (null == this.args) {
+      this.args = new java.util.HashMap<String,java.util.List<String>>();
     }
+    if (this.args.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.args.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Args.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public DeploymentCommand clearArgsEntries() {
-        this.args = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Args.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public DeploymentCommand clearArgsEntries() {
+    this.args = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

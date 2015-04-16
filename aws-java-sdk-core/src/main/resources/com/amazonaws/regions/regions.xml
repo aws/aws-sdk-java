@@ -260,6 +260,18 @@
         <Https>true</Https>
         <Hostname>ssm.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>machinelearning</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>machinelearning.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>workspaces</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>workspaces.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>us-west-1</Name>
@@ -442,6 +454,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>cloudhsm.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ecs</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ecs.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>lambda</ServiceName>
@@ -662,9 +680,21 @@
         <Https>true</Https>
         <Hostname>ssm.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>workspaces</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>workspaces.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>ap-northeast-1</Name>
+      <Endpoint>
+        <ServiceName>ecs</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ecs.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
       <Endpoint>
         <ServiceName>kms</ServiceName>
         <Http>false</Http>
@@ -854,6 +884,12 @@
         <Https>true</Https>
         <Hostname>elastictranscoder.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>workspaces</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>workspaces.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>ap-southeast-1</Name>
@@ -1033,6 +1069,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>elastictranscoder.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>workspaces</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>workspaces.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
     </Region>
     <Region>
@@ -1226,6 +1268,12 @@
         <Https>true</Https>
         <Hostname>kinesis.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>workspaces</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>workspaces.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>sa-east-1</Name>
@@ -1396,6 +1444,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>cloudhsm.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ecs</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ecs.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>lambda</ServiceName>
@@ -1621,6 +1675,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>ssm.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>workspaces</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>workspaces.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
     </Region>
     <Region>
@@ -1914,6 +1974,12 @@
         <Https>true</Https>
         <Hostname>glacier.cn-north-1.amazonaws.com.cn</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>directconnect</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>directconnect.cn-north-1.amazonaws.com.cn</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>us-gov-west-1</Name>
@@ -2029,6 +2095,9 @@
       <Name>ecs</Name>
       <FullName>Amazon EC2 Container Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>eu-west-1</RegionName>
     </Service>
     <Service>
       <Name>lambda</Name>
@@ -2458,6 +2527,7 @@
       <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>cn-north-1</RegionName>
     </Service>
     <Service>
       <Name>datapipeline</Name>
@@ -2511,6 +2581,21 @@
       <FullName>Amazon Simple Systems Management</FullName>
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
+    </Service>
+    <Service>
+      <Name>machinelearning</Name>
+      <FullName>Amazon Machine Learning</FullName>
+      <RegionName>us-east-1</RegionName>
+    </Service>
+    <Service>
+      <Name>workspaces</Name>
+      <FullName>Amazon WorkSpaces</FullName>
+      <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
       <RegionName>eu-west-1</RegionName>
     </Service>
   </Services>

@@ -144,6 +144,11 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements Serial
      * complete list of stack status codes, see the <code>StackStatus</code>
      * parameter of the <a>Stack</a> data type.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStackStatusFilters(java.util.Collection)} or
+     * {@link #withStackStatusFilters(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackStatusFilters Stack status to use as a filter. Specify one or more stack status

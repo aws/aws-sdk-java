@@ -73,6 +73,11 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      * The list of container instance full Amazon Resource Name (ARN) entries
      * for each container instance associated with the specified cluster.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setContainerInstanceArns(java.util.Collection)} or
+     * {@link #withContainerInstanceArns(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containerInstanceArns The list of container instance full Amazon Resource Name (ARN) entries

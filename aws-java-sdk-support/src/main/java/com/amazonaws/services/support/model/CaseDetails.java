@@ -545,6 +545,11 @@ public class CaseDetails implements Serializable, Cloneable {
      * The email addresses that receive copies of communication about the
      * case.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCcEmailAddresses(java.util.Collection)} or {@link
+     * #withCcEmailAddresses(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ccEmailAddresses The email addresses that receive copies of communication about the

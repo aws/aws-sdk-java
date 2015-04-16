@@ -500,6 +500,11 @@ public class Image implements Serializable, Cloneable {
     /**
      * Any product codes associated with the AMI.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProductCodes(java.util.Collection)} or {@link
+     * #withProductCodes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodes Any product codes associated with the AMI.
@@ -1194,6 +1199,11 @@ public class Image implements Serializable, Cloneable {
     /**
      * Any block device mapping entries.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param blockDeviceMappings Any block device mapping entries.
@@ -1343,6 +1353,11 @@ public class Image implements Serializable, Cloneable {
     
     /**
      * Any tags assigned to the image.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

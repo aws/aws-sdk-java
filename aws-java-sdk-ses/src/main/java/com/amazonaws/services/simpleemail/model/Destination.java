@@ -96,6 +96,11 @@ public class Destination implements Serializable, Cloneable {
     /**
      * The To: field(s) of the message.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setToAddresses(java.util.Collection)} or {@link
+     * #withToAddresses(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param toAddresses The To: field(s) of the message.
@@ -164,6 +169,11 @@ public class Destination implements Serializable, Cloneable {
     /**
      * The CC: field(s) of the message.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCcAddresses(java.util.Collection)} or {@link
+     * #withCcAddresses(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ccAddresses The CC: field(s) of the message.
@@ -231,6 +241,11 @@ public class Destination implements Serializable, Cloneable {
     
     /**
      * The BCC: field(s) of the message.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBccAddresses(java.util.Collection)} or {@link
+     * #withBccAddresses(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -1125,6 +1125,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * are projected into the index. Global secondary index queries cannot
      * fetch attributes from the parent table.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributesToGet(java.util.Collection)} or {@link
+     * #withAttributesToGet(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -2086,26 +2091,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param key The key of the entry to be added into KeyConditions.
      * @param value The corresponding value of the entry to be added into KeyConditions.
      */
-    public QueryRequest addKeyConditionsEntry(String key, Condition value) {
-        if (null == this.keyConditions) {
-            this.keyConditions = new java.util.HashMap<String,Condition>();
-        }
-        if (this.keyConditions.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.keyConditions.put(key, value);
-        return this;
+  public QueryRequest addKeyConditionsEntry(String key, Condition value) {
+    if (null == this.keyConditions) {
+      this.keyConditions = new java.util.HashMap<String,Condition>();
     }
+    if (this.keyConditions.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.keyConditions.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into KeyConditions.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public QueryRequest clearKeyConditionsEntries() {
-        this.keyConditions = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into KeyConditions.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public QueryRequest clearKeyConditionsEntries() {
+    this.keyConditions = null;
+    return this;
+  }
+  
     /**
      * <important> <p>There is a newer parameter available. Use
      * <i>FilterExpression</i> instead. Note that if you use
@@ -2423,26 +2428,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param key The key of the entry to be added into QueryFilter.
      * @param value The corresponding value of the entry to be added into QueryFilter.
      */
-    public QueryRequest addQueryFilterEntry(String key, Condition value) {
-        if (null == this.queryFilter) {
-            this.queryFilter = new java.util.HashMap<String,Condition>();
-        }
-        if (this.queryFilter.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.queryFilter.put(key, value);
-        return this;
+  public QueryRequest addQueryFilterEntry(String key, Condition value) {
+    if (null == this.queryFilter) {
+      this.queryFilter = new java.util.HashMap<String,Condition>();
     }
+    if (this.queryFilter.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.queryFilter.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into QueryFilter.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public QueryRequest clearQueryFilterEntries() {
-        this.queryFilter = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into QueryFilter.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public QueryRequest clearQueryFilterEntries() {
+    this.queryFilter = null;
+    return this;
+  }
+  
     /**
      * A logical operator to apply to the conditions in a <i>QueryFilter</i>
      * map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
@@ -2769,14 +2774,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      */
     public void setExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
         java.util.HashMap<String,AttributeValue> exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
-        
-        if (hashKey != null) {
-            exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
-        } else
+      
+      if (hashKey != null) {
+          exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
+      } else
             throw new IllegalArgumentException("hashKey must be non-null object.");
-        if (rangeKey != null) {
-            exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
-        } 
+      if (rangeKey != null) {
+          exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
+      } 
         setExclusiveStartKey(exclusiveStartKey);
     }
     
@@ -2795,8 +2800,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param rangeKey Primary range key. (null if it a hash-only table)
      */
     public QueryRequest withExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-        setExclusiveStartKey(hashKey, rangeKey);
-        return this;
+      setExclusiveStartKey(hashKey, rangeKey);
+      return this;
     }
 
     /**
@@ -2812,26 +2817,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param key The key of the entry to be added into ExclusiveStartKey.
      * @param value The corresponding value of the entry to be added into ExclusiveStartKey.
      */
-    public QueryRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
-        if (null == this.exclusiveStartKey) {
-            this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.exclusiveStartKey.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.exclusiveStartKey.put(key, value);
-        return this;
+  public QueryRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
+    if (null == this.exclusiveStartKey) {
+      this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.exclusiveStartKey.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.exclusiveStartKey.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExclusiveStartKey.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public QueryRequest clearExclusiveStartKeyEntries() {
-        this.exclusiveStartKey = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExclusiveStartKey.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public QueryRequest clearExclusiveStartKeyEntries() {
+    this.exclusiveStartKey = null;
+    return this;
+  }
+  
     /**
      * A value that if set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -3322,26 +3327,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param key The key of the entry to be added into ExpressionAttributeNames.
      * @param value The corresponding value of the entry to be added into ExpressionAttributeNames.
      */
-    public QueryRequest addExpressionAttributeNamesEntry(String key, String value) {
-        if (null == this.expressionAttributeNames) {
-            this.expressionAttributeNames = new java.util.HashMap<String,String>();
-        }
-        if (this.expressionAttributeNames.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expressionAttributeNames.put(key, value);
-        return this;
+  public QueryRequest addExpressionAttributeNamesEntry(String key, String value) {
+    if (null == this.expressionAttributeNames) {
+      this.expressionAttributeNames = new java.util.HashMap<String,String>();
     }
+    if (this.expressionAttributeNames.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expressionAttributeNames.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExpressionAttributeNames.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public QueryRequest clearExpressionAttributeNamesEntries() {
-        this.expressionAttributeNames = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExpressionAttributeNames.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public QueryRequest clearExpressionAttributeNamesEntries() {
+    this.expressionAttributeNames = null;
+    return this;
+  }
+  
     /**
      * One or more values that can be substituted in an expression. <p>Use
      * the <b>:</b> (colon) character in an expression to dereference an
@@ -3470,26 +3475,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param key The key of the entry to be added into ExpressionAttributeValues.
      * @param value The corresponding value of the entry to be added into ExpressionAttributeValues.
      */
-    public QueryRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
-        if (null == this.expressionAttributeValues) {
-            this.expressionAttributeValues = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.expressionAttributeValues.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expressionAttributeValues.put(key, value);
-        return this;
+  public QueryRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
+    if (null == this.expressionAttributeValues) {
+      this.expressionAttributeValues = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.expressionAttributeValues.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expressionAttributeValues.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExpressionAttributeValues.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public QueryRequest clearExpressionAttributeValuesEntries() {
-        this.expressionAttributeValues = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExpressionAttributeValues.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public QueryRequest clearExpressionAttributeValuesEntries() {
+    this.expressionAttributeValues = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

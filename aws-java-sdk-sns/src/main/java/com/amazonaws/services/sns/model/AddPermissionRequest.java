@@ -186,6 +186,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * to the specified actions. The users must have AWS accounts, but do not
      * need to be signed up for this service.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAWSAccountIds(java.util.Collection)} or {@link
+     * #withAWSAccountIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccountIds The AWS account IDs of the users (principals) who will be given access
@@ -264,6 +269,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The action you want to allow for the specified principal(s). <p>Valid
      * values: any Amazon SNS action name.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setActionNames(java.util.Collection)} or {@link
+     * #withActionNames(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

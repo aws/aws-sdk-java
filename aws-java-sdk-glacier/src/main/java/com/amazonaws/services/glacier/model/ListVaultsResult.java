@@ -66,6 +66,11 @@ public class ListVaultsResult implements Serializable, Cloneable {
     /**
      * List of vaults.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVaultList(java.util.Collection)} or {@link
+     * #withVaultList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultList List of vaults.

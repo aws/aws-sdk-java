@@ -66,6 +66,11 @@ public class DescribeNotificationConfigurationsResult implements Serializable, C
     /**
      * The notification configurations.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNotificationConfigurations(java.util.Collection)}
+     * or {@link #withNotificationConfigurations(java.util.Collection)} if
+     * you want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notificationConfigurations The notification configurations.

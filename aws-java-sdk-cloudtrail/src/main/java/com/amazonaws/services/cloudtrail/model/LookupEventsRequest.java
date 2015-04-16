@@ -122,6 +122,11 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements Seri
      * Contains a list of lookup attributes. Currently the list can contain
      * only one item.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLookupAttributes(java.util.Collection)} or {@link
+     * #withLookupAttributes(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lookupAttributes Contains a list of lookup attributes. Currently the list can contain

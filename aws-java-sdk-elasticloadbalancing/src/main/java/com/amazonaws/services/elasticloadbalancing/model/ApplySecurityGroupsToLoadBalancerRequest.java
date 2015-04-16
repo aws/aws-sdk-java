@@ -128,6 +128,11 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
      * VPC. The security group IDs must be provided as the ID and not the
      * security group name (For example, sg-1234).
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups A list of security group IDs to associate with your load balancer in

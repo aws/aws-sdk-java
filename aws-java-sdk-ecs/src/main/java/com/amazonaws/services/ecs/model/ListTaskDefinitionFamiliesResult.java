@@ -73,6 +73,11 @@ public class ListTaskDefinitionFamiliesResult implements Serializable, Cloneable
      * The list of task definition family names that match the
      * <code>ListTaskDefinitionFamilies</code> request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFamilies(java.util.Collection)} or {@link
+     * #withFamilies(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param families The list of task definition family names that match the

@@ -20,7 +20,8 @@ package com.amazonaws.services.config.model;
 public enum DeliveryStatus {
     
     Success("Success"),
-    Failure("Failure");
+    Failure("Failure"),
+    Not_Applicable("Not_Applicable");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum DeliveryStatus {
             return DeliveryStatus.Success;
         } else if ("Failure".equals(value)) {
             return DeliveryStatus.Failure;
+        } else if ("Not_Applicable".equals(value)) {
+            return DeliveryStatus.Not_Applicable;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

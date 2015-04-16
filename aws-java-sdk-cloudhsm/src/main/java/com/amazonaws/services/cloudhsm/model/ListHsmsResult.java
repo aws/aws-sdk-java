@@ -68,6 +68,11 @@ public class ListHsmsResult implements Serializable, Cloneable {
     /**
      * The list of ARNs that identify the HSMs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHsmList(java.util.Collection)} or {@link
+     * #withHsmList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hsmList The list of ARNs that identify the HSMs.

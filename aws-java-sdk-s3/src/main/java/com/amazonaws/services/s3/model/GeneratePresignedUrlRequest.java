@@ -79,6 +79,90 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
      */
     private SSECustomerKey sseCustomerKey;
 
+    /**
+     * Used to specify the server side encryption algorithm.  Null means
+     * no server side encryption is in use.
+     */
+    private String sseAlgorithm;
+
+    /**
+     * Used to specify the KMS CMS Key ID when KMS server side encryption is in
+     * use.
+     */
+    private String kmsCmkId;
+
+    /**
+     * Returns the KMS customer key id used for server side encryption; or null
+     * if there is none.
+     */
+    public String getKmsCmkId() {
+        return kmsCmkId;
+    }
+
+    /**
+     * Sets the KMS customer key id used for server side encryption.
+     * <p>
+     * Note S3 does not require HTTP header
+     * ???x-amz-server-side-encryption-aws-kms-key-id??? to be always present (a
+     * default key ID will be used if this header is not present).
+     * <p>
+     * It is also possible to set the header to ???alias/aws/s3??? to refer to the
+     * default KMS CMK ID.
+     */
+    public void setKmsCmkId(String kmsCmkId) {
+        this.kmsCmkId = kmsCmkId;
+    }
+
+    /**
+     * Fluent API for {@link #setKmsCmkId(String)}
+     */
+    public GeneratePresignedUrlRequest withKmsCmkId(String kmsCmkId) {
+        setKmsCmkId(kmsCmkId);
+        return this;
+    }
+
+    /**
+     * Returns the SSE algorithm used for SSE (with server side key); or null if
+     * SSE (with server side key) is not in use.
+     */
+    public String getSSEAlgorithm() {
+        return sseAlgorithm;
+    }
+
+    /**
+     * Sets the SSE algorithm for server side encryption.
+     *
+     * @param currently supported values: "AES256" or "aws:kms".
+     */
+    public void setSSEAlgorithm(String sseAlgorithm) {
+        this.sseAlgorithm = sseAlgorithm;
+    }
+
+    /**
+     * Fluent API for {@link #setSSEAlgorithm(String)}
+     */
+    public GeneratePresignedUrlRequest withSSEAlgorithm(String sseAlgorithm) {
+        setSSEAlgorithm(sseAlgorithm);
+        return this;
+
+    }
+
+    /**
+     * Sets the SSE algorithm for server side encryption.
+     *
+     * @param currently supported values: "AES256" or "aws:kms".
+     */
+    public void setSSEAlgorithm(SSEAlgorithm sseAlgorithm) {
+        this.sseAlgorithm = sseAlgorithm.getAlgorithm();
+    }
+
+    /**
+     * Fluent API for {@link #setSSEAlgorithm(SSEAlgorithm)}
+     */
+    public GeneratePresignedUrlRequest withSSEAlgorithm(SSEAlgorithm sseAlgorithm) {
+        setSSEAlgorithm(sseAlgorithm);
+        return this;
+    }
 
     /**
      * Creates a new request for generating a pre-signed URL that can be used as
@@ -419,12 +503,12 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
      * Sets the customer-provided server-side encryption key to use as part of
      * the generated pre-signed URL.
      *
-     * @param sseKey
+     * @param sseCustomerKey
      *            The customer-provided server-side encryption key to use as
      *            part of the generated pre-signed URL.
      */
-    public void setSSECustomerKey(SSECustomerKey sseKey) {
-        this.sseCustomerKey = sseKey;
+    public void setSSECustomerKey(SSECustomerKey sseCustomerKey) {
+        this.sseCustomerKey = sseCustomerKey;
     }
 
     /**
@@ -442,5 +526,74 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
     public GeneratePresignedUrlRequest withSSECustomerKey(SSECustomerKey sseKey) {
         setSSECustomerKey(sseKey);
         return this;
+    }
+
+    /**
+     * Sets the use of SSE-C (Server Side Encryption with Customer Key) using
+     * the given encryption algorithm.
+     *
+     * @param sseAlgorithm
+     *            The server-side encryption algorithm to use with this
+     *            customer-provided server-side encryption key; or null if SSE-C
+     *            is disabled. "AES256" is currently the only
+     *            supported SSE-C encryption algorithm.
+     */
+    public void setSSECustomerKeyAlgorithm(SSEAlgorithm sseAlgorithm) {
+        if (sseAlgorithm == null)
+            this.sseCustomerKey = null;
+        else if (sseAlgorithm.getAlgorithm().equals(SSEAlgorithm.AES256.getAlgorithm())) {
+            this.sseCustomerKey =
+                SSECustomerKey.generateSSECustomerKeyForPresignUrl(sseAlgorithm.getAlgorithm());
+        } else {
+            throw new IllegalArgumentException(
+                "Currently the only supported Server Side Encryption algorithm is "
+                + SSEAlgorithm.AES256);
+        }
+    }
+
+    /**
+     * Fluent method for {@link #setSSECustomerKeyAlgorithm(SSEAlgorithm)}.
+     */
+    public GeneratePresignedUrlRequest withSSECustomerKeyAlgorithm(SSEAlgorithm algorithm) {
+        setSSECustomerKeyAlgorithm(algorithm);
+        return this;
+    }
+
+    /**
+     * Rejects any illegal input (as attributes of this request) by the user.
+     *
+     * @throws IllegalArgumentException if there is illegal input from the user.
+     */
+    public void rejectIllegalArguments() {
+        if (bucketName == null) {
+            throw new IllegalArgumentException(
+                    "The bucket name parameter must be specified when generating a pre-signed URL");
+        }
+        if (this.method == null) {
+            throw new IllegalArgumentException(
+                    "The HTTP method request parameter must be specified when generating a pre-signed URL");
+        }
+        if (this.sseCustomerKey != null) {
+            if (this.sseAlgorithm != null) {
+                throw new IllegalArgumentException("Either SSE or SSE-C can be specified but not both");
+            }
+            if (this.kmsCmkId != null) {
+                throw new IllegalArgumentException("KMS CMK is not applicable for SSE-C");
+            }
+        } else if (this.kmsCmkId != null) {
+            if (!SSEAlgorithm.KMS.getAlgorithm().equals(sseAlgorithm)) {
+                throw new IllegalArgumentException(
+                        "For KMS server side encryption, the SSE algorithm must be set to "
+                                + SSEAlgorithm.KMS);
+            }
+        }
+        /*
+         * S3 does not require HTTP header
+         * ???x-amz-server-side-encryption-aws-kms-key-id??? to be always present (a
+         * default key ID will be used if this header is not present).
+         *
+         * It is also possible to set the header to ???alias/aws/s3??? to refer
+         * to the default KMS CMK ID.
+         */
     }
 }

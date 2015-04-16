@@ -135,6 +135,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
      * The objects that define the pipeline changes to validate against the
      * pipeline.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link
+     * #withPipelineObjects(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineObjects The objects that define the pipeline changes to validate against the
@@ -206,6 +211,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     /**
      * The parameter objects used with the pipeline.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameterObjects(java.util.Collection)} or {@link
+     * #withParameterObjects(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterObjects The parameter objects used with the pipeline.
@@ -273,6 +283,11 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
     
     /**
      * The parameter values used with the pipeline.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameterValues(java.util.Collection)} or {@link
+     * #withParameterValues(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

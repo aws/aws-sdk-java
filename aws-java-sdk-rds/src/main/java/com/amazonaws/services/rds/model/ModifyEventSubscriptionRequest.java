@@ -266,6 +266,11 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEventCategories(java.util.Collection)} or {@link
+     * #withEventCategories(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventCategories A list of event categories for a SourceType that you want to subscribe

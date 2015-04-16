@@ -79,6 +79,11 @@ public class ListAttachedGroupPoliciesResult implements Serializable, Cloneable 
     /**
      * A list of the attached policies.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttachedPolicies(java.util.Collection)} or {@link
+     * #withAttachedPolicies(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachedPolicies A list of the attached policies.

@@ -282,6 +282,11 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The app's data source.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDataSources(java.util.Collection)} or {@link
+     * #withDataSources(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dataSources The app's data source.
@@ -500,6 +505,11 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * The app virtual host settings, with multiple domains separated by
      * commas. For example: <code>'www.example.com, example.com'</code>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDomains(java.util.Collection)} or {@link
+     * #withDomains(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains The app virtual host settings, with multiple domains separated by
@@ -669,26 +679,26 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-    public CreateAppRequest addAttributesEntry(String key, String value) {
-        if (null == this.attributes) {
-            this.attributes = new java.util.HashMap<String,String>();
-        }
-        if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.attributes.put(key, value);
-        return this;
+  public CreateAppRequest addAttributesEntry(String key, String value) {
+    if (null == this.attributes) {
+      this.attributes = new java.util.HashMap<String,String>();
     }
+    if (this.attributes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.attributes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Attributes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public CreateAppRequest clearAttributesEntries() {
-        this.attributes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Attributes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public CreateAppRequest clearAttributesEntries() {
+    this.attributes = null;
+    return this;
+  }
+  
     /**
      * An array of <code>EnvironmentVariable</code> objects that specify
      * environment variables to be associated with the app. After you deploy
@@ -784,6 +794,11 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * 10KB)." <note>This parameter is supported only by Chef 11.10 stacks.
      * If you have specified one or more environment variables, you cannot
      * modify the stack's Chef version.</note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnvironment(java.util.Collection)} or {@link
+     * #withEnvironment(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

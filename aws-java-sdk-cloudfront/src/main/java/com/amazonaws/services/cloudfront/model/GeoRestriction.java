@@ -366,6 +366,11 @@ public class GeoRestriction implements Serializable, Cloneable {
      * for Standardization website. You can also refer to the country list in
      * the CloudFront console, which includes both country names and codes.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setItems(java.util.Collection)} or {@link
+     * #withItems(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A complex type that contains a Location element for each country in

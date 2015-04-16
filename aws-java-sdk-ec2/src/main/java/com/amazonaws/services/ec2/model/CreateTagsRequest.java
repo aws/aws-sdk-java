@@ -103,6 +103,11 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     /**
      * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResources(java.util.Collection)} or {@link
+     * #withResources(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resources The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
@@ -180,6 +185,11 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * One or more tags. The <code>value</code> parameter is required, but if
      * you don't want the tag to have a value, specify the parameter with no
      * value, and we set the value to an empty string.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

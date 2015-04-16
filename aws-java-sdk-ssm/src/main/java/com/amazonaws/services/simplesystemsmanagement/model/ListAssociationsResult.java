@@ -63,6 +63,11 @@ public class ListAssociationsResult implements Serializable, Cloneable {
     /**
      * The associations.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAssociations(java.util.Collection)} or {@link
+     * #withAssociations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associations The associations.

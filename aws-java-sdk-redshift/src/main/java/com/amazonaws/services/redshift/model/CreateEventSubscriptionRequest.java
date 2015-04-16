@@ -343,6 +343,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * returned for all objects within the source type specified. <p>Example:
      * my-cluster-1, my-cluster-2 <p>Example: my-snapshot-20131010
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSourceIds(java.util.Collection)} or {@link
+     * #withSourceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIds A list of one or more identifiers of Amazon Redshift source objects.
@@ -435,6 +440,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * Specifies the Amazon Redshift event categories to be published by the
      * event notification subscription. <p>Values: Configuration, Management,
      * Monitoring, Security
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEventCategories(java.util.Collection)} or {@link
+     * #withEventCategories(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -606,6 +616,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
     
     /**
      * A list of tag instances.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

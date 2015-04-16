@@ -28,7 +28,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * Status of the last attempted delivery.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Success, Failure
+     * <b>Allowed Values: </b>Success, Failure, Not_Applicable
      */
     private String lastStatus;
 
@@ -56,7 +56,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * Status of the last attempted delivery.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Success, Failure
+     * <b>Allowed Values: </b>Success, Failure, Not_Applicable
      *
      * @return Status of the last attempted delivery.
      *
@@ -70,7 +70,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * Status of the last attempted delivery.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Success, Failure
+     * <b>Allowed Values: </b>Success, Failure, Not_Applicable
      *
      * @param lastStatus Status of the last attempted delivery.
      *
@@ -86,7 +86,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Success, Failure
+     * <b>Allowed Values: </b>Success, Failure, Not_Applicable
      *
      * @param lastStatus Status of the last attempted delivery.
      *
@@ -104,7 +104,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * Status of the last attempted delivery.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Success, Failure
+     * <b>Allowed Values: </b>Success, Failure, Not_Applicable
      *
      * @param lastStatus Status of the last attempted delivery.
      *
@@ -120,7 +120,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Success, Failure
+     * <b>Allowed Values: </b>Success, Failure, Not_Applicable
      *
      * @param lastStatus Status of the last attempted delivery.
      *

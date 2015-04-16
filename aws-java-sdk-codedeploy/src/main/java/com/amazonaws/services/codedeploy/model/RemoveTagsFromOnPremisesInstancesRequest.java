@@ -69,6 +69,11 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends AmazonWebServiceRe
     /**
      * The tag key-value pairs to remove from the on-premises instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The tag key-value pairs to remove from the on-premises instances.
@@ -136,6 +141,11 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends AmazonWebServiceRe
     
     /**
      * The names of the on-premises instances to remove tags from.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceNames(java.util.Collection)} or {@link
+     * #withInstanceNames(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

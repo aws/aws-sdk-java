@@ -188,6 +188,11 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
      * <code>DescribeServiceErrors</code> returns descriptions of the
      * specified errors. Otherwise, it returns a description of every error.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setServiceErrorIds(java.util.Collection)} or {@link
+     * #withServiceErrorIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serviceErrorIds An array of service error IDs. If you use this parameter,

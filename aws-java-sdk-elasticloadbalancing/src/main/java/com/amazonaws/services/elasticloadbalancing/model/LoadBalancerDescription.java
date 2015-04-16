@@ -366,6 +366,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * PolicyNames are returned in a list of tuples in the
      * ListenerDescriptions element.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setListenerDescriptions(java.util.Collection)} or
+     * {@link #withListenerDescriptions(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listenerDescriptions LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and
@@ -473,6 +478,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     /**
      * Contains a list of back-end server descriptions.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBackendServerDescriptions(java.util.Collection)}
+     * or {@link #withBackendServerDescriptions(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param backendServerDescriptions Contains a list of back-end server descriptions.
@@ -541,6 +551,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     /**
      * Specifies a list of Availability Zones.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
+     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones Specifies a list of Availability Zones.
@@ -608,6 +623,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     
     /**
      * Provides a list of VPC subnet IDs for the load balancer.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSubnets(java.util.Collection)} or {@link
+     * #withSubnets(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -709,6 +729,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     
     /**
      * Provides a list of EC2 instance IDs for the load balancer.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstances(java.util.Collection)} or {@link
+     * #withInstances(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -873,6 +898,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     
     /**
      * The security groups the load balancer is a member of (VPC only).
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

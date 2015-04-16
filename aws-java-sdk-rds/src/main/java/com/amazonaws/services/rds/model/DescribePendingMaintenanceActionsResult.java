@@ -69,6 +69,11 @@ public class DescribePendingMaintenanceActionsResult implements Serializable, Cl
     /**
      * A list of the pending maintenance actions for the resource.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPendingMaintenanceActions(java.util.Collection)}
+     * or {@link #withPendingMaintenanceActions(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pendingMaintenanceActions A list of the pending maintenance actions for the resource.

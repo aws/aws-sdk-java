@@ -75,6 +75,11 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
     /**
      * An array of object definitions.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link
+     * #withPipelineObjects(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineObjects An array of object definitions.

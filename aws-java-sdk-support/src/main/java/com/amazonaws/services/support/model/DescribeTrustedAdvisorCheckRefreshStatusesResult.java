@@ -60,6 +60,11 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Seriali
     /**
      * The refresh status of the specified Trusted Advisor checks.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStatuses(java.util.Collection)} or {@link
+     * #withStatuses(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statuses The refresh status of the specified Trusted Advisor checks.

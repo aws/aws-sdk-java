@@ -149,6 +149,11 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
     /**
      * The system instance health or application instance health.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDetails(java.util.Collection)} or {@link
+     * #withDetails(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param details The system instance health or application instance health.

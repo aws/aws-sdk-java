@@ -153,6 +153,11 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
      * changes to be applied. A node ID is a numeric identifier (0001, 0002,
      * etc.).
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheNodeIdsToReboot(java.util.Collection)} or
+     * {@link #withCacheNodeIdsToReboot(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeIdsToReboot A list of the cache node IDs which need to be rebooted for parameter

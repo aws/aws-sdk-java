@@ -107,6 +107,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * One or more virtual private gateway IDs. <p>Default: Describes all
      * your virtual private gateways.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpnGatewayIds(java.util.Collection)} or {@link
+     * #withVpnGatewayIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnGatewayIds One or more virtual private gateway IDs. <p>Default: Describes all
@@ -302,6 +307,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * gateway. Currently the only supported type is <code>ipsec.1</code>.
      * </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
      * private gateway. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

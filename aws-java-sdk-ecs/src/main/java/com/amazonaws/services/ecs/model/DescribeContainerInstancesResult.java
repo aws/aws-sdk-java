@@ -62,6 +62,11 @@ public class DescribeContainerInstancesResult implements Serializable, Cloneable
     /**
      * The list of container instances.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setContainerInstances(java.util.Collection)} or
+     * {@link #withContainerInstances(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containerInstances The list of container instances.
@@ -129,6 +134,11 @@ public class DescribeContainerInstancesResult implements Serializable, Cloneable
     
     /**
      * 
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFailures(java.util.Collection)} or {@link
+     * #withFailures(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

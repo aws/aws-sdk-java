@@ -417,26 +417,26 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * @param key The key of the entry to be added into RequestItems.
      * @param value The corresponding value of the entry to be added into RequestItems.
      */
-    public BatchGetItemRequest addRequestItemsEntry(String key, KeysAndAttributes value) {
-        if (null == this.requestItems) {
-            this.requestItems = new java.util.HashMap<String,KeysAndAttributes>();
-        }
-        if (this.requestItems.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.requestItems.put(key, value);
-        return this;
+  public BatchGetItemRequest addRequestItemsEntry(String key, KeysAndAttributes value) {
+    if (null == this.requestItems) {
+      this.requestItems = new java.util.HashMap<String,KeysAndAttributes>();
     }
+    if (this.requestItems.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.requestItems.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into RequestItems.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public BatchGetItemRequest clearRequestItemsEntries() {
-        this.requestItems = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into RequestItems.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public BatchGetItemRequest clearRequestItemsEntries() {
+    this.requestItems = null;
+    return this;
+  }
+  
     /**
      * A value that if set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to

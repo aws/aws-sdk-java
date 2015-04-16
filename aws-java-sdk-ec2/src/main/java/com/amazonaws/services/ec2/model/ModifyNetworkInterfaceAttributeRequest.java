@@ -260,6 +260,11 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      * one group, even if it's just the default security group in the VPC.
      * You must specify the ID of the security group, not the name.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroups(java.util.Collection)} or {@link
+     * #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups Changes the security groups for the network interface. The new set of

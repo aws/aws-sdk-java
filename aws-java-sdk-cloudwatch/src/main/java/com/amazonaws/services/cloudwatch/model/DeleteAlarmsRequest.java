@@ -74,6 +74,11 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements Seri
     /**
      * A list of alarms to be deleted.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAlarmNames(java.util.Collection)} or {@link
+     * #withAlarmNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

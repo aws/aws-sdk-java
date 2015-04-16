@@ -155,6 +155,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * One or more image IDs. <p>Default: Describes all images available to
      * you.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setImageIds(java.util.Collection)} or {@link
+     * #withImageIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageIds One or more image IDs. <p>Default: Describes all images available to
@@ -246,6 +251,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * the request). Omitting this option returns all images for which you
      * have launch permissions, regardless of ownership.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOwners(java.util.Collection)} or {@link
+     * #withOwners(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param owners Filters the images by the owner. Specify an AWS account ID,
@@ -335,6 +345,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * Scopes the images by users with explicit launch permissions. Specify
      * an AWS account ID, <code>self</code> (the sender of the request), or
      * <code>all</code> (public AMIs).
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setExecutableUsers(java.util.Collection)} or {@link
+     * #withExecutableUsers(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -684,6 +699,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * filter. </li> <li> <p><code>virtualization-type</code> - The
      * virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      * </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

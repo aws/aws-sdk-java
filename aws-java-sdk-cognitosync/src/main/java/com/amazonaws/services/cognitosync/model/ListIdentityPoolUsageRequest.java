@@ -24,9 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gets a list of identity pools registered with Cognito.
  * </p>
  * <p>
- * <code>ListIdentityPoolUsage</code> can only be called with developer
- * credentials. You cannot make this API call with the temporary user
- * credentials provided by Cognito Identity.
+ * ListIdentityPoolUsage can only be called with developer credentials.
+ * You cannot make this API call with the temporary user credentials
+ * provided by Cognito Identity.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#listIdentityPoolUsage(ListIdentityPoolUsageRequest)

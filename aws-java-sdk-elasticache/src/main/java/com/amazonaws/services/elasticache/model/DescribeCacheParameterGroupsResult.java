@@ -103,6 +103,11 @@ public class DescribeCacheParameterGroupsResult implements Serializable, Cloneab
      * A list of cache parameter groups. Each element in the list contains
      * detailed information about one cache parameter group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheParameterGroups(java.util.Collection)} or
+     * {@link #withCacheParameterGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroups A list of cache parameter groups. Each element in the list contains

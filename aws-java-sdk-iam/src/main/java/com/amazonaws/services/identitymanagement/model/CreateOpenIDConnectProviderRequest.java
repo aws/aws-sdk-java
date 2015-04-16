@@ -269,6 +269,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      * <code>CreateOpenIDConnectProviderRequest</code> action accepts client
      * IDs up to 255 characters long.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClientIDList(java.util.Collection)} or {@link
+     * #withClientIDList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientIDList A list of client IDs (also known as audiences). When a mobile or web
@@ -448,6 +453,11 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest 
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the Thumbprint for an OpenID Connect Provider</a> in the <i>Using
      * IAM</i> guide.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setThumbprintList(java.util.Collection)} or {@link
+     * #withThumbprintList(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

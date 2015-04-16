@@ -85,6 +85,11 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * One or more placement group names. <p>Default: Describes all your
      * placement groups, or only those otherwise specified.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupNames(java.util.Collection)} or {@link
+     * #withGroupNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupNames One or more placement group names. <p>Default: Describes all your
@@ -180,6 +185,11 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * | <code>deleting</code> | <code>deleted</code>). </li> <li>
      * <p><code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code>). </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

@@ -195,6 +195,11 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
     /**
      * A list of <a>StepConfig</a> to be executed by the job flow.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSteps(java.util.Collection)} or {@link
+     * #withSteps(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of <a>StepConfig</a> to be executed by the job flow.

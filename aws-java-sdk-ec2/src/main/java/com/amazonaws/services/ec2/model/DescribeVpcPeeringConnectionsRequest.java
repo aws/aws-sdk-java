@@ -108,6 +108,11 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * One or more VPC peering connection IDs. <p>Default: Describes all your
      * VPC peering connections.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcPeeringConnectionIds(java.util.Collection)} or
+     * {@link #withVpcPeeringConnectionIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcPeeringConnectionIds One or more VPC peering connection IDs. <p>Default: Describes all your
@@ -333,6 +338,11 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>vpc-peering-connection-id</code> - The ID
      * of the VPC peering connection. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

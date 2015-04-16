@@ -54,6 +54,11 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
     /**
      * Sets the value of the Locations property for this object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLocations(java.util.Collection)} or {@link
+     * #withLocations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param locations The new value for the Locations property for this object.

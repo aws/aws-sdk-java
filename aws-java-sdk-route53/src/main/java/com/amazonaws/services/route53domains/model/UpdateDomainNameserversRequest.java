@@ -192,6 +192,11 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest impl
      * A list of new name servers for the domain. <p>Type: Complex
      * <p>Children: <code>Name</code>, <code>GlueIps</code> <p>Required: Yes
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNameservers(java.util.Collection)} or {@link
+     * #withNameservers(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nameservers A list of new name servers for the domain. <p>Type: Complex

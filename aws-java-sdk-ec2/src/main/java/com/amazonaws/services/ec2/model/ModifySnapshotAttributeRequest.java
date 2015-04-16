@@ -293,6 +293,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * The account ID to modify for the snapshot.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUserIds(java.util.Collection)} or {@link
+     * #withUserIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userIds The account ID to modify for the snapshot.
@@ -360,6 +365,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     
     /**
      * The group to modify for the snapshot.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroupNames(java.util.Collection)} or {@link
+     * #withGroupNames(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

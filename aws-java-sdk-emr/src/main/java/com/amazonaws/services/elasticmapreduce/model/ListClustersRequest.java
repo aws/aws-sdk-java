@@ -158,6 +158,11 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The cluster state filters to apply when listing clusters.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setClusterStates(java.util.Collection)} or {@link
+     * #withClusterStates(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterStates The cluster state filters to apply when listing clusters.

@@ -64,6 +64,11 @@ public class DescribeAlarmsResult implements Serializable, Cloneable {
     /**
      * A list of information for the specified alarms.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMetricAlarms(java.util.Collection)} or {@link
+     * #withMetricAlarms(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricAlarms A list of information for the specified alarms.

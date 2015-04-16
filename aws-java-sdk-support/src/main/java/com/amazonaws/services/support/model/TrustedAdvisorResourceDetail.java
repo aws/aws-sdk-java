@@ -267,6 +267,11 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * data that is shown in the Excel download, even in those cases where
      * the UI shows just summary data.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMetadata(java.util.Collection)} or {@link
+     * #withMetadata(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata Additional information about the identified resource. The exact

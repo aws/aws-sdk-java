@@ -82,6 +82,12 @@ public class Policies implements Serializable, Cloneable {
      * A list of the <a>AppCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setAppCookieStickinessPolicies(java.util.Collection)} or {@link
+     * #withAppCookieStickinessPolicies(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
@@ -158,6 +164,11 @@ public class Policies implements Serializable, Cloneable {
      * A list of <a>LBCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLBCookieStickinessPolicies(java.util.Collection)}
+     * or {@link #withLBCookieStickinessPolicies(java.util.Collection)} if
+     * you want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lBCookieStickinessPolicies A list of <a>LBCookieStickinessPolicy</a> objects created with
@@ -228,6 +239,11 @@ public class Policies implements Serializable, Cloneable {
     
     /**
      * A list of policy names other than the stickiness policies.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOtherPolicies(java.util.Collection)} or {@link
+     * #withOtherPolicies(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

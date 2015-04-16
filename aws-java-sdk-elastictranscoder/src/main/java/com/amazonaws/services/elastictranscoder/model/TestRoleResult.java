@@ -128,6 +128,11 @@ public class TestRoleResult implements Serializable, Cloneable {
      * value is an array of one or more error messages that were generated
      * during the test process.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMessages(java.util.Collection)} or {@link
+     * #withMessages(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messages If the <code>Success</code> element contains <code>false</code>, this

@@ -84,6 +84,11 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      * The list of virtual MFA devices in the current account that match the
      * <code>AssignmentStatus</code> value that was passed in the request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVirtualMFADevices(java.util.Collection)} or
+     * {@link #withVirtualMFADevices(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualMFADevices The list of virtual MFA devices in the current account that match the

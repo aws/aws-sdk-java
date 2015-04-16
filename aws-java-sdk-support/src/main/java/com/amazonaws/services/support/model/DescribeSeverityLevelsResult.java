@@ -66,6 +66,11 @@ public class DescribeSeverityLevelsResult implements Serializable, Cloneable {
      * The available severity levels for the support case. Available severity
      * levels are defined by your service level agreement with AWS.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSeverityLevels(java.util.Collection)} or {@link
+     * #withSeverityLevels(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param severityLevels The available severity levels for the support case. Available severity

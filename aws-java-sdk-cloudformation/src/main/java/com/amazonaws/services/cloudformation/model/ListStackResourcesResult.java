@@ -68,6 +68,11 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
     /**
      * A list of <code>StackResourceSummary</code> structures.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStackResourceSummaries(java.util.Collection)} or
+     * {@link #withStackResourceSummaries(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackResourceSummaries A list of <code>StackResourceSummary</code> structures.

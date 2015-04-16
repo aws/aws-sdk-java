@@ -263,6 +263,11 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
      * your task. <important> <p>The list of container instances to start
      * tasks on is limited to 10. </important>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setContainerInstances(java.util.Collection)} or
+     * {@link #withContainerInstances(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containerInstances The container instance UUIDs or full Amazon Resource Name (ARN)

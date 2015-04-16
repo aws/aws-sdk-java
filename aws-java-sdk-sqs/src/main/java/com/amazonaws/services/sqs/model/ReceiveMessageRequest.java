@@ -295,6 +295,11 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      * <li><code>SentTimestamp</code> - returns the time when the message was
      * sent to the queue (epoch time in milliseconds).</li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeNames(java.util.Collection)} or {@link
+     * #withAttributeNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNames A list of attributes that need to be returned along with each message.
@@ -500,6 +505,11 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      * attributes by specifying "All" or ".*" in your request. You can also
      * use "foo.*" to return all message attributes starting with the "foo"
      * prefix.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMessageAttributeNames(java.util.Collection)} or
+     * {@link #withMessageAttributeNames(java.util.Collection)} if you want
+     * to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

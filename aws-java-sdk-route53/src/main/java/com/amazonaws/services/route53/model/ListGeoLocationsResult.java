@@ -116,6 +116,11 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * A complex type that contains information about the geo locations that
      * are returned by the request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGeoLocationDetailsList(java.util.Collection)} or
+     * {@link #withGeoLocationDetailsList(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param geoLocationDetailsList A complex type that contains information about the geo locations that

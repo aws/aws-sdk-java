@@ -183,6 +183,11 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest implemen
      * of the tags that you want to delete. <p>Default: None <p>Required:
      * No'>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagsToDelete(java.util.Collection)} or {@link
+     * #withTagsToDelete(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagsToDelete A list of tag keys to delete. <p>Type: A list that contains the keys

@@ -459,6 +459,11 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * Cloud (VPC). <p>Constraints: Must contain no more than 255
      * alphanumeric characters. Must not be "Default".
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCacheSecurityGroupNames(java.util.Collection)} or
+     * {@link #withCacheSecurityGroupNames(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupNames A list of cache security group names to authorize for the clusters in
@@ -556,6 +561,11 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * in the replication group. <p>This parameter can be used only with
      * replication group containing cache clusters running in an Amazon
      * Virtual Private Cloud (VPC).
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link
+     * #withSecurityGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

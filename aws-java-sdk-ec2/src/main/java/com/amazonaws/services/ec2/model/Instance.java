@@ -579,6 +579,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * The product codes attached to this instance.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProductCodes(java.util.Collection)} or {@link
+     * #withProductCodes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodes The product codes attached to this instance.
@@ -1358,6 +1363,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * Any block device mapping entries for the instance.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param blockDeviceMappings Any block device mapping entries for the instance.
@@ -1656,6 +1666,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * Any tags assigned to the instance.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags Any tags assigned to the instance.
@@ -1723,6 +1738,11 @@ public class Instance implements Serializable, Cloneable {
     
     /**
      * One or more security groups for the instance.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1971,6 +1991,11 @@ public class Instance implements Serializable, Cloneable {
     
     /**
      * [EC2-VPC] One or more network interfaces for the instance.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
+     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

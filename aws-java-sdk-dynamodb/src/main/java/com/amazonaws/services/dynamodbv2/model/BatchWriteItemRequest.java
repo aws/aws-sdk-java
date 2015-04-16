@@ -427,26 +427,26 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * @param key The key of the entry to be added into RequestItems.
      * @param value The corresponding value of the entry to be added into RequestItems.
      */
-    public BatchWriteItemRequest addRequestItemsEntry(String key, java.util.List<WriteRequest> value) {
-        if (null == this.requestItems) {
-            this.requestItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
-        }
-        if (this.requestItems.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.requestItems.put(key, value);
-        return this;
+  public BatchWriteItemRequest addRequestItemsEntry(String key, java.util.List<WriteRequest> value) {
+    if (null == this.requestItems) {
+      this.requestItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
     }
+    if (this.requestItems.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.requestItems.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into RequestItems.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public BatchWriteItemRequest clearRequestItemsEntries() {
-        this.requestItems = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into RequestItems.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public BatchWriteItemRequest clearRequestItemsEntries() {
+    this.requestItems = null;
+    return this;
+  }
+  
     /**
      * A value that if set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to

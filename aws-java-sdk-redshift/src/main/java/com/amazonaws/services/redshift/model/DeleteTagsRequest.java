@@ -117,6 +117,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
     /**
      * The tag key that you want to delete.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTagKeys(java.util.Collection)} or {@link
+     * #withTagKeys(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagKeys The tag key that you want to delete.

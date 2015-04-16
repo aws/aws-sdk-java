@@ -141,6 +141,12 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * The description of the policy attributes associated with the load
      * balancer policies defined by the Elastic Load Balancing service.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setPolicyAttributeTypeDescriptions(java.util.Collection)} or {@link
+     * #withPolicyAttributeTypeDescriptions(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyAttributeTypeDescriptions The description of the policy attributes associated with the load

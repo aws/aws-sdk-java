@@ -410,6 +410,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * A list of <code>Parameter</code> structures that specify input
      * parameters for the stack.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameters(java.util.Collection)} or {@link
+     * #withParameters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <code>Parameter</code> structures that specify input
@@ -622,6 +627,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * href="http://console.aws.amazon.com/sns">SNS console</a> or your
      * Command Line Interface (CLI).
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNotificationARNs(java.util.Collection)} or {@link
+     * #withNotificationARNs(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -829,6 +839,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * these resources, we recommend that you review any permissions
      * associated with them. If you don't specify this parameter, this action
      * returns an <code>InsufficientCapabilities</code> error.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCapabilities(java.util.Collection)} or {@link
+     * #withCapabilities(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1304,6 +1319,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * represented by key/value pairs. Tags defined for the stack are
      * propagated to EC2 resources that are created as part of the stack. A
      * maximum number of 10 tags can be specified.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or {@link
+     * #withTags(java.util.Collection)} if you want to override the existing
+     * values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

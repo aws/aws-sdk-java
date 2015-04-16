@@ -329,6 +329,11 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * A collection of artifacts.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setArtifactList(java.util.Collection)} or {@link
+     * #withArtifactList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param artifactList A collection of artifacts.

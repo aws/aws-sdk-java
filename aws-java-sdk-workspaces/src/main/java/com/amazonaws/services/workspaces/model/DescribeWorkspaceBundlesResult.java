@@ -70,6 +70,11 @@ public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
     /**
      * An array of structures that contain information about the bundles.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBundles(java.util.Collection)} or {@link
+     * #withBundles(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bundles An array of structures that contain information about the bundles.

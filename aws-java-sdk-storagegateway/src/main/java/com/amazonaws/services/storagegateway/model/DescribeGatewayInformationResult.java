@@ -304,6 +304,11 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
      * A <a>NetworkInterface</a> array that contains descriptions of the
      * gateway network interfaces.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGatewayNetworkInterfaces(java.util.Collection)}
+     * or {@link #withGatewayNetworkInterfaces(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param gatewayNetworkInterfaces A <a>NetworkInterface</a> array that contains descriptions of the

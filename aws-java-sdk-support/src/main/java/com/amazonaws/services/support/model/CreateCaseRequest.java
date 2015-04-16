@@ -398,6 +398,11 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      * A list of email addresses that AWS Support copies on case
      * correspondence.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCcEmailAddresses(java.util.Collection)} or {@link
+     * #withCcEmailAddresses(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>

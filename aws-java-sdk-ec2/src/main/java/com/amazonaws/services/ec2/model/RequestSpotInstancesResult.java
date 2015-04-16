@@ -57,6 +57,11 @@ public class RequestSpotInstancesResult implements Serializable, Cloneable {
     /**
      * One or more Spot Instance requests.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSpotInstanceRequests(java.util.Collection)} or
+     * {@link #withSpotInstanceRequests(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotInstanceRequests One or more Spot Instance requests.

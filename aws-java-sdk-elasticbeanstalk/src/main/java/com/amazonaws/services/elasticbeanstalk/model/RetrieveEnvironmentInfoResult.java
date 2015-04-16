@@ -60,6 +60,11 @@ public class RetrieveEnvironmentInfoResult implements Serializable, Cloneable {
     /**
      * The <a>EnvironmentInfoDescription</a> of the environment.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnvironmentInfo(java.util.Collection)} or {@link
+     * #withEnvironmentInfo(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environmentInfo The <a>EnvironmentInfoDescription</a> of the environment.

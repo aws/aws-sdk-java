@@ -270,6 +270,11 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * when DB instance reboots. <p> <b>Oracle</b> <p>Valid Values (for Apply
      * method): <code>pending-reboot</code>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setParameters(java.util.Collection)} or {@link
+     * #withParameters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters An array of parameter names, values, and the apply method for the

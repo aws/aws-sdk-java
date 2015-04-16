@@ -104,6 +104,11 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
      * One or more customer gateway IDs. <p>Default: Describes all your
      * customer gateways.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCustomerGatewayIds(java.util.Collection)} or
+     * {@link #withCustomerGatewayIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerGatewayIds One or more customer gateway IDs. <p>Default: Describes all your
@@ -284,6 +289,11 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

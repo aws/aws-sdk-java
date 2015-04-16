@@ -54,6 +54,11 @@ public class DescribeStorediSCSIVolumesResult implements Serializable, Cloneable
     /**
      * Sets the value of the StorediSCSIVolumes property for this object.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStorediSCSIVolumes(java.util.Collection)} or
+     * {@link #withStorediSCSIVolumes(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param storediSCSIVolumes The new value for the StorediSCSIVolumes property for this object.

@@ -45,6 +45,7 @@ public class InternalConfigTest {
         serviceSignerMap.put("monitoring", DEFAULT_SIGNER_TYPE);
         serviceSignerMap.put("sts", DEFAULT_SIGNER_TYPE);
         serviceSignerMap.put("iam", DEFAULT_SIGNER_TYPE);
+        serviceSignerMap.put("route53", DEFAULT_SIGNER_TYPE);
     }
 
     /**
@@ -122,14 +123,6 @@ public class InternalConfigTest {
         assertSignerType(DEFAULT_SIGNER_TYPE, "email", "us-west-1");
         assertSignerType(DEFAULT_SIGNER_TYPE, "email", "us-west-2");
         assertSignerType(DEFAULT_SIGNER_TYPE, "email", NEW_REGION);
-    }
-
-    /**
-     * This test case tests the Route53 specific signers.
-     */
-    @Test
-    public void testRoute53ServiceSigners() {
-        assertSignerType("AWS3SignerType", "route53", null);
     }
 
     /**

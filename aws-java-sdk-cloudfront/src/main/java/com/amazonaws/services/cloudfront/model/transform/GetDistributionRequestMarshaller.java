@@ -18,6 +18,7 @@ import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +38,41 @@ import com.amazonaws.util.XMLWriter;
  */
 public class GetDistributionRequestMarshaller implements Marshaller<Request<GetDistributionRequest>, GetDistributionRequest> {
 
+    private static final String RESOURCE_PATH_TEMPLATE;
+    private static final Map<String, String> STATIC_QUERY_PARAMS;
+    private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
+    static {
+        String path = "2014-11-06/distribution/{Id}";
+        Map<String, String> staticMap = new HashMap<String, String>();
+        Map<String, String> dynamicMap = new HashMap<String, String>();
+
+        int index = path.indexOf("?");
+        if (index != -1) {
+            String queryString = path.substring(index + 1);
+            path = path.substring(0, index);
+
+            for (String s : queryString.split("[;&]")) {
+                index = s.indexOf("=");
+                if (index != -1) {
+                    String name = s.substring(0, index);
+                    String value = s.substring(index + 1);
+
+                    if (value.startsWith("{") && value.endsWith("}")) {
+                        dynamicMap.put(value.substring(1, value.length() - 1), name);
+                    } else {
+                        staticMap.put(name, value);
+                    }
+                }
+            }
+        }
+
+        RESOURCE_PATH_TEMPLATE = path;
+        STATIC_QUERY_PARAMS = Collections.unmodifiableMap(staticMap);
+        DYNAMIC_QUERY_PARAMS = Collections.unmodifiableMap(dynamicMap);
+    }
+
     public Request<GetDistributionRequest> marshall(GetDistributionRequest getDistributionRequest) {
+
         if (getDistributionRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
@@ -45,30 +80,25 @@ public class GetDistributionRequestMarshaller implements Marshaller<Request<GetD
         Request<GetDistributionRequest> request = new DefaultRequest<GetDistributionRequest>(getDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2014-11-06/distribution/{Id}"; 
-        uriResourcePath = uriResourcePath.replace("{Id}", getString(getDistributionRequest.getId())); 
+        String uriResourcePath = RESOURCE_PATH_TEMPLATE;
+        
+        if (DYNAMIC_QUERY_PARAMS.containsKey("Id")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("Id");
+            String value = (getDistributionRequest.getId() == null) ? null : StringUtils.fromString(getDistributionRequest.getId());
 
-        if (uriResourcePath.contains("?")) {
-            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-
-            for (String s : queryString.split("[;&]")) {
-                String[] nameValuePair = s.split("=");
-                if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
-                }
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
             }
+        } else {
+            uriResourcePath = uriResourcePath.replace("{Id}", (getDistributionRequest.getId() == null) ? "" : StringUtils.fromString(getDistributionRequest.getId())); 
         }
 
-        request.setResourcePath(uriResourcePath);
+        request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
+
+        for (Map.Entry<String, String> entry : STATIC_QUERY_PARAMS.entrySet()) {
+            request.addParameter(entry.getKey(), entry.getValue());
+        }
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

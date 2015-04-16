@@ -65,7 +65,7 @@ public class SSECustomerKey {
             throw new IllegalArgumentException("Encryption key must be specified");
 
         // Default to AES-256 encryption
-        this.algorithm = ObjectMetadata.AES_256_SERVER_SIDE_ENCRYPTION;
+        this.algorithm = SSEAlgorithm.AES256.getAlgorithm();
         this.base64EncodedKey = base64EncodedKey;
     }
 
@@ -86,7 +86,7 @@ public class SSECustomerKey {
             throw new IllegalArgumentException("Encryption key must be specified");
 
         // Default to AES-256 encryption
-        this.algorithm = ObjectMetadata.AES_256_SERVER_SIDE_ENCRYPTION;
+        this.algorithm = SSEAlgorithm.AES256.getAlgorithm();
         this.base64EncodedKey = Base64.encodeAsString(rawKeyMaterial);
     }
 
@@ -107,7 +107,7 @@ public class SSECustomerKey {
             throw new IllegalArgumentException("Encryption key must be specified");
 
         // Default to AES-256 encryption
-        this.algorithm = ObjectMetadata.AES_256_SERVER_SIDE_ENCRYPTION;
+        this.algorithm = SSEAlgorithm.AES256.getAlgorithm();
         this.base64EncodedKey = Base64.encodeAsString(key.getEncoded());
     }
 
@@ -148,7 +148,7 @@ public class SSECustomerKey {
      *
      * Currently, "AES256" is the only supported algorithm.
      *
-     * @see ObjectMetadata#AES_256_SERVER_SIDE_ENCRYPTION
+     * @see SSEAlgorithm#AES256
      *
      * @param algorithm
      *            The server-side encryption algorithm to use with this
@@ -165,7 +165,7 @@ public class SSECustomerKey {
      *
      * Currently, "AES256" is the only supported algorithm.
      *
-     * @see ObjectMetadata#AES_256_SERVER_SIDE_ENCRYPTION
+     * @see SSEAlgorithm#AES256
      *
      * @param algorithm
      *            The server-side encryption algorithm to use with this
@@ -235,14 +235,20 @@ public class SSECustomerKey {
      *
      * Currently, "AES256" is the only supported algorithm.
      *
-     * @see ObjectMetadata#AES_256_SERVER_SIDE_ENCRYPTION
+     * @see SSEAlgorithm#AES256
      *
      * @param algorithm
      *            The server-side encryption algorithm to use with this
-     *            customer-provided server-side encryption key.
+     *            customer-provided server-side encryption key; must not be
+     *            null.
+     *
+     * @throws IllegalArgumentException
+     *             if the input parameter is null.
      */
     public static SSECustomerKey generateSSECustomerKeyForPresignUrl(
             String algorithm) {
+        if (algorithm == null)
+            throw new IllegalArgumentException();
         return new SSECustomerKey().withAlgorithm(algorithm);
     }
 }

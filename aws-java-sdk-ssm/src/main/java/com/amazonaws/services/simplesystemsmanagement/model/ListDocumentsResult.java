@@ -63,6 +63,11 @@ public class ListDocumentsResult implements Serializable, Cloneable {
     /**
      * The names of the configuration documents.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDocumentIdentifiers(java.util.Collection)} or
+     * {@link #withDocumentIdentifiers(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param documentIdentifiers The names of the configuration documents.

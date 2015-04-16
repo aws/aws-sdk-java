@@ -320,6 +320,11 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * The IDs of the security groups for the network interface. Applies only
      * if creating a network interface when launching an instance.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGroups(java.util.Collection)} or {@link
+     * #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The IDs of the security groups for the network interface. Applies only
@@ -453,6 +458,11 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * One or more private IP addresses to assign to the network interface.
      * Only one private IP address can be designated as primary.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPrivateIpAddresses(java.util.Collection)} or
+     * {@link #withPrivateIpAddresses(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

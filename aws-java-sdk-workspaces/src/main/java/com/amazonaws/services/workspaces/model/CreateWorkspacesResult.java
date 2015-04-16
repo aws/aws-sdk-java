@@ -74,6 +74,11 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      * An array of structures that represent the WorkSpaces that could not be
      * created.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFailedRequests(java.util.Collection)} or {@link
+     * #withFailedRequests(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param failedRequests An array of structures that represent the WorkSpaces that could not be
@@ -164,6 +169,11 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      * <code>WorkspaceId</code> is not immediately available. If you
      * immediately call <a>DescribeWorkspaces</a> with this identifier, no
      * information will be returned.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPendingRequests(java.util.Collection)} or {@link
+     * #withPendingRequests(java.util.Collection)} if you want to override
+     * the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

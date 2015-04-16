@@ -560,14 +560,14 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      */
     public void setKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
         java.util.HashMap<String,AttributeValue> key = new java.util.HashMap<String,AttributeValue>();
-        
-        if (hashKey != null) {
-            key.put(hashKey.getKey(), hashKey.getValue());
-        } else
+      
+      if (hashKey != null) {
+          key.put(hashKey.getKey(), hashKey.getValue());
+      } else
             throw new IllegalArgumentException("hashKey must be non-null object.");
-        if (rangeKey != null) {
-            key.put(rangeKey.getKey(), rangeKey.getValue());
-        } 
+      if (rangeKey != null) {
+          key.put(rangeKey.getKey(), rangeKey.getValue());
+      } 
         setKey(key);
     }
     
@@ -588,8 +588,8 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      * @param rangeKey Primary range key. (null if it a hash-only table)
      */
     public DeleteItemRequest withKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-        setKey(hashKey, rangeKey);
-        return this;
+      setKey(hashKey, rangeKey);
+      return this;
     }
 
     /**
@@ -606,26 +606,26 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The key of the entry to be added into Key.
      * @param value The corresponding value of the entry to be added into Key.
      */
-    public DeleteItemRequest addKeyEntry(String key, AttributeValue value) {
-        if (null == this.key) {
-            this.key = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.key.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.key.put(key, value);
-        return this;
+  public DeleteItemRequest addKeyEntry(String key, AttributeValue value) {
+    if (null == this.key) {
+      this.key = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.key.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.key.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Key.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public DeleteItemRequest clearKeyEntries() {
-        this.key = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Key.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public DeleteItemRequest clearKeyEntries() {
+    this.key = null;
+    return this;
+  }
+  
     /**
      * <important> <p>There is a newer parameter available. Use
      * <i>ConditionExpression</i> instead. Note that if you use
@@ -1867,26 +1867,26 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The key of the entry to be added into Expected.
      * @param value The corresponding value of the entry to be added into Expected.
      */
-    public DeleteItemRequest addExpectedEntry(String key, ExpectedAttributeValue value) {
-        if (null == this.expected) {
-            this.expected = new java.util.HashMap<String,ExpectedAttributeValue>();
-        }
-        if (this.expected.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expected.put(key, value);
-        return this;
+  public DeleteItemRequest addExpectedEntry(String key, ExpectedAttributeValue value) {
+    if (null == this.expected) {
+      this.expected = new java.util.HashMap<String,ExpectedAttributeValue>();
     }
+    if (this.expected.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expected.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Expected.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public DeleteItemRequest clearExpectedEntries() {
-        this.expected = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Expected.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public DeleteItemRequest clearExpectedEntries() {
+    this.expected = null;
+    return this;
+  }
+  
     /**
      * <important> <p>There is a newer parameter available. Use
      * <i>ConditionExpression</i> instead. Note that if you use
@@ -2764,26 +2764,26 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The key of the entry to be added into ExpressionAttributeNames.
      * @param value The corresponding value of the entry to be added into ExpressionAttributeNames.
      */
-    public DeleteItemRequest addExpressionAttributeNamesEntry(String key, String value) {
-        if (null == this.expressionAttributeNames) {
-            this.expressionAttributeNames = new java.util.HashMap<String,String>();
-        }
-        if (this.expressionAttributeNames.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expressionAttributeNames.put(key, value);
-        return this;
+  public DeleteItemRequest addExpressionAttributeNamesEntry(String key, String value) {
+    if (null == this.expressionAttributeNames) {
+      this.expressionAttributeNames = new java.util.HashMap<String,String>();
     }
+    if (this.expressionAttributeNames.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expressionAttributeNames.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExpressionAttributeNames.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public DeleteItemRequest clearExpressionAttributeNamesEntries() {
-        this.expressionAttributeNames = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExpressionAttributeNames.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public DeleteItemRequest clearExpressionAttributeNamesEntries() {
+    this.expressionAttributeNames = null;
+    return this;
+  }
+  
     /**
      * One or more values that can be substituted in an expression. <p>Use
      * the <b>:</b> (colon) character in an expression to dereference an
@@ -2912,26 +2912,26 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The key of the entry to be added into ExpressionAttributeValues.
      * @param value The corresponding value of the entry to be added into ExpressionAttributeValues.
      */
-    public DeleteItemRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
-        if (null == this.expressionAttributeValues) {
-            this.expressionAttributeValues = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.expressionAttributeValues.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.expressionAttributeValues.put(key, value);
-        return this;
+  public DeleteItemRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
+    if (null == this.expressionAttributeValues) {
+      this.expressionAttributeValues = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.expressionAttributeValues.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.expressionAttributeValues.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into ExpressionAttributeValues.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public DeleteItemRequest clearExpressionAttributeValuesEntries() {
-        this.expressionAttributeValues = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into ExpressionAttributeValues.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public DeleteItemRequest clearExpressionAttributeValuesEntries() {
+    this.expressionAttributeValues = null;
+    return this;
+  }
+  
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

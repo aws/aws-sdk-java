@@ -83,6 +83,11 @@ public class ListOperationsResult implements Serializable, Cloneable {
      * list of operation summaries <p>Children: <code>OperationId</code>,
      * <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOperations(java.util.Collection)} or {@link
+     * #withOperations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param operations Lists summaries of the operations. <p>Type: Complex type containing a

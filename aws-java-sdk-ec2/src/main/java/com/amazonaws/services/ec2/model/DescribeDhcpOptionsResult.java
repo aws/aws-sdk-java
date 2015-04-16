@@ -57,6 +57,11 @@ public class DescribeDhcpOptionsResult implements Serializable, Cloneable {
     /**
      * Information about one or more DHCP options sets.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDhcpOptions(java.util.Collection)} or {@link
+     * #withDhcpOptions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpOptions Information about one or more DHCP options sets.

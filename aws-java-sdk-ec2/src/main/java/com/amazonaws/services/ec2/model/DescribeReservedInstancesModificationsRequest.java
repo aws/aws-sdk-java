@@ -108,6 +108,12 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     /**
      * IDs for the submitted modification request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setReservedInstancesModificationIds(java.util.Collection)} or {@link
+     * #withReservedInstancesModificationIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesModificationIds IDs for the submitted modification request.
@@ -338,6 +344,11 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      * <code>failed</code>). </li> <li> <p><code>status-message</code> - The
      * reason for the status. </li> <li> <p><code>update-date</code> - The
      * time when the modification request was last updated. </li> </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

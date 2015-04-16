@@ -189,26 +189,26 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements S
      * @param key The key of the entry to be added into EncryptionContext.
      * @param value The corresponding value of the entry to be added into EncryptionContext.
      */
-    public GenerateDataKeyRequest addEncryptionContextEntry(String key, String value) {
-        if (null == this.encryptionContext) {
-            this.encryptionContext = new java.util.HashMap<String,String>();
-        }
-        if (this.encryptionContext.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.encryptionContext.put(key, value);
-        return this;
+  public GenerateDataKeyRequest addEncryptionContextEntry(String key, String value) {
+    if (null == this.encryptionContext) {
+      this.encryptionContext = new java.util.HashMap<String,String>();
     }
+    if (this.encryptionContext.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.encryptionContext.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into EncryptionContext.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public GenerateDataKeyRequest clearEncryptionContextEntries() {
-        this.encryptionContext = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into EncryptionContext.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public GenerateDataKeyRequest clearEncryptionContextEntries() {
+    this.encryptionContext = null;
+    return this;
+  }
+  
     /**
      * Integer that contains the number of bytes to generate. Common values
      * are 128, 256, 512, 1024 and so on. 1024 is the current limit.
@@ -390,6 +390,11 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements S
     /**
      * A list of grant tokens that represent grants which can be used to
      * provide long term permissions to generate a key.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
+     * #withGrantTokens(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

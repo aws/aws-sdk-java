@@ -180,6 +180,11 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
      * <p><code>value</code> - The tag value. </li> </ul>
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFilters(java.util.Collection)} or {@link
+     * #withFilters(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters One or more filters. <ul> <li> <p><code>key</code> - The tag key.

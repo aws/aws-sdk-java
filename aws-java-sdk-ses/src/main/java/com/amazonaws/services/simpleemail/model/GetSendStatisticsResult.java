@@ -67,6 +67,11 @@ public class GetSendStatisticsResult implements Serializable, Cloneable {
      * A list of data points, each of which represents 15 minutes of
      * activity.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSendDataPoints(java.util.Collection)} or {@link
+     * #withSendDataPoints(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sendDataPoints A list of data points, each of which represents 15 minutes of

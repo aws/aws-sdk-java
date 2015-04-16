@@ -57,6 +57,11 @@ public class DescribeSecurityGroupsResult implements Serializable, Cloneable {
     /**
      * Information about one or more security groups.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
+     * #withSecurityGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups Information about one or more security groups.

@@ -238,6 +238,11 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     /**
      * An array that contains the instance layer IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLayerIds(java.util.Collection)} or {@link
+     * #withLayerIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array that contains the instance layer IDs.
@@ -1074,6 +1079,11 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * instance's block devices. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
+     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

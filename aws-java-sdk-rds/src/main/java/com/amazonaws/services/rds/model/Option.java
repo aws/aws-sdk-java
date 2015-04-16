@@ -279,6 +279,11 @@ public class Option implements Serializable, Cloneable {
     /**
      * The option settings for this option.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionSettings(java.util.Collection)} or {@link
+     * #withOptionSettings(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings The option settings for this option.
@@ -351,6 +356,11 @@ public class Option implements Serializable, Cloneable {
     /**
      * If the option requires access to a port, then this DB security group
      * allows access to the port.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDBSecurityGroupMemberships(java.util.Collection)}
+     * or {@link #withDBSecurityGroupMemberships(java.util.Collection)} if
+     * you want to override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -427,6 +437,12 @@ public class Option implements Serializable, Cloneable {
     /**
      * If the option requires access to a port, then this VPC security group
      * allows access to the port.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link
+     * #setVpcSecurityGroupMemberships(java.util.Collection)} or {@link
+     * #withVpcSecurityGroupMemberships(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

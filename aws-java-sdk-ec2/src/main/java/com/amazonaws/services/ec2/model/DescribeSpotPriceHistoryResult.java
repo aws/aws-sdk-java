@@ -63,6 +63,11 @@ public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
     /**
      * The historical Spot Prices.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSpotPriceHistory(java.util.Collection)} or {@link
+     * #withSpotPriceHistory(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotPriceHistory The historical Spot Prices.

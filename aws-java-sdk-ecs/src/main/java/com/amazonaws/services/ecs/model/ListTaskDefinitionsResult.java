@@ -73,6 +73,11 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      * The list of task definition Amazon Resource Name (ARN) entries for the
      * <code>ListTaskDefintions</code> request.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTaskDefinitionArns(java.util.Collection)} or
+     * {@link #withTaskDefinitionArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinitionArns The list of task definition Amazon Resource Name (ARN) entries for the

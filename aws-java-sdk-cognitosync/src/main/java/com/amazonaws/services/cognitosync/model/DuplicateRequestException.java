@@ -18,10 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An exception thrown when there is an
- * </p>
- * <code>IN_PROGRESS</code> <p>
- * bulk publish operation for the given identity pool.
+ * An exception thrown when there is an IN_PROGRESS bulk publish
+ * operation for the given identity pool.
  * </p>
  */        
 public class DuplicateRequestException extends AmazonServiceException {

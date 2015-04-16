@@ -127,26 +127,26 @@ public class PutItemResult implements Serializable, Cloneable {
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-    public PutItemResult addAttributesEntry(String key, AttributeValue value) {
-        if (null == this.attributes) {
-            this.attributes = new java.util.HashMap<String,AttributeValue>();
-        }
-        if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.attributes.put(key, value);
-        return this;
+  public PutItemResult addAttributesEntry(String key, AttributeValue value) {
+    if (null == this.attributes) {
+      this.attributes = new java.util.HashMap<String,AttributeValue>();
     }
+    if (this.attributes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.attributes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Attributes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public PutItemResult clearAttributesEntries() {
-        this.attributes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Attributes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public PutItemResult clearAttributesEntries() {
+    this.attributes = null;
+    return this;
+  }
+  
     /**
      * The capacity units consumed by an operation. The data returned
      * includes the total provisioned throughput consumed, along with

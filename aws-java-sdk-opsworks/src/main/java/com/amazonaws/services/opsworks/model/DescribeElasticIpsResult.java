@@ -65,6 +65,11 @@ public class DescribeElasticIpsResult implements Serializable, Cloneable {
      * An <code>ElasticIps</code> object that describes the specified Elastic
      * IP addresses.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setElasticIps(java.util.Collection)} or {@link
+     * #withElasticIps(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param elasticIps An <code>ElasticIps</code> object that describes the specified Elastic

@@ -89,6 +89,11 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
      * event hooks from the Amazon EC2 instances in the Auto Scaling group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHooksNotCleanedUp(java.util.Collection)} or
+     * {@link #withHooksNotCleanedUp(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hooksNotCleanedUp If the output contains no data, and the corresponding deployment group

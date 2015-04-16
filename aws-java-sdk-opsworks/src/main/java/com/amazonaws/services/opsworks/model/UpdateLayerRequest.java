@@ -343,26 +343,26 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-    public UpdateLayerRequest addAttributesEntry(String key, String value) {
-        if (null == this.attributes) {
-            this.attributes = new java.util.HashMap<String,String>();
-        }
-        if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.attributes.put(key, value);
-        return this;
+  public UpdateLayerRequest addAttributesEntry(String key, String value) {
+    if (null == this.attributes) {
+      this.attributes = new java.util.HashMap<String,String>();
     }
+    if (this.attributes.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.attributes.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Attributes.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public UpdateLayerRequest clearAttributesEntries() {
-        this.attributes = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Attributes.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public UpdateLayerRequest clearAttributesEntries() {
+    this.attributes = null;
+    return this;
+  }
+  
     /**
      * The ARN of an IAM profile to be used for all of the layer's EC2
      * instances. For more information about IAM ARNs, see <a
@@ -445,6 +445,11 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     /**
      * An array containing the layer's custom security group IDs.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCustomSecurityGroupIds(java.util.Collection)} or
+     * {@link #withCustomSecurityGroupIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customSecurityGroupIds An array containing the layer's custom security group IDs.
@@ -517,6 +522,11 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     /**
      * An array of <code>Package</code> objects that describe the layer's
      * packages.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPackages(java.util.Collection)} or {@link
+     * #withPackages(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -593,6 +603,11 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     /**
      * A <code>VolumeConfigurations</code> object that describes the layer's
      * Amazon EBS volumes.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVolumeConfigurations(java.util.Collection)} or
+     * {@link #withVolumeConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

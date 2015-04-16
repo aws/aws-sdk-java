@@ -115,6 +115,11 @@ public class ValidationWarning implements Serializable, Cloneable {
     /**
      * A description of the validation warning.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWarnings(java.util.Collection)} or {@link
+     * #withWarnings(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param warnings A description of the validation warning.

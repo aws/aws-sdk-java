@@ -342,6 +342,11 @@ public class EventSubscription implements Serializable, Cloneable {
     /**
      * A list of source IDs for the RDS event notification subscription.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSourceIdsList(java.util.Collection)} or {@link
+     * #withSourceIdsList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIdsList A list of source IDs for the RDS event notification subscription.
@@ -414,6 +419,11 @@ public class EventSubscription implements Serializable, Cloneable {
     /**
      * A list of event categories for the RDS event notification
      * subscription.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEventCategoriesList(java.util.Collection)} or
+     * {@link #withEventCategoriesList(java.util.Collection)} if you want to
+     * override the existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *

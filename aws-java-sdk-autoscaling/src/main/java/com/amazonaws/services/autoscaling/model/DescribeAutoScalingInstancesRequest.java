@@ -98,6 +98,11 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      * you omit this parameter, all Auto Scaling instances are described. If
      * you specify an ID that does not exist, it is ignored with no error.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
+     * #withInstanceIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds One or more Auto Scaling instances to describe, up to 50 instances. If

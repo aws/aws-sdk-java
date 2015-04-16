@@ -450,6 +450,11 @@ public class Job implements Serializable, Cloneable {
      * files for each output in the order in which you specify them in the
      * job.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOutputs(java.util.Collection)} or {@link
+     * #withOutputs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param outputs Information about the output files. We recommend that you use the
@@ -623,6 +628,11 @@ public class Job implements Serializable, Cloneable {
      * ts (MPEG-TS), <code>Playlists</code> contains information about the
      * master playlists that you want Elastic Transcoder to create. <p>The
      * maximum number of master playlists in a job is 30.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPlaylists(java.util.Collection)} or {@link
+     * #withPlaylists(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -840,26 +850,26 @@ public class Job implements Serializable, Cloneable {
      * @param key The key of the entry to be added into UserMetadata.
      * @param value The corresponding value of the entry to be added into UserMetadata.
      */
-    public Job addUserMetadataEntry(String key, String value) {
-        if (null == this.userMetadata) {
-            this.userMetadata = new java.util.HashMap<String,String>();
-        }
-        if (this.userMetadata.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.userMetadata.put(key, value);
-        return this;
+  public Job addUserMetadataEntry(String key, String value) {
+    if (null == this.userMetadata) {
+      this.userMetadata = new java.util.HashMap<String,String>();
     }
+    if (this.userMetadata.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.userMetadata.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into UserMetadata.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public Job clearUserMetadataEntries() {
-        this.userMetadata = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into UserMetadata.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Job clearUserMetadataEntries() {
+    this.userMetadata = null;
+    return this;
+  }
+  
     /**
      * Details about the timing of a job.
      *

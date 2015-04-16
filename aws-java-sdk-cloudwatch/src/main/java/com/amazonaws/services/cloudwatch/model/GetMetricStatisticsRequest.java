@@ -254,6 +254,11 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
     /**
      * A list of dimensions describing qualities of the metric.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDimensions(java.util.Collection)} or {@link
+     * #withDimensions(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
@@ -501,6 +506,11 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
     
     /**
      * The metric statistics to return.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStatistics(java.util.Collection)} or {@link
+     * #withStatistics(java.util.Collection)} if you want to override the
+     * existing values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>

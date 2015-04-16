@@ -73,6 +73,11 @@ public class ListJobsResult implements Serializable, Cloneable {
      * A list of job objects. Each job object contains metadata describing
      * the job.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setJobList(java.util.Collection)} or {@link
+     * #withJobList(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobList A list of job objects. Each job object contains metadata describing

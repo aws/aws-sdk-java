@@ -141,26 +141,26 @@ public class PredictRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into Record.
      * @param value The corresponding value of the entry to be added into Record.
      */
-    public PredictRequest addRecordEntry(String key, String value) {
-        if (null == this.record) {
-            this.record = new java.util.HashMap<String,String>();
-        }
-        if (this.record.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.record.put(key, value);
-        return this;
+  public PredictRequest addRecordEntry(String key, String value) {
+    if (null == this.record) {
+      this.record = new java.util.HashMap<String,String>();
     }
+    if (this.record.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.record.put(key, value);
+    return this;
+  }
 
-    /**
-     * Removes all the entries added into Record.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     */
-    public PredictRequest clearRecordEntries() {
-        this.record = null;
-        return this;
-    }
-    
+  /**
+   * Removes all the entries added into Record.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public PredictRequest clearRecordEntries() {
+    this.record = null;
+    return this;
+  }
+  
     /**
      * Returns the value of the PredictEndpoint property for this object.
      * <p>

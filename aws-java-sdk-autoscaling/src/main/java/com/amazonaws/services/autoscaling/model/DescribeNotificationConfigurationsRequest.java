@@ -79,6 +79,11 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     /**
      * The name of the group.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAutoScalingGroupNames(java.util.Collection)} or
+     * {@link #withAutoScalingGroupNames(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroupNames The name of the group.

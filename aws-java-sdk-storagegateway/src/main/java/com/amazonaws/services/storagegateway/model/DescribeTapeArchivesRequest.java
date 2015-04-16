@@ -94,6 +94,11 @@ public class DescribeTapeArchivesRequest extends AmazonWebServiceRequest impleme
      * Specifies one or more unique Amazon Resource Names (ARNs) that
      * represent the virtual tapes you want to describe.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTapeARNs(java.util.Collection)} or {@link
+     * #withTapeARNs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tapeARNs Specifies one or more unique Amazon Resource Names (ARNs) that

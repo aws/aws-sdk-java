@@ -73,6 +73,11 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      * A list of deployment configurations, including the built-in
      * configurations such as CodeDeployDefault.OneAtATime.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeploymentConfigsList(java.util.Collection)} or
+     * {@link #withDeploymentConfigsList(java.util.Collection)} if you want
+     * to override the existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deploymentConfigsList A list of deployment configurations, including the built-in

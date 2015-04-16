@@ -47,8 +47,8 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
     /** The InputStream containing the content to write out */
     private InputStream content;
 
-    /** Shared logger for more debugging information */
-    private static final Log log = LogFactory.getLog(AmazonHttpClient.class);
+    private static final Log log = LogFactory
+            .getLog(RepeatableInputStreamRequestEntity.class);
 
     /**
      * Record the original exception if we do attempt a retry, so that if the
@@ -70,7 +70,7 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
      *            content length, and content).
      */
     RepeatableInputStreamRequestEntity(final Request<?> request) {
-    	setChunked(false);
+        setChunked(false);
 
         /*
          * If we don't specify a content length when we instantiate our
@@ -90,7 +90,7 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
             }
         } catch (NumberFormatException nfe) {
             log.warn("Unable to parse content length from request.  " +
-            		"Buffering contents in memory.");
+                    "Buffering contents in memory.");
         }
 
         String contentType = request.getHeaders().get("Content-Type");
@@ -99,10 +99,10 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
                         ServiceMetricType.UPLOAD_THROUGHPUT_NAME_SUFFIX,
                         ServiceMetricType.UPLOAD_BYTE_COUNT_NAME_SUFFIX);
         if (type == null) {
-            inputStreamRequestEntity = 
+            inputStreamRequestEntity =
                 new InputStreamEntity(request.getContent(), contentLength);
         } else {
-            inputStreamRequestEntity = 
+            inputStreamRequestEntity =
                 new MetricInputStreamEntity(type, request.getContent(), contentLength);
         }
         inputStreamRequestEntity.setContentType(contentType);
@@ -114,9 +114,9 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
     }
 
     @Override
-	public boolean isChunked() {
-    	return false;
-	}
+    public boolean isChunked() {
+        return false;
+    }
 
     /**
      * Returns true if the underlying InputStream supports marking/reseting or

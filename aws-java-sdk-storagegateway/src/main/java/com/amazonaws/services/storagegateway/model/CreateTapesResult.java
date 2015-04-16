@@ -65,6 +65,11 @@ public class CreateTapesResult implements Serializable, Cloneable {
      * A list of unique Amazon Resource Named (ARN) the represents the
      * virtual tapes that were created.
      * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTapeARNs(java.util.Collection)} or {@link
+     * #withTapeARNs(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tapeARNs A list of unique Amazon Resource Named (ARN) the represents the

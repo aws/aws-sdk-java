@@ -18,6 +18,7 @@ import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +38,41 @@ import com.amazonaws.util.XMLWriter;
  */
 public class ListGeoLocationsRequestMarshaller implements Marshaller<Request<ListGeoLocationsRequest>, ListGeoLocationsRequest> {
 
+    private static final String RESOURCE_PATH_TEMPLATE;
+    private static final Map<String, String> STATIC_QUERY_PARAMS;
+    private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
+    static {
+        String path = "/2013-04-01/geolocations?startcontinentcode={StartContinentCode}&startcountrycode={StartCountryCode}&startsubdivisioncode={StartSubdivisionCode}&maxitems={MaxItems}";
+        Map<String, String> staticMap = new HashMap<String, String>();
+        Map<String, String> dynamicMap = new HashMap<String, String>();
+
+        int index = path.indexOf("?");
+        if (index != -1) {
+            String queryString = path.substring(index + 1);
+            path = path.substring(0, index);
+
+            for (String s : queryString.split("[;&]")) {
+                index = s.indexOf("=");
+                if (index != -1) {
+                    String name = s.substring(0, index);
+                    String value = s.substring(index + 1);
+
+                    if (value.startsWith("{") && value.endsWith("}")) {
+                        dynamicMap.put(value.substring(1, value.length() - 1), name);
+                    } else {
+                        staticMap.put(name, value);
+                    }
+                }
+            }
+        }
+
+        RESOURCE_PATH_TEMPLATE = path;
+        STATIC_QUERY_PARAMS = Collections.unmodifiableMap(staticMap);
+        DYNAMIC_QUERY_PARAMS = Collections.unmodifiableMap(dynamicMap);
+    }
+
     public Request<ListGeoLocationsRequest> marshall(ListGeoLocationsRequest listGeoLocationsRequest) {
+
         if (listGeoLocationsRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
@@ -45,33 +80,58 @@ public class ListGeoLocationsRequestMarshaller implements Marshaller<Request<Lis
         Request<ListGeoLocationsRequest> request = new DefaultRequest<ListGeoLocationsRequest>(listGeoLocationsRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2013-04-01/geolocations?startcontinentcode={StartContinentCode}&startcountrycode={StartCountryCode}&startsubdivisioncode={StartSubdivisionCode}&maxitems={MaxItems}"; 
-        uriResourcePath = uriResourcePath.replace("{StartContinentCode}", getString(listGeoLocationsRequest.getStartContinentCode())); 
-        uriResourcePath = uriResourcePath.replace("{StartCountryCode}", getString(listGeoLocationsRequest.getStartCountryCode())); 
-        uriResourcePath = uriResourcePath.replace("{StartSubdivisionCode}", getString(listGeoLocationsRequest.getStartSubdivisionCode())); 
-        uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listGeoLocationsRequest.getMaxItems())); 
+        String uriResourcePath = RESOURCE_PATH_TEMPLATE;
+        
+        if (DYNAMIC_QUERY_PARAMS.containsKey("StartContinentCode")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("StartContinentCode");
+            String value = (listGeoLocationsRequest.getStartContinentCode() == null) ? null : StringUtils.fromString(listGeoLocationsRequest.getStartContinentCode());
 
-        if (uriResourcePath.contains("?")) {
-            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-
-            for (String s : queryString.split("[;&]")) {
-                String[] nameValuePair = s.split("=");
-                if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
-                }
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
             }
+        } else {
+            uriResourcePath = uriResourcePath.replace("{StartContinentCode}", (listGeoLocationsRequest.getStartContinentCode() == null) ? "" : StringUtils.fromString(listGeoLocationsRequest.getStartContinentCode())); 
+        }
+        
+        if (DYNAMIC_QUERY_PARAMS.containsKey("StartCountryCode")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("StartCountryCode");
+            String value = (listGeoLocationsRequest.getStartCountryCode() == null) ? null : StringUtils.fromString(listGeoLocationsRequest.getStartCountryCode());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+        } else {
+            uriResourcePath = uriResourcePath.replace("{StartCountryCode}", (listGeoLocationsRequest.getStartCountryCode() == null) ? "" : StringUtils.fromString(listGeoLocationsRequest.getStartCountryCode())); 
+        }
+        
+        if (DYNAMIC_QUERY_PARAMS.containsKey("StartSubdivisionCode")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("StartSubdivisionCode");
+            String value = (listGeoLocationsRequest.getStartSubdivisionCode() == null) ? null : StringUtils.fromString(listGeoLocationsRequest.getStartSubdivisionCode());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+        } else {
+            uriResourcePath = uriResourcePath.replace("{StartSubdivisionCode}", (listGeoLocationsRequest.getStartSubdivisionCode() == null) ? "" : StringUtils.fromString(listGeoLocationsRequest.getStartSubdivisionCode())); 
+        }
+        
+        if (DYNAMIC_QUERY_PARAMS.containsKey("MaxItems")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("MaxItems");
+            String value = (listGeoLocationsRequest.getMaxItems() == null) ? null : StringUtils.fromString(listGeoLocationsRequest.getMaxItems());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+        } else {
+            uriResourcePath = uriResourcePath.replace("{MaxItems}", (listGeoLocationsRequest.getMaxItems() == null) ? "" : StringUtils.fromString(listGeoLocationsRequest.getMaxItems())); 
         }
 
-        request.setResourcePath(uriResourcePath);
+        request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
+
+        for (Map.Entry<String, String> entry : STATIC_QUERY_PARAMS.entrySet()) {
+            request.addParameter(entry.getKey(), entry.getValue());
+        }
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }
