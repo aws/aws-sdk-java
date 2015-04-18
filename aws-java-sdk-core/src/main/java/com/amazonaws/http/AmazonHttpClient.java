@@ -643,6 +643,25 @@ public class AmazonHttpClient {
             requestLog.debug("Sending Request: " + request);
         final AWSCredentials credentials = execContext.getCredentials();
         final AmazonWebServiceRequest awsreq = request.getOriginalRequest();
+        final ProgressListener listener = awsreq.getGeneralProgressListener();
+
+        if (p.isRetry()) {
+            publishProgress(listener, ProgressEventType.CLIENT_REQUEST_RETRY_EVENT);
+            // Notify the progress listener of the retry
+            awsRequestMetrics.startEvent(RetryPauseTime);
+            try {
+                // don't pause if the retry was not due to a redirection
+                // ie when retried exception is null
+                if (p.retriedException != null) {
+                    pauseBeforeNextRetry(request.getOriginalRequest(),
+                            p.retriedException, p.requestCount,
+                            config.getRetryPolicy());
+                }
+            } finally {
+                awsRequestMetrics.endEvent(RetryPauseTime);
+            }
+        }
+
         // Sign the request if a signer was provided
         p.newSigner(request, execContext);
         if (p.signer != null && credentials != null) {
@@ -665,24 +684,7 @@ public class AmazonHttpClient {
             }
         }
         p.newApacheRequest(httpRequestFactory, request, config, execContext);
-        final ProgressListener listener = awsreq.getGeneralProgressListener();
 
-        if (p.isRetry()) {
-            publishProgress(listener, ProgressEventType.CLIENT_REQUEST_RETRY_EVENT);
-            // Notify the progress listener of the retry
-            awsRequestMetrics.startEvent(RetryPauseTime);
-            try {
-                // don't pause if the retry was not due to a redirection
-                // ie when retried exception is null
-                if (p.retriedException != null) {
-                    pauseBeforeNextRetry(request.getOriginalRequest(),
-                        p.retriedException, p.requestCount,
-                        config.getRetryPolicy());
-                }
-            } finally {
-                awsRequestMetrics.endEvent(RetryPauseTime);
-            }
-        }
         captureConnectionPoolMetrics(httpClient.getConnectionManager(), awsRequestMetrics);
         HttpContext httpContext = new BasicHttpContext();
         httpContext.setAttribute(
