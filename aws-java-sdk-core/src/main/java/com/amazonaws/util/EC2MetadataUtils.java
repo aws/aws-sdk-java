@@ -409,7 +409,7 @@ public class EC2MetadataUtils {
         private final String instanceType;
         private final String imageId;
         private final String instanceId;
-        private final String billingProducts;
+        private final List<String> billingProducts;
         private final String architecture;
         private final String accountId;
         private final String kernelId;
@@ -426,7 +426,7 @@ public class EC2MetadataUtils {
                 @JsonProperty(value = "instanceType", required = true) String instanceType,
                 @JsonProperty(value = "imageId", required = true) String imageId,
                 @JsonProperty(value = "instanceId", required = true) String instanceId,
-                @JsonProperty(value = "billingProducts", required = false) String billingProducts,
+                @JsonProperty(value = "billingProducts", required = false) List<String> billingProducts,
                 @JsonProperty(value = "architecture", required = true) String architecture,
                 @JsonProperty(value = "accountId", required = true) String accountId,
                 @JsonProperty(value = "kernelId", required = true) String kernelId,
@@ -468,7 +468,7 @@ public class EC2MetadataUtils {
             return instanceId;
         }
 
-        public String getBillingProducts() {
+        public List<String> getBillingProducts() {
             return billingProducts;
         }
 
